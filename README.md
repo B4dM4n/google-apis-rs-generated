@@ -31,7 +31,3 @@ just refresh-all
 ```
 (cd ../generator && cargo build) && just MCP=$PWD/../generator/target/debug/mcp update-drivers
 ```
-
-
-
-

@@ -21,7 +21,7 @@ help:
     -- Operations on the gen/ directory  ------------------------------------------------------------)
     'gen-cargo-errors' and 'gen-cargo <+arguments>' and 'gen-make <target> <+arguments>'
     -- Developer Targets ----------------------------------------------------------------------------)
-    'mcp' and 'show-errors' and 'clear-errors' and 
+    'mcp' and 'show-errors' and 'clear-errors' and
     EOF
 
 # Add a brand new Google API to be generated at next refresh
@@ -48,7 +48,7 @@ refresh-api-index:
 
 # build or update the MCP tool, used for generation and much more
 mcp:
-    #!/usr/bin/env bash 
+    #!/usr/bin/env bash
     set -eux -o pipefail
     [[ "{{SKIP_MCP}}" = "yes" ]] && exit 0
     if [ ! -d {{generator_dir}} ]; then
@@ -91,7 +91,7 @@ refresh-all: refresh-with-force collect-errors
 
 any_error := "*"
 # valid prefixes: generator or cargo
-clear-errors prefix=any_error: 
+clear-errors prefix=any_error:
     @echo Clearing all errors...
     find {{OUTPUT_DIR}} -name '{{prefix}}{{ERRORS_FILE_SUFFIX}}' -exec rm -v '{}' \;
     just MCP="{{MCP}}" SKIP_MCP={{SKIP_MCP}} update-drivers
@@ -101,14 +101,14 @@ clear-errors prefix=any_error:
 show-errors prefix=any_error:
     #!/usr/bin/env sh
     set -eu
-    find {{OUTPUT_DIR}} -name '{{prefix}}{{ERRORS_FILE_SUFFIX}}' | while read -r fp; do 
+    find {{OUTPUT_DIR}} -name '{{prefix}}{{ERRORS_FILE_SUFFIX}}' | while read -r fp; do
         echo $"\n---> $fp <---\n"
         cat "$fp"
     done
 
 # Best after 'refresh-all', it generates all code and runs cargo against it, collecting errors
 collect-errors:
-    just SKIP_MCP={{SKIP_MCP}} mcp 
+    just SKIP_MCP={{SKIP_MCP}} mcp
     just gen-cargo-errors check
     just SKIP_MCP={{SKIP_MCP}} update-drivers
     just gen-cargo-errors doc
