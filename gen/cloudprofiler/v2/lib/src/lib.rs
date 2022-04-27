@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [profiles](resources/projects/profiles/struct.ProfilesActions.html)\n        * [*create*](resources/projects/profiles/struct.CreateRequestBuilder.html), [*createOffline*](resources/projects/profiles/struct.CreateOfflineRequestBuilder.html), [*patch*](resources/projects/profiles/struct.PatchRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
     #[doc = "View and write monitoring data for all of your Google and third-party Cloud and API projects\n\n`https://www.googleapis.com/auth/monitoring`"]
     pub const MONITORING: &str = "https://www.googleapis.com/auth/monitoring";
@@ -21,14 +21,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CreateProfileRequest {
-        #[doc = "Deployment details."]
+        #[doc = "Required. Deployment details."]
         #[serde(
             rename = "deployment",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub deployment: ::std::option::Option<crate::schemas::Deployment>,
-        #[doc = "One or more profile types that the agent is capable of providing."]
+        #[doc = "Required. One or more profile types that the agent is capable of providing."]
         #[serde(
             rename = "profileType",
             default,
@@ -181,7 +181,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_id: ::std::option::Option<String>,
-        #[doc = "Target is the service name used to group related deployments: * Service name for GAE Flex / Standard. * Cluster and container name for GKE. * User-specified string for direct GCE profiling (e.g. Java). * Job name for Dataflow. Validation regex: `^[a-z]([-a-z0-9_.]{0,253}[a-z0-9])?$`."]
+        #[doc = "Target is the service name used to group related deployments: * Service name for App Engine Flex / Standard. * Cluster and container name for GKE. * User-specified string for direct Compute Engine profiling (e.g. Java). * Job name for Dataflow. Validation regex: `^[a-z]([-a-z0-9_.]{0,253}[a-z0-9])?$`."]
         #[serde(
             rename = "target",
             default,
@@ -582,7 +582,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "CreateProfile creates a new profile resource in the online mode. The server ensures that the new profiles are created at a constant rate per deployment, so the creation request may hang for some time until the next profile session is available. The request may fail with ABORTED error if the creation is not available within ~1m, the response will indicate the duration of the backoff the client should take before attempting creating a profile again. The backoff duration is returned in google.rpc.RetryInfo extension on the response status. To a gRPC client, the extension will be return as a binary-serialized proto in the trailing metadata item named \"google.rpc.retryinfo-bin\"."]
+                #[doc = "CreateProfile creates a new profile resource in the online mode. The server ensures that the new profiles are created at a constant rate per deployment, so the creation request may hang for some time until the next profile session is available. The request may fail with ABORTED error if the creation is not available within ~1m, the response will indicate the duration of the backoff the client should take before attempting creating a profile again. The backoff duration is returned in google.rpc.RetryInfo extension on the response status. To a gRPC client, the extension will be return as a binary-serialized proto in the trailing metadata item named \"google.rpc.retryinfo-bin\". "]
                 pub fn create(
                     &self,
                     request: crate::schemas::CreateProfileRequest,

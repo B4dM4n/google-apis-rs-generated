@@ -1,6 +1,6 @@
-#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n        * [datasets](resources/projects/locations/datasets/struct.DatasetsActions.html)\n          * [*create*](resources/projects/locations/datasets/struct.CreateRequestBuilder.html), [*deidentify*](resources/projects/locations/datasets/struct.DeidentifyRequestBuilder.html), [*delete*](resources/projects/locations/datasets/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/datasets/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/struct.TestIamPermissionsRequestBuilder.html)\n          * [consent_stores](resources/projects/locations/datasets/consent_stores/struct.ConsentStoresActions.html)\n            * [*checkDataAccess*](resources/projects/locations/datasets/consent_stores/struct.CheckDataAccessRequestBuilder.html), [*create*](resources/projects/locations/datasets/consent_stores/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/struct.DeleteRequestBuilder.html), [*evaluateUserConsents*](resources/projects/locations/datasets/consent_stores/struct.EvaluateUserConsentsRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/consent_stores/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/struct.PatchRequestBuilder.html), [*queryAccessibleData*](resources/projects/locations/datasets/consent_stores/struct.QueryAccessibleDataRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/consent_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/consent_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [attribute_definitions](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.AttributeDefinitionsActions.html)\n              * [*create*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.PatchRequestBuilder.html)\n            * [consent_artifacts](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.ConsentArtifactsActions.html)\n              * [*create*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.ListRequestBuilder.html)\n            * [consents](resources/projects/locations/datasets/consent_stores/consents/struct.ConsentsActions.html)\n              * [*activate*](resources/projects/locations/datasets/consent_stores/consents/struct.ActivateRequestBuilder.html), [*create*](resources/projects/locations/datasets/consent_stores/consents/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/consents/struct.DeleteRequestBuilder.html), [*deleteRevision*](resources/projects/locations/datasets/consent_stores/consents/struct.DeleteRevisionRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/consents/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/consents/struct.ListRequestBuilder.html), [*listRevisions*](resources/projects/locations/datasets/consent_stores/consents/struct.ListRevisionsRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/consents/struct.PatchRequestBuilder.html), [*reject*](resources/projects/locations/datasets/consent_stores/consents/struct.RejectRequestBuilder.html), [*revoke*](resources/projects/locations/datasets/consent_stores/consents/struct.RevokeRequestBuilder.html)\n            * [user_data_mappings](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.UserDataMappingsActions.html)\n              * [*archive*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.ArchiveRequestBuilder.html), [*create*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.PatchRequestBuilder.html)\n          * [dicom_stores](resources/projects/locations/datasets/dicom_stores/struct.DicomStoresActions.html)\n            * [*create*](resources/projects/locations/datasets/dicom_stores/struct.CreateRequestBuilder.html), [*deidentify*](resources/projects/locations/datasets/dicom_stores/struct.DeidentifyRequestBuilder.html), [*delete*](resources/projects/locations/datasets/dicom_stores/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/datasets/dicom_stores/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/datasets/dicom_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/dicom_stores/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/datasets/dicom_stores/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/datasets/dicom_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/dicom_stores/struct.PatchRequestBuilder.html), [*searchForInstances*](resources/projects/locations/datasets/dicom_stores/struct.SearchForInstancesRequestBuilder.html), [*searchForSeries*](resources/projects/locations/datasets/dicom_stores/struct.SearchForSeriesRequestBuilder.html), [*searchForStudies*](resources/projects/locations/datasets/dicom_stores/struct.SearchForStudiesRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/dicom_stores/struct.SetIamPolicyRequestBuilder.html), [*storeInstances*](resources/projects/locations/datasets/dicom_stores/struct.StoreInstancesRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/dicom_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [studies](resources/projects/locations/datasets/dicom_stores/studies/struct.StudiesActions.html)\n              * [*delete*](resources/projects/locations/datasets/dicom_stores/studies/struct.DeleteRequestBuilder.html), [*retrieveMetadata*](resources/projects/locations/datasets/dicom_stores/studies/struct.RetrieveMetadataRequestBuilder.html), [*retrieveStudy*](resources/projects/locations/datasets/dicom_stores/studies/struct.RetrieveStudyRequestBuilder.html), [*searchForInstances*](resources/projects/locations/datasets/dicom_stores/studies/struct.SearchForInstancesRequestBuilder.html), [*searchForSeries*](resources/projects/locations/datasets/dicom_stores/studies/struct.SearchForSeriesRequestBuilder.html), [*storeInstances*](resources/projects/locations/datasets/dicom_stores/studies/struct.StoreInstancesRequestBuilder.html)\n              * [series](resources/projects/locations/datasets/dicom_stores/studies/series/struct.SeriesActions.html)\n                * [*delete*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.DeleteRequestBuilder.html), [*retrieveMetadata*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.RetrieveMetadataRequestBuilder.html), [*retrieveSeries*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.RetrieveSeriesRequestBuilder.html), [*searchForInstances*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.SearchForInstancesRequestBuilder.html)\n                * [instances](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.InstancesActions.html)\n                  * [*delete*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.DeleteRequestBuilder.html), [*retrieveInstance*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.RetrieveInstanceRequestBuilder.html), [*retrieveMetadata*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.RetrieveMetadataRequestBuilder.html), [*retrieveRendered*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.RetrieveRenderedRequestBuilder.html)\n                  * [frames](resources/projects/locations/datasets/dicom_stores/studies/series/instances/frames/struct.FramesActions.html)\n                    * [*retrieveFrames*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/frames/struct.RetrieveFramesRequestBuilder.html), [*retrieveRendered*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/frames/struct.RetrieveRenderedRequestBuilder.html)\n          * [fhir_stores](resources/projects/locations/datasets/fhir_stores/struct.FhirStoresActions.html)\n            * [*create*](resources/projects/locations/datasets/fhir_stores/struct.CreateRequestBuilder.html), [*deidentify*](resources/projects/locations/datasets/fhir_stores/struct.DeidentifyRequestBuilder.html), [*delete*](resources/projects/locations/datasets/fhir_stores/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/datasets/fhir_stores/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/datasets/fhir_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/fhir_stores/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/datasets/fhir_stores/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/datasets/fhir_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/fhir_stores/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/fhir_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/fhir_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [fhir](resources/projects/locations/datasets/fhir_stores/fhir/struct.FhirActions.html)\n              * [*Patient-everything*](resources/projects/locations/datasets/fhir_stores/fhir/struct.PatientEverythingRequestBuilder.html), [*Resource-purge*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ResourcePurgeRequestBuilder.html), [*capabilities*](resources/projects/locations/datasets/fhir_stores/fhir/struct.CapabilitiesRequestBuilder.html), [*create*](resources/projects/locations/datasets/fhir_stores/fhir/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/fhir_stores/fhir/struct.DeleteRequestBuilder.html), [*executeBundle*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ExecuteBundleRequestBuilder.html), [*history*](resources/projects/locations/datasets/fhir_stores/fhir/struct.HistoryRequestBuilder.html), [*patch*](resources/projects/locations/datasets/fhir_stores/fhir/struct.PatchRequestBuilder.html), [*read*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ReadRequestBuilder.html), [*search*](resources/projects/locations/datasets/fhir_stores/fhir/struct.SearchRequestBuilder.html), [*search-type*](resources/projects/locations/datasets/fhir_stores/fhir/struct.SearchTypeRequestBuilder.html), [*update*](resources/projects/locations/datasets/fhir_stores/fhir/struct.UpdateRequestBuilder.html), [*vread*](resources/projects/locations/datasets/fhir_stores/fhir/struct.VreadRequestBuilder.html)\n          * [hl_7v2_stores](resources/projects/locations/datasets/hl_7v2_stores/struct.Hl7V2StoresActions.html)\n            * [*create*](resources/projects/locations/datasets/hl_7v2_stores/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/hl_7v2_stores/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/hl_7v2_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/hl_7v2_stores/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/datasets/hl_7v2_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/hl_7v2_stores/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/hl_7v2_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/hl_7v2_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [messages](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.MessagesActions.html)\n              * [*create*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.GetRequestBuilder.html), [*ingest*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.IngestRequestBuilder.html), [*list*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.PatchRequestBuilder.html)\n          * [operations](resources/projects/locations/datasets/operations/struct.OperationsActions.html)\n            * [*cancel*](resources/projects/locations/datasets/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/locations/datasets/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/operations/struct.ListRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n        * [datasets](resources/projects/locations/datasets/struct.DatasetsActions.html)\n          * [*create*](resources/projects/locations/datasets/struct.CreateRequestBuilder.html), [*deidentify*](resources/projects/locations/datasets/struct.DeidentifyRequestBuilder.html), [*delete*](resources/projects/locations/datasets/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/datasets/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/struct.TestIamPermissionsRequestBuilder.html)\n          * [consent_stores](resources/projects/locations/datasets/consent_stores/struct.ConsentStoresActions.html)\n            * [*checkDataAccess*](resources/projects/locations/datasets/consent_stores/struct.CheckDataAccessRequestBuilder.html), [*create*](resources/projects/locations/datasets/consent_stores/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/struct.DeleteRequestBuilder.html), [*evaluateUserConsents*](resources/projects/locations/datasets/consent_stores/struct.EvaluateUserConsentsRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/consent_stores/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/struct.PatchRequestBuilder.html), [*queryAccessibleData*](resources/projects/locations/datasets/consent_stores/struct.QueryAccessibleDataRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/consent_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/consent_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [attribute_definitions](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.AttributeDefinitionsActions.html)\n              * [*create*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.PatchRequestBuilder.html)\n            * [consent_artifacts](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.ConsentArtifactsActions.html)\n              * [*create*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.ListRequestBuilder.html)\n            * [consents](resources/projects/locations/datasets/consent_stores/consents/struct.ConsentsActions.html)\n              * [*activate*](resources/projects/locations/datasets/consent_stores/consents/struct.ActivateRequestBuilder.html), [*create*](resources/projects/locations/datasets/consent_stores/consents/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/consents/struct.DeleteRequestBuilder.html), [*deleteRevision*](resources/projects/locations/datasets/consent_stores/consents/struct.DeleteRevisionRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/consents/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/consents/struct.ListRequestBuilder.html), [*listRevisions*](resources/projects/locations/datasets/consent_stores/consents/struct.ListRevisionsRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/consents/struct.PatchRequestBuilder.html), [*reject*](resources/projects/locations/datasets/consent_stores/consents/struct.RejectRequestBuilder.html), [*revoke*](resources/projects/locations/datasets/consent_stores/consents/struct.RevokeRequestBuilder.html)\n            * [user_data_mappings](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.UserDataMappingsActions.html)\n              * [*archive*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.ArchiveRequestBuilder.html), [*create*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.PatchRequestBuilder.html)\n          * [dicom_stores](resources/projects/locations/datasets/dicom_stores/struct.DicomStoresActions.html)\n            * [*create*](resources/projects/locations/datasets/dicom_stores/struct.CreateRequestBuilder.html), [*deidentify*](resources/projects/locations/datasets/dicom_stores/struct.DeidentifyRequestBuilder.html), [*delete*](resources/projects/locations/datasets/dicom_stores/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/datasets/dicom_stores/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/datasets/dicom_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/dicom_stores/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/datasets/dicom_stores/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/datasets/dicom_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/dicom_stores/struct.PatchRequestBuilder.html), [*searchForInstances*](resources/projects/locations/datasets/dicom_stores/struct.SearchForInstancesRequestBuilder.html), [*searchForSeries*](resources/projects/locations/datasets/dicom_stores/struct.SearchForSeriesRequestBuilder.html), [*searchForStudies*](resources/projects/locations/datasets/dicom_stores/struct.SearchForStudiesRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/dicom_stores/struct.SetIamPolicyRequestBuilder.html), [*storeInstances*](resources/projects/locations/datasets/dicom_stores/struct.StoreInstancesRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/dicom_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [studies](resources/projects/locations/datasets/dicom_stores/studies/struct.StudiesActions.html)\n              * [*delete*](resources/projects/locations/datasets/dicom_stores/studies/struct.DeleteRequestBuilder.html), [*retrieveMetadata*](resources/projects/locations/datasets/dicom_stores/studies/struct.RetrieveMetadataRequestBuilder.html), [*retrieveStudy*](resources/projects/locations/datasets/dicom_stores/studies/struct.RetrieveStudyRequestBuilder.html), [*searchForInstances*](resources/projects/locations/datasets/dicom_stores/studies/struct.SearchForInstancesRequestBuilder.html), [*searchForSeries*](resources/projects/locations/datasets/dicom_stores/studies/struct.SearchForSeriesRequestBuilder.html), [*storeInstances*](resources/projects/locations/datasets/dicom_stores/studies/struct.StoreInstancesRequestBuilder.html)\n              * [series](resources/projects/locations/datasets/dicom_stores/studies/series/struct.SeriesActions.html)\n                * [*delete*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.DeleteRequestBuilder.html), [*retrieveMetadata*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.RetrieveMetadataRequestBuilder.html), [*retrieveSeries*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.RetrieveSeriesRequestBuilder.html), [*searchForInstances*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.SearchForInstancesRequestBuilder.html)\n                * [instances](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.InstancesActions.html)\n                  * [*delete*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.DeleteRequestBuilder.html), [*retrieveInstance*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.RetrieveInstanceRequestBuilder.html), [*retrieveMetadata*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.RetrieveMetadataRequestBuilder.html), [*retrieveRendered*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.RetrieveRenderedRequestBuilder.html)\n                  * [frames](resources/projects/locations/datasets/dicom_stores/studies/series/instances/frames/struct.FramesActions.html)\n                    * [*retrieveFrames*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/frames/struct.RetrieveFramesRequestBuilder.html), [*retrieveRendered*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/frames/struct.RetrieveRenderedRequestBuilder.html)\n          * [fhir_stores](resources/projects/locations/datasets/fhir_stores/struct.FhirStoresActions.html)\n            * [*create*](resources/projects/locations/datasets/fhir_stores/struct.CreateRequestBuilder.html), [*deidentify*](resources/projects/locations/datasets/fhir_stores/struct.DeidentifyRequestBuilder.html), [*delete*](resources/projects/locations/datasets/fhir_stores/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/datasets/fhir_stores/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/datasets/fhir_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/fhir_stores/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/datasets/fhir_stores/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/datasets/fhir_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/fhir_stores/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/fhir_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/fhir_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [fhir](resources/projects/locations/datasets/fhir_stores/fhir/struct.FhirActions.html)\n              * [*Patient-everything*](resources/projects/locations/datasets/fhir_stores/fhir/struct.PatientEverythingRequestBuilder.html), [*Resource-purge*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ResourcePurgeRequestBuilder.html), [*Resource-validate*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ResourceValidateRequestBuilder.html), [*capabilities*](resources/projects/locations/datasets/fhir_stores/fhir/struct.CapabilitiesRequestBuilder.html), [*create*](resources/projects/locations/datasets/fhir_stores/fhir/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/fhir_stores/fhir/struct.DeleteRequestBuilder.html), [*executeBundle*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ExecuteBundleRequestBuilder.html), [*history*](resources/projects/locations/datasets/fhir_stores/fhir/struct.HistoryRequestBuilder.html), [*patch*](resources/projects/locations/datasets/fhir_stores/fhir/struct.PatchRequestBuilder.html), [*read*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ReadRequestBuilder.html), [*search*](resources/projects/locations/datasets/fhir_stores/fhir/struct.SearchRequestBuilder.html), [*search-type*](resources/projects/locations/datasets/fhir_stores/fhir/struct.SearchTypeRequestBuilder.html), [*update*](resources/projects/locations/datasets/fhir_stores/fhir/struct.UpdateRequestBuilder.html), [*vread*](resources/projects/locations/datasets/fhir_stores/fhir/struct.VreadRequestBuilder.html)\n          * [hl_7v2_stores](resources/projects/locations/datasets/hl_7v2_stores/struct.Hl7V2StoresActions.html)\n            * [*create*](resources/projects/locations/datasets/hl_7v2_stores/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/hl_7v2_stores/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/datasets/hl_7v2_stores/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/datasets/hl_7v2_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/hl_7v2_stores/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/datasets/hl_7v2_stores/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/datasets/hl_7v2_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/hl_7v2_stores/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/hl_7v2_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/hl_7v2_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [messages](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.MessagesActions.html)\n              * [*create*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.GetRequestBuilder.html), [*ingest*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.IngestRequestBuilder.html), [*list*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.PatchRequestBuilder.html)\n          * [operations](resources/projects/locations/datasets/operations/struct.OperationsActions.html)\n            * [*cancel*](resources/projects/locations/datasets/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/locations/datasets/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/operations/struct.ListRequestBuilder.html)\n        * [services](resources/projects/locations/services/struct.ServicesActions.html)\n          * [nlp](resources/projects/locations/services/nlp/struct.NlpActions.html)\n            * [*analyzeEntities*](resources/projects/locations/services/nlp/struct.AnalyzeEntitiesRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -45,6 +45,166 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ActivateConsentRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AnalyzeEntitiesRequest {
+        #[doc = "document_content is a document to be annotated."]
+        #[serde(
+            rename = "documentContent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub document_content: ::std::option::Option<String>,
+        #[doc = "A list of licensed vocabularies to use in the request, in addition to the default unlicensed vocabularies."]
+        #[serde(
+            rename = "licensedVocabularies",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub licensed_vocabularies: ::std::option::Option<
+            Vec<crate::schemas::AnalyzeEntitiesRequestLicensedVocabulariesItems>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for AnalyzeEntitiesRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AnalyzeEntitiesRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AnalyzeEntitiesRequestLicensedVocabulariesItems {
+        #[doc = "ICD-10-CM vocabulary"]
+        Icd10Cm,
+        #[doc = "No licensed vocabulary specified."]
+        LicensedVocabularyUnspecified,
+        #[doc = "SNOMED CT (US version) vocabulary"]
+        SnomedctUs,
+    }
+    impl AnalyzeEntitiesRequestLicensedVocabulariesItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AnalyzeEntitiesRequestLicensedVocabulariesItems::Icd10Cm => "ICD10CM",
+                AnalyzeEntitiesRequestLicensedVocabulariesItems::LicensedVocabularyUnspecified => {
+                    "LICENSED_VOCABULARY_UNSPECIFIED"
+                }
+                AnalyzeEntitiesRequestLicensedVocabulariesItems::SnomedctUs => "SNOMEDCT_US",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AnalyzeEntitiesRequestLicensedVocabulariesItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AnalyzeEntitiesRequestLicensedVocabulariesItems {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<AnalyzeEntitiesRequestLicensedVocabulariesItems, ()> {
+            Ok(match s {
+                "ICD10CM" => AnalyzeEntitiesRequestLicensedVocabulariesItems::Icd10Cm,
+                "LICENSED_VOCABULARY_UNSPECIFIED" => {
+                    AnalyzeEntitiesRequestLicensedVocabulariesItems::LicensedVocabularyUnspecified
+                }
+                "SNOMEDCT_US" => AnalyzeEntitiesRequestLicensedVocabulariesItems::SnomedctUs,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AnalyzeEntitiesRequestLicensedVocabulariesItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AnalyzeEntitiesRequestLicensedVocabulariesItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AnalyzeEntitiesRequestLicensedVocabulariesItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ICD10CM" => AnalyzeEntitiesRequestLicensedVocabulariesItems::Icd10Cm,
+                "LICENSED_VOCABULARY_UNSPECIFIED" => {
+                    AnalyzeEntitiesRequestLicensedVocabulariesItems::LicensedVocabularyUnspecified
+                }
+                "SNOMEDCT_US" => AnalyzeEntitiesRequestLicensedVocabulariesItems::SnomedctUs,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AnalyzeEntitiesRequestLicensedVocabulariesItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AnalyzeEntitiesRequestLicensedVocabulariesItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct AnalyzeEntitiesResponse {
+        #[doc = "The union of all the candidate entities that the entity_mentions in this response could link to. These are UMLS concepts or normalized mention content."]
+        #[serde(
+            rename = "entities",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub entities: ::std::option::Option<Vec<crate::schemas::Entity>>,
+        #[doc = "entity_mentions contains all the annotated medical entities that were mentioned in the provided document."]
+        #[serde(
+            rename = "entityMentions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub entity_mentions: ::std::option::Option<Vec<crate::schemas::EntityMention>>,
+        #[doc = "relationships contains all the binary relationships that were identified between entity mentions within the provided document."]
+        #[serde(
+            rename = "relationships",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub relationships: ::std::option::Option<Vec<crate::schemas::EntityMentionRelationship>>,
+    }
+    impl ::google_field_selector::FieldSelector for AnalyzeEntitiesResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AnalyzeEntitiesResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -148,7 +308,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AttributeDefinition {
-        #[doc = "Required. Possible values for the attribute. The number of allowed values must not exceed 100. An empty list is invalid. The list can only be expanded after creation."]
+        #[doc = "Required. Possible values for the attribute. The number of allowed values must not exceed 500. An empty list is invalid. The list can only be expanded after creation."]
         #[serde(
             rename = "allowedValues",
             default,
@@ -447,21 +607,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Binding {
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -808,7 +968,7 @@ pub mod schemas {
     pub enum ConsentState {
         #[doc = "The Consent is active and is considered when evaluating a user's consent on resources."]
         Active,
-        #[doc = "When a Consent is updated, the current version is archived and a new one is created with its state set to the updated Consent's previous state."]
+        #[doc = "The archived state is currently not being used."]
         Archived,
         #[doc = "A draft Consent is not considered when evaluating a user's consent on resources unless explicitly specified."]
         Draft,
@@ -816,7 +976,7 @@ pub mod schemas {
         Rejected,
         #[doc = "A revoked Consent is not considered when evaluating a user's consent on resources."]
         Revoked,
-        #[doc = "No state specified."]
+        #[doc = "No state specified. Treated as ACTIVE only at the time of resource creation."]
         StateUnspecified,
     }
     impl ConsentState {
@@ -1017,7 +1177,7 @@ pub mod schemas {
         NoMatchingPolicy,
         #[doc = "The Consent has at least one policy that matches the `resource_attributes` of the evaluated resource, but no `authorization_rule` was satisfied."]
         NoSatisfiedPolicy,
-        #[doc = "The Consent is not applicable to the requested access determination. For example, the Consent does not apply to the user for which the access determination is requested, or it has a `state` of `REVOKED`."]
+        #[doc = "The Consent is not applicable to the requested access determination. For example, the Consent does not apply to the user for which the access determination is requested, or it has a `state` of `REVOKED`, or it has expired."]
         NotApplicable,
     }
     impl ConsentEvaluationEvaluationResult {
@@ -1378,20 +1538,27 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DeidentifyDatasetRequest {
-        #[doc = "Deidentify configuration."]
+        #[doc = "Deidentify configuration. Only one of `config` and `gcs_config_uri` can be specified."]
         #[serde(
             rename = "config",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub config: ::std::option::Option<crate::schemas::DeidentifyConfig>,
-        #[doc = "The name of the dataset resource to create and write the redacted data to. * The destination dataset must not exist. * The destination dataset must be in the same project and location as the source dataset. De-identifying data across multiple projects or locations is not supported."]
+        #[doc = "The name of the dataset resource to create and write the redacted data to. * The destination dataset must not exist. * The destination dataset must be in the same location as the source dataset. De-identifying data across multiple locations is not supported."]
         #[serde(
             rename = "destinationDataset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub destination_dataset: ::std::option::Option<String>,
+        #[doc = "Cloud Storage location to read the JSON cloud.healthcare.deidentify.DeidentifyConfig from, overriding the default config. Must be of the form `gs://{bucket_id}/path/to/object`. The Cloud Storage location must grant the Cloud IAM role `roles/storage.objectViewer` to the project's Cloud Healthcare Service Agent service account. Only one of `config` and `gcs_config_uri` can be specified."]
+        #[serde(
+            rename = "gcsConfigUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcs_config_uri: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for DeidentifyDatasetRequest {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1416,14 +1583,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DeidentifyDicomStoreRequest {
-        #[doc = "De-identify configuration."]
+        #[doc = "Deidentify configuration. Only one of `config` and `gcs_config_uri` can be specified."]
         #[serde(
             rename = "config",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub config: ::std::option::Option<crate::schemas::DeidentifyConfig>,
-        #[doc = "The name of the DICOM store to create and write the redacted data to. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`. * The destination dataset must exist. * The source dataset and destination dataset must both reside in the same project. De-identifying data across multiple projects is not supported. * The destination DICOM store must not exist. * The caller must have the necessary permissions to create the destination DICOM store."]
+        #[doc = "The name of the DICOM store to create and write the redacted data to. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`. * The destination dataset must exist. * The source dataset and destination dataset must both reside in the same location. De-identifying data across multiple locations is not supported. * The destination DICOM store must not exist. * The caller must have the necessary permissions to create the destination DICOM store."]
         #[serde(
             rename = "destinationStore",
             default,
@@ -1437,6 +1604,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub filter_config: ::std::option::Option<crate::schemas::DicomFilterConfig>,
+        #[doc = "Cloud Storage location to read the JSON cloud.healthcare.deidentify.DeidentifyConfig from, overriding the default config. Must be of the form `gs://{bucket_id}/path/to/object`. The Cloud Storage location must grant the Cloud IAM role `roles/storage.objectViewer` to the project's Cloud Healthcare Service Agent service account. Only one of `config` and `gcs_config_uri` can be specified."]
+        #[serde(
+            rename = "gcsConfigUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcs_config_uri: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for DeidentifyDicomStoreRequest {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1461,20 +1635,27 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DeidentifyFhirStoreRequest {
-        #[doc = "Deidentify configuration."]
+        #[doc = "Deidentify configuration. Only one of `config` and `gcs_config_uri` can be specified."]
         #[serde(
             rename = "config",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub config: ::std::option::Option<crate::schemas::DeidentifyConfig>,
-        #[doc = "The name of the FHIR store to create and write the redacted data to. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`. * The destination dataset must exist. * The source dataset and destination dataset must both reside in the same project. De-identifying data across multiple projects is not supported. * The destination FHIR store must exist. * The caller must have the healthcare.fhirResources.update permission to write to the destination FHIR store."]
+        #[doc = "The name of the FHIR store to create and write the redacted data to. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`. * The destination dataset must exist. * The source dataset and destination dataset must both reside in the same location. De-identifying data across multiple locations is not supported. * The destination FHIR store must exist. * The caller must have the healthcare.fhirResources.update permission to write to the destination FHIR store."]
         #[serde(
             rename = "destinationStore",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub destination_store: ::std::option::Option<String>,
+        #[doc = "Cloud Storage location to read the JSON cloud.healthcare.deidentify.DeidentifyConfig from, overriding the default config. Must be of the form `gs://{bucket_id}/path/to/object`. The Cloud Storage location must grant the Cloud IAM role `roles/storage.objectViewer` to the project's Cloud Healthcare Service Agent service account. Only one of `config` and `gcs_config_uri` can be specified."]
+        #[serde(
+            rename = "gcsConfigUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcs_config_uri: ::std::option::Option<String>,
         #[doc = "A filter specifying the resources to include in the output. If not specified, all resources are included in the output."]
         #[serde(
             rename = "resourceFilter",
@@ -1779,6 +1960,158 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct Entity {
+        #[doc = "entity_id is a first class field entity_id uniquely identifies this concept and its meta-vocabulary. For example, \"UMLS/C0000970\"."]
+        #[serde(
+            rename = "entityId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub entity_id: ::std::option::Option<String>,
+        #[doc = "preferred_term is the preferred term for this concept. For example, \"Acetaminophen\". For ad hoc entities formed by normalization, this is the most popular unnormalized string."]
+        #[serde(
+            rename = "preferredTerm",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub preferred_term: ::std::option::Option<String>,
+        #[doc = "Vocabulary codes are first-class fields and differentiated from the concept unique identifier (entity_id). vocabulary_codes contains the representation of this concept in particular vocabularies, such as ICD-10, SNOMED-CT and RxNORM. These are prefixed by the name of the vocabulary, followed by the unique code within that vocabulary. For example, \"RXNORM/A10334543\"."]
+        #[serde(
+            rename = "vocabularyCodes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub vocabulary_codes: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for Entity {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Entity {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct EntityMention {
+        #[doc = "The certainty assessment of the entity mention. Its value is one of: LIKELY, SOMEWHAT_LIKELY, UNCERTAIN, SOMEWHAT_UNLIKELY, UNLIKELY, CONDITIONAL"]
+        #[serde(
+            rename = "certaintyAssessment",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub certainty_assessment: ::std::option::Option<crate::schemas::Feature>,
+        #[doc = "The model's confidence in this entity mention annotation. A number between 0 and 1."]
+        #[serde(
+            rename = "confidence",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub confidence: ::std::option::Option<f64>,
+        #[doc = "linked_entities are candidate ontological concepts that this entity mention may refer to. They are sorted by decreasing confidence.it"]
+        #[serde(
+            rename = "linkedEntities",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub linked_entities: ::std::option::Option<Vec<crate::schemas::LinkedEntity>>,
+        #[doc = "mention_id uniquely identifies each entity mention in a single response."]
+        #[serde(
+            rename = "mentionId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mention_id: ::std::option::Option<String>,
+        #[doc = "The semantic type of the entity: UNKNOWN_ENTITY_TYPE, ALONE, ANATOMICAL_STRUCTURE, ASSISTED_LIVING, BF_RESULT, BM_RESULT, BM_UNIT, BM_VALUE, BODY_FUNCTION, BODY_MEASUREMENT, COMPLIANT, DOESNOT_FOLLOWUP, FAMILY, FOLLOWSUP, LABORATORY_DATA, LAB_RESULT, LAB_UNIT, LAB_VALUE, MEDICAL_DEVICE, MEDICINE, MED_DOSE, MED_DURATION, MED_FORM, MED_FREQUENCY, MED_ROUTE, MED_STATUS, MED_STRENGTH, MED_TOTALDOSE, MED_UNIT, NON_COMPLIANT, OTHER_LIVINGSTATUS, PROBLEM, PROCEDURE, PROCEDURE_RESULT, PROC_METHOD, REASON_FOR_NONCOMPLIANCE, SEVERITY, SUBSTANCE_ABUSE, UNCLEAR_FOLLOWUP."]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<String>,
+        #[doc = "The subject this entity mention relates to. Its value is one of: PATIENT, FAMILY_MEMBER, OTHER"]
+        #[serde(
+            rename = "subject",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub subject: ::std::option::Option<crate::schemas::Feature>,
+        #[doc = "How this entity mention relates to the subject temporally. Its value is one of: CURRENT, CLINICAL_HISTORY, FAMILY_HISTORY, UPCOMING, ALLERGY"]
+        #[serde(
+            rename = "temporalAssessment",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub temporal_assessment: ::std::option::Option<crate::schemas::Feature>,
+        #[doc = "text is the location of the entity mention in the document."]
+        #[serde(
+            rename = "text",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub text: ::std::option::Option<crate::schemas::TextSpan>,
+    }
+    impl ::google_field_selector::FieldSelector for EntityMention {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for EntityMention {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct EntityMentionRelationship {
+        #[doc = "The model's confidence in this annotation. A number between 0 and 1."]
+        #[serde(
+            rename = "confidence",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub confidence: ::std::option::Option<f64>,
+        #[doc = "object_id is the id of the object entity mention."]
+        #[serde(
+            rename = "objectId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub object_id: ::std::option::Option<String>,
+        #[doc = "subject_id is the id of the subject entity mention."]
+        #[serde(
+            rename = "subjectId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub subject_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for EntityMentionRelationship {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for EntityMentionRelationship {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct EvaluateUserConsentsRequest {
         #[doc = "Optional. Specific Consents to evaluate the access request against. These Consents must have the same `user_id` as the User data mappings being evalauted, must exist in the current `consent_store`, and must have a `state` of either `ACTIVE` or `DRAFT`. A maximum of 100 Consents can be provided here. If unspecified, all `ACTIVE` unexpired Consents in the current `consent_store` will be evaluated."]
         #[serde(
@@ -2038,8 +2371,77 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct ExportMessagesRequest {
+        #[doc = "The end of the range in `send_time` (MSH.7, https://www.hl7.org/documentcenter/public_temp_2E58C1F9-1C23-BA17-0C6126475344DA9D/wg/conf/HL7MSH.htm) to process. If not specified, the time when the export is scheduled is used. This value has to come after the `start_time` defined below. Only messages whose `send_time` lies in the range `start_time` (inclusive) to `end_time` (exclusive) are exported."]
+        #[serde(
+            rename = "endTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub end_time: ::std::option::Option<String>,
+        #[doc = "Export to a Cloud Storage destination."]
+        #[serde(
+            rename = "gcsDestination",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcs_destination: ::std::option::Option<crate::schemas::GcsDestination>,
+        #[doc = "The start of the range in `send_time` (MSH.7, https://www.hl7.org/documentcenter/public_temp_2E58C1F9-1C23-BA17-0C6126475344DA9D/wg/conf/HL7MSH.htm) to process. If not specified, the UNIX epoch (1970-01-01T00:00:00Z) is used. This value has to come before the `end_time` defined below. Only messages whose `send_time` lies in the range `start_time` (inclusive) to `end_time` (exclusive) are exported."]
+        #[serde(
+            rename = "startTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub start_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ExportMessagesRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ExportMessagesRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ExportMessagesResponse {}
+    impl ::google_field_selector::FieldSelector for ExportMessagesResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ExportMessagesResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ExportResourcesRequest {
-        #[doc = "The BigQuery output destination. The Cloud Healthcare Service Agent requires two IAM roles on the BigQuery location: `roles/bigquery.dataEditor` and `roles/bigquery.jobUser`. The output is one BigQuery table per resource type."]
+        #[doc = "The BigQuery output destination. The Cloud Healthcare Service Agent requires two IAM roles on the BigQuery location: `roles/bigquery.dataEditor` and `roles/bigquery.jobUser`. The output is one BigQuery table per resource type. Unlike when setting `BigQueryDestination` for `StreamConfig`, `ExportResources` does not create BigQuery views."]
         #[serde(
             rename = "bigqueryDestination",
             default,
@@ -2055,6 +2457,20 @@ pub mod schemas {
         )]
         pub gcs_destination:
             ::std::option::Option<crate::schemas::GoogleCloudHealthcareV1FhirGcsDestination>,
+        #[doc = "String of comma-delimited FHIR resource types. If provided, only resources of the specified resource type(s) are exported."]
+        #[serde(
+            rename = "_type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<String>,
+        #[doc = "If provided, only resources updated after this time are exported. The time uses the format YYYY-MM-DDThh:mm:ss.sss+zz:zz. For example, `2015-02-07T13:28:17.239+02:00` or `2017-01-01T00:00:00Z`. The time must be specified to the second and include a time zone."]
+        #[serde(
+            rename = "_since",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub since: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for ExportResourcesRequest {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2143,6 +2559,35 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct Feature {
+        #[doc = "The model's confidence in this feature annotation. A number between 0 and 1."]
+        #[serde(
+            rename = "confidence",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub confidence: ::std::option::Option<f64>,
+        #[doc = "The value of this feature annotation. Its range depends on the type of the feature."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Feature {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Feature {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug,
         Clone,
         PartialEq,
@@ -2155,7 +2600,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FhirConfig {
-        #[doc = "Specifies FHIR paths to match and how to transform them. Any field that is not matched by a FieldMetadata is passed through to the output dataset unmodified. All extensions are removed in the output."]
+        #[doc = "The behaviour for handling FHIR extensions that aren't otherwise specified for de-identification. If true, all extensions are preserved during de-identification by default. If false or unspecified, all extensions are removed during de-identification by default."]
+        #[serde(
+            rename = "defaultKeepExtensions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub default_keep_extensions: ::std::option::Option<bool>,
+        #[doc = "Specifies FHIR paths to match and how to transform them. Any field that is not matched by a FieldMetadata is passed through to the output dataset unmodified. All extensions will be processed according to `default_keep_extensions`."]
         #[serde(
             rename = "fieldMetadataList",
             default,
@@ -2217,6 +2669,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FhirStore {
+        #[doc = "If true, overrides the default search behavior for this FHIR store to `handling=strict` which returns an error for unrecognized search parameters. If false, uses the FHIR specification default `handling=lenient` which ignores unrecognized search parameters. The handling can always be changed from the default on an individual API call by setting the HTTP header `Prefer: handling=strict` or `Prefer: handling=lenient`."]
+        #[serde(
+            rename = "defaultSearchHandlingStrict",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub default_search_handling_strict: ::std::option::Option<bool>,
         #[doc = "Immutable. Whether to disable referential integrity in this FHIR store. This field is immutable after FHIR store creation. The default value is false, meaning that the API enforces referential integrity and fails the requests that result in inconsistent state in the FHIR store. When this field is set to true, the API skips referential integrity checks. Consequently, operations that rely on references, such as GetPatientEverything, do not return all the results if broken references exist."]
         #[serde(
             rename = "disableReferentialIntegrity",
@@ -2231,7 +2690,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disable_resource_versioning: ::std::option::Option<bool>,
-        #[doc = "Whether this FHIR store has the [updateCreate capability](https://www.hl7.org/fhir/capabilitystatement-definitions.html#CapabilityStatement.rest.resource.updateCreate). This determines if the client can use an Update operation to create a new resource with a client-specified ID. If false, all IDs are server-assigned through the Create operation and attempts to update a non-existent resource return errors. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud audit logs and Cloud Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources."]
+        #[doc = "Whether this FHIR store has the [updateCreate capability](https://www.hl7.org/fhir/capabilitystatement-definitions.html#CapabilityStatement.rest.resource.updateCreate). This determines if the client can use an Update operation to create a new resource with a client-specified ID. If false, all IDs are server-assigned through the Create operation and attempts to update a non-existent resource return errors. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud audit logs and Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources."]
         #[serde(
             rename = "enableUpdateCreate",
             default,
@@ -2252,7 +2711,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "If non-empty, publish all resource modifications of this FHIR store to this destination. The Cloud Pub/Sub message attributes contain a map with a string describing the action that has triggered the notification. For example, \"action\":\"CreateResource\"."]
+        #[doc = "If non-empty, publish all resource modifications of this FHIR store to this destination. The Pub/Sub message attributes contain a map with a string describing the action that has triggered the notification. For example, \"action\":\"CreateResource\"."]
         #[serde(
             rename = "notificationConfig",
             default,
@@ -2266,6 +2725,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub stream_configs: ::std::option::Option<Vec<crate::schemas::StreamConfig>>,
+        #[doc = "Configuration for how to validate incoming FHIR resources against configured profiles."]
+        #[serde(
+            rename = "validationConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub validation_config: ::std::option::Option<crate::schemas::ValidationConfig>,
         #[doc = "Immutable. The FHIR specification version that this FHIR store supports natively. This field is immutable after store creation. Requests are rejected if they contain FHIR resources of a different version. Version is required for every FHIR store."]
         #[serde(
             rename = "version",
@@ -2444,7 +2910,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub action: ::std::option::Option<crate::schemas::FieldMetadataAction>,
-        #[doc = "List of paths to FHIR fields to be redacted. Each path is a period-separated list where each component is either a field name or FHIR type name, for example: Patient, HumanName. For \"choice\" types (those defined in the FHIR spec with the form: field[x]) we use two separate components. For example, \"deceasedAge.unit\" is matched by \"Deceased.Age.unit\". Supported types are: AdministrativeGenderCode, Code, Date, DateTime, Decimal, HumanName, Id, LanguageCode, Markdown, Oid, String, Uri, Uuid, Xhtml. Base64Binary is also supported, but may only be kept as-is or have all the content removed."]
+        #[doc = "List of paths to FHIR fields to be redacted. Each path is a period-separated list where each component is either a field name or FHIR type name, for example: Patient, HumanName. For \"choice\" types (those defined in the FHIR spec with the form: field[x]) we use two separate components. For example, \"deceasedAge.unit\" is matched by \"Deceased.Age.unit\". Supported types are: AdministrativeGenderCode, Base64Binary, Boolean, Code, Date, DateTime, Decimal, HumanName, Id, Instant, Integer, LanguageCode, Markdown, Oid, PositiveInt, String, UnsignedInt, Uri, Uuid, Xhtml."]
         #[serde(
             rename = "paths",
             default,
@@ -2539,6 +3005,251 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for FieldMetadataAction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GcsDestination {
+        #[doc = "The format of the exported HL7v2 message files."]
+        #[serde(
+            rename = "contentStructure",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub content_structure:
+            ::std::option::Option<crate::schemas::GcsDestinationContentStructure>,
+        #[doc = "Specifies the parts of the Message resource to include in the export. If not specified, FULL is used."]
+        #[serde(
+            rename = "messageView",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub message_view: ::std::option::Option<crate::schemas::GcsDestinationMessageView>,
+        #[doc = "URI of an existing Cloud Storage directory where the server writes result files, in the format `gs://{bucket-id}/{path/to/destination/dir}`. If there is no trailing slash, the service appends one when composing the object path."]
+        #[serde(
+            rename = "uriPrefix",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uri_prefix: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GcsDestination {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GcsDestination {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GcsDestinationContentStructure {
+        #[doc = "If the content structure is not specified, the default value `MESSAGE_JSON` will be used."]
+        ContentStructureUnspecified,
+        #[doc = "Messages are printed using the JSON format returned from the `GetMessage` API. Messages are delimited with newlines."]
+        MessageJson,
+    }
+    impl GcsDestinationContentStructure {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GcsDestinationContentStructure::ContentStructureUnspecified => {
+                    "CONTENT_STRUCTURE_UNSPECIFIED"
+                }
+                GcsDestinationContentStructure::MessageJson => "MESSAGE_JSON",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GcsDestinationContentStructure {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GcsDestinationContentStructure {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GcsDestinationContentStructure, ()> {
+            Ok(match s {
+                "CONTENT_STRUCTURE_UNSPECIFIED" => {
+                    GcsDestinationContentStructure::ContentStructureUnspecified
+                }
+                "MESSAGE_JSON" => GcsDestinationContentStructure::MessageJson,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GcsDestinationContentStructure {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GcsDestinationContentStructure {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GcsDestinationContentStructure {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CONTENT_STRUCTURE_UNSPECIFIED" => {
+                    GcsDestinationContentStructure::ContentStructureUnspecified
+                }
+                "MESSAGE_JSON" => GcsDestinationContentStructure::MessageJson,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GcsDestinationContentStructure {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GcsDestinationContentStructure {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GcsDestinationMessageView {
+        #[doc = "Server responses include only the name field."]
+        Basic,
+        #[doc = "Server responses include all the message fields."]
+        Full,
+        #[doc = "Not specified, equivalent to FULL."]
+        MessageViewUnspecified,
+        #[doc = "Server responses include all the message fields except data field, and schematized_data fields."]
+        ParsedOnly,
+        #[doc = "Server responses include all the message fields except parsed_data field, and schematized_data fields."]
+        RawOnly,
+        #[doc = "Server responses include all the message fields except data and parsed_data fields."]
+        SchematizedOnly,
+    }
+    impl GcsDestinationMessageView {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GcsDestinationMessageView::Basic => "BASIC",
+                GcsDestinationMessageView::Full => "FULL",
+                GcsDestinationMessageView::MessageViewUnspecified => "MESSAGE_VIEW_UNSPECIFIED",
+                GcsDestinationMessageView::ParsedOnly => "PARSED_ONLY",
+                GcsDestinationMessageView::RawOnly => "RAW_ONLY",
+                GcsDestinationMessageView::SchematizedOnly => "SCHEMATIZED_ONLY",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GcsDestinationMessageView {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GcsDestinationMessageView {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GcsDestinationMessageView, ()> {
+            Ok(match s {
+                "BASIC" => GcsDestinationMessageView::Basic,
+                "FULL" => GcsDestinationMessageView::Full,
+                "MESSAGE_VIEW_UNSPECIFIED" => GcsDestinationMessageView::MessageViewUnspecified,
+                "PARSED_ONLY" => GcsDestinationMessageView::ParsedOnly,
+                "RAW_ONLY" => GcsDestinationMessageView::RawOnly,
+                "SCHEMATIZED_ONLY" => GcsDestinationMessageView::SchematizedOnly,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GcsDestinationMessageView {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GcsDestinationMessageView {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GcsDestinationMessageView {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "BASIC" => GcsDestinationMessageView::Basic,
+                "FULL" => GcsDestinationMessageView::Full,
+                "MESSAGE_VIEW_UNSPECIFIED" => GcsDestinationMessageView::MessageViewUnspecified,
+                "PARSED_ONLY" => GcsDestinationMessageView::ParsedOnly,
+                "RAW_ONLY" => GcsDestinationMessageView::RawOnly,
+                "SCHEMATIZED_ONLY" => GcsDestinationMessageView::SchematizedOnly,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GcsDestinationMessageView {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GcsDestinationMessageView {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GcsSource {
+        #[doc = "Points to a Cloud Storage URI containing file(s) to import. The URI must be in the following format: `gs://{bucket_id}/{object_id}`. The URI can include wildcards in `object_id` and thus identify multiple files. Supported wildcards: * `*` to match 0 or more non-separator characters * `**` to match 0 or more characters (including separators). Must be used at the end of a path and with no other wildcards in the path. Can also be used with a file extension (such as .ndjson), which imports all files with the extension in the specified directory and its sub-directories. For example, `gs://my-bucket/my-directory/**.ndjson` imports all files with `.ndjson` extensions in `my-directory/` and its sub-directories. * `?` to match 1 character Files matching the wildcard are expected to contain content only, no metadata."]
+        #[serde(
+            rename = "uri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GcsSource {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GcsSource {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2681,7 +3392,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudHealthcareV1DicomBigQueryDestination {
-        #[doc = "If the destination table already exists and this flag is `TRUE`, the table is overwritten by the contents of the DICOM store. If the flag is not set and the destination table already exists, the export call returns an error."]
+        #[doc = "Use `write_disposition` instead. If `write_disposition` is specified, this parameter is ignored. force=false is equivalent to write_disposition=WRITE_EMPTY and force=true is equivalent to write_disposition=WRITE_TRUNCATE."]
         #[serde(
             rename = "force",
             default,
@@ -2695,6 +3406,15 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub table_uri: ::std::option::Option<String>,
+        #[doc = "Determines whether the existing table in the destination is to be overwritten or appended to. If a write_disposition is specified, the `force` parameter is ignored."]
+        #[serde(
+            rename = "writeDisposition",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub write_disposition: ::std::option::Option<
+            crate::schemas::GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition,
+        >,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudHealthcareV1DicomBigQueryDestination {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2702,6 +3422,78 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudHealthcareV1DicomBigQueryDestination {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition {
+        #[doc = "Append data to the existing table."]
+        WriteAppend,
+        #[doc = "Default behavior is the same as WRITE_EMPTY."]
+        WriteDispositionUnspecified,
+        #[doc = "Only export data if the destination table is empty."]
+        WriteEmpty,
+        #[doc = "Erase all existing data in a table before writing the instances."]
+        WriteTruncate,
+    }
+    impl GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition :: WriteAppend => "WRITE_APPEND" , GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified => "WRITE_DISPOSITION_UNSPECIFIED" , GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition :: WriteEmpty => "WRITE_EMPTY" , GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition :: WriteTruncate => "WRITE_TRUNCATE" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition,
+            (),
+        > {
+            Ok (match s { "WRITE_APPEND" => GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "WRITE_APPEND" => GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudHealthcareV1DicomBigQueryDestinationWriteDisposition
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2757,7 +3549,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudHealthcareV1DicomGcsSource {
-        #[doc = "Points to a Cloud Storage URI containing file(s) with content only. The URI must be in the following format: `gs://{bucket_id}/{object_id}`. The URI can include wildcards in `object_id` and thus identify multiple files. Supported wildcards: '*' to match 0 or more non-separator characters '**' to match 0 or more characters (including separators). Must be used at the end of a path and with no other wildcards in the path. Can also be used with a file extension (such as .dcm), which imports all files with the extension in the specified directory and its sub-directories. For example, `gs://my-bucket/my-directory/**.dcm` imports all files with .dcm extensions in `my-directory/` and its sub-directories. '?' to match 1 character All other URI formats are invalid. Files matching the wildcard are expected to contain content only, no metadata."]
+        #[doc = "Points to a Cloud Storage URI containing file(s) with content only. The URI must be in the following format: `gs://{bucket_id}/{object_id}`. The URI can include wildcards in `object_id` and thus identify multiple files. Supported wildcards: * '*' to match 0 or more non-separator characters * '**' to match 0 or more characters (including separators). Must be used at the end of a path and with no other wildcards in the path. Can also be used with a file extension (such as .dcm), which imports all files with the extension in the specified directory and its sub-directories. For example, `gs://my-bucket/my-directory/**.dcm` imports all files with .dcm extensions in `my-directory/` and its sub-directories. * '?' to match 1 character. All other URI formats are invalid. Files matching the wildcard are expected to contain content only, no metadata."]
         #[serde(
             rename = "uri",
             default,
@@ -2809,7 +3601,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub schema_config: ::std::option::Option<crate::schemas::SchemaConfig>,
-        #[doc = "Determines whether existing tables in the destination dataset are overwritten or appended to. If a write_disposition is specified, the `force` parameter is ignored."]
+        #[doc = "Determines if existing data in the destination dataset is overwritten, appended to, or not written if the tables contain data. If a write_disposition is specified, the `force` parameter is ignored."]
         #[serde(
             rename = "writeDisposition",
             default,
@@ -2856,7 +3648,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition, ()>
         {
-            Ok ( match s { "WRITE_APPEND" => GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err ( ( ) ) , } )
+            Ok (match s { "WRITE_APPEND" => GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition {
@@ -2880,7 +3672,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "WRITE_APPEND" => GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "WRITE_APPEND" => GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1FhirBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -3093,7 +3885,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub filter: ::std::option::Option<String>,
-        #[doc = "The [Cloud Pub/Sub](https://cloud.google.com/pubsub/docs/) topic that notifications of changes are published on. Supplied by the client. The notification is a `PubsubMessage` with the following fields: * `PubsubMessage.Data` contains the resource name. * `PubsubMessage.MessageId` is the ID of this notification. It's guaranteed to be unique within the topic. * `PubsubMessage.PublishTime` is the time when the message was published. Note that notifications are only sent if the topic is non-empty. [Topic names](https://cloud.google.com/pubsub/docs/overview#names) must be scoped to a project. The Cloud Healthcare API service account, service-PROJECT_NUMBER@gcp-sa-healthcare.iam.gserviceaccount.com, must have publisher permissions on the given Pub/Sub topic. Not having adequate permissions causes the calls that send notifications to fail. If a notification cannot be published to Cloud Pub/Sub, errors are logged to Cloud Logging. For more information, see [Viewing error logs in Cloud Logging](/healthcare/docs/how-tos/logging))."]
+        #[doc = "The [Pub/Sub](https://cloud.google.com/pubsub/docs/) topic that notifications of changes are published on. Supplied by the client. The notification is a `PubsubMessage` with the following fields: * `PubsubMessage.Data` contains the resource name. * `PubsubMessage.MessageId` is the ID of this notification. It's guaranteed to be unique within the topic. * `PubsubMessage.PublishTime` is the time when the message was published. Note that notifications are only sent if the topic is non-empty. [Topic names](https://cloud.google.com/pubsub/docs/overview#names) must be scoped to a project. The Cloud Healthcare API service account, service-PROJECT_NUMBER@gcp-sa-healthcare.iam.gserviceaccount.com, must have publisher permissions on the given Pub/Sub topic. Not having adequate permissions causes the calls that send notifications to fail. If a notification cannot be published to Pub/Sub, errors are logged to Cloud Logging. For more information, see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging))."]
         #[serde(
             rename = "pubsubTopic",
             default,
@@ -3431,6 +4223,61 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct ImportMessagesRequest {
+        #[doc = "Cloud Storage source data location and import configuration. The Cloud Healthcare Service Agent requires the `roles/storage.objectViewer` Cloud IAM roles on the Cloud Storage location."]
+        #[serde(
+            rename = "gcsSource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcs_source: ::std::option::Option<crate::schemas::GcsSource>,
+    }
+    impl ::google_field_selector::FieldSelector for ImportMessagesRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ImportMessagesRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ImportMessagesResponse {}
+    impl ::google_field_selector::FieldSelector for ImportMessagesResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ImportMessagesResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ImportResourcesRequest {
         #[doc = "The content structure in the source location. If not specified, the server treats the input source files as BUNDLE."]
         #[serde(
@@ -3706,6 +4553,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for IngestMessageResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct LinkedEntity {
+        #[doc = "entity_id is a concept unique identifier. These are prefixed by a string that identifies the entity coding system, followed by the unique identifier within that system. For example, \"UMLS/C0000970\". This also supports ad hoc entities, which are formed by normalizing entity mention content."]
+        #[serde(
+            rename = "entityId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub entity_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for LinkedEntity {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LinkedEntity {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4338,7 +5216,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct NotificationConfig {
-        #[doc = "The [Cloud Pub/Sub](https://cloud.google.com/pubsub/docs/) topic that notifications of changes are published on. Supplied by the client. PubsubMessage.Data contains the resource name. PubsubMessage.MessageId is the ID of this message. It is guaranteed to be unique within the topic. PubsubMessage.PublishTime is the time at which the message was published. Notifications are only sent if the topic is non-empty. [Topic names](https://cloud.google.com/pubsub/docs/overview#names) must be scoped to a project. Cloud Healthcare API service account must have publisher permissions on the given Cloud Pub/Sub topic. Not having adequate permissions causes the calls that send notifications to fail. If a notification can't be published to Cloud Pub/Sub, errors are logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how-tos/logging)). If the number of errors exceeds a certain rate, some aren't submitted. Note that not all operations trigger notifications, see [Configuring Pub/Sub notifications](https://cloud.google.com/healthcare/docs/how-tos/pubsub) for specific details."]
+        #[doc = "The [Pub/Sub](https://cloud.google.com/pubsub/docs/) topic that notifications of changes are published on. Supplied by the client. PubsubMessage.Data contains the resource name. PubsubMessage.MessageId is the ID of this message. It is guaranteed to be unique within the topic. PubsubMessage.PublishTime is the time at which the message was published. Notifications are only sent if the topic is non-empty. [Topic names](https://cloud.google.com/pubsub/docs/overview#names) must be scoped to a project. Cloud Healthcare API service account must have publisher permissions on the given Pub/Sub topic. Not having adequate permissions causes the calls that send notifications to fail. If a notification can't be published to Pub/Sub, errors are logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)). If the number of errors exceeds a certain rate, some aren't submitted. Note that not all operations trigger notifications, see [Configuring Pub/Sub notifications](https://cloud.google.com/healthcare/docs/how-tos/pubsub) for specific details."]
         #[serde(
             rename = "pubsubTopic",
             default,
@@ -4453,7 +5331,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_time: ::std::option::Option<String>,
-        #[doc = "A link to audit and error logs in the log viewer. Error logs are generated only by some operations, listed at [Viewing logs](/healthcare/docs/how-tos/logging)."]
+        #[doc = "A link to audit and error logs in the log viewer. Error logs are generated only by some operations, listed at [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)."]
         #[serde(
             rename = "logsUrl",
             default,
@@ -4535,6 +5413,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub segment_terminator: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "Immutable. Determines the version of both the default parser to be used when `schema` is not given, as well as the schematized parser used when `schema` is specified. This field is immutable after HL7v2 store creation."]
+        #[serde(
+            rename = "version",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version: ::std::option::Option<crate::schemas::ParserConfigVersion>,
     }
     impl ::google_field_selector::FieldSelector for ParserConfig {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -4542,6 +5427,82 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ParserConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ParserConfigVersion {
+        #[doc = "Unspecified parser version, equivalent to V1."]
+        ParserVersionUnspecified,
+        #[doc = "The `parsed_data` includes every given non-empty message field except the Field Separator (MSH-1) field. As a result, the parsed MSH segment starts with the MSH-2 field and the field numbers are off-by-one with respect to the HL7 standard."]
+        V1,
+        #[doc = "The `parsed_data` includes every given non-empty message field."]
+        V2,
+    }
+    impl ParserConfigVersion {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ParserConfigVersion::ParserVersionUnspecified => "PARSER_VERSION_UNSPECIFIED",
+                ParserConfigVersion::V1 => "V1",
+                ParserConfigVersion::V2 => "V2",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ParserConfigVersion {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ParserConfigVersion {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ParserConfigVersion, ()> {
+            Ok(match s {
+                "PARSER_VERSION_UNSPECIFIED" => ParserConfigVersion::ParserVersionUnspecified,
+                "V1" => ParserConfigVersion::V1,
+                "V2" => ParserConfigVersion::V2,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ParserConfigVersion {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ParserConfigVersion {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ParserConfigVersion {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "PARSER_VERSION_UNSPECIFIED" => ParserConfigVersion::ParserVersionUnspecified,
+                "V1" => ParserConfigVersion::V1,
+                "V2" => ParserConfigVersion::V2,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ParserConfigVersion {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ParserConfigVersion {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4604,7 +5565,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audit_configs: ::std::option::Option<Vec<crate::schemas::AuditConfig>>,
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,
@@ -4727,6 +5688,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for QueryAccessibleDataRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct QueryAccessibleDataResponse {
+        #[doc = "List of files, each of which contains a list of data_id(s) that are consented for a specified use in the request."]
+        #[serde(
+            rename = "gcsUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcs_uris: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for QueryAccessibleDataResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for QueryAccessibleDataResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5130,6 +6122,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub types: ::std::option::Option<Vec<crate::schemas::Hl7TypesConfig>>,
+        #[doc = "Determines how unexpected segments (segments not matched to the schema) are handled."]
+        #[serde(
+            rename = "unexpectedSegmentHandling",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub unexpected_segment_handling:
+            ::std::option::Option<crate::schemas::SchemaPackageUnexpectedSegmentHandling>,
     }
     impl ::google_field_selector::FieldSelector for SchemaPackage {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -5219,6 +6219,86 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SchemaPackageSchematizedParsingType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum SchemaPackageUnexpectedSegmentHandling {
+        #[doc = "Unexpected segments fail to parse and return an error."]
+        Fail,
+        #[doc = "Unexpected segments do not fail, but are parsed in place and added to the current group. If a segment has a type definition, it is used, otherwise it is parsed as VARIES."]
+        Parse,
+        #[doc = "Unexpected segments do not fail, but are omitted from the output."]
+        Skip,
+        #[doc = "Unspecified handling mode, equivalent to FAIL."]
+        UnexpectedSegmentHandlingModeUnspecified,
+    }
+    impl SchemaPackageUnexpectedSegmentHandling {
+        pub fn as_str(self) -> &'static str {
+            match self { SchemaPackageUnexpectedSegmentHandling :: Fail => "FAIL" , SchemaPackageUnexpectedSegmentHandling :: Parse => "PARSE" , SchemaPackageUnexpectedSegmentHandling :: Skip => "SKIP" , SchemaPackageUnexpectedSegmentHandling :: UnexpectedSegmentHandlingModeUnspecified => "UNEXPECTED_SEGMENT_HANDLING_MODE_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for SchemaPackageUnexpectedSegmentHandling {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for SchemaPackageUnexpectedSegmentHandling {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<SchemaPackageUnexpectedSegmentHandling, ()> {
+            Ok(match s {
+                "FAIL" => SchemaPackageUnexpectedSegmentHandling::Fail,
+                "PARSE" => SchemaPackageUnexpectedSegmentHandling::Parse,
+                "SKIP" => SchemaPackageUnexpectedSegmentHandling::Skip,
+                "UNEXPECTED_SEGMENT_HANDLING_MODE_UNSPECIFIED" => {
+                    SchemaPackageUnexpectedSegmentHandling::UnexpectedSegmentHandlingModeUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for SchemaPackageUnexpectedSegmentHandling {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for SchemaPackageUnexpectedSegmentHandling {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for SchemaPackageUnexpectedSegmentHandling {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "FAIL" => SchemaPackageUnexpectedSegmentHandling::Fail,
+                "PARSE" => SchemaPackageUnexpectedSegmentHandling::Parse,
+                "SKIP" => SchemaPackageUnexpectedSegmentHandling::Skip,
+                "UNEXPECTED_SEGMENT_HANDLING_MODE_UNSPECIFIED" => {
+                    SchemaPackageUnexpectedSegmentHandling::UnexpectedSegmentHandlingModeUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for SchemaPackageUnexpectedSegmentHandling {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SchemaPackageUnexpectedSegmentHandling {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5395,7 +6475,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SetIamPolicyRequest {
-        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -5520,7 +6600,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct StreamConfig {
-        #[doc = "The destination BigQuery structure that contains both the dataset location and corresponding schema config. The output is organized in one table per resource type. The server reuses the existing tables (if any) that are named after the resource types. For example, \"Patient\", \"Observation\". When there is no existing table for a given resource type, the server attempts to create one. When a table schema doesn't align with the schema config, either because of existing incompatible schema or out of band incompatible modification, the server does not stream in new data. BigQuery imposes a 1 MB limit on streaming insert row size, therefore any resource mutation that generates more than 1 MB of BigQuery data is not streamed. One resolution in this case is to delete the incompatible table and let the server recreate one, though the newly created table only contains data after the table recreation. Results are appended to the corresponding BigQuery tables. Different versions of the same resource are distinguishable by the meta.versionId and meta.lastUpdated columns. The operation (CREATE/UPDATE/DELETE) that results in the new version is recorded in the meta.tag. The tables contain all historical resource versions since streaming was enabled. For query convenience, the server also creates one view per table of the same name containing only the current resource version. The streamed data in the BigQuery dataset is not guaranteed to be completely unique. The combination of the id and meta.versionId columns should ideally identify a single unique row. But in rare cases, duplicates may exist. At query time, users may use the SQL select statement to keep only one of the duplicate rows given an id and meta.versionId pair. Alternatively, the server created view mentioned above also filters out duplicates. If a resource mutation cannot be streamed to BigQuery, errors are logged to Cloud Logging. For more information, see [Viewing error logs in Cloud Logging](/healthcare/docs/how-tos/logging))."]
+        #[doc = "The destination BigQuery structure that contains both the dataset location and corresponding schema config. The output is organized in one table per resource type. The server reuses the existing tables (if any) that are named after the resource types. For example, \"Patient\", \"Observation\". When there is no existing table for a given resource type, the server attempts to create one. When a table schema doesn't align with the schema config, either because of existing incompatible schema or out of band incompatible modification, the server does not stream in new data. BigQuery imposes a 1 MB limit on streaming insert row size, therefore any resource mutation that generates more than 1 MB of BigQuery data is not streamed. One resolution in this case is to delete the incompatible table and let the server recreate one, though the newly created table only contains data after the table recreation. Results are written to BigQuery tables according to the parameters in BigQueryDestination.WriteDisposition. Different versions of the same resource are distinguishable by the meta.versionId and meta.lastUpdated columns. The operation (CREATE/UPDATE/DELETE) that results in the new version is recorded in the meta.tag. The tables contain all historical resource versions since streaming was enabled. For query convenience, the server also creates one view per table of the same name containing only the current resource version. The streamed data in the BigQuery dataset is not guaranteed to be completely unique. The combination of the id and meta.versionId columns should ideally identify a single unique row. But in rare cases, duplicates may exist. At query time, users may use the SQL select statement to keep only one of the duplicate rows given an id and meta.versionId pair. Alternatively, the server created view mentioned above also filters out duplicates. If a resource mutation cannot be streamed to BigQuery, errors are logged to Cloud Logging. For more information, see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging))."]
         #[serde(
             rename = "bigqueryDestination",
             default,
@@ -5590,7 +6670,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -5666,6 +6746,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for TextConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct TextSpan {
+        #[doc = "The unicode codepoint index of the beginning of this span."]
+        #[serde(
+            rename = "beginOffset",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub begin_offset: ::std::option::Option<i32>,
+        #[doc = "The original text contained in this span."]
+        #[serde(
+            rename = "content",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub content: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for TextSpan {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TextSpan {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5858,6 +6976,65 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for UserDataMapping {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ValidationConfig {
+        #[doc = "Whether to disable FHIRPath validation for incoming resources. Set this to true to disable checking incoming resources for conformance against FHIRPath requirement defined in the FHIR specification. This property only affects resource types that do not have profiles configured for them, any rules in enabled implementation guides will still be enforced."]
+        #[serde(
+            rename = "disableFhirpathValidation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub disable_fhirpath_validation: ::std::option::Option<bool>,
+        #[doc = "Whether to disable profile validation for this FHIR store. Set this to true to disable checking incoming resources for conformance against structure definitions in this FHIR store."]
+        #[serde(
+            rename = "disableProfileValidation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub disable_profile_validation: ::std::option::Option<bool>,
+        #[doc = "Whether to disable reference type validation for incoming resources. Set this to true to disable checking incoming resources for conformance against reference type requirement defined in the FHIR specification. This property only affects resource types that do not have profiles configured for them, any rules in enabled implementation guides will still be enforced."]
+        #[serde(
+            rename = "disableReferenceTypeValidation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub disable_reference_type_validation: ::std::option::Option<bool>,
+        #[doc = "Whether to disable required fields validation for incoming resources. Set this to true to disable checking incoming resources for conformance against required fields requirement defined in the FHIR specification. This property only affects resource types that do not have profiles configured for them, any rules in enabled implementation guides will still be enforced."]
+        #[serde(
+            rename = "disableRequiredFieldValidation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub disable_required_field_validation: ::std::option::Option<bool>,
+        #[doc = "A list of implementation guide URLs in this FHIR store that are used to configure the profiles to use for validation. For example, to use the US Core profiles for validation, set `enabled_implementation_guides` to `[\"http://hl7.org/fhir/us/core/ImplementationGuide/ig\"]`. If `enabled_implementation_guides` is empty or omitted, then incoming resources are only required to conform to the base FHIR profiles. Otherwise, a resource must conform to at least one profile listed in the `global` property of one of the enabled ImplementationGuides. The Cloud Healthcare API does not currently enforce all of the rules in a StructureDefinition. The following rules are supported: - min/max - minValue/maxValue - maxLength - type - fixed[x] - pattern[x] on simple types - slicing, when using \"value\" as the discriminator type When a URL cannot be resolved (for example, in a type assertion), the server does not return an error."]
+        #[serde(
+            rename = "enabledImplementationGuides",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enabled_implementation_guides: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for ValidationConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ValidationConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -6167,6 +7344,16 @@ pub mod resources {
                         auth: self.auth_ref(),
                     }
                 }
+                #[doc = "Actions that can be performed on the services resource"]
+                pub fn services(
+                    &self,
+                ) -> crate::resources::projects::locations::services::ServicesActions
+                {
+                    crate::resources::projects::locations::services::ServicesActions {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                    }
+                }
             }
             #[doc = "Created via [LocationsActions::get()](struct.LocationsActions.html#method.get)"]
             #[derive(Debug, Clone)]
@@ -6349,17 +7536,17 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "The standard list filter."]
+                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
                 }
-                #[doc = "The standard list page size."]
+                #[doc = "The maximum number of results to return. If not set, the service selects a default."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "The standard list page token."]
+                #[doc = "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -6654,7 +7841,7 @@ pub mod resources {
                             dataset_id: None,
                         }
                     }
-                    #[doc = "Creates a new dataset containing de-identified data from the source dataset. The metadata field type is OperationMetadata. If the request is successful, the response field type is DeidentifySummary. If errors occur, error is set. The LRO result may still be successful if de-identification fails for some DICOM instances. The new de-identified dataset will not contain these failed resources. Failed resource totals are tracked in Operation.metadata. Error details are also logged to Cloud Logging. For more information, see [Viewing logs](/healthcare/docs/how-tos/logging)."]
+                    #[doc = "Creates a new dataset containing de-identified data from the source dataset. The metadata field type is OperationMetadata. If the request is successful, the response field type is DeidentifySummary. If errors occur, error is set. The LRO result may still be successful if de-identification fails for some DICOM instances. The new de-identified dataset will not contain these failed resources. Failed resource totals are tracked in Operation.metadata. Error details are also logged to Cloud Logging. For more information, see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)."]
                     pub fn deidentify(
                         &self,
                         request: crate::schemas::DeidentifyDatasetRequest,
@@ -6833,20 +8020,20 @@ pub mod resources {
                             resource: resource.into(),
                         }
                     }
-                    #[doc = "Actions that can be performed on the consent_stores resource"]                    pub fn consent_stores ( & self ) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: ConsentStoresActions{
-                        crate :: resources :: projects :: locations :: datasets :: consent_stores :: ConsentStoresActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the consent_stores resource"]                    pub fn consent_stores (& self) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: ConsentStoresActions{
+                        crate :: resources :: projects :: locations :: datasets :: consent_stores :: ConsentStoresActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the dicom_stores resource"]                    pub fn dicom_stores ( & self ) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: DicomStoresActions{
-                        crate :: resources :: projects :: locations :: datasets :: dicom_stores :: DicomStoresActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the dicom_stores resource"]                    pub fn dicom_stores (& self) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: DicomStoresActions{
+                        crate :: resources :: projects :: locations :: datasets :: dicom_stores :: DicomStoresActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the fhir_stores resource"]                    pub fn fhir_stores ( & self ) -> crate :: resources :: projects :: locations :: datasets :: fhir_stores :: FhirStoresActions{
-                        crate :: resources :: projects :: locations :: datasets :: fhir_stores :: FhirStoresActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the fhir_stores resource"]                    pub fn fhir_stores (& self) -> crate :: resources :: projects :: locations :: datasets :: fhir_stores :: FhirStoresActions{
+                        crate :: resources :: projects :: locations :: datasets :: fhir_stores :: FhirStoresActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the hl_7v2_stores resource"]                    pub fn hl_7v2_stores ( & self ) -> crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: Hl7V2StoresActions{
-                        crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: Hl7V2StoresActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the hl_7v2_stores resource"]                    pub fn hl_7v2_stores (& self) -> crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: Hl7V2StoresActions{
+                        crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: Hl7V2StoresActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the operations resource"]                    pub fn operations ( & self ) -> crate :: resources :: projects :: locations :: datasets :: operations :: OperationsActions{
-                        crate :: resources :: projects :: locations :: datasets :: operations :: OperationsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the operations resource"]                    pub fn operations (& self) -> crate :: resources :: projects :: locations :: datasets :: operations :: OperationsActions{
+                        crate :: resources :: projects :: locations :: datasets :: operations :: OperationsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 #[doc = "Created via [DatasetsActions::create()](struct.DatasetsActions.html#method.create)"]
@@ -7522,7 +8709,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> GetIamPolicyRequestBuilder<'a> {
-                    #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                    #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                     pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                         self.options_requested_policy_version = Some(value);
                         self
@@ -8652,7 +9839,7 @@ pub mod resources {
                                 update_mask: None,
                             }
                         }
-                        #[doc = "Queries all data_ids that are consented for a specified use in the given consent store and writes them to a specified destination. The returned Operation includes a progress counter for the number of User data mappings processed. Errors are logged to Cloud Logging (see [Viewing logs] (cloud.google.com/healthcare/docs/how-tos/logging)). For example, the following sample log entry shows a `failed to evaluate consent policy` error that occurred during a QueryAccessibleData call to consent store `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}`. `json jsonPayload: { @type: \"type.googleapis.com/google.cloud.healthcare.logging.QueryAccessibleDataLogEntry\" error: { code: 9 message: \"failed to evaluate consent policy\" } resourceName: \"projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}\" } logName: \"projects/{project_id}/logs/healthcare.googleapis.com%2Fquery_accessible_data\" operation: { id: \"projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/operations/{operation_id}\" producer: \"healthcare.googleapis.com/QueryAccessibleData\" } receiveTimestamp: \"TIMESTAMP\" resource: { labels: { consent_store_id: \"{consent_store_id}\" dataset_id: \"{dataset_id}\" location: \"{location_id}\" project_id: \"{project_id}\" } type: \"healthcare_consent_store\" } severity: \"ERROR\" timestamp: \"TIMESTAMP\" `"]
+                        #[doc = "Queries all data_ids that are consented for a specified use in the given consent store and writes them to a specified destination. The returned Operation includes a progress counter for the number of User data mappings processed. If the request is successful, a detailed response is returned of type QueryAccessibleDataResponse, contained in the response field when the operation finishes. The metadata field type is OperationMetadata. Errors are logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)). For example, the following sample log entry shows a `failed to evaluate consent policy` error that occurred during a QueryAccessibleData call to consent store `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}`. `json jsonPayload: { @type: \"type.googleapis.com/google.cloud.healthcare.logging.QueryAccessibleDataLogEntry\" error: { code: 9 message: \"failed to evaluate consent policy\" } resourceName: \"projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}\" } logName: \"projects/{project_id}/logs/healthcare.googleapis.com%2Fquery_accessible_data\" operation: { id: \"projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/operations/{operation_id}\" producer: \"healthcare.googleapis.com/QueryAccessibleData\" } receiveTimestamp: \"TIMESTAMP\" resource: { labels: { consent_store_id: \"{consent_store_id}\" dataset_id: \"{dataset_id}\" location: \"{location_id}\" project_id: \"{project_id}\" } type: \"healthcare_consent_store\" } severity: \"ERROR\" timestamp: \"TIMESTAMP\" `"]
                         pub fn query_accessible_data(
                             &self,
                             request: crate::schemas::QueryAccessibleDataRequest,
@@ -8724,17 +9911,17 @@ pub mod resources {
                                 resource: resource.into(),
                             }
                         }
-                        #[doc = "Actions that can be performed on the attribute_definitions resource"]                        pub fn attribute_definitions ( & self ) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: attribute_definitions :: AttributeDefinitionsActions{
-                            crate :: resources :: projects :: locations :: datasets :: consent_stores :: attribute_definitions :: AttributeDefinitionsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the attribute_definitions resource"]                        pub fn attribute_definitions (& self) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: attribute_definitions :: AttributeDefinitionsActions{
+                            crate :: resources :: projects :: locations :: datasets :: consent_stores :: attribute_definitions :: AttributeDefinitionsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
-                        #[doc = "Actions that can be performed on the consent_artifacts resource"]                        pub fn consent_artifacts ( & self ) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: consent_artifacts :: ConsentArtifactsActions{
-                            crate :: resources :: projects :: locations :: datasets :: consent_stores :: consent_artifacts :: ConsentArtifactsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the consent_artifacts resource"]                        pub fn consent_artifacts (& self) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: consent_artifacts :: ConsentArtifactsActions{
+                            crate :: resources :: projects :: locations :: datasets :: consent_stores :: consent_artifacts :: ConsentArtifactsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
-                        #[doc = "Actions that can be performed on the consents resource"]                        pub fn consents ( & self ) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: consents :: ConsentsActions{
-                            crate :: resources :: projects :: locations :: datasets :: consent_stores :: consents :: ConsentsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the consents resource"]                        pub fn consents (& self) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: consents :: ConsentsActions{
+                            crate :: resources :: projects :: locations :: datasets :: consent_stores :: consents :: ConsentsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
-                        #[doc = "Actions that can be performed on the user_data_mappings resource"]                        pub fn user_data_mappings ( & self ) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: user_data_mappings :: UserDataMappingsActions{
-                            crate :: resources :: projects :: locations :: datasets :: consent_stores :: user_data_mappings :: UserDataMappingsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the user_data_mappings resource"]                        pub fn user_data_mappings (& self) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: user_data_mappings :: UserDataMappingsActions{
+                            crate :: resources :: projects :: locations :: datasets :: consent_stores :: user_data_mappings :: UserDataMappingsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
                     }
                     #[doc = "Created via [ConsentStoresActions::check_data_access()](struct.ConsentStoresActions.html#method.check_data_access)"]
@@ -9586,7 +10773,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> GetIamPolicyRequestBuilder<'a> {
-                        #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                        #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                         pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                             self.options_requested_policy_version = Some(value);
                             self
@@ -16215,7 +17402,7 @@ pub mod resources {
                                 dicom_store_id: None,
                             }
                         }
-                        #[doc = "De-identifies data from the source store and writes it to the destination store. The metadata field type is OperationMetadata. If the request is successful, the response field type is DeidentifyDicomStoreSummary. If errors occur, error is set. The LRO result may still be successful if de-identification fails for some DICOM instances. The output DICOM store will not contain these failed resources. Failed resource totals are tracked in Operation.metadata. Error details are also logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how-tos/logging))."]
+                        #[doc = "De-identifies data from the source store and writes it to the destination store. The metadata field type is OperationMetadata. If the request is successful, the response field type is DeidentifyDicomStoreSummary. If errors occur, error is set. The LRO result may still be successful if de-identification fails for some DICOM instances. The output DICOM store will not contain these failed resources. Failed resource totals are tracked in Operation.metadata. Error details are also logged to Cloud Logging (see [Viewing error logs in Cloud Logging](/healthcare/docs/how-tos/logging))."]
                         pub fn deidentify(
                             &self,
                             request: crate::schemas::DeidentifyDicomStoreRequest,
@@ -16258,7 +17445,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Exports data to the specified destination by copying it from the DICOM store. Errors are also logged to Cloud Logging. For more information, see [Viewing logs](/healthcare/docs/how-tos/logging). The metadata field type is OperationMetadata."]
+                        #[doc = "Exports data to the specified destination by copying it from the DICOM store. Errors are also logged to Cloud Logging. For more information, see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging). The metadata field type is OperationMetadata."]
                         pub fn export(
                             &self,
                             request: crate::schemas::ExportDicomDataRequest,
@@ -16324,7 +17511,7 @@ pub mod resources {
                                 options_requested_policy_version: None,
                             }
                         }
-                        #[doc = "Imports data into the DICOM store by copying it from the specified source. Errors are logged to Cloud Logging. For more information, see [Viewing logs](/healthcare/docs/how-tos/logging). The metadata field type is OperationMetadata."]
+                        #[doc = "Imports data into the DICOM store by copying it from the specified source. Errors are logged to Cloud Logging. For more information, see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging). The metadata field type is OperationMetadata."]
                         pub fn import(
                             &self,
                             request: crate::schemas::ImportDicomDataRequest,
@@ -16541,8 +17728,8 @@ pub mod resources {
                                 resource: resource.into(),
                             }
                         }
-                        #[doc = "Actions that can be performed on the studies resource"]                        pub fn studies ( & self ) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: StudiesActions{
-                            crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: StudiesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the studies resource"]                        pub fn studies (& self) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: StudiesActions{
+                            crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: StudiesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
                     }
                     #[doc = "Created via [DicomStoresActions::create()](struct.DicomStoresActions.html#method.create)"]
@@ -17394,7 +18581,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> GetIamPolicyRequestBuilder<'a> {
-                        #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                        #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                         pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                             self.options_requested_policy_version = Some(value);
                             self
@@ -19217,7 +20404,7 @@ pub mod resources {
                             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                                 self.auth
                             }
-                            #[doc = "DeleteStudy deletes all instances within the given study. Delete requests are equivalent to the GET requests specified in the Retrieve transaction. The method returns an Operation which will be marked successful when the deletion is complete. Warning: Inserting instances into a study while a delete operation is running for that study could result in the new instances not appearing in search results until the deletion operation finishes. For samples that show how to call DeleteStudy, see [Deleting a study, series, or instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#deleting_a_study_series_or_instance)."]
+                            #[doc = "DeleteStudy deletes all instances within the given study. Delete requests are equivalent to the GET requests specified in the Retrieve transaction. The method returns an Operation which will be marked successful when the deletion is complete. Warning: Instances cannot be inserted into a study that is being deleted by an operation until the operation completes. For samples that show how to call DeleteStudy, see [Deleting a study, series, or instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#deleting_a_study_series_or_instance)."]
                             pub fn delete(
                                 &self,
                                 parent: impl Into<String>,
@@ -19363,8 +20550,8 @@ pub mod resources {
                                     dicom_web_path: dicom_web_path.into(),
                                 }
                             }
-                            #[doc = "Actions that can be performed on the series resource"]                            pub fn series ( & self ) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: SeriesActions{
-                                crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: SeriesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                            #[doc = "Actions that can be performed on the series resource"]                            pub fn series (& self) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: SeriesActions{
+                                crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: SeriesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                             }
                         }
                         #[doc = "Created via [StudiesActions::delete()](struct.StudiesActions.html#method.delete)"]
@@ -20411,7 +21598,7 @@ pub mod resources {
                                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                                     self.auth
                                 }
-                                #[doc = "DeleteSeries deletes all instances within the given study and series. Delete requests are equivalent to the GET requests specified in the Retrieve transaction. The method returns an Operation which will be marked successful when the deletion is complete. Warning: Inserting instances into a series while a delete operation is running for that series could result in the new instances not appearing in search results until the deletion operation finishes. For samples that show how to call DeleteSeries, see [Deleting a study, series, or instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#deleting_a_study_series_or_instance)."]
+                                #[doc = "DeleteSeries deletes all instances within the given study and series. Delete requests are equivalent to the GET requests specified in the Retrieve transaction. The method returns an Operation which will be marked successful when the deletion is complete. Warning: Instances cannot be inserted into a series that is being deleted by an operation until the operation completes. For samples that show how to call DeleteSeries, see [Deleting a study, series, or instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#deleting_a_study_series_or_instance)."]
                                 pub fn delete(
                                     &self,
                                     parent: impl Into<String>,
@@ -20509,8 +21696,8 @@ pub mod resources {
                                         dicom_web_path: dicom_web_path.into(),
                                     }
                                 }
-                                #[doc = "Actions that can be performed on the instances resource"]                                pub fn instances ( & self ) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: instances :: InstancesActions{
-                                    crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: instances :: InstancesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                                #[doc = "Actions that can be performed on the instances resource"]                                pub fn instances (& self) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: instances :: InstancesActions{
+                                    crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: instances :: InstancesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                                 }
                             }
                             #[doc = "Created via [SeriesActions::delete()](struct.SeriesActions.html#method.delete)"]
@@ -21318,8 +22505,8 @@ pub mod resources {
                                             dicom_web_path: dicom_web_path.into(),
                                         }
                                     }
-                                    #[doc = "Actions that can be performed on the frames resource"]                                    pub fn frames ( & self ) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: instances :: frames :: FramesActions{
-                                        crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: instances :: frames :: FramesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                                    #[doc = "Actions that can be performed on the frames resource"]                                    pub fn frames (& self) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: instances :: frames :: FramesActions{
+                                        crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: instances :: frames :: FramesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                                     }
                                 }
                                 #[doc = "Created via [InstancesActions::delete()](struct.InstancesActions.html#method.delete)"]
@@ -22556,7 +23743,7 @@ pub mod resources {
                                 fhir_store_id: None,
                             }
                         }
-                        #[doc = "De-identifies data from the source store and writes it to the destination store. The metadata field type is OperationMetadata. If the request is successful, the response field type is DeidentifyFhirStoreSummary. If errors occur, error is set. Error details are also logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how-tos/logging))."]
+                        #[doc = "De-identifies data from the source store and writes it to the destination store. The metadata field type is OperationMetadata. If the request is successful, the response field type is DeidentifyFhirStoreSummary. If errors occur, error is set. Error details are also logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging))."]
                         pub fn deidentify(
                             &self,
                             request: crate::schemas::DeidentifyFhirStoreRequest,
@@ -22599,7 +23786,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Export resources from the FHIR store to the specified destination. This method returns an Operation that can be used to track the status of the export by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a detailed response of type ExportResourcesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata."]
+                        #[doc = "Export resources from the FHIR store to the specified destination. This method returns an Operation that can be used to track the status of the export by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a detailed response of type ExportResourcesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata."]
                         pub fn export(
                             &self,
                             request: crate::schemas::ExportResourcesRequest,
@@ -22665,7 +23852,7 @@ pub mod resources {
                                 options_requested_policy_version: None,
                             }
                         }
-                        #[doc = "Imports resources to the FHIR store by loading data from the specified sources. This method is optimized to load large quantities of data using import semantics that ignore some FHIR store configuration options and are not suitable for all use cases. It is primarily intended to load data into an empty FHIR store that is not being used by other clients. In cases where this method is not appropriate, consider using ExecuteBundle to load data. Every resource in the input must contain a client-supplied ID. Each resource is stored using the supplied ID regardless of the enable_update_create setting on the FHIR store. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud audit logs and Cloud Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources. The import process does not enforce referential integrity, regardless of the disable_referential_integrity setting on the FHIR store. This allows the import of resources with arbitrary interdependencies without considering grouping or ordering, but if the input data contains invalid references or if some resources fail to be imported, the FHIR store might be left in a state that violates referential integrity. The import process does not trigger Pub/Sub notification or BigQuery streaming update, regardless of how those are configured on the FHIR store. If a resource with the specified ID already exists, the most recent version of the resource is overwritten without creating a new historical version, regardless of the disable_resource_versioning setting on the FHIR store. If transient failures occur during the import, it's possible that successfully imported resources will be overwritten more than once. The import operation is idempotent unless the input data contains multiple valid resources with the same ID but different contents. In that case, after the import completes, the store contains exactly one resource with that ID but there is no ordering guarantee on which version of the contents it will have. The operation result counters do not count duplicate IDs as an error and count one success for each resource in the input, which might result in a success count larger than the number of resources in the FHIR store. This often occurs when importing data organized in bundles produced by Patient-everything where each bundle contains its own copy of a resource such as Practitioner that might be referred to by many patients. If some resources fail to import, for example due to parsing errors, successfully imported resources are not rolled back. The location and format of the input data is specified by the parameters in ImportResourcesRequest. Note that if no format is specified, this method assumes the `BUNDLE` format. When using the `BUNDLE` format this method ignores the `Bundle.type` field, except that `history` bundles are rejected, and does not apply any of the bundle processing semantics for batch or transaction bundles. Unlike in ExecuteBundle, transaction bundles are not executed as a single transaction and bundle-internal references are not rewritten. The bundle is treated as a collection of resources to be written as provided in `Bundle.entry.resource`, ignoring `Bundle.entry.request`. As an example, this allows the import of `searchset` bundles produced by a FHIR search or Patient-everything operation. This method returns an Operation that can be used to track the status of the import by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a detailed response of type ImportResourcesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata."]
+                        #[doc = "Imports resources to the FHIR store by loading data from the specified sources. This method is optimized to load large quantities of data using import semantics that ignore some FHIR store configuration options and are not suitable for all use cases. It is primarily intended to load data into an empty FHIR store that is not being used by other clients. In cases where this method is not appropriate, consider using ExecuteBundle to load data. Every resource in the input must contain a client-supplied ID. Each resource is stored using the supplied ID regardless of the enable_update_create setting on the FHIR store. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud Audit Logs and Cloud Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources. The import process does not enforce referential integrity, regardless of the disable_referential_integrity setting on the FHIR store. This allows the import of resources with arbitrary interdependencies without considering grouping or ordering, but if the input data contains invalid references or if some resources fail to be imported, the FHIR store might be left in a state that violates referential integrity. The import process does not trigger Pub/Sub notification or BigQuery streaming update, regardless of how those are configured on the FHIR store. If a resource with the specified ID already exists, the most recent version of the resource is overwritten without creating a new historical version, regardless of the disable_resource_versioning setting on the FHIR store. If transient failures occur during the import, it's possible that successfully imported resources will be overwritten more than once. The import operation is idempotent unless the input data contains multiple valid resources with the same ID but different contents. In that case, after the import completes, the store contains exactly one resource with that ID but there is no ordering guarantee on which version of the contents it will have. The operation result counters do not count duplicate IDs as an error and count one success for each resource in the input, which might result in a success count larger than the number of resources in the FHIR store. This often occurs when importing data organized in bundles produced by Patient-everything where each bundle contains its own copy of a resource such as Practitioner that might be referred to by many patients. If some resources fail to import, for example due to parsing errors, successfully imported resources are not rolled back. The location and format of the input data is specified by the parameters in ImportResourcesRequest. Note that if no format is specified, this method assumes the `BUNDLE` format. When using the `BUNDLE` format this method ignores the `Bundle.type` field, except that `history` bundles are rejected, and does not apply any of the bundle processing semantics for batch or transaction bundles. Unlike in ExecuteBundle, transaction bundles are not executed as a single transaction and bundle-internal references are not rewritten. The bundle is treated as a collection of resources to be written as provided in `Bundle.entry.resource`, ignoring `Bundle.entry.request`. As an example, this allows the import of `searchset` bundles produced by a FHIR search or Patient-everything operation. This method returns an Operation that can be used to track the status of the import by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a detailed response of type ImportResourcesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata."]
                         pub fn import(
                             &self,
                             request: crate::schemas::ImportResourcesRequest,
@@ -22784,8 +23971,8 @@ pub mod resources {
                                 resource: resource.into(),
                             }
                         }
-                        #[doc = "Actions that can be performed on the fhir resource"]                        pub fn fhir ( & self ) -> crate :: resources :: projects :: locations :: datasets :: fhir_stores :: fhir :: FhirActions{
-                            crate :: resources :: projects :: locations :: datasets :: fhir_stores :: fhir :: FhirActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the fhir resource"]                        pub fn fhir (& self) -> crate :: resources :: projects :: locations :: datasets :: fhir_stores :: fhir :: FhirActions{
+                            crate :: resources :: projects :: locations :: datasets :: fhir_stores :: fhir :: FhirActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
                     }
                     #[doc = "Created via [FhirStoresActions::create()](struct.FhirStoresActions.html#method.create)"]
@@ -23637,7 +24824,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> GetIamPolicyRequestBuilder<'a> {
-                        #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                        #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                         pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                             self.options_requested_policy_version = Some(value);
                             self
@@ -24770,7 +25957,7 @@ pub mod resources {
                             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                                 self.auth
                             }
-                            #[doc = "Retrieves a Patient resource and resources related to that patient. Implements the FHIR extended operation Patient-everything ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/patient-operations.html#everything), [STU3](http://hl7.org/implement/standards/fhir/STU3/patient-operations.html#everything), [R4](http://hl7.org/implement/standards/fhir/R4/patient-operations.html#everything)). On success, the response body will contain a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the operation. Errors generated by the FHIR store will contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The resources in scope for the response are: * The patient resource itself. * All the resources directly referenced by the patient resource. * Resources directly referencing the patient resource that meet the inclusion criteria. The inclusion criteria are based on the membership rules in the patient compartment definition ([DSTU2](http://hl7.org/fhir/DSTU2/compartment-patient.html), [STU3](http://www.hl7.org/fhir/stu3/compartmentdefinition-patient.html), [R4](http://hl7.org/fhir/R4/compartmentdefinition-patient.html)), which details the eligible resource types and referencing search parameters. For samples that show how to call `Patient-everything`, see [Getting all patient compartment resources](/healthcare/docs/how-tos/fhir-resources#getting_all_patient_compartment_resources)."]
+                            #[doc = "Retrieves a Patient resource and resources related to that patient. Implements the FHIR extended operation Patient-everything ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/patient-operations.html#everything), [STU3](http://hl7.org/implement/standards/fhir/STU3/patient-operations.html#everything), [R4](http://hl7.org/implement/standards/fhir/R4/patient-operations.html#everything)). On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the operation. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The resources in scope for the response are: * The patient resource itself. * All the resources directly referenced by the patient resource. * Resources directly referencing the patient resource that meet the inclusion criteria. The inclusion criteria are based on the membership rules in the patient compartment definition ([DSTU2](http://hl7.org/fhir/DSTU2/compartment-patient.html), [STU3](http://www.hl7.org/fhir/stu3/compartmentdefinition-patient.html), [R4](http://hl7.org/fhir/R4/compartmentdefinition-patient.html)), which details the eligible resource types and referencing search parameters. For samples that show how to call `Patient-everything`, see [Getting all patient compartment resources](/healthcare/docs/how-tos/fhir-resources#getting_all_patient_compartment_resources)."]
                             pub fn patient_everything(
                                 &self,
                                 name: impl Into<String>,
@@ -24820,7 +26007,34 @@ pub mod resources {
                                     name: name.into(),
                                 }
                             }
-                            #[doc = "Gets the FHIR capability statement ([STU3](http://hl7.org/implement/standards/fhir/STU3/capabilitystatement.html), [R4](http://hl7.org/implement/standards/fhir/R4/capabilitystatement.html)), or the [conformance statement](http://hl7.org/implement/standards/fhir/DSTU2/conformance.html) in the DSTU2 case for the store, which contains a description of functionality supported by the server. Implements the FHIR standard capabilities interaction ([STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#capabilities), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#capabilities)), or the [conformance interaction](http://hl7.org/implement/standards/fhir/DSTU2/http.html#conformance) in the DSTU2 case. On success, the response body will contain a JSON-encoded representation of a `CapabilityStatement` resource."]
+                            #[doc = "Validates an input FHIR resource's conformance to its profiles and the profiles configured on the FHIR store. Implements the FHIR extended operation $validate ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/resource-operations.html#validate), [STU3](http://hl7.org/implement/standards/fhir/STU3/resource-operations.html#validate), or [R4](http://hl7.org/implement/standards/fhir/R4/resource-operation-validate.html)). The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. The `Parameters` input syntax is not supported. The `profile` query parameter can be used to request that the resource only be validated against a specific profile. If a profile with the given URL cannot be found in the FHIR store then an error is returned. Errors generated by validation contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead."]
+                            pub fn resource_validate(
+                                &self,
+                                request: crate::schemas::HttpBody,
+                                parent: impl Into<String>,
+                                r#type: impl Into<String>,
+                            ) -> ResourceValidateRequestBuilder {
+                                ResourceValidateRequestBuilder {
+                                    reqwest: &self.reqwest,
+                                    auth: self.auth_ref(),
+                                    request,
+                                    access_token: None,
+                                    alt: None,
+                                    callback: None,
+                                    fields: None,
+                                    key: None,
+                                    oauth_token: None,
+                                    pretty_print: None,
+                                    quota_user: None,
+                                    upload_protocol: None,
+                                    upload_type: None,
+                                    xgafv: None,
+                                    parent: parent.into(),
+                                    r#type: r#type.into(),
+                                    profile: None,
+                                }
+                            }
+                            #[doc = "Gets the FHIR capability statement ([STU3](http://hl7.org/implement/standards/fhir/STU3/capabilitystatement.html), [R4](http://hl7.org/implement/standards/fhir/R4/capabilitystatement.html)), or the [conformance statement](http://hl7.org/implement/standards/fhir/DSTU2/conformance.html) in the DSTU2 case for the store, which contains a description of functionality supported by the server. Implements the FHIR standard capabilities interaction ([STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#capabilities), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#capabilities)), or the [conformance interaction](http://hl7.org/implement/standards/fhir/DSTU2/http.html#conformance) in the DSTU2 case. On success, the response body contains a JSON-encoded representation of a `CapabilityStatement` resource."]
                             pub fn capabilities(
                                 &self,
                                 name: impl Into<String>,
@@ -24842,7 +26056,7 @@ pub mod resources {
                                     name: name.into(),
                                 }
                             }
-                            #[doc = "Creates a FHIR resource. Implements the FHIR standard create interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#create), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#create), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#create)), which creates a new resource with a server-assigned resource ID. The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. On success, the response body will contain a JSON-encoded representation of the resource as it was created on the server, including the server-assigned resource ID and version ID. Errors generated by the FHIR store will contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `create`, see [Creating a FHIR resource](/healthcare/docs/how-tos/fhir-resources#creating_a_fhir_resource)."]
+                            #[doc = "Creates a FHIR resource. Implements the FHIR standard create interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#create), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#create), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#create)), which creates a new resource with a server-assigned resource ID. The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. On success, the response body contains a JSON-encoded representation of the resource as it was created on the server, including the server-assigned resource ID and version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `create`, see [Creating a FHIR resource](/healthcare/docs/how-tos/fhir-resources#creating_a_fhir_resource)."]
                             pub fn create(
                                 &self,
                                 request: crate::schemas::HttpBody,
@@ -24911,7 +26125,7 @@ pub mod resources {
                                     parent: parent.into(),
                                 }
                             }
-                            #[doc = "Lists all the versions of a resource (including the current version and deleted versions) from the FHIR store. Implements the per-resource form of the FHIR standard history interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#history), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#history), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#history)). On success, the response body will contain a JSON-encoded representation of a `Bundle` resource of type `history`, containing the version history sorted from most recent to oldest versions. Errors generated by the FHIR store will contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `history`, see [Listing FHIR resource versions](/healthcare/docs/how-tos/fhir-resources#listing_fhir_resource_versions)."]
+                            #[doc = "Lists all the versions of a resource (including the current version and deleted versions) from the FHIR store. Implements the per-resource form of the FHIR standard history interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#history), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#history), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#history)). On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `history`, containing the version history sorted from most recent to oldest versions. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `history`, see [Listing FHIR resource versions](/healthcare/docs/how-tos/fhir-resources#listing_fhir_resource_versions)."]
                             pub fn history(
                                 &self,
                                 name: impl Into<String>,
@@ -24937,7 +26151,7 @@ pub mod resources {
                                     since: None,
                                 }
                             }
-                            #[doc = "Updates part of an existing resource by applying the operations specified in a [JSON Patch](http://jsonpatch.com/) document. Implements the FHIR standard patch interaction ([STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#patch), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#patch)). DSTU2 doesn't define a patch method, but the server supports it in the same way it supports STU3. The request body must contain a JSON Patch document, and the request headers must contain `Content-Type: application/json-patch+json`. On success, the response body will contain a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store will contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `patch`, see [Patching a FHIR resource](/healthcare/docs/how-tos/fhir-resources#patching_a_fhir_resource)."]
+                            #[doc = "Updates part of an existing resource by applying the operations specified in a [JSON Patch](http://jsonpatch.com/) document. Implements the FHIR standard patch interaction ([STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#patch), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#patch)). DSTU2 doesn't define a patch method, but the server supports it in the same way it supports STU3. The request body must contain a JSON Patch document, and the request headers must contain `Content-Type: application/json-patch+json`. On success, the response body contains a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `patch`, see [Patching a FHIR resource](/healthcare/docs/how-tos/fhir-resources#patching_a_fhir_resource)."]
                             pub fn patch(
                                 &self,
                                 request: crate::schemas::HttpBody,
@@ -24961,7 +26175,7 @@ pub mod resources {
                                     name: name.into(),
                                 }
                             }
-                            #[doc = "Gets the contents of a FHIR resource. Implements the FHIR standard read interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#read), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#read), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#read)). Also supports the FHIR standard conditional read interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#cread), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#cread), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#cread)) specified by supplying an `If-Modified-Since` header with a date/time value or an `If-None-Match` header with an ETag value. On success, the response body will contain a JSON-encoded representation of the resource. Errors generated by the FHIR store will contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `read`, see [Getting a FHIR resource](/healthcare/docs/how-tos/fhir-resources#getting_a_fhir_resource)."]
+                            #[doc = "Gets the contents of a FHIR resource. Implements the FHIR standard read interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#read), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#read), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#read)). Also supports the FHIR standard conditional read interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#cread), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#cread), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#cread)) specified by supplying an `If-Modified-Since` header with a date/time value or an `If-None-Match` header with an ETag value. On success, the response body contains a JSON-encoded representation of the resource. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `read`, see [Getting a FHIR resource](/healthcare/docs/how-tos/fhir-resources#getting_a_fhir_resource)."]
                             pub fn read(&self, name: impl Into<String>) -> ReadRequestBuilder {
                                 ReadRequestBuilder {
                                     reqwest: &self.reqwest,
@@ -24980,7 +26194,7 @@ pub mod resources {
                                     name: name.into(),
                                 }
                             }
-                            #[doc = "Searches for resources in the given FHIR store according to criteria specified as query parameters. Implements the FHIR standard search interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#search), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#search), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#search)) using the search semantics described in the FHIR Search specification ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/search.html), [STU3](http://hl7.org/implement/standards/fhir/STU3/search.html), [R4](http://hl7.org/implement/standards/fhir/R4/search.html)). Supports four methods of search defined by the specification: * `GET [base]?[parameters]` to search across all resources. * `GET [base]/[type]?[parameters]` to search resources of a specified type. * `POST [base]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method across all resources. * `POST [base]/[type]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method for the specified type. The `GET` and `POST` methods do not support compartment searches. The `POST` method does not support `application/x-www-form-urlencoded` search parameters. On success, the response body will contain a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the search. Errors generated by the FHIR store will contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The server's capability statement, retrieved through capabilities, indicates what search parameters are supported on each FHIR resource. A list of all search parameters defined by the specification can be found in the FHIR Search Parameter Registry ([STU3](http://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html), [R4](http://hl7.org/implement/standards/fhir/R4/searchparameter-registry.html)). FHIR search parameters for DSTU2 can be found on each resource's definition page. Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`, `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `:recurse`. Supported search result parameters: `_sort`, `_count`, `_include`, `_revinclude`, `_summary=text`, `_summary=data`, and `_elements`. The maximum number of search results returned defaults to 100, which can be overridden by the `_count` parameter up to a maximum limit of 1000. If there are additional results, the returned `Bundle` will contain pagination links. Resources with a total size larger than 5MB or a field count larger than 50,000 might not be fully searchable as the server might trim its generated search index in those cases. Note: FHIR resources are indexed asynchronously, so there might be a slight delay between the time a resource is created or changes and when the change is reflected in search results. For samples and detailed information, see [Searching for FHIR resources](/healthcare/docs/how-tos/fhir-search) and [Advanced FHIR search features](/healthcare/docs/how-tos/fhir-advanced-search)."]
+                            #[doc = "Searches for resources in the given FHIR store according to criteria specified as query parameters. Implements the FHIR standard search interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#search), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#search), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#search)) using the search semantics described in the FHIR Search specification ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/search.html), [STU3](http://hl7.org/implement/standards/fhir/STU3/search.html), [R4](http://hl7.org/implement/standards/fhir/R4/search.html)). Supports four methods of search defined by the specification: * `GET [base]?[parameters]` to search across all resources. * `GET [base]/[type]?[parameters]` to search resources of a specified type. * `POST [base]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method across all resources. * `POST [base]/[type]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method for the specified type. The `GET` and `POST` methods do not support compartment searches. The `POST` method does not support `application/x-www-form-urlencoded` search parameters. On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the search. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The server's capability statement, retrieved through capabilities, indicates what search parameters are supported on each FHIR resource. A list of all search parameters defined by the specification can be found in the FHIR Search Parameter Registry ([STU3](http://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html), [R4](http://hl7.org/implement/standards/fhir/R4/searchparameter-registry.html)). FHIR search parameters for DSTU2 can be found on each resource's definition page. Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`, `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `:recurse`. Supported search result parameters: `_sort`, `_count`, `_include`, `_revinclude`, `_summary=text`, `_summary=data`, and `_elements`. The maximum number of search results returned defaults to 100, which can be overridden by the `_count` parameter up to a maximum limit of 1000. If there are additional results, the returned `Bundle` contains a link of `relation` \"next\", which has a `_page_token` parameter for an opaque pagination token that can be used to retrieve the next page. Resources with a total size larger than 5MB or a field count larger than 50,000 might not be fully searchable as the server might trim its generated search index in those cases. Note: FHIR resources are indexed asynchronously, so there might be a slight delay between the time a resource is created or changes and when the change is reflected in search results. For samples and detailed information, see [Searching for FHIR resources](/healthcare/docs/how-tos/fhir-search) and [Advanced FHIR search features](/healthcare/docs/how-tos/fhir-advanced-search)."]
                             pub fn search(
                                 &self,
                                 request: crate::schemas::SearchResourcesRequest,
@@ -25004,7 +26218,7 @@ pub mod resources {
                                     parent: parent.into(),
                                 }
                             }
-                            #[doc = "Searches for resources in the given FHIR store according to criteria specified as query parameters. Implements the FHIR standard search interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#search), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#search), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#search)) using the search semantics described in the FHIR Search specification ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/search.html), [STU3](http://hl7.org/implement/standards/fhir/STU3/search.html), [R4](http://hl7.org/implement/standards/fhir/R4/search.html)). Supports four methods of search defined by the specification: * `GET [base]?[parameters]` to search across all resources. * `GET [base]/[type]?[parameters]` to search resources of a specified type. * `POST [base]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method across all resources. * `POST [base]/[type]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method for the specified type. The `GET` and `POST` methods do not support compartment searches. The `POST` method does not support `application/x-www-form-urlencoded` search parameters. On success, the response body will contain a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the search. Errors generated by the FHIR store will contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The server's capability statement, retrieved through capabilities, indicates what search parameters are supported on each FHIR resource. A list of all search parameters defined by the specification can be found in the FHIR Search Parameter Registry ([STU3](http://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html), [R4](http://hl7.org/implement/standards/fhir/R4/searchparameter-registry.html)). FHIR search parameters for DSTU2 can be found on each resource's definition page. Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`, `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `:recurse`. Supported search result parameters: `_sort`, `_count`, `_include`, `_revinclude`, `_summary=text`, `_summary=data`, and `_elements`. The maximum number of search results returned defaults to 100, which can be overridden by the `_count` parameter up to a maximum limit of 1000. If there are additional results, the returned `Bundle` will contain pagination links. Resources with a total size larger than 5MB or a field count larger than 50,000 might not be fully searchable as the server might trim its generated search index in those cases. Note: FHIR resources are indexed asynchronously, so there might be a slight delay between the time a resource is created or changes and when the change is reflected in search results. For samples and detailed information, see [Searching for FHIR resources](/healthcare/docs/how-tos/fhir-search) and [Advanced FHIR search features](/healthcare/docs/how-tos/fhir-advanced-search)."]
+                            #[doc = "Searches for resources in the given FHIR store according to criteria specified as query parameters. Implements the FHIR standard search interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#search), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#search), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#search)) using the search semantics described in the FHIR Search specification ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/search.html), [STU3](http://hl7.org/implement/standards/fhir/STU3/search.html), [R4](http://hl7.org/implement/standards/fhir/R4/search.html)). Supports four methods of search defined by the specification: * `GET [base]?[parameters]` to search across all resources. * `GET [base]/[type]?[parameters]` to search resources of a specified type. * `POST [base]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method across all resources. * `POST [base]/[type]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method for the specified type. The `GET` and `POST` methods do not support compartment searches. The `POST` method does not support `application/x-www-form-urlencoded` search parameters. On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the search. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The server's capability statement, retrieved through capabilities, indicates what search parameters are supported on each FHIR resource. A list of all search parameters defined by the specification can be found in the FHIR Search Parameter Registry ([STU3](http://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html), [R4](http://hl7.org/implement/standards/fhir/R4/searchparameter-registry.html)). FHIR search parameters for DSTU2 can be found on each resource's definition page. Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`, `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `:recurse`. Supported search result parameters: `_sort`, `_count`, `_include`, `_revinclude`, `_summary=text`, `_summary=data`, and `_elements`. The maximum number of search results returned defaults to 100, which can be overridden by the `_count` parameter up to a maximum limit of 1000. If there are additional results, the returned `Bundle` contains a link of `relation` \"next\", which has a `_page_token` parameter for an opaque pagination token that can be used to retrieve the next page. Resources with a total size larger than 5MB or a field count larger than 50,000 might not be fully searchable as the server might trim its generated search index in those cases. Note: FHIR resources are indexed asynchronously, so there might be a slight delay between the time a resource is created or changes and when the change is reflected in search results. For samples and detailed information, see [Searching for FHIR resources](/healthcare/docs/how-tos/fhir-search) and [Advanced FHIR search features](/healthcare/docs/how-tos/fhir-advanced-search)."]
                             pub fn search_type(
                                 &self,
                                 request: crate::schemas::SearchResourcesRequest,
@@ -25030,7 +26244,7 @@ pub mod resources {
                                     resource_type: resource_type.into(),
                                 }
                             }
-                            #[doc = "Updates the entire contents of a resource. Implements the FHIR standard update interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#update), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#update), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#update)). If the specified resource does not exist and the FHIR store has enable_update_create set, creates the resource with the client-specified ID. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud audit logs and Cloud Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources. The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. The resource must contain an `id` element having an identical value to the ID in the REST path of the request. On success, the response body will contain a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store will contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `update`, see [Updating a FHIR resource](/healthcare/docs/how-tos/fhir-resources#updating_a_fhir_resource)."]
+                            #[doc = "Updates the entire contents of a resource. Implements the FHIR standard update interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#update), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#update), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#update)). If the specified resource does not exist and the FHIR store has enable_update_create set, creates the resource with the client-specified ID. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud Audit Logs and Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources. The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. The resource must contain an `id` element having an identical value to the ID in the REST path of the request. On success, the response body contains a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `update`, see [Updating a FHIR resource](/healthcare/docs/how-tos/fhir-resources#updating_a_fhir_resource)."]
                             pub fn update(
                                 &self,
                                 request: crate::schemas::HttpBody,
@@ -25054,7 +26268,7 @@ pub mod resources {
                                     name: name.into(),
                                 }
                             }
-                            #[doc = "Gets the contents of a version (current or historical) of a FHIR resource by version ID. Implements the FHIR standard vread interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#vread), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#vread), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#vread)). On success, the response body will contain a JSON-encoded representation of the resource. Errors generated by the FHIR store will contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `vread`, see [Retrieving a FHIR resource version](/healthcare/docs/how-tos/fhir-resources#retrieving_a_fhir_resource_version)."]
+                            #[doc = "Gets the contents of a version (current or historical) of a FHIR resource by version ID. Implements the FHIR standard vread interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#vread), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#vread), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#vread)). On success, the response body contains a JSON-encoded representation of the resource. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `vread`, see [Retrieving a FHIR resource version](/healthcare/docs/how-tos/fhir-resources#retrieving_a_fhir_resource_version)."]
                             pub fn vread(&self, name: impl Into<String>) -> VreadRequestBuilder {
                                 VreadRequestBuilder {
                                     reqwest: &self.reqwest,
@@ -25425,6 +26639,188 @@ pub mod resources {
                             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
                             {
                                 let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                                req = req.query(&[("access_token", &self.access_token)]);
+                                req = req.query(&[("alt", &self.alt)]);
+                                req = req.query(&[("callback", &self.callback)]);
+                                req = req.query(&[("fields", &self.fields)]);
+                                req = req.query(&[("key", &self.key)]);
+                                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                                req = req.query(&[("quotaUser", &self.quota_user)]);
+                                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                                req = req.query(&[("uploadType", &self.upload_type)]);
+                                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                                req = req.bearer_auth(
+                                    self.auth
+                                        .access_token()
+                                        .map_err(|err| crate::Error::OAuth2(err))?,
+                                );
+                                Ok(req)
+                            }
+                        }
+                        #[doc = "Created via [FhirActions::resource_validate()](struct.FhirActions.html#method.resource_validate)"]
+                        #[derive(Debug, Clone)]
+                        pub struct ResourceValidateRequestBuilder<'a> {
+                            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                            request: crate::schemas::HttpBody,
+                            parent: String,
+                            r#type: String,
+                            profile: Option<String>,
+                            access_token: Option<String>,
+                            alt: Option<crate::params::Alt>,
+                            callback: Option<String>,
+                            fields: Option<String>,
+                            key: Option<String>,
+                            oauth_token: Option<String>,
+                            pretty_print: Option<bool>,
+                            quota_user: Option<String>,
+                            upload_protocol: Option<String>,
+                            upload_type: Option<String>,
+                            xgafv: Option<crate::params::Xgafv>,
+                        }
+                        impl<'a> ResourceValidateRequestBuilder<'a> {
+                            #[doc = "A profile that this resource should be validated against."]
+                            pub fn profile(mut self, value: impl Into<String>) -> Self {
+                                self.profile = Some(value.into());
+                                self
+                            }
+                            #[doc = "OAuth access token."]
+                            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                                self.access_token = Some(value.into());
+                                self
+                            }
+                            #[doc = "JSONP"]
+                            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                                self.callback = Some(value.into());
+                                self
+                            }
+                            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                            pub fn key(mut self, value: impl Into<String>) -> Self {
+                                self.key = Some(value.into());
+                                self
+                            }
+                            #[doc = "OAuth 2.0 token for the current user."]
+                            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                                self.oauth_token = Some(value.into());
+                                self
+                            }
+                            #[doc = "Returns response with indentations and line breaks."]
+                            pub fn pretty_print(mut self, value: bool) -> Self {
+                                self.pretty_print = Some(value);
+                                self
+                            }
+                            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                                self.quota_user = Some(value.into());
+                                self
+                            }
+                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                                self.upload_protocol = Some(value.into());
+                                self
+                            }
+                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                                self.upload_type = Some(value.into());
+                                self
+                            }
+                            #[doc = "V1 error format."]
+                            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                                self.xgafv = Some(value);
+                                self
+                            }
+                            #[doc = r" Execute the given operation. The fields requested are"]
+                            #[doc = r" determined by the FieldSelector attribute of the return type."]
+                            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                            #[doc = r" are not generic over the return type and deserialize the"]
+                            #[doc = r" response into an auto-generated struct will all possible"]
+                            #[doc = r" fields."]
+                            pub fn execute<T>(self) -> Result<T, crate::Error>
+                            where
+                                T: ::serde::de::DeserializeOwned
+                                    + ::google_field_selector::FieldSelector,
+                            {
+                                let fields = ::google_field_selector::to_string::<T>();
+                                let fields: Option<String> = if fields.is_empty() {
+                                    None
+                                } else {
+                                    Some(fields)
+                                };
+                                self.execute_with_fields(fields)
+                            }
+                            #[doc = r" Execute the given operation. This will not provide any"]
+                            #[doc = r" `fields` selector indicating that the server will determine"]
+                            #[doc = r" the fields returned. This typically includes the most common"]
+                            #[doc = r" fields, but it will not include every possible attribute of"]
+                            #[doc = r" the response resource."]
+                            pub fn execute_with_default_fields(
+                                self,
+                            ) -> Result<crate::schemas::HttpBody, crate::Error>
+                            {
+                                self.execute_with_fields(None::<&str>)
+                            }
+                            #[doc = r" Execute the given operation. This will provide a `fields`"]
+                            #[doc = r" selector of `*`. This will include every attribute of the"]
+                            #[doc = r" response resource and should be limited to use during"]
+                            #[doc = r" development or debugging."]
+                            pub fn execute_with_all_fields(
+                                self,
+                            ) -> Result<crate::schemas::HttpBody, crate::Error>
+                            {
+                                self.execute_with_fields(Some("*"))
+                            }
+                            #[doc = r" Execute the given operation. This will use the `fields`"]
+                            #[doc = r" selector provided and will deserialize the response into"]
+                            #[doc = r" whatever return value is provided."]
+                            pub fn execute_with_fields<T, F>(
+                                mut self,
+                                fields: Option<F>,
+                            ) -> Result<T, crate::Error>
+                            where
+                                T: ::serde::de::DeserializeOwned,
+                                F: Into<String>,
+                            {
+                                self.fields = fields.map(Into::into);
+                                self._execute()
+                            }
+                            fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                            where
+                                T: ::serde::de::DeserializeOwned,
+                            {
+                                let req = self._request(&self._path())?;
+                                let req = req.json(&self.request);
+                                Ok(crate::error_from_response(req.send()?)?.json()?)
+                            }
+                            fn _path(&self) -> String {
+                                let mut output = "https://healthcare.googleapis.com/".to_owned();
+                                output.push_str("v1/");
+                                {
+                                    let var_as_str = &self.parent;
+                                    output.extend(::percent_encoding::utf8_percent_encode(
+                                        &var_as_str,
+                                        crate::RESERVED,
+                                    ));
+                                }
+                                output.push_str("/fhir/");
+                                {
+                                    let var_as_str = &self.r#type;
+                                    output.extend(::percent_encoding::utf8_percent_encode(
+                                        &var_as_str,
+                                        crate::RESERVED,
+                                    ));
+                                }
+                                output.push_str("/$validate");
+                                output
+                            }
+                            fn _request(
+                                &self,
+                                path: &str,
+                            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                            {
+                                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                                req = req.query(&[("profile", &self.profile)]);
                                 req = req.query(&[("access_token", &self.access_token)]);
                                 req = req.query(&[("alt", &self.alt)]);
                                 req = req.query(&[("callback", &self.callback)]);
@@ -27356,6 +28752,30 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
+                        #[doc = "Exports the messages to a destination. To filter messages to be exported, define a filter using the start and end time, relative to the message generation time (MSH.7). This API returns an Operation that can be used to track the status of the job by calling GetOperation. Immediate fatal errors appear in the error field. Otherwise, when the operation finishes, a detailed response of type ExportMessagesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata."]
+                        pub fn export(
+                            &self,
+                            request: crate::schemas::ExportMessagesRequest,
+                            name: impl Into<String>,
+                        ) -> ExportRequestBuilder {
+                            ExportRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
+                            }
+                        }
                         #[doc = "Gets the specified HL7v2 store."]
                         pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                             GetRequestBuilder {
@@ -27396,6 +28816,30 @@ pub mod resources {
                                 xgafv: None,
                                 resource: resource.into(),
                                 options_requested_policy_version: None,
+                            }
+                        }
+                        #[doc = "Import messages to the HL7v2 store by loading data from the specified sources. This method is optimized to load large quantities of data using import semantics that ignore some HL7v2 store configuration options and are not suitable for all use cases. It is primarily intended to load data into an empty HL7v2 store that is not being used by other clients. An existing message will be overwritten if a duplicate message is imported. A duplicate message is a message with the same raw bytes as a message that already exists in this HL7v2 store. When a message is overwritten, its labels will also be overwritten. The import operation is idempotent unless the input data contains multiple valid messages with the same raw bytes but different labels. In that case, after the import completes, the store contains exactly one message with those raw bytes but there is no ordering guarantee on which version of the labels it has. The operation result counters do not count duplicated raw bytes as an error and count one success for each message in the input, which might result in a success count larger than the number of messages in the HL7v2 store. If some messages fail to import, for example due to parsing errors, successfully imported messages are not rolled back. This method returns an Operation that can be used to track the status of the import by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a response of type ImportMessagesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata."]
+                        pub fn import(
+                            &self,
+                            request: crate::schemas::ImportMessagesRequest,
+                            name: impl Into<String>,
+                        ) -> ImportRequestBuilder {
+                            ImportRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
                             }
                         }
                         #[doc = "Lists the HL7v2 stores in the given dataset."]
@@ -27493,8 +28937,8 @@ pub mod resources {
                                 resource: resource.into(),
                             }
                         }
-                        #[doc = "Actions that can be performed on the messages resource"]                        pub fn messages ( & self ) -> crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: MessagesActions{
-                            crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: MessagesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the messages resource"]                        pub fn messages (& self) -> crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: MessagesActions{
+                            crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: MessagesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
                     }
                     #[doc = "Created via [Hl7V2StoresActions::create()](struct.Hl7V2StoresActions.html#method.create)"]
@@ -27831,6 +29275,172 @@ pub mod resources {
                             Ok(req)
                         }
                     }
+                    #[doc = "Created via [Hl7V2StoresActions::export()](struct.Hl7V2StoresActions.html#method.export)"]
+                    #[derive(Debug, Clone)]
+                    pub struct ExportRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::ExportMessagesRequest,
+                        name: String,
+                        access_token: Option<String>,
+                        alt: Option<crate::params::Alt>,
+                        callback: Option<String>,
+                        fields: Option<String>,
+                        key: Option<String>,
+                        oauth_token: Option<String>,
+                        pretty_print: Option<bool>,
+                        quota_user: Option<String>,
+                        upload_protocol: Option<String>,
+                        upload_type: Option<String>,
+                        xgafv: Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> ExportRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields)
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::Operation, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>)
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::Operation, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*"))
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute()
+                        }
+                        fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path())?;
+                            let req = req.json(&self.request);
+                            Ok(crate::error_from_response(req.send()?)?.json()?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://healthcare.googleapis.com/".to_owned();
+                            output.push_str("v1/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str(":export");
+                            output
+                        }
+                        fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            req = req.bearer_auth(
+                                self.auth
+                                    .access_token()
+                                    .map_err(|err| crate::Error::OAuth2(err))?,
+                            );
+                            Ok(req)
+                        }
+                    }
                     #[doc = "Created via [Hl7V2StoresActions::get()](struct.Hl7V2StoresActions.html#method.get)"]
                     #[derive(Debug, Clone)]
                     pub struct GetRequestBuilder<'a> {
@@ -28014,7 +29624,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> GetIamPolicyRequestBuilder<'a> {
-                        #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                        #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                         pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                             self.options_requested_policy_version = Some(value);
                             self
@@ -28147,6 +29757,172 @@ pub mod resources {
                                 "options.requestedPolicyVersion",
                                 &self.options_requested_policy_version,
                             )]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            req = req.bearer_auth(
+                                self.auth
+                                    .access_token()
+                                    .map_err(|err| crate::Error::OAuth2(err))?,
+                            );
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [Hl7V2StoresActions::import()](struct.Hl7V2StoresActions.html#method.import)"]
+                    #[derive(Debug, Clone)]
+                    pub struct ImportRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::ImportMessagesRequest,
+                        name: String,
+                        access_token: Option<String>,
+                        alt: Option<crate::params::Alt>,
+                        callback: Option<String>,
+                        fields: Option<String>,
+                        key: Option<String>,
+                        oauth_token: Option<String>,
+                        pretty_print: Option<bool>,
+                        quota_user: Option<String>,
+                        upload_protocol: Option<String>,
+                        upload_type: Option<String>,
+                        xgafv: Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> ImportRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields)
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::Operation, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>)
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::Operation, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*"))
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute()
+                        }
+                        fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path())?;
+                            let req = req.json(&self.request);
+                            Ok(crate::error_from_response(req.send()?)?.json()?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://healthcare.googleapis.com/".to_owned();
+                            output.push_str("v1/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str(":import");
+                            output
+                        }
+                        fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
                             req = req.query(&[("access_token", &self.access_token)]);
                             req = req.query(&[("alt", &self.alt)]);
                             req = req.query(&[("callback", &self.callback)]);
@@ -28981,10 +30757,12 @@ pub mod resources {
                                 Full,
                                 #[doc = "Not specified, equivalent to FULL."]
                                 MessageViewUnspecified,
-                                #[doc = "Server responses include all the message fields except data field."]
+                                #[doc = "Server responses include all the message fields except data field, and schematized_data fields."]
                                 ParsedOnly,
-                                #[doc = "Server responses include all the message fields except parsed_data field."]
+                                #[doc = "Server responses include all the message fields except parsed_data field, and schematized_data fields."]
                                 RawOnly,
+                                #[doc = "Server responses include all the message fields except data and parsed_data fields."]
+                                SchematizedOnly,
                             }
                             impl GetView {
                                 pub fn as_str(self) -> &'static str {
@@ -28996,6 +30774,7 @@ pub mod resources {
                                         }
                                         GetView::ParsedOnly => "PARSED_ONLY",
                                         GetView::RawOnly => "RAW_ONLY",
+                                        GetView::SchematizedOnly => "SCHEMATIZED_ONLY",
                                     }
                                 }
                             }
@@ -29015,6 +30794,7 @@ pub mod resources {
                                         }
                                         "PARSED_ONLY" => GetView::ParsedOnly,
                                         "RAW_ONLY" => GetView::RawOnly,
+                                        "SCHEMATIZED_ONLY" => GetView::SchematizedOnly,
                                         _ => return Err(()),
                                     })
                                 }
@@ -29054,6 +30834,7 @@ pub mod resources {
                                         }
                                         "PARSED_ONLY" => GetView::ParsedOnly,
                                         "RAW_ONLY" => GetView::RawOnly,
+                                        "SCHEMATIZED_ONLY" => GetView::SchematizedOnly,
                                         _ => {
                                             return Err(::serde::de::Error::custom(format!(
                                                 "invalid enum for #name: {}",
@@ -29081,10 +30862,12 @@ pub mod resources {
                                 Full,
                                 #[doc = "Not specified, equivalent to FULL."]
                                 MessageViewUnspecified,
-                                #[doc = "Server responses include all the message fields except data field."]
+                                #[doc = "Server responses include all the message fields except data field, and schematized_data fields."]
                                 ParsedOnly,
-                                #[doc = "Server responses include all the message fields except parsed_data field."]
+                                #[doc = "Server responses include all the message fields except parsed_data field, and schematized_data fields."]
                                 RawOnly,
+                                #[doc = "Server responses include all the message fields except data and parsed_data fields."]
+                                SchematizedOnly,
                             }
                             impl ListView {
                                 pub fn as_str(self) -> &'static str {
@@ -29096,6 +30879,7 @@ pub mod resources {
                                         }
                                         ListView::ParsedOnly => "PARSED_ONLY",
                                         ListView::RawOnly => "RAW_ONLY",
+                                        ListView::SchematizedOnly => "SCHEMATIZED_ONLY",
                                     }
                                 }
                             }
@@ -29115,6 +30899,7 @@ pub mod resources {
                                         }
                                         "PARSED_ONLY" => ListView::ParsedOnly,
                                         "RAW_ONLY" => ListView::RawOnly,
+                                        "SCHEMATIZED_ONLY" => ListView::SchematizedOnly,
                                         _ => return Err(()),
                                     })
                                 }
@@ -29154,6 +30939,7 @@ pub mod resources {
                                         }
                                         "PARSED_ONLY" => ListView::ParsedOnly,
                                         "RAW_ONLY" => ListView::RawOnly,
+                                        "SCHEMATIZED_ONLY" => ListView::SchematizedOnly,
                                         _ => {
                                             return Err(::serde::de::Error::custom(format!(
                                                 "invalid enum for #name: {}",
@@ -29182,7 +30968,7 @@ pub mod resources {
                             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                                 self.auth
                             }
-                            #[doc = "Parses and stores an HL7v2 message. This method triggers an asynchronous notification to any Cloud Pub/Sub topic configured in projects.locations.datasets.hl7V2Stores.Hl7V2NotificationConfig, if the filtering matches the message. If an MLLP adapter is configured to listen to a Cloud Pub/Sub topic, the adapter transmits the message when a notification is received."]
+                            #[doc = "Parses and stores an HL7v2 message. This method triggers an asynchronous notification to any Pub/Sub topic configured in Hl7V2Store.Hl7V2NotificationConfig, if the filtering matches the message. If an MLLP adapter is configured to listen to a Pub/Sub topic, the adapter transmits the message when a notification is received."]
                             pub fn create(
                                 &self,
                                 request: crate::schemas::CreateMessageRequest,
@@ -29245,7 +31031,7 @@ pub mod resources {
                                     view: None,
                                 }
                             }
-                            #[doc = "Parses and stores an HL7v2 message. This method triggers an asynchronous notification to any Cloud Pub/Sub topic configured in projects.locations.datasets.hl7V2Stores.Hl7V2NotificationConfig, if the filtering matches the message. If an MLLP adapter is configured to listen to a Cloud Pub/Sub topic, the adapter transmits the message when a notification is received. This method also generates a response containing an HL7v2 acknowledgement (`ACK`) message when successful or a negative acknowledgement (`NACK`) message in case of error, suitable for replying to HL7v2 interface systems that expect these acknowledgements."]
+                            #[doc = "Parses and stores an HL7v2 message. This method triggers an asynchronous notification to any Pub/Sub topic configured in Hl7V2Store.Hl7V2NotificationConfig, if the filtering matches the message. If an MLLP adapter is configured to listen to a Pub/Sub topic, the adapter transmits the message when a notification is received. If the method is successful, it generates a response containing an HL7v2 acknowledgment (`ACK`) message. If the method encounters an error, it returns a negative acknowledgment (`NACK`) message. This behavior is suitable for replying to HL7v2 interface systems that expect these acknowledgments."]
                             pub fn ingest(
                                 &self,
                                 request: crate::schemas::IngestMessageRequest,
@@ -29650,7 +31436,7 @@ pub mod resources {
                         }
                         #[doc = "Created via [MessagesActions::get()](struct.MessagesActions.html#method.get)"]
                         #[derive(Debug, Clone)]
-                        pub struct GetRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , name : String , view : Option < crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: params :: GetView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                        pub struct GetRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , name : String , view : Option < crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: params :: GetView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                         impl<'a> GetRequestBuilder<'a> {
                             #[doc = "Specifies which parts of the Message resource to return in the response. When unspecified, equivalent to FULL."]
                             pub fn view(
@@ -29973,7 +31759,7 @@ pub mod resources {
                         }
                         #[doc = "Created via [MessagesActions::list()](struct.MessagesActions.html#method.list)"]
                         #[derive(Debug, Clone)]
-                        pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , filter : Option < String > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , view : Option < crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: params :: ListView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                        pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , filter : Option < String > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , view : Option < crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: params :: ListView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                         impl<'a> ListRequestBuilder<'a> {
                             #[doc = "Restricts messages returned to those matching a filter. The following syntax is available: * A string field value can be written as text inside quotation marks, for example `\"query text\"`. The only valid relational operation for text fields is equality (`=`), where text is searched within the field, rather than having the field be equal to the text. For example, `\"Comment = great\"` returns messages with `great` in the comment field. * A number field value can be written as an integer, a decimal, or an exponential. The valid relational operators for number fields are the equality operator (`=`), along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * A date field value must be written in `yyyy-mm-dd` form. Fields with date and time use the RFC3339 time format. Leading zeros are required for one-digit months and days. The valid relational operators for date fields are the equality operator (`=`) , along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * Multiple field query expressions can be combined in one query by adding `AND` or `OR` operators between the expressions. If a boolean operator appears within a quoted string, it is not treated as special, it's just another part of the character string to be matched. You can prepend the `NOT` operator to an expression to negate it. Fields/functions available for filtering are: * `message_type`, from the MSH-9.1 field. For example, `NOT message_type = \"ADT\"`. * `send_date` or `sendDate`, the YYYY-MM-DD date the message was sent in the dataset's time_zone, from the MSH-7 segment. For example, `send_date < \"2017-01-02\"`. * `send_time`, the timestamp when the message was sent, using the RFC3339 time format for comparisons, from the MSH-7 segment. For example, `send_time < \"2017-01-02T00:00:00-05:00\"`. * `create_time`, the timestamp when the message was created in the HL7v2 store. Use the RFC3339 time format for comparisons. For example, `create_time < \"2017-01-02T00:00:00-05:00\"`. * `send_facility`, the care center that the message came from, from the MSH-4 segment. For example, `send_facility = \"ABC\"`. * `PatientId(value, type)`, which matches if the message lists a patient having an ID of the given value and type in the PID-2, PID-3, or PID-4 segments. For example, `PatientId(\"123456\", \"MRN\")`. * `labels.x`, a string value of the label with key `x` as set using the Message.labels map. For example, `labels.\"priority\"=\"high\"`. The operator `:*` can be used to assert the existence of a label. For example, `labels.\"priority\":*`."]
                             pub fn filter(mut self, value: impl Into<String>) -> Self {
@@ -31151,6 +32937,230 @@ pub mod resources {
                             T: ::serde::de::DeserializeOwned,
                         {
                             self._execute()
+                        }
+                    }
+                }
+            }
+            pub mod services {
+                pub mod params {}
+                pub struct ServicesActions<'a> {
+                    pub(crate) reqwest: &'a reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                }
+                impl<'a> ServicesActions<'a> {
+                    fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                        self.auth
+                    }
+                    #[doc = "Actions that can be performed on the nlp resource"]
+                    pub fn nlp(
+                        &self,
+                    ) -> crate::resources::projects::locations::services::nlp::NlpActions
+                    {
+                        crate::resources::projects::locations::services::nlp::NlpActions {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                        }
+                    }
+                }
+                pub mod nlp {
+                    pub mod params {}
+                    pub struct NlpActions<'a> {
+                        pub(crate) reqwest: &'a reqwest::blocking::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    }
+                    impl<'a> NlpActions<'a> {
+                        fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                            self.auth
+                        }
+                        #[doc = "Analyze heathcare entity in a document. Its response includes the recognized entity mentions and the relationships between them. AnalyzeEntities uses context aware models to detect entities."]
+                        pub fn analyze_entities(
+                            &self,
+                            request: crate::schemas::AnalyzeEntitiesRequest,
+                            nlp_service: impl Into<String>,
+                        ) -> AnalyzeEntitiesRequestBuilder {
+                            AnalyzeEntitiesRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                nlp_service: nlp_service.into(),
+                            }
+                        }
+                    }
+                    #[doc = "Created via [NlpActions::analyze_entities()](struct.NlpActions.html#method.analyze_entities)"]
+                    #[derive(Debug, Clone)]
+                    pub struct AnalyzeEntitiesRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::AnalyzeEntitiesRequest,
+                        nlp_service: String,
+                        access_token: Option<String>,
+                        alt: Option<crate::params::Alt>,
+                        callback: Option<String>,
+                        fields: Option<String>,
+                        key: Option<String>,
+                        oauth_token: Option<String>,
+                        pretty_print: Option<bool>,
+                        quota_user: Option<String>,
+                        upload_protocol: Option<String>,
+                        upload_type: Option<String>,
+                        xgafv: Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> AnalyzeEntitiesRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields)
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::AnalyzeEntitiesResponse, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>)
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::AnalyzeEntitiesResponse, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*"))
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute()
+                        }
+                        fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path())?;
+                            let req = req.json(&self.request);
+                            Ok(crate::error_from_response(req.send()?)?.json()?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://healthcare.googleapis.com/".to_owned();
+                            output.push_str("v1/");
+                            {
+                                let var_as_str = &self.nlp_service;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str(":analyzeEntities");
+                            output
+                        }
+                        fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            req = req.bearer_auth(
+                                self.auth
+                                    .access_token()
+                                    .map_err(|err| crate::Error::OAuth2(err))?,
+                            );
+                            Ok(req)
                         }
                     }
                 }

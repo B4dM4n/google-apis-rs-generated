@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [shelves](resources/shelves/struct.ShelvesActions.html)\n      * [*get*](resources/shelves/struct.GetRequestBuilder.html), [*list*](resources/shelves/struct.ListRequestBuilder.html)\n      * [books](resources/shelves/books/struct.BooksActions.html)\n        * [*borrow*](resources/shelves/books/struct.BorrowRequestBuilder.html), [*get*](resources/shelves/books/struct.GetRequestBuilder.html), [*list*](resources/shelves/books/struct.ListRequestBuilder.html), [*return*](resources/shelves/books/struct.ReturnRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {

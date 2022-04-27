@@ -7,7 +7,7 @@
   "canonicalName": "Clouderrorreporting",
   "fullyEncodeReservedExpansion": null,
   "version": "v1beta1",
-  "revision": "20210225",
+  "revision": "20220413",
   "title": "Error Reporting API",
   "description": "Groups and counts similar errors from cloud services and applications, reports new errors, and provides access to error groups and their associated errors. ",
   "ownerDomain": "google.com",
@@ -201,7 +201,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         }
       }
     }
@@ -644,7 +644,7 @@
           "$ref": "ErrorContext"
         },
         "eventTime": {
-          "description": "Optional. Time when the event occurred. If not provided, the time when the event was received by the Error Reporting system will be used.",
+          "description": "Optional. Time when the event occurred. If not provided, the time when the event was received by the Error Reporting system is used. If provided, the time must not exceed the [logs retention period](https://cloud.google.com/logging/quotas#logs_retention_periods) in the past, or be more than 24 hours in the future. If an invalid time is provided, then an error is returned.",
           "type": "string",
           "format": "google-datetime",
           "enum": [],
@@ -1011,7 +1011,7 @@
               "id": "clouderrorreporting.projects.events.report",
               "path": "v1beta1/{+projectName}/events:report",
               "httpMethod": "POST",
-              "description": "Report an individual error event and record the event to a log. This endpoint accepts **either** an OAuth token, **or** an [API key](https://support.google.com/cloud/answer/6158862) for authentication. To use an API key, append it to the URL as the value of a `key` parameter. For example: `POST https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456` **Note:** [Error Reporting](/error-reporting) is a global service built on Cloud Logging and doesn't analyze logs stored in regional log buckets or logs routed to other Google Cloud projects. For more information, see [Using Error Reporting with regionalized logs](/error-reporting/docs/regionalization).",
+              "description": "Report an individual error event and record the event to a log. This endpoint accepts **either** an OAuth token, **or** an [API key](https://support.google.com/cloud/answer/6158862) for authentication. To use an API key, append it to the URL as the value of a `key` parameter. For example: `POST https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456` **Note:** [Error Reporting] (https://cloud.google.com/error-reporting) is a global service built on Cloud Logging and doesn't analyze logs stored in regional log buckets or logs routed to other Google Cloud projects. For more information, see [Using Error Reporting with regionalized logs] (https://cloud.google.com/error-reporting/docs/regionalization).",
               "parameters": {
                 "projectName": {
                   "description": "Required. The resource name of the Google Cloud Platform project. Written as `projects/{projectId}`, where `{projectId}` is the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840). Example: // `projects/my-project-123`.",

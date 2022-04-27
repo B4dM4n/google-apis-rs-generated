@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [iam](resources/iam/struct.IamActions.html)\n      * [*troubleshoot*](resources/iam/struct.TroubleshootRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -61,7 +61,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudPolicytroubleshooterV1BetaBindingExplanation { # [ doc = "Indicates whether *this binding* provides the specified permission to the specified member for the specified resource. This field does *not* indicate whether the member actually has the permission for the resource. There might be another binding that overrides this binding. To determine whether the member actually has the permission, use the `access` field in the TroubleshootIamPolicyResponse." ] # [ serde ( rename = "access" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub access : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess > , # [ doc = "A condition expression that prevents access unless the expression evaluates to `true`. To learn about IAM Conditions, see http://cloud.google.com/iam/help/conditions/overview." ] # [ serde ( rename = "condition" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub condition : :: std :: option :: Option < crate :: schemas :: GoogleTypeExpr > , # [ doc = "Indicates whether each member in the binding includes the member specified in the request, either directly or indirectly. Each key identifies a member in the binding, and each value indicates whether the member in the binding includes the member in the request. For example, suppose that a binding includes the following members: * `user:alice@example.com` * `group:product-eng@example.com` You want to troubleshoot access for `user:bob@example.com`. This user is a member of the group `group:product-eng@example.com`. For the first member in the binding, the key is `user:alice@example.com`, and the `membership` field in the value is set to `MEMBERSHIP_NOT_INCLUDED`. For the second member in the binding, the key is `group:product-eng@example.com`, and the `membership` field in the value is set to `MEMBERSHIP_INCLUDED`." ] # [ serde ( rename = "memberships" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub memberships : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembership > > , # [ doc = "The relevance of this binding to the overall determination for the entire policy." ] # [ serde ( rename = "relevance" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub relevance : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRelevance > , # [ doc = "The role that this binding grants. For example, `roles/compute.serviceAgent`. For a complete list of predefined IAM roles, as well as the permissions in each role, see https://cloud.google.com/iam/help/roles/reference." ] # [ serde ( rename = "role" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub role : :: std :: option :: Option < String > , # [ doc = "Indicates whether the role granted by this binding contains the specified permission." ] # [ serde ( rename = "rolePermission" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub role_permission : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission > , # [ doc = "The relevance of the permission's existence, or nonexistence, in the role to the overall determination for the entire policy." ] # [ serde ( rename = "rolePermissionRelevance" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub role_permission_relevance : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermissionRelevance > , }
+    pub struct GoogleCloudPolicytroubleshooterV1BetaBindingExplanation { # [doc = "Indicates whether *this binding* provides the specified permission to the specified member for the specified resource. This field does *not* indicate whether the member actually has the permission for the resource. There might be another binding that overrides this binding. To determine whether the member actually has the permission, use the `access` field in the TroubleshootIamPolicyResponse."] # [serde (rename = "access" , default , skip_serializing_if = "std::option::Option::is_none")] pub access : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess > , # [doc = "A condition expression that prevents access unless the expression evaluates to `true`. To learn about IAM Conditions, see https://cloud.google.com/iam/help/conditions/overview."] # [serde (rename = "condition" , default , skip_serializing_if = "std::option::Option::is_none")] pub condition : :: std :: option :: Option < crate :: schemas :: GoogleTypeExpr > , # [doc = "Indicates whether each member in the binding includes the member specified in the request, either directly or indirectly. Each key identifies a member in the binding, and each value indicates whether the member in the binding includes the member in the request. For example, suppose that a binding includes the following members: * `user:alice@example.com` * `group:product-eng@example.com` You want to troubleshoot access for `user:bob@example.com`. This user is a member of the group `group:product-eng@example.com`. For the first member in the binding, the key is `user:alice@example.com`, and the `membership` field in the value is set to `MEMBERSHIP_NOT_INCLUDED`. For the second member in the binding, the key is `group:product-eng@example.com`, and the `membership` field in the value is set to `MEMBERSHIP_INCLUDED`."] # [serde (rename = "memberships" , default , skip_serializing_if = "std::option::Option::is_none")] pub memberships : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembership > > , # [doc = "The relevance of this binding to the overall determination for the entire policy."] # [serde (rename = "relevance" , default , skip_serializing_if = "std::option::Option::is_none")] pub relevance : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRelevance > , # [doc = "The role that this binding grants. For example, `roles/compute.serviceAgent`. For a complete list of predefined IAM roles, as well as the permissions in each role, see https://cloud.google.com/iam/help/roles/reference."] # [serde (rename = "role" , default , skip_serializing_if = "std::option::Option::is_none")] pub role : :: std :: option :: Option < String > , # [doc = "Indicates whether the role granted by this binding contains the specified permission."] # [serde (rename = "rolePermission" , default , skip_serializing_if = "std::option::Option::is_none")] pub role_permission : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission > , # [doc = "The relevance of the permission's existence, or nonexistence, in the role to the overall determination for the entire policy."] # [serde (rename = "rolePermissionRelevance" , default , skip_serializing_if = "std::option::Option::is_none")] pub role_permission_relevance : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermissionRelevance > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudPolicytroubleshooterV1BetaBindingExplanation
     {
@@ -105,7 +105,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess, ()>
         {
-            Ok ( match s { "ACCESS_STATE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: AccessStateUnspecified , "GRANTED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: Granted , "NOT_GRANTED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: NotGranted , "UNKNOWN_CONDITIONAL" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: UnknownConditional , "UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: UnknownInfoDenied , _ => return Err ( ( ) ) , } )
+            Ok (match s { "ACCESS_STATE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: AccessStateUnspecified , "GRANTED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: Granted , "NOT_GRANTED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: NotGranted , "UNKNOWN_CONDITIONAL" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: UnknownConditional , "UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: UnknownInfoDenied , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess {
@@ -129,7 +129,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "ACCESS_STATE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: AccessStateUnspecified , "GRANTED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: Granted , "NOT_GRANTED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: NotGranted , "UNKNOWN_CONDITIONAL" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: UnknownConditional , "UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: UnknownInfoDenied , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "ACCESS_STATE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: AccessStateUnspecified , "GRANTED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: Granted , "NOT_GRANTED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: NotGranted , "UNKNOWN_CONDITIONAL" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: UnknownConditional , "UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAccess :: UnknownInfoDenied , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -175,7 +175,7 @@ pub mod schemas {
             GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRelevance,
             (),
         > {
-            Ok ( match s { "HEURISTIC_RELEVANCE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRelevance :: HeuristicRelevanceUnspecified , "HIGH" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRelevance :: High , "NORMAL" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRelevance :: Normal , _ => return Err ( ( ) ) , } )
+            Ok (match s { "HEURISTIC_RELEVANCE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRelevance :: HeuristicRelevanceUnspecified , "HIGH" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRelevance :: High , "NORMAL" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRelevance :: Normal , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRelevance {
@@ -199,7 +199,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "HEURISTIC_RELEVANCE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRelevance :: HeuristicRelevanceUnspecified , "HIGH" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRelevance :: High , "NORMAL" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRelevance :: Normal , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "HEURISTIC_RELEVANCE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRelevance :: HeuristicRelevanceUnspecified , "HIGH" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRelevance :: High , "NORMAL" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRelevance :: Normal , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -247,7 +247,7 @@ pub mod schemas {
             GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission,
             (),
         > {
-            Ok ( match s { "ROLE_PERMISSION_INCLUDED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission :: RolePermissionIncluded , "ROLE_PERMISSION_NOT_INCLUDED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission :: RolePermissionNotIncluded , "ROLE_PERMISSION_UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission :: RolePermissionUnknownInfoDenied , "ROLE_PERMISSION_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission :: RolePermissionUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "ROLE_PERMISSION_INCLUDED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission :: RolePermissionIncluded , "ROLE_PERMISSION_NOT_INCLUDED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission :: RolePermissionNotIncluded , "ROLE_PERMISSION_UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission :: RolePermissionUnknownInfoDenied , "ROLE_PERMISSION_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission :: RolePermissionUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission {
@@ -271,7 +271,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "ROLE_PERMISSION_INCLUDED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission :: RolePermissionIncluded , "ROLE_PERMISSION_NOT_INCLUDED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission :: RolePermissionNotIncluded , "ROLE_PERMISSION_UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission :: RolePermissionUnknownInfoDenied , "ROLE_PERMISSION_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission :: RolePermissionUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "ROLE_PERMISSION_INCLUDED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission :: RolePermissionIncluded , "ROLE_PERMISSION_NOT_INCLUDED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission :: RolePermissionNotIncluded , "ROLE_PERMISSION_UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission :: RolePermissionUnknownInfoDenied , "ROLE_PERMISSION_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermission :: RolePermissionUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -319,7 +319,7 @@ pub mod schemas {
             GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermissionRelevance,
             (),
         > {
-            Ok ( match s { "HEURISTIC_RELEVANCE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermissionRelevance :: HeuristicRelevanceUnspecified , "HIGH" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermissionRelevance :: High , "NORMAL" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermissionRelevance :: Normal , _ => return Err ( ( ) ) , } )
+            Ok (match s { "HEURISTIC_RELEVANCE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermissionRelevance :: HeuristicRelevanceUnspecified , "HIGH" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermissionRelevance :: High , "NORMAL" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermissionRelevance :: Normal , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display
@@ -347,7 +347,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "HEURISTIC_RELEVANCE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermissionRelevance :: HeuristicRelevanceUnspecified , "HIGH" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermissionRelevance :: High , "NORMAL" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermissionRelevance :: Normal , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "HEURISTIC_RELEVANCE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermissionRelevance :: HeuristicRelevanceUnspecified , "HIGH" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermissionRelevance :: High , "NORMAL" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationRolePermissionRelevance :: Normal , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -376,7 +376,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembership { # [ doc = "Indicates whether the binding includes the member." ] # [ serde ( rename = "membership" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub membership : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership > , # [ doc = "The relevance of the member's status to the overall determination for the binding." ] # [ serde ( rename = "relevance" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub relevance : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipRelevance > , }
+    pub struct GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembership { # [doc = "Indicates whether the binding includes the member."] # [serde (rename = "membership" , default , skip_serializing_if = "std::option::Option::is_none")] pub membership : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership > , # [doc = "The relevance of the member's status to the overall determination for the binding."] # [serde (rename = "relevance" , default , skip_serializing_if = "std::option::Option::is_none")] pub relevance : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipRelevance > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembership
     {
@@ -426,7 +426,7 @@ pub mod schemas {
             GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership,
             (),
         > {
-            Ok ( match s { "MEMBERSHIP_INCLUDED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipIncluded , "MEMBERSHIP_NOT_INCLUDED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipNotIncluded , "MEMBERSHIP_UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipUnknownInfoDenied , "MEMBERSHIP_UNKNOWN_UNSUPPORTED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipUnknownUnsupported , "MEMBERSHIP_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "MEMBERSHIP_INCLUDED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipIncluded , "MEMBERSHIP_NOT_INCLUDED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipNotIncluded , "MEMBERSHIP_UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipUnknownInfoDenied , "MEMBERSHIP_UNKNOWN_UNSUPPORTED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipUnknownUnsupported , "MEMBERSHIP_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display
@@ -454,7 +454,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "MEMBERSHIP_INCLUDED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipIncluded , "MEMBERSHIP_NOT_INCLUDED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipNotIncluded , "MEMBERSHIP_UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipUnknownInfoDenied , "MEMBERSHIP_UNKNOWN_UNSUPPORTED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipUnknownUnsupported , "MEMBERSHIP_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "MEMBERSHIP_INCLUDED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipIncluded , "MEMBERSHIP_NOT_INCLUDED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipNotIncluded , "MEMBERSHIP_UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipUnknownInfoDenied , "MEMBERSHIP_UNKNOWN_UNSUPPORTED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipUnknownUnsupported , "MEMBERSHIP_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipMembership :: MembershipUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -502,7 +502,7 @@ pub mod schemas {
             GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipRelevance,
             (),
         > {
-            Ok ( match s { "HEURISTIC_RELEVANCE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipRelevance :: HeuristicRelevanceUnspecified , "HIGH" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipRelevance :: High , "NORMAL" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipRelevance :: Normal , _ => return Err ( ( ) ) , } )
+            Ok (match s { "HEURISTIC_RELEVANCE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipRelevance :: HeuristicRelevanceUnspecified , "HIGH" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipRelevance :: High , "NORMAL" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipRelevance :: Normal , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display
@@ -530,7 +530,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "HEURISTIC_RELEVANCE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipRelevance :: HeuristicRelevanceUnspecified , "HIGH" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipRelevance :: High , "NORMAL" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipRelevance :: Normal , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "HEURISTIC_RELEVANCE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipRelevance :: HeuristicRelevanceUnspecified , "HIGH" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipRelevance :: High , "NORMAL" => GoogleCloudPolicytroubleshooterV1BetaBindingExplanationAnnotatedMembershipRelevance :: Normal , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -643,7 +643,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess, ()>
         {
-            Ok ( match s { "ACCESS_STATE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: AccessStateUnspecified , "GRANTED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: Granted , "NOT_GRANTED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: NotGranted , "UNKNOWN_CONDITIONAL" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: UnknownConditional , "UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: UnknownInfoDenied , _ => return Err ( ( ) ) , } )
+            Ok (match s { "ACCESS_STATE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: AccessStateUnspecified , "GRANTED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: Granted , "NOT_GRANTED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: NotGranted , "UNKNOWN_CONDITIONAL" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: UnknownConditional , "UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: UnknownInfoDenied , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess {
@@ -665,7 +665,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "ACCESS_STATE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: AccessStateUnspecified , "GRANTED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: Granted , "NOT_GRANTED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: NotGranted , "UNKNOWN_CONDITIONAL" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: UnknownConditional , "UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: UnknownInfoDenied , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "ACCESS_STATE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: AccessStateUnspecified , "GRANTED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: Granted , "NOT_GRANTED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: NotGranted , "UNKNOWN_CONDITIONAL" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: UnknownConditional , "UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyAccess :: UnknownInfoDenied , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -707,7 +707,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyRelevance, ()>
         {
-            Ok ( match s { "HEURISTIC_RELEVANCE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyRelevance :: HeuristicRelevanceUnspecified , "HIGH" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyRelevance :: High , "NORMAL" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyRelevance :: Normal , _ => return Err ( ( ) ) , } )
+            Ok (match s { "HEURISTIC_RELEVANCE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyRelevance :: HeuristicRelevanceUnspecified , "HIGH" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyRelevance :: High , "NORMAL" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyRelevance :: Normal , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyRelevance {
@@ -731,7 +731,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "HEURISTIC_RELEVANCE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyRelevance :: HeuristicRelevanceUnspecified , "HIGH" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyRelevance :: High , "NORMAL" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyRelevance :: Normal , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "HEURISTIC_RELEVANCE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyRelevance :: HeuristicRelevanceUnspecified , "HIGH" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyRelevance :: High , "NORMAL" => GoogleCloudPolicytroubleshooterV1BetaExplainedPolicyRelevance :: Normal , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -796,7 +796,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponse { # [ doc = "Indicates whether the member has the specified permission for the specified resource, based on evaluating all of the applicable policies." ] # [ serde ( rename = "access" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub access : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess > , # [ doc = "List of IAM policies that were evaluated to check the member's permissions, with annotations to indicate how each policy contributed to the final result. The list of policies can include the policy for the resource itself. It can also include policies that are inherited from higher levels of the resource hierarchy, including the organization, the folder, and the project. To learn more about the resource hierarchy, see https://cloud.google.com/iam/help/resource-hierarchy." ] # [ serde ( rename = "explainedPolicies" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub explained_policies : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaExplainedPolicy > > , }
+    pub struct GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponse { # [doc = "Indicates whether the member has the specified permission for the specified resource, based on evaluating all of the applicable policies."] # [serde (rename = "access" , default , skip_serializing_if = "std::option::Option::is_none")] pub access : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess > , # [doc = "List of IAM policies that were evaluated to check the member's permissions, with annotations to indicate how each policy contributed to the final result. The list of policies can include the policy for the resource itself. It can also include policies that are inherited from higher levels of the resource hierarchy, including the organization, the folder, and the project. To learn more about the resource hierarchy, see https://cloud.google.com/iam/help/resource-hierarchy."] # [serde (rename = "explainedPolicies" , default , skip_serializing_if = "std::option::Option::is_none")] pub explained_policies : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudPolicytroubleshooterV1BetaExplainedPolicy > > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponse
     {
@@ -846,7 +846,7 @@ pub mod schemas {
             GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess,
             (),
         > {
-            Ok ( match s { "ACCESS_STATE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: AccessStateUnspecified , "GRANTED" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: Granted , "NOT_GRANTED" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: NotGranted , "UNKNOWN_CONDITIONAL" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: UnknownConditional , "UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: UnknownInfoDenied , _ => return Err ( ( ) ) , } )
+            Ok (match s { "ACCESS_STATE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: AccessStateUnspecified , "GRANTED" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: Granted , "NOT_GRANTED" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: NotGranted , "UNKNOWN_CONDITIONAL" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: UnknownConditional , "UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: UnknownInfoDenied , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display
@@ -874,7 +874,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "ACCESS_STATE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: AccessStateUnspecified , "GRANTED" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: Granted , "NOT_GRANTED" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: NotGranted , "UNKNOWN_CONDITIONAL" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: UnknownConditional , "UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: UnknownInfoDenied , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "ACCESS_STATE_UNSPECIFIED" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: AccessStateUnspecified , "GRANTED" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: Granted , "NOT_GRANTED" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: NotGranted , "UNKNOWN_CONDITIONAL" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: UnknownConditional , "UNKNOWN_INFO_DENIED" => GoogleCloudPolicytroubleshooterV1BetaTroubleshootIamPolicyResponseAccess :: UnknownInfoDenied , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1062,21 +1062,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleIamV1Binding {
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::GoogleTypeExpr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -1114,7 +1114,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audit_configs: ::std::option::Option<Vec<crate::schemas::GoogleIamV1AuditConfig>>,
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,

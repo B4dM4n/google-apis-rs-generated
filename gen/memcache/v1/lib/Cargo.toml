@@ -1,6 +1,6 @@
 [package]
 name = "google-memcache1"
-version = "0.1.0-20210209"
+version = "0.1.0-20220404"
 authors = ["Glenn Griffin <ggriffiniii@gmail.com"]
 edition = "2018"
 # for now, let's not even accidentally publish these

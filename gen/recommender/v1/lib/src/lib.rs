@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [billing_accounts](resources/billing_accounts/struct.BillingAccountsActions.html)\n      * [locations](resources/billing_accounts/locations/struct.LocationsActions.html)\n        * [insight_types](resources/billing_accounts/locations/insight_types/struct.InsightTypesActions.html)\n          * [insights](resources/billing_accounts/locations/insight_types/insights/struct.InsightsActions.html)\n            * [*get*](resources/billing_accounts/locations/insight_types/insights/struct.GetRequestBuilder.html), [*list*](resources/billing_accounts/locations/insight_types/insights/struct.ListRequestBuilder.html), [*markAccepted*](resources/billing_accounts/locations/insight_types/insights/struct.MarkAcceptedRequestBuilder.html)\n        * [recommenders](resources/billing_accounts/locations/recommenders/struct.RecommendersActions.html)\n          * [recommendations](resources/billing_accounts/locations/recommenders/recommendations/struct.RecommendationsActions.html)\n            * [*get*](resources/billing_accounts/locations/recommenders/recommendations/struct.GetRequestBuilder.html), [*list*](resources/billing_accounts/locations/recommenders/recommendations/struct.ListRequestBuilder.html), [*markClaimed*](resources/billing_accounts/locations/recommenders/recommendations/struct.MarkClaimedRequestBuilder.html), [*markFailed*](resources/billing_accounts/locations/recommenders/recommendations/struct.MarkFailedRequestBuilder.html), [*markSucceeded*](resources/billing_accounts/locations/recommenders/recommendations/struct.MarkSucceededRequestBuilder.html)\n    * [folders](resources/folders/struct.FoldersActions.html)\n      * [locations](resources/folders/locations/struct.LocationsActions.html)\n        * [insight_types](resources/folders/locations/insight_types/struct.InsightTypesActions.html)\n          * [insights](resources/folders/locations/insight_types/insights/struct.InsightsActions.html)\n            * [*get*](resources/folders/locations/insight_types/insights/struct.GetRequestBuilder.html), [*list*](resources/folders/locations/insight_types/insights/struct.ListRequestBuilder.html), [*markAccepted*](resources/folders/locations/insight_types/insights/struct.MarkAcceptedRequestBuilder.html)\n        * [recommenders](resources/folders/locations/recommenders/struct.RecommendersActions.html)\n          * [recommendations](resources/folders/locations/recommenders/recommendations/struct.RecommendationsActions.html)\n            * [*get*](resources/folders/locations/recommenders/recommendations/struct.GetRequestBuilder.html), [*list*](resources/folders/locations/recommenders/recommendations/struct.ListRequestBuilder.html), [*markClaimed*](resources/folders/locations/recommenders/recommendations/struct.MarkClaimedRequestBuilder.html), [*markFailed*](resources/folders/locations/recommenders/recommendations/struct.MarkFailedRequestBuilder.html), [*markSucceeded*](resources/folders/locations/recommenders/recommendations/struct.MarkSucceededRequestBuilder.html)\n    * [organizations](resources/organizations/struct.OrganizationsActions.html)\n      * [locations](resources/organizations/locations/struct.LocationsActions.html)\n        * [insight_types](resources/organizations/locations/insight_types/struct.InsightTypesActions.html)\n          * [insights](resources/organizations/locations/insight_types/insights/struct.InsightsActions.html)\n            * [*get*](resources/organizations/locations/insight_types/insights/struct.GetRequestBuilder.html), [*list*](resources/organizations/locations/insight_types/insights/struct.ListRequestBuilder.html), [*markAccepted*](resources/organizations/locations/insight_types/insights/struct.MarkAcceptedRequestBuilder.html)\n        * [recommenders](resources/organizations/locations/recommenders/struct.RecommendersActions.html)\n          * [recommendations](resources/organizations/locations/recommenders/recommendations/struct.RecommendationsActions.html)\n            * [*get*](resources/organizations/locations/recommenders/recommendations/struct.GetRequestBuilder.html), [*list*](resources/organizations/locations/recommenders/recommendations/struct.ListRequestBuilder.html), [*markClaimed*](resources/organizations/locations/recommenders/recommendations/struct.MarkClaimedRequestBuilder.html), [*markFailed*](resources/organizations/locations/recommenders/recommendations/struct.MarkFailedRequestBuilder.html), [*markSucceeded*](resources/organizations/locations/recommenders/recommendations/struct.MarkSucceededRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [insight_types](resources/projects/locations/insight_types/struct.InsightTypesActions.html)\n          * [insights](resources/projects/locations/insight_types/insights/struct.InsightsActions.html)\n            * [*get*](resources/projects/locations/insight_types/insights/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/insight_types/insights/struct.ListRequestBuilder.html), [*markAccepted*](resources/projects/locations/insight_types/insights/struct.MarkAcceptedRequestBuilder.html)\n        * [recommenders](resources/projects/locations/recommenders/struct.RecommendersActions.html)\n          * [recommendations](resources/projects/locations/recommenders/recommendations/struct.RecommendationsActions.html)\n            * [*get*](resources/projects/locations/recommenders/recommendations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/recommenders/recommendations/struct.ListRequestBuilder.html), [*markClaimed*](resources/projects/locations/recommenders/recommendations/struct.MarkClaimedRequestBuilder.html), [*markFailed*](resources/projects/locations/recommenders/recommendations/struct.MarkFailedRequestBuilder.html), [*markSucceeded*](resources/projects/locations/recommenders/recommendations/struct.MarkSucceededRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -17,7 +17,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRecommenderV1CostProjection {
-        #[doc = "An approximate projection on amount saved or amount incurred. Negative cost units indicate cost savings and positive cost units indicate increase. See google.type.Money documentation for positive/negative units."]
+        #[doc = "An approximate projection on amount saved or amount incurred. Negative cost units indicate cost savings and positive cost units indicate increase. See google.type.Money documentation for positive/negative units. A user's permissions may affect whether the cost is computed using list prices or custom contract prices."]
         #[serde(
             rename = "cost",
             default,
@@ -42,18 +42,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudRecommenderV1Impact {
         #[doc = "Category that is being targeted."]
         #[serde(
@@ -70,6 +59,14 @@ pub mod schemas {
         )]
         pub cost_projection:
             ::std::option::Option<crate::schemas::GoogleCloudRecommenderV1CostProjection>,
+        #[doc = "Use with CategoryType.SECURITY"]
+        #[serde(
+            rename = "securityProjection",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub security_projection:
+            ::std::option::Option<crate::schemas::GoogleCloudRecommenderV1SecurityProjection>,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudRecommenderV1Impact {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -242,6 +239,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub observation_period: ::std::option::Option<String>,
+        #[doc = "Insight's severity."]
+        #[serde(
+            rename = "severity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub severity:
+            ::std::option::Option<crate::schemas::GoogleCloudRecommenderV1InsightSeverity>,
         #[doc = "Information state and metadata."]
         #[serde(
             rename = "stateInfo",
@@ -356,6 +361,98 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudRecommenderV1InsightCategory {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRecommenderV1InsightSeverity {
+        #[doc = "Insight has critical severity."]
+        Critical,
+        #[doc = "Insight has high severity."]
+        High,
+        #[doc = "Insight has low severity."]
+        Low,
+        #[doc = "Insight has medium severity."]
+        Medium,
+        #[doc = "Insight has unspecified severity."]
+        SeverityUnspecified,
+    }
+    impl GoogleCloudRecommenderV1InsightSeverity {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRecommenderV1InsightSeverity::Critical => "CRITICAL",
+                GoogleCloudRecommenderV1InsightSeverity::High => "HIGH",
+                GoogleCloudRecommenderV1InsightSeverity::Low => "LOW",
+                GoogleCloudRecommenderV1InsightSeverity::Medium => "MEDIUM",
+                GoogleCloudRecommenderV1InsightSeverity::SeverityUnspecified => {
+                    "SEVERITY_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRecommenderV1InsightSeverity {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRecommenderV1InsightSeverity {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleCloudRecommenderV1InsightSeverity, ()> {
+            Ok(match s {
+                "CRITICAL" => GoogleCloudRecommenderV1InsightSeverity::Critical,
+                "HIGH" => GoogleCloudRecommenderV1InsightSeverity::High,
+                "LOW" => GoogleCloudRecommenderV1InsightSeverity::Low,
+                "MEDIUM" => GoogleCloudRecommenderV1InsightSeverity::Medium,
+                "SEVERITY_UNSPECIFIED" => {
+                    GoogleCloudRecommenderV1InsightSeverity::SeverityUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRecommenderV1InsightSeverity {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRecommenderV1InsightSeverity {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRecommenderV1InsightSeverity {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CRITICAL" => GoogleCloudRecommenderV1InsightSeverity::Critical,
+                "HIGH" => GoogleCloudRecommenderV1InsightSeverity::High,
+                "LOW" => GoogleCloudRecommenderV1InsightSeverity::Low,
+                "MEDIUM" => GoogleCloudRecommenderV1InsightSeverity::Medium,
+                "SEVERITY_UNSPECIFIED" => {
+                    GoogleCloudRecommenderV1InsightSeverity::SeverityUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRecommenderV1InsightSeverity {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRecommenderV1InsightSeverity {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -638,7 +735,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "State properties to include with this state. Overwrites any existing `state_metadata`. Keys must match the regex /^a-z0-9{0,62}$/. Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/."]
+        #[doc = "State properties to include with this state. Overwrites any existing `state_metadata`. Keys must match the regex `/^a-z0-9{0,62}$/`. Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`."]
         #[serde(
             rename = "stateMetadata",
             default,
@@ -680,7 +777,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "State properties to include with this state. Overwrites any existing `state_metadata`. Keys must match the regex /^a-z0-9{0,62}$/. Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/."]
+        #[doc = "State properties to include with this state. Overwrites any existing `state_metadata`. Keys must match the regex `/^a-z0-9{0,62}$/`. Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`."]
         #[serde(
             rename = "stateMetadata",
             default,
@@ -722,7 +819,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "State properties to include with this state. Overwrites any existing `state_metadata`. Keys must match the regex /^a-z0-9{0,62}$/. Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/."]
+        #[doc = "State properties to include with this state. Overwrites any existing `state_metadata`. Keys must match the regex `/^a-z0-9{0,62}$/`. Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`."]
         #[serde(
             rename = "stateMetadata",
             default,
@@ -746,7 +843,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudRecommenderV1Operation {
-        #[doc = "Type of this operation. Contains one of 'and', 'remove', 'replace', 'move', 'copy', 'test' and custom operations. This field is case-insensitive and always populated."]
+        #[doc = "Type of this operation. Contains one of 'add', 'remove', 'replace', 'move', 'copy', 'test' and custom operations. This field is case-insensitive and always populated."]
         #[serde(
             rename = "action",
             default,
@@ -760,7 +857,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub path: ::std::option::Option<String>,
-        #[doc = "Set of filters to apply if `path` refers to array elements or nested array elements in order to narrow down to a single unique element that is being tested/modified. This is intended to be an exact match per filter. To perform advanced matching, use path_value_matchers. * Example: { \"/versions/*/name\" : \"it-123\" \"/versions/*/targetSize/percent\": 20 } * Example: { \"/bindings/*/role\": \"roles/owner\" \"/bindings/*/condition\" : null } * Example: { \"/bindings/*/role\": \"roles/owner\" \"/bindings/*/members/*\" : [\"x@example.com\", \"y@example.com\"] } When both path_filters and path_value_matchers are set, an implicit AND must be performed."]
+        #[doc = "Set of filters to apply if `path` refers to array elements or nested array elements in order to narrow down to a single unique element that is being tested/modified. This is intended to be an exact match per filter. To perform advanced matching, use path_value_matchers. * Example: `{ \"/versions/*/name\" : \"it-123\" \"/versions/*/targetSize/percent\": 20 }` * Example: `{ \"/bindings/*/role\": \"roles/owner\" \"/bindings/*/condition\" : null }` * Example: `{ \"/bindings/*/role\": \"roles/owner\" \"/bindings/*/members/*\" : [\"x@example.com\", \"y@example.com\"] }` When both path_filters and path_value_matchers are set, an implicit AND must be performed."]
         #[serde(
             rename = "pathFilters",
             default,
@@ -917,6 +1014,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub primary_impact: ::std::option::Option<crate::schemas::GoogleCloudRecommenderV1Impact>,
+        #[doc = "Recommendation's priority."]
+        #[serde(
+            rename = "priority",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub priority:
+            ::std::option::Option<crate::schemas::GoogleCloudRecommenderV1RecommendationPriority>,
         #[doc = "Contains an identifier for a subtype of recommendations produced for the same recommender. Subtype is a function of content and impact, meaning a new subtype might be added when significant changes to `content` or `primary_impact.category` are introduced. See the Recommenders section to see a list of subtypes for a given Recommender. Examples: For recommender = \"google.iam.policy.Recommender\", recommender_subtype can be one of \"REMOVE_ROLE\"/\"REPLACE_ROLE\""]
         #[serde(
             rename = "recommenderSubtype",
@@ -932,6 +1037,13 @@ pub mod schemas {
         )]
         pub state_info:
             ::std::option::Option<crate::schemas::GoogleCloudRecommenderV1RecommendationStateInfo>,
+        #[doc = "Corresponds to a mutually exclusive group ID within a recommender. A non-empty ID indicates that the recommendation belongs to a mutually exclusive group. This means that only one recommendation within the group is suggested to be applied."]
+        #[serde(
+            rename = "xorGroupId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub xor_group_id: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudRecommenderV1Recommendation {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -939,6 +1051,100 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudRecommenderV1Recommendation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRecommenderV1RecommendationPriority {
+        #[doc = "Recommendation has P1 priority (highest priority)."]
+        P1,
+        #[doc = "Recommendation has P2 priority (second highest priority)."]
+        P2,
+        #[doc = "Recommendation has P3 priority (second lowest priority)."]
+        P3,
+        #[doc = "Recommendation has P4 priority (lowest priority)."]
+        P4,
+        #[doc = "Recommendation has unspecified priority."]
+        PriorityUnspecified,
+    }
+    impl GoogleCloudRecommenderV1RecommendationPriority {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRecommenderV1RecommendationPriority::P1 => "P1",
+                GoogleCloudRecommenderV1RecommendationPriority::P2 => "P2",
+                GoogleCloudRecommenderV1RecommendationPriority::P3 => "P3",
+                GoogleCloudRecommenderV1RecommendationPriority::P4 => "P4",
+                GoogleCloudRecommenderV1RecommendationPriority::PriorityUnspecified => {
+                    "PRIORITY_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRecommenderV1RecommendationPriority {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRecommenderV1RecommendationPriority {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRecommenderV1RecommendationPriority, ()> {
+            Ok(match s {
+                "P1" => GoogleCloudRecommenderV1RecommendationPriority::P1,
+                "P2" => GoogleCloudRecommenderV1RecommendationPriority::P2,
+                "P3" => GoogleCloudRecommenderV1RecommendationPriority::P3,
+                "P4" => GoogleCloudRecommenderV1RecommendationPriority::P4,
+                "PRIORITY_UNSPECIFIED" => {
+                    GoogleCloudRecommenderV1RecommendationPriority::PriorityUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRecommenderV1RecommendationPriority {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRecommenderV1RecommendationPriority {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRecommenderV1RecommendationPriority {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "P1" => GoogleCloudRecommenderV1RecommendationPriority::P1,
+                "P2" => GoogleCloudRecommenderV1RecommendationPriority::P2,
+                "P3" => GoogleCloudRecommenderV1RecommendationPriority::P3,
+                "P4" => GoogleCloudRecommenderV1RecommendationPriority::P4,
+                "PRIORITY_UNSPECIFIED" => {
+                    GoogleCloudRecommenderV1RecommendationPriority::PriorityUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRecommenderV1RecommendationPriority {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRecommenderV1RecommendationPriority {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -953,6 +1159,14 @@ pub mod schemas {
         )]
         pub operation_groups:
             ::std::option::Option<Vec<crate::schemas::GoogleCloudRecommenderV1OperationGroup>>,
+        #[doc = "Condensed overview information about the recommendation."]
+        #[serde(
+            rename = "overview",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub overview:
+            ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudRecommenderV1RecommendationContent {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1137,6 +1351,27 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudRecommenderV1RecommendationStateInfoState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleCloudRecommenderV1SecurityProjection {
+        #[doc = "Additional security impact details that is provided by the recommender."]
+        #[serde(
+            rename = "details",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub details:
+            ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRecommenderV1SecurityProjection {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRecommenderV1SecurityProjection {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1462,14 +1697,14 @@ pub mod resources {
                     &self,
                 ) -> crate::resources::billing_accounts::locations::insight_types::InsightTypesActions
                 {
-                    crate :: resources :: billing_accounts :: locations :: insight_types :: InsightTypesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    crate :: resources :: billing_accounts :: locations :: insight_types :: InsightTypesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
                 #[doc = "Actions that can be performed on the recommenders resource"]
                 pub fn recommenders(
                     &self,
                 ) -> crate::resources::billing_accounts::locations::recommenders::RecommendersActions
                 {
-                    crate :: resources :: billing_accounts :: locations :: recommenders :: RecommendersActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    crate :: resources :: billing_accounts :: locations :: recommenders :: RecommendersActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
             }
             pub mod insight_types {
@@ -1482,8 +1717,8 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Actions that can be performed on the insights resource"]                    pub fn insights ( & self ) -> crate :: resources :: billing_accounts :: locations :: insight_types :: insights :: InsightsActions{
-                        crate :: resources :: billing_accounts :: locations :: insight_types :: insights :: InsightsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the insights resource"]                    pub fn insights (& self) -> crate :: resources :: billing_accounts :: locations :: insight_types :: insights :: InsightsActions{
+                        crate :: resources :: billing_accounts :: locations :: insight_types :: insights :: InsightsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 pub mod insights {
@@ -1515,7 +1750,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Lists insights for a Cloud project. Requires the recommender.*.list IAM permission for the specified insight type."]
+                        #[doc = "Lists insights for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified insight type."]
                         pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                             ListRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -1747,7 +1982,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "Optional. Filter expression to restrict the insights returned. Supported filter fields: state Eg: `state:\"DISMISSED\" or state:\"ACTIVE\""]
+                        #[doc = "Optional. Filter expression to restrict the insights returned. Supported filter fields: * `stateInfo.state` * `insightSubtype` * `severity` Examples: * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED` * `insightSubtype = PERMISSIONS_USAGE` * `severity = CRITICAL OR severity = HIGH` * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)` (These expressions are based on the filter language described at https://google.aip.dev/160)"]
                         pub fn filter(mut self, value: impl Into<String>) -> Self {
                             self.filter = Some(value.into());
                             self
@@ -2217,8 +2452,8 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Actions that can be performed on the recommendations resource"]                    pub fn recommendations ( & self ) -> crate :: resources :: billing_accounts :: locations :: recommenders :: recommendations :: RecommendationsActions{
-                        crate :: resources :: billing_accounts :: locations :: recommenders :: recommendations :: RecommendationsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the recommendations resource"]                    pub fn recommendations (& self) -> crate :: resources :: billing_accounts :: locations :: recommenders :: recommendations :: RecommendationsActions{
+                        crate :: resources :: billing_accounts :: locations :: recommenders :: recommendations :: RecommendationsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 pub mod recommendations {
@@ -2250,7 +2485,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Lists recommendations for a Cloud project. Requires the recommender.*.list IAM permission for the specified recommender."]
+                        #[doc = "Lists recommendations for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified recommender."]
                         pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                             ListRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -2534,7 +2769,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "Filter expression to restrict the recommendations returned. Supported filter fields: state_info.state Eg: `state_info.state:\"DISMISSED\" or state_info.state:\"FAILED\""]
+                        #[doc = "Filter expression to restrict the recommendations returned. Supported filter fields: * `state_info.state` * `recommenderSubtype` * `priority` Examples: * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED` * `recommenderSubtype = REMOVE_ROLE OR recommenderSubtype = REPLACE_ROLE` * `priority = P1 OR priority = P2` * `stateInfo.state = ACTIVE AND (priority = P1 OR priority = P2)` (These expressions are based on the filter language described at https://google.aip.dev/160)"]
                         pub fn filter(mut self, value: impl Into<String>) -> Self {
                             self.filter = Some(value.into());
                             self
@@ -2829,7 +3064,7 @@ pub mod resources {
                     }
                     #[doc = "Created via [RecommendationsActions::mark_claimed()](struct.RecommendationsActions.html#method.mark_claimed)"]
                     #[derive(Debug, Clone)]
-                    pub struct MarkClaimedRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudRecommenderV1MarkRecommendationClaimedRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                    pub struct MarkClaimedRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudRecommenderV1MarkRecommendationClaimedRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> MarkClaimedRequestBuilder<'a> {
                         #[doc = "OAuth access token."]
                         pub fn access_token(mut self, value: impl Into<String>) -> Self {
@@ -3154,7 +3389,7 @@ pub mod resources {
                     }
                     #[doc = "Created via [RecommendationsActions::mark_succeeded()](struct.RecommendationsActions.html#method.mark_succeeded)"]
                     #[derive(Debug, Clone)]
-                    pub struct MarkSucceededRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudRecommenderV1MarkRecommendationSucceededRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                    pub struct MarkSucceededRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudRecommenderV1MarkRecommendationSucceededRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> MarkSucceededRequestBuilder<'a> {
                         #[doc = "OAuth access token."]
                         pub fn access_token(mut self, value: impl Into<String>) -> Self {
@@ -3369,8 +3604,8 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Actions that can be performed on the insights resource"]                    pub fn insights ( & self ) -> crate :: resources :: folders :: locations :: insight_types :: insights :: InsightsActions{
-                        crate :: resources :: folders :: locations :: insight_types :: insights :: InsightsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the insights resource"]                    pub fn insights (& self) -> crate :: resources :: folders :: locations :: insight_types :: insights :: InsightsActions{
+                        crate :: resources :: folders :: locations :: insight_types :: insights :: InsightsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 pub mod insights {
@@ -3402,7 +3637,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Lists insights for a Cloud project. Requires the recommender.*.list IAM permission for the specified insight type."]
+                        #[doc = "Lists insights for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified insight type."]
                         pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                             ListRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -3634,7 +3869,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "Optional. Filter expression to restrict the insights returned. Supported filter fields: state Eg: `state:\"DISMISSED\" or state:\"ACTIVE\""]
+                        #[doc = "Optional. Filter expression to restrict the insights returned. Supported filter fields: * `stateInfo.state` * `insightSubtype` * `severity` Examples: * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED` * `insightSubtype = PERMISSIONS_USAGE` * `severity = CRITICAL OR severity = HIGH` * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)` (These expressions are based on the filter language described at https://google.aip.dev/160)"]
                         pub fn filter(mut self, value: impl Into<String>) -> Self {
                             self.filter = Some(value.into());
                             self
@@ -4104,8 +4339,8 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Actions that can be performed on the recommendations resource"]                    pub fn recommendations ( & self ) -> crate :: resources :: folders :: locations :: recommenders :: recommendations :: RecommendationsActions{
-                        crate :: resources :: folders :: locations :: recommenders :: recommendations :: RecommendationsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the recommendations resource"]                    pub fn recommendations (& self) -> crate :: resources :: folders :: locations :: recommenders :: recommendations :: RecommendationsActions{
+                        crate :: resources :: folders :: locations :: recommenders :: recommendations :: RecommendationsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 pub mod recommendations {
@@ -4137,7 +4372,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Lists recommendations for a Cloud project. Requires the recommender.*.list IAM permission for the specified recommender."]
+                        #[doc = "Lists recommendations for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified recommender."]
                         pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                             ListRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -4421,7 +4656,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "Filter expression to restrict the recommendations returned. Supported filter fields: state_info.state Eg: `state_info.state:\"DISMISSED\" or state_info.state:\"FAILED\""]
+                        #[doc = "Filter expression to restrict the recommendations returned. Supported filter fields: * `state_info.state` * `recommenderSubtype` * `priority` Examples: * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED` * `recommenderSubtype = REMOVE_ROLE OR recommenderSubtype = REPLACE_ROLE` * `priority = P1 OR priority = P2` * `stateInfo.state = ACTIVE AND (priority = P1 OR priority = P2)` (These expressions are based on the filter language described at https://google.aip.dev/160)"]
                         pub fn filter(mut self, value: impl Into<String>) -> Self {
                             self.filter = Some(value.into());
                             self
@@ -4716,7 +4951,7 @@ pub mod resources {
                     }
                     #[doc = "Created via [RecommendationsActions::mark_claimed()](struct.RecommendationsActions.html#method.mark_claimed)"]
                     #[derive(Debug, Clone)]
-                    pub struct MarkClaimedRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudRecommenderV1MarkRecommendationClaimedRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                    pub struct MarkClaimedRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudRecommenderV1MarkRecommendationClaimedRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> MarkClaimedRequestBuilder<'a> {
                         #[doc = "OAuth access token."]
                         pub fn access_token(mut self, value: impl Into<String>) -> Self {
@@ -5041,7 +5276,7 @@ pub mod resources {
                     }
                     #[doc = "Created via [RecommendationsActions::mark_succeeded()](struct.RecommendationsActions.html#method.mark_succeeded)"]
                     #[derive(Debug, Clone)]
-                    pub struct MarkSucceededRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudRecommenderV1MarkRecommendationSucceededRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                    pub struct MarkSucceededRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudRecommenderV1MarkRecommendationSucceededRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> MarkSucceededRequestBuilder<'a> {
                         #[doc = "OAuth access token."]
                         pub fn access_token(mut self, value: impl Into<String>) -> Self {
@@ -5258,8 +5493,8 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Actions that can be performed on the insights resource"]                    pub fn insights ( & self ) -> crate :: resources :: organizations :: locations :: insight_types :: insights :: InsightsActions{
-                        crate :: resources :: organizations :: locations :: insight_types :: insights :: InsightsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the insights resource"]                    pub fn insights (& self) -> crate :: resources :: organizations :: locations :: insight_types :: insights :: InsightsActions{
+                        crate :: resources :: organizations :: locations :: insight_types :: insights :: InsightsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 pub mod insights {
@@ -5291,7 +5526,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Lists insights for a Cloud project. Requires the recommender.*.list IAM permission for the specified insight type."]
+                        #[doc = "Lists insights for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified insight type."]
                         pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                             ListRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -5523,7 +5758,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "Optional. Filter expression to restrict the insights returned. Supported filter fields: state Eg: `state:\"DISMISSED\" or state:\"ACTIVE\""]
+                        #[doc = "Optional. Filter expression to restrict the insights returned. Supported filter fields: * `stateInfo.state` * `insightSubtype` * `severity` Examples: * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED` * `insightSubtype = PERMISSIONS_USAGE` * `severity = CRITICAL OR severity = HIGH` * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)` (These expressions are based on the filter language described at https://google.aip.dev/160)"]
                         pub fn filter(mut self, value: impl Into<String>) -> Self {
                             self.filter = Some(value.into());
                             self
@@ -5993,8 +6228,8 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Actions that can be performed on the recommendations resource"]                    pub fn recommendations ( & self ) -> crate :: resources :: organizations :: locations :: recommenders :: recommendations :: RecommendationsActions{
-                        crate :: resources :: organizations :: locations :: recommenders :: recommendations :: RecommendationsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the recommendations resource"]                    pub fn recommendations (& self) -> crate :: resources :: organizations :: locations :: recommenders :: recommendations :: RecommendationsActions{
+                        crate :: resources :: organizations :: locations :: recommenders :: recommendations :: RecommendationsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 pub mod recommendations {
@@ -6026,7 +6261,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Lists recommendations for a Cloud project. Requires the recommender.*.list IAM permission for the specified recommender."]
+                        #[doc = "Lists recommendations for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified recommender."]
                         pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                             ListRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -6310,7 +6545,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "Filter expression to restrict the recommendations returned. Supported filter fields: state_info.state Eg: `state_info.state:\"DISMISSED\" or state_info.state:\"FAILED\""]
+                        #[doc = "Filter expression to restrict the recommendations returned. Supported filter fields: * `state_info.state` * `recommenderSubtype` * `priority` Examples: * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED` * `recommenderSubtype = REMOVE_ROLE OR recommenderSubtype = REPLACE_ROLE` * `priority = P1 OR priority = P2` * `stateInfo.state = ACTIVE AND (priority = P1 OR priority = P2)` (These expressions are based on the filter language described at https://google.aip.dev/160)"]
                         pub fn filter(mut self, value: impl Into<String>) -> Self {
                             self.filter = Some(value.into());
                             self
@@ -6605,7 +6840,7 @@ pub mod resources {
                     }
                     #[doc = "Created via [RecommendationsActions::mark_claimed()](struct.RecommendationsActions.html#method.mark_claimed)"]
                     #[derive(Debug, Clone)]
-                    pub struct MarkClaimedRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudRecommenderV1MarkRecommendationClaimedRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                    pub struct MarkClaimedRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudRecommenderV1MarkRecommendationClaimedRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> MarkClaimedRequestBuilder<'a> {
                         #[doc = "OAuth access token."]
                         pub fn access_token(mut self, value: impl Into<String>) -> Self {
@@ -6930,7 +7165,7 @@ pub mod resources {
                     }
                     #[doc = "Created via [RecommendationsActions::mark_succeeded()](struct.RecommendationsActions.html#method.mark_succeeded)"]
                     #[derive(Debug, Clone)]
-                    pub struct MarkSucceededRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudRecommenderV1MarkRecommendationSucceededRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                    pub struct MarkSucceededRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudRecommenderV1MarkRecommendationSucceededRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> MarkSucceededRequestBuilder<'a> {
                         #[doc = "OAuth access token."]
                         pub fn access_token(mut self, value: impl Into<String>) -> Self {
@@ -7145,8 +7380,8 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Actions that can be performed on the insights resource"]                    pub fn insights ( & self ) -> crate :: resources :: projects :: locations :: insight_types :: insights :: InsightsActions{
-                        crate :: resources :: projects :: locations :: insight_types :: insights :: InsightsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the insights resource"]                    pub fn insights (& self) -> crate :: resources :: projects :: locations :: insight_types :: insights :: InsightsActions{
+                        crate :: resources :: projects :: locations :: insight_types :: insights :: InsightsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 pub mod insights {
@@ -7178,7 +7413,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Lists insights for a Cloud project. Requires the recommender.*.list IAM permission for the specified insight type."]
+                        #[doc = "Lists insights for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified insight type."]
                         pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                             ListRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -7410,7 +7645,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "Optional. Filter expression to restrict the insights returned. Supported filter fields: state Eg: `state:\"DISMISSED\" or state:\"ACTIVE\""]
+                        #[doc = "Optional. Filter expression to restrict the insights returned. Supported filter fields: * `stateInfo.state` * `insightSubtype` * `severity` Examples: * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED` * `insightSubtype = PERMISSIONS_USAGE` * `severity = CRITICAL OR severity = HIGH` * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)` (These expressions are based on the filter language described at https://google.aip.dev/160)"]
                         pub fn filter(mut self, value: impl Into<String>) -> Self {
                             self.filter = Some(value.into());
                             self
@@ -7880,8 +8115,8 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Actions that can be performed on the recommendations resource"]                    pub fn recommendations ( & self ) -> crate :: resources :: projects :: locations :: recommenders :: recommendations :: RecommendationsActions{
-                        crate :: resources :: projects :: locations :: recommenders :: recommendations :: RecommendationsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the recommendations resource"]                    pub fn recommendations (& self) -> crate :: resources :: projects :: locations :: recommenders :: recommendations :: RecommendationsActions{
+                        crate :: resources :: projects :: locations :: recommenders :: recommendations :: RecommendationsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 pub mod recommendations {
@@ -7913,7 +8148,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Lists recommendations for a Cloud project. Requires the recommender.*.list IAM permission for the specified recommender."]
+                        #[doc = "Lists recommendations for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified recommender."]
                         pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                             ListRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -8197,7 +8432,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "Filter expression to restrict the recommendations returned. Supported filter fields: state_info.state Eg: `state_info.state:\"DISMISSED\" or state_info.state:\"FAILED\""]
+                        #[doc = "Filter expression to restrict the recommendations returned. Supported filter fields: * `state_info.state` * `recommenderSubtype` * `priority` Examples: * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED` * `recommenderSubtype = REMOVE_ROLE OR recommenderSubtype = REPLACE_ROLE` * `priority = P1 OR priority = P2` * `stateInfo.state = ACTIVE AND (priority = P1 OR priority = P2)` (These expressions are based on the filter language described at https://google.aip.dev/160)"]
                         pub fn filter(mut self, value: impl Into<String>) -> Self {
                             self.filter = Some(value.into());
                             self
@@ -8492,7 +8727,7 @@ pub mod resources {
                     }
                     #[doc = "Created via [RecommendationsActions::mark_claimed()](struct.RecommendationsActions.html#method.mark_claimed)"]
                     #[derive(Debug, Clone)]
-                    pub struct MarkClaimedRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudRecommenderV1MarkRecommendationClaimedRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                    pub struct MarkClaimedRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudRecommenderV1MarkRecommendationClaimedRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> MarkClaimedRequestBuilder<'a> {
                         #[doc = "OAuth access token."]
                         pub fn access_token(mut self, value: impl Into<String>) -> Self {
@@ -8817,7 +9052,7 @@ pub mod resources {
                     }
                     #[doc = "Created via [RecommendationsActions::mark_succeeded()](struct.RecommendationsActions.html#method.mark_succeeded)"]
                     #[derive(Debug, Clone)]
-                    pub struct MarkSucceededRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudRecommenderV1MarkRecommendationSucceededRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                    pub struct MarkSucceededRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudRecommenderV1MarkRecommendationSucceededRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> MarkSucceededRequestBuilder<'a> {
                         #[doc = "OAuth access token."]
                         pub fn access_token(mut self, value: impl Into<String>) -> Self {

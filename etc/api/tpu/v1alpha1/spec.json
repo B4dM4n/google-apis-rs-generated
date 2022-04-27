@@ -7,7 +7,7 @@
   "canonicalName": "TPU",
   "fullyEncodeReservedExpansion": true,
   "version": "v1alpha1",
-  "revision": "20210217",
+  "revision": "20220412",
   "title": "Cloud TPU API",
   "description": "TPU API provides customers with access to Google TPU technology.",
   "ownerDomain": "google.com",
@@ -201,7 +201,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         }
       }
     }
@@ -241,7 +241,7 @@
     },
     "Empty": {
       "id": "Empty",
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
+      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
       "type": "object",
       "format": null,
       "enum": [],
@@ -604,6 +604,26 @@
           "additionalProperties": null,
           "items": null
         },
+        "apiVersion": {
+          "description": "Output only. The API version that created this Node.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "API_VERSION_UNSPECIFIED",
+            "V1_ALPHA1",
+            "V1",
+            "V2_ALPHA1"
+          ],
+          "enumDescriptions": [
+            "API version is unknown.",
+            "TPU API V1Alpha1 version.",
+            "TPU API V1 version.",
+            "TPU API V2Alpha1 version."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "cidrBlock": {
           "description": "The CIDR block that the TPU node will use when selecting an IP address. This CIDR block must be a /29 block; the Compute Engine networks API forbids a smaller block, and using a larger block would be wasteful (a node can only consume one IP address). Errors will occur if the CIDR block has already been used for a currently existing TPU node, the CIDR block conflicts with any subnetworks in the user's provided network, or the provided network is peered with another network that is using that CIDR block.",
           "type": "string",
@@ -777,7 +797,7 @@
           "enumDescriptions": [
             "TPU node state is not known/set.",
             "TPU node is being created.",
-            "TPU node has been created and is fully usable.",
+            "TPU node has been created.",
             "TPU node is restarting.",
             "TPU node is undergoing reimaging.",
             "TPU node is being deleted.",
@@ -907,14 +927,14 @@
     },
     "OperationMetadata": {
       "id": "OperationMetadata",
-      "description": "Represents the metadata of the long-running operation.",
+      "description": "Metadata describing an Operation",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "apiVersion": {
-          "description": "[Output only] API version used to start the operation.",
+          "description": "API version.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -924,7 +944,7 @@
           "items": null
         },
         "cancelRequested": {
-          "description": "[Output only] Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.",
+          "description": "Specifies if cancellation was requested for the operation.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -934,7 +954,7 @@
           "items": null
         },
         "createTime": {
-          "description": "[Output only] The time the operation was created.",
+          "description": "The time the operation was created.",
           "type": "string",
           "format": "google-datetime",
           "enum": [],
@@ -944,7 +964,7 @@
           "items": null
         },
         "endTime": {
-          "description": "[Output only] The time the operation finished running.",
+          "description": "The time the operation finished running.",
           "type": "string",
           "format": "google-datetime",
           "enum": [],
@@ -954,7 +974,7 @@
           "items": null
         },
         "statusDetail": {
-          "description": "[Output only] Human-readable status of the operation, if any.",
+          "description": "Human-readable status of the operation, if any.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -964,7 +984,7 @@
           "items": null
         },
         "target": {
-          "description": "[Output only] Server-defined resource path for the target of the operation.",
+          "description": "Target of the operation - for example projects/project-1/connectivityTests/test-1",
           "type": "string",
           "format": null,
           "enum": [],
@@ -974,7 +994,7 @@
           "items": null
         },
         "verb": {
-          "description": "[Output only] Name of the verb executed by the operation.",
+          "description": "Name of the verb executed by the operation.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1160,7 +1180,8 @@
             "OUT_OF_MEMORY",
             "EXECUTE_TIMED_OUT",
             "MESH_BUILD_FAIL",
-            "HBM_OUT_OF_MEMORY"
+            "HBM_OUT_OF_MEMORY",
+            "PROJECT_ABUSE"
           ],
           "enumDescriptions": [
             "Unspecified symptom.",
@@ -1168,7 +1189,8 @@
             "TPU runtime is out of memory.",
             "TPU runtime execution has timed out.",
             "TPU runtime fails to construct a mesh that recognizes each TPU device's neighbors.",
-            "TPU HBM is out of memory."
+            "TPU HBM is out of memory.",
+            "Abusive behaviors have been identified on the current project."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1397,6 +1419,20 @@
                       "enum": [],
                       "enumDescriptions": [],
                       "repeated": false
+                    },
+                    "requestId": {
+                      "description": "Idempotent request UUID.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
                     }
                   },
                   "parameterOrder": [
@@ -1433,6 +1469,20 @@
                       "minimum": null,
                       "maximum": null,
                       "pattern": "^projects/[^/]+/locations/[^/]+/nodes/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "requestId": {
+                      "description": "Idempotent request UUID.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
                       "enum": [],
                       "enumDescriptions": [],
                       "repeated": false
@@ -1638,7 +1688,7 @@
                   "id": "tpu.projects.locations.nodes.stop",
                   "path": "v1alpha1/{+name}:stop",
                   "httpMethod": "POST",
-                  "description": "Stops a node.",
+                  "description": "Stops a node. This operation is only available with single TPU nodes.",
                   "parameters": {
                     "name": {
                       "description": "The resource name.",
@@ -2051,7 +2101,7 @@
               "description": "Lists information about the supported locations for this service.",
               "parameters": {
                 "filter": {
-                  "description": "The standard list filter.",
+                  "description": "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -2079,7 +2129,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "The standard list page size.",
+                  "description": "The maximum number of results to return. If not set, the service selects a default.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -2093,7 +2143,7 @@
                   "repeated": false
                 },
                 "pageToken": {
-                  "description": "The standard list page token.",
+                  "description": "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.",
                   "default": null,
                   "location": "query",
                   "required": false,

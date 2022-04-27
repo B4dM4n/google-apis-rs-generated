@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [operations](resources/operations/struct.OperationsActions.html)\n      * [*get*](resources/operations/struct.GetRequestBuilder.html), [*list*](resources/operations/struct.ListRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [custom_classes](resources/projects/locations/custom_classes/struct.CustomClassesActions.html)\n          * [*create*](resources/projects/locations/custom_classes/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/custom_classes/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/custom_classes/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/custom_classes/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/custom_classes/struct.PatchRequestBuilder.html)\n        * [phrase_sets](resources/projects/locations/phrase_sets/struct.PhraseSetsActions.html)\n          * [*create*](resources/projects/locations/phrase_sets/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/phrase_sets/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/phrase_sets/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/phrase_sets/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/phrase_sets/struct.PatchRequestBuilder.html)\n    * [speech](resources/speech/struct.SpeechActions.html)\n      * [*longrunningrecognize*](resources/speech/struct.LongrunningrecognizeRequestBuilder.html), [*recognize*](resources/speech/struct.RecognizeRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -55,7 +55,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub custom_class: ::std::option::Option<crate::schemas::CustomClass>,
-        #[doc = "The ID to use for the custom class, which will become the final component of the custom class' resource name. This value should be 4-63 characters, and valid characters are /a-z-/."]
+        #[doc = "Required. The ID to use for the custom class, which will become the final component of the custom class' resource name. This value should restrict to letters, numbers, and hyphens, with the first character a letter, the last a letter or a number, and be 4-63 characters."]
         #[serde(
             rename = "customClassId",
             default,
@@ -84,7 +84,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub phrase_set: ::std::option::Option<crate::schemas::PhraseSet>,
-        #[doc = "The ID to use for the phrase set, which will become the final component of the phrase set's resource name. This value should be 4-63 characters, and valid characters are /a-z-/."]
+        #[doc = "Required. The ID to use for the phrase set, which will become the final component of the phrase set's resource name. This value should restrict to letters, numbers, and hyphens, with the first character a letter, the last a letter or a number, and be 4-63 characters."]
         #[serde(
             rename = "phraseSetId",
             default,
@@ -167,6 +167,51 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Empty {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Entry {
+        #[doc = "Whether the search is case sensitive."]
+        #[serde(
+            rename = "caseSensitive",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub case_sensitive: ::std::option::Option<bool>,
+        #[doc = "What to replace with. Max length is 100 characters."]
+        #[serde(
+            rename = "replace",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub replace: ::std::option::Option<String>,
+        #[doc = "What to replace. Max length is 100 characters."]
+        #[serde(
+            rename = "search",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub search: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Entry {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Entry {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -285,6 +330,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub last_update_time: ::std::option::Option<String>,
+        #[doc = "Output only. A copy of the TranscriptOutputConfig if it was set in the request."]
+        #[serde(
+            rename = "outputConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub output_config: ::std::option::Option<crate::schemas::TranscriptOutputConfig>,
         #[doc = "Approximate percentage of audio processed thus far. Guaranteed to be 100 when the audio is fully processed and the results are available."]
         #[serde(
             rename = "progressPercent",
@@ -353,10 +405,22 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    #[derive(
-        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
-    )]
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct LongRunningRecognizeResponse {
+        #[doc = "Original output config if present in the request."]
+        #[serde(
+            rename = "outputConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub output_config: ::std::option::Option<crate::schemas::TranscriptOutputConfig>,
+        #[doc = "If the transcript output fails this field contains the relevant error."]
+        #[serde(
+            rename = "outputError",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub output_error: ::std::option::Option<crate::schemas::Status>,
         #[doc = "Sequential list of transcription results corresponding to sequential portions of audio."]
         #[serde(
             rename = "results",
@@ -364,6 +428,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub results: ::std::option::Option<Vec<crate::schemas::SpeechRecognitionResult>>,
+        #[doc = "When available, billed audio seconds for the corresponding request."]
+        #[serde(
+            rename = "totalBilledTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_billed_time: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for LongRunningRecognizeResponse {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -429,7 +500,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Phrase {
-        #[doc = "Hint Boost. Overrides the boost set at the phrase set level. Positive value will increase the probability that a specific phrase will be recognized over other similar sounding phrases. The higher the boost, the higher the chance of false positive recognition as well. Negative boost values would correspond to anti-biasing. Anti-biasing is not enabled, so negative boost will simply be ignored. Though `boost` can accept a wide range of positive values, most use cases are best served with values between 0 and 20. We recommend using a binary search approach to finding the optimal value for your use case. Speech recognition will skip PhraseSets with a boost value of 0."]
+        #[doc = "Hint Boost. Overrides the boost set at the phrase set level. Positive value will increase the probability that a specific phrase will be recognized over other similar sounding phrases. The higher the boost, the higher the chance of false positive recognition as well. Negative boost will simply be ignored. Though `boost` can accept a wide range of positive values, most use cases are best served with values between 0 and 20. We recommend using a binary search approach to finding the optimal value for your use case. Speech recognition will skip PhraseSets with a boost value of 0."]
         #[serde(
             rename = "boost",
             default,
@@ -532,7 +603,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct RecognitionConfig {
-        #[doc = "Speech adaptation configuration improves the accuracy of speech recognition. When speech adaptation is set it supersedes the `speech_contexts` field. For more information, see the [speech adaptation](https://cloud.google.com/speech-to-text/docs/context-strength) documentation."]
+        #[doc = "Speech adaptation configuration improves the accuracy of speech recognition. For more information, see the [speech adaptation](https://cloud.google.com/speech-to-text/docs/adaptation) documentation. When speech adaptation is set it supersedes the `speech_contexts` field."]
         #[serde(
             rename = "adaptation",
             default,
@@ -588,6 +659,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enable_speaker_diarization: ::std::option::Option<bool>,
+        #[doc = "The spoken emoji behavior for the call If not set, uses default behavior based on model of choice If 'true', adds spoken emoji formatting for the request. This will replace spoken emojis with the corresponding Unicode symbols in the final transcript. If 'false', spoken emojis are not replaced."]
+        #[serde(
+            rename = "enableSpokenEmojis",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_spoken_emojis: ::std::option::Option<bool>,
+        #[doc = "The spoken punctuation behavior for the call If not set, uses default behavior based on model of choice e.g. command_and_search will enable spoken punctuation by default If 'true', replaces spoken punctuation with the corresponding symbols in the request. For example, \"how are you question mark\" becomes \"how are you?\". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation for support. If 'false', spoken punctuation is not replaced."]
+        #[serde(
+            rename = "enableSpokenPunctuation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_spoken_punctuation: ::std::option::Option<bool>,
         #[doc = "If `true`, the top result includes a list of words and the confidence for those words. If `false`, no word-level confidence information is returned. The default is `false`."]
         #[serde(
             rename = "enableWordConfidence",
@@ -630,7 +715,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metadata: ::std::option::Option<crate::schemas::RecognitionMetadata>,
-        #[doc = "Which model to select for the given request. Select the model best suited to your domain to get best results. If a model is not explicitly specified, then we auto-select a model based on the parameters in the RecognitionConfig. *Model* *Description* command_and_search Best for short queries such as voice commands or voice search. phone_call Best for audio that originated from a phone call (typically recorded at an 8khz sampling rate). video Best for audio that originated from from video or includes multiple speakers. Ideally the audio is recorded at a 16khz or greater sampling rate. This is a premium model that costs more than the standard rate. default Best for audio that is not one of the specific audio models. For example, long-form audio. Ideally the audio is high-fidelity, recorded at a 16khz or greater sampling rate. "]
+        #[doc = "Which model to select for the given request. Select the model best suited to your domain to get best results. If a model is not explicitly specified, then we auto-select a model based on the parameters in the RecognitionConfig. *Model* *Description* command_and_search Best for short queries such as voice commands or voice search. phone_call Best for audio that originated from a phone call (typically recorded at an 8khz sampling rate). video Best for audio that originated from video or includes multiple speakers. Ideally the audio is recorded at a 16khz or greater sampling rate. This is a premium model that costs more than the standard rate. default Best for audio that is not one of the specific audio models. For example, long-form audio. Ideally the audio is high-fidelity, recorded at a 16khz or greater sampling rate. medical_conversation Best for audio that originated from a conversation between a medical provider and patient. medical_dictation Best for audio that originated from dictation notes by a medical provider. "]
         #[serde(
             rename = "model",
             default,
@@ -651,13 +736,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub sample_rate_hertz: ::std::option::Option<i32>,
-        #[doc = "Array of SpeechContext. A means to provide context to assist the speech recognition. For more information, see [speech adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)."]
+        #[doc = "Array of SpeechContext. A means to provide context to assist the speech recognition. For more information, see [speech adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)."]
         #[serde(
             rename = "speechContexts",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub speech_contexts: ::std::option::Option<Vec<crate::schemas::SpeechContext>>,
+        #[doc = "Use transcription normalization to automatically replace parts of the transcript with phrases of your choosing. For StreamingRecognize, this normalization only applies to stable partial transcripts (stability > 0.8) and final transcripts."]
+        #[serde(
+            rename = "transcriptNormalization",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub transcript_normalization:
+            ::std::option::Option<crate::schemas::TranscriptNormalization>,
         #[doc = "Set to true to use an enhanced model for speech recognition. If `use_enhanced` is set to true and the `model` field is not set, then an appropriate enhanced model is chosen if an enhanced model exists for the audio. If `use_enhanced` is true and an enhanced version of the specified model does not exist, then the speech is recognized using the standard version of the specified model."]
         #[serde(
             rename = "useEnhanced",
@@ -696,6 +789,8 @@ pub mod schemas {
         OggOpus,
         #[doc = "Although the use of lossy encodings is not recommended, if a very low bitrate encoding is required, `OGG_OPUS` is highly preferred over Speex encoding. The [Speex](https://speex.org/) encoding supported by Cloud Speech API has a header byte in each block, as in MIME type `audio/x-speex-with-header-byte`. It is a variant of the RTP Speex encoding defined in [RFC 5574](https://tools.ietf.org/html/rfc5574). The stream is a sequence of blocks, one block per RTP packet. Each block starts with a byte containing the length of the block, in bytes, followed by one or more frames of Speex data, padded to an integral number of bytes (octets) as specified in RFC 5574. In other words, each RTP header is replaced with a single byte containing the block length. Only Speex wideband is supported. `sample_rate_hertz` must be 16000."]
         SpeexWithHeaderByte,
+        #[doc = "Opus encoded audio frames in WebM container ([OggOpus](https://wiki.xiph.org/OggOpus)). `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000, or 48000."]
+        WebmOpus,
     }
     impl RecognitionConfigEncoding {
         pub fn as_str(self) -> &'static str {
@@ -709,6 +804,7 @@ pub mod schemas {
                 RecognitionConfigEncoding::Mulaw => "MULAW",
                 RecognitionConfigEncoding::OggOpus => "OGG_OPUS",
                 RecognitionConfigEncoding::SpeexWithHeaderByte => "SPEEX_WITH_HEADER_BYTE",
+                RecognitionConfigEncoding::WebmOpus => "WEBM_OPUS",
             }
         }
     }
@@ -730,6 +826,7 @@ pub mod schemas {
                 "MULAW" => RecognitionConfigEncoding::Mulaw,
                 "OGG_OPUS" => RecognitionConfigEncoding::OggOpus,
                 "SPEEX_WITH_HEADER_BYTE" => RecognitionConfigEncoding::SpeexWithHeaderByte,
+                "WEBM_OPUS" => RecognitionConfigEncoding::WebmOpus,
                 _ => return Err(()),
             })
         }
@@ -763,6 +860,7 @@ pub mod schemas {
                 "MULAW" => RecognitionConfigEncoding::Mulaw,
                 "OGG_OPUS" => RecognitionConfigEncoding::OggOpus,
                 "SPEEX_WITH_HEADER_BYTE" => RecognitionConfigEncoding::SpeexWithHeaderByte,
+                "WEBM_OPUS" => RecognitionConfigEncoding::WebmOpus,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -1309,6 +1407,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub results: ::std::option::Option<Vec<crate::schemas::SpeechRecognitionResult>>,
+        #[doc = "When available, billed audio seconds for the corresponding request."]
+        #[serde(
+            rename = "totalBilledTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_billed_time: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for RecognizeResponse {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1448,7 +1553,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub confidence: ::std::option::Option<f32>,
-        #[doc = "Transcript text representing the words that the user spoke."]
+        #[doc = "Transcript text representing the words that the user spoke. In languages that use spaces to separate words, the transcript might have a leading space if it isn't the first result. You can concatenate each result to obtain the full transcript without using a separator."]
         #[serde(
             rename = "transcript",
             default,
@@ -1498,6 +1603,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub language_code: ::std::option::Option<String>,
+        #[doc = "Time offset of the end of this result relative to the beginning of the audio."]
+        #[serde(
+            rename = "resultEndTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub result_end_time: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for SpeechRecognitionResult {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1540,6 +1652,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Status {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct TranscriptNormalization {
+        #[doc = "A list of replacement entries. We will perform replacement with one entry at a time. For example, the second entry in [\"cat\" => \"dog\", \"mountain cat\" => \"mountain dog\"] will never be applied because we will always process the first entry before it. At most 100 entries."]
+        #[serde(
+            rename = "entries",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub entries: ::std::option::Option<Vec<crate::schemas::Entry>>,
+    }
+    impl ::google_field_selector::FieldSelector for TranscriptNormalization {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TranscriptNormalization {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }

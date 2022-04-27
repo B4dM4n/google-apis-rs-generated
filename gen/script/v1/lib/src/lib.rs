@@ -10,7 +10,7 @@ pub mod scopes {
     pub const ADMIN_DIRECTORY_GROUP: &str = "https://www.googleapis.com/auth/admin.directory.group";
     #[doc = "View and manage the provisioning of users on your domain\n\n`https://www.googleapis.com/auth/admin.directory.user`"]
     pub const ADMIN_DIRECTORY_USER: &str = "https://www.googleapis.com/auth/admin.directory.user";
-    #[doc = "See, create, and edit all Google Docs documents you have access to\n\n`https://www.googleapis.com/auth/documents`"]
+    #[doc = "See, edit, create, and delete all your Google Docs documents\n\n`https://www.googleapis.com/auth/documents`"]
     pub const DOCUMENTS: &str = "https://www.googleapis.com/auth/documents";
     #[doc = "See, edit, create, and delete all of your Google Drive files\n\n`https://www.googleapis.com/auth/drive`"]
     pub const DRIVE: &str = "https://www.googleapis.com/auth/drive";
@@ -34,9 +34,9 @@ pub mod scopes {
     #[doc = "View Google Apps Script projects\n\n`https://www.googleapis.com/auth/script.projects.readonly`"]
     pub const SCRIPT_PROJECTS_READONLY: &str =
         "https://www.googleapis.com/auth/script.projects.readonly";
-    #[doc = "See, edit, create, and delete your spreadsheets in Google Drive\n\n`https://www.googleapis.com/auth/spreadsheets`"]
+    #[doc = "See, edit, create, and delete all your Google Sheets spreadsheets\n\n`https://www.googleapis.com/auth/spreadsheets`"]
     pub const SPREADSHEETS: &str = "https://www.googleapis.com/auth/spreadsheets";
-    #[doc = "View your email address\n\n`https://www.googleapis.com/auth/userinfo.email`"]
+    #[doc = "See your primary Google Account email address\n\n`https://www.googleapis.com/auth/userinfo.email`"]
     pub const USERINFO_EMAIL: &str = "https://www.googleapis.com/auth/userinfo.email";
 }
 pub mod schemas {
@@ -988,6 +988,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "The ordered list of parameter names of the function in the script project."]
+        #[serde(
+            rename = "parameters",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub parameters: ::std::option::Option<Vec<String>>,
     }
     impl ::google_field_selector::FieldSelector for GoogleAppsScriptTypeFunction {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -3004,7 +3011,7 @@ pub mod resources {
                     s: &str,
                 ) -> ::std::result::Result<ListScriptProcessesScriptProcessFilterStatusesItems, ()>
                 {
-                    Ok ( match s { "CANCELED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Canceled , "COMPLETED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Completed , "DELAYED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Delayed , "FAILED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Failed , "PAUSED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Paused , "PROCESS_STATUS_UNSPECIFIED" => ListScriptProcessesScriptProcessFilterStatusesItems :: ProcessStatusUnspecified , "RUNNING" => ListScriptProcessesScriptProcessFilterStatusesItems :: Running , "TIMED_OUT" => ListScriptProcessesScriptProcessFilterStatusesItems :: TimedOut , "UNKNOWN" => ListScriptProcessesScriptProcessFilterStatusesItems :: Unknown , _ => return Err ( ( ) ) , } )
+                    Ok (match s { "CANCELED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Canceled , "COMPLETED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Completed , "DELAYED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Delayed , "FAILED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Failed , "PAUSED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Paused , "PROCESS_STATUS_UNSPECIFIED" => ListScriptProcessesScriptProcessFilterStatusesItems :: ProcessStatusUnspecified , "RUNNING" => ListScriptProcessesScriptProcessFilterStatusesItems :: Running , "TIMED_OUT" => ListScriptProcessesScriptProcessFilterStatusesItems :: TimedOut , "UNKNOWN" => ListScriptProcessesScriptProcessFilterStatusesItems :: Unknown , _ => return Err (()) , })
                 }
             }
             impl ::std::fmt::Display for ListScriptProcessesScriptProcessFilterStatusesItems {
@@ -3026,7 +3033,7 @@ pub mod resources {
                     D: ::serde::de::Deserializer<'de>,
                 {
                     let value: &'de str = <&str>::deserialize(deserializer)?;
-                    Ok ( match value { "CANCELED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Canceled , "COMPLETED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Completed , "DELAYED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Delayed , "FAILED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Failed , "PAUSED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Paused , "PROCESS_STATUS_UNSPECIFIED" => ListScriptProcessesScriptProcessFilterStatusesItems :: ProcessStatusUnspecified , "RUNNING" => ListScriptProcessesScriptProcessFilterStatusesItems :: Running , "TIMED_OUT" => ListScriptProcessesScriptProcessFilterStatusesItems :: TimedOut , "UNKNOWN" => ListScriptProcessesScriptProcessFilterStatusesItems :: Unknown , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+                    Ok (match value { "CANCELED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Canceled , "COMPLETED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Completed , "DELAYED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Delayed , "FAILED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Failed , "PAUSED" => ListScriptProcessesScriptProcessFilterStatusesItems :: Paused , "PROCESS_STATUS_UNSPECIFIED" => ListScriptProcessesScriptProcessFilterStatusesItems :: ProcessStatusUnspecified , "RUNNING" => ListScriptProcessesScriptProcessFilterStatusesItems :: Running , "TIMED_OUT" => ListScriptProcessesScriptProcessFilterStatusesItems :: TimedOut , "UNKNOWN" => ListScriptProcessesScriptProcessFilterStatusesItems :: Unknown , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
                 }
             }
             impl ::google_field_selector::FieldSelector
@@ -3191,7 +3198,7 @@ pub mod resources {
                     ListScriptProcessesScriptProcessFilterUserAccessLevelsItems,
                     (),
                 > {
-                    Ok ( match s { "NONE" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: None , "OWNER" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: Owner , "READ" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: Read , "USER_ACCESS_LEVEL_UNSPECIFIED" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: UserAccessLevelUnspecified , "WRITE" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: Write , _ => return Err ( ( ) ) , } )
+                    Ok (match s { "NONE" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: None , "OWNER" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: Owner , "READ" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: Read , "USER_ACCESS_LEVEL_UNSPECIFIED" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: UserAccessLevelUnspecified , "WRITE" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: Write , _ => return Err (()) , })
                 }
             }
             impl ::std::fmt::Display for ListScriptProcessesScriptProcessFilterUserAccessLevelsItems {
@@ -3215,7 +3222,7 @@ pub mod resources {
                     D: ::serde::de::Deserializer<'de>,
                 {
                     let value: &'de str = <&str>::deserialize(deserializer)?;
-                    Ok ( match value { "NONE" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: None , "OWNER" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: Owner , "READ" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: Read , "USER_ACCESS_LEVEL_UNSPECIFIED" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: UserAccessLevelUnspecified , "WRITE" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: Write , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+                    Ok (match value { "NONE" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: None , "OWNER" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: Owner , "READ" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: Read , "USER_ACCESS_LEVEL_UNSPECIFIED" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: UserAccessLevelUnspecified , "WRITE" => ListScriptProcessesScriptProcessFilterUserAccessLevelsItems :: Write , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
                 }
             }
             impl ::google_field_selector::FieldSelector
@@ -3683,7 +3690,7 @@ pub mod resources {
         }
         #[doc = "Created via [ProcessesActions::list_script_processes()](struct.ProcessesActions.html#method.list_script_processes)"]
         #[derive(Debug, Clone)]
-        pub struct ListScriptProcessesRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , page_size : Option < i32 > , page_token : Option < String > , script_id : Option < String > , script_process_filter_deployment_id : Option < String > , script_process_filter_end_time : Option < String > , script_process_filter_function_name : Option < String > , script_process_filter_start_time : Option < String > , script_process_filter_statuses : Option < Vec < crate :: resources :: processes :: params :: ListScriptProcessesScriptProcessFilterStatusesItems > > , script_process_filter_types : Option < Vec < crate :: resources :: processes :: params :: ListScriptProcessesScriptProcessFilterTypesItems > > , script_process_filter_user_access_levels : Option < Vec < crate :: resources :: processes :: params :: ListScriptProcessesScriptProcessFilterUserAccessLevelsItems > > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+        pub struct ListScriptProcessesRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , page_size : Option < i32 > , page_token : Option < String > , script_id : Option < String > , script_process_filter_deployment_id : Option < String > , script_process_filter_end_time : Option < String > , script_process_filter_function_name : Option < String > , script_process_filter_start_time : Option < String > , script_process_filter_statuses : Option < Vec < crate :: resources :: processes :: params :: ListScriptProcessesScriptProcessFilterStatusesItems > > , script_process_filter_types : Option < Vec < crate :: resources :: processes :: params :: ListScriptProcessesScriptProcessFilterTypesItems > > , script_process_filter_user_access_levels : Option < Vec < crate :: resources :: processes :: params :: ListScriptProcessesScriptProcessFilterUserAccessLevelsItems > > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
         impl<'a> ListScriptProcessesRequestBuilder<'a> {
             #[doc = "The maximum number of returned processes per page of results. Defaults to 50."]
             pub fn page_size(mut self, value: i32) -> Self {

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("adexchangebuyer2_beta1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210318")
+            .version("0.1.0-20220426")
             .about("Accesses the latest features for managing Authorized Buyers accounts, Real-Time Bidding configurations and auction metrics, and Marketplace programmatic deals.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -89,9 +89,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut finalized_proposals1 = SubCommand::with_name("finalized_proposals")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: list");
+            .about("methods: list, pause and resume");
         {
             let mcmd = SubCommand::with_name("list").about("List finalized proposals, regardless if a proposal is being renegotiated. A filter expression (PQL query) may be specified to filter the results. The notes will not be returned.");
+            finalized_proposals1 = finalized_proposals1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("pause").about("Update given deals to pause serving. This method will set the `DealServingMetadata.DealPauseStatus.has_buyer_paused` bit to true for all listed deals in the request. Currently, this method only applies to PG and PD deals. For PA deals, please call accounts.proposals.pause endpoint. It is a no-op to pause already-paused deals. It is an error to call PauseProposalDeals for deals which are not part of the proposal of proposal_id or which are not finalized or renegotiating.");
+            finalized_proposals1 = finalized_proposals1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("resume").about("Update given deals to resume serving. This method will set the `DealServingMetadata.DealPauseStatus.has_buyer_paused` bit to false for all listed deals in the request. Currently, this method only applies to PG and PD deals. For PA deals, please call accounts.proposals.resume endpoint. It is a no-op to resume running deals or deals paused by the other party. It is an error to call ResumeProposalDeals for deals which are not part of the proposal of proposal_id or which are not finalized or renegotiating.");
             finalized_proposals1 = finalized_proposals1.subcommand(mcmd);
         }
         let mut products1 = SubCommand::with_name("products")
@@ -109,7 +117,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: accept, add_note, cancel_negotiation, complete_setup, create, get, list, pause, resume and update");
         {
-            let mcmd = SubCommand::with_name("accept").about("Mark the proposal as accepted at the given revision number. If the number does not match the server\'s revision number an `ABORTED` error message will be returned. This call updates the proposal_state from `PROPOSED` to `BUYER_ACCEPTED`, or from `SELLER_ACCEPTED` to `FINALIZED`. Upon calling this endpoint, the buyer implicitly agrees to the terms and conditions optionally set within the proposal by the publisher.");
+            let mcmd = SubCommand::with_name("accept").about("Mark the proposal as accepted at the given revision number. If the number does not match the server's revision number an `ABORTED` error message will be returned. This call updates the proposal_state from `PROPOSED` to `BUYER_ACCEPTED`, or from `SELLER_ACCEPTED` to `FINALIZED`. Upon calling this endpoint, the buyer implicitly agrees to the terms and conditions optionally set within the proposal by the publisher.");
             proposals1 = proposals1.subcommand(mcmd);
         }
         {
@@ -135,7 +143,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             proposals1 = proposals1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("List proposals. A filter expression (PQL query) may be specified to filter the results. To retrieve all finalized proposals, regardless if a proposal is being renegotiated, see the FinalizedProposals resource. Note that Bidder/ChildSeat relationships differ from the usual behavior. A Bidder account can only see its child seats\' proposals by specifying the ChildSeat\'s accountId in the request path.");
+            let mcmd = SubCommand::with_name("list").about("List proposals. A filter expression (PQL query) may be specified to filter the results. To retrieve all finalized proposals, regardless if a proposal is being renegotiated, see the FinalizedProposals resource. Note that Bidder/ChildSeat relationships differ from the usual behavior. A Bidder account can only see its child seats' proposals by specifying the ChildSeat's accountId in the request path.");
             proposals1 = proposals1.subcommand(mcmd);
         }
         {

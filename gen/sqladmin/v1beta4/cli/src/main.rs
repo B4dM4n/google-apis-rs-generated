@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("sqladmin1_beta4")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210310")
+            .version("0.1.0-20220419")
             .about("API for Cloud SQL database instance management")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -47,12 +47,24 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             backup_runs0 = backup_runs0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("insert").about("Creates a new backup run on demand. This method is applicable only to Second Generation instances.");
+            let mcmd = SubCommand::with_name("insert").about("Creates a new backup run on demand.");
             backup_runs0 = backup_runs0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists all backup runs associated with a given instance and configuration in the reverse chronological order of the backup initiation time.");
+            let mcmd = SubCommand::with_name("list").about("Lists all backup runs associated with the project or a given instance and configuration in the reverse chronological order of the backup initiation time.");
             backup_runs0 = backup_runs0.subcommand(mcmd);
+        }
+        let mut connect0 = SubCommand::with_name("connect")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: generate_ephemeral_cert and get");
+        {
+            let mcmd = SubCommand::with_name("generate_ephemeral_cert").about("Generates a short-lived X509 certificate containing the provided public key and signed by a private key specific to the target instance. Users may use the certificate to authenticate as themselves when connecting to the database.");
+            connect0 = connect0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get")
+                .about("Retrieves connect settings about a Cloud SQL instance.");
+            connect0 = connect0.subcommand(mcmd);
         }
         let mut databases0 = SubCommand::with_name("databases")
             .setting(AppSettings::ColoredHelp)
@@ -88,7 +100,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: list");
         {
             let mcmd = SubCommand::with_name("list")
-                .about("List all available database flags for Cloud SQL instances.");
+                .about("Lists all available database flags for Cloud SQL instances.");
             flags0 = flags0.subcommand(mcmd);
         }
         let mut instances0 = SubCommand::with_name("instances")
@@ -115,7 +127,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             instances0 = instances0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("failover").about("Failover the instance to its failover replica instance. Using this operation might cause your instance to restart.");
+            let mcmd = SubCommand::with_name("failover").about("Initiates a manual failover of a high availability (HA) primary instance to a standby instance, which becomes the primary instance. Users are then rerouted to the new primary. For more information, see the [Overview of high availability](https://cloud.google.com/sql/docs/mysql/high-availability) page in the Cloud SQL documentation. If using Legacy HA (MySQL only), this causes the instance to failover to its failover replica instance.");
             instances0 = instances0.subcommand(mcmd);
         }
         {
@@ -228,7 +240,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
         {
-            let mcmd = SubCommand::with_name("list").about("Lists all available machine types (tiers) for Cloud SQL, for example, db-n1-standard-1. For related information, see Pricing.");
+            let mcmd = SubCommand::with_name("list").about("Lists all available machine types (tiers) for Cloud SQL, for example, `db-custom-1-3840`. For related information, see [Pricing](/sql/pricing).");
             tiers0 = tiers0.subcommand(mcmd);
         }
         let mut users0 = SubCommand::with_name("users")
@@ -281,6 +293,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         app = app.subcommand(instances0);
         app = app.subcommand(flags0);
         app = app.subcommand(databases0);
+        app = app.subcommand(connect0);
         app = app.subcommand(backup_runs0);
 
         Self { app }

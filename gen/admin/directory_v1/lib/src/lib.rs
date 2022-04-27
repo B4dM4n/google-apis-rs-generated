@@ -81,7 +81,7 @@ pub mod scopes {
     #[doc = "View user schemas on your domain\n\n`https://www.googleapis.com/auth/admin.directory.userschema.readonly`"]
     pub const ADMIN_DIRECTORY_USERSCHEMA_READONLY: &str =
         "https://www.googleapis.com/auth/admin.directory.userschema.readonly";
-    #[doc = "See, edit, configure, and delete your Google Cloud Platform data\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -1081,6 +1081,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub boot_mode: ::std::option::Option<String>,
+        #[doc = "Information regarding CPU specs in the device."]
+        #[serde(
+            rename = "cpuInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cpu_info: ::std::option::Option<Vec<crate::schemas::ChromeOsDeviceCpuInfoItems>>,
         #[doc = "Reports of CPU utilization and temperature (Read-only)"]
         #[serde(
             rename = "cpuStatusReports",
@@ -1218,7 +1225,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub order_number: ::std::option::Option<String>,
-        #[doc = "The full parent path with the organizational unit's name associated with the device. Path names are case insensitive. If the parent organizational unit is the top-level organization, it is represented as a forward slash, `/`. This property can be [updated](/admin-sdk/directory/v1/guides/manage-chrome-devices#update_chrome_device) using the API. For more information about how to create an organizational structure for your device, see the [administration help center](https://support.google.com/a/answer/182433)."]
+        #[doc = "The unique ID of the organizational unit. orgUnitPath is the human readable version of orgUnitId. While orgUnitPath may change by renaming an organizational unit within the path, orgUnitId is unchangeable for one organizational unit. This property can be [updated](/admin-sdk/directory/v1/guides/manage-chrome-devices#move_chrome_devices_to_ou) using the API. For more information about how to create an organizational structure for your device, see the [administration help center](https://support.google.com/a/answer/182433)."]
+        #[serde(
+            rename = "orgUnitId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub org_unit_id: ::std::option::Option<String>,
+        #[doc = "The full parent path with the organizational unit's name associated with the device. Path names are case insensitive. If the parent organizational unit is the top-level organization, it is represented as a forward slash, `/`. This property can be [updated](/admin-sdk/directory/v1/guides/manage-chrome-devices#move_chrome_devices_to_ou) using the API. For more information about how to create an organizational structure for your device, see the [administration help center](https://support.google.com/a/answer/182433)."]
         #[serde(
             rename = "orgUnitPath",
             default,
@@ -1245,7 +1259,8 @@ pub mod schemas {
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub recent_users: ::std::option::Option<Vec<crate::schemas::RecentUsers>>,
+        pub recent_users:
+            ::std::option::Option<Vec<crate::schemas::ChromeOsDeviceRecentUsersItems>>,
         #[doc = "List of screenshot files to download. Type is always \"SCREENSHOT_FILE\". (Read-only)"]
         #[serde(
             rename = "screenshotFiles",
@@ -1350,6 +1365,155 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ChromeOsDeviceActiveTimeRangesItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ChromeOsDeviceCpuInfoItems {
+        #[doc = "The CPU architecture."]
+        #[serde(
+            rename = "architecture",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub architecture: ::std::option::Option<String>,
+        #[doc = "Information for the Logical CPUs"]
+        #[serde(
+            rename = "logicalCpus",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub logical_cpus:
+            ::std::option::Option<Vec<crate::schemas::ChromeOsDeviceCpuInfoItemsLogicalCpusItems>>,
+        #[doc = "The max CPU clock speed in kHz."]
+        #[serde(
+            rename = "maxClockSpeedKhz",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub max_clock_speed_khz: ::std::option::Option<i32>,
+        #[doc = "The CPU model name."]
+        #[serde(
+            rename = "model",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub model: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ChromeOsDeviceCpuInfoItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ChromeOsDeviceCpuInfoItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ChromeOsDeviceCpuInfoItemsLogicalCpusItems {
+        #[doc = "C-States indicate the power consumption state of the CPU. For more information look at documentation published by the CPU maker."]
+        #[serde(
+            rename = "cStates",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub c_states: ::std::option::Option<
+            Vec<crate::schemas::ChromeOsDeviceCpuInfoItemsLogicalCpusItemsCStatesItems>,
+        >,
+        #[doc = "Current frequency the CPU is running at."]
+        #[serde(
+            rename = "currentScalingFrequencyKhz",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub current_scaling_frequency_khz: ::std::option::Option<i32>,
+        #[doc = "Idle time since last boot."]
+        #[serde(
+            rename = "idleDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub idle_duration: ::std::option::Option<String>,
+        #[doc = "Maximum frequency the CPU is allowed to run at, by policy."]
+        #[serde(
+            rename = "maxScalingFrequencyKhz",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub max_scaling_frequency_khz: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for ChromeOsDeviceCpuInfoItemsLogicalCpusItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ChromeOsDeviceCpuInfoItemsLogicalCpusItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ChromeOsDeviceCpuInfoItemsLogicalCpusItemsCStatesItems {
+        #[doc = "Name of the state."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "Time spent in the state since the last reboot."]
+        #[serde(
+            rename = "sessionDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub session_duration: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for ChromeOsDeviceCpuInfoItemsLogicalCpusItemsCStatesItems
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for ChromeOsDeviceCpuInfoItemsLogicalCpusItemsCStatesItems
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1610,6 +1774,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ChromeOsDeviceLastKnownNetworkItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ChromeOsDeviceRecentUsersItems {
+        #[doc = "The user's email address. This is only present if the user type is `USER_TYPE_MANAGED`."]
+        #[serde(
+            rename = "email",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub email: ::std::option::Option<String>,
+        #[doc = "The type of the user."]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ChromeOsDeviceRecentUsersItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ChromeOsDeviceRecentUsersItems {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2975,20 +3177,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub error_message: ::std::option::Option<String>,
-        #[doc = "Failed printers."]
+        #[doc = "Failed printer."]
         #[serde(
             rename = "printer",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub printer: ::std::option::Option<crate::schemas::Printer>,
-        #[doc = "Ids of failed printers."]
+        #[doc = "Id of a failed printer."]
         #[serde(
-            rename = "printerIds",
+            rename = "printerId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub printer_ids: ::std::option::Option<String>,
+        pub printer_id: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for FailureInfo {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -3012,7 +3214,7 @@ pub mod schemas {
         DataLoss,
         #[doc = "The deadline expired before the operation could complete. For operations that change the state of the system, this error may be returned even if the operation has completed successfully. For example, a successful response from a server could have been delayed long enough for the deadline to expire. HTTP Mapping: 504 Gateway Timeout"]
         DeadlineExceeded,
-        #[doc = "The operation was rejected because the system is not in a state required for the operation's execution. For example, the directory to be deleted is non-empty, an rmdir operation is applied to a non-directory, etc. Service implementors can use the following guidelines to decide between `FAILED_PRECONDITION`, `ABORTED`, and `UNAVAILABLE`: (a) Use `UNAVAILABLE` if the client can retry just the failing call. (b) Use `ABORTED` if the client should retry at a higher level (e.g., when a client-specified test-and-set fails, indicating the client should restart a read-modify-write sequence). (c) Use `FAILED_PRECONDITION` if the client should not retry until the system state has been explicitly fixed. E.g., if an \"rmdir\" fails because the directory is non-empty, `FAILED_PRECONDITION` should be returned since the client should not retry unless the files are deleted from the directory. HTTP Mapping: 400 Bad Request"]
+        #[doc = "The operation was rejected because the system is not in a state required for the operation's execution. For example, the directory to be deleted is non-empty, an rmdir operation is applied to a non-directory, etc. Service implementors can use the following guidelines to decide between `FAILED_PRECONDITION`, `ABORTED`, and `UNAVAILABLE`: (a) Use `UNAVAILABLE` if the client can retry just the failing call. (b) Use `ABORTED` if the client should retry at a higher level. For example, when a client-specified test-and-set fails, indicating the client should restart a read-modify-write sequence. (c) Use `FAILED_PRECONDITION` if the client should not retry until the system state has been explicitly fixed. For example, if an \"rmdir\" fails because the directory is non-empty, `FAILED_PRECONDITION` should be returned since the client should not retry unless the files are deleted from the directory. HTTP Mapping: 400 Bad Request"]
         FailedPrecondition,
         #[doc = "Internal errors. This means that some invariants expected by the underlying system have been broken. This error code is reserved for serious errors. HTTP Mapping: 500 Internal Server Error"]
         Internal,
@@ -3510,7 +3712,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub next_page_token: ::std::option::Option<String>,
-        #[doc = "List of printers. If `org_unit_id` was given in the request, then only printers visible for this OU will be returned. If `org_unit_id` was given in the request, then all printers will be returned."]
+        #[doc = "List of printers. If `org_unit_id` was given in the request, then only printers visible for this OU will be returned. If `org_unit_id` was not given in the request, then all printers will be returned."]
         #[serde(
             rename = "printers",
             default,
@@ -4539,44 +4741,6 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct RecentUsers {
-        #[doc = "The user's email address. This is only present if the user type is `USER_TYPE_MANAGED`."]
-        #[serde(
-            rename = "email",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub email: ::std::option::Option<String>,
-        #[doc = "The type of the user."]
-        #[serde(
-            rename = "type",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub r#type: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for RecentUsers {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for RecentUsers {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
     pub struct Role {
         #[doc = "ETag of the resource."]
         #[serde(
@@ -4900,7 +5064,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub schema_id: ::std::option::Option<String>,
-        #[doc = "The schema's name."]
+        #[doc = "The schema's name. Each `schema_name` must be unique within a customer. Reusing a name results in a `409: Entity already exists` error."]
         #[serde(
             rename = "schemaName",
             default,
@@ -5210,7 +5374,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub agreed_to_terms: ::std::option::Option<bool>,
-        #[doc = "Output only. List of the user's alias email addresses."]
+        #[doc = "Output only. A list of the user's alias email addresses."]
         #[serde(
             rename = "aliases",
             default,
@@ -5238,7 +5402,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub creation_time: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
-        #[doc = "Custom fields of the user."]
+        #[doc = "Custom fields of the user. The key is a `schema_name` and its values are `'field_name': 'field_value'`."]
         #[serde(
             rename = "customSchemas",
             default,
@@ -5288,7 +5452,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gender: ::std::option::Option<::serde_json::Value>,
-        #[doc = "Stores the hash format of the password property. We recommend sending the `password` property value as a base 16 bit hexadecimal-encoded hash value. Set the `hashFunction` values as either the [SHA-1](https://wikipedia.org/wiki/SHA-1), [MD5](https://wikipedia.org/wiki/MD5), or [crypt](https://en.wikipedia.org/wiki/Crypt_(C)) hash format."]
+        #[doc = "Stores the hash format of the password property. We recommend sending the `password` property value as a base 16 bit hexadecimal-encoded hash value. The following `hashFunction` values are allowed: * `DES` * `MD5` - hash prefix is `$1$` * `SHA2-256` - hash prefix is `$5$` * `SHA2-512` - hash prefix is `$6$` If rounds are specified as part of the prefix, they must be 10,000 or fewer."]
         #[serde(
             rename = "hashFunction",
             default,
@@ -5950,20 +6114,27 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UserLanguage {
-        #[doc = "Other language. User can provide own language name if there is no corresponding Google III language code. If this is set LanguageCode can't be set"]
+        #[doc = "Other language. User can provide their own language name if there is no corresponding ISO 639 language code. If this is set, `languageCode` can't be set."]
         #[serde(
             rename = "customLanguage",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub custom_language: ::std::option::Option<String>,
-        #[doc = "Language Code. Should be used for storing Google III LanguageCode string representation for language. Illegal values cause SchemaException."]
+        #[doc = "ISO 639 string representation of a language. See [Language Codes](/admin-sdk/directory/v1/languages) for the list of supported codes. Valid language codes outside the supported set will be accepted by the API but may lead to unexpected behavior. Illegal values cause `SchemaException`. If this is set, `customLanguage` can't be set."]
         #[serde(
             rename = "languageCode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub language_code: ::std::option::Option<String>,
+        #[doc = "Optional. If present, controls whether the specified `languageCode` is the user's preferred language. If `customLanguage` is set, this can't be set. Allowed values are `preferred` and `not_preferred`."]
+        #[serde(
+            rename = "preference",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub preference: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for UserLanguage {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -7114,7 +7285,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Delete an ASP issued by a user."]
+            #[doc = "Deletes an ASP issued by a user."]
             pub fn delete(
                 &self,
                 user_key: impl Into<String>,
@@ -7138,7 +7309,7 @@ pub mod resources {
                     code_id,
                 }
             }
-            #[doc = "Get information about an ASP issued by a user."]
+            #[doc = "Gets information about an ASP issued by a user."]
             pub fn get(&self, user_key: impl Into<String>, code_id: i32) -> GetRequestBuilder {
                 GetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -7158,7 +7329,7 @@ pub mod resources {
                     code_id,
                 }
             }
-            #[doc = "List the ASPs issued by a user."]
+            #[doc = "Lists the ASPs issued by a user."]
             pub fn list(&self, user_key: impl Into<String>) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -7619,7 +7790,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Stop watching resources through this channel."]
+            #[doc = "Stops watching resources through this channel."]
             pub fn stop(&self, request: crate::schemas::Channel) -> StopRequestBuilder {
                 StopRequestBuilder {
                     reqwest: &self.reqwest,
@@ -7747,14 +7918,12 @@ pub mod resources {
                 Basic,
                 #[doc = "Includes all metadata fields"]
                 Full,
-                ProjectionUndefined,
             }
             impl GetProjection {
                 pub fn as_str(self) -> &'static str {
                     match self {
                         GetProjection::Basic => "BASIC",
                         GetProjection::Full => "FULL",
-                        GetProjection::ProjectionUndefined => "PROJECTION_UNDEFINED",
                     }
                 }
             }
@@ -7769,7 +7938,6 @@ pub mod resources {
                     Ok(match s {
                         "BASIC" => GetProjection::Basic,
                         "FULL" => GetProjection::Full,
-                        "PROJECTION_UNDEFINED" => GetProjection::ProjectionUndefined,
                         _ => return Err(()),
                     })
                 }
@@ -7796,7 +7964,6 @@ pub mod resources {
                     Ok(match value {
                         "BASIC" => GetProjection::Basic,
                         "FULL" => GetProjection::Full,
-                        "PROJECTION_UNDEFINED" => GetProjection::ProjectionUndefined,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -7826,7 +7993,6 @@ pub mod resources {
                 LastSync,
                 #[doc = "Chrome device notes as annotated by the administrator."]
                 Notes,
-                OrderByUndefined,
                 #[doc = "The Chrome device serial number entered when the device was enabled."]
                 SerialNumber,
                 #[doc = "Chrome device status. For more information, see the <a [chromeosdevices](/admin-sdk/directory/v1/reference/chromeosdevices.html)."]
@@ -7841,7 +8007,6 @@ pub mod resources {
                         ListOrderBy::AnnotatedUser => "annotatedUser",
                         ListOrderBy::LastSync => "lastSync",
                         ListOrderBy::Notes => "notes",
-                        ListOrderBy::OrderByUndefined => "orderByUndefined",
                         ListOrderBy::SerialNumber => "serialNumber",
                         ListOrderBy::Status => "status",
                         ListOrderBy::SupportEndDate => "supportEndDate",
@@ -7861,7 +8026,6 @@ pub mod resources {
                         "annotatedUser" => ListOrderBy::AnnotatedUser,
                         "lastSync" => ListOrderBy::LastSync,
                         "notes" => ListOrderBy::Notes,
-                        "orderByUndefined" => ListOrderBy::OrderByUndefined,
                         "serialNumber" => ListOrderBy::SerialNumber,
                         "status" => ListOrderBy::Status,
                         "supportEndDate" => ListOrderBy::SupportEndDate,
@@ -7893,7 +8057,6 @@ pub mod resources {
                         "annotatedUser" => ListOrderBy::AnnotatedUser,
                         "lastSync" => ListOrderBy::LastSync,
                         "notes" => ListOrderBy::Notes,
-                        "orderByUndefined" => ListOrderBy::OrderByUndefined,
                         "serialNumber" => ListOrderBy::SerialNumber,
                         "status" => ListOrderBy::Status,
                         "supportEndDate" => ListOrderBy::SupportEndDate,
@@ -7922,14 +8085,12 @@ pub mod resources {
                 Basic,
                 #[doc = "Includes all metadata fields"]
                 Full,
-                ProjectionUndefined,
             }
             impl ListProjection {
                 pub fn as_str(self) -> &'static str {
                     match self {
                         ListProjection::Basic => "BASIC",
                         ListProjection::Full => "FULL",
-                        ListProjection::ProjectionUndefined => "PROJECTION_UNDEFINED",
                     }
                 }
             }
@@ -7944,7 +8105,6 @@ pub mod resources {
                     Ok(match s {
                         "BASIC" => ListProjection::Basic,
                         "FULL" => ListProjection::Full,
-                        "PROJECTION_UNDEFINED" => ListProjection::ProjectionUndefined,
                         _ => return Err(()),
                     })
                 }
@@ -7971,7 +8131,6 @@ pub mod resources {
                     Ok(match value {
                         "BASIC" => ListProjection::Basic,
                         "FULL" => ListProjection::Full,
-                        "PROJECTION_UNDEFINED" => ListProjection::ProjectionUndefined,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -7997,14 +8156,12 @@ pub mod resources {
                 Ascending,
                 #[doc = "Descending order."]
                 Descending,
-                SortOrderUndefined,
             }
             impl ListSortOrder {
                 pub fn as_str(self) -> &'static str {
                     match self {
                         ListSortOrder::Ascending => "ASCENDING",
                         ListSortOrder::Descending => "DESCENDING",
-                        ListSortOrder::SortOrderUndefined => "SORT_ORDER_UNDEFINED",
                     }
                 }
             }
@@ -8019,7 +8176,6 @@ pub mod resources {
                     Ok(match s {
                         "ASCENDING" => ListSortOrder::Ascending,
                         "DESCENDING" => ListSortOrder::Descending,
-                        "SORT_ORDER_UNDEFINED" => ListSortOrder::SortOrderUndefined,
                         _ => return Err(()),
                     })
                 }
@@ -8046,7 +8202,6 @@ pub mod resources {
                     Ok(match value {
                         "ASCENDING" => ListSortOrder::Ascending,
                         "DESCENDING" => ListSortOrder::Descending,
-                        "SORT_ORDER_UNDEFINED" => ListSortOrder::SortOrderUndefined,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -8072,14 +8227,12 @@ pub mod resources {
                 Basic,
                 #[doc = "Includes all metadata fields"]
                 Full,
-                ProjectionUndefined,
             }
             impl PatchProjection {
                 pub fn as_str(self) -> &'static str {
                     match self {
                         PatchProjection::Basic => "BASIC",
                         PatchProjection::Full => "FULL",
-                        PatchProjection::ProjectionUndefined => "PROJECTION_UNDEFINED",
                     }
                 }
             }
@@ -8094,7 +8247,6 @@ pub mod resources {
                     Ok(match s {
                         "BASIC" => PatchProjection::Basic,
                         "FULL" => PatchProjection::Full,
-                        "PROJECTION_UNDEFINED" => PatchProjection::ProjectionUndefined,
                         _ => return Err(()),
                     })
                 }
@@ -8121,7 +8273,6 @@ pub mod resources {
                     Ok(match value {
                         "BASIC" => PatchProjection::Basic,
                         "FULL" => PatchProjection::Full,
-                        "PROJECTION_UNDEFINED" => PatchProjection::ProjectionUndefined,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -8147,14 +8298,12 @@ pub mod resources {
                 Basic,
                 #[doc = "Includes all metadata fields"]
                 Full,
-                ProjectionUndefined,
             }
             impl UpdateProjection {
                 pub fn as_str(self) -> &'static str {
                     match self {
                         UpdateProjection::Basic => "BASIC",
                         UpdateProjection::Full => "FULL",
-                        UpdateProjection::ProjectionUndefined => "PROJECTION_UNDEFINED",
                     }
                 }
             }
@@ -8169,7 +8318,6 @@ pub mod resources {
                     Ok(match s {
                         "BASIC" => UpdateProjection::Basic,
                         "FULL" => UpdateProjection::Full,
-                        "PROJECTION_UNDEFINED" => UpdateProjection::ProjectionUndefined,
                         _ => return Err(()),
                     })
                 }
@@ -8196,7 +8344,6 @@ pub mod resources {
                     Ok(match value {
                         "BASIC" => UpdateProjection::Basic,
                         "FULL" => UpdateProjection::Full,
-                        "PROJECTION_UNDEFINED" => UpdateProjection::ProjectionUndefined,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -8293,6 +8440,7 @@ pub mod resources {
                     upload_type: None,
                     xgafv: None,
                     customer_id: customer_id.into(),
+                    include_child_orgunits: None,
                     max_results: None,
                     order_by: None,
                     org_unit_path: None,
@@ -8302,7 +8450,7 @@ pub mod resources {
                     sort_order: None,
                 }
             }
-            #[doc = "Move or insert multiple Chrome OS devices to an organizational unit. You can move up to 50 devices at once."]
+            #[doc = "Moves or inserts multiple Chrome OS devices to an organizational unit. You can move up to 50 devices at once."]
             pub fn move_devices_to_ou(
                 &self,
                 request: crate::schemas::ChromeOsMoveDevicesToOu,
@@ -8681,6 +8829,7 @@ pub mod resources {
             pub(crate) reqwest: &'a ::reqwest::blocking::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             customer_id: String,
+            include_child_orgunits: Option<bool>,
             max_results: Option<i32>,
             order_by: Option<crate::resources::chromeosdevices::params::ListOrderBy>,
             org_unit_path: Option<String>,
@@ -8701,6 +8850,11 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
+            #[doc = "Return devices from all child orgunits, as well as the specified org unit. If this is set to true 'orgUnitPath' must be provided."]
+            pub fn include_child_orgunits(mut self, value: bool) -> Self {
+                self.include_child_orgunits = Some(value);
+                self
+            }
             #[doc = "Maximum number of results to return."]
             pub fn max_results(mut self, value: i32) -> Self {
                 self.max_results = Some(value);
@@ -8714,7 +8868,7 @@ pub mod resources {
                 self.order_by = Some(value);
                 self
             }
-            #[doc = "The full path of the organizational unit or its unique ID."]
+            #[doc = "The full path of the organizational unit (minus the leading `/`) or its unique ID."]
             pub fn org_unit_path(mut self, value: impl Into<String>) -> Self {
                 self.org_unit_path = Some(value.into());
                 self
@@ -8732,7 +8886,7 @@ pub mod resources {
                 self.projection = Some(value);
                 self
             }
-            #[doc = "Search string in the format given at http://support.google.com/chromeos/a/bin/answer.py?answer=1698333"]
+            #[doc = "Search string in the format given at https://developers.google.com/admin-sdk/directory/v1/list-query-operators"]
             pub fn query(mut self, value: impl Into<String>) -> Self {
                 self.query = Some(value.into());
                 self
@@ -8962,6 +9116,7 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                req = req.query(&[("includeChildOrgunits", &self.include_child_orgunits)]);
                 req = req.query(&[("maxResults", &self.max_results)]);
                 req = req.query(&[("orderBy", &self.order_by)]);
                 req = req.query(&[("orgUnitPath", &self.org_unit_path)]);
@@ -9980,7 +10135,7 @@ pub mod resources {
                     customer_key: customer_key.into(),
                 }
             }
-            #[doc = "Patch Customers via Apiary Patch Orchestration"]
+            #[doc = "Patches a customer."]
             pub fn patch(
                 &self,
                 request: crate::schemas::Customer,
@@ -10661,6 +10816,7 @@ pub mod resources {
                             xgafv: None,
                             parent: parent.into(),
                             filter: None,
+                            order_by: None,
                             org_unit_id: None,
                             page_size: None,
                             page_token: None,
@@ -11538,6 +11694,7 @@ pub mod resources {
                     pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                     parent: String,
                     filter: Option<String>,
+                    order_by: Option<String>,
                     org_unit_id: Option<String>,
                     page_size: Option<i32>,
                     page_token: Option<String>,
@@ -11557,6 +11714,11 @@ pub mod resources {
                     #[doc = "Search query. Search syntax is shared between this api and Admin Console printers pages."]
                     pub fn filter(mut self, value: impl Into<String>) -> Self {
                         self.filter = Some(value.into());
+                        self
+                    }
+                    #[doc = "The order to sort results by. Must be one of display_name, description, make_and_model, or create_time. Default order is ascending, but descending order can be returned by appending \"desc\" to the order_by field. For instance, \"description desc\" will return the printers sorted by description in descending order."]
+                    pub fn order_by(mut self, value: impl Into<String>) -> Self {
+                        self.order_by = Some(value.into());
                         self
                     }
                     #[doc = "Organization Unit that we want to list the printers for. When org_unit is not present in the request then all printers of the customer are returned (or filtered). When org_unit is present in the request then only printers available to this OU will be returned (owned or inherited). You may see if printer is owned or inherited for this OU by looking at Printer.org_unit_id."]
@@ -11803,6 +11965,7 @@ pub mod resources {
                     {
                         let mut req = self.reqwest.request(::reqwest::Method::GET, path);
                         req = req.query(&[("filter", &self.filter)]);
+                        req = req.query(&[("orderBy", &self.order_by)]);
                         req = req.query(&[("orgUnitId", &self.org_unit_id)]);
                         req = req.query(&[("pageSize", &self.page_size)]);
                         req = req.query(&[("pageToken", &self.page_token)]);
@@ -13718,13 +13881,11 @@ pub mod resources {
             pub enum ListOrderBy {
                 #[doc = "Email of the group."]
                 Email,
-                OrderByUndefined,
             }
             impl ListOrderBy {
                 pub fn as_str(self) -> &'static str {
                     match self {
                         ListOrderBy::Email => "email",
-                        ListOrderBy::OrderByUndefined => "orderByUndefined",
                     }
                 }
             }
@@ -13738,7 +13899,6 @@ pub mod resources {
                 fn from_str(s: &str) -> ::std::result::Result<ListOrderBy, ()> {
                     Ok(match s {
                         "email" => ListOrderBy::Email,
-                        "orderByUndefined" => ListOrderBy::OrderByUndefined,
                         _ => return Err(()),
                     })
                 }
@@ -13764,7 +13924,6 @@ pub mod resources {
                     let value: &'de str = <&str>::deserialize(deserializer)?;
                     Ok(match value {
                         "email" => ListOrderBy::Email,
-                        "orderByUndefined" => ListOrderBy::OrderByUndefined,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -13790,14 +13949,12 @@ pub mod resources {
                 Ascending,
                 #[doc = "Descending order."]
                 Descending,
-                SortOrderUndefined,
             }
             impl ListSortOrder {
                 pub fn as_str(self) -> &'static str {
                     match self {
                         ListSortOrder::Ascending => "ASCENDING",
                         ListSortOrder::Descending => "DESCENDING",
-                        ListSortOrder::SortOrderUndefined => "SORT_ORDER_UNDEFINED",
                     }
                 }
             }
@@ -13812,7 +13969,6 @@ pub mod resources {
                     Ok(match s {
                         "ASCENDING" => ListSortOrder::Ascending,
                         "DESCENDING" => ListSortOrder::Descending,
-                        "SORT_ORDER_UNDEFINED" => ListSortOrder::SortOrderUndefined,
                         _ => return Err(()),
                     })
                 }
@@ -13839,7 +13995,6 @@ pub mod resources {
                     Ok(match value {
                         "ASCENDING" => ListSortOrder::Ascending,
                         "DESCENDING" => ListSortOrder::Descending,
-                        "SORT_ORDER_UNDEFINED" => ListSortOrder::SortOrderUndefined,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -13925,7 +14080,7 @@ pub mod resources {
                     xgafv: None,
                 }
             }
-            #[doc = "Retrieve all groups of a domain or of a user given a userKey (paginated)"]
+            #[doc = "Retrieves all groups of a domain or of a user given a userKey (paginated)."]
             pub fn list(&self) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -14445,7 +14600,7 @@ pub mod resources {
                 self.customer = Some(value.into());
                 self
             }
-            #[doc = "The domain name. Use this field to get fields from only one domain. To return all domains for a customer account, use the `customer` query parameter instead."]
+            #[doc = "The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the `customer` query parameter instead."]
             pub fn domain(mut self, value: impl Into<String>) -> Self {
                 self.domain = Some(value.into());
                 self
@@ -16971,14 +17126,12 @@ pub mod resources {
                 Basic,
                 #[doc = "Includes all metadata fields"]
                 Full,
-                ProjectionUndefined,
             }
             impl GetProjection {
                 pub fn as_str(self) -> &'static str {
                     match self {
                         GetProjection::Basic => "BASIC",
                         GetProjection::Full => "FULL",
-                        GetProjection::ProjectionUndefined => "PROJECTION_UNDEFINED",
                     }
                 }
             }
@@ -16993,7 +17146,6 @@ pub mod resources {
                     Ok(match s {
                         "BASIC" => GetProjection::Basic,
                         "FULL" => GetProjection::Full,
-                        "PROJECTION_UNDEFINED" => GetProjection::ProjectionUndefined,
                         _ => return Err(()),
                     })
                 }
@@ -17020,7 +17172,6 @@ pub mod resources {
                     Ok(match value {
                         "BASIC" => GetProjection::Basic,
                         "FULL" => GetProjection::Full,
-                        "PROJECTION_UNDEFINED" => GetProjection::ProjectionUndefined,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -17052,7 +17203,6 @@ pub mod resources {
                 Model,
                 #[doc = "The device owner's user name."]
                 Name,
-                OrderByUndefined,
                 #[doc = "The device's operating system."]
                 Os,
                 #[doc = "The device status."]
@@ -17068,7 +17218,6 @@ pub mod resources {
                         ListOrderBy::LastSync => "lastSync",
                         ListOrderBy::Model => "model",
                         ListOrderBy::Name => "name",
-                        ListOrderBy::OrderByUndefined => "orderByUndefined",
                         ListOrderBy::Os => "os",
                         ListOrderBy::Status => "status",
                         ListOrderBy::Type => "type",
@@ -17089,7 +17238,6 @@ pub mod resources {
                         "lastSync" => ListOrderBy::LastSync,
                         "model" => ListOrderBy::Model,
                         "name" => ListOrderBy::Name,
-                        "orderByUndefined" => ListOrderBy::OrderByUndefined,
                         "os" => ListOrderBy::Os,
                         "status" => ListOrderBy::Status,
                         "type" => ListOrderBy::Type,
@@ -17122,7 +17270,6 @@ pub mod resources {
                         "lastSync" => ListOrderBy::LastSync,
                         "model" => ListOrderBy::Model,
                         "name" => ListOrderBy::Name,
-                        "orderByUndefined" => ListOrderBy::OrderByUndefined,
                         "os" => ListOrderBy::Os,
                         "status" => ListOrderBy::Status,
                         "type" => ListOrderBy::Type,
@@ -17151,14 +17298,12 @@ pub mod resources {
                 Basic,
                 #[doc = "Includes all metadata fields"]
                 Full,
-                ProjectionUndefined,
             }
             impl ListProjection {
                 pub fn as_str(self) -> &'static str {
                     match self {
                         ListProjection::Basic => "BASIC",
                         ListProjection::Full => "FULL",
-                        ListProjection::ProjectionUndefined => "PROJECTION_UNDEFINED",
                     }
                 }
             }
@@ -17173,7 +17318,6 @@ pub mod resources {
                     Ok(match s {
                         "BASIC" => ListProjection::Basic,
                         "FULL" => ListProjection::Full,
-                        "PROJECTION_UNDEFINED" => ListProjection::ProjectionUndefined,
                         _ => return Err(()),
                     })
                 }
@@ -17200,7 +17344,6 @@ pub mod resources {
                     Ok(match value {
                         "BASIC" => ListProjection::Basic,
                         "FULL" => ListProjection::Full,
-                        "PROJECTION_UNDEFINED" => ListProjection::ProjectionUndefined,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -17226,14 +17369,12 @@ pub mod resources {
                 Ascending,
                 #[doc = "Descending order."]
                 Descending,
-                SortOrderUndefined,
             }
             impl ListSortOrder {
                 pub fn as_str(self) -> &'static str {
                     match self {
                         ListSortOrder::Ascending => "ASCENDING",
                         ListSortOrder::Descending => "DESCENDING",
-                        ListSortOrder::SortOrderUndefined => "SORT_ORDER_UNDEFINED",
                     }
                 }
             }
@@ -17248,7 +17389,6 @@ pub mod resources {
                     Ok(match s {
                         "ASCENDING" => ListSortOrder::Ascending,
                         "DESCENDING" => ListSortOrder::Descending,
-                        "SORT_ORDER_UNDEFINED" => ListSortOrder::SortOrderUndefined,
                         _ => return Err(()),
                     })
                 }
@@ -17275,7 +17415,6 @@ pub mod resources {
                     Ok(match value {
                         "ASCENDING" => ListSortOrder::Ascending,
                         "DESCENDING" => ListSortOrder::Descending,
-                        "SORT_ORDER_UNDEFINED" => ListSortOrder::SortOrderUndefined,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -17379,7 +17518,7 @@ pub mod resources {
                     projection: None,
                 }
             }
-            #[doc = "Retrieves a paginated list of all mobile devices for an account."]
+            #[doc = "Retrieves a paginated list of all user-owned mobile devices for an account. To retrieve a list that includes company-owned devices, use the Cloud Identity [Devices API](https://cloud.google.com/identity/docs/concepts/overview-devices) instead."]
             pub fn list(&self, customer_id: impl Into<String>) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -18137,14 +18276,12 @@ pub mod resources {
                 All,
                 #[doc = "Immediate children only (default)."]
                 Children,
-                TypeUndefined,
             }
             impl ListType {
                 pub fn as_str(self) -> &'static str {
                     match self {
                         ListType::All => "all",
                         ListType::Children => "children",
-                        ListType::TypeUndefined => "typeUndefined",
                     }
                 }
             }
@@ -18159,7 +18296,6 @@ pub mod resources {
                     Ok(match s {
                         "all" => ListType::All,
                         "children" => ListType::Children,
-                        "typeUndefined" => ListType::TypeUndefined,
                         _ => return Err(()),
                     })
                 }
@@ -18186,7 +18322,6 @@ pub mod resources {
                     Ok(match value {
                         "all" => ListType::All,
                         "children" => ListType::Children,
-                        "typeUndefined" => ListType::TypeUndefined,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -18237,7 +18372,6 @@ pub mod resources {
                     xgafv: None,
                     customer_id: customer_id.into(),
                     org_unit_path: org_unit_path.into(),
-                    allow_plus: None,
                 }
             }
             #[doc = "Retrieves an organizational unit."]
@@ -18262,7 +18396,6 @@ pub mod resources {
                     xgafv: None,
                     customer_id: customer_id.into(),
                     org_unit_path: org_unit_path.into(),
-                    allow_plus: None,
                 }
             }
             #[doc = "Adds an organizational unit."]
@@ -18334,7 +18467,6 @@ pub mod resources {
                     xgafv: None,
                     customer_id: customer_id.into(),
                     org_unit_path: org_unit_path.into(),
-                    allow_plus: None,
                 }
             }
             #[doc = "Updates an organizational unit."]
@@ -18361,7 +18493,6 @@ pub mod resources {
                     xgafv: None,
                     customer_id: customer_id.into(),
                     org_unit_path: org_unit_path.into(),
-                    allow_plus: None,
                 }
             }
         }
@@ -18372,7 +18503,6 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             customer_id: String,
             org_unit_path: String,
-            allow_plus: Option<bool>,
             access_token: Option<String>,
             alt: Option<crate::params::Alt>,
             callback: Option<String>,
@@ -18386,11 +18516,6 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
-            #[doc = "Parses org unit path without url decode to allow for plus in ou name"]
-            pub fn allow_plus(mut self, value: bool) -> Self {
-                self.allow_plus = Some(value);
-                self
-            }
             #[doc = "OAuth access token."]
             pub fn access_token(mut self, value: impl Into<String>) -> Self {
                 self.access_token = Some(value.into());
@@ -18466,7 +18591,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
-                req = req.query(&[("allowPlus", &self.allow_plus)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -18493,7 +18617,6 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             customer_id: String,
             org_unit_path: String,
-            allow_plus: Option<bool>,
             access_token: Option<String>,
             alt: Option<crate::params::Alt>,
             callback: Option<String>,
@@ -18507,11 +18630,6 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> GetRequestBuilder<'a> {
-            #[doc = "Parses org unit path without url decode to allow for plus in ou name"]
-            pub fn allow_plus(mut self, value: bool) -> Self {
-                self.allow_plus = Some(value);
-                self
-            }
             #[doc = "OAuth access token."]
             pub fn access_token(mut self, value: impl Into<String>) -> Self {
                 self.access_token = Some(value.into());
@@ -18636,7 +18754,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::GET, path);
-                req = req.query(&[("allowPlus", &self.allow_plus)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -18990,7 +19107,6 @@ pub mod resources {
             request: crate::schemas::OrgUnit,
             customer_id: String,
             org_unit_path: String,
-            allow_plus: Option<bool>,
             access_token: Option<String>,
             alt: Option<crate::params::Alt>,
             callback: Option<String>,
@@ -19004,11 +19120,6 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> PatchRequestBuilder<'a> {
-            #[doc = "Parses org unit path without url decode to allow for plus in ou name"]
-            pub fn allow_plus(mut self, value: bool) -> Self {
-                self.allow_plus = Some(value);
-                self
-            }
             #[doc = "OAuth access token."]
             pub fn access_token(mut self, value: impl Into<String>) -> Self {
                 self.access_token = Some(value.into());
@@ -19134,7 +19245,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
-                req = req.query(&[("allowPlus", &self.allow_plus)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -19162,7 +19272,6 @@ pub mod resources {
             request: crate::schemas::OrgUnit,
             customer_id: String,
             org_unit_path: String,
-            allow_plus: Option<bool>,
             access_token: Option<String>,
             alt: Option<crate::params::Alt>,
             callback: Option<String>,
@@ -19176,11 +19285,6 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> UpdateRequestBuilder<'a> {
-            #[doc = "Parses org unit path without url decode to allow for plus in ou name"]
-            pub fn allow_plus(mut self, value: bool) -> Self {
-                self.allow_plus = Some(value);
-                self
-            }
             #[doc = "OAuth access token."]
             pub fn access_token(mut self, value: impl Into<String>) -> Self {
                 self.access_token = Some(value.into());
@@ -19306,7 +19410,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::PUT, path);
-                req = req.query(&[("allowPlus", &self.allow_plus)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -19553,7 +19656,6 @@ pub mod resources {
                 pub enum InsertCoordinatesSource {
                     #[doc = "Building.coordinates are set to the coordinates included in the request."]
                     ClientSpecified,
-                    CoordinatesSourceUndefined,
                     #[doc = "Building.coordinates are automatically populated based on the postal address."]
                     ResolvedFromAddress,
                     #[doc = "Defaults to `RESOLVED_FROM_ADDRESS` if postal address is provided. Otherwise, defaults to `CLIENT_SPECIFIED` if coordinates are provided."]
@@ -19563,9 +19665,6 @@ pub mod resources {
                     pub fn as_str(self) -> &'static str {
                         match self {
                             InsertCoordinatesSource::ClientSpecified => "CLIENT_SPECIFIED",
-                            InsertCoordinatesSource::CoordinatesSourceUndefined => {
-                                "COORDINATES_SOURCE_UNDEFINED"
-                            }
                             InsertCoordinatesSource::ResolvedFromAddress => "RESOLVED_FROM_ADDRESS",
                             InsertCoordinatesSource::SourceUnspecified => "SOURCE_UNSPECIFIED",
                         }
@@ -19581,9 +19680,6 @@ pub mod resources {
                     fn from_str(s: &str) -> ::std::result::Result<InsertCoordinatesSource, ()> {
                         Ok(match s {
                             "CLIENT_SPECIFIED" => InsertCoordinatesSource::ClientSpecified,
-                            "COORDINATES_SOURCE_UNDEFINED" => {
-                                InsertCoordinatesSource::CoordinatesSourceUndefined
-                            }
                             "RESOLVED_FROM_ADDRESS" => InsertCoordinatesSource::ResolvedFromAddress,
                             "SOURCE_UNSPECIFIED" => InsertCoordinatesSource::SourceUnspecified,
                             _ => return Err(()),
@@ -19611,9 +19707,6 @@ pub mod resources {
                         let value: &'de str = <&str>::deserialize(deserializer)?;
                         Ok(match value {
                             "CLIENT_SPECIFIED" => InsertCoordinatesSource::ClientSpecified,
-                            "COORDINATES_SOURCE_UNDEFINED" => {
-                                InsertCoordinatesSource::CoordinatesSourceUndefined
-                            }
                             "RESOLVED_FROM_ADDRESS" => InsertCoordinatesSource::ResolvedFromAddress,
                             "SOURCE_UNSPECIFIED" => InsertCoordinatesSource::SourceUnspecified,
                             _ => {
@@ -19639,7 +19732,6 @@ pub mod resources {
                 pub enum PatchCoordinatesSource {
                     #[doc = "Building.coordinates are set to the coordinates included in the request."]
                     ClientSpecified,
-                    CoordinatesSourceUndefined,
                     #[doc = "Building.coordinates are automatically populated based on the postal address."]
                     ResolvedFromAddress,
                     #[doc = "Defaults to `RESOLVED_FROM_ADDRESS` if postal address is provided. Otherwise, defaults to `CLIENT_SPECIFIED` if coordinates are provided."]
@@ -19649,9 +19741,6 @@ pub mod resources {
                     pub fn as_str(self) -> &'static str {
                         match self {
                             PatchCoordinatesSource::ClientSpecified => "CLIENT_SPECIFIED",
-                            PatchCoordinatesSource::CoordinatesSourceUndefined => {
-                                "COORDINATES_SOURCE_UNDEFINED"
-                            }
                             PatchCoordinatesSource::ResolvedFromAddress => "RESOLVED_FROM_ADDRESS",
                             PatchCoordinatesSource::SourceUnspecified => "SOURCE_UNSPECIFIED",
                         }
@@ -19667,9 +19756,6 @@ pub mod resources {
                     fn from_str(s: &str) -> ::std::result::Result<PatchCoordinatesSource, ()> {
                         Ok(match s {
                             "CLIENT_SPECIFIED" => PatchCoordinatesSource::ClientSpecified,
-                            "COORDINATES_SOURCE_UNDEFINED" => {
-                                PatchCoordinatesSource::CoordinatesSourceUndefined
-                            }
                             "RESOLVED_FROM_ADDRESS" => PatchCoordinatesSource::ResolvedFromAddress,
                             "SOURCE_UNSPECIFIED" => PatchCoordinatesSource::SourceUnspecified,
                             _ => return Err(()),
@@ -19697,9 +19783,6 @@ pub mod resources {
                         let value: &'de str = <&str>::deserialize(deserializer)?;
                         Ok(match value {
                             "CLIENT_SPECIFIED" => PatchCoordinatesSource::ClientSpecified,
-                            "COORDINATES_SOURCE_UNDEFINED" => {
-                                PatchCoordinatesSource::CoordinatesSourceUndefined
-                            }
                             "RESOLVED_FROM_ADDRESS" => PatchCoordinatesSource::ResolvedFromAddress,
                             "SOURCE_UNSPECIFIED" => PatchCoordinatesSource::SourceUnspecified,
                             _ => {
@@ -19725,7 +19808,6 @@ pub mod resources {
                 pub enum UpdateCoordinatesSource {
                     #[doc = "Building.coordinates are set to the coordinates included in the request."]
                     ClientSpecified,
-                    CoordinatesSourceUndefined,
                     #[doc = "Building.coordinates are automatically populated based on the postal address."]
                     ResolvedFromAddress,
                     #[doc = "Defaults to `RESOLVED_FROM_ADDRESS` if postal address is provided. Otherwise, defaults to `CLIENT_SPECIFIED` if coordinates are provided."]
@@ -19735,9 +19817,6 @@ pub mod resources {
                     pub fn as_str(self) -> &'static str {
                         match self {
                             UpdateCoordinatesSource::ClientSpecified => "CLIENT_SPECIFIED",
-                            UpdateCoordinatesSource::CoordinatesSourceUndefined => {
-                                "COORDINATES_SOURCE_UNDEFINED"
-                            }
                             UpdateCoordinatesSource::ResolvedFromAddress => "RESOLVED_FROM_ADDRESS",
                             UpdateCoordinatesSource::SourceUnspecified => "SOURCE_UNSPECIFIED",
                         }
@@ -19753,9 +19832,6 @@ pub mod resources {
                     fn from_str(s: &str) -> ::std::result::Result<UpdateCoordinatesSource, ()> {
                         Ok(match s {
                             "CLIENT_SPECIFIED" => UpdateCoordinatesSource::ClientSpecified,
-                            "COORDINATES_SOURCE_UNDEFINED" => {
-                                UpdateCoordinatesSource::CoordinatesSourceUndefined
-                            }
                             "RESOLVED_FROM_ADDRESS" => UpdateCoordinatesSource::ResolvedFromAddress,
                             "SOURCE_UNSPECIFIED" => UpdateCoordinatesSource::SourceUnspecified,
                             _ => return Err(()),
@@ -19783,9 +19859,6 @@ pub mod resources {
                         let value: &'de str = <&str>::deserialize(deserializer)?;
                         Ok(match value {
                             "CLIENT_SPECIFIED" => UpdateCoordinatesSource::ClientSpecified,
-                            "COORDINATES_SOURCE_UNDEFINED" => {
-                                UpdateCoordinatesSource::CoordinatesSourceUndefined
-                            }
                             "RESOLVED_FROM_ADDRESS" => UpdateCoordinatesSource::ResolvedFromAddress,
                             "SOURCE_UNSPECIFIED" => UpdateCoordinatesSource::SourceUnspecified,
                             _ => {
@@ -19910,7 +19983,7 @@ pub mod resources {
                         page_token: None,
                     }
                 }
-                #[doc = "Patches a building via Apiary Patch Orchestration."]
+                #[doc = "Patches a building."]
                 pub fn patch(
                     &self,
                     request: crate::schemas::Building,
@@ -21171,7 +21244,7 @@ pub mod resources {
                         query: None,
                     }
                 }
-                #[doc = "Patches a calendar resource via Apiary Patch Orchestration."]
+                #[doc = "Patches a calendar resource."]
                 pub fn patch(
                     &self,
                     request: crate::schemas::CalendarResource,
@@ -22413,7 +22486,7 @@ pub mod resources {
                         page_token: None,
                     }
                 }
-                #[doc = "Patches a feature via Apiary Patch Orchestration."]
+                #[doc = "Patches a feature."]
                 pub fn patch(
                     &self,
                     request: crate::schemas::Feature,
@@ -23712,7 +23785,7 @@ pub mod resources {
                     role_assignment_id: role_assignment_id.into(),
                 }
             }
-            #[doc = "Retrieve a role assignment."]
+            #[doc = "Retrieves a role assignment."]
             pub fn get(
                 &self,
                 customer: impl Into<String>,
@@ -24620,7 +24693,7 @@ pub mod resources {
                     page_token: None,
                 }
             }
-            #[doc = "Patch role via Apiary Patch Orchestration"]
+            #[doc = "Patches a role."]
             pub fn patch(
                 &self,
                 request: crate::schemas::Role,
@@ -25718,7 +25791,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Delete schema"]
+            #[doc = "Deletes a schema."]
             pub fn delete(
                 &self,
                 customer_id: impl Into<String>,
@@ -25742,7 +25815,7 @@ pub mod resources {
                     schema_key: schema_key.into(),
                 }
             }
-            #[doc = "Retrieve schema"]
+            #[doc = "Retrieves a schema."]
             pub fn get(
                 &self,
                 customer_id: impl Into<String>,
@@ -25766,7 +25839,7 @@ pub mod resources {
                     schema_key: schema_key.into(),
                 }
             }
-            #[doc = "Create schema."]
+            #[doc = "Creates a schema."]
             pub fn insert(
                 &self,
                 request: crate::schemas::Schema,
@@ -25790,7 +25863,7 @@ pub mod resources {
                     customer_id: customer_id.into(),
                 }
             }
-            #[doc = "Retrieve all schemas for a customer"]
+            #[doc = "Retrieves all schemas for a customer."]
             pub fn list(&self, customer_id: impl Into<String>) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -25809,7 +25882,7 @@ pub mod resources {
                     customer_id: customer_id.into(),
                 }
             }
-            #[doc = "Patch Schema via Apiary Patch Orchestration"]
+            #[doc = "Patches a schema."]
             pub fn patch(
                 &self,
                 request: crate::schemas::Schema,
@@ -25835,7 +25908,7 @@ pub mod resources {
                     schema_key: schema_key.into(),
                 }
             }
-            #[doc = "Update schema"]
+            #[doc = "Updates a schema."]
             pub fn update(
                 &self,
                 request: crate::schemas::Schema,
@@ -26792,7 +26865,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Delete all access tokens issued by a user for an application."]
+            #[doc = "Deletes all access tokens issued by a user for an application."]
             pub fn delete(
                 &self,
                 user_key: impl Into<String>,
@@ -26816,7 +26889,7 @@ pub mod resources {
                     client_id: client_id.into(),
                 }
             }
-            #[doc = "Get information about an access token issued by a user."]
+            #[doc = "Gets information about an access token issued by a user."]
             pub fn get(
                 &self,
                 user_key: impl Into<String>,
@@ -27303,7 +27376,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Turn off 2-Step Verification for user."]
+            #[doc = "Turns off 2-Step Verification for user."]
             pub fn turn_off(&self, user_key: impl Into<String>) -> TurnOffRequestBuilder {
                 TurnOffRequestBuilder {
                     reqwest: &self.reqwest,
@@ -27440,7 +27513,6 @@ pub mod resources {
                 Custom,
                 #[doc = "Include all fields associated with this user."]
                 Full,
-                ProjectionUndefined,
             }
             impl GetProjection {
                 pub fn as_str(self) -> &'static str {
@@ -27448,7 +27520,6 @@ pub mod resources {
                         GetProjection::Basic => "basic",
                         GetProjection::Custom => "custom",
                         GetProjection::Full => "full",
-                        GetProjection::ProjectionUndefined => "projectionUndefined",
                     }
                 }
             }
@@ -27464,7 +27535,6 @@ pub mod resources {
                         "basic" => GetProjection::Basic,
                         "custom" => GetProjection::Custom,
                         "full" => GetProjection::Full,
-                        "projectionUndefined" => GetProjection::ProjectionUndefined,
                         _ => return Err(()),
                     })
                 }
@@ -27492,7 +27562,6 @@ pub mod resources {
                         "basic" => GetProjection::Basic,
                         "custom" => GetProjection::Custom,
                         "full" => GetProjection::Full,
-                        "projectionUndefined" => GetProjection::ProjectionUndefined,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -27518,14 +27587,12 @@ pub mod resources {
                 AdminView,
                 #[doc = "Results only include fields for the user that are publicly visible to other users in the domain."]
                 DomainPublic,
-                ViewTypeUndefined,
             }
             impl GetViewType {
                 pub fn as_str(self) -> &'static str {
                     match self {
                         GetViewType::AdminView => "admin_view",
                         GetViewType::DomainPublic => "domain_public",
-                        GetViewType::ViewTypeUndefined => "view_type_undefined",
                     }
                 }
             }
@@ -27540,7 +27607,6 @@ pub mod resources {
                     Ok(match s {
                         "admin_view" => GetViewType::AdminView,
                         "domain_public" => GetViewType::DomainPublic,
-                        "view_type_undefined" => GetViewType::ViewTypeUndefined,
                         _ => return Err(()),
                     })
                 }
@@ -27567,7 +27633,6 @@ pub mod resources {
                     Ok(match value {
                         "admin_view" => GetViewType::AdminView,
                         "domain_public" => GetViewType::DomainPublic,
-                        "view_type_undefined" => GetViewType::ViewTypeUndefined,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -27593,7 +27658,6 @@ pub mod resources {
                 Add,
                 #[doc = "User Deleted Event"]
                 Delete,
-                EventUndefined,
                 #[doc = "User Admin Status Change Event"]
                 MakeAdmin,
                 #[doc = "User Undeleted Event"]
@@ -27606,7 +27670,6 @@ pub mod resources {
                     match self {
                         ListEvent::Add => "add",
                         ListEvent::Delete => "delete",
-                        ListEvent::EventUndefined => "eventUndefined",
                         ListEvent::MakeAdmin => "makeAdmin",
                         ListEvent::Undelete => "undelete",
                         ListEvent::Update => "update",
@@ -27624,7 +27687,6 @@ pub mod resources {
                     Ok(match s {
                         "add" => ListEvent::Add,
                         "delete" => ListEvent::Delete,
-                        "eventUndefined" => ListEvent::EventUndefined,
                         "makeAdmin" => ListEvent::MakeAdmin,
                         "undelete" => ListEvent::Undelete,
                         "update" => ListEvent::Update,
@@ -27654,7 +27716,6 @@ pub mod resources {
                     Ok(match value {
                         "add" => ListEvent::Add,
                         "delete" => ListEvent::Delete,
-                        "eventUndefined" => ListEvent::EventUndefined,
                         "makeAdmin" => ListEvent::MakeAdmin,
                         "undelete" => ListEvent::Undelete,
                         "update" => ListEvent::Update,
@@ -27685,7 +27746,6 @@ pub mod resources {
                 FamilyName,
                 #[doc = "User's given name."]
                 GivenName,
-                OrderByUndefined,
             }
             impl ListOrderBy {
                 pub fn as_str(self) -> &'static str {
@@ -27693,7 +27753,6 @@ pub mod resources {
                         ListOrderBy::Email => "email",
                         ListOrderBy::FamilyName => "familyName",
                         ListOrderBy::GivenName => "givenName",
-                        ListOrderBy::OrderByUndefined => "orderByUndefined",
                     }
                 }
             }
@@ -27709,7 +27768,6 @@ pub mod resources {
                         "email" => ListOrderBy::Email,
                         "familyName" => ListOrderBy::FamilyName,
                         "givenName" => ListOrderBy::GivenName,
-                        "orderByUndefined" => ListOrderBy::OrderByUndefined,
                         _ => return Err(()),
                     })
                 }
@@ -27737,7 +27795,6 @@ pub mod resources {
                         "email" => ListOrderBy::Email,
                         "familyName" => ListOrderBy::FamilyName,
                         "givenName" => ListOrderBy::GivenName,
-                        "orderByUndefined" => ListOrderBy::OrderByUndefined,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -27765,7 +27822,6 @@ pub mod resources {
                 Custom,
                 #[doc = "Include all fields associated with this user."]
                 Full,
-                ProjectionUndefined,
             }
             impl ListProjection {
                 pub fn as_str(self) -> &'static str {
@@ -27773,7 +27829,6 @@ pub mod resources {
                         ListProjection::Basic => "basic",
                         ListProjection::Custom => "custom",
                         ListProjection::Full => "full",
-                        ListProjection::ProjectionUndefined => "projectionUndefined",
                     }
                 }
             }
@@ -27789,7 +27844,6 @@ pub mod resources {
                         "basic" => ListProjection::Basic,
                         "custom" => ListProjection::Custom,
                         "full" => ListProjection::Full,
-                        "projectionUndefined" => ListProjection::ProjectionUndefined,
                         _ => return Err(()),
                     })
                 }
@@ -27817,7 +27871,6 @@ pub mod resources {
                         "basic" => ListProjection::Basic,
                         "custom" => ListProjection::Custom,
                         "full" => ListProjection::Full,
-                        "projectionUndefined" => ListProjection::ProjectionUndefined,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -27843,14 +27896,12 @@ pub mod resources {
                 Ascending,
                 #[doc = "Descending order."]
                 Descending,
-                SortOrderUndefined,
             }
             impl ListSortOrder {
                 pub fn as_str(self) -> &'static str {
                     match self {
                         ListSortOrder::Ascending => "ASCENDING",
                         ListSortOrder::Descending => "DESCENDING",
-                        ListSortOrder::SortOrderUndefined => "SORT_ORDER_UNDEFINED",
                     }
                 }
             }
@@ -27865,7 +27916,6 @@ pub mod resources {
                     Ok(match s {
                         "ASCENDING" => ListSortOrder::Ascending,
                         "DESCENDING" => ListSortOrder::Descending,
-                        "SORT_ORDER_UNDEFINED" => ListSortOrder::SortOrderUndefined,
                         _ => return Err(()),
                     })
                 }
@@ -27892,7 +27942,6 @@ pub mod resources {
                     Ok(match value {
                         "ASCENDING" => ListSortOrder::Ascending,
                         "DESCENDING" => ListSortOrder::Descending,
-                        "SORT_ORDER_UNDEFINED" => ListSortOrder::SortOrderUndefined,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -27918,14 +27967,12 @@ pub mod resources {
                 AdminView,
                 #[doc = "Results only include fields for the user that are publicly visible to other users in the domain."]
                 DomainPublic,
-                ViewTypeUndefined,
             }
             impl ListViewType {
                 pub fn as_str(self) -> &'static str {
                     match self {
                         ListViewType::AdminView => "admin_view",
                         ListViewType::DomainPublic => "domain_public",
-                        ListViewType::ViewTypeUndefined => "view_type_undefined",
                     }
                 }
             }
@@ -27940,7 +27987,6 @@ pub mod resources {
                     Ok(match s {
                         "admin_view" => ListViewType::AdminView,
                         "domain_public" => ListViewType::DomainPublic,
-                        "view_type_undefined" => ListViewType::ViewTypeUndefined,
                         _ => return Err(()),
                     })
                 }
@@ -27967,7 +28013,6 @@ pub mod resources {
                     Ok(match value {
                         "admin_view" => ListViewType::AdminView,
                         "domain_public" => ListViewType::DomainPublic,
-                        "view_type_undefined" => ListViewType::ViewTypeUndefined,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -27993,7 +28038,6 @@ pub mod resources {
                 Add,
                 #[doc = "User Deleted Event"]
                 Delete,
-                EventTypeUnspecified,
                 #[doc = "User Admin Status Change Event"]
                 MakeAdmin,
                 #[doc = "User Undeleted Event"]
@@ -28006,7 +28050,6 @@ pub mod resources {
                     match self {
                         WatchEvent::Add => "add",
                         WatchEvent::Delete => "delete",
-                        WatchEvent::EventTypeUnspecified => "eventTypeUnspecified",
                         WatchEvent::MakeAdmin => "makeAdmin",
                         WatchEvent::Undelete => "undelete",
                         WatchEvent::Update => "update",
@@ -28024,7 +28067,6 @@ pub mod resources {
                     Ok(match s {
                         "add" => WatchEvent::Add,
                         "delete" => WatchEvent::Delete,
-                        "eventTypeUnspecified" => WatchEvent::EventTypeUnspecified,
                         "makeAdmin" => WatchEvent::MakeAdmin,
                         "undelete" => WatchEvent::Undelete,
                         "update" => WatchEvent::Update,
@@ -28054,7 +28096,6 @@ pub mod resources {
                     Ok(match value {
                         "add" => WatchEvent::Add,
                         "delete" => WatchEvent::Delete,
-                        "eventTypeUnspecified" => WatchEvent::EventTypeUnspecified,
                         "makeAdmin" => WatchEvent::MakeAdmin,
                         "undelete" => WatchEvent::Undelete,
                         "update" => WatchEvent::Update,
@@ -28085,7 +28126,6 @@ pub mod resources {
                 FamilyName,
                 #[doc = "User's given name."]
                 GivenName,
-                OrderByUnspecified,
             }
             impl WatchOrderBy {
                 pub fn as_str(self) -> &'static str {
@@ -28093,7 +28133,6 @@ pub mod resources {
                         WatchOrderBy::Email => "email",
                         WatchOrderBy::FamilyName => "familyName",
                         WatchOrderBy::GivenName => "givenName",
-                        WatchOrderBy::OrderByUnspecified => "orderByUnspecified",
                     }
                 }
             }
@@ -28109,7 +28148,6 @@ pub mod resources {
                         "email" => WatchOrderBy::Email,
                         "familyName" => WatchOrderBy::FamilyName,
                         "givenName" => WatchOrderBy::GivenName,
-                        "orderByUnspecified" => WatchOrderBy::OrderByUnspecified,
                         _ => return Err(()),
                     })
                 }
@@ -28137,7 +28175,6 @@ pub mod resources {
                         "email" => WatchOrderBy::Email,
                         "familyName" => WatchOrderBy::FamilyName,
                         "givenName" => WatchOrderBy::GivenName,
-                        "orderByUnspecified" => WatchOrderBy::OrderByUnspecified,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -28165,7 +28202,6 @@ pub mod resources {
                 Custom,
                 #[doc = "Include all fields associated with this user."]
                 Full,
-                ProjectionUnspecified,
             }
             impl WatchProjection {
                 pub fn as_str(self) -> &'static str {
@@ -28173,7 +28209,6 @@ pub mod resources {
                         WatchProjection::Basic => "basic",
                         WatchProjection::Custom => "custom",
                         WatchProjection::Full => "full",
-                        WatchProjection::ProjectionUnspecified => "projectionUnspecified",
                     }
                 }
             }
@@ -28189,7 +28224,6 @@ pub mod resources {
                         "basic" => WatchProjection::Basic,
                         "custom" => WatchProjection::Custom,
                         "full" => WatchProjection::Full,
-                        "projectionUnspecified" => WatchProjection::ProjectionUnspecified,
                         _ => return Err(()),
                     })
                 }
@@ -28217,7 +28251,6 @@ pub mod resources {
                         "basic" => WatchProjection::Basic,
                         "custom" => WatchProjection::Custom,
                         "full" => WatchProjection::Full,
-                        "projectionUnspecified" => WatchProjection::ProjectionUnspecified,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -28243,14 +28276,12 @@ pub mod resources {
                 Ascending,
                 #[doc = "Descending order."]
                 Descending,
-                SortOrderUnspecified,
             }
             impl WatchSortOrder {
                 pub fn as_str(self) -> &'static str {
                     match self {
                         WatchSortOrder::Ascending => "ASCENDING",
                         WatchSortOrder::Descending => "DESCENDING",
-                        WatchSortOrder::SortOrderUnspecified => "sortOrderUnspecified",
                     }
                 }
             }
@@ -28265,7 +28296,6 @@ pub mod resources {
                     Ok(match s {
                         "ASCENDING" => WatchSortOrder::Ascending,
                         "DESCENDING" => WatchSortOrder::Descending,
-                        "sortOrderUnspecified" => WatchSortOrder::SortOrderUnspecified,
                         _ => return Err(()),
                     })
                 }
@@ -28292,7 +28322,6 @@ pub mod resources {
                     Ok(match value {
                         "ASCENDING" => WatchSortOrder::Ascending,
                         "DESCENDING" => WatchSortOrder::Descending,
-                        "sortOrderUnspecified" => WatchSortOrder::SortOrderUnspecified,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -28530,7 +28559,7 @@ pub mod resources {
                     user_key: user_key.into(),
                 }
             }
-            #[doc = "Sign a user out of all web and device sessions and reset their sign-in cookies. User will have to sign in by authenticating again."]
+            #[doc = "Signs a user out of all web and device sessions and reset their sign-in cookies. User will have to sign in by authenticating again."]
             pub fn sign_out(&self, user_key: impl Into<String>) -> SignOutRequestBuilder {
                 SignOutRequestBuilder {
                     reqwest: &self.reqwest,
@@ -28597,7 +28626,7 @@ pub mod resources {
                     user_key: user_key.into(),
                 }
             }
-            #[doc = "Watch for changes in users list"]
+            #[doc = "Watches for changes in users list."]
             pub fn watch(&self, request: crate::schemas::Channel) -> WatchRequestBuilder {
                 WatchRequestBuilder {
                     reqwest: &self.reqwest,
@@ -29113,7 +29142,7 @@ pub mod resources {
                 self.customer = Some(value.into());
                 self
             }
-            #[doc = "The domain name. Use this field to get fields from only one domain. To return all domains for a customer account, use the `customer` query parameter instead. Either the `customer` or the `domain` parameter must be provided."]
+            #[doc = "The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the `customer` query parameter instead. Either the `customer` or the `domain` parameter must be provided."]
             pub fn domain(mut self, value: impl Into<String>) -> Self {
                 self.domain = Some(value.into());
                 self
@@ -29156,7 +29185,7 @@ pub mod resources {
                 self.show_deleted = Some(value.into());
                 self
             }
-            #[doc = "Whether to return results in ascending or descending order."]
+            #[doc = "Whether to return results in ascending or descending order, ignoring case."]
             pub fn sort_order(
                 mut self,
                 value: crate::resources::users::params::ListSortOrder,
@@ -30298,19 +30327,88 @@ pub mod resources {
         pub mod aliases {
             pub mod params {
                 #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+                pub enum ListEvent {
+                    #[doc = "Alias Created Event"]
+                    Add,
+                    #[doc = "Alias Deleted Event"]
+                    Delete,
+                }
+                impl ListEvent {
+                    pub fn as_str(self) -> &'static str {
+                        match self {
+                            ListEvent::Add => "add",
+                            ListEvent::Delete => "delete",
+                        }
+                    }
+                }
+                impl ::std::convert::AsRef<str> for ListEvent {
+                    fn as_ref(&self) -> &str {
+                        self.as_str()
+                    }
+                }
+                impl ::std::str::FromStr for ListEvent {
+                    type Err = ();
+                    fn from_str(s: &str) -> ::std::result::Result<ListEvent, ()> {
+                        Ok(match s {
+                            "add" => ListEvent::Add,
+                            "delete" => ListEvent::Delete,
+                            _ => return Err(()),
+                        })
+                    }
+                }
+                impl ::std::fmt::Display for ListEvent {
+                    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                        f.write_str(self.as_str())
+                    }
+                }
+                impl ::serde::Serialize for ListEvent {
+                    fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+                    where
+                        S: ::serde::ser::Serializer,
+                    {
+                        serializer.serialize_str(self.as_str())
+                    }
+                }
+                impl<'de> ::serde::Deserialize<'de> for ListEvent {
+                    fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+                    where
+                        D: ::serde::de::Deserializer<'de>,
+                    {
+                        let value: &'de str = <&str>::deserialize(deserializer)?;
+                        Ok(match value {
+                            "add" => ListEvent::Add,
+                            "delete" => ListEvent::Delete,
+                            _ => {
+                                return Err(::serde::de::Error::custom(format!(
+                                    "invalid enum for #name: {}",
+                                    value
+                                )))
+                            }
+                        })
+                    }
+                }
+                impl ::google_field_selector::FieldSelector for ListEvent {
+                    fn fields() -> Vec<::google_field_selector::Field> {
+                        Vec::new()
+                    }
+                }
+                impl ::google_field_selector::ToFieldType for ListEvent {
+                    fn field_type() -> ::google_field_selector::FieldType {
+                        ::google_field_selector::FieldType::Leaf
+                    }
+                }
+                #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                 pub enum WatchEvent {
                     #[doc = "Alias Created Event"]
                     Add,
                     #[doc = "Alias Deleted Event"]
                     Delete,
-                    EventUndefined,
                 }
                 impl WatchEvent {
                     pub fn as_str(self) -> &'static str {
                         match self {
                             WatchEvent::Add => "add",
                             WatchEvent::Delete => "delete",
-                            WatchEvent::EventUndefined => "eventUndefined",
                         }
                     }
                 }
@@ -30325,7 +30423,6 @@ pub mod resources {
                         Ok(match s {
                             "add" => WatchEvent::Add,
                             "delete" => WatchEvent::Delete,
-                            "eventUndefined" => WatchEvent::EventUndefined,
                             _ => return Err(()),
                         })
                     }
@@ -30352,7 +30449,6 @@ pub mod resources {
                         Ok(match value {
                             "add" => WatchEvent::Add,
                             "delete" => WatchEvent::Delete,
-                            "eventUndefined" => WatchEvent::EventUndefined,
                             _ => {
                                 return Err(::serde::de::Error::custom(format!(
                                     "invalid enum for #name: {}",
@@ -30446,9 +30542,10 @@ pub mod resources {
                         upload_type: None,
                         xgafv: None,
                         user_key: user_key.into(),
+                        event: None,
                     }
                 }
-                #[doc = "Watch for changes in users list."]
+                #[doc = "Watches for changes in users list."]
                 pub fn watch(
                     &self,
                     request: crate::schemas::Channel,
@@ -30756,6 +30853,7 @@ pub mod resources {
                 pub(crate) reqwest: &'a ::reqwest::blocking::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 user_key: String,
+                event: Option<crate::resources::users::aliases::params::ListEvent>,
                 access_token: Option<String>,
                 alt: Option<crate::params::Alt>,
                 callback: Option<String>,
@@ -30769,6 +30867,14 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
+                #[doc = "Events to watch for."]
+                pub fn event(
+                    mut self,
+                    value: crate::resources::users::aliases::params::ListEvent,
+                ) -> Self {
+                    self.event = Some(value);
+                    self
+                }
                 #[doc = "OAuth access token."]
                 pub fn access_token(mut self, value: impl Into<String>) -> Self {
                     self.access_token = Some(value.into());
@@ -30891,6 +30997,7 @@ pub mod resources {
                     path: &str,
                 ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                     let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("event", &self.event)]);
                     req = req.query(&[("access_token", &self.access_token)]);
                     req = req.query(&[("alt", &self.alt)]);
                     req = req.query(&[("callback", &self.callback)]);
@@ -31782,7 +31889,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Generate new backup verification codes for the user."]
+            #[doc = "Generates new backup verification codes for the user."]
             pub fn generate(&self, user_key: impl Into<String>) -> GenerateRequestBuilder {
                 GenerateRequestBuilder {
                     reqwest: &self.reqwest,
@@ -31801,7 +31908,7 @@ pub mod resources {
                     user_key: user_key.into(),
                 }
             }
-            #[doc = "Invalidate the current backup verification codes for the user."]
+            #[doc = "Invalidates the current backup verification codes for the user."]
             pub fn invalidate(&self, user_key: impl Into<String>) -> InvalidateRequestBuilder {
                 InvalidateRequestBuilder {
                     reqwest: &self.reqwest,

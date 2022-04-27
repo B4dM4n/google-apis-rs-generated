@@ -7,7 +7,7 @@
   "canonicalName": "Gmail",
   "fullyEncodeReservedExpansion": null,
   "version": "v1",
-  "revision": "20210315",
+  "revision": "20220418",
   "title": "Gmail API",
   "description": "The Gmail API lets you view and manage Gmail mailbox data like threads, messages, and labels.",
   "ownerDomain": "google.com",
@@ -228,7 +228,7 @@
           "description": "View your email message metadata such as labels and headers, but not the email body"
         },
         "https://www.googleapis.com/auth/gmail.modify": {
-          "description": "View and modify but not delete your email"
+          "description": "Read, compose, and send emails from your Gmail account"
         },
         "https://www.googleapis.com/auth/gmail.readonly": {
           "description": "View your email messages and settings"
@@ -950,7 +950,7 @@
     },
     "Label": {
       "id": "Label",
-      "description": "Labels are used to categorize messages and threads within the user's mailbox.",
+      "description": "Labels are used to categorize messages and threads within the user's mailbox. The maximum number of labels supported for a user's mailbox is 10,000.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1705,7 +1705,7 @@
       "enumDescriptions": [],
       "properties": {
         "addLabelIds": {
-          "description": "A list of IDs of labels to add to this message.",
+          "description": "A list of IDs of labels to add to this message. You can add up to 100 labels with each update.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1723,7 +1723,7 @@
           }
         },
         "removeLabelIds": {
-          "description": "A list IDs of labels to remove from this message.",
+          "description": "A list IDs of labels to remove from this message. You can remove up to 100 labels with each update.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1753,7 +1753,7 @@
       "enumDescriptions": [],
       "properties": {
         "addLabelIds": {
-          "description": "A list of IDs of labels to add to this thread.",
+          "description": "A list of IDs of labels to add to this thread. You can add up to 100 labels with each update.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1771,7 +1771,7 @@
           }
         },
         "removeLabelIds": {
-          "description": "A list of IDs of labels to remove from this thread.",
+          "description": "A list of IDs of labels to remove from this thread. You can remove up to 100 labels with each update.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2607,7 +2607,7 @@
                   "repeated": false
                 },
                 "maxResults": {
-                  "description": "Maximum number of drafts to return.",
+                  "description": "Maximum number of drafts to return. This field defaults to 100. The maximum allowed value for this field is 500.",
                   "default": "100",
                   "location": "query",
                   "required": false,
@@ -2861,7 +2861,7 @@
                   "repeated": false
                 },
                 "maxResults": {
-                  "description": "The maximum number of history records to return.",
+                  "description": "Maximum number of history records to return. This field defaults to 100. The maximum allowed value for this field is 500.",
                   "default": "100",
                   "location": "query",
                   "required": false,
@@ -3550,7 +3550,7 @@
               "id": "gmail.users.messages.import",
               "path": "gmail/v1/users/{userId}/messages/import",
               "httpMethod": "POST",
-              "description": "Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message. Note: This function doesn't trigger forwarding rules or filters set up by the user.",
+              "description": "Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing. This method does not send a message. Note: This function doesn't trigger forwarding rules or filters set up by the user.",
               "parameters": {
                 "deleted": {
                   "description": "Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for G Suite accounts.",
@@ -3789,7 +3789,7 @@
                   "repeated": true
                 },
                 "maxResults": {
-                  "description": "Maximum number of messages to return.",
+                  "description": "Maximum number of messages to return. This field defaults to 100. The maximum allowed value for this field is 500.",
                   "default": "100",
                   "location": "query",
                   "required": false,
@@ -4322,7 +4322,7 @@
                   "id": "gmail.users.settings.filters.delete",
                   "path": "gmail/v1/users/{userId}/settings/filters/{id}",
                   "httpMethod": "DELETE",
-                  "description": "Deletes a filter.",
+                  "description": "Immediately and permanently deletes the specified filter.",
                   "parameters": {
                     "id": {
                       "description": "The ID of the filter to be deleted.",
@@ -5729,7 +5729,7 @@
               "id": "gmail.users.threads.delete",
               "path": "gmail/v1/users/{userId}/threads/{id}",
               "httpMethod": "DELETE",
-              "description": "Immediately and permanently deletes the specified thread. This operation cannot be undone. Prefer `threads.trash` instead.",
+              "description": "Immediately and permanently deletes the specified thread. Any messages that belong to the thread are also deleted. This operation cannot be undone. Prefer `threads.trash` instead.",
               "parameters": {
                 "id": {
                   "description": "ID of the Thread to delete.",
@@ -5904,7 +5904,7 @@
                   "repeated": true
                 },
                 "maxResults": {
-                  "description": "Maximum number of threads to return.",
+                  "description": "Maximum number of threads to return. This field defaults to 100. The maximum allowed value for this field is 500.",
                   "default": "100",
                   "location": "query",
                   "required": false,
@@ -6038,7 +6038,7 @@
               "id": "gmail.users.threads.trash",
               "path": "gmail/v1/users/{userId}/threads/{id}/trash",
               "httpMethod": "POST",
-              "description": "Moves the specified thread to the trash.",
+              "description": "Moves the specified thread to the trash. Any messages that belong to the thread are also moved to the trash.",
               "parameters": {
                 "id": {
                   "description": "The ID of the thread to Trash.",
@@ -6091,7 +6091,7 @@
               "id": "gmail.users.threads.untrash",
               "path": "gmail/v1/users/{userId}/threads/{id}/untrash",
               "httpMethod": "POST",
-              "description": "Removes the specified thread from the trash.",
+              "description": "Removes the specified thread from the trash. Any messages that belong to the thread are also removed from the trash.",
               "parameters": {
                 "id": {
                   "description": "The ID of the thread to remove from Trash.",

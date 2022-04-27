@@ -1,6 +1,6 @@
-#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [autoscaling_policies](resources/projects/locations/autoscaling_policies/struct.AutoscalingPoliciesActions.html)\n          * [*create*](resources/projects/locations/autoscaling_policies/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/autoscaling_policies/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/autoscaling_policies/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/autoscaling_policies/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/autoscaling_policies/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/autoscaling_policies/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/autoscaling_policies/struct.TestIamPermissionsRequestBuilder.html), [*update*](resources/projects/locations/autoscaling_policies/struct.UpdateRequestBuilder.html)\n        * [workflow_templates](resources/projects/locations/workflow_templates/struct.WorkflowTemplatesActions.html)\n          * [*create*](resources/projects/locations/workflow_templates/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/workflow_templates/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/workflow_templates/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/workflow_templates/struct.GetIamPolicyRequestBuilder.html), [*instantiate*](resources/projects/locations/workflow_templates/struct.InstantiateRequestBuilder.html), [*instantiateInline*](resources/projects/locations/workflow_templates/struct.InstantiateInlineRequestBuilder.html), [*list*](resources/projects/locations/workflow_templates/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/workflow_templates/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/workflow_templates/struct.TestIamPermissionsRequestBuilder.html), [*update*](resources/projects/locations/workflow_templates/struct.UpdateRequestBuilder.html)\n      * [regions](resources/projects/regions/struct.RegionsActions.html)\n        * [autoscaling_policies](resources/projects/regions/autoscaling_policies/struct.AutoscalingPoliciesActions.html)\n          * [*create*](resources/projects/regions/autoscaling_policies/struct.CreateRequestBuilder.html), [*delete*](resources/projects/regions/autoscaling_policies/struct.DeleteRequestBuilder.html), [*get*](resources/projects/regions/autoscaling_policies/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/regions/autoscaling_policies/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/regions/autoscaling_policies/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/regions/autoscaling_policies/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/regions/autoscaling_policies/struct.TestIamPermissionsRequestBuilder.html), [*update*](resources/projects/regions/autoscaling_policies/struct.UpdateRequestBuilder.html)\n        * [clusters](resources/projects/regions/clusters/struct.ClustersActions.html)\n          * [*create*](resources/projects/regions/clusters/struct.CreateRequestBuilder.html), [*delete*](resources/projects/regions/clusters/struct.DeleteRequestBuilder.html), [*diagnose*](resources/projects/regions/clusters/struct.DiagnoseRequestBuilder.html), [*get*](resources/projects/regions/clusters/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/regions/clusters/struct.GetIamPolicyRequestBuilder.html), [*injectCredentials*](resources/projects/regions/clusters/struct.InjectCredentialsRequestBuilder.html), [*list*](resources/projects/regions/clusters/struct.ListRequestBuilder.html), [*patch*](resources/projects/regions/clusters/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/regions/clusters/struct.SetIamPolicyRequestBuilder.html), [*start*](resources/projects/regions/clusters/struct.StartRequestBuilder.html), [*stop*](resources/projects/regions/clusters/struct.StopRequestBuilder.html), [*testIamPermissions*](resources/projects/regions/clusters/struct.TestIamPermissionsRequestBuilder.html)\n        * [jobs](resources/projects/regions/jobs/struct.JobsActions.html)\n          * [*cancel*](resources/projects/regions/jobs/struct.CancelRequestBuilder.html), [*delete*](resources/projects/regions/jobs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/regions/jobs/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/regions/jobs/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/regions/jobs/struct.ListRequestBuilder.html), [*patch*](resources/projects/regions/jobs/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/regions/jobs/struct.SetIamPolicyRequestBuilder.html), [*submit*](resources/projects/regions/jobs/struct.SubmitRequestBuilder.html), [*submitAsOperation*](resources/projects/regions/jobs/struct.SubmitAsOperationRequestBuilder.html), [*testIamPermissions*](resources/projects/regions/jobs/struct.TestIamPermissionsRequestBuilder.html)\n        * [operations](resources/projects/regions/operations/struct.OperationsActions.html)\n          * [*cancel*](resources/projects/regions/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/regions/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/regions/operations/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/regions/operations/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/regions/operations/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/regions/operations/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/regions/operations/struct.TestIamPermissionsRequestBuilder.html)\n        * [workflow_templates](resources/projects/regions/workflow_templates/struct.WorkflowTemplatesActions.html)\n          * [*create*](resources/projects/regions/workflow_templates/struct.CreateRequestBuilder.html), [*delete*](resources/projects/regions/workflow_templates/struct.DeleteRequestBuilder.html), [*get*](resources/projects/regions/workflow_templates/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/regions/workflow_templates/struct.GetIamPolicyRequestBuilder.html), [*instantiate*](resources/projects/regions/workflow_templates/struct.InstantiateRequestBuilder.html), [*instantiateInline*](resources/projects/regions/workflow_templates/struct.InstantiateInlineRequestBuilder.html), [*list*](resources/projects/regions/workflow_templates/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/regions/workflow_templates/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/regions/workflow_templates/struct.TestIamPermissionsRequestBuilder.html), [*update*](resources/projects/regions/workflow_templates/struct.UpdateRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [autoscaling_policies](resources/projects/locations/autoscaling_policies/struct.AutoscalingPoliciesActions.html)\n          * [*create*](resources/projects/locations/autoscaling_policies/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/autoscaling_policies/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/autoscaling_policies/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/autoscaling_policies/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/autoscaling_policies/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/autoscaling_policies/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/autoscaling_policies/struct.TestIamPermissionsRequestBuilder.html), [*update*](resources/projects/locations/autoscaling_policies/struct.UpdateRequestBuilder.html)\n        * [batches](resources/projects/locations/batches/struct.BatchesActions.html)\n          * [*create*](resources/projects/locations/batches/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/batches/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/batches/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/batches/struct.ListRequestBuilder.html)\n        * [workflow_templates](resources/projects/locations/workflow_templates/struct.WorkflowTemplatesActions.html)\n          * [*create*](resources/projects/locations/workflow_templates/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/workflow_templates/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/workflow_templates/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/workflow_templates/struct.GetIamPolicyRequestBuilder.html), [*instantiate*](resources/projects/locations/workflow_templates/struct.InstantiateRequestBuilder.html), [*instantiateInline*](resources/projects/locations/workflow_templates/struct.InstantiateInlineRequestBuilder.html), [*list*](resources/projects/locations/workflow_templates/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/workflow_templates/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/workflow_templates/struct.TestIamPermissionsRequestBuilder.html), [*update*](resources/projects/locations/workflow_templates/struct.UpdateRequestBuilder.html)\n      * [regions](resources/projects/regions/struct.RegionsActions.html)\n        * [autoscaling_policies](resources/projects/regions/autoscaling_policies/struct.AutoscalingPoliciesActions.html)\n          * [*create*](resources/projects/regions/autoscaling_policies/struct.CreateRequestBuilder.html), [*delete*](resources/projects/regions/autoscaling_policies/struct.DeleteRequestBuilder.html), [*get*](resources/projects/regions/autoscaling_policies/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/regions/autoscaling_policies/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/regions/autoscaling_policies/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/regions/autoscaling_policies/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/regions/autoscaling_policies/struct.TestIamPermissionsRequestBuilder.html), [*update*](resources/projects/regions/autoscaling_policies/struct.UpdateRequestBuilder.html)\n        * [clusters](resources/projects/regions/clusters/struct.ClustersActions.html)\n          * [*create*](resources/projects/regions/clusters/struct.CreateRequestBuilder.html), [*delete*](resources/projects/regions/clusters/struct.DeleteRequestBuilder.html), [*diagnose*](resources/projects/regions/clusters/struct.DiagnoseRequestBuilder.html), [*get*](resources/projects/regions/clusters/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/regions/clusters/struct.GetIamPolicyRequestBuilder.html), [*injectCredentials*](resources/projects/regions/clusters/struct.InjectCredentialsRequestBuilder.html), [*list*](resources/projects/regions/clusters/struct.ListRequestBuilder.html), [*patch*](resources/projects/regions/clusters/struct.PatchRequestBuilder.html), [*repair*](resources/projects/regions/clusters/struct.RepairRequestBuilder.html), [*setIamPolicy*](resources/projects/regions/clusters/struct.SetIamPolicyRequestBuilder.html), [*start*](resources/projects/regions/clusters/struct.StartRequestBuilder.html), [*stop*](resources/projects/regions/clusters/struct.StopRequestBuilder.html), [*testIamPermissions*](resources/projects/regions/clusters/struct.TestIamPermissionsRequestBuilder.html)\n        * [jobs](resources/projects/regions/jobs/struct.JobsActions.html)\n          * [*cancel*](resources/projects/regions/jobs/struct.CancelRequestBuilder.html), [*delete*](resources/projects/regions/jobs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/regions/jobs/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/regions/jobs/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/regions/jobs/struct.ListRequestBuilder.html), [*patch*](resources/projects/regions/jobs/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/regions/jobs/struct.SetIamPolicyRequestBuilder.html), [*submit*](resources/projects/regions/jobs/struct.SubmitRequestBuilder.html), [*submitAsOperation*](resources/projects/regions/jobs/struct.SubmitAsOperationRequestBuilder.html), [*testIamPermissions*](resources/projects/regions/jobs/struct.TestIamPermissionsRequestBuilder.html)\n        * [operations](resources/projects/regions/operations/struct.OperationsActions.html)\n          * [*cancel*](resources/projects/regions/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/regions/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/regions/operations/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/regions/operations/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/regions/operations/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/regions/operations/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/regions/operations/struct.TestIamPermissionsRequestBuilder.html)\n        * [workflow_templates](resources/projects/regions/workflow_templates/struct.WorkflowTemplatesActions.html)\n          * [*create*](resources/projects/regions/workflow_templates/struct.CreateRequestBuilder.html), [*delete*](resources/projects/regions/workflow_templates/struct.DeleteRequestBuilder.html), [*get*](resources/projects/regions/workflow_templates/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/regions/workflow_templates/struct.GetIamPolicyRequestBuilder.html), [*instantiate*](resources/projects/regions/workflow_templates/struct.InstantiateRequestBuilder.html), [*instantiateInline*](resources/projects/regions/workflow_templates/struct.InstantiateInlineRequestBuilder.html), [*list*](resources/projects/regions/workflow_templates/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/regions/workflow_templates/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/regions/workflow_templates/struct.TestIamPermissionsRequestBuilder.html), [*update*](resources/projects/regions/workflow_templates/struct.UpdateRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -90,6 +90,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
+        #[doc = "Optional. The labels to associate with this autoscaling policy. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with an autoscaling policy."]
+        #[serde(
+            rename = "labels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
         #[doc = "Output only. The \"resource name\" of the autoscaling policy, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies, the resource name of the policy has the following format: projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id} For projects.locations.autoscalingPolicies, the resource name of the policy has the following format: projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}"]
         #[serde(
             rename = "name",
@@ -125,6 +132,45 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AuxiliaryServicesConfig {
+        #[doc = "Optional. The Hive Metastore configuration for this workload."]
+        #[serde(
+            rename = "metastoreConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metastore_config: ::std::option::Option<crate::schemas::MetastoreConfig>,
+        #[doc = "Optional. The Spark History Server configuration for the workload."]
+        #[serde(
+            rename = "sparkHistoryServerConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub spark_history_server_config:
+            ::std::option::Option<crate::schemas::SparkHistoryServerConfig>,
+    }
+    impl ::google_field_selector::FieldSelector for AuxiliaryServicesConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AuxiliaryServicesConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct BasicAutoscalingAlgorithm {
@@ -135,7 +181,15 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cooldown_period: ::std::option::Option<String>,
-        #[doc = "Required. YARN autoscaling configuration."]
+        #[doc = "Optional. Spark Standalone autoscaling configuration"]
+        #[serde(
+            rename = "sparkStandaloneConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub spark_standalone_config:
+            ::std::option::Option<crate::schemas::SparkStandaloneAutoscalingConfig>,
+        #[doc = "Optional. YARN autoscaling configuration."]
         #[serde(
             rename = "yarnConfig",
             default,
@@ -215,22 +269,419 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct Batch {
+        #[doc = "Output only. The time when the batch was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "Output only. The email address of the user who created the batch."]
+        #[serde(
+            rename = "creator",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub creator: ::std::option::Option<String>,
+        #[doc = "Optional. Environment configuration for the batch execution."]
+        #[serde(
+            rename = "environmentConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub environment_config: ::std::option::Option<crate::schemas::EnvironmentConfig>,
+        #[doc = "Optional. The labels to associate with this batch. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a batch."]
+        #[serde(
+            rename = "labels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "Output only. The resource name of the batch."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Output only. The resource name of the operation associated with this batch."]
+        #[serde(
+            rename = "operation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub operation: ::std::option::Option<String>,
+        #[doc = "Optional. PySpark batch config."]
+        #[serde(
+            rename = "pysparkBatch",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pyspark_batch: ::std::option::Option<crate::schemas::PySparkBatch>,
+        #[doc = "Optional. Runtime configuration for the batch execution."]
+        #[serde(
+            rename = "runtimeConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_config: ::std::option::Option<crate::schemas::RuntimeConfig>,
+        #[doc = "Output only. Runtime information about batch execution."]
+        #[serde(
+            rename = "runtimeInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_info: ::std::option::Option<crate::schemas::RuntimeInfo>,
+        #[doc = "Optional. Spark batch config."]
+        #[serde(
+            rename = "sparkBatch",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub spark_batch: ::std::option::Option<crate::schemas::SparkBatch>,
+        #[doc = "Optional. SparkR batch config."]
+        #[serde(
+            rename = "sparkRBatch",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub spark_r_batch: ::std::option::Option<crate::schemas::SparkRBatch>,
+        #[doc = "Optional. SparkSql batch config."]
+        #[serde(
+            rename = "sparkSqlBatch",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub spark_sql_batch: ::std::option::Option<crate::schemas::SparkSqlBatch>,
+        #[doc = "Output only. The state of the batch."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::BatchState>,
+        #[doc = "Output only. Historical state information for the batch."]
+        #[serde(
+            rename = "stateHistory",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state_history: ::std::option::Option<Vec<crate::schemas::StateHistory>>,
+        #[doc = "Output only. Batch state details, such as a failure description if the state is FAILED."]
+        #[serde(
+            rename = "stateMessage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state_message: ::std::option::Option<String>,
+        #[doc = "Output only. The time when the batch entered a current state."]
+        #[serde(
+            rename = "stateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state_time: ::std::option::Option<String>,
+        #[doc = "Output only. A batch UUID (Unique Universal Identifier). The service generates this value when it creates the batch."]
+        #[serde(
+            rename = "uuid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uuid: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Batch {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Batch {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum BatchState {
+        #[doc = "The batch cancellation was successful."]
+        Cancelled,
+        #[doc = "The batch is cancelling."]
+        Cancelling,
+        #[doc = "The batch is no longer running due to an error."]
+        Failed,
+        #[doc = "The batch is created before running."]
+        Pending,
+        #[doc = "The batch is running."]
+        Running,
+        #[doc = "The batch state is unknown."]
+        StateUnspecified,
+        #[doc = "The batch completed successfully."]
+        Succeeded,
+    }
+    impl BatchState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                BatchState::Cancelled => "CANCELLED",
+                BatchState::Cancelling => "CANCELLING",
+                BatchState::Failed => "FAILED",
+                BatchState::Pending => "PENDING",
+                BatchState::Running => "RUNNING",
+                BatchState::StateUnspecified => "STATE_UNSPECIFIED",
+                BatchState::Succeeded => "SUCCEEDED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for BatchState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for BatchState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<BatchState, ()> {
+            Ok(match s {
+                "CANCELLED" => BatchState::Cancelled,
+                "CANCELLING" => BatchState::Cancelling,
+                "FAILED" => BatchState::Failed,
+                "PENDING" => BatchState::Pending,
+                "RUNNING" => BatchState::Running,
+                "STATE_UNSPECIFIED" => BatchState::StateUnspecified,
+                "SUCCEEDED" => BatchState::Succeeded,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for BatchState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for BatchState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for BatchState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CANCELLED" => BatchState::Cancelled,
+                "CANCELLING" => BatchState::Cancelling,
+                "FAILED" => BatchState::Failed,
+                "PENDING" => BatchState::Pending,
+                "RUNNING" => BatchState::Running,
+                "STATE_UNSPECIFIED" => BatchState::StateUnspecified,
+                "SUCCEEDED" => BatchState::Succeeded,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for BatchState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BatchState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BatchOperationMetadata {
+        #[doc = "Name of the batch for the operation."]
+        #[serde(
+            rename = "batch",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub batch: ::std::option::Option<String>,
+        #[doc = "Batch UUID for the operation."]
+        #[serde(
+            rename = "batchUuid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub batch_uuid: ::std::option::Option<String>,
+        #[doc = "The time when the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "Short description of the operation."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "The time when the operation finished."]
+        #[serde(
+            rename = "doneTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub done_time: ::std::option::Option<String>,
+        #[doc = "Labels associated with the operation."]
+        #[serde(
+            rename = "labels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "The operation type."]
+        #[serde(
+            rename = "operationType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub operation_type:
+            ::std::option::Option<crate::schemas::BatchOperationMetadataOperationType>,
+        #[doc = "Warnings encountered during operation execution."]
+        #[serde(
+            rename = "warnings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub warnings: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for BatchOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BatchOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum BatchOperationMetadataOperationType {
+        #[doc = "Batch operation type."]
+        Batch,
+        #[doc = "Batch operation type is unknown."]
+        BatchOperationTypeUnspecified,
+    }
+    impl BatchOperationMetadataOperationType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                BatchOperationMetadataOperationType::Batch => "BATCH",
+                BatchOperationMetadataOperationType::BatchOperationTypeUnspecified => {
+                    "BATCH_OPERATION_TYPE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for BatchOperationMetadataOperationType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for BatchOperationMetadataOperationType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<BatchOperationMetadataOperationType, ()> {
+            Ok(match s {
+                "BATCH" => BatchOperationMetadataOperationType::Batch,
+                "BATCH_OPERATION_TYPE_UNSPECIFIED" => {
+                    BatchOperationMetadataOperationType::BatchOperationTypeUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for BatchOperationMetadataOperationType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for BatchOperationMetadataOperationType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for BatchOperationMetadataOperationType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "BATCH" => BatchOperationMetadataOperationType::Batch,
+                "BATCH_OPERATION_TYPE_UNSPECIFIED" => {
+                    BatchOperationMetadataOperationType::BatchOperationTypeUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for BatchOperationMetadataOperationType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BatchOperationMetadataOperationType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Binding {
-        #[doc = "The condition that is associated with this binding.If the condition evaluates to true, then this binding applies to the current request.If the condition evaluates to false, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding.To learn which resources support conditions in their IAM policies, see the IAM documentation (https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding.If the condition evaluates to true, then this binding applies to the current request.If the condition evaluates to false, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding.To learn which resources support conditions in their IAM policies, see the IAM documentation (https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. members can have the following values: allUsers: A special identifier that represents anyone who is on the internet; with or without a Google account. allAuthenticatedUsers: A special identifier that represents anyone who is authenticated with a Google account or a service account. user:{emailid}: An email address that represents a specific Google account. For example, alice@example.com . serviceAccount:{emailid}: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com. group:{emailid}: An email address that represents a Google group. For example, admins@example.com. deleted:user:{emailid}?uid={uniqueid}: An email address (plus unique identifier) representing a user that has been recently deleted. For example, alice@example.com?uid=123456789012345678901. If the user is recovered, this value reverts to user:{emailid} and the recovered user retains the role in the binding. deleted:serviceAccount:{emailid}?uid={uniqueid}: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901. If the service account is undeleted, this value reverts to serviceAccount:{emailid} and the undeleted service account retains the role in the binding. deleted:group:{emailid}?uid={uniqueid}: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, admins@example.com?uid=123456789012345678901. If the group is recovered, this value reverts to group:{emailid} and the recovered group retains the role in the binding. domain:{domain}: The G Suite domain (primary) that represents all the users of that domain. For example, google.com or example.com."]
+        #[doc = "Specifies the principals requesting access for a Cloud Platform resource. members can have the following values: allUsers: A special identifier that represents anyone who is on the internet; with or without a Google account. allAuthenticatedUsers: A special identifier that represents anyone who is authenticated with a Google account or a service account. user:{emailid}: An email address that represents a specific Google account. For example, alice@example.com . serviceAccount:{emailid}: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com. group:{emailid}: An email address that represents a Google group. For example, admins@example.com. deleted:user:{emailid}?uid={uniqueid}: An email address (plus unique identifier) representing a user that has been recently deleted. For example, alice@example.com?uid=123456789012345678901. If the user is recovered, this value reverts to user:{emailid} and the recovered user retains the role in the binding. deleted:serviceAccount:{emailid}?uid={uniqueid}: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901. If the service account is undeleted, this value reverts to serviceAccount:{emailid} and the undeleted service account retains the role in the binding. deleted:group:{emailid}?uid={uniqueid}: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, admins@example.com?uid=123456789012345678901. If the group is recovered, this value reverts to group:{emailid} and the recovered group retains the role in the binding. domain:{domain}: The G Suite domain (primary) that represents all the users of that domain. For example, google.com or example.com."]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to members. For example, roles/viewer, roles/editor, or roles/owner."]
+        #[doc = "Role that is assigned to the list of members, or principals. For example, roles/viewer, roles/editor, or roles/owner."]
         #[serde(
             rename = "role",
             default,
@@ -299,7 +750,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cluster_uuid: ::std::option::Option<String>,
-        #[doc = "Required. The cluster config. Note that Dataproc may set default values, and values may change when clusters are updated."]
+        #[doc = "Optional. The cluster config for a cluster of Compute Engine Instances. Note that Dataproc may set default values, and values may change when clusters are updated.Exactly one of ClusterConfig or VirtualClusterConfig must be specified."]
         #[serde(
             rename = "config",
             default,
@@ -341,6 +792,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status_history: ::std::option::Option<Vec<crate::schemas::ClusterStatus>>,
+        #[doc = "Optional. The virtual cluster config, used when creating a Dataproc cluster that does not directly control the underlying compute resources, for example, when creating a Dataproc-on-GKE cluster (https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster). Note that Dataproc may set default values, and values may change when clusters are updated. Exactly one of config or virtualClusterConfig must be specified."]
+        #[serde(
+            rename = "virtualClusterConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub virtual_cluster_config: ::std::option::Option<crate::schemas::VirtualClusterConfig>,
     }
     impl ::google_field_selector::FieldSelector for Cluster {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -372,13 +830,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub autoscaling_config: ::std::option::Option<crate::schemas::AutoscalingConfig>,
-        #[doc = "Optional. A Cloud Storage bucket used to stage job dependencies, config files, and job driver console output. If you do not specify a staging bucket, Cloud Dataproc will determine a Cloud Storage location (US, ASIA, or EU) for your cluster's staging bucket according to the Compute Engine zone where your cluster is deployed, and then create and manage this project-level, per-location bucket (see Dataproc staging bucket (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)). This field requires a Cloud Storage bucket name, not a URI to a Cloud Storage bucket."]
+        #[doc = "Optional. A Cloud Storage bucket used to stage job dependencies, config files, and job driver console output. If you do not specify a staging bucket, Cloud Dataproc will determine a Cloud Storage location (US, ASIA, or EU) for your cluster's staging bucket according to the Compute Engine zone where your cluster is deployed, and then create and manage this project-level, per-location bucket (see Dataproc staging and temp buckets (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)). This field requires a Cloud Storage bucket name, not a gs://... URI to a Cloud Storage bucket."]
         #[serde(
             rename = "configBucket",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub config_bucket: ::std::option::Option<String>,
+        #[doc = "Optional. The configuration(s) for a dataproc metric(s)."]
+        #[serde(
+            rename = "dataprocMetricConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dataproc_metric_config: ::std::option::Option<crate::schemas::DataprocMetricConfig>,
         #[doc = "Optional. Encryption settings for the cluster."]
         #[serde(
             rename = "encryptionConfig",
@@ -400,6 +865,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gce_cluster_config: ::std::option::Option<crate::schemas::GceClusterConfig>,
+        #[doc = "Optional. Deprecated. Use VirtualClusterConfig based clusters instead. BETA. The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes. Setting this is considered mutually exclusive with Compute Engine-based options such as gce_cluster_config, master_config, worker_config, secondary_worker_config, and autoscaling_config."]
+        #[serde(
+            rename = "gkeClusterConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gke_cluster_config: ::std::option::Option<crate::schemas::GkeClusterConfig>,
         #[doc = "Optional. Commands to execute on each node after config is completed. By default, executables are run on master and all worker nodes. You can test a node's role metadata to run an executable on a master or worker node, as shown below using curl (you can also use wget): ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role) if [[ \"${ROLE}\" == 'Master' ]]; then ... master specific actions ... else ... worker specific actions ... fi "]
         #[serde(
             rename = "initializationActions",
@@ -415,7 +887,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub lifecycle_config: ::std::option::Option<crate::schemas::LifecycleConfig>,
-        #[doc = "Optional. The Compute Engine config settings for the master instance in a cluster."]
+        #[doc = "Optional. The Compute Engine config settings for the cluster's master instance."]
         #[serde(
             rename = "masterConfig",
             default,
@@ -429,7 +901,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metastore_config: ::std::option::Option<crate::schemas::MetastoreConfig>,
-        #[doc = "Optional. The Compute Engine config settings for additional worker instances in a cluster."]
+        #[doc = "Optional. The Compute Engine config settings for a cluster's secondary worker instances"]
         #[serde(
             rename = "secondaryWorkerConfig",
             default,
@@ -443,21 +915,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub security_config: ::std::option::Option<crate::schemas::SecurityConfig>,
-        #[doc = "Optional. The config settings for software inside the cluster."]
+        #[doc = "Optional. The config settings for cluster software."]
         #[serde(
             rename = "softwareConfig",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub software_config: ::std::option::Option<crate::schemas::SoftwareConfig>,
-        #[doc = "Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data, such as Spark and MapReduce history files. If you do not specify a temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or EU) for your cluster's temp bucket according to the Compute Engine zone where your cluster is deployed, and then create and manage this project-level, per-location bucket. The default bucket has a TTL of 90 days, but you can use any TTL (or none) if you specify a bucket. This field requires a Cloud Storage bucket name, not a URI to a Cloud Storage bucket."]
+        #[doc = "Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data, such as Spark and MapReduce history files. If you do not specify a temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or EU) for your cluster's temp bucket according to the Compute Engine zone where your cluster is deployed, and then create and manage this project-level, per-location bucket. The default bucket has a TTL of 90 days, but you can use any TTL (or none) if you specify a bucket (see Dataproc staging and temp buckets (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)). This field requires a Cloud Storage bucket name, not a gs://... URI to a Cloud Storage bucket."]
         #[serde(
             rename = "tempBucket",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub temp_bucket: ::std::option::Option<String>,
-        #[doc = "Optional. The Compute Engine config settings for worker instances in a cluster."]
+        #[doc = "Optional. The Compute Engine config settings for the cluster's worker instances."]
         #[serde(
             rename = "workerConfig",
             default,
@@ -869,7 +1341,9 @@ pub mod schemas {
         Deleting,
         #[doc = "The cluster encountered an error. It is not ready for use."]
         Error,
-        #[doc = "The cluster is currently running and healthy. It is ready for use."]
+        #[doc = "The cluster has encountered an error while being updated. Jobs can be submitted to the cluster, but the cluster cannot be updated."]
+        ErrorDueToUpdate,
+        #[doc = "The cluster is currently running and healthy. It is ready for use.Note: The cluster state changes from \"creating\" to \"running\" status after the master node(s), first two primary worker nodes (and the last primary worker node if primary workers > 2) are running."]
         Running,
         #[doc = "The cluster is being started. It is not ready for use."]
         Starting,
@@ -888,6 +1362,7 @@ pub mod schemas {
                 ClusterStatusState::Creating => "CREATING",
                 ClusterStatusState::Deleting => "DELETING",
                 ClusterStatusState::Error => "ERROR",
+                ClusterStatusState::ErrorDueToUpdate => "ERROR_DUE_TO_UPDATE",
                 ClusterStatusState::Running => "RUNNING",
                 ClusterStatusState::Starting => "STARTING",
                 ClusterStatusState::Stopped => "STOPPED",
@@ -909,6 +1384,7 @@ pub mod schemas {
                 "CREATING" => ClusterStatusState::Creating,
                 "DELETING" => ClusterStatusState::Deleting,
                 "ERROR" => ClusterStatusState::Error,
+                "ERROR_DUE_TO_UPDATE" => ClusterStatusState::ErrorDueToUpdate,
                 "RUNNING" => ClusterStatusState::Running,
                 "STARTING" => ClusterStatusState::Starting,
                 "STOPPED" => ClusterStatusState::Stopped,
@@ -942,6 +1418,7 @@ pub mod schemas {
                 "CREATING" => ClusterStatusState::Creating,
                 "DELETING" => ClusterStatusState::Deleting,
                 "ERROR" => ClusterStatusState::Error,
+                "ERROR_DUE_TO_UPDATE" => ClusterStatusState::ErrorDueToUpdate,
                 "RUNNING" => ClusterStatusState::Running,
                 "STARTING" => ClusterStatusState::Starting,
                 "STOPPED" => ClusterStatusState::Stopped,
@@ -1051,6 +1528,68 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ConfidentialInstanceConfig {
+        #[doc = "Optional. Defines whether the instance should have confidential compute enabled."]
+        #[serde(
+            rename = "enableConfidentialCompute",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_confidential_compute: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for ConfidentialInstanceConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ConfidentialInstanceConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DataprocMetricConfig {
+        #[doc = "Required. Metrics to be enabled."]
+        #[serde(
+            rename = "metrics",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metrics: ::std::option::Option<Vec<crate::schemas::Metric>>,
+    }
+    impl ::google_field_selector::FieldSelector for DataprocMetricConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DataprocMetricConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Copy,
         Default,
         :: serde :: Deserialize,
@@ -1125,6 +1664,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub boot_disk_type: ::std::option::Option<String>,
+        #[doc = "Optional. Interface type of local SSDs (default is \"scsi\"). Valid values: \"scsi\" (Small Computer System Interface), \"nvme\" (Non-Volatile Memory Express). See local SSD performance (https://cloud.google.com/compute/docs/disks/local-ssd#performance)."]
+        #[serde(
+            rename = "localSsdInterface",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub local_ssd_interface: ::std::option::Option<String>,
         #[doc = "Optional. Number of attached SSDs, from 0 to 4 (default is 0). If SSDs are not attached, the boot disk is used to store runtime logs and HDFS (https://hadoop.apache.org/docs/r1.2.1/hdfs_user_guide.html) data. If one or more SSDs are attached, this runtime bulk data is spread across them, and the boot disk contains only basic config and installed binaries."]
         #[serde(
             rename = "numLocalSsds",
@@ -1248,6 +1794,103 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct EnvironmentConfig {
+        #[doc = "Optional. Execution configuration for a workload."]
+        #[serde(
+            rename = "executionConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub execution_config: ::std::option::Option<crate::schemas::ExecutionConfig>,
+        #[doc = "Optional. Peripherals configuration that workload has access to."]
+        #[serde(
+            rename = "peripheralsConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub peripherals_config: ::std::option::Option<crate::schemas::PeripheralsConfig>,
+    }
+    impl ::google_field_selector::FieldSelector for EnvironmentConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for EnvironmentConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ExecutionConfig {
+        #[doc = "Optional. The Cloud KMS key to use for encryption."]
+        #[serde(
+            rename = "kmsKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kms_key: ::std::option::Option<String>,
+        #[doc = "Optional. Tags used for network traffic control."]
+        #[serde(
+            rename = "networkTags",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub network_tags: ::std::option::Option<Vec<String>>,
+        #[doc = "Optional. Network URI to connect workload to."]
+        #[serde(
+            rename = "networkUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub network_uri: ::std::option::Option<String>,
+        #[doc = "Optional. Service account that used to execute workload."]
+        #[serde(
+            rename = "serviceAccount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub service_account: ::std::option::Option<String>,
+        #[doc = "Optional. Subnetwork URI to connect workload to."]
+        #[serde(
+            rename = "subnetworkUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub subnetwork_uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ExecutionConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ExecutionConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Expr {
         #[doc = "Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI."]
         #[serde(
@@ -1301,6 +1944,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GceClusterConfig {
+        #[doc = "Optional. Confidential Instance Config for clusters using Confidential VMs (https://cloud.google.com/compute/confidential-vm/docs)."]
+        #[serde(
+            rename = "confidentialInstanceConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub confidential_instance_config:
+            ::std::option::Option<crate::schemas::ConfidentialInstanceConfig>,
         #[doc = "Optional. If true, all instances in the cluster will only have internal IP addresses. By default, clusters are not restricted to internal IP addresses, and will have ephemeral external IP addresses assigned to each instance. This internal_ip_only restriction can only be enabled for subnetwork enabled networks, and all off-cluster dependencies must be configured to be accessible without external IP addresses."]
         #[serde(
             rename = "internalIpOnly",
@@ -1534,7 +2185,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GetPolicyOptions {
-        #[doc = "Optional. The policy format version to be returned.Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected.Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset.To learn which resources support conditions in their IAM policies, see the IAM documentation (https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "Optional. The maximum policy version that will be used to format the policy.Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected.Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset.The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1.To learn which resources support conditions in their IAM policies, see the IAM documentation (https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "requestedPolicyVersion",
             default,
@@ -1548,6 +2199,378 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GetPolicyOptions {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GkeClusterConfig {
+        #[doc = "Optional. A target GKE cluster to deploy to. It must be in the same project and region as the Dataproc cluster (the GKE cluster can be zonal or regional). Format: 'projects/{project}/locations/{location}/clusters/{cluster_id}'"]
+        #[serde(
+            rename = "gkeClusterTarget",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gke_cluster_target: ::std::option::Option<String>,
+        #[doc = "Optional. Deprecated. Use gkeClusterTarget. Used only for the deprecated beta. A target for the deployment."]
+        #[serde(
+            rename = "namespacedGkeDeploymentTarget",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub namespaced_gke_deployment_target:
+            ::std::option::Option<crate::schemas::NamespacedGkeDeploymentTarget>,
+        #[doc = "Optional. GKE NodePools where workloads will be scheduled. At least one node pool must be assigned the 'default' role. Each role can be given to only a single NodePoolTarget. All NodePools must have the same location settings. If a nodePoolTarget is not specified, Dataproc constructs a default nodePoolTarget."]
+        #[serde(
+            rename = "nodePoolTarget",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub node_pool_target: ::std::option::Option<Vec<crate::schemas::GkeNodePoolTarget>>,
+    }
+    impl ::google_field_selector::FieldSelector for GkeClusterConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GkeClusterConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GkeNodeConfig {
+        #[doc = "Optional. A list of hardware accelerators (https://cloud.google.com/compute/docs/gpus) to attach to each node."]
+        #[serde(
+            rename = "accelerators",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub accelerators: ::std::option::Option<Vec<crate::schemas::GkeNodePoolAcceleratorConfig>>,
+        #[doc = "Optional. The number of local SSD disks to attach to the node, which is limited by the maximum number of disks allowable per zone (see Adding Local SSDs (https://cloud.google.com/compute/docs/disks/local-ssd))."]
+        #[serde(
+            rename = "localSsdCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub local_ssd_count: ::std::option::Option<i32>,
+        #[doc = "Optional. The name of a Compute Engine machine type (https://cloud.google.com/compute/docs/machine-types)."]
+        #[serde(
+            rename = "machineType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub machine_type: ::std::option::Option<String>,
+        #[doc = "Optional. Minimum CPU platform (https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform) to be used by this instance. The instance may be scheduled on the specified or a newer CPU platform. Specify the friendly names of CPU platforms, such as \"Intel Haswell\"` or Intel Sandy Bridge\"."]
+        #[serde(
+            rename = "minCpuPlatform",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub min_cpu_platform: ::std::option::Option<String>,
+        #[doc = "Optional. Whether the nodes are created as preemptible VM instances (https://cloud.google.com/compute/docs/instances/preemptible)."]
+        #[serde(
+            rename = "preemptible",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub preemptible: ::std::option::Option<bool>,
+        #[doc = "Optional. Spot flag for enabling Spot VM, which is a rebrand of the existing preemptible flag."]
+        #[serde(
+            rename = "spot",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub spot: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for GkeNodeConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GkeNodeConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GkeNodePoolAcceleratorConfig {
+        #[doc = "The number of accelerator cards exposed to an instance."]
+        #[serde(
+            rename = "acceleratorCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub accelerator_count: ::std::option::Option<i64>,
+        #[doc = "The accelerator type resource namename (see GPUs on Compute Engine)."]
+        #[serde(
+            rename = "acceleratorType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub accelerator_type: ::std::option::Option<String>,
+        #[doc = "Size of partitions to create on the GPU. Valid values are described in the NVIDIA mig user guide (https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning)."]
+        #[serde(
+            rename = "gpuPartitionSize",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gpu_partition_size: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GkeNodePoolAcceleratorConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GkeNodePoolAcceleratorConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GkeNodePoolAutoscalingConfig {
+        #[doc = "The maximum number of nodes in the NodePool. Must be >= min_node_count. Note: Quota must be sufficient to scale up the cluster."]
+        #[serde(
+            rename = "maxNodeCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub max_node_count: ::std::option::Option<i32>,
+        #[doc = "The minimum number of nodes in the NodePool. Must be >= 0 and <= max_node_count."]
+        #[serde(
+            rename = "minNodeCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub min_node_count: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for GkeNodePoolAutoscalingConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GkeNodePoolAutoscalingConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GkeNodePoolConfig {
+        #[doc = "Optional. The autoscaler configuration for this NodePool. The autoscaler is enabled only when a valid configuration is present."]
+        #[serde(
+            rename = "autoscaling",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub autoscaling: ::std::option::Option<crate::schemas::GkeNodePoolAutoscalingConfig>,
+        #[doc = "Optional. The node pool configuration."]
+        #[serde(
+            rename = "config",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub config: ::std::option::Option<crate::schemas::GkeNodeConfig>,
+        #[doc = "Optional. The list of Compute Engine zones (https://cloud.google.com/compute/docs/zones#available) where NodePool's nodes will be located.Note: Currently, only one zone may be specified.If a location is not specified during NodePool creation, Dataproc will choose a location."]
+        #[serde(
+            rename = "locations",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub locations: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for GkeNodePoolConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GkeNodePoolConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GkeNodePoolTarget {
+        #[doc = "Required. The target GKE NodePool. Format: 'projects/{project}/locations/{location}/clusters/{cluster}/nodePools/{node_pool}'"]
+        #[serde(
+            rename = "nodePool",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub node_pool: ::std::option::Option<String>,
+        #[doc = "Input only. The configuration for the GKE NodePool.If specified, Dataproc attempts to create a NodePool with the specified shape. If one with the same name already exists, it is verified against all specified fields. If a field differs, the virtual cluster creation will fail.If omitted, any NodePool with the specified name is used. If a NodePool with the specified name does not exist, Dataproc create a NodePool with default values.This is an input only field. It will not be returned by the API."]
+        #[serde(
+            rename = "nodePoolConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub node_pool_config: ::std::option::Option<crate::schemas::GkeNodePoolConfig>,
+        #[doc = "Required. The types of role for a GKE NodePool"]
+        #[serde(
+            rename = "roles",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub roles: ::std::option::Option<Vec<crate::schemas::GkeNodePoolTargetRolesItems>>,
+    }
+    impl ::google_field_selector::FieldSelector for GkeNodePoolTarget {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GkeNodePoolTarget {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GkeNodePoolTargetRolesItems {
+        #[doc = "Run controllers and webhooks."]
+        Controller,
+        #[doc = "Any roles that are not directly assigned to a NodePool run on the default role's NodePool."]
+        Default,
+        #[doc = "Role is unspecified."]
+        RoleUnspecified,
+        #[doc = "Run spark driver."]
+        SparkDriver,
+        #[doc = "Run spark executors."]
+        SparkExecutor,
+    }
+    impl GkeNodePoolTargetRolesItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GkeNodePoolTargetRolesItems::Controller => "CONTROLLER",
+                GkeNodePoolTargetRolesItems::Default => "DEFAULT",
+                GkeNodePoolTargetRolesItems::RoleUnspecified => "ROLE_UNSPECIFIED",
+                GkeNodePoolTargetRolesItems::SparkDriver => "SPARK_DRIVER",
+                GkeNodePoolTargetRolesItems::SparkExecutor => "SPARK_EXECUTOR",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GkeNodePoolTargetRolesItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GkeNodePoolTargetRolesItems {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GkeNodePoolTargetRolesItems, ()> {
+            Ok(match s {
+                "CONTROLLER" => GkeNodePoolTargetRolesItems::Controller,
+                "DEFAULT" => GkeNodePoolTargetRolesItems::Default,
+                "ROLE_UNSPECIFIED" => GkeNodePoolTargetRolesItems::RoleUnspecified,
+                "SPARK_DRIVER" => GkeNodePoolTargetRolesItems::SparkDriver,
+                "SPARK_EXECUTOR" => GkeNodePoolTargetRolesItems::SparkExecutor,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GkeNodePoolTargetRolesItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GkeNodePoolTargetRolesItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GkeNodePoolTargetRolesItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CONTROLLER" => GkeNodePoolTargetRolesItems::Controller,
+                "DEFAULT" => GkeNodePoolTargetRolesItems::Default,
+                "ROLE_UNSPECIFIED" => GkeNodePoolTargetRolesItems::RoleUnspecified,
+                "SPARK_DRIVER" => GkeNodePoolTargetRolesItems::SparkDriver,
+                "SPARK_EXECUTOR" => GkeNodePoolTargetRolesItems::SparkExecutor,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GkeNodePoolTargetRolesItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GkeNodePoolTargetRolesItems {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1694,6 +2717,38 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for HiveJob {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct IdentityConfig {
+        #[doc = "Required. Map of user to service account."]
+        #[serde(
+            rename = "userServiceAccountMapping",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_service_account_mapping:
+            ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+    }
+    impl ::google_field_selector::FieldSelector for IdentityConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IdentityConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1992,7 +3047,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub instance_name: ::std::option::Option<String>,
-        #[doc = "The public key used for sharing data with this instance."]
+        #[doc = "The public ECIES key used for sharing data with this instance."]
+        #[serde(
+            rename = "publicEciesKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub public_ecies_key: ::std::option::Option<String>,
+        #[doc = "The public RSA key used for sharing data with this instance."]
         #[serde(
             rename = "publicKey",
             default,
@@ -2351,14 +3413,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct JobScheduling {
-        #[doc = "Optional. Maximum number of times per hour a driver may be restarted as a result of driver exiting with non-zero code before job is reported failed.A job may be reported as thrashing if driver exits with non-zero code 4 times within 10 minute window.Maximum value is 10."]
+        #[doc = "Optional. Maximum number of times per hour a driver may be restarted as a result of driver exiting with non-zero code before job is reported failed.A job may be reported as thrashing if driver exits with non-zero code 4 times within 10 minute window.Maximum value is 10.Note: Currently, this restartable job option is not supported in Dataproc workflow template (https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template) jobs."]
         #[serde(
             rename = "maxFailuresPerHour",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_failures_per_hour: ::std::option::Option<i32>,
-        #[doc = "Optional. Maximum number of times in total a driver may be restarted as a result of driver exiting with non-zero code before job is reported failed. Maximum value is 240."]
+        #[doc = "Optional. Maximum number of times in total a driver may be restarted as a result of driver exiting with non-zero code before job is reported failed. Maximum value is 240.Note: Currently, this restartable job option is not supported in Dataproc workflow template (https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template) jobs."]
         #[serde(
             rename = "maxFailuresTotal",
             default,
@@ -2761,6 +3823,90 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct KubernetesClusterConfig {
+        #[doc = "Required. The configuration for running the Dataproc cluster on GKE."]
+        #[serde(
+            rename = "gkeClusterConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gke_cluster_config: ::std::option::Option<crate::schemas::GkeClusterConfig>,
+        #[doc = "Optional. A namespace within the Kubernetes cluster to deploy into. If this namespace does not exist, it is created. If it exists, Dataproc verifies that another Dataproc VirtualCluster is not installed into it. If not specified, the name of the Dataproc Cluster is used."]
+        #[serde(
+            rename = "kubernetesNamespace",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kubernetes_namespace: ::std::option::Option<String>,
+        #[doc = "Optional. The software configuration for this Dataproc cluster running on Kubernetes."]
+        #[serde(
+            rename = "kubernetesSoftwareConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kubernetes_software_config:
+            ::std::option::Option<crate::schemas::KubernetesSoftwareConfig>,
+    }
+    impl ::google_field_selector::FieldSelector for KubernetesClusterConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for KubernetesClusterConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct KubernetesSoftwareConfig {
+        #[doc = "The components that should be installed in this Dataproc cluster. The key must be a string from the KubernetesComponent enumeration. The value is the version of the software to be installed. At least one entry must be specified."]
+        #[serde(
+            rename = "componentVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub component_version: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "The properties to set on daemon config files.Property keys are specified in prefix:property format, for example spark:spark.kubernetes.container.image. The following are supported prefixes and their mappings: spark: spark-defaults.confFor more information, see Cluster properties (https://cloud.google.com/dataproc/docs/concepts/cluster-properties)."]
+        #[serde(
+            rename = "properties",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub properties: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+    }
+    impl ::google_field_selector::FieldSelector for KubernetesSoftwareConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for KubernetesSoftwareConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct LifecycleConfig {
         #[doc = "Optional. The time when cluster will be auto-deleted (see JSON representation of Timestamp (https://developers.google.com/protocol-buffers/docs/proto3#json))."]
         #[serde(
@@ -2826,6 +3972,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ListAutoscalingPoliciesResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ListBatchesResponse {
+        #[doc = "The batches from the specified collection."]
+        #[serde(
+            rename = "batches",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub batches: ::std::option::Option<Vec<crate::schemas::Batch>>,
+        #[doc = "A token, which can be sent as page_token to retrieve the next page. If this field is omitted, there are no subsequent pages."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ListBatchesResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ListBatchesResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3238,6 +4422,178 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct Metric {
+        #[doc = "Optional. Optional Metrics to override the dataproc default metrics configured for the metric source"]
+        #[serde(
+            rename = "metricOverrides",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metric_overrides: ::std::option::Option<Vec<String>>,
+        #[doc = "Required. MetricSource that should be enabled"]
+        #[serde(
+            rename = "metricSource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metric_source: ::std::option::Option<crate::schemas::MetricMetricSource>,
+    }
+    impl ::google_field_selector::FieldSelector for Metric {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Metric {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MetricMetricSource {
+        #[doc = "Hdfs metric source"]
+        Hdfs,
+        #[doc = "hiveserver2 metric source"]
+        Hiveserver2,
+        #[doc = "Required unspecified metric source"]
+        MetricSourceUnspecified,
+        #[doc = "all default monitoring agent metrics that are published with prefix \"agent.googleapis.com\" when we enable a monitoring agent in Compute Engine"]
+        MonitoringAgentDefaults,
+        #[doc = "Spark metric source"]
+        Spark,
+        #[doc = "Spark history server metric source"]
+        SparkHistoryServer,
+        #[doc = "Yarn metric source"]
+        Yarn,
+    }
+    impl MetricMetricSource {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MetricMetricSource::Hdfs => "HDFS",
+                MetricMetricSource::Hiveserver2 => "HIVESERVER2",
+                MetricMetricSource::MetricSourceUnspecified => "METRIC_SOURCE_UNSPECIFIED",
+                MetricMetricSource::MonitoringAgentDefaults => "MONITORING_AGENT_DEFAULTS",
+                MetricMetricSource::Spark => "SPARK",
+                MetricMetricSource::SparkHistoryServer => "SPARK_HISTORY_SERVER",
+                MetricMetricSource::Yarn => "YARN",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MetricMetricSource {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MetricMetricSource {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MetricMetricSource, ()> {
+            Ok(match s {
+                "HDFS" => MetricMetricSource::Hdfs,
+                "HIVESERVER2" => MetricMetricSource::Hiveserver2,
+                "METRIC_SOURCE_UNSPECIFIED" => MetricMetricSource::MetricSourceUnspecified,
+                "MONITORING_AGENT_DEFAULTS" => MetricMetricSource::MonitoringAgentDefaults,
+                "SPARK" => MetricMetricSource::Spark,
+                "SPARK_HISTORY_SERVER" => MetricMetricSource::SparkHistoryServer,
+                "YARN" => MetricMetricSource::Yarn,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MetricMetricSource {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MetricMetricSource {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MetricMetricSource {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "HDFS" => MetricMetricSource::Hdfs,
+                "HIVESERVER2" => MetricMetricSource::Hiveserver2,
+                "METRIC_SOURCE_UNSPECIFIED" => MetricMetricSource::MetricSourceUnspecified,
+                "MONITORING_AGENT_DEFAULTS" => MetricMetricSource::MonitoringAgentDefaults,
+                "SPARK" => MetricMetricSource::Spark,
+                "SPARK_HISTORY_SERVER" => MetricMetricSource::SparkHistoryServer,
+                "YARN" => MetricMetricSource::Yarn,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MetricMetricSource {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MetricMetricSource {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct NamespacedGkeDeploymentTarget {
+        #[doc = "Optional. A namespace within the GKE cluster to deploy into."]
+        #[serde(
+            rename = "clusterNamespace",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cluster_namespace: ::std::option::Option<String>,
+        #[doc = "Optional. The target GKE cluster to deploy to. Format: 'projects/{project}/locations/{location}/clusters/{cluster_id}'"]
+        #[serde(
+            rename = "targetGkeCluster",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target_gke_cluster: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for NamespacedGkeDeploymentTarget {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NamespacedGkeDeploymentTarget {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct NodeGroupAffinity {
         #[doc = "Required. The URI of a sole-tenant node group resource (https://cloud.google.com/compute/docs/reference/rest/v1/nodeGroups) that the cluster will be created on.A full URL, partial URI, or node group name are valid. Examples: https://www.googleapis.com/compute/v1/projects/[project_id]/zones/us-central1-a/nodeGroups/node-group-1 projects/[project_id]/zones/us-central1-a/nodeGroups/node-group-1 node-group-1"]
         #[serde(
@@ -3503,6 +4859,45 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct PeripheralsConfig {
+        #[doc = "Optional. Resource name of an existing Dataproc Metastore service.Example: projects/[project_id]/locations/[region]/services/[service_id]"]
+        #[serde(
+            rename = "metastoreService",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metastore_service: ::std::option::Option<String>,
+        #[doc = "Optional. The Spark History Server configuration for the workload."]
+        #[serde(
+            rename = "sparkHistoryServerConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub spark_history_server_config:
+            ::std::option::Option<crate::schemas::SparkHistoryServerConfig>,
+    }
+    impl ::google_field_selector::FieldSelector for PeripheralsConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PeripheralsConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct PigJob {
         #[doc = "Optional. Whether to continue executing queries if a query fails. The default value is false. Setting to true can be useful when executing independent parallel queries."]
         #[serde(
@@ -3577,7 +4972,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Policy {
-        #[doc = "Associates a list of members to a role. Optionally, may specify a condition that determines how and when the bindings are applied. Each of the bindings must contain at least one member."]
+        #[doc = "Associates a list of members, or principals, with a role. Optionally, may specify a condition that determines how and when the bindings are applied. Each of the bindings must contain at least one principal.The bindings in a Policy can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the bindings grant 50 different roles to user:alice@example.com, and not to any other principal, then you can add another 1,450 principals to the bindings in the Policy."]
         #[serde(
             rename = "bindings",
             default,
@@ -3678,6 +5073,72 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for PrestoJob {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PySparkBatch {
+        #[doc = "Optional. HCFS URIs of archives to be extracted into the working directory of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and .zip."]
+        #[serde(
+            rename = "archiveUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub archive_uris: ::std::option::Option<Vec<String>>,
+        #[doc = "Optional. The arguments to pass to the driver. Do not include arguments that can be set as batch properties, such as --conf, since a collision can occur that causes an incorrect batch submission."]
+        #[serde(
+            rename = "args",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub args: ::std::option::Option<Vec<String>>,
+        #[doc = "Optional. HCFS URIs of files to be placed in the working directory of each executor."]
+        #[serde(
+            rename = "fileUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub file_uris: ::std::option::Option<Vec<String>>,
+        #[doc = "Optional. HCFS URIs of jar files to add to the classpath of the Spark driver and tasks."]
+        #[serde(
+            rename = "jarFileUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub jar_file_uris: ::std::option::Option<Vec<String>>,
+        #[doc = "Required. The HCFS URI of the main Python file to use as the Spark driver. Must be a .py file."]
+        #[serde(
+            rename = "mainPythonFileUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub main_python_file_uri: ::std::option::Option<String>,
+        #[doc = "Optional. HCFS file URIs of Python files to pass to the PySpark framework. Supported file types: .py, .egg, and .zip."]
+        #[serde(
+            rename = "pythonFileUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub python_file_uris: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for PySparkBatch {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PySparkBatch {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3836,6 +5297,44 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct RepairClusterRequest {
+        #[doc = "Optional. Specifying the cluster_uuid means the RPC will fail (with error NOT_FOUND) if a cluster with the specified UUID does not exist."]
+        #[serde(
+            rename = "clusterUuid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cluster_uuid: ::std::option::Option<String>,
+        #[doc = "Optional. A unique ID used to identify the request. If the server receives two RepairClusterRequests with the same ID, the second request is ignored, and the first google.longrunning.Operation created and stored in the backend is returned.Recommendation: Set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters."]
+        #[serde(
+            rename = "requestId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub request_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for RepairClusterRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RepairClusterRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ReservationAffinity {
         #[doc = "Optional. Type of reservation to consume"]
         #[serde(
@@ -3970,7 +5469,104 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct RuntimeConfig {
+        #[doc = "Optional. Optional custom container image for the job runtime environment. If not specified, a default container image will be used."]
+        #[serde(
+            rename = "containerImage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub container_image: ::std::option::Option<String>,
+        #[doc = "Optional. A mapping of property names to values, which are used to configure workload execution."]
+        #[serde(
+            rename = "properties",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub properties: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "Optional. Version of the batch runtime."]
+        #[serde(
+            rename = "version",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for RuntimeConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RuntimeConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct RuntimeInfo {
+        #[doc = "Output only. A URI pointing to the location of the diagnostics tarball."]
+        #[serde(
+            rename = "diagnosticOutputUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub diagnostic_output_uri: ::std::option::Option<String>,
+        #[doc = "Output only. Map of remote access endpoints (such as web interfaces and APIs) to their URIs."]
+        #[serde(
+            rename = "endpoints",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub endpoints: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "Output only. A URI pointing to the location of the stdout and stderr of the workload."]
+        #[serde(
+            rename = "outputUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub output_uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for RuntimeInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RuntimeInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SecurityConfig {
+        #[doc = "Optional. Identity related configuration, including service account based secure multi-tenancy user mappings."]
+        #[serde(
+            rename = "identityConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub identity_config: ::std::option::Option<crate::schemas::IdentityConfig>,
         #[doc = "Optional. Kerberos related configuration."]
         #[serde(
             rename = "kerberosConfig",
@@ -3985,6 +5581,174 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SecurityConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SessionOperationMetadata {
+        #[doc = "The time when the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "Short description of the operation."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "The time when the operation was finished."]
+        #[serde(
+            rename = "doneTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub done_time: ::std::option::Option<String>,
+        #[doc = "Labels associated with the operation."]
+        #[serde(
+            rename = "labels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "The operation type."]
+        #[serde(
+            rename = "operationType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub operation_type:
+            ::std::option::Option<crate::schemas::SessionOperationMetadataOperationType>,
+        #[doc = "Name of the session for the operation."]
+        #[serde(
+            rename = "session",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub session: ::std::option::Option<String>,
+        #[doc = "Session UUID for the operation."]
+        #[serde(
+            rename = "sessionUuid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub session_uuid: ::std::option::Option<String>,
+        #[doc = "Warnings encountered during operation execution."]
+        #[serde(
+            rename = "warnings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub warnings: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for SessionOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SessionOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum SessionOperationMetadataOperationType {
+        #[doc = "Create Session operation type."]
+        Create,
+        #[doc = "Delete Session operation type."]
+        Delete,
+        #[doc = "Session operation type is unknown."]
+        SessionOperationTypeUnspecified,
+        #[doc = "Terminate Session operation type."]
+        Terminate,
+    }
+    impl SessionOperationMetadataOperationType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                SessionOperationMetadataOperationType::Create => "CREATE",
+                SessionOperationMetadataOperationType::Delete => "DELETE",
+                SessionOperationMetadataOperationType::SessionOperationTypeUnspecified => {
+                    "SESSION_OPERATION_TYPE_UNSPECIFIED"
+                }
+                SessionOperationMetadataOperationType::Terminate => "TERMINATE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for SessionOperationMetadataOperationType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for SessionOperationMetadataOperationType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<SessionOperationMetadataOperationType, ()> {
+            Ok(match s {
+                "CREATE" => SessionOperationMetadataOperationType::Create,
+                "DELETE" => SessionOperationMetadataOperationType::Delete,
+                "SESSION_OPERATION_TYPE_UNSPECIFIED" => {
+                    SessionOperationMetadataOperationType::SessionOperationTypeUnspecified
+                }
+                "TERMINATE" => SessionOperationMetadataOperationType::Terminate,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for SessionOperationMetadataOperationType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for SessionOperationMetadataOperationType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for SessionOperationMetadataOperationType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CREATE" => SessionOperationMetadataOperationType::Create,
+                "DELETE" => SessionOperationMetadataOperationType::Delete,
+                "SESSION_OPERATION_TYPE_UNSPECIFIED" => {
+                    SessionOperationMetadataOperationType::SessionOperationTypeUnspecified
+                }
+                "TERMINATE" => SessionOperationMetadataOperationType::Terminate,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for SessionOperationMetadataOperationType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SessionOperationMetadataOperationType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4119,8 +5883,12 @@ pub mod schemas {
         ComponentUnspecified,
         #[doc = "Docker"]
         Docker,
+        #[doc = "The Druid query engine. (alpha)"]
+        Druid,
         #[doc = "Flink"]
         Flink,
+        #[doc = "HBase. (beta)"]
+        Hbase,
         #[doc = "The Hive Web HCatalog (the REST service for accessing HCatalog)."]
         HiveWebhcat,
         #[doc = "The Jupyter Notebook."]
@@ -4144,7 +5912,9 @@ pub mod schemas {
                     "COMPONENT_UNSPECIFIED"
                 }
                 SoftwareConfigOptionalComponentsItems::Docker => "DOCKER",
+                SoftwareConfigOptionalComponentsItems::Druid => "DRUID",
                 SoftwareConfigOptionalComponentsItems::Flink => "FLINK",
+                SoftwareConfigOptionalComponentsItems::Hbase => "HBASE",
                 SoftwareConfigOptionalComponentsItems::HiveWebhcat => "HIVE_WEBHCAT",
                 SoftwareConfigOptionalComponentsItems::Jupyter => "JUPYTER",
                 SoftwareConfigOptionalComponentsItems::Presto => "PRESTO",
@@ -4169,7 +5939,9 @@ pub mod schemas {
                     SoftwareConfigOptionalComponentsItems::ComponentUnspecified
                 }
                 "DOCKER" => SoftwareConfigOptionalComponentsItems::Docker,
+                "DRUID" => SoftwareConfigOptionalComponentsItems::Druid,
                 "FLINK" => SoftwareConfigOptionalComponentsItems::Flink,
+                "HBASE" => SoftwareConfigOptionalComponentsItems::Hbase,
                 "HIVE_WEBHCAT" => SoftwareConfigOptionalComponentsItems::HiveWebhcat,
                 "JUPYTER" => SoftwareConfigOptionalComponentsItems::Jupyter,
                 "PRESTO" => SoftwareConfigOptionalComponentsItems::Presto,
@@ -4206,7 +5978,9 @@ pub mod schemas {
                     SoftwareConfigOptionalComponentsItems::ComponentUnspecified
                 }
                 "DOCKER" => SoftwareConfigOptionalComponentsItems::Docker,
+                "DRUID" => SoftwareConfigOptionalComponentsItems::Druid,
                 "FLINK" => SoftwareConfigOptionalComponentsItems::Flink,
+                "HBASE" => SoftwareConfigOptionalComponentsItems::Hbase,
                 "HIVE_WEBHCAT" => SoftwareConfigOptionalComponentsItems::HiveWebhcat,
                 "JUPYTER" => SoftwareConfigOptionalComponentsItems::Jupyter,
                 "PRESTO" => SoftwareConfigOptionalComponentsItems::Presto,
@@ -4229,6 +6003,103 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SoftwareConfigOptionalComponentsItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SparkBatch {
+        #[doc = "Optional. HCFS URIs of archives to be extracted into the working directory of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and .zip."]
+        #[serde(
+            rename = "archiveUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub archive_uris: ::std::option::Option<Vec<String>>,
+        #[doc = "Optional. The arguments to pass to the driver. Do not include arguments that can be set as batch properties, such as --conf, since a collision can occur that causes an incorrect batch submission."]
+        #[serde(
+            rename = "args",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub args: ::std::option::Option<Vec<String>>,
+        #[doc = "Optional. HCFS URIs of files to be placed in the working directory of each executor."]
+        #[serde(
+            rename = "fileUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub file_uris: ::std::option::Option<Vec<String>>,
+        #[doc = "Optional. HCFS URIs of jar files to add to the classpath of the Spark driver and tasks."]
+        #[serde(
+            rename = "jarFileUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub jar_file_uris: ::std::option::Option<Vec<String>>,
+        #[doc = "Optional. The name of the driver main class. The jar file that contains the class must be in the classpath or specified in jar_file_uris."]
+        #[serde(
+            rename = "mainClass",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub main_class: ::std::option::Option<String>,
+        #[doc = "Optional. The HCFS URI of the jar file that contains the main class."]
+        #[serde(
+            rename = "mainJarFileUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub main_jar_file_uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SparkBatch {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SparkBatch {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SparkHistoryServerConfig {
+        #[doc = "Optional. Resource name of an existing Dataproc Cluster to act as a Spark History Server for the workload.Example: projects/[project_id]/regions/[region]/clusters/[cluster_name]"]
+        #[serde(
+            rename = "dataprocCluster",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dataproc_cluster: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SparkHistoryServerConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SparkHistoryServerConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4325,6 +6196,58 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct SparkRBatch {
+        #[doc = "Optional. HCFS URIs of archives to be extracted into the working directory of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and .zip."]
+        #[serde(
+            rename = "archiveUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub archive_uris: ::std::option::Option<Vec<String>>,
+        #[doc = "Optional. The arguments to pass to the Spark driver. Do not include arguments that can be set as batch properties, such as --conf, since a collision can occur that causes an incorrect batch submission."]
+        #[serde(
+            rename = "args",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub args: ::std::option::Option<Vec<String>>,
+        #[doc = "Optional. HCFS URIs of files to be placed in the working directory of each executor."]
+        #[serde(
+            rename = "fileUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub file_uris: ::std::option::Option<Vec<String>>,
+        #[doc = "Required. The HCFS URI of the main R file to use as the driver. Must be a .R or .r file."]
+        #[serde(
+            rename = "mainRFileUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub main_r_file_uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SparkRBatch {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SparkRBatch {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SparkRJob {
         #[doc = "Optional. HCFS URIs of archives to be extracted into the working directory of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and .zip."]
         #[serde(
@@ -4375,6 +6298,51 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SparkRJob {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SparkSqlBatch {
+        #[doc = "Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH."]
+        #[serde(
+            rename = "jarFileUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub jar_file_uris: ::std::option::Option<Vec<String>>,
+        #[doc = "Required. The HCFS URI of the script that contains Spark SQL queries to execute."]
+        #[serde(
+            rename = "queryFileUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub query_file_uri: ::std::option::Option<String>,
+        #[doc = "Optional. Mapping of query variable names to values (equivalent to the Spark SQL command: SET name=\"value\";)."]
+        #[serde(
+            rename = "queryVariables",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub query_variables: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+    }
+    impl ::google_field_selector::FieldSelector for SparkSqlBatch {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SparkSqlBatch {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4446,6 +6414,56 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct SparkStandaloneAutoscalingConfig {
+        #[doc = "Required. Timeout for Spark graceful decommissioning of spark workers. Specifies the duration to wait for spark worker to complete spark decomissioning tasks before forcefully removing workers. Only applicable to downscaling operations.Bounds: 0s, 1d."]
+        #[serde(
+            rename = "gracefulDecommissionTimeout",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub graceful_decommission_timeout: ::std::option::Option<String>,
+        #[doc = "Required. Fraction of required executors to remove from Spark Serverless clusters. A scale-down factor of 1.0 will result in scaling down so that there are no more executors for the Spark Job.(more aggressive scaling). A scale-down factor closer to 0 will result in a smaller magnitude of scaling donw (less aggressive scaling).Bounds: 0.0, 1.0."]
+        #[serde(
+            rename = "scaleDownFactor",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub scale_down_factor: ::std::option::Option<f64>,
+        #[doc = "Optional. Minimum scale-down threshold as a fraction of total cluster size before scaling occurs. For example, in a 20-worker cluster, a threshold of 0.1 means the autoscaler must recommend at least a 2 worker scale-down for the cluster to scale. A threshold of 0 means the autoscaler will scale down on any recommended change.Bounds: 0.0, 1.0. Default: 0.0."]
+        #[serde(
+            rename = "scaleDownMinWorkerFraction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub scale_down_min_worker_fraction: ::std::option::Option<f64>,
+        #[doc = "Required. Fraction of required workers to add to Spark Standalone clusters. A scale-up factor of 1.0 will result in scaling up so that there are no more required workers for the Spark Job (more aggressive scaling). A scale-up factor closer to 0 will result in a smaller magnitude of scaling up (less aggressive scaling).Bounds: 0.0, 1.0."]
+        #[serde(
+            rename = "scaleUpFactor",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub scale_up_factor: ::std::option::Option<f64>,
+        #[doc = "Optional. Minimum scale-up threshold as a fraction of total cluster size before scaling occurs. For example, in a 20-worker cluster, a threshold of 0.1 means the autoscaler must recommend at least a 2-worker scale-up for the cluster to scale. A threshold of 0 means the autoscaler will scale up on any recommended change.Bounds: 0.0, 1.0. Default: 0.0."]
+        #[serde(
+            rename = "scaleUpMinWorkerFraction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub scale_up_min_worker_fraction: ::std::option::Option<f64>,
+    }
+    impl ::google_field_selector::FieldSelector for SparkStandaloneAutoscalingConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SparkStandaloneAutoscalingConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug,
         Clone,
         PartialEq,
@@ -4465,7 +6483,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cluster_uuid: ::std::option::Option<String>,
-        #[doc = "Optional. A unique id used to identify the request. If the server receives two StartClusterRequest (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.StartClusterRequest)s with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.Recommendation: Set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters."]
+        #[doc = "Optional. A unique ID used to identify the request. If the server receives two StartClusterRequest (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.StartClusterRequest)s with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.Recommendation: Set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters."]
         #[serde(
             rename = "requestId",
             default,
@@ -4479,6 +6497,147 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for StartClusterRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct StateHistory {
+        #[doc = "Output only. The state of the batch at this point in history."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::StateHistoryState>,
+        #[doc = "Output only. Details about the state at this point in history."]
+        #[serde(
+            rename = "stateMessage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state_message: ::std::option::Option<String>,
+        #[doc = "Output only. The time when the batch entered the historical state."]
+        #[serde(
+            rename = "stateStartTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state_start_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for StateHistory {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for StateHistory {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum StateHistoryState {
+        #[doc = "The batch cancellation was successful."]
+        Cancelled,
+        #[doc = "The batch is cancelling."]
+        Cancelling,
+        #[doc = "The batch is no longer running due to an error."]
+        Failed,
+        #[doc = "The batch is created before running."]
+        Pending,
+        #[doc = "The batch is running."]
+        Running,
+        #[doc = "The batch state is unknown."]
+        StateUnspecified,
+        #[doc = "The batch completed successfully."]
+        Succeeded,
+    }
+    impl StateHistoryState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                StateHistoryState::Cancelled => "CANCELLED",
+                StateHistoryState::Cancelling => "CANCELLING",
+                StateHistoryState::Failed => "FAILED",
+                StateHistoryState::Pending => "PENDING",
+                StateHistoryState::Running => "RUNNING",
+                StateHistoryState::StateUnspecified => "STATE_UNSPECIFIED",
+                StateHistoryState::Succeeded => "SUCCEEDED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for StateHistoryState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for StateHistoryState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<StateHistoryState, ()> {
+            Ok(match s {
+                "CANCELLED" => StateHistoryState::Cancelled,
+                "CANCELLING" => StateHistoryState::Cancelling,
+                "FAILED" => StateHistoryState::Failed,
+                "PENDING" => StateHistoryState::Pending,
+                "RUNNING" => StateHistoryState::Running,
+                "STATE_UNSPECIFIED" => StateHistoryState::StateUnspecified,
+                "SUCCEEDED" => StateHistoryState::Succeeded,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for StateHistoryState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for StateHistoryState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for StateHistoryState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CANCELLED" => StateHistoryState::Cancelled,
+                "CANCELLING" => StateHistoryState::Cancelling,
+                "FAILED" => StateHistoryState::Failed,
+                "PENDING" => StateHistoryState::Pending,
+                "RUNNING" => StateHistoryState::Running,
+                "STATE_UNSPECIFIED" => StateHistoryState::StateUnspecified,
+                "SUCCEEDED" => StateHistoryState::Succeeded,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for StateHistoryState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for StateHistoryState {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4538,7 +6697,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cluster_uuid: ::std::option::Option<String>,
-        #[doc = "Optional. A unique id used to identify the request. If the server receives two StopClusterRequest (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.StopClusterRequest)s with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.Recommendation: Set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters."]
+        #[doc = "Optional. A unique ID used to identify the request. If the server receives two StopClusterRequest (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.StopClusterRequest)s with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.Recommendation: Set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters."]
         #[serde(
             rename = "requestId",
             default,
@@ -4726,6 +6885,53 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ValueValidation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct VirtualClusterConfig {
+        #[doc = "Optional. Configuration of auxiliary services used by this cluster."]
+        #[serde(
+            rename = "auxiliaryServicesConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub auxiliary_services_config:
+            ::std::option::Option<crate::schemas::AuxiliaryServicesConfig>,
+        #[doc = "Required. The configuration for running the Dataproc cluster on Kubernetes."]
+        #[serde(
+            rename = "kubernetesClusterConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kubernetes_cluster_config:
+            ::std::option::Option<crate::schemas::KubernetesClusterConfig>,
+        #[doc = "Optional. A Storage bucket used to stage job dependencies, config files, and job driver console output. If you do not specify a staging bucket, Cloud Dataproc will determine a Cloud Storage location (US, ASIA, or EU) for your cluster's staging bucket according to the Compute Engine zone where your cluster is deployed, and then create and manage this project-level, per-location bucket (see Dataproc staging and temp buckets (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)). This field requires a Cloud Storage bucket name, not a gs://... URI to a Cloud Storage bucket."]
+        #[serde(
+            rename = "stagingBucket",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub staging_bucket: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for VirtualClusterConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for VirtualClusterConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5617,11 +7823,21 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Actions that can be performed on the autoscaling_policies resource"]                pub fn autoscaling_policies ( & self ) -> crate :: resources :: projects :: locations :: autoscaling_policies :: AutoscalingPoliciesActions{
-                    crate :: resources :: projects :: locations :: autoscaling_policies :: AutoscalingPoliciesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the autoscaling_policies resource"]                pub fn autoscaling_policies (& self) -> crate :: resources :: projects :: locations :: autoscaling_policies :: AutoscalingPoliciesActions{
+                    crate :: resources :: projects :: locations :: autoscaling_policies :: AutoscalingPoliciesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
-                #[doc = "Actions that can be performed on the workflow_templates resource"]                pub fn workflow_templates ( & self ) -> crate :: resources :: projects :: locations :: workflow_templates :: WorkflowTemplatesActions{
-                    crate :: resources :: projects :: locations :: workflow_templates :: WorkflowTemplatesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the batches resource"]
+                pub fn batches(
+                    &self,
+                ) -> crate::resources::projects::locations::batches::BatchesActions
+                {
+                    crate::resources::projects::locations::batches::BatchesActions {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                    }
+                }
+                #[doc = "Actions that can be performed on the workflow_templates resource"]                pub fn workflow_templates (& self) -> crate :: resources :: projects :: locations :: workflow_templates :: WorkflowTemplatesActions{
+                    crate :: resources :: projects :: locations :: workflow_templates :: WorkflowTemplatesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
             }
             pub mod autoscaling_policies {
@@ -7245,6 +9461,891 @@ pub mod resources {
                                 .map_err(|err| crate::Error::OAuth2(err))?,
                         );
                         Ok(req)
+                    }
+                }
+            }
+            pub mod batches {
+                pub mod params {}
+                pub struct BatchesActions<'a> {
+                    pub(crate) reqwest: &'a reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                }
+                impl<'a> BatchesActions<'a> {
+                    fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                        self.auth
+                    }
+                    #[doc = "Creates a batch workload that executes asynchronously."]
+                    pub fn create(
+                        &self,
+                        request: crate::schemas::Batch,
+                        parent: impl Into<String>,
+                    ) -> CreateRequestBuilder {
+                        CreateRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                            batch_id: None,
+                            request_id: None,
+                        }
+                    }
+                    #[doc = "Deletes the batch workload resource. If the batch is not in terminal state, the delete fails and the response returns FAILED_PRECONDITION."]
+                    pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
+                        DeleteRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                    #[doc = "Gets the batch workload resource representation."]
+                    pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                        GetRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                    #[doc = "Lists batch workloads."]
+                    pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                        ListRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                            page_size: None,
+                            page_token: None,
+                        }
+                    }
+                }
+                #[doc = "Created via [BatchesActions::create()](struct.BatchesActions.html#method.create)"]
+                #[derive(Debug, Clone)]
+                pub struct CreateRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::Batch,
+                    parent: String,
+                    batch_id: Option<String>,
+                    request_id: Option<String>,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> CreateRequestBuilder<'a> {
+                    #[doc = "Optional. The ID to use for the batch, which will become the final component of the batch's resource name.This value must be 4-63 characters. Valid characters are /[a-z][0-9]-/."]
+                    pub fn batch_id(mut self, value: impl Into<String>) -> Self {
+                        self.batch_id = Some(value.into());
+                        self
+                    }
+                    #[doc = "Optional. A unique ID used to identify the request. If the service receives two CreateBatchRequest (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateBatchRequest)s with the same request_id, the second request is ignored and the Operation that corresponds to the first Batch created and stored in the backend is returned.Recommendation: Set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The value must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters."]
+                    pub fn request_id(mut self, value: impl Into<String>) -> Self {
+                        self.request_id = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Operation, crate::Error> {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Operation, crate::Error> {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        let req = req.json(&self.request);
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://dataproc.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/batches");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("batchId", &self.batch_id)]);
+                        req = req.query(&[("requestId", &self.request_id)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [BatchesActions::delete()](struct.BatchesActions.html#method.delete)"]
+                #[derive(Debug, Clone)]
+                pub struct DeleteRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> DeleteRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Empty, crate::Error> {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Empty, crate::Error> {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://dataproc.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [BatchesActions::get()](struct.BatchesActions.html#method.get)"]
+                #[derive(Debug, Clone)]
+                pub struct GetRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> GetRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Batch, crate::Error> {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Batch, crate::Error> {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://dataproc.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [BatchesActions::list()](struct.BatchesActions.html#method.list)"]
+                #[derive(Debug, Clone)]
+                pub struct ListRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    parent: String,
+                    page_size: Option<i32>,
+                    page_token: Option<String>,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> ListRequestBuilder<'a> {
+                    #[doc = "Optional. The maximum number of batches to return in each response. The service may return fewer than this value. The default page size is 20; the maximum page size is 1000."]
+                    pub fn page_size(mut self, value: i32) -> Self {
+                        self.page_size = Some(value);
+                        self
+                    }
+                    #[doc = "Optional. A page token received from a previous ListBatches call. Provide this token to retrieve the subsequent page."]
+                    pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                        self.page_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                    #[doc = r" items yielded by the iterator are chosen by the caller of this"]
+                    #[doc = r" method and must implement `Deserialize` and `FieldSelector`. The"]
+                    #[doc = r" populated fields in the yielded items will be determined by the"]
+                    #[doc = r" `FieldSelector` implementation."]
+                    pub fn iter_batches<T>(self) -> crate::iter::PageItemIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.iter_batches_with_fields(fields)
+                    }
+                    #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                    #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                    #[doc = r" fields in `#items_type` will be the default fields populated by"]
+                    #[doc = r" the server."]
+                    pub fn iter_batches_with_default_fields(
+                        self,
+                    ) -> crate::iter::PageItemIter<Self, crate::schemas::Batch>
+                    {
+                        self.iter_batches_with_fields(None::<String>)
+                    }
+                    #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                    #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                    #[doc = r" fields in `#items_type` will be all fields available. This should"]
+                    #[doc = r" primarily be used during developement and debugging as fetching"]
+                    #[doc = r" all fields can be expensive both in bandwidth and server"]
+                    #[doc = r" resources."]
+                    pub fn iter_batches_with_all_fields(
+                        self,
+                    ) -> crate::iter::PageItemIter<Self, crate::schemas::Batch>
+                    {
+                        self.iter_batches_with_fields(Some("*"))
+                    }
+                    pub fn iter_batches_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> crate::iter::PageItemIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: AsRef<str>,
+                    {
+                        self.fields = Some({
+                            let mut selector = concat!("nextPageToken,", "batches").to_owned();
+                            let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                            if !items_fields.is_empty() {
+                                selector.push_str("(");
+                                selector.push_str(items_fields);
+                                selector.push_str(")");
+                            }
+                            selector
+                        });
+                        crate::iter::PageItemIter::new(self, "batches")
+                    }
+                    pub fn iter<T>(self) -> crate::iter::PageIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.iter_with_fields(fields)
+                    }
+                    pub fn iter_with_default_fields(
+                        self,
+                    ) -> crate::iter::PageIter<Self, crate::schemas::ListBatchesResponse>
+                    {
+                        self.iter_with_fields(None::<&str>)
+                    }
+                    pub fn iter_with_all_fields(
+                        self,
+                    ) -> crate::iter::PageIter<Self, crate::schemas::ListBatchesResponse>
+                    {
+                        self.iter_with_fields(Some("*"))
+                    }
+                    pub fn iter_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> crate::iter::PageIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: AsRef<str>,
+                    {
+                        let mut fields =
+                            fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                        if !fields.is_empty() {
+                            match fields.chars().rev().nth(0) {
+                                Some(',') | None => {}
+                                _ => fields.push_str(","),
+                            }
+                            fields.push_str("nextPageToken");
+                            self.fields = Some(fields);
+                        }
+                        crate::iter::PageIter::new(self)
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::ListBatchesResponse, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::ListBatchesResponse, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://dataproc.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/batches");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("pageSize", &self.page_size)]);
+                        req = req.query(&[("pageToken", &self.page_token)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                impl<'a> crate::iter::IterableMethod for ListRequestBuilder<'a> {
+                    fn set_page_token(&mut self, value: String) {
+                        self.page_token = value.into();
+                    }
+                    fn execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        self._execute()
                     }
                 }
             }
@@ -9281,8 +12382,8 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Actions that can be performed on the autoscaling_policies resource"]                pub fn autoscaling_policies ( & self ) -> crate :: resources :: projects :: regions :: autoscaling_policies :: AutoscalingPoliciesActions{
-                    crate :: resources :: projects :: regions :: autoscaling_policies :: AutoscalingPoliciesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the autoscaling_policies resource"]                pub fn autoscaling_policies (& self) -> crate :: resources :: projects :: regions :: autoscaling_policies :: AutoscalingPoliciesActions{
+                    crate :: resources :: projects :: regions :: autoscaling_policies :: AutoscalingPoliciesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
                 #[doc = "Actions that can be performed on the clusters resource"]
                 pub fn clusters(
@@ -9316,7 +12417,7 @@ pub mod resources {
                     &self,
                 ) -> crate::resources::projects::regions::workflow_templates::WorkflowTemplatesActions
                 {
-                    crate :: resources :: projects :: regions :: workflow_templates :: WorkflowTemplatesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    crate :: resources :: projects :: regions :: workflow_templates :: WorkflowTemplatesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
             }
             pub mod autoscaling_policies {
@@ -10944,7 +14045,96 @@ pub mod resources {
                 }
             }
             pub mod clusters {
-                pub mod params {}
+                pub mod params {
+                    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+                    pub enum CreateActionOnFailedPrimaryWorkers {
+                        #[doc = "Delete the failed cluster resource."]
+                        Delete,
+                        #[doc = "When FailureAction is unspecified, failure action defaults to NO_ACTION."]
+                        FailureActionUnspecified,
+                        #[doc = "Take no action on failure to create a cluster resource. NO_ACTION is the default."]
+                        NoAction,
+                    }
+                    impl CreateActionOnFailedPrimaryWorkers {
+                        pub fn as_str(self) -> &'static str {
+                            match self {
+                                CreateActionOnFailedPrimaryWorkers::Delete => "DELETE",
+                                CreateActionOnFailedPrimaryWorkers::FailureActionUnspecified => {
+                                    "FAILURE_ACTION_UNSPECIFIED"
+                                }
+                                CreateActionOnFailedPrimaryWorkers::NoAction => "NO_ACTION",
+                            }
+                        }
+                    }
+                    impl ::std::convert::AsRef<str> for CreateActionOnFailedPrimaryWorkers {
+                        fn as_ref(&self) -> &str {
+                            self.as_str()
+                        }
+                    }
+                    impl ::std::str::FromStr for CreateActionOnFailedPrimaryWorkers {
+                        type Err = ();
+                        fn from_str(
+                            s: &str,
+                        ) -> ::std::result::Result<CreateActionOnFailedPrimaryWorkers, ()>
+                        {
+                            Ok(match s {
+                                "DELETE" => CreateActionOnFailedPrimaryWorkers::Delete,
+                                "FAILURE_ACTION_UNSPECIFIED" => {
+                                    CreateActionOnFailedPrimaryWorkers::FailureActionUnspecified
+                                }
+                                "NO_ACTION" => CreateActionOnFailedPrimaryWorkers::NoAction,
+                                _ => return Err(()),
+                            })
+                        }
+                    }
+                    impl ::std::fmt::Display for CreateActionOnFailedPrimaryWorkers {
+                        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                            f.write_str(self.as_str())
+                        }
+                    }
+                    impl ::serde::Serialize for CreateActionOnFailedPrimaryWorkers {
+                        fn serialize<S>(
+                            &self,
+                            serializer: S,
+                        ) -> ::std::result::Result<S::Ok, S::Error>
+                        where
+                            S: ::serde::ser::Serializer,
+                        {
+                            serializer.serialize_str(self.as_str())
+                        }
+                    }
+                    impl<'de> ::serde::Deserialize<'de> for CreateActionOnFailedPrimaryWorkers {
+                        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+                        where
+                            D: ::serde::de::Deserializer<'de>,
+                        {
+                            let value: &'de str = <&str>::deserialize(deserializer)?;
+                            Ok(match value {
+                                "DELETE" => CreateActionOnFailedPrimaryWorkers::Delete,
+                                "FAILURE_ACTION_UNSPECIFIED" => {
+                                    CreateActionOnFailedPrimaryWorkers::FailureActionUnspecified
+                                }
+                                "NO_ACTION" => CreateActionOnFailedPrimaryWorkers::NoAction,
+                                _ => {
+                                    return Err(::serde::de::Error::custom(format!(
+                                        "invalid enum for #name: {}",
+                                        value
+                                    )))
+                                }
+                            })
+                        }
+                    }
+                    impl ::google_field_selector::FieldSelector for CreateActionOnFailedPrimaryWorkers {
+                        fn fields() -> Vec<::google_field_selector::Field> {
+                            Vec::new()
+                        }
+                    }
+                    impl ::google_field_selector::ToFieldType for CreateActionOnFailedPrimaryWorkers {
+                        fn field_type() -> ::google_field_selector::FieldType {
+                            ::google_field_selector::FieldType::Leaf
+                        }
+                    }
+                }
                 pub struct ClustersActions<'a> {
                     pub(crate) reqwest: &'a reqwest::blocking::Client,
                     pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
@@ -10977,6 +14167,7 @@ pub mod resources {
                             xgafv: None,
                             project_id: project_id.into(),
                             region: region.into(),
+                            action_on_failed_primary_workers: None,
                             request_id: None,
                         }
                     }
@@ -11141,7 +14332,7 @@ pub mod resources {
                             page_token: None,
                         }
                     }
-                    #[doc = "Updates a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata)."]
+                    #[doc = "Updates a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata). The cluster must be in a RUNNING state or an error is returned."]
                     pub fn patch(
                         &self,
                         request: crate::schemas::Cluster,
@@ -11170,6 +14361,34 @@ pub mod resources {
                             graceful_decommission_timeout: None,
                             request_id: None,
                             update_mask: None,
+                        }
+                    }
+                    #[doc = "Repairs a cluster."]
+                    pub fn repair(
+                        &self,
+                        request: crate::schemas::RepairClusterRequest,
+                        project_id: impl Into<String>,
+                        region: impl Into<String>,
+                        cluster_name: impl Into<String>,
+                    ) -> RepairRequestBuilder {
+                        RepairRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            project_id: project_id.into(),
+                            region: region.into(),
+                            cluster_name: cluster_name.into(),
                         }
                     }
                     #[doc = "Sets the access control policy on the specified resource. Replaces any existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and PERMISSION_DENIED errors."]
@@ -11279,27 +14498,17 @@ pub mod resources {
                 }
                 #[doc = "Created via [ClustersActions::create()](struct.ClustersActions.html#method.create)"]
                 #[derive(Debug, Clone)]
-                pub struct CreateRequestBuilder<'a> {
-                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
-                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-                    request: crate::schemas::Cluster,
-                    project_id: String,
-                    region: String,
-                    request_id: Option<String>,
-                    access_token: Option<String>,
-                    alt: Option<crate::params::Alt>,
-                    callback: Option<String>,
-                    fields: Option<String>,
-                    key: Option<String>,
-                    oauth_token: Option<String>,
-                    pretty_print: Option<bool>,
-                    quota_user: Option<String>,
-                    upload_protocol: Option<String>,
-                    upload_type: Option<String>,
-                    xgafv: Option<crate::params::Xgafv>,
-                }
+                pub struct CreateRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: Cluster , project_id : String , region : String , action_on_failed_primary_workers : Option < crate :: resources :: projects :: regions :: clusters :: params :: CreateActionOnFailedPrimaryWorkers > , request_id : Option < String > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                 impl<'a> CreateRequestBuilder<'a> {
-                    #[doc = "Optional. A unique id used to identify the request. If the server receives two CreateClusterRequest (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateClusterRequest)s with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters."]
+                    #[doc = "Optional. Failure action when primary worker creation fails."]
+                    pub fn action_on_failed_primary_workers(
+                        mut self,
+                        value : crate :: resources :: projects :: regions :: clusters :: params :: CreateActionOnFailedPrimaryWorkers,
+                    ) -> Self {
+                        self.action_on_failed_primary_workers = Some(value);
+                        self
+                    }
+                    #[doc = "Optional. A unique ID used to identify the request. If the server receives two CreateClusterRequest (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateClusterRequest)s with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters."]
                     pub fn request_id(mut self, value: impl Into<String>) -> Self {
                         self.request_id = Some(value.into());
                         self
@@ -11436,6 +14645,10 @@ pub mod resources {
                     ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
                     {
                         let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[(
+                            "actionOnFailedPrimaryWorkers",
+                            &self.action_on_failed_primary_workers,
+                        )]);
                         req = req.query(&[("requestId", &self.request_id)]);
                         req = req.query(&[("access_token", &self.access_token)]);
                         req = req.query(&[("alt", &self.alt)]);
@@ -11484,7 +14697,7 @@ pub mod resources {
                         self.cluster_uuid = Some(value.into());
                         self
                     }
-                    #[doc = "Optional. A unique id used to identify the request. If the server receives two DeleteClusterRequest (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.DeleteClusterRequest)s with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters."]
+                    #[doc = "Optional. A unique ID used to identify the request. If the server receives two DeleteClusterRequest (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.DeleteClusterRequest)s with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters."]
                     pub fn request_id(mut self, value: impl Into<String>) -> Self {
                         self.request_id = Some(value.into());
                         self
@@ -12691,7 +15904,7 @@ pub mod resources {
                         self.graceful_decommission_timeout = Some(value.into());
                         self
                     }
-                    #[doc = "Optional. A unique id used to identify the request. If the server receives two UpdateClusterRequest (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.UpdateClusterRequest)s with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters."]
+                    #[doc = "Optional. A unique ID used to identify the request. If the server receives two UpdateClusterRequest (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.UpdateClusterRequest)s with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters."]
                     pub fn request_id(mut self, value: impl Into<String>) -> Self {
                         self.request_id = Some(value.into());
                         self
@@ -12846,6 +16059,187 @@ pub mod resources {
                         )]);
                         req = req.query(&[("requestId", &self.request_id)]);
                         req = req.query(&[("updateMask", &self.update_mask)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [ClustersActions::repair()](struct.ClustersActions.html#method.repair)"]
+                #[derive(Debug, Clone)]
+                pub struct RepairRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::RepairClusterRequest,
+                    project_id: String,
+                    region: String,
+                    cluster_name: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> RepairRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Operation, crate::Error> {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Operation, crate::Error> {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        let req = req.json(&self.request);
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://dataproc.googleapis.com/".to_owned();
+                        output.push_str("v1/projects/");
+                        {
+                            let var_as_str = &self.project_id;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::SIMPLE,
+                            ));
+                        }
+                        output.push_str("/regions/");
+                        {
+                            let var_as_str = &self.region;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::SIMPLE,
+                            ));
+                        }
+                        output.push_str("/clusters/");
+                        {
+                            let var_as_str = &self.cluster_name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::SIMPLE,
+                            ));
+                        }
+                        output.push_str(":repair");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
                         req = req.query(&[("access_token", &self.access_token)]);
                         req = req.query(&[("alt", &self.alt)]);
                         req = req.query(&[("callback", &self.callback)]);

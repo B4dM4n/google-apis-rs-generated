@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("dns1_beta2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210309")
+            .version("0.1.0-20220426")
             .about("")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -143,15 +143,34 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: get");
         {
             let mcmd = SubCommand::with_name("get")
-                .about("Fetch the representation of an existing Project.");
+                .about("Fetches the representation of an existing Project.");
             projects0 = projects0.subcommand(mcmd);
         }
         let mut resource_record_sets0 = SubCommand::with_name("resource_record_sets")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: list");
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a new ResourceRecordSet.");
+            resource_record_sets0 = resource_record_sets0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete")
+                .about("Deletes a previously created ResourceRecordSet.");
+            resource_record_sets0 = resource_record_sets0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get")
+                .about("Fetches the representation of an existing ResourceRecordSet.");
+            resource_record_sets0 = resource_record_sets0.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("list")
                 .about("Enumerates ResourceRecordSets that you have created but not yet deleted.");
+            resource_record_sets0 = resource_record_sets0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch")
+                .about("Applies a partial update to an existing ResourceRecordSet.");
             resource_record_sets0 = resource_record_sets0.subcommand(mcmd);
         }
         let mut response_policies0 = SubCommand::with_name("response_policies")
@@ -217,33 +236,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 SubCommand::with_name("update").about("Updates an existing Response Policy Rule.");
             response_policy_rules0 = response_policy_rules0.subcommand(mcmd);
         }
-        let mut managed_zones1 = SubCommand::with_name("managed_zones")
-            .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: rrsets");
-        let mut rrsets2 = SubCommand::with_name("rrsets")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get and patch");
-        {
-            let mcmd = SubCommand::with_name("create").about("Creates a new ResourceRecordSet.");
-            rrsets2 = rrsets2.subcommand(mcmd);
-        }
-        {
-            let mcmd = SubCommand::with_name("delete")
-                .about("Deletes a previously created ResourceRecordSet.");
-            rrsets2 = rrsets2.subcommand(mcmd);
-        }
-        {
-            let mcmd = SubCommand::with_name("get")
-                .about("Fetches the representation of an existing ResourceRecordSet.");
-            rrsets2 = rrsets2.subcommand(mcmd);
-        }
-        {
-            let mcmd = SubCommand::with_name("patch")
-                .about("Applies a partial update to an existing ResourceRecordSet.");
-            rrsets2 = rrsets2.subcommand(mcmd);
-        }
-        managed_zones1 = managed_zones1.subcommand(rrsets2);
-        projects0 = projects0.subcommand(managed_zones1);
         app = app.subcommand(response_policy_rules0);
         app = app.subcommand(response_policies0);
         app = app.subcommand(resource_record_sets0);

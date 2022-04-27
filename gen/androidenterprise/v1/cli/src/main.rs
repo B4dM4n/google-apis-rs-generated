@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("androidenterprise1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210317")
+            .version("0.1.0-20220426")
             .about("Manages the deployment of apps to Android Enterprise devices.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -45,20 +45,20 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             devices0 = devices0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get_state").about("Retrieves whether a device\'s access to Google services is enabled or disabled. The device state takes effect only if enforcing EMM policies on Android devices is enabled in the Google Admin Console. Otherwise, the device state is ignored and all devices are allowed access to Google services. This is only supported for Google-managed users.");
+            let mcmd = SubCommand::with_name("get_state").about("Retrieves whether a device's access to Google services is enabled or disabled. The device state takes effect only if enforcing EMM policies on Android devices is enabled in the Google Admin Console. Otherwise, the device state is ignored and all devices are allowed access to Google services. This is only supported for Google-managed users.");
             devices0 = devices0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("list")
-                .about("Retrieves the IDs of all of a user\'s devices.");
+                .about("Retrieves the IDs of all of a user's devices.");
             devices0 = devices0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("set_state").about("Sets whether a device\'s access to Google services is enabled or disabled. The device state takes effect only if enforcing EMM policies on Android devices is enabled in the Google Admin Console. Otherwise, the device state is ignored and all devices are allowed access to Google services. This is only supported for Google-managed users.");
+            let mcmd = SubCommand::with_name("set_state").about("Sets whether a device's access to Google services is enabled or disabled. The device state takes effect only if enforcing EMM policies on Android devices is enabled in the Google Admin Console. Otherwise, the device state is ignored and all devices are allowed access to Google services. This is only supported for Google-managed users.");
             devices0 = devices0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update").about("Updates the device policy. To ensure the policy is properly enforced, you need to prevent unmanaged accounts from accessing Google Play by setting the allowed_accounts in the managed configuration for the Google Play package. See restrict accounts in Google Play.");
+            let mcmd = SubCommand::with_name("update").about("Updates the device policy. To ensure the policy is properly enforced, you need to prevent unmanaged accounts from accessing Google Play by setting the allowed_accounts in the managed configuration for the Google Play package. See restrict accounts in Google Play. When provisioning a new device, you should set the device policy using this method before adding the managed Google Play Account to the device, otherwise the policy will not be applied for a short period of time after adding the account to the device.");
             devices0 = devices0.subcommand(mcmd);
         }
         let mut enterprises0 = SubCommand::with_name("enterprises")
@@ -153,7 +153,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: get and list");
         {
             let mcmd = SubCommand::with_name("get")
-                .about("Retrieves details of an enterprise\'s group license for a product.");
+                .about("Retrieves details of an enterprise's group license for a product.");
             grouplicenses0 = grouplicenses0.subcommand(mcmd);
         }
         {
@@ -362,7 +362,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             users0 = users0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Retrieves a user\'s details.");
+            let mcmd = SubCommand::with_name("get").about("Retrieves a user's details.");
             users0 = users0.subcommand(mcmd);
         }
         {

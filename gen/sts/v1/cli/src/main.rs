@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("sts1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210307")
+            .version("0.1.0-20220415")
             .about("The Security Token Service exchanges Google or third-party credentials for a short-lived access token to Google Cloud resources.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -35,9 +35,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .takes_value(false));
         let mut v_10 = SubCommand::with_name("v_1")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: token");
+            .about("methods: introspect and token");
         {
-            let mcmd = SubCommand::with_name("token").about("Exchanges a credential for a Google OAuth 2.0 access token. The token asserts an external identity within a workload identity pool, or it applies a Credential Access Boundary to a Google access token. When you call this method, do not send the `Authorization` HTTP header in the request. This method does not require the `Authorization` header, and using the header can cause the request to fail.");
+            let mcmd = SubCommand::with_name("introspect").about("Gets information about a Google OAuth 2.0 access token issued by the Google Cloud [Security Token Service API](https://cloud.google.com/iam/docs/reference/sts/rest).");
+            v_10 = v_10.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("token").about("Exchanges a credential for a Google OAuth 2.0 access token. The token asserts an external identity within an identity pool, or it applies a Credential Access Boundary to a Google access token. When you call this method, do not send the `Authorization` HTTP header in the request. This method does not require the `Authorization` header, and using the header can cause the request to fail.");
             v_10 = v_10.subcommand(mcmd);
         }
         app = app.subcommand(v_10);

@@ -7,7 +7,7 @@
   "canonicalName": "Cloud Natural Language",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta1",
-  "revision": "20210306",
+  "revision": "20220423",
   "title": "Cloud Natural Language API",
   "description": "Provides natural language understanding technologies, such as sentiment analysis, entity recognition, entity sentiment analysis, and other text annotations, to developers.",
   "ownerDomain": "google.com",
@@ -204,7 +204,7 @@
           "description": "Apply machine learning models to reveal the structure and meaning of text"
         },
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         }
       }
     }

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("retail2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210312")
+            .version("0.1.0-20220414")
             .about("Cloud Retail service enables customers to build end-to-end personalized recommendation systems without requiring a high level of expertise in machine learning, recommendation system, or Google Cloud.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -35,13 +35,34 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .takes_value(false));
         let mut projects0 = SubCommand::with_name("projects")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: locations");
+            .about("sub-resources: locations and operations");
         let mut locations1 = SubCommand::with_name("locations")
             .setting(AppSettings::ColoredHelp)
             .about("sub-resources: catalogs and operations");
+        let mut operations1 = SubCommand::with_name("operations")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.");
+            operations1 = operations1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            operations1 = operations1.subcommand(mcmd);
+        }
         let mut catalogs2 = SubCommand::with_name("catalogs")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: list and patch");
+            .about(
+                "methods: complete_query, get_default_branch, list, patch and set_default_branch",
+            );
+        {
+            let mcmd = SubCommand::with_name("complete_query").about("Completes the specified prefix with keyword suggestions. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
+            catalogs2 = catalogs2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_default_branch").about("Get which branch is currently default branch set by CatalogService.SetDefaultBranch method under a specified parent catalog.");
+            catalogs2 = catalogs2.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists all the Catalogs associated with the project.");
@@ -49,6 +70,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("patch").about("Updates the Catalogs.");
+            catalogs2 = catalogs2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_default_branch").about("Set a specified branch id as default branch. API methods such as SearchService.Search, ProductService.GetProduct, ProductService.ListProducts will treat requests using \"default_branch\" to the actual branch id set as default. For example, if `projects/*/locations/*/catalogs/*/branches/1` is set as default, setting SearchRequest.branch to `projects/*/locations/*/catalogs/*/branches/default_branch` is equivalent to setting SearchRequest.branch to `projects/*/locations/*/catalogs/*/branches/1`. Using multiple branches can be useful when developers would like to have a staging branch to test and verify for future usage. When it becomes ready, developers switch on the staging branch using this API while keeping using `projects/*/locations/*/catalogs/*/branches/default_branch` as SearchRequest.branch to route the traffic to this staging branch. CAUTION: If you have live predict/search traffic, switching the default branch could potentially cause outages if the ID space of the new branch is very different from the old one. More specifically: * PredictionService will only return product IDs from branch {newBranch}. * SearchService will only return product IDs from branch {newBranch} (if branch is not explicitly set). * UserEventService will only join events with products from branch {newBranch}.");
             catalogs2 = catalogs2.subcommand(mcmd);
         }
         let mut operations2 = SubCommand::with_name("operations")
@@ -59,12 +84,19 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             operations2 = operations2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn\'t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations2 = operations2.subcommand(mcmd);
         }
         let mut branches3 = SubCommand::with_name("branches")
             .setting(AppSettings::ColoredHelp)
             .about("sub-resources: operations and products");
+        let mut completion_data3 = SubCommand::with_name("completion_data")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: import");
+        {
+            let mcmd = SubCommand::with_name("import").about("Bulk import of processed completion dataset. Request processing is asynchronous. Partial updating is not supported. The operation is successfully finished only after the imported suggestions are indexed successfully and ready for serving. The process takes hours. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
+            completion_data3 = completion_data3.subcommand(mcmd);
+        }
         let mut operations3 = SubCommand::with_name("operations")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get and list");
@@ -73,15 +105,30 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             operations3 = operations3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn\'t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations3 = operations3.subcommand(mcmd);
         }
         let mut placements3 = SubCommand::with_name("placements")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: predict");
+            .about("methods: predict and search");
         {
             let mcmd = SubCommand::with_name("predict").about("Makes a recommendation prediction.");
             placements3 = placements3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("search").about("Performs a search. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
+            placements3 = placements3.subcommand(mcmd);
+        }
+        let mut serving_configs3 = SubCommand::with_name("serving_configs")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: predict and search");
+        {
+            let mcmd = SubCommand::with_name("predict").about("Makes a recommendation prediction.");
+            serving_configs3 = serving_configs3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("search").about("Performs a search. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
+            serving_configs3 = serving_configs3.subcommand(mcmd);
         }
         let mut user_events3 = SubCommand::with_name("user_events")
             .setting(AppSettings::ColoredHelp)
@@ -99,7 +146,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             user_events3 = user_events3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("rejoin").about("Triggers a user event rejoin operation with latest product catalog. Events will not be annotated with detailed product information if product is missing from the catalog at the time the user event is ingested, and these events are stored as unjoined events with a limited usage on training and serving. This API can be used to trigger a \'join\' operation on specified events with latest version of product catalog. It can also be used to correct events joined with wrong product catalog.");
+            let mcmd = SubCommand::with_name("rejoin").about("Starts a user event rejoin operation with latest product catalog. Events will not be annotated with detailed product information if product is missing from the catalog at the time the user event is ingested, and these events are stored as unjoined events with a limited usage on training and serving. This method can be used to start a join operation on specified events with latest version of product catalog. It can also be used to correct events joined with the wrong product catalog. A rejoin operation can take hours or days to complete.");
             user_events3 = user_events3.subcommand(mcmd);
         }
         {
@@ -114,8 +161,16 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             operations4 = operations4.subcommand(mcmd);
         }
         let mut products4 = SubCommand::with_name("products")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, import and patch");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: add_fulfillment_places, add_local_inventories, create, delete, get, import, list, patch, remove_fulfillment_places, remove_local_inventories and set_inventory");
+        {
+            let mcmd = SubCommand::with_name("add_fulfillment_places").about("Incrementally adds place IDs to Product.fulfillment_info.place_ids. This process is asynchronous and does not require the Product to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the added place IDs are not immediately manifested in the Product queried by GetProduct or ListProducts. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
+            products4 = products4.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("add_local_inventories").about("Updates local inventory information for a Product at a list of places, while respecting the last update timestamps of each inventory field. This process is asynchronous and does not require the Product to exist before updating inventory information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, updates are not immediately manifested in the Product queried by GetProduct or ListProducts. Local inventory information can only be modified using this method. CreateProduct and UpdateProduct has no effect on local inventories. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
+            products4 = products4.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("create").about("Creates a Product.");
             products4 = products4.subcommand(mcmd);
@@ -133,17 +188,36 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             products4 = products4.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("list").about("Gets a list of Products.");
+            products4 = products4.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("patch").about("Updates a Product.");
+            products4 = products4.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("remove_fulfillment_places").about("Incrementally removes place IDs from a Product.fulfillment_info.place_ids. This process is asynchronous and does not require the Product to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the removed place IDs are not immediately manifested in the Product queried by GetProduct or ListProducts. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
+            products4 = products4.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("remove_local_inventories").about("Remove local inventory information for a Product at a list of places at a removal timestamp. This process is asynchronous. If the request is valid, the removal will be enqueued and processed downstream. As a consequence, when a response is returned, removals are not immediately manifested in the Product queried by GetProduct or ListProducts. Local inventory information can only be removed using this method. CreateProduct and UpdateProduct has no effect on local inventories. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
+            products4 = products4.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_inventory").about("Updates inventory information for a Product while respecting the last update timestamps of each inventory field. This process is asynchronous and does not require the Product to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, updates are not immediately manifested in the Product queried by GetProduct or ListProducts. When inventory is updated with CreateProduct and UpdateProduct, the specified inventory field value(s) will overwrite any existing value(s) while ignoring the last update time for this field. Furthermore, the last update time for the specified inventory fields will be overwritten to the time of the CreateProduct or UpdateProduct request. If no inventory fields are set in CreateProductRequest.product, then any pre-existing inventory information for this product will be used. If no inventory fields are set in SetInventoryRequest.set_mask, then any existing inventory information will be preserved. Pre-existing inventory information can only be updated with SetInventory, AddFulfillmentPlaces, and RemoveFulfillmentPlaces. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
             products4 = products4.subcommand(mcmd);
         }
         branches3 = branches3.subcommand(products4);
         branches3 = branches3.subcommand(operations4);
         catalogs2 = catalogs2.subcommand(user_events3);
+        catalogs2 = catalogs2.subcommand(serving_configs3);
         catalogs2 = catalogs2.subcommand(placements3);
         catalogs2 = catalogs2.subcommand(operations3);
+        catalogs2 = catalogs2.subcommand(completion_data3);
         catalogs2 = catalogs2.subcommand(branches3);
         locations1 = locations1.subcommand(operations2);
         locations1 = locations1.subcommand(catalogs2);
+        projects0 = projects0.subcommand(operations1);
         projects0 = projects0.subcommand(locations1);
         app = app.subcommand(projects0);
 

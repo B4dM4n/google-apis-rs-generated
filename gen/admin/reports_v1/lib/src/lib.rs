@@ -167,7 +167,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub key: ::std::option::Option<String>,
-        #[doc = "The unique Google Workspace profile ID of the actor. May be absent if the actor is not a Google Workspace user."]
+        #[doc = "The unique Google Workspace profile ID of the actor. This value might be absent if the actor is not a Google Workspace user, or may be the number 105250506097979753968 which acts as a placeholder ID."]
         #[serde(
             rename = "profileId",
             default,
@@ -1126,12 +1126,11 @@ pub mod resources {
                 AccessTransparency,
                 #[doc = "The Admin console application's activity reports return account information about different types of administrator activity events."]
                 Admin,
-                ApplicationNameUndefined,
                 #[doc = "The Google Calendar application's activity reports return information about various Calendar activity events."]
                 Calendar,
                 #[doc = "The Chat activity reports return information about various Chat activity events."]
                 Chat,
-                #[doc = "The Chrome activity reports return information about unsafe events reported in the context of the WebProtect features of BeyondCorp."]
+                #[doc = "The Chrome activity reports return information about Chrome browser and Chrome OS events."]
                 Chrome,
                 #[doc = "The Context-aware access activity reports return information about users' access denied events due to Context-aware access rules."]
                 ContextAwareAccess,
@@ -1149,15 +1148,17 @@ pub mod resources {
                 GroupsEnterprise,
                 #[doc = "The Jamboard activity reports return information about various Jamboard activity events."]
                 Jamboard,
+                #[doc = "The Keep application's activity reports return information about various Google Keep activity events. The Keep activity report is only available for Google Workspace Business and Enterprise customers."]
+                Keep,
                 #[doc = "The Login application's activity reports return account information about different types of Login activity events."]
                 Login,
-                #[doc = "The Meet Audit activity report return information about different types of Meet Audit activity events."]
+                #[doc = "The Meet Audit activity report returns information about different types of Meet Audit activity events."]
                 Meet,
-                #[doc = "The Mobile Audit activity report return information about different types of Mobile Audit activity events."]
+                #[doc = "The Device Audit activity report returns information about different types of Device Audit activity events."]
                 Mobile,
-                #[doc = "The Rules activity report return information about different types of Rules activity events."]
+                #[doc = "The Rules activity report returns information about different types of Rules activity events."]
                 Rules,
-                #[doc = "The SAML activity report return information about different types of SAML activity events."]
+                #[doc = "The SAML activity report returns information about different types of SAML activity events."]
                 Saml,
                 #[doc = "The Token application's activity reports return account information about different types of Token activity events."]
                 Token,
@@ -1169,9 +1170,6 @@ pub mod resources {
                     match self {
                         ListApplicationName::AccessTransparency => "access_transparency",
                         ListApplicationName::Admin => "admin",
-                        ListApplicationName::ApplicationNameUndefined => {
-                            "application_name_undefined"
-                        }
                         ListApplicationName::Calendar => "calendar",
                         ListApplicationName::Chat => "chat",
                         ListApplicationName::Chrome => "chrome",
@@ -1183,6 +1181,7 @@ pub mod resources {
                         ListApplicationName::Groups => "groups",
                         ListApplicationName::GroupsEnterprise => "groups_enterprise",
                         ListApplicationName::Jamboard => "jamboard",
+                        ListApplicationName::Keep => "keep",
                         ListApplicationName::Login => "login",
                         ListApplicationName::Meet => "meet",
                         ListApplicationName::Mobile => "mobile",
@@ -1204,9 +1203,6 @@ pub mod resources {
                     Ok(match s {
                         "access_transparency" => ListApplicationName::AccessTransparency,
                         "admin" => ListApplicationName::Admin,
-                        "application_name_undefined" => {
-                            ListApplicationName::ApplicationNameUndefined
-                        }
                         "calendar" => ListApplicationName::Calendar,
                         "chat" => ListApplicationName::Chat,
                         "chrome" => ListApplicationName::Chrome,
@@ -1218,6 +1214,7 @@ pub mod resources {
                         "groups" => ListApplicationName::Groups,
                         "groups_enterprise" => ListApplicationName::GroupsEnterprise,
                         "jamboard" => ListApplicationName::Jamboard,
+                        "keep" => ListApplicationName::Keep,
                         "login" => ListApplicationName::Login,
                         "meet" => ListApplicationName::Meet,
                         "mobile" => ListApplicationName::Mobile,
@@ -1251,9 +1248,6 @@ pub mod resources {
                     Ok(match value {
                         "access_transparency" => ListApplicationName::AccessTransparency,
                         "admin" => ListApplicationName::Admin,
-                        "application_name_undefined" => {
-                            ListApplicationName::ApplicationNameUndefined
-                        }
                         "calendar" => ListApplicationName::Calendar,
                         "chat" => ListApplicationName::Chat,
                         "chrome" => ListApplicationName::Chrome,
@@ -1265,6 +1259,7 @@ pub mod resources {
                         "groups" => ListApplicationName::Groups,
                         "groups_enterprise" => ListApplicationName::GroupsEnterprise,
                         "jamboard" => ListApplicationName::Jamboard,
+                        "keep" => ListApplicationName::Keep,
                         "login" => ListApplicationName::Login,
                         "meet" => ListApplicationName::Meet,
                         "mobile" => ListApplicationName::Mobile,
@@ -1297,12 +1292,11 @@ pub mod resources {
                 AccessTransparency,
                 #[doc = "The Admin console application's activity reports return account information about different types of administrator activity events."]
                 Admin,
-                ApplicationNameUnspecified,
                 #[doc = "The Google Calendar application's activity reports return information about various Calendar activity events."]
                 Calendar,
                 #[doc = "The Chat activity reports return information about various Chat activity events."]
                 Chat,
-                #[doc = "The Chrome activity reports return information about unsafe events reported in the context of the WebProtect features of BeyondCorp."]
+                #[doc = "The Chrome activity reports return information about Chrome browser and Chrome OS events."]
                 Chrome,
                 #[doc = "The Context-aware access activity reports return information about users' access denied events due to Context-aware access rules."]
                 ContextAwareAccess,
@@ -1320,15 +1314,17 @@ pub mod resources {
                 GroupsEnterprise,
                 #[doc = "The Jamboard activity reports return information about various Jamboard activity events."]
                 Jamboard,
+                #[doc = "The Keep application's activity reports return information about various Google Keep activity events. The Keep activity report is only available for Google Workspace Business and Enterprise customers."]
+                Keep,
                 #[doc = "The Login application's activity reports return account information about different types of Login activity events."]
                 Login,
-                #[doc = "The Meet Audit activity report return information about different types of Meet Audit activity events."]
+                #[doc = "The Meet Audit activity report returns information about different types of Meet Audit activity events."]
                 Meet,
-                #[doc = "The Mobile Audit activity report return information about different types of Mobile Audit activity events."]
+                #[doc = "The Device Audit activity report returns information about different types of Device Audit activity events."]
                 Mobile,
-                #[doc = "The Rules activity report return information about different types of Rules activity events."]
+                #[doc = "The Rules activity report returns information about different types of Rules activity events."]
                 Rules,
-                #[doc = "The SAML activity report return information about different types of SAML activity events."]
+                #[doc = "The SAML activity report returns information about different types of SAML activity events."]
                 Saml,
                 #[doc = "The Token application's activity reports return account information about different types of Token activity events."]
                 Token,
@@ -1340,9 +1336,6 @@ pub mod resources {
                     match self {
                         WatchApplicationName::AccessTransparency => "access_transparency",
                         WatchApplicationName::Admin => "admin",
-                        WatchApplicationName::ApplicationNameUnspecified => {
-                            "application_name_unspecified"
-                        }
                         WatchApplicationName::Calendar => "calendar",
                         WatchApplicationName::Chat => "chat",
                         WatchApplicationName::Chrome => "chrome",
@@ -1354,6 +1347,7 @@ pub mod resources {
                         WatchApplicationName::Groups => "groups",
                         WatchApplicationName::GroupsEnterprise => "groups_enterprise",
                         WatchApplicationName::Jamboard => "jamboard",
+                        WatchApplicationName::Keep => "keep",
                         WatchApplicationName::Login => "login",
                         WatchApplicationName::Meet => "meet",
                         WatchApplicationName::Mobile => "mobile",
@@ -1375,9 +1369,6 @@ pub mod resources {
                     Ok(match s {
                         "access_transparency" => WatchApplicationName::AccessTransparency,
                         "admin" => WatchApplicationName::Admin,
-                        "application_name_unspecified" => {
-                            WatchApplicationName::ApplicationNameUnspecified
-                        }
                         "calendar" => WatchApplicationName::Calendar,
                         "chat" => WatchApplicationName::Chat,
                         "chrome" => WatchApplicationName::Chrome,
@@ -1389,6 +1380,7 @@ pub mod resources {
                         "groups" => WatchApplicationName::Groups,
                         "groups_enterprise" => WatchApplicationName::GroupsEnterprise,
                         "jamboard" => WatchApplicationName::Jamboard,
+                        "keep" => WatchApplicationName::Keep,
                         "login" => WatchApplicationName::Login,
                         "meet" => WatchApplicationName::Meet,
                         "mobile" => WatchApplicationName::Mobile,
@@ -1422,9 +1414,6 @@ pub mod resources {
                     Ok(match value {
                         "access_transparency" => WatchApplicationName::AccessTransparency,
                         "admin" => WatchApplicationName::Admin,
-                        "application_name_unspecified" => {
-                            WatchApplicationName::ApplicationNameUnspecified
-                        }
                         "calendar" => WatchApplicationName::Calendar,
                         "chat" => WatchApplicationName::Chat,
                         "chrome" => WatchApplicationName::Chrome,
@@ -1436,6 +1425,7 @@ pub mod resources {
                         "groups" => WatchApplicationName::Groups,
                         "groups_enterprise" => WatchApplicationName::GroupsEnterprise,
                         "jamboard" => WatchApplicationName::Jamboard,
+                        "keep" => WatchApplicationName::Keep,
                         "login" => WatchApplicationName::Login,
                         "meet" => WatchApplicationName::Meet,
                         "mobile" => WatchApplicationName::Mobile,
@@ -1597,7 +1587,7 @@ pub mod resources {
                 self.filters = Some(value.into());
                 self
             }
-            #[doc = "Comma separated group ids (obfuscated) on which user activities are filtered, i.e, the response will contain activities for only those users that are a part of at least one of the group ids mentioned here. Format: \"id:abc123,id:xyz456\""]
+            #[doc = "Comma separated group ids (obfuscated) on which user activities are filtered, i.e. the response will contain activities for only those users that are a part of at least one of the group ids mentioned here. Format: \"id:abc123,id:xyz456\""]
             pub fn group_id_filter(mut self, value: impl Into<String>) -> Self {
                 self.group_id_filter = Some(value.into());
                 self
@@ -1943,7 +1933,7 @@ pub mod resources {
                 self.filters = Some(value.into());
                 self
             }
-            #[doc = "Comma separated group ids (obfuscated) on which user activities are filtered, i.e, the response will contain activities for only those users that are a part of at least one of the group ids mentioned here. Format: \"id:abc123,id:xyz456\""]
+            #[doc = "Comma separated group ids (obfuscated) on which user activities are filtered, i.e. the response will contain activities for only those users that are a part of at least one of the group ids mentioned here. Format: \"id:abc123,id:xyz456\""]
             pub fn group_id_filter(mut self, value: impl Into<String>) -> Self {
                 self.group_id_filter = Some(value.into());
                 self
@@ -2638,14 +2628,12 @@ pub mod resources {
         pub mod params {
             #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
             pub enum GetEntityType {
-                EntityTypeUndefined,
                 #[doc = "Returns a report on Google+ communities."]
                 GplusCommunities,
             }
             impl GetEntityType {
                 pub fn as_str(self) -> &'static str {
                     match self {
-                        GetEntityType::EntityTypeUndefined => "entity_type_undefined",
                         GetEntityType::GplusCommunities => "gplus_communities",
                     }
                 }
@@ -2659,7 +2647,6 @@ pub mod resources {
                 type Err = ();
                 fn from_str(s: &str) -> ::std::result::Result<GetEntityType, ()> {
                     Ok(match s {
-                        "entity_type_undefined" => GetEntityType::EntityTypeUndefined,
                         "gplus_communities" => GetEntityType::GplusCommunities,
                         _ => return Err(()),
                     })
@@ -2685,7 +2672,6 @@ pub mod resources {
                 {
                     let value: &'de str = <&str>::deserialize(deserializer)?;
                     Ok(match value {
-                        "entity_type_undefined" => GetEntityType::EntityTypeUndefined,
                         "gplus_communities" => GetEntityType::GplusCommunities,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
@@ -2706,81 +2692,6 @@ pub mod resources {
                     ::google_field_selector::FieldType::Leaf
                 }
             }
-            #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-            pub enum GetEntityKey {
-                #[doc = "Returns activity events for all users."]
-                All,
-                #[doc = "Represents an app-specific identifier for the entity. For details on how to obtain the `entityKey` for a particular `entityType`, see the Entities Usage parameters reference guides."]
-                EntityKey,
-                EntityKeyUndefined,
-            }
-            impl GetEntityKey {
-                pub fn as_str(self) -> &'static str {
-                    match self {
-                        GetEntityKey::All => "all",
-                        GetEntityKey::EntityKey => "entityKey",
-                        GetEntityKey::EntityKeyUndefined => "entityKeyUndefined",
-                    }
-                }
-            }
-            impl ::std::convert::AsRef<str> for GetEntityKey {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
-            impl ::std::str::FromStr for GetEntityKey {
-                type Err = ();
-                fn from_str(s: &str) -> ::std::result::Result<GetEntityKey, ()> {
-                    Ok(match s {
-                        "all" => GetEntityKey::All,
-                        "entityKey" => GetEntityKey::EntityKey,
-                        "entityKeyUndefined" => GetEntityKey::EntityKeyUndefined,
-                        _ => return Err(()),
-                    })
-                }
-            }
-            impl ::std::fmt::Display for GetEntityKey {
-                fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-                    f.write_str(self.as_str())
-                }
-            }
-            impl ::serde::Serialize for GetEntityKey {
-                fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-                where
-                    S: ::serde::ser::Serializer,
-                {
-                    serializer.serialize_str(self.as_str())
-                }
-            }
-            impl<'de> ::serde::Deserialize<'de> for GetEntityKey {
-                fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-                where
-                    D: ::serde::de::Deserializer<'de>,
-                {
-                    let value: &'de str = <&str>::deserialize(deserializer)?;
-                    Ok(match value {
-                        "all" => GetEntityKey::All,
-                        "entityKey" => GetEntityKey::EntityKey,
-                        "entityKeyUndefined" => GetEntityKey::EntityKeyUndefined,
-                        _ => {
-                            return Err(::serde::de::Error::custom(format!(
-                                "invalid enum for #name: {}",
-                                value
-                            )))
-                        }
-                    })
-                }
-            }
-            impl ::google_field_selector::FieldSelector for GetEntityKey {
-                fn fields() -> Vec<::google_field_selector::Field> {
-                    Vec::new()
-                }
-            }
-            impl ::google_field_selector::ToFieldType for GetEntityKey {
-                fn field_type() -> ::google_field_selector::FieldType {
-                    ::google_field_selector::FieldType::Leaf
-                }
-            }
         }
         pub struct EntityUsageReportsActions<'a> {
             pub(crate) reqwest: &'a reqwest::blocking::Client,
@@ -2794,7 +2705,7 @@ pub mod resources {
             pub fn get(
                 &self,
                 entity_type: crate::resources::entity_usage_reports::params::GetEntityType,
-                entity_key: crate::resources::entity_usage_reports::params::GetEntityKey,
+                entity_key: impl Into<String>,
                 date: impl Into<String>,
             ) -> GetRequestBuilder {
                 GetRequestBuilder {
@@ -2812,7 +2723,7 @@ pub mod resources {
                     upload_type: None,
                     xgafv: None,
                     entity_type,
-                    entity_key,
+                    entity_key: entity_key.into(),
                     date: date.into(),
                     customer_id: None,
                     filters: None,
@@ -2828,7 +2739,7 @@ pub mod resources {
             pub(crate) reqwest: &'a ::reqwest::blocking::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             entity_type: crate::resources::entity_usage_reports::params::GetEntityType,
-            entity_key: crate::resources::entity_usage_reports::params::GetEntityKey,
+            entity_key: String,
             date: String,
             customer_id: Option<String>,
             filters: Option<String>,
@@ -3144,8 +3055,7 @@ pub mod resources {
                 }
                 output.push_str("/");
                 {
-                    let var_as_string = self.entity_key.to_string();
-                    let var_as_str = &var_as_string;
+                    let var_as_str = &self.entity_key;
                     output.extend(::percent_encoding::utf8_percent_encode(
                         &var_as_str,
                         crate::SIMPLE,
@@ -3281,7 +3191,7 @@ pub mod resources {
                 self.filters = Some(value.into());
                 self
             }
-            #[doc = "Comma separated group ids (obfuscated) on which user activities are filtered, i.e, the response will contain activities for only those users that are a part of at least one of the group ids mentioned here. Format: \"id:abc123,id:xyz456\""]
+            #[doc = "Comma separated group ids (obfuscated) on which user activities are filtered, i.e. the response will contain activities for only those users that are a part of at least one of the group ids mentioned here. Format: \"id:abc123,id:xyz456\""]
             pub fn group_id_filter(mut self, value: impl Into<String>) -> Self {
                 self.group_id_filter = Some(value.into());
                 self

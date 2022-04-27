@@ -212,7 +212,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Floor number, used for ordering. 0 indicates the ground level, 1 indicates the first level above ground level, -1 indicates the first level under ground level. Non-integer values are OK."]
+        #[doc = "Optional. Floor number, used for ordering. 0 indicates the ground level, 1 indicates the first level above ground level, -1 indicates the first level under ground level. Non-integer values are OK."]
         #[serde(
             rename = "number",
             default,
@@ -313,14 +313,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Photo {
-        #[doc = "Absolute time when the photo was captured. When the photo has no exif timestamp, this is used to set a timestamp in the photo metadata."]
+        #[doc = "Optional. Absolute time when the photo was captured. When the photo has no exif timestamp, this is used to set a timestamp in the photo metadata."]
         #[serde(
             rename = "captureTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub capture_time: ::std::option::Option<String>,
-        #[doc = "Connections to other photos. A connection represents the link from this photo to another photo."]
+        #[doc = "Optional. Connections to other photos. A connection represents the link from this photo to another photo."]
         #[serde(
             rename = "connections",
             default,
@@ -334,28 +334,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub download_url: ::std::option::Option<String>,
-        #[doc = "Output only. Status in Google Maps, whether this photo was published or rejected. Not currently populated."]
+        #[doc = "Output only. Status in Google Maps, whether this photo was published or rejected."]
         #[serde(
             rename = "mapsPublishStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub maps_publish_status: ::std::option::Option<crate::schemas::PhotoMapsPublishStatus>,
-        #[doc = "Required when updating a photo. Output only when creating a photo. Identifier for the photo, which is unique among all photos in Google."]
+        #[doc = "Required. Output only. Required when updating a photo. Output only when creating a photo. Identifier for the photo, which is unique among all photos in Google."]
         #[serde(
             rename = "photoId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub photo_id: ::std::option::Option<crate::schemas::PhotoId>,
-        #[doc = "Places where this photo belongs."]
+        #[doc = "Optional. Places where this photo belongs."]
         #[serde(
             rename = "places",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub places: ::std::option::Option<Vec<crate::schemas::Place>>,
-        #[doc = "Pose of the photo."]
+        #[doc = "Optional. Pose of the photo."]
         #[serde(
             rename = "pose",
             default,
@@ -383,13 +383,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub transfer_status: ::std::option::Option<crate::schemas::PhotoTransferStatus>,
-        #[doc = "Required when creating a photo. Input only. The resource URL where the photo bytes are uploaded to."]
+        #[doc = "Input only. Required when creating a photo. Input only. The resource URL where the photo bytes are uploaded to."]
         #[serde(
             rename = "uploadReference",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub upload_reference: ::std::option::Option<crate::schemas::UploadRef>,
+        #[doc = "Output only. Time when the image was uploaded."]
+        #[serde(
+            rename = "uploadTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub upload_time: ::std::option::Option<String>,
         #[doc = "Output only. View count of the photo."]
         #[serde(
             rename = "viewCount",
@@ -605,7 +612,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PhotoId {
-        #[doc = "Required. A unique identifier for a photo."]
+        #[doc = "A unique identifier for a photo."]
         #[serde(
             rename = "id",
             default,
@@ -663,14 +670,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Place {
-        #[doc = "Output-only. The language_code that the name is localized with. This should be the language_code specified in the request, but may be a fallback."]
+        #[doc = "Output only. The language_code that the name is localized with. This should be the language_code specified in the request, but may be a fallback."]
         #[serde(
             rename = "languageCode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub language_code: ::std::option::Option<String>,
-        #[doc = "Output-only. The name of the place, localized to the language_code."]
+        #[doc = "Output only. The name of the place, localized to the language_code."]
         #[serde(
             rename = "name",
             default,
@@ -713,7 +720,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub altitude: ::std::option::Option<f64>,
-        #[doc = "Compass heading, measured at the center of the photo in degrees clockwise from North. Value must be >=0 and <360. NaN indicates an unmeasured quantity."]
+        #[doc = "The following pose parameters pertain to the center of the photo. They match https://developers.google.com/streetview/spherical-metadata. Compass heading, measured at the center of the photo in degrees clockwise from North. Value must be >=0 and <360. NaN indicates an unmeasured quantity."]
         #[serde(
             rename = "heading",
             default,
@@ -805,7 +812,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub photo: ::std::option::Option<crate::schemas::Photo>,
-        #[doc = "Required. Mask that identifies fields on the photo metadata to update. If not present, the old Photo metadata is entirely replaced with the new Photo metadata in this request. The update fails if invalid fields are specified. Multiple fields can be specified in a comma-delimited list. The following fields are valid: * `pose.heading` * `pose.latLngPair` * `pose.pitch` * `pose.roll` * `pose.level` * `pose.altitude` * `connections` * `places` *Note:* When updateMask contains repeated fields, the entire set of repeated values get replaced with the new contents. For example, if updateMask contains `connections` and `UpdatePhotoRequest.photo.connections` is empty, all connections are removed."]
+        #[doc = "Required. Mask that identifies fields on the photo metadata to update. If not present, the old Photo metadata is entirely replaced with the new Photo metadata in this request. The update fails if invalid fields are specified. Multiple fields can be specified in a comma-delimited list. The following fields are valid: * `pose.heading` * `pose.latLngPair` * `pose.pitch` * `pose.roll` * `pose.level` * `pose.altitude` * `connections` * `places` > Note: When updateMask contains repeated fields, the entire set of repeated values get replaced with the new contents. For example, if updateMask contains `connections` and `UpdatePhotoRequest.photo.connections` is empty, all connections are removed."]
         #[serde(
             rename = "updateMask",
             default,
@@ -1053,7 +1060,7 @@ pub mod resources {
         pub mod params {
             #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
             pub enum GetView {
-                #[doc = "Server reponses do not include the download URL for the photo bytes. The default value."]
+                #[doc = "Server responses do not include the download URL for the photo bytes. The default value."]
                 Basic,
                 #[doc = "Server responses include the download URL for the photo bytes."]
                 IncludeDownloadUrl,
@@ -1879,7 +1886,7 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> UpdateRequestBuilder<'a> {
-            #[doc = "Required. Mask that identifies fields on the photo metadata to update. If not present, the old Photo metadata is entirely replaced with the new Photo metadata in this request. The update fails if invalid fields are specified. Multiple fields can be specified in a comma-delimited list. The following fields are valid: * `pose.heading` * `pose.latLngPair` * `pose.pitch` * `pose.roll` * `pose.level` * `pose.altitude` * `connections` * `places` *Note:* When updateMask contains repeated fields, the entire set of repeated values get replaced with the new contents. For example, if updateMask contains `connections` and `UpdatePhotoRequest.photo.connections` is empty, all connections are removed."]
+            #[doc = "Required. Mask that identifies fields on the photo metadata to update. If not present, the old Photo metadata is entirely replaced with the new Photo metadata in this request. The update fails if invalid fields are specified. Multiple fields can be specified in a comma-delimited list. The following fields are valid: * `pose.heading` * `pose.latLngPair` * `pose.pitch` * `pose.roll` * `pose.level` * `pose.altitude` * `connections` * `places` > Note: When updateMask contains repeated fields, the entire set of repeated values get replaced with the new contents. For example, if updateMask contains `connections` and `UpdatePhotoRequest.photo.connections` is empty, all connections are removed."]
             pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                 self.update_mask = Some(value.into());
                 self
@@ -2026,7 +2033,7 @@ pub mod resources {
         pub mod params {
             #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
             pub enum BatchGetView {
-                #[doc = "Server reponses do not include the download URL for the photo bytes. The default value."]
+                #[doc = "Server responses do not include the download URL for the photo bytes. The default value."]
                 Basic,
                 #[doc = "Server responses include the download URL for the photo bytes."]
                 IncludeDownloadUrl,
@@ -2097,7 +2104,7 @@ pub mod resources {
             }
             #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
             pub enum ListView {
-                #[doc = "Server reponses do not include the download URL for the photo bytes. The default value."]
+                #[doc = "Server responses do not include the download URL for the photo bytes. The default value."]
                 Basic,
                 #[doc = "Server responses include the download URL for the photo bytes."]
                 IncludeDownloadUrl,
@@ -2218,7 +2225,7 @@ pub mod resources {
                     view: None,
                 }
             }
-            #[doc = "Updates the metadata of Photos, such as pose, place association, connections, etc. Changing the pixels of photos is not supported. Note that if BatchUpdatePhotos fails, either critical fields are missing or there is an authentication error. Even if BatchUpdatePhotos succeeds, individual photos in the batch may have failures. These failures are specified in each PhotoResponse.status in BatchUpdatePhotosResponse.results. See UpdatePhoto for specific failures that can occur per photo. Only the fields specified in updateMask field are used. If `updateMask` is not present, the update applies to all fields. The number of UpdatePhotoRequest messages in a BatchUpdatePhotosRequest must not exceed 20. *Note:* To update Pose.altitude, Pose.latLngPair has to be filled as well. Otherwise, the request will fail."]
+            #[doc = "Updates the metadata of Photos, such as pose, place association, connections, etc. Changing the pixels of photos is not supported. Note that if BatchUpdatePhotos fails, either critical fields are missing or there is an authentication error. Even if BatchUpdatePhotos succeeds, individual photos in the batch may have failures. These failures are specified in each PhotoResponse.status in BatchUpdatePhotosResponse.results. See UpdatePhoto for specific failures that can occur per photo. Only the fields specified in updateMask field are used. If `updateMask` is not present, the update applies to all fields. The number of UpdatePhotoRequest messages in a BatchUpdatePhotosRequest must not exceed 20. > Note: To update Pose.altitude, Pose.latLngPair has to be filled as well. Otherwise, the request will fail."]
             pub fn batch_update(
                 &self,
                 request: crate::schemas::BatchUpdatePhotosRequest,
@@ -2240,7 +2247,7 @@ pub mod resources {
                     xgafv: None,
                 }
             }
-            #[doc = "Lists all the Photos that belong to the user. *Note:* Recently created photos that are still being indexed are not returned in the response."]
+            #[doc = "Lists all the Photos that belong to the user. > Note: Recently created photos that are still being indexed are not returned in the response."]
             pub fn list(&self) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -2435,7 +2442,7 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> BatchGetRequestBuilder<'a> {
-            #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. If language_code is unspecified, the user's language preference for Google services is used."]
+            #[doc = "Optional. The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. If language_code is unspecified, the user's language preference for Google services is used."]
             pub fn language_code(mut self, value: impl Into<String>) -> Self {
                 self.language_code = Some(value.into());
                 self
@@ -2758,22 +2765,22 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "Required. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`. The only filter supported at the moment is `placeId`."]
+            #[doc = "Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`. The filters supported are: `placeId`, `min_latitude`, `max_latitude`, `min_longitude`, and `max_longitude`. See https://google.aip.dev/160 for more information."]
             pub fn filter(mut self, value: impl Into<String>) -> Self {
                 self.filter = Some(value.into());
                 self
             }
-            #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. If language_code is unspecified, the user's language preference for Google services is used."]
+            #[doc = "Optional. The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. If language_code is unspecified, the user's language preference for Google services is used."]
             pub fn language_code(mut self, value: impl Into<String>) -> Self {
                 self.language_code = Some(value.into());
                 self
             }
-            #[doc = "The maximum number of photos to return. `pageSize` must be non-negative. If `pageSize` is zero or is not provided, the default page size of 100 is used. The number of photos returned in the response may be less than `pageSize` if the number of photos that belong to the user is less than `pageSize`."]
+            #[doc = "Optional. The maximum number of photos to return. `pageSize` must be non-negative. If `pageSize` is zero or is not provided, the default page size of 100 is used. The number of photos returned in the response may be less than `pageSize` if the number of photos that belong to the user is less than `pageSize`."]
             pub fn page_size(mut self, value: i32) -> Self {
                 self.page_size = Some(value);
                 self
             }
-            #[doc = "The nextPageToken value returned from a previous ListPhotos request, if any."]
+            #[doc = "Optional. The nextPageToken value returned from a previous ListPhotos request, if any."]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
                 self

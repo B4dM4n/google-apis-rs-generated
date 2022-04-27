@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("tagmanager2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210317")
+            .version("0.1.0-20220423")
             .about("This API allows clients to access and modify container and tag configuration.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -78,7 +78,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: create, delete, get, list and update");
         {
             let mcmd = SubCommand::with_name("create")
-                .about("Creates a user\'s Account & Container access.");
+                .about("Creates a user's Account & Container access.");
             user_permissions1 = user_permissions1.subcommand(mcmd);
         }
         {
@@ -89,7 +89,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd =
-                SubCommand::with_name("get").about("Gets a user\'s Account & Container access.");
+                SubCommand::with_name("get").about("Gets a user's Account & Container access.");
             user_permissions1 = user_permissions1.subcommand(mcmd);
         }
         {
@@ -98,7 +98,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("update")
-                .about("Updates a user\'s Account & Container access.");
+                .about("Updates a user's Account & Container access.");
             user_permissions1 = user_permissions1.subcommand(mcmd);
         }
         let mut environments2 = SubCommand::with_name("environments")
@@ -242,6 +242,35 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("revert")
                 .about("Reverts changes to a GTM Built-In Variables in a GTM Workspace.");
             built_in_variables3 = built_in_variables3.subcommand(mcmd);
+        }
+        let mut clients3 = SubCommand::with_name("clients")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list, revert and update");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a GTM Client.");
+            clients3 = clients3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a GTM Client.");
+            clients3 = clients3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a GTM Client.");
+            clients3 = clients3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists all GTM Clients of a GTM container workspace.");
+            clients3 = clients3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("revert")
+                .about("Reverts changes to a GTM Client in a GTM Workspace.");
+            clients3 = clients3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("update").about("Updates a GTM Client.");
+            clients3 = clients3.subcommand(mcmd);
         }
         let mut folders3 = SubCommand::with_name("folders")
                         .setting(AppSettings::ColoredHelp)
@@ -431,6 +460,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         workspaces2 = workspaces2.subcommand(templates3);
         workspaces2 = workspaces2.subcommand(tags3);
         workspaces2 = workspaces2.subcommand(folders3);
+        workspaces2 = workspaces2.subcommand(clients3);
         workspaces2 = workspaces2.subcommand(built_in_variables3);
         containers1 = containers1.subcommand(workspaces2);
         containers1 = containers1.subcommand(versions2);

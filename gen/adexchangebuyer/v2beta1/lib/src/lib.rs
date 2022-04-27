@@ -1,4 +1,4 @@
-#![doc = "# Resources and Methods\n    * [accounts](resources/accounts/struct.AccountsActions.html)\n      * [clients](resources/accounts/clients/struct.ClientsActions.html)\n        * [*create*](resources/accounts/clients/struct.CreateRequestBuilder.html), [*get*](resources/accounts/clients/struct.GetRequestBuilder.html), [*list*](resources/accounts/clients/struct.ListRequestBuilder.html), [*update*](resources/accounts/clients/struct.UpdateRequestBuilder.html)\n        * [invitations](resources/accounts/clients/invitations/struct.InvitationsActions.html)\n          * [*create*](resources/accounts/clients/invitations/struct.CreateRequestBuilder.html), [*get*](resources/accounts/clients/invitations/struct.GetRequestBuilder.html), [*list*](resources/accounts/clients/invitations/struct.ListRequestBuilder.html)\n        * [users](resources/accounts/clients/users/struct.UsersActions.html)\n          * [*get*](resources/accounts/clients/users/struct.GetRequestBuilder.html), [*list*](resources/accounts/clients/users/struct.ListRequestBuilder.html), [*update*](resources/accounts/clients/users/struct.UpdateRequestBuilder.html)\n      * [creatives](resources/accounts/creatives/struct.CreativesActions.html)\n        * [*create*](resources/accounts/creatives/struct.CreateRequestBuilder.html), [*get*](resources/accounts/creatives/struct.GetRequestBuilder.html), [*list*](resources/accounts/creatives/struct.ListRequestBuilder.html), [*stopWatching*](resources/accounts/creatives/struct.StopWatchingRequestBuilder.html), [*update*](resources/accounts/creatives/struct.UpdateRequestBuilder.html), [*watch*](resources/accounts/creatives/struct.WatchRequestBuilder.html)\n        * [deal_associations](resources/accounts/creatives/deal_associations/struct.DealAssociationsActions.html)\n          * [*add*](resources/accounts/creatives/deal_associations/struct.AddRequestBuilder.html), [*list*](resources/accounts/creatives/deal_associations/struct.ListRequestBuilder.html), [*remove*](resources/accounts/creatives/deal_associations/struct.RemoveRequestBuilder.html)\n      * [finalized_proposals](resources/accounts/finalized_proposals/struct.FinalizedProposalsActions.html)\n        * [*list*](resources/accounts/finalized_proposals/struct.ListRequestBuilder.html)\n      * [products](resources/accounts/products/struct.ProductsActions.html)\n        * [*get*](resources/accounts/products/struct.GetRequestBuilder.html), [*list*](resources/accounts/products/struct.ListRequestBuilder.html)\n      * [proposals](resources/accounts/proposals/struct.ProposalsActions.html)\n        * [*accept*](resources/accounts/proposals/struct.AcceptRequestBuilder.html), [*addNote*](resources/accounts/proposals/struct.AddNoteRequestBuilder.html), [*cancelNegotiation*](resources/accounts/proposals/struct.CancelNegotiationRequestBuilder.html), [*completeSetup*](resources/accounts/proposals/struct.CompleteSetupRequestBuilder.html), [*create*](resources/accounts/proposals/struct.CreateRequestBuilder.html), [*get*](resources/accounts/proposals/struct.GetRequestBuilder.html), [*list*](resources/accounts/proposals/struct.ListRequestBuilder.html), [*pause*](resources/accounts/proposals/struct.PauseRequestBuilder.html), [*resume*](resources/accounts/proposals/struct.ResumeRequestBuilder.html), [*update*](resources/accounts/proposals/struct.UpdateRequestBuilder.html)\n      * [publisher_profiles](resources/accounts/publisher_profiles/struct.PublisherProfilesActions.html)\n        * [*get*](resources/accounts/publisher_profiles/struct.GetRequestBuilder.html), [*list*](resources/accounts/publisher_profiles/struct.ListRequestBuilder.html)\n    * [bidders](resources/bidders/struct.BiddersActions.html)\n      * [accounts](resources/bidders/accounts/struct.AccountsActions.html)\n        * [filter_sets](resources/bidders/accounts/filter_sets/struct.FilterSetsActions.html)\n          * [*create*](resources/bidders/accounts/filter_sets/struct.CreateRequestBuilder.html), [*delete*](resources/bidders/accounts/filter_sets/struct.DeleteRequestBuilder.html), [*get*](resources/bidders/accounts/filter_sets/struct.GetRequestBuilder.html), [*list*](resources/bidders/accounts/filter_sets/struct.ListRequestBuilder.html)\n          * [bid_metrics](resources/bidders/accounts/filter_sets/bid_metrics/struct.BidMetricsActions.html)\n            * [*list*](resources/bidders/accounts/filter_sets/bid_metrics/struct.ListRequestBuilder.html)\n          * [bid_response_errors](resources/bidders/accounts/filter_sets/bid_response_errors/struct.BidResponseErrorsActions.html)\n            * [*list*](resources/bidders/accounts/filter_sets/bid_response_errors/struct.ListRequestBuilder.html)\n          * [bid_responses_without_bids](resources/bidders/accounts/filter_sets/bid_responses_without_bids/struct.BidResponsesWithoutBidsActions.html)\n            * [*list*](resources/bidders/accounts/filter_sets/bid_responses_without_bids/struct.ListRequestBuilder.html)\n          * [filtered_bid_requests](resources/bidders/accounts/filter_sets/filtered_bid_requests/struct.FilteredBidRequestsActions.html)\n            * [*list*](resources/bidders/accounts/filter_sets/filtered_bid_requests/struct.ListRequestBuilder.html)\n          * [filtered_bids](resources/bidders/accounts/filter_sets/filtered_bids/struct.FilteredBidsActions.html)\n            * [*list*](resources/bidders/accounts/filter_sets/filtered_bids/struct.ListRequestBuilder.html)\n            * [creatives](resources/bidders/accounts/filter_sets/filtered_bids/creatives/struct.CreativesActions.html)\n              * [*list*](resources/bidders/accounts/filter_sets/filtered_bids/creatives/struct.ListRequestBuilder.html)\n            * [details](resources/bidders/accounts/filter_sets/filtered_bids/details/struct.DetailsActions.html)\n              * [*list*](resources/bidders/accounts/filter_sets/filtered_bids/details/struct.ListRequestBuilder.html)\n          * [impression_metrics](resources/bidders/accounts/filter_sets/impression_metrics/struct.ImpressionMetricsActions.html)\n            * [*list*](resources/bidders/accounts/filter_sets/impression_metrics/struct.ListRequestBuilder.html)\n          * [losing_bids](resources/bidders/accounts/filter_sets/losing_bids/struct.LosingBidsActions.html)\n            * [*list*](resources/bidders/accounts/filter_sets/losing_bids/struct.ListRequestBuilder.html)\n          * [non_billable_winning_bids](resources/bidders/accounts/filter_sets/non_billable_winning_bids/struct.NonBillableWinningBidsActions.html)\n            * [*list*](resources/bidders/accounts/filter_sets/non_billable_winning_bids/struct.ListRequestBuilder.html)\n      * [filter_sets](resources/bidders/filter_sets/struct.FilterSetsActions.html)\n        * [*create*](resources/bidders/filter_sets/struct.CreateRequestBuilder.html), [*delete*](resources/bidders/filter_sets/struct.DeleteRequestBuilder.html), [*get*](resources/bidders/filter_sets/struct.GetRequestBuilder.html), [*list*](resources/bidders/filter_sets/struct.ListRequestBuilder.html)\n        * [bid_metrics](resources/bidders/filter_sets/bid_metrics/struct.BidMetricsActions.html)\n          * [*list*](resources/bidders/filter_sets/bid_metrics/struct.ListRequestBuilder.html)\n        * [bid_response_errors](resources/bidders/filter_sets/bid_response_errors/struct.BidResponseErrorsActions.html)\n          * [*list*](resources/bidders/filter_sets/bid_response_errors/struct.ListRequestBuilder.html)\n        * [bid_responses_without_bids](resources/bidders/filter_sets/bid_responses_without_bids/struct.BidResponsesWithoutBidsActions.html)\n          * [*list*](resources/bidders/filter_sets/bid_responses_without_bids/struct.ListRequestBuilder.html)\n        * [filtered_bid_requests](resources/bidders/filter_sets/filtered_bid_requests/struct.FilteredBidRequestsActions.html)\n          * [*list*](resources/bidders/filter_sets/filtered_bid_requests/struct.ListRequestBuilder.html)\n        * [filtered_bids](resources/bidders/filter_sets/filtered_bids/struct.FilteredBidsActions.html)\n          * [*list*](resources/bidders/filter_sets/filtered_bids/struct.ListRequestBuilder.html)\n          * [creatives](resources/bidders/filter_sets/filtered_bids/creatives/struct.CreativesActions.html)\n            * [*list*](resources/bidders/filter_sets/filtered_bids/creatives/struct.ListRequestBuilder.html)\n          * [details](resources/bidders/filter_sets/filtered_bids/details/struct.DetailsActions.html)\n            * [*list*](resources/bidders/filter_sets/filtered_bids/details/struct.ListRequestBuilder.html)\n        * [impression_metrics](resources/bidders/filter_sets/impression_metrics/struct.ImpressionMetricsActions.html)\n          * [*list*](resources/bidders/filter_sets/impression_metrics/struct.ListRequestBuilder.html)\n        * [losing_bids](resources/bidders/filter_sets/losing_bids/struct.LosingBidsActions.html)\n          * [*list*](resources/bidders/filter_sets/losing_bids/struct.ListRequestBuilder.html)\n        * [non_billable_winning_bids](resources/bidders/filter_sets/non_billable_winning_bids/struct.NonBillableWinningBidsActions.html)\n          * [*list*](resources/bidders/filter_sets/non_billable_winning_bids/struct.ListRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [accounts](resources/accounts/struct.AccountsActions.html)\n      * [clients](resources/accounts/clients/struct.ClientsActions.html)\n        * [*create*](resources/accounts/clients/struct.CreateRequestBuilder.html), [*get*](resources/accounts/clients/struct.GetRequestBuilder.html), [*list*](resources/accounts/clients/struct.ListRequestBuilder.html), [*update*](resources/accounts/clients/struct.UpdateRequestBuilder.html)\n        * [invitations](resources/accounts/clients/invitations/struct.InvitationsActions.html)\n          * [*create*](resources/accounts/clients/invitations/struct.CreateRequestBuilder.html), [*get*](resources/accounts/clients/invitations/struct.GetRequestBuilder.html), [*list*](resources/accounts/clients/invitations/struct.ListRequestBuilder.html)\n        * [users](resources/accounts/clients/users/struct.UsersActions.html)\n          * [*get*](resources/accounts/clients/users/struct.GetRequestBuilder.html), [*list*](resources/accounts/clients/users/struct.ListRequestBuilder.html), [*update*](resources/accounts/clients/users/struct.UpdateRequestBuilder.html)\n      * [creatives](resources/accounts/creatives/struct.CreativesActions.html)\n        * [*create*](resources/accounts/creatives/struct.CreateRequestBuilder.html), [*get*](resources/accounts/creatives/struct.GetRequestBuilder.html), [*list*](resources/accounts/creatives/struct.ListRequestBuilder.html), [*stopWatching*](resources/accounts/creatives/struct.StopWatchingRequestBuilder.html), [*update*](resources/accounts/creatives/struct.UpdateRequestBuilder.html), [*watch*](resources/accounts/creatives/struct.WatchRequestBuilder.html)\n        * [deal_associations](resources/accounts/creatives/deal_associations/struct.DealAssociationsActions.html)\n          * [*add*](resources/accounts/creatives/deal_associations/struct.AddRequestBuilder.html), [*list*](resources/accounts/creatives/deal_associations/struct.ListRequestBuilder.html), [*remove*](resources/accounts/creatives/deal_associations/struct.RemoveRequestBuilder.html)\n      * [finalized_proposals](resources/accounts/finalized_proposals/struct.FinalizedProposalsActions.html)\n        * [*list*](resources/accounts/finalized_proposals/struct.ListRequestBuilder.html), [*pause*](resources/accounts/finalized_proposals/struct.PauseRequestBuilder.html), [*resume*](resources/accounts/finalized_proposals/struct.ResumeRequestBuilder.html)\n      * [products](resources/accounts/products/struct.ProductsActions.html)\n        * [*get*](resources/accounts/products/struct.GetRequestBuilder.html), [*list*](resources/accounts/products/struct.ListRequestBuilder.html)\n      * [proposals](resources/accounts/proposals/struct.ProposalsActions.html)\n        * [*accept*](resources/accounts/proposals/struct.AcceptRequestBuilder.html), [*addNote*](resources/accounts/proposals/struct.AddNoteRequestBuilder.html), [*cancelNegotiation*](resources/accounts/proposals/struct.CancelNegotiationRequestBuilder.html), [*completeSetup*](resources/accounts/proposals/struct.CompleteSetupRequestBuilder.html), [*create*](resources/accounts/proposals/struct.CreateRequestBuilder.html), [*get*](resources/accounts/proposals/struct.GetRequestBuilder.html), [*list*](resources/accounts/proposals/struct.ListRequestBuilder.html), [*pause*](resources/accounts/proposals/struct.PauseRequestBuilder.html), [*resume*](resources/accounts/proposals/struct.ResumeRequestBuilder.html), [*update*](resources/accounts/proposals/struct.UpdateRequestBuilder.html)\n      * [publisher_profiles](resources/accounts/publisher_profiles/struct.PublisherProfilesActions.html)\n        * [*get*](resources/accounts/publisher_profiles/struct.GetRequestBuilder.html), [*list*](resources/accounts/publisher_profiles/struct.ListRequestBuilder.html)\n    * [bidders](resources/bidders/struct.BiddersActions.html)\n      * [accounts](resources/bidders/accounts/struct.AccountsActions.html)\n        * [filter_sets](resources/bidders/accounts/filter_sets/struct.FilterSetsActions.html)\n          * [*create*](resources/bidders/accounts/filter_sets/struct.CreateRequestBuilder.html), [*delete*](resources/bidders/accounts/filter_sets/struct.DeleteRequestBuilder.html), [*get*](resources/bidders/accounts/filter_sets/struct.GetRequestBuilder.html), [*list*](resources/bidders/accounts/filter_sets/struct.ListRequestBuilder.html)\n          * [bid_metrics](resources/bidders/accounts/filter_sets/bid_metrics/struct.BidMetricsActions.html)\n            * [*list*](resources/bidders/accounts/filter_sets/bid_metrics/struct.ListRequestBuilder.html)\n          * [bid_response_errors](resources/bidders/accounts/filter_sets/bid_response_errors/struct.BidResponseErrorsActions.html)\n            * [*list*](resources/bidders/accounts/filter_sets/bid_response_errors/struct.ListRequestBuilder.html)\n          * [bid_responses_without_bids](resources/bidders/accounts/filter_sets/bid_responses_without_bids/struct.BidResponsesWithoutBidsActions.html)\n            * [*list*](resources/bidders/accounts/filter_sets/bid_responses_without_bids/struct.ListRequestBuilder.html)\n          * [filtered_bid_requests](resources/bidders/accounts/filter_sets/filtered_bid_requests/struct.FilteredBidRequestsActions.html)\n            * [*list*](resources/bidders/accounts/filter_sets/filtered_bid_requests/struct.ListRequestBuilder.html)\n          * [filtered_bids](resources/bidders/accounts/filter_sets/filtered_bids/struct.FilteredBidsActions.html)\n            * [*list*](resources/bidders/accounts/filter_sets/filtered_bids/struct.ListRequestBuilder.html)\n            * [creatives](resources/bidders/accounts/filter_sets/filtered_bids/creatives/struct.CreativesActions.html)\n              * [*list*](resources/bidders/accounts/filter_sets/filtered_bids/creatives/struct.ListRequestBuilder.html)\n            * [details](resources/bidders/accounts/filter_sets/filtered_bids/details/struct.DetailsActions.html)\n              * [*list*](resources/bidders/accounts/filter_sets/filtered_bids/details/struct.ListRequestBuilder.html)\n          * [impression_metrics](resources/bidders/accounts/filter_sets/impression_metrics/struct.ImpressionMetricsActions.html)\n            * [*list*](resources/bidders/accounts/filter_sets/impression_metrics/struct.ListRequestBuilder.html)\n          * [losing_bids](resources/bidders/accounts/filter_sets/losing_bids/struct.LosingBidsActions.html)\n            * [*list*](resources/bidders/accounts/filter_sets/losing_bids/struct.ListRequestBuilder.html)\n          * [non_billable_winning_bids](resources/bidders/accounts/filter_sets/non_billable_winning_bids/struct.NonBillableWinningBidsActions.html)\n            * [*list*](resources/bidders/accounts/filter_sets/non_billable_winning_bids/struct.ListRequestBuilder.html)\n      * [filter_sets](resources/bidders/filter_sets/struct.FilterSetsActions.html)\n        * [*create*](resources/bidders/filter_sets/struct.CreateRequestBuilder.html), [*delete*](resources/bidders/filter_sets/struct.DeleteRequestBuilder.html), [*get*](resources/bidders/filter_sets/struct.GetRequestBuilder.html), [*list*](resources/bidders/filter_sets/struct.ListRequestBuilder.html)\n        * [bid_metrics](resources/bidders/filter_sets/bid_metrics/struct.BidMetricsActions.html)\n          * [*list*](resources/bidders/filter_sets/bid_metrics/struct.ListRequestBuilder.html)\n        * [bid_response_errors](resources/bidders/filter_sets/bid_response_errors/struct.BidResponseErrorsActions.html)\n          * [*list*](resources/bidders/filter_sets/bid_response_errors/struct.ListRequestBuilder.html)\n        * [bid_responses_without_bids](resources/bidders/filter_sets/bid_responses_without_bids/struct.BidResponsesWithoutBidsActions.html)\n          * [*list*](resources/bidders/filter_sets/bid_responses_without_bids/struct.ListRequestBuilder.html)\n        * [filtered_bid_requests](resources/bidders/filter_sets/filtered_bid_requests/struct.FilteredBidRequestsActions.html)\n          * [*list*](resources/bidders/filter_sets/filtered_bid_requests/struct.ListRequestBuilder.html)\n        * [filtered_bids](resources/bidders/filter_sets/filtered_bids/struct.FilteredBidsActions.html)\n          * [*list*](resources/bidders/filter_sets/filtered_bids/struct.ListRequestBuilder.html)\n          * [creatives](resources/bidders/filter_sets/filtered_bids/creatives/struct.CreativesActions.html)\n            * [*list*](resources/bidders/filter_sets/filtered_bids/creatives/struct.ListRequestBuilder.html)\n          * [details](resources/bidders/filter_sets/filtered_bids/details/struct.DetailsActions.html)\n            * [*list*](resources/bidders/filter_sets/filtered_bids/details/struct.ListRequestBuilder.html)\n        * [impression_metrics](resources/bidders/filter_sets/impression_metrics/struct.ImpressionMetricsActions.html)\n          * [*list*](resources/bidders/filter_sets/impression_metrics/struct.ListRequestBuilder.html)\n        * [losing_bids](resources/bidders/filter_sets/losing_bids/struct.LosingBidsActions.html)\n          * [*list*](resources/bidders/filter_sets/losing_bids/struct.ListRequestBuilder.html)\n        * [non_billable_winning_bids](resources/bidders/filter_sets/non_billable_winning_bids/struct.NonBillableWinningBidsActions.html)\n          * [*list*](resources/bidders/filter_sets/non_billable_winning_bids/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Manage your Ad Exchange buyer account configuration\n\n`https://www.googleapis.com/auth/adexchange.buyer`"]
     pub const ADEXCHANGE_BUYER: &str = "https://www.googleapis.com/auth/adexchange.buyer";
@@ -857,7 +857,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub client_account_id: ::std::option::Option<i64>,
-        #[doc = "Name used to represent this client to publishers. You may have multiple clients that map to the same entity, but for each client the combination of `clientName` and entity must be unique. You can specify this field as empty."]
+        #[doc = "Name used to represent this client to publishers. You may have multiple clients that map to the same entity, but for each client the combination of `clientName` and entity must be unique. You can specify this field as empty. Maximum length of 255 characters is allowed."]
         #[serde(
             rename = "clientName",
             default,
@@ -4782,7 +4782,7 @@ pub mod schemas {
         NoBorder,
         #[doc = "Non-SSL compliant."]
         NonSslCompliant,
-        #[doc = "Use of an Open Measurement SDK vendor not on approved whitelist."]
+        #[doc = "Use of an Open Measurement SDK vendor not on approved vendor list."]
         NonWhitelistedOmidVendor,
         #[doc = "Non-family safe or adult content."]
         NotFamilySafe,
@@ -6124,6 +6124,10 @@ pub mod schemas {
         Minute,
         #[doc = "Month"]
         Month,
+        #[doc = "Pod"]
+        Pod,
+        #[doc = "Stream"]
+        Stream,
         #[doc = "A placeholder for an undefined time unit type. This just indicates the variable with this value hasn't been initialized."]
         TimeUnitTypeUnspecified,
         #[doc = "Week"]
@@ -6137,6 +6141,8 @@ pub mod schemas {
                 FrequencyCapTimeUnitType::Lifetime => "LIFETIME",
                 FrequencyCapTimeUnitType::Minute => "MINUTE",
                 FrequencyCapTimeUnitType::Month => "MONTH",
+                FrequencyCapTimeUnitType::Pod => "POD",
+                FrequencyCapTimeUnitType::Stream => "STREAM",
                 FrequencyCapTimeUnitType::TimeUnitTypeUnspecified => "TIME_UNIT_TYPE_UNSPECIFIED",
                 FrequencyCapTimeUnitType::Week => "WEEK",
             }
@@ -6156,6 +6162,8 @@ pub mod schemas {
                 "LIFETIME" => FrequencyCapTimeUnitType::Lifetime,
                 "MINUTE" => FrequencyCapTimeUnitType::Minute,
                 "MONTH" => FrequencyCapTimeUnitType::Month,
+                "POD" => FrequencyCapTimeUnitType::Pod,
+                "STREAM" => FrequencyCapTimeUnitType::Stream,
                 "TIME_UNIT_TYPE_UNSPECIFIED" => FrequencyCapTimeUnitType::TimeUnitTypeUnspecified,
                 "WEEK" => FrequencyCapTimeUnitType::Week,
                 _ => return Err(()),
@@ -6187,6 +6195,8 @@ pub mod schemas {
                 "LIFETIME" => FrequencyCapTimeUnitType::Lifetime,
                 "MINUTE" => FrequencyCapTimeUnitType::Minute,
                 "MONTH" => FrequencyCapTimeUnitType::Month,
+                "POD" => FrequencyCapTimeUnitType::Pod,
+                "STREAM" => FrequencyCapTimeUnitType::Stream,
                 "TIME_UNIT_TYPE_UNSPECIFIED" => FrequencyCapTimeUnitType::TimeUnitTypeUnspecified,
                 "WEEK" => FrequencyCapTimeUnitType::Week,
                 _ => {
@@ -6244,6 +6254,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub guaranteed_looks: ::std::option::Option<i64>,
+        #[doc = "The lifetime impression cap for CPM sponsorship deals. The deal will stop serving when the cap is reached."]
+        #[serde(
+            rename = "impressionCap",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub impression_cap: ::std::option::Option<i64>,
         #[doc = "Daily minimum looks for CPD deal types."]
         #[serde(
             rename = "minimumDailyLooks",
@@ -6252,6 +6270,22 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub minimum_daily_looks: ::std::option::Option<i64>,
+        #[doc = "For sponsorship deals, this is the percentage of the seller's eligible impressions that the deal will serve until the cap is reached."]
+        #[serde(
+            rename = "percentShareOfVoice",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub percent_share_of_voice: ::std::option::Option<i64>,
+        #[doc = "The reservation type for a Programmatic Guaranteed deal. This indicates whether the number of impressions is fixed, or a percent of available impressions. If not specified, the default reservation type is STANDARD."]
+        #[serde(
+            rename = "reservationType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reservation_type:
+            ::std::option::Option<crate::schemas::GuaranteedFixedPriceTermsReservationType>,
     }
     impl ::google_field_selector::FieldSelector for GuaranteedFixedPriceTerms {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -6259,6 +6293,90 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GuaranteedFixedPriceTerms {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GuaranteedFixedPriceTermsReservationType {
+        #[doc = "An unspecified reservation type."]
+        ReservationTypeUnspecified,
+        #[doc = "Sponsorship deals don't have impression goal (guaranteed_looks) and they are served based on the flight dates. For CPM Sponsorship deals, impression_cap is the lifetime impression limit."]
+        Sponsorship,
+        #[doc = "Non-sponsorship deal."]
+        Standard,
+    }
+    impl GuaranteedFixedPriceTermsReservationType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GuaranteedFixedPriceTermsReservationType::ReservationTypeUnspecified => {
+                    "RESERVATION_TYPE_UNSPECIFIED"
+                }
+                GuaranteedFixedPriceTermsReservationType::Sponsorship => "SPONSORSHIP",
+                GuaranteedFixedPriceTermsReservationType::Standard => "STANDARD",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GuaranteedFixedPriceTermsReservationType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GuaranteedFixedPriceTermsReservationType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GuaranteedFixedPriceTermsReservationType, ()> {
+            Ok(match s {
+                "RESERVATION_TYPE_UNSPECIFIED" => {
+                    GuaranteedFixedPriceTermsReservationType::ReservationTypeUnspecified
+                }
+                "SPONSORSHIP" => GuaranteedFixedPriceTermsReservationType::Sponsorship,
+                "STANDARD" => GuaranteedFixedPriceTermsReservationType::Standard,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GuaranteedFixedPriceTermsReservationType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GuaranteedFixedPriceTermsReservationType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GuaranteedFixedPriceTermsReservationType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "RESERVATION_TYPE_UNSPECIFIED" => {
+                    GuaranteedFixedPriceTermsReservationType::ReservationTypeUnspecified
+                }
+                "SPONSORSHIP" => GuaranteedFixedPriceTermsReservationType::Sponsorship,
+                "STANDARD" => GuaranteedFixedPriceTermsReservationType::Standard,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GuaranteedFixedPriceTermsReservationType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GuaranteedFixedPriceTermsReservationType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -8045,6 +8163,44 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct PauseProposalDealsRequest {
+        #[doc = "The external_deal_id's of the deals to be paused. If empty, all the deals in the proposal will be paused."]
+        #[serde(
+            rename = "externalDealIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub external_deal_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "The reason why the deals are being paused. This human readable message will be displayed in the seller's UI. (Max length: 1000 unicode code units.)"]
+        #[serde(
+            rename = "reason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reason: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PauseProposalDealsRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PauseProposalDealsRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct PauseProposalRequest {
         #[doc = "The reason why the proposal is being paused. This human readable message will be displayed in the seller's UI. (Max length: 1000 unicode code units.)"]
         #[serde(
@@ -9468,6 +9624,37 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ResumeProposalDealsRequest {
+        #[doc = "The external_deal_id's of the deals to resume. If empty, all the deals in the proposal will be resumed."]
+        #[serde(
+            rename = "externalDealIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub external_deal_ids: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for ResumeProposalDealsRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ResumeProposalDealsRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Copy,
         Default,
         :: serde :: Deserialize,
@@ -9644,7 +9831,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub account_id: ::std::option::Option<String>,
-        #[doc = "Optional sub-account ID for the seller."]
+        #[doc = "Output only. Ad manager network code for the seller."]
         #[serde(
             rename = "subAccountId",
             default,
@@ -13469,7 +13656,7 @@ pub mod resources {
                     &self,
                 ) -> crate::resources::accounts::creatives::deal_associations::DealAssociationsActions
                 {
-                    crate :: resources :: accounts :: creatives :: deal_associations :: DealAssociationsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    crate :: resources :: accounts :: creatives :: deal_associations :: DealAssociationsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
             }
             #[doc = "Created via [CreativesActions::create()](struct.CreativesActions.html#method.create)"]
@@ -15476,6 +15663,58 @@ pub mod resources {
                         page_token: None,
                     }
                 }
+                #[doc = "Update given deals to pause serving. This method will set the `DealServingMetadata.DealPauseStatus.has_buyer_paused` bit to true for all listed deals in the request. Currently, this method only applies to PG and PD deals. For PA deals, please call accounts.proposals.pause endpoint. It is a no-op to pause already-paused deals. It is an error to call PauseProposalDeals for deals which are not part of the proposal of proposal_id or which are not finalized or renegotiating."]
+                pub fn pause(
+                    &self,
+                    request: crate::schemas::PauseProposalDealsRequest,
+                    account_id: impl Into<String>,
+                    proposal_id: impl Into<String>,
+                ) -> PauseRequestBuilder {
+                    PauseRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        account_id: account_id.into(),
+                        proposal_id: proposal_id.into(),
+                    }
+                }
+                #[doc = "Update given deals to resume serving. This method will set the `DealServingMetadata.DealPauseStatus.has_buyer_paused` bit to false for all listed deals in the request. Currently, this method only applies to PG and PD deals. For PA deals, please call accounts.proposals.resume endpoint. It is a no-op to resume running deals or deals paused by the other party. It is an error to call ResumeProposalDeals for deals which are not part of the proposal of proposal_id or which are not finalized or renegotiating."]
+                pub fn resume(
+                    &self,
+                    request: crate::schemas::ResumeProposalDealsRequest,
+                    account_id: impl Into<String>,
+                    proposal_id: impl Into<String>,
+                ) -> ResumeRequestBuilder {
+                    ResumeRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        account_id: account_id.into(),
+                        proposal_id: proposal_id.into(),
+                    }
+                }
             }
             #[doc = "Created via [FinalizedProposalsActions::list()](struct.FinalizedProposalsActions.html#method.list)"]
             #[derive(Debug, Clone)]
@@ -15779,6 +16018,348 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned,
                 {
                     self._execute()
+                }
+            }
+            #[doc = "Created via [FinalizedProposalsActions::pause()](struct.FinalizedProposalsActions.html#method.pause)"]
+            #[derive(Debug, Clone)]
+            pub struct PauseRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::PauseProposalDealsRequest,
+                account_id: String,
+                proposal_id: String,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> PauseRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Proposal, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Proposal, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://adexchangebuyer.googleapis.com/".to_owned();
+                    output.push_str("v2beta1/accounts/");
+                    {
+                        let var_as_str = &self.account_id;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::SIMPLE,
+                        ));
+                    }
+                    output.push_str("/finalizedProposals/");
+                    {
+                        let var_as_str = &self.proposal_id;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::SIMPLE,
+                        ));
+                    }
+                    output.push_str(":pause");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [FinalizedProposalsActions::resume()](struct.FinalizedProposalsActions.html#method.resume)"]
+            #[derive(Debug, Clone)]
+            pub struct ResumeRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::ResumeProposalDealsRequest,
+                account_id: String,
+                proposal_id: String,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> ResumeRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Proposal, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Proposal, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://adexchangebuyer.googleapis.com/".to_owned();
+                    output.push_str("v2beta1/accounts/");
+                    {
+                        let var_as_str = &self.account_id;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::SIMPLE,
+                        ));
+                    }
+                    output.push_str("/finalizedProposals/");
+                    {
+                        let var_as_str = &self.proposal_id;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::SIMPLE,
+                        ));
+                    }
+                    output.push_str(":resume");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
                 }
             }
         }
@@ -19131,29 +19712,29 @@ pub mod resources {
                             page_token: None,
                         }
                     }
-                    #[doc = "Actions that can be performed on the bid_metrics resource"]                    pub fn bid_metrics ( & self ) -> crate :: resources :: bidders :: accounts :: filter_sets :: bid_metrics :: BidMetricsActions{
-                        crate :: resources :: bidders :: accounts :: filter_sets :: bid_metrics :: BidMetricsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the bid_metrics resource"]                    pub fn bid_metrics (& self) -> crate :: resources :: bidders :: accounts :: filter_sets :: bid_metrics :: BidMetricsActions{
+                        crate :: resources :: bidders :: accounts :: filter_sets :: bid_metrics :: BidMetricsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the bid_response_errors resource"]                    pub fn bid_response_errors ( & self ) -> crate :: resources :: bidders :: accounts :: filter_sets :: bid_response_errors :: BidResponseErrorsActions{
-                        crate :: resources :: bidders :: accounts :: filter_sets :: bid_response_errors :: BidResponseErrorsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the bid_response_errors resource"]                    pub fn bid_response_errors (& self) -> crate :: resources :: bidders :: accounts :: filter_sets :: bid_response_errors :: BidResponseErrorsActions{
+                        crate :: resources :: bidders :: accounts :: filter_sets :: bid_response_errors :: BidResponseErrorsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the bid_responses_without_bids resource"]                    pub fn bid_responses_without_bids ( & self ) -> crate :: resources :: bidders :: accounts :: filter_sets :: bid_responses_without_bids :: BidResponsesWithoutBidsActions{
-                        crate :: resources :: bidders :: accounts :: filter_sets :: bid_responses_without_bids :: BidResponsesWithoutBidsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the bid_responses_without_bids resource"]                    pub fn bid_responses_without_bids (& self) -> crate :: resources :: bidders :: accounts :: filter_sets :: bid_responses_without_bids :: BidResponsesWithoutBidsActions{
+                        crate :: resources :: bidders :: accounts :: filter_sets :: bid_responses_without_bids :: BidResponsesWithoutBidsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the filtered_bid_requests resource"]                    pub fn filtered_bid_requests ( & self ) -> crate :: resources :: bidders :: accounts :: filter_sets :: filtered_bid_requests :: FilteredBidRequestsActions{
-                        crate :: resources :: bidders :: accounts :: filter_sets :: filtered_bid_requests :: FilteredBidRequestsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the filtered_bid_requests resource"]                    pub fn filtered_bid_requests (& self) -> crate :: resources :: bidders :: accounts :: filter_sets :: filtered_bid_requests :: FilteredBidRequestsActions{
+                        crate :: resources :: bidders :: accounts :: filter_sets :: filtered_bid_requests :: FilteredBidRequestsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the filtered_bids resource"]                    pub fn filtered_bids ( & self ) -> crate :: resources :: bidders :: accounts :: filter_sets :: filtered_bids :: FilteredBidsActions{
-                        crate :: resources :: bidders :: accounts :: filter_sets :: filtered_bids :: FilteredBidsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the filtered_bids resource"]                    pub fn filtered_bids (& self) -> crate :: resources :: bidders :: accounts :: filter_sets :: filtered_bids :: FilteredBidsActions{
+                        crate :: resources :: bidders :: accounts :: filter_sets :: filtered_bids :: FilteredBidsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the impression_metrics resource"]                    pub fn impression_metrics ( & self ) -> crate :: resources :: bidders :: accounts :: filter_sets :: impression_metrics :: ImpressionMetricsActions{
-                        crate :: resources :: bidders :: accounts :: filter_sets :: impression_metrics :: ImpressionMetricsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the impression_metrics resource"]                    pub fn impression_metrics (& self) -> crate :: resources :: bidders :: accounts :: filter_sets :: impression_metrics :: ImpressionMetricsActions{
+                        crate :: resources :: bidders :: accounts :: filter_sets :: impression_metrics :: ImpressionMetricsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the losing_bids resource"]                    pub fn losing_bids ( & self ) -> crate :: resources :: bidders :: accounts :: filter_sets :: losing_bids :: LosingBidsActions{
-                        crate :: resources :: bidders :: accounts :: filter_sets :: losing_bids :: LosingBidsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the losing_bids resource"]                    pub fn losing_bids (& self) -> crate :: resources :: bidders :: accounts :: filter_sets :: losing_bids :: LosingBidsActions{
+                        crate :: resources :: bidders :: accounts :: filter_sets :: losing_bids :: LosingBidsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the non_billable_winning_bids resource"]                    pub fn non_billable_winning_bids ( & self ) -> crate :: resources :: bidders :: accounts :: filter_sets :: non_billable_winning_bids :: NonBillableWinningBidsActions{
-                        crate :: resources :: bidders :: accounts :: filter_sets :: non_billable_winning_bids :: NonBillableWinningBidsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the non_billable_winning_bids resource"]                    pub fn non_billable_winning_bids (& self) -> crate :: resources :: bidders :: accounts :: filter_sets :: non_billable_winning_bids :: NonBillableWinningBidsActions{
+                        crate :: resources :: bidders :: accounts :: filter_sets :: non_billable_winning_bids :: NonBillableWinningBidsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 #[doc = "Created via [FilterSetsActions::create()](struct.FilterSetsActions.html#method.create)"]
@@ -21324,11 +21905,11 @@ pub mod resources {
                                 page_token: None,
                             }
                         }
-                        #[doc = "Actions that can be performed on the creatives resource"]                        pub fn creatives ( & self ) -> crate :: resources :: bidders :: accounts :: filter_sets :: filtered_bids :: creatives :: CreativesActions{
-                            crate :: resources :: bidders :: accounts :: filter_sets :: filtered_bids :: creatives :: CreativesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the creatives resource"]                        pub fn creatives (& self) -> crate :: resources :: bidders :: accounts :: filter_sets :: filtered_bids :: creatives :: CreativesActions{
+                            crate :: resources :: bidders :: accounts :: filter_sets :: filtered_bids :: creatives :: CreativesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
-                        #[doc = "Actions that can be performed on the details resource"]                        pub fn details ( & self ) -> crate :: resources :: bidders :: accounts :: filter_sets :: filtered_bids :: details :: DetailsActions{
-                            crate :: resources :: bidders :: accounts :: filter_sets :: filtered_bids :: details :: DetailsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the details resource"]                        pub fn details (& self) -> crate :: resources :: bidders :: accounts :: filter_sets :: filtered_bids :: details :: DetailsActions{
+                            crate :: resources :: bidders :: accounts :: filter_sets :: filtered_bids :: details :: DetailsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
                     }
                     #[doc = "Created via [FilteredBidsActions::list()](struct.FilteredBidsActions.html#method.list)"]
@@ -23469,14 +24050,14 @@ pub mod resources {
                         auth: self.auth_ref(),
                     }
                 }
-                #[doc = "Actions that can be performed on the bid_response_errors resource"]                pub fn bid_response_errors ( & self ) -> crate :: resources :: bidders :: filter_sets :: bid_response_errors :: BidResponseErrorsActions{
-                    crate :: resources :: bidders :: filter_sets :: bid_response_errors :: BidResponseErrorsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the bid_response_errors resource"]                pub fn bid_response_errors (& self) -> crate :: resources :: bidders :: filter_sets :: bid_response_errors :: BidResponseErrorsActions{
+                    crate :: resources :: bidders :: filter_sets :: bid_response_errors :: BidResponseErrorsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
-                #[doc = "Actions that can be performed on the bid_responses_without_bids resource"]                pub fn bid_responses_without_bids ( & self ) -> crate :: resources :: bidders :: filter_sets :: bid_responses_without_bids :: BidResponsesWithoutBidsActions{
-                    crate :: resources :: bidders :: filter_sets :: bid_responses_without_bids :: BidResponsesWithoutBidsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the bid_responses_without_bids resource"]                pub fn bid_responses_without_bids (& self) -> crate :: resources :: bidders :: filter_sets :: bid_responses_without_bids :: BidResponsesWithoutBidsActions{
+                    crate :: resources :: bidders :: filter_sets :: bid_responses_without_bids :: BidResponsesWithoutBidsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
-                #[doc = "Actions that can be performed on the filtered_bid_requests resource"]                pub fn filtered_bid_requests ( & self ) -> crate :: resources :: bidders :: filter_sets :: filtered_bid_requests :: FilteredBidRequestsActions{
-                    crate :: resources :: bidders :: filter_sets :: filtered_bid_requests :: FilteredBidRequestsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the filtered_bid_requests resource"]                pub fn filtered_bid_requests (& self) -> crate :: resources :: bidders :: filter_sets :: filtered_bid_requests :: FilteredBidRequestsActions{
+                    crate :: resources :: bidders :: filter_sets :: filtered_bid_requests :: FilteredBidRequestsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
                 #[doc = "Actions that can be performed on the filtered_bids resource"]
                 pub fn filtered_bids(
@@ -23488,8 +24069,8 @@ pub mod resources {
                         auth: self.auth_ref(),
                     }
                 }
-                #[doc = "Actions that can be performed on the impression_metrics resource"]                pub fn impression_metrics ( & self ) -> crate :: resources :: bidders :: filter_sets :: impression_metrics :: ImpressionMetricsActions{
-                    crate :: resources :: bidders :: filter_sets :: impression_metrics :: ImpressionMetricsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the impression_metrics resource"]                pub fn impression_metrics (& self) -> crate :: resources :: bidders :: filter_sets :: impression_metrics :: ImpressionMetricsActions{
+                    crate :: resources :: bidders :: filter_sets :: impression_metrics :: ImpressionMetricsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
                 #[doc = "Actions that can be performed on the losing_bids resource"]
                 pub fn losing_bids(
@@ -23501,8 +24082,8 @@ pub mod resources {
                         auth: self.auth_ref(),
                     }
                 }
-                #[doc = "Actions that can be performed on the non_billable_winning_bids resource"]                pub fn non_billable_winning_bids ( & self ) -> crate :: resources :: bidders :: filter_sets :: non_billable_winning_bids :: NonBillableWinningBidsActions{
-                    crate :: resources :: bidders :: filter_sets :: non_billable_winning_bids :: NonBillableWinningBidsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the non_billable_winning_bids resource"]                pub fn non_billable_winning_bids (& self) -> crate :: resources :: bidders :: filter_sets :: non_billable_winning_bids :: NonBillableWinningBidsActions{
+                    crate :: resources :: bidders :: filter_sets :: non_billable_winning_bids :: NonBillableWinningBidsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
             }
             #[doc = "Created via [FilterSetsActions::create()](struct.FilterSetsActions.html#method.create)"]
@@ -25619,11 +26200,11 @@ pub mod resources {
                             page_token: None,
                         }
                     }
-                    #[doc = "Actions that can be performed on the creatives resource"]                    pub fn creatives ( & self ) -> crate :: resources :: bidders :: filter_sets :: filtered_bids :: creatives :: CreativesActions{
-                        crate :: resources :: bidders :: filter_sets :: filtered_bids :: creatives :: CreativesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the creatives resource"]                    pub fn creatives (& self) -> crate :: resources :: bidders :: filter_sets :: filtered_bids :: creatives :: CreativesActions{
+                        crate :: resources :: bidders :: filter_sets :: filtered_bids :: creatives :: CreativesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the details resource"]                    pub fn details ( & self ) -> crate :: resources :: bidders :: filter_sets :: filtered_bids :: details :: DetailsActions{
-                        crate :: resources :: bidders :: filter_sets :: filtered_bids :: details :: DetailsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the details resource"]                    pub fn details (& self) -> crate :: resources :: bidders :: filter_sets :: filtered_bids :: details :: DetailsActions{
+                        crate :: resources :: bidders :: filter_sets :: filtered_bids :: details :: DetailsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 #[doc = "Created via [FilteredBidsActions::list()](struct.FilteredBidsActions.html#method.list)"]

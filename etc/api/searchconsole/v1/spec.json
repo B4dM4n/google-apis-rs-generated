@@ -7,7 +7,7 @@
   "canonicalName": "Search Console",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20210317",
+  "revision": "20220425",
   "title": "Google Search Console API",
   "description": "The Search Console API provides access to both Search Console data (verified users only) and to public information on an URL basis (anyone)",
   "ownerDomain": "google.com",
@@ -210,6 +210,208 @@
     }
   },
   "schemas": {
+    "AmpInspectionResult": {
+      "id": "AmpInspectionResult",
+      "description": "AMP inspection result of the live page or the current information from Google's index, depending on whether you requested a live inspection or not.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "ampIndexStatusVerdict": {
+          "description": "Index status of the AMP URL.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "VERDICT_UNSPECIFIED",
+            "PASS",
+            "PARTIAL",
+            "FAIL",
+            "NEUTRAL"
+          ],
+          "enumDescriptions": [
+            "Unknown verdict.",
+            "Equivalent to \"Valid\" for the page or item in Search Console.",
+            "Equivalent to \"Valid with warnings\" for the page or item in Search Console.",
+            "Equivalent to \"Error\" or \"Invalid\" for the page or item in Search Console.",
+            "Equivalent to \"Excluded\" for the page or item in Search Console."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "ampUrl": {
+          "description": "URL of the AMP that was inspected. If the submitted URL is a desktop page that refers to an AMP version, the AMP version will be inspected.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "indexingState": {
+          "description": "Whether or not the page blocks indexing through a noindex rule.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "AMP_INDEXING_STATE_UNSPECIFIED",
+            "AMP_INDEXING_ALLOWED",
+            "BLOCKED_DUE_TO_NOINDEX",
+            "BLOCKED_DUE_TO_EXPIRED_UNAVAILABLE_AFTER"
+          ],
+          "enumDescriptions": [
+            "Unknown indexing status.",
+            "Indexing allowed.",
+            "Indexing not allowed, 'noindex' detected.",
+            "Indexing not allowed, 'unavailable_after' date expired."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "issues": {
+          "description": "A list of zero or more AMP issues found for the inspected URL.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "AmpIssue"
+          }
+        },
+        "lastCrawlTime": {
+          "description": "Last time this AMP version was crawled by Google. Absent if the URL was never crawled successfully.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "pageFetchState": {
+          "description": "Whether or not Google could fetch the AMP.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "PAGE_FETCH_STATE_UNSPECIFIED",
+            "SUCCESSFUL",
+            "SOFT_404",
+            "BLOCKED_ROBOTS_TXT",
+            "NOT_FOUND",
+            "ACCESS_DENIED",
+            "SERVER_ERROR",
+            "REDIRECT_ERROR",
+            "ACCESS_FORBIDDEN",
+            "BLOCKED_4XX",
+            "INTERNAL_CRAWL_ERROR",
+            "INVALID_URL"
+          ],
+          "enumDescriptions": [
+            "Unknown fetch state.",
+            "Successful fetch.",
+            "Soft 404.",
+            "Blocked by robots.txt.",
+            "Not found (404).",
+            "Blocked due to unauthorized request (401).",
+            "Server error (5xx).",
+            "Redirection error.",
+            "Blocked due to access forbidden (403).",
+            "Blocked due to other 4xx issue (not 403, 404).",
+            "Internal error.",
+            "Invalid URL."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "robotsTxtState": {
+          "description": "Whether or not the page is blocked to Google by a robots.txt rule.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "ALLOWED",
+            "DISALLOWED"
+          ],
+          "enumDescriptions": [
+            "Unknown robots.txt state, typically because the page wasn't fetched or found, or because robots.txt itself couldn't be reached.",
+            "Crawl allowed by robots.txt.",
+            "Crawl blocked by robots.txt."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "verdict": {
+          "description": "The status of the most severe error on the page. If a page has both warnings and errors, the page status is error. Error status means the page cannot be shown in Search results.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "VERDICT_UNSPECIFIED",
+            "PASS",
+            "PARTIAL",
+            "FAIL",
+            "NEUTRAL"
+          ],
+          "enumDescriptions": [
+            "Unknown verdict.",
+            "Equivalent to \"Valid\" for the page or item in Search Console.",
+            "Equivalent to \"Valid with warnings\" for the page or item in Search Console.",
+            "Equivalent to \"Error\" or \"Invalid\" for the page or item in Search Console.",
+            "Equivalent to \"Excluded\" for the page or item in Search Console."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "AmpIssue": {
+      "id": "AmpIssue",
+      "description": "AMP issue.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "issueMessage": {
+          "description": "Brief description of this issue.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "severity": {
+          "description": "Severity of this issue: WARNING or ERROR.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "SEVERITY_UNSPECIFIED",
+            "WARNING",
+            "ERROR"
+          ],
+          "enumDescriptions": [
+            "Unknown severity.",
+            "Warning.",
+            "Error."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "ApiDataRow": {
       "id": "ApiDataRow",
       "description": null,
@@ -328,9 +530,13 @@
             "EQUALS",
             "NOT_EQUALS",
             "CONTAINS",
-            "NOT_CONTAINS"
+            "NOT_CONTAINS",
+            "INCLUDING_REGEX",
+            "EXCLUDING_REGEX"
           ],
           "enumDescriptions": [
+            "",
+            "",
             "",
             "",
             "",
@@ -404,6 +610,40 @@
       "additionalProperties": null,
       "items": null
     },
+    "DetectedItems": {
+      "id": "DetectedItems",
+      "description": "Rich Results items grouped by type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "items": {
+          "description": "List of Rich Results items.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Item"
+          }
+        },
+        "richResultType": {
+          "description": "Rich Results type",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Image": {
       "id": "Image",
       "description": "Describe image data.",
@@ -424,6 +664,302 @@
         },
         "mimeType": {
           "description": "The mime-type of the image data.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "IndexStatusInspectionResult": {
+      "id": "IndexStatusInspectionResult",
+      "description": "Results of index status inspection for either the live page or the version in Google's index, depending on whether you requested a live inspection or not. For more information, see the [Index coverage report documentation](https://support.google.com/webmasters/answer/7440203).",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "coverageState": {
+          "description": "Could Google find and index the page. More details about page indexing appear in 'indexing_state'.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "crawledAs": {
+          "description": "Primary crawler that was used by Google to crawl your site.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "CRAWLING_USER_AGENT_UNSPECIFIED",
+            "DESKTOP",
+            "MOBILE"
+          ],
+          "enumDescriptions": [
+            "Unknown user agent.",
+            "Desktop user agent.",
+            "Mobile user agent."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "googleCanonical": {
+          "description": "The URL of the page that Google selected as canonical. If the page was not indexed, this field is absent.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "indexingState": {
+          "description": "Whether or not the page blocks indexing through a noindex rule.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "INDEXING_STATE_UNSPECIFIED",
+            "INDEXING_ALLOWED",
+            "BLOCKED_BY_META_TAG",
+            "BLOCKED_BY_HTTP_HEADER",
+            "BLOCKED_BY_ROBOTS_TXT"
+          ],
+          "enumDescriptions": [
+            "Unknown indexing status.",
+            "Indexing allowed.",
+            "Indexing not allowed, 'noindex' detected in 'robots' meta tag.",
+            "Indexing not allowed, 'noindex' detected in 'X-Robots-Tag' http header.",
+            "Reserved, no longer in use."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "lastCrawlTime": {
+          "description": "Last time this URL was crawled by Google using the [primary crawler](https://support.google.com/webmasters/answer/7440203#primary_crawler). Absent if the URL was never crawled successfully.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "pageFetchState": {
+          "description": "Whether or not Google could retrieve the page from your server. Equivalent to [\"page fetch\"](https://support.google.com/webmasters/answer/9012289#index_coverage) in the URL inspection report.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "PAGE_FETCH_STATE_UNSPECIFIED",
+            "SUCCESSFUL",
+            "SOFT_404",
+            "BLOCKED_ROBOTS_TXT",
+            "NOT_FOUND",
+            "ACCESS_DENIED",
+            "SERVER_ERROR",
+            "REDIRECT_ERROR",
+            "ACCESS_FORBIDDEN",
+            "BLOCKED_4XX",
+            "INTERNAL_CRAWL_ERROR",
+            "INVALID_URL"
+          ],
+          "enumDescriptions": [
+            "Unknown fetch state.",
+            "Successful fetch.",
+            "Soft 404.",
+            "Blocked by robots.txt.",
+            "Not found (404).",
+            "Blocked due to unauthorized request (401).",
+            "Server error (5xx).",
+            "Redirection error.",
+            "Blocked due to access forbidden (403).",
+            "Blocked due to other 4xx issue (not 403, 404).",
+            "Internal error.",
+            "Invalid URL."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "referringUrls": {
+          "description": "URLs that link to the inspected URL, directly and indirectly.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "robotsTxtState": {
+          "description": "Whether or not the page is blocked to Google by a robots.txt rule.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "ALLOWED",
+            "DISALLOWED"
+          ],
+          "enumDescriptions": [
+            "Unknown robots.txt state, typically because the page wasn't fetched or found, or because robots.txt itself couldn't be reached.",
+            "Crawl allowed by robots.txt.",
+            "Crawl blocked by robots.txt."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "sitemap": {
+          "description": "Any sitemaps that this URL was listed in, as known by Google. Not guaranteed to be an exhaustive list, especially if Google did not discover this URL through a sitemap. Absent if no sitemaps were found.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "userCanonical": {
+          "description": "The URL that your page or site [declares as canonical](https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls?#define-canonical). If you did not declare a canonical URL, this field is absent.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "verdict": {
+          "description": "High level verdict about whether the URL *is* indexed (indexed status), or *can be* indexed (live inspection).",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "VERDICT_UNSPECIFIED",
+            "PASS",
+            "PARTIAL",
+            "FAIL",
+            "NEUTRAL"
+          ],
+          "enumDescriptions": [
+            "Unknown verdict.",
+            "Equivalent to \"Valid\" for the page or item in Search Console.",
+            "Equivalent to \"Valid with warnings\" for the page or item in Search Console.",
+            "Equivalent to \"Error\" or \"Invalid\" for the page or item in Search Console.",
+            "Equivalent to \"Excluded\" for the page or item in Search Console."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "InspectUrlIndexRequest": {
+      "id": "InspectUrlIndexRequest",
+      "description": "Index inspection request.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "inspectionUrl": {
+          "description": "Required. URL to inspect. Must be under the property specified in \"site_url\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "languageCode": {
+          "description": "Optional. An [IETF BCP-47](https://en.wikipedia.org/wiki/IETF_language_tag) language code representing the requested language for translated issue messages, e.g. \"en-US\", \"or \"de-CH\". Default value is \"en-US\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "siteUrl": {
+          "description": "Required. The URL of the property as defined in Search Console. **Examples:** `http://www.example.com/` for a URL-prefix property, or `sc-domain:example.com` for a Domain property.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "InspectUrlIndexResponse": {
+      "id": "InspectUrlIndexResponse",
+      "description": "Index-Status inspection response.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "inspectionResult": {
+          "description": "URL inspection results.",
+          "$ref": "UrlInspectionResult"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Item": {
+      "id": "Item",
+      "description": "A specific rich result found on the page.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "issues": {
+          "description": "A list of zero or more rich result issues found for this instance.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "RichResultsIssue"
+          }
+        },
+        "name": {
+          "description": "The user-provided name of this item.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -460,11 +996,123 @@
           "enumDescriptions": [
             "Unknown rule. Sorry, we don't have any description for the rule that was broken.",
             "Plugins incompatible with mobile devices are being used. [Learn more] (https://support.google.com/webmasters/answer/6352293#flash_usage).",
-            "Viewsport is not specified using the meta viewport tag. [Learn more] (https://support.google.com/webmasters/answer/6352293#viewport_not_configured).",
+            "Viewport is not specified using the meta viewport tag. [Learn more] (https://support.google.com/webmasters/answer/6352293#viewport_not_configured).",
             "Viewport defined to a fixed width. [Learn more] (https://support.google.com/webmasters/answer/6352293#fixed-width_viewport).",
             "Content not sized to viewport. [Learn more] (https://support.google.com/webmasters/answer/6352293#content_not_sized_to_viewport).",
             "Font size is too small for easy reading on a small screen. [Learn More] (https://support.google.com/webmasters/answer/6352293#small_font_size).",
             "Touch elements are too close to each other. [Learn more] (https://support.google.com/webmasters/answer/6352293#touch_elements_too_close)."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "MobileUsabilityInspectionResult": {
+      "id": "MobileUsabilityInspectionResult",
+      "description": "Mobile-usability inspection results.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "issues": {
+          "description": "A list of zero or more mobile-usability issues detected for this URL.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "MobileUsabilityIssue"
+          }
+        },
+        "verdict": {
+          "description": "High-level mobile-usability inspection result for this URL.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "VERDICT_UNSPECIFIED",
+            "PASS",
+            "PARTIAL",
+            "FAIL",
+            "NEUTRAL"
+          ],
+          "enumDescriptions": [
+            "Unknown verdict.",
+            "Equivalent to \"Valid\" for the page or item in Search Console.",
+            "Equivalent to \"Valid with warnings\" for the page or item in Search Console.",
+            "Equivalent to \"Error\" or \"Invalid\" for the page or item in Search Console.",
+            "Equivalent to \"Excluded\" for the page or item in Search Console."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "MobileUsabilityIssue": {
+      "id": "MobileUsabilityIssue",
+      "description": "Mobile-usability issue.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "issueType": {
+          "description": "Mobile-usability issue type.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "MOBILE_USABILITY_ISSUE_TYPE_UNSPECIFIED",
+            "USES_INCOMPATIBLE_PLUGINS",
+            "CONFIGURE_VIEWPORT",
+            "FIXED_WIDTH_VIEWPORT",
+            "SIZE_CONTENT_TO_VIEWPORT",
+            "USE_LEGIBLE_FONT_SIZES",
+            "TAP_TARGETS_TOO_CLOSE"
+          ],
+          "enumDescriptions": [
+            "Unknown issue. Sorry, we don't have any description for the rule that was broken.",
+            "Plugins incompatible with mobile devices are being used. [Learn more] (https://support.google.com/webmasters/answer/6352293#flash_usage#error-list).",
+            "Viewport is not specified using the meta viewport tag. [Learn more] (https://support.google.com/webmasters/answer/6352293#viewport_not_configured#error-list).",
+            "Viewport defined to a fixed width. [Learn more] (https://support.google.com/webmasters/answer/6352293#fixed-width_viewport#error-list).",
+            "Content not sized to viewport. [Learn more] (https://support.google.com/webmasters/answer/6352293#content_not_sized_to_viewport#error-list).",
+            "Font size is too small for easy reading on a small screen. [Learn More] (https://support.google.com/webmasters/answer/6352293#small_font_size#error-list).",
+            "Touch elements are too close to each other. [Learn more] (https://support.google.com/webmasters/answer/6352293#touch_elements_too_close#error-list)."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "message": {
+          "description": "Additional information regarding the issue.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "severity": {
+          "description": "Not returned; reserved for future use.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "SEVERITY_UNSPECIFIED",
+            "WARNING",
+            "ERROR"
+          ],
+          "enumDescriptions": [
+            "Unknown severity.",
+            "Warning.",
+            "Error."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -485,6 +1133,92 @@
         "blockedResource": {
           "description": "Describes a blocked resource issue.",
           "$ref": "BlockedResource"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RichResultsInspectionResult": {
+      "id": "RichResultsInspectionResult",
+      "description": "Rich-Results inspection result, including any rich results found at this URL.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "detectedItems": {
+          "description": "A list of zero or more rich results detected on this page. Rich results that cannot even be parsed due to syntactic issues will not be listed here.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "DetectedItems"
+          }
+        },
+        "verdict": {
+          "description": "High-level rich results inspection result for this URL.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "VERDICT_UNSPECIFIED",
+            "PASS",
+            "PARTIAL",
+            "FAIL",
+            "NEUTRAL"
+          ],
+          "enumDescriptions": [
+            "Unknown verdict.",
+            "Equivalent to \"Valid\" for the page or item in Search Console.",
+            "Equivalent to \"Valid with warnings\" for the page or item in Search Console.",
+            "Equivalent to \"Error\" or \"Invalid\" for the page or item in Search Console.",
+            "Equivalent to \"Excluded\" for the page or item in Search Console."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RichResultsIssue": {
+      "id": "RichResultsIssue",
+      "description": "Severity and status of a single issue affecting a single rich result instance on a page.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "issueMessage": {
+          "description": "Rich Results issue type.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "severity": {
+          "description": "Severity of this issue: WARNING, or ERROR. Items with an issue of status ERROR cannot appear with rich result features in Google Search results.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "SEVERITY_UNSPECIFIED",
+            "WARNING",
+            "ERROR"
+          ],
+          "enumDescriptions": [
+            "Unknown severity.",
+            "Warning.",
+            "Error."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -700,13 +1434,17 @@
             "WEB",
             "IMAGE",
             "VIDEO",
-            "NEWS"
+            "NEWS",
+            "DISCOVER",
+            "GOOGLE_NEWS"
           ],
           "enumDescriptions": [
             "",
             "",
             "",
-            ""
+            "News tab in search.",
+            "Discover.",
+            "Google News (news.google.com or mobile app)."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -728,6 +1466,30 @@
           "format": "int32",
           "enum": [],
           "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "type": {
+          "description": "Optional. [Optional; Default is \\\"web\\\"] Type of report: search type, or either Discover or Gnews.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "WEB",
+            "IMAGE",
+            "VIDEO",
+            "NEWS",
+            "DISCOVER",
+            "GOOGLE_NEWS"
+          ],
+          "enumDescriptions": [
+            "",
+            "",
+            "",
+            "News tab in search.",
+            "Discover.",
+            "Google News (news.google.com or mobile app)."
+          ],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -863,6 +1625,44 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "UrlInspectionResult": {
+      "id": "UrlInspectionResult",
+      "description": "URL inspection result, including all inspection results.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "ampResult": {
+          "description": "Result of the AMP analysis. Absent if the page is not an AMP page.",
+          "$ref": "AmpInspectionResult"
+        },
+        "indexStatusResult": {
+          "description": "Result of the index status analysis.",
+          "$ref": "IndexStatusInspectionResult"
+        },
+        "inspectionResultLink": {
+          "description": "Link to Search Console URL inspection.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "mobileUsabilityResult": {
+          "description": "Result of the Mobile usability analysis.",
+          "$ref": "MobileUsabilityInspectionResult"
+        },
+        "richResultsResult": {
+          "description": "Result of the Rich Results analysis. Absent if there are no rich results found.",
+          "$ref": "RichResultsInspectionResult"
         }
       },
       "additionalProperties": null,
@@ -1041,7 +1841,7 @@
       "enumDescriptions": [],
       "properties": {
         "indexed": {
-          "description": "The number of URLs from the sitemap that were indexed (of the content type).",
+          "description": "*Deprecated; do not use.*",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -1148,7 +1948,7 @@
           "id": "webmasters.sitemaps.delete",
           "path": "webmasters/v3/sites/{siteUrl}/sitemaps/{feedpath}",
           "httpMethod": "DELETE",
-          "description": "Deletes a sitemap from this site.",
+          "description": "Deletes a sitemap from the Sitemaps report. Does not stop Google from crawling this sitemap or the URLs that were previously crawled in the deleted sitemap.",
           "parameters": {
             "feedpath": {
               "description": "The URL of the actual sitemap. For example: `http://www.example.com/sitemap.xml`.",
@@ -1484,6 +2284,39 @@
           "mediaUpload": null
         }
       }
+    },
+    "urlInspection": {
+      "resources": {
+        "index": {
+          "resources": {},
+          "methods": {
+            "inspect": {
+              "id": "searchconsole.urlInspection.index.inspect",
+              "path": "v1/urlInspection/index:inspect",
+              "httpMethod": "POST",
+              "description": "Index inspection.",
+              "parameters": {},
+              "parameterOrder": [],
+              "request": {
+                "$ref": "InspectUrlIndexRequest"
+              },
+              "response": {
+                "$ref": "InspectUrlIndexResponse"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/webmasters",
+                "https://www.googleapis.com/auth/webmasters.readonly"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            }
+          }
+        }
+      },
+      "methods": {}
     },
     "urlTestingTools": {
       "resources": {

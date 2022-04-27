@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [operations](resources/projects/operations/struct.OperationsActions.html)\n        * [*get*](resources/projects/operations/struct.GetRequestBuilder.html)\n      * [tenants](resources/projects/tenants/struct.TenantsActions.html)\n        * [*completeQuery*](resources/projects/tenants/struct.CompleteQueryRequestBuilder.html), [*create*](resources/projects/tenants/struct.CreateRequestBuilder.html), [*delete*](resources/projects/tenants/struct.DeleteRequestBuilder.html), [*get*](resources/projects/tenants/struct.GetRequestBuilder.html), [*list*](resources/projects/tenants/struct.ListRequestBuilder.html), [*patch*](resources/projects/tenants/struct.PatchRequestBuilder.html)\n        * [client_events](resources/projects/tenants/client_events/struct.ClientEventsActions.html)\n          * [*create*](resources/projects/tenants/client_events/struct.CreateRequestBuilder.html)\n        * [companies](resources/projects/tenants/companies/struct.CompaniesActions.html)\n          * [*create*](resources/projects/tenants/companies/struct.CreateRequestBuilder.html), [*delete*](resources/projects/tenants/companies/struct.DeleteRequestBuilder.html), [*get*](resources/projects/tenants/companies/struct.GetRequestBuilder.html), [*list*](resources/projects/tenants/companies/struct.ListRequestBuilder.html), [*patch*](resources/projects/tenants/companies/struct.PatchRequestBuilder.html)\n        * [jobs](resources/projects/tenants/jobs/struct.JobsActions.html)\n          * [*batchCreate*](resources/projects/tenants/jobs/struct.BatchCreateRequestBuilder.html), [*batchDelete*](resources/projects/tenants/jobs/struct.BatchDeleteRequestBuilder.html), [*batchUpdate*](resources/projects/tenants/jobs/struct.BatchUpdateRequestBuilder.html), [*create*](resources/projects/tenants/jobs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/tenants/jobs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/tenants/jobs/struct.GetRequestBuilder.html), [*list*](resources/projects/tenants/jobs/struct.ListRequestBuilder.html), [*patch*](resources/projects/tenants/jobs/struct.PatchRequestBuilder.html), [*search*](resources/projects/tenants/jobs/struct.SearchRequestBuilder.html), [*searchForAlert*](resources/projects/tenants/jobs/struct.SearchForAlertRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
     #[doc = "Manage job postings\n\n`https://www.googleapis.com/auth/jobs`"]
     pub const JOBS: &str = "https://www.googleapis.com/auth/jobs";
@@ -489,10 +489,16 @@ pub mod schemas {
     pub enum CommuteFilterCommuteMethod {
         #[doc = "Commute method isn't specified."]
         CommuteMethodUnspecified,
+        #[doc = "Commute time is calculated based on biking time."]
+        Cycling,
         #[doc = "Commute time is calculated based on driving time."]
         Driving,
         #[doc = "Commute time is calculated based on public transit including bus, metro, subway, and so on."]
         Transit,
+        #[doc = "Commute time is calculated based on public transit that is wheelchair accessible."]
+        TransitAccessible,
+        #[doc = "Commute time is calculated based on walking time."]
+        Walking,
     }
     impl CommuteFilterCommuteMethod {
         pub fn as_str(self) -> &'static str {
@@ -500,8 +506,11 @@ pub mod schemas {
                 CommuteFilterCommuteMethod::CommuteMethodUnspecified => {
                     "COMMUTE_METHOD_UNSPECIFIED"
                 }
+                CommuteFilterCommuteMethod::Cycling => "CYCLING",
                 CommuteFilterCommuteMethod::Driving => "DRIVING",
                 CommuteFilterCommuteMethod::Transit => "TRANSIT",
+                CommuteFilterCommuteMethod::TransitAccessible => "TRANSIT_ACCESSIBLE",
+                CommuteFilterCommuteMethod::Walking => "WALKING",
             }
         }
     }
@@ -517,8 +526,11 @@ pub mod schemas {
                 "COMMUTE_METHOD_UNSPECIFIED" => {
                     CommuteFilterCommuteMethod::CommuteMethodUnspecified
                 }
+                "CYCLING" => CommuteFilterCommuteMethod::Cycling,
                 "DRIVING" => CommuteFilterCommuteMethod::Driving,
                 "TRANSIT" => CommuteFilterCommuteMethod::Transit,
+                "TRANSIT_ACCESSIBLE" => CommuteFilterCommuteMethod::TransitAccessible,
+                "WALKING" => CommuteFilterCommuteMethod::Walking,
                 _ => return Err(()),
             })
         }
@@ -546,8 +558,11 @@ pub mod schemas {
                 "COMMUTE_METHOD_UNSPECIFIED" => {
                     CommuteFilterCommuteMethod::CommuteMethodUnspecified
                 }
+                "CYCLING" => CommuteFilterCommuteMethod::Cycling,
                 "DRIVING" => CommuteFilterCommuteMethod::Driving,
                 "TRANSIT" => CommuteFilterCommuteMethod::Transit,
+                "TRANSIT_ACCESSIBLE" => CommuteFilterCommuteMethod::TransitAccessible,
+                "WALKING" => CommuteFilterCommuteMethod::Walking,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -1735,7 +1750,7 @@ pub mod schemas {
         )]
         pub importance_level:
             ::std::option::Option<crate::schemas::CustomRankingInfoImportanceLevel>,
-        #[doc = "Required. Controls over how job documents get ranked on top of existing relevance score (determined by API algorithm). A combination of the ranking expression and relevance score is used to determine job's final ranking position. The syntax for this expression is a subset of Google SQL syntax. Supported operators are: +, -, *, /, where the left and right side of the operator is either a numeric Job.custom_attributes key, integer/double value or an expression that can be evaluated to a number. Parenthesis are supported to adjust calculation precedence. The expression must be < 100 characters in length. The expression is considered invalid for a job if the expression references custom attributes that are not populated on the job or if the expression results in a divide by zero. If an expression is invalid for a job, that job is demoted to the end of the results. Sample ranking expression (year + 25) * 0.25 - (freshness / 0.5)"]
+        #[doc = "Required. Controls over how job documents get ranked on top of existing relevance score (determined by API algorithm). A combination of the ranking expression and relevance score is used to determine job's final ranking position. The syntax for this expression is a subset of Google SQL syntax. Supported operators are: +, -, *, /, where the left and right side of the operator is either a numeric Job.custom_attributes key, integer/double value or an expression that can be evaluated to a number. Parenthesis are supported to adjust calculation precedence. The expression must be < 200 characters in length. The expression is considered invalid for a job if the expression references custom attributes that are not populated on the job or if the expression results in a divide by zero. If an expression is invalid for a job, that job is demoted to the end of the results. Sample ranking expression (year + 25) * 0.25 - (freshness / 0.5)"]
         #[serde(
             rename = "rankingExpression",
             default,
@@ -2086,7 +2101,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Job {
-        #[doc = "Strongly recommended for the best service experience. Location(s) where the employer is looking to hire for this job posting. Specifying the full street address(es) of the hiring location enables better API results, especially job searches by commute time. At most 50 locations are allowed for best search performance. If a job has more locations, it is suggested to split it into multiple jobs with unique requisition_ids (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the same company, language_code and requisition_id are not allowed. If the original requisition_id must be preserved, a custom field should be used for storage. It is also suggested to group the locations that close to each other in the same job for better search experience. The maximum number of allowed characters is 500."]
+        #[doc = "Strongly recommended for the best service experience. Location(s) where the employer is looking to hire for this job posting. Specifying the full street address(es) of the hiring location enables better API results, especially job searches by commute time. At most 50 locations are allowed for best search performance. If a job has more locations, it is suggested to split it into multiple jobs with unique requisition_ids (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the same company, language_code and requisition_id are not allowed. If the original requisition_id must be preserved, a custom field should be used for storage. It is also suggested to group the locations that close to each other in the same job for better search experience. Jobs with multiple addresses must have their addresses with the same LocationType to allow location filtering to work properly. (For example, a Job with addresses \"1600 Amphitheatre Parkway, Mountain View, CA, USA\" and \"London, UK\" may not have location filters applied correctly at search time since the first is a LocationType.STREET_ADDRESS and the second is a LocationType.LOCALITY.) If a job needs to have multiple addresses, it is suggested to split it into multiple jobs with same LocationTypes. The maximum number of allowed characters is 500."]
         #[serde(
             rename = "addresses",
             default,
@@ -2121,7 +2136,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub compensation_info: ::std::option::Option<crate::schemas::CompensationInfo>,
-        #[doc = "A map of fields to hold both filterable and non-filterable custom job attributes that are not covered by the provided structured fields. The keys of the map are strings up to 64 bytes and must match the pattern: a-zA-Z*. For example, key0LikeThis or KEY_1_LIKE_THIS. At most 100 filterable and at most 100 unfilterable keys are supported. For filterable `string_values`, across all keys at most 200 values are allowed, with each string no more than 255 characters. For unfilterable `string_values`, the maximum total size of `string_values` across all keys is 50KB."]
+        #[doc = "A map of fields to hold both filterable and non-filterable custom job attributes that are not covered by the provided structured fields. The keys of the map are strings up to 64 bytes and must match the pattern: `a-zA-Z*`. For example, key0LikeThis or KEY_1_LIKE_THIS. At most 100 filterable and at most 100 unfilterable keys are supported. For filterable `string_values`, across all keys at most 200 values are allowed, with each string no more than 255 characters. For unfilterable `string_values`, the maximum total size of `string_values` across all keys is 50KB."]
         #[serde(
             rename = "customAttributes",
             default,
@@ -3432,7 +3447,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub companies: ::std::option::Option<Vec<String>>,
-        #[doc = "This filter specifies the exact company Company.display_name of the jobs to search against. If a value isn't specified, jobs within the search results are associated with any company. If multiple values are specified, jobs within the search results may be associated with any of the specified companies. At most 20 company display name filters are allowed."]
+        #[doc = "This filter specifies the company Company.display_name of the jobs to search against. The company name must match the value exactly. Alternatively, if the value being searched for is wrapped in `SUBSTRING_MATCH([value])`, the company name must contain a case insensitive substring match of the value. Using this function may increase latency. Sample Value: `SUBSTRING_MATCH(google)` If a value isn't specified, jobs within the search results are associated with any company. If multiple values are specified, jobs within the search results may be associated with any of the specified companies. At most 20 company display name filters are allowed."]
         #[serde(
             rename = "companyDisplayNames",
             default,
@@ -3446,7 +3461,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub compensation_filter: ::std::option::Option<crate::schemas::CompensationFilter>,
-        #[doc = "This filter specifies a structured syntax to match against the Job.custom_attributes marked as `filterable`. The syntax for this expression is a subset of SQL syntax. Supported operators are: `=`, `!=`, `<`, `<=`, `>`, and `>=` where the left of the operator is a custom field key and the right of the operator is a number or a quoted string. You must escape backslash (\\) and quote (\") characters. Supported functions are `LOWER([field_name])` to perform a case insensitive match and `EMPTY([field_name])` to filter on the existence of a key. Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting (for example, \"((A AND B AND C) OR NOT D) AND E\"), a maximum of 100 comparisons or functions are allowed in the expression. The expression must be < 6000 bytes in length. Sample Query: `(LOWER(driving_license)=\"class \\\"a\\\"\" OR EMPTY(driving_license)) AND driving_years > 10`"]
+        #[doc = "This filter specifies a structured syntax to match against the Job.custom_attributes marked as `filterable`. The syntax for this expression is a subset of SQL syntax. Supported operators are: `=`, `!=`, `<`, `<=`, `>`, and `>=` where the left of the operator is a custom field key and the right of the operator is a number or a quoted string. You must escape backslash (\\) and quote (\") characters. Supported functions are `LOWER([field_name])` to perform a case insensitive match and `EMPTY([field_name])` to filter on the existence of a key. Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting (for example, \"((A AND B AND C) OR NOT D) AND E\"), a maximum of 100 comparisons or functions are allowed in the expression. The expression must be < 10000 bytes in length. Sample Query: `(LOWER(driving_license)=\"class \\\"a\\\"\" OR EMPTY(driving_license)) AND driving_years > 10`"]
         #[serde(
             rename = "customAttributeFilter",
             default,
@@ -4272,7 +4287,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub region_code: ::std::option::Option<String>,
-        #[doc = "Allows the client to return jobs without a set location, specifically, telecommuting jobs (telecommuting is considered by the service as a special location. Job.posting_region indicates if a job permits telecommuting. If this field is set to TelecommutePreference.TELECOMMUTE_ALLOWED, telecommuting jobs are searched, and address and lat_lng are ignored. If not set or set to TelecommutePreference.TELECOMMUTE_EXCLUDED, telecommute job are not searched. This filter can be used by itself to search exclusively for telecommuting jobs, or it can be combined with another location filter to search for a combination of job locations, such as \"Mountain View\" or \"telecommuting\" jobs. However, when used in combination with other location filters, telecommuting jobs can be treated as less relevant than other jobs in the search response. This field is only used for job search requests."]
+        #[doc = "Allows the client to return jobs without a set location, specifically, telecommuting jobs (telecommuting is considered by the service as a special location). Job.posting_region indicates if a job permits telecommuting. If this field is set to TelecommutePreference.TELECOMMUTE_ALLOWED, telecommuting jobs are searched, and address and lat_lng are ignored. If not set or set to TelecommutePreference.TELECOMMUTE_EXCLUDED, the telecommute status of the jobs is ignored. Jobs that have PostingRegion.TELECOMMUTE and have additional Job.addresses may still be matched based on other location filters using address or latlng. This filter can be used by itself to search exclusively for telecommuting jobs, or it can be combined with another location filter to search for a combination of job locations, such as \"Mountain View\" or \"telecommuting\" jobs. However, when used in combination with other location filters, telecommuting jobs can be treated as less relevant than other jobs in the search response. This field is only used for job search requests."]
         #[serde(
             rename = "telecommutePreference",
             default,
@@ -4295,7 +4310,7 @@ pub mod schemas {
     pub enum LocationFilterTelecommutePreference {
         #[doc = "Allow telecommute jobs."]
         TelecommuteAllowed,
-        #[doc = "Exclude telecommute jobs."]
+        #[doc = "Ignore telecommute status of jobs."]
         TelecommuteExcluded,
         #[doc = "Default value if the telecommute preference isn't specified."]
         TelecommutePreferenceUnspecified,
@@ -4736,7 +4751,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub recipients: ::std::option::Option<Vec<String>>,
-        #[doc = "Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See http://cldr.unicode.org/ and http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: \"CH\" for Switzerland."]
+        #[doc = "Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See https://cldr.unicode.org/ and https://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: \"CH\" for Switzerland."]
         #[serde(
             rename = "regionCode",
             default,
@@ -5003,7 +5018,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub custom_ranking_info: ::std::option::Option<crate::schemas::CustomRankingInfo>,
-        #[doc = "Controls whether to disable exact keyword match on Job.title, Job.description, Job.company_display_name, Job.addresses, Job.qualifications. When disable keyword match is turned off, a keyword match returns jobs that do not match given category filters when there are matching keywords. For example, for the query \"program manager,\" a result is returned even if the job posting has the title \"software developer,\" which doesn't fall into \"program manager\" ontology, but does have \"program manager\" appearing in its description. For queries like \"cloud\" that don't contain title or location specific ontology, jobs with \"cloud\" keyword matches are returned regardless of this flag's value. Use Company.keyword_searchable_job_custom_attributes if company-specific globally matched custom field/attribute string values are needed. Enabling keyword match improves recall of subsequent search requests. Defaults to false."]
+        #[doc = "This field is deprecated. Please use SearchJobsRequest.keyword_match_mode going forward. To migrate, disable_keyword_match set to false maps to KeywordMatchMode.KEYWORD_MATCH_ALL, and disable_keyword_match set to true maps to KeywordMatchMode.KEYWORD_MATCH_DISABLED. If SearchJobsRequest.keyword_match_mode is set, this field is ignored. Controls whether to disable exact keyword match on Job.title, Job.description, Job.company_display_name, Job.addresses, Job.qualifications. When disable keyword match is turned off, a keyword match returns jobs that do not match given category filters when there are matching keywords. For example, for the query \"program manager,\" a result is returned even if the job posting has the title \"software developer,\" which doesn't fall into \"program manager\" ontology, but does have \"program manager\" appearing in its description. For queries like \"cloud\" that don't contain title or location specific ontology, jobs with \"cloud\" keyword matches are returned regardless of this flag's value. Use Company.keyword_searchable_job_custom_attributes if company-specific globally matched custom field/attribute string values are needed. Enabling keyword match improves recall of subsequent search requests. Defaults to false."]
         #[serde(
             rename = "disableKeywordMatch",
             default,
@@ -5025,7 +5040,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enable_broadening: ::std::option::Option<bool>,
-        #[doc = "An expression specifies a histogram request against matching jobs. Expression syntax is an aggregation function call with histogram facets and other options. Available aggregation function calls are: * `count(string_histogram_facet)`: Count the number of matching entities, for each distinct attribute value. * `count(numeric_histogram_facet, list of buckets)`: Count the number of matching entities within each bucket. Data types: * Histogram facet: facet names with format a-zA-Z+. * String: string like \"any string with backslash escape for quote(\").\" * Number: whole number and floating point number like 10, -1 and -0.01. * List: list of elements with comma(,) separator surrounded by square brackets, for example, [1, 2, 3] and [\"one\", \"two\", \"three\"]. Built-in constants: * MIN (minimum number similar to java Double.MIN_VALUE) * MAX (maximum number similar to java Double.MAX_VALUE) Built-in functions: * bucket(start, end[, label]): bucket built-in function creates a bucket with range of start, end). Note that the end is exclusive, for example, bucket(1, MAX, \"positive number\") or bucket(1, 10). Job histogram facets: * company_display_name: histogram by [Job.company_display_name. * employment_type: histogram by Job.employment_types, for example, \"FULL_TIME\", \"PART_TIME\". * company_size: histogram by CompanySize, for example, \"SMALL\", \"MEDIUM\", \"BIG\". * publish_time_in_month: histogram by the Job.posting_publish_time in months. Must specify list of numeric buckets in spec. * publish_time_in_year: histogram by the Job.posting_publish_time in years. Must specify list of numeric buckets in spec. * degree_types: histogram by the Job.degree_types, for example, \"Bachelors\", \"Masters\". * job_level: histogram by the Job.job_level, for example, \"Entry Level\". * country: histogram by the country code of jobs, for example, \"US\", \"FR\". * admin1: histogram by the admin1 code of jobs, which is a global placeholder referring to the state, province, or the particular term a country uses to define the geographic structure below the country level, for example, \"CA\", \"IL\". * city: histogram by a combination of the \"city name, admin1 code\". For example, \"Mountain View, CA\", \"New York, NY\". * admin1_country: histogram by a combination of the \"admin1 code, country\", for example, \"CA, US\", \"IL, US\". * city_coordinate: histogram by the city center's GPS coordinates (latitude and longitude), for example, 37.4038522,-122.0987765. Since the coordinates of a city center can change, customers may need to refresh them periodically. * locale: histogram by the Job.language_code, for example, \"en-US\", \"fr-FR\". * language: histogram by the language subtag of the Job.language_code, for example, \"en\", \"fr\". * category: histogram by the JobCategory, for example, \"COMPUTER_AND_IT\", \"HEALTHCARE\". * base_compensation_unit: histogram by the CompensationInfo.CompensationUnit of base salary, for example, \"WEEKLY\", \"MONTHLY\". * base_compensation: histogram by the base salary. Must specify list of numeric buckets to group results by. * annualized_base_compensation: histogram by the base annualized salary. Must specify list of numeric buckets to group results by. * annualized_total_compensation: histogram by the total annualized salary. Must specify list of numeric buckets to group results by. * string_custom_attribute: histogram by string Job.custom_attributes. Values can be accessed via square bracket notations like string_custom_attribute[\"key1\"]. * numeric_custom_attribute: histogram by numeric Job.custom_attributes. Values can be accessed via square bracket notations like numeric_custom_attribute[\"key1\"]. Must specify list of numeric buckets to group results by. Example expressions: * `count(admin1)` * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000), bucket(100000, MAX)])` * `count(string_custom_attribute[\"some-string-custom-attribute\"])` * `count(numeric_custom_attribute[\"some-numeric-custom-attribute\"], [bucket(MIN, 0, \"negative\"), bucket(0, MAX, \"non-negative\"])`"]
+        #[doc = "An expression specifies a histogram request against matching jobs. Expression syntax is an aggregation function call with histogram facets and other options. Available aggregation function calls are: * `count(string_histogram_facet)`: Count the number of matching entities, for each distinct attribute value. * `count(numeric_histogram_facet, list of buckets)`: Count the number of matching entities within each bucket. A maximum of 200 histogram buckets are supported. Data types: * Histogram facet: facet names with format `a-zA-Z+`. * String: string like \"any string with backslash escape for quote(\").\" * Number: whole number and floating point number like 10, -1 and -0.01. * List: list of elements with comma(,) separator surrounded by square brackets, for example, [1, 2, 3] and [\"one\", \"two\", \"three\"]. Built-in constants: * MIN (minimum number similar to java Double.MIN_VALUE) * MAX (maximum number similar to java Double.MAX_VALUE) Built-in functions: * bucket(start, end[, label]): bucket built-in function creates a bucket with range of start, end). Note that the end is exclusive, for example, bucket(1, MAX, \"positive number\") or bucket(1, 10). Job histogram facets: * company_display_name: histogram by [Job.company_display_name. * employment_type: histogram by Job.employment_types, for example, \"FULL_TIME\", \"PART_TIME\". * company_size: histogram by CompanySize, for example, \"SMALL\", \"MEDIUM\", \"BIG\". * publish_time_in_day: histogram by the Job.posting_publish_time in days. Must specify list of numeric buckets in spec. * publish_time_in_month: histogram by the Job.posting_publish_time in months. Must specify list of numeric buckets in spec. * publish_time_in_year: histogram by the Job.posting_publish_time in years. Must specify list of numeric buckets in spec. * degree_types: histogram by the Job.degree_types, for example, \"Bachelors\", \"Masters\". * job_level: histogram by the Job.job_level, for example, \"Entry Level\". * country: histogram by the country code of jobs, for example, \"US\", \"FR\". * admin1: histogram by the admin1 code of jobs, which is a global placeholder referring to the state, province, or the particular term a country uses to define the geographic structure below the country level, for example, \"CA\", \"IL\". * city: histogram by a combination of the \"city name, admin1 code\". For example, \"Mountain View, CA\", \"New York, NY\". * admin1_country: histogram by a combination of the \"admin1 code, country\", for example, \"CA, US\", \"IL, US\". * city_coordinate: histogram by the city center's GPS coordinates (latitude and longitude), for example, 37.4038522,-122.0987765. Since the coordinates of a city center can change, customers may need to refresh them periodically. * locale: histogram by the Job.language_code, for example, \"en-US\", \"fr-FR\". * language: histogram by the language subtag of the Job.language_code, for example, \"en\", \"fr\". * category: histogram by the JobCategory, for example, \"COMPUTER_AND_IT\", \"HEALTHCARE\". * base_compensation_unit: histogram by the CompensationInfo.CompensationUnit of base salary, for example, \"WEEKLY\", \"MONTHLY\". * base_compensation: histogram by the base salary. Must specify list of numeric buckets to group results by. * annualized_base_compensation: histogram by the base annualized salary. Must specify list of numeric buckets to group results by. * annualized_total_compensation: histogram by the total annualized salary. Must specify list of numeric buckets to group results by. * string_custom_attribute: histogram by string Job.custom_attributes. Values can be accessed via square bracket notations like string_custom_attribute[\"key1\"]. * numeric_custom_attribute: histogram by numeric Job.custom_attributes. Values can be accessed via square bracket notations like numeric_custom_attribute[\"key1\"]. Must specify list of numeric buckets to group results by. Example expressions: * `count(admin1)` * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000), bucket(100000, MAX)])` * `count(string_custom_attribute[\"some-string-custom-attribute\"])` * `count(numeric_custom_attribute[\"some-numeric-custom-attribute\"], [bucket(MIN, 0, \"negative\"), bucket(0, MAX, \"non-negative\")])`"]
         #[serde(
             rename = "histogramQueries",
             default,
@@ -5046,6 +5061,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub job_view: ::std::option::Option<crate::schemas::SearchJobsRequestJobView>,
+        #[doc = "Controls what keyword match options to use. If both keyword_match_mode and disable_keyword_match are set, keyword_match_mode will take precedence. Defaults to KeywordMatchMode.KEYWORD_MATCH_ALL if no value is specified."]
+        #[serde(
+            rename = "keywordMatchMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub keyword_match_mode:
+            ::std::option::Option<crate::schemas::SearchJobsRequestKeywordMatchMode>,
         #[doc = "A limit on the number of jobs returned in the search results. Increasing this value above the default value of 10 can increase search response time. The value can be between 1 and 100."]
         #[serde(
             rename = "maxPageSize",
@@ -5105,8 +5128,14 @@ pub mod schemas {
         Disabled,
         #[doc = "The diversification level isn't specified."]
         DiversificationLevelUnspecified,
-        #[doc = "Default diversifying behavior. The result list is ordered so that highly similar results are pushed to the end of the last page of search results. If you are using pageToken to page through the result set, latency might be lower but we can't guarantee that all results are returned. If you are using page offset, latency might be higher but all results are returned."]
+        #[doc = "The result list is ordered such that somewhat similar results are pushed to the end of the last page of the search results. This option is recommended if SIMPLE diversification does not diversify enough."]
+        DiversifyByLooserSimilarity,
+        #[doc = "Only one job from the same company will be shown at once, other jobs under same company are pushed to the end of the last page of search result."]
+        OnePerCompany,
+        #[doc = "Default diversifying behavior. The result list is ordered so that highly similar results are pushed to the end of the last page of search results."]
         Simple,
+        #[doc = "Similar to ONE_PER_COMPANY, but it allows at most two jobs in the same company to be shown at once, the other jobs under same company are pushed to the end of the last page of search result."]
+        TwoPerCompany,
     }
     impl SearchJobsRequestDiversificationLevel {
         pub fn as_str(self) -> &'static str {
@@ -5115,7 +5144,12 @@ pub mod schemas {
                 SearchJobsRequestDiversificationLevel::DiversificationLevelUnspecified => {
                     "DIVERSIFICATION_LEVEL_UNSPECIFIED"
                 }
+                SearchJobsRequestDiversificationLevel::DiversifyByLooserSimilarity => {
+                    "DIVERSIFY_BY_LOOSER_SIMILARITY"
+                }
+                SearchJobsRequestDiversificationLevel::OnePerCompany => "ONE_PER_COMPANY",
                 SearchJobsRequestDiversificationLevel::Simple => "SIMPLE",
+                SearchJobsRequestDiversificationLevel::TwoPerCompany => "TWO_PER_COMPANY",
             }
         }
     }
@@ -5132,7 +5166,12 @@ pub mod schemas {
                 "DIVERSIFICATION_LEVEL_UNSPECIFIED" => {
                     SearchJobsRequestDiversificationLevel::DiversificationLevelUnspecified
                 }
+                "DIVERSIFY_BY_LOOSER_SIMILARITY" => {
+                    SearchJobsRequestDiversificationLevel::DiversifyByLooserSimilarity
+                }
+                "ONE_PER_COMPANY" => SearchJobsRequestDiversificationLevel::OnePerCompany,
                 "SIMPLE" => SearchJobsRequestDiversificationLevel::Simple,
+                "TWO_PER_COMPANY" => SearchJobsRequestDiversificationLevel::TwoPerCompany,
                 _ => return Err(()),
             })
         }
@@ -5161,7 +5200,12 @@ pub mod schemas {
                 "DIVERSIFICATION_LEVEL_UNSPECIFIED" => {
                     SearchJobsRequestDiversificationLevel::DiversificationLevelUnspecified
                 }
+                "DIVERSIFY_BY_LOOSER_SIMILARITY" => {
+                    SearchJobsRequestDiversificationLevel::DiversifyByLooserSimilarity
+                }
+                "ONE_PER_COMPANY" => SearchJobsRequestDiversificationLevel::OnePerCompany,
                 "SIMPLE" => SearchJobsRequestDiversificationLevel::Simple,
+                "TWO_PER_COMPANY" => SearchJobsRequestDiversificationLevel::TwoPerCompany,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -5263,6 +5307,99 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SearchJobsRequestJobView {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum SearchJobsRequestKeywordMatchMode {
+        #[doc = "Enable keyword matching over Job.title, Job.description, Job.company_display_name, Job.addresses, Job.qualifications, and keyword searchable Job.custom_attributes fields."]
+        KeywordMatchAll,
+        #[doc = "Disables keyword matching."]
+        KeywordMatchDisabled,
+        #[doc = "The keyword match option isn't specified. Defaults to KeywordMatchMode.KEYWORD_MATCH_ALL behavior."]
+        KeywordMatchModeUnspecified,
+        #[doc = "Only enable keyword matching over Job.title."]
+        KeywordMatchTitleOnly,
+    }
+    impl SearchJobsRequestKeywordMatchMode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                SearchJobsRequestKeywordMatchMode::KeywordMatchAll => "KEYWORD_MATCH_ALL",
+                SearchJobsRequestKeywordMatchMode::KeywordMatchDisabled => "KEYWORD_MATCH_DISABLED",
+                SearchJobsRequestKeywordMatchMode::KeywordMatchModeUnspecified => {
+                    "KEYWORD_MATCH_MODE_UNSPECIFIED"
+                }
+                SearchJobsRequestKeywordMatchMode::KeywordMatchTitleOnly => {
+                    "KEYWORD_MATCH_TITLE_ONLY"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for SearchJobsRequestKeywordMatchMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for SearchJobsRequestKeywordMatchMode {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<SearchJobsRequestKeywordMatchMode, ()> {
+            Ok(match s {
+                "KEYWORD_MATCH_ALL" => SearchJobsRequestKeywordMatchMode::KeywordMatchAll,
+                "KEYWORD_MATCH_DISABLED" => SearchJobsRequestKeywordMatchMode::KeywordMatchDisabled,
+                "KEYWORD_MATCH_MODE_UNSPECIFIED" => {
+                    SearchJobsRequestKeywordMatchMode::KeywordMatchModeUnspecified
+                }
+                "KEYWORD_MATCH_TITLE_ONLY" => {
+                    SearchJobsRequestKeywordMatchMode::KeywordMatchTitleOnly
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for SearchJobsRequestKeywordMatchMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for SearchJobsRequestKeywordMatchMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for SearchJobsRequestKeywordMatchMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "KEYWORD_MATCH_ALL" => SearchJobsRequestKeywordMatchMode::KeywordMatchAll,
+                "KEYWORD_MATCH_DISABLED" => SearchJobsRequestKeywordMatchMode::KeywordMatchDisabled,
+                "KEYWORD_MATCH_MODE_UNSPECIFIED" => {
+                    SearchJobsRequestKeywordMatchMode::KeywordMatchModeUnspecified
+                }
+                "KEYWORD_MATCH_TITLE_ONLY" => {
+                    SearchJobsRequestKeywordMatchMode::KeywordMatchTitleOnly
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for SearchJobsRequestKeywordMatchMode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SearchJobsRequestKeywordMatchMode {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -10110,7 +10247,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Required. The filter string specifies the jobs to be enumerated. Supported operator: =, AND The fields eligible for filtering are: * `companyName` (Required) * `requisitionId` * `status` Available values: OPEN, EXPIRED, ALL. Defaults to OPEN if no value is specified. Sample Query: * companyName = \"projects/foo/tenants/bar/companies/baz\" * companyName = \"projects/foo/tenants/bar/companies/baz\" AND requisitionId = \"req-1\" * companyName = \"projects/foo/tenants/bar/companies/baz\" AND status = \"EXPIRED\""]
+                    #[doc = "Required. The filter string specifies the jobs to be enumerated. Supported operator: =, AND The fields eligible for filtering are: * `companyName` * `requisitionId` * `status` Available values: OPEN, EXPIRED, ALL. Defaults to OPEN if no value is specified. At least one of `companyName` and `requisitionId` must present or an INVALID_ARGUMENT error is thrown. Sample Query: * companyName = \"projects/foo/tenants/bar/companies/baz\" * companyName = \"projects/foo/tenants/bar/companies/baz\" AND requisitionId = \"req-1\" * companyName = \"projects/foo/tenants/bar/companies/baz\" AND status = \"EXPIRED\" * requisitionId = \"req-1\" * requisitionId = \"req-1\" AND status = \"EXPIRED\""]
                     pub fn filter(mut self, value: impl Into<String>) -> Self {
                         self.filter = Some(value.into());
                         self

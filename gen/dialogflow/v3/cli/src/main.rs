@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("dialogflow3")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210318")
+            .version("0.1.0-20220417")
             .about("Builds conversational interfaces (for example, chatbots, and voice-powered apps and devices).")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -38,12 +38,21 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: locations and operations");
         let mut locations1 = SubCommand::with_name("locations")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: agents, operations and security_settings");
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets information about a location.");
+            locations1 = locations1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists information about the supported locations for this service.");
+            locations1 = locations1.subcommand(mcmd);
+        }
         let mut operations1 = SubCommand::with_name("operations")
             .setting(AppSettings::ColoredHelp)
             .about("methods: cancel, get and list");
         {
-            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn\'t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
+            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
             operations1 = operations1.subcommand(mcmd);
         }
         {
@@ -51,15 +60,14 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             operations1 = operations1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn\'t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations1 = operations1.subcommand(mcmd);
         }
         let mut agents2 = SubCommand::with_name("agents")
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: create, delete, export, get, get_validation_result, list, patch, restore and validate");
         {
-            let mcmd = SubCommand::with_name("create")
-                .about("Creates an agent in the specified location.");
+            let mcmd = SubCommand::with_name("create").about("Creates an agent in the specified location. Note: You should always train flows prior to sending them queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             agents2 = agents2.subcommand(mcmd);
         }
         {
@@ -67,8 +75,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             agents2 = agents2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("export")
-                .about("Exports the specified agent to a binary file.");
+            let mcmd = SubCommand::with_name("export").about("Exports the specified agent to a binary file. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: An empty [Struct message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: ExportAgentResponse");
             agents2 = agents2.subcommand(mcmd);
         }
         {
@@ -85,11 +92,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             agents2 = agents2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates the specified agent.");
+            let mcmd = SubCommand::with_name("patch").about("Updates the specified agent. Note: You should always train flows prior to sending them queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             agents2 = agents2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("restore").about("Restores the specified agent from a binary file. Replaces the current agent with a new one. Note that all existing resources in agent (e.g. intents, entity types, flows) will be removed.");
+            let mcmd = SubCommand::with_name("restore").about("Restores the specified agent from a binary file. Replaces the current agent with a new one. Note that all existing resources in agent (e.g. intents, entity types, flows) will be removed. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: An empty [Struct message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: An [Empty message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty) Note: You should always train flows prior to sending them queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             agents2 = agents2.subcommand(mcmd);
         }
         {
@@ -100,7 +107,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: cancel, get and list");
         {
-            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn\'t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
+            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
             operations2 = operations2.subcommand(mcmd);
         }
         {
@@ -108,7 +115,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             operations2 = operations2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn\'t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations2 = operations2.subcommand(mcmd);
         }
         let mut security_settings2 = SubCommand::with_name("security_settings")
@@ -138,16 +145,26 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 SubCommand::with_name("patch").about("Updates the specified SecuritySettings.");
             security_settings2 = security_settings2.subcommand(mcmd);
         }
+        let mut changelogs3 = SubCommand::with_name("changelogs")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Retrieves the specified Changelog.");
+            changelogs3 = changelogs3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Returns the list of Changelogs.");
+            changelogs3 = changelogs3.subcommand(mcmd);
+        }
         let mut entity_types3 = SubCommand::with_name("entity_types")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
         {
-            let mcmd = SubCommand::with_name("create")
-                .about("Creates an entity type in the specified agent.");
+            let mcmd = SubCommand::with_name("create").about("Creates an entity type in the specified agent. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             entity_types3 = entity_types3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes the specified entity type.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes the specified entity type. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             entity_types3 = entity_types3.subcommand(mcmd);
         }
         {
@@ -160,19 +177,22 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             entity_types3 = entity_types3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates the specified entity type.");
+            let mcmd = SubCommand::with_name("patch").about("Updates the specified entity type. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             entity_types3 = entity_types3.subcommand(mcmd);
         }
         let mut environments3 = SubCommand::with_name("environments")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list, lookup_environment_history and patch");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, deploy_flow, get, list, lookup_environment_history, patch and run_continuous_test");
         {
-            let mcmd = SubCommand::with_name("create")
-                .about("Creates an Environment in the specified Agent.");
+            let mcmd = SubCommand::with_name("create").about("Creates an Environment in the specified Agent. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: An empty [Struct message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: Environment");
             environments3 = environments3.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("delete").about("Deletes the specified Environment.");
+            environments3 = environments3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("deploy_flow").about("Deploys a flow to the specified Environment. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: DeployFlowMetadata - `response`: DeployFlowResponse");
             environments3 = environments3.subcommand(mcmd);
         }
         {
@@ -190,19 +210,26 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             environments3 = environments3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates the specified Environment.");
+            let mcmd = SubCommand::with_name("patch").about("Updates the specified Environment. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: An empty [Struct message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: Environment");
+            environments3 = environments3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("run_continuous_test").about("Kicks off a continuous test under the specified Environment. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: RunContinuousTestMetadata - `response`: RunContinuousTestResponse");
             environments3 = environments3.subcommand(mcmd);
         }
         let mut flows3 = SubCommand::with_name("flows")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: create, delete, get, get_validation_result, list, patch, train and validate");
+                        .about("methods: create, delete, export, get, get_validation_result, import, list, patch, train and validate");
         {
-            let mcmd =
-                SubCommand::with_name("create").about("Creates a flow in the specified agent.");
+            let mcmd = SubCommand::with_name("create").about("Creates a flow in the specified agent. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             flows3 = flows3.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("delete").about("Deletes a specified flow.");
+            flows3 = flows3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("export").about("Exports the specified flow to a binary file. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: An empty [Struct message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: ExportFlowResponse Note that resources (e.g. intents, entities, webhooks) that the flow references will also be exported.");
             flows3 = flows3.subcommand(mcmd);
         }
         {
@@ -214,16 +241,20 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             flows3 = flows3.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("import").about("Imports the specified flow to the specified agent from a binary file. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: An empty [Struct message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: ImportFlowResponse Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
+            flows3 = flows3.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("list")
                 .about("Returns the list of all flows in the specified agent.");
             flows3 = flows3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates the specified flow.");
+            let mcmd = SubCommand::with_name("patch").about("Updates the specified flow. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             flows3 = flows3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("train").about("Trains the specified flow. Note that only the flow in \'draft\' environment is trained.");
+            let mcmd = SubCommand::with_name("train").about("Trains the specified flow. Note that only the flow in 'draft' environment is trained. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: An empty [Struct message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: An [Empty message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty) Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             flows3 = flows3.subcommand(mcmd);
         }
         {
@@ -234,12 +265,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
         {
-            let mcmd =
-                SubCommand::with_name("create").about("Creates an intent in the specified agent.");
+            let mcmd = SubCommand::with_name("create").about("Creates an intent in the specified agent. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             intents3 = intents3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes the specified intent.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes the specified intent. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             intents3 = intents3.subcommand(mcmd);
         }
         {
@@ -252,7 +282,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             intents3 = intents3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates the specified intent.");
+            let mcmd = SubCommand::with_name("patch").about("Updates the specified intent. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             intents3 = intents3.subcommand(mcmd);
         }
         let mut sessions3 = SubCommand::with_name("sessions")
@@ -268,7 +298,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("match_intent").about(
-                "Returns preliminary intent match results, doesn\'t change the session status.",
+                "Returns preliminary intent match results, doesn't change the session status.",
             );
             sessions3 = sessions3.subcommand(mcmd);
         }
@@ -280,8 +310,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             test_cases3 = test_cases3.subcommand(mcmd);
         }
         {
-            let mcmd =
-                SubCommand::with_name("batch_run").about("Kicks off a batch run of test cases.");
+            let mcmd = SubCommand::with_name("batch_run").about("Kicks off a batch run of test cases. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: BatchRunTestCasesMetadata - `response`: BatchRunTestCasesResponse");
             test_cases3 = test_cases3.subcommand(mcmd);
         }
         {
@@ -295,7 +324,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             test_cases3 = test_cases3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("export").about("Exports the test cases under the agent to a Cloud Storage bucket or a local file. Filter can be applied to export a subset of test cases.");
+            let mcmd = SubCommand::with_name("export").about("Exports the test cases under the agent to a Cloud Storage bucket or a local file. Filter can be applied to export a subset of test cases. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: ExportTestCasesMetadata - `response`: ExportTestCasesResponse");
             test_cases3 = test_cases3.subcommand(mcmd);
         }
         {
@@ -303,7 +332,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             test_cases3 = test_cases3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("import").about("Imports the test cases from a Cloud Storage bucket or a local file. It always creates new test cases and won\'t overwite any existing ones. The provided ID in the imported test case is neglected.");
+            let mcmd = SubCommand::with_name("import").about("Imports the test cases from a Cloud Storage bucket or a local file. It always creates new test cases and won't overwrite any existing ones. The provided ID in the imported test case is neglected. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: ImportTestCasesMetadata - `response`: ImportTestCasesResponse");
             test_cases3 = test_cases3.subcommand(mcmd);
         }
         {
@@ -316,7 +345,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             test_cases3 = test_cases3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("run").about("Kicks off a test case run.");
+            let mcmd = SubCommand::with_name("run").about("Kicks off a test case run. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: RunTestCaseMetadata - `response`: RunTestCaseResponse");
             test_cases3 = test_cases3.subcommand(mcmd);
         }
         let mut webhooks3 = SubCommand::with_name("webhooks")
@@ -343,6 +372,26 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("patch").about("Updates the specified webhook.");
             webhooks3 = webhooks3.subcommand(mcmd);
+        }
+        let mut continuous_test_results4 = SubCommand::with_name("continuous_test_results")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: list");
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Fetches a list of continuous test results for a given environment.");
+            continuous_test_results4 = continuous_test_results4.subcommand(mcmd);
+        }
+        let mut deployments4 = SubCommand::with_name("deployments")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Retrieves the specified Deployment.");
+            deployments4 = deployments4.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Returns the list of all deployments in the specified Environment.");
+            deployments4 = deployments4.subcommand(mcmd);
         }
         let mut experiments4 = SubCommand::with_name("experiments")
             .setting(AppSettings::ColoredHelp)
@@ -390,7 +439,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("match_intent").about(
-                "Returns preliminary intent match results, doesn\'t change the session status.",
+                "Returns preliminary intent match results, doesn't change the session status.",
             );
             sessions4 = sessions4.subcommand(mcmd);
         }
@@ -398,12 +447,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
         {
-            let mcmd =
-                SubCommand::with_name("create").about("Creates a page in the specified flow.");
+            let mcmd = SubCommand::with_name("create").about("Creates a page in the specified flow. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             pages4 = pages4.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes the specified page.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes the specified page. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             pages4 = pages4.subcommand(mcmd);
         }
         {
@@ -416,20 +464,18 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             pages4 = pages4.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates the specified page.");
+            let mcmd = SubCommand::with_name("patch").about("Updates the specified page. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             pages4 = pages4.subcommand(mcmd);
         }
         let mut transition_route_groups4 = SubCommand::with_name("transition_route_groups")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
         {
-            let mcmd = SubCommand::with_name("create")
-                .about("Creates an TransitionRouteGroup in the specified flow.");
+            let mcmd = SubCommand::with_name("create").about("Creates an TransitionRouteGroup in the specified flow. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             transition_route_groups4 = transition_route_groups4.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete")
-                .about("Deletes the specified TransitionRouteGroup.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes the specified TransitionRouteGroup. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             transition_route_groups4 = transition_route_groups4.subcommand(mcmd);
         }
         {
@@ -443,16 +489,19 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             transition_route_groups4 = transition_route_groups4.subcommand(mcmd);
         }
         {
-            let mcmd =
-                SubCommand::with_name("patch").about("Updates the specified TransitionRouteGroup.");
+            let mcmd = SubCommand::with_name("patch").about("Updates the specified TransitionRouteGroup. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).");
             transition_route_groups4 = transition_route_groups4.subcommand(mcmd);
         }
         let mut versions4 = SubCommand::with_name("versions")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list, load and patch");
+            .about("methods: compare_versions, create, delete, get, list, load and patch");
         {
-            let mcmd =
-                SubCommand::with_name("create").about("Creates a Version in the specified Flow.");
+            let mcmd = SubCommand::with_name("compare_versions")
+                .about("Compares the specified base version with target version.");
+            versions4 = versions4.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a Version in the specified Flow. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: CreateVersionOperationMetadata - `response`: Version");
             versions4 = versions4.subcommand(mcmd);
         }
         {
@@ -469,8 +518,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             versions4 = versions4.subcommand(mcmd);
         }
         {
-            let mcmd =
-                SubCommand::with_name("load").about("Loads a specified version to draft version.");
+            let mcmd = SubCommand::with_name("load").about("Loads resources in the specified version to the draft flow. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: An empty [Struct message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: An [Empty message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)");
             versions4 = versions4.subcommand(mcmd);
         }
         {
@@ -551,6 +599,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         flows3 = flows3.subcommand(pages4);
         environments3 = environments3.subcommand(sessions4);
         environments3 = environments3.subcommand(experiments4);
+        environments3 = environments3.subcommand(deployments4);
+        environments3 = environments3.subcommand(continuous_test_results4);
         agents2 = agents2.subcommand(webhooks3);
         agents2 = agents2.subcommand(test_cases3);
         agents2 = agents2.subcommand(sessions3);
@@ -558,6 +608,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         agents2 = agents2.subcommand(flows3);
         agents2 = agents2.subcommand(environments3);
         agents2 = agents2.subcommand(entity_types3);
+        agents2 = agents2.subcommand(changelogs3);
         locations1 = locations1.subcommand(security_settings2);
         locations1 = locations1.subcommand(operations2);
         locations1 = locations1.subcommand(agents2);

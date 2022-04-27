@@ -1,4 +1,4 @@
-#![doc = "# Resources and Methods\n    * [operations](resources/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/operations/struct.CancelRequestBuilder.html), [*delete*](resources/operations/struct.DeleteRequestBuilder.html), [*get*](resources/operations/struct.GetRequestBuilder.html)\n      * [projects](resources/operations/projects/struct.ProjectsActions.html)\n        * [operations](resources/operations/projects/operations/struct.OperationsActions.html)\n          * [*list*](resources/operations/projects/operations/struct.ListRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [instances](resources/projects/instances/struct.InstancesActions.html)\n        * [*create*](resources/projects/instances/struct.CreateRequestBuilder.html), [*delete*](resources/projects/instances/struct.DeleteRequestBuilder.html), [*get*](resources/projects/instances/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/instances/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/instances/struct.ListRequestBuilder.html), [*partialUpdateInstance*](resources/projects/instances/struct.PartialUpdateInstanceRequestBuilder.html), [*setIamPolicy*](resources/projects/instances/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/instances/struct.TestIamPermissionsRequestBuilder.html), [*update*](resources/projects/instances/struct.UpdateRequestBuilder.html)\n        * [app_profiles](resources/projects/instances/app_profiles/struct.AppProfilesActions.html)\n          * [*create*](resources/projects/instances/app_profiles/struct.CreateRequestBuilder.html), [*delete*](resources/projects/instances/app_profiles/struct.DeleteRequestBuilder.html), [*get*](resources/projects/instances/app_profiles/struct.GetRequestBuilder.html), [*list*](resources/projects/instances/app_profiles/struct.ListRequestBuilder.html), [*patch*](resources/projects/instances/app_profiles/struct.PatchRequestBuilder.html)\n        * [clusters](resources/projects/instances/clusters/struct.ClustersActions.html)\n          * [*create*](resources/projects/instances/clusters/struct.CreateRequestBuilder.html), [*delete*](resources/projects/instances/clusters/struct.DeleteRequestBuilder.html), [*get*](resources/projects/instances/clusters/struct.GetRequestBuilder.html), [*list*](resources/projects/instances/clusters/struct.ListRequestBuilder.html), [*update*](resources/projects/instances/clusters/struct.UpdateRequestBuilder.html)\n          * [backups](resources/projects/instances/clusters/backups/struct.BackupsActions.html)\n            * [*create*](resources/projects/instances/clusters/backups/struct.CreateRequestBuilder.html), [*delete*](resources/projects/instances/clusters/backups/struct.DeleteRequestBuilder.html), [*get*](resources/projects/instances/clusters/backups/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/instances/clusters/backups/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/instances/clusters/backups/struct.ListRequestBuilder.html), [*patch*](resources/projects/instances/clusters/backups/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/instances/clusters/backups/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/instances/clusters/backups/struct.TestIamPermissionsRequestBuilder.html)\n        * [tables](resources/projects/instances/tables/struct.TablesActions.html)\n          * [*checkConsistency*](resources/projects/instances/tables/struct.CheckConsistencyRequestBuilder.html), [*create*](resources/projects/instances/tables/struct.CreateRequestBuilder.html), [*delete*](resources/projects/instances/tables/struct.DeleteRequestBuilder.html), [*dropRowRange*](resources/projects/instances/tables/struct.DropRowRangeRequestBuilder.html), [*generateConsistencyToken*](resources/projects/instances/tables/struct.GenerateConsistencyTokenRequestBuilder.html), [*get*](resources/projects/instances/tables/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/instances/tables/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/instances/tables/struct.ListRequestBuilder.html), [*modifyColumnFamilies*](resources/projects/instances/tables/struct.ModifyColumnFamiliesRequestBuilder.html), [*restore*](resources/projects/instances/tables/struct.RestoreRequestBuilder.html), [*setIamPolicy*](resources/projects/instances/tables/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/instances/tables/struct.TestIamPermissionsRequestBuilder.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [operations](resources/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/operations/struct.CancelRequestBuilder.html), [*delete*](resources/operations/struct.DeleteRequestBuilder.html), [*get*](resources/operations/struct.GetRequestBuilder.html)\n      * [projects](resources/operations/projects/struct.ProjectsActions.html)\n        * [operations](resources/operations/projects/operations/struct.OperationsActions.html)\n          * [*list*](resources/operations/projects/operations/struct.ListRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [instances](resources/projects/instances/struct.InstancesActions.html)\n        * [*create*](resources/projects/instances/struct.CreateRequestBuilder.html), [*delete*](resources/projects/instances/struct.DeleteRequestBuilder.html), [*get*](resources/projects/instances/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/instances/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/instances/struct.ListRequestBuilder.html), [*partialUpdateInstance*](resources/projects/instances/struct.PartialUpdateInstanceRequestBuilder.html), [*setIamPolicy*](resources/projects/instances/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/instances/struct.TestIamPermissionsRequestBuilder.html), [*update*](resources/projects/instances/struct.UpdateRequestBuilder.html)\n        * [app_profiles](resources/projects/instances/app_profiles/struct.AppProfilesActions.html)\n          * [*create*](resources/projects/instances/app_profiles/struct.CreateRequestBuilder.html), [*delete*](resources/projects/instances/app_profiles/struct.DeleteRequestBuilder.html), [*get*](resources/projects/instances/app_profiles/struct.GetRequestBuilder.html), [*list*](resources/projects/instances/app_profiles/struct.ListRequestBuilder.html), [*patch*](resources/projects/instances/app_profiles/struct.PatchRequestBuilder.html)\n        * [clusters](resources/projects/instances/clusters/struct.ClustersActions.html)\n          * [*create*](resources/projects/instances/clusters/struct.CreateRequestBuilder.html), [*delete*](resources/projects/instances/clusters/struct.DeleteRequestBuilder.html), [*get*](resources/projects/instances/clusters/struct.GetRequestBuilder.html), [*list*](resources/projects/instances/clusters/struct.ListRequestBuilder.html), [*partialUpdateCluster*](resources/projects/instances/clusters/struct.PartialUpdateClusterRequestBuilder.html), [*update*](resources/projects/instances/clusters/struct.UpdateRequestBuilder.html)\n          * [backups](resources/projects/instances/clusters/backups/struct.BackupsActions.html)\n            * [*create*](resources/projects/instances/clusters/backups/struct.CreateRequestBuilder.html), [*delete*](resources/projects/instances/clusters/backups/struct.DeleteRequestBuilder.html), [*get*](resources/projects/instances/clusters/backups/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/instances/clusters/backups/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/instances/clusters/backups/struct.ListRequestBuilder.html), [*patch*](resources/projects/instances/clusters/backups/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/instances/clusters/backups/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/instances/clusters/backups/struct.TestIamPermissionsRequestBuilder.html)\n          * [hot_tablets](resources/projects/instances/clusters/hot_tablets/struct.HotTabletsActions.html)\n            * [*list*](resources/projects/instances/clusters/hot_tablets/struct.ListRequestBuilder.html)\n        * [tables](resources/projects/instances/tables/struct.TablesActions.html)\n          * [*checkConsistency*](resources/projects/instances/tables/struct.CheckConsistencyRequestBuilder.html), [*create*](resources/projects/instances/tables/struct.CreateRequestBuilder.html), [*delete*](resources/projects/instances/tables/struct.DeleteRequestBuilder.html), [*dropRowRange*](resources/projects/instances/tables/struct.DropRowRangeRequestBuilder.html), [*generateConsistencyToken*](resources/projects/instances/tables/struct.GenerateConsistencyTokenRequestBuilder.html), [*get*](resources/projects/instances/tables/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/instances/tables/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/instances/tables/struct.ListRequestBuilder.html), [*modifyColumnFamilies*](resources/projects/instances/tables/struct.ModifyColumnFamiliesRequestBuilder.html), [*restore*](resources/projects/instances/tables/struct.RestoreRequestBuilder.html), [*setIamPolicy*](resources/projects/instances/tables/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/instances/tables/struct.TestIamPermissionsRequestBuilder.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Administer your Cloud Bigtable tables and clusters\n\n`https://www.googleapis.com/auth/bigtable.admin`"]
     pub const BIGTABLE_ADMIN: &str = "https://www.googleapis.com/auth/bigtable.admin";
@@ -18,9 +18,9 @@ pub mod scopes {
     #[doc = "Administer your Cloud Bigtable tables\n\n`https://www.googleapis.com/auth/cloud-bigtable.admin.table`"]
     pub const CLOUD_BIGTABLE_ADMIN_TABLE: &str =
         "https://www.googleapis.com/auth/cloud-bigtable.admin.table";
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
-    #[doc = "View your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
+    #[doc = "View your data across Google Cloud services and see the email address of your Google Account\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
     pub const CLOUD_PLATFORM_READ_ONLY: &str =
         "https://www.googleapis.com/auth/cloud-platform.read-only";
 }
@@ -254,7 +254,72 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct AutoscalingLimits {
+        #[doc = "Required. Maximum number of nodes to scale up to."]
+        #[serde(
+            rename = "maxServeNodes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub max_serve_nodes: ::std::option::Option<i32>,
+        #[doc = "Required. Minimum number of nodes to scale down to."]
+        #[serde(
+            rename = "minServeNodes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub min_serve_nodes: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for AutoscalingLimits {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AutoscalingLimits {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AutoscalingTargets {
+        #[doc = "The cpu utilization that the Autoscaler should be trying to achieve. This number is on a scale from 0 (no utilization) to 100 (total utilization), and is limited between 10 and 80, otherwise it will return INVALID_ARGUMENT error."]
+        #[serde(
+            rename = "cpuUtilizationPercent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cpu_utilization_percent: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for AutoscalingTargets {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AutoscalingTargets {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Backup {
+        #[doc = "Output only. The encryption information for the backup."]
+        #[serde(
+            rename = "encryptionInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encryption_info: ::std::option::Option<crate::schemas::EncryptionInfo>,
         #[doc = "Output only. `end_time` is the time that the backup was finished. The row data in the backup will be no newer than this timestamp."]
         #[serde(
             rename = "endTime",
@@ -457,21 +522,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Binding {
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -564,6 +629,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Cluster {
+        #[doc = "Configuration for this cluster."]
+        #[serde(
+            rename = "clusterConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cluster_config: ::std::option::Option<crate::schemas::ClusterConfig>,
         #[doc = "Immutable. The type of storage used by this cluster to serve its parent instance's tables, unless explicitly overridden."]
         #[serde(
             rename = "defaultStorageType",
@@ -571,6 +643,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_storage_type: ::std::option::Option<crate::schemas::ClusterDefaultStorageType>,
+        #[doc = "Immutable. The encryption configuration for CMEK-protected clusters."]
+        #[serde(
+            rename = "encryptionConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encryption_config: ::std::option::Option<crate::schemas::EncryptionConfig>,
         #[doc = "Immutable. The location where this cluster's nodes and storage reside. For best performance, clients should be located as close as possible to this cluster. Currently only zones are supported, so values should be of the form `projects/{project}/locations/{zone}`."]
         #[serde(
             rename = "location",
@@ -585,7 +664,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. The number of nodes allocated to this cluster. More nodes enable higher throughput and more consistent performance."]
+        #[doc = "The number of nodes allocated to this cluster. More nodes enable higher throughput and more consistent performance."]
         #[serde(
             rename = "serveNodes",
             default,
@@ -784,7 +863,73 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct ClusterAutoscalingConfig {
+        #[doc = "Required. Autoscaling limits for this cluster."]
+        #[serde(
+            rename = "autoscalingLimits",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub autoscaling_limits: ::std::option::Option<crate::schemas::AutoscalingLimits>,
+        #[doc = "Required. Autoscaling targets for this cluster."]
+        #[serde(
+            rename = "autoscalingTargets",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub autoscaling_targets: ::std::option::Option<crate::schemas::AutoscalingTargets>,
+    }
+    impl ::google_field_selector::FieldSelector for ClusterAutoscalingConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ClusterAutoscalingConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ClusterConfig {
+        #[doc = "Autoscaling configuration for this cluster."]
+        #[serde(
+            rename = "clusterAutoscalingConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cluster_autoscaling_config:
+            ::std::option::Option<crate::schemas::ClusterAutoscalingConfig>,
+    }
+    impl ::google_field_selector::FieldSelector for ClusterConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ClusterConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct ClusterState {
+        #[doc = "Output only. The encryption information for the table in this cluster. If the encryption key protecting this resource is customer managed, then its version can be rotated in Cloud Key Management Service (Cloud KMS). The primary version of the key and its status will be reflected here when changes propagate from Cloud KMS."]
+        #[serde(
+            rename = "encryptionInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encryption_info: ::std::option::Option<Vec<crate::schemas::EncryptionInfo>>,
         #[doc = "Output only. The state of replication for the table in this cluster."]
         #[serde(
             rename = "replicationState",
@@ -1134,7 +1279,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CreateInstanceRequest {
-        #[doc = "Required. The clusters to be created within the instance, mapped by desired cluster ID, e.g., just `mycluster` rather than `projects/myproject/instances/myinstance/clusters/mycluster`. Fields marked `OutputOnly` must be left blank. Currently, at most four clusters can be specified."]
+        #[doc = "Required. The clusters to be created within the instance, mapped by desired cluster ID, e.g., just `mycluster` rather than `projects/myproject/instances/myinstance/clusters/mycluster`. Fields marked `OutputOnly` must be left blank."]
         #[serde(
             rename = "clusters",
             default,
@@ -1174,18 +1319,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct CreateTableRequest {
         #[doc = "The optional list of row keys that will be used to initially split the table into several tablets (tablets are similar to HBase regions). Given two split keys, `s1` and `s2`, three tablets will be created, spanning the key ranges: `[, s1), [s1, s2), [s2, )`. Example: * Row keys := `[\"a\", \"apple\", \"custom\", \"customer_1\", \"customer_2\",` `\"other\", \"zz\"]` * initial_split_keys := `[\"apple\", \"customer_1\", \"customer_2\", \"other\"]` * Key assignment: - Tablet 1 `[, apple) => {\"a\"}.` - Tablet 2 `[apple, customer_1) => {\"apple\", \"custom\"}.` - Tablet 3 `[customer_1, customer_2) => {\"customer_1\"}.` - Tablet 4 `[customer_2, other) => {\"customer_2\"}.` - Tablet 5 `[other, ) => {\"other\", \"zz\"}.`"]
         #[serde(
@@ -1293,6 +1427,165 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct EncryptionConfig {
+        #[doc = "Describes the Cloud KMS encryption key that will be used to protect the destination Bigtable cluster. The requirements for this key are: 1) The Cloud Bigtable service account associated with the project that contains this cluster must be granted the `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key. 2) Only regional keys can be used and the region of the CMEK key must match the region of the cluster. Values are of the form `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`"]
+        #[serde(
+            rename = "kmsKeyName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kms_key_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for EncryptionConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for EncryptionConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct EncryptionInfo {
+        #[doc = "Output only. The status of encrypt/decrypt calls on underlying data for this resource. Regardless of status, the existing data is always encrypted at rest."]
+        #[serde(
+            rename = "encryptionStatus",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encryption_status: ::std::option::Option<crate::schemas::Status>,
+        #[doc = "Output only. The type of encryption used to protect this resource."]
+        #[serde(
+            rename = "encryptionType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encryption_type: ::std::option::Option<crate::schemas::EncryptionInfoEncryptionType>,
+        #[doc = "Output only. The version of the Cloud KMS key specified in the parent cluster that is in use for the data underlying this table."]
+        #[serde(
+            rename = "kmsKeyVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kms_key_version: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for EncryptionInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for EncryptionInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum EncryptionInfoEncryptionType {
+        #[doc = "The data backing this resource is encrypted at rest with a key that is managed by the customer. The in-use version of the key and its status are populated for CMEK-protected tables. CMEK-protected backups are pinned to the key version that was in use at the time the backup was taken. This key version is populated but its status is not tracked and is reported as `UNKNOWN`."]
+        CustomerManagedEncryption,
+        #[doc = "Encryption type was not specified, though data at rest remains encrypted."]
+        EncryptionTypeUnspecified,
+        #[doc = "The data backing this resource is encrypted at rest with a key that is fully managed by Google. No key version or status will be populated. This is the default state."]
+        GoogleDefaultEncryption,
+    }
+    impl EncryptionInfoEncryptionType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                EncryptionInfoEncryptionType::CustomerManagedEncryption => {
+                    "CUSTOMER_MANAGED_ENCRYPTION"
+                }
+                EncryptionInfoEncryptionType::EncryptionTypeUnspecified => {
+                    "ENCRYPTION_TYPE_UNSPECIFIED"
+                }
+                EncryptionInfoEncryptionType::GoogleDefaultEncryption => {
+                    "GOOGLE_DEFAULT_ENCRYPTION"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for EncryptionInfoEncryptionType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for EncryptionInfoEncryptionType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<EncryptionInfoEncryptionType, ()> {
+            Ok(match s {
+                "CUSTOMER_MANAGED_ENCRYPTION" => {
+                    EncryptionInfoEncryptionType::CustomerManagedEncryption
+                }
+                "ENCRYPTION_TYPE_UNSPECIFIED" => {
+                    EncryptionInfoEncryptionType::EncryptionTypeUnspecified
+                }
+                "GOOGLE_DEFAULT_ENCRYPTION" => {
+                    EncryptionInfoEncryptionType::GoogleDefaultEncryption
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for EncryptionInfoEncryptionType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for EncryptionInfoEncryptionType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for EncryptionInfoEncryptionType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CUSTOMER_MANAGED_ENCRYPTION" => {
+                    EncryptionInfoEncryptionType::CustomerManagedEncryption
+                }
+                "ENCRYPTION_TYPE_UNSPECIFIED" => {
+                    EncryptionInfoEncryptionType::EncryptionTypeUnspecified
+                }
+                "GOOGLE_DEFAULT_ENCRYPTION" => {
+                    EncryptionInfoEncryptionType::GoogleDefaultEncryption
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for EncryptionInfoEncryptionType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for EncryptionInfoEncryptionType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Expr {
         #[doc = "Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI."]
         #[serde(
@@ -1329,78 +1622,6 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Expr {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct FailureTrace {
-        #[serde(
-            rename = "frames",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub frames: ::std::option::Option<Vec<crate::schemas::Frame>>,
-    }
-    impl ::google_field_selector::FieldSelector for FailureTrace {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for FailureTrace {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct Frame {
-        #[serde(
-            rename = "targetName",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub target_name: ::std::option::Option<String>,
-        #[serde(
-            rename = "workflowGuid",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub workflow_guid: ::std::option::Option<String>,
-        #[serde(
-            rename = "zoneId",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub zone_id: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for Frame {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for Frame {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1556,7 +1777,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GetPolicyOptions {
-        #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "requestedPolicyVersion",
             default,
@@ -1575,6 +1796,70 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct HotTablet {
+        #[doc = "Tablet End Key (inclusive)."]
+        #[serde(
+            rename = "endKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub end_key: ::std::option::Option<String>,
+        #[doc = "Output only. The end time of the hot tablet."]
+        #[serde(
+            rename = "endTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub end_time: ::std::option::Option<String>,
+        #[doc = "The unique name of the hot tablet. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}/hotTablets/[a-zA-Z0-9_-]*`."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Output only. The average CPU usage spent by a node on this tablet over the start_time to end_time time range. The percentage is the amount of CPU used by the node to serve the tablet, from 0% (tablet was not interacted with) to 100% (the node spent all cycles serving the hot tablet)."]
+        #[serde(
+            rename = "nodeCpuUsagePercent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub node_cpu_usage_percent: ::std::option::Option<f32>,
+        #[doc = "Tablet Start Key (inclusive)."]
+        #[serde(
+            rename = "startKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub start_key: ::std::option::Option<String>,
+        #[doc = "Output only. The start time of the hot tablet."]
+        #[serde(
+            rename = "startTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub start_time: ::std::option::Option<String>,
+        #[doc = "Name of the table that contains the tablet. Values are of the form `projects/{project}/instances/{instance}/tables/_a-zA-Z0-9*`."]
+        #[serde(
+            rename = "tableName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub table_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for HotTablet {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for HotTablet {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug,
         Clone,
         PartialEq,
@@ -1587,6 +1872,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Instance {
+        #[doc = "Output only. A server-assigned timestamp representing when this Instance was created. For instances created before this field was added (August 2021), this value is `seconds: 0, nanos: 1`."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
         #[doc = "Required. The descriptive name for this instance as it appears in UIs. Can be changed at any time, but should be kept globally unique to avoid confusion."]
         #[serde(
             rename = "displayName",
@@ -1861,18 +2153,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct ListBackupsResponse {
         #[doc = "The list of matching backups."]
         #[serde(
@@ -1940,6 +2221,35 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ListClustersResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct ListHotTabletsResponse {
+        #[doc = "List of hot tablets in the tables of the requested cluster that fall within the requested time range. Hot tablets are ordered by node cpu usage percent. If there are multiple hot tablets that correspond to the same tablet within a 15-minute interval, only the hot tablet with the highest node cpu usage will be included in the response."]
+        #[serde(
+            rename = "hotTablets",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub hot_tablets: ::std::option::Option<Vec<crate::schemas::HotTablet>>,
+        #[doc = "Set if not all hot tablets could be returned in a single response. Pass this value to `page_token` in another request to get the next page of results."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ListHotTabletsResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ListHotTabletsResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2043,18 +2353,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct ListTablesResponse {
         #[doc = "Set if not all tables could be returned in a single response. Pass this value to `page_token` in another request to get the next page of results."]
         #[serde(
@@ -2221,12 +2520,19 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
-        Copy,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct MultiClusterRoutingUseAny {}
+    pub struct MultiClusterRoutingUseAny {
+        #[doc = "The set of clusters to route to. The order is ignored; clusters will be tried in order of distance. If left empty, all clusters are eligible."]
+        #[serde(
+            rename = "clusterIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cluster_ids: ::std::option::Option<Vec<String>>,
+    }
     impl ::google_field_selector::FieldSelector for MultiClusterRoutingUseAny {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
@@ -2382,6 +2688,89 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct PartialUpdateClusterMetadata {
+        #[doc = "The time at which the operation failed or was completed successfully."]
+        #[serde(
+            rename = "finishTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub finish_time: ::std::option::Option<String>,
+        #[doc = "The original request for PartialUpdateCluster."]
+        #[serde(
+            rename = "originalRequest",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub original_request: ::std::option::Option<crate::schemas::PartialUpdateClusterRequest>,
+        #[doc = "The time at which the original request was received."]
+        #[serde(
+            rename = "requestTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub request_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PartialUpdateClusterMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PartialUpdateClusterMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PartialUpdateClusterRequest {
+        #[doc = "Required. The Cluster which contains the partial updates to be applied, subject to the update_mask."]
+        #[serde(
+            rename = "cluster",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cluster: ::std::option::Option<crate::schemas::Cluster>,
+        #[doc = "Required. The subset of Cluster fields which should be replaced."]
+        #[serde(
+            rename = "updateMask",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_mask: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PartialUpdateClusterRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PartialUpdateClusterRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct PartialUpdateInstanceRequest {
         #[doc = "Required. The Instance which will (partially) replace the current value."]
         #[serde(
@@ -2428,7 +2817,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audit_configs: ::std::option::Option<Vec<crate::schemas::AuditConfig>>,
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,
@@ -2761,7 +3150,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SetIamPolicyRequest {
-        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -2890,20 +3279,9 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Table {
-        #[doc = "Output only. Map from cluster ID to per-cluster table state. If it could not be determined whether or not the table has data in a particular cluster (for example, if its zone is unavailable), then there will be an entry for the cluster with UNKNOWN `replication_status`. Views: `REPLICATION_VIEW`, `FULL`"]
+        #[doc = "Output only. Map from cluster ID to per-cluster table state. If it could not be determined whether or not the table has data in a particular cluster (for example, if its zone is unavailable), then there will be an entry for the cluster with UNKNOWN `replication_status`. Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`"]
         #[serde(
             rename = "clusterStates",
             default,
@@ -3174,7 +3552,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -4493,7 +4871,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Create an instance within a project."]
+                #[doc = "Create an instance within a project. Note that exactly one of Cluster.serve_nodes and Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is enabled."]
                 pub fn create(
                     &self,
                     request: crate::schemas::CreateInstanceRequest,
@@ -7521,7 +7899,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Creates a cluster within an instance."]
+                    #[doc = "Creates a cluster within an instance. Note that exactly one of Cluster.serve_nodes and Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is enabled."]
                     pub fn create(
                         &self,
                         request: crate::schemas::Cluster,
@@ -7604,7 +7982,32 @@ pub mod resources {
                             page_token: None,
                         }
                     }
-                    #[doc = "Updates a cluster within an instance."]
+                    #[doc = "Partially updates a cluster within a project. This method is the preferred way to update a Cluster. To enable and update autoscaling, set cluster_config.cluster_autoscaling_config. When autoscaling is enabled, serve_nodes is treated as an OUTPUT_ONLY field, meaning that updates to it are ignored. Note that an update cannot simultaneously set serve_nodes to non-zero and cluster_config.cluster_autoscaling_config to non-empty, and also specify both in the update_mask. To disable autoscaling, clear cluster_config.cluster_autoscaling_config, and explicitly set a serve_node count via the update_mask."]
+                    pub fn partial_update_cluster(
+                        &self,
+                        request: crate::schemas::Cluster,
+                        name: impl Into<String>,
+                    ) -> PartialUpdateClusterRequestBuilder {
+                        PartialUpdateClusterRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                            update_mask: None,
+                        }
+                    }
+                    #[doc = "Updates a cluster within an instance. Note that UpdateCluster does not support updating cluster_config.cluster_autoscaling_config. In order to update it, you must use PartialUpdateCluster."]
                     pub fn update(
                         &self,
                         request: crate::schemas::Cluster,
@@ -7637,6 +8040,9 @@ pub mod resources {
                             reqwest: &self.reqwest,
                             auth: self.auth_ref(),
                         }
+                    }
+                    #[doc = "Actions that can be performed on the hot_tablets resource"]                    pub fn hot_tablets (& self) -> crate :: resources :: projects :: instances :: clusters :: hot_tablets :: HotTabletsActions{
+                        crate :: resources :: projects :: instances :: clusters :: hot_tablets :: HotTabletsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 #[doc = "Created via [ClustersActions::create()](struct.ClustersActions.html#method.create)"]
@@ -8469,6 +8875,175 @@ pub mod resources {
                         T: ::serde::de::DeserializeOwned,
                     {
                         self._execute()
+                    }
+                }
+                #[doc = "Created via [ClustersActions::partial_update_cluster()](struct.ClustersActions.html#method.partial_update_cluster)"]
+                #[derive(Debug, Clone)]
+                pub struct PartialUpdateClusterRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::Cluster,
+                    name: String,
+                    update_mask: Option<String>,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> PartialUpdateClusterRequestBuilder<'a> {
+                    #[doc = "Required. The subset of Cluster fields which should be replaced."]
+                    pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                        self.update_mask = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Operation, crate::Error> {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Operation, crate::Error> {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        let req = req.json(&self.request);
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://bigtableadmin.googleapis.com/".to_owned();
+                        output.push_str("v2/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                        req = req.query(&[("updateMask", &self.update_mask)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
                     }
                 }
                 #[doc = "Created via [ClustersActions::update()](struct.ClustersActions.html#method.update)"]
@@ -10296,11 +10871,358 @@ pub mod resources {
                         }
                     }
                 }
+                pub mod hot_tablets {
+                    pub mod params {}
+                    pub struct HotTabletsActions<'a> {
+                        pub(crate) reqwest: &'a reqwest::blocking::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    }
+                    impl<'a> HotTabletsActions<'a> {
+                        fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                            self.auth
+                        }
+                        #[doc = "Lists hot tablets in a cluster, within the time range provided. Hot tablets are ordered based on CPU usage."]
+                        pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                            ListRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                parent: parent.into(),
+                                end_time: None,
+                                page_size: None,
+                                page_token: None,
+                                start_time: None,
+                            }
+                        }
+                    }
+                    #[doc = "Created via [HotTabletsActions::list()](struct.HotTabletsActions.html#method.list)"]
+                    #[derive(Debug, Clone)]
+                    pub struct ListRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        parent: String,
+                        end_time: Option<String>,
+                        page_size: Option<i32>,
+                        page_token: Option<String>,
+                        start_time: Option<String>,
+                        access_token: Option<String>,
+                        alt: Option<crate::params::Alt>,
+                        callback: Option<String>,
+                        fields: Option<String>,
+                        key: Option<String>,
+                        oauth_token: Option<String>,
+                        pretty_print: Option<bool>,
+                        quota_user: Option<String>,
+                        upload_protocol: Option<String>,
+                        upload_type: Option<String>,
+                        xgafv: Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> ListRequestBuilder<'a> {
+                        #[doc = "The end time to list hot tablets."]
+                        pub fn end_time(mut self, value: impl Into<String>) -> Self {
+                            self.end_time = Some(value.into());
+                            self
+                        }
+                        #[doc = "Maximum number of results per page. A page_size that is empty or zero lets the server choose the number of items to return. A page_size which is strictly positive will return at most that many items. A negative page_size will cause an error. Following the first request, subsequent paginated calls do not need a page_size field. If a page_size is set in subsequent calls, it must match the page_size given in the first request."]
+                        pub fn page_size(mut self, value: i32) -> Self {
+                            self.page_size = Some(value);
+                            self
+                        }
+                        #[doc = "The value of `next_page_token` returned by a previous call."]
+                        pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                            self.page_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "The start time to list hot tablets. The hot tablets in the response will have start times between the requested start time and end time. Start time defaults to Now if it is unset, and end time defaults to Now - 24 hours if it is unset. The start time should be less than the end time, and the maximum allowed time range between start time and end time is 48 hours. Start time and end time should have values between Now and Now - 14 days."]
+                        pub fn start_time(mut self, value: impl Into<String>) -> Self {
+                            self.start_time = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                        #[doc = r" items yielded by the iterator are chosen by the caller of this"]
+                        #[doc = r" method and must implement `Deserialize` and `FieldSelector`. The"]
+                        #[doc = r" populated fields in the yielded items will be determined by the"]
+                        #[doc = r" `FieldSelector` implementation."]
+                        pub fn iter_hot_tablets<T>(self) -> crate::iter::PageItemIter<Self, T>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.iter_hot_tablets_with_fields(fields)
+                        }
+                        #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                        #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                        #[doc = r" fields in `#items_type` will be the default fields populated by"]
+                        #[doc = r" the server."]
+                        pub fn iter_hot_tablets_with_default_fields(
+                            self,
+                        ) -> crate::iter::PageItemIter<Self, crate::schemas::HotTablet>
+                        {
+                            self.iter_hot_tablets_with_fields(None::<String>)
+                        }
+                        #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                        #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                        #[doc = r" fields in `#items_type` will be all fields available. This should"]
+                        #[doc = r" primarily be used during developement and debugging as fetching"]
+                        #[doc = r" all fields can be expensive both in bandwidth and server"]
+                        #[doc = r" resources."]
+                        pub fn iter_hot_tablets_with_all_fields(
+                            self,
+                        ) -> crate::iter::PageItemIter<Self, crate::schemas::HotTablet>
+                        {
+                            self.iter_hot_tablets_with_fields(Some("*"))
+                        }
+                        pub fn iter_hot_tablets_with_fields<T, F>(
+                            mut self,
+                            fields: Option<F>,
+                        ) -> crate::iter::PageItemIter<Self, T>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: AsRef<str>,
+                        {
+                            self.fields = Some({
+                                let mut selector =
+                                    concat!("nextPageToken,", "hotTablets").to_owned();
+                                let items_fields =
+                                    fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                                if !items_fields.is_empty() {
+                                    selector.push_str("(");
+                                    selector.push_str(items_fields);
+                                    selector.push_str(")");
+                                }
+                                selector
+                            });
+                            crate::iter::PageItemIter::new(self, "hotTablets")
+                        }
+                        pub fn iter<T>(self) -> crate::iter::PageIter<Self, T>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.iter_with_fields(fields)
+                        }
+                        pub fn iter_with_default_fields(
+                            self,
+                        ) -> crate::iter::PageIter<Self, crate::schemas::ListHotTabletsResponse>
+                        {
+                            self.iter_with_fields(None::<&str>)
+                        }
+                        pub fn iter_with_all_fields(
+                            self,
+                        ) -> crate::iter::PageIter<Self, crate::schemas::ListHotTabletsResponse>
+                        {
+                            self.iter_with_fields(Some("*"))
+                        }
+                        pub fn iter_with_fields<T, F>(
+                            mut self,
+                            fields: Option<F>,
+                        ) -> crate::iter::PageIter<Self, T>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: AsRef<str>,
+                        {
+                            let mut fields =
+                                fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                            if !fields.is_empty() {
+                                match fields.chars().rev().nth(0) {
+                                    Some(',') | None => {}
+                                    _ => fields.push_str(","),
+                                }
+                                fields.push_str("nextPageToken");
+                                self.fields = Some(fields);
+                            }
+                            crate::iter::PageIter::new(self)
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields)
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::ListHotTabletsResponse, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>)
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::ListHotTabletsResponse, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*"))
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute()
+                        }
+                        fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path())?;
+                            Ok(crate::error_from_response(req.send()?)?.json()?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://bigtableadmin.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.parent;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str("/hotTablets");
+                            output
+                        }
+                        fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                            req = req.query(&[("endTime", &self.end_time)]);
+                            req = req.query(&[("pageSize", &self.page_size)]);
+                            req = req.query(&[("pageToken", &self.page_token)]);
+                            req = req.query(&[("startTime", &self.start_time)]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            req = req.bearer_auth(
+                                self.auth
+                                    .access_token()
+                                    .map_err(|err| crate::Error::OAuth2(err))?,
+                            );
+                            Ok(req)
+                        }
+                    }
+                    impl<'a> crate::iter::IterableMethod for ListRequestBuilder<'a> {
+                        fn set_page_token(&mut self, value: String) {
+                            self.page_token = value.into();
+                        }
+                        fn execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            self._execute()
+                        }
+                    }
+                }
             }
             pub mod tables {
                 pub mod params {
                     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                     pub enum GetView {
+                        #[doc = "Only populates `name` and fields related to the table's encryption state."]
+                        EncryptionView,
                         #[doc = "Populates all fields."]
                         Full,
                         #[doc = "Only populates `name`."]
@@ -10315,6 +11237,7 @@ pub mod resources {
                     impl GetView {
                         pub fn as_str(self) -> &'static str {
                             match self {
+                                GetView::EncryptionView => "ENCRYPTION_VIEW",
                                 GetView::Full => "FULL",
                                 GetView::NameOnly => "NAME_ONLY",
                                 GetView::ReplicationView => "REPLICATION_VIEW",
@@ -10332,6 +11255,7 @@ pub mod resources {
                         type Err = ();
                         fn from_str(s: &str) -> ::std::result::Result<GetView, ()> {
                             Ok(match s {
+                                "ENCRYPTION_VIEW" => GetView::EncryptionView,
                                 "FULL" => GetView::Full,
                                 "NAME_ONLY" => GetView::NameOnly,
                                 "REPLICATION_VIEW" => GetView::ReplicationView,
@@ -10364,6 +11288,7 @@ pub mod resources {
                         {
                             let value: &'de str = <&str>::deserialize(deserializer)?;
                             Ok(match value {
+                                "ENCRYPTION_VIEW" => GetView::EncryptionView,
                                 "FULL" => GetView::Full,
                                 "NAME_ONLY" => GetView::NameOnly,
                                 "REPLICATION_VIEW" => GetView::ReplicationView,
@@ -10390,6 +11315,8 @@ pub mod resources {
                     }
                     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                     pub enum ListView {
+                        #[doc = "Only populates `name` and fields related to the table's encryption state."]
+                        EncryptionView,
                         #[doc = "Populates all fields."]
                         Full,
                         #[doc = "Only populates `name`."]
@@ -10404,6 +11331,7 @@ pub mod resources {
                     impl ListView {
                         pub fn as_str(self) -> &'static str {
                             match self {
+                                ListView::EncryptionView => "ENCRYPTION_VIEW",
                                 ListView::Full => "FULL",
                                 ListView::NameOnly => "NAME_ONLY",
                                 ListView::ReplicationView => "REPLICATION_VIEW",
@@ -10421,6 +11349,7 @@ pub mod resources {
                         type Err = ();
                         fn from_str(s: &str) -> ::std::result::Result<ListView, ()> {
                             Ok(match s {
+                                "ENCRYPTION_VIEW" => ListView::EncryptionView,
                                 "FULL" => ListView::Full,
                                 "NAME_ONLY" => ListView::NameOnly,
                                 "REPLICATION_VIEW" => ListView::ReplicationView,
@@ -10453,6 +11382,7 @@ pub mod resources {
                         {
                             let value: &'de str = <&str>::deserialize(deserializer)?;
                             Ok(match value {
+                                "ENCRYPTION_VIEW" => ListView::EncryptionView,
                                 "FULL" => ListView::Full,
                                 "NAME_ONLY" => ListView::NameOnly,
                                 "REPLICATION_VIEW" => ListView::ReplicationView,
@@ -10691,7 +11621,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Create a new table by restoring from a completed backup. The new table must be in the same instance as the instance containing the backup. The returned table long-running operation can be used to track the progress of the operation, and to cancel it. The metadata field type is RestoreTableMetadata. The response type is Table, if successful."]
+                    #[doc = "Create a new table by restoring from a completed backup. The new table must be in the same project as the instance containing the backup. The returned table long-running operation can be used to track the progress of the operation, and to cancel it. The metadata field type is RestoreTableMetadata. The response type is Table, if successful."]
                     pub fn restore(
                         &self,
                         request: crate::schemas::RestoreTableRequest,
@@ -11945,7 +12875,7 @@ pub mod resources {
                         self.page_token = Some(value.into());
                         self
                     }
-                    #[doc = "The view to be applied to the returned tables' fields. Only NAME_ONLY view (default) and REPLICATION_VIEW are supported."]
+                    #[doc = "The view to be applied to the returned tables' fields. Only NAME_ONLY view (default), REPLICATION_VIEW and ENCRYPTION_VIEW are supported."]
                     pub fn view(
                         mut self,
                         value: crate::resources::projects::instances::tables::params::ListView,
@@ -13103,17 +14033,17 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "The standard list filter."]
+                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
                 }
-                #[doc = "The standard list page size."]
+                #[doc = "The maximum number of results to return. If not set, the service selects a default."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "The standard list page token."]
+                #[doc = "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self

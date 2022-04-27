@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudtasks2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210303")
+            .version("0.1.0-20220401")
             .about("Manages the execution of large numbers of distributed requests.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -56,7 +56,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             queues2 = queues2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a queue. This command will delete the queue even if it has tasks in it. Note: If you delete a queue, a queue with the same name can\'t be created for 7 days. WARNING: Using this method may have unintended side effects if you are using an App Engine `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a queue. This command will delete the queue even if it has tasks in it. Note: If you delete a queue, a queue with the same name can't be created for 7 days. WARNING: Using this method may have unintended side effects if you are using an App Engine `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.");
             queues2 = queues2.subcommand(mcmd);
         }
         {
@@ -85,7 +85,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             queues2 = queues2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("resume").about("Resume a queue. This method resumes a queue after it has been PAUSED or DISABLED. The state of a queue is stored in the queue\'s state; after calling this method it will be set to RUNNING. WARNING: Resuming many high-QPS queues at the same time can lead to target overloading. If you are resuming high-QPS queues, follow the 500/50/5 pattern described in [Managing Cloud Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).");
+            let mcmd = SubCommand::with_name("resume").about("Resume a queue. This method resumes a queue after it has been PAUSED or DISABLED. The state of a queue is stored in the queue's state; after calling this method it will be set to RUNNING. WARNING: Resuming many high-QPS queues at the same time can lead to target overloading. If you are resuming high-QPS queues, follow the 500/50/5 pattern described in [Managing Cloud Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).");
             queues2 = queues2.subcommand(mcmd);
         }
         {
@@ -116,7 +116,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             tasks3 = tasks3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("run").about("Forces a task to run now. When this method is called, Cloud Tasks will dispatch the task, even if the task is already running, the queue has reached its RateLimits or is PAUSED. This command is meant to be used for manual debugging. For example, RunTask can be used to retry a failed task after a fix has been made or to manually force a task to be dispatched now. The dispatched task is returned. That is, the task that is returned contains the status after the task is dispatched but before the task is received by its target. If Cloud Tasks receives a successful response from the task\'s target, then the task will be deleted; otherwise the task\'s schedule_time will be reset to the time that RunTask was called plus the retry delay specified in the queue\'s RetryConfig. RunTask returns NOT_FOUND when it is called on a task that has already succeeded or permanently failed.");
+            let mcmd = SubCommand::with_name("run").about("Forces a task to run now. When this method is called, Cloud Tasks will dispatch the task, even if the task is already running, the queue has reached its RateLimits or is PAUSED. This command is meant to be used for manual debugging. For example, RunTask can be used to retry a failed task after a fix has been made or to manually force a task to be dispatched now. The dispatched task is returned. That is, the task that is returned contains the status after the task is dispatched but before the task is received by its target. If Cloud Tasks receives a successful response from the task's target, then the task will be deleted; otherwise the task's schedule_time will be reset to the time that RunTask was called plus the retry delay specified in the queue's RetryConfig. RunTask returns NOT_FOUND when it is called on a task that has already succeeded or permanently failed.");
             tasks3 = tasks3.subcommand(mcmd);
         }
         queues2 = queues2.subcommand(tasks3);

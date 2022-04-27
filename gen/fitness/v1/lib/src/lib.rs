@@ -2,63 +2,63 @@
 pub mod scopes {
     #[doc = "Use Google Fit to see and store your physical activity data\n\n`https://www.googleapis.com/auth/fitness.activity.read`"]
     pub const FITNESS_ACTIVITY_READ: &str = "https://www.googleapis.com/auth/fitness.activity.read";
-    #[doc = "See and add to your Google Fit physical activity data\n\n`https://www.googleapis.com/auth/fitness.activity.write`"]
+    #[doc = "Add to your Google Fit physical activity data\n\n`https://www.googleapis.com/auth/fitness.activity.write`"]
     pub const FITNESS_ACTIVITY_WRITE: &str =
         "https://www.googleapis.com/auth/fitness.activity.write";
     #[doc = "See info about your blood glucose in Google Fit. I consent to Google sharing my blood glucose information with this app.\n\n`https://www.googleapis.com/auth/fitness.blood_glucose.read`"]
     pub const FITNESS_BLOOD_GLUCOSE_READ: &str =
         "https://www.googleapis.com/auth/fitness.blood_glucose.read";
-    #[doc = "See and add info about your blood glucose to Google Fit. I consent to Google sharing my blood glucose information with this app.\n\n`https://www.googleapis.com/auth/fitness.blood_glucose.write`"]
+    #[doc = "Add info about your blood glucose to Google Fit. I consent to Google using my blood glucose information with this app.\n\n`https://www.googleapis.com/auth/fitness.blood_glucose.write`"]
     pub const FITNESS_BLOOD_GLUCOSE_WRITE: &str =
         "https://www.googleapis.com/auth/fitness.blood_glucose.write";
     #[doc = "See info about your blood pressure in Google Fit. I consent to Google sharing my blood pressure information with this app.\n\n`https://www.googleapis.com/auth/fitness.blood_pressure.read`"]
     pub const FITNESS_BLOOD_PRESSURE_READ: &str =
         "https://www.googleapis.com/auth/fitness.blood_pressure.read";
-    #[doc = "See and add info about your blood pressure in Google Fit. I consent to Google sharing my blood pressure information with this app.\n\n`https://www.googleapis.com/auth/fitness.blood_pressure.write`"]
+    #[doc = "Add info about your blood pressure in Google Fit. I consent to Google using my blood pressure information with this app.\n\n`https://www.googleapis.com/auth/fitness.blood_pressure.write`"]
     pub const FITNESS_BLOOD_PRESSURE_WRITE: &str =
         "https://www.googleapis.com/auth/fitness.blood_pressure.write";
-    #[doc = "See info about your body measurements and heart rate in Google Fit\n\n`https://www.googleapis.com/auth/fitness.body.read`"]
+    #[doc = "See info about your body measurements in Google Fit\n\n`https://www.googleapis.com/auth/fitness.body.read`"]
     pub const FITNESS_BODY_READ: &str = "https://www.googleapis.com/auth/fitness.body.read";
-    #[doc = "See and add info about your body measurements and heart rate to Google Fit\n\n`https://www.googleapis.com/auth/fitness.body.write`"]
+    #[doc = "Add info about your body measurements to Google Fit\n\n`https://www.googleapis.com/auth/fitness.body.write`"]
     pub const FITNESS_BODY_WRITE: &str = "https://www.googleapis.com/auth/fitness.body.write";
     #[doc = "See info about your body temperature in Google Fit. I consent to Google sharing my body temperature information with this app.\n\n`https://www.googleapis.com/auth/fitness.body_temperature.read`"]
     pub const FITNESS_BODY_TEMPERATURE_READ: &str =
         "https://www.googleapis.com/auth/fitness.body_temperature.read";
-    #[doc = "See and add to info about your body temperature in Google Fit. I consent to Google sharing my body temperature information with this app.\n\n`https://www.googleapis.com/auth/fitness.body_temperature.write`"]
+    #[doc = "Add to info about your body temperature in Google Fit. I consent to Google using my body temperature information with this app.\n\n`https://www.googleapis.com/auth/fitness.body_temperature.write`"]
     pub const FITNESS_BODY_TEMPERATURE_WRITE: &str =
         "https://www.googleapis.com/auth/fitness.body_temperature.write";
     #[doc = "See your heart rate data in Google Fit. I consent to Google sharing my heart rate information with this app.\n\n`https://www.googleapis.com/auth/fitness.heart_rate.read`"]
     pub const FITNESS_HEART_RATE_READ: &str =
         "https://www.googleapis.com/auth/fitness.heart_rate.read";
-    #[doc = "See and add to your heart rate data in Google Fit. I consent to Google sharing my heart rate information with this app.\n\n`https://www.googleapis.com/auth/fitness.heart_rate.write`"]
+    #[doc = "Add to your heart rate data in Google Fit. I consent to Google using my heart rate information with this app.\n\n`https://www.googleapis.com/auth/fitness.heart_rate.write`"]
     pub const FITNESS_HEART_RATE_WRITE: &str =
         "https://www.googleapis.com/auth/fitness.heart_rate.write";
     #[doc = "See your Google Fit speed and distance data\n\n`https://www.googleapis.com/auth/fitness.location.read`"]
     pub const FITNESS_LOCATION_READ: &str = "https://www.googleapis.com/auth/fitness.location.read";
-    #[doc = "See and add to your Google Fit location data\n\n`https://www.googleapis.com/auth/fitness.location.write`"]
+    #[doc = "Add to your Google Fit location data\n\n`https://www.googleapis.com/auth/fitness.location.write`"]
     pub const FITNESS_LOCATION_WRITE: &str =
         "https://www.googleapis.com/auth/fitness.location.write";
     #[doc = "See info about your nutrition in Google Fit\n\n`https://www.googleapis.com/auth/fitness.nutrition.read`"]
     pub const FITNESS_NUTRITION_READ: &str =
         "https://www.googleapis.com/auth/fitness.nutrition.read";
-    #[doc = "See and add to info about your nutrition in Google Fit\n\n`https://www.googleapis.com/auth/fitness.nutrition.write`"]
+    #[doc = "Add to info about your nutrition in Google Fit\n\n`https://www.googleapis.com/auth/fitness.nutrition.write`"]
     pub const FITNESS_NUTRITION_WRITE: &str =
         "https://www.googleapis.com/auth/fitness.nutrition.write";
     #[doc = "See info about your oxygen saturation in Google Fit. I consent to Google sharing my oxygen saturation information with this app.\n\n`https://www.googleapis.com/auth/fitness.oxygen_saturation.read`"]
     pub const FITNESS_OXYGEN_SATURATION_READ: &str =
         "https://www.googleapis.com/auth/fitness.oxygen_saturation.read";
-    #[doc = "See and add info about your oxygen saturation in Google Fit. I consent to Google sharing my oxygen saturation information with this app.\n\n`https://www.googleapis.com/auth/fitness.oxygen_saturation.write`"]
+    #[doc = "Add info about your oxygen saturation in Google Fit. I consent to Google using my oxygen saturation information with this app.\n\n`https://www.googleapis.com/auth/fitness.oxygen_saturation.write`"]
     pub const FITNESS_OXYGEN_SATURATION_WRITE: &str =
         "https://www.googleapis.com/auth/fitness.oxygen_saturation.write";
     #[doc = "See info about your reproductive health in Google Fit. I consent to Google sharing my reproductive health information with this app.\n\n`https://www.googleapis.com/auth/fitness.reproductive_health.read`"]
     pub const FITNESS_REPRODUCTIVE_HEALTH_READ: &str =
         "https://www.googleapis.com/auth/fitness.reproductive_health.read";
-    #[doc = "See and add info about your reproductive health in Google Fit. I consent to Google sharing my reproductive health information with this app.\n\n`https://www.googleapis.com/auth/fitness.reproductive_health.write`"]
+    #[doc = "Add info about your reproductive health in Google Fit. I consent to Google using my reproductive health information with this app.\n\n`https://www.googleapis.com/auth/fitness.reproductive_health.write`"]
     pub const FITNESS_REPRODUCTIVE_HEALTH_WRITE: &str =
         "https://www.googleapis.com/auth/fitness.reproductive_health.write";
     #[doc = "See your sleep data in Google Fit. I consent to Google sharing my sleep information with this app.\n\n`https://www.googleapis.com/auth/fitness.sleep.read`"]
     pub const FITNESS_SLEEP_READ: &str = "https://www.googleapis.com/auth/fitness.sleep.read";
-    #[doc = "See and add to your sleep data in Google Fit. I consent to Google sharing my sleep information with this app.\n\n`https://www.googleapis.com/auth/fitness.sleep.write`"]
+    #[doc = "Add to your sleep data in Google Fit. I consent to Google using my sleep information with this app.\n\n`https://www.googleapis.com/auth/fitness.sleep.write`"]
     pub const FITNESS_SLEEP_WRITE: &str = "https://www.googleapis.com/auth/fitness.sleep.write";
 }
 pub mod schemas {
@@ -292,7 +292,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bucket_by_time: ::std::option::Option<crate::schemas::BucketByTime>,
-        #[doc = "The end of a window of time. Data that intersects with this time window will be aggregated. The time is in milliseconds since epoch, inclusive."]
+        #[doc = "The end of a window of time. Data that intersects with this time window will be aggregated. The time is in milliseconds since epoch, inclusive. The maximum allowed difference between start_time_millis // and end_time_millis is 7776000000 (roughly 90 days)."]
         #[serde(
             rename = "endTimeMillis",
             default,
@@ -356,7 +356,7 @@ pub mod schemas {
         fn from_str(
             s: &str,
         ) -> ::std::result::Result<AggregateRequestFilteredDataQualityStandardItems, ()> {
-            Ok ( match s { "dataQualityBloodGlucoseIso151972003" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodGlucoseIso151972003 , "dataQualityBloodGlucoseIso151972013" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodGlucoseIso151972013 , "dataQualityBloodPressureAami" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureAami , "dataQualityBloodPressureBhsAA" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureBhsAA , "dataQualityBloodPressureBhsAB" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureBhsAB , "dataQualityBloodPressureBhsBA" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureBhsBA , "dataQualityBloodPressureBhsBB" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureBhsBB , "dataQualityBloodPressureEsh2002" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureEsh2002 , "dataQualityBloodPressureEsh2010" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureEsh2010 , "dataQualityUnknown" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityUnknown , _ => return Err ( ( ) ) , } )
+            Ok (match s { "dataQualityBloodGlucoseIso151972003" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodGlucoseIso151972003 , "dataQualityBloodGlucoseIso151972013" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodGlucoseIso151972013 , "dataQualityBloodPressureAami" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureAami , "dataQualityBloodPressureBhsAA" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureBhsAA , "dataQualityBloodPressureBhsAB" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureBhsAB , "dataQualityBloodPressureBhsBA" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureBhsBA , "dataQualityBloodPressureBhsBB" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureBhsBB , "dataQualityBloodPressureEsh2002" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureEsh2002 , "dataQualityBloodPressureEsh2010" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureEsh2010 , "dataQualityUnknown" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityUnknown , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for AggregateRequestFilteredDataQualityStandardItems {
@@ -378,7 +378,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "dataQualityBloodGlucoseIso151972003" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodGlucoseIso151972003 , "dataQualityBloodGlucoseIso151972013" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodGlucoseIso151972013 , "dataQualityBloodPressureAami" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureAami , "dataQualityBloodPressureBhsAA" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureBhsAA , "dataQualityBloodPressureBhsAB" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureBhsAB , "dataQualityBloodPressureBhsBA" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureBhsBA , "dataQualityBloodPressureBhsBB" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureBhsBB , "dataQualityBloodPressureEsh2002" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureEsh2002 , "dataQualityBloodPressureEsh2010" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureEsh2010 , "dataQualityUnknown" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityUnknown , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "dataQualityBloodGlucoseIso151972003" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodGlucoseIso151972003 , "dataQualityBloodGlucoseIso151972013" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodGlucoseIso151972013 , "dataQualityBloodPressureAami" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureAami , "dataQualityBloodPressureBhsAA" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureBhsAA , "dataQualityBloodPressureBhsAB" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureBhsAB , "dataQualityBloodPressureBhsBA" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureBhsBA , "dataQualityBloodPressureBhsBB" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureBhsBB , "dataQualityBloodPressureEsh2002" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureEsh2002 , "dataQualityBloodPressureEsh2010" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityBloodPressureEsh2010 , "dataQualityUnknown" => AggregateRequestFilteredDataQualityStandardItems :: DataQualityUnknown , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector for AggregateRequestFilteredDataQualityStandardItems {
@@ -2113,8 +2113,8 @@ pub mod resources {
                         data_source_id: data_source_id.into(),
                     }
                 }
-                #[doc = "Actions that can be performed on the data_point_changes resource"]                pub fn data_point_changes ( & self ) -> crate :: resources :: users :: data_sources :: data_point_changes :: DataPointChangesActions{
-                    crate :: resources :: users :: data_sources :: data_point_changes :: DataPointChangesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the data_point_changes resource"]                pub fn data_point_changes (& self) -> crate :: resources :: users :: data_sources :: data_point_changes :: DataPointChangesActions{
+                    crate :: resources :: users :: data_sources :: data_point_changes :: DataPointChangesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
                 #[doc = "Actions that can be performed on the datasets resource"]
                 pub fn datasets(

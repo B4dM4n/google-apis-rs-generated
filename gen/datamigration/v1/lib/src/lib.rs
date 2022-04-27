@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n        * [connection_profiles](resources/projects/locations/connection_profiles/struct.ConnectionProfilesActions.html)\n          * [*create*](resources/projects/locations/connection_profiles/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/connection_profiles/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/connection_profiles/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/connection_profiles/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/connection_profiles/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/connection_profiles/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/connection_profiles/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/connection_profiles/struct.TestIamPermissionsRequestBuilder.html)\n        * [migration_jobs](resources/projects/locations/migration_jobs/struct.MigrationJobsActions.html)\n          * [*create*](resources/projects/locations/migration_jobs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/migration_jobs/struct.DeleteRequestBuilder.html), [*generateSshScript*](resources/projects/locations/migration_jobs/struct.GenerateSshScriptRequestBuilder.html), [*get*](resources/projects/locations/migration_jobs/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/migration_jobs/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/migration_jobs/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/migration_jobs/struct.PatchRequestBuilder.html), [*promote*](resources/projects/locations/migration_jobs/struct.PromoteRequestBuilder.html), [*restart*](resources/projects/locations/migration_jobs/struct.RestartRequestBuilder.html), [*resume*](resources/projects/locations/migration_jobs/struct.ResumeRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/migration_jobs/struct.SetIamPolicyRequestBuilder.html), [*start*](resources/projects/locations/migration_jobs/struct.StartRequestBuilder.html), [*stop*](resources/projects/locations/migration_jobs/struct.StopRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/migration_jobs/struct.TestIamPermissionsRequestBuilder.html), [*verify*](resources/projects/locations/migration_jobs/struct.VerifyRequestBuilder.html)\n        * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n          * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/locations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -174,21 +174,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Binding {
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -310,6 +310,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub auto_storage_increase: ::std::option::Option<bool>,
+        #[doc = "The KMS key name used for the csql instance."]
+        #[serde(
+            rename = "cmekKeyName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cmek_key_name: ::std::option::Option<String>,
         #[doc = "The Cloud SQL default instance level collation."]
         #[serde(
             rename = "collation",
@@ -595,6 +602,8 @@ pub mod schemas {
         Postgres12,
         #[doc = "PostgreSQL 13."]
         Postgres13,
+        #[doc = "PostgreSQL 14."]
+        Postgres14,
         #[doc = "PostgreSQL 9.6."]
         Postgres96,
         #[doc = "Unspecified version."]
@@ -610,6 +619,7 @@ pub mod schemas {
                 CloudSqlSettingsDatabaseVersion::Postgres11 => "POSTGRES_11",
                 CloudSqlSettingsDatabaseVersion::Postgres12 => "POSTGRES_12",
                 CloudSqlSettingsDatabaseVersion::Postgres13 => "POSTGRES_13",
+                CloudSqlSettingsDatabaseVersion::Postgres14 => "POSTGRES_14",
                 CloudSqlSettingsDatabaseVersion::Postgres96 => "POSTGRES_9_6",
                 CloudSqlSettingsDatabaseVersion::SqlDatabaseVersionUnspecified => {
                     "SQL_DATABASE_VERSION_UNSPECIFIED"
@@ -633,6 +643,7 @@ pub mod schemas {
                 "POSTGRES_11" => CloudSqlSettingsDatabaseVersion::Postgres11,
                 "POSTGRES_12" => CloudSqlSettingsDatabaseVersion::Postgres12,
                 "POSTGRES_13" => CloudSqlSettingsDatabaseVersion::Postgres13,
+                "POSTGRES_14" => CloudSqlSettingsDatabaseVersion::Postgres14,
                 "POSTGRES_9_6" => CloudSqlSettingsDatabaseVersion::Postgres96,
                 "SQL_DATABASE_VERSION_UNSPECIFIED" => {
                     CloudSqlSettingsDatabaseVersion::SqlDatabaseVersionUnspecified
@@ -668,6 +679,7 @@ pub mod schemas {
                 "POSTGRES_11" => CloudSqlSettingsDatabaseVersion::Postgres11,
                 "POSTGRES_12" => CloudSqlSettingsDatabaseVersion::Postgres12,
                 "POSTGRES_13" => CloudSqlSettingsDatabaseVersion::Postgres13,
+                "POSTGRES_14" => CloudSqlSettingsDatabaseVersion::Postgres14,
                 "POSTGRES_9_6" => CloudSqlSettingsDatabaseVersion::Postgres96,
                 "SQL_DATABASE_VERSION_UNSPECIFIED" => {
                     CloudSqlSettingsDatabaseVersion::SqlDatabaseVersionUnspecified
@@ -735,7 +747,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mysql: ::std::option::Option<crate::schemas::MySqlConnectionProfile>,
-        #[doc = "The name of this connection profile resource in the form of projects/{project}/locations/{location}/instances/{instance}."]
+        #[doc = "The name of this connection profile resource in the form of projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}."]
         #[serde(
             rename = "name",
             default,
@@ -783,6 +795,8 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ConnectionProfileProvider {
+        #[doc = "Amazon Aurora."]
+        Aurora,
         #[doc = "CloudSQL runs the database."]
         Cloudsql,
         #[doc = "The database provider is unknown."]
@@ -793,6 +807,7 @@ pub mod schemas {
     impl ConnectionProfileProvider {
         pub fn as_str(self) -> &'static str {
             match self {
+                ConnectionProfileProvider::Aurora => "AURORA",
                 ConnectionProfileProvider::Cloudsql => "CLOUDSQL",
                 ConnectionProfileProvider::DatabaseProviderUnspecified => {
                     "DATABASE_PROVIDER_UNSPECIFIED"
@@ -810,6 +825,7 @@ pub mod schemas {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<ConnectionProfileProvider, ()> {
             Ok(match s {
+                "AURORA" => ConnectionProfileProvider::Aurora,
                 "CLOUDSQL" => ConnectionProfileProvider::Cloudsql,
                 "DATABASE_PROVIDER_UNSPECIFIED" => {
                     ConnectionProfileProvider::DatabaseProviderUnspecified
@@ -839,6 +855,7 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "AURORA" => ConnectionProfileProvider::Aurora,
                 "CLOUDSQL" => ConnectionProfileProvider::Cloudsql,
                 "DATABASE_PROVIDER_UNSPECIFIED" => {
                     ConnectionProfileProvider::DatabaseProviderUnspecified
@@ -1080,6 +1097,8 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum DatabaseTypeProvider {
+        #[doc = "Amazon Aurora."]
+        Aurora,
         #[doc = "CloudSQL runs the database."]
         Cloudsql,
         #[doc = "The database provider is unknown."]
@@ -1090,6 +1109,7 @@ pub mod schemas {
     impl DatabaseTypeProvider {
         pub fn as_str(self) -> &'static str {
             match self {
+                DatabaseTypeProvider::Aurora => "AURORA",
                 DatabaseTypeProvider::Cloudsql => "CLOUDSQL",
                 DatabaseTypeProvider::DatabaseProviderUnspecified => {
                     "DATABASE_PROVIDER_UNSPECIFIED"
@@ -1107,6 +1127,7 @@ pub mod schemas {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<DatabaseTypeProvider, ()> {
             Ok(match s {
+                "AURORA" => DatabaseTypeProvider::Aurora,
                 "CLOUDSQL" => DatabaseTypeProvider::Cloudsql,
                 "DATABASE_PROVIDER_UNSPECIFIED" => {
                     DatabaseTypeProvider::DatabaseProviderUnspecified
@@ -1136,6 +1157,7 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "AURORA" => DatabaseTypeProvider::Aurora,
                 "CLOUDSQL" => DatabaseTypeProvider::Cloudsql,
                 "DATABASE_PROVIDER_UNSPECIFIED" => {
                     DatabaseTypeProvider::DatabaseProviderUnspecified
@@ -1156,6 +1178,75 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for DatabaseTypeProvider {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DumpFlag {
+        #[doc = "The name of the flag"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "The value of the flag."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for DumpFlag {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DumpFlag {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DumpFlags {
+        #[doc = "The flags for the initial dump."]
+        #[serde(
+            rename = "dumpFlags",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dump_flags: ::std::option::Option<Vec<crate::schemas::DumpFlag>>,
+    }
+    impl ::google_field_selector::FieldSelector for DumpFlags {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DumpFlags {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1562,7 +1653,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "The path to the dump file in Google Cloud Storage, in the format: (gs://[BUCKET_NAME]/[OBJECT_NAME])."]
+        #[doc = "The initial dump flags. This field and the \"dump_path\" field are mutually exclusive."]
+        #[serde(
+            rename = "dumpFlags",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dump_flags: ::std::option::Option<crate::schemas::DumpFlags>,
+        #[doc = "The path to the dump file in Google Cloud Storage, in the format: (gs://[BUCKET_NAME]/[OBJECT_NAME]). This field and the \"dump_flags\" field are mutually exclusive."]
         #[serde(
             rename = "dumpPath",
             default,
@@ -1597,7 +1695,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "The name (URI) of this migration job resource, in the form of: projects/{project}/locations/{location}/instances/{instance}."]
+        #[doc = "The name (URI) of this migration job resource, in the form of: projects/{project}/locations/{location}/migrationJobs/{migrationJob}."]
         #[serde(
             rename = "name",
             default,
@@ -1867,7 +1965,7 @@ pub mod schemas {
         Failed,
         #[doc = "The migration job is down for maintenance."]
         Maintenance,
-        #[doc = "The migration job is created, not started and is fully editable."]
+        #[doc = "The migration job is created and not started."]
         NotStarted,
         #[doc = "The migration job is restarting."]
         Restarting,
@@ -2444,7 +2542,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audit_configs: ::std::option::Option<Vec<crate::schemas::AuditConfig>>,
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,
@@ -2686,7 +2784,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SetIamPolicyRequest {
-        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -2790,7 +2888,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enable_ipv_4: ::std::option::Option<bool>,
-        #[doc = "The resource link for the VPC network from which the Cloud SQL instance is accessible for private IP. For example, `/projects/myProject/global/networks/default`. This setting can be updated, but it cannot be removed after it is set."]
+        #[doc = "The resource link for the VPC network from which the Cloud SQL instance is accessible for private IP. For example, `projects/myProject/global/networks/default`. This setting can be updated, but it cannot be removed after it is set."]
         #[serde(
             rename = "privateNetwork",
             default,
@@ -3094,7 +3192,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -3531,8 +3629,8 @@ pub mod resources {
                         page_token: None,
                     }
                 }
-                #[doc = "Actions that can be performed on the connection_profiles resource"]                pub fn connection_profiles ( & self ) -> crate :: resources :: projects :: locations :: connection_profiles :: ConnectionProfilesActions{
-                    crate :: resources :: projects :: locations :: connection_profiles :: ConnectionProfilesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the connection_profiles resource"]                pub fn connection_profiles (& self) -> crate :: resources :: projects :: locations :: connection_profiles :: ConnectionProfilesActions{
+                    crate :: resources :: projects :: locations :: connection_profiles :: ConnectionProfilesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
                 #[doc = "Actions that can be performed on the migration_jobs resource"]
                 pub fn migration_jobs(
@@ -3736,17 +3834,17 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "The standard list filter."]
+                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
                 }
-                #[doc = "The standard list page size."]
+                #[doc = "The maximum number of results to return. If not set, the service selects a default."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "The standard list page token."]
+                #[doc = "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -4105,7 +4203,7 @@ pub mod resources {
                             options_requested_policy_version: None,
                         }
                     }
-                    #[doc = "Retrieve a list of all connection profiles in a given project and location."]
+                    #[doc = "Retrieves a list of all connection profiles in a given project and location."]
                     pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                         ListRequestBuilder {
                             reqwest: &self.reqwest,
@@ -4736,7 +4834,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> GetIamPolicyRequestBuilder<'a> {
-                    #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                    #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                     pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                         self.options_requested_policy_version = Some(value);
                         self
@@ -4915,7 +5013,7 @@ pub mod resources {
                         self.filter = Some(value.into());
                         self
                     }
-                    #[doc = "the order by fields for the result."]
+                    #[doc = "A comma-separated list of fields to order results according to."]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
@@ -6814,7 +6912,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> GetIamPolicyRequestBuilder<'a> {
-                    #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                    #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                     pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                         self.options_requested_policy_version = Some(value);
                         self

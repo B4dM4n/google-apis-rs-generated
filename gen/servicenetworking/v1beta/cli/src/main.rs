@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("servicenetworking1_beta")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210316")
+            .version("0.1.0-20220425")
             .about("Provides automatic management of network configurations necessary for certain services.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -44,7 +44,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: add_subnetwork, search_range and update_connections");
         {
-            let mcmd = SubCommand::with_name("add_subnetwork").about("For service producers, provisions a new subnet in a peered service\'s shared VPC network in the requested region and with the requested size that\'s expressed as a CIDR range (number of leading bits of ipV4 network mask). The method checks against the assigned allocated ranges to find a non-conflicting IP address range. The method will reuse a subnet if subsequent calls contain the same subnet name, region, and prefix length. This method will make producer\'s tenant project to be a shared VPC service project as needed. The response from the `get` operation will be of type `Subnetwork` if the operation successfully completes.");
+            let mcmd = SubCommand::with_name("add_subnetwork").about("For service producers, provisions a new subnet in a peered service's shared VPC network in the requested region and with the requested size that's expressed as a CIDR range (number of leading bits of ipV4 network mask). The method checks against the assigned allocated ranges to find a non-conflicting IP address range. The method will reuse a subnet if subsequent calls contain the same subnet name, region, and prefix length. This method will make producer's tenant project to be a shared VPC service project as needed. The response from the `get` operation will be of type `Subnetwork` if the operation successfully completes.");
             services0 = services0.subcommand(mcmd);
         }
         {
@@ -59,11 +59,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create and list");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a private connection that establishes a VPC Network Peering connection to a VPC network in the service producer\'s organization. The administrator of the service consumer\'s VPC network invokes this method. The administrator must assign one or more allocated IP ranges for provisioning subnetworks in the service producer\'s VPC network. This connection is used for all supported services in the service producer\'s organization, so it only needs to be invoked once. The response from the `get` operation will be of type `Connection` if the operation successfully completes.");
+            let mcmd = SubCommand::with_name("create").about("Creates a private connection that establishes a VPC Network Peering connection to a VPC network in the service producer's organization. The administrator of the service consumer's VPC network invokes this method. The administrator must assign one or more allocated IP ranges for provisioning subnetworks in the service producer's VPC network. This connection is used for all supported services in the service producer's organization, so it only needs to be invoked once. The response from the `get` operation will be of type `Connection` if the operation successfully completes.");
             connections1 = connections1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("List the private connections that are configured in a service consumer\'s VPC network.");
+            let mcmd = SubCommand::with_name("list").about("List the private connections that are configured in a service consumer's VPC network.");
             connections1 = connections1.subcommand(mcmd);
         }
         services0 = services0.subcommand(connections1);

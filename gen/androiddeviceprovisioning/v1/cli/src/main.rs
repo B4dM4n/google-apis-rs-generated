@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("androiddeviceprovisioning1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210315")
+            .version("0.1.0-20220415")
             .about("Automates Android zero-touch enrollment for device resellers, customers, and EMMs.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -37,7 +37,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
         {
-            let mcmd = SubCommand::with_name("list").about("Lists the user\'s customer accounts.");
+            let mcmd = SubCommand::with_name("list").about("Lists the user's customer accounts.");
             customers0 = customers0.subcommand(mcmd);
         }
         let mut operations0 = SubCommand::with_name("operations")
@@ -66,12 +66,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             configurations1 = configurations1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists a customer\'s configurations.");
+            let mcmd = SubCommand::with_name("list").about("Lists a customer's configurations.");
             configurations1 = configurations1.subcommand(mcmd);
         }
         {
             let mcmd =
-                SubCommand::with_name("patch").about("Updates a configuration\'s field values.");
+                SubCommand::with_name("patch").about("Updates a configuration's field values.");
             configurations1 = configurations1.subcommand(mcmd);
         }
         let mut devices1 = SubCommand::with_name("devices")
@@ -86,7 +86,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             devices1 = devices1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists a customer\'s devices.");
+            let mcmd = SubCommand::with_name("list").about("Lists a customer's devices.");
             devices1 = devices1.subcommand(mcmd);
         }
         {
@@ -135,7 +135,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             devices1 = devices1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("find_by_owner").about("Finds devices claimed for customers. The results only contain devices registered to the reseller that\'s identified by the `partnerId` argument. The customer\'s devices purchased from other resellers don\'t appear in the results.");
+            let mcmd = SubCommand::with_name("find_by_owner").about("Finds devices claimed for customers. The results only contain devices registered to the reseller that's identified by the `partnerId` argument. The customer's devices purchased from other resellers don't appear in the results.");
             devices1 = devices1.subcommand(mcmd);
         }
         {

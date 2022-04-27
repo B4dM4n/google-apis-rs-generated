@@ -1,6 +1,6 @@
 [package]
 name = "google-bigqueryreservation1_beta1"
-version = "0.1.0-20210313"
+version = "0.1.0-20220415"
 authors = ["Glenn Griffin <ggriffiniii@gmail.com"]
 edition = "2018"
 # for now, let's not even accidentally publish these

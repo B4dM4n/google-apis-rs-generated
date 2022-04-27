@@ -7,7 +7,7 @@
   "canonicalName": "Script",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20210307",
+  "revision": "20220425",
   "title": "Apps Script API",
   "description": "Manages and executes Google Apps Script projects. ",
   "ownerDomain": "google.com",
@@ -216,7 +216,7 @@
           "description": "View and manage the provisioning of users on your domain"
         },
         "https://www.googleapis.com/auth/documents": {
-          "description": "See, create, and edit all Google Docs documents you have access to"
+          "description": "See, edit, create, and delete all your Google Docs documents"
         },
         "https://www.googleapis.com/auth/drive": {
           "description": "See, edit, create, and delete all of your Google Drive files"
@@ -249,10 +249,10 @@
           "description": "View Google Apps Script projects"
         },
         "https://www.googleapis.com/auth/spreadsheets": {
-          "description": "See, edit, create, and delete your spreadsheets in Google Drive"
+          "description": "See, edit, create, and delete all your Google Sheets spreadsheets"
         },
         "https://www.googleapis.com/auth/userinfo.email": {
-          "description": "View your email address"
+          "description": "See your primary Google Account email address"
         }
       }
     }
@@ -426,7 +426,7 @@
     },
     "Empty": {
       "id": "Empty",
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
+      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
       "type": "object",
       "format": null,
       "enum": [],
@@ -848,6 +848,24 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "parameters": {
+          "description": "The ordered list of parameter names of the function in the script project.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
         }
       },
       "additionalProperties": null,

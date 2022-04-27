@@ -235,6 +235,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub company_name: ::std::option::Option<String>,
+        #[doc = "Input only. The preferred locale of the customer represented as a BCP47 language code. This field is validated on input and requests containing unsupported language codes will be rejected. Supported language codes: Arabic (ar) Chinese (Hong Kong) (zh-HK) Chinese (Simplified) (zh-CN) Chinese (Traditional) (zh-TW) Czech (cs) Danish (da) Dutch (nl) English (UK) (en-GB) English (US) (en-US) Filipino (fil) Finnish (fi) French (fr) German (de) Hebrew (iw) Hindi (hi) Hungarian (hu) Indonesian (id) Italian (it) Japanese (ja) Korean (ko) Norwegian (Bokmal) (no) Polish (pl) Portuguese (Brazil) (pt-BR) Portuguese (Portugal) (pt-PT) Russian (ru) Spanish (es) Spanish (Latin America) (es-419) Swedish (sv) Thai (th) Turkish (tr) Ukrainian (uk) Vietnamese (vi)"]
+        #[serde(
+            rename = "languageCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub language_code: ::std::option::Option<String>,
         #[doc = "Output only. The API resource name of the company. The resource name is one of the following formats: * `partners/[PARTNER_ID]/customers/[CUSTOMER_ID]` * `partners/[PARTNER_ID]/vendors/[VENDOR_ID]` * `partners/[PARTNER_ID]/vendors/[VENDOR_ID]/customers/[CUSTOMER_ID]` Assigned by the server."]
         #[serde(
             rename = "name",
@@ -242,13 +249,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. Input only. Email address of customer's users in the owner role. At least one `owner_email` is required. Each email address must be associated with a Google Account. Owners share the same access as admins but can also add, delete, and edit your organization's portal users."]
+        #[doc = "Required. Input only. Email address of customer's users in the owner role. At least one `owner_email` is required. Owners share the same access as admins but can also add, delete, and edit your organization's portal users."]
         #[serde(
             rename = "ownerEmails",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub owner_emails: ::std::option::Option<Vec<String>>,
+        #[doc = "Input only. If set to true, welcome email will not be sent to the customer. It is recommended to skip the welcome email if devices will be claimed with additional DEVICE_PROTECTION service, as the customer will receive separate emails at device claim time. This field is ignored if this is not a Zero-touch customer."]
+        #[serde(
+            rename = "skipWelcomeEmail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub skip_welcome_email: ::std::option::Option<bool>,
         #[doc = "Output only. Whether any user from the company has accepted the latest Terms of Service (ToS). See TermsStatus."]
         #[serde(
             rename = "termsStatus",
@@ -494,7 +508,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub configuration: ::std::option::Option<String>,
-        #[doc = "Required. The device the configuration is applied to."]
+        #[doc = "Required. The device the configuration is applied to. There are custom validations in ApplyConfigurationRequestValidator"]
         #[serde(
             rename = "device",
             default,
@@ -663,7 +677,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CustomerRemoveConfigurationRequest {
-        #[doc = "Required. The device to remove the configuration from."]
+        #[doc = "Required. The device to remove the configuration from. There are custom validations in RemoveConfigurationRequestValidator"]
         #[serde(
             rename = "device",
             default,
@@ -694,7 +708,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CustomerUnclaimDeviceRequest {
-        #[doc = "Required. The device to unclaim."]
+        #[doc = "Required. The device to unclaim. There are custom validations in UnclaimDeviceRequestValidator."]
         #[serde(
             rename = "device",
             default,
@@ -792,6 +806,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DeviceClaim {
+        #[doc = "The Additional service registered for the device."]
+        #[serde(
+            rename = "additionalService",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub additional_service: ::std::option::Option<crate::schemas::DeviceClaimAdditionalService>,
         #[doc = "The ID of the Customer that purchased the device."]
         #[serde(
             rename = "ownerCompanyId",
@@ -836,6 +857,83 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for DeviceClaim {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum DeviceClaimAdditionalService {
+        #[doc = "No additional service."]
+        AdditionalServiceUnspecified,
+        #[doc = "Device protection service, also known as Android Enterprise Essentials. To claim a device with the device protection service you must enroll with the partnership team."]
+        DeviceProtection,
+    }
+    impl DeviceClaimAdditionalService {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                DeviceClaimAdditionalService::AdditionalServiceUnspecified => {
+                    "ADDITIONAL_SERVICE_UNSPECIFIED"
+                }
+                DeviceClaimAdditionalService::DeviceProtection => "DEVICE_PROTECTION",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for DeviceClaimAdditionalService {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for DeviceClaimAdditionalService {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<DeviceClaimAdditionalService, ()> {
+            Ok(match s {
+                "ADDITIONAL_SERVICE_UNSPECIFIED" => {
+                    DeviceClaimAdditionalService::AdditionalServiceUnspecified
+                }
+                "DEVICE_PROTECTION" => DeviceClaimAdditionalService::DeviceProtection,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for DeviceClaimAdditionalService {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for DeviceClaimAdditionalService {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for DeviceClaimAdditionalService {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ADDITIONAL_SERVICE_UNSPECIFIED" => {
+                    DeviceClaimAdditionalService::AdditionalServiceUnspecified
+                }
+                "DEVICE_PROTECTION" => DeviceClaimAdditionalService::DeviceProtection,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for DeviceClaimAdditionalService {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DeviceClaimAdditionalService {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1119,7 +1217,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<DevicesLongRunningOperationMetadataProcessingStatus, ()>
         {
-            Ok ( match s { "BATCH_PROCESS_IN_PROGRESS" => DevicesLongRunningOperationMetadataProcessingStatus :: BatchProcessInProgress , "BATCH_PROCESS_PENDING" => DevicesLongRunningOperationMetadataProcessingStatus :: BatchProcessPending , "BATCH_PROCESS_PROCESSED" => DevicesLongRunningOperationMetadataProcessingStatus :: BatchProcessProcessed , "BATCH_PROCESS_STATUS_UNSPECIFIED" => DevicesLongRunningOperationMetadataProcessingStatus :: BatchProcessStatusUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "BATCH_PROCESS_IN_PROGRESS" => DevicesLongRunningOperationMetadataProcessingStatus :: BatchProcessInProgress , "BATCH_PROCESS_PENDING" => DevicesLongRunningOperationMetadataProcessingStatus :: BatchProcessPending , "BATCH_PROCESS_PROCESSED" => DevicesLongRunningOperationMetadataProcessingStatus :: BatchProcessProcessed , "BATCH_PROCESS_STATUS_UNSPECIFIED" => DevicesLongRunningOperationMetadataProcessingStatus :: BatchProcessStatusUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for DevicesLongRunningOperationMetadataProcessingStatus {
@@ -1141,7 +1239,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "BATCH_PROCESS_IN_PROGRESS" => DevicesLongRunningOperationMetadataProcessingStatus :: BatchProcessInProgress , "BATCH_PROCESS_PENDING" => DevicesLongRunningOperationMetadataProcessingStatus :: BatchProcessPending , "BATCH_PROCESS_PROCESSED" => DevicesLongRunningOperationMetadataProcessingStatus :: BatchProcessProcessed , "BATCH_PROCESS_STATUS_UNSPECIFIED" => DevicesLongRunningOperationMetadataProcessingStatus :: BatchProcessStatusUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "BATCH_PROCESS_IN_PROGRESS" => DevicesLongRunningOperationMetadataProcessingStatus :: BatchProcessInProgress , "BATCH_PROCESS_PENDING" => DevicesLongRunningOperationMetadataProcessingStatus :: BatchProcessPending , "BATCH_PROCESS_PROCESSED" => DevicesLongRunningOperationMetadataProcessingStatus :: BatchProcessProcessed , "BATCH_PROCESS_STATUS_UNSPECIFIED" => DevicesLongRunningOperationMetadataProcessingStatus :: BatchProcessStatusUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -2842,7 +2940,7 @@ pub mod resources {
                 self.page_size = Some(value);
                 self
             }
-            #[doc = "A token specifying which result page to return."]
+            #[doc = "A token specifying which result page to return. This field has custom validations in ListCustomersRequestValidator"]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
                 self

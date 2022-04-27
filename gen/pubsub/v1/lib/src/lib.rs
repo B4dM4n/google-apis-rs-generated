@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [schemas](resources/projects/schemas/struct.SchemasActions.html)\n        * [*create*](resources/projects/schemas/struct.CreateRequestBuilder.html), [*delete*](resources/projects/schemas/struct.DeleteRequestBuilder.html), [*get*](resources/projects/schemas/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/schemas/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/schemas/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/schemas/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/schemas/struct.TestIamPermissionsRequestBuilder.html), [*validate*](resources/projects/schemas/struct.ValidateRequestBuilder.html), [*validateMessage*](resources/projects/schemas/struct.ValidateMessageRequestBuilder.html)\n      * [snapshots](resources/projects/snapshots/struct.SnapshotsActions.html)\n        * [*create*](resources/projects/snapshots/struct.CreateRequestBuilder.html), [*delete*](resources/projects/snapshots/struct.DeleteRequestBuilder.html), [*get*](resources/projects/snapshots/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/snapshots/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/snapshots/struct.ListRequestBuilder.html), [*patch*](resources/projects/snapshots/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/snapshots/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/snapshots/struct.TestIamPermissionsRequestBuilder.html)\n      * [subscriptions](resources/projects/subscriptions/struct.SubscriptionsActions.html)\n        * [*acknowledge*](resources/projects/subscriptions/struct.AcknowledgeRequestBuilder.html), [*create*](resources/projects/subscriptions/struct.CreateRequestBuilder.html), [*delete*](resources/projects/subscriptions/struct.DeleteRequestBuilder.html), [*detach*](resources/projects/subscriptions/struct.DetachRequestBuilder.html), [*get*](resources/projects/subscriptions/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/subscriptions/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/subscriptions/struct.ListRequestBuilder.html), [*modifyAckDeadline*](resources/projects/subscriptions/struct.ModifyAckDeadlineRequestBuilder.html), [*modifyPushConfig*](resources/projects/subscriptions/struct.ModifyPushConfigRequestBuilder.html), [*patch*](resources/projects/subscriptions/struct.PatchRequestBuilder.html), [*pull*](resources/projects/subscriptions/struct.PullRequestBuilder.html), [*seek*](resources/projects/subscriptions/struct.SeekRequestBuilder.html), [*setIamPolicy*](resources/projects/subscriptions/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/subscriptions/struct.TestIamPermissionsRequestBuilder.html)\n      * [topics](resources/projects/topics/struct.TopicsActions.html)\n        * [*create*](resources/projects/topics/struct.CreateRequestBuilder.html), [*delete*](resources/projects/topics/struct.DeleteRequestBuilder.html), [*get*](resources/projects/topics/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/topics/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/topics/struct.ListRequestBuilder.html), [*patch*](resources/projects/topics/struct.PatchRequestBuilder.html), [*publish*](resources/projects/topics/struct.PublishRequestBuilder.html), [*setIamPolicy*](resources/projects/topics/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/topics/struct.TestIamPermissionsRequestBuilder.html)\n        * [snapshots](resources/projects/topics/snapshots/struct.SnapshotsActions.html)\n          * [*list*](resources/projects/topics/snapshots/struct.ListRequestBuilder.html)\n        * [subscriptions](resources/projects/topics/subscriptions/struct.SubscriptionsActions.html)\n          * [*list*](resources/projects/topics/subscriptions/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
     #[doc = "View and manage Pub/Sub topics and subscriptions\n\n`https://www.googleapis.com/auth/pubsub`"]
     pub const PUBSUB: &str = "https://www.googleapis.com/auth/pubsub";
@@ -50,21 +50,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Binding {
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -637,7 +637,6 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audience: ::std::option::Option<String>,
-        #[doc = "[Service account email](https://cloud.google.com/iam/docs/service-accounts) to be used for generating the OIDC token. The caller (for CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must have the iam.serviceAccounts.actAs permission for the service account."]
         #[serde(
             rename = "serviceAccountEmail",
             default,
@@ -668,7 +667,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Policy {
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,
@@ -796,7 +795,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub message_id: ::std::option::Option<String>,
-        #[doc = "If non-empty, identifies related messages for which publish order should be respected. If a `Subscription` has `enable_message_ordering` set to `true`, messages published with the same non-empty `ordering_key` value will be delivered to subscribers in the order in which they are received by the Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest` must specify the same `ordering_key` value."]
+        #[doc = "If non-empty, identifies related messages for which publish order should be respected. If a `Subscription` has `enable_message_ordering` set to `true`, messages published with the same non-empty `ordering_key` value will be delivered to subscribers in the order in which they are received by the Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest` must specify the same `ordering_key` value. For more information, see [ordering messages](https://cloud.google.com/pubsub/docs/ordering)."]
         #[serde(
             rename = "orderingKey",
             default,
@@ -1052,6 +1051,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<crate::schemas::SchemaType>,
+        #[doc = "Output only. The timestamp that the revision was created."]
+        #[serde(
+            rename = "revisionCreateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub revision_create_time: ::std::option::Option<String>,
+        #[doc = "Output only. Immutable. The revision ID of the schema."]
+        #[serde(
+            rename = "revisionId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub revision_id: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for Schema {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1328,7 +1341,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SetIamPolicyRequest {
-        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -1432,6 +1445,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub detached: ::std::option::Option<bool>,
+        #[doc = "If true, Pub/Sub provides the following guarantees for the delivery of a message with a given value of `message_id` on this subscription: * The message sent to a subscriber is guaranteed not to be resent before the message's acknowledgement deadline expires. * An acknowledged message will not be resent to a subscriber. Note that subscribers may still receive multiple copies of a message when `enable_exactly_once_delivery` is true if the message was published multiple times by a publisher client. These copies are considered distinct by Pub/Sub and have distinct `message_id` values."]
+        #[serde(
+            rename = "enableExactlyOnceDelivery",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_exactly_once_delivery: ::std::option::Option<bool>,
         #[doc = "If true, messages published with the same `ordering_key` in `PubsubMessage` will be delivered to the subscribers in the order in which they are received by the Pub/Sub system. Otherwise, they may be delivered in any order."]
         #[serde(
             rename = "enableMessageOrdering",
@@ -1439,7 +1459,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enable_message_ordering: ::std::option::Option<bool>,
-        #[doc = "A policy that specifies the conditions for this subscription's expiration. A subscription is considered active as long as any connected subscriber is successfully consuming messages from the subscription or is issuing operations on the subscription. If `expiration_policy` is not set, a *default policy* with `ttl` of 31 days will be used. The minimum allowed value for `expiration_policy.ttl` is 1 day."]
+        #[doc = "A policy that specifies the conditions for this subscription's expiration. A subscription is considered active as long as any connected subscriber is successfully consuming messages from the subscription or is issuing operations on the subscription. If `expiration_policy` is not set, a *default policy* with `ttl` of 31 days will be used. The minimum allowed value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set, but `expiration_policy.ttl` is not set, the subscription never expires."]
         #[serde(
             rename = "expirationPolicy",
             default,
@@ -1474,14 +1494,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "If push delivery is used with this subscription, this field is used to configure it. An empty `pushConfig` signifies that the subscriber will pull and ack messages using API methods."]
+        #[doc = "If push delivery is used with this subscription, this field is used to configure it. At most one of `pushConfig` and `bigQueryConfig` can be set. If both are empty, then the subscriber will pull and ack messages using API methods."]
         #[serde(
             rename = "pushConfig",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub push_config: ::std::option::Option<crate::schemas::PushConfig>,
-        #[doc = "Indicates whether to retain acknowledged messages. If true, then messages are not expunged from the subscription's backlog, even if they are acknowledged, until they fall out of the `message_retention_duration` window. This must be true if you would like to [Seek to a timestamp] (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)."]
+        #[doc = "Indicates whether to retain acknowledged messages. If true, then messages are not expunged from the subscription's backlog, even if they are acknowledged, until they fall out of the `message_retention_duration` window. This must be true if you would like to [`Seek` to a timestamp] (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time) in the past to replay previously-acknowledged messages."]
         #[serde(
             rename = "retainAckedMessages",
             default,
@@ -1495,6 +1515,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub retry_policy: ::std::option::Option<crate::schemas::RetryPolicy>,
+        #[doc = "Output only. An output-only field indicating whether or not the subscription can receive messages."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::SubscriptionState>,
         #[doc = "Required. The name of the topic from which this subscription is receiving messages. Format is `projects/{project}/topics/{topic}`. The value of this field will be `_deleted-topic_` if the topic has been deleted."]
         #[serde(
             rename = "topic",
@@ -1502,6 +1529,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub topic: ::std::option::Option<String>,
+        #[doc = "Output only. Indicates the minimum duration for which a message is retained after it is published to the subscription's topic. If this field is set, messages published to the subscription's topic in the last `topic_message_retention_duration` are always available to subscribers. See the `message_retention_duration` field in `Topic`. This field is set only in responses from the server; it is ignored if it is set in any requests."]
+        #[serde(
+            rename = "topicMessageRetentionDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub topic_message_retention_duration: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for Subscription {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1509,6 +1543,82 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Subscription {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum SubscriptionState {
+        #[doc = "The subscription can actively receive messages"]
+        Active,
+        #[doc = "The subscription cannot receive messages because of an error with the resource to which it pushes messages. See the more detailed error state in the corresponding configuration."]
+        ResourceError,
+        #[doc = "Default value. This value is unused."]
+        StateUnspecified,
+    }
+    impl SubscriptionState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                SubscriptionState::Active => "ACTIVE",
+                SubscriptionState::ResourceError => "RESOURCE_ERROR",
+                SubscriptionState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for SubscriptionState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for SubscriptionState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<SubscriptionState, ()> {
+            Ok(match s {
+                "ACTIVE" => SubscriptionState::Active,
+                "RESOURCE_ERROR" => SubscriptionState::ResourceError,
+                "STATE_UNSPECIFIED" => SubscriptionState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for SubscriptionState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for SubscriptionState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for SubscriptionState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACTIVE" => SubscriptionState::Active,
+                "RESOURCE_ERROR" => SubscriptionState::ResourceError,
+                "STATE_UNSPECIFIED" => SubscriptionState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for SubscriptionState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SubscriptionState {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1526,7 +1636,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -1602,6 +1712,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "Indicates the minimum duration to retain a message after it is published to the topic. If this field is set, messages published to the topic in the last `message_retention_duration` are always available to subscribers. For instance, it allows any attached subscription to [seek to a timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time) that is up to `message_retention_duration` in the past. If this field is not set, message retention is controlled by settings on individual subscriptions. Cannot be more than 31 days or less than 10 minutes."]
+        #[serde(
+            rename = "messageRetentionDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub message_retention_duration: ::std::option::Option<String>,
         #[doc = "Policy constraining the set of Google Cloud Platform regions where messages published to the topic may be stored. If not present, then no constraints are in effect."]
         #[serde(
             rename = "messageStoragePolicy",
@@ -2908,7 +3025,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> GetRequestBuilder<'a> {
-                #[doc = "The set of fields to return in the response. If not set, returns a Schema with `name` and `type`, but not `definition`. Set to `FULL` to retrieve all fields."]
+                #[doc = "The set of fields to return in the response. If not set, returns a Schema with all fields filled out. Set to `BASIC` to omit the `definition`."]
                 pub fn view(
                     mut self,
                     value: crate::resources::projects::schemas::params::GetView,
@@ -3077,7 +3194,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> GetIamPolicyRequestBuilder<'a> {
-                #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                 pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                     self.options_requested_policy_version = Some(value);
                     self
@@ -4226,7 +4343,7 @@ pub mod resources {
                         snapshot: snapshot.into(),
                     }
                 }
-                #[doc = "Gets the configuration details of a snapshot. Snapshots are used in Seek operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot."]
+                #[doc = "Gets the configuration details of a snapshot. Snapshots are used in [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot."]
                 pub fn get(&self, snapshot: impl Into<String>) -> GetRequestBuilder {
                     GetRequestBuilder {
                         reqwest: &self.reqwest,
@@ -4289,7 +4406,7 @@ pub mod resources {
                         page_token: None,
                     }
                 }
-                #[doc = "Updates an existing snapshot. Snapshots are used in Seek operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot."]
+                #[doc = "Updates an existing snapshot. Snapshots are used in [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot."]
                 pub fn patch(
                     &self,
                     request: crate::schemas::UpdateSnapshotRequest,
@@ -4861,7 +4978,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> GetIamPolicyRequestBuilder<'a> {
-                #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                 pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                     self.options_requested_policy_version = Some(value);
                     self
@@ -6935,7 +7052,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> GetIamPolicyRequestBuilder<'a> {
-                #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                 pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                     self.options_requested_policy_version = Some(value);
                     self
@@ -9240,7 +9357,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> GetIamPolicyRequestBuilder<'a> {
-                #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                 pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                     self.options_requested_policy_version = Some(value);
                     self

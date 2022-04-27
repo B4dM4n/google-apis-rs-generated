@@ -7,7 +7,7 @@
   "canonicalName": "Tag Manager",
   "fullyEncodeReservedExpansion": null,
   "version": "v2",
-  "revision": "20210317",
+  "revision": "20220423",
   "title": "Tag Manager API",
   "description": "This API allows clients to access and modify container and tag configuration.",
   "ownerDomain": "google.com",
@@ -491,7 +491,10 @@
             "requestPath",
             "requestMethod",
             "clientName",
-            "queryString"
+            "queryString",
+            "serverPageLocationUrl",
+            "serverPageLocationPath",
+            "serverPageLocationHostname"
           ],
           "enumDescriptions": [
             "",
@@ -527,6 +530,9 @@
             "",
             "For web or mobile.",
             "For web or mobile.",
+            "",
+            "",
+            "",
             "",
             "",
             "",
@@ -2103,6 +2109,40 @@
       "additionalProperties": null,
       "items": null
     },
+    "ListClientsResponse": {
+      "id": "ListClientsResponse",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "client": {
+          "description": "All GTM Clients of a GTM Container.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Client"
+          }
+        },
+        "nextPageToken": {
+          "description": "Continuation token for fetching the next page of results.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "ListContainerVersionsResponse": {
       "id": "ListContainerVersionsResponse",
       "description": "List container versions response.",
@@ -2693,6 +2733,22 @@
       "additionalProperties": null,
       "items": null
     },
+    "RevertClientResponse": {
+      "id": "RevertClientResponse",
+      "description": "The result of reverting a client in a workspace.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "client": {
+          "description": "Client as it appears in the latest container version since the last workspace synchronization operation. If no client is present, that means the client was deleted in the latest container version.",
+          "$ref": "Client"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "RevertFolderResponse": {
       "id": "RevertFolderResponse",
       "description": "The result of reverting folder changes in a workspace.",
@@ -2934,6 +2990,10 @@
             "additionalProperties": null,
             "items": null
           }
+        },
+        "consentSettings": {
+          "description": "Consent settings of a tag. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update",
+          "$ref": "TagConsentSetting"
         },
         "containerId": {
           "description": "GTM Container ID.",
@@ -3189,6 +3249,40 @@
       "additionalProperties": null,
       "items": null
     },
+    "TagConsentSetting": {
+      "id": "TagConsentSetting",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "consentStatus": {
+          "description": "The tag's consent status. If set to NEEDED, the runtime will check that the consent types specified by the consent_type field have been granted.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "notSet",
+            "notNeeded",
+            "needed"
+          ],
+          "enumDescriptions": [
+            "Default value where user has not specified any setting on it.",
+            "Tag doesn't require any additional consent settings.",
+            "Tag requires additional consent settings."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "consentType": {
+          "description": "The type of consents to check for during tag firing if in the consent NEEDED state. This parameter must be of type LIST where each list item is of type STRING.",
+          "$ref": "Parameter"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "TeardownTag": {
       "id": "TeardownTag",
       "description": "Represents a tag that fires after another tag in order to tear down dependencies.",
@@ -3418,6 +3512,9 @@
             "windowLoaded",
             "customEvent",
             "triggerGroup",
+            "init",
+            "consentInit",
+            "serverPageview",
             "always",
             "firebaseAppException",
             "firebaseAppUpdate",
@@ -3446,6 +3543,9 @@
             "elementVisibility"
           ],
           "enumDescriptions": [
+            "",
+            "",
+            "",
             "",
             "",
             "",
@@ -3988,6 +4088,18 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "parameter": {
+          "description": "Additional parameters.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Parameter"
+          }
         },
         "path": {
           "description": "GTM Zone's API relative path.",
@@ -4982,7 +5094,10 @@
                             "requestPath",
                             "requestMethod",
                             "clientName",
-                            "queryString"
+                            "queryString",
+                            "serverPageLocationUrl",
+                            "serverPageLocationPath",
+                            "serverPageLocationHostname"
                           ],
                           "enumDescriptions": [
                             "",
@@ -5018,6 +5133,9 @@
                             "",
                             "For web or mobile.",
                             "For web or mobile.",
+                            "",
+                            "",
+                            "",
                             "",
                             "",
                             "",
@@ -5255,7 +5373,10 @@
                             "requestPath",
                             "requestMethod",
                             "clientName",
-                            "queryString"
+                            "queryString",
+                            "serverPageLocationUrl",
+                            "serverPageLocationPath",
+                            "serverPageLocationHostname"
                           ],
                           "enumDescriptions": [
                             "",
@@ -5291,6 +5412,9 @@
                             "",
                             "For web or mobile.",
                             "For web or mobile.",
+                            "",
+                            "",
+                            "",
                             "",
                             "",
                             "",
@@ -5578,7 +5702,10 @@
                             "requestPath",
                             "requestMethod",
                             "clientName",
-                            "queryString"
+                            "queryString",
+                            "serverPageLocationUrl",
+                            "serverPageLocationPath",
+                            "serverPageLocationHostname"
                           ],
                           "enumDescriptions": [
                             "",
@@ -5690,6 +5817,9 @@
                             "",
                             "",
                             "",
+                            "",
+                            "",
+                            "",
                             ""
                           ],
                           "repeated": false
@@ -5701,6 +5831,279 @@
                       "request": null,
                       "response": {
                         "$ref": "RevertBuiltInVariableResponse"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/tagmanager.edit.containers"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    }
+                  }
+                },
+                "clients": {
+                  "resources": {},
+                  "methods": {
+                    "create": {
+                      "id": "tagmanager.accounts.containers.workspaces.clients.create",
+                      "path": "tagmanager/v2/{+parent}/clients",
+                      "httpMethod": "POST",
+                      "description": "Creates a GTM Client.",
+                      "parameters": {
+                        "parent": {
+                          "description": "GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^accounts/[^/]+/containers/[^/]+/workspaces/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "parent"
+                      ],
+                      "request": {
+                        "$ref": "Client"
+                      },
+                      "response": {
+                        "$ref": "Client"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/tagmanager.edit.containers"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "delete": {
+                      "id": "tagmanager.accounts.containers.workspaces.clients.delete",
+                      "path": "tagmanager/v2/{+path}",
+                      "httpMethod": "DELETE",
+                      "description": "Deletes a GTM Client.",
+                      "parameters": {
+                        "path": {
+                          "description": "GTM Client's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/clients/{client_id}",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^accounts/[^/]+/containers/[^/]+/workspaces/[^/]+/clients/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "path"
+                      ],
+                      "request": null,
+                      "response": null,
+                      "scopes": [
+                        "https://www.googleapis.com/auth/tagmanager.edit.containers"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "get": {
+                      "id": "tagmanager.accounts.containers.workspaces.clients.get",
+                      "path": "tagmanager/v2/{+path}",
+                      "httpMethod": "GET",
+                      "description": "Gets a GTM Client.",
+                      "parameters": {
+                        "path": {
+                          "description": "GTM Client's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/clients/{client_id}",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^accounts/[^/]+/containers/[^/]+/workspaces/[^/]+/clients/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "path"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "Client"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/tagmanager.edit.containers",
+                        "https://www.googleapis.com/auth/tagmanager.readonly"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "list": {
+                      "id": "tagmanager.accounts.containers.workspaces.clients.list",
+                      "path": "tagmanager/v2/{+parent}/clients",
+                      "httpMethod": "GET",
+                      "description": "Lists all GTM Clients of a GTM container workspace.",
+                      "parameters": {
+                        "pageToken": {
+                          "description": "Continuation token for fetching the next page of results.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "parent": {
+                          "description": "GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^accounts/[^/]+/containers/[^/]+/workspaces/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "parent"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "ListClientsResponse"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/tagmanager.edit.containers",
+                        "https://www.googleapis.com/auth/tagmanager.readonly"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "revert": {
+                      "id": "tagmanager.accounts.containers.workspaces.clients.revert",
+                      "path": "tagmanager/v2/{+path}:revert",
+                      "httpMethod": "POST",
+                      "description": "Reverts changes to a GTM Client in a GTM Workspace.",
+                      "parameters": {
+                        "fingerprint": {
+                          "description": "When provided, this fingerprint must match the fingerprint of the client in storage.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "path": {
+                          "description": "GTM Client's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/clients/{client_id}",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^accounts/[^/]+/containers/[^/]+/workspaces/[^/]+/clients/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "path"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "RevertClientResponse"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/tagmanager.edit.containers"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "update": {
+                      "id": "tagmanager.accounts.containers.workspaces.clients.update",
+                      "path": "tagmanager/v2/{+path}",
+                      "httpMethod": "PUT",
+                      "description": "Updates a GTM Client.",
+                      "parameters": {
+                        "fingerprint": {
+                          "description": "When provided, this fingerprint must match the fingerprint of the client in storage.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "path": {
+                          "description": "GTM Client's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/clients/{client_id}",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^accounts/[^/]+/containers/[^/]+/workspaces/[^/]+/clients/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "path"
+                      ],
+                      "request": {
+                        "$ref": "Client"
+                      },
+                      "response": {
+                        "$ref": "Client"
                       },
                       "scopes": [
                         "https://www.googleapis.com/auth/tagmanager.edit.containers"

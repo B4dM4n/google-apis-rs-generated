@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [trace_sinks](resources/projects/trace_sinks/struct.TraceSinksActions.html)\n        * [*create*](resources/projects/trace_sinks/struct.CreateRequestBuilder.html), [*delete*](resources/projects/trace_sinks/struct.DeleteRequestBuilder.html), [*get*](resources/projects/trace_sinks/struct.GetRequestBuilder.html), [*list*](resources/projects/trace_sinks/struct.ListRequestBuilder.html), [*patch*](resources/projects/trace_sinks/struct.PatchRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
     #[doc = "Write Trace data for a project or application\n\n`https://www.googleapis.com/auth/trace.append`"]
     pub const TRACE_APPEND: &str = "https://www.googleapis.com/auth/trace.append";
@@ -45,7 +45,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListTraceSinksResponse {
-        #[doc = "If there might be more results than appear in this response, then `nextPageToken` is included. To get the next set of results, call the same method again using the value of `nextPageToken` as `pageToken`."]
+        #[doc = "A paginated response where more pages might be available has `next_page_token` set. To get the next set of results, call the same method again using the value of `next_page_token` as `page_token`."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -114,7 +114,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TraceSink {
-        #[doc = "Required. The canonical sink resource name, unique within the project. Must be of the form: project/[PROJECT_NUMBER]/traceSinks/[SINK_ID]. E.g.: `\"projects/12345/traceSinks/my-project-trace-sink\"`. Sink identifiers are limited to 256 characters and can include only the following characters: upper and lower-case alphanumeric characters, underscores, hyphens, and periods."]
+        #[doc = "Required. The canonical sink resource name, unique within the project. Must be of the form: projects/[PROJECT_NUMBER]/traceSinks/[SINK_ID]. E.g.: `\"projects/12345/traceSinks/my-project-trace-sink\"`. Sink identifiers are limited to 256 characters and can include only the following characters: upper and lower-case alphanumeric characters, underscores, hyphens, and periods."]
         #[serde(
             rename = "name",
             default,
@@ -128,7 +128,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub output_config: ::std::option::Option<crate::schemas::OutputConfig>,
-        #[doc = "Output only. A service account name for exporting the data. This field is set by sinks.create and sinks.update. The service account will need to be granted write access to the destination specified in the output configuration, see [Granting access for a resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource). To create tables and write data this account will need the dataEditor role. Read more about roles in the [BigQuery documentation](https://cloud.google.com/bigquery/docs/access-control). E.g.: \"service-00000001@00000002.iam.gserviceaccount.com\""]
+        #[doc = "Output only. A service account name for exporting the data. This field is set by sinks.create and sinks.update. The service account will need to be granted write access to the destination specified in the output configuration, see [Granting access for a resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource). To create tables and to write data, this account needs the `dataEditor` role. Read more about roles in the [BigQuery documentation](https://cloud.google.com/bigquery/docs/access-control). E.g.: \"service-00000001@00000002.iam.gserviceaccount.com\""]
         #[serde(
             rename = "writerIdentity",
             default,
@@ -974,12 +974,12 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of `nextPageToken` in the response indicates that more results might be available."]
+                #[doc = "Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of `next_page_token` in the response indicates that more results might be available."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "Optional. If present, then retrieve the next batch of results from the preceding call to this method. `pageToken` must be the value of `nextPageToken` from the previous response. The values of other method parameters should be identical to those in the previous call."]
+                #[doc = "Optional. If present, then retrieve the next batch of results from the preceding call to this method. `page_token` must be the value of `next_page_token` from the previous response. The values of other method parameters should be identical to those in the previous call."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -1259,7 +1259,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> PatchRequestBuilder<'a> {
-                #[doc = "Required. Field mask that specifies the fields in `trace_sink` that are to be updated. A sink field is overwritten if, and only if, it is in the update mask. `name` and `writer_identity` fields cannot be updated. An empty updateMask is considered an error. For a detailed `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask Example: `updateMask=output_config`."]
+                #[doc = "Required. Field mask that specifies the fields in `trace_sink` that are to be updated. A sink field is overwritten if, and only if, it is in the update mask. `name` and `writer_identity` fields cannot be updated. An empty `update_mask` is considered an error. For a detailed `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask Example: `updateMask=output_config`."]
                 pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                     self.update_mask = Some(value.into());
                     self

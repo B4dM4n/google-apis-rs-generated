@@ -1,4 +1,4 @@
-#![doc = "# Resources and Methods\n    * [accounts](resources/accounts/struct.AccountsActions.html)\n      * [*get*](resources/accounts/struct.GetRequestBuilder.html), [*list*](resources/accounts/struct.ListRequestBuilder.html), [*update*](resources/accounts/struct.UpdateRequestBuilder.html)\n      * [containers](resources/accounts/containers/struct.ContainersActions.html)\n        * [*create*](resources/accounts/containers/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/struct.GetRequestBuilder.html), [*list*](resources/accounts/containers/struct.ListRequestBuilder.html), [*update*](resources/accounts/containers/struct.UpdateRequestBuilder.html)\n        * [environments](resources/accounts/containers/environments/struct.EnvironmentsActions.html)\n          * [*create*](resources/accounts/containers/environments/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/environments/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/environments/struct.GetRequestBuilder.html), [*list*](resources/accounts/containers/environments/struct.ListRequestBuilder.html), [*reauthorize*](resources/accounts/containers/environments/struct.ReauthorizeRequestBuilder.html), [*update*](resources/accounts/containers/environments/struct.UpdateRequestBuilder.html)\n        * [version_headers](resources/accounts/containers/version_headers/struct.VersionHeadersActions.html)\n          * [*latest*](resources/accounts/containers/version_headers/struct.LatestRequestBuilder.html), [*list*](resources/accounts/containers/version_headers/struct.ListRequestBuilder.html)\n        * [versions](resources/accounts/containers/versions/struct.VersionsActions.html)\n          * [*delete*](resources/accounts/containers/versions/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/versions/struct.GetRequestBuilder.html), [*live*](resources/accounts/containers/versions/struct.LiveRequestBuilder.html), [*publish*](resources/accounts/containers/versions/struct.PublishRequestBuilder.html), [*set_latest*](resources/accounts/containers/versions/struct.SetLatestRequestBuilder.html), [*undelete*](resources/accounts/containers/versions/struct.UndeleteRequestBuilder.html), [*update*](resources/accounts/containers/versions/struct.UpdateRequestBuilder.html)\n        * [workspaces](resources/accounts/containers/workspaces/struct.WorkspacesActions.html)\n          * [*create*](resources/accounts/containers/workspaces/struct.CreateRequestBuilder.html), [*create_version*](resources/accounts/containers/workspaces/struct.CreateVersionRequestBuilder.html), [*delete*](resources/accounts/containers/workspaces/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/workspaces/struct.GetRequestBuilder.html), [*getStatus*](resources/accounts/containers/workspaces/struct.GetStatusRequestBuilder.html), [*list*](resources/accounts/containers/workspaces/struct.ListRequestBuilder.html), [*quick_preview*](resources/accounts/containers/workspaces/struct.QuickPreviewRequestBuilder.html), [*resolve_conflict*](resources/accounts/containers/workspaces/struct.ResolveConflictRequestBuilder.html), [*sync*](resources/accounts/containers/workspaces/struct.SyncRequestBuilder.html), [*update*](resources/accounts/containers/workspaces/struct.UpdateRequestBuilder.html)\n          * [built_in_variables](resources/accounts/containers/workspaces/built_in_variables/struct.BuiltInVariablesActions.html)\n            * [*create*](resources/accounts/containers/workspaces/built_in_variables/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/workspaces/built_in_variables/struct.DeleteRequestBuilder.html), [*list*](resources/accounts/containers/workspaces/built_in_variables/struct.ListRequestBuilder.html), [*revert*](resources/accounts/containers/workspaces/built_in_variables/struct.RevertRequestBuilder.html)\n          * [folders](resources/accounts/containers/workspaces/folders/struct.FoldersActions.html)\n            * [*create*](resources/accounts/containers/workspaces/folders/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/workspaces/folders/struct.DeleteRequestBuilder.html), [*entities*](resources/accounts/containers/workspaces/folders/struct.EntitiesRequestBuilder.html), [*get*](resources/accounts/containers/workspaces/folders/struct.GetRequestBuilder.html), [*list*](resources/accounts/containers/workspaces/folders/struct.ListRequestBuilder.html), [*move_entities_to_folder*](resources/accounts/containers/workspaces/folders/struct.MoveEntitiesToFolderRequestBuilder.html), [*revert*](resources/accounts/containers/workspaces/folders/struct.RevertRequestBuilder.html), [*update*](resources/accounts/containers/workspaces/folders/struct.UpdateRequestBuilder.html)\n          * [tags](resources/accounts/containers/workspaces/tags/struct.TagsActions.html)\n            * [*create*](resources/accounts/containers/workspaces/tags/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/workspaces/tags/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/workspaces/tags/struct.GetRequestBuilder.html), [*list*](resources/accounts/containers/workspaces/tags/struct.ListRequestBuilder.html), [*revert*](resources/accounts/containers/workspaces/tags/struct.RevertRequestBuilder.html), [*update*](resources/accounts/containers/workspaces/tags/struct.UpdateRequestBuilder.html)\n          * [templates](resources/accounts/containers/workspaces/templates/struct.TemplatesActions.html)\n            * [*create*](resources/accounts/containers/workspaces/templates/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/workspaces/templates/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/workspaces/templates/struct.GetRequestBuilder.html), [*list*](resources/accounts/containers/workspaces/templates/struct.ListRequestBuilder.html), [*revert*](resources/accounts/containers/workspaces/templates/struct.RevertRequestBuilder.html), [*update*](resources/accounts/containers/workspaces/templates/struct.UpdateRequestBuilder.html)\n          * [triggers](resources/accounts/containers/workspaces/triggers/struct.TriggersActions.html)\n            * [*create*](resources/accounts/containers/workspaces/triggers/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/workspaces/triggers/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/workspaces/triggers/struct.GetRequestBuilder.html), [*list*](resources/accounts/containers/workspaces/triggers/struct.ListRequestBuilder.html), [*revert*](resources/accounts/containers/workspaces/triggers/struct.RevertRequestBuilder.html), [*update*](resources/accounts/containers/workspaces/triggers/struct.UpdateRequestBuilder.html)\n          * [variables](resources/accounts/containers/workspaces/variables/struct.VariablesActions.html)\n            * [*create*](resources/accounts/containers/workspaces/variables/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/workspaces/variables/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/workspaces/variables/struct.GetRequestBuilder.html), [*list*](resources/accounts/containers/workspaces/variables/struct.ListRequestBuilder.html), [*revert*](resources/accounts/containers/workspaces/variables/struct.RevertRequestBuilder.html), [*update*](resources/accounts/containers/workspaces/variables/struct.UpdateRequestBuilder.html)\n          * [zones](resources/accounts/containers/workspaces/zones/struct.ZonesActions.html)\n            * [*create*](resources/accounts/containers/workspaces/zones/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/workspaces/zones/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/workspaces/zones/struct.GetRequestBuilder.html), [*list*](resources/accounts/containers/workspaces/zones/struct.ListRequestBuilder.html), [*revert*](resources/accounts/containers/workspaces/zones/struct.RevertRequestBuilder.html), [*update*](resources/accounts/containers/workspaces/zones/struct.UpdateRequestBuilder.html)\n      * [user_permissions](resources/accounts/user_permissions/struct.UserPermissionsActions.html)\n        * [*create*](resources/accounts/user_permissions/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/user_permissions/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/user_permissions/struct.GetRequestBuilder.html), [*list*](resources/accounts/user_permissions/struct.ListRequestBuilder.html), [*update*](resources/accounts/user_permissions/struct.UpdateRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [accounts](resources/accounts/struct.AccountsActions.html)\n      * [*get*](resources/accounts/struct.GetRequestBuilder.html), [*list*](resources/accounts/struct.ListRequestBuilder.html), [*update*](resources/accounts/struct.UpdateRequestBuilder.html)\n      * [containers](resources/accounts/containers/struct.ContainersActions.html)\n        * [*create*](resources/accounts/containers/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/struct.GetRequestBuilder.html), [*list*](resources/accounts/containers/struct.ListRequestBuilder.html), [*update*](resources/accounts/containers/struct.UpdateRequestBuilder.html)\n        * [environments](resources/accounts/containers/environments/struct.EnvironmentsActions.html)\n          * [*create*](resources/accounts/containers/environments/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/environments/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/environments/struct.GetRequestBuilder.html), [*list*](resources/accounts/containers/environments/struct.ListRequestBuilder.html), [*reauthorize*](resources/accounts/containers/environments/struct.ReauthorizeRequestBuilder.html), [*update*](resources/accounts/containers/environments/struct.UpdateRequestBuilder.html)\n        * [version_headers](resources/accounts/containers/version_headers/struct.VersionHeadersActions.html)\n          * [*latest*](resources/accounts/containers/version_headers/struct.LatestRequestBuilder.html), [*list*](resources/accounts/containers/version_headers/struct.ListRequestBuilder.html)\n        * [versions](resources/accounts/containers/versions/struct.VersionsActions.html)\n          * [*delete*](resources/accounts/containers/versions/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/versions/struct.GetRequestBuilder.html), [*live*](resources/accounts/containers/versions/struct.LiveRequestBuilder.html), [*publish*](resources/accounts/containers/versions/struct.PublishRequestBuilder.html), [*set_latest*](resources/accounts/containers/versions/struct.SetLatestRequestBuilder.html), [*undelete*](resources/accounts/containers/versions/struct.UndeleteRequestBuilder.html), [*update*](resources/accounts/containers/versions/struct.UpdateRequestBuilder.html)\n        * [workspaces](resources/accounts/containers/workspaces/struct.WorkspacesActions.html)\n          * [*create*](resources/accounts/containers/workspaces/struct.CreateRequestBuilder.html), [*create_version*](resources/accounts/containers/workspaces/struct.CreateVersionRequestBuilder.html), [*delete*](resources/accounts/containers/workspaces/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/workspaces/struct.GetRequestBuilder.html), [*getStatus*](resources/accounts/containers/workspaces/struct.GetStatusRequestBuilder.html), [*list*](resources/accounts/containers/workspaces/struct.ListRequestBuilder.html), [*quick_preview*](resources/accounts/containers/workspaces/struct.QuickPreviewRequestBuilder.html), [*resolve_conflict*](resources/accounts/containers/workspaces/struct.ResolveConflictRequestBuilder.html), [*sync*](resources/accounts/containers/workspaces/struct.SyncRequestBuilder.html), [*update*](resources/accounts/containers/workspaces/struct.UpdateRequestBuilder.html)\n          * [built_in_variables](resources/accounts/containers/workspaces/built_in_variables/struct.BuiltInVariablesActions.html)\n            * [*create*](resources/accounts/containers/workspaces/built_in_variables/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/workspaces/built_in_variables/struct.DeleteRequestBuilder.html), [*list*](resources/accounts/containers/workspaces/built_in_variables/struct.ListRequestBuilder.html), [*revert*](resources/accounts/containers/workspaces/built_in_variables/struct.RevertRequestBuilder.html)\n          * [clients](resources/accounts/containers/workspaces/clients/struct.ClientsActions.html)\n            * [*create*](resources/accounts/containers/workspaces/clients/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/workspaces/clients/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/workspaces/clients/struct.GetRequestBuilder.html), [*list*](resources/accounts/containers/workspaces/clients/struct.ListRequestBuilder.html), [*revert*](resources/accounts/containers/workspaces/clients/struct.RevertRequestBuilder.html), [*update*](resources/accounts/containers/workspaces/clients/struct.UpdateRequestBuilder.html)\n          * [folders](resources/accounts/containers/workspaces/folders/struct.FoldersActions.html)\n            * [*create*](resources/accounts/containers/workspaces/folders/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/workspaces/folders/struct.DeleteRequestBuilder.html), [*entities*](resources/accounts/containers/workspaces/folders/struct.EntitiesRequestBuilder.html), [*get*](resources/accounts/containers/workspaces/folders/struct.GetRequestBuilder.html), [*list*](resources/accounts/containers/workspaces/folders/struct.ListRequestBuilder.html), [*move_entities_to_folder*](resources/accounts/containers/workspaces/folders/struct.MoveEntitiesToFolderRequestBuilder.html), [*revert*](resources/accounts/containers/workspaces/folders/struct.RevertRequestBuilder.html), [*update*](resources/accounts/containers/workspaces/folders/struct.UpdateRequestBuilder.html)\n          * [tags](resources/accounts/containers/workspaces/tags/struct.TagsActions.html)\n            * [*create*](resources/accounts/containers/workspaces/tags/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/workspaces/tags/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/workspaces/tags/struct.GetRequestBuilder.html), [*list*](resources/accounts/containers/workspaces/tags/struct.ListRequestBuilder.html), [*revert*](resources/accounts/containers/workspaces/tags/struct.RevertRequestBuilder.html), [*update*](resources/accounts/containers/workspaces/tags/struct.UpdateRequestBuilder.html)\n          * [templates](resources/accounts/containers/workspaces/templates/struct.TemplatesActions.html)\n            * [*create*](resources/accounts/containers/workspaces/templates/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/workspaces/templates/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/workspaces/templates/struct.GetRequestBuilder.html), [*list*](resources/accounts/containers/workspaces/templates/struct.ListRequestBuilder.html), [*revert*](resources/accounts/containers/workspaces/templates/struct.RevertRequestBuilder.html), [*update*](resources/accounts/containers/workspaces/templates/struct.UpdateRequestBuilder.html)\n          * [triggers](resources/accounts/containers/workspaces/triggers/struct.TriggersActions.html)\n            * [*create*](resources/accounts/containers/workspaces/triggers/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/workspaces/triggers/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/workspaces/triggers/struct.GetRequestBuilder.html), [*list*](resources/accounts/containers/workspaces/triggers/struct.ListRequestBuilder.html), [*revert*](resources/accounts/containers/workspaces/triggers/struct.RevertRequestBuilder.html), [*update*](resources/accounts/containers/workspaces/triggers/struct.UpdateRequestBuilder.html)\n          * [variables](resources/accounts/containers/workspaces/variables/struct.VariablesActions.html)\n            * [*create*](resources/accounts/containers/workspaces/variables/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/workspaces/variables/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/workspaces/variables/struct.GetRequestBuilder.html), [*list*](resources/accounts/containers/workspaces/variables/struct.ListRequestBuilder.html), [*revert*](resources/accounts/containers/workspaces/variables/struct.RevertRequestBuilder.html), [*update*](resources/accounts/containers/workspaces/variables/struct.UpdateRequestBuilder.html)\n          * [zones](resources/accounts/containers/workspaces/zones/struct.ZonesActions.html)\n            * [*create*](resources/accounts/containers/workspaces/zones/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/containers/workspaces/zones/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/containers/workspaces/zones/struct.GetRequestBuilder.html), [*list*](resources/accounts/containers/workspaces/zones/struct.ListRequestBuilder.html), [*revert*](resources/accounts/containers/workspaces/zones/struct.RevertRequestBuilder.html), [*update*](resources/accounts/containers/workspaces/zones/struct.UpdateRequestBuilder.html)\n      * [user_permissions](resources/accounts/user_permissions/struct.UserPermissionsActions.html)\n        * [*create*](resources/accounts/user_permissions/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/user_permissions/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/user_permissions/struct.GetRequestBuilder.html), [*list*](resources/accounts/user_permissions/struct.ListRequestBuilder.html), [*update*](resources/accounts/user_permissions/struct.UpdateRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Delete your Google Tag Manager containers\n\n`https://www.googleapis.com/auth/tagmanager.delete.containers`"]
     pub const TAGMANAGER_DELETE_CONTAINERS: &str =
@@ -375,6 +375,9 @@ pub mod schemas {
         ScrollDepthThreshold,
         ScrollDepthUnits,
         SdkVersion,
+        ServerPageLocationHostname,
+        ServerPageLocationPath,
+        ServerPageLocationUrl,
         VideoCurrentTime,
         VideoDuration,
         VideoPercent,
@@ -533,6 +536,9 @@ pub mod schemas {
                 BuiltInVariableType::ScrollDepthThreshold => "scrollDepthThreshold",
                 BuiltInVariableType::ScrollDepthUnits => "scrollDepthUnits",
                 BuiltInVariableType::SdkVersion => "sdkVersion",
+                BuiltInVariableType::ServerPageLocationHostname => "serverPageLocationHostname",
+                BuiltInVariableType::ServerPageLocationPath => "serverPageLocationPath",
+                BuiltInVariableType::ServerPageLocationUrl => "serverPageLocationUrl",
                 BuiltInVariableType::VideoCurrentTime => "videoCurrentTime",
                 BuiltInVariableType::VideoDuration => "videoDuration",
                 BuiltInVariableType::VideoPercent => "videoPercent",
@@ -699,6 +705,9 @@ pub mod schemas {
                 "scrollDepthThreshold" => BuiltInVariableType::ScrollDepthThreshold,
                 "scrollDepthUnits" => BuiltInVariableType::ScrollDepthUnits,
                 "sdkVersion" => BuiltInVariableType::SdkVersion,
+                "serverPageLocationHostname" => BuiltInVariableType::ServerPageLocationHostname,
+                "serverPageLocationPath" => BuiltInVariableType::ServerPageLocationPath,
+                "serverPageLocationUrl" => BuiltInVariableType::ServerPageLocationUrl,
                 "videoCurrentTime" => BuiltInVariableType::VideoCurrentTime,
                 "videoDuration" => BuiltInVariableType::VideoDuration,
                 "videoPercent" => BuiltInVariableType::VideoPercent,
@@ -877,6 +886,9 @@ pub mod schemas {
                 "scrollDepthThreshold" => BuiltInVariableType::ScrollDepthThreshold,
                 "scrollDepthUnits" => BuiltInVariableType::ScrollDepthUnits,
                 "sdkVersion" => BuiltInVariableType::SdkVersion,
+                "serverPageLocationHostname" => BuiltInVariableType::ServerPageLocationHostname,
+                "serverPageLocationPath" => BuiltInVariableType::ServerPageLocationPath,
+                "serverPageLocationUrl" => BuiltInVariableType::ServerPageLocationUrl,
                 "videoCurrentTime" => BuiltInVariableType::VideoCurrentTime,
                 "videoDuration" => BuiltInVariableType::VideoDuration,
                 "videoPercent" => BuiltInVariableType::VideoPercent,
@@ -2624,6 +2636,44 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct ListClientsResponse {
+        #[doc = "All GTM Clients of a GTM Container."]
+        #[serde(
+            rename = "client",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub client: ::std::option::Option<Vec<crate::schemas::Client>>,
+        #[doc = "Continuation token for fetching the next page of results."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ListClientsResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ListClientsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ListContainerVersionsResponse {
         #[doc = "All container version headers of a GTM Container."]
         #[serde(
@@ -3386,6 +3436,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct RevertClientResponse {
+        #[doc = "Client as it appears in the latest container version since the last workspace synchronization operation. If no client is present, that means the client was deleted in the latest container version."]
+        #[serde(
+            rename = "client",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub client: ::std::option::Option<crate::schemas::Client>,
+    }
+    impl ::google_field_selector::FieldSelector for RevertClientResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RevertClientResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct RevertFolderResponse {
         #[doc = "Folder as it appears in the latest container version since the last workspace synchronization operation. If no folder is present, that means the folder was deleted in the latest container version."]
         #[serde(
@@ -3708,6 +3789,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub blocking_trigger_id: ::std::option::Option<Vec<String>>,
+        #[doc = "Consent settings of a tag. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update"]
+        #[serde(
+            rename = "consentSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub consent_settings: ::std::option::Option<crate::schemas::TagConsentSetting>,
         #[doc = "GTM Container ID."]
         #[serde(
             rename = "containerId",
@@ -3958,6 +4046,120 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for TagTagFiringOption {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct TagConsentSetting {
+        #[doc = "The tag's consent status. If set to NEEDED, the runtime will check that the consent types specified by the consent_type field have been granted."]
+        #[serde(
+            rename = "consentStatus",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub consent_status: ::std::option::Option<crate::schemas::TagConsentSettingConsentStatus>,
+        #[doc = "The type of consents to check for during tag firing if in the consent NEEDED state. This parameter must be of type LIST where each list item is of type STRING."]
+        #[serde(
+            rename = "consentType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub consent_type: ::std::option::Option<crate::schemas::Parameter>,
+    }
+    impl ::google_field_selector::FieldSelector for TagConsentSetting {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TagConsentSetting {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum TagConsentSettingConsentStatus {
+        #[doc = "Tag requires additional consent settings."]
+        Needed,
+        #[doc = "Tag doesn't require any additional consent settings."]
+        NotNeeded,
+        #[doc = "Default value where user has not specified any setting on it."]
+        NotSet,
+    }
+    impl TagConsentSettingConsentStatus {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                TagConsentSettingConsentStatus::Needed => "needed",
+                TagConsentSettingConsentStatus::NotNeeded => "notNeeded",
+                TagConsentSettingConsentStatus::NotSet => "notSet",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for TagConsentSettingConsentStatus {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for TagConsentSettingConsentStatus {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<TagConsentSettingConsentStatus, ()> {
+            Ok(match s {
+                "needed" => TagConsentSettingConsentStatus::Needed,
+                "notNeeded" => TagConsentSettingConsentStatus::NotNeeded,
+                "notSet" => TagConsentSettingConsentStatus::NotSet,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for TagConsentSettingConsentStatus {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for TagConsentSettingConsentStatus {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for TagConsentSettingConsentStatus {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "needed" => TagConsentSettingConsentStatus::Needed,
+                "notNeeded" => TagConsentSettingConsentStatus::NotNeeded,
+                "notSet" => TagConsentSettingConsentStatus::NotSet,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for TagConsentSettingConsentStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TagConsentSettingConsentStatus {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4256,6 +4458,7 @@ pub mod schemas {
         AmpTimer,
         AmpVisibility,
         Click,
+        ConsentInit,
         CustomEvent,
         DomReady,
         ElementVisibility,
@@ -4274,10 +4477,12 @@ pub mod schemas {
         FirebaseUserEngagement,
         FormSubmission,
         HistoryChange,
+        Init,
         JsError,
         LinkClick,
         Pageview,
         ScrollDepth,
+        ServerPageview,
         Timer,
         TriggerGroup,
         WindowLoaded,
@@ -4292,6 +4497,7 @@ pub mod schemas {
                 TriggerType::AmpTimer => "ampTimer",
                 TriggerType::AmpVisibility => "ampVisibility",
                 TriggerType::Click => "click",
+                TriggerType::ConsentInit => "consentInit",
                 TriggerType::CustomEvent => "customEvent",
                 TriggerType::DomReady => "domReady",
                 TriggerType::ElementVisibility => "elementVisibility",
@@ -4310,10 +4516,12 @@ pub mod schemas {
                 TriggerType::FirebaseUserEngagement => "firebaseUserEngagement",
                 TriggerType::FormSubmission => "formSubmission",
                 TriggerType::HistoryChange => "historyChange",
+                TriggerType::Init => "init",
                 TriggerType::JsError => "jsError",
                 TriggerType::LinkClick => "linkClick",
                 TriggerType::Pageview => "pageview",
                 TriggerType::ScrollDepth => "scrollDepth",
+                TriggerType::ServerPageview => "serverPageview",
                 TriggerType::Timer => "timer",
                 TriggerType::TriggerGroup => "triggerGroup",
                 TriggerType::WindowLoaded => "windowLoaded",
@@ -4336,6 +4544,7 @@ pub mod schemas {
                 "ampTimer" => TriggerType::AmpTimer,
                 "ampVisibility" => TriggerType::AmpVisibility,
                 "click" => TriggerType::Click,
+                "consentInit" => TriggerType::ConsentInit,
                 "customEvent" => TriggerType::CustomEvent,
                 "domReady" => TriggerType::DomReady,
                 "elementVisibility" => TriggerType::ElementVisibility,
@@ -4354,10 +4563,12 @@ pub mod schemas {
                 "firebaseUserEngagement" => TriggerType::FirebaseUserEngagement,
                 "formSubmission" => TriggerType::FormSubmission,
                 "historyChange" => TriggerType::HistoryChange,
+                "init" => TriggerType::Init,
                 "jsError" => TriggerType::JsError,
                 "linkClick" => TriggerType::LinkClick,
                 "pageview" => TriggerType::Pageview,
                 "scrollDepth" => TriggerType::ScrollDepth,
+                "serverPageview" => TriggerType::ServerPageview,
                 "timer" => TriggerType::Timer,
                 "triggerGroup" => TriggerType::TriggerGroup,
                 "windowLoaded" => TriggerType::WindowLoaded,
@@ -4392,6 +4603,7 @@ pub mod schemas {
                 "ampTimer" => TriggerType::AmpTimer,
                 "ampVisibility" => TriggerType::AmpVisibility,
                 "click" => TriggerType::Click,
+                "consentInit" => TriggerType::ConsentInit,
                 "customEvent" => TriggerType::CustomEvent,
                 "domReady" => TriggerType::DomReady,
                 "elementVisibility" => TriggerType::ElementVisibility,
@@ -4410,10 +4622,12 @@ pub mod schemas {
                 "firebaseUserEngagement" => TriggerType::FirebaseUserEngagement,
                 "formSubmission" => TriggerType::FormSubmission,
                 "historyChange" => TriggerType::HistoryChange,
+                "init" => TriggerType::Init,
                 "jsError" => TriggerType::JsError,
                 "linkClick" => TriggerType::LinkClick,
                 "pageview" => TriggerType::Pageview,
                 "scrollDepth" => TriggerType::ScrollDepth,
+                "serverPageview" => TriggerType::ServerPageview,
                 "timer" => TriggerType::Timer,
                 "triggerGroup" => TriggerType::TriggerGroup,
                 "windowLoaded" => TriggerType::WindowLoaded,
@@ -4918,6 +5132,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub notes: ::std::option::Option<String>,
+        #[doc = "Additional parameters."]
+        #[serde(
+            rename = "parameter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub parameter: ::std::option::Option<Vec<crate::schemas::Parameter>>,
         #[doc = "GTM Zone's API relative path."]
         #[serde(
             rename = "path",
@@ -10148,15 +10369,22 @@ pub mod resources {
                             fingerprint: None,
                         }
                     }
-                    #[doc = "Actions that can be performed on the built_in_variables resource"]                    pub fn built_in_variables ( & self ) -> crate :: resources :: accounts :: containers :: workspaces :: built_in_variables :: BuiltInVariablesActions{
-                        crate :: resources :: accounts :: containers :: workspaces :: built_in_variables :: BuiltInVariablesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the built_in_variables resource"]                    pub fn built_in_variables (& self) -> crate :: resources :: accounts :: containers :: workspaces :: built_in_variables :: BuiltInVariablesActions{
+                        crate :: resources :: accounts :: containers :: workspaces :: built_in_variables :: BuiltInVariablesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
+                    }
+                    #[doc = "Actions that can be performed on the clients resource"]
+                    pub fn clients(
+                        &self,
+                    ) -> crate::resources::accounts::containers::workspaces::clients::ClientsActions
+                    {
+                        crate :: resources :: accounts :: containers :: workspaces :: clients :: ClientsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                     #[doc = "Actions that can be performed on the folders resource"]
                     pub fn folders(
                         &self,
                     ) -> crate::resources::accounts::containers::workspaces::folders::FoldersActions
                     {
-                        crate :: resources :: accounts :: containers :: workspaces :: folders :: FoldersActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        crate :: resources :: accounts :: containers :: workspaces :: folders :: FoldersActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                     #[doc = "Actions that can be performed on the tags resource"]
                     pub fn tags(
@@ -10168,18 +10396,18 @@ pub mod resources {
                             auth: self.auth_ref(),
                         }
                     }
-                    #[doc = "Actions that can be performed on the templates resource"]                    pub fn templates ( & self ) -> crate :: resources :: accounts :: containers :: workspaces :: templates :: TemplatesActions{
-                        crate :: resources :: accounts :: containers :: workspaces :: templates :: TemplatesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the templates resource"]                    pub fn templates (& self) -> crate :: resources :: accounts :: containers :: workspaces :: templates :: TemplatesActions{
+                        crate :: resources :: accounts :: containers :: workspaces :: templates :: TemplatesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                     #[doc = "Actions that can be performed on the triggers resource"]
                     pub fn triggers(
                         &self,
                     ) -> crate::resources::accounts::containers::workspaces::triggers::TriggersActions
                     {
-                        crate :: resources :: accounts :: containers :: workspaces :: triggers :: TriggersActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        crate :: resources :: accounts :: containers :: workspaces :: triggers :: TriggersActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the variables resource"]                    pub fn variables ( & self ) -> crate :: resources :: accounts :: containers :: workspaces :: variables :: VariablesActions{
-                        crate :: resources :: accounts :: containers :: workspaces :: variables :: VariablesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the variables resource"]                    pub fn variables (& self) -> crate :: resources :: accounts :: containers :: workspaces :: variables :: VariablesActions{
+                        crate :: resources :: accounts :: containers :: workspaces :: variables :: VariablesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                     #[doc = "Actions that can be performed on the zones resource"]
                     pub fn zones(
@@ -11954,6 +12182,9 @@ pub mod resources {
                             ScrollDepthThreshold,
                             ScrollDepthUnits,
                             SdkVersion,
+                            ServerPageLocationHostname,
+                            ServerPageLocationPath,
+                            ServerPageLocationUrl,
                             VideoCurrentTime,
                             VideoDuration,
                             VideoPercent,
@@ -11965,7 +12196,7 @@ pub mod resources {
                         }
                         impl CreateTypeItems {
                             pub fn as_str(self) -> &'static str {
-                                match self { CreateTypeItems :: AdvertiserId => "advertiserId" , CreateTypeItems :: AdvertisingTrackingEnabled => "advertisingTrackingEnabled" , CreateTypeItems :: AmpBrowserLanguage => "ampBrowserLanguage" , CreateTypeItems :: AmpCanonicalHost => "ampCanonicalHost" , CreateTypeItems :: AmpCanonicalPath => "ampCanonicalPath" , CreateTypeItems :: AmpCanonicalUrl => "ampCanonicalUrl" , CreateTypeItems :: AmpClientId => "ampClientId" , CreateTypeItems :: AmpClientMaxScrollX => "ampClientMaxScrollX" , CreateTypeItems :: AmpClientMaxScrollY => "ampClientMaxScrollY" , CreateTypeItems :: AmpClientScreenHeight => "ampClientScreenHeight" , CreateTypeItems :: AmpClientScreenWidth => "ampClientScreenWidth" , CreateTypeItems :: AmpClientScrollX => "ampClientScrollX" , CreateTypeItems :: AmpClientScrollY => "ampClientScrollY" , CreateTypeItems :: AmpClientTimestamp => "ampClientTimestamp" , CreateTypeItems :: AmpClientTimezone => "ampClientTimezone" , CreateTypeItems :: AmpGtmEvent => "ampGtmEvent" , CreateTypeItems :: AmpPageDownloadTime => "ampPageDownloadTime" , CreateTypeItems :: AmpPageLoadTime => "ampPageLoadTime" , CreateTypeItems :: AmpPageViewId => "ampPageViewId" , CreateTypeItems :: AmpReferrer => "ampReferrer" , CreateTypeItems :: AmpTitle => "ampTitle" , CreateTypeItems :: AmpTotalEngagedTime => "ampTotalEngagedTime" , CreateTypeItems :: AppId => "appId" , CreateTypeItems :: AppName => "appName" , CreateTypeItems :: AppVersionCode => "appVersionCode" , CreateTypeItems :: AppVersionName => "appVersionName" , CreateTypeItems :: BuiltInVariableTypeUnspecified => "builtInVariableTypeUnspecified" , CreateTypeItems :: ClickClasses => "clickClasses" , CreateTypeItems :: ClickElement => "clickElement" , CreateTypeItems :: ClickId => "clickId" , CreateTypeItems :: ClickTarget => "clickTarget" , CreateTypeItems :: ClickText => "clickText" , CreateTypeItems :: ClickUrl => "clickUrl" , CreateTypeItems :: ClientName => "clientName" , CreateTypeItems :: ContainerId => "containerId" , CreateTypeItems :: ContainerVersion => "containerVersion" , CreateTypeItems :: DebugMode => "debugMode" , CreateTypeItems :: DeviceName => "deviceName" , CreateTypeItems :: ElementVisibilityFirstTime => "elementVisibilityFirstTime" , CreateTypeItems :: ElementVisibilityRatio => "elementVisibilityRatio" , CreateTypeItems :: ElementVisibilityRecentTime => "elementVisibilityRecentTime" , CreateTypeItems :: ElementVisibilityTime => "elementVisibilityTime" , CreateTypeItems :: EnvironmentName => "environmentName" , CreateTypeItems :: ErrorLine => "errorLine" , CreateTypeItems :: ErrorMessage => "errorMessage" , CreateTypeItems :: ErrorUrl => "errorUrl" , CreateTypeItems :: Event => "event" , CreateTypeItems :: EventName => "eventName" , CreateTypeItems :: FirebaseEventParameterCampaign => "firebaseEventParameterCampaign" , CreateTypeItems :: FirebaseEventParameterCampaignAclid => "firebaseEventParameterCampaignAclid" , CreateTypeItems :: FirebaseEventParameterCampaignAnid => "firebaseEventParameterCampaignAnid" , CreateTypeItems :: FirebaseEventParameterCampaignClickTimestamp => "firebaseEventParameterCampaignClickTimestamp" , CreateTypeItems :: FirebaseEventParameterCampaignContent => "firebaseEventParameterCampaignContent" , CreateTypeItems :: FirebaseEventParameterCampaignCp1 => "firebaseEventParameterCampaignCp1" , CreateTypeItems :: FirebaseEventParameterCampaignGclid => "firebaseEventParameterCampaignGclid" , CreateTypeItems :: FirebaseEventParameterCampaignSource => "firebaseEventParameterCampaignSource" , CreateTypeItems :: FirebaseEventParameterCampaignTerm => "firebaseEventParameterCampaignTerm" , CreateTypeItems :: FirebaseEventParameterCurrency => "firebaseEventParameterCurrency" , CreateTypeItems :: FirebaseEventParameterDynamicLinkAcceptTime => "firebaseEventParameterDynamicLinkAcceptTime" , CreateTypeItems :: FirebaseEventParameterDynamicLinkLinkid => "firebaseEventParameterDynamicLinkLinkid" , CreateTypeItems :: FirebaseEventParameterNotificationMessageDeviceTime => "firebaseEventParameterNotificationMessageDeviceTime" , CreateTypeItems :: FirebaseEventParameterNotificationMessageId => "firebaseEventParameterNotificationMessageId" , CreateTypeItems :: FirebaseEventParameterNotificationMessageName => "firebaseEventParameterNotificationMessageName" , CreateTypeItems :: FirebaseEventParameterNotificationMessageTime => "firebaseEventParameterNotificationMessageTime" , CreateTypeItems :: FirebaseEventParameterNotificationTopic => "firebaseEventParameterNotificationTopic" , CreateTypeItems :: FirebaseEventParameterPreviousAppVersion => "firebaseEventParameterPreviousAppVersion" , CreateTypeItems :: FirebaseEventParameterPreviousOsVersion => "firebaseEventParameterPreviousOsVersion" , CreateTypeItems :: FirebaseEventParameterPrice => "firebaseEventParameterPrice" , CreateTypeItems :: FirebaseEventParameterProductId => "firebaseEventParameterProductId" , CreateTypeItems :: FirebaseEventParameterQuantity => "firebaseEventParameterQuantity" , CreateTypeItems :: FirebaseEventParameterValue => "firebaseEventParameterValue" , CreateTypeItems :: FirstPartyServingUrl => "firstPartyServingUrl" , CreateTypeItems :: FormClasses => "formClasses" , CreateTypeItems :: FormElement => "formElement" , CreateTypeItems :: FormId => "formId" , CreateTypeItems :: FormTarget => "formTarget" , CreateTypeItems :: FormText => "formText" , CreateTypeItems :: FormUrl => "formUrl" , CreateTypeItems :: HistorySource => "historySource" , CreateTypeItems :: HtmlId => "htmlId" , CreateTypeItems :: Language => "language" , CreateTypeItems :: NewHistoryFragment => "newHistoryFragment" , CreateTypeItems :: NewHistoryState => "newHistoryState" , CreateTypeItems :: NewHistoryUrl => "newHistoryUrl" , CreateTypeItems :: OldHistoryFragment => "oldHistoryFragment" , CreateTypeItems :: OldHistoryState => "oldHistoryState" , CreateTypeItems :: OldHistoryUrl => "oldHistoryUrl" , CreateTypeItems :: OsVersion => "osVersion" , CreateTypeItems :: PageHostname => "pageHostname" , CreateTypeItems :: PagePath => "pagePath" , CreateTypeItems :: PageUrl => "pageUrl" , CreateTypeItems :: Platform => "platform" , CreateTypeItems :: QueryString => "queryString" , CreateTypeItems :: RandomNumber => "randomNumber" , CreateTypeItems :: Referrer => "referrer" , CreateTypeItems :: RequestMethod => "requestMethod" , CreateTypeItems :: RequestPath => "requestPath" , CreateTypeItems :: Resolution => "resolution" , CreateTypeItems :: ScrollDepthDirection => "scrollDepthDirection" , CreateTypeItems :: ScrollDepthThreshold => "scrollDepthThreshold" , CreateTypeItems :: ScrollDepthUnits => "scrollDepthUnits" , CreateTypeItems :: SdkVersion => "sdkVersion" , CreateTypeItems :: VideoCurrentTime => "videoCurrentTime" , CreateTypeItems :: VideoDuration => "videoDuration" , CreateTypeItems :: VideoPercent => "videoPercent" , CreateTypeItems :: VideoProvider => "videoProvider" , CreateTypeItems :: VideoStatus => "videoStatus" , CreateTypeItems :: VideoTitle => "videoTitle" , CreateTypeItems :: VideoUrl => "videoUrl" , CreateTypeItems :: VideoVisible => "videoVisible" , }
+                                match self { CreateTypeItems :: AdvertiserId => "advertiserId" , CreateTypeItems :: AdvertisingTrackingEnabled => "advertisingTrackingEnabled" , CreateTypeItems :: AmpBrowserLanguage => "ampBrowserLanguage" , CreateTypeItems :: AmpCanonicalHost => "ampCanonicalHost" , CreateTypeItems :: AmpCanonicalPath => "ampCanonicalPath" , CreateTypeItems :: AmpCanonicalUrl => "ampCanonicalUrl" , CreateTypeItems :: AmpClientId => "ampClientId" , CreateTypeItems :: AmpClientMaxScrollX => "ampClientMaxScrollX" , CreateTypeItems :: AmpClientMaxScrollY => "ampClientMaxScrollY" , CreateTypeItems :: AmpClientScreenHeight => "ampClientScreenHeight" , CreateTypeItems :: AmpClientScreenWidth => "ampClientScreenWidth" , CreateTypeItems :: AmpClientScrollX => "ampClientScrollX" , CreateTypeItems :: AmpClientScrollY => "ampClientScrollY" , CreateTypeItems :: AmpClientTimestamp => "ampClientTimestamp" , CreateTypeItems :: AmpClientTimezone => "ampClientTimezone" , CreateTypeItems :: AmpGtmEvent => "ampGtmEvent" , CreateTypeItems :: AmpPageDownloadTime => "ampPageDownloadTime" , CreateTypeItems :: AmpPageLoadTime => "ampPageLoadTime" , CreateTypeItems :: AmpPageViewId => "ampPageViewId" , CreateTypeItems :: AmpReferrer => "ampReferrer" , CreateTypeItems :: AmpTitle => "ampTitle" , CreateTypeItems :: AmpTotalEngagedTime => "ampTotalEngagedTime" , CreateTypeItems :: AppId => "appId" , CreateTypeItems :: AppName => "appName" , CreateTypeItems :: AppVersionCode => "appVersionCode" , CreateTypeItems :: AppVersionName => "appVersionName" , CreateTypeItems :: BuiltInVariableTypeUnspecified => "builtInVariableTypeUnspecified" , CreateTypeItems :: ClickClasses => "clickClasses" , CreateTypeItems :: ClickElement => "clickElement" , CreateTypeItems :: ClickId => "clickId" , CreateTypeItems :: ClickTarget => "clickTarget" , CreateTypeItems :: ClickText => "clickText" , CreateTypeItems :: ClickUrl => "clickUrl" , CreateTypeItems :: ClientName => "clientName" , CreateTypeItems :: ContainerId => "containerId" , CreateTypeItems :: ContainerVersion => "containerVersion" , CreateTypeItems :: DebugMode => "debugMode" , CreateTypeItems :: DeviceName => "deviceName" , CreateTypeItems :: ElementVisibilityFirstTime => "elementVisibilityFirstTime" , CreateTypeItems :: ElementVisibilityRatio => "elementVisibilityRatio" , CreateTypeItems :: ElementVisibilityRecentTime => "elementVisibilityRecentTime" , CreateTypeItems :: ElementVisibilityTime => "elementVisibilityTime" , CreateTypeItems :: EnvironmentName => "environmentName" , CreateTypeItems :: ErrorLine => "errorLine" , CreateTypeItems :: ErrorMessage => "errorMessage" , CreateTypeItems :: ErrorUrl => "errorUrl" , CreateTypeItems :: Event => "event" , CreateTypeItems :: EventName => "eventName" , CreateTypeItems :: FirebaseEventParameterCampaign => "firebaseEventParameterCampaign" , CreateTypeItems :: FirebaseEventParameterCampaignAclid => "firebaseEventParameterCampaignAclid" , CreateTypeItems :: FirebaseEventParameterCampaignAnid => "firebaseEventParameterCampaignAnid" , CreateTypeItems :: FirebaseEventParameterCampaignClickTimestamp => "firebaseEventParameterCampaignClickTimestamp" , CreateTypeItems :: FirebaseEventParameterCampaignContent => "firebaseEventParameterCampaignContent" , CreateTypeItems :: FirebaseEventParameterCampaignCp1 => "firebaseEventParameterCampaignCp1" , CreateTypeItems :: FirebaseEventParameterCampaignGclid => "firebaseEventParameterCampaignGclid" , CreateTypeItems :: FirebaseEventParameterCampaignSource => "firebaseEventParameterCampaignSource" , CreateTypeItems :: FirebaseEventParameterCampaignTerm => "firebaseEventParameterCampaignTerm" , CreateTypeItems :: FirebaseEventParameterCurrency => "firebaseEventParameterCurrency" , CreateTypeItems :: FirebaseEventParameterDynamicLinkAcceptTime => "firebaseEventParameterDynamicLinkAcceptTime" , CreateTypeItems :: FirebaseEventParameterDynamicLinkLinkid => "firebaseEventParameterDynamicLinkLinkid" , CreateTypeItems :: FirebaseEventParameterNotificationMessageDeviceTime => "firebaseEventParameterNotificationMessageDeviceTime" , CreateTypeItems :: FirebaseEventParameterNotificationMessageId => "firebaseEventParameterNotificationMessageId" , CreateTypeItems :: FirebaseEventParameterNotificationMessageName => "firebaseEventParameterNotificationMessageName" , CreateTypeItems :: FirebaseEventParameterNotificationMessageTime => "firebaseEventParameterNotificationMessageTime" , CreateTypeItems :: FirebaseEventParameterNotificationTopic => "firebaseEventParameterNotificationTopic" , CreateTypeItems :: FirebaseEventParameterPreviousAppVersion => "firebaseEventParameterPreviousAppVersion" , CreateTypeItems :: FirebaseEventParameterPreviousOsVersion => "firebaseEventParameterPreviousOsVersion" , CreateTypeItems :: FirebaseEventParameterPrice => "firebaseEventParameterPrice" , CreateTypeItems :: FirebaseEventParameterProductId => "firebaseEventParameterProductId" , CreateTypeItems :: FirebaseEventParameterQuantity => "firebaseEventParameterQuantity" , CreateTypeItems :: FirebaseEventParameterValue => "firebaseEventParameterValue" , CreateTypeItems :: FirstPartyServingUrl => "firstPartyServingUrl" , CreateTypeItems :: FormClasses => "formClasses" , CreateTypeItems :: FormElement => "formElement" , CreateTypeItems :: FormId => "formId" , CreateTypeItems :: FormTarget => "formTarget" , CreateTypeItems :: FormText => "formText" , CreateTypeItems :: FormUrl => "formUrl" , CreateTypeItems :: HistorySource => "historySource" , CreateTypeItems :: HtmlId => "htmlId" , CreateTypeItems :: Language => "language" , CreateTypeItems :: NewHistoryFragment => "newHistoryFragment" , CreateTypeItems :: NewHistoryState => "newHistoryState" , CreateTypeItems :: NewHistoryUrl => "newHistoryUrl" , CreateTypeItems :: OldHistoryFragment => "oldHistoryFragment" , CreateTypeItems :: OldHistoryState => "oldHistoryState" , CreateTypeItems :: OldHistoryUrl => "oldHistoryUrl" , CreateTypeItems :: OsVersion => "osVersion" , CreateTypeItems :: PageHostname => "pageHostname" , CreateTypeItems :: PagePath => "pagePath" , CreateTypeItems :: PageUrl => "pageUrl" , CreateTypeItems :: Platform => "platform" , CreateTypeItems :: QueryString => "queryString" , CreateTypeItems :: RandomNumber => "randomNumber" , CreateTypeItems :: Referrer => "referrer" , CreateTypeItems :: RequestMethod => "requestMethod" , CreateTypeItems :: RequestPath => "requestPath" , CreateTypeItems :: Resolution => "resolution" , CreateTypeItems :: ScrollDepthDirection => "scrollDepthDirection" , CreateTypeItems :: ScrollDepthThreshold => "scrollDepthThreshold" , CreateTypeItems :: ScrollDepthUnits => "scrollDepthUnits" , CreateTypeItems :: SdkVersion => "sdkVersion" , CreateTypeItems :: ServerPageLocationHostname => "serverPageLocationHostname" , CreateTypeItems :: ServerPageLocationPath => "serverPageLocationPath" , CreateTypeItems :: ServerPageLocationUrl => "serverPageLocationUrl" , CreateTypeItems :: VideoCurrentTime => "videoCurrentTime" , CreateTypeItems :: VideoDuration => "videoDuration" , CreateTypeItems :: VideoPercent => "videoPercent" , CreateTypeItems :: VideoProvider => "videoProvider" , CreateTypeItems :: VideoStatus => "videoStatus" , CreateTypeItems :: VideoTitle => "videoTitle" , CreateTypeItems :: VideoUrl => "videoUrl" , CreateTypeItems :: VideoVisible => "videoVisible" , }
                             }
                         }
                         impl ::std::convert::AsRef<str> for CreateTypeItems {
@@ -11976,7 +12207,7 @@ pub mod resources {
                         impl ::std::str::FromStr for CreateTypeItems {
                             type Err = ();
                             fn from_str(s: &str) -> ::std::result::Result<CreateTypeItems, ()> {
-                                Ok ( match s { "advertiserId" => CreateTypeItems :: AdvertiserId , "advertisingTrackingEnabled" => CreateTypeItems :: AdvertisingTrackingEnabled , "ampBrowserLanguage" => CreateTypeItems :: AmpBrowserLanguage , "ampCanonicalHost" => CreateTypeItems :: AmpCanonicalHost , "ampCanonicalPath" => CreateTypeItems :: AmpCanonicalPath , "ampCanonicalUrl" => CreateTypeItems :: AmpCanonicalUrl , "ampClientId" => CreateTypeItems :: AmpClientId , "ampClientMaxScrollX" => CreateTypeItems :: AmpClientMaxScrollX , "ampClientMaxScrollY" => CreateTypeItems :: AmpClientMaxScrollY , "ampClientScreenHeight" => CreateTypeItems :: AmpClientScreenHeight , "ampClientScreenWidth" => CreateTypeItems :: AmpClientScreenWidth , "ampClientScrollX" => CreateTypeItems :: AmpClientScrollX , "ampClientScrollY" => CreateTypeItems :: AmpClientScrollY , "ampClientTimestamp" => CreateTypeItems :: AmpClientTimestamp , "ampClientTimezone" => CreateTypeItems :: AmpClientTimezone , "ampGtmEvent" => CreateTypeItems :: AmpGtmEvent , "ampPageDownloadTime" => CreateTypeItems :: AmpPageDownloadTime , "ampPageLoadTime" => CreateTypeItems :: AmpPageLoadTime , "ampPageViewId" => CreateTypeItems :: AmpPageViewId , "ampReferrer" => CreateTypeItems :: AmpReferrer , "ampTitle" => CreateTypeItems :: AmpTitle , "ampTotalEngagedTime" => CreateTypeItems :: AmpTotalEngagedTime , "appId" => CreateTypeItems :: AppId , "appName" => CreateTypeItems :: AppName , "appVersionCode" => CreateTypeItems :: AppVersionCode , "appVersionName" => CreateTypeItems :: AppVersionName , "builtInVariableTypeUnspecified" => CreateTypeItems :: BuiltInVariableTypeUnspecified , "clickClasses" => CreateTypeItems :: ClickClasses , "clickElement" => CreateTypeItems :: ClickElement , "clickId" => CreateTypeItems :: ClickId , "clickTarget" => CreateTypeItems :: ClickTarget , "clickText" => CreateTypeItems :: ClickText , "clickUrl" => CreateTypeItems :: ClickUrl , "clientName" => CreateTypeItems :: ClientName , "containerId" => CreateTypeItems :: ContainerId , "containerVersion" => CreateTypeItems :: ContainerVersion , "debugMode" => CreateTypeItems :: DebugMode , "deviceName" => CreateTypeItems :: DeviceName , "elementVisibilityFirstTime" => CreateTypeItems :: ElementVisibilityFirstTime , "elementVisibilityRatio" => CreateTypeItems :: ElementVisibilityRatio , "elementVisibilityRecentTime" => CreateTypeItems :: ElementVisibilityRecentTime , "elementVisibilityTime" => CreateTypeItems :: ElementVisibilityTime , "environmentName" => CreateTypeItems :: EnvironmentName , "errorLine" => CreateTypeItems :: ErrorLine , "errorMessage" => CreateTypeItems :: ErrorMessage , "errorUrl" => CreateTypeItems :: ErrorUrl , "event" => CreateTypeItems :: Event , "eventName" => CreateTypeItems :: EventName , "firebaseEventParameterCampaign" => CreateTypeItems :: FirebaseEventParameterCampaign , "firebaseEventParameterCampaignAclid" => CreateTypeItems :: FirebaseEventParameterCampaignAclid , "firebaseEventParameterCampaignAnid" => CreateTypeItems :: FirebaseEventParameterCampaignAnid , "firebaseEventParameterCampaignClickTimestamp" => CreateTypeItems :: FirebaseEventParameterCampaignClickTimestamp , "firebaseEventParameterCampaignContent" => CreateTypeItems :: FirebaseEventParameterCampaignContent , "firebaseEventParameterCampaignCp1" => CreateTypeItems :: FirebaseEventParameterCampaignCp1 , "firebaseEventParameterCampaignGclid" => CreateTypeItems :: FirebaseEventParameterCampaignGclid , "firebaseEventParameterCampaignSource" => CreateTypeItems :: FirebaseEventParameterCampaignSource , "firebaseEventParameterCampaignTerm" => CreateTypeItems :: FirebaseEventParameterCampaignTerm , "firebaseEventParameterCurrency" => CreateTypeItems :: FirebaseEventParameterCurrency , "firebaseEventParameterDynamicLinkAcceptTime" => CreateTypeItems :: FirebaseEventParameterDynamicLinkAcceptTime , "firebaseEventParameterDynamicLinkLinkid" => CreateTypeItems :: FirebaseEventParameterDynamicLinkLinkid , "firebaseEventParameterNotificationMessageDeviceTime" => CreateTypeItems :: FirebaseEventParameterNotificationMessageDeviceTime , "firebaseEventParameterNotificationMessageId" => CreateTypeItems :: FirebaseEventParameterNotificationMessageId , "firebaseEventParameterNotificationMessageName" => CreateTypeItems :: FirebaseEventParameterNotificationMessageName , "firebaseEventParameterNotificationMessageTime" => CreateTypeItems :: FirebaseEventParameterNotificationMessageTime , "firebaseEventParameterNotificationTopic" => CreateTypeItems :: FirebaseEventParameterNotificationTopic , "firebaseEventParameterPreviousAppVersion" => CreateTypeItems :: FirebaseEventParameterPreviousAppVersion , "firebaseEventParameterPreviousOsVersion" => CreateTypeItems :: FirebaseEventParameterPreviousOsVersion , "firebaseEventParameterPrice" => CreateTypeItems :: FirebaseEventParameterPrice , "firebaseEventParameterProductId" => CreateTypeItems :: FirebaseEventParameterProductId , "firebaseEventParameterQuantity" => CreateTypeItems :: FirebaseEventParameterQuantity , "firebaseEventParameterValue" => CreateTypeItems :: FirebaseEventParameterValue , "firstPartyServingUrl" => CreateTypeItems :: FirstPartyServingUrl , "formClasses" => CreateTypeItems :: FormClasses , "formElement" => CreateTypeItems :: FormElement , "formId" => CreateTypeItems :: FormId , "formTarget" => CreateTypeItems :: FormTarget , "formText" => CreateTypeItems :: FormText , "formUrl" => CreateTypeItems :: FormUrl , "historySource" => CreateTypeItems :: HistorySource , "htmlId" => CreateTypeItems :: HtmlId , "language" => CreateTypeItems :: Language , "newHistoryFragment" => CreateTypeItems :: NewHistoryFragment , "newHistoryState" => CreateTypeItems :: NewHistoryState , "newHistoryUrl" => CreateTypeItems :: NewHistoryUrl , "oldHistoryFragment" => CreateTypeItems :: OldHistoryFragment , "oldHistoryState" => CreateTypeItems :: OldHistoryState , "oldHistoryUrl" => CreateTypeItems :: OldHistoryUrl , "osVersion" => CreateTypeItems :: OsVersion , "pageHostname" => CreateTypeItems :: PageHostname , "pagePath" => CreateTypeItems :: PagePath , "pageUrl" => CreateTypeItems :: PageUrl , "platform" => CreateTypeItems :: Platform , "queryString" => CreateTypeItems :: QueryString , "randomNumber" => CreateTypeItems :: RandomNumber , "referrer" => CreateTypeItems :: Referrer , "requestMethod" => CreateTypeItems :: RequestMethod , "requestPath" => CreateTypeItems :: RequestPath , "resolution" => CreateTypeItems :: Resolution , "scrollDepthDirection" => CreateTypeItems :: ScrollDepthDirection , "scrollDepthThreshold" => CreateTypeItems :: ScrollDepthThreshold , "scrollDepthUnits" => CreateTypeItems :: ScrollDepthUnits , "sdkVersion" => CreateTypeItems :: SdkVersion , "videoCurrentTime" => CreateTypeItems :: VideoCurrentTime , "videoDuration" => CreateTypeItems :: VideoDuration , "videoPercent" => CreateTypeItems :: VideoPercent , "videoProvider" => CreateTypeItems :: VideoProvider , "videoStatus" => CreateTypeItems :: VideoStatus , "videoTitle" => CreateTypeItems :: VideoTitle , "videoUrl" => CreateTypeItems :: VideoUrl , "videoVisible" => CreateTypeItems :: VideoVisible , _ => return Err ( ( ) ) , } )
+                                Ok (match s { "advertiserId" => CreateTypeItems :: AdvertiserId , "advertisingTrackingEnabled" => CreateTypeItems :: AdvertisingTrackingEnabled , "ampBrowserLanguage" => CreateTypeItems :: AmpBrowserLanguage , "ampCanonicalHost" => CreateTypeItems :: AmpCanonicalHost , "ampCanonicalPath" => CreateTypeItems :: AmpCanonicalPath , "ampCanonicalUrl" => CreateTypeItems :: AmpCanonicalUrl , "ampClientId" => CreateTypeItems :: AmpClientId , "ampClientMaxScrollX" => CreateTypeItems :: AmpClientMaxScrollX , "ampClientMaxScrollY" => CreateTypeItems :: AmpClientMaxScrollY , "ampClientScreenHeight" => CreateTypeItems :: AmpClientScreenHeight , "ampClientScreenWidth" => CreateTypeItems :: AmpClientScreenWidth , "ampClientScrollX" => CreateTypeItems :: AmpClientScrollX , "ampClientScrollY" => CreateTypeItems :: AmpClientScrollY , "ampClientTimestamp" => CreateTypeItems :: AmpClientTimestamp , "ampClientTimezone" => CreateTypeItems :: AmpClientTimezone , "ampGtmEvent" => CreateTypeItems :: AmpGtmEvent , "ampPageDownloadTime" => CreateTypeItems :: AmpPageDownloadTime , "ampPageLoadTime" => CreateTypeItems :: AmpPageLoadTime , "ampPageViewId" => CreateTypeItems :: AmpPageViewId , "ampReferrer" => CreateTypeItems :: AmpReferrer , "ampTitle" => CreateTypeItems :: AmpTitle , "ampTotalEngagedTime" => CreateTypeItems :: AmpTotalEngagedTime , "appId" => CreateTypeItems :: AppId , "appName" => CreateTypeItems :: AppName , "appVersionCode" => CreateTypeItems :: AppVersionCode , "appVersionName" => CreateTypeItems :: AppVersionName , "builtInVariableTypeUnspecified" => CreateTypeItems :: BuiltInVariableTypeUnspecified , "clickClasses" => CreateTypeItems :: ClickClasses , "clickElement" => CreateTypeItems :: ClickElement , "clickId" => CreateTypeItems :: ClickId , "clickTarget" => CreateTypeItems :: ClickTarget , "clickText" => CreateTypeItems :: ClickText , "clickUrl" => CreateTypeItems :: ClickUrl , "clientName" => CreateTypeItems :: ClientName , "containerId" => CreateTypeItems :: ContainerId , "containerVersion" => CreateTypeItems :: ContainerVersion , "debugMode" => CreateTypeItems :: DebugMode , "deviceName" => CreateTypeItems :: DeviceName , "elementVisibilityFirstTime" => CreateTypeItems :: ElementVisibilityFirstTime , "elementVisibilityRatio" => CreateTypeItems :: ElementVisibilityRatio , "elementVisibilityRecentTime" => CreateTypeItems :: ElementVisibilityRecentTime , "elementVisibilityTime" => CreateTypeItems :: ElementVisibilityTime , "environmentName" => CreateTypeItems :: EnvironmentName , "errorLine" => CreateTypeItems :: ErrorLine , "errorMessage" => CreateTypeItems :: ErrorMessage , "errorUrl" => CreateTypeItems :: ErrorUrl , "event" => CreateTypeItems :: Event , "eventName" => CreateTypeItems :: EventName , "firebaseEventParameterCampaign" => CreateTypeItems :: FirebaseEventParameterCampaign , "firebaseEventParameterCampaignAclid" => CreateTypeItems :: FirebaseEventParameterCampaignAclid , "firebaseEventParameterCampaignAnid" => CreateTypeItems :: FirebaseEventParameterCampaignAnid , "firebaseEventParameterCampaignClickTimestamp" => CreateTypeItems :: FirebaseEventParameterCampaignClickTimestamp , "firebaseEventParameterCampaignContent" => CreateTypeItems :: FirebaseEventParameterCampaignContent , "firebaseEventParameterCampaignCp1" => CreateTypeItems :: FirebaseEventParameterCampaignCp1 , "firebaseEventParameterCampaignGclid" => CreateTypeItems :: FirebaseEventParameterCampaignGclid , "firebaseEventParameterCampaignSource" => CreateTypeItems :: FirebaseEventParameterCampaignSource , "firebaseEventParameterCampaignTerm" => CreateTypeItems :: FirebaseEventParameterCampaignTerm , "firebaseEventParameterCurrency" => CreateTypeItems :: FirebaseEventParameterCurrency , "firebaseEventParameterDynamicLinkAcceptTime" => CreateTypeItems :: FirebaseEventParameterDynamicLinkAcceptTime , "firebaseEventParameterDynamicLinkLinkid" => CreateTypeItems :: FirebaseEventParameterDynamicLinkLinkid , "firebaseEventParameterNotificationMessageDeviceTime" => CreateTypeItems :: FirebaseEventParameterNotificationMessageDeviceTime , "firebaseEventParameterNotificationMessageId" => CreateTypeItems :: FirebaseEventParameterNotificationMessageId , "firebaseEventParameterNotificationMessageName" => CreateTypeItems :: FirebaseEventParameterNotificationMessageName , "firebaseEventParameterNotificationMessageTime" => CreateTypeItems :: FirebaseEventParameterNotificationMessageTime , "firebaseEventParameterNotificationTopic" => CreateTypeItems :: FirebaseEventParameterNotificationTopic , "firebaseEventParameterPreviousAppVersion" => CreateTypeItems :: FirebaseEventParameterPreviousAppVersion , "firebaseEventParameterPreviousOsVersion" => CreateTypeItems :: FirebaseEventParameterPreviousOsVersion , "firebaseEventParameterPrice" => CreateTypeItems :: FirebaseEventParameterPrice , "firebaseEventParameterProductId" => CreateTypeItems :: FirebaseEventParameterProductId , "firebaseEventParameterQuantity" => CreateTypeItems :: FirebaseEventParameterQuantity , "firebaseEventParameterValue" => CreateTypeItems :: FirebaseEventParameterValue , "firstPartyServingUrl" => CreateTypeItems :: FirstPartyServingUrl , "formClasses" => CreateTypeItems :: FormClasses , "formElement" => CreateTypeItems :: FormElement , "formId" => CreateTypeItems :: FormId , "formTarget" => CreateTypeItems :: FormTarget , "formText" => CreateTypeItems :: FormText , "formUrl" => CreateTypeItems :: FormUrl , "historySource" => CreateTypeItems :: HistorySource , "htmlId" => CreateTypeItems :: HtmlId , "language" => CreateTypeItems :: Language , "newHistoryFragment" => CreateTypeItems :: NewHistoryFragment , "newHistoryState" => CreateTypeItems :: NewHistoryState , "newHistoryUrl" => CreateTypeItems :: NewHistoryUrl , "oldHistoryFragment" => CreateTypeItems :: OldHistoryFragment , "oldHistoryState" => CreateTypeItems :: OldHistoryState , "oldHistoryUrl" => CreateTypeItems :: OldHistoryUrl , "osVersion" => CreateTypeItems :: OsVersion , "pageHostname" => CreateTypeItems :: PageHostname , "pagePath" => CreateTypeItems :: PagePath , "pageUrl" => CreateTypeItems :: PageUrl , "platform" => CreateTypeItems :: Platform , "queryString" => CreateTypeItems :: QueryString , "randomNumber" => CreateTypeItems :: RandomNumber , "referrer" => CreateTypeItems :: Referrer , "requestMethod" => CreateTypeItems :: RequestMethod , "requestPath" => CreateTypeItems :: RequestPath , "resolution" => CreateTypeItems :: Resolution , "scrollDepthDirection" => CreateTypeItems :: ScrollDepthDirection , "scrollDepthThreshold" => CreateTypeItems :: ScrollDepthThreshold , "scrollDepthUnits" => CreateTypeItems :: ScrollDepthUnits , "sdkVersion" => CreateTypeItems :: SdkVersion , "serverPageLocationHostname" => CreateTypeItems :: ServerPageLocationHostname , "serverPageLocationPath" => CreateTypeItems :: ServerPageLocationPath , "serverPageLocationUrl" => CreateTypeItems :: ServerPageLocationUrl , "videoCurrentTime" => CreateTypeItems :: VideoCurrentTime , "videoDuration" => CreateTypeItems :: VideoDuration , "videoPercent" => CreateTypeItems :: VideoPercent , "videoProvider" => CreateTypeItems :: VideoProvider , "videoStatus" => CreateTypeItems :: VideoStatus , "videoTitle" => CreateTypeItems :: VideoTitle , "videoUrl" => CreateTypeItems :: VideoUrl , "videoVisible" => CreateTypeItems :: VideoVisible , _ => return Err (()) , })
                             }
                         }
                         impl ::std::fmt::Display for CreateTypeItems {
@@ -12003,7 +12234,7 @@ pub mod resources {
                                 D: ::serde::de::Deserializer<'de>,
                             {
                                 let value: &'de str = <&str>::deserialize(deserializer)?;
-                                Ok ( match value { "advertiserId" => CreateTypeItems :: AdvertiserId , "advertisingTrackingEnabled" => CreateTypeItems :: AdvertisingTrackingEnabled , "ampBrowserLanguage" => CreateTypeItems :: AmpBrowserLanguage , "ampCanonicalHost" => CreateTypeItems :: AmpCanonicalHost , "ampCanonicalPath" => CreateTypeItems :: AmpCanonicalPath , "ampCanonicalUrl" => CreateTypeItems :: AmpCanonicalUrl , "ampClientId" => CreateTypeItems :: AmpClientId , "ampClientMaxScrollX" => CreateTypeItems :: AmpClientMaxScrollX , "ampClientMaxScrollY" => CreateTypeItems :: AmpClientMaxScrollY , "ampClientScreenHeight" => CreateTypeItems :: AmpClientScreenHeight , "ampClientScreenWidth" => CreateTypeItems :: AmpClientScreenWidth , "ampClientScrollX" => CreateTypeItems :: AmpClientScrollX , "ampClientScrollY" => CreateTypeItems :: AmpClientScrollY , "ampClientTimestamp" => CreateTypeItems :: AmpClientTimestamp , "ampClientTimezone" => CreateTypeItems :: AmpClientTimezone , "ampGtmEvent" => CreateTypeItems :: AmpGtmEvent , "ampPageDownloadTime" => CreateTypeItems :: AmpPageDownloadTime , "ampPageLoadTime" => CreateTypeItems :: AmpPageLoadTime , "ampPageViewId" => CreateTypeItems :: AmpPageViewId , "ampReferrer" => CreateTypeItems :: AmpReferrer , "ampTitle" => CreateTypeItems :: AmpTitle , "ampTotalEngagedTime" => CreateTypeItems :: AmpTotalEngagedTime , "appId" => CreateTypeItems :: AppId , "appName" => CreateTypeItems :: AppName , "appVersionCode" => CreateTypeItems :: AppVersionCode , "appVersionName" => CreateTypeItems :: AppVersionName , "builtInVariableTypeUnspecified" => CreateTypeItems :: BuiltInVariableTypeUnspecified , "clickClasses" => CreateTypeItems :: ClickClasses , "clickElement" => CreateTypeItems :: ClickElement , "clickId" => CreateTypeItems :: ClickId , "clickTarget" => CreateTypeItems :: ClickTarget , "clickText" => CreateTypeItems :: ClickText , "clickUrl" => CreateTypeItems :: ClickUrl , "clientName" => CreateTypeItems :: ClientName , "containerId" => CreateTypeItems :: ContainerId , "containerVersion" => CreateTypeItems :: ContainerVersion , "debugMode" => CreateTypeItems :: DebugMode , "deviceName" => CreateTypeItems :: DeviceName , "elementVisibilityFirstTime" => CreateTypeItems :: ElementVisibilityFirstTime , "elementVisibilityRatio" => CreateTypeItems :: ElementVisibilityRatio , "elementVisibilityRecentTime" => CreateTypeItems :: ElementVisibilityRecentTime , "elementVisibilityTime" => CreateTypeItems :: ElementVisibilityTime , "environmentName" => CreateTypeItems :: EnvironmentName , "errorLine" => CreateTypeItems :: ErrorLine , "errorMessage" => CreateTypeItems :: ErrorMessage , "errorUrl" => CreateTypeItems :: ErrorUrl , "event" => CreateTypeItems :: Event , "eventName" => CreateTypeItems :: EventName , "firebaseEventParameterCampaign" => CreateTypeItems :: FirebaseEventParameterCampaign , "firebaseEventParameterCampaignAclid" => CreateTypeItems :: FirebaseEventParameterCampaignAclid , "firebaseEventParameterCampaignAnid" => CreateTypeItems :: FirebaseEventParameterCampaignAnid , "firebaseEventParameterCampaignClickTimestamp" => CreateTypeItems :: FirebaseEventParameterCampaignClickTimestamp , "firebaseEventParameterCampaignContent" => CreateTypeItems :: FirebaseEventParameterCampaignContent , "firebaseEventParameterCampaignCp1" => CreateTypeItems :: FirebaseEventParameterCampaignCp1 , "firebaseEventParameterCampaignGclid" => CreateTypeItems :: FirebaseEventParameterCampaignGclid , "firebaseEventParameterCampaignSource" => CreateTypeItems :: FirebaseEventParameterCampaignSource , "firebaseEventParameterCampaignTerm" => CreateTypeItems :: FirebaseEventParameterCampaignTerm , "firebaseEventParameterCurrency" => CreateTypeItems :: FirebaseEventParameterCurrency , "firebaseEventParameterDynamicLinkAcceptTime" => CreateTypeItems :: FirebaseEventParameterDynamicLinkAcceptTime , "firebaseEventParameterDynamicLinkLinkid" => CreateTypeItems :: FirebaseEventParameterDynamicLinkLinkid , "firebaseEventParameterNotificationMessageDeviceTime" => CreateTypeItems :: FirebaseEventParameterNotificationMessageDeviceTime , "firebaseEventParameterNotificationMessageId" => CreateTypeItems :: FirebaseEventParameterNotificationMessageId , "firebaseEventParameterNotificationMessageName" => CreateTypeItems :: FirebaseEventParameterNotificationMessageName , "firebaseEventParameterNotificationMessageTime" => CreateTypeItems :: FirebaseEventParameterNotificationMessageTime , "firebaseEventParameterNotificationTopic" => CreateTypeItems :: FirebaseEventParameterNotificationTopic , "firebaseEventParameterPreviousAppVersion" => CreateTypeItems :: FirebaseEventParameterPreviousAppVersion , "firebaseEventParameterPreviousOsVersion" => CreateTypeItems :: FirebaseEventParameterPreviousOsVersion , "firebaseEventParameterPrice" => CreateTypeItems :: FirebaseEventParameterPrice , "firebaseEventParameterProductId" => CreateTypeItems :: FirebaseEventParameterProductId , "firebaseEventParameterQuantity" => CreateTypeItems :: FirebaseEventParameterQuantity , "firebaseEventParameterValue" => CreateTypeItems :: FirebaseEventParameterValue , "firstPartyServingUrl" => CreateTypeItems :: FirstPartyServingUrl , "formClasses" => CreateTypeItems :: FormClasses , "formElement" => CreateTypeItems :: FormElement , "formId" => CreateTypeItems :: FormId , "formTarget" => CreateTypeItems :: FormTarget , "formText" => CreateTypeItems :: FormText , "formUrl" => CreateTypeItems :: FormUrl , "historySource" => CreateTypeItems :: HistorySource , "htmlId" => CreateTypeItems :: HtmlId , "language" => CreateTypeItems :: Language , "newHistoryFragment" => CreateTypeItems :: NewHistoryFragment , "newHistoryState" => CreateTypeItems :: NewHistoryState , "newHistoryUrl" => CreateTypeItems :: NewHistoryUrl , "oldHistoryFragment" => CreateTypeItems :: OldHistoryFragment , "oldHistoryState" => CreateTypeItems :: OldHistoryState , "oldHistoryUrl" => CreateTypeItems :: OldHistoryUrl , "osVersion" => CreateTypeItems :: OsVersion , "pageHostname" => CreateTypeItems :: PageHostname , "pagePath" => CreateTypeItems :: PagePath , "pageUrl" => CreateTypeItems :: PageUrl , "platform" => CreateTypeItems :: Platform , "queryString" => CreateTypeItems :: QueryString , "randomNumber" => CreateTypeItems :: RandomNumber , "referrer" => CreateTypeItems :: Referrer , "requestMethod" => CreateTypeItems :: RequestMethod , "requestPath" => CreateTypeItems :: RequestPath , "resolution" => CreateTypeItems :: Resolution , "scrollDepthDirection" => CreateTypeItems :: ScrollDepthDirection , "scrollDepthThreshold" => CreateTypeItems :: ScrollDepthThreshold , "scrollDepthUnits" => CreateTypeItems :: ScrollDepthUnits , "sdkVersion" => CreateTypeItems :: SdkVersion , "videoCurrentTime" => CreateTypeItems :: VideoCurrentTime , "videoDuration" => CreateTypeItems :: VideoDuration , "videoPercent" => CreateTypeItems :: VideoPercent , "videoProvider" => CreateTypeItems :: VideoProvider , "videoStatus" => CreateTypeItems :: VideoStatus , "videoTitle" => CreateTypeItems :: VideoTitle , "videoUrl" => CreateTypeItems :: VideoUrl , "videoVisible" => CreateTypeItems :: VideoVisible , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+                                Ok (match value { "advertiserId" => CreateTypeItems :: AdvertiserId , "advertisingTrackingEnabled" => CreateTypeItems :: AdvertisingTrackingEnabled , "ampBrowserLanguage" => CreateTypeItems :: AmpBrowserLanguage , "ampCanonicalHost" => CreateTypeItems :: AmpCanonicalHost , "ampCanonicalPath" => CreateTypeItems :: AmpCanonicalPath , "ampCanonicalUrl" => CreateTypeItems :: AmpCanonicalUrl , "ampClientId" => CreateTypeItems :: AmpClientId , "ampClientMaxScrollX" => CreateTypeItems :: AmpClientMaxScrollX , "ampClientMaxScrollY" => CreateTypeItems :: AmpClientMaxScrollY , "ampClientScreenHeight" => CreateTypeItems :: AmpClientScreenHeight , "ampClientScreenWidth" => CreateTypeItems :: AmpClientScreenWidth , "ampClientScrollX" => CreateTypeItems :: AmpClientScrollX , "ampClientScrollY" => CreateTypeItems :: AmpClientScrollY , "ampClientTimestamp" => CreateTypeItems :: AmpClientTimestamp , "ampClientTimezone" => CreateTypeItems :: AmpClientTimezone , "ampGtmEvent" => CreateTypeItems :: AmpGtmEvent , "ampPageDownloadTime" => CreateTypeItems :: AmpPageDownloadTime , "ampPageLoadTime" => CreateTypeItems :: AmpPageLoadTime , "ampPageViewId" => CreateTypeItems :: AmpPageViewId , "ampReferrer" => CreateTypeItems :: AmpReferrer , "ampTitle" => CreateTypeItems :: AmpTitle , "ampTotalEngagedTime" => CreateTypeItems :: AmpTotalEngagedTime , "appId" => CreateTypeItems :: AppId , "appName" => CreateTypeItems :: AppName , "appVersionCode" => CreateTypeItems :: AppVersionCode , "appVersionName" => CreateTypeItems :: AppVersionName , "builtInVariableTypeUnspecified" => CreateTypeItems :: BuiltInVariableTypeUnspecified , "clickClasses" => CreateTypeItems :: ClickClasses , "clickElement" => CreateTypeItems :: ClickElement , "clickId" => CreateTypeItems :: ClickId , "clickTarget" => CreateTypeItems :: ClickTarget , "clickText" => CreateTypeItems :: ClickText , "clickUrl" => CreateTypeItems :: ClickUrl , "clientName" => CreateTypeItems :: ClientName , "containerId" => CreateTypeItems :: ContainerId , "containerVersion" => CreateTypeItems :: ContainerVersion , "debugMode" => CreateTypeItems :: DebugMode , "deviceName" => CreateTypeItems :: DeviceName , "elementVisibilityFirstTime" => CreateTypeItems :: ElementVisibilityFirstTime , "elementVisibilityRatio" => CreateTypeItems :: ElementVisibilityRatio , "elementVisibilityRecentTime" => CreateTypeItems :: ElementVisibilityRecentTime , "elementVisibilityTime" => CreateTypeItems :: ElementVisibilityTime , "environmentName" => CreateTypeItems :: EnvironmentName , "errorLine" => CreateTypeItems :: ErrorLine , "errorMessage" => CreateTypeItems :: ErrorMessage , "errorUrl" => CreateTypeItems :: ErrorUrl , "event" => CreateTypeItems :: Event , "eventName" => CreateTypeItems :: EventName , "firebaseEventParameterCampaign" => CreateTypeItems :: FirebaseEventParameterCampaign , "firebaseEventParameterCampaignAclid" => CreateTypeItems :: FirebaseEventParameterCampaignAclid , "firebaseEventParameterCampaignAnid" => CreateTypeItems :: FirebaseEventParameterCampaignAnid , "firebaseEventParameterCampaignClickTimestamp" => CreateTypeItems :: FirebaseEventParameterCampaignClickTimestamp , "firebaseEventParameterCampaignContent" => CreateTypeItems :: FirebaseEventParameterCampaignContent , "firebaseEventParameterCampaignCp1" => CreateTypeItems :: FirebaseEventParameterCampaignCp1 , "firebaseEventParameterCampaignGclid" => CreateTypeItems :: FirebaseEventParameterCampaignGclid , "firebaseEventParameterCampaignSource" => CreateTypeItems :: FirebaseEventParameterCampaignSource , "firebaseEventParameterCampaignTerm" => CreateTypeItems :: FirebaseEventParameterCampaignTerm , "firebaseEventParameterCurrency" => CreateTypeItems :: FirebaseEventParameterCurrency , "firebaseEventParameterDynamicLinkAcceptTime" => CreateTypeItems :: FirebaseEventParameterDynamicLinkAcceptTime , "firebaseEventParameterDynamicLinkLinkid" => CreateTypeItems :: FirebaseEventParameterDynamicLinkLinkid , "firebaseEventParameterNotificationMessageDeviceTime" => CreateTypeItems :: FirebaseEventParameterNotificationMessageDeviceTime , "firebaseEventParameterNotificationMessageId" => CreateTypeItems :: FirebaseEventParameterNotificationMessageId , "firebaseEventParameterNotificationMessageName" => CreateTypeItems :: FirebaseEventParameterNotificationMessageName , "firebaseEventParameterNotificationMessageTime" => CreateTypeItems :: FirebaseEventParameterNotificationMessageTime , "firebaseEventParameterNotificationTopic" => CreateTypeItems :: FirebaseEventParameterNotificationTopic , "firebaseEventParameterPreviousAppVersion" => CreateTypeItems :: FirebaseEventParameterPreviousAppVersion , "firebaseEventParameterPreviousOsVersion" => CreateTypeItems :: FirebaseEventParameterPreviousOsVersion , "firebaseEventParameterPrice" => CreateTypeItems :: FirebaseEventParameterPrice , "firebaseEventParameterProductId" => CreateTypeItems :: FirebaseEventParameterProductId , "firebaseEventParameterQuantity" => CreateTypeItems :: FirebaseEventParameterQuantity , "firebaseEventParameterValue" => CreateTypeItems :: FirebaseEventParameterValue , "firstPartyServingUrl" => CreateTypeItems :: FirstPartyServingUrl , "formClasses" => CreateTypeItems :: FormClasses , "formElement" => CreateTypeItems :: FormElement , "formId" => CreateTypeItems :: FormId , "formTarget" => CreateTypeItems :: FormTarget , "formText" => CreateTypeItems :: FormText , "formUrl" => CreateTypeItems :: FormUrl , "historySource" => CreateTypeItems :: HistorySource , "htmlId" => CreateTypeItems :: HtmlId , "language" => CreateTypeItems :: Language , "newHistoryFragment" => CreateTypeItems :: NewHistoryFragment , "newHistoryState" => CreateTypeItems :: NewHistoryState , "newHistoryUrl" => CreateTypeItems :: NewHistoryUrl , "oldHistoryFragment" => CreateTypeItems :: OldHistoryFragment , "oldHistoryState" => CreateTypeItems :: OldHistoryState , "oldHistoryUrl" => CreateTypeItems :: OldHistoryUrl , "osVersion" => CreateTypeItems :: OsVersion , "pageHostname" => CreateTypeItems :: PageHostname , "pagePath" => CreateTypeItems :: PagePath , "pageUrl" => CreateTypeItems :: PageUrl , "platform" => CreateTypeItems :: Platform , "queryString" => CreateTypeItems :: QueryString , "randomNumber" => CreateTypeItems :: RandomNumber , "referrer" => CreateTypeItems :: Referrer , "requestMethod" => CreateTypeItems :: RequestMethod , "requestPath" => CreateTypeItems :: RequestPath , "resolution" => CreateTypeItems :: Resolution , "scrollDepthDirection" => CreateTypeItems :: ScrollDepthDirection , "scrollDepthThreshold" => CreateTypeItems :: ScrollDepthThreshold , "scrollDepthUnits" => CreateTypeItems :: ScrollDepthUnits , "sdkVersion" => CreateTypeItems :: SdkVersion , "serverPageLocationHostname" => CreateTypeItems :: ServerPageLocationHostname , "serverPageLocationPath" => CreateTypeItems :: ServerPageLocationPath , "serverPageLocationUrl" => CreateTypeItems :: ServerPageLocationUrl , "videoCurrentTime" => CreateTypeItems :: VideoCurrentTime , "videoDuration" => CreateTypeItems :: VideoDuration , "videoPercent" => CreateTypeItems :: VideoPercent , "videoProvider" => CreateTypeItems :: VideoProvider , "videoStatus" => CreateTypeItems :: VideoStatus , "videoTitle" => CreateTypeItems :: VideoTitle , "videoUrl" => CreateTypeItems :: VideoUrl , "videoVisible" => CreateTypeItems :: VideoVisible , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
                             }
                         }
                         impl ::google_field_selector::FieldSelector for CreateTypeItems {
@@ -12124,6 +12355,9 @@ pub mod resources {
                             ScrollDepthThreshold,
                             ScrollDepthUnits,
                             SdkVersion,
+                            ServerPageLocationHostname,
+                            ServerPageLocationPath,
+                            ServerPageLocationUrl,
                             VideoCurrentTime,
                             VideoDuration,
                             VideoPercent,
@@ -12135,7 +12369,7 @@ pub mod resources {
                         }
                         impl DeleteTypeItems {
                             pub fn as_str(self) -> &'static str {
-                                match self { DeleteTypeItems :: AdvertiserId => "advertiserId" , DeleteTypeItems :: AdvertisingTrackingEnabled => "advertisingTrackingEnabled" , DeleteTypeItems :: AmpBrowserLanguage => "ampBrowserLanguage" , DeleteTypeItems :: AmpCanonicalHost => "ampCanonicalHost" , DeleteTypeItems :: AmpCanonicalPath => "ampCanonicalPath" , DeleteTypeItems :: AmpCanonicalUrl => "ampCanonicalUrl" , DeleteTypeItems :: AmpClientId => "ampClientId" , DeleteTypeItems :: AmpClientMaxScrollX => "ampClientMaxScrollX" , DeleteTypeItems :: AmpClientMaxScrollY => "ampClientMaxScrollY" , DeleteTypeItems :: AmpClientScreenHeight => "ampClientScreenHeight" , DeleteTypeItems :: AmpClientScreenWidth => "ampClientScreenWidth" , DeleteTypeItems :: AmpClientScrollX => "ampClientScrollX" , DeleteTypeItems :: AmpClientScrollY => "ampClientScrollY" , DeleteTypeItems :: AmpClientTimestamp => "ampClientTimestamp" , DeleteTypeItems :: AmpClientTimezone => "ampClientTimezone" , DeleteTypeItems :: AmpGtmEvent => "ampGtmEvent" , DeleteTypeItems :: AmpPageDownloadTime => "ampPageDownloadTime" , DeleteTypeItems :: AmpPageLoadTime => "ampPageLoadTime" , DeleteTypeItems :: AmpPageViewId => "ampPageViewId" , DeleteTypeItems :: AmpReferrer => "ampReferrer" , DeleteTypeItems :: AmpTitle => "ampTitle" , DeleteTypeItems :: AmpTotalEngagedTime => "ampTotalEngagedTime" , DeleteTypeItems :: AppId => "appId" , DeleteTypeItems :: AppName => "appName" , DeleteTypeItems :: AppVersionCode => "appVersionCode" , DeleteTypeItems :: AppVersionName => "appVersionName" , DeleteTypeItems :: BuiltInVariableTypeUnspecified => "builtInVariableTypeUnspecified" , DeleteTypeItems :: ClickClasses => "clickClasses" , DeleteTypeItems :: ClickElement => "clickElement" , DeleteTypeItems :: ClickId => "clickId" , DeleteTypeItems :: ClickTarget => "clickTarget" , DeleteTypeItems :: ClickText => "clickText" , DeleteTypeItems :: ClickUrl => "clickUrl" , DeleteTypeItems :: ClientName => "clientName" , DeleteTypeItems :: ContainerId => "containerId" , DeleteTypeItems :: ContainerVersion => "containerVersion" , DeleteTypeItems :: DebugMode => "debugMode" , DeleteTypeItems :: DeviceName => "deviceName" , DeleteTypeItems :: ElementVisibilityFirstTime => "elementVisibilityFirstTime" , DeleteTypeItems :: ElementVisibilityRatio => "elementVisibilityRatio" , DeleteTypeItems :: ElementVisibilityRecentTime => "elementVisibilityRecentTime" , DeleteTypeItems :: ElementVisibilityTime => "elementVisibilityTime" , DeleteTypeItems :: EnvironmentName => "environmentName" , DeleteTypeItems :: ErrorLine => "errorLine" , DeleteTypeItems :: ErrorMessage => "errorMessage" , DeleteTypeItems :: ErrorUrl => "errorUrl" , DeleteTypeItems :: Event => "event" , DeleteTypeItems :: EventName => "eventName" , DeleteTypeItems :: FirebaseEventParameterCampaign => "firebaseEventParameterCampaign" , DeleteTypeItems :: FirebaseEventParameterCampaignAclid => "firebaseEventParameterCampaignAclid" , DeleteTypeItems :: FirebaseEventParameterCampaignAnid => "firebaseEventParameterCampaignAnid" , DeleteTypeItems :: FirebaseEventParameterCampaignClickTimestamp => "firebaseEventParameterCampaignClickTimestamp" , DeleteTypeItems :: FirebaseEventParameterCampaignContent => "firebaseEventParameterCampaignContent" , DeleteTypeItems :: FirebaseEventParameterCampaignCp1 => "firebaseEventParameterCampaignCp1" , DeleteTypeItems :: FirebaseEventParameterCampaignGclid => "firebaseEventParameterCampaignGclid" , DeleteTypeItems :: FirebaseEventParameterCampaignSource => "firebaseEventParameterCampaignSource" , DeleteTypeItems :: FirebaseEventParameterCampaignTerm => "firebaseEventParameterCampaignTerm" , DeleteTypeItems :: FirebaseEventParameterCurrency => "firebaseEventParameterCurrency" , DeleteTypeItems :: FirebaseEventParameterDynamicLinkAcceptTime => "firebaseEventParameterDynamicLinkAcceptTime" , DeleteTypeItems :: FirebaseEventParameterDynamicLinkLinkid => "firebaseEventParameterDynamicLinkLinkid" , DeleteTypeItems :: FirebaseEventParameterNotificationMessageDeviceTime => "firebaseEventParameterNotificationMessageDeviceTime" , DeleteTypeItems :: FirebaseEventParameterNotificationMessageId => "firebaseEventParameterNotificationMessageId" , DeleteTypeItems :: FirebaseEventParameterNotificationMessageName => "firebaseEventParameterNotificationMessageName" , DeleteTypeItems :: FirebaseEventParameterNotificationMessageTime => "firebaseEventParameterNotificationMessageTime" , DeleteTypeItems :: FirebaseEventParameterNotificationTopic => "firebaseEventParameterNotificationTopic" , DeleteTypeItems :: FirebaseEventParameterPreviousAppVersion => "firebaseEventParameterPreviousAppVersion" , DeleteTypeItems :: FirebaseEventParameterPreviousOsVersion => "firebaseEventParameterPreviousOsVersion" , DeleteTypeItems :: FirebaseEventParameterPrice => "firebaseEventParameterPrice" , DeleteTypeItems :: FirebaseEventParameterProductId => "firebaseEventParameterProductId" , DeleteTypeItems :: FirebaseEventParameterQuantity => "firebaseEventParameterQuantity" , DeleteTypeItems :: FirebaseEventParameterValue => "firebaseEventParameterValue" , DeleteTypeItems :: FirstPartyServingUrl => "firstPartyServingUrl" , DeleteTypeItems :: FormClasses => "formClasses" , DeleteTypeItems :: FormElement => "formElement" , DeleteTypeItems :: FormId => "formId" , DeleteTypeItems :: FormTarget => "formTarget" , DeleteTypeItems :: FormText => "formText" , DeleteTypeItems :: FormUrl => "formUrl" , DeleteTypeItems :: HistorySource => "historySource" , DeleteTypeItems :: HtmlId => "htmlId" , DeleteTypeItems :: Language => "language" , DeleteTypeItems :: NewHistoryFragment => "newHistoryFragment" , DeleteTypeItems :: NewHistoryState => "newHistoryState" , DeleteTypeItems :: NewHistoryUrl => "newHistoryUrl" , DeleteTypeItems :: OldHistoryFragment => "oldHistoryFragment" , DeleteTypeItems :: OldHistoryState => "oldHistoryState" , DeleteTypeItems :: OldHistoryUrl => "oldHistoryUrl" , DeleteTypeItems :: OsVersion => "osVersion" , DeleteTypeItems :: PageHostname => "pageHostname" , DeleteTypeItems :: PagePath => "pagePath" , DeleteTypeItems :: PageUrl => "pageUrl" , DeleteTypeItems :: Platform => "platform" , DeleteTypeItems :: QueryString => "queryString" , DeleteTypeItems :: RandomNumber => "randomNumber" , DeleteTypeItems :: Referrer => "referrer" , DeleteTypeItems :: RequestMethod => "requestMethod" , DeleteTypeItems :: RequestPath => "requestPath" , DeleteTypeItems :: Resolution => "resolution" , DeleteTypeItems :: ScrollDepthDirection => "scrollDepthDirection" , DeleteTypeItems :: ScrollDepthThreshold => "scrollDepthThreshold" , DeleteTypeItems :: ScrollDepthUnits => "scrollDepthUnits" , DeleteTypeItems :: SdkVersion => "sdkVersion" , DeleteTypeItems :: VideoCurrentTime => "videoCurrentTime" , DeleteTypeItems :: VideoDuration => "videoDuration" , DeleteTypeItems :: VideoPercent => "videoPercent" , DeleteTypeItems :: VideoProvider => "videoProvider" , DeleteTypeItems :: VideoStatus => "videoStatus" , DeleteTypeItems :: VideoTitle => "videoTitle" , DeleteTypeItems :: VideoUrl => "videoUrl" , DeleteTypeItems :: VideoVisible => "videoVisible" , }
+                                match self { DeleteTypeItems :: AdvertiserId => "advertiserId" , DeleteTypeItems :: AdvertisingTrackingEnabled => "advertisingTrackingEnabled" , DeleteTypeItems :: AmpBrowserLanguage => "ampBrowserLanguage" , DeleteTypeItems :: AmpCanonicalHost => "ampCanonicalHost" , DeleteTypeItems :: AmpCanonicalPath => "ampCanonicalPath" , DeleteTypeItems :: AmpCanonicalUrl => "ampCanonicalUrl" , DeleteTypeItems :: AmpClientId => "ampClientId" , DeleteTypeItems :: AmpClientMaxScrollX => "ampClientMaxScrollX" , DeleteTypeItems :: AmpClientMaxScrollY => "ampClientMaxScrollY" , DeleteTypeItems :: AmpClientScreenHeight => "ampClientScreenHeight" , DeleteTypeItems :: AmpClientScreenWidth => "ampClientScreenWidth" , DeleteTypeItems :: AmpClientScrollX => "ampClientScrollX" , DeleteTypeItems :: AmpClientScrollY => "ampClientScrollY" , DeleteTypeItems :: AmpClientTimestamp => "ampClientTimestamp" , DeleteTypeItems :: AmpClientTimezone => "ampClientTimezone" , DeleteTypeItems :: AmpGtmEvent => "ampGtmEvent" , DeleteTypeItems :: AmpPageDownloadTime => "ampPageDownloadTime" , DeleteTypeItems :: AmpPageLoadTime => "ampPageLoadTime" , DeleteTypeItems :: AmpPageViewId => "ampPageViewId" , DeleteTypeItems :: AmpReferrer => "ampReferrer" , DeleteTypeItems :: AmpTitle => "ampTitle" , DeleteTypeItems :: AmpTotalEngagedTime => "ampTotalEngagedTime" , DeleteTypeItems :: AppId => "appId" , DeleteTypeItems :: AppName => "appName" , DeleteTypeItems :: AppVersionCode => "appVersionCode" , DeleteTypeItems :: AppVersionName => "appVersionName" , DeleteTypeItems :: BuiltInVariableTypeUnspecified => "builtInVariableTypeUnspecified" , DeleteTypeItems :: ClickClasses => "clickClasses" , DeleteTypeItems :: ClickElement => "clickElement" , DeleteTypeItems :: ClickId => "clickId" , DeleteTypeItems :: ClickTarget => "clickTarget" , DeleteTypeItems :: ClickText => "clickText" , DeleteTypeItems :: ClickUrl => "clickUrl" , DeleteTypeItems :: ClientName => "clientName" , DeleteTypeItems :: ContainerId => "containerId" , DeleteTypeItems :: ContainerVersion => "containerVersion" , DeleteTypeItems :: DebugMode => "debugMode" , DeleteTypeItems :: DeviceName => "deviceName" , DeleteTypeItems :: ElementVisibilityFirstTime => "elementVisibilityFirstTime" , DeleteTypeItems :: ElementVisibilityRatio => "elementVisibilityRatio" , DeleteTypeItems :: ElementVisibilityRecentTime => "elementVisibilityRecentTime" , DeleteTypeItems :: ElementVisibilityTime => "elementVisibilityTime" , DeleteTypeItems :: EnvironmentName => "environmentName" , DeleteTypeItems :: ErrorLine => "errorLine" , DeleteTypeItems :: ErrorMessage => "errorMessage" , DeleteTypeItems :: ErrorUrl => "errorUrl" , DeleteTypeItems :: Event => "event" , DeleteTypeItems :: EventName => "eventName" , DeleteTypeItems :: FirebaseEventParameterCampaign => "firebaseEventParameterCampaign" , DeleteTypeItems :: FirebaseEventParameterCampaignAclid => "firebaseEventParameterCampaignAclid" , DeleteTypeItems :: FirebaseEventParameterCampaignAnid => "firebaseEventParameterCampaignAnid" , DeleteTypeItems :: FirebaseEventParameterCampaignClickTimestamp => "firebaseEventParameterCampaignClickTimestamp" , DeleteTypeItems :: FirebaseEventParameterCampaignContent => "firebaseEventParameterCampaignContent" , DeleteTypeItems :: FirebaseEventParameterCampaignCp1 => "firebaseEventParameterCampaignCp1" , DeleteTypeItems :: FirebaseEventParameterCampaignGclid => "firebaseEventParameterCampaignGclid" , DeleteTypeItems :: FirebaseEventParameterCampaignSource => "firebaseEventParameterCampaignSource" , DeleteTypeItems :: FirebaseEventParameterCampaignTerm => "firebaseEventParameterCampaignTerm" , DeleteTypeItems :: FirebaseEventParameterCurrency => "firebaseEventParameterCurrency" , DeleteTypeItems :: FirebaseEventParameterDynamicLinkAcceptTime => "firebaseEventParameterDynamicLinkAcceptTime" , DeleteTypeItems :: FirebaseEventParameterDynamicLinkLinkid => "firebaseEventParameterDynamicLinkLinkid" , DeleteTypeItems :: FirebaseEventParameterNotificationMessageDeviceTime => "firebaseEventParameterNotificationMessageDeviceTime" , DeleteTypeItems :: FirebaseEventParameterNotificationMessageId => "firebaseEventParameterNotificationMessageId" , DeleteTypeItems :: FirebaseEventParameterNotificationMessageName => "firebaseEventParameterNotificationMessageName" , DeleteTypeItems :: FirebaseEventParameterNotificationMessageTime => "firebaseEventParameterNotificationMessageTime" , DeleteTypeItems :: FirebaseEventParameterNotificationTopic => "firebaseEventParameterNotificationTopic" , DeleteTypeItems :: FirebaseEventParameterPreviousAppVersion => "firebaseEventParameterPreviousAppVersion" , DeleteTypeItems :: FirebaseEventParameterPreviousOsVersion => "firebaseEventParameterPreviousOsVersion" , DeleteTypeItems :: FirebaseEventParameterPrice => "firebaseEventParameterPrice" , DeleteTypeItems :: FirebaseEventParameterProductId => "firebaseEventParameterProductId" , DeleteTypeItems :: FirebaseEventParameterQuantity => "firebaseEventParameterQuantity" , DeleteTypeItems :: FirebaseEventParameterValue => "firebaseEventParameterValue" , DeleteTypeItems :: FirstPartyServingUrl => "firstPartyServingUrl" , DeleteTypeItems :: FormClasses => "formClasses" , DeleteTypeItems :: FormElement => "formElement" , DeleteTypeItems :: FormId => "formId" , DeleteTypeItems :: FormTarget => "formTarget" , DeleteTypeItems :: FormText => "formText" , DeleteTypeItems :: FormUrl => "formUrl" , DeleteTypeItems :: HistorySource => "historySource" , DeleteTypeItems :: HtmlId => "htmlId" , DeleteTypeItems :: Language => "language" , DeleteTypeItems :: NewHistoryFragment => "newHistoryFragment" , DeleteTypeItems :: NewHistoryState => "newHistoryState" , DeleteTypeItems :: NewHistoryUrl => "newHistoryUrl" , DeleteTypeItems :: OldHistoryFragment => "oldHistoryFragment" , DeleteTypeItems :: OldHistoryState => "oldHistoryState" , DeleteTypeItems :: OldHistoryUrl => "oldHistoryUrl" , DeleteTypeItems :: OsVersion => "osVersion" , DeleteTypeItems :: PageHostname => "pageHostname" , DeleteTypeItems :: PagePath => "pagePath" , DeleteTypeItems :: PageUrl => "pageUrl" , DeleteTypeItems :: Platform => "platform" , DeleteTypeItems :: QueryString => "queryString" , DeleteTypeItems :: RandomNumber => "randomNumber" , DeleteTypeItems :: Referrer => "referrer" , DeleteTypeItems :: RequestMethod => "requestMethod" , DeleteTypeItems :: RequestPath => "requestPath" , DeleteTypeItems :: Resolution => "resolution" , DeleteTypeItems :: ScrollDepthDirection => "scrollDepthDirection" , DeleteTypeItems :: ScrollDepthThreshold => "scrollDepthThreshold" , DeleteTypeItems :: ScrollDepthUnits => "scrollDepthUnits" , DeleteTypeItems :: SdkVersion => "sdkVersion" , DeleteTypeItems :: ServerPageLocationHostname => "serverPageLocationHostname" , DeleteTypeItems :: ServerPageLocationPath => "serverPageLocationPath" , DeleteTypeItems :: ServerPageLocationUrl => "serverPageLocationUrl" , DeleteTypeItems :: VideoCurrentTime => "videoCurrentTime" , DeleteTypeItems :: VideoDuration => "videoDuration" , DeleteTypeItems :: VideoPercent => "videoPercent" , DeleteTypeItems :: VideoProvider => "videoProvider" , DeleteTypeItems :: VideoStatus => "videoStatus" , DeleteTypeItems :: VideoTitle => "videoTitle" , DeleteTypeItems :: VideoUrl => "videoUrl" , DeleteTypeItems :: VideoVisible => "videoVisible" , }
                             }
                         }
                         impl ::std::convert::AsRef<str> for DeleteTypeItems {
@@ -12146,7 +12380,7 @@ pub mod resources {
                         impl ::std::str::FromStr for DeleteTypeItems {
                             type Err = ();
                             fn from_str(s: &str) -> ::std::result::Result<DeleteTypeItems, ()> {
-                                Ok ( match s { "advertiserId" => DeleteTypeItems :: AdvertiserId , "advertisingTrackingEnabled" => DeleteTypeItems :: AdvertisingTrackingEnabled , "ampBrowserLanguage" => DeleteTypeItems :: AmpBrowserLanguage , "ampCanonicalHost" => DeleteTypeItems :: AmpCanonicalHost , "ampCanonicalPath" => DeleteTypeItems :: AmpCanonicalPath , "ampCanonicalUrl" => DeleteTypeItems :: AmpCanonicalUrl , "ampClientId" => DeleteTypeItems :: AmpClientId , "ampClientMaxScrollX" => DeleteTypeItems :: AmpClientMaxScrollX , "ampClientMaxScrollY" => DeleteTypeItems :: AmpClientMaxScrollY , "ampClientScreenHeight" => DeleteTypeItems :: AmpClientScreenHeight , "ampClientScreenWidth" => DeleteTypeItems :: AmpClientScreenWidth , "ampClientScrollX" => DeleteTypeItems :: AmpClientScrollX , "ampClientScrollY" => DeleteTypeItems :: AmpClientScrollY , "ampClientTimestamp" => DeleteTypeItems :: AmpClientTimestamp , "ampClientTimezone" => DeleteTypeItems :: AmpClientTimezone , "ampGtmEvent" => DeleteTypeItems :: AmpGtmEvent , "ampPageDownloadTime" => DeleteTypeItems :: AmpPageDownloadTime , "ampPageLoadTime" => DeleteTypeItems :: AmpPageLoadTime , "ampPageViewId" => DeleteTypeItems :: AmpPageViewId , "ampReferrer" => DeleteTypeItems :: AmpReferrer , "ampTitle" => DeleteTypeItems :: AmpTitle , "ampTotalEngagedTime" => DeleteTypeItems :: AmpTotalEngagedTime , "appId" => DeleteTypeItems :: AppId , "appName" => DeleteTypeItems :: AppName , "appVersionCode" => DeleteTypeItems :: AppVersionCode , "appVersionName" => DeleteTypeItems :: AppVersionName , "builtInVariableTypeUnspecified" => DeleteTypeItems :: BuiltInVariableTypeUnspecified , "clickClasses" => DeleteTypeItems :: ClickClasses , "clickElement" => DeleteTypeItems :: ClickElement , "clickId" => DeleteTypeItems :: ClickId , "clickTarget" => DeleteTypeItems :: ClickTarget , "clickText" => DeleteTypeItems :: ClickText , "clickUrl" => DeleteTypeItems :: ClickUrl , "clientName" => DeleteTypeItems :: ClientName , "containerId" => DeleteTypeItems :: ContainerId , "containerVersion" => DeleteTypeItems :: ContainerVersion , "debugMode" => DeleteTypeItems :: DebugMode , "deviceName" => DeleteTypeItems :: DeviceName , "elementVisibilityFirstTime" => DeleteTypeItems :: ElementVisibilityFirstTime , "elementVisibilityRatio" => DeleteTypeItems :: ElementVisibilityRatio , "elementVisibilityRecentTime" => DeleteTypeItems :: ElementVisibilityRecentTime , "elementVisibilityTime" => DeleteTypeItems :: ElementVisibilityTime , "environmentName" => DeleteTypeItems :: EnvironmentName , "errorLine" => DeleteTypeItems :: ErrorLine , "errorMessage" => DeleteTypeItems :: ErrorMessage , "errorUrl" => DeleteTypeItems :: ErrorUrl , "event" => DeleteTypeItems :: Event , "eventName" => DeleteTypeItems :: EventName , "firebaseEventParameterCampaign" => DeleteTypeItems :: FirebaseEventParameterCampaign , "firebaseEventParameterCampaignAclid" => DeleteTypeItems :: FirebaseEventParameterCampaignAclid , "firebaseEventParameterCampaignAnid" => DeleteTypeItems :: FirebaseEventParameterCampaignAnid , "firebaseEventParameterCampaignClickTimestamp" => DeleteTypeItems :: FirebaseEventParameterCampaignClickTimestamp , "firebaseEventParameterCampaignContent" => DeleteTypeItems :: FirebaseEventParameterCampaignContent , "firebaseEventParameterCampaignCp1" => DeleteTypeItems :: FirebaseEventParameterCampaignCp1 , "firebaseEventParameterCampaignGclid" => DeleteTypeItems :: FirebaseEventParameterCampaignGclid , "firebaseEventParameterCampaignSource" => DeleteTypeItems :: FirebaseEventParameterCampaignSource , "firebaseEventParameterCampaignTerm" => DeleteTypeItems :: FirebaseEventParameterCampaignTerm , "firebaseEventParameterCurrency" => DeleteTypeItems :: FirebaseEventParameterCurrency , "firebaseEventParameterDynamicLinkAcceptTime" => DeleteTypeItems :: FirebaseEventParameterDynamicLinkAcceptTime , "firebaseEventParameterDynamicLinkLinkid" => DeleteTypeItems :: FirebaseEventParameterDynamicLinkLinkid , "firebaseEventParameterNotificationMessageDeviceTime" => DeleteTypeItems :: FirebaseEventParameterNotificationMessageDeviceTime , "firebaseEventParameterNotificationMessageId" => DeleteTypeItems :: FirebaseEventParameterNotificationMessageId , "firebaseEventParameterNotificationMessageName" => DeleteTypeItems :: FirebaseEventParameterNotificationMessageName , "firebaseEventParameterNotificationMessageTime" => DeleteTypeItems :: FirebaseEventParameterNotificationMessageTime , "firebaseEventParameterNotificationTopic" => DeleteTypeItems :: FirebaseEventParameterNotificationTopic , "firebaseEventParameterPreviousAppVersion" => DeleteTypeItems :: FirebaseEventParameterPreviousAppVersion , "firebaseEventParameterPreviousOsVersion" => DeleteTypeItems :: FirebaseEventParameterPreviousOsVersion , "firebaseEventParameterPrice" => DeleteTypeItems :: FirebaseEventParameterPrice , "firebaseEventParameterProductId" => DeleteTypeItems :: FirebaseEventParameterProductId , "firebaseEventParameterQuantity" => DeleteTypeItems :: FirebaseEventParameterQuantity , "firebaseEventParameterValue" => DeleteTypeItems :: FirebaseEventParameterValue , "firstPartyServingUrl" => DeleteTypeItems :: FirstPartyServingUrl , "formClasses" => DeleteTypeItems :: FormClasses , "formElement" => DeleteTypeItems :: FormElement , "formId" => DeleteTypeItems :: FormId , "formTarget" => DeleteTypeItems :: FormTarget , "formText" => DeleteTypeItems :: FormText , "formUrl" => DeleteTypeItems :: FormUrl , "historySource" => DeleteTypeItems :: HistorySource , "htmlId" => DeleteTypeItems :: HtmlId , "language" => DeleteTypeItems :: Language , "newHistoryFragment" => DeleteTypeItems :: NewHistoryFragment , "newHistoryState" => DeleteTypeItems :: NewHistoryState , "newHistoryUrl" => DeleteTypeItems :: NewHistoryUrl , "oldHistoryFragment" => DeleteTypeItems :: OldHistoryFragment , "oldHistoryState" => DeleteTypeItems :: OldHistoryState , "oldHistoryUrl" => DeleteTypeItems :: OldHistoryUrl , "osVersion" => DeleteTypeItems :: OsVersion , "pageHostname" => DeleteTypeItems :: PageHostname , "pagePath" => DeleteTypeItems :: PagePath , "pageUrl" => DeleteTypeItems :: PageUrl , "platform" => DeleteTypeItems :: Platform , "queryString" => DeleteTypeItems :: QueryString , "randomNumber" => DeleteTypeItems :: RandomNumber , "referrer" => DeleteTypeItems :: Referrer , "requestMethod" => DeleteTypeItems :: RequestMethod , "requestPath" => DeleteTypeItems :: RequestPath , "resolution" => DeleteTypeItems :: Resolution , "scrollDepthDirection" => DeleteTypeItems :: ScrollDepthDirection , "scrollDepthThreshold" => DeleteTypeItems :: ScrollDepthThreshold , "scrollDepthUnits" => DeleteTypeItems :: ScrollDepthUnits , "sdkVersion" => DeleteTypeItems :: SdkVersion , "videoCurrentTime" => DeleteTypeItems :: VideoCurrentTime , "videoDuration" => DeleteTypeItems :: VideoDuration , "videoPercent" => DeleteTypeItems :: VideoPercent , "videoProvider" => DeleteTypeItems :: VideoProvider , "videoStatus" => DeleteTypeItems :: VideoStatus , "videoTitle" => DeleteTypeItems :: VideoTitle , "videoUrl" => DeleteTypeItems :: VideoUrl , "videoVisible" => DeleteTypeItems :: VideoVisible , _ => return Err ( ( ) ) , } )
+                                Ok (match s { "advertiserId" => DeleteTypeItems :: AdvertiserId , "advertisingTrackingEnabled" => DeleteTypeItems :: AdvertisingTrackingEnabled , "ampBrowserLanguage" => DeleteTypeItems :: AmpBrowserLanguage , "ampCanonicalHost" => DeleteTypeItems :: AmpCanonicalHost , "ampCanonicalPath" => DeleteTypeItems :: AmpCanonicalPath , "ampCanonicalUrl" => DeleteTypeItems :: AmpCanonicalUrl , "ampClientId" => DeleteTypeItems :: AmpClientId , "ampClientMaxScrollX" => DeleteTypeItems :: AmpClientMaxScrollX , "ampClientMaxScrollY" => DeleteTypeItems :: AmpClientMaxScrollY , "ampClientScreenHeight" => DeleteTypeItems :: AmpClientScreenHeight , "ampClientScreenWidth" => DeleteTypeItems :: AmpClientScreenWidth , "ampClientScrollX" => DeleteTypeItems :: AmpClientScrollX , "ampClientScrollY" => DeleteTypeItems :: AmpClientScrollY , "ampClientTimestamp" => DeleteTypeItems :: AmpClientTimestamp , "ampClientTimezone" => DeleteTypeItems :: AmpClientTimezone , "ampGtmEvent" => DeleteTypeItems :: AmpGtmEvent , "ampPageDownloadTime" => DeleteTypeItems :: AmpPageDownloadTime , "ampPageLoadTime" => DeleteTypeItems :: AmpPageLoadTime , "ampPageViewId" => DeleteTypeItems :: AmpPageViewId , "ampReferrer" => DeleteTypeItems :: AmpReferrer , "ampTitle" => DeleteTypeItems :: AmpTitle , "ampTotalEngagedTime" => DeleteTypeItems :: AmpTotalEngagedTime , "appId" => DeleteTypeItems :: AppId , "appName" => DeleteTypeItems :: AppName , "appVersionCode" => DeleteTypeItems :: AppVersionCode , "appVersionName" => DeleteTypeItems :: AppVersionName , "builtInVariableTypeUnspecified" => DeleteTypeItems :: BuiltInVariableTypeUnspecified , "clickClasses" => DeleteTypeItems :: ClickClasses , "clickElement" => DeleteTypeItems :: ClickElement , "clickId" => DeleteTypeItems :: ClickId , "clickTarget" => DeleteTypeItems :: ClickTarget , "clickText" => DeleteTypeItems :: ClickText , "clickUrl" => DeleteTypeItems :: ClickUrl , "clientName" => DeleteTypeItems :: ClientName , "containerId" => DeleteTypeItems :: ContainerId , "containerVersion" => DeleteTypeItems :: ContainerVersion , "debugMode" => DeleteTypeItems :: DebugMode , "deviceName" => DeleteTypeItems :: DeviceName , "elementVisibilityFirstTime" => DeleteTypeItems :: ElementVisibilityFirstTime , "elementVisibilityRatio" => DeleteTypeItems :: ElementVisibilityRatio , "elementVisibilityRecentTime" => DeleteTypeItems :: ElementVisibilityRecentTime , "elementVisibilityTime" => DeleteTypeItems :: ElementVisibilityTime , "environmentName" => DeleteTypeItems :: EnvironmentName , "errorLine" => DeleteTypeItems :: ErrorLine , "errorMessage" => DeleteTypeItems :: ErrorMessage , "errorUrl" => DeleteTypeItems :: ErrorUrl , "event" => DeleteTypeItems :: Event , "eventName" => DeleteTypeItems :: EventName , "firebaseEventParameterCampaign" => DeleteTypeItems :: FirebaseEventParameterCampaign , "firebaseEventParameterCampaignAclid" => DeleteTypeItems :: FirebaseEventParameterCampaignAclid , "firebaseEventParameterCampaignAnid" => DeleteTypeItems :: FirebaseEventParameterCampaignAnid , "firebaseEventParameterCampaignClickTimestamp" => DeleteTypeItems :: FirebaseEventParameterCampaignClickTimestamp , "firebaseEventParameterCampaignContent" => DeleteTypeItems :: FirebaseEventParameterCampaignContent , "firebaseEventParameterCampaignCp1" => DeleteTypeItems :: FirebaseEventParameterCampaignCp1 , "firebaseEventParameterCampaignGclid" => DeleteTypeItems :: FirebaseEventParameterCampaignGclid , "firebaseEventParameterCampaignSource" => DeleteTypeItems :: FirebaseEventParameterCampaignSource , "firebaseEventParameterCampaignTerm" => DeleteTypeItems :: FirebaseEventParameterCampaignTerm , "firebaseEventParameterCurrency" => DeleteTypeItems :: FirebaseEventParameterCurrency , "firebaseEventParameterDynamicLinkAcceptTime" => DeleteTypeItems :: FirebaseEventParameterDynamicLinkAcceptTime , "firebaseEventParameterDynamicLinkLinkid" => DeleteTypeItems :: FirebaseEventParameterDynamicLinkLinkid , "firebaseEventParameterNotificationMessageDeviceTime" => DeleteTypeItems :: FirebaseEventParameterNotificationMessageDeviceTime , "firebaseEventParameterNotificationMessageId" => DeleteTypeItems :: FirebaseEventParameterNotificationMessageId , "firebaseEventParameterNotificationMessageName" => DeleteTypeItems :: FirebaseEventParameterNotificationMessageName , "firebaseEventParameterNotificationMessageTime" => DeleteTypeItems :: FirebaseEventParameterNotificationMessageTime , "firebaseEventParameterNotificationTopic" => DeleteTypeItems :: FirebaseEventParameterNotificationTopic , "firebaseEventParameterPreviousAppVersion" => DeleteTypeItems :: FirebaseEventParameterPreviousAppVersion , "firebaseEventParameterPreviousOsVersion" => DeleteTypeItems :: FirebaseEventParameterPreviousOsVersion , "firebaseEventParameterPrice" => DeleteTypeItems :: FirebaseEventParameterPrice , "firebaseEventParameterProductId" => DeleteTypeItems :: FirebaseEventParameterProductId , "firebaseEventParameterQuantity" => DeleteTypeItems :: FirebaseEventParameterQuantity , "firebaseEventParameterValue" => DeleteTypeItems :: FirebaseEventParameterValue , "firstPartyServingUrl" => DeleteTypeItems :: FirstPartyServingUrl , "formClasses" => DeleteTypeItems :: FormClasses , "formElement" => DeleteTypeItems :: FormElement , "formId" => DeleteTypeItems :: FormId , "formTarget" => DeleteTypeItems :: FormTarget , "formText" => DeleteTypeItems :: FormText , "formUrl" => DeleteTypeItems :: FormUrl , "historySource" => DeleteTypeItems :: HistorySource , "htmlId" => DeleteTypeItems :: HtmlId , "language" => DeleteTypeItems :: Language , "newHistoryFragment" => DeleteTypeItems :: NewHistoryFragment , "newHistoryState" => DeleteTypeItems :: NewHistoryState , "newHistoryUrl" => DeleteTypeItems :: NewHistoryUrl , "oldHistoryFragment" => DeleteTypeItems :: OldHistoryFragment , "oldHistoryState" => DeleteTypeItems :: OldHistoryState , "oldHistoryUrl" => DeleteTypeItems :: OldHistoryUrl , "osVersion" => DeleteTypeItems :: OsVersion , "pageHostname" => DeleteTypeItems :: PageHostname , "pagePath" => DeleteTypeItems :: PagePath , "pageUrl" => DeleteTypeItems :: PageUrl , "platform" => DeleteTypeItems :: Platform , "queryString" => DeleteTypeItems :: QueryString , "randomNumber" => DeleteTypeItems :: RandomNumber , "referrer" => DeleteTypeItems :: Referrer , "requestMethod" => DeleteTypeItems :: RequestMethod , "requestPath" => DeleteTypeItems :: RequestPath , "resolution" => DeleteTypeItems :: Resolution , "scrollDepthDirection" => DeleteTypeItems :: ScrollDepthDirection , "scrollDepthThreshold" => DeleteTypeItems :: ScrollDepthThreshold , "scrollDepthUnits" => DeleteTypeItems :: ScrollDepthUnits , "sdkVersion" => DeleteTypeItems :: SdkVersion , "serverPageLocationHostname" => DeleteTypeItems :: ServerPageLocationHostname , "serverPageLocationPath" => DeleteTypeItems :: ServerPageLocationPath , "serverPageLocationUrl" => DeleteTypeItems :: ServerPageLocationUrl , "videoCurrentTime" => DeleteTypeItems :: VideoCurrentTime , "videoDuration" => DeleteTypeItems :: VideoDuration , "videoPercent" => DeleteTypeItems :: VideoPercent , "videoProvider" => DeleteTypeItems :: VideoProvider , "videoStatus" => DeleteTypeItems :: VideoStatus , "videoTitle" => DeleteTypeItems :: VideoTitle , "videoUrl" => DeleteTypeItems :: VideoUrl , "videoVisible" => DeleteTypeItems :: VideoVisible , _ => return Err (()) , })
                             }
                         }
                         impl ::std::fmt::Display for DeleteTypeItems {
@@ -12173,7 +12407,7 @@ pub mod resources {
                                 D: ::serde::de::Deserializer<'de>,
                             {
                                 let value: &'de str = <&str>::deserialize(deserializer)?;
-                                Ok ( match value { "advertiserId" => DeleteTypeItems :: AdvertiserId , "advertisingTrackingEnabled" => DeleteTypeItems :: AdvertisingTrackingEnabled , "ampBrowserLanguage" => DeleteTypeItems :: AmpBrowserLanguage , "ampCanonicalHost" => DeleteTypeItems :: AmpCanonicalHost , "ampCanonicalPath" => DeleteTypeItems :: AmpCanonicalPath , "ampCanonicalUrl" => DeleteTypeItems :: AmpCanonicalUrl , "ampClientId" => DeleteTypeItems :: AmpClientId , "ampClientMaxScrollX" => DeleteTypeItems :: AmpClientMaxScrollX , "ampClientMaxScrollY" => DeleteTypeItems :: AmpClientMaxScrollY , "ampClientScreenHeight" => DeleteTypeItems :: AmpClientScreenHeight , "ampClientScreenWidth" => DeleteTypeItems :: AmpClientScreenWidth , "ampClientScrollX" => DeleteTypeItems :: AmpClientScrollX , "ampClientScrollY" => DeleteTypeItems :: AmpClientScrollY , "ampClientTimestamp" => DeleteTypeItems :: AmpClientTimestamp , "ampClientTimezone" => DeleteTypeItems :: AmpClientTimezone , "ampGtmEvent" => DeleteTypeItems :: AmpGtmEvent , "ampPageDownloadTime" => DeleteTypeItems :: AmpPageDownloadTime , "ampPageLoadTime" => DeleteTypeItems :: AmpPageLoadTime , "ampPageViewId" => DeleteTypeItems :: AmpPageViewId , "ampReferrer" => DeleteTypeItems :: AmpReferrer , "ampTitle" => DeleteTypeItems :: AmpTitle , "ampTotalEngagedTime" => DeleteTypeItems :: AmpTotalEngagedTime , "appId" => DeleteTypeItems :: AppId , "appName" => DeleteTypeItems :: AppName , "appVersionCode" => DeleteTypeItems :: AppVersionCode , "appVersionName" => DeleteTypeItems :: AppVersionName , "builtInVariableTypeUnspecified" => DeleteTypeItems :: BuiltInVariableTypeUnspecified , "clickClasses" => DeleteTypeItems :: ClickClasses , "clickElement" => DeleteTypeItems :: ClickElement , "clickId" => DeleteTypeItems :: ClickId , "clickTarget" => DeleteTypeItems :: ClickTarget , "clickText" => DeleteTypeItems :: ClickText , "clickUrl" => DeleteTypeItems :: ClickUrl , "clientName" => DeleteTypeItems :: ClientName , "containerId" => DeleteTypeItems :: ContainerId , "containerVersion" => DeleteTypeItems :: ContainerVersion , "debugMode" => DeleteTypeItems :: DebugMode , "deviceName" => DeleteTypeItems :: DeviceName , "elementVisibilityFirstTime" => DeleteTypeItems :: ElementVisibilityFirstTime , "elementVisibilityRatio" => DeleteTypeItems :: ElementVisibilityRatio , "elementVisibilityRecentTime" => DeleteTypeItems :: ElementVisibilityRecentTime , "elementVisibilityTime" => DeleteTypeItems :: ElementVisibilityTime , "environmentName" => DeleteTypeItems :: EnvironmentName , "errorLine" => DeleteTypeItems :: ErrorLine , "errorMessage" => DeleteTypeItems :: ErrorMessage , "errorUrl" => DeleteTypeItems :: ErrorUrl , "event" => DeleteTypeItems :: Event , "eventName" => DeleteTypeItems :: EventName , "firebaseEventParameterCampaign" => DeleteTypeItems :: FirebaseEventParameterCampaign , "firebaseEventParameterCampaignAclid" => DeleteTypeItems :: FirebaseEventParameterCampaignAclid , "firebaseEventParameterCampaignAnid" => DeleteTypeItems :: FirebaseEventParameterCampaignAnid , "firebaseEventParameterCampaignClickTimestamp" => DeleteTypeItems :: FirebaseEventParameterCampaignClickTimestamp , "firebaseEventParameterCampaignContent" => DeleteTypeItems :: FirebaseEventParameterCampaignContent , "firebaseEventParameterCampaignCp1" => DeleteTypeItems :: FirebaseEventParameterCampaignCp1 , "firebaseEventParameterCampaignGclid" => DeleteTypeItems :: FirebaseEventParameterCampaignGclid , "firebaseEventParameterCampaignSource" => DeleteTypeItems :: FirebaseEventParameterCampaignSource , "firebaseEventParameterCampaignTerm" => DeleteTypeItems :: FirebaseEventParameterCampaignTerm , "firebaseEventParameterCurrency" => DeleteTypeItems :: FirebaseEventParameterCurrency , "firebaseEventParameterDynamicLinkAcceptTime" => DeleteTypeItems :: FirebaseEventParameterDynamicLinkAcceptTime , "firebaseEventParameterDynamicLinkLinkid" => DeleteTypeItems :: FirebaseEventParameterDynamicLinkLinkid , "firebaseEventParameterNotificationMessageDeviceTime" => DeleteTypeItems :: FirebaseEventParameterNotificationMessageDeviceTime , "firebaseEventParameterNotificationMessageId" => DeleteTypeItems :: FirebaseEventParameterNotificationMessageId , "firebaseEventParameterNotificationMessageName" => DeleteTypeItems :: FirebaseEventParameterNotificationMessageName , "firebaseEventParameterNotificationMessageTime" => DeleteTypeItems :: FirebaseEventParameterNotificationMessageTime , "firebaseEventParameterNotificationTopic" => DeleteTypeItems :: FirebaseEventParameterNotificationTopic , "firebaseEventParameterPreviousAppVersion" => DeleteTypeItems :: FirebaseEventParameterPreviousAppVersion , "firebaseEventParameterPreviousOsVersion" => DeleteTypeItems :: FirebaseEventParameterPreviousOsVersion , "firebaseEventParameterPrice" => DeleteTypeItems :: FirebaseEventParameterPrice , "firebaseEventParameterProductId" => DeleteTypeItems :: FirebaseEventParameterProductId , "firebaseEventParameterQuantity" => DeleteTypeItems :: FirebaseEventParameterQuantity , "firebaseEventParameterValue" => DeleteTypeItems :: FirebaseEventParameterValue , "firstPartyServingUrl" => DeleteTypeItems :: FirstPartyServingUrl , "formClasses" => DeleteTypeItems :: FormClasses , "formElement" => DeleteTypeItems :: FormElement , "formId" => DeleteTypeItems :: FormId , "formTarget" => DeleteTypeItems :: FormTarget , "formText" => DeleteTypeItems :: FormText , "formUrl" => DeleteTypeItems :: FormUrl , "historySource" => DeleteTypeItems :: HistorySource , "htmlId" => DeleteTypeItems :: HtmlId , "language" => DeleteTypeItems :: Language , "newHistoryFragment" => DeleteTypeItems :: NewHistoryFragment , "newHistoryState" => DeleteTypeItems :: NewHistoryState , "newHistoryUrl" => DeleteTypeItems :: NewHistoryUrl , "oldHistoryFragment" => DeleteTypeItems :: OldHistoryFragment , "oldHistoryState" => DeleteTypeItems :: OldHistoryState , "oldHistoryUrl" => DeleteTypeItems :: OldHistoryUrl , "osVersion" => DeleteTypeItems :: OsVersion , "pageHostname" => DeleteTypeItems :: PageHostname , "pagePath" => DeleteTypeItems :: PagePath , "pageUrl" => DeleteTypeItems :: PageUrl , "platform" => DeleteTypeItems :: Platform , "queryString" => DeleteTypeItems :: QueryString , "randomNumber" => DeleteTypeItems :: RandomNumber , "referrer" => DeleteTypeItems :: Referrer , "requestMethod" => DeleteTypeItems :: RequestMethod , "requestPath" => DeleteTypeItems :: RequestPath , "resolution" => DeleteTypeItems :: Resolution , "scrollDepthDirection" => DeleteTypeItems :: ScrollDepthDirection , "scrollDepthThreshold" => DeleteTypeItems :: ScrollDepthThreshold , "scrollDepthUnits" => DeleteTypeItems :: ScrollDepthUnits , "sdkVersion" => DeleteTypeItems :: SdkVersion , "videoCurrentTime" => DeleteTypeItems :: VideoCurrentTime , "videoDuration" => DeleteTypeItems :: VideoDuration , "videoPercent" => DeleteTypeItems :: VideoPercent , "videoProvider" => DeleteTypeItems :: VideoProvider , "videoStatus" => DeleteTypeItems :: VideoStatus , "videoTitle" => DeleteTypeItems :: VideoTitle , "videoUrl" => DeleteTypeItems :: VideoUrl , "videoVisible" => DeleteTypeItems :: VideoVisible , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+                                Ok (match value { "advertiserId" => DeleteTypeItems :: AdvertiserId , "advertisingTrackingEnabled" => DeleteTypeItems :: AdvertisingTrackingEnabled , "ampBrowserLanguage" => DeleteTypeItems :: AmpBrowserLanguage , "ampCanonicalHost" => DeleteTypeItems :: AmpCanonicalHost , "ampCanonicalPath" => DeleteTypeItems :: AmpCanonicalPath , "ampCanonicalUrl" => DeleteTypeItems :: AmpCanonicalUrl , "ampClientId" => DeleteTypeItems :: AmpClientId , "ampClientMaxScrollX" => DeleteTypeItems :: AmpClientMaxScrollX , "ampClientMaxScrollY" => DeleteTypeItems :: AmpClientMaxScrollY , "ampClientScreenHeight" => DeleteTypeItems :: AmpClientScreenHeight , "ampClientScreenWidth" => DeleteTypeItems :: AmpClientScreenWidth , "ampClientScrollX" => DeleteTypeItems :: AmpClientScrollX , "ampClientScrollY" => DeleteTypeItems :: AmpClientScrollY , "ampClientTimestamp" => DeleteTypeItems :: AmpClientTimestamp , "ampClientTimezone" => DeleteTypeItems :: AmpClientTimezone , "ampGtmEvent" => DeleteTypeItems :: AmpGtmEvent , "ampPageDownloadTime" => DeleteTypeItems :: AmpPageDownloadTime , "ampPageLoadTime" => DeleteTypeItems :: AmpPageLoadTime , "ampPageViewId" => DeleteTypeItems :: AmpPageViewId , "ampReferrer" => DeleteTypeItems :: AmpReferrer , "ampTitle" => DeleteTypeItems :: AmpTitle , "ampTotalEngagedTime" => DeleteTypeItems :: AmpTotalEngagedTime , "appId" => DeleteTypeItems :: AppId , "appName" => DeleteTypeItems :: AppName , "appVersionCode" => DeleteTypeItems :: AppVersionCode , "appVersionName" => DeleteTypeItems :: AppVersionName , "builtInVariableTypeUnspecified" => DeleteTypeItems :: BuiltInVariableTypeUnspecified , "clickClasses" => DeleteTypeItems :: ClickClasses , "clickElement" => DeleteTypeItems :: ClickElement , "clickId" => DeleteTypeItems :: ClickId , "clickTarget" => DeleteTypeItems :: ClickTarget , "clickText" => DeleteTypeItems :: ClickText , "clickUrl" => DeleteTypeItems :: ClickUrl , "clientName" => DeleteTypeItems :: ClientName , "containerId" => DeleteTypeItems :: ContainerId , "containerVersion" => DeleteTypeItems :: ContainerVersion , "debugMode" => DeleteTypeItems :: DebugMode , "deviceName" => DeleteTypeItems :: DeviceName , "elementVisibilityFirstTime" => DeleteTypeItems :: ElementVisibilityFirstTime , "elementVisibilityRatio" => DeleteTypeItems :: ElementVisibilityRatio , "elementVisibilityRecentTime" => DeleteTypeItems :: ElementVisibilityRecentTime , "elementVisibilityTime" => DeleteTypeItems :: ElementVisibilityTime , "environmentName" => DeleteTypeItems :: EnvironmentName , "errorLine" => DeleteTypeItems :: ErrorLine , "errorMessage" => DeleteTypeItems :: ErrorMessage , "errorUrl" => DeleteTypeItems :: ErrorUrl , "event" => DeleteTypeItems :: Event , "eventName" => DeleteTypeItems :: EventName , "firebaseEventParameterCampaign" => DeleteTypeItems :: FirebaseEventParameterCampaign , "firebaseEventParameterCampaignAclid" => DeleteTypeItems :: FirebaseEventParameterCampaignAclid , "firebaseEventParameterCampaignAnid" => DeleteTypeItems :: FirebaseEventParameterCampaignAnid , "firebaseEventParameterCampaignClickTimestamp" => DeleteTypeItems :: FirebaseEventParameterCampaignClickTimestamp , "firebaseEventParameterCampaignContent" => DeleteTypeItems :: FirebaseEventParameterCampaignContent , "firebaseEventParameterCampaignCp1" => DeleteTypeItems :: FirebaseEventParameterCampaignCp1 , "firebaseEventParameterCampaignGclid" => DeleteTypeItems :: FirebaseEventParameterCampaignGclid , "firebaseEventParameterCampaignSource" => DeleteTypeItems :: FirebaseEventParameterCampaignSource , "firebaseEventParameterCampaignTerm" => DeleteTypeItems :: FirebaseEventParameterCampaignTerm , "firebaseEventParameterCurrency" => DeleteTypeItems :: FirebaseEventParameterCurrency , "firebaseEventParameterDynamicLinkAcceptTime" => DeleteTypeItems :: FirebaseEventParameterDynamicLinkAcceptTime , "firebaseEventParameterDynamicLinkLinkid" => DeleteTypeItems :: FirebaseEventParameterDynamicLinkLinkid , "firebaseEventParameterNotificationMessageDeviceTime" => DeleteTypeItems :: FirebaseEventParameterNotificationMessageDeviceTime , "firebaseEventParameterNotificationMessageId" => DeleteTypeItems :: FirebaseEventParameterNotificationMessageId , "firebaseEventParameterNotificationMessageName" => DeleteTypeItems :: FirebaseEventParameterNotificationMessageName , "firebaseEventParameterNotificationMessageTime" => DeleteTypeItems :: FirebaseEventParameterNotificationMessageTime , "firebaseEventParameterNotificationTopic" => DeleteTypeItems :: FirebaseEventParameterNotificationTopic , "firebaseEventParameterPreviousAppVersion" => DeleteTypeItems :: FirebaseEventParameterPreviousAppVersion , "firebaseEventParameterPreviousOsVersion" => DeleteTypeItems :: FirebaseEventParameterPreviousOsVersion , "firebaseEventParameterPrice" => DeleteTypeItems :: FirebaseEventParameterPrice , "firebaseEventParameterProductId" => DeleteTypeItems :: FirebaseEventParameterProductId , "firebaseEventParameterQuantity" => DeleteTypeItems :: FirebaseEventParameterQuantity , "firebaseEventParameterValue" => DeleteTypeItems :: FirebaseEventParameterValue , "firstPartyServingUrl" => DeleteTypeItems :: FirstPartyServingUrl , "formClasses" => DeleteTypeItems :: FormClasses , "formElement" => DeleteTypeItems :: FormElement , "formId" => DeleteTypeItems :: FormId , "formTarget" => DeleteTypeItems :: FormTarget , "formText" => DeleteTypeItems :: FormText , "formUrl" => DeleteTypeItems :: FormUrl , "historySource" => DeleteTypeItems :: HistorySource , "htmlId" => DeleteTypeItems :: HtmlId , "language" => DeleteTypeItems :: Language , "newHistoryFragment" => DeleteTypeItems :: NewHistoryFragment , "newHistoryState" => DeleteTypeItems :: NewHistoryState , "newHistoryUrl" => DeleteTypeItems :: NewHistoryUrl , "oldHistoryFragment" => DeleteTypeItems :: OldHistoryFragment , "oldHistoryState" => DeleteTypeItems :: OldHistoryState , "oldHistoryUrl" => DeleteTypeItems :: OldHistoryUrl , "osVersion" => DeleteTypeItems :: OsVersion , "pageHostname" => DeleteTypeItems :: PageHostname , "pagePath" => DeleteTypeItems :: PagePath , "pageUrl" => DeleteTypeItems :: PageUrl , "platform" => DeleteTypeItems :: Platform , "queryString" => DeleteTypeItems :: QueryString , "randomNumber" => DeleteTypeItems :: RandomNumber , "referrer" => DeleteTypeItems :: Referrer , "requestMethod" => DeleteTypeItems :: RequestMethod , "requestPath" => DeleteTypeItems :: RequestPath , "resolution" => DeleteTypeItems :: Resolution , "scrollDepthDirection" => DeleteTypeItems :: ScrollDepthDirection , "scrollDepthThreshold" => DeleteTypeItems :: ScrollDepthThreshold , "scrollDepthUnits" => DeleteTypeItems :: ScrollDepthUnits , "sdkVersion" => DeleteTypeItems :: SdkVersion , "serverPageLocationHostname" => DeleteTypeItems :: ServerPageLocationHostname , "serverPageLocationPath" => DeleteTypeItems :: ServerPageLocationPath , "serverPageLocationUrl" => DeleteTypeItems :: ServerPageLocationUrl , "videoCurrentTime" => DeleteTypeItems :: VideoCurrentTime , "videoDuration" => DeleteTypeItems :: VideoDuration , "videoPercent" => DeleteTypeItems :: VideoPercent , "videoProvider" => DeleteTypeItems :: VideoProvider , "videoStatus" => DeleteTypeItems :: VideoStatus , "videoTitle" => DeleteTypeItems :: VideoTitle , "videoUrl" => DeleteTypeItems :: VideoUrl , "videoVisible" => DeleteTypeItems :: VideoVisible , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
                             }
                         }
                         impl ::google_field_selector::FieldSelector for DeleteTypeItems {
@@ -12294,6 +12528,9 @@ pub mod resources {
                             ScrollDepthThreshold,
                             ScrollDepthUnits,
                             SdkVersion,
+                            ServerPageLocationHostname,
+                            ServerPageLocationPath,
+                            ServerPageLocationUrl,
                             VideoCurrentTime,
                             VideoDuration,
                             VideoPercent,
@@ -12305,7 +12542,7 @@ pub mod resources {
                         }
                         impl RevertType {
                             pub fn as_str(self) -> &'static str {
-                                match self { RevertType :: AdvertiserId => "advertiserId" , RevertType :: AdvertisingTrackingEnabled => "advertisingTrackingEnabled" , RevertType :: AmpBrowserLanguage => "ampBrowserLanguage" , RevertType :: AmpCanonicalHost => "ampCanonicalHost" , RevertType :: AmpCanonicalPath => "ampCanonicalPath" , RevertType :: AmpCanonicalUrl => "ampCanonicalUrl" , RevertType :: AmpClientId => "ampClientId" , RevertType :: AmpClientMaxScrollX => "ampClientMaxScrollX" , RevertType :: AmpClientMaxScrollY => "ampClientMaxScrollY" , RevertType :: AmpClientScreenHeight => "ampClientScreenHeight" , RevertType :: AmpClientScreenWidth => "ampClientScreenWidth" , RevertType :: AmpClientScrollX => "ampClientScrollX" , RevertType :: AmpClientScrollY => "ampClientScrollY" , RevertType :: AmpClientTimestamp => "ampClientTimestamp" , RevertType :: AmpClientTimezone => "ampClientTimezone" , RevertType :: AmpGtmEvent => "ampGtmEvent" , RevertType :: AmpPageDownloadTime => "ampPageDownloadTime" , RevertType :: AmpPageLoadTime => "ampPageLoadTime" , RevertType :: AmpPageViewId => "ampPageViewId" , RevertType :: AmpReferrer => "ampReferrer" , RevertType :: AmpTitle => "ampTitle" , RevertType :: AmpTotalEngagedTime => "ampTotalEngagedTime" , RevertType :: AppId => "appId" , RevertType :: AppName => "appName" , RevertType :: AppVersionCode => "appVersionCode" , RevertType :: AppVersionName => "appVersionName" , RevertType :: BuiltInVariableTypeUnspecified => "builtInVariableTypeUnspecified" , RevertType :: ClickClasses => "clickClasses" , RevertType :: ClickElement => "clickElement" , RevertType :: ClickId => "clickId" , RevertType :: ClickTarget => "clickTarget" , RevertType :: ClickText => "clickText" , RevertType :: ClickUrl => "clickUrl" , RevertType :: ClientName => "clientName" , RevertType :: ContainerId => "containerId" , RevertType :: ContainerVersion => "containerVersion" , RevertType :: DebugMode => "debugMode" , RevertType :: DeviceName => "deviceName" , RevertType :: ElementVisibilityFirstTime => "elementVisibilityFirstTime" , RevertType :: ElementVisibilityRatio => "elementVisibilityRatio" , RevertType :: ElementVisibilityRecentTime => "elementVisibilityRecentTime" , RevertType :: ElementVisibilityTime => "elementVisibilityTime" , RevertType :: EnvironmentName => "environmentName" , RevertType :: ErrorLine => "errorLine" , RevertType :: ErrorMessage => "errorMessage" , RevertType :: ErrorUrl => "errorUrl" , RevertType :: Event => "event" , RevertType :: EventName => "eventName" , RevertType :: FirebaseEventParameterCampaign => "firebaseEventParameterCampaign" , RevertType :: FirebaseEventParameterCampaignAclid => "firebaseEventParameterCampaignAclid" , RevertType :: FirebaseEventParameterCampaignAnid => "firebaseEventParameterCampaignAnid" , RevertType :: FirebaseEventParameterCampaignClickTimestamp => "firebaseEventParameterCampaignClickTimestamp" , RevertType :: FirebaseEventParameterCampaignContent => "firebaseEventParameterCampaignContent" , RevertType :: FirebaseEventParameterCampaignCp1 => "firebaseEventParameterCampaignCp1" , RevertType :: FirebaseEventParameterCampaignGclid => "firebaseEventParameterCampaignGclid" , RevertType :: FirebaseEventParameterCampaignSource => "firebaseEventParameterCampaignSource" , RevertType :: FirebaseEventParameterCampaignTerm => "firebaseEventParameterCampaignTerm" , RevertType :: FirebaseEventParameterCurrency => "firebaseEventParameterCurrency" , RevertType :: FirebaseEventParameterDynamicLinkAcceptTime => "firebaseEventParameterDynamicLinkAcceptTime" , RevertType :: FirebaseEventParameterDynamicLinkLinkid => "firebaseEventParameterDynamicLinkLinkid" , RevertType :: FirebaseEventParameterNotificationMessageDeviceTime => "firebaseEventParameterNotificationMessageDeviceTime" , RevertType :: FirebaseEventParameterNotificationMessageId => "firebaseEventParameterNotificationMessageId" , RevertType :: FirebaseEventParameterNotificationMessageName => "firebaseEventParameterNotificationMessageName" , RevertType :: FirebaseEventParameterNotificationMessageTime => "firebaseEventParameterNotificationMessageTime" , RevertType :: FirebaseEventParameterNotificationTopic => "firebaseEventParameterNotificationTopic" , RevertType :: FirebaseEventParameterPreviousAppVersion => "firebaseEventParameterPreviousAppVersion" , RevertType :: FirebaseEventParameterPreviousOsVersion => "firebaseEventParameterPreviousOsVersion" , RevertType :: FirebaseEventParameterPrice => "firebaseEventParameterPrice" , RevertType :: FirebaseEventParameterProductId => "firebaseEventParameterProductId" , RevertType :: FirebaseEventParameterQuantity => "firebaseEventParameterQuantity" , RevertType :: FirebaseEventParameterValue => "firebaseEventParameterValue" , RevertType :: FirstPartyServingUrl => "firstPartyServingUrl" , RevertType :: FormClasses => "formClasses" , RevertType :: FormElement => "formElement" , RevertType :: FormId => "formId" , RevertType :: FormTarget => "formTarget" , RevertType :: FormText => "formText" , RevertType :: FormUrl => "formUrl" , RevertType :: HistorySource => "historySource" , RevertType :: HtmlId => "htmlId" , RevertType :: Language => "language" , RevertType :: NewHistoryFragment => "newHistoryFragment" , RevertType :: NewHistoryState => "newHistoryState" , RevertType :: NewHistoryUrl => "newHistoryUrl" , RevertType :: OldHistoryFragment => "oldHistoryFragment" , RevertType :: OldHistoryState => "oldHistoryState" , RevertType :: OldHistoryUrl => "oldHistoryUrl" , RevertType :: OsVersion => "osVersion" , RevertType :: PageHostname => "pageHostname" , RevertType :: PagePath => "pagePath" , RevertType :: PageUrl => "pageUrl" , RevertType :: Platform => "platform" , RevertType :: QueryString => "queryString" , RevertType :: RandomNumber => "randomNumber" , RevertType :: Referrer => "referrer" , RevertType :: RequestMethod => "requestMethod" , RevertType :: RequestPath => "requestPath" , RevertType :: Resolution => "resolution" , RevertType :: ScrollDepthDirection => "scrollDepthDirection" , RevertType :: ScrollDepthThreshold => "scrollDepthThreshold" , RevertType :: ScrollDepthUnits => "scrollDepthUnits" , RevertType :: SdkVersion => "sdkVersion" , RevertType :: VideoCurrentTime => "videoCurrentTime" , RevertType :: VideoDuration => "videoDuration" , RevertType :: VideoPercent => "videoPercent" , RevertType :: VideoProvider => "videoProvider" , RevertType :: VideoStatus => "videoStatus" , RevertType :: VideoTitle => "videoTitle" , RevertType :: VideoUrl => "videoUrl" , RevertType :: VideoVisible => "videoVisible" , }
+                                match self { RevertType :: AdvertiserId => "advertiserId" , RevertType :: AdvertisingTrackingEnabled => "advertisingTrackingEnabled" , RevertType :: AmpBrowserLanguage => "ampBrowserLanguage" , RevertType :: AmpCanonicalHost => "ampCanonicalHost" , RevertType :: AmpCanonicalPath => "ampCanonicalPath" , RevertType :: AmpCanonicalUrl => "ampCanonicalUrl" , RevertType :: AmpClientId => "ampClientId" , RevertType :: AmpClientMaxScrollX => "ampClientMaxScrollX" , RevertType :: AmpClientMaxScrollY => "ampClientMaxScrollY" , RevertType :: AmpClientScreenHeight => "ampClientScreenHeight" , RevertType :: AmpClientScreenWidth => "ampClientScreenWidth" , RevertType :: AmpClientScrollX => "ampClientScrollX" , RevertType :: AmpClientScrollY => "ampClientScrollY" , RevertType :: AmpClientTimestamp => "ampClientTimestamp" , RevertType :: AmpClientTimezone => "ampClientTimezone" , RevertType :: AmpGtmEvent => "ampGtmEvent" , RevertType :: AmpPageDownloadTime => "ampPageDownloadTime" , RevertType :: AmpPageLoadTime => "ampPageLoadTime" , RevertType :: AmpPageViewId => "ampPageViewId" , RevertType :: AmpReferrer => "ampReferrer" , RevertType :: AmpTitle => "ampTitle" , RevertType :: AmpTotalEngagedTime => "ampTotalEngagedTime" , RevertType :: AppId => "appId" , RevertType :: AppName => "appName" , RevertType :: AppVersionCode => "appVersionCode" , RevertType :: AppVersionName => "appVersionName" , RevertType :: BuiltInVariableTypeUnspecified => "builtInVariableTypeUnspecified" , RevertType :: ClickClasses => "clickClasses" , RevertType :: ClickElement => "clickElement" , RevertType :: ClickId => "clickId" , RevertType :: ClickTarget => "clickTarget" , RevertType :: ClickText => "clickText" , RevertType :: ClickUrl => "clickUrl" , RevertType :: ClientName => "clientName" , RevertType :: ContainerId => "containerId" , RevertType :: ContainerVersion => "containerVersion" , RevertType :: DebugMode => "debugMode" , RevertType :: DeviceName => "deviceName" , RevertType :: ElementVisibilityFirstTime => "elementVisibilityFirstTime" , RevertType :: ElementVisibilityRatio => "elementVisibilityRatio" , RevertType :: ElementVisibilityRecentTime => "elementVisibilityRecentTime" , RevertType :: ElementVisibilityTime => "elementVisibilityTime" , RevertType :: EnvironmentName => "environmentName" , RevertType :: ErrorLine => "errorLine" , RevertType :: ErrorMessage => "errorMessage" , RevertType :: ErrorUrl => "errorUrl" , RevertType :: Event => "event" , RevertType :: EventName => "eventName" , RevertType :: FirebaseEventParameterCampaign => "firebaseEventParameterCampaign" , RevertType :: FirebaseEventParameterCampaignAclid => "firebaseEventParameterCampaignAclid" , RevertType :: FirebaseEventParameterCampaignAnid => "firebaseEventParameterCampaignAnid" , RevertType :: FirebaseEventParameterCampaignClickTimestamp => "firebaseEventParameterCampaignClickTimestamp" , RevertType :: FirebaseEventParameterCampaignContent => "firebaseEventParameterCampaignContent" , RevertType :: FirebaseEventParameterCampaignCp1 => "firebaseEventParameterCampaignCp1" , RevertType :: FirebaseEventParameterCampaignGclid => "firebaseEventParameterCampaignGclid" , RevertType :: FirebaseEventParameterCampaignSource => "firebaseEventParameterCampaignSource" , RevertType :: FirebaseEventParameterCampaignTerm => "firebaseEventParameterCampaignTerm" , RevertType :: FirebaseEventParameterCurrency => "firebaseEventParameterCurrency" , RevertType :: FirebaseEventParameterDynamicLinkAcceptTime => "firebaseEventParameterDynamicLinkAcceptTime" , RevertType :: FirebaseEventParameterDynamicLinkLinkid => "firebaseEventParameterDynamicLinkLinkid" , RevertType :: FirebaseEventParameterNotificationMessageDeviceTime => "firebaseEventParameterNotificationMessageDeviceTime" , RevertType :: FirebaseEventParameterNotificationMessageId => "firebaseEventParameterNotificationMessageId" , RevertType :: FirebaseEventParameterNotificationMessageName => "firebaseEventParameterNotificationMessageName" , RevertType :: FirebaseEventParameterNotificationMessageTime => "firebaseEventParameterNotificationMessageTime" , RevertType :: FirebaseEventParameterNotificationTopic => "firebaseEventParameterNotificationTopic" , RevertType :: FirebaseEventParameterPreviousAppVersion => "firebaseEventParameterPreviousAppVersion" , RevertType :: FirebaseEventParameterPreviousOsVersion => "firebaseEventParameterPreviousOsVersion" , RevertType :: FirebaseEventParameterPrice => "firebaseEventParameterPrice" , RevertType :: FirebaseEventParameterProductId => "firebaseEventParameterProductId" , RevertType :: FirebaseEventParameterQuantity => "firebaseEventParameterQuantity" , RevertType :: FirebaseEventParameterValue => "firebaseEventParameterValue" , RevertType :: FirstPartyServingUrl => "firstPartyServingUrl" , RevertType :: FormClasses => "formClasses" , RevertType :: FormElement => "formElement" , RevertType :: FormId => "formId" , RevertType :: FormTarget => "formTarget" , RevertType :: FormText => "formText" , RevertType :: FormUrl => "formUrl" , RevertType :: HistorySource => "historySource" , RevertType :: HtmlId => "htmlId" , RevertType :: Language => "language" , RevertType :: NewHistoryFragment => "newHistoryFragment" , RevertType :: NewHistoryState => "newHistoryState" , RevertType :: NewHistoryUrl => "newHistoryUrl" , RevertType :: OldHistoryFragment => "oldHistoryFragment" , RevertType :: OldHistoryState => "oldHistoryState" , RevertType :: OldHistoryUrl => "oldHistoryUrl" , RevertType :: OsVersion => "osVersion" , RevertType :: PageHostname => "pageHostname" , RevertType :: PagePath => "pagePath" , RevertType :: PageUrl => "pageUrl" , RevertType :: Platform => "platform" , RevertType :: QueryString => "queryString" , RevertType :: RandomNumber => "randomNumber" , RevertType :: Referrer => "referrer" , RevertType :: RequestMethod => "requestMethod" , RevertType :: RequestPath => "requestPath" , RevertType :: Resolution => "resolution" , RevertType :: ScrollDepthDirection => "scrollDepthDirection" , RevertType :: ScrollDepthThreshold => "scrollDepthThreshold" , RevertType :: ScrollDepthUnits => "scrollDepthUnits" , RevertType :: SdkVersion => "sdkVersion" , RevertType :: ServerPageLocationHostname => "serverPageLocationHostname" , RevertType :: ServerPageLocationPath => "serverPageLocationPath" , RevertType :: ServerPageLocationUrl => "serverPageLocationUrl" , RevertType :: VideoCurrentTime => "videoCurrentTime" , RevertType :: VideoDuration => "videoDuration" , RevertType :: VideoPercent => "videoPercent" , RevertType :: VideoProvider => "videoProvider" , RevertType :: VideoStatus => "videoStatus" , RevertType :: VideoTitle => "videoTitle" , RevertType :: VideoUrl => "videoUrl" , RevertType :: VideoVisible => "videoVisible" , }
                             }
                         }
                         impl ::std::convert::AsRef<str> for RevertType {
@@ -12316,7 +12553,7 @@ pub mod resources {
                         impl ::std::str::FromStr for RevertType {
                             type Err = ();
                             fn from_str(s: &str) -> ::std::result::Result<RevertType, ()> {
-                                Ok ( match s { "advertiserId" => RevertType :: AdvertiserId , "advertisingTrackingEnabled" => RevertType :: AdvertisingTrackingEnabled , "ampBrowserLanguage" => RevertType :: AmpBrowserLanguage , "ampCanonicalHost" => RevertType :: AmpCanonicalHost , "ampCanonicalPath" => RevertType :: AmpCanonicalPath , "ampCanonicalUrl" => RevertType :: AmpCanonicalUrl , "ampClientId" => RevertType :: AmpClientId , "ampClientMaxScrollX" => RevertType :: AmpClientMaxScrollX , "ampClientMaxScrollY" => RevertType :: AmpClientMaxScrollY , "ampClientScreenHeight" => RevertType :: AmpClientScreenHeight , "ampClientScreenWidth" => RevertType :: AmpClientScreenWidth , "ampClientScrollX" => RevertType :: AmpClientScrollX , "ampClientScrollY" => RevertType :: AmpClientScrollY , "ampClientTimestamp" => RevertType :: AmpClientTimestamp , "ampClientTimezone" => RevertType :: AmpClientTimezone , "ampGtmEvent" => RevertType :: AmpGtmEvent , "ampPageDownloadTime" => RevertType :: AmpPageDownloadTime , "ampPageLoadTime" => RevertType :: AmpPageLoadTime , "ampPageViewId" => RevertType :: AmpPageViewId , "ampReferrer" => RevertType :: AmpReferrer , "ampTitle" => RevertType :: AmpTitle , "ampTotalEngagedTime" => RevertType :: AmpTotalEngagedTime , "appId" => RevertType :: AppId , "appName" => RevertType :: AppName , "appVersionCode" => RevertType :: AppVersionCode , "appVersionName" => RevertType :: AppVersionName , "builtInVariableTypeUnspecified" => RevertType :: BuiltInVariableTypeUnspecified , "clickClasses" => RevertType :: ClickClasses , "clickElement" => RevertType :: ClickElement , "clickId" => RevertType :: ClickId , "clickTarget" => RevertType :: ClickTarget , "clickText" => RevertType :: ClickText , "clickUrl" => RevertType :: ClickUrl , "clientName" => RevertType :: ClientName , "containerId" => RevertType :: ContainerId , "containerVersion" => RevertType :: ContainerVersion , "debugMode" => RevertType :: DebugMode , "deviceName" => RevertType :: DeviceName , "elementVisibilityFirstTime" => RevertType :: ElementVisibilityFirstTime , "elementVisibilityRatio" => RevertType :: ElementVisibilityRatio , "elementVisibilityRecentTime" => RevertType :: ElementVisibilityRecentTime , "elementVisibilityTime" => RevertType :: ElementVisibilityTime , "environmentName" => RevertType :: EnvironmentName , "errorLine" => RevertType :: ErrorLine , "errorMessage" => RevertType :: ErrorMessage , "errorUrl" => RevertType :: ErrorUrl , "event" => RevertType :: Event , "eventName" => RevertType :: EventName , "firebaseEventParameterCampaign" => RevertType :: FirebaseEventParameterCampaign , "firebaseEventParameterCampaignAclid" => RevertType :: FirebaseEventParameterCampaignAclid , "firebaseEventParameterCampaignAnid" => RevertType :: FirebaseEventParameterCampaignAnid , "firebaseEventParameterCampaignClickTimestamp" => RevertType :: FirebaseEventParameterCampaignClickTimestamp , "firebaseEventParameterCampaignContent" => RevertType :: FirebaseEventParameterCampaignContent , "firebaseEventParameterCampaignCp1" => RevertType :: FirebaseEventParameterCampaignCp1 , "firebaseEventParameterCampaignGclid" => RevertType :: FirebaseEventParameterCampaignGclid , "firebaseEventParameterCampaignSource" => RevertType :: FirebaseEventParameterCampaignSource , "firebaseEventParameterCampaignTerm" => RevertType :: FirebaseEventParameterCampaignTerm , "firebaseEventParameterCurrency" => RevertType :: FirebaseEventParameterCurrency , "firebaseEventParameterDynamicLinkAcceptTime" => RevertType :: FirebaseEventParameterDynamicLinkAcceptTime , "firebaseEventParameterDynamicLinkLinkid" => RevertType :: FirebaseEventParameterDynamicLinkLinkid , "firebaseEventParameterNotificationMessageDeviceTime" => RevertType :: FirebaseEventParameterNotificationMessageDeviceTime , "firebaseEventParameterNotificationMessageId" => RevertType :: FirebaseEventParameterNotificationMessageId , "firebaseEventParameterNotificationMessageName" => RevertType :: FirebaseEventParameterNotificationMessageName , "firebaseEventParameterNotificationMessageTime" => RevertType :: FirebaseEventParameterNotificationMessageTime , "firebaseEventParameterNotificationTopic" => RevertType :: FirebaseEventParameterNotificationTopic , "firebaseEventParameterPreviousAppVersion" => RevertType :: FirebaseEventParameterPreviousAppVersion , "firebaseEventParameterPreviousOsVersion" => RevertType :: FirebaseEventParameterPreviousOsVersion , "firebaseEventParameterPrice" => RevertType :: FirebaseEventParameterPrice , "firebaseEventParameterProductId" => RevertType :: FirebaseEventParameterProductId , "firebaseEventParameterQuantity" => RevertType :: FirebaseEventParameterQuantity , "firebaseEventParameterValue" => RevertType :: FirebaseEventParameterValue , "firstPartyServingUrl" => RevertType :: FirstPartyServingUrl , "formClasses" => RevertType :: FormClasses , "formElement" => RevertType :: FormElement , "formId" => RevertType :: FormId , "formTarget" => RevertType :: FormTarget , "formText" => RevertType :: FormText , "formUrl" => RevertType :: FormUrl , "historySource" => RevertType :: HistorySource , "htmlId" => RevertType :: HtmlId , "language" => RevertType :: Language , "newHistoryFragment" => RevertType :: NewHistoryFragment , "newHistoryState" => RevertType :: NewHistoryState , "newHistoryUrl" => RevertType :: NewHistoryUrl , "oldHistoryFragment" => RevertType :: OldHistoryFragment , "oldHistoryState" => RevertType :: OldHistoryState , "oldHistoryUrl" => RevertType :: OldHistoryUrl , "osVersion" => RevertType :: OsVersion , "pageHostname" => RevertType :: PageHostname , "pagePath" => RevertType :: PagePath , "pageUrl" => RevertType :: PageUrl , "platform" => RevertType :: Platform , "queryString" => RevertType :: QueryString , "randomNumber" => RevertType :: RandomNumber , "referrer" => RevertType :: Referrer , "requestMethod" => RevertType :: RequestMethod , "requestPath" => RevertType :: RequestPath , "resolution" => RevertType :: Resolution , "scrollDepthDirection" => RevertType :: ScrollDepthDirection , "scrollDepthThreshold" => RevertType :: ScrollDepthThreshold , "scrollDepthUnits" => RevertType :: ScrollDepthUnits , "sdkVersion" => RevertType :: SdkVersion , "videoCurrentTime" => RevertType :: VideoCurrentTime , "videoDuration" => RevertType :: VideoDuration , "videoPercent" => RevertType :: VideoPercent , "videoProvider" => RevertType :: VideoProvider , "videoStatus" => RevertType :: VideoStatus , "videoTitle" => RevertType :: VideoTitle , "videoUrl" => RevertType :: VideoUrl , "videoVisible" => RevertType :: VideoVisible , _ => return Err ( ( ) ) , } )
+                                Ok (match s { "advertiserId" => RevertType :: AdvertiserId , "advertisingTrackingEnabled" => RevertType :: AdvertisingTrackingEnabled , "ampBrowserLanguage" => RevertType :: AmpBrowserLanguage , "ampCanonicalHost" => RevertType :: AmpCanonicalHost , "ampCanonicalPath" => RevertType :: AmpCanonicalPath , "ampCanonicalUrl" => RevertType :: AmpCanonicalUrl , "ampClientId" => RevertType :: AmpClientId , "ampClientMaxScrollX" => RevertType :: AmpClientMaxScrollX , "ampClientMaxScrollY" => RevertType :: AmpClientMaxScrollY , "ampClientScreenHeight" => RevertType :: AmpClientScreenHeight , "ampClientScreenWidth" => RevertType :: AmpClientScreenWidth , "ampClientScrollX" => RevertType :: AmpClientScrollX , "ampClientScrollY" => RevertType :: AmpClientScrollY , "ampClientTimestamp" => RevertType :: AmpClientTimestamp , "ampClientTimezone" => RevertType :: AmpClientTimezone , "ampGtmEvent" => RevertType :: AmpGtmEvent , "ampPageDownloadTime" => RevertType :: AmpPageDownloadTime , "ampPageLoadTime" => RevertType :: AmpPageLoadTime , "ampPageViewId" => RevertType :: AmpPageViewId , "ampReferrer" => RevertType :: AmpReferrer , "ampTitle" => RevertType :: AmpTitle , "ampTotalEngagedTime" => RevertType :: AmpTotalEngagedTime , "appId" => RevertType :: AppId , "appName" => RevertType :: AppName , "appVersionCode" => RevertType :: AppVersionCode , "appVersionName" => RevertType :: AppVersionName , "builtInVariableTypeUnspecified" => RevertType :: BuiltInVariableTypeUnspecified , "clickClasses" => RevertType :: ClickClasses , "clickElement" => RevertType :: ClickElement , "clickId" => RevertType :: ClickId , "clickTarget" => RevertType :: ClickTarget , "clickText" => RevertType :: ClickText , "clickUrl" => RevertType :: ClickUrl , "clientName" => RevertType :: ClientName , "containerId" => RevertType :: ContainerId , "containerVersion" => RevertType :: ContainerVersion , "debugMode" => RevertType :: DebugMode , "deviceName" => RevertType :: DeviceName , "elementVisibilityFirstTime" => RevertType :: ElementVisibilityFirstTime , "elementVisibilityRatio" => RevertType :: ElementVisibilityRatio , "elementVisibilityRecentTime" => RevertType :: ElementVisibilityRecentTime , "elementVisibilityTime" => RevertType :: ElementVisibilityTime , "environmentName" => RevertType :: EnvironmentName , "errorLine" => RevertType :: ErrorLine , "errorMessage" => RevertType :: ErrorMessage , "errorUrl" => RevertType :: ErrorUrl , "event" => RevertType :: Event , "eventName" => RevertType :: EventName , "firebaseEventParameterCampaign" => RevertType :: FirebaseEventParameterCampaign , "firebaseEventParameterCampaignAclid" => RevertType :: FirebaseEventParameterCampaignAclid , "firebaseEventParameterCampaignAnid" => RevertType :: FirebaseEventParameterCampaignAnid , "firebaseEventParameterCampaignClickTimestamp" => RevertType :: FirebaseEventParameterCampaignClickTimestamp , "firebaseEventParameterCampaignContent" => RevertType :: FirebaseEventParameterCampaignContent , "firebaseEventParameterCampaignCp1" => RevertType :: FirebaseEventParameterCampaignCp1 , "firebaseEventParameterCampaignGclid" => RevertType :: FirebaseEventParameterCampaignGclid , "firebaseEventParameterCampaignSource" => RevertType :: FirebaseEventParameterCampaignSource , "firebaseEventParameterCampaignTerm" => RevertType :: FirebaseEventParameterCampaignTerm , "firebaseEventParameterCurrency" => RevertType :: FirebaseEventParameterCurrency , "firebaseEventParameterDynamicLinkAcceptTime" => RevertType :: FirebaseEventParameterDynamicLinkAcceptTime , "firebaseEventParameterDynamicLinkLinkid" => RevertType :: FirebaseEventParameterDynamicLinkLinkid , "firebaseEventParameterNotificationMessageDeviceTime" => RevertType :: FirebaseEventParameterNotificationMessageDeviceTime , "firebaseEventParameterNotificationMessageId" => RevertType :: FirebaseEventParameterNotificationMessageId , "firebaseEventParameterNotificationMessageName" => RevertType :: FirebaseEventParameterNotificationMessageName , "firebaseEventParameterNotificationMessageTime" => RevertType :: FirebaseEventParameterNotificationMessageTime , "firebaseEventParameterNotificationTopic" => RevertType :: FirebaseEventParameterNotificationTopic , "firebaseEventParameterPreviousAppVersion" => RevertType :: FirebaseEventParameterPreviousAppVersion , "firebaseEventParameterPreviousOsVersion" => RevertType :: FirebaseEventParameterPreviousOsVersion , "firebaseEventParameterPrice" => RevertType :: FirebaseEventParameterPrice , "firebaseEventParameterProductId" => RevertType :: FirebaseEventParameterProductId , "firebaseEventParameterQuantity" => RevertType :: FirebaseEventParameterQuantity , "firebaseEventParameterValue" => RevertType :: FirebaseEventParameterValue , "firstPartyServingUrl" => RevertType :: FirstPartyServingUrl , "formClasses" => RevertType :: FormClasses , "formElement" => RevertType :: FormElement , "formId" => RevertType :: FormId , "formTarget" => RevertType :: FormTarget , "formText" => RevertType :: FormText , "formUrl" => RevertType :: FormUrl , "historySource" => RevertType :: HistorySource , "htmlId" => RevertType :: HtmlId , "language" => RevertType :: Language , "newHistoryFragment" => RevertType :: NewHistoryFragment , "newHistoryState" => RevertType :: NewHistoryState , "newHistoryUrl" => RevertType :: NewHistoryUrl , "oldHistoryFragment" => RevertType :: OldHistoryFragment , "oldHistoryState" => RevertType :: OldHistoryState , "oldHistoryUrl" => RevertType :: OldHistoryUrl , "osVersion" => RevertType :: OsVersion , "pageHostname" => RevertType :: PageHostname , "pagePath" => RevertType :: PagePath , "pageUrl" => RevertType :: PageUrl , "platform" => RevertType :: Platform , "queryString" => RevertType :: QueryString , "randomNumber" => RevertType :: RandomNumber , "referrer" => RevertType :: Referrer , "requestMethod" => RevertType :: RequestMethod , "requestPath" => RevertType :: RequestPath , "resolution" => RevertType :: Resolution , "scrollDepthDirection" => RevertType :: ScrollDepthDirection , "scrollDepthThreshold" => RevertType :: ScrollDepthThreshold , "scrollDepthUnits" => RevertType :: ScrollDepthUnits , "sdkVersion" => RevertType :: SdkVersion , "serverPageLocationHostname" => RevertType :: ServerPageLocationHostname , "serverPageLocationPath" => RevertType :: ServerPageLocationPath , "serverPageLocationUrl" => RevertType :: ServerPageLocationUrl , "videoCurrentTime" => RevertType :: VideoCurrentTime , "videoDuration" => RevertType :: VideoDuration , "videoPercent" => RevertType :: VideoPercent , "videoProvider" => RevertType :: VideoProvider , "videoStatus" => RevertType :: VideoStatus , "videoTitle" => RevertType :: VideoTitle , "videoUrl" => RevertType :: VideoUrl , "videoVisible" => RevertType :: VideoVisible , _ => return Err (()) , })
                             }
                         }
                         impl ::std::fmt::Display for RevertType {
@@ -12343,7 +12580,7 @@ pub mod resources {
                                 D: ::serde::de::Deserializer<'de>,
                             {
                                 let value: &'de str = <&str>::deserialize(deserializer)?;
-                                Ok ( match value { "advertiserId" => RevertType :: AdvertiserId , "advertisingTrackingEnabled" => RevertType :: AdvertisingTrackingEnabled , "ampBrowserLanguage" => RevertType :: AmpBrowserLanguage , "ampCanonicalHost" => RevertType :: AmpCanonicalHost , "ampCanonicalPath" => RevertType :: AmpCanonicalPath , "ampCanonicalUrl" => RevertType :: AmpCanonicalUrl , "ampClientId" => RevertType :: AmpClientId , "ampClientMaxScrollX" => RevertType :: AmpClientMaxScrollX , "ampClientMaxScrollY" => RevertType :: AmpClientMaxScrollY , "ampClientScreenHeight" => RevertType :: AmpClientScreenHeight , "ampClientScreenWidth" => RevertType :: AmpClientScreenWidth , "ampClientScrollX" => RevertType :: AmpClientScrollX , "ampClientScrollY" => RevertType :: AmpClientScrollY , "ampClientTimestamp" => RevertType :: AmpClientTimestamp , "ampClientTimezone" => RevertType :: AmpClientTimezone , "ampGtmEvent" => RevertType :: AmpGtmEvent , "ampPageDownloadTime" => RevertType :: AmpPageDownloadTime , "ampPageLoadTime" => RevertType :: AmpPageLoadTime , "ampPageViewId" => RevertType :: AmpPageViewId , "ampReferrer" => RevertType :: AmpReferrer , "ampTitle" => RevertType :: AmpTitle , "ampTotalEngagedTime" => RevertType :: AmpTotalEngagedTime , "appId" => RevertType :: AppId , "appName" => RevertType :: AppName , "appVersionCode" => RevertType :: AppVersionCode , "appVersionName" => RevertType :: AppVersionName , "builtInVariableTypeUnspecified" => RevertType :: BuiltInVariableTypeUnspecified , "clickClasses" => RevertType :: ClickClasses , "clickElement" => RevertType :: ClickElement , "clickId" => RevertType :: ClickId , "clickTarget" => RevertType :: ClickTarget , "clickText" => RevertType :: ClickText , "clickUrl" => RevertType :: ClickUrl , "clientName" => RevertType :: ClientName , "containerId" => RevertType :: ContainerId , "containerVersion" => RevertType :: ContainerVersion , "debugMode" => RevertType :: DebugMode , "deviceName" => RevertType :: DeviceName , "elementVisibilityFirstTime" => RevertType :: ElementVisibilityFirstTime , "elementVisibilityRatio" => RevertType :: ElementVisibilityRatio , "elementVisibilityRecentTime" => RevertType :: ElementVisibilityRecentTime , "elementVisibilityTime" => RevertType :: ElementVisibilityTime , "environmentName" => RevertType :: EnvironmentName , "errorLine" => RevertType :: ErrorLine , "errorMessage" => RevertType :: ErrorMessage , "errorUrl" => RevertType :: ErrorUrl , "event" => RevertType :: Event , "eventName" => RevertType :: EventName , "firebaseEventParameterCampaign" => RevertType :: FirebaseEventParameterCampaign , "firebaseEventParameterCampaignAclid" => RevertType :: FirebaseEventParameterCampaignAclid , "firebaseEventParameterCampaignAnid" => RevertType :: FirebaseEventParameterCampaignAnid , "firebaseEventParameterCampaignClickTimestamp" => RevertType :: FirebaseEventParameterCampaignClickTimestamp , "firebaseEventParameterCampaignContent" => RevertType :: FirebaseEventParameterCampaignContent , "firebaseEventParameterCampaignCp1" => RevertType :: FirebaseEventParameterCampaignCp1 , "firebaseEventParameterCampaignGclid" => RevertType :: FirebaseEventParameterCampaignGclid , "firebaseEventParameterCampaignSource" => RevertType :: FirebaseEventParameterCampaignSource , "firebaseEventParameterCampaignTerm" => RevertType :: FirebaseEventParameterCampaignTerm , "firebaseEventParameterCurrency" => RevertType :: FirebaseEventParameterCurrency , "firebaseEventParameterDynamicLinkAcceptTime" => RevertType :: FirebaseEventParameterDynamicLinkAcceptTime , "firebaseEventParameterDynamicLinkLinkid" => RevertType :: FirebaseEventParameterDynamicLinkLinkid , "firebaseEventParameterNotificationMessageDeviceTime" => RevertType :: FirebaseEventParameterNotificationMessageDeviceTime , "firebaseEventParameterNotificationMessageId" => RevertType :: FirebaseEventParameterNotificationMessageId , "firebaseEventParameterNotificationMessageName" => RevertType :: FirebaseEventParameterNotificationMessageName , "firebaseEventParameterNotificationMessageTime" => RevertType :: FirebaseEventParameterNotificationMessageTime , "firebaseEventParameterNotificationTopic" => RevertType :: FirebaseEventParameterNotificationTopic , "firebaseEventParameterPreviousAppVersion" => RevertType :: FirebaseEventParameterPreviousAppVersion , "firebaseEventParameterPreviousOsVersion" => RevertType :: FirebaseEventParameterPreviousOsVersion , "firebaseEventParameterPrice" => RevertType :: FirebaseEventParameterPrice , "firebaseEventParameterProductId" => RevertType :: FirebaseEventParameterProductId , "firebaseEventParameterQuantity" => RevertType :: FirebaseEventParameterQuantity , "firebaseEventParameterValue" => RevertType :: FirebaseEventParameterValue , "firstPartyServingUrl" => RevertType :: FirstPartyServingUrl , "formClasses" => RevertType :: FormClasses , "formElement" => RevertType :: FormElement , "formId" => RevertType :: FormId , "formTarget" => RevertType :: FormTarget , "formText" => RevertType :: FormText , "formUrl" => RevertType :: FormUrl , "historySource" => RevertType :: HistorySource , "htmlId" => RevertType :: HtmlId , "language" => RevertType :: Language , "newHistoryFragment" => RevertType :: NewHistoryFragment , "newHistoryState" => RevertType :: NewHistoryState , "newHistoryUrl" => RevertType :: NewHistoryUrl , "oldHistoryFragment" => RevertType :: OldHistoryFragment , "oldHistoryState" => RevertType :: OldHistoryState , "oldHistoryUrl" => RevertType :: OldHistoryUrl , "osVersion" => RevertType :: OsVersion , "pageHostname" => RevertType :: PageHostname , "pagePath" => RevertType :: PagePath , "pageUrl" => RevertType :: PageUrl , "platform" => RevertType :: Platform , "queryString" => RevertType :: QueryString , "randomNumber" => RevertType :: RandomNumber , "referrer" => RevertType :: Referrer , "requestMethod" => RevertType :: RequestMethod , "requestPath" => RevertType :: RequestPath , "resolution" => RevertType :: Resolution , "scrollDepthDirection" => RevertType :: ScrollDepthDirection , "scrollDepthThreshold" => RevertType :: ScrollDepthThreshold , "scrollDepthUnits" => RevertType :: ScrollDepthUnits , "sdkVersion" => RevertType :: SdkVersion , "videoCurrentTime" => RevertType :: VideoCurrentTime , "videoDuration" => RevertType :: VideoDuration , "videoPercent" => RevertType :: VideoPercent , "videoProvider" => RevertType :: VideoProvider , "videoStatus" => RevertType :: VideoStatus , "videoTitle" => RevertType :: VideoTitle , "videoUrl" => RevertType :: VideoUrl , "videoVisible" => RevertType :: VideoVisible , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+                                Ok (match value { "advertiserId" => RevertType :: AdvertiserId , "advertisingTrackingEnabled" => RevertType :: AdvertisingTrackingEnabled , "ampBrowserLanguage" => RevertType :: AmpBrowserLanguage , "ampCanonicalHost" => RevertType :: AmpCanonicalHost , "ampCanonicalPath" => RevertType :: AmpCanonicalPath , "ampCanonicalUrl" => RevertType :: AmpCanonicalUrl , "ampClientId" => RevertType :: AmpClientId , "ampClientMaxScrollX" => RevertType :: AmpClientMaxScrollX , "ampClientMaxScrollY" => RevertType :: AmpClientMaxScrollY , "ampClientScreenHeight" => RevertType :: AmpClientScreenHeight , "ampClientScreenWidth" => RevertType :: AmpClientScreenWidth , "ampClientScrollX" => RevertType :: AmpClientScrollX , "ampClientScrollY" => RevertType :: AmpClientScrollY , "ampClientTimestamp" => RevertType :: AmpClientTimestamp , "ampClientTimezone" => RevertType :: AmpClientTimezone , "ampGtmEvent" => RevertType :: AmpGtmEvent , "ampPageDownloadTime" => RevertType :: AmpPageDownloadTime , "ampPageLoadTime" => RevertType :: AmpPageLoadTime , "ampPageViewId" => RevertType :: AmpPageViewId , "ampReferrer" => RevertType :: AmpReferrer , "ampTitle" => RevertType :: AmpTitle , "ampTotalEngagedTime" => RevertType :: AmpTotalEngagedTime , "appId" => RevertType :: AppId , "appName" => RevertType :: AppName , "appVersionCode" => RevertType :: AppVersionCode , "appVersionName" => RevertType :: AppVersionName , "builtInVariableTypeUnspecified" => RevertType :: BuiltInVariableTypeUnspecified , "clickClasses" => RevertType :: ClickClasses , "clickElement" => RevertType :: ClickElement , "clickId" => RevertType :: ClickId , "clickTarget" => RevertType :: ClickTarget , "clickText" => RevertType :: ClickText , "clickUrl" => RevertType :: ClickUrl , "clientName" => RevertType :: ClientName , "containerId" => RevertType :: ContainerId , "containerVersion" => RevertType :: ContainerVersion , "debugMode" => RevertType :: DebugMode , "deviceName" => RevertType :: DeviceName , "elementVisibilityFirstTime" => RevertType :: ElementVisibilityFirstTime , "elementVisibilityRatio" => RevertType :: ElementVisibilityRatio , "elementVisibilityRecentTime" => RevertType :: ElementVisibilityRecentTime , "elementVisibilityTime" => RevertType :: ElementVisibilityTime , "environmentName" => RevertType :: EnvironmentName , "errorLine" => RevertType :: ErrorLine , "errorMessage" => RevertType :: ErrorMessage , "errorUrl" => RevertType :: ErrorUrl , "event" => RevertType :: Event , "eventName" => RevertType :: EventName , "firebaseEventParameterCampaign" => RevertType :: FirebaseEventParameterCampaign , "firebaseEventParameterCampaignAclid" => RevertType :: FirebaseEventParameterCampaignAclid , "firebaseEventParameterCampaignAnid" => RevertType :: FirebaseEventParameterCampaignAnid , "firebaseEventParameterCampaignClickTimestamp" => RevertType :: FirebaseEventParameterCampaignClickTimestamp , "firebaseEventParameterCampaignContent" => RevertType :: FirebaseEventParameterCampaignContent , "firebaseEventParameterCampaignCp1" => RevertType :: FirebaseEventParameterCampaignCp1 , "firebaseEventParameterCampaignGclid" => RevertType :: FirebaseEventParameterCampaignGclid , "firebaseEventParameterCampaignSource" => RevertType :: FirebaseEventParameterCampaignSource , "firebaseEventParameterCampaignTerm" => RevertType :: FirebaseEventParameterCampaignTerm , "firebaseEventParameterCurrency" => RevertType :: FirebaseEventParameterCurrency , "firebaseEventParameterDynamicLinkAcceptTime" => RevertType :: FirebaseEventParameterDynamicLinkAcceptTime , "firebaseEventParameterDynamicLinkLinkid" => RevertType :: FirebaseEventParameterDynamicLinkLinkid , "firebaseEventParameterNotificationMessageDeviceTime" => RevertType :: FirebaseEventParameterNotificationMessageDeviceTime , "firebaseEventParameterNotificationMessageId" => RevertType :: FirebaseEventParameterNotificationMessageId , "firebaseEventParameterNotificationMessageName" => RevertType :: FirebaseEventParameterNotificationMessageName , "firebaseEventParameterNotificationMessageTime" => RevertType :: FirebaseEventParameterNotificationMessageTime , "firebaseEventParameterNotificationTopic" => RevertType :: FirebaseEventParameterNotificationTopic , "firebaseEventParameterPreviousAppVersion" => RevertType :: FirebaseEventParameterPreviousAppVersion , "firebaseEventParameterPreviousOsVersion" => RevertType :: FirebaseEventParameterPreviousOsVersion , "firebaseEventParameterPrice" => RevertType :: FirebaseEventParameterPrice , "firebaseEventParameterProductId" => RevertType :: FirebaseEventParameterProductId , "firebaseEventParameterQuantity" => RevertType :: FirebaseEventParameterQuantity , "firebaseEventParameterValue" => RevertType :: FirebaseEventParameterValue , "firstPartyServingUrl" => RevertType :: FirstPartyServingUrl , "formClasses" => RevertType :: FormClasses , "formElement" => RevertType :: FormElement , "formId" => RevertType :: FormId , "formTarget" => RevertType :: FormTarget , "formText" => RevertType :: FormText , "formUrl" => RevertType :: FormUrl , "historySource" => RevertType :: HistorySource , "htmlId" => RevertType :: HtmlId , "language" => RevertType :: Language , "newHistoryFragment" => RevertType :: NewHistoryFragment , "newHistoryState" => RevertType :: NewHistoryState , "newHistoryUrl" => RevertType :: NewHistoryUrl , "oldHistoryFragment" => RevertType :: OldHistoryFragment , "oldHistoryState" => RevertType :: OldHistoryState , "oldHistoryUrl" => RevertType :: OldHistoryUrl , "osVersion" => RevertType :: OsVersion , "pageHostname" => RevertType :: PageHostname , "pagePath" => RevertType :: PagePath , "pageUrl" => RevertType :: PageUrl , "platform" => RevertType :: Platform , "queryString" => RevertType :: QueryString , "randomNumber" => RevertType :: RandomNumber , "referrer" => RevertType :: Referrer , "requestMethod" => RevertType :: RequestMethod , "requestPath" => RevertType :: RequestPath , "resolution" => RevertType :: Resolution , "scrollDepthDirection" => RevertType :: ScrollDepthDirection , "scrollDepthThreshold" => RevertType :: ScrollDepthThreshold , "scrollDepthUnits" => RevertType :: ScrollDepthUnits , "sdkVersion" => RevertType :: SdkVersion , "serverPageLocationHostname" => RevertType :: ServerPageLocationHostname , "serverPageLocationPath" => RevertType :: ServerPageLocationPath , "serverPageLocationUrl" => RevertType :: ServerPageLocationUrl , "videoCurrentTime" => RevertType :: VideoCurrentTime , "videoDuration" => RevertType :: VideoDuration , "videoPercent" => RevertType :: VideoPercent , "videoProvider" => RevertType :: VideoProvider , "videoStatus" => RevertType :: VideoStatus , "videoTitle" => RevertType :: VideoTitle , "videoUrl" => RevertType :: VideoUrl , "videoVisible" => RevertType :: VideoVisible , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
                             }
                         }
                         impl ::google_field_selector::FieldSelector for RevertType {
@@ -12448,7 +12685,7 @@ pub mod resources {
                     }
                     #[doc = "Created via [BuiltInVariablesActions::create()](struct.BuiltInVariablesActions.html#method.create)"]
                     #[derive(Debug, Clone)]
-                    pub struct CreateRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , r#type : Option < Vec < crate :: resources :: accounts :: containers :: workspaces :: built_in_variables :: params :: CreateTypeItems > > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                    pub struct CreateRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , r#type : Option < Vec < crate :: resources :: accounts :: containers :: workspaces :: built_in_variables :: params :: CreateTypeItems > > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> CreateRequestBuilder<'a> {
                         #[doc = "The types of built-in variables to enable."]
                         pub fn r#type(
@@ -12608,7 +12845,7 @@ pub mod resources {
                     }
                     #[doc = "Created via [BuiltInVariablesActions::delete()](struct.BuiltInVariablesActions.html#method.delete)"]
                     #[derive(Debug, Clone)]
-                    pub struct DeleteRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , path : String , r#type : Option < Vec < crate :: resources :: accounts :: containers :: workspaces :: built_in_variables :: params :: DeleteTypeItems > > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                    pub struct DeleteRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , path : String , r#type : Option < Vec < crate :: resources :: accounts :: containers :: workspaces :: built_in_variables :: params :: DeleteTypeItems > > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> DeleteRequestBuilder<'a> {
                         #[doc = "The types of built-in variables to delete."]
                         pub fn r#type(
@@ -13003,7 +13240,7 @@ pub mod resources {
                     }
                     #[doc = "Created via [BuiltInVariablesActions::revert()](struct.BuiltInVariablesActions.html#method.revert)"]
                     #[derive(Debug, Clone)]
-                    pub struct RevertRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , path : String , r#type : Option < crate :: resources :: accounts :: containers :: workspaces :: built_in_variables :: params :: RevertType > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                    pub struct RevertRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , path : String , r#type : Option < crate :: resources :: accounts :: containers :: workspaces :: built_in_variables :: params :: RevertType > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> RevertRequestBuilder<'a> {
                         #[doc = "The type of built-in variable to revert."]
                         pub fn r#type(
@@ -13140,6 +13377,1205 @@ pub mod resources {
                         {
                             let mut req = self.reqwest.request(::reqwest::Method::POST, path);
                             req = req.query(&[("type", &self.r#type)]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            req = req.bearer_auth(
+                                self.auth
+                                    .access_token()
+                                    .map_err(|err| crate::Error::OAuth2(err))?,
+                            );
+                            Ok(req)
+                        }
+                    }
+                }
+                pub mod clients {
+                    pub mod params {}
+                    pub struct ClientsActions<'a> {
+                        pub(crate) reqwest: &'a reqwest::blocking::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    }
+                    impl<'a> ClientsActions<'a> {
+                        fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                            self.auth
+                        }
+                        #[doc = "Creates a GTM Client."]
+                        pub fn create(
+                            &self,
+                            request: crate::schemas::Client,
+                            parent: impl Into<String>,
+                        ) -> CreateRequestBuilder {
+                            CreateRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                parent: parent.into(),
+                            }
+                        }
+                        #[doc = "Deletes a GTM Client."]
+                        pub fn delete(&self, path: impl Into<String>) -> DeleteRequestBuilder {
+                            DeleteRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                path: path.into(),
+                            }
+                        }
+                        #[doc = "Gets a GTM Client."]
+                        pub fn get(&self, path: impl Into<String>) -> GetRequestBuilder {
+                            GetRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                path: path.into(),
+                            }
+                        }
+                        #[doc = "Lists all GTM Clients of a GTM container workspace."]
+                        pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                            ListRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                parent: parent.into(),
+                                page_token: None,
+                            }
+                        }
+                        #[doc = "Reverts changes to a GTM Client in a GTM Workspace."]
+                        pub fn revert(&self, path: impl Into<String>) -> RevertRequestBuilder {
+                            RevertRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                path: path.into(),
+                                fingerprint: None,
+                            }
+                        }
+                        #[doc = "Updates a GTM Client."]
+                        pub fn update(
+                            &self,
+                            request: crate::schemas::Client,
+                            path: impl Into<String>,
+                        ) -> UpdateRequestBuilder {
+                            UpdateRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                path: path.into(),
+                                fingerprint: None,
+                            }
+                        }
+                    }
+                    #[doc = "Created via [ClientsActions::create()](struct.ClientsActions.html#method.create)"]
+                    #[derive(Debug, Clone)]
+                    pub struct CreateRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::Client,
+                        parent: String,
+                        access_token: Option<String>,
+                        alt: Option<crate::params::Alt>,
+                        callback: Option<String>,
+                        fields: Option<String>,
+                        key: Option<String>,
+                        oauth_token: Option<String>,
+                        pretty_print: Option<bool>,
+                        quota_user: Option<String>,
+                        upload_protocol: Option<String>,
+                        upload_type: Option<String>,
+                        xgafv: Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> CreateRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields)
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::Client, crate::Error> {
+                            self.execute_with_fields(None::<&str>)
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::Client, crate::Error> {
+                            self.execute_with_fields(Some("*"))
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute()
+                        }
+                        fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path())?;
+                            let req = req.json(&self.request);
+                            Ok(crate::error_from_response(req.send()?)?.json()?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://tagmanager.googleapis.com/".to_owned();
+                            output.push_str("tagmanager/v2/");
+                            {
+                                let var_as_str = &self.parent;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str("/clients");
+                            output
+                        }
+                        fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            req = req.bearer_auth(
+                                self.auth
+                                    .access_token()
+                                    .map_err(|err| crate::Error::OAuth2(err))?,
+                            );
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ClientsActions::delete()](struct.ClientsActions.html#method.delete)"]
+                    #[derive(Debug, Clone)]
+                    pub struct DeleteRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        path: String,
+                        access_token: Option<String>,
+                        alt: Option<crate::params::Alt>,
+                        callback: Option<String>,
+                        fields: Option<String>,
+                        key: Option<String>,
+                        oauth_token: Option<String>,
+                        pretty_print: Option<bool>,
+                        quota_user: Option<String>,
+                        upload_protocol: Option<String>,
+                        upload_type: Option<String>,
+                        xgafv: Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> DeleteRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        pub fn execute(self) -> Result<(), crate::Error> {
+                            let req = self._request(&self._path())?;
+                            crate::error_from_response(req.send()?)?;
+                            Ok(())
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://tagmanager.googleapis.com/".to_owned();
+                            output.push_str("tagmanager/v2/");
+                            {
+                                let var_as_str = &self.path;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output
+                        }
+                        fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            req = req.bearer_auth(
+                                self.auth
+                                    .access_token()
+                                    .map_err(|err| crate::Error::OAuth2(err))?,
+                            );
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ClientsActions::get()](struct.ClientsActions.html#method.get)"]
+                    #[derive(Debug, Clone)]
+                    pub struct GetRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        path: String,
+                        access_token: Option<String>,
+                        alt: Option<crate::params::Alt>,
+                        callback: Option<String>,
+                        fields: Option<String>,
+                        key: Option<String>,
+                        oauth_token: Option<String>,
+                        pretty_print: Option<bool>,
+                        quota_user: Option<String>,
+                        upload_protocol: Option<String>,
+                        upload_type: Option<String>,
+                        xgafv: Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> GetRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields)
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::Client, crate::Error> {
+                            self.execute_with_fields(None::<&str>)
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::Client, crate::Error> {
+                            self.execute_with_fields(Some("*"))
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute()
+                        }
+                        fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path())?;
+                            Ok(crate::error_from_response(req.send()?)?.json()?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://tagmanager.googleapis.com/".to_owned();
+                            output.push_str("tagmanager/v2/");
+                            {
+                                let var_as_str = &self.path;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output
+                        }
+                        fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            req = req.bearer_auth(
+                                self.auth
+                                    .access_token()
+                                    .map_err(|err| crate::Error::OAuth2(err))?,
+                            );
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ClientsActions::list()](struct.ClientsActions.html#method.list)"]
+                    #[derive(Debug, Clone)]
+                    pub struct ListRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        parent: String,
+                        page_token: Option<String>,
+                        access_token: Option<String>,
+                        alt: Option<crate::params::Alt>,
+                        callback: Option<String>,
+                        fields: Option<String>,
+                        key: Option<String>,
+                        oauth_token: Option<String>,
+                        pretty_print: Option<bool>,
+                        quota_user: Option<String>,
+                        upload_protocol: Option<String>,
+                        upload_type: Option<String>,
+                        xgafv: Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> ListRequestBuilder<'a> {
+                        #[doc = "Continuation token for fetching the next page of results."]
+                        pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                            self.page_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                        #[doc = r" items yielded by the iterator are chosen by the caller of this"]
+                        #[doc = r" method and must implement `Deserialize` and `FieldSelector`. The"]
+                        #[doc = r" populated fields in the yielded items will be determined by the"]
+                        #[doc = r" `FieldSelector` implementation."]
+                        pub fn iter_client<T>(self) -> crate::iter::PageItemIter<Self, T>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.iter_client_with_fields(fields)
+                        }
+                        #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                        #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                        #[doc = r" fields in `#items_type` will be the default fields populated by"]
+                        #[doc = r" the server."]
+                        pub fn iter_client_with_default_fields(
+                            self,
+                        ) -> crate::iter::PageItemIter<Self, crate::schemas::Client>
+                        {
+                            self.iter_client_with_fields(None::<String>)
+                        }
+                        #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                        #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                        #[doc = r" fields in `#items_type` will be all fields available. This should"]
+                        #[doc = r" primarily be used during developement and debugging as fetching"]
+                        #[doc = r" all fields can be expensive both in bandwidth and server"]
+                        #[doc = r" resources."]
+                        pub fn iter_client_with_all_fields(
+                            self,
+                        ) -> crate::iter::PageItemIter<Self, crate::schemas::Client>
+                        {
+                            self.iter_client_with_fields(Some("*"))
+                        }
+                        pub fn iter_client_with_fields<T, F>(
+                            mut self,
+                            fields: Option<F>,
+                        ) -> crate::iter::PageItemIter<Self, T>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: AsRef<str>,
+                        {
+                            self.fields = Some({
+                                let mut selector = concat!("nextPageToken,", "client").to_owned();
+                                let items_fields =
+                                    fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                                if !items_fields.is_empty() {
+                                    selector.push_str("(");
+                                    selector.push_str(items_fields);
+                                    selector.push_str(")");
+                                }
+                                selector
+                            });
+                            crate::iter::PageItemIter::new(self, "client")
+                        }
+                        pub fn iter<T>(self) -> crate::iter::PageIter<Self, T>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.iter_with_fields(fields)
+                        }
+                        pub fn iter_with_default_fields(
+                            self,
+                        ) -> crate::iter::PageIter<Self, crate::schemas::ListClientsResponse>
+                        {
+                            self.iter_with_fields(None::<&str>)
+                        }
+                        pub fn iter_with_all_fields(
+                            self,
+                        ) -> crate::iter::PageIter<Self, crate::schemas::ListClientsResponse>
+                        {
+                            self.iter_with_fields(Some("*"))
+                        }
+                        pub fn iter_with_fields<T, F>(
+                            mut self,
+                            fields: Option<F>,
+                        ) -> crate::iter::PageIter<Self, T>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: AsRef<str>,
+                        {
+                            let mut fields =
+                                fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                            if !fields.is_empty() {
+                                match fields.chars().rev().nth(0) {
+                                    Some(',') | None => {}
+                                    _ => fields.push_str(","),
+                                }
+                                fields.push_str("nextPageToken");
+                                self.fields = Some(fields);
+                            }
+                            crate::iter::PageIter::new(self)
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields)
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::ListClientsResponse, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>)
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::ListClientsResponse, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*"))
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute()
+                        }
+                        fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path())?;
+                            Ok(crate::error_from_response(req.send()?)?.json()?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://tagmanager.googleapis.com/".to_owned();
+                            output.push_str("tagmanager/v2/");
+                            {
+                                let var_as_str = &self.parent;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str("/clients");
+                            output
+                        }
+                        fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                            req = req.query(&[("pageToken", &self.page_token)]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            req = req.bearer_auth(
+                                self.auth
+                                    .access_token()
+                                    .map_err(|err| crate::Error::OAuth2(err))?,
+                            );
+                            Ok(req)
+                        }
+                    }
+                    impl<'a> crate::iter::IterableMethod for ListRequestBuilder<'a> {
+                        fn set_page_token(&mut self, value: String) {
+                            self.page_token = value.into();
+                        }
+                        fn execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            self._execute()
+                        }
+                    }
+                    #[doc = "Created via [ClientsActions::revert()](struct.ClientsActions.html#method.revert)"]
+                    #[derive(Debug, Clone)]
+                    pub struct RevertRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        path: String,
+                        fingerprint: Option<String>,
+                        access_token: Option<String>,
+                        alt: Option<crate::params::Alt>,
+                        callback: Option<String>,
+                        fields: Option<String>,
+                        key: Option<String>,
+                        oauth_token: Option<String>,
+                        pretty_print: Option<bool>,
+                        quota_user: Option<String>,
+                        upload_protocol: Option<String>,
+                        upload_type: Option<String>,
+                        xgafv: Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> RevertRequestBuilder<'a> {
+                        #[doc = "When provided, this fingerprint must match the fingerprint of the client in storage."]
+                        pub fn fingerprint(mut self, value: impl Into<String>) -> Self {
+                            self.fingerprint = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields)
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::RevertClientResponse, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>)
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::RevertClientResponse, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*"))
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute()
+                        }
+                        fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path())?;
+                            Ok(crate::error_from_response(req.send()?)?.json()?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://tagmanager.googleapis.com/".to_owned();
+                            output.push_str("tagmanager/v2/");
+                            {
+                                let var_as_str = &self.path;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str(":revert");
+                            output
+                        }
+                        fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("fingerprint", &self.fingerprint)]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            req = req.bearer_auth(
+                                self.auth
+                                    .access_token()
+                                    .map_err(|err| crate::Error::OAuth2(err))?,
+                            );
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ClientsActions::update()](struct.ClientsActions.html#method.update)"]
+                    #[derive(Debug, Clone)]
+                    pub struct UpdateRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::Client,
+                        path: String,
+                        fingerprint: Option<String>,
+                        access_token: Option<String>,
+                        alt: Option<crate::params::Alt>,
+                        callback: Option<String>,
+                        fields: Option<String>,
+                        key: Option<String>,
+                        oauth_token: Option<String>,
+                        pretty_print: Option<bool>,
+                        quota_user: Option<String>,
+                        upload_protocol: Option<String>,
+                        upload_type: Option<String>,
+                        xgafv: Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> UpdateRequestBuilder<'a> {
+                        #[doc = "When provided, this fingerprint must match the fingerprint of the client in storage."]
+                        pub fn fingerprint(mut self, value: impl Into<String>) -> Self {
+                            self.fingerprint = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields)
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::Client, crate::Error> {
+                            self.execute_with_fields(None::<&str>)
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::Client, crate::Error> {
+                            self.execute_with_fields(Some("*"))
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute()
+                        }
+                        fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path())?;
+                            let req = req.json(&self.request);
+                            Ok(crate::error_from_response(req.send()?)?.json()?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://tagmanager.googleapis.com/".to_owned();
+                            output.push_str("tagmanager/v2/");
+                            {
+                                let var_as_str = &self.path;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output
+                        }
+                        fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::PUT, path);
+                            req = req.query(&[("fingerprint", &self.fingerprint)]);
                             req = req.query(&[("access_token", &self.access_token)]);
                             req = req.query(&[("alt", &self.alt)]);
                             req = req.query(&[("callback", &self.callback)]);

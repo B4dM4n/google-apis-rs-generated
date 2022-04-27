@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("datastore1_beta3")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210220")
+            .version("0.1.0-20220407")
             .about("Accesses the schemaless NoSQL database to provide fully managed, robust, scalable storage for your application. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -57,7 +57,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("reserve_ids").about(
-                "Prevents the supplied keys\' IDs from being auto-allocated by Cloud Datastore.",
+                "Prevents the supplied keys' IDs from being auto-allocated by Cloud Datastore.",
             );
             projects0 = projects0.subcommand(mcmd);
         }

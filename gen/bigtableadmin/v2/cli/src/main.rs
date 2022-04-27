@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("bigtableadmin2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210302")
+            .version("0.1.0-20220412")
             .about("Administer your Cloud Bigtable tables and instances.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -37,11 +37,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: cancel, delete and get");
         {
-            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn\'t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
+            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
             operations0 = operations0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn\'t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.");
             operations0 = operations0.subcommand(mcmd);
         }
         {
@@ -58,8 +58,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: create, delete, get, get_iam_policy, list, partial_update_instance, set_iam_policy, test_iam_permissions and update");
         {
-            let mcmd =
-                SubCommand::with_name("create").about("Create an instance within a project.");
+            let mcmd = SubCommand::with_name("create").about("Create an instance within a project. Note that exactly one of Cluster.serve_nodes and Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is enabled.");
             instances1 = instances1.subcommand(mcmd);
         }
         {
@@ -113,7 +112,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
         {
-            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn\'t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations2 = operations2.subcommand(mcmd);
         }
         let mut app_profiles2 = SubCommand::with_name("app_profiles")
@@ -145,10 +144,9 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut clusters2 = SubCommand::with_name("clusters")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list and update");
+            .about("methods: create, delete, get, list, partial_update_cluster and update");
         {
-            let mcmd =
-                SubCommand::with_name("create").about("Creates a cluster within an instance.");
+            let mcmd = SubCommand::with_name("create").about("Creates a cluster within an instance. Note that exactly one of Cluster.serve_nodes and Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is enabled.");
             clusters2 = clusters2.subcommand(mcmd);
         }
         {
@@ -165,8 +163,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             clusters2 = clusters2.subcommand(mcmd);
         }
         {
-            let mcmd =
-                SubCommand::with_name("update").about("Updates a cluster within an instance.");
+            let mcmd = SubCommand::with_name("partial_update_cluster").about("Partially updates a cluster within a project. This method is the preferred way to update a Cluster. To enable and update autoscaling, set cluster_config.cluster_autoscaling_config. When autoscaling is enabled, serve_nodes is treated as an OUTPUT_ONLY field, meaning that updates to it are ignored. Note that an update cannot simultaneously set serve_nodes to non-zero and cluster_config.cluster_autoscaling_config to non-empty, and also specify both in the update_mask. To disable autoscaling, clear cluster_config.cluster_autoscaling_config, and explicitly set a serve_node count via the update_mask.");
+            clusters2 = clusters2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("update").about("Updates a cluster within an instance. Note that UpdateCluster does not support updating cluster_config.cluster_autoscaling_config. In order to update it, you must use PartialUpdateCluster.");
             clusters2 = clusters2.subcommand(mcmd);
         }
         let mut tables2 = SubCommand::with_name("tables")
@@ -212,7 +213,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             tables2 = tables2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("restore").about("Create a new table by restoring from a completed backup. The new table must be in the same instance as the instance containing the backup. The returned table long-running operation can be used to track the progress of the operation, and to cancel it. The metadata field type is RestoreTableMetadata. The response type is Table, if successful.");
+            let mcmd = SubCommand::with_name("restore").about("Create a new table by restoring from a completed backup. The new table must be in the same project as the instance containing the backup. The returned table long-running operation can be used to track the progress of the operation, and to cancel it. The metadata field type is RestoreTableMetadata. The response type is Table, if successful.");
             tables2 = tables2.subcommand(mcmd);
         }
         {
@@ -268,6 +269,14 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("Returns permissions that the caller has on the specified table resource.");
             backups3 = backups3.subcommand(mcmd);
         }
+        let mut hot_tablets3 = SubCommand::with_name("hot_tablets")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: list");
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists hot tablets in a cluster, within the time range provided. Hot tablets are ordered based on CPU usage.");
+            hot_tablets3 = hot_tablets3.subcommand(mcmd);
+        }
+        clusters2 = clusters2.subcommand(hot_tablets3);
         clusters2 = clusters2.subcommand(backups3);
         instances1 = instances1.subcommand(tables2);
         instances1 = instances1.subcommand(clusters2);

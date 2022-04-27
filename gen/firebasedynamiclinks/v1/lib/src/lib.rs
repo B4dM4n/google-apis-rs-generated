@@ -1203,7 +1203,7 @@ pub mod schemas {
         fn from_str(
             s: &str,
         ) -> ::std::result::Result<GetIosPostInstallAttributionRequestRetrievalMethod, ()> {
-            Ok ( match s { "EXPLICIT_STRONG_AFTER_WEAK_MATCH" => GetIosPostInstallAttributionRequestRetrievalMethod :: ExplicitStrongAfterWeakMatch , "EXPLICIT_WEAK_MATCH" => GetIosPostInstallAttributionRequestRetrievalMethod :: ExplicitWeakMatch , "IMPLICIT_WEAK_MATCH" => GetIosPostInstallAttributionRequestRetrievalMethod :: ImplicitWeakMatch , "UNKNOWN_PAYLOAD_RETRIEVAL_METHOD" => GetIosPostInstallAttributionRequestRetrievalMethod :: UnknownPayloadRetrievalMethod , _ => return Err ( ( ) ) , } )
+            Ok (match s { "EXPLICIT_STRONG_AFTER_WEAK_MATCH" => GetIosPostInstallAttributionRequestRetrievalMethod :: ExplicitStrongAfterWeakMatch , "EXPLICIT_WEAK_MATCH" => GetIosPostInstallAttributionRequestRetrievalMethod :: ExplicitWeakMatch , "IMPLICIT_WEAK_MATCH" => GetIosPostInstallAttributionRequestRetrievalMethod :: ImplicitWeakMatch , "UNKNOWN_PAYLOAD_RETRIEVAL_METHOD" => GetIosPostInstallAttributionRequestRetrievalMethod :: UnknownPayloadRetrievalMethod , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GetIosPostInstallAttributionRequestRetrievalMethod {
@@ -1225,7 +1225,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "EXPLICIT_STRONG_AFTER_WEAK_MATCH" => GetIosPostInstallAttributionRequestRetrievalMethod :: ExplicitStrongAfterWeakMatch , "EXPLICIT_WEAK_MATCH" => GetIosPostInstallAttributionRequestRetrievalMethod :: ExplicitWeakMatch , "IMPLICIT_WEAK_MATCH" => GetIosPostInstallAttributionRequestRetrievalMethod :: ImplicitWeakMatch , "UNKNOWN_PAYLOAD_RETRIEVAL_METHOD" => GetIosPostInstallAttributionRequestRetrievalMethod :: UnknownPayloadRetrievalMethod , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "EXPLICIT_STRONG_AFTER_WEAK_MATCH" => GetIosPostInstallAttributionRequestRetrievalMethod :: ExplicitStrongAfterWeakMatch , "EXPLICIT_WEAK_MATCH" => GetIosPostInstallAttributionRequestRetrievalMethod :: ExplicitWeakMatch , "IMPLICIT_WEAK_MATCH" => GetIosPostInstallAttributionRequestRetrievalMethod :: ImplicitWeakMatch , "UNKNOWN_PAYLOAD_RETRIEVAL_METHOD" => GetIosPostInstallAttributionRequestRetrievalMethod :: UnknownPayloadRetrievalMethod , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector for GetIosPostInstallAttributionRequestRetrievalMethod {
@@ -1489,7 +1489,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GetIosPostInstallAttributionResponseAttributionConfidence, ()>
         {
-            Ok ( match s { "DEFAULT" => GetIosPostInstallAttributionResponseAttributionConfidence :: Default , "UNIQUE" => GetIosPostInstallAttributionResponseAttributionConfidence :: Unique , "UNKNOWN_ATTRIBUTION_CONFIDENCE" => GetIosPostInstallAttributionResponseAttributionConfidence :: UnknownAttributionConfidence , "WEAK" => GetIosPostInstallAttributionResponseAttributionConfidence :: Weak , _ => return Err ( ( ) ) , } )
+            Ok (match s { "DEFAULT" => GetIosPostInstallAttributionResponseAttributionConfidence :: Default , "UNIQUE" => GetIosPostInstallAttributionResponseAttributionConfidence :: Unique , "UNKNOWN_ATTRIBUTION_CONFIDENCE" => GetIosPostInstallAttributionResponseAttributionConfidence :: UnknownAttributionConfidence , "WEAK" => GetIosPostInstallAttributionResponseAttributionConfidence :: Weak , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GetIosPostInstallAttributionResponseAttributionConfidence {
@@ -1511,7 +1511,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "DEFAULT" => GetIosPostInstallAttributionResponseAttributionConfidence :: Default , "UNIQUE" => GetIosPostInstallAttributionResponseAttributionConfidence :: Unique , "UNKNOWN_ATTRIBUTION_CONFIDENCE" => GetIosPostInstallAttributionResponseAttributionConfidence :: UnknownAttributionConfidence , "WEAK" => GetIosPostInstallAttributionResponseAttributionConfidence :: Weak , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "DEFAULT" => GetIosPostInstallAttributionResponseAttributionConfidence :: Default , "UNIQUE" => GetIosPostInstallAttributionResponseAttributionConfidence :: Unique , "UNKNOWN_ATTRIBUTION_CONFIDENCE" => GetIosPostInstallAttributionResponseAttributionConfidence :: UnknownAttributionConfidence , "WEAK" => GetIosPostInstallAttributionResponseAttributionConfidence :: Weak , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1760,7 +1760,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GooglePlayAnalytics {
-        #[doc = "[AdWords autotagging parameter](https://support.google.com/analytics/answer/1033981?hl=en); used to measure Google AdWords ads. This value is generated dynamically and should never be modified."]
+        #[doc = "Deprecated; FDL SDK does not process nor log it."]
         #[serde(
             rename = "gclid",
             default,

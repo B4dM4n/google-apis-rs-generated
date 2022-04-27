@@ -15,8 +15,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("orgpolicy2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210317")
-            .about("The Org Policy API allows users to configure governance ruleson their GCP resources across the Cloud Resource Hierarchy.")
+            .version("0.1.0-20220425")
+            .about("The Org Policy API allows users to configure governance rules on their GCP resources across the Cloud Resource Hierarchy.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
                 .long("scope")
@@ -66,7 +66,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             policies1 = policies1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get_effective_policy").about("Gets the effective `Policy` on a resource. This is the result of merging `Policies` in the resource hierarchy and evaluating conditions. The returned `Policy` will not have an `etag` or `condition` set because it is a computed `Policy` across multiple resources. Subtrees of Resource Manager resource hierarchy with \'under:\' prefix will not be expanded.");
+            let mcmd = SubCommand::with_name("get_effective_policy").about("Gets the effective `Policy` on a resource. This is the result of merging `Policies` in the resource hierarchy and evaluating conditions. The returned `Policy` will not have an `etag` or `condition` set because it is a computed `Policy` across multiple resources. Subtrees of Resource Manager resource hierarchy with 'under:' prefix will not be expanded.");
             policies1 = policies1.subcommand(mcmd);
         }
         {
@@ -102,7 +102,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             policies1 = policies1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get_effective_policy").about("Gets the effective `Policy` on a resource. This is the result of merging `Policies` in the resource hierarchy and evaluating conditions. The returned `Policy` will not have an `etag` or `condition` set because it is a computed `Policy` across multiple resources. Subtrees of Resource Manager resource hierarchy with \'under:\' prefix will not be expanded.");
+            let mcmd = SubCommand::with_name("get_effective_policy").about("Gets the effective `Policy` on a resource. This is the result of merging `Policies` in the resource hierarchy and evaluating conditions. The returned `Policy` will not have an `etag` or `condition` set because it is a computed `Policy` across multiple resources. Subtrees of Resource Manager resource hierarchy with 'under:' prefix will not be expanded.");
             policies1 = policies1.subcommand(mcmd);
         }
         {
@@ -138,7 +138,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             policies1 = policies1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get_effective_policy").about("Gets the effective `Policy` on a resource. This is the result of merging `Policies` in the resource hierarchy and evaluating conditions. The returned `Policy` will not have an `etag` or `condition` set because it is a computed `Policy` across multiple resources. Subtrees of Resource Manager resource hierarchy with \'under:\' prefix will not be expanded.");
+            let mcmd = SubCommand::with_name("get_effective_policy").about("Gets the effective `Policy` on a resource. This is the result of merging `Policies` in the resource hierarchy and evaluating conditions. The returned `Policy` will not have an `etag` or `condition` set because it is a computed `Policy` across multiple resources. Subtrees of Resource Manager resource hierarchy with 'under:' prefix will not be expanded.");
             policies1 = policies1.subcommand(mcmd);
         }
         {

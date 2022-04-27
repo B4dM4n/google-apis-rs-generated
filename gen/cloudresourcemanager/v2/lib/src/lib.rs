@@ -1,8 +1,8 @@
 #![doc = "# Resources and Methods\n    * [folders](resources/folders/struct.FoldersActions.html)\n      * [*create*](resources/folders/struct.CreateRequestBuilder.html), [*delete*](resources/folders/struct.DeleteRequestBuilder.html), [*get*](resources/folders/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/folders/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/folders/struct.ListRequestBuilder.html), [*move*](resources/folders/struct.MoveRequestBuilder.html), [*patch*](resources/folders/struct.PatchRequestBuilder.html), [*search*](resources/folders/struct.SearchRequestBuilder.html), [*setIamPolicy*](resources/folders/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/folders/struct.TestIamPermissionsRequestBuilder.html), [*undelete*](resources/folders/struct.UndeleteRequestBuilder.html)\n    * [operations](resources/operations/struct.OperationsActions.html)\n      * [*get*](resources/operations/struct.GetRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "See, edit, configure, and delete your Google Cloud Platform data\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
-    #[doc = "View your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
+    #[doc = "View your data across Google Cloud services and see the email address of your Google Account\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
     pub const CLOUD_PLATFORM_READ_ONLY: &str =
         "https://www.googleapis.com/auth/cloud-platform.read-only";
 }
@@ -177,21 +177,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Binding {
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -221,7 +221,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperation { # [ doc = "The resource name of the folder or organization we are either creating the folder under or moving the folder to." ] # [ serde ( rename = "destinationParent" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub destination_parent : :: std :: option :: Option < String > , # [ doc = "The display name of the folder." ] # [ serde ( rename = "displayName" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub display_name : :: std :: option :: Option < String > , # [ doc = "The type of this operation." ] # [ serde ( rename = "operationType" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub operation_type : :: std :: option :: Option < crate :: schemas :: CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperationOperationType > , # [ doc = "The resource name of the folder's parent. Only applicable when the operation_type is MOVE." ] # [ serde ( rename = "sourceParent" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub source_parent : :: std :: option :: Option < String > , }
+    pub struct CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperation { # [doc = "The resource name of the folder or organization we are either creating the folder under or moving the folder to."] # [serde (rename = "destinationParent" , default , skip_serializing_if = "std::option::Option::is_none")] pub destination_parent : :: std :: option :: Option < String > , # [doc = "The display name of the folder."] # [serde (rename = "displayName" , default , skip_serializing_if = "std::option::Option::is_none")] pub display_name : :: std :: option :: Option < String > , # [doc = "The type of this operation."] # [serde (rename = "operationType" , default , skip_serializing_if = "std::option::Option::is_none")] pub operation_type : :: std :: option :: Option < crate :: schemas :: CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperationOperationType > , # [doc = "The resource name of the folder's parent. Only applicable when the operation_type is MOVE."] # [serde (rename = "sourceParent" , default , skip_serializing_if = "std::option::Option::is_none")] pub source_parent : :: std :: option :: Option < String > , }
     impl ::google_field_selector::FieldSelector
         for CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperation
     {
@@ -267,7 +267,7 @@ pub mod schemas {
             CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperationOperationType,
             (),
         > {
-            Ok ( match s { "CREATE" => CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperationOperationType :: Create , "MOVE" => CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperationOperationType :: Move , "OPERATION_TYPE_UNSPECIFIED" => CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperationOperationType :: OperationTypeUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "CREATE" => CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperationOperationType :: Create , "MOVE" => CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperationOperationType :: Move , "OPERATION_TYPE_UNSPECIFIED" => CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperationOperationType :: OperationTypeUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display
@@ -295,7 +295,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "CREATE" => CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperationOperationType :: Create , "MOVE" => CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperationOperationType :: Move , "OPERATION_TYPE_UNSPECIFIED" => CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperationOperationType :: OperationTypeUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "CREATE" => CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperationOperationType :: Create , "MOVE" => CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperationOperationType :: Move , "OPERATION_TYPE_UNSPECIFIED" => CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperationOperationType :: OperationTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -324,7 +324,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperation { # [ doc = "The resource name of the folder or organization we are either creating the folder under or moving the folder to." ] # [ serde ( rename = "destinationParent" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub destination_parent : :: std :: option :: Option < String > , # [ doc = "The display name of the folder." ] # [ serde ( rename = "displayName" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub display_name : :: std :: option :: Option < String > , # [ doc = "The type of this operation." ] # [ serde ( rename = "operationType" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub operation_type : :: std :: option :: Option < crate :: schemas :: CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperationOperationType > , # [ doc = "The resource name of the folder's parent. Only applicable when the operation_type is MOVE." ] # [ serde ( rename = "sourceParent" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub source_parent : :: std :: option :: Option < String > , }
+    pub struct CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperation { # [doc = "The resource name of the folder or organization we are either creating the folder under or moving the folder to."] # [serde (rename = "destinationParent" , default , skip_serializing_if = "std::option::Option::is_none")] pub destination_parent : :: std :: option :: Option < String > , # [doc = "The display name of the folder."] # [serde (rename = "displayName" , default , skip_serializing_if = "std::option::Option::is_none")] pub display_name : :: std :: option :: Option < String > , # [doc = "The type of this operation."] # [serde (rename = "operationType" , default , skip_serializing_if = "std::option::Option::is_none")] pub operation_type : :: std :: option :: Option < crate :: schemas :: CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperationOperationType > , # [doc = "The resource name of the folder's parent. Only applicable when the operation_type is MOVE."] # [serde (rename = "sourceParent" , default , skip_serializing_if = "std::option::Option::is_none")] pub source_parent : :: std :: option :: Option < String > , }
     impl ::google_field_selector::FieldSelector
         for CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperation
     {
@@ -370,7 +370,7 @@ pub mod schemas {
             CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperationOperationType,
             (),
         > {
-            Ok ( match s { "CREATE" => CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperationOperationType :: Create , "MOVE" => CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperationOperationType :: Move , "OPERATION_TYPE_UNSPECIFIED" => CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperationOperationType :: OperationTypeUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "CREATE" => CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperationOperationType :: Create , "MOVE" => CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperationOperationType :: Move , "OPERATION_TYPE_UNSPECIFIED" => CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperationOperationType :: OperationTypeUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display
@@ -398,7 +398,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "CREATE" => CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperationOperationType :: Create , "MOVE" => CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperationOperationType :: Move , "OPERATION_TYPE_UNSPECIFIED" => CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperationOperationType :: OperationTypeUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "CREATE" => CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperationOperationType :: Create , "MOVE" => CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperationOperationType :: Move , "OPERATION_TYPE_UNSPECIFIED" => CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperationOperationType :: OperationTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -473,7 +473,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "True if the project can be retrieved using GetProject. No other operations on the project are guaranteed to work until the project creation is complete."]
+        #[doc = "True if the project can be retrieved using `GetProject`. No other operations on the project are guaranteed to work until the project creation is complete."]
         #[serde(
             rename = "gettable",
             default,
@@ -494,6 +494,30 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CreateProjectMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CreateTagBindingMetadata {}
+    impl ::google_field_selector::FieldSelector for CreateTagBindingMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CreateTagBindingMetadata {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -614,6 +638,30 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for DeleteProjectMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DeleteTagBindingMetadata {}
+    impl ::google_field_selector::FieldSelector for DeleteTagBindingMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DeleteTagBindingMetadata {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1234,7 +1282,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GetPolicyOptions {
-        #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "requestedPolicyVersion",
             default,
@@ -1460,7 +1508,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audit_configs: ::std::option::Option<Vec<crate::schemas::AuditConfig>>,
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,
@@ -1550,7 +1598,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SearchFoldersRequest {
-        #[doc = "Optional. The maximum number of folders to return in the response."]
+        #[doc = "Optional. The maximum number of folders to return in the response. The server can return fewer folders than requested. If unspecified, server picks an appropriate default."]
         #[serde(
             rename = "pageSize",
             default,
@@ -1633,7 +1681,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SetIamPolicyRequest {
-        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -1706,7 +1754,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -3044,7 +3092,7 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "Optional. The maximum number of Folders to return in the response."]
+            #[doc = "Optional. The maximum number of Folders to return in the response. The server can return fewer folders than requested. If unspecified, server picks an appropriate default."]
             pub fn page_size(mut self, value: i32) -> Self {
                 self.page_size = Some(value);
                 self

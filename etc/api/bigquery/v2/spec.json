@@ -7,7 +7,7 @@
   "canonicalName": null,
   "fullyEncodeReservedExpansion": null,
   "version": "v2",
-  "revision": "20210303",
+  "revision": "20220326",
   "title": "BigQuery API",
   "description": "A data platform for customers to create, manage, share and query data.",
   "ownerDomain": "google.com",
@@ -135,28 +135,25 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/bigquery": {
-          "description": "View and manage your data in Google BigQuery"
+          "description": "View and manage your data in Google BigQuery and see the email address for your Google Account"
         },
         "https://www.googleapis.com/auth/bigquery.insertdata": {
           "description": "Insert data into Google BigQuery"
         },
-        "https://www.googleapis.com/auth/bigquery.readonly": {
-          "description": "View your data in Google BigQuery"
-        },
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         },
         "https://www.googleapis.com/auth/cloud-platform.read-only": {
-          "description": "View your data across Google Cloud Platform services"
+          "description": "View your data across Google Cloud services and see the email address of your Google Account"
         },
         "https://www.googleapis.com/auth/devstorage.full_control": {
-          "description": "Manage your data and permissions in Google Cloud Storage"
+          "description": "Manage your data and permissions in Cloud Storage and see the email address for your Google Account"
         },
         "https://www.googleapis.com/auth/devstorage.read_only": {
           "description": "View your data in Google Cloud Storage"
         },
         "https://www.googleapis.com/auth/devstorage.read_write": {
-          "description": "Manage your data in Google Cloud Storage"
+          "description": "Manage your data in Cloud Storage and see the email address of your Google Account"
         }
       }
     }
@@ -491,7 +488,7 @@
               "YEARLY"
             ],
             "enumDescriptions": [
-              "",
+              "Unspecified seasonal period.",
               "No seasonality",
               "Daily period, 24 hours.",
               "Weekly period, 7 days.",
@@ -552,6 +549,36 @@
           "additionalProperties": null,
           "items": null
         },
+        "hasHolidayEffect": {
+          "description": "If true, holiday_effect is a part of time series decomposition result.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "hasSpikesAndDips": {
+          "description": "If true, spikes_and_dips is a part of time series decomposition result.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "hasStepChanges": {
+          "description": "If true, step_changes is a part of time series decomposition result.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "nonSeasonalOrder": {
           "description": "Non-seasonal order.",
           "$ref": "ArimaOrder"
@@ -577,7 +604,7 @@
               "YEARLY"
             ],
             "enumDescriptions": [
-              "",
+              "Unspecified seasonal period.",
               "No seasonality",
               "Daily period, 24 hours.",
               "Weekly period, 7 days.",
@@ -599,6 +626,24 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "timeSeriesIds": {
+          "description": "The tuple of time_series_ids identifying this time series. It will be one of the unique tuples of values present in the time_series_id_columns specified during ARIMA model training. Only present when time_series_id_columns training option was used and the order of values here are same as the order of time_series_id_columns.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
         }
       },
       "additionalProperties": null,
@@ -687,7 +732,7 @@
               "YEARLY"
             ],
             "enumDescriptions": [
-              "",
+              "Unspecified seasonal period.",
               "No seasonality",
               "Daily period, 24 hours.",
               "Weekly period, 7 days.",
@@ -726,6 +771,36 @@
           "additionalProperties": null,
           "items": null
         },
+        "hasHolidayEffect": {
+          "description": "If true, holiday_effect is a part of time series decomposition result.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "hasSpikesAndDips": {
+          "description": "If true, spikes_and_dips is a part of time series decomposition result.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "hasStepChanges": {
+          "description": "If true, step_changes is a part of time series decomposition result.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "nonSeasonalOrder": {
           "description": "Non-seasonal order.",
           "$ref": "ArimaOrder"
@@ -751,7 +826,7 @@
               "YEARLY"
             ],
             "enumDescriptions": [
-              "",
+              "Unspecified seasonal period.",
               "No seasonality",
               "Daily period, 24 hours.",
               "Weekly period, 7 days.",
@@ -773,6 +848,24 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "timeSeriesIds": {
+          "description": "The tuple of time_series_ids identifying this time series. It will be one of the unique tuples of values present in the time_series_id_columns specified during ARIMA model training. Only present when time_series_id_columns training option was used and the order of values here are same as the order of time_series_id_columns.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
         }
       },
       "additionalProperties": null,
@@ -857,6 +950,94 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "AvroOptions": {
+      "id": "AvroOptions",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "useAvroLogicalTypes": {
+          "description": "[Optional] If sourceFormat is set to \"AVRO\", indicates whether to interpret logical types as the corresponding BigQuery data type (for example, TIMESTAMP), instead of using the raw type (for example, INTEGER).",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "BiEngineReason": {
+      "id": "BiEngineReason",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "code": {
+          "description": "[Output-only] High-level BI Engine reason for partial or disabled acceleration.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "message": {
+          "description": "[Output-only] Free form human-readable reason for partial or disabled acceleration.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "BiEngineStatistics": {
+      "id": "BiEngineStatistics",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "biEngineMode": {
+          "description": "[Output-only] Specifies which mode of BI Engine acceleration was performed (if any).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "biEngineReasons": {
+          "description": "In case of DISABLED or PARTIAL bi_engine_mode, these contain the explanatory reasons as to why BI Engine could not accelerate. In case the full query was accelerated, this field is not populated.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "BiEngineReason"
+          }
         }
       },
       "additionalProperties": null,
@@ -1226,18 +1407,18 @@
     },
     "Binding": {
       "id": "Binding",
-      "description": "Associates `members` with a `role`.",
+      "description": "Associates `members`, or principals, with a `role`.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "condition": {
-          "description": "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+          "description": "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
           "$ref": "Expr"
         },
         "members": {
-          "description": "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. ",
+          "description": "Specifies the principals requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. ",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1255,7 +1436,7 @@
           }
         },
         "role": {
-          "description": "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`.",
+          "description": "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1521,6 +1702,32 @@
           "description": "The count of training samples matching the category within the cluster.",
           "type": "string",
           "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "CloneDefinition": {
+      "id": "CloneDefinition",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "baseTableReference": {
+          "description": "[Required] Reference describing the ID of the table that was cloned.",
+          "$ref": "TableReference"
+        },
+        "cloneTime": {
+          "description": "[Required] The time at which the base table was cloned. This value is reported in the JSON response using RFC3339 format.",
+          "type": "string",
+          "format": "date-time",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -1805,6 +2012,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "null_marker": {
+          "description": "[Optional] An custom string that will represent a NULL value in CSV import data.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "quote": {
           "description": "[Optional] The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. The default value is a double-quote ('\"'). If your data does not contain quoted sections, set the property value to an empty string. If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true.",
           "type": "string",
@@ -1839,6 +2056,10 @@
       "properties": {
         "evaluationTable": {
           "description": "Table reference of the evaluation data after split.",
+          "$ref": "TableReference"
+        },
+        "testTable": {
+          "description": "Table reference of the test data after split.",
           "$ref": "TableReference"
         },
         "trainingTable": {
@@ -1962,6 +2183,16 @@
           "description": "[Required] A reference that identifies the dataset.",
           "$ref": "DatasetReference"
         },
+        "defaultCollation": {
+          "description": "[Output-only] The default collation of the dataset.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "defaultEncryptionConfiguration": {
           "description": null,
           "$ref": "EncryptionConfiguration"
@@ -2026,6 +2257,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "isCaseInsensitive": {
+          "description": "[Optional] Indicates if table names are case insensitive in the dataset.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "kind": {
           "description": "[Output-only] The resource type.",
           "type": "string",
@@ -2075,6 +2316,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "maxTimeTravelHours": {
+          "description": "[Optional] Number of hours for the max time travel for all tables in the dataset.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "satisfiesPZS": {
           "description": "[Output-only] Reserved for future use.",
           "type": "boolean",
@@ -2094,6 +2345,45 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "tags": {
+          "description": "[Optional]The tags associated with this dataset. Tag keys are globally unique.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "object",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {
+              "tagKey": {
+                "description": "[Required] The namespaced friendly name of the tag key, e.g. \"12345/environment\" where 12345 is org id.",
+                "type": "string",
+                "format": null,
+                "enum": [],
+                "enumDescriptions": [],
+                "properties": {},
+                "additionalProperties": null,
+                "items": null
+              },
+              "tagValue": {
+                "description": "[Required] Friendly short name of the tag value, e.g. \"production\".",
+                "type": "string",
+                "format": null,
+                "enum": [],
+                "enumDescriptions": [],
+                "properties": {},
+                "additionalProperties": null,
+                "items": null
+              }
+            },
+            "additionalProperties": null,
+            "items": null
+          }
         }
       },
       "additionalProperties": null,
@@ -2111,7 +2401,7 @@
           "description": "[Required] The dataset this entry applies to.",
           "$ref": "DatasetReference"
         },
-        "target_types": {
+        "targetTypes": {
           "description": null,
           "type": "array",
           "format": null,
@@ -2120,22 +2410,17 @@
           "properties": {},
           "additionalProperties": null,
           "items": {
-            "type": "object",
+            "type": "string",
             "format": null,
-            "enum": [],
-            "enumDescriptions": [],
-            "properties": {
-              "targetType": {
-                "description": "[Required] Which resources in the dataset this entry applies to. Currently, only views are supported, but additional target types may be added in the future. Possible values: VIEWS: This entry applies to all views in the dataset.",
-                "type": "string",
-                "format": null,
-                "enum": [],
-                "enumDescriptions": [],
-                "properties": {},
-                "additionalProperties": null,
-                "items": null
-              }
-            },
+            "enum": [
+              "TARGET_TYPE_UNSPECIFIED",
+              "VIEWS"
+            ],
+            "enumDescriptions": [
+              "Do not use. You must set a target type explicitly.",
+              "This entry applies to views in the dataset."
+            ],
+            "properties": {},
             "additionalProperties": null,
             "items": null
           }
@@ -2318,6 +2603,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "expirationTime": {
+          "description": "[Internal] This field is for Google internal use only.",
+          "type": "string",
+          "format": "date-time",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "friendlyName": {
           "description": "[Optional] The friendly name for the destination table. This will only be used if the destination table is newly created. If the table already exists and a value different than the current friendly name is provided, the job will fail.",
           "type": "string",
@@ -2361,6 +2656,130 @@
       "properties": {
         "totalExplainedVarianceRatio": {
           "description": "Total percentage of variance explained by the selected principal components.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "DmlStatistics": {
+      "id": "DmlStatistics",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "deletedRowCount": {
+          "description": "Number of deleted Rows. populated by DML DELETE, MERGE and TRUNCATE statements.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "insertedRowCount": {
+          "description": "Number of inserted Rows. Populated by DML INSERT and MERGE statements.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "updatedRowCount": {
+          "description": "Number of updated Rows. Populated by DML UPDATE and MERGE statements.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "DoubleCandidates": {
+      "id": "DoubleCandidates",
+      "description": "Discrete candidates of a double hyperparameter.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "candidates": {
+          "description": "Candidates for the double parameter in increasing order.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "number",
+            "format": "double",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "DoubleHparamSearchSpace": {
+      "id": "DoubleHparamSearchSpace",
+      "description": "Search space for a double hyperparameter.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "candidates": {
+          "description": "Candidates of the double hyperparameter.",
+          "$ref": "DoubleCandidates"
+        },
+        "range": {
+          "description": "Range of the double hyperparameter.",
+          "$ref": "DoubleRange"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "DoubleRange": {
+      "id": "DoubleRange",
+      "description": "Range of a double hyperparameter.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "max": {
+          "description": "Max value of the double parameter.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "min": {
+          "description": "Min value of the double parameter.",
           "type": "number",
           "format": "double",
           "enum": [],
@@ -2900,7 +3319,7 @@
           "items": null
         },
         "featureName": {
-          "description": "Full name of the feature. For non-numerical features, will be formatted like .. Overall size of feature name will always be truncated to first 120 characters.",
+          "description": "The full feature name. For non-numerical features, will be formatted like `.`. Overall size of feature name will always be truncated to first 120 characters.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2983,6 +3402,10 @@
           "additionalProperties": null,
           "items": null
         },
+        "avroOptions": {
+          "description": "Additional properties to set if sourceFormat is set to Avro.",
+          "$ref": "AvroOptions"
+        },
         "bigtableOptions": {
           "description": "[Optional] Additional options if sourceFormat is set to BIGTABLE.",
           "$ref": "BigtableOptions"
@@ -3010,6 +3433,24 @@
         "csvOptions": {
           "description": "Additional properties to set if sourceFormat is set to CSV.",
           "$ref": "CsvOptions"
+        },
+        "decimalTargetTypes": {
+          "description": "[Optional] Defines the list of possible SQL data types to which the source decimal values are converted. This list and the precision and the scale parameters of the decimal field determine the target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in the specified list and if it supports the precision and the scale. STRING supports all precision and scale values. If none of the listed types supports the precision and the scale, the type supporting the widest range in the specified list is picked, and if a value exceeds the supported range when reading the data, an error will be thrown. Example: Suppose the value of this field is [\"NUMERIC\", \"BIGNUMERIC\"]. If (precision,scale) is: (38,9) -> NUMERIC; (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits); (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits); (76,38) -> BIGNUMERIC; (77,38) -> BIGNUMERIC (error if value exeeds supported range). This field cannot contain duplicate types. The order of the types in this field is ignored. For example, [\"BIGNUMERIC\", \"NUMERIC\"] is the same as [\"NUMERIC\", \"BIGNUMERIC\"] and NUMERIC always takes precedence over BIGNUMERIC. Defaults to [\"NUMERIC\", \"STRING\"] for ORC and [\"NUMERIC\"] for the other file formats.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
         },
         "googleSheetsOptions": {
           "description": "[Optional] Additional options if sourceFormat is set to GOOGLE_SHEETS.",
@@ -3140,7 +3581,7 @@
       "enumDescriptions": [],
       "properties": {
         "requestedPolicyVersion": {
-          "description": "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+          "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -3417,20 +3858,226 @@
       "additionalProperties": null,
       "items": null
     },
-    "IterationResult": {
-      "id": "IterationResult",
-      "description": "Information about a single iteration of the training run.",
+    "HparamSearchSpaces": {
+      "id": "HparamSearchSpaces",
+      "description": "Hyperparameter search spaces. These should be a subset of training_options.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
-        "arimaResult": {
-          "description": null,
-          "$ref": "ArimaResult"
+        "activationFn": {
+          "description": "Activation functions of neural network models.",
+          "$ref": "StringHparamSearchSpace"
         },
-        "clusterInfos": {
-          "description": "Information about top clusters for clustering models.",
+        "batchSize": {
+          "description": "Mini batch sample size.",
+          "$ref": "IntHparamSearchSpace"
+        },
+        "boosterType": {
+          "description": "Booster type for boosted tree models.",
+          "$ref": "StringHparamSearchSpace"
+        },
+        "colsampleBylevel": {
+          "description": "Subsample ratio of columns for each level for boosted tree models.",
+          "$ref": "DoubleHparamSearchSpace"
+        },
+        "colsampleBynode": {
+          "description": "Subsample ratio of columns for each node(split) for boosted tree models.",
+          "$ref": "DoubleHparamSearchSpace"
+        },
+        "colsampleBytree": {
+          "description": "Subsample ratio of columns when constructing each tree for boosted tree models.",
+          "$ref": "DoubleHparamSearchSpace"
+        },
+        "dartNormalizeType": {
+          "description": "Dart normalization type for boosted tree models.",
+          "$ref": "StringHparamSearchSpace"
+        },
+        "dropout": {
+          "description": "Dropout probability for dnn model training and boosted tree models using dart booster.",
+          "$ref": "DoubleHparamSearchSpace"
+        },
+        "hiddenUnits": {
+          "description": "Hidden units for neural network models.",
+          "$ref": "IntArrayHparamSearchSpace"
+        },
+        "l1Reg": {
+          "description": "L1 regularization coefficient.",
+          "$ref": "DoubleHparamSearchSpace"
+        },
+        "l2Reg": {
+          "description": "L2 regularization coefficient.",
+          "$ref": "DoubleHparamSearchSpace"
+        },
+        "learnRate": {
+          "description": "Learning rate of training jobs.",
+          "$ref": "DoubleHparamSearchSpace"
+        },
+        "maxTreeDepth": {
+          "description": "Maximum depth of a tree for boosted tree models.",
+          "$ref": "IntHparamSearchSpace"
+        },
+        "minSplitLoss": {
+          "description": "Minimum split loss for boosted tree models.",
+          "$ref": "DoubleHparamSearchSpace"
+        },
+        "minTreeChildWeight": {
+          "description": "Minimum sum of instance weight needed in a child for boosted tree models.",
+          "$ref": "IntHparamSearchSpace"
+        },
+        "numClusters": {
+          "description": "Number of clusters for k-means.",
+          "$ref": "IntHparamSearchSpace"
+        },
+        "numFactors": {
+          "description": "Number of latent factors to train on.",
+          "$ref": "IntHparamSearchSpace"
+        },
+        "numParallelTree": {
+          "description": "Number of parallel trees for boosted tree models.",
+          "$ref": "IntHparamSearchSpace"
+        },
+        "optimizer": {
+          "description": "Optimizer of TF models.",
+          "$ref": "StringHparamSearchSpace"
+        },
+        "subsample": {
+          "description": "Subsample the training data to grow tree to prevent overfitting for boosted tree models.",
+          "$ref": "DoubleHparamSearchSpace"
+        },
+        "treeMethod": {
+          "description": "Tree construction algorithm for boosted tree models.",
+          "$ref": "StringHparamSearchSpace"
+        },
+        "walsAlpha": {
+          "description": "Hyperparameter for matrix factoration when implicit feedback type is specified.",
+          "$ref": "DoubleHparamSearchSpace"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "HparamTuningTrial": {
+      "id": "HparamTuningTrial",
+      "description": "Training info of a trial in [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "endTimeMs": {
+          "description": "Ending time of the trial.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "errorMessage": {
+          "description": "Error message for FAILED and INFEASIBLE trial.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "evalLoss": {
+          "description": "Loss computed on the eval data at the end of trial.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "evaluationMetrics": {
+          "description": "Evaluation metrics of this trial calculated on the test data. Empty in Job API.",
+          "$ref": "EvaluationMetrics"
+        },
+        "hparamTuningEvaluationMetrics": {
+          "description": "Hyperparameter tuning evaluation metrics of this trial calculated on the eval data. Unlike evaluation_metrics, only the fields corresponding to the hparam_tuning_objectives are set.",
+          "$ref": "EvaluationMetrics"
+        },
+        "hparams": {
+          "description": "The hyperprameters selected for this trial.",
+          "$ref": "TrainingOptions"
+        },
+        "startTimeMs": {
+          "description": "Starting time of the trial.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "status": {
+          "description": "The status of the trial.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "TRIAL_STATUS_UNSPECIFIED",
+            "NOT_STARTED",
+            "RUNNING",
+            "SUCCEEDED",
+            "FAILED",
+            "INFEASIBLE",
+            "STOPPED_EARLY"
+          ],
+          "enumDescriptions": [
+            "",
+            "Scheduled but not started.",
+            "Running state.",
+            "The trial succeeded.",
+            "The trial failed.",
+            "The trial is infeasible due to the invalid params.",
+            "Trial stopped early because it's not promising."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "trainingLoss": {
+          "description": "Loss computed on the training data at the end of trial.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "trialId": {
+          "description": "1-based index of the trial.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "IntArray": {
+      "id": "IntArray",
+      "description": "An array of int.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "elements": {
+          "description": "Elements in the int array.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3438,9 +4085,133 @@
           "properties": {},
           "additionalProperties": null,
           "items": {
-            "$ref": "ClusterInfo"
+            "type": "string",
+            "format": "int64",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
           }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "IntArrayHparamSearchSpace": {
+      "id": "IntArrayHparamSearchSpace",
+      "description": "Search space for int array.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "candidates": {
+          "description": "Candidates for the int array parameter.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "IntArray"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "IntCandidates": {
+      "id": "IntCandidates",
+      "description": "Discrete candidates of an int hyperparameter.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "candidates": {
+          "description": "Candidates for the int parameter in increasing order.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": "int64",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "IntHparamSearchSpace": {
+      "id": "IntHparamSearchSpace",
+      "description": "Search space for an int hyperparameter.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "candidates": {
+          "description": "Candidates of the int hyperparameter.",
+          "$ref": "IntCandidates"
         },
+        "range": {
+          "description": "Range of the int hyperparameter.",
+          "$ref": "IntRange"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "IntRange": {
+      "id": "IntRange",
+      "description": "Range of an int hyperparameter.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "max": {
+          "description": "Max value of the int parameter.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "min": {
+          "description": "Min value of the int parameter.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "IterationResult": {
+      "id": "IterationResult",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
         "durationMs": {
           "description": "Time taken to run the iteration in milliseconds.",
           "type": "string",
@@ -3480,18 +4251,6 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
-        },
-        "principalComponentInfos": {
-          "description": "The information of the principal components.",
-          "type": "array",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": {
-            "$ref": "PrincipalComponentInfo"
-          }
         },
         "trainingLoss": {
           "description": "Loss computed on the training data at the end of iteration.",
@@ -3839,7 +4598,7 @@
           "items": null
         },
         "decimalTargetTypes": {
-          "description": "Defines the list of possible SQL data types to which the source decimal values are converted. This list and the precision and the scale parameters of the decimal field determine the target type. In the order of NUMERIC, BIGNUMERIC ([Preview](/products/#product-launch-stages)), and STRING, a type is picked if it is in the specified list and if it supports the precision and the scale. STRING supports all precision and scale values. If none of the listed types supports the precision and the scale, the type supporting the widest range in the specified list is picked, and if a value exceeds the supported range when reading the data, an error will be thrown. Example: Suppose the value of this field is [\"NUMERIC\", \"BIGNUMERIC\"]. If (precision,scale) is: * (38,9) -> NUMERIC; * (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits); * (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits); * (76,38) -> BIGNUMERIC; * (77,38) -> BIGNUMERIC (error if value exeeds supported range). This field cannot contain duplicate types. The order of the types in this field is ignored. For example, [\"BIGNUMERIC\", \"NUMERIC\"] is the same as [\"NUMERIC\", \"BIGNUMERIC\"] and NUMERIC always takes precedence over BIGNUMERIC. Defaults to [\"NUMERIC\", \"STRING\"] for ORC and [\"NUMERIC\"] for the other file formats.",
+          "description": "[Optional] Defines the list of possible SQL data types to which the source decimal values are converted. This list and the precision and the scale parameters of the decimal field determine the target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in the specified list and if it supports the precision and the scale. STRING supports all precision and scale values. If none of the listed types supports the precision and the scale, the type supporting the widest range in the specified list is picked, and if a value exceeds the supported range when reading the data, an error will be thrown. Example: Suppose the value of this field is [\"NUMERIC\", \"BIGNUMERIC\"]. If (precision,scale) is: (38,9) -> NUMERIC; (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits); (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits); (76,38) -> BIGNUMERIC; (77,38) -> BIGNUMERIC (error if value exeeds supported range). This field cannot contain duplicate types. The order of the types in this field is ignored. For example, [\"BIGNUMERIC\", \"NUMERIC\"] is the same as [\"NUMERIC\", \"BIGNUMERIC\"] and NUMERIC always takes precedence over BIGNUMERIC. Defaults to [\"NUMERIC\", \"STRING\"] for ORC and [\"NUMERIC\"] for the other file formats.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3935,6 +4694,16 @@
         "parquetOptions": {
           "description": "[Optional] Options to configure parquet support.",
           "$ref": "ParquetOptions"
+        },
+        "preserveAsciiControlCharacters": {
+          "description": "[Optional] Preserves the embedded ASCII control characters (the first 32 characters in the ASCII-table, from '\\x00' to '\\x1F') when loading from CSV. Only applicable to CSV, ignored for other formats.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "projectionFields": {
           "description": "If sourceFormat is set to \"DATASTORE_BACKUP\", indicates which entity properties to load into BigQuery from a Cloud Datastore backup. Property names are case sensitive and must be top-level properties. If no properties are specified, BigQuery loads all properties. If any named property isn't found in the Cloud Datastore backup, an invalid error is returned in the job result.",
@@ -4053,7 +4822,7 @@
           "$ref": "TimePartitioning"
         },
         "useAvroLogicalTypes": {
-          "description": "[Optional] If sourceFormat is set to \"AVRO\", indicates whether to enable interpreting logical types into their corresponding types (ie. TIMESTAMP), instead of only using their raw types (ie. INTEGER).",
+          "description": "[Optional] If sourceFormat is set to \"AVRO\", indicates whether to interpret logical types as the corresponding BigQuery data type (for example, TIMESTAMP), instead of using the raw type (for example, INTEGER).",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -4566,6 +5335,10 @@
           "additionalProperties": null,
           "items": null
         },
+        "copy": {
+          "description": "[Output-only] Statistics for a copy job.",
+          "$ref": "JobStatistics5"
+        },
         "creationTime": {
           "description": "[Output-only] Creation time of this job, in milliseconds since the epoch. This field will be present on all jobs.",
           "type": "string",
@@ -4693,6 +5466,10 @@
           "description": "[Output-only] Statistics for a child job of a script.",
           "$ref": "ScriptStatistics"
         },
+        "sessionInfo": {
+          "description": "[Output-only] [Preview] Information of the session if this job is part of one.",
+          "$ref": "SessionInfo"
+        },
         "startTime": {
           "description": "[Output-only] Start time of this job, in milliseconds since the epoch. This field will be present when the job transitions from the PENDING state to either RUNNING or DONE.",
           "type": "string",
@@ -4723,7 +5500,7 @@
           "additionalProperties": null,
           "items": null
         },
-        "transactionInfoTemplate": {
+        "transactionInfo": {
           "description": "[Output-only] [Alpha] Information of the multi-statement transaction if this job is part of one.",
           "$ref": "TransactionInfo"
         }
@@ -4739,6 +5516,10 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "biEngineStatistics": {
+          "description": "BI Engine specific Statistics. [Output-only] BI Engine specific Statistics.",
+          "$ref": "BiEngineStatistics"
+        },
         "billingTier": {
           "description": "[Output-only] Billing tier for the job.",
           "type": "integer",
@@ -4769,6 +5550,10 @@
           "additionalProperties": null,
           "items": null
         },
+        "ddlDestinationTable": {
+          "description": "[Output-only] The DDL destination table. Present only for ALTER TABLE RENAME TO queries. Note that ddl_target_table is used just for its type information.",
+          "$ref": "TableReference"
+        },
         "ddlOperationPerformed": {
           "description": "The DDL operation performed, possibly dependent on the pre-existence of the DDL target. Possible values (new values might be added in the future): \"CREATE\": The query created the DDL target. \"SKIP\": No-op. Example cases: the query is CREATE TABLE IF NOT EXISTS while the table already exists, or the query is DROP TABLE IF EXISTS while the table does not exist. \"REPLACE\": The query replaced the DDL target. Example case: the query is CREATE OR REPLACE TABLE, and the table already exists. \"DROP\": The query deleted the DDL target.",
           "type": "string",
@@ -4795,6 +5580,10 @@
           "description": "[Output-only] The DDL target table. Present only for CREATE/DROP TABLE/VIEW and DROP ALL ROW ACCESS POLICIES queries.",
           "$ref": "TableReference"
         },
+        "dmlStats": {
+          "description": "[Output-only] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE.",
+          "$ref": "DmlStatistics"
+        },
         "estimatedBytesProcessed": {
           "description": "[Output-only] The original estimate of bytes processed for the job.",
           "type": "string",
@@ -4804,6 +5593,10 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "mlStatistics": {
+          "description": "[Output-only] Statistics of a BigQuery ML training job.",
+          "$ref": "MlStatistics"
         },
         "modelTraining": {
           "description": "[Output-only, Beta] Information about create model query job progress.",
@@ -5108,6 +5901,38 @@
       "additionalProperties": null,
       "items": null
     },
+    "JobStatistics5": {
+      "id": "JobStatistics5",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "copied_logical_bytes": {
+          "description": "[Output-only] Number of logical bytes copied to the destination table.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "copied_rows": {
+          "description": "[Output-only] Number of rows copied to the destination table.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "JobStatus": {
       "id": "JobStatus",
       "description": null,
@@ -5347,6 +6172,40 @@
       "additionalProperties": null,
       "items": null
     },
+    "MlStatistics": {
+      "id": "MlStatistics",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "iterationResults": {
+          "description": "Results for all completed iterations.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "IterationResult"
+          }
+        },
+        "maxIterations": {
+          "description": "Maximum number of iterations specified as max_iterations in the 'CREATE MODEL' query. The actual number of iterations may be less than this number due to early stop.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Model": {
       "id": "Model",
       "description": null,
@@ -5367,6 +6226,16 @@
         },
         "creationTime": {
           "description": "Output only. The time when this model was created, in millisecs since the epoch.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "defaultTrialId": {
+          "description": "Output only. The default trial_id to use in TVFs when the trial_id is not passed in. For single-objective [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, this is the best trial ID. For multi-objective [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, this is the smallest trial ID among all Pareto optimal trials.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -5430,6 +6299,22 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "hparamSearchSpaces": {
+          "description": "Output only. All hyperparameter search spaces in this model.",
+          "$ref": "HparamSearchSpaces"
+        },
+        "hparamTrials": {
+          "description": "Output only. Trials of a [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) model sorted by trial_id.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "HparamTuningTrial"
+          }
         },
         "labelColumns": {
           "description": "Output only. Label columns that were used to train this model. The output of the model will have a \"predicted_\" prefix to these columns.",
@@ -5503,7 +6388,10 @@
             "BOOSTED_TREE_CLASSIFIER",
             "ARIMA",
             "AUTOML_REGRESSOR",
-            "AUTOML_CLASSIFIER"
+            "AUTOML_CLASSIFIER",
+            "PCA",
+            "AUTOENCODER",
+            "ARIMA_PLUS"
           ],
           "enumDescriptions": [
             "",
@@ -5517,12 +6405,33 @@
             "Boosted tree regressor model.",
             "Boosted tree classifier model.",
             "ARIMA model.",
-            "[Beta] AutoML Tables regression model.",
-            "[Beta] AutoML Tables classification model."
+            "AutoML Tables regression model.",
+            "AutoML Tables classification model.",
+            "Prinpical Component Analysis model.",
+            "Autoencoder model.",
+            "New name for the ARIMA model."
           ],
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "optimalTrialIds": {
+          "description": "Output only. For single-objective [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, it only contains the best trial. For multi-objective [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, it contains all Pareto optimal trials sorted by trial_id.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": "int64",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
         },
         "trainingRuns": {
           "description": "Output only. Information for all training runs in increasing order of start_time.",
@@ -5717,7 +6626,7 @@
     },
     "Policy": {
       "id": "Policy",
-      "description": "An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members` to a single `role`. Members can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [ \"user:eve@example.com\" ], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01T00:00:00.000Z')\", } } ], \"etag\": \"BwWWja0YfJA=\", \"version\": 3 } **YAML example:** bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') - etag: BwWWja0YfJA= - version: 3 For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).",
+      "description": "An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [ \"user:eve@example.com\" ], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01T00:00:00.000Z')\", } } ], \"etag\": \"BwWWja0YfJA=\", \"version\": 3 } **YAML example:** bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).",
       "type": "object",
       "format": null,
       "enum": [],
@@ -5736,7 +6645,7 @@
           }
         },
         "bindings": {
-          "description": "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.",
+          "description": "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -6313,6 +7222,10 @@
           "additionalProperties": null,
           "items": null
         },
+        "dmlStats": {
+          "description": "[Output-only] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE.",
+          "$ref": "DmlStatistics"
+        },
         "errors": {
           "description": "[Output-only] The first errors or warnings encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has completed or was unsuccessful.",
           "type": "array",
@@ -6384,6 +7297,10 @@
         "schema": {
           "description": "The schema of the results. Present only when the query completes successfully.",
           "$ref": "TableSchema"
+        },
+        "sessionInfo": {
+          "description": "[Output-only] [Preview] Information of the session if this job is part of one.",
+          "$ref": "SessionInfo"
         },
         "totalBytesProcessed": {
           "description": "The total number of bytes processed for this query. If this query was a dry run, this is the number of bytes that would be processed if the query were run.",
@@ -6689,7 +7606,7 @@
           "items": null
         },
         "description": {
-          "description": "Optional. [Experimental] The description of the routine if defined.",
+          "description": "Optional. The description of the routine, if defined.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -6699,7 +7616,7 @@
           "items": null
         },
         "determinismLevel": {
-          "description": "Optional. [Experimental] The determinism level of the JavaScript UDF if defined.",
+          "description": "Optional. The determinism level of the JavaScript UDF, if defined.",
           "type": "string",
           "format": null,
           "enum": [
@@ -6773,11 +7690,11 @@
           "items": null
         },
         "returnTableType": {
-          "description": "Optional. Set only if Routine is a \"TABLE_VALUED_FUNCTION\". TODO(b/173344646) - Update return_type documentation to say it cannot be set for TABLE_VALUED_FUNCTION before preview launch.",
+          "description": "Optional. Can be set only if routine_type = \"TABLE_VALUED_FUNCTION\". If absent, the return table type is inferred from definition_body at query time in each query that references this routine. If present, then the columns in the evaluated table result will be cast to match the column types specificed in return table type, at query time.",
           "$ref": "StandardSqlTableType"
         },
         "returnType": {
-          "description": "Optional if language = \"SQL\"; required otherwise. If absent, the return type is inferred from definition_body at query time in each query that references this routine. If present, then the evaluated result will be cast to the specified returned type at query time. For example, for the functions created with the following statements: * `CREATE FUNCTION Add(x FLOAT64, y FLOAT64) RETURNS FLOAT64 AS (x + y);` * `CREATE FUNCTION Increment(x FLOAT64) AS (Add(x, 1));` * `CREATE FUNCTION Decrement(x FLOAT64) RETURNS FLOAT64 AS (Add(x, -1));` The return_type is `{type_kind: \"FLOAT64\"}` for `Add` and `Decrement`, and is absent for `Increment` (inferred as FLOAT64 at query time). Suppose the function `Add` is replaced by `CREATE OR REPLACE FUNCTION Add(x INT64, y INT64) AS (x + y);` Then the inferred return type of `Increment` is automatically changed to INT64 at query time, while the return type of `Decrement` remains FLOAT64.",
+          "description": "Optional if language = \"SQL\"; required otherwise. Cannot be set if routine_type = \"TABLE_VALUED_FUNCTION\". If absent, the return type is inferred from definition_body at query time in each query that references this routine. If present, then the evaluated result will be cast to the specified returned type at query time. For example, for the functions created with the following statements: * `CREATE FUNCTION Add(x FLOAT64, y FLOAT64) RETURNS FLOAT64 AS (x + y);` * `CREATE FUNCTION Increment(x FLOAT64) AS (Add(x, 1));` * `CREATE FUNCTION Decrement(x FLOAT64) RETURNS FLOAT64 AS (Add(x, -1));` The return_type is `{type_kind: \"FLOAT64\"}` for `Add` and `Decrement`, and is absent for `Increment` (inferred as FLOAT64 at query time). Suppose the function `Add` is replaced by `CREATE OR REPLACE FUNCTION Add(x INT64, y INT64) AS (x + y);` Then the inferred return type of `Increment` is automatically changed to INT64 at query time, while the return type of `Decrement` remains FLOAT64.",
           "$ref": "StandardSqlDataType"
         },
         "routineReference": {
@@ -6800,6 +7717,16 @@
             "Stored procedure.",
             "Non-builtin permanent TVF."
           ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "strictMode": {
+          "description": "Optional. Can be set for procedures only. If true (default), the definition body will be validated in the creation and the updates of the procedure. For procedures with an argument of ANY TYPE, the definition body validtion is not supported at creation/update time, and thus this field must be set to false explicitly.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -7120,6 +8047,28 @@
       "additionalProperties": null,
       "items": null
     },
+    "SessionInfo": {
+      "id": "SessionInfo",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "sessionId": {
+          "description": "[Output-only] // [Preview] Id of the session.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "SetIamPolicyRequest": {
       "id": "SetIamPolicyRequest",
       "description": "Request message for `SetIamPolicy` method.",
@@ -7155,11 +8104,11 @@
       "enumDescriptions": [],
       "properties": {
         "baseTableReference": {
-          "description": "[Required] Reference describing the ID of the table that is snapshotted.",
+          "description": "[Required] Reference describing the ID of the table that was snapshot.",
           "$ref": "TableReference"
         },
         "snapshotTime": {
-          "description": "[Required] The time at which the base table was snapshot.",
+          "description": "[Required] The time at which the base table was snapshot. This value is reported in the JSON response using RFC3339 format.",
           "type": "string",
           "format": "date-time",
           "enum": [],
@@ -7174,7 +8123,7 @@
     },
     "StandardSqlDataType": {
       "id": "StandardSqlDataType",
-      "description": "The type of a variable, e.g., a function argument. Examples: INT64: {type_kind=\"INT64\"} ARRAY: {type_kind=\"ARRAY\", array_element_type=\"STRING\"} STRUCT>: {type_kind=\"STRUCT\", struct_type={fields=[ {name=\"x\", type={type_kind=\"STRING\"}}, {name=\"y\", type={type_kind=\"ARRAY\", array_element_type=\"DATE\"}} ]}}",
+      "description": "The data type of a variable such as a function argument. Examples include: * INT64: `{\"typeKind\": \"INT64\"}` * ARRAY: { \"typeKind\": \"ARRAY\", \"arrayElementType\": {\"typeKind\": \"STRING\"} } * STRUCT>: { \"typeKind\": \"STRUCT\", \"structType\": { \"fields\": [ { \"name\": \"x\", \"type\": {\"typeKind: \"STRING\"} }, { \"name\": \"y\", \"type\": { \"typeKind\": \"ARRAY\", \"arrayElementType\": {\"typekind\": \"DATE\"} } } ] } }",
       "type": "object",
       "format": null,
       "enum": [],
@@ -7203,9 +8152,11 @@
             "DATE",
             "TIME",
             "DATETIME",
+            "INTERVAL",
             "GEOGRAPHY",
             "NUMERIC",
             "BIGNUMERIC",
+            "JSON",
             "ARRAY",
             "STRUCT"
           ],
@@ -7220,9 +8171,11 @@
             "Encoded as RFC 3339 full-date format string: 1985-04-12",
             "Encoded as RFC 3339 partial-time format string: 23:20:50.52",
             "Encoded as RFC 3339 full-date \"T\" partial-time: 1985-04-12T23:20:50.52",
+            "Encoded as fully qualified 3 part: 0-5 15 2:30:45.6",
             "Encoded as WKT",
             "Encoded as a decimal string.",
             "Encoded as a decimal string.",
+            "Encoded as a string.",
             "Encoded as a list with types matching Type.array_type.",
             "Encoded as a list with fields of type Type.struct_type[i]. List is used because a JSON object cannot have duplicate field names."
           ],
@@ -7350,6 +8303,36 @@
       "additionalProperties": null,
       "items": null
     },
+    "StringHparamSearchSpace": {
+      "id": "StringHparamSearchSpace",
+      "description": "Search space for string and enum.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "candidates": {
+          "description": "Canididates for the string or enum parameter in lower case.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Table": {
       "id": "Table",
       "description": null,
@@ -7358,6 +8341,10 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "cloneDefinition": {
+          "description": "[Output-only] Clone definition.",
+          "$ref": "CloneDefinition"
+        },
         "clustering": {
           "description": "[Beta] Clustering specification for the table. Must be specified with partitioning, data in the table will be first partitioned and subsequently clustered.",
           "$ref": "Clustering"
@@ -7366,6 +8353,16 @@
           "description": "[Output-only] The time when this table was created, in milliseconds since the epoch.",
           "type": "string",
           "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "defaultCollation": {
+          "description": "[Output-only] The default collation of the table.",
+          "type": "string",
+          "format": null,
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -7521,6 +8518,86 @@
           "description": "[Output-only] The number of rows of data in this table, excluding any data in the streaming buffer.",
           "type": "string",
           "format": "uint64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "num_active_logical_bytes": {
+          "description": "[Output-only] Number of logical bytes that are less than 90 days old.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "num_active_physical_bytes": {
+          "description": "[Output-only] Number of physical bytes less than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "num_long_term_logical_bytes": {
+          "description": "[Output-only] Number of logical bytes that are more than 90 days old.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "num_long_term_physical_bytes": {
+          "description": "[Output-only] Number of physical bytes more than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "num_partitions": {
+          "description": "[Output-only] The number of partitions present in the table or materialized view. This data is not kept in real time, and might be delayed by a few seconds to a few minutes.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "num_time_travel_physical_bytes": {
+          "description": "[Output-only] Number of physical bytes used by time travel storage (deleted or changed data). This data is not kept in real time, and might be delayed by a few seconds to a few minutes.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "num_total_logical_bytes": {
+          "description": "[Output-only] Total number of logical bytes in the table or materialized view.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "num_total_physical_bytes": {
+          "description": "[Output-only] The physical size of this table in bytes. This also includes storage used for time travel. This data is not kept in real time, and might be delayed by a few seconds to a few minutes.",
+          "type": "string",
+          "format": "int64",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -7860,6 +8937,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "collationSpec": {
+          "description": "Optional. Collation specification of the field. It only can be set on string type field.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "description": {
           "description": "[Optional] The field description. The maximum length is 1,024 characters.",
           "type": "string",
@@ -7882,6 +8969,16 @@
             "$ref": "TableFieldSchema"
           }
         },
+        "maxLength": {
+          "description": "[Optional] Maximum length of values of this field for STRINGS or BYTES. If max_length is not specified, no maximum length constraint is imposed on this field. If type = \"STRING\", then max_length represents the maximum UTF-8 length of strings in this field. If type = \"BYTES\", then max_length represents the maximum number of bytes in this field. It is invalid to set this field if type ≠ \"STRING\" and ≠ \"BYTES\".",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "mode": {
           "description": "[Optional] The field mode. Possible values include NULLABLE, REQUIRED and REPEATED. The default value is NULLABLE.",
           "type": "string",
@@ -7893,7 +8990,7 @@
           "items": null
         },
         "name": {
-          "description": "[Required] The field name. The name must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_), and must start with a letter or underscore. The maximum length is 128 characters.",
+          "description": "[Required] The field name. The name must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_), and must start with a letter or underscore. The maximum length is 300 characters.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -7931,8 +9028,28 @@
           "additionalProperties": null,
           "items": null
         },
+        "precision": {
+          "description": "[Optional] Precision (maximum number of total digits in base 10) and scale (maximum number of digits in the fractional part in base 10) constraints for values of this field for NUMERIC or BIGNUMERIC. It is invalid to set precision or scale if type ≠ \"NUMERIC\" and ≠ \"BIGNUMERIC\". If precision and scale are not specified, no value range constraint is imposed on this field insofar as values are permitted by the type. Values of this NUMERIC or BIGNUMERIC field must be in this range when: - Precision (P) and scale (S) are specified: [-10P-S + 10-S, 10P-S - 10-S] - Precision (P) is specified but not scale (and thus scale is interpreted to be equal to zero): [-10P + 1, 10P - 1]. Acceptable values for precision and scale if both are specified: - If type = \"NUMERIC\": 1 ≤ precision - scale ≤ 29 and 0 ≤ scale ≤ 9. - If type = \"BIGNUMERIC\": 1 ≤ precision - scale ≤ 38 and 0 ≤ scale ≤ 38. Acceptable values for precision if only precision is specified but not scale (and thus scale is interpreted to be equal to zero): - If type = \"NUMERIC\": 1 ≤ precision ≤ 29. - If type = \"BIGNUMERIC\": 1 ≤ precision ≤ 38. If scale is specified but not precision, then it is invalid.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "scale": {
+          "description": "[Optional] See documentation for precision.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "type": {
-          "description": "[Required] The field data type. Possible values include STRING, BYTES, INTEGER, INT64 (same as INTEGER), FLOAT, FLOAT64 (same as FLOAT), NUMERIC, BIGNUMERIC, BOOLEAN, BOOL (same as BOOLEAN), TIMESTAMP, DATE, TIME, DATETIME, RECORD (where RECORD indicates that the field contains a nested schema) or STRUCT (same as RECORD).",
+          "description": "[Required] The field data type. Possible values include STRING, BYTES, INTEGER, INT64 (same as INTEGER), FLOAT, FLOAT64 (same as FLOAT), NUMERIC, BIGNUMERIC, BOOLEAN, BOOL (same as BOOLEAN), TIMESTAMP, DATE, TIME, DATETIME, INTERVAL, RECORD (where RECORD indicates that the field contains a nested schema) or STRUCT (same as RECORD).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -8342,6 +9459,16 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "adjustStepChanges": {
+          "description": "If true, detect step changes and make data adjustment in the input time series.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "autoArima": {
           "description": "Whether to enable auto ARIMA or not.",
           "type": "boolean",
@@ -8368,6 +9495,92 @@
           "format": "int64",
           "enum": [],
           "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "boosterType": {
+          "description": "Booster type for boosted tree models.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "BOOSTER_TYPE_UNSPECIFIED",
+            "GBTREE",
+            "DART"
+          ],
+          "enumDescriptions": [
+            "Unspecified booster type.",
+            "Gbtree booster.",
+            "Dart booster."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "calculatePValues": {
+          "description": "Whether or not p-value test should be computed for this model. Only available for linear and logistic regression models.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "cleanSpikesAndDips": {
+          "description": "If true, clean spikes and dips in the input time series.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "colsampleBylevel": {
+          "description": "Subsample ratio of columns for each level for boosted tree models.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "colsampleBynode": {
+          "description": "Subsample ratio of columns for each node(split) for boosted tree models.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "colsampleBytree": {
+          "description": "Subsample ratio of columns when constructing each tree for boosted tree models.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "dartNormalizeType": {
+          "description": "Type of normalization algorithm for boosted tree models using dart booster.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "DART_NORMALIZE_TYPE_UNSPECIFIED",
+            "TREE",
+            "FOREST"
+          ],
+          "enumDescriptions": [
+            "Unspecified dart normalize type.",
+            "New trees have the same weight of each of dropped trees.",
+            "New trees have the same weight of sum of dropped trees."
+          ],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -8446,6 +9659,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "decomposeTimeSeries": {
+          "description": "If true, perform decompose time series and save the results.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "distanceType": {
           "description": "Distance type for clustering models.",
           "type": "string",
@@ -8476,6 +9699,16 @@
         },
         "earlyStop": {
           "description": "Whether to stop early when the loss doesn't improve significantly any more (compared to min_relative_progress). Used only for iterative training algorithms.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "enableGlobalExplain": {
+          "description": "If true, enable global explanation during training.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -8680,6 +9913,60 @@
           "additionalProperties": null,
           "items": null
         },
+        "hparamTuningObjectives": {
+          "description": "The target evaluation metrics to optimize the hyperparameters for.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [
+              "HPARAM_TUNING_OBJECTIVE_UNSPECIFIED",
+              "MEAN_ABSOLUTE_ERROR",
+              "MEAN_SQUARED_ERROR",
+              "MEAN_SQUARED_LOG_ERROR",
+              "MEDIAN_ABSOLUTE_ERROR",
+              "R_SQUARED",
+              "EXPLAINED_VARIANCE",
+              "PRECISION",
+              "RECALL",
+              "ACCURACY",
+              "F1_SCORE",
+              "LOG_LOSS",
+              "ROC_AUC",
+              "DAVIES_BOULDIN_INDEX",
+              "MEAN_AVERAGE_PRECISION",
+              "NORMALIZED_DISCOUNTED_CUMULATIVE_GAIN",
+              "AVERAGE_RANK"
+            ],
+            "enumDescriptions": [
+              "Unspecified evaluation metric.",
+              "Mean absolute error. mean_absolute_error = AVG(ABS(label - predicted))",
+              "Mean squared error. mean_squared_error = AVG(POW(label - predicted, 2))",
+              "Mean squared log error. mean_squared_log_error = AVG(POW(LN(1 + label) - LN(1 + predicted), 2))",
+              "Mean absolute error. median_absolute_error = APPROX_QUANTILES(absolute_error, 2)[OFFSET(1)]",
+              "R^2 score. This corresponds to r2_score in ML.EVALUATE. r_squared = 1 - SUM(squared_error)/(COUNT(label)*VAR_POP(label))",
+              "Explained variance. explained_variance = 1 - VAR_POP(label_error)/VAR_POP(label)",
+              "Precision is the fraction of actual positive predictions that had positive actual labels. For multiclass this is a macro-averaged metric treating each class as a binary classifier.",
+              "Recall is the fraction of actual positive labels that were given a positive prediction. For multiclass this is a macro-averaged metric.",
+              "Accuracy is the fraction of predictions given the correct label. For multiclass this is a globally micro-averaged metric.",
+              "The F1 score is an average of recall and precision. For multiclass this is a macro-averaged metric.",
+              "Logorithmic Loss. For multiclass this is a macro-averaged metric.",
+              "Area Under an ROC Curve. For multiclass this is a macro-averaged metric.",
+              "Davies-Bouldin Index.",
+              "Mean Average Precision.",
+              "Normalized Discounted Cumulative Gain.",
+              "Average Rank."
+            ],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
         "includeDrift": {
           "description": "Include drift when fitting an ARIMA model.",
           "type": "boolean",
@@ -8717,6 +10004,16 @@
             "additionalProperties": null,
             "items": null
           }
+        },
+        "integratedGradientsNumSteps": {
+          "description": "Number of integral steps for the integrated gradients explain method.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "itemColumn": {
           "description": "Item column specified for matrix factorization models.",
@@ -8853,6 +10150,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "maxParallelTrials": {
+          "description": "Maximum number of trials to run in parallel.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "maxTreeDepth": {
           "description": "Maximum depth of a tree for boosted tree models.",
           "type": "string",
@@ -8877,6 +10184,16 @@
           "description": "Minimum split loss for boosted tree models.",
           "type": "number",
           "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "minTreeChildWeight": {
+          "description": "Minimum sum of instance weight needed in a child for boosted tree models.",
+          "type": "string",
+          "format": "int64",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -8917,6 +10234,26 @@
           "additionalProperties": null,
           "items": null
         },
+        "numParallelTree": {
+          "description": "Number of parallel trees constructed during each iteration for boosted tree models.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "numTrials": {
+          "description": "Number of trials to run this hyperparameter tuning job.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "optimizationStrategy": {
           "description": "Optimization strategy for training linear regression models.",
           "type": "string",
@@ -8939,6 +10276,16 @@
           "description": "Whether to preserve the input structs in output feature names. Suppose there is a struct A with field b. When false (default), the output feature name is A_b. When true, the output feature name is A.b.",
           "type": "boolean",
           "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "sampledShapleyNumPaths": {
+          "description": "Number of paths for the sampled shapley explain method.",
+          "type": "string",
+          "format": "int64",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -8975,12 +10322,52 @@
           "additionalProperties": null,
           "items": null
         },
+        "timeSeriesIdColumns": {
+          "description": "The time series id columns that were used during ARIMA model training.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
         "timeSeriesTimestampColumn": {
           "description": "Column to be designated as time series timestamp for ARIMA model.",
           "type": "string",
           "format": null,
           "enum": [],
           "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "treeMethod": {
+          "description": "Tree construction algorithm for boosted tree models.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "TREE_METHOD_UNSPECIFIED",
+            "AUTO",
+            "EXACT",
+            "APPROX",
+            "HIST"
+          ],
+          "enumDescriptions": [
+            "Unspecified tree method.",
+            "Use heuristic to choose the fastest method.",
+            "Exact greedy algorithm.",
+            "Approximate greedy algorithm using quantile sketch and gradient histogram.",
+            "Fast histogram optimized approximate greedy algorithm."
+          ],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -9027,16 +10414,8 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
-        "dataSplitResult": {
-          "description": "Data split result of the training run. Only set when the input data is actually split.",
-          "$ref": "DataSplitResult"
-        },
-        "evaluationMetrics": {
-          "description": "The evaluation metrics over training/eval data that were computed at the end of training.",
-          "$ref": "EvaluationMetrics"
-        },
-        "globalExplanations": {
-          "description": "Global explanations for important features of the model. For multi-class models, there is one entry for each label class. For other models, there is only one entry in the list.",
+        "classLevelGlobalExplanations": {
+          "description": "Global explanation contains the explanation of top features on the class level. Applies to classification models only.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -9046,6 +10425,18 @@
           "items": {
             "$ref": "GlobalExplanation"
           }
+        },
+        "dataSplitResult": {
+          "description": "Data split result of the training run. Only set when the input data is actually split.",
+          "$ref": "DataSplitResult"
+        },
+        "evaluationMetrics": {
+          "description": "The evaluation metrics over training/eval data that were computed at the end of training.",
+          "$ref": "EvaluationMetrics"
+        },
+        "modelLevelGlobalExplanation": {
+          "description": "Global explanation contains the explanation of top features on the model level. Applies to both regression and classification models.",
+          "$ref": "GlobalExplanation"
         },
         "results": {
           "description": "Output of each iteration run, results.size() <= max_iterations.",
@@ -9072,6 +10463,26 @@
         "trainingOptions": {
           "description": "Options that were used for this training run, includes user specified and default options that were used.",
           "$ref": "TrainingOptions"
+        },
+        "vertexAiModelId": {
+          "description": "The model id in Vertex AI Model Registry for this training run",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "vertexAiModelVersion": {
+          "description": "The model version in Vertex AI Model Registry for this training run",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -9142,6 +10553,16 @@
         "query": {
           "description": "[Required] A query that BigQuery executes when the view is referenced.",
           "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "useExplicitColumnNames": {
+          "description": "True if the column names are explicitly specified. For example by using the 'CREATE VIEW v(c1, c2) AS ...' syntax. Can only be set using BigQuery's standard SQL: https://cloud.google.com/bigquery/sql-reference/",
+          "type": "boolean",
           "format": null,
           "enum": [],
           "enumDescriptions": [],
@@ -9290,7 +10711,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -9426,7 +10846,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -9618,6 +11037,71 @@
           "supportsMediaUpload": false,
           "mediaUpload": null
         },
+        "delete": {
+          "id": "bigquery.jobs.delete",
+          "path": "projects/{+projectId}/jobs/{+jobId}/delete",
+          "httpMethod": "DELETE",
+          "description": "Requests the deletion of the metadata of a job. This call returns when the job's metadata is deleted.",
+          "parameters": {
+            "jobId": {
+              "description": "Required. Job ID of the job for which metadata is to be deleted. If this is a parent job which has child jobs, the metadata from all child jobs will be deleted as well. Direct deletion of the metadata of child jobs is not allowed.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "location": {
+              "description": "The geographic location of the job. Required. See details at: https://cloud.google.com/bigquery/docs/locations#specifying_your_location.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "projectId": {
+              "description": "Required. Project ID of the job for which metadata is to be deleted.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "projectId",
+            "jobId"
+          ],
+          "request": null,
+          "response": null,
+          "scopes": [
+            "https://www.googleapis.com/auth/bigquery",
+            "https://www.googleapis.com/auth/cloud-platform"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
         "get": {
           "id": "bigquery.jobs.get",
           "path": "projects/{projectId}/jobs/{jobId}",
@@ -9677,7 +11161,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -9802,7 +11285,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -10026,7 +11508,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -10068,7 +11549,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -10209,7 +11689,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -10223,7 +11702,7 @@
           "id": "bigquery.models.list",
           "path": "projects/{+projectId}/datasets/{+datasetId}/models",
           "httpMethod": "GET",
-          "description": "Lists all models in the specified dataset. Requires the READER dataset role.",
+          "description": "Lists all models in the specified dataset. Requires the READER dataset role. After retrieving the list of models, you can get information about a particular model by calling the models.get method.",
           "parameters": {
             "datasetId": {
               "description": "Required. Dataset ID of the models to list.",
@@ -10292,7 +11771,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -10407,7 +11885,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -10459,7 +11936,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -10614,7 +12090,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -10780,7 +12255,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -10897,7 +12371,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -10995,7 +12468,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -11077,7 +12549,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -11279,7 +12750,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -11434,7 +12904,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -11476,7 +12945,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -11614,7 +13082,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -11630,6 +13097,20 @@
           "httpMethod": "PATCH",
           "description": "Updates information in an existing table. The update method replaces the entire table resource, whereas the patch method only replaces fields that are provided in the submitted table resource. This method supports patch semantics.",
           "parameters": {
+            "autodetect_schema": {
+              "description": "When true will autodetect schema, else will keep original schema",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "boolean",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
             "datasetId": {
               "description": "Dataset ID of the table to update",
               "default": null,
@@ -11766,7 +13247,6 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/bigquery",
-            "https://www.googleapis.com/auth/bigquery.readonly",
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only"
           ],
@@ -11782,6 +13262,20 @@
           "httpMethod": "PUT",
           "description": "Updates information in an existing table. The update method replaces the entire table resource, whereas the patch method only replaces fields that are provided in the submitted table resource.",
           "parameters": {
+            "autodetect_schema": {
+              "description": "When true will autodetect schema, else will keep original schema",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "boolean",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
             "datasetId": {
               "description": "Dataset ID of the table to update",
               "default": null,

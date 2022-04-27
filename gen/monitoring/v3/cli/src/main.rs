@@ -15,8 +15,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("monitoring3")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210316")
-            .about("Manages your Cloud Monitoring data and configurations. Most projects must be associated with a Workspace, with a few exceptions as noted on the individual method pages. The table entries below are presented in alphabetical order, not in order of common use. For explanations of the concepts found in the table entries, read the Cloud Monitoring documentation.")
+            .version("0.1.0-20220418")
+            .about("Manages your Cloud Monitoring data and configurations.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
                 .long("scope")
@@ -77,18 +77,16 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
         {
-            let mcmd = SubCommand::with_name("list").about(
-                "Lists time series that match a filter. This method does not require a Workspace.",
-            );
+            let mcmd =
+                SubCommand::with_name("list").about("Lists time series that match a filter.");
             time_series1 = time_series1.subcommand(mcmd);
         }
         let mut time_series1 = SubCommand::with_name("time_series")
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
         {
-            let mcmd = SubCommand::with_name("list").about(
-                "Lists time series that match a filter. This method does not require a Workspace.",
-            );
+            let mcmd =
+                SubCommand::with_name("list").about("Lists time series that match a filter.");
             time_series1 = time_series1.subcommand(mcmd);
         }
         let mut alert_policies1 = SubCommand::with_name("alert_policies")
@@ -151,7 +149,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get and list");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a new metric descriptor. User-created metric descriptors define custom metrics (https://cloud.google.com/monitoring/custom-metrics).");
+            let mcmd = SubCommand::with_name("create").about("Creates a new metric descriptor. The creation is executed asynchronously and callers may check the returned operation to track its progress. User-created metric descriptors define custom metrics (https://cloud.google.com/monitoring/custom-metrics).");
             metric_descriptors1 = metric_descriptors1.subcommand(mcmd);
         }
         {
@@ -159,13 +157,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             metric_descriptors1 = metric_descriptors1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about(
-                "Gets a single metric descriptor. This method does not require a Workspace.",
-            );
+            let mcmd = SubCommand::with_name("get").about("Gets a single metric descriptor.");
             metric_descriptors1 = metric_descriptors1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists metric descriptors that match a filter. This method does not require a Workspace.");
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists metric descriptors that match a filter.");
             metric_descriptors1 = metric_descriptors1.subcommand(mcmd);
         }
         let mut monitored_resource_descriptors1 =
@@ -173,11 +170,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .setting(AppSettings::ColoredHelp)
                 .about("methods: get and list");
         {
-            let mcmd = SubCommand::with_name("get").about("Gets a single monitored resource descriptor. This method does not require a Workspace.");
+            let mcmd =
+                SubCommand::with_name("get").about("Gets a single monitored resource descriptor.");
             monitored_resource_descriptors1 = monitored_resource_descriptors1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists monitored resource descriptors that match a filter. This method does not require a Workspace.");
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists monitored resource descriptors that match a filter.");
             monitored_resource_descriptors1 = monitored_resource_descriptors1.subcommand(mcmd);
         }
         let mut notification_channel_descriptors1 =
@@ -230,19 +229,23 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut time_series1 = SubCommand::with_name("time_series")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, list and query");
+            .about("methods: create, create_service, list and query");
         {
             let mcmd = SubCommand::with_name("create").about("Creates or adds data to one or more time series. The response is empty if all time series in the request were written. If any time series could not be written, a corresponding failure message is included in the error response.");
             time_series1 = time_series1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about(
-                "Lists time series that match a filter. This method does not require a Workspace.",
-            );
+            let mcmd = SubCommand::with_name("create_service").about("Creates or adds data to one or more service time series. A service time series is a time series for a metric from a Google Cloud service. The response is empty if all time series in the request were written. If any time series could not be written, a corresponding failure message is included in the error response. This endpoint rejects writes to user-defined metrics. This method is only for use by Google Cloud services. Use projects.timeSeries.create instead.");
             time_series1 = time_series1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("query").about("Queries time series using Monitoring Query Language. This method does not require a Workspace.");
+            let mcmd =
+                SubCommand::with_name("list").about("Lists time series that match a filter.");
+            time_series1 = time_series1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("query")
+                .about("Queries time series using Monitoring Query Language.");
             time_series1 = time_series1.subcommand(mcmd);
         }
         let mut uptime_check_configs1 = SubCommand::with_name("uptime_check_configs")

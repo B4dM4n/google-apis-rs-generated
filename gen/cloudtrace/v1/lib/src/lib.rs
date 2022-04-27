@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [*patchTraces*](resources/projects/struct.PatchTracesRequestBuilder.html)\n      * [traces](resources/projects/traces/struct.TracesActions.html)\n        * [*get*](resources/projects/traces/struct.GetRequestBuilder.html), [*list*](resources/projects/traces/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
     #[doc = "Write Trace data for a project or application\n\n`https://www.googleapis.com/auth/trace.append`"]
     pub const TRACE_APPEND: &str = "https://www.googleapis.com/auth/trace.append";
@@ -800,7 +800,7 @@ pub mod resources {
                         trace_id: trace_id.into(),
                     }
                 }
-                #[doc = "Returns of a list of traces that match the specified filter conditions."]
+                #[doc = "Returns a list of traces that match the specified filter conditions."]
                 pub fn list(&self, project_id: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,

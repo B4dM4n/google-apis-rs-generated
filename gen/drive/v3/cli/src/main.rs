@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("drive3")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210315")
+            .version("0.1.0-20220417")
             .about("Manages files in Drive including uploading, downloading, searching, detecting changes, and updating sharing permissions.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -38,7 +38,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: get");
         {
             let mcmd = SubCommand::with_name("get").about(
-                "Gets information about the user, the user\'s Drive, and system capabilities.",
+                "Gets information about the user, the user's Drive, and system capabilities.",
             );
             about0 = about0.subcommand(mcmd);
         }
@@ -83,7 +83,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             comments0 = comments0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists a file\'s comments.");
+            let mcmd = SubCommand::with_name("list").about("Lists a file's comments.");
             comments0 = comments0.subcommand(mcmd);
         }
         {
@@ -103,7 +103,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             drives0 = drives0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Gets a shared drive\'s metadata by ID.");
+            let mcmd = SubCommand::with_name("get").about("Gets a shared drive's metadata by ID.");
             drives0 = drives0.subcommand(mcmd);
         }
         {
@@ -112,7 +112,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             drives0 = drives0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists the user\'s shared drives.");
+            let mcmd = SubCommand::with_name("list").about("Lists the user's shared drives.");
             drives0 = drives0.subcommand(mcmd);
         }
         {
@@ -142,11 +142,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("empty_trash")
-                .about("Permanently deletes all of the user\'s trashed files.");
+                .about("Permanently deletes all of the user's trashed files.");
             files0 = files0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("export").about("Exports a Google Doc to the requested MIME type and returns the exported content. Please note that the exported content is limited to 10MB.");
+            let mcmd = SubCommand::with_name("export").about("Exports a Google Workspace document to the requested MIME type and returns exported byte content. Note that the exported content is limited to 10MB.");
             files0 = files0.subcommand(mcmd);
         }
         {
@@ -157,7 +157,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd =
-                SubCommand::with_name("get").about("Gets a file\'s metadata or content by ID.");
+                SubCommand::with_name("get").about("Gets a file's metadata or content by ID.");
             files0 = files0.subcommand(mcmd);
         }
         {
@@ -165,13 +165,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             files0 = files0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update").about(
-                "Updates a file\'s metadata and/or content. This method supports patch semantics.",
-            );
+            let mcmd = SubCommand::with_name("update").about("Updates a file's metadata and/or content. When calling this method, only populate fields in the request that you want to modify. When updating fields, some fields might change automatically, such as modifiedDate. This method supports patch semantics.");
             files0 = files0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("watch").about("Subscribes to changes to a file");
+            let mcmd = SubCommand::with_name("watch").about("Subscribes to changes to a file. While you can establish a channel for changes to a file on a shared drive, a change to a shared drive file won't create a notification.");
             files0 = files0.subcommand(mcmd);
         }
         let mut permissions0 = SubCommand::with_name("permissions")
@@ -192,7 +190,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("list")
-                .about("Lists a file\'s or shared drive\'s permissions.");
+                .about("Lists a file's or shared drive's permissions.");
             permissions0 = permissions0.subcommand(mcmd);
         }
         {
@@ -216,7 +214,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             replies0 = replies0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists a comment\'s replies.");
+            let mcmd = SubCommand::with_name("list").about("Lists a comment's replies.");
             replies0 = replies0.subcommand(mcmd);
         }
         {
@@ -228,16 +226,16 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete, get, list and update");
         {
-            let mcmd = SubCommand::with_name("delete").about("Permanently deletes a file version. You can only delete revisions for files with binary content in Google Drive, like images or videos. Revisions for other files, like Google Docs or Sheets, and the last remaining file version can\'t be deleted.");
+            let mcmd = SubCommand::with_name("delete").about("Permanently deletes a file version. You can only delete revisions for files with binary content in Google Drive, like images or videos. Revisions for other files, like Google Docs or Sheets, and the last remaining file version can't be deleted.");
             revisions0 = revisions0.subcommand(mcmd);
         }
         {
             let mcmd =
-                SubCommand::with_name("get").about("Gets a revision\'s metadata or content by ID.");
+                SubCommand::with_name("get").about("Gets a revision's metadata or content by ID.");
             revisions0 = revisions0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists a file\'s revisions.");
+            let mcmd = SubCommand::with_name("list").about("Lists a file's revisions.");
             revisions0 = revisions0.subcommand(mcmd);
         }
         {

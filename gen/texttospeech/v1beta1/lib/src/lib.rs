@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [text](resources/text/struct.TextActions.html)\n      * [*synthesize*](resources/text/struct.SynthesizeRequestBuilder.html)\n    * [voices](resources/voices/struct.VoicesActions.html)\n      * [*list*](resources/voices/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -169,6 +169,126 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct CustomVoiceParams {
+        #[doc = "Required. The name of the AutoML model that synthesizes the custom voice."]
+        #[serde(
+            rename = "model",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub model: ::std::option::Option<String>,
+        #[doc = "Optional. The usage of the synthesized audio to be reported."]
+        #[serde(
+            rename = "reportedUsage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reported_usage: ::std::option::Option<crate::schemas::CustomVoiceParamsReportedUsage>,
+    }
+    impl ::google_field_selector::FieldSelector for CustomVoiceParams {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CustomVoiceParams {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum CustomVoiceParamsReportedUsage {
+        #[doc = "For scenarios where the synthesized audio is downloadable and can be reused. For example, the synthesized audio is downloaded, stored in customer service system and played repeatedly."]
+        Offline,
+        #[doc = "For scenarios where the synthesized audio is not downloadable and can only be used once. For example, real-time request in IVR system."]
+        Realtime,
+        #[doc = "Request with reported usage unspecified will be rejected."]
+        ReportedUsageUnspecified,
+    }
+    impl CustomVoiceParamsReportedUsage {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                CustomVoiceParamsReportedUsage::Offline => "OFFLINE",
+                CustomVoiceParamsReportedUsage::Realtime => "REALTIME",
+                CustomVoiceParamsReportedUsage::ReportedUsageUnspecified => {
+                    "REPORTED_USAGE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for CustomVoiceParamsReportedUsage {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for CustomVoiceParamsReportedUsage {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<CustomVoiceParamsReportedUsage, ()> {
+            Ok(match s {
+                "OFFLINE" => CustomVoiceParamsReportedUsage::Offline,
+                "REALTIME" => CustomVoiceParamsReportedUsage::Realtime,
+                "REPORTED_USAGE_UNSPECIFIED" => {
+                    CustomVoiceParamsReportedUsage::ReportedUsageUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for CustomVoiceParamsReportedUsage {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for CustomVoiceParamsReportedUsage {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for CustomVoiceParamsReportedUsage {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "OFFLINE" => CustomVoiceParamsReportedUsage::Offline,
+                "REALTIME" => CustomVoiceParamsReportedUsage::Realtime,
+                "REPORTED_USAGE_UNSPECIFIED" => {
+                    CustomVoiceParamsReportedUsage::ReportedUsageUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for CustomVoiceParamsReportedUsage {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CustomVoiceParamsReportedUsage {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ListVoicesResponse {
         #[doc = "The list of voices."]
         #[serde(
@@ -273,7 +393,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum SynthesizeSpeechRequestEnableTimePointingItems {
-        #[doc = "Timepoint information of tags in SSML input will be returned."]
+        #[doc = "Timepoint information of `` tags in SSML input will be returned."]
         SsmlMark,
         #[doc = "Not specified. No timepoint information will be returned."]
         TimepointTypeUnspecified,
@@ -368,7 +488,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audio_content: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "A link between a position in the original request input and a corresponding time in the output audio. It's only supported via of SSML input."]
+        #[doc = "A link between a position in the original request input and a corresponding time in the output audio. It's only supported via `` of SSML input."]
         #[serde(
             rename = "timepoints",
             default,
@@ -390,7 +510,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Timepoint {
-        #[doc = "Timepoint name as received from the client within tag."]
+        #[doc = "Timepoint name as received from the client within `` tag."]
         #[serde(
             rename = "markName",
             default,
@@ -561,6 +681,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct VoiceSelectionParams {
+        #[doc = "The configuration for a custom voice. If [CustomVoiceParams.model] is set, the service will choose the custom voice matching the specified configuration."]
+        #[serde(
+            rename = "customVoice",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub custom_voice: ::std::option::Option<crate::schemas::CustomVoiceParams>,
         #[doc = "Required. The language (and potentially also the region) of the voice expressed as a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag, e.g. \"en-US\". This should not include a script tag (e.g. use \"cmn-cn\" rather than \"cmn-Hant-cn\"), because the script will be inferred from the input provided in the SynthesisInput. The TTS service will use this parameter to help choose an appropriate voice. Note that the TTS service may choose a voice with a slightly different language code than the one selected; it may substitute a different region (e.g. using en-US rather than en-CA if there isn't a Canadian voice available), or even a different language, e.g. using \"nb\" (Norwegian Bokmal) instead of \"no\" (Norwegian)\"."]
         #[serde(
             rename = "languageCode",
@@ -1108,7 +1235,7 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "Optional. Recommended. [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If not specified, the API will return all supported voices. If specified, the ListVoices call will only return voices that can be used to synthesize this language_code. E.g. when specifying \"en-NZ\", you will get supported \"en-NZ\" voices; when specifying \"no\", you will get supported \"no-*\" (Norwegian) and \"nb-*\" (Norwegian Bokmal) voices; specifying \"zh\" will also get supported \"cmn-*\" voices; specifying \"zh-hk\" will also get supported \"yue-hk\" voices."]
+            #[doc = "Optional. Recommended. [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If not specified, the API will return all supported voices. If specified, the ListVoices call will only return voices that can be used to synthesize this language_code. For example, if you specify `\"en-NZ\"`, all `\"en-NZ\"` voices will be returned. If you specify `\"no\"`, both `\"no-\\*\"` (Norwegian) and `\"nb-\\*\"` (Norwegian Bokmal) voices will be returned."]
             pub fn language_code(mut self, value: impl Into<String>) -> Self {
                 self.language_code = Some(value.into());
                 self

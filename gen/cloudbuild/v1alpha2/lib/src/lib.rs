@@ -1,9 +1,175 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n          * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html)\n      * [worker_pools](resources/projects/worker_pools/struct.WorkerPoolsActions.html)\n        * [*create*](resources/projects/worker_pools/struct.CreateRequestBuilder.html), [*delete*](resources/projects/worker_pools/struct.DeleteRequestBuilder.html), [*get*](resources/projects/worker_pools/struct.GetRequestBuilder.html), [*list*](resources/projects/worker_pools/struct.ListRequestBuilder.html), [*patch*](resources/projects/worker_pools/struct.PatchRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ApprovalConfig {
+        #[doc = "Whether or not approval is needed. If this is set on a build, it will become pending when created, and will need to be explicitly approved to start."]
+        #[serde(
+            rename = "approvalRequired",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub approval_required: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for ApprovalConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ApprovalConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ApprovalResult {
+        #[doc = "Output only. The time when the approval decision was made."]
+        #[serde(
+            rename = "approvalTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub approval_time: ::std::option::Option<String>,
+        #[doc = "Output only. Email of the user that called the ApproveBuild API to approve or reject a build at the time that the API was called."]
+        #[serde(
+            rename = "approverAccount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub approver_account: ::std::option::Option<String>,
+        #[doc = "Optional. An optional comment for this manual approval result."]
+        #[serde(
+            rename = "comment",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub comment: ::std::option::Option<String>,
+        #[doc = "Required. The decision of this manual approval."]
+        #[serde(
+            rename = "decision",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub decision: ::std::option::Option<crate::schemas::ApprovalResultDecision>,
+        #[doc = "Optional. An optional URL tied to this manual approval result. This field is essentially the same as comment, except that it will be rendered by the UI differently. An example use case is a link to an external job that approved this Build."]
+        #[serde(
+            rename = "url",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub url: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ApprovalResult {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ApprovalResult {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ApprovalResultDecision {
+        #[doc = "Build is approved."]
+        Approved,
+        #[doc = "Default enum type. This should not be used."]
+        DecisionUnspecified,
+        #[doc = "Build is rejected."]
+        Rejected,
+    }
+    impl ApprovalResultDecision {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ApprovalResultDecision::Approved => "APPROVED",
+                ApprovalResultDecision::DecisionUnspecified => "DECISION_UNSPECIFIED",
+                ApprovalResultDecision::Rejected => "REJECTED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ApprovalResultDecision {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ApprovalResultDecision {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ApprovalResultDecision, ()> {
+            Ok(match s {
+                "APPROVED" => ApprovalResultDecision::Approved,
+                "DECISION_UNSPECIFIED" => ApprovalResultDecision::DecisionUnspecified,
+                "REJECTED" => ApprovalResultDecision::Rejected,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ApprovalResultDecision {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ApprovalResultDecision {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ApprovalResultDecision {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "APPROVED" => ApprovalResultDecision::Approved,
+                "DECISION_UNSPECIFIED" => ApprovalResultDecision::DecisionUnspecified,
+                "REJECTED" => ApprovalResultDecision::Rejected,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ApprovalResultDecision {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ApprovalResultDecision {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -125,6 +291,159 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct BatchCreateBitbucketServerConnectedRepositoriesResponse {
+        #[doc = "The connected Bitbucket Server repositories."]
+        #[serde(
+            rename = "bitbucketServerConnectedRepositories",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bitbucket_server_connected_repositories:
+            ::std::option::Option<Vec<crate::schemas::BitbucketServerConnectedRepository>>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for BatchCreateBitbucketServerConnectedRepositoriesResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for BatchCreateBitbucketServerConnectedRepositoriesResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BatchCreateBitbucketServerConnectedRepositoriesResponseMetadata {
+        #[doc = "Time the operation was completed."]
+        #[serde(
+            rename = "completeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub complete_time: ::std::option::Option<String>,
+        #[doc = "The name of the `BitbucketServerConfig` that added connected repositories. Format: `projects/{project}/locations/{location}/bitbucketServerConfigs/{config}`"]
+        #[serde(
+            rename = "config",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub config: ::std::option::Option<String>,
+        #[doc = "Time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for BatchCreateBitbucketServerConnectedRepositoriesResponseMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for BatchCreateBitbucketServerConnectedRepositoriesResponseMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct BitbucketServerConnectedRepository {
+        #[doc = "The name of the `BitbucketServerConfig` that added connected repository. Format: `projects/{project}/locations/{location}/bitbucketServerConfigs/{config}`"]
+        #[serde(
+            rename = "parent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub parent: ::std::option::Option<String>,
+        #[doc = "The Bitbucket Server repositories to connect."]
+        #[serde(
+            rename = "repo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub repo: ::std::option::Option<crate::schemas::BitbucketServerRepositoryId>,
+        #[doc = "Output only. The status of the repo connection request."]
+        #[serde(
+            rename = "status",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub status: ::std::option::Option<crate::schemas::Status>,
+    }
+    impl ::google_field_selector::FieldSelector for BitbucketServerConnectedRepository {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BitbucketServerConnectedRepository {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BitbucketServerRepositoryId {
+        #[doc = "Required. Identifier for the project storing the repository."]
+        #[serde(
+            rename = "projectKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub project_key: ::std::option::Option<String>,
+        #[doc = "Required. Identifier for the repository."]
+        #[serde(
+            rename = "repoSlug",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub repo_slug: ::std::option::Option<String>,
+        #[doc = "Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo."]
+        #[serde(
+            rename = "webhookId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub webhook_id: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for BitbucketServerRepositoryId {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BitbucketServerRepositoryId {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -138,6 +457,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Build {
+        #[doc = "Output only. Describes this build's approval configuration, status, and result."]
+        #[serde(
+            rename = "approval",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub approval: ::std::option::Option<crate::schemas::BuildApproval>,
         #[doc = "Artifacts produced by the build that should be uploaded upon successful completion of all build steps."]
         #[serde(
             rename = "artifacts",
@@ -166,6 +492,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
+        #[doc = "Output only. Contains information about the build when status=FAILURE."]
+        #[serde(
+            rename = "failureInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub failure_info: ::std::option::Option<crate::schemas::FailureInfo>,
         #[doc = "Output only. Time at which execution of the build was finished. The difference between finish_time and start_time is the duration of the build's execution."]
         #[serde(
             rename = "finishTime",
@@ -243,7 +576,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub secrets: ::std::option::Option<Vec<crate::schemas::Secret>>,
-        #[doc = "IAM service account whose credentials will be used at build runtime. Must be of the format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. ACCOUNT can be email address or uniqueId of the service account. This field is in beta."]
+        #[doc = "IAM service account whose credentials will be used at build runtime. Must be of the format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. ACCOUNT can be email address or uniqueId of the service account. "]
         #[serde(
             rename = "serviceAccount",
             default,
@@ -313,7 +646,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub timeout: ::std::option::Option<String>,
-        #[doc = "Output only. Stores timing information for phases of the build. Valid keys are: * BUILD: time to execute all build steps * PUSH: time to push all specified images. * FETCHSOURCE: time to fetch source. If the build does not specify source or images, these keys will not be included."]
+        #[doc = "Output only. Stores timing information for phases of the build. Valid keys are: * BUILD: time to execute all build steps. * PUSH: time to push all specified images. * FETCHSOURCE: time to fetch source. * SETUPBUILD: time to set up build. If the build does not specify source or images, these keys will not be included."]
         #[serde(
             rename = "timing",
             default,
@@ -321,6 +654,13 @@ pub mod schemas {
         )]
         pub timing:
             ::std::option::Option<::std::collections::BTreeMap<String, crate::schemas::TimeSpan>>,
+        #[doc = "Output only. Non-fatal problems encountered during the execution of the build."]
+        #[serde(
+            rename = "warnings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub warnings: ::std::option::Option<Vec<crate::schemas::Warning>>,
     }
     impl ::google_field_selector::FieldSelector for Build {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -342,6 +682,8 @@ pub mod schemas {
         Failure,
         #[doc = "Build or step failed due to an internal cause."]
         InternalError,
+        #[doc = "Build has been created and is pending execution and queuing. It has not been queued."]
+        Pending,
         #[doc = "Build or step is queued; work has not yet begun."]
         Queued,
         #[doc = "Status of the build is unknown."]
@@ -360,6 +702,7 @@ pub mod schemas {
                 BuildStatus::Expired => "EXPIRED",
                 BuildStatus::Failure => "FAILURE",
                 BuildStatus::InternalError => "INTERNAL_ERROR",
+                BuildStatus::Pending => "PENDING",
                 BuildStatus::Queued => "QUEUED",
                 BuildStatus::StatusUnknown => "STATUS_UNKNOWN",
                 BuildStatus::Success => "SUCCESS",
@@ -381,6 +724,7 @@ pub mod schemas {
                 "EXPIRED" => BuildStatus::Expired,
                 "FAILURE" => BuildStatus::Failure,
                 "INTERNAL_ERROR" => BuildStatus::InternalError,
+                "PENDING" => BuildStatus::Pending,
                 "QUEUED" => BuildStatus::Queued,
                 "STATUS_UNKNOWN" => BuildStatus::StatusUnknown,
                 "SUCCESS" => BuildStatus::Success,
@@ -414,6 +758,7 @@ pub mod schemas {
                 "EXPIRED" => BuildStatus::Expired,
                 "FAILURE" => BuildStatus::Failure,
                 "INTERNAL_ERROR" => BuildStatus::InternalError,
+                "PENDING" => BuildStatus::Pending,
                 "QUEUED" => BuildStatus::Queued,
                 "STATUS_UNKNOWN" => BuildStatus::StatusUnknown,
                 "SUCCESS" => BuildStatus::Success,
@@ -434,6 +779,137 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for BuildStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BuildApproval {
+        #[doc = "Output only. Configuration for manual approval of this build."]
+        #[serde(
+            rename = "config",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub config: ::std::option::Option<crate::schemas::ApprovalConfig>,
+        #[doc = "Output only. Result of manual approval for this Build."]
+        #[serde(
+            rename = "result",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub result: ::std::option::Option<crate::schemas::ApprovalResult>,
+        #[doc = "Output only. The state of this build's approval."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::BuildApprovalState>,
+    }
+    impl ::google_field_selector::FieldSelector for BuildApproval {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BuildApproval {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum BuildApprovalState {
+        #[doc = "Build approval has been approved."]
+        Approved,
+        #[doc = "Build was cancelled while it was still pending approval."]
+        Cancelled,
+        #[doc = "Build approval is pending."]
+        Pending,
+        #[doc = "Build approval has been rejected."]
+        Rejected,
+        #[doc = "Default enum type. This should not be used."]
+        StateUnspecified,
+    }
+    impl BuildApprovalState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                BuildApprovalState::Approved => "APPROVED",
+                BuildApprovalState::Cancelled => "CANCELLED",
+                BuildApprovalState::Pending => "PENDING",
+                BuildApprovalState::Rejected => "REJECTED",
+                BuildApprovalState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for BuildApprovalState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for BuildApprovalState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<BuildApprovalState, ()> {
+            Ok(match s {
+                "APPROVED" => BuildApprovalState::Approved,
+                "CANCELLED" => BuildApprovalState::Cancelled,
+                "PENDING" => BuildApprovalState::Pending,
+                "REJECTED" => BuildApprovalState::Rejected,
+                "STATE_UNSPECIFIED" => BuildApprovalState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for BuildApprovalState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for BuildApprovalState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for BuildApprovalState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "APPROVED" => BuildApprovalState::Approved,
+                "CANCELLED" => BuildApprovalState::Cancelled,
+                "PENDING" => BuildApprovalState::Pending,
+                "REJECTED" => BuildApprovalState::Rejected,
+                "STATE_UNSPECIFIED" => BuildApprovalState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for BuildApprovalState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BuildApprovalState {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -526,6 +1002,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub machine_type: ::std::option::Option<crate::schemas::BuildOptionsMachineType>,
+        #[doc = "Optional. Specification for execution on a `WorkerPool`. See [running builds in a private pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool) for more information."]
+        #[serde(
+            rename = "pool",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pool: ::std::option::Option<crate::schemas::PoolOption>,
         #[doc = "Requested verifiability options."]
         #[serde(
             rename = "requestedVerifyOption",
@@ -564,7 +1047,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub volumes: ::std::option::Option<Vec<crate::schemas::Volume>>,
-        #[doc = "Option to specify a `WorkerPool` for the build. Format: projects/{project}/locations/{location}/workerPools/{workerPool} This field is in beta and is available only to restricted users."]
+        #[doc = "This field deprecated; please use `pool.name` instead."]
         #[serde(
             rename = "workerPool",
             default,
@@ -660,11 +1143,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum BuildOptionsLogging {
-        #[doc = "Only Cloud Logging is enabled. Note that logs for both the Cloud Console UI and Cloud SDK are based on Cloud Storage logs, so neither will provide logs if this option is chosen."]
+        #[doc = "Build logs are stored in Cloud Logging. Selecting this option will not allow [logs streaming](https://cloud.google.com/sdk/gcloud/reference/builds/log)."]
         CloudLoggingOnly,
-        #[doc = "Only Cloud Storage logging is enabled."]
+        #[doc = "Build logs are stored in Cloud Storage."]
         GcsOnly,
-        #[doc = "Cloud Logging and Cloud Storage logging are enabled."]
+        #[doc = "Build logs are stored in Cloud Logging and Cloud Storage."]
         Legacy,
         #[doc = "The service determines the logging mode. The default is `LEGACY`. Do not rely on the default logging behavior as it may change in the future."]
         LoggingUnspecified,
@@ -1115,6 +1598,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pull_timing: ::std::option::Option<crate::schemas::TimeSpan>,
+        #[doc = "A shell script to be executed in the step. When script is provided, the user cannot specify the entrypoint or args."]
+        #[serde(
+            rename = "script",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub script: ::std::option::Option<String>,
         #[doc = "A list of environment variables which are encrypted using a Cloud Key Management Service crypto key. These values must be specified in the build's `Secret`."]
         #[serde(
             rename = "secretEnv",
@@ -1178,6 +1668,8 @@ pub mod schemas {
         Failure,
         #[doc = "Build or step failed due to an internal cause."]
         InternalError,
+        #[doc = "Build has been created and is pending execution and queuing. It has not been queued."]
+        Pending,
         #[doc = "Build or step is queued; work has not yet begun."]
         Queued,
         #[doc = "Status of the build is unknown."]
@@ -1196,6 +1688,7 @@ pub mod schemas {
                 BuildStepStatus::Expired => "EXPIRED",
                 BuildStepStatus::Failure => "FAILURE",
                 BuildStepStatus::InternalError => "INTERNAL_ERROR",
+                BuildStepStatus::Pending => "PENDING",
                 BuildStepStatus::Queued => "QUEUED",
                 BuildStepStatus::StatusUnknown => "STATUS_UNKNOWN",
                 BuildStepStatus::Success => "SUCCESS",
@@ -1217,6 +1710,7 @@ pub mod schemas {
                 "EXPIRED" => BuildStepStatus::Expired,
                 "FAILURE" => BuildStepStatus::Failure,
                 "INTERNAL_ERROR" => BuildStepStatus::InternalError,
+                "PENDING" => BuildStepStatus::Pending,
                 "QUEUED" => BuildStepStatus::Queued,
                 "STATUS_UNKNOWN" => BuildStepStatus::StatusUnknown,
                 "SUCCESS" => BuildStepStatus::Success,
@@ -1250,6 +1744,7 @@ pub mod schemas {
                 "EXPIRED" => BuildStepStatus::Expired,
                 "FAILURE" => BuildStepStatus::Failure,
                 "INTERNAL_ERROR" => BuildStepStatus::InternalError,
+                "PENDING" => BuildStepStatus::Pending,
                 "QUEUED" => BuildStepStatus::Queued,
                 "STATUS_UNKNOWN" => BuildStepStatus::StatusUnknown,
                 "SUCCESS" => BuildStepStatus::Success,
@@ -1351,6 +1846,366 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CreateBitbucketServerConfigOperationMetadata {
+        #[doc = "The resource name of the BitbucketServerConfig to be created. Format: `projects/{project}/locations/{location}/bitbucketServerConfigs/{id}`."]
+        #[serde(
+            rename = "bitbucketServerConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bitbucket_server_config: ::std::option::Option<String>,
+        #[doc = "Time the operation was completed."]
+        #[serde(
+            rename = "completeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub complete_time: ::std::option::Option<String>,
+        #[doc = "Time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for CreateBitbucketServerConfigOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CreateBitbucketServerConfigOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CreateGitHubEnterpriseConfigOperationMetadata {
+        #[doc = "Time the operation was completed."]
+        #[serde(
+            rename = "completeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub complete_time: ::std::option::Option<String>,
+        #[doc = "Time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "The resource name of the GitHubEnterprise to be created. Format: `projects/{project}/locations/{location}/githubEnterpriseConfigs/{id}`."]
+        #[serde(
+            rename = "githubEnterpriseConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub github_enterprise_config: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for CreateGitHubEnterpriseConfigOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CreateGitHubEnterpriseConfigOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CreateGitLabConfigOperationMetadata {
+        #[doc = "Time the operation was completed."]
+        #[serde(
+            rename = "completeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub complete_time: ::std::option::Option<String>,
+        #[doc = "Time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "The resource name of the GitLabConfig to be created. Format: `projects/{project}/locations/{location}/gitlabConfigs/{id}`."]
+        #[serde(
+            rename = "gitlabConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gitlab_config: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for CreateGitLabConfigOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CreateGitLabConfigOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CreateWorkerPoolOperationMetadata {
+        #[doc = "Time the operation was completed."]
+        #[serde(
+            rename = "completeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub complete_time: ::std::option::Option<String>,
+        #[doc = "Time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "The resource name of the `WorkerPool` to create. Format: `projects/{project}/locations/{location}/workerPools/{worker_pool}`."]
+        #[serde(
+            rename = "workerPool",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub worker_pool: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for CreateWorkerPoolOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CreateWorkerPoolOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DeleteBitbucketServerConfigOperationMetadata {
+        #[doc = "The resource name of the BitbucketServerConfig to be deleted. Format: `projects/{project}/locations/{location}/bitbucketServerConfigs/{id}`."]
+        #[serde(
+            rename = "bitbucketServerConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bitbucket_server_config: ::std::option::Option<String>,
+        #[doc = "Time the operation was completed."]
+        #[serde(
+            rename = "completeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub complete_time: ::std::option::Option<String>,
+        #[doc = "Time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for DeleteBitbucketServerConfigOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DeleteBitbucketServerConfigOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DeleteGitHubEnterpriseConfigOperationMetadata {
+        #[doc = "Time the operation was completed."]
+        #[serde(
+            rename = "completeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub complete_time: ::std::option::Option<String>,
+        #[doc = "Time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "The resource name of the GitHubEnterprise to be deleted. Format: `projects/{project}/locations/{location}/githubEnterpriseConfigs/{id}`."]
+        #[serde(
+            rename = "githubEnterpriseConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub github_enterprise_config: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for DeleteGitHubEnterpriseConfigOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DeleteGitHubEnterpriseConfigOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DeleteGitLabConfigOperationMetadata {
+        #[doc = "Time the operation was completed."]
+        #[serde(
+            rename = "completeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub complete_time: ::std::option::Option<String>,
+        #[doc = "Time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "The resource name of the GitLabConfig to be created. Format: `projects/{project}/locations/{location}/gitlabConfigs/{id}`."]
+        #[serde(
+            rename = "gitlabConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gitlab_config: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for DeleteGitLabConfigOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DeleteGitLabConfigOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DeleteWorkerPoolOperationMetadata {
+        #[doc = "Time the operation was completed."]
+        #[serde(
+            rename = "completeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub complete_time: ::std::option::Option<String>,
+        #[doc = "Time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "The resource name of the `WorkerPool` being deleted. Format: `projects/{project}/locations/{location}/workerPools/{worker_pool}`."]
+        #[serde(
+            rename = "workerPool",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub worker_pool: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for DeleteWorkerPoolOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DeleteWorkerPoolOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Copy,
         Default,
         :: serde :: Deserialize,
@@ -1363,6 +2218,140 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Empty {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct FailureInfo {
+        #[doc = "Explains the failure issue in more detail using hard-coded text."]
+        #[serde(
+            rename = "detail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub detail: ::std::option::Option<String>,
+        #[doc = "The name of the failure."]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<crate::schemas::FailureInfoType>,
+    }
+    impl ::google_field_selector::FieldSelector for FailureInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FailureInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum FailureInfoType {
+        #[doc = "Type unspecified"]
+        FailureTypeUnspecified,
+        #[doc = "The source fetching has failed."]
+        FetchSourceFailed,
+        #[doc = "Backend logging failures. Should retry."]
+        LoggingFailure,
+        #[doc = "Unable to push the image to the repository."]
+        PushFailed,
+        #[doc = "Final image not found."]
+        PushImageNotFound,
+        #[doc = "Unauthorized push of the final image."]
+        PushNotAuthorized,
+        #[doc = "A build step has failed."]
+        UserBuildStep,
+    }
+    impl FailureInfoType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                FailureInfoType::FailureTypeUnspecified => "FAILURE_TYPE_UNSPECIFIED",
+                FailureInfoType::FetchSourceFailed => "FETCH_SOURCE_FAILED",
+                FailureInfoType::LoggingFailure => "LOGGING_FAILURE",
+                FailureInfoType::PushFailed => "PUSH_FAILED",
+                FailureInfoType::PushImageNotFound => "PUSH_IMAGE_NOT_FOUND",
+                FailureInfoType::PushNotAuthorized => "PUSH_NOT_AUTHORIZED",
+                FailureInfoType::UserBuildStep => "USER_BUILD_STEP",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for FailureInfoType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for FailureInfoType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<FailureInfoType, ()> {
+            Ok(match s {
+                "FAILURE_TYPE_UNSPECIFIED" => FailureInfoType::FailureTypeUnspecified,
+                "FETCH_SOURCE_FAILED" => FailureInfoType::FetchSourceFailed,
+                "LOGGING_FAILURE" => FailureInfoType::LoggingFailure,
+                "PUSH_FAILED" => FailureInfoType::PushFailed,
+                "PUSH_IMAGE_NOT_FOUND" => FailureInfoType::PushImageNotFound,
+                "PUSH_NOT_AUTHORIZED" => FailureInfoType::PushNotAuthorized,
+                "USER_BUILD_STEP" => FailureInfoType::UserBuildStep,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for FailureInfoType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for FailureInfoType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for FailureInfoType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "FAILURE_TYPE_UNSPECIFIED" => FailureInfoType::FailureTypeUnspecified,
+                "FETCH_SOURCE_FAILED" => FailureInfoType::FetchSourceFailed,
+                "LOGGING_FAILURE" => FailureInfoType::LoggingFailure,
+                "PUSH_FAILED" => FailureInfoType::PushFailed,
+                "PUSH_IMAGE_NOT_FOUND" => FailureInfoType::PushImageNotFound,
+                "PUSH_NOT_AUTHORIZED" => FailureInfoType::PushNotAuthorized,
+                "USER_BUILD_STEP" => FailureInfoType::UserBuildStep,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for FailureInfoType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FailureInfoType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1394,6 +2383,79 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for FileHashes {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleDevtoolsCloudbuildV2OperationMetadata {
+        #[doc = "Output only. API version used to start the operation."]
+        #[serde(
+            rename = "apiVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub api_version: ::std::option::Option<String>,
+        #[doc = "Output only. The time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "Output only. The time the operation finished running."]
+        #[serde(
+            rename = "endTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub end_time: ::std::option::Option<String>,
+        #[doc = "Output only. Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
+        #[serde(
+            rename = "requestedCancellation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub requested_cancellation: ::std::option::Option<bool>,
+        #[doc = "Output only. Human-readable status of the operation, if any."]
+        #[serde(
+            rename = "statusMessage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub status_message: ::std::option::Option<String>,
+        #[doc = "Output only. Server-defined resource path for the target of the operation."]
+        #[serde(
+            rename = "target",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target: ::std::option::Option<String>,
+        #[doc = "Output only. Name of the verb executed by the operation."]
+        #[serde(
+            rename = "verb",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verb: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleDevtoolsCloudbuildV2OperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleDevtoolsCloudbuildV2OperationMetadata {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1930,6 +2992,155 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct OperationMetadata {
+        #[doc = "Output only. API version used to start the operation."]
+        #[serde(
+            rename = "apiVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub api_version: ::std::option::Option<String>,
+        #[doc = "Output only. Identifies whether the user has requested cancellation of the operation. Operations that have been cancelled successfully have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
+        #[serde(
+            rename = "cancelRequested",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cancel_requested: ::std::option::Option<bool>,
+        #[doc = "Output only. The time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "Output only. The time the operation finished running."]
+        #[serde(
+            rename = "endTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub end_time: ::std::option::Option<String>,
+        #[doc = "Output only. Human-readable status of the operation, if any."]
+        #[serde(
+            rename = "statusDetail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub status_detail: ::std::option::Option<String>,
+        #[doc = "Output only. Server-defined resource path for the target of the operation."]
+        #[serde(
+            rename = "target",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target: ::std::option::Option<String>,
+        #[doc = "Output only. Name of the verb executed by the operation."]
+        #[serde(
+            rename = "verb",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verb: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for OperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PoolOption {
+        #[doc = "The `WorkerPool` resource to execute the build on. You must have `cloudbuild.workerpools.use` on the project hosting the WorkerPool. Format projects/{project}/locations/{location}/workerPools/{workerPoolId}"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PoolOption {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PoolOption {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ProcessAppManifestCallbackOperationMetadata {
+        #[doc = "Time the operation was completed."]
+        #[serde(
+            rename = "completeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub complete_time: ::std::option::Option<String>,
+        #[doc = "Time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "The resource name of the GitHubEnterprise to be created. Format: `projects/{project}/locations/{location}/githubEnterpriseConfigs/{id}`."]
+        #[serde(
+            rename = "githubEnterpriseConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub github_enterprise_config: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ProcessAppManifestCallbackOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProcessAppManifestCallbackOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct RepoSource {
         #[doc = "Regex matching branches to build. The syntax of the regular expressions accepted is the syntax accepted by RE2 and described at https://github.com/google/re2/wiki/Syntax"]
         #[serde(
@@ -2061,6 +3272,79 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Results {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct RunWorkflowCustomOperationMetadata {
+        #[doc = "Output only. API version used to start the operation."]
+        #[serde(
+            rename = "apiVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub api_version: ::std::option::Option<String>,
+        #[doc = "Output only. The time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "Output only. The time the operation finished running."]
+        #[serde(
+            rename = "endTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub end_time: ::std::option::Option<String>,
+        #[doc = "Output only. ID of the pipeline run created by RunWorkflow."]
+        #[serde(
+            rename = "pipelineRunId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pipeline_run_id: ::std::option::Option<String>,
+        #[doc = "Output only. Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
+        #[serde(
+            rename = "requestedCancellation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub requested_cancellation: ::std::option::Option<bool>,
+        #[doc = "Output only. Server-defined resource path for the target of the operation."]
+        #[serde(
+            rename = "target",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target: ::std::option::Option<String>,
+        #[doc = "Output only. Name of the verb executed by the operation."]
+        #[serde(
+            rename = "verb",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verb: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for RunWorkflowCustomOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RunWorkflowCustomOperationMetadata {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2304,6 +3588,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub storage_source: ::std::option::Option<crate::schemas::StorageSource>,
+        #[doc = "If provided, get the source from this manifest in Google Cloud Storage. This feature is in Preview; see description [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher)."]
+        #[serde(
+            rename = "storageSourceManifest",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub storage_source_manifest: ::std::option::Option<crate::schemas::StorageSourceManifest>,
     }
     impl ::google_field_selector::FieldSelector for Source {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2350,6 +3641,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resolved_storage_source: ::std::option::Option<crate::schemas::StorageSource>,
+        #[doc = "A copy of the build's `source.storage_source_manifest`, if exists, with any revisions resolved. This feature is in Preview."]
+        #[serde(
+            rename = "resolvedStorageSourceManifest",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resolved_storage_source_manifest:
+            ::std::option::Option<crate::schemas::StorageSourceManifest>,
     }
     impl ::google_field_selector::FieldSelector for SourceProvenance {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2424,7 +3723,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub generation: ::std::option::Option<i64>,
-        #[doc = "Google Cloud Storage object containing the source. This object must be a gzipped archive file (`.tar.gz`) containing source to build."]
+        #[doc = "Google Cloud Storage object containing the source. This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`) containing source to build."]
         #[serde(
             rename = "object",
             default,
@@ -2438,6 +3737,52 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for StorageSource {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct StorageSourceManifest {
+        #[doc = "Google Cloud Storage bucket containing the source manifest (see [Bucket Name Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements))."]
+        #[serde(
+            rename = "bucket",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bucket: ::std::option::Option<String>,
+        #[doc = "Google Cloud Storage generation for the object. If the generation is omitted, the latest generation will be used."]
+        #[serde(
+            rename = "generation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub generation: ::std::option::Option<i64>,
+        #[doc = "Google Cloud Storage object containing the source manifest. This object must be a JSON file."]
+        #[serde(
+            rename = "object",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub object: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for StorageSourceManifest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for StorageSourceManifest {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2492,6 +3837,186 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct UpdateBitbucketServerConfigOperationMetadata {
+        #[doc = "The resource name of the BitbucketServerConfig to be updated. Format: `projects/{project}/locations/{location}/bitbucketServerConfigs/{id}`."]
+        #[serde(
+            rename = "bitbucketServerConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bitbucket_server_config: ::std::option::Option<String>,
+        #[doc = "Time the operation was completed."]
+        #[serde(
+            rename = "completeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub complete_time: ::std::option::Option<String>,
+        #[doc = "Time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for UpdateBitbucketServerConfigOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UpdateBitbucketServerConfigOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UpdateGitHubEnterpriseConfigOperationMetadata {
+        #[doc = "Time the operation was completed."]
+        #[serde(
+            rename = "completeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub complete_time: ::std::option::Option<String>,
+        #[doc = "Time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "The resource name of the GitHubEnterprise to be updated. Format: `projects/{project}/locations/{location}/githubEnterpriseConfigs/{id}`."]
+        #[serde(
+            rename = "githubEnterpriseConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub github_enterprise_config: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for UpdateGitHubEnterpriseConfigOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UpdateGitHubEnterpriseConfigOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UpdateGitLabConfigOperationMetadata {
+        #[doc = "Time the operation was completed."]
+        #[serde(
+            rename = "completeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub complete_time: ::std::option::Option<String>,
+        #[doc = "Time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "The resource name of the GitLabConfig to be created. Format: `projects/{project}/locations/{location}/gitlabConfigs/{id}`."]
+        #[serde(
+            rename = "gitlabConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gitlab_config: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for UpdateGitLabConfigOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UpdateGitLabConfigOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UpdateWorkerPoolOperationMetadata {
+        #[doc = "Time the operation was completed."]
+        #[serde(
+            rename = "completeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub complete_time: ::std::option::Option<String>,
+        #[doc = "Time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "The resource name of the `WorkerPool` being updated. Format: `projects/{project}/locations/{location}/workerPools/{worker_pool}`."]
+        #[serde(
+            rename = "workerPool",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub worker_pool: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for UpdateWorkerPoolOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UpdateWorkerPoolOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Volume {
         #[doc = "Name of the volume to mount. Volume names must be unique per build step and must be valid names for Docker volumes. Each named volume must be used by at least two build steps."]
         #[serde(
@@ -2514,6 +4039,125 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Volume {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Warning {
+        #[doc = "The priority for this warning."]
+        #[serde(
+            rename = "priority",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub priority: ::std::option::Option<crate::schemas::WarningPriority>,
+        #[doc = "Explanation of the warning generated."]
+        #[serde(
+            rename = "text",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub text: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Warning {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Warning {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum WarningPriority {
+        #[doc = "e.g. alerts that a feature used in the build is pending removal"]
+        Alert,
+        #[doc = "e.g. deprecation warnings and alternative feature highlights."]
+        Info,
+        #[doc = "Should not be used."]
+        PriorityUnspecified,
+        #[doc = "e.g. automated detection of possible issues with the build."]
+        Warning,
+    }
+    impl WarningPriority {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                WarningPriority::Alert => "ALERT",
+                WarningPriority::Info => "INFO",
+                WarningPriority::PriorityUnspecified => "PRIORITY_UNSPECIFIED",
+                WarningPriority::Warning => "WARNING",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for WarningPriority {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for WarningPriority {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<WarningPriority, ()> {
+            Ok(match s {
+                "ALERT" => WarningPriority::Alert,
+                "INFO" => WarningPriority::Info,
+                "PRIORITY_UNSPECIFIED" => WarningPriority::PriorityUnspecified,
+                "WARNING" => WarningPriority::Warning,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for WarningPriority {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for WarningPriority {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for WarningPriority {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ALERT" => WarningPriority::Alert,
+                "INFO" => WarningPriority::Info,
+                "PRIORITY_UNSPECIFIED" => WarningPriority::PriorityUnspecified,
+                "WARNING" => WarningPriority::Warning,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for WarningPriority {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for WarningPriority {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }

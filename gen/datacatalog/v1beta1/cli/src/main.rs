@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("datacatalog1_beta1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210316")
+            .version("0.1.0-20220415")
             .about("A fully managed and highly scalable data discovery and metadata management service. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -85,7 +85,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             entry_groups2 = entry_groups2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns the caller\'s permissions on a resource. If the resource does not exist, an empty set of permissions is returned (We don\'t return a `NOT_FOUND` error). Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced to Data Catalog. A caller is not required to have Google IAM permission to make this request.");
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns the caller's permissions on a resource. If the resource does not exist, an empty set of permissions is returned (We don't return a `NOT_FOUND` error). Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced to Data Catalog. A caller is not required to have Google IAM permission to make this request.");
             entry_groups2 = entry_groups2.subcommand(mcmd);
         }
         let mut tag_templates2 = SubCommand::with_name("tag_templates")
@@ -116,7 +116,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             tag_templates2 = tag_templates2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns the caller\'s permissions on a resource. If the resource does not exist, an empty set of permissions is returned (We don\'t return a `NOT_FOUND` error). Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced to Data Catalog. A caller is not required to have Google IAM permission to make this request.");
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns the caller's permissions on a resource. If the resource does not exist, an empty set of permissions is returned (We don't return a `NOT_FOUND` error). Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced to Data Catalog. A caller is not required to have Google IAM permission to make this request.");
             tag_templates2 = tag_templates2.subcommand(mcmd);
         }
         let mut taxonomies2 = SubCommand::with_name("taxonomies")
@@ -169,7 +169,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: create, delete, get, get_iam_policy, list, patch and test_iam_permissions");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates an entry. Only entries of \'FILESET\' type or user-specified type can be created. Users should enable the Data Catalog API in the project identified by the `parent` parameter (see [Data Catalog Resource Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information). A maximum of 100,000 entries may be created per entry group.");
+            let mcmd = SubCommand::with_name("create").about("Creates an entry. Only entries of 'FILESET' type or user-specified type can be created. Users should enable the Data Catalog API in the project identified by the `parent` parameter (see [Data Catalog Resource Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information). A maximum of 100,000 entries may be created per entry group.");
             entries3 = entries3.subcommand(mcmd);
         }
         {
@@ -193,7 +193,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             entries3 = entries3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns the caller\'s permissions on a resource. If the resource does not exist, an empty set of permissions is returned (We don\'t return a `NOT_FOUND` error). Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced to Data Catalog. A caller is not required to have Google IAM permission to make this request.");
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns the caller's permissions on a resource. If the resource does not exist, an empty set of permissions is returned (We don't return a `NOT_FOUND` error). Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced to Data Catalog. A caller is not required to have Google IAM permission to make this request.");
             entries3 = entries3.subcommand(mcmd);
         }
         let mut tags3 = SubCommand::with_name("tags")
@@ -208,7 +208,9 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             tags3 = tags3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists the tags on an Entry.");
+            let mcmd = SubCommand::with_name("list").about(
+                "Lists tags assigned to an Entry. The columns in the response are lowercased.",
+            );
             tags3 = tags3.subcommand(mcmd);
         }
         {
@@ -285,7 +287,9 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             tags4 = tags4.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists the tags on an Entry.");
+            let mcmd = SubCommand::with_name("list").about(
+                "Lists tags assigned to an Entry. The columns in the response are lowercased.",
+            );
             tags4 = tags4.subcommand(mcmd);
         }
         {

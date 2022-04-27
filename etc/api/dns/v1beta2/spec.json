@@ -7,7 +7,7 @@
   "canonicalName": "Dns",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta2",
-  "revision": "20210309",
+  "revision": "20220426",
   "title": "Cloud DNS API",
   "description": "",
   "ownerDomain": "google.com",
@@ -201,10 +201,10 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         },
         "https://www.googleapis.com/auth/cloud-platform.read-only": {
-          "description": "View your data across Google Cloud Platform services"
+          "description": "View your data across Google Cloud services and see the email address of your Google Account"
         },
         "https://www.googleapis.com/auth/ndev.clouddns.readonly": {
           "description": "View your DNS records hosted by Google Cloud DNS"
@@ -343,7 +343,7 @@
           "items": null
         },
         "nextPageToken": {
-          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your pagination token. In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. There is no way to retrieve a \"snapshot\" of collections larger than the maximum page size.",
+          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your pagination token. This lets you retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. You cannot retrieve a \"snapshot\" of collections larger than the maximum page size.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -664,6 +664,10 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "cloudLoggingConfig": {
+          "description": null,
+          "$ref": "ManagedZoneCloudLoggingConfig"
+        },
         "creationTime": {
           "description": "The time that this resource was created on the server. This is in RFC3339 text format. Output only.",
           "type": "string",
@@ -807,6 +811,38 @@
             "",
             ""
           ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ManagedZoneCloudLoggingConfig": {
+      "id": "ManagedZoneCloudLoggingConfig",
+      "description": "Cloud Logging configurations for publicly visible zones.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "enableLogging": {
+          "description": "If set, enable query logging for this ManagedZone. False by default, making logging opt-in.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "kind": {
+          "description": null,
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -988,7 +1024,7 @@
           "$ref": "ResponseHeader"
         },
         "kind": {
-          "description": null,
+          "description": "Type of resource.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -998,7 +1034,7 @@
           "items": null
         },
         "nextPageToken": {
-          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. There is no way to retrieve a consistent snapshot of a collection larger than the maximum page size.",
+          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. This lets you retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. You cannot retrieve a consistent snapshot of a collection larger than the maximum page size.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1099,6 +1135,18 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "gkeClusters": {
+          "description": "The list of Google Kubernetes Engine clusters that can see this zone.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "ManagedZonePrivateVisibilityConfigGKECluster"
+          }
+        },
         "kind": {
           "description": null,
           "type": "string",
@@ -1120,6 +1168,38 @@
           "items": {
             "$ref": "ManagedZonePrivateVisibilityConfigNetwork"
           }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ManagedZonePrivateVisibilityConfigGKECluster": {
+      "id": "ManagedZonePrivateVisibilityConfigGKECluster",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "gkeClusterName": {
+          "description": "The resource name of the cluster to bind this ManagedZone to. This should be specified in the format like: projects/*/locations/*/clusters/*. This is referenced from GKE projects.locations.clusters.get API: https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/get",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "kind": {
+          "description": null,
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -1234,7 +1314,7 @@
           "items": null
         },
         "namespaceUrl": {
-          "description": "The fully qualified URL of the namespace associated with the zone. This should be formatted like https://servicedirectory.googleapis.com/v1/projects/{project}/locations/{location}/namespaces/{namespace}",
+          "description": "The fully qualified URL of the namespace associated with the zone. Format must be https://servicedirectory.googleapis.com/v1/projects/{project}/locations/{location}/namespaces/{namespace}",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1282,7 +1362,7 @@
           }
         },
         "nextPageToken": {
-          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. There is no way to retrieve a consistent snapshot of a collection larger than the maximum page size.",
+          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. This lets you the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. You cannot retrieve a consistent snapshot of a collection larger than the maximum page size.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1444,7 +1524,7 @@
           "items": null
         },
         "nextPageToken": {
-          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. There is no way to retrieve a consistent snapshot of a collection larger than the maximum page size.",
+          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. This lets you the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. You cannot retrieve a consistent snapshot of a collection larger than the maximum page size.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1723,7 +1803,7 @@
     },
     "Project": {
       "id": "Project",
-      "description": "A project resource. The project is a top level container for resources including Cloud DNS ManagedZones. Projects can be created only in the APIs console.",
+      "description": "A project resource. The project is a top level container for resources including Cloud DNS ManagedZones. Projects can be created only in the APIs console. Next tag: 7.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1785,6 +1865,36 @@
           "additionalProperties": null,
           "items": null
         },
+        "gkeClustersPerManagedZone": {
+          "description": "Maximum allowed number of GKE clusters to which a privately scoped zone can be attached.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "gkeClustersPerResponsePolicy": {
+          "description": "Maximum allowed number of GKE clusters per response policy.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "itemsPerRoutingPolicy": {
+          "description": "Maximum allowed number of items per routing policy.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "kind": {
           "description": null,
           "type": "string",
@@ -1797,6 +1907,16 @@
         },
         "managedZones": {
           "description": "Maximum allowed number of managed zones in the project.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "managedZonesPerGkeCluster": {
+          "description": "Maximum allowed number of managed zones which can be attached to a GKE cluster.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -1827,6 +1947,16 @@
         },
         "networksPerPolicy": {
           "description": "Maximum allowed number of networks per policy.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "peeringZonesPerTargetNetwork": {
+          "description": "Maximum allowed number of consumer peering zones per target network owned by this producer project",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -1941,6 +2071,248 @@
       "additionalProperties": null,
       "items": null
     },
+    "RRSetRoutingPolicy": {
+      "id": "RRSetRoutingPolicy",
+      "description": "A RRSetRoutingPolicy represents ResourceRecordSet data that is returned dynamically with the response varying based on configured properties such as geolocation or by weighted random selection.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "geo": {
+          "description": null,
+          "$ref": "RRSetRoutingPolicyGeoPolicy"
+        },
+        "geoPolicy": {
+          "description": null,
+          "$ref": "RRSetRoutingPolicyGeoPolicy"
+        },
+        "kind": {
+          "description": null,
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "wrr": {
+          "description": null,
+          "$ref": "RRSetRoutingPolicyWrrPolicy"
+        },
+        "wrrPolicy": {
+          "description": null,
+          "$ref": "RRSetRoutingPolicyWrrPolicy"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RRSetRoutingPolicyGeoPolicy": {
+      "id": "RRSetRoutingPolicyGeoPolicy",
+      "description": "Configures a RRSetRoutingPolicy that routes based on the geo location of the querying user.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "items": {
+          "description": "The primary geo routing configuration. If there are multiple items with the same location, an error is returned instead.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "RRSetRoutingPolicyGeoPolicyGeoPolicyItem"
+          }
+        },
+        "kind": {
+          "description": null,
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RRSetRoutingPolicyGeoPolicyGeoPolicyItem": {
+      "id": "RRSetRoutingPolicyGeoPolicyGeoPolicyItem",
+      "description": "ResourceRecordSet data for one geo location.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "kind": {
+          "description": null,
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "location": {
+          "description": "The geo-location granularity is a GCP region. This location string should correspond to a GCP region. e.g. \"us-east1\", \"southamerica-east1\", \"asia-east1\", etc.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "rrdatas": {
+          "description": null,
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "signatureRrdatas": {
+          "description": "DNSSEC generated signatures for all the rrdata within this item. Note that if health checked targets are provided for DNSSEC enabled zones, there's a restriction of 1 ip per item. .",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RRSetRoutingPolicyWrrPolicy": {
+      "id": "RRSetRoutingPolicyWrrPolicy",
+      "description": "Configures a RRSetRoutingPolicy that routes in a weighted round robin fashion.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "items": {
+          "description": null,
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "RRSetRoutingPolicyWrrPolicyWrrPolicyItem"
+          }
+        },
+        "kind": {
+          "description": null,
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RRSetRoutingPolicyWrrPolicyWrrPolicyItem": {
+      "id": "RRSetRoutingPolicyWrrPolicyWrrPolicyItem",
+      "description": "A routing block which contains the routing information for one WRR item.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "kind": {
+          "description": null,
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "rrdatas": {
+          "description": null,
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "signatureRrdatas": {
+          "description": "DNSSEC generated signatures for all the rrdata within this item. Note that if health checked targets are provided for DNSSEC enabled zones, there's a restriction of 1 ip per item. .",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "weight": {
+          "description": "The weight corresponding to this subset of rrdata. When multiple WeightedRoundRobinPolicyItems are configured, the probability of returning an rrset is proportional to its weight relative to the sum of weights configured for all items. This weight should be non-negative.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "ResourceRecordSet": {
       "id": "ResourceRecordSet",
       "description": "A unit of data that is returned by the DNS servers.",
@@ -1968,6 +2340,10 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "routingPolicy": {
+          "description": "Configures dynamic query responses based on geo location of querying user or a weighted round robin based routing policy. A ResourceRecordSet should only have either rrdata (static) or routing_policy (dynamic). An error is returned otherwise.",
+          "$ref": "RRSetRoutingPolicy"
         },
         "rrdatas": {
           "description": "As defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1) -- see examples.",
@@ -2112,7 +2488,7 @@
           "$ref": "ResponseHeader"
         },
         "nextPageToken": {
-          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. There is no way to retrieve a consistent snapshot of a collection larger than the maximum page size.",
+          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. This lets you the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. You cannot retrieve a consistent snapshot of a collection larger than the maximum page size.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2195,6 +2571,18 @@
           "additionalProperties": null,
           "items": null
         },
+        "gkeClusters": {
+          "description": "The list of Google Kubernetes Engine clusters to which this response policy is applied.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "ResponsePolicyGKECluster"
+          }
+        },
         "id": {
           "description": "Unique identifier for the resource; defined by the server (output only).",
           "type": "string",
@@ -2229,6 +2617,38 @@
         },
         "responsePolicyName": {
           "description": "User assigned name for this Response Policy.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ResponsePolicyGKECluster": {
+      "id": "ResponsePolicyGKECluster",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "gkeClusterName": {
+          "description": "The resource name of the cluster to bind this response policy to. This should be specified in the format like: projects/*/locations/*/clusters/*. This is referenced from GKE projects.locations.clusters.get API: https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/get",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "kind": {
+          "description": null,
           "type": "string",
           "format": null,
           "enum": [],
@@ -2372,7 +2792,7 @@
           "$ref": "ResponseHeader"
         },
         "nextPageToken": {
-          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. There is no way to retrieve a consistent snapshot of a collection larger than the maximum page size.",
+          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. This lets you the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. You cannot retrieve a consistent snapshot of a collection larger than the maximum page size.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3917,386 +4337,13 @@
       }
     },
     "projects": {
-      "resources": {
-        "managedZones": {
-          "resources": {
-            "rrsets": {
-              "resources": {},
-              "methods": {
-                "create": {
-                  "id": "dns.projects.managedZones.rrsets.create",
-                  "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets",
-                  "httpMethod": "POST",
-                  "description": "Creates a new ResourceRecordSet.",
-                  "parameters": {
-                    "clientOperationId": {
-                      "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-                      "default": null,
-                      "location": "query",
-                      "required": false,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    },
-                    "managedZone": {
-                      "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
-                      "default": null,
-                      "location": "path",
-                      "required": true,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    },
-                    "project": {
-                      "description": "Identifies the project addressed by this request.",
-                      "default": null,
-                      "location": "path",
-                      "required": true,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    }
-                  },
-                  "parameterOrder": [
-                    "project",
-                    "managedZone"
-                  ],
-                  "request": {
-                    "$ref": "ResourceRecordSet"
-                  },
-                  "response": {
-                    "$ref": "ResourceRecordSet"
-                  },
-                  "scopes": [
-                    "https://www.googleapis.com/auth/cloud-platform",
-                    "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-                  ],
-                  "supportsMediaDownload": false,
-                  "useMediaDownloadService": false,
-                  "supportsSubscription": false,
-                  "supportsMediaUpload": false,
-                  "mediaUpload": null
-                },
-                "delete": {
-                  "id": "dns.projects.managedZones.rrsets.delete",
-                  "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets/{name}/{type}",
-                  "httpMethod": "DELETE",
-                  "description": "Deletes a previously created ResourceRecordSet.",
-                  "parameters": {
-                    "clientOperationId": {
-                      "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-                      "default": null,
-                      "location": "query",
-                      "required": false,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    },
-                    "managedZone": {
-                      "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
-                      "default": null,
-                      "location": "path",
-                      "required": true,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    },
-                    "name": {
-                      "description": "Fully qualified domain name.",
-                      "default": null,
-                      "location": "path",
-                      "required": true,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    },
-                    "project": {
-                      "description": "Identifies the project addressed by this request.",
-                      "default": null,
-                      "location": "path",
-                      "required": true,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    },
-                    "type": {
-                      "description": "RRSet type.",
-                      "default": null,
-                      "location": "path",
-                      "required": true,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    }
-                  },
-                  "parameterOrder": [
-                    "project",
-                    "managedZone",
-                    "name",
-                    "type"
-                  ],
-                  "request": null,
-                  "response": null,
-                  "scopes": [
-                    "https://www.googleapis.com/auth/cloud-platform",
-                    "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-                  ],
-                  "supportsMediaDownload": false,
-                  "useMediaDownloadService": false,
-                  "supportsSubscription": false,
-                  "supportsMediaUpload": false,
-                  "mediaUpload": null
-                },
-                "get": {
-                  "id": "dns.projects.managedZones.rrsets.get",
-                  "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets/{name}/{type}",
-                  "httpMethod": "GET",
-                  "description": "Fetches the representation of an existing ResourceRecordSet.",
-                  "parameters": {
-                    "clientOperationId": {
-                      "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-                      "default": null,
-                      "location": "query",
-                      "required": false,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    },
-                    "managedZone": {
-                      "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
-                      "default": null,
-                      "location": "path",
-                      "required": true,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    },
-                    "name": {
-                      "description": "Fully qualified domain name.",
-                      "default": null,
-                      "location": "path",
-                      "required": true,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    },
-                    "project": {
-                      "description": "Identifies the project addressed by this request.",
-                      "default": null,
-                      "location": "path",
-                      "required": true,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    },
-                    "type": {
-                      "description": "RRSet type.",
-                      "default": null,
-                      "location": "path",
-                      "required": true,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    }
-                  },
-                  "parameterOrder": [
-                    "project",
-                    "managedZone",
-                    "name",
-                    "type"
-                  ],
-                  "request": null,
-                  "response": {
-                    "$ref": "ResourceRecordSet"
-                  },
-                  "scopes": [
-                    "https://www.googleapis.com/auth/cloud-platform",
-                    "https://www.googleapis.com/auth/cloud-platform.read-only",
-                    "https://www.googleapis.com/auth/ndev.clouddns.readonly",
-                    "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-                  ],
-                  "supportsMediaDownload": false,
-                  "useMediaDownloadService": false,
-                  "supportsSubscription": false,
-                  "supportsMediaUpload": false,
-                  "mediaUpload": null
-                },
-                "patch": {
-                  "id": "dns.projects.managedZones.rrsets.patch",
-                  "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets/{name}/{type}",
-                  "httpMethod": "PATCH",
-                  "description": "Applies a partial update to an existing ResourceRecordSet.",
-                  "parameters": {
-                    "clientOperationId": {
-                      "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-                      "default": null,
-                      "location": "query",
-                      "required": false,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    },
-                    "managedZone": {
-                      "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
-                      "default": null,
-                      "location": "path",
-                      "required": true,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    },
-                    "name": {
-                      "description": "Fully qualified domain name.",
-                      "default": null,
-                      "location": "path",
-                      "required": true,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    },
-                    "project": {
-                      "description": "Identifies the project addressed by this request.",
-                      "default": null,
-                      "location": "path",
-                      "required": true,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    },
-                    "type": {
-                      "description": "RRSet type.",
-                      "default": null,
-                      "location": "path",
-                      "required": true,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    }
-                  },
-                  "parameterOrder": [
-                    "project",
-                    "managedZone",
-                    "name",
-                    "type"
-                  ],
-                  "request": {
-                    "$ref": "ResourceRecordSet"
-                  },
-                  "response": {
-                    "$ref": "ResourceRecordSet"
-                  },
-                  "scopes": [
-                    "https://www.googleapis.com/auth/cloud-platform",
-                    "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-                  ],
-                  "supportsMediaDownload": false,
-                  "useMediaDownloadService": false,
-                  "supportsSubscription": false,
-                  "supportsMediaUpload": false,
-                  "mediaUpload": null
-                }
-              }
-            }
-          },
-          "methods": {}
-        }
-      },
+      "resources": {},
       "methods": {
         "get": {
           "id": "dns.projects.get",
           "path": "dns/v1beta2/projects/{project}",
           "httpMethod": "GET",
-          "description": "Fetch the representation of an existing Project.",
+          "description": "Fetches the representation of an existing Project.",
           "parameters": {
             "clientOperationId": {
               "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
@@ -4351,6 +4398,269 @@
     "resourceRecordSets": {
       "resources": {},
       "methods": {
+        "create": {
+          "id": "dns.resourceRecordSets.create",
+          "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets",
+          "httpMethod": "POST",
+          "description": "Creates a new ResourceRecordSet.",
+          "parameters": {
+            "clientOperationId": {
+              "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "managedZone": {
+              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "project": {
+              "description": "Identifies the project addressed by this request.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "project",
+            "managedZone"
+          ],
+          "request": {
+            "$ref": "ResourceRecordSet"
+          },
+          "response": {
+            "$ref": "ResourceRecordSet"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-platform",
+            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "delete": {
+          "id": "dns.resourceRecordSets.delete",
+          "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets/{name}/{type}",
+          "httpMethod": "DELETE",
+          "description": "Deletes a previously created ResourceRecordSet.",
+          "parameters": {
+            "clientOperationId": {
+              "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "managedZone": {
+              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "name": {
+              "description": "Fully qualified domain name.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "project": {
+              "description": "Identifies the project addressed by this request.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "type": {
+              "description": "RRSet type.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "project",
+            "managedZone",
+            "name",
+            "type"
+          ],
+          "request": null,
+          "response": null,
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-platform",
+            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "get": {
+          "id": "dns.resourceRecordSets.get",
+          "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets/{name}/{type}",
+          "httpMethod": "GET",
+          "description": "Fetches the representation of an existing ResourceRecordSet.",
+          "parameters": {
+            "clientOperationId": {
+              "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "managedZone": {
+              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "name": {
+              "description": "Fully qualified domain name.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "project": {
+              "description": "Identifies the project addressed by this request.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "type": {
+              "description": "RRSet type.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "project",
+            "managedZone",
+            "name",
+            "type"
+          ],
+          "request": null,
+          "response": {
+            "$ref": "ResourceRecordSet"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-platform",
+            "https://www.googleapis.com/auth/cloud-platform.read-only",
+            "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
         "list": {
           "id": "dns.resourceRecordSets.list",
           "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets",
@@ -4454,6 +4764,105 @@
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/cloud-platform.read-only",
             "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "patch": {
+          "id": "dns.resourceRecordSets.patch",
+          "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets/{name}/{type}",
+          "httpMethod": "PATCH",
+          "description": "Applies a partial update to an existing ResourceRecordSet.",
+          "parameters": {
+            "clientOperationId": {
+              "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "managedZone": {
+              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "name": {
+              "description": "Fully qualified domain name.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "project": {
+              "description": "Identifies the project addressed by this request.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "type": {
+              "description": "RRSet type.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "project",
+            "managedZone",
+            "name",
+            "type"
+          ],
+          "request": {
+            "$ref": "ResourceRecordSet"
+          },
+          "response": {
+            "$ref": "ResourceRecordSet"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
           ],
           "supportsMediaDownload": false,

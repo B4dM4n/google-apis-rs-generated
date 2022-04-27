@@ -1,8 +1,8 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [*explain*](resources/projects/struct.ExplainRequestBuilder.html), [*getConfig*](resources/projects/struct.GetConfigRequestBuilder.html), [*predict*](resources/projects/struct.PredictRequestBuilder.html)\n      * [jobs](resources/projects/jobs/struct.JobsActions.html)\n        * [*cancel*](resources/projects/jobs/struct.CancelRequestBuilder.html), [*create*](resources/projects/jobs/struct.CreateRequestBuilder.html), [*get*](resources/projects/jobs/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/jobs/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/jobs/struct.ListRequestBuilder.html), [*patch*](resources/projects/jobs/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/jobs/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/jobs/struct.TestIamPermissionsRequestBuilder.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n        * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n          * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html)\n        * [studies](resources/projects/locations/studies/struct.StudiesActions.html)\n          * [*create*](resources/projects/locations/studies/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/studies/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/studies/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/studies/struct.ListRequestBuilder.html)\n          * [trials](resources/projects/locations/studies/trials/struct.TrialsActions.html)\n            * [*addMeasurement*](resources/projects/locations/studies/trials/struct.AddMeasurementRequestBuilder.html), [*checkEarlyStoppingState*](resources/projects/locations/studies/trials/struct.CheckEarlyStoppingStateRequestBuilder.html), [*complete*](resources/projects/locations/studies/trials/struct.CompleteRequestBuilder.html), [*create*](resources/projects/locations/studies/trials/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/studies/trials/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/studies/trials/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/studies/trials/struct.ListRequestBuilder.html), [*listOptimalTrials*](resources/projects/locations/studies/trials/struct.ListOptimalTrialsRequestBuilder.html), [*stop*](resources/projects/locations/studies/trials/struct.StopRequestBuilder.html), [*suggest*](resources/projects/locations/studies/trials/struct.SuggestRequestBuilder.html)\n      * [models](resources/projects/models/struct.ModelsActions.html)\n        * [*create*](resources/projects/models/struct.CreateRequestBuilder.html), [*delete*](resources/projects/models/struct.DeleteRequestBuilder.html), [*get*](resources/projects/models/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/models/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/models/struct.ListRequestBuilder.html), [*patch*](resources/projects/models/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/models/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/models/struct.TestIamPermissionsRequestBuilder.html)\n        * [versions](resources/projects/models/versions/struct.VersionsActions.html)\n          * [*create*](resources/projects/models/versions/struct.CreateRequestBuilder.html), [*delete*](resources/projects/models/versions/struct.DeleteRequestBuilder.html), [*get*](resources/projects/models/versions/struct.GetRequestBuilder.html), [*list*](resources/projects/models/versions/struct.ListRequestBuilder.html), [*patch*](resources/projects/models/versions/struct.PatchRequestBuilder.html), [*setDefault*](resources/projects/models/versions/struct.SetDefaultRequestBuilder.html)\n      * [operations](resources/projects/operations/struct.OperationsActions.html)\n        * [*cancel*](resources/projects/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/operations/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
-    #[doc = "View your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
+    #[doc = "View your data across Google Cloud services and see the email address of your Google Account\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
     pub const CLOUD_PLATFORM_READ_ONLY: &str =
         "https://www.googleapis.com/auth/cloud-platform.read-only";
 }
@@ -99,8 +99,12 @@ pub mod schemas {
         NvidiaTeslaV100,
         #[doc = "TPU v2."]
         TpuV2,
+        #[doc = "TPU v2 POD."]
+        TpuV2Pod,
         #[doc = "TPU v3."]
         TpuV3,
+        #[doc = "TPU v3 POD."]
+        TpuV3Pod,
     }
     impl GoogleCloudMlV1AcceleratorConfigType {
         pub fn as_str(self) -> &'static str {
@@ -115,7 +119,9 @@ pub mod schemas {
                 GoogleCloudMlV1AcceleratorConfigType::NvidiaTeslaT4 => "NVIDIA_TESLA_T4",
                 GoogleCloudMlV1AcceleratorConfigType::NvidiaTeslaV100 => "NVIDIA_TESLA_V100",
                 GoogleCloudMlV1AcceleratorConfigType::TpuV2 => "TPU_V2",
+                GoogleCloudMlV1AcceleratorConfigType::TpuV2Pod => "TPU_V2_POD",
                 GoogleCloudMlV1AcceleratorConfigType::TpuV3 => "TPU_V3",
+                GoogleCloudMlV1AcceleratorConfigType::TpuV3Pod => "TPU_V3_POD",
             }
         }
     }
@@ -138,7 +144,9 @@ pub mod schemas {
                 "NVIDIA_TESLA_T4" => GoogleCloudMlV1AcceleratorConfigType::NvidiaTeslaT4,
                 "NVIDIA_TESLA_V100" => GoogleCloudMlV1AcceleratorConfigType::NvidiaTeslaV100,
                 "TPU_V2" => GoogleCloudMlV1AcceleratorConfigType::TpuV2,
+                "TPU_V2_POD" => GoogleCloudMlV1AcceleratorConfigType::TpuV2Pod,
                 "TPU_V3" => GoogleCloudMlV1AcceleratorConfigType::TpuV3,
+                "TPU_V3_POD" => GoogleCloudMlV1AcceleratorConfigType::TpuV3Pod,
                 _ => return Err(()),
             })
         }
@@ -173,7 +181,9 @@ pub mod schemas {
                 "NVIDIA_TESLA_T4" => GoogleCloudMlV1AcceleratorConfigType::NvidiaTeslaT4,
                 "NVIDIA_TESLA_V100" => GoogleCloudMlV1AcceleratorConfigType::NvidiaTeslaV100,
                 "TPU_V2" => GoogleCloudMlV1AcceleratorConfigType::TpuV2,
+                "TPU_V2_POD" => GoogleCloudMlV1AcceleratorConfigType::TpuV2Pod,
                 "TPU_V3" => GoogleCloudMlV1AcceleratorConfigType::TpuV3,
+                "TPU_V3_POD" => GoogleCloudMlV1AcceleratorConfigType::TpuV3Pod,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -503,8 +513,12 @@ pub mod schemas {
         NvidiaTeslaV100,
         #[doc = "TPU v2."]
         TpuV2,
+        #[doc = "TPU v2 POD."]
+        TpuV2Pod,
         #[doc = "TPU v3."]
         TpuV3,
+        #[doc = "TPU v3 POD."]
+        TpuV3Pod,
     }
     impl GoogleCloudMlV1CapabilityAvailableAcceleratorsItems {
         pub fn as_str(self) -> &'static str {
@@ -531,7 +545,9 @@ pub mod schemas {
                     "NVIDIA_TESLA_V100"
                 }
                 GoogleCloudMlV1CapabilityAvailableAcceleratorsItems::TpuV2 => "TPU_V2",
+                GoogleCloudMlV1CapabilityAvailableAcceleratorsItems::TpuV2Pod => "TPU_V2_POD",
                 GoogleCloudMlV1CapabilityAvailableAcceleratorsItems::TpuV3 => "TPU_V3",
+                GoogleCloudMlV1CapabilityAvailableAcceleratorsItems::TpuV3Pod => "TPU_V3_POD",
             }
         }
     }
@@ -569,7 +585,9 @@ pub mod schemas {
                     GoogleCloudMlV1CapabilityAvailableAcceleratorsItems::NvidiaTeslaV100
                 }
                 "TPU_V2" => GoogleCloudMlV1CapabilityAvailableAcceleratorsItems::TpuV2,
+                "TPU_V2_POD" => GoogleCloudMlV1CapabilityAvailableAcceleratorsItems::TpuV2Pod,
                 "TPU_V3" => GoogleCloudMlV1CapabilityAvailableAcceleratorsItems::TpuV3,
+                "TPU_V3_POD" => GoogleCloudMlV1CapabilityAvailableAcceleratorsItems::TpuV3Pod,
                 _ => return Err(()),
             })
         }
@@ -616,7 +634,9 @@ pub mod schemas {
                     GoogleCloudMlV1CapabilityAvailableAcceleratorsItems::NvidiaTeslaV100
                 }
                 "TPU_V2" => GoogleCloudMlV1CapabilityAvailableAcceleratorsItems::TpuV2,
+                "TPU_V2_POD" => GoogleCloudMlV1CapabilityAvailableAcceleratorsItems::TpuV2Pod,
                 "TPU_V3" => GoogleCloudMlV1CapabilityAvailableAcceleratorsItems::TpuV3,
+                "TPU_V3_POD" => GoogleCloudMlV1CapabilityAvailableAcceleratorsItems::TpuV3Pod,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -1281,6 +1301,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub trial_id: ::std::option::Option<String>,
+        #[doc = "URIs for accessing [interactive shells](https://cloud.google.com/ai-platform/training/docs/monitor-debug-interactive-shell) (one URI for each training node). Only available if this trial is part of a hyperparameter tuning job and the job's training_input.enable_web_access is `true`. The keys are names of each node in the training job; for example, `master-replica-0` for the master node, `worker-replica-0` for the first worker, and `ps-replica-0` for the first parameter server. The values are the URIs for each node's interactive shell."]
+        #[serde(
+            rename = "webAccessUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub web_access_uris: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudMlV1HyperparameterOutput {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1744,6 +1771,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub job_id: ::std::option::Option<String>,
+        #[doc = "Output only. It's only effect when the job is in QUEUED state. If it's positive, it indicates the job's position in the job scheduler. It's 0 when the job is already scheduled."]
+        #[serde(
+            rename = "jobPosition",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub job_position: ::std::option::Option<i64>,
         #[doc = "Optional. One or more labels that you can add, to organize your jobs. Each label is a key-value pair, where both the key and the value are arbitrary strings that you supply. For more information, see the documentation on using labels."]
         #[serde(
             rename = "labels",
@@ -3435,6 +3470,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_wait_time: ::std::option::Option<String>,
+        #[doc = "Optional. Job scheduling will be based on this priority, which in the range [0, 1000]. The bigger the number, the higher the priority. Default to 0 if not set. If there are multiple jobs requesting same type of accelerators, the high priority job will be scheduled prior to ones with low priority."]
+        #[serde(
+            rename = "priority",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub priority: ::std::option::Option<i32>,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudMlV1Scheduling {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -3889,7 +3931,7 @@ pub mod schemas {
     #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
-    pub struct GoogleCloudMlV1StudyConfigParameterSpec { # [ doc = "The value spec for a 'CATEGORICAL' parameter." ] # [ serde ( rename = "categoricalValueSpec" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub categorical_value_spec : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecCategoricalValueSpec > , # [ doc = "A child node is active if the parameter's value matches the child node's matching_parent_values. If two items in child_parameter_specs have the same name, they must have disjoint matching_parent_values." ] # [ serde ( rename = "childParameterSpecs" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub child_parameter_specs : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpec > > , # [ doc = "The value spec for a 'DISCRETE' parameter." ] # [ serde ( rename = "discreteValueSpec" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub discrete_value_spec : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecDiscreteValueSpec > , # [ doc = "The value spec for a 'DOUBLE' parameter." ] # [ serde ( rename = "doubleValueSpec" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub double_value_spec : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecDoubleValueSpec > , # [ doc = "The value spec for an 'INTEGER' parameter." ] # [ serde ( rename = "integerValueSpec" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub integer_value_spec : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecIntegerValueSpec > , # [ doc = "Required. The parameter name must be unique amongst all ParameterSpecs." ] # [ serde ( rename = "parameter" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub parameter : :: std :: option :: Option < String > , # [ serde ( rename = "parentCategoricalValues" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub parent_categorical_values : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecMatchingParentCategoricalValueSpec > , # [ serde ( rename = "parentDiscreteValues" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub parent_discrete_values : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecMatchingParentDiscreteValueSpec > , # [ serde ( rename = "parentIntValues" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub parent_int_values : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecMatchingParentIntValueSpec > , # [ doc = "Required. The type of the parameter." ] # [ serde ( rename = "type" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub r#type : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecType > , # [ doc = "How the parameter should be scaled. Leave unset for categorical parameters." ] # [ serde ( rename = "scaleType" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub scale_type : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecScaleType > , }
+    pub struct GoogleCloudMlV1StudyConfigParameterSpec { # [doc = "The value spec for a 'CATEGORICAL' parameter."] # [serde (rename = "categoricalValueSpec" , default , skip_serializing_if = "std::option::Option::is_none")] pub categorical_value_spec : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecCategoricalValueSpec > , # [doc = "A child node is active if the parameter's value matches the child node's matching_parent_values. If two items in child_parameter_specs have the same name, they must have disjoint matching_parent_values."] # [serde (rename = "childParameterSpecs" , default , skip_serializing_if = "std::option::Option::is_none")] pub child_parameter_specs : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpec > > , # [doc = "The value spec for a 'DISCRETE' parameter."] # [serde (rename = "discreteValueSpec" , default , skip_serializing_if = "std::option::Option::is_none")] pub discrete_value_spec : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecDiscreteValueSpec > , # [doc = "The value spec for a 'DOUBLE' parameter."] # [serde (rename = "doubleValueSpec" , default , skip_serializing_if = "std::option::Option::is_none")] pub double_value_spec : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecDoubleValueSpec > , # [doc = "The value spec for an 'INTEGER' parameter."] # [serde (rename = "integerValueSpec" , default , skip_serializing_if = "std::option::Option::is_none")] pub integer_value_spec : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecIntegerValueSpec > , # [doc = "Required. The parameter name must be unique amongst all ParameterSpecs."] # [serde (rename = "parameter" , default , skip_serializing_if = "std::option::Option::is_none")] pub parameter : :: std :: option :: Option < String > , # [serde (rename = "parentCategoricalValues" , default , skip_serializing_if = "std::option::Option::is_none")] pub parent_categorical_values : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecMatchingParentCategoricalValueSpec > , # [serde (rename = "parentDiscreteValues" , default , skip_serializing_if = "std::option::Option::is_none")] pub parent_discrete_values : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecMatchingParentDiscreteValueSpec > , # [serde (rename = "parentIntValues" , default , skip_serializing_if = "std::option::Option::is_none")] pub parent_int_values : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecMatchingParentIntValueSpec > , # [doc = "Required. The type of the parameter."] # [serde (rename = "type" , default , skip_serializing_if = "std::option::Option::is_none")] pub r#type : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecType > , # [doc = "How the parameter should be scaled. Leave unset for categorical parameters."] # [serde (rename = "scaleType" , default , skip_serializing_if = "std::option::Option::is_none")] pub scale_type : :: std :: option :: Option < crate :: schemas :: GoogleCloudMlV1StudyConfigParameterSpecScaleType > , }
     impl ::google_field_selector::FieldSelector for GoogleCloudMlV1StudyConfigParameterSpec {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
@@ -4563,6 +4605,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub args: ::std::option::Option<Vec<String>>,
+        #[doc = "Optional. Whether you want AI Platform Training to enable [interactive shell access](https://cloud.google.com/ai-platform/training/docs/monitor-debug-interactive-shell) to training containers. If set to `true`, you can access interactive shells at the URIs given by TrainingOutput.web_access_uris or HyperparameterOutput.web_access_uris (within TrainingOutput.trials)."]
+        #[serde(
+            rename = "enableWebAccess",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_web_access: ::std::option::Option<bool>,
         #[doc = "Optional. Options for using customer-managed encryption keys (CMEK) to protect resources created by a training job, instead of using Google's default encryption. If this is set, then all resources created by the training job will be encrypted with the customer-managed encryption key that you specify. [Learn how and when to use CMEK with AI Platform Training](/ai-platform/training/docs/cmek)."]
         #[serde(
             rename = "encryptionConfig",
@@ -4895,6 +4944,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub trials: ::std::option::Option<Vec<crate::schemas::GoogleCloudMlV1HyperparameterOutput>>,
+        #[doc = "Output only. URIs for accessing [interactive shells](https://cloud.google.com/ai-platform/training/docs/monitor-debug-interactive-shell) (one URI for each training node). Only available if training_input.enable_web_access is `true`. The keys are names of each node in the training job; for example, `master-replica-0` for the master node, `worker-replica-0` for the first worker, and `ps-replica-0` for the first parameter server. The values are the URIs for each node's interactive shell."]
+        #[serde(
+            rename = "webAccessUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub web_access_uris: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudMlV1TrainingOutput {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -5695,21 +5751,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleIamV1Binding {
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::GoogleTypeExpr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -5747,7 +5803,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audit_configs: ::std::option::Option<Vec<crate::schemas::GoogleIamV1AuditConfig>>,
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,
@@ -5792,7 +5848,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleIamV1SetIamPolicyRequest {
-        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -5830,7 +5886,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleIamV1TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -7537,7 +7593,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> GetIamPolicyRequestBuilder<'a> {
-                #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                 pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                     self.options_requested_policy_version = Some(value);
                     self
@@ -12731,7 +12787,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> GetIamPolicyRequestBuilder<'a> {
-                #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                 pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                     self.options_requested_policy_version = Some(value);
                     self

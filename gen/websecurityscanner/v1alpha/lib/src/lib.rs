@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [scan_configs](resources/projects/scan_configs/struct.ScanConfigsActions.html)\n        * [*create*](resources/projects/scan_configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/scan_configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/scan_configs/struct.GetRequestBuilder.html), [*list*](resources/projects/scan_configs/struct.ListRequestBuilder.html), [*patch*](resources/projects/scan_configs/struct.PatchRequestBuilder.html), [*start*](resources/projects/scan_configs/struct.StartRequestBuilder.html)\n        * [scan_runs](resources/projects/scan_configs/scan_runs/struct.ScanRunsActions.html)\n          * [*get*](resources/projects/scan_configs/scan_runs/struct.GetRequestBuilder.html), [*list*](resources/projects/scan_configs/scan_runs/struct.ListRequestBuilder.html), [*stop*](resources/projects/scan_configs/scan_runs/struct.StopRequestBuilder.html)\n          * [crawled_urls](resources/projects/scan_configs/scan_runs/crawled_urls/struct.CrawledUrlsActions.html)\n            * [*list*](resources/projects/scan_configs/scan_runs/crawled_urls/struct.ListRequestBuilder.html)\n          * [finding_type_stats](resources/projects/scan_configs/scan_runs/finding_type_stats/struct.FindingTypeStatsActions.html)\n            * [*list*](resources/projects/scan_configs/scan_runs/finding_type_stats/struct.ListRequestBuilder.html)\n          * [findings](resources/projects/scan_configs/scan_runs/findings/struct.FindingsActions.html)\n            * [*get*](resources/projects/scan_configs/scan_runs/findings/struct.GetRequestBuilder.html), [*list*](resources/projects/scan_configs/scan_runs/findings/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -3163,14 +3163,14 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Actions that can be performed on the crawled_urls resource"]                    pub fn crawled_urls ( & self ) -> crate :: resources :: projects :: scan_configs :: scan_runs :: crawled_urls :: CrawledUrlsActions{
-                        crate :: resources :: projects :: scan_configs :: scan_runs :: crawled_urls :: CrawledUrlsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the crawled_urls resource"]                    pub fn crawled_urls (& self) -> crate :: resources :: projects :: scan_configs :: scan_runs :: crawled_urls :: CrawledUrlsActions{
+                        crate :: resources :: projects :: scan_configs :: scan_runs :: crawled_urls :: CrawledUrlsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the finding_type_stats resource"]                    pub fn finding_type_stats ( & self ) -> crate :: resources :: projects :: scan_configs :: scan_runs :: finding_type_stats :: FindingTypeStatsActions{
-                        crate :: resources :: projects :: scan_configs :: scan_runs :: finding_type_stats :: FindingTypeStatsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the finding_type_stats resource"]                    pub fn finding_type_stats (& self) -> crate :: resources :: projects :: scan_configs :: scan_runs :: finding_type_stats :: FindingTypeStatsActions{
+                        crate :: resources :: projects :: scan_configs :: scan_runs :: finding_type_stats :: FindingTypeStatsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the findings resource"]                    pub fn findings ( & self ) -> crate :: resources :: projects :: scan_configs :: scan_runs :: findings :: FindingsActions{
-                        crate :: resources :: projects :: scan_configs :: scan_runs :: findings :: FindingsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the findings resource"]                    pub fn findings (& self) -> crate :: resources :: projects :: scan_configs :: scan_runs :: findings :: FindingsActions{
+                        crate :: resources :: projects :: scan_configs :: scan_runs :: findings :: FindingsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 #[doc = "Created via [ScanRunsActions::get()](struct.ScanRunsActions.html#method.get)"]

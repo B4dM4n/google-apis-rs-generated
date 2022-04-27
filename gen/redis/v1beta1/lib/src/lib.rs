@@ -1,6 +1,6 @@
-#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n        * [instances](resources/projects/locations/instances/struct.InstancesActions.html)\n          * [*create*](resources/projects/locations/instances/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/instances/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/instances/struct.ExportRequestBuilder.html), [*failover*](resources/projects/locations/instances/struct.FailoverRequestBuilder.html), [*get*](resources/projects/locations/instances/struct.GetRequestBuilder.html), [*getAuthString*](resources/projects/locations/instances/struct.GetAuthStringRequestBuilder.html), [*import*](resources/projects/locations/instances/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/instances/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/instances/struct.PatchRequestBuilder.html), [*upgrade*](resources/projects/locations/instances/struct.UpgradeRequestBuilder.html)\n        * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n          * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/locations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n        * [instances](resources/projects/locations/instances/struct.InstancesActions.html)\n          * [*create*](resources/projects/locations/instances/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/instances/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/instances/struct.ExportRequestBuilder.html), [*failover*](resources/projects/locations/instances/struct.FailoverRequestBuilder.html), [*get*](resources/projects/locations/instances/struct.GetRequestBuilder.html), [*getAuthString*](resources/projects/locations/instances/struct.GetAuthStringRequestBuilder.html), [*import*](resources/projects/locations/instances/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/instances/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/instances/struct.PatchRequestBuilder.html), [*rescheduleMaintenance*](resources/projects/locations/instances/struct.RescheduleMaintenanceRequestBuilder.html), [*upgrade*](resources/projects/locations/instances/struct.UpgradeRequestBuilder.html)\n        * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n          * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/locations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "See, edit, configure, and delete your Google Cloud Platform data\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -250,49 +250,49 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudCommonOperationMetadata {
-        #[doc = "[Output only] API version used to start the operation."]
+        #[doc = "Output only. API version used to start the operation."]
         #[serde(
             rename = "apiVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_version: ::std::option::Option<String>,
-        #[doc = "[Output only] Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
+        #[doc = "Output only. Identifies whether the user has requested cancellation of the operation. Operations that have been cancelled successfully have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
         #[serde(
             rename = "cancelRequested",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cancel_requested: ::std::option::Option<bool>,
-        #[doc = "[Output only] The time the operation was created."]
+        #[doc = "Output only. The time the operation was created."]
         #[serde(
             rename = "createTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "[Output only] The time the operation finished running."]
+        #[doc = "Output only. The time the operation finished running."]
         #[serde(
             rename = "endTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_time: ::std::option::Option<String>,
-        #[doc = "[Output only] Human-readable status of the operation, if any."]
+        #[doc = "Output only. Human-readable status of the operation, if any."]
         #[serde(
             rename = "statusDetail",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status_detail: ::std::option::Option<String>,
-        #[doc = "[Output only] Server-defined resource path for the target of the operation."]
+        #[doc = "Output only. Server-defined resource path for the target of the operation."]
         #[serde(
             rename = "target",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub target: ::std::option::Option<String>,
-        #[doc = "[Output only] Name of the verb executed by the operation."]
+        #[doc = "Output only. Name of the verb executed by the operation."]
         #[serde(
             rename = "verb",
             default,
@@ -445,7 +445,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Instance {
-        #[doc = "Optional. Only applicable to STANDARD_HA tier which protects the instance against zonal failures by provisioning it across two zones. If provided, it must be a different zone from the one provided in location_id."]
+        #[doc = "Optional. If specified, at least one node will be provisioned in this zone in addition to the zone specified in location_id. Only applicable to standard tier. If provided, it must be a different zone from the one provided in [location_id]. Additional nodes beyond the first 2 will be placed in zones selected by the service."]
         #[serde(
             rename = "alternativeLocationId",
             default,
@@ -480,7 +480,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Output only. The current zone where the Redis endpoint is placed. For Basic Tier instances, this will always be the same as the location_id provided by the user at creation time. For Standard Tier instances, this can be either location_id or alternative_location_id and can change after a failover event."]
+        #[doc = "Output only. The current zone where the Redis primary node is located. In basic tier, this will always be the same as [location_id]. In standard tier, this can be the zone of any node in the instance."]
         #[serde(
             rename = "currentLocationId",
             default,
@@ -508,13 +508,27 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Optional. The zone where the instance will be provisioned. If not provided, the service will choose a zone for the instance. For STANDARD_HA tier, instances will be created across two zones for protection against zonal failures. If alternative_location_id is also provided, it must be different from location_id."]
+        #[doc = "Optional. The zone where the instance will be provisioned. If not provided, the service will choose a zone from the specified region for the instance. For standard tier, additional nodes will be added across multiple zones for protection against zonal failures. If specified, at least one node will be provisioned in this zone."]
         #[serde(
             rename = "locationId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location_id: ::std::option::Option<String>,
+        #[doc = "Optional. The maintenance policy for the instance. If not provided, maintenance events can be performed at any time."]
+        #[serde(
+            rename = "maintenancePolicy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub maintenance_policy: ::std::option::Option<crate::schemas::MaintenancePolicy>,
+        #[doc = "Output only. Date and time of upcoming maintenance events which have been scheduled."]
+        #[serde(
+            rename = "maintenanceSchedule",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub maintenance_schedule: ::std::option::Option<crate::schemas::MaintenanceSchedule>,
         #[doc = "Required. Redis memory size in GiB."]
         #[serde(
             rename = "memorySizeGb",
@@ -529,6 +543,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "Output only. Info per node."]
+        #[serde(
+            rename = "nodes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub nodes: ::std::option::Option<Vec<crate::schemas::NodeInfo>>,
+        #[doc = "Optional. Persistence configuration parameters"]
+        #[serde(
+            rename = "persistenceConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub persistence_config: ::std::option::Option<crate::schemas::PersistenceConfig>,
         #[doc = "Output only. Cloud IAM identity used by import / export operations to transfer data to/from Cloud Storage. Format is \"serviceAccount:\". The value may change over time for a given instance so should be checked before each import/export operation."]
         #[serde(
             rename = "persistenceIamIdentity",
@@ -543,6 +571,27 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub port: ::std::option::Option<i32>,
+        #[doc = "Output only. Hostname or IP address of the exposed readonly Redis endpoint. Standard tier only. Targets all healthy replica nodes in instance. Replication is asynchronous and replica nodes will exhibit some lag behind the primary. Write requests must target 'host'."]
+        #[serde(
+            rename = "readEndpoint",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub read_endpoint: ::std::option::Option<String>,
+        #[doc = "Output only. The port number of the exposed readonly redis endpoint. Standard tier only. Write requests should target 'port'."]
+        #[serde(
+            rename = "readEndpointPort",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub read_endpoint_port: ::std::option::Option<i32>,
+        #[doc = "Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED."]
+        #[serde(
+            rename = "readReplicasMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub read_replicas_mode: ::std::option::Option<crate::schemas::InstanceReadReplicasMode>,
         #[doc = "Optional. Redis configuration parameters, according to http://redis.io/topics/config. Currently, the only supported parameters are: Redis version 3.2 and newer: * maxmemory-policy * notify-keyspace-events Redis version 4.0 and newer: * activedefrag * lfu-decay-time * lfu-log-factor * maxmemory-gb Redis version 5.0 and newer: * stream-node-max-bytes * stream-node-max-entries"]
         #[serde(
             rename = "redisConfigs",
@@ -550,20 +599,34 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub redis_configs: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Optional. The version of Redis software. If not provided, latest supported version will be used. Currently, the supported values are: * `REDIS_3_2` for Redis 3.2 compatibility * `REDIS_4_0` for Redis 4.0 compatibility (default) * `REDIS_5_0` for Redis 5.0 compatibility"]
+        #[doc = "Optional. The version of Redis software. If not provided, latest supported version will be used. Currently, the supported values are: * `REDIS_3_2` for Redis 3.2 compatibility * `REDIS_4_0` for Redis 4.0 compatibility (default) * `REDIS_5_0` for Redis 5.0 compatibility * `REDIS_6_X` for Redis 6.x compatibility"]
         #[serde(
             rename = "redisVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub redis_version: ::std::option::Option<String>,
-        #[doc = "Optional. The CIDR range of internal addresses that are reserved for this instance. If not provided, the service will choose an unused /29 block, for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique and non-overlapping with existing subnets in an authorized network."]
+        #[doc = "Optional. The number of replica nodes. The valid range for the Standard Tier with read replicas enabled is [1-5] and defaults to 2. If read replicas are not enabled for a Standard Tier instance, the only valid value is 1 and the default is 1. The valid value for basic tier is 0 and the default is also 0."]
+        #[serde(
+            rename = "replicaCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub replica_count: ::std::option::Option<i32>,
+        #[doc = "Optional. For DIRECT_PEERING mode, the CIDR range of internal addresses that are reserved for this instance. Range must be unique and non-overlapping with existing subnets in an authorized network. For PRIVATE_SERVICE_ACCESS mode, the name of one allocated IP address ranges associated with this private service access connection. If not provided, the service will choose an unused /29 block, for example, 10.0.0.0/29 or 192.168.0.0/29. For READ_REPLICAS_ENABLED the default block size is /28."]
         #[serde(
             rename = "reservedIpRange",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub reserved_ip_range: ::std::option::Option<String>,
+        #[doc = "Optional. Additional IP range for node placement. Required when enabling read replicas on an existing instance. For DIRECT_PEERING mode value must be a CIDR range of size /28, or \"auto\". For PRIVATE_SERVICE_ACCESS mode value must be the name of an allocated address range associated with the private service access connection, or \"auto\"."]
+        #[serde(
+            rename = "secondaryIpRange",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub secondary_ip_range: ::std::option::Option<String>,
         #[doc = "Output only. List of server CA certificates for the instance."]
         #[serde(
             rename = "serverCaCerts",
@@ -617,7 +680,7 @@ pub mod schemas {
         ConnectModeUnspecified,
         #[doc = "Connect via direct peering to the Memorystore for Redis hosted service."]
         DirectPeering,
-        #[doc = "Connect your Memorystore for Redis instance using Private Services Access. Private services access provides an IP address range for multiple Google Cloud services, including Memorystore."]
+        #[doc = "Connect your Memorystore for Redis instance using Private Service Access. Private services access provides an IP address range for multiple Google Cloud services, including Memorystore."]
         PrivateServiceAccess,
     }
     impl InstanceConnectMode {
@@ -683,6 +746,88 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for InstanceConnectMode {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum InstanceReadReplicasMode {
+        #[doc = "If disabled, read endpoint will not be provided and the instance cannot scale up or down the number of replicas."]
+        ReadReplicasDisabled,
+        #[doc = "If enabled, read endpoint will be provided and the instance can scale up and down the number of replicas. Not valid for basic tier."]
+        ReadReplicasEnabled,
+        #[doc = "If not set, Memorystore Redis backend will default to READ_REPLICAS_DISABLED."]
+        ReadReplicasModeUnspecified,
+    }
+    impl InstanceReadReplicasMode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                InstanceReadReplicasMode::ReadReplicasDisabled => "READ_REPLICAS_DISABLED",
+                InstanceReadReplicasMode::ReadReplicasEnabled => "READ_REPLICAS_ENABLED",
+                InstanceReadReplicasMode::ReadReplicasModeUnspecified => {
+                    "READ_REPLICAS_MODE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for InstanceReadReplicasMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for InstanceReadReplicasMode {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<InstanceReadReplicasMode, ()> {
+            Ok(match s {
+                "READ_REPLICAS_DISABLED" => InstanceReadReplicasMode::ReadReplicasDisabled,
+                "READ_REPLICAS_ENABLED" => InstanceReadReplicasMode::ReadReplicasEnabled,
+                "READ_REPLICAS_MODE_UNSPECIFIED" => {
+                    InstanceReadReplicasMode::ReadReplicasModeUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for InstanceReadReplicasMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for InstanceReadReplicasMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for InstanceReadReplicasMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "READ_REPLICAS_DISABLED" => InstanceReadReplicasMode::ReadReplicasDisabled,
+                "READ_REPLICAS_ENABLED" => InstanceReadReplicasMode::ReadReplicasEnabled,
+                "READ_REPLICAS_MODE_UNSPECIFIED" => {
+                    InstanceReadReplicasMode::ReadReplicasModeUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for InstanceReadReplicasMode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for InstanceReadReplicasMode {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1130,6 +1275,149 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MaintenancePolicy {
+        #[doc = "Output only. The time when the policy was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "Optional. Description of what this policy is for. Create/Update methods return INVALID_ARGUMENT if the length is greater than 512."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "Output only. The time when the policy was last updated."]
+        #[serde(
+            rename = "updateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_time: ::std::option::Option<String>,
+        #[doc = "Optional. Maintenance window that is applied to resources covered by this policy. Minimum 1. For the current version, the maximum number of weekly_window is expected to be one."]
+        #[serde(
+            rename = "weeklyMaintenanceWindow",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub weekly_maintenance_window:
+            ::std::option::Option<Vec<crate::schemas::WeeklyMaintenanceWindow>>,
+    }
+    impl ::google_field_selector::FieldSelector for MaintenancePolicy {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MaintenancePolicy {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MaintenanceSchedule {
+        #[doc = "If the scheduled maintenance can be rescheduled, default is true."]
+        #[serde(
+            rename = "canReschedule",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub can_reschedule: ::std::option::Option<bool>,
+        #[doc = "Output only. The end time of any upcoming scheduled maintenance for this instance."]
+        #[serde(
+            rename = "endTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub end_time: ::std::option::Option<String>,
+        #[doc = "Output only. The deadline that the maintenance schedule start time can not go beyond, including reschedule."]
+        #[serde(
+            rename = "scheduleDeadlineTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub schedule_deadline_time: ::std::option::Option<String>,
+        #[doc = "Output only. The start time of any upcoming scheduled maintenance for this instance."]
+        #[serde(
+            rename = "startTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub start_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for MaintenanceSchedule {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MaintenanceSchedule {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct NodeInfo {
+        #[doc = "Output only. Node identifying string. e.g. 'node-0', 'node-1'"]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "Output only. Location of the node."]
+        #[serde(
+            rename = "zone",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub zone: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for NodeInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NodeInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Operation {
         #[doc = "If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available."]
@@ -1211,6 +1499,368 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PersistenceConfig {
+        #[doc = "Optional. Controls whether Persistence features are enabled. If not provided, the existing value will be used."]
+        #[serde(
+            rename = "persistenceMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub persistence_mode:
+            ::std::option::Option<crate::schemas::PersistenceConfigPersistenceMode>,
+        #[doc = "Output only. The next time that a snapshot attempt is scheduled to occur."]
+        #[serde(
+            rename = "rdbNextSnapshotTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rdb_next_snapshot_time: ::std::option::Option<String>,
+        #[doc = "Optional. Period between RDB snapshots. Snapshots will be attempted every period starting from the provided snapshot start time. For example, a start time of 01/01/2033 06:45 and SIX_HOURS snapshot period will do nothing until 01/01/2033, and then trigger snapshots every day at 06:45, 12:45, 18:45, and 00:45 the next day, and so on. If not provided, TWENTY_FOUR_HOURS will be used as default."]
+        #[serde(
+            rename = "rdbSnapshotPeriod",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rdb_snapshot_period:
+            ::std::option::Option<crate::schemas::PersistenceConfigRdbSnapshotPeriod>,
+        #[doc = "Optional. Date and time that the first snapshot was/will be attempted, and to which future snapshots will be aligned. If not provided, the current time will be used."]
+        #[serde(
+            rename = "rdbSnapshotStartTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rdb_snapshot_start_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PersistenceConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PersistenceConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PersistenceConfigPersistenceMode {
+        #[doc = "Persistence is disabled for the instance, and any existing snapshots are deleted."]
+        Disabled,
+        #[doc = "Not set."]
+        PersistenceModeUnspecified,
+        #[doc = "RDB based Persistence is enabled."]
+        Rdb,
+    }
+    impl PersistenceConfigPersistenceMode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PersistenceConfigPersistenceMode::Disabled => "DISABLED",
+                PersistenceConfigPersistenceMode::PersistenceModeUnspecified => {
+                    "PERSISTENCE_MODE_UNSPECIFIED"
+                }
+                PersistenceConfigPersistenceMode::Rdb => "RDB",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PersistenceConfigPersistenceMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PersistenceConfigPersistenceMode {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PersistenceConfigPersistenceMode, ()> {
+            Ok(match s {
+                "DISABLED" => PersistenceConfigPersistenceMode::Disabled,
+                "PERSISTENCE_MODE_UNSPECIFIED" => {
+                    PersistenceConfigPersistenceMode::PersistenceModeUnspecified
+                }
+                "RDB" => PersistenceConfigPersistenceMode::Rdb,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PersistenceConfigPersistenceMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PersistenceConfigPersistenceMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PersistenceConfigPersistenceMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DISABLED" => PersistenceConfigPersistenceMode::Disabled,
+                "PERSISTENCE_MODE_UNSPECIFIED" => {
+                    PersistenceConfigPersistenceMode::PersistenceModeUnspecified
+                }
+                "RDB" => PersistenceConfigPersistenceMode::Rdb,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PersistenceConfigPersistenceMode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PersistenceConfigPersistenceMode {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PersistenceConfigRdbSnapshotPeriod {
+        #[doc = "Snapshot every 1 hour."]
+        OneHour,
+        #[doc = "Snapshot every 6 hours."]
+        SixHours,
+        #[doc = "Not set."]
+        SnapshotPeriodUnspecified,
+        #[doc = "Snapshot every 12 hours."]
+        TwelveHours,
+        #[doc = "Snapshot every 24 horus."]
+        TwentyFourHours,
+    }
+    impl PersistenceConfigRdbSnapshotPeriod {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PersistenceConfigRdbSnapshotPeriod::OneHour => "ONE_HOUR",
+                PersistenceConfigRdbSnapshotPeriod::SixHours => "SIX_HOURS",
+                PersistenceConfigRdbSnapshotPeriod::SnapshotPeriodUnspecified => {
+                    "SNAPSHOT_PERIOD_UNSPECIFIED"
+                }
+                PersistenceConfigRdbSnapshotPeriod::TwelveHours => "TWELVE_HOURS",
+                PersistenceConfigRdbSnapshotPeriod::TwentyFourHours => "TWENTY_FOUR_HOURS",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PersistenceConfigRdbSnapshotPeriod {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PersistenceConfigRdbSnapshotPeriod {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PersistenceConfigRdbSnapshotPeriod, ()> {
+            Ok(match s {
+                "ONE_HOUR" => PersistenceConfigRdbSnapshotPeriod::OneHour,
+                "SIX_HOURS" => PersistenceConfigRdbSnapshotPeriod::SixHours,
+                "SNAPSHOT_PERIOD_UNSPECIFIED" => {
+                    PersistenceConfigRdbSnapshotPeriod::SnapshotPeriodUnspecified
+                }
+                "TWELVE_HOURS" => PersistenceConfigRdbSnapshotPeriod::TwelveHours,
+                "TWENTY_FOUR_HOURS" => PersistenceConfigRdbSnapshotPeriod::TwentyFourHours,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PersistenceConfigRdbSnapshotPeriod {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PersistenceConfigRdbSnapshotPeriod {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PersistenceConfigRdbSnapshotPeriod {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ONE_HOUR" => PersistenceConfigRdbSnapshotPeriod::OneHour,
+                "SIX_HOURS" => PersistenceConfigRdbSnapshotPeriod::SixHours,
+                "SNAPSHOT_PERIOD_UNSPECIFIED" => {
+                    PersistenceConfigRdbSnapshotPeriod::SnapshotPeriodUnspecified
+                }
+                "TWELVE_HOURS" => PersistenceConfigRdbSnapshotPeriod::TwelveHours,
+                "TWENTY_FOUR_HOURS" => PersistenceConfigRdbSnapshotPeriod::TwentyFourHours,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PersistenceConfigRdbSnapshotPeriod {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PersistenceConfigRdbSnapshotPeriod {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct RescheduleMaintenanceRequest {
+        #[doc = "Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as well."]
+        #[serde(
+            rename = "rescheduleType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reschedule_type:
+            ::std::option::Option<crate::schemas::RescheduleMaintenanceRequestRescheduleType>,
+        #[doc = "Optional. Timestamp when the maintenance shall be rescheduled to if reschedule_type=SPECIFIC_TIME, in RFC 3339 format, for example `2012-11-15T16:19:00.094Z`."]
+        #[serde(
+            rename = "scheduleTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub schedule_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for RescheduleMaintenanceRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RescheduleMaintenanceRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum RescheduleMaintenanceRequestRescheduleType {
+        #[doc = "If the user wants to schedule the maintenance to happen now."]
+        Immediate,
+        #[doc = "If the user wants to use the existing maintenance policy to find the next available window."]
+        NextAvailableWindow,
+        #[doc = "Not set."]
+        RescheduleTypeUnspecified,
+        #[doc = "If the user wants to reschedule the maintenance to a specific time."]
+        SpecificTime,
+    }
+    impl RescheduleMaintenanceRequestRescheduleType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                RescheduleMaintenanceRequestRescheduleType::Immediate => "IMMEDIATE",
+                RescheduleMaintenanceRequestRescheduleType::NextAvailableWindow => {
+                    "NEXT_AVAILABLE_WINDOW"
+                }
+                RescheduleMaintenanceRequestRescheduleType::RescheduleTypeUnspecified => {
+                    "RESCHEDULE_TYPE_UNSPECIFIED"
+                }
+                RescheduleMaintenanceRequestRescheduleType::SpecificTime => "SPECIFIC_TIME",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for RescheduleMaintenanceRequestRescheduleType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for RescheduleMaintenanceRequestRescheduleType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<RescheduleMaintenanceRequestRescheduleType, ()> {
+            Ok(match s {
+                "IMMEDIATE" => RescheduleMaintenanceRequestRescheduleType::Immediate,
+                "NEXT_AVAILABLE_WINDOW" => {
+                    RescheduleMaintenanceRequestRescheduleType::NextAvailableWindow
+                }
+                "RESCHEDULE_TYPE_UNSPECIFIED" => {
+                    RescheduleMaintenanceRequestRescheduleType::RescheduleTypeUnspecified
+                }
+                "SPECIFIC_TIME" => RescheduleMaintenanceRequestRescheduleType::SpecificTime,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for RescheduleMaintenanceRequestRescheduleType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for RescheduleMaintenanceRequestRescheduleType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for RescheduleMaintenanceRequestRescheduleType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "IMMEDIATE" => RescheduleMaintenanceRequestRescheduleType::Immediate,
+                "NEXT_AVAILABLE_WINDOW" => {
+                    RescheduleMaintenanceRequestRescheduleType::NextAvailableWindow
+                }
+                "RESCHEDULE_TYPE_UNSPECIFIED" => {
+                    RescheduleMaintenanceRequestRescheduleType::RescheduleTypeUnspecified
+                }
+                "SPECIFIC_TIME" => RescheduleMaintenanceRequestRescheduleType::SpecificTime,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for RescheduleMaintenanceRequestRescheduleType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RescheduleMaintenanceRequestRescheduleType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Status {
         #[doc = "The status code, which should be an enum value of google.rpc.Code."]
@@ -1242,6 +1892,58 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Status {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct TimeOfDay {
+        #[doc = "Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value \"24:00:00\" for scenarios like business closing time."]
+        #[serde(
+            rename = "hours",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub hours: ::std::option::Option<i32>,
+        #[doc = "Minutes of hour of day. Must be from 0 to 59."]
+        #[serde(
+            rename = "minutes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub minutes: ::std::option::Option<i32>,
+        #[doc = "Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999."]
+        #[serde(
+            rename = "nanos",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub nanos: ::std::option::Option<i32>,
+        #[doc = "Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds."]
+        #[serde(
+            rename = "seconds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub seconds: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for TimeOfDay {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TimeOfDay {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1332,6 +2034,152 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for UpgradeInstanceRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct WeeklyMaintenanceWindow {
+        #[doc = "Required. The day of week that maintenance updates occur."]
+        #[serde(
+            rename = "day",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub day: ::std::option::Option<crate::schemas::WeeklyMaintenanceWindowDay>,
+        #[doc = "Output only. Duration of the maintenance window. The current window is fixed at 1 hour."]
+        #[serde(
+            rename = "duration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub duration: ::std::option::Option<String>,
+        #[doc = "Required. Start time of the window in UTC time."]
+        #[serde(
+            rename = "startTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub start_time: ::std::option::Option<crate::schemas::TimeOfDay>,
+    }
+    impl ::google_field_selector::FieldSelector for WeeklyMaintenanceWindow {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for WeeklyMaintenanceWindow {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum WeeklyMaintenanceWindowDay {
+        #[doc = "The day of the week is unspecified."]
+        DayOfWeekUnspecified,
+        #[doc = "Friday"]
+        Friday,
+        #[doc = "Monday"]
+        Monday,
+        #[doc = "Saturday"]
+        Saturday,
+        #[doc = "Sunday"]
+        Sunday,
+        #[doc = "Thursday"]
+        Thursday,
+        #[doc = "Tuesday"]
+        Tuesday,
+        #[doc = "Wednesday"]
+        Wednesday,
+    }
+    impl WeeklyMaintenanceWindowDay {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                WeeklyMaintenanceWindowDay::DayOfWeekUnspecified => "DAY_OF_WEEK_UNSPECIFIED",
+                WeeklyMaintenanceWindowDay::Friday => "FRIDAY",
+                WeeklyMaintenanceWindowDay::Monday => "MONDAY",
+                WeeklyMaintenanceWindowDay::Saturday => "SATURDAY",
+                WeeklyMaintenanceWindowDay::Sunday => "SUNDAY",
+                WeeklyMaintenanceWindowDay::Thursday => "THURSDAY",
+                WeeklyMaintenanceWindowDay::Tuesday => "TUESDAY",
+                WeeklyMaintenanceWindowDay::Wednesday => "WEDNESDAY",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for WeeklyMaintenanceWindowDay {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for WeeklyMaintenanceWindowDay {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<WeeklyMaintenanceWindowDay, ()> {
+            Ok(match s {
+                "DAY_OF_WEEK_UNSPECIFIED" => WeeklyMaintenanceWindowDay::DayOfWeekUnspecified,
+                "FRIDAY" => WeeklyMaintenanceWindowDay::Friday,
+                "MONDAY" => WeeklyMaintenanceWindowDay::Monday,
+                "SATURDAY" => WeeklyMaintenanceWindowDay::Saturday,
+                "SUNDAY" => WeeklyMaintenanceWindowDay::Sunday,
+                "THURSDAY" => WeeklyMaintenanceWindowDay::Thursday,
+                "TUESDAY" => WeeklyMaintenanceWindowDay::Tuesday,
+                "WEDNESDAY" => WeeklyMaintenanceWindowDay::Wednesday,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for WeeklyMaintenanceWindowDay {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for WeeklyMaintenanceWindowDay {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for WeeklyMaintenanceWindowDay {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DAY_OF_WEEK_UNSPECIFIED" => WeeklyMaintenanceWindowDay::DayOfWeekUnspecified,
+                "FRIDAY" => WeeklyMaintenanceWindowDay::Friday,
+                "MONDAY" => WeeklyMaintenanceWindowDay::Monday,
+                "SATURDAY" => WeeklyMaintenanceWindowDay::Saturday,
+                "SUNDAY" => WeeklyMaintenanceWindowDay::Sunday,
+                "THURSDAY" => WeeklyMaintenanceWindowDay::Thursday,
+                "TUESDAY" => WeeklyMaintenanceWindowDay::Tuesday,
+                "WEDNESDAY" => WeeklyMaintenanceWindowDay::Wednesday,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for WeeklyMaintenanceWindowDay {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for WeeklyMaintenanceWindowDay {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1795,12 +2643,12 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like \"displayName=tokyo\", and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
+                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
                 }
-                #[doc = "The maximum number of results to return. If not set, the service will select a default."]
+                #[doc = "The maximum number of results to return. If not set, the service selects a default."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
@@ -2075,7 +2923,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Creates a Redis instance based on the specified tier and memory size. By default, the instance is accessible from the project's [default network](https://cloud.google.com/vpc/docs/vpc). The creation is executed asynchronously and callers may check the returned operation to track its progress. Once the operation is completed the Redis instance will be fully functional. Completed longrunning.Operation will contain the new instance object in the response field. The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation."]
+                    #[doc = "Creates a Redis instance based on the specified tier and memory size. By default, the instance is accessible from the project's [default network](https://cloud.google.com/vpc/docs/vpc). The creation is executed asynchronously and callers may check the returned operation to track its progress. Once the operation is completed the Redis instance will be fully functional. The completed longrunning.Operation will contain the new instance object in the response field. The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation."]
                     pub fn create(
                         &self,
                         request: crate::schemas::Instance,
@@ -2276,6 +3124,30 @@ pub mod resources {
                             xgafv: None,
                             name: name.into(),
                             update_mask: None,
+                        }
+                    }
+                    #[doc = "Reschedule maintenance for a given instance in a given project and location."]
+                    pub fn reschedule_maintenance(
+                        &self,
+                        request: crate::schemas::RescheduleMaintenanceRequest,
+                        name: impl Into<String>,
+                    ) -> RescheduleMaintenanceRequestBuilder {
+                        RescheduleMaintenanceRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
                         }
                     }
                     #[doc = "Upgrades Redis instance to the newer Redis version specified in the request."]
@@ -3814,7 +4686,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> PatchRequestBuilder<'a> {
-                    #[doc = "Required. Mask of fields to update. At least one path must be supplied in this field. The elements of the repeated paths field may only include these fields from Instance: * `displayName` * `labels` * `memorySizeGb` * `redisConfig`"]
+                    #[doc = "Required. Mask of fields to update. At least one path must be supplied in this field. The elements of the repeated paths field may only include these fields from Instance: * `displayName` * `labels` * `memorySizeGb` * `redisConfig` * `replica_count`"]
                     pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                         self.update_mask = Some(value.into());
                         self
@@ -3943,6 +4815,169 @@ pub mod resources {
                     {
                         let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
                         req = req.query(&[("updateMask", &self.update_mask)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [InstancesActions::reschedule_maintenance()](struct.InstancesActions.html#method.reschedule_maintenance)"]
+                #[derive(Debug, Clone)]
+                pub struct RescheduleMaintenanceRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::RescheduleMaintenanceRequest,
+                    name: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> RescheduleMaintenanceRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Operation, crate::Error> {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Operation, crate::Error> {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        let req = req.json(&self.request);
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://redis.googleapis.com/".to_owned();
+                        output.push_str("v1beta1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str(":rescheduleMaintenance");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
                         req = req.query(&[("access_token", &self.access_token)]);
                         req = req.query(&[("alt", &self.alt)]);
                         req = req.query(&[("callback", &self.callback)]);

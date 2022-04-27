@@ -7,7 +7,7 @@
   "canonicalName": null,
   "fullyEncodeReservedExpansion": null,
   "version": "v1",
-  "revision": "20210317",
+  "revision": "20220419",
   "title": "Cloud Testing API",
   "description": "Allows developers to run automated tests for their mobile applications on Google infrastructure.",
   "ownerDomain": "google.com",
@@ -201,10 +201,10 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         },
         "https://www.googleapis.com/auth/cloud-platform.read-only": {
-          "description": "View your data across Google Cloud Platform services"
+          "description": "View your data across Google Cloud services and see the email address of your Google Account"
         }
       }
     }
@@ -369,7 +369,7 @@
           "items": null
         },
         "orchestratorOption": {
-          "description": "The option of whether running each test within its own invocation of instrumentation with Android Test Orchestrator or not. ** Orchestrator is only compatible with AndroidJUnitRunner version 1.0 or higher! ** Orchestrator offers the following benefits: - No shared state - Crashes are isolated - Logs are scoped per test See for more information about Android Test Orchestrator. If not set, the test will be run without the orchestrator.",
+          "description": "The option of whether running each test within its own invocation of instrumentation with Android Test Orchestrator or not. ** Orchestrator is only compatible with AndroidJUnitRunner version 1.1 or higher! ** Orchestrator offers the following benefits: - No shared state - Crashes are isolated - Logs are scoped per test See for more information about Android Test Orchestrator. If not set, the test will be run without the orchestrator.",
           "type": "string",
           "format": null,
           "enum": [
@@ -379,7 +379,7 @@
           ],
           "enumDescriptions": [
             "Default value: the server will choose the mode. Currently implies that the test will run without the orchestrator. In the future, all instrumentation tests will be run with the orchestrator. Using the orchestrator is highly encouraged because of all the benefits it offers.",
-            "Run test using orchestrator. ** Only compatible with AndroidJUnitRunner version 1.0 or higher! ** Recommended.",
+            "Run test using orchestrator. ** Only compatible with AndroidJUnitRunner version 1.1 or higher! ** Recommended.",
             "Run test without using orchestrator."
           ],
           "properties": {},
@@ -713,7 +713,7 @@
           }
         },
         "thumbnailUrl": {
-          "description": "URL of a thumbnail image (photo) of the device. e.g. https://lh3.googleusercontent.com/90WcauuJiCYABEl8U0lcZeuS5STUbf2yW...",
+          "description": "URL of a thumbnail image (photo) of the device.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -728,7 +728,7 @@
     },
     "AndroidRoboTest": {
       "id": "AndroidRoboTest",
-      "description": "A test of an android application that explores the application on a virtual or physical Android Device, finding culprits and crashes as it goes. Next tag: 30",
+      "description": "A test of an android application that explores the application on a virtual or physical Android Device, finding culprits and crashes as it goes.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -793,6 +793,24 @@
           "items": {
             "$ref": "RoboDirective"
           }
+        },
+        "roboMode": {
+          "description": "The mode in which Robo should run. Most clients should allow the server to populate this field automatically.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ROBO_MODE_UNSPECIFIED",
+            "ROBO_VERSION_1",
+            "ROBO_VERSION_2"
+          ],
+          "enumDescriptions": [
+            "This means that the server should choose the mode. Recommended.",
+            "Runs Robo in UIAutomator-only mode without app resigning",
+            "Runs Robo in standard Espresso with UIAutomator fallback"
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "roboScript": {
           "description": "A JSON file with a sequence of actions Robo should perform as a prologue for the crawl.",
@@ -1258,7 +1276,7 @@
     },
     "Date": {
       "id": "Date",
-      "description": "Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values * A month and day value, with a zero year, such as an anniversary * A year on its own, with zero month and day values * A year and month value, with a zero day, such as a credit card expiration date Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.",
+      "description": "Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp",
       "type": "object",
       "format": null,
       "enum": [],
@@ -2036,7 +2054,7 @@
           "items": null
         },
         "pullDirectories": {
-          "description": "List of directories on the device to upload to Cloud Storage at the end of the test. Directories should either be in a shared directory (e.g. /private/var/mobile/Media) or within an accessible directory inside the app's filesystem (e.g. /Documents) by specifying the bundle id.",
+          "description": "List of directories on the device to upload to Cloud Storage at the end of the test. Directories should either be in a shared directory (such as /private/var/mobile/Media) or within an accessible directory inside the app's filesystem (such as /Documents) by specifying the bundle ID.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2435,7 +2453,7 @@
           "items": null
         },
         "orchestratorVersion": {
-          "description": "A string representing the current version of Android Test Orchestrator that is used in the environment. The package is available at https://maven.google.com/web/index.html#com.android.support.test:orchestrator.",
+          "description": "Deprecated: Use AndroidX Test Orchestrator going forward. A string representing the current version of Android Test Orchestrator that is used in the environment. The package is available at https://maven.google.com/web/index.html#com.android.support.test:orchestrator.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2619,7 +2637,7 @@
           "items": null
         },
         "testTargetsForShard": {
-          "description": "Output only. Test targets for each shard.",
+          "description": "Output only. Test targets for each shard. Only set for manual sharding.",
           "$ref": "TestTargetsForShard"
         }
       },
@@ -2984,7 +3002,7 @@
             "The test package and app package are the same.",
             "The test apk does not declare an instrumentation.",
             "The input app apk does not have a signature.",
-            "The test runner class specified by user or in the test APK's manifest file is not compatible with Android Test Orchestrator. Orchestrator is only compatible with AndroidJUnitRunner version 1.0 or higher. Orchestrator can be disabled by using DO_NOT_USE_ORCHESTRATOR OrchestratorOption.",
+            "The test runner class specified by user or in the test APK's manifest file is not compatible with Android Test Orchestrator. Orchestrator is only compatible with AndroidJUnitRunner version 1.1 or higher. Orchestrator can be disabled by using DO_NOT_USE_ORCHESTRATOR OrchestratorOption.",
             "The test APK does not contain the test runner class specified by user or in the manifest file. This can be caused by either of the following reasons: - the user provided a runner class name that's incorrect, or - the test runner isn't built into the test APK (might be in the app APK instead).",
             "A main launcher activity could not be found.",
             "The app declares one or more permissions that are not allowed.",
@@ -3211,7 +3229,7 @@
           "items": null
         },
         "systrace": {
-          "description": "Systrace configuration for the run. If set a systrace will be taken, starting on test start and lasting for the configured duration. The systrace file thus obtained is put in the results bucket together with the other artifacts from the run.",
+          "description": "Deprecated: Systrace uses Python 2 which has been sunset 2020-01-01. Support of Systrace may stop at any time, at which point no Systrace file will be provided in the results. Systrace configuration for the run. If set a systrace will be taken, starting on test start and lasting for the configured duration. The systrace file thus obtained is put in the results bucket together with the other artifacts from the run.",
           "$ref": "SystraceSetup"
         }
       },
@@ -3297,7 +3315,7 @@
       "enumDescriptions": [],
       "properties": {
         "testTargets": {
-          "description": "Group of packages, classes, and/or test methods to be run for each shard. The targets need to be specified in AndroidJUnitRunner argument format. For example, \"package com.my.packages\" \"class com.my.package.MyClass\". The number of shard_test_targets must be greater than 0.",
+          "description": "Group of packages, classes, and/or test methods to be run for each shard. The targets need to be specified in AndroidJUnitRunner argument format. For example, \"package com.my.packages\" \"class com.my.package.MyClass\". The number of test_targets must be greater than 0.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3508,7 +3526,7 @@
     },
     "UniformSharding": {
       "id": "UniformSharding",
-      "description": "Uniformly shards test cases given a total number of shards. For Instrumentation test, it will be translated to \"-e numShard\" \"-e shardIndex\" AndroidJUnitRunner arguments. With uniform sharding enabled, specifying these sharding arguments via environment_variables is invalid.",
+      "description": "Uniformly shards test cases given a total number of shards. For Instrumentation test, it will be translated to \"-e numShard\" \"-e shardIndex\" AndroidJUnitRunner arguments. Based on the sharding mechanism AndroidJUnitRunner uses, there is no guarantee that test cases will be distributed uniformly across all shards. With uniform sharding enabled, specifying these sharding arguments via environment_variables is invalid.",
       "type": "object",
       "format": null,
       "enum": [],

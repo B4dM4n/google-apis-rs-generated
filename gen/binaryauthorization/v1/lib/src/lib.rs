@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [*getPolicy*](resources/projects/struct.GetPolicyRequestBuilder.html), [*updatePolicy*](resources/projects/struct.UpdatePolicyRequestBuilder.html)\n      * [attestors](resources/projects/attestors/struct.AttestorsActions.html)\n        * [*create*](resources/projects/attestors/struct.CreateRequestBuilder.html), [*delete*](resources/projects/attestors/struct.DeleteRequestBuilder.html), [*get*](resources/projects/attestors/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/attestors/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/attestors/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/attestors/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/attestors/struct.TestIamPermissionsRequestBuilder.html), [*update*](resources/projects/attestors/struct.UpdateRequestBuilder.html), [*validateAttestationOccurrence*](resources/projects/attestors/struct.ValidateAttestationOccurrenceRequestBuilder.html)\n      * [policy](resources/projects/policy/struct.PolicyActions.html)\n        * [*getIamPolicy*](resources/projects/policy/struct.GetIamPolicyRequestBuilder.html), [*setIamPolicy*](resources/projects/policy/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/policy/struct.TestIamPermissionsRequestBuilder.html)\n    * [systempolicy](resources/systempolicy/struct.SystempolicyActions.html)\n      * [*getPolicy*](resources/systempolicy/struct.GetPolicyRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -145,7 +145,7 @@ pub mod schemas {
         AlwaysDeny,
         #[doc = "Do not use."]
         EvaluationModeUnspecified,
-        #[doc = "This rule allows a pod creation if all the attestors listed in 'require_attestations_by' have valid attestations for all of the images in the pod spec."]
+        #[doc = "This rule allows a pod creation if all the attestors listed in `require_attestations_by` have valid attestations for all of the images in the pod spec."]
         RequireAttestation,
     }
     impl AdmissionRuleEvaluationMode {
@@ -237,7 +237,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AdmissionWhitelistPattern {
-        #[doc = "An image name pattern to allowlist, in the form `registry/path/to/image`. This supports a trailing `*` as a wildcard, but this is allowed only in text after the `registry/` part."]
+        #[doc = "An image name pattern to allowlist, in the form `registry/path/to/image`. This supports a trailing `*` wildcard, but this is allowed only in text after the `registry/` part. This also supports a trailing `**` wildcard which matches subdirectories of a given entry."]
         #[serde(
             rename = "namePattern",
             default,
@@ -320,6 +320,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
+        #[doc = "Optional. A checksum, returned by the server, that can be sent on update requests to ensure the attestor has an up-to-date value before attempting to update it. See https://google.aip.dev/154."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
         #[doc = "Required. The resource name, in the format: `projects/*/attestors/*`. This field may not be updated."]
         #[serde(
             rename = "name",
@@ -417,21 +424,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Binding {
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -538,7 +545,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct IamPolicy {
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,
@@ -708,6 +715,14 @@ pub mod schemas {
         RsaSignPkcs14096Sha256,
         #[doc = "RSASSA-PKCS1-v1_5 with a 4096 bit key and a SHA512 digest."]
         RsaSignPkcs14096Sha512,
+        #[doc = "RSASSA-PSS 2048 bit key with a SHA256 digest."]
+        RsaSignPss2048Sha256,
+        #[doc = "RSASSA-PSS 3072 bit key with a SHA256 digest."]
+        RsaSignPss3072Sha256,
+        #[doc = "RSASSA-PSS 4096 bit key with a SHA256 digest."]
+        RsaSignPss4096Sha256,
+        #[doc = "RSASSA-PSS 4096 bit key with a SHA512 digest."]
+        RsaSignPss4096Sha512,
         #[doc = "Not specified."]
         SignatureAlgorithmUnspecified,
     }
@@ -736,6 +751,10 @@ pub mod schemas {
                 PkixPublicKeySignatureAlgorithm::RsaSignPkcs14096Sha512 => {
                     "RSA_SIGN_PKCS1_4096_SHA512"
                 }
+                PkixPublicKeySignatureAlgorithm::RsaSignPss2048Sha256 => "RSA_SIGN_PSS_2048_SHA256",
+                PkixPublicKeySignatureAlgorithm::RsaSignPss3072Sha256 => "RSA_SIGN_PSS_3072_SHA256",
+                PkixPublicKeySignatureAlgorithm::RsaSignPss4096Sha256 => "RSA_SIGN_PSS_4096_SHA256",
+                PkixPublicKeySignatureAlgorithm::RsaSignPss4096Sha512 => "RSA_SIGN_PSS_4096_SHA512",
                 PkixPublicKeySignatureAlgorithm::SignatureAlgorithmUnspecified => {
                     "SIGNATURE_ALGORITHM_UNSPECIFIED"
                 }
@@ -773,6 +792,10 @@ pub mod schemas {
                 "RSA_SIGN_PKCS1_4096_SHA512" => {
                     PkixPublicKeySignatureAlgorithm::RsaSignPkcs14096Sha512
                 }
+                "RSA_SIGN_PSS_2048_SHA256" => PkixPublicKeySignatureAlgorithm::RsaSignPss2048Sha256,
+                "RSA_SIGN_PSS_3072_SHA256" => PkixPublicKeySignatureAlgorithm::RsaSignPss3072Sha256,
+                "RSA_SIGN_PSS_4096_SHA256" => PkixPublicKeySignatureAlgorithm::RsaSignPss4096Sha256,
+                "RSA_SIGN_PSS_4096_SHA512" => PkixPublicKeySignatureAlgorithm::RsaSignPss4096Sha512,
                 "SIGNATURE_ALGORITHM_UNSPECIFIED" => {
                     PkixPublicKeySignatureAlgorithm::SignatureAlgorithmUnspecified
                 }
@@ -822,6 +845,10 @@ pub mod schemas {
                 "RSA_SIGN_PKCS1_4096_SHA512" => {
                     PkixPublicKeySignatureAlgorithm::RsaSignPkcs14096Sha512
                 }
+                "RSA_SIGN_PSS_2048_SHA256" => PkixPublicKeySignatureAlgorithm::RsaSignPss2048Sha256,
+                "RSA_SIGN_PSS_3072_SHA256" => PkixPublicKeySignatureAlgorithm::RsaSignPss3072Sha256,
+                "RSA_SIGN_PSS_4096_SHA256" => PkixPublicKeySignatureAlgorithm::RsaSignPss4096Sha256,
+                "RSA_SIGN_PSS_4096_SHA512" => PkixPublicKeySignatureAlgorithm::RsaSignPss4096Sha512,
                 "SIGNATURE_ALGORITHM_UNSPECIFIED" => {
                     PkixPublicKeySignatureAlgorithm::SignatureAlgorithmUnspecified
                 }
@@ -888,6 +915,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
+        #[doc = "Optional. A checksum, returned by the server, that can be sent on update requests to ensure the policy has an up-to-date value before attempting to update it. See https://google.aip.dev/154."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
         #[doc = "Optional. Controls the evaluation of a Google-maintained global admission policy for common system-level images. Images not covered by the global policy will be subject to the project admission policy. This setting has no effect when specified inside a global admission policy."]
         #[serde(
             rename = "globalPolicyEvaluationMode",
@@ -896,7 +930,7 @@ pub mod schemas {
         )]
         pub global_policy_evaluation_mode:
             ::std::option::Option<crate::schemas::PolicyGlobalPolicyEvaluationMode>,
-        #[doc = "Optional. Per-istio-service-identity admission rules. Istio service identity spec format: spiffe:///ns//sa/ or /ns//sa/ e.g. spiffe://example.com/ns/test-ns/sa/default"]
+        #[doc = "Optional. Per-istio-service-identity admission rules. Istio service identity spec format: `spiffe:///ns//sa/` or `/ns//sa/` e.g. `spiffe://example.com/ns/test-ns/sa/default`"]
         #[serde(
             rename = "istioServiceIdentityAdmissionRules",
             default,
@@ -905,7 +939,7 @@ pub mod schemas {
         pub istio_service_identity_admission_rules: ::std::option::Option<
             ::std::collections::BTreeMap<String, crate::schemas::AdmissionRule>,
         >,
-        #[doc = "Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format: [a-z.-]+, e.g. 'some-namespace'"]
+        #[doc = "Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format: `[a-z.-]+`, e.g. `some-namespace`"]
         #[serde(
             rename = "kubernetesNamespaceAdmissionRules",
             default,
@@ -914,7 +948,7 @@ pub mod schemas {
         pub kubernetes_namespace_admission_rules: ::std::option::Option<
             ::std::collections::BTreeMap<String, crate::schemas::AdmissionRule>,
         >,
-        #[doc = "Optional. Per-kubernetes-service-account admission rules. Service account spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'"]
+        #[doc = "Optional. Per-kubernetes-service-account admission rules. Service account spec format: `namespace:serviceaccount`. e.g. `test-ns:default`"]
         #[serde(
             rename = "kubernetesServiceAccountAdmissionRules",
             default,
@@ -950,9 +984,9 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum PolicyGlobalPolicyEvaluationMode {
-        #[doc = "Disables global policy evaluation."]
+        #[doc = "Disables system policy evaluation."]
         Disable,
-        #[doc = "Enables global policy evaluation."]
+        #[doc = "Enables system policy evaluation."]
         Enable,
         #[doc = "Not specified: DISABLE is assumed."]
         GlobalPolicyEvaluationModeUnspecified,
@@ -1043,7 +1077,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SetIamPolicyRequest {
-        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -1112,7 +1146,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -2674,7 +2708,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> GetIamPolicyRequestBuilder<'a> {
-                #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                 pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                     self.options_requested_policy_version = Some(value);
                     self
@@ -3863,7 +3897,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> GetIamPolicyRequestBuilder<'a> {
-                #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                 pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                     self.options_requested_policy_version = Some(value);
                     self

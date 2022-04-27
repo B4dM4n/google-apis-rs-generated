@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n        * [game_server_deployments](resources/projects/locations/game_server_deployments/struct.GameServerDeploymentsActions.html)\n          * [*create*](resources/projects/locations/game_server_deployments/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/game_server_deployments/struct.DeleteRequestBuilder.html), [*fetchDeploymentState*](resources/projects/locations/game_server_deployments/struct.FetchDeploymentStateRequestBuilder.html), [*get*](resources/projects/locations/game_server_deployments/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/game_server_deployments/struct.GetIamPolicyRequestBuilder.html), [*getRollout*](resources/projects/locations/game_server_deployments/struct.GetRolloutRequestBuilder.html), [*list*](resources/projects/locations/game_server_deployments/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/game_server_deployments/struct.PatchRequestBuilder.html), [*previewRollout*](resources/projects/locations/game_server_deployments/struct.PreviewRolloutRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/game_server_deployments/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/game_server_deployments/struct.TestIamPermissionsRequestBuilder.html), [*updateRollout*](resources/projects/locations/game_server_deployments/struct.UpdateRolloutRequestBuilder.html)\n          * [configs](resources/projects/locations/game_server_deployments/configs/struct.ConfigsActions.html)\n            * [*create*](resources/projects/locations/game_server_deployments/configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/game_server_deployments/configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/game_server_deployments/configs/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/game_server_deployments/configs/struct.ListRequestBuilder.html)\n        * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n          * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/locations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n        * [realms](resources/projects/locations/realms/struct.RealmsActions.html)\n          * [*create*](resources/projects/locations/realms/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/realms/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/realms/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/realms/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/realms/struct.PatchRequestBuilder.html), [*previewUpdate*](resources/projects/locations/realms/struct.PreviewUpdateRequestBuilder.html)\n          * [game_server_clusters](resources/projects/locations/realms/game_server_clusters/struct.GameServerClustersActions.html)\n            * [*create*](resources/projects/locations/realms/game_server_clusters/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/realms/game_server_clusters/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/realms/game_server_clusters/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/realms/game_server_clusters/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/realms/game_server_clusters/struct.PatchRequestBuilder.html), [*previewCreate*](resources/projects/locations/realms/game_server_clusters/struct.PreviewCreateRequestBuilder.html), [*previewDelete*](resources/projects/locations/realms/game_server_clusters/struct.PreviewDeleteRequestBuilder.html), [*previewUpdate*](resources/projects/locations/realms/game_server_clusters/struct.PreviewUpdateRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -24,12 +24,6 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audit_log_configs: ::std::option::Option<Vec<crate::schemas::AuditLogConfig>>,
-        #[serde(
-            rename = "exemptedMembers",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub exempted_members: ::std::option::Option<Vec<String>>,
         #[doc = "Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services."]
         #[serde(
             rename = "service",
@@ -318,21 +312,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub binding_id: ::std::option::Option<String>,
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -564,7 +558,7 @@ pub mod schemas {
         JustificationType,
         #[doc = "Default non-attribute."]
         NoAttr,
-        #[doc = "Any of the security realms in the IAMContext (go/security-realms). When used with IN, the condition indicates \"any of the request's realms match one of the given values; with NOT_IN, \"none of the realms match any of the given values\". Note that a value can be: - 'self' (i.e., allow connections from clients that are in the same security realm) - 'self:metro' (i.e., clients that are in the same metro) - 'self:cloud-region' (i.e., allow connections from clients that are in the same cloud region) - 'guardians' (i.e., allow connections from its guardian realms. See go/security-realms-glossary#guardian for more information.) - a realm (e.g., 'campus-abc') - a realm group (e.g., 'realms-for-borg-cell-xx', see: go/realm-groups) A match is determined by a realm group membership check performed by a RealmAclRep object (go/realm-acl-howto). It is not permitted to grant access based on the *absence* of a realm, so realm conditions can only be used in a \"positive\" context (e.g., ALLOW/IN or DENY/NOT_IN)."]
+        #[doc = "Any of the security realms in the IAMContext (go/security-realms). When used with IN, the condition indicates \"any of the request's realms match one of the given values; with NOT_IN, \"none of the realms match any of the given values\". Note that a value can be: - 'self' (i.e., allow connections from clients that are in the same security realm, which is currently but not guaranteed to be campus-sized) - 'self:metro' (i.e., clients that are in the same metro) - 'self:cloud-region' (i.e., allow connections from clients that are in the same cloud region) - 'self:prod-region' (i.e., allow connections from clients that are in the same prod region) - 'guardians' (i.e., allow connections from its guardian realms. See go/security-realms-glossary#guardian for more information.) - a realm (e.g., 'campus-abc') - a realm group (e.g., 'realms-for-borg-cell-xx', see: go/realm-groups) A match is determined by a realm group membership check performed by a RealmAclRep object (go/realm-acl-howto). It is not permitted to grant access based on the *absence* of a realm, so realm conditions can only be used in a \"positive\" context (e.g., ALLOW/IN or DENY/NOT_IN)."]
         SecurityRealm,
     }
     impl ConditionIam {
@@ -1390,7 +1384,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FleetConfig {
-        #[doc = "Agones fleet spec. Example spec: `https://agones.dev/site/docs/reference/fleet/`."]
+        #[doc = "Agones fleet spec (see [example spec](https://agones.dev/site/docs/reference/fleet/))."]
         #[serde(
             rename = "fleetSpec",
             default,
@@ -1428,14 +1422,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GameServerCluster {
-        #[doc = "Optional. The allocation priority assigned to the game server cluster. Game server clusters receive new game server allocations based on the relative allocation priorites set for each cluster, if the realm is configured for multicluster allocation."]
+        #[doc = "Output only. The state of the Kubernetes cluster in preview. This will be available if view is set to FULL in the relevant list/get/preview request."]
         #[serde(
-            rename = "allocationPriority",
+            rename = "clusterState",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub allocation_priority:
-            ::std::option::Option<crate::schemas::GameServerClusterAllocationPriority>,
+        pub cluster_state: ::std::option::Option<crate::schemas::KubernetesClusterState>,
         #[doc = "The game server cluster connection information. This information is used to manage game server clusters."]
         #[serde(
             rename = "connectionInfo",
@@ -1457,7 +1450,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "ETag of the resource."]
+        #[doc = "Used to perform consistent read-modify-write updates. If not set, a blind \"overwrite\" update happens."]
         #[serde(
             rename = "etag",
             default,
@@ -1471,7 +1464,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Required. The resource name of the game server cluster, in the following form: `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`. For example, `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`."]
+        #[doc = "Required. The resource name of the game server cluster, in the following form: `projects/{project}/locations/{locationId}/realms/{realmId}/gameServerClusters/{gameServerClusterId}`. For example, `projects/my-project/locations/global/realms/zanzibar/gameServerClusters/my-gke-cluster`."]
         #[serde(
             rename = "name",
             default,
@@ -1496,92 +1489,6 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GameServerClusterAllocationPriority {
-        #[doc = "Priority 1, the highest priority."]
-        P1,
-        #[doc = "Priority 2."]
-        P2,
-        #[doc = "Priority 3."]
-        P3,
-        #[doc = "Priority 4."]
-        P4,
-        #[doc = "The default allocation priority. `PRIORITY_UNSPECIFIED` is the lowest possible priority."]
-        PriorityUnspecified,
-    }
-    impl GameServerClusterAllocationPriority {
-        pub fn as_str(self) -> &'static str {
-            match self {
-                GameServerClusterAllocationPriority::P1 => "P1",
-                GameServerClusterAllocationPriority::P2 => "P2",
-                GameServerClusterAllocationPriority::P3 => "P3",
-                GameServerClusterAllocationPriority::P4 => "P4",
-                GameServerClusterAllocationPriority::PriorityUnspecified => "PRIORITY_UNSPECIFIED",
-            }
-        }
-    }
-    impl ::std::convert::AsRef<str> for GameServerClusterAllocationPriority {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr for GameServerClusterAllocationPriority {
-        type Err = ();
-        fn from_str(s: &str) -> ::std::result::Result<GameServerClusterAllocationPriority, ()> {
-            Ok(match s {
-                "P1" => GameServerClusterAllocationPriority::P1,
-                "P2" => GameServerClusterAllocationPriority::P2,
-                "P3" => GameServerClusterAllocationPriority::P3,
-                "P4" => GameServerClusterAllocationPriority::P4,
-                "PRIORITY_UNSPECIFIED" => GameServerClusterAllocationPriority::PriorityUnspecified,
-                _ => return Err(()),
-            })
-        }
-    }
-    impl ::std::fmt::Display for GameServerClusterAllocationPriority {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize for GameServerClusterAllocationPriority {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de> for GameServerClusterAllocationPriority {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok(match value {
-                "P1" => GameServerClusterAllocationPriority::P1,
-                "P2" => GameServerClusterAllocationPriority::P2,
-                "P3" => GameServerClusterAllocationPriority::P3,
-                "P4" => GameServerClusterAllocationPriority::P4,
-                "PRIORITY_UNSPECIFIED" => GameServerClusterAllocationPriority::PriorityUnspecified,
-                _ => {
-                    return Err(::serde::de::Error::custom(format!(
-                        "invalid enum for #name: {}",
-                        value
-                    )))
-                }
-            })
-        }
-    }
-    impl ::google_field_selector::FieldSelector for GameServerClusterAllocationPriority {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for GameServerClusterAllocationPriority {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
     #[derive(
         Debug,
         Clone,
@@ -1602,14 +1509,6 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gke_cluster_reference: ::std::option::Option<crate::schemas::GkeClusterReference>,
-        #[doc = "Reference to a Kubernetes cluster registered through GKE Hub. See https://cloud.google.com/anthos/multicluster-management/ for more information about registering Kubernetes clusters."]
-        #[serde(
-            rename = "gkeHubClusterReference",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub gke_hub_cluster_reference:
-            ::std::option::Option<crate::schemas::GkeHubClusterReference>,
         #[doc = "Namespace designated on the game server cluster where the Agones game server instances will be created. Existence of the namespace will be validated during creation."]
         #[serde(
             rename = "namespace",
@@ -1669,7 +1568,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "The resource name of the game server config, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`. For example, `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`."]
+        #[doc = "The resource name of the game server config, in the following form: `projects/{project}/locations/{locationId}/gameServerDeployments/{deploymentId}/configs/{configId}`. For example, `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`."]
         #[serde(
             rename = "name",
             default,
@@ -1759,14 +1658,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Human readable description of the game server delpoyment."]
+        #[doc = "Human readable description of the game server deployment."]
         #[serde(
             rename = "description",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "ETag of the resource."]
+        #[doc = "Used to perform consistent read-modify-write updates. If not set, a blind \"overwrite\" update happens."]
         #[serde(
             rename = "etag",
             default,
@@ -1780,7 +1679,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "The resource name of the game server deployment, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment`."]
+        #[doc = "The resource name of the game server deployment, in the following form: `projects/{project}/locations/{locationId}/gameServerDeployments/{deploymentId}`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment`."]
         #[serde(
             rename = "name",
             default,
@@ -1847,7 +1746,7 @@ pub mod schemas {
         )]
         pub game_server_config_overrides:
             ::std::option::Option<Vec<crate::schemas::GameServerConfigOverride>>,
-        #[doc = "The resource name of the game server deployment rollout, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`."]
+        #[doc = "The resource name of the game server deployment rollout, in the following form: `projects/{project}/locations/{locationId}/gameServerDeployments/{deploymentId}/rollout`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`."]
         #[serde(
             rename = "name",
             default,
@@ -1885,7 +1784,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GkeClusterReference {
-        #[doc = "The full or partial name of a GKE cluster, using one of the following forms: * `projects/{project}/locations/{location}/clusters/{cluster}` * `locations/{location}/clusters/{cluster}` * `{cluster}` If project and location are not specified, the project and location of the GameServerCluster resource are used to generate the full name of the GKE cluster."]
+        #[doc = "The full or partial name of a GKE cluster, using one of the following forms: * `projects/{project}/locations/{locationId}/clusters/{cluster}` * `locations/{locationId}/clusters/{cluster}` * `{cluster}` If project and location are not specified, the project and location of the GameServerCluster resource are used to generate the full name of the GKE cluster."]
         #[serde(
             rename = "cluster",
             default,
@@ -1915,21 +1814,206 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GkeHubClusterReference {
-        #[doc = "The full or partial name of a GKE Hub membership, using one of the following forms: * `https://gkehub.googleapis.com/v1beta1/projects/{project_id}/locations/global/memberships/{membership_id}` * `projects/{project_id}/locations/global/memberships/{membership_id}` * `{membership_id}` If project is not specified, the project of the GameServerCluster resource is used to generate the full name of the GKE Hub membership."]
+    pub struct KubernetesClusterState {
+        #[doc = "Output only. The version of Agones currently installed in the registered Kubernetes cluster."]
         #[serde(
-            rename = "membership",
+            rename = "agonesVersionInstalled",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub membership: ::std::option::Option<String>,
+        pub agones_version_installed: ::std::option::Option<String>,
+        #[doc = "Output only. The version of Agones that is targeted to be installed in the cluster."]
+        #[serde(
+            rename = "agonesVersionTargeted",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub agones_version_targeted: ::std::option::Option<String>,
+        #[doc = "Output only. The state for the installed versions of Agones/Kubernetes."]
+        #[serde(
+            rename = "installationState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub installation_state:
+            ::std::option::Option<crate::schemas::KubernetesClusterStateInstallationState>,
+        #[doc = "Output only. The version of Kubernetes that is currently used in the registered Kubernetes cluster (as detected by the Cloud Game Servers service)."]
+        #[serde(
+            rename = "kubernetesVersionInstalled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kubernetes_version_installed: ::std::option::Option<String>,
+        #[doc = "Output only. The cloud provider type reported by the first node's `providerID` in the list of nodes on the Kubernetes endpoint. On Kubernetes platforms that support zero-node clusters (like GKE-on-GCP), the provider type will be empty."]
+        #[serde(
+            rename = "provider",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub provider: ::std::option::Option<String>,
+        #[doc = "Output only. The detailed error message for the installed versions of Agones/Kubernetes."]
+        #[serde(
+            rename = "versionInstalledErrorMessage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version_installed_error_message: ::std::option::Option<String>,
     }
-    impl ::google_field_selector::FieldSelector for GkeHubClusterReference {
+    impl ::google_field_selector::FieldSelector for KubernetesClusterState {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for GkeHubClusterReference {
+    impl ::google_field_selector::ToFieldType for KubernetesClusterState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum KubernetesClusterStateInstallationState {
+        #[doc = "Both the Agones and Kubernetes versions are supported by Google Cloud Game Servers and Agones and Kubernetes versions are compatible."]
+        AgonesKubernetesVersionSupported,
+        #[doc = "The installed version of Agones is supported by Google Cloud Game Servers, but the installed version of Kubernetes is not recommended or supported by the version of Agones."]
+        AgonesKubernetesVersionUnsupported,
+        #[doc = "Agones is not installed."]
+        AgonesNotInstalled,
+        #[doc = "The installed version of Agones is not recognized because the Agones controller's image name does not have a version string reported as {major}.{minor}(.{patch})."]
+        AgonesVersionUnrecognized,
+        #[doc = "The installed version of Agones is not supported by Google Cloud Game Servers."]
+        AgonesVersionUnsupported,
+        #[doc = "The default installation state. This value is used if the state is omitted."]
+        InstallationStateUnspecified,
+        #[doc = "The server version of Kubernetes cluster is not recognized because the API server didn't return parsable version info on path/version."]
+        KubernetesVersionUnrecognized,
+        #[doc = "Failed to read or verify the version of Agones or Kubernetes. See `version_installed_error_message` for details."]
+        VersionVerificationFailed,
+    }
+    impl KubernetesClusterStateInstallationState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                KubernetesClusterStateInstallationState::AgonesKubernetesVersionSupported => {
+                    "AGONES_KUBERNETES_VERSION_SUPPORTED"
+                }
+                KubernetesClusterStateInstallationState::AgonesKubernetesVersionUnsupported => {
+                    "AGONES_KUBERNETES_VERSION_UNSUPPORTED"
+                }
+                KubernetesClusterStateInstallationState::AgonesNotInstalled => {
+                    "AGONES_NOT_INSTALLED"
+                }
+                KubernetesClusterStateInstallationState::AgonesVersionUnrecognized => {
+                    "AGONES_VERSION_UNRECOGNIZED"
+                }
+                KubernetesClusterStateInstallationState::AgonesVersionUnsupported => {
+                    "AGONES_VERSION_UNSUPPORTED"
+                }
+                KubernetesClusterStateInstallationState::InstallationStateUnspecified => {
+                    "INSTALLATION_STATE_UNSPECIFIED"
+                }
+                KubernetesClusterStateInstallationState::KubernetesVersionUnrecognized => {
+                    "KUBERNETES_VERSION_UNRECOGNIZED"
+                }
+                KubernetesClusterStateInstallationState::VersionVerificationFailed => {
+                    "VERSION_VERIFICATION_FAILED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for KubernetesClusterStateInstallationState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for KubernetesClusterStateInstallationState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<KubernetesClusterStateInstallationState, ()> {
+            Ok(match s {
+                "AGONES_KUBERNETES_VERSION_SUPPORTED" => {
+                    KubernetesClusterStateInstallationState::AgonesKubernetesVersionSupported
+                }
+                "AGONES_KUBERNETES_VERSION_UNSUPPORTED" => {
+                    KubernetesClusterStateInstallationState::AgonesKubernetesVersionUnsupported
+                }
+                "AGONES_NOT_INSTALLED" => {
+                    KubernetesClusterStateInstallationState::AgonesNotInstalled
+                }
+                "AGONES_VERSION_UNRECOGNIZED" => {
+                    KubernetesClusterStateInstallationState::AgonesVersionUnrecognized
+                }
+                "AGONES_VERSION_UNSUPPORTED" => {
+                    KubernetesClusterStateInstallationState::AgonesVersionUnsupported
+                }
+                "INSTALLATION_STATE_UNSPECIFIED" => {
+                    KubernetesClusterStateInstallationState::InstallationStateUnspecified
+                }
+                "KUBERNETES_VERSION_UNRECOGNIZED" => {
+                    KubernetesClusterStateInstallationState::KubernetesVersionUnrecognized
+                }
+                "VERSION_VERIFICATION_FAILED" => {
+                    KubernetesClusterStateInstallationState::VersionVerificationFailed
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for KubernetesClusterStateInstallationState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for KubernetesClusterStateInstallationState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for KubernetesClusterStateInstallationState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "AGONES_KUBERNETES_VERSION_SUPPORTED" => {
+                    KubernetesClusterStateInstallationState::AgonesKubernetesVersionSupported
+                }
+                "AGONES_KUBERNETES_VERSION_UNSUPPORTED" => {
+                    KubernetesClusterStateInstallationState::AgonesKubernetesVersionUnsupported
+                }
+                "AGONES_NOT_INSTALLED" => {
+                    KubernetesClusterStateInstallationState::AgonesNotInstalled
+                }
+                "AGONES_VERSION_UNRECOGNIZED" => {
+                    KubernetesClusterStateInstallationState::AgonesVersionUnrecognized
+                }
+                "AGONES_VERSION_UNSUPPORTED" => {
+                    KubernetesClusterStateInstallationState::AgonesVersionUnsupported
+                }
+                "INSTALLATION_STATE_UNSPECIFIED" => {
+                    KubernetesClusterStateInstallationState::InstallationStateUnspecified
+                }
+                "KUBERNETES_VERSION_UNRECOGNIZED" => {
+                    KubernetesClusterStateInstallationState::KubernetesVersionUnrecognized
+                }
+                "VERSION_VERIFICATION_FAILED" => {
+                    KubernetesClusterStateInstallationState::VersionVerificationFailed
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for KubernetesClusterStateInstallationState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for KubernetesClusterStateInstallationState {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2575,7 +2659,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audit_configs: ::std::option::Option<Vec<crate::schemas::AuditConfig>>,
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,
@@ -2589,12 +2673,6 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[serde(
-            rename = "iamOwned",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub iam_owned: ::std::option::Option<bool>,
         #[doc = "If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied."]
         #[serde(
             rename = "rules",
@@ -2633,6 +2711,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PreviewCreateGameServerClusterResponse {
+        #[doc = "Output only. The state of the Kubernetes cluster in preview. This will be available if view is set to FULL in the relevant list/get/preview request."]
+        #[serde(
+            rename = "clusterState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cluster_state: ::std::option::Option<crate::schemas::KubernetesClusterState>,
         #[doc = "The ETag of the game server cluster."]
         #[serde(
             rename = "etag",
@@ -2844,7 +2929,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "ETag of the resource."]
+        #[doc = "Used to perform consistent read-modify-write updates. If not set, a blind \"overwrite\" update happens."]
         #[serde(
             rename = "etag",
             default,
@@ -2858,14 +2943,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "The resource name of the realm, in the following form: `projects/{project}/locations/{location}/realms/{realm}`. For example, `projects/my-project/locations/{location}/realms/my-realm`."]
+        #[doc = "The resource name of the realm, in the following form: `projects/{project}/locations/{locationId}/realms/{realmId}`. For example, `projects/my-project/locations/global/realms/my-realm`."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. Time zone where all policies targeting this realm are evaluated. The value of this field must be from the IANA time zone database: https://www.iana.org/time-zones."]
+        #[doc = "Required. Time zone where all policies targeting this realm are evaluated. The value of this field must be from the [IANA time zone database](https://www.iana.org/time-zones)."]
         #[serde(
             rename = "timeZone",
             default,
@@ -2955,7 +3040,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action."]
+        #[doc = "The config returned to callers of CheckPolicy for any entries that match the LOG action."]
         #[serde(
             rename = "logConfig",
             default,
@@ -3098,21 +3183,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ScalingConfig {
-        #[doc = "Required. Agones fleet autoscaler spec. Example spec: https://agones.dev/site/docs/reference/fleetautoscaler/"]
+        #[doc = "Required. Agones fleet autoscaler spec (see [example spec](https://agones.dev/site/docs/reference/fleetautoscaler/))."]
         #[serde(
             rename = "fleetAutoscalerSpec",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub fleet_autoscaler_spec: ::std::option::Option<String>,
-        #[doc = "Required. The name of the Scaling Config"]
+        #[doc = "Required. The name of the scaling config."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The schedules to which this Scaling Config applies."]
+        #[doc = "The schedules to which this scaling config applies."]
         #[serde(
             rename = "schedules",
             default,
@@ -3157,7 +3242,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cron_job_duration: ::std::option::Option<String>,
-        #[doc = "The cron definition of the scheduled event. See https://en.wikipedia.org/wiki/Cron. Cron spec specifies the local time as defined by the realm."]
+        #[doc = "The cron definition of the scheduled event. See https://en.wikipedia.org/wiki/Cron. The cron spec specifies the local time as defined by the realm."]
         #[serde(
             rename = "cronSpec",
             default,
@@ -3202,7 +3287,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SetIamPolicyRequest {
-        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -3240,14 +3325,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SpecSource {
-        #[doc = "The game server config resource. Uses the form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment_id}/configs/{config_id}`."]
+        #[doc = "The game server config resource. Uses the form: `projects/{project}/locations/{locationId}/gameServerDeployments/{deploymentId}/configs/{configId}`."]
         #[serde(
             rename = "gameServerConfigName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub game_server_config_name: ::std::option::Option<String>,
-        #[doc = "The name of the Agones leet config or Agones scaling config used to derive the Agones fleet or Agones autoscaler spec."]
+        #[doc = "The name of the Agones fleet config or Agones scaling config used to derive the Agones fleet or Agones autoscaler spec."]
         #[serde(
             rename = "name",
             default,
@@ -3320,14 +3405,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub fleet_details: ::std::option::Option<Vec<crate::schemas::TargetFleetDetails>>,
-        #[doc = "The game server cluster name. Uses the form: `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`."]
+        #[doc = "The game server cluster name. Uses the form: `projects/{project}/locations/{locationId}/realms/{realmId}/gameServerClusters/{gameServerClusterId}`."]
         #[serde(
             rename = "gameServerClusterName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub game_server_cluster_name: ::std::option::Option<String>,
-        #[doc = "The game server deployment name. Uses the form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment_id}`."]
+        #[doc = "The game server deployment name. Uses the form: `projects/{project}/locations/{locationId}/gameServerDeployments/{deploymentId}`."]
         #[serde(
             rename = "gameServerDeploymentName",
             default,
@@ -3503,7 +3588,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -3810,8 +3895,8 @@ pub mod resources {
                         page_token: None,
                     }
                 }
-                #[doc = "Actions that can be performed on the game_server_deployments resource"]                pub fn game_server_deployments ( & self ) -> crate :: resources :: projects :: locations :: game_server_deployments :: GameServerDeploymentsActions{
-                    crate :: resources :: projects :: locations :: game_server_deployments :: GameServerDeploymentsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the game_server_deployments resource"]                pub fn game_server_deployments (& self) -> crate :: resources :: projects :: locations :: game_server_deployments :: GameServerDeploymentsActions{
+                    crate :: resources :: projects :: locations :: game_server_deployments :: GameServerDeploymentsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
                 #[doc = "Actions that can be performed on the operations resource"]
                 pub fn operations(
@@ -4015,7 +4100,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "The standard list filter."]
+                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
@@ -4025,12 +4110,12 @@ pub mod resources {
                     self.include_unrevealed_locations = Some(value);
                     self
                 }
-                #[doc = "The standard list page size."]
+                #[doc = "The maximum number of results to return. If not set, the service selects a default."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "The standard list page token."]
+                #[doc = "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -4414,7 +4499,7 @@ pub mod resources {
                             options_requested_policy_version: None,
                         }
                     }
-                    #[doc = "Gets details a single game server deployment rollout."]
+                    #[doc = "Gets details of a single game server deployment rollout."]
                     pub fn get_rollout(&self, name: impl Into<String>) -> GetRolloutRequestBuilder {
                         GetRolloutRequestBuilder {
                             reqwest: &self.reqwest,
@@ -4555,7 +4640,7 @@ pub mod resources {
                             resource: resource.into(),
                         }
                     }
-                    #[doc = "Patches a single game server deployment rollout. The method will not return an error if the update does not affect any existing realms. For example - if the default_game_server_config is changed but all existing realms use the override, that is valid. Similarly, if a non existing realm is explicitly called out in game_server_config_overrides field, that will also not result in an error."]
+                    #[doc = "Patches a single game server deployment rollout. The method will not return an error if the update does not affect any existing realms. For example, the following cases will not return an error: * The default_game_server_config is changed but all existing realms use the override. * A non-existing realm is explicitly called out in the game_server_config_overrides field."]
                     pub fn update_rollout(
                         &self,
                         request: crate::schemas::GameServerDeploymentRollout,
@@ -4580,8 +4665,8 @@ pub mod resources {
                             update_mask: None,
                         }
                     }
-                    #[doc = "Actions that can be performed on the configs resource"]                    pub fn configs ( & self ) -> crate :: resources :: projects :: locations :: game_server_deployments :: configs :: ConfigsActions{
-                        crate :: resources :: projects :: locations :: game_server_deployments :: configs :: ConfigsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the configs resource"]                    pub fn configs (& self) -> crate :: resources :: projects :: locations :: game_server_deployments :: configs :: ConfigsActions{
+                        crate :: resources :: projects :: locations :: game_server_deployments :: configs :: ConfigsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 #[doc = "Created via [GameServerDeploymentsActions::create()](struct.GameServerDeploymentsActions.html#method.create)"]
@@ -4605,7 +4690,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> CreateRequestBuilder<'a> {
-                    #[doc = "Required. The ID of the game server delpoyment resource to be created."]
+                    #[doc = "Required. The ID of the game server deployment resource to create."]
                     pub fn deployment_id(mut self, value: impl Into<String>) -> Self {
                         self.deployment_id = Some(value.into());
                         self
@@ -5261,7 +5346,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> GetIamPolicyRequestBuilder<'a> {
-                    #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                    #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                     pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                         self.options_requested_policy_version = Some(value);
                         self
@@ -5598,22 +5683,22 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Optional. The filter to apply to list results."]
+                    #[doc = "Optional. The filter to apply to list results (see [Filtering](https://google.aip.dev/160))."]
                     pub fn filter(mut self, value: impl Into<String>) -> Self {
                         self.filter = Some(value.into());
                         self
                     }
-                    #[doc = "Optional. Specifies the ordering of results following syntax at https://cloud.google.com/apis/design/design_patterns#sorting_order."]
+                    #[doc = "Optional. Specifies the ordering of results following [Cloud API syntax](https://cloud.google.com/apis/design/design_patterns#sorting_order)."]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
                     }
-                    #[doc = "Optional. The maximum number of items to return. If unspecified, the server will pick an appropriate default. The server may return fewer items than requested. A caller should only rely on response's next_page_token to determine if there are more GameServerDeployments left to be queried."]
+                    #[doc = "Optional. The maximum number of items to return. If unspecified, the server picks an appropriate default. The server may return fewer items than requested. A caller should only rely on the response's next_page_token to determine if there are more GameServerDeployments left to be queried."]
                     pub fn page_size(mut self, value: i32) -> Self {
                         self.page_size = Some(value);
                         self
                     }
-                    #[doc = "Optional. The next_page_token value returned from a previous List request, if any."]
+                    #[doc = "Optional. The next_page_token value returned from a previous list request, if any."]
                     pub fn page_token(mut self, value: impl Into<String>) -> Self {
                         self.page_token = Some(value.into());
                         self
@@ -5965,7 +6050,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> PatchRequestBuilder<'a> {
-                    #[doc = "Required. Mask of fields to update. At least one path must be supplied in this field. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask"]
+                    #[doc = "Required. The update mask to apply to the resource. At least one path must be supplied in this field. For more information, see the [`FieldMask` definition](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask)."]
                     pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                         self.update_mask = Some(value.into());
                         self
@@ -6140,7 +6225,7 @@ pub mod resources {
                         self.preview_time = Some(value.into());
                         self
                     }
-                    #[doc = "Optional. Mask of fields to update. At least one path must be supplied in this field. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask"]
+                    #[doc = "Optional. The update mask to apply to the resource. At least one path must be supplied in this field. For more information, see the [`FieldMask` definition](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask)."]
                     pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                         self.update_mask = Some(value.into());
                         self
@@ -6645,7 +6730,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> UpdateRolloutRequestBuilder<'a> {
-                    #[doc = "Required. Mask of fields to update. At least one path must be supplied in this field. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask"]
+                    #[doc = "Required. The update mask to apply to the resource. At least one path must be supplied in this field. For more information, see the [`FieldMask` definition](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask)."]
                     pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                         self.update_mask = Some(value.into());
                         self
@@ -6829,7 +6914,7 @@ pub mod resources {
                                 config_id: None,
                             }
                         }
-                        #[doc = "Deletes a single game server config. The deletion will fail if the game server config is referenced in a game server deployment rollout."]
+                        #[doc = "Deletes a single game server config. The deletion fails if the game server config is referenced in a game server deployment rollout."]
                         pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                             DeleteRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -6912,7 +6997,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> CreateRequestBuilder<'a> {
-                        #[doc = "Required. The ID of the game server config resource to be created."]
+                        #[doc = "Required. The ID of the game server config resource to create."]
                         pub fn config_id(mut self, value: impl Into<String>) -> Self {
                             self.config_id = Some(value.into());
                             self
@@ -7413,17 +7498,17 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "Optional. The filter to apply to list results."]
+                        #[doc = "Optional. The filter to apply to list results (see [Filtering](https://google.aip.dev/160))."]
                         pub fn filter(mut self, value: impl Into<String>) -> Self {
                             self.filter = Some(value.into());
                             self
                         }
-                        #[doc = "Optional. Specifies the ordering of results following syntax at https://cloud.google.com/apis/design/design_patterns#sorting_order."]
+                        #[doc = "Optional. Specifies the ordering of results following [Cloud API syntax](https://cloud.google.com/apis/design/design_patterns#sorting_order)."]
                         pub fn order_by(mut self, value: impl Into<String>) -> Self {
                             self.order_by = Some(value.into());
                             self
                         }
-                        #[doc = "Optional. The maximum number of items to return. If unspecified, server will pick an appropriate default. Server may return fewer items than requested. A caller should only rely on response's next_page_token to determine if there are more GameServerConfigs left to be queried."]
+                        #[doc = "Optional. The maximum number of items to return. If unspecified, the server picks an appropriate default. The server may return fewer items than requested. A caller should only rely on response's next_page_token to determine if there are more GameServerConfigs left to be queried."]
                         pub fn page_size(mut self, value: i32) -> Self {
                             self.page_size = Some(value);
                             self
@@ -8792,8 +8877,8 @@ pub mod resources {
                             update_mask: None,
                         }
                     }
-                    #[doc = "Actions that can be performed on the game_server_clusters resource"]                    pub fn game_server_clusters ( & self ) -> crate :: resources :: projects :: locations :: realms :: game_server_clusters :: GameServerClustersActions{
-                        crate :: resources :: projects :: locations :: realms :: game_server_clusters :: GameServerClustersActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the game_server_clusters resource"]                    pub fn game_server_clusters (& self) -> crate :: resources :: projects :: locations :: realms :: game_server_clusters :: GameServerClustersActions{
+                        crate :: resources :: projects :: locations :: realms :: game_server_clusters :: GameServerClustersActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 #[doc = "Created via [RealmsActions::create()](struct.RealmsActions.html#method.create)"]
@@ -8817,7 +8902,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> CreateRequestBuilder<'a> {
-                    #[doc = "Required. The ID of the realm resource to be created."]
+                    #[doc = "Required. The ID of the realm resource to create."]
                     pub fn realm_id(mut self, value: impl Into<String>) -> Self {
                         self.realm_id = Some(value.into());
                         self
@@ -9309,22 +9394,22 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Optional. The filter to apply to list results."]
+                    #[doc = "Optional. The filter to apply to list results (see [Filtering](https://google.aip.dev/160))."]
                     pub fn filter(mut self, value: impl Into<String>) -> Self {
                         self.filter = Some(value.into());
                         self
                     }
-                    #[doc = "Optional. Specifies the ordering of results following syntax at https://cloud.google.com/apis/design/design_patterns#sorting_order."]
+                    #[doc = "Optional. Specifies the ordering of results following [Cloud API syntax](https://cloud.google.com/apis/design/design_patterns#sorting_order)."]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
                     }
-                    #[doc = "Optional. The maximum number of items to return. If unspecified, server will pick an appropriate default. Server may return fewer items than requested. A caller should only rely on response's next_page_token to determine if there are more realms left to be queried."]
+                    #[doc = "Optional. The maximum number of items to return. If unspecified, the server picks an appropriate default. The server may return fewer items than requested. A caller should only rely on the response's next_page_token to determine if there are more realms left to be queried."]
                     pub fn page_size(mut self, value: i32) -> Self {
                         self.page_size = Some(value);
                         self
                     }
-                    #[doc = "Optional. The next_page_token value returned from a previous List request, if any."]
+                    #[doc = "Optional. The next_page_token value returned from a previous list request, if any."]
                     pub fn page_token(mut self, value: impl Into<String>) -> Self {
                         self.page_token = Some(value.into());
                         self
@@ -9669,7 +9754,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> PatchRequestBuilder<'a> {
-                    #[doc = "Required. The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask"]
+                    #[doc = "Required. The update mask to apply to the resource. For more information, see the [`FieldMask` definition](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask)."]
                     pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                         self.update_mask = Some(value.into());
                         self
@@ -9844,7 +9929,7 @@ pub mod resources {
                         self.preview_time = Some(value.into());
                         self
                     }
-                    #[doc = "Required. The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask"]
+                    #[doc = "Required. The update mask to apply to the resource. For more information, see the [`FieldMask` definition](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask)."]
                     pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                         self.update_mask = Some(value.into());
                         self
@@ -9997,7 +10082,269 @@ pub mod resources {
                     }
                 }
                 pub mod game_server_clusters {
-                    pub mod params {}
+                    pub mod params {
+                        #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+                        pub enum GetView {
+                            #[doc = "Includes basic information of a GameServerCluster resource and omits `cluster_state`. This is the default value (for methods ListGameServerClusters, GetGameServerCluster, and PreviewCreateGameServerCluster)."]
+                            Basic,
+                            #[doc = "Include basic information of a GameServerCluster resource as well as `cluster_state`."]
+                            Full,
+                            #[doc = "If the value is not set, Google Cloud Game Servers defaults to the `BASIC` view."]
+                            GameServerClusterViewUnspecified,
+                        }
+                        impl GetView {
+                            pub fn as_str(self) -> &'static str {
+                                match self {
+                                    GetView::Basic => "BASIC",
+                                    GetView::Full => "FULL",
+                                    GetView::GameServerClusterViewUnspecified => {
+                                        "GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED"
+                                    }
+                                }
+                            }
+                        }
+                        impl ::std::convert::AsRef<str> for GetView {
+                            fn as_ref(&self) -> &str {
+                                self.as_str()
+                            }
+                        }
+                        impl ::std::str::FromStr for GetView {
+                            type Err = ();
+                            fn from_str(s: &str) -> ::std::result::Result<GetView, ()> {
+                                Ok(match s {
+                                    "BASIC" => GetView::Basic,
+                                    "FULL" => GetView::Full,
+                                    "GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED" => {
+                                        GetView::GameServerClusterViewUnspecified
+                                    }
+                                    _ => return Err(()),
+                                })
+                            }
+                        }
+                        impl ::std::fmt::Display for GetView {
+                            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                                f.write_str(self.as_str())
+                            }
+                        }
+                        impl ::serde::Serialize for GetView {
+                            fn serialize<S>(
+                                &self,
+                                serializer: S,
+                            ) -> ::std::result::Result<S::Ok, S::Error>
+                            where
+                                S: ::serde::ser::Serializer,
+                            {
+                                serializer.serialize_str(self.as_str())
+                            }
+                        }
+                        impl<'de> ::serde::Deserialize<'de> for GetView {
+                            fn deserialize<D>(
+                                deserializer: D,
+                            ) -> ::std::result::Result<Self, D::Error>
+                            where
+                                D: ::serde::de::Deserializer<'de>,
+                            {
+                                let value: &'de str = <&str>::deserialize(deserializer)?;
+                                Ok(match value {
+                                    "BASIC" => GetView::Basic,
+                                    "FULL" => GetView::Full,
+                                    "GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED" => {
+                                        GetView::GameServerClusterViewUnspecified
+                                    }
+                                    _ => {
+                                        return Err(::serde::de::Error::custom(format!(
+                                            "invalid enum for #name: {}",
+                                            value
+                                        )))
+                                    }
+                                })
+                            }
+                        }
+                        impl ::google_field_selector::FieldSelector for GetView {
+                            fn fields() -> Vec<::google_field_selector::Field> {
+                                Vec::new()
+                            }
+                        }
+                        impl ::google_field_selector::ToFieldType for GetView {
+                            fn field_type() -> ::google_field_selector::FieldType {
+                                ::google_field_selector::FieldType::Leaf
+                            }
+                        }
+                        #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+                        pub enum ListView {
+                            #[doc = "Includes basic information of a GameServerCluster resource and omits `cluster_state`. This is the default value (for methods ListGameServerClusters, GetGameServerCluster, and PreviewCreateGameServerCluster)."]
+                            Basic,
+                            #[doc = "Include basic information of a GameServerCluster resource as well as `cluster_state`."]
+                            Full,
+                            #[doc = "If the value is not set, Google Cloud Game Servers defaults to the `BASIC` view."]
+                            GameServerClusterViewUnspecified,
+                        }
+                        impl ListView {
+                            pub fn as_str(self) -> &'static str {
+                                match self {
+                                    ListView::Basic => "BASIC",
+                                    ListView::Full => "FULL",
+                                    ListView::GameServerClusterViewUnspecified => {
+                                        "GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED"
+                                    }
+                                }
+                            }
+                        }
+                        impl ::std::convert::AsRef<str> for ListView {
+                            fn as_ref(&self) -> &str {
+                                self.as_str()
+                            }
+                        }
+                        impl ::std::str::FromStr for ListView {
+                            type Err = ();
+                            fn from_str(s: &str) -> ::std::result::Result<ListView, ()> {
+                                Ok(match s {
+                                    "BASIC" => ListView::Basic,
+                                    "FULL" => ListView::Full,
+                                    "GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED" => {
+                                        ListView::GameServerClusterViewUnspecified
+                                    }
+                                    _ => return Err(()),
+                                })
+                            }
+                        }
+                        impl ::std::fmt::Display for ListView {
+                            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                                f.write_str(self.as_str())
+                            }
+                        }
+                        impl ::serde::Serialize for ListView {
+                            fn serialize<S>(
+                                &self,
+                                serializer: S,
+                            ) -> ::std::result::Result<S::Ok, S::Error>
+                            where
+                                S: ::serde::ser::Serializer,
+                            {
+                                serializer.serialize_str(self.as_str())
+                            }
+                        }
+                        impl<'de> ::serde::Deserialize<'de> for ListView {
+                            fn deserialize<D>(
+                                deserializer: D,
+                            ) -> ::std::result::Result<Self, D::Error>
+                            where
+                                D: ::serde::de::Deserializer<'de>,
+                            {
+                                let value: &'de str = <&str>::deserialize(deserializer)?;
+                                Ok(match value {
+                                    "BASIC" => ListView::Basic,
+                                    "FULL" => ListView::Full,
+                                    "GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED" => {
+                                        ListView::GameServerClusterViewUnspecified
+                                    }
+                                    _ => {
+                                        return Err(::serde::de::Error::custom(format!(
+                                            "invalid enum for #name: {}",
+                                            value
+                                        )))
+                                    }
+                                })
+                            }
+                        }
+                        impl ::google_field_selector::FieldSelector for ListView {
+                            fn fields() -> Vec<::google_field_selector::Field> {
+                                Vec::new()
+                            }
+                        }
+                        impl ::google_field_selector::ToFieldType for ListView {
+                            fn field_type() -> ::google_field_selector::FieldType {
+                                ::google_field_selector::FieldType::Leaf
+                            }
+                        }
+                        #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+                        pub enum PreviewCreateView {
+                            #[doc = "Includes basic information of a GameServerCluster resource and omits `cluster_state`. This is the default value (for methods ListGameServerClusters, GetGameServerCluster, and PreviewCreateGameServerCluster)."]
+                            Basic,
+                            #[doc = "Include basic information of a GameServerCluster resource as well as `cluster_state`."]
+                            Full,
+                            #[doc = "If the value is not set, Google Cloud Game Servers defaults to the `BASIC` view."]
+                            GameServerClusterViewUnspecified,
+                        }
+                        impl PreviewCreateView {
+                            pub fn as_str(self) -> &'static str {
+                                match self {
+                                    PreviewCreateView::Basic => "BASIC",
+                                    PreviewCreateView::Full => "FULL",
+                                    PreviewCreateView::GameServerClusterViewUnspecified => {
+                                        "GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED"
+                                    }
+                                }
+                            }
+                        }
+                        impl ::std::convert::AsRef<str> for PreviewCreateView {
+                            fn as_ref(&self) -> &str {
+                                self.as_str()
+                            }
+                        }
+                        impl ::std::str::FromStr for PreviewCreateView {
+                            type Err = ();
+                            fn from_str(s: &str) -> ::std::result::Result<PreviewCreateView, ()> {
+                                Ok(match s {
+                                    "BASIC" => PreviewCreateView::Basic,
+                                    "FULL" => PreviewCreateView::Full,
+                                    "GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED" => {
+                                        PreviewCreateView::GameServerClusterViewUnspecified
+                                    }
+                                    _ => return Err(()),
+                                })
+                            }
+                        }
+                        impl ::std::fmt::Display for PreviewCreateView {
+                            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                                f.write_str(self.as_str())
+                            }
+                        }
+                        impl ::serde::Serialize for PreviewCreateView {
+                            fn serialize<S>(
+                                &self,
+                                serializer: S,
+                            ) -> ::std::result::Result<S::Ok, S::Error>
+                            where
+                                S: ::serde::ser::Serializer,
+                            {
+                                serializer.serialize_str(self.as_str())
+                            }
+                        }
+                        impl<'de> ::serde::Deserialize<'de> for PreviewCreateView {
+                            fn deserialize<D>(
+                                deserializer: D,
+                            ) -> ::std::result::Result<Self, D::Error>
+                            where
+                                D: ::serde::de::Deserializer<'de>,
+                            {
+                                let value: &'de str = <&str>::deserialize(deserializer)?;
+                                Ok(match value {
+                                    "BASIC" => PreviewCreateView::Basic,
+                                    "FULL" => PreviewCreateView::Full,
+                                    "GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED" => {
+                                        PreviewCreateView::GameServerClusterViewUnspecified
+                                    }
+                                    _ => {
+                                        return Err(::serde::de::Error::custom(format!(
+                                            "invalid enum for #name: {}",
+                                            value
+                                        )))
+                                    }
+                                })
+                            }
+                        }
+                        impl ::google_field_selector::FieldSelector for PreviewCreateView {
+                            fn fields() -> Vec<::google_field_selector::Field> {
+                                Vec::new()
+                            }
+                        }
+                        impl ::google_field_selector::ToFieldType for PreviewCreateView {
+                            fn field_type() -> ::google_field_selector::FieldType {
+                                ::google_field_selector::FieldType::Leaf
+                            }
+                        }
+                    }
                     pub struct GameServerClustersActions<'a> {
                         pub(crate) reqwest: &'a reqwest::blocking::Client,
                         pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
@@ -10067,6 +10414,7 @@ pub mod resources {
                                 upload_type: None,
                                 xgafv: None,
                                 name: name.into(),
+                                view: None,
                             }
                         }
                         #[doc = "Lists game server clusters in a given project and location."]
@@ -10090,6 +10438,7 @@ pub mod resources {
                                 order_by: None,
                                 page_size: None,
                                 page_token: None,
+                                view: None,
                             }
                         }
                         #[doc = "Patches a single game server cluster."]
@@ -10141,6 +10490,7 @@ pub mod resources {
                                 parent: parent.into(),
                                 game_server_cluster_id: None,
                                 preview_time: None,
+                                view: None,
                             }
                         }
                         #[doc = "Previews deletion of a single game server cluster."]
@@ -10214,7 +10564,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> CreateRequestBuilder<'a> {
-                        #[doc = "Required. The ID of the game server cluster resource to be created."]
+                        #[doc = "Required. The ID of the game server cluster resource to create."]
                         pub fn game_server_cluster_id(mut self, value: impl Into<String>) -> Self {
                             self.game_server_cluster_id = Some(value.into());
                             self
@@ -10532,23 +10882,16 @@ pub mod resources {
                     }
                     #[doc = "Created via [GameServerClustersActions::get()](struct.GameServerClustersActions.html#method.get)"]
                     #[derive(Debug, Clone)]
-                    pub struct GetRequestBuilder<'a> {
-                        pub(crate) reqwest: &'a ::reqwest::blocking::Client,
-                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-                        name: String,
-                        access_token: Option<String>,
-                        alt: Option<crate::params::Alt>,
-                        callback: Option<String>,
-                        fields: Option<String>,
-                        key: Option<String>,
-                        oauth_token: Option<String>,
-                        pretty_print: Option<bool>,
-                        quota_user: Option<String>,
-                        upload_protocol: Option<String>,
-                        upload_type: Option<String>,
-                        xgafv: Option<crate::params::Xgafv>,
-                    }
+                    pub struct GetRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , name : String , view : Option < crate :: resources :: projects :: locations :: realms :: game_server_clusters :: params :: GetView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> GetRequestBuilder<'a> {
+                        #[doc = "Optional. View for the returned GameServerCluster objects. When `FULL` is specified, the `cluster_state` field is also returned in the GameServerCluster object, which includes the state of the referenced Kubernetes cluster such as versions and provider info. The default/unset value is `GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED`, the same as `BASIC`, which does not return the `cluster_state` field."]
+                        pub fn view(
+                            mut self,
+                            value : crate :: resources :: projects :: locations :: realms :: game_server_clusters :: params :: GetView,
+                        ) -> Self {
+                            self.view = Some(value);
+                            self
+                        }
                         #[doc = "OAuth access token."]
                         pub fn access_token(mut self, value: impl Into<String>) -> Self {
                             self.access_token = Some(value.into());
@@ -10674,6 +11017,7 @@ pub mod resources {
                         ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
                         {
                             let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                            req = req.query(&[("view", &self.view)]);
                             req = req.query(&[("access_token", &self.access_token)]);
                             req = req.query(&[("alt", &self.alt)]);
                             req = req.query(&[("callback", &self.callback)]);
@@ -10695,45 +11039,34 @@ pub mod resources {
                     }
                     #[doc = "Created via [GameServerClustersActions::list()](struct.GameServerClustersActions.html#method.list)"]
                     #[derive(Debug, Clone)]
-                    pub struct ListRequestBuilder<'a> {
-                        pub(crate) reqwest: &'a ::reqwest::blocking::Client,
-                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-                        parent: String,
-                        filter: Option<String>,
-                        order_by: Option<String>,
-                        page_size: Option<i32>,
-                        page_token: Option<String>,
-                        access_token: Option<String>,
-                        alt: Option<crate::params::Alt>,
-                        callback: Option<String>,
-                        fields: Option<String>,
-                        key: Option<String>,
-                        oauth_token: Option<String>,
-                        pretty_print: Option<bool>,
-                        quota_user: Option<String>,
-                        upload_protocol: Option<String>,
-                        upload_type: Option<String>,
-                        xgafv: Option<crate::params::Xgafv>,
-                    }
+                    pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , filter : Option < String > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , view : Option < crate :: resources :: projects :: locations :: realms :: game_server_clusters :: params :: ListView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "Optional. The filter to apply to list results."]
+                        #[doc = "Optional. The filter to apply to list results (see [Filtering](https://google.aip.dev/160))."]
                         pub fn filter(mut self, value: impl Into<String>) -> Self {
                             self.filter = Some(value.into());
                             self
                         }
-                        #[doc = "Optional. Specifies the ordering of results following syntax at https://cloud.google.com/apis/design/design_patterns#sorting_order."]
+                        #[doc = "Optional. Specifies the ordering of results following [Cloud API syntax](https://cloud.google.com/apis/design/design_patterns#sorting_order)."]
                         pub fn order_by(mut self, value: impl Into<String>) -> Self {
                             self.order_by = Some(value.into());
                             self
                         }
-                        #[doc = "Optional. The maximum number of items to return. If unspecified, the server will pick an appropriate default. The server may return fewer items than requested. A caller should only rely on response's next_page_token to determine if there are more GameServerClusters left to be queried."]
+                        #[doc = "Optional. The maximum number of items to return. If unspecified, the server picks an appropriate default. The server may return fewer items than requested. A caller should only rely on response's next_page_token to determine if there are more GameServerClusters left to be queried."]
                         pub fn page_size(mut self, value: i32) -> Self {
                             self.page_size = Some(value);
                             self
                         }
-                        #[doc = "Optional. The next_page_token value returned from a previous List request, if any."]
+                        #[doc = "Optional. The next_page_token value returned from a previous list request, if any."]
                         pub fn page_token(mut self, value: impl Into<String>) -> Self {
                             self.page_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Optional. View for the returned GameServerCluster objects. When `FULL` is specified, the `cluster_state` field is also returned in the GameServerCluster object, which includes the state of the referenced Kubernetes cluster such as versions and provider info. The default/unset value is `GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED`, the same as `BASIC`, which does not return the `cluster_state` field."]
+                        pub fn view(
+                            mut self,
+                            value : crate :: resources :: projects :: locations :: realms :: game_server_clusters :: params :: ListView,
+                        ) -> Self {
+                            self.view = Some(value);
                             self
                         }
                         #[doc = "OAuth access token."]
@@ -11039,6 +11372,7 @@ pub mod resources {
                             req = req.query(&[("orderBy", &self.order_by)]);
                             req = req.query(&[("pageSize", &self.page_size)]);
                             req = req.query(&[("pageToken", &self.page_token)]);
+                            req = req.query(&[("view", &self.view)]);
                             req = req.query(&[("access_token", &self.access_token)]);
                             req = req.query(&[("alt", &self.alt)]);
                             req = req.query(&[("callback", &self.callback)]);
@@ -11090,7 +11424,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> PatchRequestBuilder<'a> {
-                        #[doc = "Required. Mask of fields to update. At least one path must be supplied in this field. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask"]
+                        #[doc = "Required. The update mask to apply to the resource. At least one path must be supplied in this field. For more information, see the [`FieldMask` definition](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask)."]
                         pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                             self.update_mask = Some(value.into());
                             self
@@ -11243,27 +11577,9 @@ pub mod resources {
                     }
                     #[doc = "Created via [GameServerClustersActions::preview_create()](struct.GameServerClustersActions.html#method.preview_create)"]
                     #[derive(Debug, Clone)]
-                    pub struct PreviewCreateRequestBuilder<'a> {
-                        pub(crate) reqwest: &'a ::reqwest::blocking::Client,
-                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-                        request: crate::schemas::GameServerCluster,
-                        parent: String,
-                        game_server_cluster_id: Option<String>,
-                        preview_time: Option<String>,
-                        access_token: Option<String>,
-                        alt: Option<crate::params::Alt>,
-                        callback: Option<String>,
-                        fields: Option<String>,
-                        key: Option<String>,
-                        oauth_token: Option<String>,
-                        pretty_print: Option<bool>,
-                        quota_user: Option<String>,
-                        upload_protocol: Option<String>,
-                        upload_type: Option<String>,
-                        xgafv: Option<crate::params::Xgafv>,
-                    }
+                    pub struct PreviewCreateRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GameServerCluster , parent : String , game_server_cluster_id : Option < String > , preview_time : Option < String > , view : Option < crate :: resources :: projects :: locations :: realms :: game_server_clusters :: params :: PreviewCreateView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> PreviewCreateRequestBuilder<'a> {
-                        #[doc = "Required. The ID of the game server cluster resource to be created."]
+                        #[doc = "Required. The ID of the game server cluster resource to create."]
                         pub fn game_server_cluster_id(mut self, value: impl Into<String>) -> Self {
                             self.game_server_cluster_id = Some(value.into());
                             self
@@ -11271,6 +11587,14 @@ pub mod resources {
                         #[doc = "Optional. The target timestamp to compute the preview."]
                         pub fn preview_time(mut self, value: impl Into<String>) -> Self {
                             self.preview_time = Some(value.into());
+                            self
+                        }
+                        #[doc = "Optional. This field is deprecated. Preview will always return KubernetesClusterState."]
+                        pub fn view(
+                            mut self,
+                            value : crate :: resources :: projects :: locations :: realms :: game_server_clusters :: params :: PreviewCreateView,
+                        ) -> Self {
+                            self.view = Some(value);
                             self
                         }
                         #[doc = "OAuth access token."]
@@ -11407,6 +11731,7 @@ pub mod resources {
                             req =
                                 req.query(&[("gameServerClusterId", &self.game_server_cluster_id)]);
                             req = req.query(&[("previewTime", &self.preview_time)]);
+                            req = req.query(&[("view", &self.view)]);
                             req = req.query(&[("access_token", &self.access_token)]);
                             req = req.query(&[("alt", &self.alt)]);
                             req = req.query(&[("callback", &self.callback)]);
@@ -11628,7 +11953,7 @@ pub mod resources {
                             self.preview_time = Some(value.into());
                             self
                         }
-                        #[doc = "Required. Mask of fields to update. At least one path must be supplied in this field. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask"]
+                        #[doc = "Required. Mask of fields to update. At least one path must be supplied in this field. For more information, see the [`FieldMask` definition](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask)."]
                         pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                             self.update_mask = Some(value.into());
                             self

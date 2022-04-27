@@ -15,8 +15,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("displayvideo1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210312")
-            .about("Display & Video 360 API allows users to manage and create campaigns and reports.")
+            .version("0.1.0-20220425")
+            .about("Display & Video 360 API allows users to automate complex Display & Video 360 workflows, such as creating insertion orders and setting targeting options for individual line items.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
                 .long("scope")
@@ -85,13 +85,25 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut custom_bidding_algorithms0 = SubCommand::with_name("custom_bidding_algorithms")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get and list");
+            .about("methods: create, get, list, patch and upload_script");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a new custom bidding algorithm. Returns the newly created custom bidding algorithm if successful.");
+            custom_bidding_algorithms0 = custom_bidding_algorithms0.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("get").about("Gets a custom bidding algorithm.");
             custom_bidding_algorithms0 = custom_bidding_algorithms0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("list").about("Lists custom bidding algorithms that are accessible to the current user and can be used in bidding stratgies. The order is defined by the order_by parameter.");
+            custom_bidding_algorithms0 = custom_bidding_algorithms0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates an existing custom bidding algorithm. Returns the updated custom bidding algorithm if successful.");
+            custom_bidding_algorithms0 = custom_bidding_algorithms0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("upload_script").about("Creates a custom bidding script reference object for a script file. The resulting reference object provides a resource path to which the script file should be uploaded. This reference object should be included in when creating a new custom bidding script object.");
             custom_bidding_algorithms0 = custom_bidding_algorithms0.subcommand(mcmd);
         }
         let mut custom_lists0 = SubCommand::with_name("custom_lists")
@@ -109,13 +121,25 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut first_and_third_party_audiences0 =
             SubCommand::with_name("first_and_third_party_audiences")
                 .setting(AppSettings::ColoredHelp)
-                .about("methods: get and list");
+                .about("methods: create, edit_customer_match_members, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a FirstAndThirdPartyAudience. Only supported for the following audience_type: * `CUSTOMER_MATCH_CONTACT_INFO` * `CUSTOMER_MATCH_DEVICE_ID`");
+            first_and_third_party_audiences0 = first_and_third_party_audiences0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("edit_customer_match_members").about("Updates the member list of a Customer Match audience. Only supported for the following audience_type: * `CUSTOMER_MATCH_CONTACT_INFO` * `CUSTOMER_MATCH_DEVICE_ID`");
+            first_and_third_party_audiences0 = first_and_third_party_audiences0.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("get").about("Gets a first and third party audience.");
             first_and_third_party_audiences0 = first_and_third_party_audiences0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("list").about("Lists first and third party audiences. The order is defined by the order_by parameter.");
+            first_and_third_party_audiences0 = first_and_third_party_audiences0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates an existing FirstAndThirdPartyAudience. Only supported for the following audience_type: * `CUSTOMER_MATCH_CONTACT_INFO` * `CUSTOMER_MATCH_DEVICE_ID`");
             first_and_third_party_audiences0 = first_and_third_party_audiences0.subcommand(mcmd);
         }
         let mut floodlight_groups0 = SubCommand::with_name("floodlight_groups")
@@ -177,9 +201,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut media0 = SubCommand::with_name("media")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: download");
+            .about("methods: download and upload");
         {
             let mcmd = SubCommand::with_name("download").about("Downloads media. Download is supported on the URI `/download/{resource_name=**}?alt=media.` **Note**: Download requests will not be successful without including `alt=media` query string.");
+            media0 = media0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("upload").about("Uploads media. Upload is supported on the URI `/upload/media/{resource_name=**}?upload_type=media.` **Note**: Upload requests will not be successful without including `upload_type=media` query string.");
             media0 = media0.subcommand(mcmd);
         }
         let mut partners0 = SubCommand::with_name("partners")
@@ -240,12 +268,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: upload");
         {
-            let mcmd = SubCommand::with_name("upload").about("Uploads an asset. Returns the ID of the newly uploaded asset if successful. The asset file size should be no more than 10 MB for images, 200 MB for ZIP files, and 1 GB for videos.");
+            let mcmd = SubCommand::with_name("upload").about("Uploads an asset. Returns the ID of the newly uploaded asset if successful. The asset file size should be no more than 10 MB for images, 200 MB for ZIP files, and 1 GB for videos. Must be used within the [multipart media upload process](/display-video/api/guides/how-tos/upload#multipart). Examples using provided client libraries can be found in our [Creating Creatives guide](/display-video/api/guides/creating-creatives/overview#upload_an_asset).");
             assets1 = assets1.subcommand(mcmd);
         }
         let mut campaigns1 = SubCommand::with_name("campaigns")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list and patch");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: bulk_list_campaign_assigned_targeting_options, create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("bulk_list_campaign_assigned_targeting_options")
+                .about("Lists assigned targeting options of a campaign across targeting types.");
+            campaigns1 = campaigns1.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("create")
                 .about("Creates a new campaign. Returns the newly created campaign if successful.");
@@ -348,11 +381,23 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("patch").about("Updates an existing insertion order. Returns the updated insertion order if successful.");
             insertion_orders1 = insertion_orders1.subcommand(mcmd);
         }
+        let mut invoices1 = SubCommand::with_name("invoices")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: list and lookup_invoice_currency");
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists invoices posted for an advertiser in a given month. Invoices generated by billing profiles with a \"Partner\" invoice level are not retrievable through this method.");
+            invoices1 = invoices1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("lookup_invoice_currency")
+                .about("Retrieves the invoice currency used by an advertiser in a given month.");
+            invoices1 = invoices1.subcommand(mcmd);
+        }
         let mut line_items1 = SubCommand::with_name("line_items")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: bulk_edit_line_item_assigned_targeting_options, bulk_list_line_item_assigned_targeting_options, create, delete, get, list and patch");
+                        .about("methods: bulk_edit_line_item_assigned_targeting_options, bulk_list_line_item_assigned_targeting_options, create, delete, generate_default, get, list and patch");
         {
-            let mcmd = SubCommand::with_name("bulk_edit_line_item_assigned_targeting_options").about("Bulk edits targeting options under a single line item. The operation will delete the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.delete_requests and then create the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.create_requests .");
+            let mcmd = SubCommand::with_name("bulk_edit_line_item_assigned_targeting_options").about("Bulk edits targeting options under a single line item. The operation will delete the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.delete_requests and then create the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.create_requests. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditLineItemAssignedTargetingOptions * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption");
             line_items1 = line_items1.subcommand(mcmd);
         }
         {
@@ -371,6 +416,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             line_items1 = line_items1.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("generate_default").about("Creates a new line item with settings (including targeting) inherited from the insertion order and an `ENTITY_STATUS_DRAFT` entity_status. Returns the newly created line item if successful. There are default values based on the three fields: * The insertion order's insertion_order_type * The insertion order's automation_type * The given line_item_type");
+            line_items1 = line_items1.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("get").about("Gets a line item.");
             line_items1 = line_items1.subcommand(mcmd);
         }
@@ -379,9 +428,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             line_items1 = line_items1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about(
-                "Updates an existing line item. Returns the updated line item if successful.",
-            );
+            let mcmd = SubCommand::with_name("patch").about("Updates an existing line item. Returns the updated line item if successful. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditLineItemAssignedTargetingOptions * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption");
             line_items1 = line_items1.subcommand(mcmd);
         }
         let mut location_lists1 = SubCommand::with_name("location_lists")
@@ -461,6 +508,21 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut targeting_types1 = SubCommand::with_name("targeting_types")
             .setting(AppSettings::ColoredHelp)
             .about("sub-resources: assigned_targeting_options");
+        let mut scripts1 = SubCommand::with_name("scripts")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, get and list");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a new custom bidding script. Returns the newly created script if successful.");
+            scripts1 = scripts1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a custom bidding script.");
+            scripts1 = scripts1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists custom bidding scripts that belong to the given algorithm. The order is defined by the order_by parameter.");
+            scripts1 = scripts1.subcommand(mcmd);
+        }
         let mut assigned_inventory_sources1 = SubCommand::with_name("assigned_inventory_sources")
             .setting(AppSettings::ColoredHelp)
             .about("methods: bulk_edit, create, delete and list");
@@ -536,9 +598,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             );
             targeting_options1 = targeting_options1.subcommand(mcmd);
         }
+        let mut targeting_types2 = SubCommand::with_name("targeting_types")
+            .setting(AppSettings::ColoredHelp)
+            .about("sub-resources: assigned_targeting_options");
         let mut sites2 = SubCommand::with_name("sites")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: bulk_edit, create, delete and list");
+            .about("methods: bulk_edit, create, delete, list and replace");
         {
             let mcmd = SubCommand::with_name("bulk_edit").about("Bulk edits sites under a single channel. The operation will delete the sites provided in BulkEditSitesRequest.deleted_sites and then create the sites provided in BulkEditSitesRequest.created_sites.");
             sites2 = sites2.subcommand(mcmd);
@@ -553,6 +618,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("list").about("Lists sites in a channel.");
+            sites2 = sites2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("replace").about("Replaces all of the sites under a single channel. The operation will replace the sites under a channel with the sites provided in ReplaceSitesRequest.new_sites.");
             sites2 = sites2.subcommand(mcmd);
         }
         let mut targeting_types2 = SubCommand::with_name("targeting_types")
@@ -585,7 +654,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut negative_keywords2 = SubCommand::with_name("negative_keywords")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: bulk_edit, create, delete and list");
+            .about("methods: bulk_edit, create, delete, list and replace");
         {
             let mcmd = SubCommand::with_name("bulk_edit").about("Bulk edits negative keywords in a single negative keyword list. The operation will delete the negative keywords provided in BulkEditNegativeKeywordsRequest.deleted_negative_keywords and then create the negative keywords provided in BulkEditNegativeKeywordsRequest.created_negative_keywords. This operation is guaranteed to be atomic and will never result in a partial success or partial failure.");
             negative_keywords2 = negative_keywords2.subcommand(mcmd);
@@ -603,6 +672,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists negative keywords in a negative keyword list.");
+            negative_keywords2 = negative_keywords2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("replace").about("Replaces all negative keywords in a single negative keyword list. The operation will replace the keywords in a negative keyword list with keywords provided in ReplaceNegativeKeywordsRequest.new_negative_keywords.");
             negative_keywords2 = negative_keywords2.subcommand(mcmd);
         }
         let mut assigned_targeting_options2 = SubCommand::with_name("assigned_targeting_options")
@@ -629,7 +702,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut sites2 = SubCommand::with_name("sites")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: bulk_edit, create, delete and list");
+            .about("methods: bulk_edit, create, delete, list and replace");
         {
             let mcmd = SubCommand::with_name("bulk_edit").about("Bulk edits sites under a single channel. The operation will delete the sites provided in BulkEditSitesRequest.deleted_sites and then create the sites provided in BulkEditSitesRequest.created_sites.");
             sites2 = sites2.subcommand(mcmd);
@@ -644,6 +717,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("list").about("Lists sites in a channel.");
+            sites2 = sites2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("replace").about("Replaces all of the sites under a single channel. The operation will replace the sites under a channel with the sites provided in ReplaceSitesRequest.new_sites.");
             sites2 = sites2.subcommand(mcmd);
         }
         let mut assigned_targeting_options2 = SubCommand::with_name("assigned_targeting_options")
@@ -673,6 +750,18 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: get and list");
         {
             let mcmd = SubCommand::with_name("get")
+                .about("Gets a single targeting option assigned to a campaign.");
+            assigned_targeting_options3 = assigned_targeting_options3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists the targeting options assigned to a campaign for a specified targeting type.");
+            assigned_targeting_options3 = assigned_targeting_options3.subcommand(mcmd);
+        }
+        let mut assigned_targeting_options3 = SubCommand::with_name("assigned_targeting_options")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get")
                 .about("Gets a single targeting option assigned to an insertion order.");
             assigned_targeting_options3 = assigned_targeting_options3.subcommand(mcmd);
         }
@@ -685,12 +774,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get and list");
         {
-            let mcmd = SubCommand::with_name("create").about("Assigns a targeting option to a line item. Returns the assigned targeting option if successful.");
+            let mcmd = SubCommand::with_name("create").about("Assigns a targeting option to a line item. Returns the assigned targeting option if successful. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditLineItemAssignedTargetingOptions * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption");
             assigned_targeting_options3 = assigned_targeting_options3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete")
-                .about("Deletes an assigned targeting option from a line item.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes an assigned targeting option from a line item. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditLineItemAssignedTargetingOptions * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption");
             assigned_targeting_options3 = assigned_targeting_options3.subcommand(mcmd);
         }
         {
@@ -705,6 +793,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         targeting_types2 = targeting_types2.subcommand(assigned_targeting_options3);
         targeting_types2 = targeting_types2.subcommand(assigned_targeting_options3);
+        targeting_types2 = targeting_types2.subcommand(assigned_targeting_options3);
         targeting_types1 = targeting_types1.subcommand(assigned_targeting_options2);
         channels1 = channels1.subcommand(sites2);
         targeting_types1 = targeting_types1.subcommand(assigned_targeting_options2);
@@ -713,16 +802,19 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         line_items1 = line_items1.subcommand(targeting_types2);
         insertion_orders1 = insertion_orders1.subcommand(targeting_types2);
         channels1 = channels1.subcommand(sites2);
+        campaigns1 = campaigns1.subcommand(targeting_types2);
         targeting_types0 = targeting_types0.subcommand(targeting_options1);
         sdfdownloadtasks0 = sdfdownloadtasks0.subcommand(operations1);
         partners0 = partners0.subcommand(targeting_types1);
         partners0 = partners0.subcommand(channels1);
         inventory_source_groups0 = inventory_source_groups0.subcommand(assigned_inventory_sources1);
+        custom_bidding_algorithms0 = custom_bidding_algorithms0.subcommand(scripts1);
         advertisers0 = advertisers0.subcommand(targeting_types1);
         advertisers0 = advertisers0.subcommand(negative_keyword_lists1);
         advertisers0 = advertisers0.subcommand(manual_triggers1);
         advertisers0 = advertisers0.subcommand(location_lists1);
         advertisers0 = advertisers0.subcommand(line_items1);
+        advertisers0 = advertisers0.subcommand(invoices1);
         advertisers0 = advertisers0.subcommand(insertion_orders1);
         advertisers0 = advertisers0.subcommand(creatives1);
         advertisers0 = advertisers0.subcommand(channels1);

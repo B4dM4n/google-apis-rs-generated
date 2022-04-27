@@ -7,7 +7,7 @@
   "canonicalName": "Sheets",
   "fullyEncodeReservedExpansion": true,
   "version": "v4",
-  "revision": "20210309",
+  "revision": "20220419",
   "title": "Google Sheets API",
   "description": "Reads and writes Google Sheets.",
   "ownerDomain": "google.com",
@@ -204,16 +204,16 @@
           "description": "See, edit, create, and delete all of your Google Drive files"
         },
         "https://www.googleapis.com/auth/drive.file": {
-          "description": "View and manage Google Drive files and folders that you have opened or created with this app"
+          "description": "See, edit, create, and delete only the specific Google Drive files you use with this app"
         },
         "https://www.googleapis.com/auth/drive.readonly": {
           "description": "See and download all your Google Drive files"
         },
         "https://www.googleapis.com/auth/spreadsheets": {
-          "description": "See, edit, create, and delete your spreadsheets in Google Drive"
+          "description": "See, edit, create, and delete all your Google Sheets spreadsheets"
         },
         "https://www.googleapis.com/auth/spreadsheets.readonly": {
-          "description": "View your Google Spreadsheets"
+          "description": "See all your Google Sheets spreadsheets"
         }
       }
     }
@@ -860,7 +860,7 @@
           "$ref": "ColorStyle"
         },
         "textFormat": {
-          "description": "Text formatting options for baseline value.",
+          "description": "Text formatting options for baseline value. The link field is not supported.",
           "$ref": "TextFormat"
         }
       },
@@ -876,7 +876,7 @@
       "enumDescriptions": [],
       "properties": {
         "format": {
-          "description": "The format of the title. Only valid if the axis is not associated with the domain.",
+          "description": "The format of the title. Only valid if the axis is not associated with the domain. The link field is not supported.",
           "$ref": "TextFormat"
         },
         "position": {
@@ -1345,7 +1345,7 @@
       "enumDescriptions": [],
       "properties": {
         "clearedRanges": {
-          "description": "The ranges that were cleared, in A1 notation. If the requests are for an unbounded range or a ranger larger than the bounds of the sheet, this is the actual ranges that were cleared, bounded to the sheet's limits.",
+          "description": "The ranges that were cleared, in [A1 notation](/sheets/api/guides/concepts#cell). If the requests are for an unbounded range or a ranger larger than the bounds of the sheet, this is the actual ranges that were cleared, bounded to the sheet's limits.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1385,7 +1385,7 @@
       "enumDescriptions": [],
       "properties": {
         "ranges": {
-          "description": "The ranges to clear, in A1 or R1C1 notation.",
+          "description": "The ranges to clear, in [A1 notation or R1C1 notation](/sheets/api/guides/concepts#cell).",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1467,7 +1467,7 @@
           }
         },
         "dateTimeRenderOption": {
-          "description": "How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].",
+          "description": "How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.",
           "type": "string",
           "format": null,
           "enum": [
@@ -1475,8 +1475,8 @@
             "FORMATTED_STRING"
           ],
           "enumDescriptions": [
-            "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30st 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year.",
-            "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which is dependent on the spreadsheet locale)."
+            "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year.",
+            "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1501,7 +1501,7 @@
           "items": null
         },
         "valueRenderOption": {
-          "description": "How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE.",
+          "description": "How values should be represented in the output. The default render option is FORMATTED_VALUE.",
           "type": "string",
           "format": null,
           "enum": [
@@ -1683,7 +1683,7 @@
           "items": null
         },
         "updatedSpreadsheet": {
-          "description": "The spreadsheet after updates were applied. This is only set if [BatchUpdateSpreadsheetRequest.include_spreadsheet_in_response] is `true`.",
+          "description": "The spreadsheet after updates were applied. This is only set if BatchUpdateSpreadsheetRequest.include_spreadsheet_in_response is `true`.",
           "$ref": "Spreadsheet"
         }
       },
@@ -1721,7 +1721,7 @@
           "items": null
         },
         "responseDateTimeRenderOption": {
-          "description": "Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is DateTimeRenderOption.SERIAL_NUMBER.",
+          "description": "Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.",
           "type": "string",
           "format": null,
           "enum": [
@@ -1729,15 +1729,15 @@
             "FORMATTED_STRING"
           ],
           "enumDescriptions": [
-            "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30st 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year.",
-            "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which is dependent on the spreadsheet locale)."
+            "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year.",
+            "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."
           ],
           "properties": {},
           "additionalProperties": null,
           "items": null
         },
         "responseValueRenderOption": {
-          "description": "Determines how values in the response should be rendered. The default render option is ValueRenderOption.FORMATTED_VALUE.",
+          "description": "Determines how values in the response should be rendered. The default render option is FORMATTED_VALUE.",
           "type": "string",
           "format": null,
           "enum": [
@@ -1881,7 +1881,7 @@
           "items": null
         },
         "responseDateTimeRenderOption": {
-          "description": "Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is DateTimeRenderOption.SERIAL_NUMBER.",
+          "description": "Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.",
           "type": "string",
           "format": null,
           "enum": [
@@ -1889,15 +1889,15 @@
             "FORMATTED_STRING"
           ],
           "enumDescriptions": [
-            "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30st 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year.",
-            "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which is dependent on the spreadsheet locale)."
+            "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year.",
+            "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."
           ],
           "properties": {},
           "additionalProperties": null,
           "items": null
         },
         "responseValueRenderOption": {
-          "description": "Determines how values in the response should be rendered. The default render option is ValueRenderOption.FORMATTED_VALUE.",
+          "description": "Determines how values in the response should be rendered. The default render option is FORMATTED_VALUE.",
           "type": "string",
           "format": null,
           "enum": [
@@ -2365,7 +2365,7 @@
           "$ref": "ChartData"
         },
         "bubbleTextStyle": {
-          "description": "The format of the text inside the bubbles. Strikethrough and underline are not supported.",
+          "description": "The format of the text inside the bubbles. Strikethrough, underline, and link are not supported.",
           "$ref": "TextFormat"
         },
         "domain": {
@@ -2517,7 +2517,7 @@
       "enumDescriptions": [],
       "properties": {
         "dataSourceFormula": {
-          "description": "Output only. Information about a data source formula on the cell. The field is set if user_entered_value is a formula referencing some DATA_SOURCE sheet, e.g `=SUM(DataSheet!Column)`.",
+          "description": "Output only. Information about a data source formula on the cell. The field is set if user_entered_value is a formula referencing some DATA_SOURCE sheet, e.g. `=SUM(DataSheet!Column)`.",
           "$ref": "DataSourceFormula"
         },
         "dataSourceTable": {
@@ -2547,7 +2547,7 @@
           "items": null
         },
         "hyperlink": {
-          "description": "A hyperlink this cell points to, if any. If the cell contains multiple hyperlinks, this field will be empty. This field is read-only. To set it, use a `=HYPERLINK` formula in the userEnteredValue.formulaValue field.",
+          "description": "A hyperlink this cell points to, if any. If the cell contains multiple hyperlinks, this field will be empty. This field is read-only. To set it, use a `=HYPERLINK` formula in the userEnteredValue.formulaValue field. A cell-level link can also be set from the userEnteredFormat.textFormat field. Alternatively, set a hyperlink in the textFormatRun.format.link field that spans the entire cell.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2679,7 +2679,7 @@
           "items": null
         },
         "textFormat": {
-          "description": "The format of the text in the cell (unless overridden by a format run).",
+          "description": "The format of the text in the cell (unless overridden by a format run). Setting a cell-level link here will clear the cell's existing links. Setting the link field in a TextFormatRun will take precedence over the cell-level link.",
           "$ref": "TextFormat"
         },
         "textRotation": {
@@ -2719,7 +2719,7 @@
           ],
           "enumDescriptions": [
             "The default value, do not use.",
-            "Lines that are longer than the cell width will be written in the next cell over, so long as that cell is empty. If the next cell over is non-empty, this behaves the same as CLIP. The text will never wrap to the next line unless the user manually inserts a new line. Example: | First sentence. | | Manual newline that is very long. <- Text continues into next cell | Next newline. |",
+            "Lines that are longer than the cell width will be written in the next cell over, so long as that cell is empty. If the next cell over is non-empty, this behaves the same as `CLIP`. The text will never wrap to the next line unless the user manually inserts a new line. Example: | First sentence. | | Manual newline that is very long. <- Text continues into next cell | Next newline. |",
             "This wrap strategy represents the old Google Sheets wrap strategy where words that are longer than a line are clipped rather than broken. This strategy is not supported on all platforms and is being phased out. Example: | Cell has a | | loooooooooo| <- Word is clipped. | word. |",
             "Lines that are longer than the cell width will be clipped. The text will never wrap to the next line unless the user manually inserts a new line. Example: | First sentence. | | Manual newline t| <- Text is clipped | Next newline. |",
             "Words that are longer than a line are wrapped at the character level rather than clipped. Example: | Cell has a | | loooooooooo| <- Word is broken. | ong word. |"
@@ -3143,7 +3143,7 @@
           "items": null
         },
         "subtitleTextFormat": {
-          "description": "The subtitle text format. Strikethrough and underline are not supported.",
+          "description": "The subtitle text format. Strikethrough, underline, and link are not supported.",
           "$ref": "TextFormat"
         },
         "subtitleTextPosition": {
@@ -3161,7 +3161,7 @@
           "items": null
         },
         "titleTextFormat": {
-          "description": "The title text format. Strikethrough and underline are not supported.",
+          "description": "The title text format. Strikethrough, underline, and link are not supported.",
           "$ref": "TextFormat"
         },
         "titleTextPosition": {
@@ -3247,14 +3247,14 @@
     },
     "Color": {
       "id": "Color",
-      "description": "Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to/from color representations in various languages over compactness; for example, the fields of this representation can be trivially provided to the constructor of \"java.awt.Color\" in Java; it can also be trivially provided to UIColor's \"+colorWithRed:green:blue:alpha\" method in iOS; and, with just a little work, it can be easily formatted into a CSS \"rgba()\" string in JavaScript, as well. Note: this proto does not carry information about the absolute color space that should be used to interpret the RGB value (e.g. sRGB, Adobe RGB, DCI-P3, BT.2020, etc.). By default, applications SHOULD assume the sRGB color space. Note: when color equality needs to be decided, implementations, unless documented otherwise, will treat two colors to be equal if all their red, green, blue and alpha values each differ by at most 1e-5. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor_(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor_ = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ...",
+      "description": "Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to/from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't carry information about the absolute color space that should be used to interpret the RGB value (e.g. sRGB, Adobe RGB, DCI-P3, BT.2020, etc.). By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most 1e-5. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ...",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "alpha": {
-          "description": "The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: pixel color = alpha * (this color) + (1.0 - alpha) * (background color) This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is to be rendered as a solid color (as if the alpha value had been explicitly given with a value of 1.0).",
+          "description": "The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0).",
           "type": "number",
           "format": "float",
           "enum": [],
@@ -3470,7 +3470,7 @@
             "Paste values, formulas, formats, and merges.",
             "Paste the values ONLY without formats, formulas, or merges.",
             "Paste the format and data validation only.",
-            "Like PASTE_NORMAL but without borders.",
+            "Like `PASTE_NORMAL` but without borders.",
             "Paste the formulas only.",
             "Paste the data validation only.",
             "Paste the conditional formatting rules only."
@@ -3570,7 +3570,7 @@
             "Paste values, formulas, formats, and merges.",
             "Paste the values ONLY without formats, formulas, or merges.",
             "Paste the format and data validation only.",
-            "Like PASTE_NORMAL but without borders.",
+            "Like `PASTE_NORMAL` but without borders.",
             "Paste the formulas only.",
             "Paste the data validation only.",
             "Paste the conditional formatting rules only."
@@ -3603,6 +3603,7 @@
             "DATA_EXECUTION_ERROR_CODE_UNSPECIFIED",
             "TIMED_OUT",
             "TOO_MANY_ROWS",
+            "TOO_MANY_COLUMNS",
             "TOO_MANY_CELLS",
             "ENGINE",
             "PARAMETER_INVALID",
@@ -3623,6 +3624,7 @@
             "Default value, do not use.",
             "The data execution timed out.",
             "The data execution returns more rows than the limit.",
+            "The data execution returns more columns than the limit.",
             "The data execution returns more cells than the limit.",
             "Error is received from the backend data execution engine (e.g. BigQuery). Check error_message for details.",
             "One or some of the provided data source parameters are invalid.",
@@ -3822,7 +3824,7 @@
           "items": null
         },
         "textFormat": {
-          "description": "The text format used for the data label.",
+          "description": "The text format used for the data label. The link field is not supported.",
           "$ref": "TextFormat"
         },
         "type": {
@@ -4918,7 +4920,7 @@
       "enumDescriptions": [],
       "properties": {
         "sheetId": {
-          "description": "The ID of the sheet to delete. If the sheet is of SheetType.DATA_SOURCE type, the associated DataSource is also deleted.",
+          "description": "The ID of the sheet to delete. If the sheet is of DATA_SOURCE type, the associated DataSource is also deleted.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -5652,7 +5654,7 @@
           "items": null
         },
         "numberValue": {
-          "description": "Represents a double value. Note: Dates, Times and DateTimes are represented as doubles in \"serial number\" format.",
+          "description": "Represents a double value. Note: Dates, Times and DateTimes are represented as doubles in SERIAL_NUMBER format.",
           "type": "number",
           "format": "double",
           "enum": [],
@@ -6248,7 +6250,7 @@
     },
     "GridRange": {
       "id": "GridRange",
-      "description": "A range on a sheet. All indexes are zero-based. Indexes are half open, i.e. the start index is inclusive and the end index is exclusive -- [start_index, end_index). Missing indexes indicate the range is unbounded on that side. For example, if `\"Sheet1\"` is sheet ID 0, then: `Sheet1!A1:A1 == sheet_id: 0, start_row_index: 0, end_row_index: 1, start_column_index: 0, end_column_index: 1` `Sheet1!A3:B4 == sheet_id: 0, start_row_index: 2, end_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1!A:B == sheet_id: 0, start_column_index: 0, end_column_index: 2` `Sheet1!A5:B == sheet_id: 0, start_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1 == sheet_id:0` The start index must always be less than or equal to the end index. If the start index equals the end index, then the range is empty. Empty ranges are typically not meaningful and are usually rendered in the UI as `#REF!`.",
+      "description": "A range on a sheet. All indexes are zero-based. Indexes are half open, i.e. the start index is inclusive and the end index is exclusive -- [start_index, end_index). Missing indexes indicate the range is unbounded on that side. For example, if `\"Sheet1\"` is sheet ID 123456, then: `Sheet1!A1:A1 == sheet_id: 123456, start_row_index: 0, end_row_index: 1, start_column_index: 0, end_column_index: 1` `Sheet1!A3:B4 == sheet_id: 123456, start_row_index: 2, end_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1!A:B == sheet_id: 123456, start_column_index: 0, end_column_index: 2` `Sheet1!A5:B == sheet_id: 123456, start_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1 == sheet_id: 123456` The start index must always be less than or equal to the end index. If the start index equals the end index, then the range is empty. Empty ranges are typically not meaningful and are usually rendered in the UI as `#REF!`.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -6547,8 +6549,8 @@
             "The interpolation point uses the minimum value in the cells over the range of the conditional format.",
             "The interpolation point uses the maximum value in the cells over the range of the conditional format.",
             "The interpolation point uses exactly the value in InterpolationPoint.value.",
-            "The interpolation point is the given percentage over all the cells in the range of the conditional format. This is equivalent to NUMBER if the value was: `=(MAX(FLATTEN(range)) * (value / 100)) + (MIN(FLATTEN(range)) * (1 - (value / 100)))` (where errors in the range are ignored when flattening).",
-            "The interpolation point is the given percentile over all the cells in the range of the conditional format. This is equivalent to NUMBER if the value was: `=PERCENTILE(FLATTEN(range), value / 100)` (where errors in the range are ignored when flattening)."
+            "The interpolation point is the given percentage over all the cells in the range of the conditional format. This is equivalent to `NUMBER` if the value was: `=(MAX(FLATTEN(range)) * (value / 100)) + (MIN(FLATTEN(range)) * (1 - (value / 100)))` (where errors in the range are ignored when flattening).",
+            "The interpolation point is the given percentile over all the cells in the range of the conditional format. This is equivalent to `NUMBER` if the value was: `=PERCENTILE(FLATTEN(range), value / 100)` (where errors in the range are ignored when flattening)."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -6645,7 +6647,7 @@
           "$ref": "TextPosition"
         },
         "textFormat": {
-          "description": "Text formatting options for key value.",
+          "description": "Text formatting options for key value. The link field is not supported.",
           "$ref": "TextFormat"
         }
       },
@@ -6694,6 +6696,28 @@
           "description": "The thickness of the line, in px.",
           "type": "integer",
           "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Link": {
+      "id": "Link",
+      "description": "An external or local reference.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "uri": {
+          "description": "The link identifier.",
+          "type": "string",
+          "format": null,
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -7187,7 +7211,7 @@
             "Paste values, formulas, formats, and merges.",
             "Paste the values ONLY without formats, formulas, or merges.",
             "Paste the format and data validation only.",
-            "Like PASTE_NORMAL but without borders.",
+            "Like `PASTE_NORMAL` but without borders.",
             "Paste the formulas only.",
             "Paste the data validation only.",
             "Paste the conditional formatting rules only."
@@ -8954,7 +8978,7 @@
           "items": null
         },
         "textFormat": {
-          "description": "The text format of title in the slicer.",
+          "description": "The text format of title in the slicer. The link field is not supported.",
           "$ref": "TextFormat"
         },
         "title": {
@@ -9363,6 +9387,10 @@
           "additionalProperties": null,
           "items": null
         },
+        "link": {
+          "description": "The link destination of the text, if any. Setting the link field in a TextFormatRun will clear the cell's existing links or a cell-level link set in the same request. When a link is set, the text foreground color will be set to the default link color and the text will be underlined. If these fields are modified in the same request, those values will be used instead of the link defaults.",
+          "$ref": "Link"
+        },
         "strikethrough": {
           "description": "True if the text has a strikethrough.",
           "type": "boolean",
@@ -9760,7 +9788,7 @@
           "$ref": "ChartData"
         },
         "textFormat": {
-          "description": "The text format for all labels on the chart.",
+          "description": "The text format for all labels on the chart. The link field is not supported.",
           "$ref": "TextFormat"
         }
       },
@@ -10500,7 +10528,7 @@
           "$ref": "ValueRange"
         },
         "updatedRange": {
-          "description": "The range (in A1 notation) that updates were applied to.",
+          "description": "The range (in [A1 notation](/sheets/api/guides/concepts#cell)) that updates were applied to.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -10616,7 +10644,7 @@
           "items": null
         },
         "range": {
-          "description": "The range the values cover, in A1 notation. For output, this range indicates the entire requested range, even though the values will exclude trailing rows and columns. When appending values, this field represents the range to search for a table, after which values will be appended.",
+          "description": "The range the values cover, in [A1 notation](/sheets/api/guides/concepts#cell). For output, this range indicates the entire requested range, even though the values will exclude trailing rows and columns. When appending values, this field represents the range to search for a table, after which values will be appended.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -11090,7 +11118,7 @@
                   "repeated": false
                 },
                 "range": {
-                  "description": "The A1 notation of a range to search for a logical table of data. Values are appended after the last row of the table.",
+                  "description": "The [A1 notation](/sheets/api/guides/concepts#cell) of a range to search for a logical table of data. Values are appended after the last row of the table.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -11104,7 +11132,7 @@
                   "repeated": false
                 },
                 "responseDateTimeRenderOption": {
-                  "description": "Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].",
+                  "description": "Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -11118,13 +11146,13 @@
                     "FORMATTED_STRING"
                   ],
                   "enumDescriptions": [
-                    "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30st 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year.",
-                    "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which is dependent on the spreadsheet locale)."
+                    "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year.",
+                    "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."
                   ],
                   "repeated": false
                 },
                 "responseValueRenderOption": {
-                  "description": "Determines how values in the response should be rendered. The default render option is ValueRenderOption.FORMATTED_VALUE.",
+                  "description": "Determines how values in the response should be rendered. The default render option is FORMATTED_VALUE.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -11207,7 +11235,7 @@
               "id": "sheets.spreadsheets.values.batchClear",
               "path": "v4/spreadsheets/{spreadsheetId}/values:batchClear",
               "httpMethod": "POST",
-              "description": "Clears one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more ranges. Only values are cleared -- all other properties of the cell (such as formatting, data validation, etc..) are kept.",
+              "description": "Clears one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more ranges. Only values are cleared -- all other properties of the cell (such as formatting and data validation) are kept.",
               "parameters": {
                 "spreadsheetId": {
                   "description": "The ID of the spreadsheet to update.",
@@ -11292,7 +11320,7 @@
               "description": "Returns one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more ranges.",
               "parameters": {
                 "dateTimeRenderOption": {
-                  "description": "How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].",
+                  "description": "How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -11306,13 +11334,13 @@
                     "FORMATTED_STRING"
                   ],
                   "enumDescriptions": [
-                    "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30st 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year.",
-                    "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which is dependent on the spreadsheet locale)."
+                    "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year.",
+                    "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."
                   ],
                   "repeated": false
                 },
                 "majorDimension": {
-                  "description": "The major dimension that results should use. For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then requesting `range=A1:B2,majorDimension=ROWS` returns `[[1,2],[3,4]]`, whereas requesting `range=A1:B2,majorDimension=COLUMNS` returns `[[1,3],[2,4]]`.",
+                  "description": "The major dimension that results should use. For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then requesting `ranges=[\"A1:B2\"],majorDimension=ROWS` returns `[[1,2],[3,4]]`, whereas requesting `ranges=[\"A1:B2\"],majorDimension=COLUMNS` returns `[[1,3],[2,4]]`.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -11334,7 +11362,7 @@
                   "repeated": false
                 },
                 "ranges": {
-                  "description": "The A1 notation or R1C1 notation of the range to retrieve values from.",
+                  "description": "The [A1 notation or R1C1 notation](/sheets/api/guides/concepts#cell) of the range to retrieve values from.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -11534,7 +11562,7 @@
               "description": "Clears values from a spreadsheet. The caller must specify the spreadsheet ID and range. Only values are cleared -- all other properties of the cell (such as formatting, data validation, etc..) are kept.",
               "parameters": {
                 "range": {
-                  "description": "The A1 notation or R1C1 notation of the values to clear.",
+                  "description": "The [A1 notation or R1C1 notation](/sheets/api/guides/concepts#cell) of the values to clear.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -11590,7 +11618,7 @@
               "description": "Returns a range of values from a spreadsheet. The caller must specify the spreadsheet ID and a range.",
               "parameters": {
                 "dateTimeRenderOption": {
-                  "description": "How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].",
+                  "description": "How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -11604,8 +11632,8 @@
                     "FORMATTED_STRING"
                   ],
                   "enumDescriptions": [
-                    "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30st 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year.",
-                    "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which is dependent on the spreadsheet locale)."
+                    "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year.",
+                    "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."
                   ],
                   "repeated": false
                 },
@@ -11632,7 +11660,7 @@
                   "repeated": false
                 },
                 "range": {
-                  "description": "The A1 notation or R1C1 notation of the range to retrieve values from.",
+                  "description": "The [A1 notation or R1C1 notation](/sheets/api/guides/concepts#cell) of the range to retrieve values from.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -11660,7 +11688,7 @@
                   "repeated": false
                 },
                 "valueRenderOption": {
-                  "description": "How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE.",
+                  "description": "How values should be represented in the output. The default render option is FORMATTED_VALUE.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -11724,7 +11752,7 @@
                   "repeated": false
                 },
                 "range": {
-                  "description": "The A1 notation of the values to update.",
+                  "description": "The [A1 notation](/sheets/api/guides/concepts#cell) of the values to update.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -11738,7 +11766,7 @@
                   "repeated": false
                 },
                 "responseDateTimeRenderOption": {
-                  "description": "Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is DateTimeRenderOption.SERIAL_NUMBER.",
+                  "description": "Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -11752,13 +11780,13 @@
                     "FORMATTED_STRING"
                   ],
                   "enumDescriptions": [
-                    "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30st 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year.",
-                    "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which is dependent on the spreadsheet locale)."
+                    "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year.",
+                    "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."
                   ],
                   "repeated": false
                 },
                 "responseValueRenderOption": {
-                  "description": "Determines how values in the response should be rendered. The default render option is ValueRenderOption.FORMATTED_VALUE.",
+                  "description": "Determines how values in the response should be rendered. The default render option is FORMATTED_VALUE.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -11910,7 +11938,7 @@
           "id": "sheets.spreadsheets.get",
           "path": "v4/spreadsheets/{spreadsheetId}",
           "httpMethod": "GET",
-          "description": "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. By default, data within grids will not be returned. You can include grid data one of two ways: * Specify a field mask listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData URL parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, it is recommended to retrieve only the specific fields of the spreadsheet that you want. To retrieve only subsets of the spreadsheet, use the ranges URL parameter. Multiple ranges can be specified. Limiting the range will return only the portions of the spreadsheet that intersect the requested ranges. Ranges are specified using A1 notation.",
+          "description": "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. By default, data within grids is not returned. You can include grid data in one of 2 ways: * Specify a field mask listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData URL parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want. To retrieve only subsets of spreadsheet data, use the ranges URL parameter. Ranges are specified using [A1 notation](/sheets/api/guides/concepts#cell). You can define a single cell (for example, `A1`) or multiple cells (for example, `A1:D5`). You can also get cells from other sheets within the same spreadsheet (for example, `Sheet2!A1:C4`) or retrieve multiple ranges at once (for example, `?ranges=A1:D5&ranges=Sheet2!A1:C4`). Limiting the range returns only the portions of the spreadsheet that intersect the requested ranges.",
           "parameters": {
             "includeGridData": {
               "description": "True if grid data should be returned. This parameter is ignored if a field mask was set in the request.",
@@ -11979,7 +12007,7 @@
           "id": "sheets.spreadsheets.getByDataFilter",
           "path": "v4/spreadsheets/{spreadsheetId}:getByDataFilter",
           "httpMethod": "POST",
-          "description": "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. This method differs from GetSpreadsheet in that it allows selecting which subsets of spreadsheet data to return by specifying a dataFilters parameter. Multiple DataFilters can be specified. Specifying one or more data filters will return the portions of the spreadsheet that intersect ranges matched by any of the filters. By default, data within grids will not be returned. You can include grid data one of two ways: * Specify a field mask listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, it is recommended to retrieve only the specific fields of the spreadsheet that you want.",
+          "description": "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. This method differs from GetSpreadsheet in that it allows selecting which subsets of spreadsheet data to return by specifying a dataFilters parameter. Multiple DataFilters can be specified. Specifying one or more data filters returns the portions of the spreadsheet that intersect ranges matched by any of the filters. By default, data within grids is not returned. You can include grid data one of 2 ways: * Specify a field mask listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want.",
           "parameters": {
             "spreadsheetId": {
               "description": "The spreadsheet to request.",

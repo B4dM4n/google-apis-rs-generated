@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("dataproc1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210305")
+            .version("0.1.0-20220419")
             .about("Manages Hadoop-based clusters and jobs on Google Cloud Platform.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -38,7 +38,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: locations and regions");
         let mut locations1 = SubCommand::with_name("locations")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: autoscaling_policies and workflow_templates");
+            .about("sub-resources: autoscaling_policies, batches and workflow_templates");
         let mut regions1 = SubCommand::with_name("regions")
                         .setting(AppSettings::ColoredHelp)
                         .about("sub-resources: autoscaling_policies, clusters, jobs, operations and workflow_templates");
@@ -77,6 +77,27 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("update").about("Updates (replaces) autoscaling policy.Disabled check for update_mask, because all updates will be full replacements.");
             autoscaling_policies2 = autoscaling_policies2.subcommand(mcmd);
+        }
+        let mut batches2 = SubCommand::with_name("batches")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get and list");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a batch workload that executes asynchronously.");
+            batches2 = batches2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes the batch workload resource. If the batch is not in terminal state, the delete fails and the response returns FAILED_PRECONDITION.");
+            batches2 = batches2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get")
+                .about("Gets the batch workload resource representation.");
+            batches2 = batches2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists batch workloads.");
+            batches2 = batches2.subcommand(mcmd);
         }
         let mut workflow_templates2 = SubCommand::with_name("workflow_templates")
                         .setting(AppSettings::ColoredHelp)
@@ -161,7 +182,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut clusters2 = SubCommand::with_name("clusters")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: create, delete, diagnose, get, get_iam_policy, inject_credentials, list, patch, set_iam_policy, start, stop and test_iam_permissions");
+                        .about("methods: create, delete, diagnose, get, get_iam_policy, inject_credentials, list, patch, repair, set_iam_policy, start, stop and test_iam_permissions");
         {
             let mcmd = SubCommand::with_name("create").about("Creates a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).");
             clusters2 = clusters2.subcommand(mcmd);
@@ -193,7 +214,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             clusters2 = clusters2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).");
+            let mcmd = SubCommand::with_name("patch").about("Updates a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata). The cluster must be in a RUNNING state or an error is returned.");
+            clusters2 = clusters2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("repair").about("Repairs a cluster.");
             clusters2 = clusters2.subcommand(mcmd);
         }
         {
@@ -262,11 +287,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: cancel, delete, get, get_iam_policy, list, set_iam_policy and test_iam_permissions");
         {
-            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn\'t support this method, it returns google.rpc.Code.UNIMPLEMENTED. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to Code.CANCELLED.");
+            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns google.rpc.Code.UNIMPLEMENTED. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to Code.CANCELLED.");
             operations2 = operations2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn\'t support this method, it returns google.rpc.Code.UNIMPLEMENTED.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns google.rpc.Code.UNIMPLEMENTED.");
             operations2 = operations2.subcommand(mcmd);
         }
         {
@@ -278,7 +303,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             operations2 = operations2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn\'t support this method, it returns UNIMPLEMENTED.NOTE: the name binding allows API services to override the binding to use different resource name schemes, such as users/*/operations. To override the binding, API services can add a binding such as \"/v1/{name=users/*}/operations\" to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns UNIMPLEMENTED.NOTE: the name binding allows API services to override the binding to use different resource name schemes, such as users/*/operations. To override the binding, API services can add a binding such as \"/v1/{name=users/*}/operations\" to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations2 = operations2.subcommand(mcmd);
         }
         {
@@ -340,6 +365,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         regions1 = regions1.subcommand(clusters2);
         regions1 = regions1.subcommand(autoscaling_policies2);
         locations1 = locations1.subcommand(workflow_templates2);
+        locations1 = locations1.subcommand(batches2);
         locations1 = locations1.subcommand(autoscaling_policies2);
         projects0 = projects0.subcommand(regions1);
         projects0 = projects0.subcommand(locations1);

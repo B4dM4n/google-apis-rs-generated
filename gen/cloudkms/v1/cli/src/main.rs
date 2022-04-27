@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudkms1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210210")
+            .version("0.1.0-20220415")
             .about("Manages keys and performs cryptographic operations in a central cloud service, for direct use by other cloud resources and applications. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -38,7 +38,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: locations");
         let mut locations1 = SubCommand::with_name("locations")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get and list");
+            .about("methods: generate_random_bytes, get and list");
+        {
+            let mcmd = SubCommand::with_name("generate_random_bytes").about("Generate random bytes using the Cloud KMS randomness source in the provided location.");
+            locations1 = locations1.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("get").about("Gets information about a location.");
             locations1 = locations1.subcommand(mcmd);
@@ -47,6 +51,39 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists information about the supported locations for this service.");
             locations1 = locations1.subcommand(mcmd);
+        }
+        let mut ekm_connections2 = SubCommand::with_name("ekm_connections")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a new EkmConnection in a given Project and Location.");
+            ekm_connections2 = ekm_connections2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("get").about("Returns metadata for a given EkmConnection.");
+            ekm_connections2 = ekm_connections2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            ekm_connections2 = ekm_connections2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists EkmConnections.");
+            ekm_connections2 = ekm_connections2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates an EkmConnection's metadata.");
+            ekm_connections2 = ekm_connections2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.");
+            ekm_connections2 = ekm_connections2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
+            ekm_connections2 = ekm_connections2.subcommand(mcmd);
         }
         let mut key_rings2 = SubCommand::with_name("key_rings")
                         .setting(AppSettings::ColoredHelp)
@@ -118,7 +155,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             crypto_keys3 = crypto_keys3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update_primary_version").about("Update the version of a CryptoKey that will be used in Encrypt. Returns an error if called on an asymmetric key.");
+            let mcmd = SubCommand::with_name("update_primary_version").about("Update the version of a CryptoKey that will be used in Encrypt. Returns an error if called on a key whose purpose is not ENCRYPT_DECRYPT.");
             crypto_keys3 = crypto_keys3.subcommand(mcmd);
         }
         let mut import_jobs3 = SubCommand::with_name("import_jobs")
@@ -153,7 +190,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut crypto_key_versions4 = SubCommand::with_name("crypto_key_versions")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: asymmetric_decrypt, asymmetric_sign, create, destroy, get, get_public_key, import, list, patch and restore");
+                        .about("methods: asymmetric_decrypt, asymmetric_sign, create, destroy, get, get_public_key, import, list, mac_sign, mac_verify, patch and restore");
         {
             let mcmd = SubCommand::with_name("asymmetric_decrypt").about("Decrypts data that was encrypted with a public key retrieved from GetPublicKey corresponding to a CryptoKeyVersion with CryptoKey.purpose ASYMMETRIC_DECRYPT.");
             crypto_key_versions4 = crypto_key_versions4.subcommand(mcmd);
@@ -167,7 +204,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             crypto_key_versions4 = crypto_key_versions4.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("destroy").about("Schedule a CryptoKeyVersion for destruction. Upon calling this method, CryptoKeyVersion.state will be set to DESTROY_SCHEDULED and destroy_time will be set to a time 24 hours in the future, at which point the state will be changed to DESTROYED, and the key material will be irrevocably destroyed. Before the destroy_time is reached, RestoreCryptoKeyVersion may be called to reverse the process.");
+            let mcmd = SubCommand::with_name("destroy").about("Schedule a CryptoKeyVersion for destruction. Upon calling this method, CryptoKeyVersion.state will be set to DESTROY_SCHEDULED, and destroy_time will be set to the time destroy_scheduled_duration in the future. At that time, the state will automatically change to DESTROYED, and the key material will be irrevocably destroyed. Before the destroy_time is reached, RestoreCryptoKeyVersion may be called to reverse the process.");
             crypto_key_versions4 = crypto_key_versions4.subcommand(mcmd);
         }
         {
@@ -180,7 +217,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             crypto_key_versions4 = crypto_key_versions4.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("import").about("Imports a new CryptoKeyVersion into an existing CryptoKey using the wrapped key material provided in the request. The version ID will be assigned the next sequential id within the CryptoKey.");
+            let mcmd = SubCommand::with_name("import").about("Import wrapped key material into a CryptoKeyVersion. All requests must specify a CryptoKey. If a CryptoKeyVersion is additionally specified in the request, key material will be reimported into that version. Otherwise, a new version will be created, and will be assigned the next sequential id within the CryptoKey.");
             crypto_key_versions4 = crypto_key_versions4.subcommand(mcmd);
         }
         {
@@ -188,7 +225,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             crypto_key_versions4 = crypto_key_versions4.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Update a CryptoKeyVersion\'s metadata. state may be changed between ENABLED and DISABLED using this method. See DestroyCryptoKeyVersion and RestoreCryptoKeyVersion to move between other states.");
+            let mcmd = SubCommand::with_name("mac_sign").about("Signs data using a CryptoKeyVersion with CryptoKey.purpose MAC, producing a tag that can be verified by another source with the same key.");
+            crypto_key_versions4 = crypto_key_versions4.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("mac_verify").about("Verifies MAC tag using a CryptoKeyVersion with CryptoKey.purpose MAC, and returns a response that indicates whether or not the verification was successful.");
+            crypto_key_versions4 = crypto_key_versions4.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Update a CryptoKeyVersion's metadata. state may be changed between ENABLED and DISABLED using this method. See DestroyCryptoKeyVersion and RestoreCryptoKeyVersion to move between other states.");
             crypto_key_versions4 = crypto_key_versions4.subcommand(mcmd);
         }
         {
@@ -199,6 +244,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         key_rings2 = key_rings2.subcommand(import_jobs3);
         key_rings2 = key_rings2.subcommand(crypto_keys3);
         locations1 = locations1.subcommand(key_rings2);
+        locations1 = locations1.subcommand(ekm_connections2);
         projects0 = projects0.subcommand(locations1);
         app = app.subcommand(projects0);
 

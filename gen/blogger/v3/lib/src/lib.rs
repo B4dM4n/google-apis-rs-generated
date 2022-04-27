@@ -1154,12 +1154,14 @@ pub mod schemas {
     pub enum PageStatus {
         Draft,
         Live,
+        SoftTrashed,
     }
     impl PageStatus {
         pub fn as_str(self) -> &'static str {
             match self {
                 PageStatus::Draft => "DRAFT",
                 PageStatus::Live => "LIVE",
+                PageStatus::SoftTrashed => "SOFT_TRASHED",
             }
         }
     }
@@ -1174,6 +1176,7 @@ pub mod schemas {
             Ok(match s {
                 "DRAFT" => PageStatus::Draft,
                 "LIVE" => PageStatus::Live,
+                "SOFT_TRASHED" => PageStatus::SoftTrashed,
                 _ => return Err(()),
             })
         }
@@ -1200,6 +1203,7 @@ pub mod schemas {
             Ok(match value {
                 "DRAFT" => PageStatus::Draft,
                 "LIVE" => PageStatus::Live,
+                "SOFT_TRASHED" => PageStatus::SoftTrashed,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -1887,6 +1891,7 @@ pub mod schemas {
         Draft,
         Live,
         Scheduled,
+        SoftTrashed,
     }
     impl PostStatus {
         pub fn as_str(self) -> &'static str {
@@ -1894,6 +1899,7 @@ pub mod schemas {
                 PostStatus::Draft => "DRAFT",
                 PostStatus::Live => "LIVE",
                 PostStatus::Scheduled => "SCHEDULED",
+                PostStatus::SoftTrashed => "SOFT_TRASHED",
             }
         }
     }
@@ -1909,6 +1915,7 @@ pub mod schemas {
                 "DRAFT" => PostStatus::Draft,
                 "LIVE" => PostStatus::Live,
                 "SCHEDULED" => PostStatus::Scheduled,
+                "SOFT_TRASHED" => PostStatus::SoftTrashed,
                 _ => return Err(()),
             })
         }
@@ -1936,6 +1943,7 @@ pub mod schemas {
                 "DRAFT" => PostStatus::Draft,
                 "LIVE" => PostStatus::Live,
                 "SCHEDULED" => PostStatus::Scheduled,
+                "SOFT_TRASHED" => PostStatus::SoftTrashed,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -6035,12 +6043,14 @@ pub mod resources {
             pub enum ListStatusItems {
                 Draft,
                 Live,
+                SoftTrashed,
             }
             impl ListStatusItems {
                 pub fn as_str(self) -> &'static str {
                     match self {
                         ListStatusItems::Draft => "DRAFT",
                         ListStatusItems::Live => "LIVE",
+                        ListStatusItems::SoftTrashed => "SOFT_TRASHED",
                     }
                 }
             }
@@ -6055,6 +6065,7 @@ pub mod resources {
                     Ok(match s {
                         "DRAFT" => ListStatusItems::Draft,
                         "LIVE" => ListStatusItems::Live,
+                        "SOFT_TRASHED" => ListStatusItems::SoftTrashed,
                         _ => return Err(()),
                     })
                 }
@@ -6081,6 +6092,7 @@ pub mod resources {
                     Ok(match value {
                         "DRAFT" => ListStatusItems::Draft,
                         "LIVE" => ListStatusItems::Live,
+                        "SOFT_TRASHED" => ListStatusItems::SoftTrashed,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -7896,6 +7908,7 @@ pub mod resources {
                 Draft,
                 Live,
                 Scheduled,
+                SoftTrashed,
             }
             impl ListStatusItems {
                 pub fn as_str(self) -> &'static str {
@@ -7903,6 +7916,7 @@ pub mod resources {
                         ListStatusItems::Draft => "DRAFT",
                         ListStatusItems::Live => "LIVE",
                         ListStatusItems::Scheduled => "SCHEDULED",
+                        ListStatusItems::SoftTrashed => "SOFT_TRASHED",
                     }
                 }
             }
@@ -7918,6 +7932,7 @@ pub mod resources {
                         "DRAFT" => ListStatusItems::Draft,
                         "LIVE" => ListStatusItems::Live,
                         "SCHEDULED" => ListStatusItems::Scheduled,
+                        "SOFT_TRASHED" => ListStatusItems::SoftTrashed,
                         _ => return Err(()),
                     })
                 }
@@ -7945,6 +7960,7 @@ pub mod resources {
                         "DRAFT" => ListStatusItems::Draft,
                         "LIVE" => ListStatusItems::Live,
                         "SCHEDULED" => ListStatusItems::Scheduled,
+                        "SOFT_TRASHED" => ListStatusItems::SoftTrashed,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -8876,6 +8892,7 @@ pub mod resources {
                 Draft,
                 Live,
                 Scheduled,
+                SoftTrashed,
             }
             impl ListStatusItems {
                 pub fn as_str(self) -> &'static str {
@@ -8883,6 +8900,7 @@ pub mod resources {
                         ListStatusItems::Draft => "DRAFT",
                         ListStatusItems::Live => "LIVE",
                         ListStatusItems::Scheduled => "SCHEDULED",
+                        ListStatusItems::SoftTrashed => "SOFT_TRASHED",
                     }
                 }
             }
@@ -8898,6 +8916,7 @@ pub mod resources {
                         "DRAFT" => ListStatusItems::Draft,
                         "LIVE" => ListStatusItems::Live,
                         "SCHEDULED" => ListStatusItems::Scheduled,
+                        "SOFT_TRASHED" => ListStatusItems::SoftTrashed,
                         _ => return Err(()),
                     })
                 }
@@ -8925,6 +8944,7 @@ pub mod resources {
                         "DRAFT" => ListStatusItems::Draft,
                         "LIVE" => ListStatusItems::Live,
                         "SCHEDULED" => ListStatusItems::Scheduled,
+                        "SOFT_TRASHED" => ListStatusItems::SoftTrashed,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",

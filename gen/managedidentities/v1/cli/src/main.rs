@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("managedidentities1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210305")
+            .version("0.1.0-20220216")
             .about("The Managed Service for Microsoft Active Directory API is used for managing a highly available, hardened service running Microsoft Active Directory (AD).")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -50,10 +50,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut global2 = SubCommand::with_name("global")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: domains and operations");
+            .about("sub-resources: domains, operations and peerings");
         let mut domains3 = SubCommand::with_name("domains")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: attach_trust, create, delete, detach_trust, get, get_iam_policy, list, patch, reconfigure_trust, reset_admin_password, set_iam_policy, test_iam_permissions and validate_trust");
+                        .about("methods: attach_trust, create, delete, detach_trust, get, get_iam_policy, get_ldapssettings, list, patch, reconfigure_trust, reset_admin_password, restore, set_iam_policy, test_iam_permissions, update_ldapssettings and validate_trust");
         {
             let mcmd = SubCommand::with_name("attach_trust").about("Adds an AD trust to a domain.");
             domains3 = domains3.subcommand(mcmd);
@@ -79,6 +79,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             domains3 = domains3.subcommand(mcmd);
         }
         {
+            let mcmd =
+                SubCommand::with_name("get_ldapssettings").about("Gets the domain ldaps settings.");
+            domains3 = domains3.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("list").about("Lists domains in a project.");
             domains3 = domains3.subcommand(mcmd);
         }
@@ -94,7 +99,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("reset_admin_password")
-                .about("Resets a domain\'s administrator password.");
+                .about("Resets a domain's administrator password.");
+            domains3 = domains3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("restore").about(
+                "RestoreDomain restores domain backup mentioned in the RestoreDomainRequest",
+            );
             domains3 = domains3.subcommand(mcmd);
         }
         {
@@ -106,6 +117,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             domains3 = domains3.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("update_ldapssettings")
+                .about("Patches a single ldaps settings.");
+            domains3 = domains3.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("validate_trust").about("Validates a trust state, that the target domain is reachable, and that the target domain is able to accept incoming trust requests.");
             domains3 = domains3.subcommand(mcmd);
         }
@@ -113,11 +129,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: cancel, delete, get and list");
         {
-            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn\'t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
+            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
             operations3 = operations3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn\'t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.");
             operations3 = operations3.subcommand(mcmd);
         }
         {
@@ -125,9 +141,98 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             operations3 = operations3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn\'t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations3 = operations3.subcommand(mcmd);
         }
+        let mut peerings3 = SubCommand::with_name("peerings")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd =
+                SubCommand::with_name("create").about("Creates a Peering for Managed AD instance.");
+            peerings3 = peerings3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes identified Peering.");
+            peerings3 = peerings3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets details of a single Peering.");
+            peerings3 = peerings3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            peerings3 = peerings3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists Peerings in a given project.");
+            peerings3 = peerings3.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("patch").about("Updates the labels for specified Peering.");
+            peerings3 = peerings3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.");
+            peerings3 = peerings3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
+            peerings3 = peerings3.subcommand(mcmd);
+        }
+        let mut backups4 = SubCommand::with_name("backups")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a Backup for a domain.");
+            backups4 = backups4.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes identified Backup.");
+            backups4 = backups4.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets details of a single Backup.");
+            backups4 = backups4.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            backups4 = backups4.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists Backup in a given project.");
+            backups4 = backups4.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("patch").about("Updates the labels for specified Backup.");
+            backups4 = backups4.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.");
+            backups4 = backups4.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
+            backups4 = backups4.subcommand(mcmd);
+        }
+        let mut sql_integrations4 = SubCommand::with_name("sql_integrations")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd =
+                SubCommand::with_name("get").about("Gets details of a single sqlIntegration.");
+            sql_integrations4 = sql_integrations4.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("list").about("Lists SqlIntegrations in a given domain.");
+            sql_integrations4 = sql_integrations4.subcommand(mcmd);
+        }
+        domains3 = domains3.subcommand(sql_integrations4);
+        domains3 = domains3.subcommand(backups4);
+        global2 = global2.subcommand(peerings3);
         global2 = global2.subcommand(operations3);
         global2 = global2.subcommand(domains3);
         locations1 = locations1.subcommand(global2);

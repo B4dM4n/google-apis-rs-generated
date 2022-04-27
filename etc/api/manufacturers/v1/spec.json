@@ -7,7 +7,7 @@
   "canonicalName": "Manufacturer Center",
   "fullyEncodeReservedExpansion": null,
   "version": "v1",
-  "revision": "20210310",
+  "revision": "20220421",
   "title": "Manufacturer Center API",
   "description": "Public API for managing Manufacturer Center related data.",
   "ownerDomain": "google.com",
@@ -286,7 +286,7 @@
           "items": null
         },
         "excludedDestination": {
-          "description": "A list of excluded destinations.",
+          "description": "A list of excluded destinations such as \"ClientExport\", \"ClientShoppingCatalog\" or \"PartnerShoppingCatalog\". For more information, see https://support.google.com/manufacturers/answer/7443550",
           "type": "array",
           "format": null,
           "enum": [],
@@ -368,7 +368,7 @@
           "$ref": "Image"
         },
         "includedDestination": {
-          "description": "A list of included destinations.",
+          "description": "A list of included destinations such as \"ClientExport\", \"ClientShoppingCatalog\" or \"PartnerShoppingCatalog\". For more information, see https://support.google.com/manufacturers/answer/7443550",
           "type": "array",
           "format": null,
           "enum": [],
@@ -563,20 +563,28 @@
         },
         "sizeType": {
           "description": "The size type of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#sizetype.",
-          "type": "string",
+          "type": "array",
           "format": null,
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
           "additionalProperties": null,
-          "items": null
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
         },
         "suggestedRetailPrice": {
           "description": "The suggested retail price (MSRP) of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#price.",
           "$ref": "Price"
         },
         "targetClientId": {
-          "description": "The target client id. Should only be used in the accounts of the data partners.",
+          "description": "The target client id. Should only be used in the accounts of the data partners. For more information, see https://support.google.com/manufacturers/answer/10857344",
           "type": "string",
           "format": null,
           "enum": [],
@@ -735,7 +743,7 @@
     },
     "Empty": {
       "id": "Empty",
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
+      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
       "type": "object",
       "format": null,
       "enum": [],

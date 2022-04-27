@@ -7,7 +7,7 @@
   "canonicalName": "OS Config",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20210305",
+  "revision": "20220415",
   "title": "OS Config API",
   "description": "OS management tools that can be used for patch management, patch compliance, and configuration management on VM instances.",
   "ownerDomain": "google.com",
@@ -16,7 +16,7 @@
     "x16": "http://www.google.com/images/icons/product/search-16.gif",
     "x32": "http://www.google.com/images/icons/product/search-32.gif"
   },
-  "documentationLink": "https://cloud.google.com/compute/docs/manage-os",
+  "documentationLink": "https://cloud.google.com/compute/docs/osconfig/rest",
   "protocol": "rest",
   "baseUrl": "https://osconfig.googleapis.com/",
   "basePath": "",
@@ -201,7 +201,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         }
       }
     }
@@ -273,6 +273,215 @@
       "additionalProperties": null,
       "items": null
     },
+    "CVSSv3": {
+      "id": "CVSSv3",
+      "description": "Common Vulnerability Scoring System version 3. For details, see https://www.first.org/cvss/specification-document",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "attackComplexity": {
+          "description": "This metric describes the conditions beyond the attacker's control that must exist in order to exploit the vulnerability.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ATTACK_COMPLEXITY_UNSPECIFIED",
+            "ATTACK_COMPLEXITY_LOW",
+            "ATTACK_COMPLEXITY_HIGH"
+          ],
+          "enumDescriptions": [
+            "Invalid value.",
+            "Specialized access conditions or extenuating circumstances do not exist. An attacker can expect repeatable success when attacking the vulnerable component.",
+            "A successful attack depends on conditions beyond the attacker's control. That is, a successful attack cannot be accomplished at will, but requires the attacker to invest in some measurable amount of effort in preparation or execution against the vulnerable component before a successful attack can be expected."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "attackVector": {
+          "description": "This metric reflects the context by which vulnerability exploitation is possible.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ATTACK_VECTOR_UNSPECIFIED",
+            "ATTACK_VECTOR_NETWORK",
+            "ATTACK_VECTOR_ADJACENT",
+            "ATTACK_VECTOR_LOCAL",
+            "ATTACK_VECTOR_PHYSICAL"
+          ],
+          "enumDescriptions": [
+            "Invalid value.",
+            "The vulnerable component is bound to the network stack and the set of possible attackers extends beyond the other options listed below, up to and including the entire Internet.",
+            "The vulnerable component is bound to the network stack, but the attack is limited at the protocol level to a logically adjacent topology.",
+            "The vulnerable component is not bound to the network stack and the attacker's path is via read/write/execute capabilities.",
+            "The attack requires the attacker to physically touch or manipulate the vulnerable component."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "availabilityImpact": {
+          "description": "This metric measures the impact to the availability of the impacted component resulting from a successfully exploited vulnerability.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "IMPACT_UNSPECIFIED",
+            "IMPACT_HIGH",
+            "IMPACT_LOW",
+            "IMPACT_NONE"
+          ],
+          "enumDescriptions": [
+            "Invalid value.",
+            "High impact.",
+            "Low impact.",
+            "No impact."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "baseScore": {
+          "description": "The base score is a function of the base metric scores. https://www.first.org/cvss/specification-document#Base-Metrics",
+          "type": "number",
+          "format": "float",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "confidentialityImpact": {
+          "description": "This metric measures the impact to the confidentiality of the information resources managed by a software component due to a successfully exploited vulnerability.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "IMPACT_UNSPECIFIED",
+            "IMPACT_HIGH",
+            "IMPACT_LOW",
+            "IMPACT_NONE"
+          ],
+          "enumDescriptions": [
+            "Invalid value.",
+            "High impact.",
+            "Low impact.",
+            "No impact."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "exploitabilityScore": {
+          "description": "The Exploitability sub-score equation is derived from the Base Exploitability metrics. https://www.first.org/cvss/specification-document#2-1-Exploitability-Metrics",
+          "type": "number",
+          "format": "float",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "impactScore": {
+          "description": "The Impact sub-score equation is derived from the Base Impact metrics.",
+          "type": "number",
+          "format": "float",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "integrityImpact": {
+          "description": "This metric measures the impact to integrity of a successfully exploited vulnerability.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "IMPACT_UNSPECIFIED",
+            "IMPACT_HIGH",
+            "IMPACT_LOW",
+            "IMPACT_NONE"
+          ],
+          "enumDescriptions": [
+            "Invalid value.",
+            "High impact.",
+            "Low impact.",
+            "No impact."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "privilegesRequired": {
+          "description": "This metric describes the level of privileges an attacker must possess before successfully exploiting the vulnerability.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "PRIVILEGES_REQUIRED_UNSPECIFIED",
+            "PRIVILEGES_REQUIRED_NONE",
+            "PRIVILEGES_REQUIRED_LOW",
+            "PRIVILEGES_REQUIRED_HIGH"
+          ],
+          "enumDescriptions": [
+            "Invalid value.",
+            "The attacker is unauthorized prior to attack, and therefore does not require any access to settings or files of the vulnerable system to carry out an attack.",
+            "The attacker requires privileges that provide basic user capabilities that could normally affect only settings and files owned by a user. Alternatively, an attacker with Low privileges has the ability to access only non-sensitive resources.",
+            "The attacker requires privileges that provide significant (e.g., administrative) control over the vulnerable component allowing access to component-wide settings and files."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "scope": {
+          "description": "The Scope metric captures whether a vulnerability in one vulnerable component impacts resources in components beyond its security scope.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "SCOPE_UNSPECIFIED",
+            "SCOPE_UNCHANGED",
+            "SCOPE_CHANGED"
+          ],
+          "enumDescriptions": [
+            "Invalid value.",
+            "An exploited vulnerability can only affect resources managed by the same security authority.",
+            "An exploited vulnerability can affect resources beyond the security scope managed by the security authority of the vulnerable component."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "userInteraction": {
+          "description": "This metric captures the requirement for a human user, other than the attacker, to participate in the successful compromise of the vulnerable component.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "USER_INTERACTION_UNSPECIFIED",
+            "USER_INTERACTION_NONE",
+            "USER_INTERACTION_REQUIRED"
+          ],
+          "enumDescriptions": [
+            "Invalid value.",
+            "The vulnerable system can be exploited without interaction from any user.",
+            "Successful exploitation of this vulnerability requires a user to take some action before the vulnerability can be exploited."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "CancelOperationRequest": {
+      "id": "CancelOperationRequest",
+      "description": "The request message for Operations.CancelOperation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
     "CancelPatchJobRequest": {
       "id": "CancelPatchJobRequest",
       "description": "Message for canceling a patch job.",
@@ -284,9 +493,51 @@
       "additionalProperties": null,
       "items": null
     },
+    "Date": {
+      "id": "Date",
+      "description": "Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "day": {
+          "description": "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "month": {
+          "description": "Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "year": {
+          "description": "Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Empty": {
       "id": "Empty",
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
+      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
       "type": "object",
       "format": null,
       "enum": [],
@@ -351,13 +602,15 @@
           "format": null,
           "enum": [
             "INTERPRETER_UNSPECIFIED",
+            "NONE",
             "SHELL",
             "POWERSHELL"
           ],
           "enumDescriptions": [
-            "Invalid for a Windows ExecStepConfig. For a Linux ExecStepConfig, the interpreter will be parsed from the shebang line of the script if unspecified.",
-            "Indicates that the script is run with `/bin/sh` on Linux and `cmd` on Windows.",
-            "Indicates that the file is run with PowerShell flags `-NonInteractive`, `-NoProfile`, and `-ExecutionPolicy Bypass`."
+            "If the interpreter is not specified, the value defaults to `NONE`.",
+            "Indicates that the file is run as follows on each operating system: + For Linux VMs, the file is ran as an executable and the interpreter might be parsed from the [shebang line](https://wikipedia.org/wiki/Shebang_(Unix)) of the file. + For Windows VM, this value is not supported.",
+            "Indicates that the file is run with `/bin/sh` on Linux and `cmd` on Windows.",
+            "Indicates that the file is run with PowerShell."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -526,9 +779,93 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadata": {
+      "id": "GoogleCloudOsconfigV1__OSPolicyAssignmentOperationMetadata",
+      "description": "OS policy assignment operation metadata provided by OS policy assignment API methods that return long running operations.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "apiMethod": {
+          "description": "The OS policy assignment API method.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "API_METHOD_UNSPECIFIED",
+            "CREATE",
+            "UPDATE",
+            "DELETE"
+          ],
+          "enumDescriptions": [
+            "Invalid value",
+            "Create OS policy assignment API method",
+            "Update OS policy assignment API method",
+            "Delete OS policy assignment API method"
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "osPolicyAssignment": {
+          "description": "Reference to the `OSPolicyAssignment` API resource. Format: `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id@revision_id}`",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "rolloutStartTime": {
+          "description": "Rollout start time",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "rolloutState": {
+          "description": "State of the rollout",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ROLLOUT_STATE_UNSPECIFIED",
+            "IN_PROGRESS",
+            "CANCELLING",
+            "CANCELLED",
+            "SUCCEEDED"
+          ],
+          "enumDescriptions": [
+            "Invalid value",
+            "The rollout is in progress.",
+            "The rollout is being cancelled.",
+            "The rollout is cancelled.",
+            "The rollout has completed successfully."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "rolloutUpdateTime": {
+          "description": "Rollout update time",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Inventory": {
       "id": "Inventory",
-      "description": "The inventory details of a VM.",
+      "description": "This API resource represents the available inventory data for a Compute Engine virtual machine (VM) instance at a given point in time. You can use this API resource to determine the inventory data of your VM. For more information, see [Information provided by OS inventory management](https://cloud.google.com/compute/docs/instances/os-inventory-management#data-collected).",
       "type": "object",
       "format": null,
       "enum": [],
@@ -547,9 +884,29 @@
           },
           "items": null
         },
+        "name": {
+          "description": "Output only. The `Inventory` API resource name. Format: `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "osInfo": {
           "description": "Base level operating system information for the VM.",
           "$ref": "InventoryOsInfo"
+        },
+        "updateTime": {
+          "description": "Output only. Timestamp of the last reported inventory for the VM.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -755,6 +1112,10 @@
           "description": "Details of a Windows Quick Fix engineering package. See https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-quickfixengineering for info in Windows Quick Fix Engineering.",
           "$ref": "InventoryWindowsQuickFixEngineeringPackage"
         },
+        "windowsApplication": {
+          "description": "Details of Windows Application.",
+          "$ref": "InventoryWindowsApplication"
+        },
         "wuaPackage": {
           "description": "Details of a Windows Update package. See https://docs.microsoft.com/en-us/windows/win32/api/_wua/ for information about Windows Update.",
           "$ref": "InventoryWindowsUpdatePackage"
@@ -805,6 +1166,62 @@
         },
         "version": {
           "description": "The version of the package.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "InventoryWindowsApplication": {
+      "id": "InventoryWindowsApplication",
+      "description": "Contains information about a Windows application that is retrieved from the Windows Registry. For more information about these fields, see: https://docs.microsoft.com/en-us/windows/win32/msi/uninstall-registry-key",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "displayName": {
+          "description": "The name of the application or product.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "displayVersion": {
+          "description": "The version of the product or application in string format.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "helpLink": {
+          "description": "The internet address for technical support.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "installDate": {
+          "description": "The last time this product received service. The value of this property is replaced each time a patch is applied or removed from the product or the command-line option is used to repair the product.",
+          "$ref": "Date"
+        },
+        "publisher": {
+          "description": "The name of the manufacturer for the product or application.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1073,6 +1490,142 @@
       "additionalProperties": null,
       "items": null
     },
+    "ListInventoriesResponse": {
+      "id": "ListInventoriesResponse",
+      "description": "A response message for listing inventory data for all VMs in a specified location.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "inventories": {
+          "description": "List of inventory objects.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Inventory"
+          }
+        },
+        "nextPageToken": {
+          "description": "The pagination token to retrieve the next page of inventory objects.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListOSPolicyAssignmentReportsResponse": {
+      "id": "ListOSPolicyAssignmentReportsResponse",
+      "description": "A response message for listing OS Policy assignment reports including the page of results and page token.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "The pagination token to retrieve the next page of OS policy assignment report objects.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "osPolicyAssignmentReports": {
+          "description": "List of OS policy assignment reports.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "OSPolicyAssignmentReport"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListOSPolicyAssignmentRevisionsResponse": {
+      "id": "ListOSPolicyAssignmentRevisionsResponse",
+      "description": "A response message for listing all revisions for a OS policy assignment.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "The pagination token to retrieve the next page of OS policy assignment revisions.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "osPolicyAssignments": {
+          "description": "The OS policy assignment revisions",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "OSPolicyAssignment"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListOSPolicyAssignmentsResponse": {
+      "id": "ListOSPolicyAssignmentsResponse",
+      "description": "A response message for listing all assignments under given parent.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "The pagination token to retrieve the next page of OS policy assignments.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "osPolicyAssignments": {
+          "description": "The list of assignments",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "OSPolicyAssignment"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "ListPatchDeploymentsResponse": {
       "id": "ListPatchDeploymentsResponse",
       "description": "A response message for listing patch deployments.",
@@ -1175,6 +1728,40 @@
       "additionalProperties": null,
       "items": null
     },
+    "ListVulnerabilityReportsResponse": {
+      "id": "ListVulnerabilityReportsResponse",
+      "description": "A response message for listing vulnerability reports for all VM instances in the specified location.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "The pagination token to retrieve the next page of vulnerabilityReports object.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "vulnerabilityReports": {
+          "description": "List of vulnerabilityReport objects.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "VulnerabilityReport"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "MonthlySchedule": {
       "id": "MonthlySchedule",
       "description": "Represents a monthly schedule. An example of a valid monthly schedule is \"on the third Tuesday of the month\" or \"on the 15th of the month\".",
@@ -1196,6 +1783,1591 @@
         "weekDayOfMonth": {
           "description": "Required. Week day in a month.",
           "$ref": "WeekDayOfMonth"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicy": {
+      "id": "OSPolicy",
+      "description": "An OS policy defines the desired state configuration for a VM.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "allowNoResourceGroupMatch": {
+          "description": "This flag determines the OS policy compliance status when none of the resource groups within the policy are applicable for a VM. Set this value to `true` if the policy needs to be reported as compliant even if the policy has nothing to validate or enforce.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "description": {
+          "description": "Policy description. Length of the description is limited to 1024 characters.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "id": {
+          "description": "Required. The id of the OS policy with the following restrictions: * Must contain only lowercase letters, numbers, and hyphens. * Must start with a letter. * Must be between 1-63 characters. * Must end with a number or a letter. * Must be unique within the assignment.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "mode": {
+          "description": "Required. Policy mode",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "MODE_UNSPECIFIED",
+            "VALIDATION",
+            "ENFORCEMENT"
+          ],
+          "enumDescriptions": [
+            "Invalid mode",
+            "This mode checks if the configuration resources in the policy are in their desired state. No actions are performed if they are not in the desired state. This mode is used for reporting purposes.",
+            "This mode checks if the configuration resources in the policy are in their desired state, and if not, enforces the desired state."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "resourceGroups": {
+          "description": "Required. List of resource groups for the policy. For a particular VM, resource groups are evaluated in the order specified and the first resource group that is applicable is selected and the rest are ignored. If none of the resource groups are applicable for a VM, the VM is considered to be non-compliant w.r.t this policy. This behavior can be toggled by the flag `allow_no_resource_group_match`",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "OSPolicyResourceGroup"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyAssignment": {
+      "id": "OSPolicyAssignment",
+      "description": "OS policy assignment is an API resource that is used to apply a set of OS policies to a dynamically targeted group of Compute Engine VM instances. An OS policy is used to define the desired state configuration for a Compute Engine VM instance through a set of configuration resources that provide capabilities such as installing or removing software packages, or executing a script. For more information, see [OS policy and OS policy assignment](https://cloud.google.com/compute/docs/os-configuration-management/working-with-os-policies).",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "baseline": {
+          "description": "Output only. Indicates that this revision has been successfully rolled out in this zone and new VMs will be assigned OS policies from this revision. For a given OS policy assignment, there is only one revision with a value of `true` for this field.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "deleted": {
+          "description": "Output only. Indicates that this revision deletes the OS policy assignment.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "description": {
+          "description": "OS policy assignment description. Length of the description is limited to 1024 characters.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "etag": {
+          "description": "The etag for this OS policy assignment. If this is provided on update, it must match the server's etag.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "instanceFilter": {
+          "description": "Required. Filter to select VMs.",
+          "$ref": "OSPolicyAssignmentInstanceFilter"
+        },
+        "name": {
+          "description": "Resource name. Format: `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id}` This field is ignored when you create an OS policy assignment.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "osPolicies": {
+          "description": "Required. List of OS policies to be applied to the VMs.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "OSPolicy"
+          }
+        },
+        "reconciling": {
+          "description": "Output only. Indicates that reconciliation is in progress for the revision. This value is `true` when the `rollout_state` is one of: * IN_PROGRESS * CANCELLING",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "revisionCreateTime": {
+          "description": "Output only. The timestamp that the revision was created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "revisionId": {
+          "description": "Output only. The assignment revision ID A new revision is committed whenever a rollout is triggered for a OS policy assignment",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "rollout": {
+          "description": "Required. Rollout to deploy the OS policy assignment. A rollout is triggered in the following situations: 1) OSPolicyAssignment is created. 2) OSPolicyAssignment is updated and the update contains changes to one of the following fields: - instance_filter - os_policies 3) OSPolicyAssignment is deleted.",
+          "$ref": "OSPolicyAssignmentRollout"
+        },
+        "rolloutState": {
+          "description": "Output only. OS policy assignment rollout state",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ROLLOUT_STATE_UNSPECIFIED",
+            "IN_PROGRESS",
+            "CANCELLING",
+            "CANCELLED",
+            "SUCCEEDED"
+          ],
+          "enumDescriptions": [
+            "Invalid value",
+            "The rollout is in progress.",
+            "The rollout is being cancelled.",
+            "The rollout is cancelled.",
+            "The rollout has completed successfully."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "uid": {
+          "description": "Output only. Server generated unique id for the OS policy assignment resource.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyAssignmentInstanceFilter": {
+      "id": "OSPolicyAssignmentInstanceFilter",
+      "description": "Filters to select target VMs for an assignment. If more than one filter criteria is specified below, a VM will be selected if and only if it satisfies all of them.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "all": {
+          "description": "Target all VMs in the project. If true, no other criteria is permitted.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "exclusionLabels": {
+          "description": "List of label sets used for VM exclusion. If the list has more than one label set, the VM is excluded if any of the label sets are applicable for the VM.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "OSPolicyAssignmentLabelSet"
+          }
+        },
+        "inclusionLabels": {
+          "description": "List of label sets used for VM inclusion. If the list has more than one `LabelSet`, the VM is included if any of the label sets are applicable for the VM.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "OSPolicyAssignmentLabelSet"
+          }
+        },
+        "inventories": {
+          "description": "List of inventories to select VMs. A VM is selected if its inventory data matches at least one of the following inventories.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "OSPolicyAssignmentInstanceFilterInventory"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyAssignmentInstanceFilterInventory": {
+      "id": "OSPolicyAssignmentInstanceFilterInventory",
+      "description": "VM inventory details.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "osShortName": {
+          "description": "Required. The OS short name",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "osVersion": {
+          "description": "The OS version Prefix matches are supported if asterisk(*) is provided as the last character. For example, to match all versions with a major version of `7`, specify the following value for this field `7.*` An empty string matches all OS versions.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyAssignmentLabelSet": {
+      "id": "OSPolicyAssignmentLabelSet",
+      "description": "Message representing label set. * A label is a key value pair set for a VM. * A LabelSet is a set of labels. * Labels within a LabelSet are ANDed. In other words, a LabelSet is applicable for a VM only if it matches all the labels in the LabelSet. * Example: A LabelSet with 2 labels: `env=prod` and `type=webserver` will only be applicable for those VMs with both labels present.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "labels": {
+          "description": "Labels are identified by key/value pairs in this map. A VM should contain all the key/value pairs specified in this map to be selected.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyAssignmentOperationMetadata": {
+      "id": "OSPolicyAssignmentOperationMetadata",
+      "description": "OS policy assignment operation metadata provided by OS policy assignment API methods that return long running operations.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "apiMethod": {
+          "description": "The OS policy assignment API method.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "API_METHOD_UNSPECIFIED",
+            "CREATE",
+            "UPDATE",
+            "DELETE"
+          ],
+          "enumDescriptions": [
+            "Invalid value",
+            "Create OS policy assignment API method",
+            "Update OS policy assignment API method",
+            "Delete OS policy assignment API method"
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "osPolicyAssignment": {
+          "description": "Reference to the `OSPolicyAssignment` API resource. Format: `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id@revision_id}`",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "rolloutStartTime": {
+          "description": "Rollout start time",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "rolloutState": {
+          "description": "State of the rollout",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ROLLOUT_STATE_UNSPECIFIED",
+            "IN_PROGRESS",
+            "CANCELLING",
+            "CANCELLED",
+            "SUCCEEDED"
+          ],
+          "enumDescriptions": [
+            "Invalid value",
+            "The rollout is in progress.",
+            "The rollout is being cancelled.",
+            "The rollout is cancelled.",
+            "The rollout has completed successfully."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "rolloutUpdateTime": {
+          "description": "Rollout update time",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyAssignmentReport": {
+      "id": "OSPolicyAssignmentReport",
+      "description": "A report of the OS policy assignment status for a given instance.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "instance": {
+          "description": "The Compute Engine VM instance name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "lastRunId": {
+          "description": "Unique identifier of the last attempted run to apply the OS policies associated with this assignment on the VM. This ID is logged by the OS Config agent while applying the OS policies associated with this assignment on the VM. NOTE: If the service is unable to successfully connect to the agent for this run, then this id will not be available in the agent logs.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "The `OSPolicyAssignmentReport` API resource name. Format: `projects/{project_number}/locations/{location}/instances/{instance_id}/osPolicyAssignments/{os_policy_assignment_id}/report`",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "osPolicyAssignment": {
+          "description": "Reference to the `OSPolicyAssignment` API resource that the `OSPolicy` belongs to. Format: `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id@revision_id}`",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "osPolicyCompliances": {
+          "description": "Compliance data for each `OSPolicy` that is applied to the VM.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "OSPolicyAssignmentReportOSPolicyCompliance"
+          }
+        },
+        "updateTime": {
+          "description": "Timestamp for when the report was last generated.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyAssignmentReportOSPolicyCompliance": {
+      "id": "OSPolicyAssignmentReportOSPolicyCompliance",
+      "description": "Compliance data for an OS policy",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "complianceState": {
+          "description": "The compliance state of the OS policy.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "UNKNOWN",
+            "COMPLIANT",
+            "NON_COMPLIANT"
+          ],
+          "enumDescriptions": [
+            "The policy is in an unknown compliance state. Refer to the field `compliance_state_reason` to learn the exact reason for the policy to be in this compliance state.",
+            "Policy is compliant. The policy is compliant if all the underlying resources are also compliant.",
+            "Policy is non-compliant. The policy is non-compliant if one or more underlying resources are non-compliant."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "complianceStateReason": {
+          "description": "The reason for the OS policy to be in an unknown compliance state. This field is always populated when `compliance_state` is `UNKNOWN`. If populated, the field can contain one of the following values: * `vm-not-running`: The VM was not running. * `os-policies-not-supported-by-agent`: The version of the OS Config agent running on the VM does not support running OS policies. * `no-agent-detected`: The OS Config agent is not detected for the VM. * `resource-execution-errors`: The OS Config agent encountered errors while executing one or more resources in the policy. See `os_policy_resource_compliances` for details. * `task-timeout`: The task sent to the agent to apply the policy timed out. * `unexpected-agent-state`: The OS Config agent did not report the final status of the task that attempted to apply the policy. Instead, the agent unexpectedly started working on a different task. This mostly happens when the agent or VM unexpectedly restarts while applying OS policies. * `internal-service-errors`: Internal service errors were encountered while attempting to apply the policy.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "osPolicyId": {
+          "description": "The OS policy id",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "osPolicyResourceCompliances": {
+          "description": "Compliance data for each resource within the policy that is applied to the VM.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "OSPolicyAssignmentReportOSPolicyComplianceOSPolicyResourceCompliance"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyAssignmentReportOSPolicyComplianceOSPolicyResourceCompliance": {
+      "id": "OSPolicyAssignmentReportOSPolicyComplianceOSPolicyResourceCompliance",
+      "description": "Compliance data for an OS policy resource.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "complianceState": {
+          "description": "The compliance state of the resource.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "UNKNOWN",
+            "COMPLIANT",
+            "NON_COMPLIANT"
+          ],
+          "enumDescriptions": [
+            "The resource is in an unknown compliance state. To get more details about why the policy is in this state, review the output of the `compliance_state_reason` field.",
+            "Resource is compliant.",
+            "Resource is non-compliant."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "complianceStateReason": {
+          "description": "A reason for the resource to be in the given compliance state. This field is always populated when `compliance_state` is `UNKNOWN`. The following values are supported when `compliance_state == UNKNOWN` * `execution-errors`: Errors were encountered by the agent while executing the resource and the compliance state couldn't be determined. * `execution-skipped-by-agent`: Resource execution was skipped by the agent because errors were encountered while executing prior resources in the OS policy. * `os-policy-execution-attempt-failed`: The execution of the OS policy containing this resource failed and the compliance state couldn't be determined.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "configSteps": {
+          "description": "Ordered list of configuration completed by the agent for the OS policy resource.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "OSPolicyAssignmentReportOSPolicyComplianceOSPolicyResourceComplianceOSPolicyResourceConfigStep"
+          }
+        },
+        "execResourceOutput": {
+          "description": "ExecResource specific output.",
+          "$ref": "OSPolicyAssignmentReportOSPolicyComplianceOSPolicyResourceComplianceExecResourceOutput"
+        },
+        "osPolicyResourceId": {
+          "description": "The ID of the OS policy resource.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyAssignmentReportOSPolicyComplianceOSPolicyResourceComplianceExecResourceOutput": {
+      "id": "OSPolicyAssignmentReportOSPolicyComplianceOSPolicyResourceComplianceExecResourceOutput",
+      "description": "ExecResource specific output.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "enforcementOutput": {
+          "description": "Output from enforcement phase output file (if run). Output size is limited to 100K bytes.",
+          "type": "string",
+          "format": "byte",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyAssignmentReportOSPolicyComplianceOSPolicyResourceComplianceOSPolicyResourceConfigStep": {
+      "id": "OSPolicyAssignmentReportOSPolicyComplianceOSPolicyResourceComplianceOSPolicyResourceConfigStep",
+      "description": "Step performed by the OS Config agent for configuring an `OSPolicy` resource to its desired state.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "errorMessage": {
+          "description": "An error message recorded during the execution of this step. Only populated if errors were encountered during this step execution.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "type": {
+          "description": "Configuration step type.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "TYPE_UNSPECIFIED",
+            "VALIDATION",
+            "DESIRED_STATE_CHECK",
+            "DESIRED_STATE_ENFORCEMENT",
+            "DESIRED_STATE_CHECK_POST_ENFORCEMENT"
+          ],
+          "enumDescriptions": [
+            "Default value. This value is unused.",
+            "Checks for resource conflicts such as schema errors.",
+            "Checks the current status of the desired state for a resource.",
+            "Enforces the desired state for a resource that is not in desired state.",
+            "Re-checks the status of the desired state. This check is done for a resource after the enforcement of all OS policies. This step is used to determine the final desired state status for the resource. It accounts for any resources that might have drifted from their desired state due to side effects from executing other resources."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyAssignmentRollout": {
+      "id": "OSPolicyAssignmentRollout",
+      "description": "Message to configure the rollout at the zonal level for the OS policy assignment.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "disruptionBudget": {
+          "description": "Required. The maximum number (or percentage) of VMs per zone to disrupt at any given moment.",
+          "$ref": "FixedOrPercent"
+        },
+        "minWaitDuration": {
+          "description": "Required. This determines the minimum duration of time to wait after the configuration changes are applied through the current rollout. A VM continues to count towards the `disruption_budget` at least until this duration of time has passed after configuration changes are applied.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyInventoryFilter": {
+      "id": "OSPolicyInventoryFilter",
+      "description": "Filtering criteria to select VMs based on inventory details.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "osShortName": {
+          "description": "Required. The OS short name",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "osVersion": {
+          "description": "The OS version Prefix matches are supported if asterisk(*) is provided as the last character. For example, to match all versions with a major version of `7`, specify the following value for this field `7.*` An empty string matches all OS versions.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResource": {
+      "id": "OSPolicyResource",
+      "description": "An OS policy resource is used to define the desired state configuration and provides a specific functionality like installing/removing packages, executing a script etc. The system ensures that resources are always in their desired state by taking necessary actions if they have drifted from their desired state.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "exec": {
+          "description": "Exec resource",
+          "$ref": "OSPolicyResourceExecResource"
+        },
+        "file": {
+          "description": "File resource",
+          "$ref": "OSPolicyResourceFileResource"
+        },
+        "id": {
+          "description": "Required. The id of the resource with the following restrictions: * Must contain only lowercase letters, numbers, and hyphens. * Must start with a letter. * Must be between 1-63 characters. * Must end with a number or a letter. * Must be unique within the OS policy.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "pkg": {
+          "description": "Package resource",
+          "$ref": "OSPolicyResourcePackageResource"
+        },
+        "repository": {
+          "description": "Package repository resource",
+          "$ref": "OSPolicyResourceRepositoryResource"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourceExecResource": {
+      "id": "OSPolicyResourceExecResource",
+      "description": "A resource that allows executing scripts on the VM. The `ExecResource` has 2 stages: `validate` and `enforce` and both stages accept a script as an argument to execute. When the `ExecResource` is applied by the agent, it first executes the script in the `validate` stage. The `validate` stage can signal that the `ExecResource` is already in the desired state by returning an exit code of `100`. If the `ExecResource` is not in the desired state, it should return an exit code of `101`. Any other exit code returned by this stage is considered an error. If the `ExecResource` is not in the desired state based on the exit code from the `validate` stage, the agent proceeds to execute the script from the `enforce` stage. If the `ExecResource` is already in the desired state, the `enforce` stage will not be run. Similar to `validate` stage, the `enforce` stage should return an exit code of `100` to indicate that the resource in now in its desired state. Any other exit code is considered an error. NOTE: An exit code of `100` was chosen over `0` (and `101` vs `1`) to have an explicit indicator of `in desired state`, `not in desired state` and errors. Because, for example, Powershell will always return an exit code of `0` unless an `exit` statement is provided in the script. So, for reasons of consistency and being explicit, exit codes `100` and `101` were chosen.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "enforce": {
+          "description": "What to run to bring this resource into the desired state. An exit code of 100 indicates \"success\", any other exit code indicates a failure running enforce.",
+          "$ref": "OSPolicyResourceExecResourceExec"
+        },
+        "validate": {
+          "description": "Required. What to run to validate this resource is in the desired state. An exit code of 100 indicates \"in desired state\", and exit code of 101 indicates \"not in desired state\". Any other exit code indicates a failure running validate.",
+          "$ref": "OSPolicyResourceExecResourceExec"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourceExecResourceExec": {
+      "id": "OSPolicyResourceExecResourceExec",
+      "description": "A file or script to execute.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "args": {
+          "description": "Optional arguments to pass to the source during execution.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "file": {
+          "description": "A remote or local file.",
+          "$ref": "OSPolicyResourceFile"
+        },
+        "interpreter": {
+          "description": "Required. The script interpreter to use.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "INTERPRETER_UNSPECIFIED",
+            "NONE",
+            "SHELL",
+            "POWERSHELL"
+          ],
+          "enumDescriptions": [
+            "Invalid value, the request will return validation error.",
+            "If an interpreter is not specified, the source is executed directly. This execution, without an interpreter, only succeeds for executables and scripts that have shebang lines.",
+            "Indicates that the script runs with `/bin/sh` on Linux and `cmd.exe` on Windows.",
+            "Indicates that the script runs with PowerShell."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "outputFilePath": {
+          "description": "Only recorded for enforce Exec. Path to an output file (that is created by this Exec) whose content will be recorded in OSPolicyResourceCompliance after a successful run. Absence or failure to read this file will result in this ExecResource being non-compliant. Output file size is limited to 100K bytes.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "script": {
+          "description": "An inline script. The size of the script is limited to 1024 characters.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourceFile": {
+      "id": "OSPolicyResourceFile",
+      "description": "A remote or local file.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "allowInsecure": {
+          "description": "Defaults to false. When false, files are subject to validations based on the file type: Remote: A checksum must be specified. Cloud Storage: An object generation number must be specified.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "gcs": {
+          "description": "A Cloud Storage object.",
+          "$ref": "OSPolicyResourceFileGcs"
+        },
+        "localPath": {
+          "description": "A local path within the VM to use.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "remote": {
+          "description": "A generic remote file.",
+          "$ref": "OSPolicyResourceFileRemote"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourceFileGcs": {
+      "id": "OSPolicyResourceFileGcs",
+      "description": "Specifies a file available as a Cloud Storage Object.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "bucket": {
+          "description": "Required. Bucket of the Cloud Storage object.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "generation": {
+          "description": "Generation number of the Cloud Storage object.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "object": {
+          "description": "Required. Name of the Cloud Storage object.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourceFileRemote": {
+      "id": "OSPolicyResourceFileRemote",
+      "description": "Specifies a file available via some URI.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "sha256Checksum": {
+          "description": "SHA256 checksum of the remote file.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "uri": {
+          "description": "Required. URI from which to fetch the object. It should contain both the protocol and path following the format `{protocol}://{location}`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourceFileResource": {
+      "id": "OSPolicyResourceFileResource",
+      "description": "A resource that manages the state of a file.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "content": {
+          "description": "A a file with this content. The size of the content is limited to 1024 characters.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "file": {
+          "description": "A remote or local source.",
+          "$ref": "OSPolicyResourceFile"
+        },
+        "path": {
+          "description": "Required. The absolute path of the file within the VM.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "permissions": {
+          "description": "Consists of three octal digits which represent, in order, the permissions of the owner, group, and other users for the file (similarly to the numeric mode used in the linux chmod utility). Each digit represents a three bit number with the 4 bit corresponding to the read permissions, the 2 bit corresponds to the write bit, and the one bit corresponds to the execute permission. Default behavior is 755. Below are some examples of permissions and their associated values: read, write, and execute: 7 read and execute: 5 read and write: 6 read only: 4",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "state": {
+          "description": "Required. Desired state of the file.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "DESIRED_STATE_UNSPECIFIED",
+            "PRESENT",
+            "ABSENT",
+            "CONTENTS_MATCH"
+          ],
+          "enumDescriptions": [
+            "Unspecified is invalid.",
+            "Ensure file at path is present.",
+            "Ensure file at path is absent.",
+            "Ensure the contents of the file at path matches. If the file does not exist it will be created."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourceGroup": {
+      "id": "OSPolicyResourceGroup",
+      "description": "Resource groups provide a mechanism to group OS policy resources. Resource groups enable OS policy authors to create a single OS policy to be applied to VMs running different operating Systems. When the OS policy is applied to a target VM, the appropriate resource group within the OS policy is selected based on the `OSFilter` specified within the resource group.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "inventoryFilters": {
+          "description": "List of inventory filters for the resource group. The resources in this resource group are applied to the target VM if it satisfies at least one of the following inventory filters. For example, to apply this resource group to VMs running either `RHEL` or `CentOS` operating systems, specify 2 items for the list with following values: inventory_filters[0].os_short_name='rhel' and inventory_filters[1].os_short_name='centos' If the list is empty, this resource group will be applied to the target VM unconditionally.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "OSPolicyInventoryFilter"
+          }
+        },
+        "resources": {
+          "description": "Required. List of resources configured for this resource group. The resources are executed in the exact order specified here.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "OSPolicyResource"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourcePackageResource": {
+      "id": "OSPolicyResourcePackageResource",
+      "description": "A resource that manages a system package.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "apt": {
+          "description": "A package managed by Apt.",
+          "$ref": "OSPolicyResourcePackageResourceAPT"
+        },
+        "deb": {
+          "description": "A deb package file.",
+          "$ref": "OSPolicyResourcePackageResourceDeb"
+        },
+        "desiredState": {
+          "description": "Required. The desired state the agent should maintain for this package.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "DESIRED_STATE_UNSPECIFIED",
+            "INSTALLED",
+            "REMOVED"
+          ],
+          "enumDescriptions": [
+            "Unspecified is invalid.",
+            "Ensure that the package is installed.",
+            "The agent ensures that the package is not installed and uninstalls it if detected."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "googet": {
+          "description": "A package managed by GooGet.",
+          "$ref": "OSPolicyResourcePackageResourceGooGet"
+        },
+        "msi": {
+          "description": "An MSI package.",
+          "$ref": "OSPolicyResourcePackageResourceMSI"
+        },
+        "rpm": {
+          "description": "An rpm package file.",
+          "$ref": "OSPolicyResourcePackageResourceRPM"
+        },
+        "yum": {
+          "description": "A package managed by YUM.",
+          "$ref": "OSPolicyResourcePackageResourceYUM"
+        },
+        "zypper": {
+          "description": "A package managed by Zypper.",
+          "$ref": "OSPolicyResourcePackageResourceZypper"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourcePackageResourceAPT": {
+      "id": "OSPolicyResourcePackageResourceAPT",
+      "description": "A package managed by APT. - install: `apt-get update && apt-get -y install [name]` - remove: `apt-get -y remove [name]`",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "name": {
+          "description": "Required. Package name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourcePackageResourceDeb": {
+      "id": "OSPolicyResourcePackageResourceDeb",
+      "description": "A deb package file. dpkg packages only support INSTALLED state.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "pullDeps": {
+          "description": "Whether dependencies should also be installed. - install when false: `dpkg -i package` - install when true: `apt-get update && apt-get -y install package.deb`",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "source": {
+          "description": "Required. A deb package.",
+          "$ref": "OSPolicyResourceFile"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourcePackageResourceGooGet": {
+      "id": "OSPolicyResourcePackageResourceGooGet",
+      "description": "A package managed by GooGet. - install: `googet -noconfirm install package` - remove: `googet -noconfirm remove package`",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "name": {
+          "description": "Required. Package name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourcePackageResourceMSI": {
+      "id": "OSPolicyResourcePackageResourceMSI",
+      "description": "An MSI package. MSI packages only support INSTALLED state.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "properties": {
+          "description": "Additional properties to use during installation. This should be in the format of Property=Setting. Appended to the defaults of `ACTION=INSTALL REBOOT=ReallySuppress`.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "source": {
+          "description": "Required. The MSI package.",
+          "$ref": "OSPolicyResourceFile"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourcePackageResourceRPM": {
+      "id": "OSPolicyResourcePackageResourceRPM",
+      "description": "An RPM package file. RPM packages only support INSTALLED state.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "pullDeps": {
+          "description": "Whether dependencies should also be installed. - install when false: `rpm --upgrade --replacepkgs package.rpm` - install when true: `yum -y install package.rpm` or `zypper -y install package.rpm`",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "source": {
+          "description": "Required. An rpm package.",
+          "$ref": "OSPolicyResourceFile"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourcePackageResourceYUM": {
+      "id": "OSPolicyResourcePackageResourceYUM",
+      "description": "A package managed by YUM. - install: `yum -y install package` - remove: `yum -y remove package`",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "name": {
+          "description": "Required. Package name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourcePackageResourceZypper": {
+      "id": "OSPolicyResourcePackageResourceZypper",
+      "description": "A package managed by Zypper. - install: `zypper -y install package` - remove: `zypper -y rm package`",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "name": {
+          "description": "Required. Package name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourceRepositoryResource": {
+      "id": "OSPolicyResourceRepositoryResource",
+      "description": "A resource that manages a package repository.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "apt": {
+          "description": "An Apt Repository.",
+          "$ref": "OSPolicyResourceRepositoryResourceAptRepository"
+        },
+        "goo": {
+          "description": "A Goo Repository.",
+          "$ref": "OSPolicyResourceRepositoryResourceGooRepository"
+        },
+        "yum": {
+          "description": "A Yum Repository.",
+          "$ref": "OSPolicyResourceRepositoryResourceYumRepository"
+        },
+        "zypper": {
+          "description": "A Zypper Repository.",
+          "$ref": "OSPolicyResourceRepositoryResourceZypperRepository"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourceRepositoryResourceAptRepository": {
+      "id": "OSPolicyResourceRepositoryResourceAptRepository",
+      "description": "Represents a single apt package repository. These will be added to a repo file that will be managed at `/etc/apt/sources.list.d/google_osconfig.list`.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "archiveType": {
+          "description": "Required. Type of archive files in this repository.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ARCHIVE_TYPE_UNSPECIFIED",
+            "DEB",
+            "DEB_SRC"
+          ],
+          "enumDescriptions": [
+            "Unspecified is invalid.",
+            "Deb indicates that the archive contains binary files.",
+            "Deb-src indicates that the archive contains source files."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "components": {
+          "description": "Required. List of components for this repository. Must contain at least one item.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "distribution": {
+          "description": "Required. Distribution of this repository.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "gpgKey": {
+          "description": "URI of the key file for this repository. The agent maintains a keyring at `/etc/apt/trusted.gpg.d/osconfig_agent_managed.gpg`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "uri": {
+          "description": "Required. URI for this repository.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourceRepositoryResourceGooRepository": {
+      "id": "OSPolicyResourceRepositoryResourceGooRepository",
+      "description": "Represents a Goo package repository. These are added to a repo file that is managed at `C:/ProgramData/GooGet/repos/google_osconfig.repo`.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "name": {
+          "description": "Required. The name of the repository.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "url": {
+          "description": "Required. The url of the repository.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourceRepositoryResourceYumRepository": {
+      "id": "OSPolicyResourceRepositoryResourceYumRepository",
+      "description": "Represents a single yum package repository. These are added to a repo file that is managed at `/etc/yum.repos.d/google_osconfig.repo`.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "baseUrl": {
+          "description": "Required. The location of the repository directory.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "displayName": {
+          "description": "The display name of the repository.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "gpgKeys": {
+          "description": "URIs of GPG keys.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "id": {
+          "description": "Required. A one word, unique name for this repository. This is the `repo id` in the yum config file and also the `display_name` if `display_name` is omitted. This id is also used as the unique identifier when checking for resource conflicts.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OSPolicyResourceRepositoryResourceZypperRepository": {
+      "id": "OSPolicyResourceRepositoryResourceZypperRepository",
+      "description": "Represents a single zypper package repository. These are added to a repo file that is managed at `/etc/zypp/repos.d/google_osconfig.repo`.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "baseUrl": {
+          "description": "Required. The location of the repository directory.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "displayName": {
+          "description": "The display name of the repository.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "gpgKeys": {
+          "description": "URIs of GPG keys.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "id": {
+          "description": "Required. A one word, unique name for this repository. This is the `repo id` in the zypper config file and also the `display_name` if `display_name` is omitted. This id is also used as the unique identifier when checking for GuestPolicy conflicts.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -1223,6 +3395,80 @@
       "additionalProperties": null,
       "items": null
     },
+    "Operation": {
+      "id": "Operation",
+      "description": "This resource represents a long-running operation that is the result of a network API call.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "done": {
+          "description": "If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "error": {
+          "description": "The error result of the operation in case of failure or cancellation.",
+          "$ref": "Status"
+        },
+        "metadata": {
+          "description": "Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": "Properties of the object. Contains field @type with type URL.",
+            "type": "any",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        },
+        "name": {
+          "description": "The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should be a resource name ending with `operations/{unique_id}`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "response": {
+          "description": "The normal response of the operation in case of success. If the original method returns no data on success, such as `Delete`, the response is `google.protobuf.Empty`. If the original method is standard `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": "Properties of the object. Contains field @type with type URL.",
+            "type": "any",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "PatchConfig": {
       "id": "PatchConfig",
       "description": "Patch configuration specifications. Contains details on how to apply the patch(es) to a VM instance.",
@@ -1238,6 +3484,16 @@
         "goo": {
           "description": "Goo update settings. Use this setting to override the default `goo` patch rules.",
           "$ref": "GooSettings"
+        },
+        "migInstancesAllowed": {
+          "description": "Allows the patch job to run on Managed instance groups (MIGs).",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "postStep": {
           "description": "The `ExecStep` to run after the patch update.",
@@ -1360,6 +3616,24 @@
         "rollout": {
           "description": "Optional. Rollout strategy of the patch job.",
           "$ref": "PatchRollout"
+        },
+        "state": {
+          "description": "Output only. Current state of the patch deployment.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "STATE_UNSPECIFIED",
+            "ACTIVE",
+            "PAUSED"
+          ],
+          "enumDescriptions": [
+            "The default value. This value is used if the state is omitted.",
+            "Active value means that patch deployment generates Patch Jobs.",
+            "Paused value means that patch deployment does not generate Patch jobs. Requires user action to move in and out from this state."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "updateTime": {
           "description": "Output only. Time the patch deployment was last updated. Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.",
@@ -1942,6 +4216,17 @@
       "additionalProperties": null,
       "items": null
     },
+    "PausePatchDeploymentRequest": {
+      "id": "PausePatchDeploymentRequest",
+      "description": "A request message for pausing a patch deployment.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
     "RecurringSchedule": {
       "id": "RecurringSchedule",
       "description": "Sets the time for recurring patch deployments.",
@@ -1967,12 +4252,14 @@
           "enum": [
             "FREQUENCY_UNSPECIFIED",
             "WEEKLY",
-            "MONTHLY"
+            "MONTHLY",
+            "DAILY"
           ],
           "enumDescriptions": [
             "Invalid. A frequency must be specified.",
-            "Indicates that the frequency should be expressed in terms of weeks.",
-            "Indicates that the frequency should be expressed in terms of months."
+            "Indicates that the frequency of recurrence should be expressed in terms of weeks.",
+            "Indicates that the frequency of recurrence should be expressed in terms of months.",
+            "Indicates that the frequency of recurrence should be expressed in terms of days."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -2023,6 +4310,76 @@
         "weekly": {
           "description": "Required. Schedule with weekly executions.",
           "$ref": "WeeklySchedule"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ResumePatchDeploymentRequest": {
+      "id": "ResumePatchDeploymentRequest",
+      "description": "A request message for resuming a patch deployment.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "Status": {
+      "id": "Status",
+      "description": "The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "code": {
+          "description": "The status code, which should be an enum value of google.rpc.Code.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "details": {
+          "description": "A list of messages that carry the error details. There is a common set of message types for APIs to use.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "object",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": {
+              "description": "Properties of the object. Contains field @type with type URL.",
+              "type": "any",
+              "format": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "properties": {},
+              "additionalProperties": null,
+              "items": null
+            },
+            "items": null
+          }
+        },
+        "message": {
+          "description": "A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -2112,6 +4469,286 @@
       "additionalProperties": null,
       "items": null
     },
+    "VulnerabilityReport": {
+      "id": "VulnerabilityReport",
+      "description": "This API resource represents the vulnerability report for a specified Compute Engine virtual machine (VM) instance at a given point in time. For more information, see [Vulnerability reports](https://cloud.google.com/compute/docs/instances/os-inventory-management#vulnerability-reports).",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "name": {
+          "description": "Output only. The `vulnerabilityReport` API resource name. Format: `projects/{project_number}/locations/{location}/instances/{instance_id}/vulnerabilityReport`",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "updateTime": {
+          "description": "Output only. The timestamp for when the last vulnerability report was generated for the VM.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "vulnerabilities": {
+          "description": "Output only. List of vulnerabilities affecting the VM.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "VulnerabilityReportVulnerability"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "VulnerabilityReportVulnerability": {
+      "id": "VulnerabilityReportVulnerability",
+      "description": "A vulnerability affecting the VM instance.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "availableInventoryItemIds": {
+          "description": "Corresponds to the `AVAILABLE_PACKAGE` inventory item on the VM. If the vulnerability report was not updated after the VM inventory update, these values might not display in VM inventory. If there is no available fix, the field is empty. The `inventory_item` value specifies the latest `SoftwarePackage` available to the VM that fixes the vulnerability.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "createTime": {
+          "description": "The timestamp for when the vulnerability was first detected.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "details": {
+          "description": "Contains metadata as per the upstream feed of the operating system and NVD.",
+          "$ref": "VulnerabilityReportVulnerabilityDetails"
+        },
+        "installedInventoryItemIds": {
+          "description": "Corresponds to the `INSTALLED_PACKAGE` inventory item on the VM. This field displays the inventory items affected by this vulnerability. If the vulnerability report was not updated after the VM inventory update, these values might not display in VM inventory. For some distros, this field may be empty.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "items": {
+          "description": "List of items affected by the vulnerability.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "VulnerabilityReportVulnerabilityItem"
+          }
+        },
+        "updateTime": {
+          "description": "The timestamp for when the vulnerability was last modified.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "VulnerabilityReportVulnerabilityDetails": {
+      "id": "VulnerabilityReportVulnerabilityDetails",
+      "description": "Contains metadata information for the vulnerability. This information is collected from the upstream feed of the operating system.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "cve": {
+          "description": "The CVE of the vulnerability. CVE cannot be empty and the combination of should be unique across vulnerabilities for a VM.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "cvssV2Score": {
+          "description": "The CVSS V2 score of this vulnerability. CVSS V2 score is on a scale of 0 - 10 where 0 indicates low severity and 10 indicates high severity.",
+          "type": "number",
+          "format": "float",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "cvssV3": {
+          "description": "The full description of the CVSSv3 for this vulnerability from NVD.",
+          "$ref": "CVSSv3"
+        },
+        "description": {
+          "description": "The note or description describing the vulnerability from the distro.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "references": {
+          "description": "Corresponds to the references attached to the `VulnerabilityDetails`.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "VulnerabilityReportVulnerabilityDetailsReference"
+          }
+        },
+        "severity": {
+          "description": "Assigned severity/impact ranking from the distro.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "VulnerabilityReportVulnerabilityDetailsReference": {
+      "id": "VulnerabilityReportVulnerabilityDetailsReference",
+      "description": "A reference for this vulnerability.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "source": {
+          "description": "The source of the reference e.g. NVD.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "url": {
+          "description": "The url of the reference.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "VulnerabilityReportVulnerabilityItem": {
+      "id": "VulnerabilityReportVulnerabilityItem",
+      "description": "OS inventory item that is affected by a vulnerability or fixed as a result of a vulnerability.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "availableInventoryItemId": {
+          "description": "Corresponds to the `AVAILABLE_PACKAGE` inventory item on the VM. If the vulnerability report was not updated after the VM inventory update, these values might not display in VM inventory. If there is no available fix, the field is empty. The `inventory_item` value specifies the latest `SoftwarePackage` available to the VM that fixes the vulnerability.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "fixedCpeUri": {
+          "description": "The recommended [CPE URI](https://cpe.mitre.org/specification/) update that contains a fix for this vulnerability.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "installedInventoryItemId": {
+          "description": "Corresponds to the `INSTALLED_PACKAGE` inventory item on the VM. This field displays the inventory items affected by this vulnerability. If the vulnerability report was not updated after the VM inventory update, these values might not display in VM inventory. For some operating systems, this field might be empty.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "upstreamFix": {
+          "description": "The upstream OS patch, packages or KB that fixes the vulnerability.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "WeekDayOfMonth": {
       "id": "WeekDayOfMonth",
       "description": "Represents one week day in a month. An example is \"the 4th Sunday\".",
@@ -2144,6 +4781,16 @@
             "Saturday",
             "Sunday"
           ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "dayOffset": {
+          "description": "Optional. Represents the number of days before or after the given week day of month that the patch deployment is scheduled for. For example if `week_ordinal` and `day_of_week` values point to the second day of the month and this `day_offset` value is set to `3`, the patch deployment takes place three days after the second Tuesday of the month. If this value is negative, for example -5, the patches are deployed five days before before the second Tuesday of the month. Allowed values are in range [-30, 30].",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -2466,6 +5113,825 @@
   "resources": {
     "projects": {
       "resources": {
+        "locations": {
+          "resources": {
+            "instances": {
+              "resources": {
+                "inventories": {
+                  "resources": {},
+                  "methods": {
+                    "get": {
+                      "id": "osconfig.projects.locations.instances.inventories.get",
+                      "path": "v1/{+name}",
+                      "httpMethod": "GET",
+                      "description": "Get inventory data for the specified VM instance. If the VM has no associated inventory, the message `NOT_FOUND` is returned.",
+                      "parameters": {
+                        "name": {
+                          "description": "Required. API resource name for inventory resource. Format: `projects/{project}/locations/{location}/instances/{instance}/inventory` For `{project}`, either `project-number` or `project-id` can be provided. For `{instance}`, either Compute Engine `instance-id` or `instance-name` can be provided.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+/inventory$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "view": {
+                          "description": "Inventory view indicating what information should be included in the inventory resource. If unspecified, the default view is BASIC.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [
+                            "INVENTORY_VIEW_UNSPECIFIED",
+                            "BASIC",
+                            "FULL"
+                          ],
+                          "enumDescriptions": [
+                            "The default value. The API defaults to the BASIC view.",
+                            "Returns the basic inventory information that includes `os_info`.",
+                            "Returns all fields."
+                          ],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "name"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "Inventory"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "list": {
+                      "id": "osconfig.projects.locations.instances.inventories.list",
+                      "path": "v1/{+parent}/inventories",
+                      "httpMethod": "GET",
+                      "description": "List inventory data for all VM instances in the specified zone.",
+                      "parameters": {
+                        "filter": {
+                          "description": "If provided, this field specifies the criteria that must be met by a `Inventory` API resource to be included in the response.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "pageSize": {
+                          "description": "The maximum number of results to return.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "integer",
+                          "format": "int32",
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "pageToken": {
+                          "description": "A pagination token returned from a previous call to `ListInventories` that indicates where this listing should continue from.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "parent": {
+                          "description": "Required. The parent resource name. Format: `projects/{project}/locations/{location}/instances/-` For `{project}`, either `project-number` or `project-id` can be provided.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "view": {
+                          "description": "Inventory view indicating what information should be included in the inventory resource. If unspecified, the default view is BASIC.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [
+                            "INVENTORY_VIEW_UNSPECIFIED",
+                            "BASIC",
+                            "FULL"
+                          ],
+                          "enumDescriptions": [
+                            "The default value. The API defaults to the BASIC view.",
+                            "Returns the basic inventory information that includes `os_info`.",
+                            "Returns all fields."
+                          ],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "parent"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "ListInventoriesResponse"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    }
+                  }
+                },
+                "osPolicyAssignments": {
+                  "resources": {
+                    "reports": {
+                      "resources": {},
+                      "methods": {
+                        "get": {
+                          "id": "osconfig.projects.locations.instances.osPolicyAssignments.reports.get",
+                          "path": "v1/{+name}",
+                          "httpMethod": "GET",
+                          "description": "Get the OS policy asssignment report for the specified Compute Engine VM instance.",
+                          "parameters": {
+                            "name": {
+                              "description": "Required. API resource name for OS policy assignment report. Format: `/projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/report` For `{project}`, either `project-number` or `project-id` can be provided. For `{instance_id}`, either Compute Engine `instance-id` or `instance-name` can be provided. For `{assignment_id}`, the OSPolicyAssignment id must be provided.",
+                              "default": null,
+                              "location": "path",
+                              "required": true,
+                              "type": "string",
+                              "format": null,
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+/osPolicyAssignments/[^/]+/report$",
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": false
+                            }
+                          },
+                          "parameterOrder": [
+                            "name"
+                          ],
+                          "request": null,
+                          "response": {
+                            "$ref": "OSPolicyAssignmentReport"
+                          },
+                          "scopes": [
+                            "https://www.googleapis.com/auth/cloud-platform"
+                          ],
+                          "supportsMediaDownload": false,
+                          "useMediaDownloadService": false,
+                          "supportsSubscription": false,
+                          "supportsMediaUpload": false,
+                          "mediaUpload": null
+                        },
+                        "list": {
+                          "id": "osconfig.projects.locations.instances.osPolicyAssignments.reports.list",
+                          "path": "v1/{+parent}/reports",
+                          "httpMethod": "GET",
+                          "description": "List OS policy asssignment reports for all Compute Engine VM instances in the specified zone.",
+                          "parameters": {
+                            "filter": {
+                              "description": "If provided, this field specifies the criteria that must be met by the `OSPolicyAssignmentReport` API resource that is included in the response.",
+                              "default": null,
+                              "location": "query",
+                              "required": false,
+                              "type": "string",
+                              "format": null,
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": null,
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": false
+                            },
+                            "pageSize": {
+                              "description": "The maximum number of results to return.",
+                              "default": null,
+                              "location": "query",
+                              "required": false,
+                              "type": "integer",
+                              "format": "int32",
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": null,
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": false
+                            },
+                            "pageToken": {
+                              "description": "A pagination token returned from a previous call to the `ListOSPolicyAssignmentReports` method that indicates where this listing should continue from.",
+                              "default": null,
+                              "location": "query",
+                              "required": false,
+                              "type": "string",
+                              "format": null,
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": null,
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": false
+                            },
+                            "parent": {
+                              "description": "Required. The parent resource name. Format: `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/reports` For `{project}`, either `project-number` or `project-id` can be provided. For `{instance}`, either `instance-name`, `instance-id`, or `-` can be provided. If '-' is provided, the response will include OSPolicyAssignmentReports for all instances in the project/location. For `{assignment}`, either `assignment-id` or `-` can be provided. If '-' is provided, the response will include OSPolicyAssignmentReports for all OSPolicyAssignments in the project/location. Either {instance} or {assignment} must be `-`. For example: `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/-/reports` returns all reports for the instance `projects/{project}/locations/{location}/instances/-/osPolicyAssignments/{assignment-id}/reports` returns all the reports for the given assignment across all instances. `projects/{project}/locations/{location}/instances/-/osPolicyAssignments/-/reports` returns all the reports for all assignments across all instances.",
+                              "default": null,
+                              "location": "path",
+                              "required": true,
+                              "type": "string",
+                              "format": null,
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+/osPolicyAssignments/[^/]+$",
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": false
+                            }
+                          },
+                          "parameterOrder": [
+                            "parent"
+                          ],
+                          "request": null,
+                          "response": {
+                            "$ref": "ListOSPolicyAssignmentReportsResponse"
+                          },
+                          "scopes": [
+                            "https://www.googleapis.com/auth/cloud-platform"
+                          ],
+                          "supportsMediaDownload": false,
+                          "useMediaDownloadService": false,
+                          "supportsSubscription": false,
+                          "supportsMediaUpload": false,
+                          "mediaUpload": null
+                        }
+                      }
+                    }
+                  },
+                  "methods": {}
+                },
+                "vulnerabilityReports": {
+                  "resources": {},
+                  "methods": {
+                    "get": {
+                      "id": "osconfig.projects.locations.instances.vulnerabilityReports.get",
+                      "path": "v1/{+name}",
+                      "httpMethod": "GET",
+                      "description": "Gets the vulnerability report for the specified VM instance. Only VMs with inventory data have vulnerability reports associated with them.",
+                      "parameters": {
+                        "name": {
+                          "description": "Required. API resource name for vulnerability resource. Format: `projects/{project}/locations/{location}/instances/{instance}/vulnerabilityReport` For `{project}`, either `project-number` or `project-id` can be provided. For `{instance}`, either Compute Engine `instance-id` or `instance-name` can be provided.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+/vulnerabilityReport$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "name"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "VulnerabilityReport"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "list": {
+                      "id": "osconfig.projects.locations.instances.vulnerabilityReports.list",
+                      "path": "v1/{+parent}/vulnerabilityReports",
+                      "httpMethod": "GET",
+                      "description": "List vulnerability reports for all VM instances in the specified zone.",
+                      "parameters": {
+                        "filter": {
+                          "description": "This field supports filtering by the severity level for the vulnerability. For a list of severity levels, see [Severity levels for vulnerabilities](https://cloud.google.com/container-analysis/docs/container-scanning-overview#severity_levels_for_vulnerabilities). The filter field follows the rules described in the [AIP-160](https://google.aip.dev/160) guidelines as follows: + **Filter for a specific severity type**: you can list reports that contain vulnerabilities that are classified as medium by specifying `vulnerabilities.details.severity:MEDIUM`. + **Filter for a range of severities** : you can list reports that have vulnerabilities that are classified as critical or high by specifying `vulnerabilities.details.severity:HIGH OR vulnerabilities.details.severity:CRITICAL`",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "pageSize": {
+                          "description": "The maximum number of results to return.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "integer",
+                          "format": "int32",
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "pageToken": {
+                          "description": "A pagination token returned from a previous call to `ListVulnerabilityReports` that indicates where this listing should continue from.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "parent": {
+                          "description": "Required. The parent resource name. Format: `projects/{project}/locations/{location}/instances/-` For `{project}`, either `project-number` or `project-id` can be provided.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "parent"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "ListVulnerabilityReportsResponse"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    }
+                  }
+                }
+              },
+              "methods": {}
+            },
+            "osPolicyAssignments": {
+              "resources": {
+                "operations": {
+                  "resources": {},
+                  "methods": {
+                    "cancel": {
+                      "id": "osconfig.projects.locations.osPolicyAssignments.operations.cancel",
+                      "path": "v1/{+name}:cancel",
+                      "httpMethod": "POST",
+                      "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.",
+                      "parameters": {
+                        "name": {
+                          "description": "The name of the operation resource to be cancelled.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/osPolicyAssignments/[^/]+/operations/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "name"
+                      ],
+                      "request": {
+                        "$ref": "CancelOperationRequest"
+                      },
+                      "response": {
+                        "$ref": "Empty"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "get": {
+                      "id": "osconfig.projects.locations.osPolicyAssignments.operations.get",
+                      "path": "v1/{+name}",
+                      "httpMethod": "GET",
+                      "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+                      "parameters": {
+                        "name": {
+                          "description": "The name of the operation resource.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/osPolicyAssignments/[^/]+/operations/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "name"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "Operation"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    }
+                  }
+                }
+              },
+              "methods": {
+                "create": {
+                  "id": "osconfig.projects.locations.osPolicyAssignments.create",
+                  "path": "v1/{+parent}/osPolicyAssignments",
+                  "httpMethod": "POST",
+                  "description": "Create an OS policy assignment. This method also creates the first revision of the OS policy assignment. This method returns a long running operation (LRO) that contains the rollout details. The rollout can be cancelled by cancelling the LRO. For more information, see [Method: projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).",
+                  "parameters": {
+                    "osPolicyAssignmentId": {
+                      "description": "Required. The logical name of the OS policy assignment in the project with the following restrictions: * Must contain only lowercase letters, numbers, and hyphens. * Must start with a letter. * Must be between 1-63 characters. * Must end with a number or a letter. * Must be unique within the project.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "parent": {
+                      "description": "Required. The parent resource name in the form: projects/{project}/locations/{location}",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": {
+                    "$ref": "OSPolicyAssignment"
+                  },
+                  "response": {
+                    "$ref": "Operation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "delete": {
+                  "id": "osconfig.projects.locations.osPolicyAssignments.delete",
+                  "path": "v1/{+name}",
+                  "httpMethod": "DELETE",
+                  "description": "Delete the OS policy assignment. This method creates a new revision of the OS policy assignment. This method returns a long running operation (LRO) that contains the rollout details. The rollout can be cancelled by cancelling the LRO. If the LRO completes and is not cancelled, all revisions associated with the OS policy assignment are deleted. For more information, see [Method: projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The name of the OS policy assignment to be deleted",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/osPolicyAssignments/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "Operation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "get": {
+                  "id": "osconfig.projects.locations.osPolicyAssignments.get",
+                  "path": "v1/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Retrieve an existing OS policy assignment. This method always returns the latest revision. In order to retrieve a previous revision of the assignment, also provide the revision ID in the `name` parameter.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The resource name of OS policy assignment. Format: `projects/{project}/locations/{location}/osPolicyAssignments/{os_policy_assignment}@{revisionId}`",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/osPolicyAssignments/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "OSPolicyAssignment"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "list": {
+                  "id": "osconfig.projects.locations.osPolicyAssignments.list",
+                  "path": "v1/{+parent}/osPolicyAssignments",
+                  "httpMethod": "GET",
+                  "description": "List the OS policy assignments under the parent resource. For each OS policy assignment, the latest revision is returned.",
+                  "parameters": {
+                    "pageSize": {
+                      "description": "The maximum number of assignments to return.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "integer",
+                      "format": "int32",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageToken": {
+                      "description": "A pagination token returned from a previous call to `ListOSPolicyAssignments` that indicates where this listing should continue from.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "parent": {
+                      "description": "Required. The parent resource name.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "ListOSPolicyAssignmentsResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "listRevisions": {
+                  "id": "osconfig.projects.locations.osPolicyAssignments.listRevisions",
+                  "path": "v1/{+name}:listRevisions",
+                  "httpMethod": "GET",
+                  "description": "List the OS policy assignment revisions for a given OS policy assignment.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The name of the OS policy assignment to list revisions for.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/osPolicyAssignments/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageSize": {
+                      "description": "The maximum number of revisions to return.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "integer",
+                      "format": "int32",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageToken": {
+                      "description": "A pagination token returned from a previous call to `ListOSPolicyAssignmentRevisions` that indicates where this listing should continue from.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "ListOSPolicyAssignmentRevisionsResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "patch": {
+                  "id": "osconfig.projects.locations.osPolicyAssignments.patch",
+                  "path": "v1/{+name}",
+                  "httpMethod": "PATCH",
+                  "description": "Update an existing OS policy assignment. This method creates a new revision of the OS policy assignment. This method returns a long running operation (LRO) that contains the rollout details. The rollout can be cancelled by cancelling the LRO. For more information, see [Method: projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).",
+                  "parameters": {
+                    "name": {
+                      "description": "Resource name. Format: `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id}` This field is ignored when you create an OS policy assignment.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/osPolicyAssignments/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "updateMask": {
+                      "description": "Optional. Field mask that controls which fields of the assignment should be updated.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": "google-fieldmask",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": {
+                    "$ref": "OSPolicyAssignment"
+                  },
+                  "response": {
+                    "$ref": "Operation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
+            }
+          },
+          "methods": {}
+        },
         "patchDeployments": {
           "resources": {},
           "methods": {
@@ -2651,6 +6117,137 @@
               "request": null,
               "response": {
                 "$ref": "ListPatchDeploymentsResponse"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "patch": {
+              "id": "osconfig.projects.patchDeployments.patch",
+              "path": "v1/{+name}",
+              "httpMethod": "PATCH",
+              "description": "Update an OS Config patch deployment.",
+              "parameters": {
+                "name": {
+                  "description": "Unique name for the patch deployment resource in a project. The patch deployment name is in the form: `projects/{project_id}/patchDeployments/{patch_deployment_id}`. This field is ignored when you create a new patch deployment.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^projects/[^/]+/patchDeployments/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "updateMask": {
+                  "description": "Optional. Field mask that controls which fields of the patch deployment should be updated.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": "google-fieldmask",
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "name"
+              ],
+              "request": {
+                "$ref": "PatchDeployment"
+              },
+              "response": {
+                "$ref": "PatchDeployment"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "pause": {
+              "id": "osconfig.projects.patchDeployments.pause",
+              "path": "v1/{+name}:pause",
+              "httpMethod": "POST",
+              "description": "Change state of patch deployment to \"PAUSED\". Patch deployment in paused state doesn't generate patch jobs.",
+              "parameters": {
+                "name": {
+                  "description": "Required. The resource name of the patch deployment in the form `projects/*/patchDeployments/*`.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^projects/[^/]+/patchDeployments/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "name"
+              ],
+              "request": {
+                "$ref": "PausePatchDeploymentRequest"
+              },
+              "response": {
+                "$ref": "PatchDeployment"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "resume": {
+              "id": "osconfig.projects.patchDeployments.resume",
+              "path": "v1/{+name}:resume",
+              "httpMethod": "POST",
+              "description": "Change state of patch deployment back to \"ACTIVE\". Patch deployment in active state continues to generate patch jobs.",
+              "parameters": {
+                "name": {
+                  "description": "Required. The resource name of the patch deployment in the form `projects/*/patchDeployments/*`.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^projects/[^/]+/patchDeployments/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "name"
+              ],
+              "request": {
+                "$ref": "ResumePatchDeploymentRequest"
+              },
+              "response": {
+                "$ref": "PatchDeployment"
               },
               "scopes": [
                 "https://www.googleapis.com/auth/cloud-platform"

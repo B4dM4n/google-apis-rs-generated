@@ -7,7 +7,7 @@
   "canonicalName": "Doubleclicksearch",
   "fullyEncodeReservedExpansion": null,
   "version": "v2",
-  "revision": "20210309",
+  "revision": "20220420",
   "title": "Search Ads 360 API",
   "description": "The Search Ads 360 API allows developers to automate uploading conversions and downloading reports from Search Ads 360.",
   "ownerDomain": "google.com",
@@ -720,6 +720,17 @@
           "items": null
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "IdMappingFile": {
+      "id": "IdMappingFile",
+      "description": "File returned to https://developers.google.com/search-ads/v2/reference/reports/getIdMappingFile.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -1795,6 +1806,58 @@
           ],
           "request": null,
           "response": null,
+          "scopes": [
+            "https://www.googleapis.com/auth/doubleclicksearch"
+          ],
+          "supportsMediaDownload": true,
+          "useMediaDownloadService": true,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "getIdMappingFile": {
+          "id": "doubleclicksearch.reports.getIdMappingFile",
+          "path": "doubleclicksearch/v2/agency/{agencyId}/advertiser/{advertiserId}/idmapping",
+          "httpMethod": "GET",
+          "description": "Downloads a csv file(encoded in UTF-8) that contains ID mappings between legacy SA360 and new SA360. The file includes all children entities of the given advertiser(e.g. engine accounts, campaigns, ad groups, etc.) that exist in both legacy SA360 and new SA360.",
+          "parameters": {
+            "advertiserId": {
+              "description": "Legacy SA360 advertiser ID.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "agencyId": {
+              "description": "Legacy SA360 agency ID.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "agencyId",
+            "advertiserId"
+          ],
+          "request": null,
+          "response": {
+            "$ref": "IdMappingFile"
+          },
           "scopes": [
             "https://www.googleapis.com/auth/doubleclicksearch"
           ],

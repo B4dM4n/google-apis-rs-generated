@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("tasks1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210316")
+            .version("0.1.0-20220422")
             .about("The Google Tasks API lets you manage your tasks and task lists.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -38,39 +38,39 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: delete, get, insert, list, patch and update");
         {
             let mcmd = SubCommand::with_name("delete")
-                .about("Deletes the authenticated user\'s specified task list.");
+                .about("Deletes the authenticated user's specified task list.");
             tasklists0 = tasklists0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("get")
-                .about("Returns the authenticated user\'s specified task list.");
+                .about("Returns the authenticated user's specified task list.");
             tasklists0 = tasklists0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("insert").about(
-                "Creates a new task list and adds it to the authenticated user\'s task lists.",
+                "Creates a new task list and adds it to the authenticated user's task lists.",
             );
             tasklists0 = tasklists0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("list")
-                .about("Returns all the authenticated user\'s task lists.");
+                .about("Returns all the authenticated user's task lists.");
             tasklists0 = tasklists0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates the authenticated user\'s specified task list. This method supports patch semantics.");
+            let mcmd = SubCommand::with_name("patch").about("Updates the authenticated user's specified task list. This method supports patch semantics.");
             tasklists0 = tasklists0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("update")
-                .about("Updates the authenticated user\'s specified task list.");
+                .about("Updates the authenticated user's specified task list.");
             tasklists0 = tasklists0.subcommand(mcmd);
         }
         let mut tasks0 = SubCommand::with_name("tasks")
             .setting(AppSettings::ColoredHelp)
             .about("methods: clear, delete, get, insert, list, r#move, patch and update");
         {
-            let mcmd = SubCommand::with_name("clear").about("Clears all completed tasks from the specified task list. The affected tasks will be marked as \'hidden\' and no longer be returned by default when retrieving all tasks for a task list.");
+            let mcmd = SubCommand::with_name("clear").about("Clears all completed tasks from the specified task list. The affected tasks will be marked as 'hidden' and no longer be returned by default when retrieving all tasks for a task list.");
             tasks0 = tasks0.subcommand(mcmd);
         }
         {

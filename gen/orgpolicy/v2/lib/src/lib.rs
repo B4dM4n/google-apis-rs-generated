@@ -1,9 +1,47 @@
 #![doc = "# Resources and Methods\n    * [folders](resources/folders/struct.FoldersActions.html)\n      * [constraints](resources/folders/constraints/struct.ConstraintsActions.html)\n        * [*list*](resources/folders/constraints/struct.ListRequestBuilder.html)\n      * [policies](resources/folders/policies/struct.PoliciesActions.html)\n        * [*create*](resources/folders/policies/struct.CreateRequestBuilder.html), [*delete*](resources/folders/policies/struct.DeleteRequestBuilder.html), [*get*](resources/folders/policies/struct.GetRequestBuilder.html), [*getEffectivePolicy*](resources/folders/policies/struct.GetEffectivePolicyRequestBuilder.html), [*list*](resources/folders/policies/struct.ListRequestBuilder.html), [*patch*](resources/folders/policies/struct.PatchRequestBuilder.html)\n    * [organizations](resources/organizations/struct.OrganizationsActions.html)\n      * [constraints](resources/organizations/constraints/struct.ConstraintsActions.html)\n        * [*list*](resources/organizations/constraints/struct.ListRequestBuilder.html)\n      * [policies](resources/organizations/policies/struct.PoliciesActions.html)\n        * [*create*](resources/organizations/policies/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/policies/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/policies/struct.GetRequestBuilder.html), [*getEffectivePolicy*](resources/organizations/policies/struct.GetEffectivePolicyRequestBuilder.html), [*list*](resources/organizations/policies/struct.ListRequestBuilder.html), [*patch*](resources/organizations/policies/struct.PatchRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [constraints](resources/projects/constraints/struct.ConstraintsActions.html)\n        * [*list*](resources/projects/constraints/struct.ListRequestBuilder.html)\n      * [policies](resources/projects/policies/struct.PoliciesActions.html)\n        * [*create*](resources/projects/policies/struct.CreateRequestBuilder.html), [*delete*](resources/projects/policies/struct.DeleteRequestBuilder.html), [*get*](resources/projects/policies/struct.GetRequestBuilder.html), [*getEffectivePolicy*](resources/projects/policies/struct.GetEffectivePolicyRequestBuilder.html), [*list*](resources/projects/policies/struct.ListRequestBuilder.html), [*patch*](resources/projects/policies/struct.PatchRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudOrgpolicyV2AlternatePolicySpec {
+        #[doc = "Reference to the launch that will be used while audit logging and to control the launch. Should be set only in the alternate policy."]
+        #[serde(
+            rename = "launch",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub launch: ::std::option::Option<String>,
+        #[doc = "Specify `Constraint` for configurations of Cloud Platform resources."]
+        #[serde(
+            rename = "spec",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub spec: ::std::option::Option<crate::schemas::GoogleCloudOrgpolicyV2PolicySpec>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudOrgpolicyV2AlternatePolicySpec {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudOrgpolicyV2AlternatePolicySpec {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -311,6 +349,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudOrgpolicyV2Policy {
+        #[doc = "Deprecated."]
+        #[serde(
+            rename = "alternate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub alternate:
+            ::std::option::Option<crate::schemas::GoogleCloudOrgpolicyV2AlternatePolicySpec>,
         #[doc = "Immutable. The resource name of the Policy. Must be one of the following forms, where constraint_name is the name of the constraint which this Policy configures: * `projects/{project_number}/policies/{constraint_name}` * `folders/{folder_id}/policies/{constraint_name}` * `organizations/{organization_id}/policies/{constraint_name}` For example, \"projects/123/policies/compute.disableSerialPortAccess\". Note: `projects/{project_id}/policies/{constraint_name}` is also an acceptable name for API requests, but responses will return the name using the equivalent project number."]
         #[serde(
             rename = "name",

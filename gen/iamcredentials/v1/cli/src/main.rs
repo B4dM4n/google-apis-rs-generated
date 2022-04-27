@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("iamcredentials1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210312")
+            .version("0.1.0-20220414")
             .about("Creates short-lived credentials for impersonating IAM service accounts. To enable this API, you must enable the IAM API (iam.googleapis.com). ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -51,12 +51,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("sign_blob")
-                .about("Signs a blob using a service account\'s system-managed private key.");
+                .about("Signs a blob using a service account's system-managed private key.");
             service_accounts1 = service_accounts1.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("sign_jwt")
-                .about("Signs a JWT using a service account\'s system-managed private key.");
+                .about("Signs a JWT using a service account's system-managed private key.");
             service_accounts1 = service_accounts1.subcommand(mcmd);
         }
         projects0 = projects0.subcommand(service_accounts1);

@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [info_types](resources/info_types/struct.InfoTypesActions.html)\n      * [*list*](resources/info_types/struct.ListRequestBuilder.html)\n    * [locations](resources/locations/struct.LocationsActions.html)\n      * [info_types](resources/locations/info_types/struct.InfoTypesActions.html)\n        * [*list*](resources/locations/info_types/struct.ListRequestBuilder.html)\n    * [organizations](resources/organizations/struct.OrganizationsActions.html)\n      * [deidentify_templates](resources/organizations/deidentify_templates/struct.DeidentifyTemplatesActions.html)\n        * [*create*](resources/organizations/deidentify_templates/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/deidentify_templates/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/deidentify_templates/struct.GetRequestBuilder.html), [*list*](resources/organizations/deidentify_templates/struct.ListRequestBuilder.html), [*patch*](resources/organizations/deidentify_templates/struct.PatchRequestBuilder.html)\n      * [inspect_templates](resources/organizations/inspect_templates/struct.InspectTemplatesActions.html)\n        * [*create*](resources/organizations/inspect_templates/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/inspect_templates/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/inspect_templates/struct.GetRequestBuilder.html), [*list*](resources/organizations/inspect_templates/struct.ListRequestBuilder.html), [*patch*](resources/organizations/inspect_templates/struct.PatchRequestBuilder.html)\n      * [locations](resources/organizations/locations/struct.LocationsActions.html)\n        * [deidentify_templates](resources/organizations/locations/deidentify_templates/struct.DeidentifyTemplatesActions.html)\n          * [*create*](resources/organizations/locations/deidentify_templates/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/locations/deidentify_templates/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/locations/deidentify_templates/struct.GetRequestBuilder.html), [*list*](resources/organizations/locations/deidentify_templates/struct.ListRequestBuilder.html), [*patch*](resources/organizations/locations/deidentify_templates/struct.PatchRequestBuilder.html)\n        * [dlp_jobs](resources/organizations/locations/dlp_jobs/struct.DlpJobsActions.html)\n          * [*list*](resources/organizations/locations/dlp_jobs/struct.ListRequestBuilder.html)\n        * [inspect_templates](resources/organizations/locations/inspect_templates/struct.InspectTemplatesActions.html)\n          * [*create*](resources/organizations/locations/inspect_templates/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/locations/inspect_templates/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/locations/inspect_templates/struct.GetRequestBuilder.html), [*list*](resources/organizations/locations/inspect_templates/struct.ListRequestBuilder.html), [*patch*](resources/organizations/locations/inspect_templates/struct.PatchRequestBuilder.html)\n        * [job_triggers](resources/organizations/locations/job_triggers/struct.JobTriggersActions.html)\n          * [*create*](resources/organizations/locations/job_triggers/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/locations/job_triggers/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/locations/job_triggers/struct.GetRequestBuilder.html), [*list*](resources/organizations/locations/job_triggers/struct.ListRequestBuilder.html), [*patch*](resources/organizations/locations/job_triggers/struct.PatchRequestBuilder.html)\n        * [stored_info_types](resources/organizations/locations/stored_info_types/struct.StoredInfoTypesActions.html)\n          * [*create*](resources/organizations/locations/stored_info_types/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/locations/stored_info_types/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/locations/stored_info_types/struct.GetRequestBuilder.html), [*list*](resources/organizations/locations/stored_info_types/struct.ListRequestBuilder.html), [*patch*](resources/organizations/locations/stored_info_types/struct.PatchRequestBuilder.html)\n      * [stored_info_types](resources/organizations/stored_info_types/struct.StoredInfoTypesActions.html)\n        * [*create*](resources/organizations/stored_info_types/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/stored_info_types/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/stored_info_types/struct.GetRequestBuilder.html), [*list*](resources/organizations/stored_info_types/struct.ListRequestBuilder.html), [*patch*](resources/organizations/stored_info_types/struct.PatchRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [content](resources/projects/content/struct.ContentActions.html)\n        * [*deidentify*](resources/projects/content/struct.DeidentifyRequestBuilder.html), [*inspect*](resources/projects/content/struct.InspectRequestBuilder.html), [*reidentify*](resources/projects/content/struct.ReidentifyRequestBuilder.html)\n      * [deidentify_templates](resources/projects/deidentify_templates/struct.DeidentifyTemplatesActions.html)\n        * [*create*](resources/projects/deidentify_templates/struct.CreateRequestBuilder.html), [*delete*](resources/projects/deidentify_templates/struct.DeleteRequestBuilder.html), [*get*](resources/projects/deidentify_templates/struct.GetRequestBuilder.html), [*list*](resources/projects/deidentify_templates/struct.ListRequestBuilder.html), [*patch*](resources/projects/deidentify_templates/struct.PatchRequestBuilder.html)\n      * [dlp_jobs](resources/projects/dlp_jobs/struct.DlpJobsActions.html)\n        * [*cancel*](resources/projects/dlp_jobs/struct.CancelRequestBuilder.html), [*create*](resources/projects/dlp_jobs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/dlp_jobs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/dlp_jobs/struct.GetRequestBuilder.html), [*list*](resources/projects/dlp_jobs/struct.ListRequestBuilder.html)\n      * [image](resources/projects/image/struct.ImageActions.html)\n        * [*redact*](resources/projects/image/struct.RedactRequestBuilder.html)\n      * [inspect_templates](resources/projects/inspect_templates/struct.InspectTemplatesActions.html)\n        * [*create*](resources/projects/inspect_templates/struct.CreateRequestBuilder.html), [*delete*](resources/projects/inspect_templates/struct.DeleteRequestBuilder.html), [*get*](resources/projects/inspect_templates/struct.GetRequestBuilder.html), [*list*](resources/projects/inspect_templates/struct.ListRequestBuilder.html), [*patch*](resources/projects/inspect_templates/struct.PatchRequestBuilder.html)\n      * [job_triggers](resources/projects/job_triggers/struct.JobTriggersActions.html)\n        * [*activate*](resources/projects/job_triggers/struct.ActivateRequestBuilder.html), [*create*](resources/projects/job_triggers/struct.CreateRequestBuilder.html), [*delete*](resources/projects/job_triggers/struct.DeleteRequestBuilder.html), [*get*](resources/projects/job_triggers/struct.GetRequestBuilder.html), [*list*](resources/projects/job_triggers/struct.ListRequestBuilder.html), [*patch*](resources/projects/job_triggers/struct.PatchRequestBuilder.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [content](resources/projects/locations/content/struct.ContentActions.html)\n          * [*deidentify*](resources/projects/locations/content/struct.DeidentifyRequestBuilder.html), [*inspect*](resources/projects/locations/content/struct.InspectRequestBuilder.html), [*reidentify*](resources/projects/locations/content/struct.ReidentifyRequestBuilder.html)\n        * [deidentify_templates](resources/projects/locations/deidentify_templates/struct.DeidentifyTemplatesActions.html)\n          * [*create*](resources/projects/locations/deidentify_templates/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/deidentify_templates/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/deidentify_templates/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/deidentify_templates/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/deidentify_templates/struct.PatchRequestBuilder.html)\n        * [dlp_jobs](resources/projects/locations/dlp_jobs/struct.DlpJobsActions.html)\n          * [*cancel*](resources/projects/locations/dlp_jobs/struct.CancelRequestBuilder.html), [*create*](resources/projects/locations/dlp_jobs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/dlp_jobs/struct.DeleteRequestBuilder.html), [*finish*](resources/projects/locations/dlp_jobs/struct.FinishRequestBuilder.html), [*get*](resources/projects/locations/dlp_jobs/struct.GetRequestBuilder.html), [*hybridInspect*](resources/projects/locations/dlp_jobs/struct.HybridInspectRequestBuilder.html), [*list*](resources/projects/locations/dlp_jobs/struct.ListRequestBuilder.html)\n        * [image](resources/projects/locations/image/struct.ImageActions.html)\n          * [*redact*](resources/projects/locations/image/struct.RedactRequestBuilder.html)\n        * [inspect_templates](resources/projects/locations/inspect_templates/struct.InspectTemplatesActions.html)\n          * [*create*](resources/projects/locations/inspect_templates/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/inspect_templates/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/inspect_templates/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/inspect_templates/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/inspect_templates/struct.PatchRequestBuilder.html)\n        * [job_triggers](resources/projects/locations/job_triggers/struct.JobTriggersActions.html)\n          * [*activate*](resources/projects/locations/job_triggers/struct.ActivateRequestBuilder.html), [*create*](resources/projects/locations/job_triggers/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/job_triggers/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/job_triggers/struct.GetRequestBuilder.html), [*hybridInspect*](resources/projects/locations/job_triggers/struct.HybridInspectRequestBuilder.html), [*list*](resources/projects/locations/job_triggers/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/job_triggers/struct.PatchRequestBuilder.html)\n        * [stored_info_types](resources/projects/locations/stored_info_types/struct.StoredInfoTypesActions.html)\n          * [*create*](resources/projects/locations/stored_info_types/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/stored_info_types/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/stored_info_types/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/stored_info_types/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/stored_info_types/struct.PatchRequestBuilder.html)\n      * [stored_info_types](resources/projects/stored_info_types/struct.StoredInfoTypesActions.html)\n        * [*create*](resources/projects/stored_info_types/struct.CreateRequestBuilder.html), [*delete*](resources/projects/stored_info_types/struct.DeleteRequestBuilder.html), [*get*](resources/projects/stored_info_types/struct.GetRequestBuilder.html), [*list*](resources/projects/stored_info_types/struct.ListRequestBuilder.html), [*patch*](resources/projects/stored_info_types/struct.PatchRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -336,6 +336,13 @@ pub mod schemas {
         )]
         pub identifying_fields:
             ::std::option::Option<Vec<crate::schemas::GooglePrivacyDlpV2FieldId>>,
+        #[doc = "Limit scanning only to these fields."]
+        #[serde(
+            rename = "includedFields",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub included_fields: ::std::option::Option<Vec<crate::schemas::GooglePrivacyDlpV2FieldId>>,
         #[doc = "Max number of rows to scan. If the table has more rows than this value, the rest of the rows are omitted. If not set, or if set to 0, all rows will be scanned. Only one of rows_limit and rows_limit_percent can be specified. Cannot be used in conjunction with TimespanConfig."]
         #[serde(
             rename = "rowsLimit",
@@ -660,6 +667,8 @@ pub mod schemas {
         BytesTypeUnspecified,
         #[doc = "csv"]
         Csv,
+        #[doc = "xlsx, xlsm, xltx, xltm"]
+        ExcelDocument,
         #[doc = "Any image type."]
         Image,
         #[doc = "bmp"]
@@ -672,6 +681,8 @@ pub mod schemas {
         ImageSvg,
         #[doc = "pdf"]
         Pdf,
+        #[doc = "pptx, pptm, potx, potm, pot"]
+        PowerpointDocument,
         #[doc = "plain text"]
         TextUtf8,
         #[doc = "tsv"]
@@ -687,12 +698,14 @@ pub mod schemas {
                     "BYTES_TYPE_UNSPECIFIED"
                 }
                 GooglePrivacyDlpV2ByteContentItemType::Csv => "CSV",
+                GooglePrivacyDlpV2ByteContentItemType::ExcelDocument => "EXCEL_DOCUMENT",
                 GooglePrivacyDlpV2ByteContentItemType::Image => "IMAGE",
                 GooglePrivacyDlpV2ByteContentItemType::ImageBmp => "IMAGE_BMP",
                 GooglePrivacyDlpV2ByteContentItemType::ImageJpeg => "IMAGE_JPEG",
                 GooglePrivacyDlpV2ByteContentItemType::ImagePng => "IMAGE_PNG",
                 GooglePrivacyDlpV2ByteContentItemType::ImageSvg => "IMAGE_SVG",
                 GooglePrivacyDlpV2ByteContentItemType::Pdf => "PDF",
+                GooglePrivacyDlpV2ByteContentItemType::PowerpointDocument => "POWERPOINT_DOCUMENT",
                 GooglePrivacyDlpV2ByteContentItemType::TextUtf8 => "TEXT_UTF8",
                 GooglePrivacyDlpV2ByteContentItemType::Tsv => "TSV",
                 GooglePrivacyDlpV2ByteContentItemType::WordDocument => "WORD_DOCUMENT",
@@ -713,12 +726,14 @@ pub mod schemas {
                     GooglePrivacyDlpV2ByteContentItemType::BytesTypeUnspecified
                 }
                 "CSV" => GooglePrivacyDlpV2ByteContentItemType::Csv,
+                "EXCEL_DOCUMENT" => GooglePrivacyDlpV2ByteContentItemType::ExcelDocument,
                 "IMAGE" => GooglePrivacyDlpV2ByteContentItemType::Image,
                 "IMAGE_BMP" => GooglePrivacyDlpV2ByteContentItemType::ImageBmp,
                 "IMAGE_JPEG" => GooglePrivacyDlpV2ByteContentItemType::ImageJpeg,
                 "IMAGE_PNG" => GooglePrivacyDlpV2ByteContentItemType::ImagePng,
                 "IMAGE_SVG" => GooglePrivacyDlpV2ByteContentItemType::ImageSvg,
                 "PDF" => GooglePrivacyDlpV2ByteContentItemType::Pdf,
+                "POWERPOINT_DOCUMENT" => GooglePrivacyDlpV2ByteContentItemType::PowerpointDocument,
                 "TEXT_UTF8" => GooglePrivacyDlpV2ByteContentItemType::TextUtf8,
                 "TSV" => GooglePrivacyDlpV2ByteContentItemType::Tsv,
                 "WORD_DOCUMENT" => GooglePrivacyDlpV2ByteContentItemType::WordDocument,
@@ -751,12 +766,14 @@ pub mod schemas {
                     GooglePrivacyDlpV2ByteContentItemType::BytesTypeUnspecified
                 }
                 "CSV" => GooglePrivacyDlpV2ByteContentItemType::Csv,
+                "EXCEL_DOCUMENT" => GooglePrivacyDlpV2ByteContentItemType::ExcelDocument,
                 "IMAGE" => GooglePrivacyDlpV2ByteContentItemType::Image,
                 "IMAGE_BMP" => GooglePrivacyDlpV2ByteContentItemType::ImageBmp,
                 "IMAGE_JPEG" => GooglePrivacyDlpV2ByteContentItemType::ImageJpeg,
                 "IMAGE_PNG" => GooglePrivacyDlpV2ByteContentItemType::ImagePng,
                 "IMAGE_SVG" => GooglePrivacyDlpV2ByteContentItemType::ImageSvg,
                 "PDF" => GooglePrivacyDlpV2ByteContentItemType::Pdf,
+                "POWERPOINT_DOCUMENT" => GooglePrivacyDlpV2ByteContentItemType::PowerpointDocument,
                 "TEXT_UTF8" => GooglePrivacyDlpV2ByteContentItemType::TextUtf8,
                 "TSV" => GooglePrivacyDlpV2ByteContentItemType::Tsv,
                 "WORD_DOCUMENT" => GooglePrivacyDlpV2ByteContentItemType::WordDocument,
@@ -1037,7 +1054,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore, ()>
         {
-            Ok ( match s { "ALPHA_LOWER_CASE" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: AlphaLowerCase , "ALPHA_UPPER_CASE" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: AlphaUpperCase , "COMMON_CHARS_TO_IGNORE_UNSPECIFIED" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: CommonCharsToIgnoreUnspecified , "NUMERIC" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: Numeric , "PUNCTUATION" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: Punctuation , "WHITESPACE" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: Whitespace , _ => return Err ( ( ) ) , } )
+            Ok (match s { "ALPHA_LOWER_CASE" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: AlphaLowerCase , "ALPHA_UPPER_CASE" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: AlphaUpperCase , "COMMON_CHARS_TO_IGNORE_UNSPECIFIED" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: CommonCharsToIgnoreUnspecified , "NUMERIC" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: Numeric , "PUNCTUATION" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: Punctuation , "WHITESPACE" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: Whitespace , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore {
@@ -1059,7 +1076,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "ALPHA_LOWER_CASE" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: AlphaLowerCase , "ALPHA_UPPER_CASE" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: AlphaUpperCase , "COMMON_CHARS_TO_IGNORE_UNSPECIFIED" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: CommonCharsToIgnoreUnspecified , "NUMERIC" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: Numeric , "PUNCTUATION" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: Punctuation , "WHITESPACE" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: Whitespace , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "ALPHA_LOWER_CASE" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: AlphaLowerCase , "ALPHA_UPPER_CASE" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: AlphaUpperCase , "COMMON_CHARS_TO_IGNORE_UNSPECIFIED" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: CommonCharsToIgnoreUnspecified , "NUMERIC" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: Numeric , "PUNCTUATION" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: Punctuation , "WHITESPACE" => GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore :: Whitespace , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1185,12 +1202,16 @@ pub mod schemas {
         BinaryFile,
         #[doc = "Included file extensions: csv"]
         Csv,
+        #[doc = "Excel files >30 MB will be scanned as binary files. Included file extensions: xlsx, xlsm, xltx, xltm"]
+        Excel,
         #[doc = "Includes all files."]
         FileTypeUnspecified,
         #[doc = "Included file extensions: bmp, gif, jpg, jpeg, jpe, png. bytes_limit_per_file has no effect on image files. Image inspection is restricted to 'global', 'us', 'asia', and 'europe'."]
         Image,
         #[doc = "PDF files >30 MB will be scanned as binary files. Included file extensions: pdf"]
         Pdf,
+        #[doc = "Powerpoint files >30 MB will be scanned as binary files. Included file extensions: pptx, pptm, potx, potm, pot"]
+        Powerpoint,
         #[doc = "Included file extensions: asc,asp, aspx, brf, c, cc,cfm, cgi, cpp, csv, cxx, c++, cs, css, dart, dat, dot, eml,, epbub, ged, go, h, hh, hpp, hxx, h++, hs, html, htm, mkd, markdown, m, ml, mli, perl, pl, plist, pm, php, phtml, pht, properties, py, pyw, rb, rbw, rs, rss, rc, scala, sh, sql, swift, tex, shtml, shtm, xhtml, lhs, ics, ini, java, js, json, kix, kml, ocaml, md, txt, text, tsv, vb, vcard, vcs, wml, xcodeproj, xml, xsl, xsd, yml, yaml."]
         TextFile,
         #[doc = "Included file extensions: tsv"]
@@ -1204,11 +1225,13 @@ pub mod schemas {
                 GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Avro => "AVRO",
                 GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::BinaryFile => "BINARY_FILE",
                 GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Csv => "CSV",
+                GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Excel => "EXCEL",
                 GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::FileTypeUnspecified => {
                     "FILE_TYPE_UNSPECIFIED"
                 }
                 GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Image => "IMAGE",
                 GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Pdf => "PDF",
+                GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Powerpoint => "POWERPOINT",
                 GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::TextFile => "TEXT_FILE",
                 GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Tsv => "TSV",
                 GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Word => "WORD",
@@ -1230,11 +1253,13 @@ pub mod schemas {
                 "AVRO" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Avro,
                 "BINARY_FILE" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::BinaryFile,
                 "CSV" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Csv,
+                "EXCEL" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Excel,
                 "FILE_TYPE_UNSPECIFIED" => {
                     GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::FileTypeUnspecified
                 }
                 "IMAGE" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Image,
                 "PDF" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Pdf,
+                "POWERPOINT" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Powerpoint,
                 "TEXT_FILE" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::TextFile,
                 "TSV" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Tsv,
                 "WORD" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Word,
@@ -1265,11 +1290,13 @@ pub mod schemas {
                 "AVRO" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Avro,
                 "BINARY_FILE" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::BinaryFile,
                 "CSV" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Csv,
+                "EXCEL" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Excel,
                 "FILE_TYPE_UNSPECIFIED" => {
                     GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::FileTypeUnspecified
                 }
                 "IMAGE" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Image,
                 "PDF" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Pdf,
+                "POWERPOINT" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Powerpoint,
                 "TEXT_FILE" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::TextFile,
                 "TSV" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Tsv,
                 "WORD" => GooglePrivacyDlpV2CloudStorageOptionsFileTypesItems::Word,
@@ -2080,7 +2107,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub context: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2FieldId>,
-        #[doc = "The key used by the encryption function."]
+        #[doc = "The key used by the encryption function. For deterministic encryption using AES-SIV, the provided key is internally expanded to 64 bytes prior to use."]
         #[serde(
             rename = "cryptoKey",
             default,
@@ -2149,7 +2176,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GooglePrivacyDlpV2CryptoKey {
-        #[doc = "Kms wrapped key"]
+        #[doc = "Key wrapped using Cloud KMS"]
         #[serde(
             rename = "kmsWrapped",
             default,
@@ -2279,7 +2306,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet, ()>
         {
-            Ok ( match s { "ALPHA_NUMERIC" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: AlphaNumeric , "FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: FfxCommonNativeAlphabetUnspecified , "HEXADECIMAL" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: Hexadecimal , "NUMERIC" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: Numeric , "UPPER_CASE_ALPHA_NUMERIC" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: UpperCaseAlphaNumeric , _ => return Err ( ( ) ) , } )
+            Ok (match s { "ALPHA_NUMERIC" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: AlphaNumeric , "FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: FfxCommonNativeAlphabetUnspecified , "HEXADECIMAL" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: Hexadecimal , "NUMERIC" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: Numeric , "UPPER_CASE_ALPHA_NUMERIC" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: UpperCaseAlphaNumeric , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet {
@@ -2301,7 +2328,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "ALPHA_NUMERIC" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: AlphaNumeric , "FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: FfxCommonNativeAlphabetUnspecified , "HEXADECIMAL" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: Hexadecimal , "NUMERIC" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: Numeric , "UPPER_CASE_ALPHA_NUMERIC" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: UpperCaseAlphaNumeric , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "ALPHA_NUMERIC" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: AlphaNumeric , "FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: FfxCommonNativeAlphabetUnspecified , "HEXADECIMAL" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: Hexadecimal , "NUMERIC" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: Numeric , "UPPER_CASE_ALPHA_NUMERIC" => GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet :: UpperCaseAlphaNumeric , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -2579,6 +2606,460 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2CustomInfoTypeLikelihood {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2DataProfileAction {
+        #[doc = "Export data profiles into a provided location."]
+        #[serde(
+            rename = "exportData",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub export_data: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2Export>,
+        #[doc = "Publish a message into the Pub/Sub topic."]
+        #[serde(
+            rename = "pubSubNotification",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pub_sub_notification:
+            ::std::option::Option<crate::schemas::GooglePrivacyDlpV2PubSubNotification>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2DataProfileAction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2DataProfileAction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2DataProfileConfigSnapshot {
+        #[doc = "A copy of the configuration used to generate this profile."]
+        #[serde(
+            rename = "dataProfileJob",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data_profile_job:
+            ::std::option::Option<crate::schemas::GooglePrivacyDlpV2DataProfileJobConfig>,
+        #[doc = "A copy of the inspection config used to generate this profile. This is a copy of the inspect_template specified in `DataProfileJobConfig`."]
+        #[serde(
+            rename = "inspectConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub inspect_config: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2InspectConfig>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2DataProfileConfigSnapshot {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2DataProfileConfigSnapshot {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2DataProfileJobConfig {
+        #[doc = "Actions to execute at the completion of the job."]
+        #[serde(
+            rename = "dataProfileActions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data_profile_actions:
+            ::std::option::Option<Vec<crate::schemas::GooglePrivacyDlpV2DataProfileAction>>,
+        #[doc = "Detection logic for profile generation. Not all template features are used by profiles. FindingLimits, include_quote and exclude_info_types have no impact on data profiling. Multiple templates may be provided if there is data in multiple regions. At most one template must be specified per-region (including \"global\"). Each region is scanned using the applicable template. If no region-specific template is specified, but a \"global\" template is specified, it will be copied to that region and used instead. If no global or region-specific template is provided for a region with data, that region's data will not be scanned. For more information, see https://cloud.google.com/dlp/docs/data-profiles#data_residency."]
+        #[serde(
+            rename = "inspectTemplates",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub inspect_templates: ::std::option::Option<Vec<String>>,
+        #[doc = "The data to scan."]
+        #[serde(
+            rename = "location",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub location: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2DataProfileLocation>,
+        #[doc = "The project that will run the scan. The DLP service account that exists within this project must have access to all resources that are profiled, and the Cloud DLP API must be enabled."]
+        #[serde(
+            rename = "projectId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub project_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2DataProfileJobConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2DataProfileJobConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2DataProfileLocation {
+        #[doc = "The ID of the Folder within an organization to scan."]
+        #[serde(
+            rename = "folderId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub folder_id: ::std::option::Option<i64>,
+        #[doc = "The ID of an organization to scan."]
+        #[serde(
+            rename = "organizationId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub organization_id: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2DataProfileLocation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2DataProfileLocation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2DataProfilePubSubCondition {
+        #[doc = "An expression."]
+        #[serde(
+            rename = "expressions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub expressions: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2PubSubExpressions>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2DataProfilePubSubCondition {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2DataProfilePubSubCondition {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GooglePrivacyDlpV2DataProfilePubSubMessage {
+        #[doc = "The event that caused the Pub/Sub message to be sent."]
+        #[serde(
+            rename = "event",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event:
+            ::std::option::Option<crate::schemas::GooglePrivacyDlpV2DataProfilePubSubMessageEvent>,
+        #[doc = "If `DetailLevel` is `TABLE_PROFILE` this will be fully populated. Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and `full_resource` will be populated."]
+        #[serde(
+            rename = "profile",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub profile: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2TableDataProfile>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2DataProfilePubSubMessage {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2DataProfilePubSubMessage {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2DataProfilePubSubMessageEvent {
+        #[doc = "Changed one of the following profile metrics: * Table data risk score * Table sensitivity score * Table resource visibility * Table encryption type * Table predicted infoTypes * Table other infoTypes"]
+        ChangedProfile,
+        #[doc = "A user (non-internal) error occurred."]
+        ErrorChanged,
+        #[doc = "Unused."]
+        EventTypeUnspecified,
+        #[doc = "New profile (not a re-profile)."]
+        NewProfile,
+        #[doc = "Table data risk score or sensitivity score increased."]
+        ScoreIncreased,
+    }
+    impl GooglePrivacyDlpV2DataProfilePubSubMessageEvent {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GooglePrivacyDlpV2DataProfilePubSubMessageEvent::ChangedProfile => {
+                    "CHANGED_PROFILE"
+                }
+                GooglePrivacyDlpV2DataProfilePubSubMessageEvent::ErrorChanged => "ERROR_CHANGED",
+                GooglePrivacyDlpV2DataProfilePubSubMessageEvent::EventTypeUnspecified => {
+                    "EVENT_TYPE_UNSPECIFIED"
+                }
+                GooglePrivacyDlpV2DataProfilePubSubMessageEvent::NewProfile => "NEW_PROFILE",
+                GooglePrivacyDlpV2DataProfilePubSubMessageEvent::ScoreIncreased => {
+                    "SCORE_INCREASED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2DataProfilePubSubMessageEvent {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2DataProfilePubSubMessageEvent {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GooglePrivacyDlpV2DataProfilePubSubMessageEvent, ()> {
+            Ok(match s {
+                "CHANGED_PROFILE" => {
+                    GooglePrivacyDlpV2DataProfilePubSubMessageEvent::ChangedProfile
+                }
+                "ERROR_CHANGED" => GooglePrivacyDlpV2DataProfilePubSubMessageEvent::ErrorChanged,
+                "EVENT_TYPE_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2DataProfilePubSubMessageEvent::EventTypeUnspecified
+                }
+                "NEW_PROFILE" => GooglePrivacyDlpV2DataProfilePubSubMessageEvent::NewProfile,
+                "SCORE_INCREASED" => {
+                    GooglePrivacyDlpV2DataProfilePubSubMessageEvent::ScoreIncreased
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2DataProfilePubSubMessageEvent {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2DataProfilePubSubMessageEvent {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GooglePrivacyDlpV2DataProfilePubSubMessageEvent {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CHANGED_PROFILE" => {
+                    GooglePrivacyDlpV2DataProfilePubSubMessageEvent::ChangedProfile
+                }
+                "ERROR_CHANGED" => GooglePrivacyDlpV2DataProfilePubSubMessageEvent::ErrorChanged,
+                "EVENT_TYPE_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2DataProfilePubSubMessageEvent::EventTypeUnspecified
+                }
+                "NEW_PROFILE" => GooglePrivacyDlpV2DataProfilePubSubMessageEvent::NewProfile,
+                "SCORE_INCREASED" => {
+                    GooglePrivacyDlpV2DataProfilePubSubMessageEvent::ScoreIncreased
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2DataProfilePubSubMessageEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2DataProfilePubSubMessageEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2DataRiskLevel {
+        #[doc = "The score applied to the resource."]
+        #[serde(
+            rename = "score",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub score: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2DataRiskLevelScore>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2DataRiskLevel {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2DataRiskLevel {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2DataRiskLevelScore {
+        #[doc = "High risk – SPII may be present. Access controls may include public ACLs. Exfiltration of data may lead to user data loss. Re-identification of users may be possible. Consider limiting usage and or removing SPII."]
+        RiskHigh,
+        #[doc = "Low risk - Lower indication of sensitive data that appears to have additional access restrictions in place or no indication of sensitive data found."]
+        RiskLow,
+        #[doc = "Medium risk - Sensitive data may be present but additional access or fine grain access restrictions appears to be present. Consider limiting access even further or transforming data to mask."]
+        RiskModerate,
+        #[doc = "Unused."]
+        RiskScoreUnspecified,
+    }
+    impl GooglePrivacyDlpV2DataRiskLevelScore {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GooglePrivacyDlpV2DataRiskLevelScore::RiskHigh => "RISK_HIGH",
+                GooglePrivacyDlpV2DataRiskLevelScore::RiskLow => "RISK_LOW",
+                GooglePrivacyDlpV2DataRiskLevelScore::RiskModerate => "RISK_MODERATE",
+                GooglePrivacyDlpV2DataRiskLevelScore::RiskScoreUnspecified => {
+                    "RISK_SCORE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2DataRiskLevelScore {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2DataRiskLevelScore {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GooglePrivacyDlpV2DataRiskLevelScore, ()> {
+            Ok(match s {
+                "RISK_HIGH" => GooglePrivacyDlpV2DataRiskLevelScore::RiskHigh,
+                "RISK_LOW" => GooglePrivacyDlpV2DataRiskLevelScore::RiskLow,
+                "RISK_MODERATE" => GooglePrivacyDlpV2DataRiskLevelScore::RiskModerate,
+                "RISK_SCORE_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2DataRiskLevelScore::RiskScoreUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2DataRiskLevelScore {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2DataRiskLevelScore {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GooglePrivacyDlpV2DataRiskLevelScore {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "RISK_HIGH" => GooglePrivacyDlpV2DataRiskLevelScore::RiskHigh,
+                "RISK_LOW" => GooglePrivacyDlpV2DataRiskLevelScore::RiskLow,
+                "RISK_MODERATE" => GooglePrivacyDlpV2DataRiskLevelScore::RiskModerate,
+                "RISK_SCORE_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2DataRiskLevelScore::RiskScoreUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2DataRiskLevelScore {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2DataRiskLevelScore {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3366,7 +3847,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GooglePrivacyDlpV2DlpJobType {
-        #[doc = "Unused"]
+        #[doc = "Defaults to INSPECT_JOB."]
         DlpJobTypeUnspecified,
         #[doc = "The job inspected Google Cloud for sensitive data."]
         InspectJob,
@@ -3819,6 +4300,37 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2Export {
+        #[doc = "Store all table and column profiles in an existing table or a new table in an existing dataset. Each re-generation will result in a new row in BigQuery."]
+        #[serde(
+            rename = "profileTable",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub profile_table: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2BigQueryTable>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2Export {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2Export {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GooglePrivacyDlpV2Expressions {
@@ -3969,7 +4481,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2RecordCondition>,
-        #[doc = "Required. Input field(s) to apply the transformation to."]
+        #[doc = "Required. Input field(s) to apply the transformation to. When you have columns that reference their position within a list, omit the index from the FieldId. FieldId name matching ignores the index. For example, instead of \"contact.nums[0].type\", use \"contact.nums.type\"."]
         #[serde(
             rename = "fields",
             default,
@@ -4751,6 +5263,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "Optional version name for this InfoType."]
+        #[serde(
+            rename = "version",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2InfoType {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -4989,6 +5508,37 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2InfoTypeSummary {
+        #[doc = "The infoType."]
+        #[serde(
+            rename = "infoType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub info_type: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2InfoType>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2InfoTypeSummary {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2InfoTypeSummary {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GooglePrivacyDlpV2InfoTypeTransformation {
@@ -5054,7 +5604,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GooglePrivacyDlpV2InspectConfig {
-        #[doc = "List of options defining data content to scan. If empty, text, images, and other content will be included."]
+        #[doc = "Deprecated and unused."]
         #[serde(
             rename = "contentOptions",
             default,
@@ -5071,14 +5621,14 @@ pub mod schemas {
         )]
         pub custom_info_types:
             ::std::option::Option<Vec<crate::schemas::GooglePrivacyDlpV2CustomInfoType>>,
-        #[doc = "When true, excludes type information of the findings."]
+        #[doc = "When true, excludes type information of the findings. This is not used for data profiling."]
         #[serde(
             rename = "excludeInfoTypes",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub exclude_info_types: ::std::option::Option<bool>,
-        #[doc = "When true, a contextual quote from the data that triggered a finding is included in the response; see Finding.quote."]
+        #[doc = "When true, a contextual quote from the data that triggered a finding is included in the response; see Finding.quote. This is not used for data profiling."]
         #[serde(
             rename = "includeQuote",
             default,
@@ -5092,7 +5642,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub info_types: ::std::option::Option<Vec<crate::schemas::GooglePrivacyDlpV2InfoType>>,
-        #[doc = "Configuration to control the number of findings returned."]
+        #[doc = "Configuration to control the number of findings returned. This is not used for data profiling."]
         #[serde(
             rename = "limits",
             default,
@@ -7118,6 +7668,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GooglePrivacyDlpV2OtherInfoTypeSummary {
+        #[doc = "The other infoType."]
+        #[serde(
+            rename = "infoType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub info_type: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2InfoType>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2OtherInfoTypeSummary {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2OtherInfoTypeSummary {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GooglePrivacyDlpV2OutputStorageConfig {
         #[doc = "Schema used for writing the findings for Inspect jobs. This field is only used for Inspect and must be unspecified for Risk jobs. Columns are derived from the `Finding` object. If appending to an existing table, any columns from the predefined schema that are missing will be added. No columns in the existing table will be deleted. If unspecified, then all available columns will be used for a new table or an (existing) table with no schema, and no changes will be made to an existing table that has a schema. Only for use with external storage."]
         #[serde(
@@ -7408,7 +7989,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub redact_config: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2RedactConfig>,
-        #[doc = "Replace"]
+        #[doc = "Replace with a specified value."]
         #[serde(
             rename = "replaceConfig",
             default,
@@ -7416,6 +7997,14 @@ pub mod schemas {
         )]
         pub replace_config:
             ::std::option::Option<crate::schemas::GooglePrivacyDlpV2ReplaceValueConfig>,
+        #[doc = "Replace with a value randomly drawn (with replacement) from a dictionary."]
+        #[serde(
+            rename = "replaceDictionaryConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub replace_dictionary_config:
+            ::std::option::Option<crate::schemas::GooglePrivacyDlpV2ReplaceDictionaryConfig>,
         #[doc = "Replace with infotype"]
         #[serde(
             rename = "replaceWithInfoTypeConfig",
@@ -7515,6 +8104,33 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GooglePrivacyDlpV2ProfileStatus {
+        #[doc = "Profiling status code and optional message"]
+        #[serde(
+            rename = "status",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub status: ::std::option::Option<crate::schemas::GoogleRpcStatus>,
+        #[doc = "Time when the profile generation status was updated"]
+        #[serde(
+            rename = "timestamp",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub timestamp: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2ProfileStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2ProfileStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -7549,6 +8165,563 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2Proximity {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2PubSubCondition {
+        #[doc = "The minimum data risk score that triggers the condition."]
+        #[serde(
+            rename = "minimumRiskScore",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub minimum_risk_score: ::std::option::Option<
+            crate::schemas::GooglePrivacyDlpV2PubSubConditionMinimumRiskScore,
+        >,
+        #[doc = "The minimum sensitivity level that triggers the condition."]
+        #[serde(
+            rename = "minimumSensitivityScore",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub minimum_sensitivity_score: ::std::option::Option<
+            crate::schemas::GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2PubSubCondition {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2PubSubCondition {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2PubSubConditionMinimumRiskScore {
+        #[doc = "High risk/sensitivity detected."]
+        High,
+        #[doc = "Medium or high risk/sensitivity detected."]
+        MediumOrHigh,
+        #[doc = "Unused."]
+        ProfileScoreBucketUnspecified,
+    }
+    impl GooglePrivacyDlpV2PubSubConditionMinimumRiskScore {
+        pub fn as_str(self) -> &'static str {
+            match self { GooglePrivacyDlpV2PubSubConditionMinimumRiskScore :: High => "HIGH" , GooglePrivacyDlpV2PubSubConditionMinimumRiskScore :: MediumOrHigh => "MEDIUM_OR_HIGH" , GooglePrivacyDlpV2PubSubConditionMinimumRiskScore :: ProfileScoreBucketUnspecified => "PROFILE_SCORE_BUCKET_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2PubSubConditionMinimumRiskScore {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2PubSubConditionMinimumRiskScore {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GooglePrivacyDlpV2PubSubConditionMinimumRiskScore, ()> {
+            Ok(match s {
+                "HIGH" => GooglePrivacyDlpV2PubSubConditionMinimumRiskScore::High,
+                "MEDIUM_OR_HIGH" => GooglePrivacyDlpV2PubSubConditionMinimumRiskScore::MediumOrHigh,
+                "PROFILE_SCORE_BUCKET_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2PubSubConditionMinimumRiskScore::ProfileScoreBucketUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2PubSubConditionMinimumRiskScore {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2PubSubConditionMinimumRiskScore {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GooglePrivacyDlpV2PubSubConditionMinimumRiskScore {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "HIGH" => GooglePrivacyDlpV2PubSubConditionMinimumRiskScore::High,
+                "MEDIUM_OR_HIGH" => GooglePrivacyDlpV2PubSubConditionMinimumRiskScore::MediumOrHigh,
+                "PROFILE_SCORE_BUCKET_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2PubSubConditionMinimumRiskScore::ProfileScoreBucketUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2PubSubConditionMinimumRiskScore {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2PubSubConditionMinimumRiskScore {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore {
+        #[doc = "High risk/sensitivity detected."]
+        High,
+        #[doc = "Medium or high risk/sensitivity detected."]
+        MediumOrHigh,
+        #[doc = "Unused."]
+        ProfileScoreBucketUnspecified,
+    }
+    impl GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore {
+        pub fn as_str(self) -> &'static str {
+            match self { GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore :: High => "HIGH" , GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore :: MediumOrHigh => "MEDIUM_OR_HIGH" , GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore :: ProfileScoreBucketUnspecified => "PROFILE_SCORE_BUCKET_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore, ()>
+        {
+            Ok (match s { "HIGH" => GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore :: High , "MEDIUM_OR_HIGH" => GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore :: MediumOrHigh , "PROFILE_SCORE_BUCKET_UNSPECIFIED" => GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore :: ProfileScoreBucketUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "HIGH" => GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore :: High , "MEDIUM_OR_HIGH" => GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore :: MediumOrHigh , "PROFILE_SCORE_BUCKET_UNSPECIFIED" => GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore :: ProfileScoreBucketUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GooglePrivacyDlpV2PubSubConditionMinimumSensitivityScore
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2PubSubExpressions {
+        #[doc = "Conditions to apply to the expression."]
+        #[serde(
+            rename = "conditions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub conditions:
+            ::std::option::Option<Vec<crate::schemas::GooglePrivacyDlpV2PubSubCondition>>,
+        #[doc = "The operator to apply to the collection of conditions."]
+        #[serde(
+            rename = "logicalOperator",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub logical_operator: ::std::option::Option<
+            crate::schemas::GooglePrivacyDlpV2PubSubExpressionsLogicalOperator,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2PubSubExpressions {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2PubSubExpressions {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2PubSubExpressionsLogicalOperator {
+        #[doc = "Conditional AND."]
+        And,
+        #[doc = "Unused."]
+        LogicalOperatorUnspecified,
+        #[doc = "Conditional OR."]
+        Or,
+    }
+    impl GooglePrivacyDlpV2PubSubExpressionsLogicalOperator {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GooglePrivacyDlpV2PubSubExpressionsLogicalOperator::And => "AND",
+                GooglePrivacyDlpV2PubSubExpressionsLogicalOperator::LogicalOperatorUnspecified => {
+                    "LOGICAL_OPERATOR_UNSPECIFIED"
+                }
+                GooglePrivacyDlpV2PubSubExpressionsLogicalOperator::Or => "OR",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2PubSubExpressionsLogicalOperator {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2PubSubExpressionsLogicalOperator {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GooglePrivacyDlpV2PubSubExpressionsLogicalOperator, ()> {
+            Ok(match s {
+                "AND" => GooglePrivacyDlpV2PubSubExpressionsLogicalOperator::And,
+                "LOGICAL_OPERATOR_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2PubSubExpressionsLogicalOperator::LogicalOperatorUnspecified
+                }
+                "OR" => GooglePrivacyDlpV2PubSubExpressionsLogicalOperator::Or,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2PubSubExpressionsLogicalOperator {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2PubSubExpressionsLogicalOperator {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GooglePrivacyDlpV2PubSubExpressionsLogicalOperator {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "AND" => GooglePrivacyDlpV2PubSubExpressionsLogicalOperator::And,
+                "LOGICAL_OPERATOR_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2PubSubExpressionsLogicalOperator::LogicalOperatorUnspecified
+                }
+                "OR" => GooglePrivacyDlpV2PubSubExpressionsLogicalOperator::Or,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2PubSubExpressionsLogicalOperator {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2PubSubExpressionsLogicalOperator {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2PubSubNotification {
+        #[doc = "How much data to include in the Pub/Sub message. If the user wishes to limit the size of the message, they can use resource_name and fetch the profile fields they wish to. Per table profile (not per column)."]
+        #[serde(
+            rename = "detailOfMessage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub detail_of_message: ::std::option::Option<
+            crate::schemas::GooglePrivacyDlpV2PubSubNotificationDetailOfMessage,
+        >,
+        #[doc = "The type of event that triggers a Pub/Sub. At most one `PubSubNotification` per EventType is permitted."]
+        #[serde(
+            rename = "event",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2PubSubNotificationEvent>,
+        #[doc = "Conditions (e.g., data risk or sensitivity level) for triggering a Pub/Sub."]
+        #[serde(
+            rename = "pubsubCondition",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pubsub_condition:
+            ::std::option::Option<crate::schemas::GooglePrivacyDlpV2DataProfilePubSubCondition>,
+        #[doc = "Cloud Pub/Sub topic to send notifications to. Format is projects/{project}/topics/{topic}."]
+        #[serde(
+            rename = "topic",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub topic: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2PubSubNotification {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2PubSubNotification {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2PubSubNotificationDetailOfMessage {
+        #[doc = "Unused."]
+        DetailLevelUnspecified,
+        #[doc = "The resource name of the table."]
+        ResourceName,
+        #[doc = "The full table data profile."]
+        TableProfile,
+    }
+    impl GooglePrivacyDlpV2PubSubNotificationDetailOfMessage {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GooglePrivacyDlpV2PubSubNotificationDetailOfMessage::DetailLevelUnspecified => {
+                    "DETAIL_LEVEL_UNSPECIFIED"
+                }
+                GooglePrivacyDlpV2PubSubNotificationDetailOfMessage::ResourceName => {
+                    "RESOURCE_NAME"
+                }
+                GooglePrivacyDlpV2PubSubNotificationDetailOfMessage::TableProfile => {
+                    "TABLE_PROFILE"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2PubSubNotificationDetailOfMessage {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2PubSubNotificationDetailOfMessage {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GooglePrivacyDlpV2PubSubNotificationDetailOfMessage, ()>
+        {
+            Ok(match s {
+                "DETAIL_LEVEL_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2PubSubNotificationDetailOfMessage::DetailLevelUnspecified
+                }
+                "RESOURCE_NAME" => {
+                    GooglePrivacyDlpV2PubSubNotificationDetailOfMessage::ResourceName
+                }
+                "TABLE_PROFILE" => {
+                    GooglePrivacyDlpV2PubSubNotificationDetailOfMessage::TableProfile
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2PubSubNotificationDetailOfMessage {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2PubSubNotificationDetailOfMessage {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GooglePrivacyDlpV2PubSubNotificationDetailOfMessage {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DETAIL_LEVEL_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2PubSubNotificationDetailOfMessage::DetailLevelUnspecified
+                }
+                "RESOURCE_NAME" => {
+                    GooglePrivacyDlpV2PubSubNotificationDetailOfMessage::ResourceName
+                }
+                "TABLE_PROFILE" => {
+                    GooglePrivacyDlpV2PubSubNotificationDetailOfMessage::TableProfile
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GooglePrivacyDlpV2PubSubNotificationDetailOfMessage
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2PubSubNotificationDetailOfMessage {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2PubSubNotificationEvent {
+        #[doc = "Changed one of the following profile metrics: * Table data risk score * Table sensitivity score * Table resource visibility * Table encryption type * Table predicted infoTypes * Table other infoTypes"]
+        ChangedProfile,
+        #[doc = "A user (non-internal) error occurred."]
+        ErrorChanged,
+        #[doc = "Unused."]
+        EventTypeUnspecified,
+        #[doc = "New profile (not a re-profile)."]
+        NewProfile,
+        #[doc = "Table data risk score or sensitivity score increased."]
+        ScoreIncreased,
+    }
+    impl GooglePrivacyDlpV2PubSubNotificationEvent {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GooglePrivacyDlpV2PubSubNotificationEvent::ChangedProfile => "CHANGED_PROFILE",
+                GooglePrivacyDlpV2PubSubNotificationEvent::ErrorChanged => "ERROR_CHANGED",
+                GooglePrivacyDlpV2PubSubNotificationEvent::EventTypeUnspecified => {
+                    "EVENT_TYPE_UNSPECIFIED"
+                }
+                GooglePrivacyDlpV2PubSubNotificationEvent::NewProfile => "NEW_PROFILE",
+                GooglePrivacyDlpV2PubSubNotificationEvent::ScoreIncreased => "SCORE_INCREASED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2PubSubNotificationEvent {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2PubSubNotificationEvent {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GooglePrivacyDlpV2PubSubNotificationEvent, ()> {
+            Ok(match s {
+                "CHANGED_PROFILE" => GooglePrivacyDlpV2PubSubNotificationEvent::ChangedProfile,
+                "ERROR_CHANGED" => GooglePrivacyDlpV2PubSubNotificationEvent::ErrorChanged,
+                "EVENT_TYPE_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2PubSubNotificationEvent::EventTypeUnspecified
+                }
+                "NEW_PROFILE" => GooglePrivacyDlpV2PubSubNotificationEvent::NewProfile,
+                "SCORE_INCREASED" => GooglePrivacyDlpV2PubSubNotificationEvent::ScoreIncreased,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2PubSubNotificationEvent {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2PubSubNotificationEvent {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GooglePrivacyDlpV2PubSubNotificationEvent {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CHANGED_PROFILE" => GooglePrivacyDlpV2PubSubNotificationEvent::ChangedProfile,
+                "ERROR_CHANGED" => GooglePrivacyDlpV2PubSubNotificationEvent::ErrorChanged,
+                "EVENT_TYPE_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2PubSubNotificationEvent::EventTypeUnspecified
+                }
+                "NEW_PROFILE" => GooglePrivacyDlpV2PubSubNotificationEvent::NewProfile,
+                "SCORE_INCREASED" => GooglePrivacyDlpV2PubSubNotificationEvent::ScoreIncreased,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2PubSubNotificationEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2PubSubNotificationEvent {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -8267,6 +9440,37 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2ReplaceDictionaryConfig {
+        #[doc = "A list of words to select from for random replacement. The [limits](https://cloud.google.com/dlp/limits) page contains details about the size limits of dictionaries."]
+        #[serde(
+            rename = "wordList",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub word_list: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2WordList>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2ReplaceDictionaryConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2ReplaceDictionaryConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GooglePrivacyDlpV2ReplaceValueConfig {
@@ -8565,6 +9769,130 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2Schedule {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2SensitivityScore {
+        #[doc = "The score applied to the resource."]
+        #[serde(
+            rename = "score",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub score: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2SensitivityScoreScore>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2SensitivityScore {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2SensitivityScore {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2SensitivityScoreScore {
+        #[doc = "High risk – SPII may be present. Exfiltration of data may lead to user data loss. Re-identification of users may be possible. Consider limiting usage and or removing SPII."]
+        SensitivityHigh,
+        #[doc = "No sensitive information detected. Limited access."]
+        SensitivityLow,
+        #[doc = "Medium risk - PII, potentially sensitive data, or fields with free-text data that are at higher risk of having intermittent sensitive data. Consider limiting access."]
+        SensitivityModerate,
+        #[doc = "Unused."]
+        SensitivityScoreUnspecified,
+    }
+    impl GooglePrivacyDlpV2SensitivityScoreScore {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GooglePrivacyDlpV2SensitivityScoreScore::SensitivityHigh => "SENSITIVITY_HIGH",
+                GooglePrivacyDlpV2SensitivityScoreScore::SensitivityLow => "SENSITIVITY_LOW",
+                GooglePrivacyDlpV2SensitivityScoreScore::SensitivityModerate => {
+                    "SENSITIVITY_MODERATE"
+                }
+                GooglePrivacyDlpV2SensitivityScoreScore::SensitivityScoreUnspecified => {
+                    "SENSITIVITY_SCORE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2SensitivityScoreScore {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2SensitivityScoreScore {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GooglePrivacyDlpV2SensitivityScoreScore, ()> {
+            Ok(match s {
+                "SENSITIVITY_HIGH" => GooglePrivacyDlpV2SensitivityScoreScore::SensitivityHigh,
+                "SENSITIVITY_LOW" => GooglePrivacyDlpV2SensitivityScoreScore::SensitivityLow,
+                "SENSITIVITY_MODERATE" => {
+                    GooglePrivacyDlpV2SensitivityScoreScore::SensitivityModerate
+                }
+                "SENSITIVITY_SCORE_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2SensitivityScoreScore::SensitivityScoreUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2SensitivityScoreScore {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2SensitivityScoreScore {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GooglePrivacyDlpV2SensitivityScoreScore {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "SENSITIVITY_HIGH" => GooglePrivacyDlpV2SensitivityScoreScore::SensitivityHigh,
+                "SENSITIVITY_LOW" => GooglePrivacyDlpV2SensitivityScoreScore::SensitivityLow,
+                "SENSITIVITY_MODERATE" => {
+                    GooglePrivacyDlpV2SensitivityScoreScore::SensitivityModerate
+                }
+                "SENSITIVITY_SCORE_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2SensitivityScoreScore::SensitivityScoreUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2SensitivityScoreScore {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2SensitivityScoreScore {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -9193,6 +10521,440 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2Table {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GooglePrivacyDlpV2TableDataProfile {
+        #[doc = "The snapshot of the configurations used to generate the profile."]
+        #[serde(
+            rename = "configSnapshot",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub config_snapshot:
+            ::std::option::Option<crate::schemas::GooglePrivacyDlpV2DataProfileConfigSnapshot>,
+        #[doc = "The time at which the table was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "The data risk level of this table."]
+        #[serde(
+            rename = "dataRiskLevel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data_risk_level: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2DataRiskLevel>,
+        #[doc = "The BigQuery dataset ID."]
+        #[serde(
+            rename = "datasetId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dataset_id: ::std::option::Option<String>,
+        #[doc = "The BigQuery location where the dataset's data is stored. See https://cloud.google.com/bigquery/docs/locations for supported locations."]
+        #[serde(
+            rename = "datasetLocation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dataset_location: ::std::option::Option<String>,
+        #[doc = "The GCP project ID that owns the BigQuery dataset."]
+        #[serde(
+            rename = "datasetProjectId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dataset_project_id: ::std::option::Option<String>,
+        #[doc = "How the table is encrypted."]
+        #[serde(
+            rename = "encryptionStatus",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encryption_status: ::std::option::Option<
+            crate::schemas::GooglePrivacyDlpV2TableDataProfileEncryptionStatus,
+        >,
+        #[doc = "Optional. The time when this table expires."]
+        #[serde(
+            rename = "expirationTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub expiration_time: ::std::option::Option<String>,
+        #[doc = "The number of columns skipped in the table because of an error."]
+        #[serde(
+            rename = "failedColumnCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub failed_column_count: ::std::option::Option<i64>,
+        #[doc = "The resource name of the table. https://cloud.google.com/apis/design/resource_names#full_resource_name"]
+        #[serde(
+            rename = "fullResource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub full_resource: ::std::option::Option<String>,
+        #[doc = "The time when this table was last modified"]
+        #[serde(
+            rename = "lastModifiedTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub last_modified_time: ::std::option::Option<String>,
+        #[doc = "The name of the profile."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Other infoTypes found in this table's data."]
+        #[serde(
+            rename = "otherInfoTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub other_info_types:
+            ::std::option::Option<Vec<crate::schemas::GooglePrivacyDlpV2OtherInfoTypeSummary>>,
+        #[doc = "The infoTypes predicted from this table's data."]
+        #[serde(
+            rename = "predictedInfoTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub predicted_info_types:
+            ::std::option::Option<Vec<crate::schemas::GooglePrivacyDlpV2InfoTypeSummary>>,
+        #[doc = "The last time the profile was generated."]
+        #[serde(
+            rename = "profileLastGenerated",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub profile_last_generated: ::std::option::Option<String>,
+        #[doc = "Success or error status from the most recent profile generation attempt. May be empty if the profile is still being generated."]
+        #[serde(
+            rename = "profileStatus",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub profile_status: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2ProfileStatus>,
+        #[doc = "The resource name to the project data profile for this table."]
+        #[serde(
+            rename = "projectDataProfile",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub project_data_profile: ::std::option::Option<String>,
+        #[doc = "The labels applied to the resource at the time the profile was generated."]
+        #[serde(
+            rename = "resourceLabels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resource_labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "How broadly a resource has been shared."]
+        #[serde(
+            rename = "resourceVisibility",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resource_visibility: ::std::option::Option<
+            crate::schemas::GooglePrivacyDlpV2TableDataProfileResourceVisibility,
+        >,
+        #[doc = "Number of rows in the table when the profile was generated."]
+        #[serde(
+            rename = "rowCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub row_count: ::std::option::Option<i64>,
+        #[doc = "The number of columns profiled in the table."]
+        #[serde(
+            rename = "scannedColumnCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub scanned_column_count: ::std::option::Option<i64>,
+        #[doc = "The sensitivity score of this table."]
+        #[serde(
+            rename = "sensitivityScore",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sensitivity_score:
+            ::std::option::Option<crate::schemas::GooglePrivacyDlpV2SensitivityScore>,
+        #[doc = "State of a profile."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2TableDataProfileState>,
+        #[doc = "The BigQuery table ID."]
+        #[serde(
+            rename = "tableId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub table_id: ::std::option::Option<String>,
+        #[doc = "The size of the table when the profile was generated."]
+        #[serde(
+            rename = "tableSizeBytes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub table_size_bytes: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2TableDataProfile {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2TableDataProfile {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2TableDataProfileEncryptionStatus {
+        #[doc = "Customer provides the key."]
+        EncryptionCustomerManaged,
+        #[doc = "Google manages server-side encryption keys on your behalf."]
+        EncryptionGoogleManaged,
+        #[doc = "Unused."]
+        EncryptionStatusUnspecified,
+    }
+    impl GooglePrivacyDlpV2TableDataProfileEncryptionStatus {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GooglePrivacyDlpV2TableDataProfileEncryptionStatus::EncryptionCustomerManaged => {
+                    "ENCRYPTION_CUSTOMER_MANAGED"
+                }
+                GooglePrivacyDlpV2TableDataProfileEncryptionStatus::EncryptionGoogleManaged => {
+                    "ENCRYPTION_GOOGLE_MANAGED"
+                }
+                GooglePrivacyDlpV2TableDataProfileEncryptionStatus::EncryptionStatusUnspecified => {
+                    "ENCRYPTION_STATUS_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2TableDataProfileEncryptionStatus {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2TableDataProfileEncryptionStatus {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GooglePrivacyDlpV2TableDataProfileEncryptionStatus, ()> {
+            Ok(match s {
+                "ENCRYPTION_CUSTOMER_MANAGED" => {
+                    GooglePrivacyDlpV2TableDataProfileEncryptionStatus::EncryptionCustomerManaged
+                }
+                "ENCRYPTION_GOOGLE_MANAGED" => {
+                    GooglePrivacyDlpV2TableDataProfileEncryptionStatus::EncryptionGoogleManaged
+                }
+                "ENCRYPTION_STATUS_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2TableDataProfileEncryptionStatus::EncryptionStatusUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2TableDataProfileEncryptionStatus {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2TableDataProfileEncryptionStatus {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GooglePrivacyDlpV2TableDataProfileEncryptionStatus {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ENCRYPTION_CUSTOMER_MANAGED" => {
+                    GooglePrivacyDlpV2TableDataProfileEncryptionStatus::EncryptionCustomerManaged
+                }
+                "ENCRYPTION_GOOGLE_MANAGED" => {
+                    GooglePrivacyDlpV2TableDataProfileEncryptionStatus::EncryptionGoogleManaged
+                }
+                "ENCRYPTION_STATUS_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2TableDataProfileEncryptionStatus::EncryptionStatusUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2TableDataProfileEncryptionStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2TableDataProfileEncryptionStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2TableDataProfileResourceVisibility {
+        #[doc = "Visible to any user."]
+        ResourceVisibilityPublic,
+        #[doc = "Visible only to specific users."]
+        ResourceVisibilityRestricted,
+        #[doc = "Unused."]
+        ResourceVisibilityUnspecified,
+    }
+    impl GooglePrivacyDlpV2TableDataProfileResourceVisibility {
+        pub fn as_str(self) -> &'static str {
+            match self { GooglePrivacyDlpV2TableDataProfileResourceVisibility :: ResourceVisibilityPublic => "RESOURCE_VISIBILITY_PUBLIC" , GooglePrivacyDlpV2TableDataProfileResourceVisibility :: ResourceVisibilityRestricted => "RESOURCE_VISIBILITY_RESTRICTED" , GooglePrivacyDlpV2TableDataProfileResourceVisibility :: ResourceVisibilityUnspecified => "RESOURCE_VISIBILITY_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2TableDataProfileResourceVisibility {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2TableDataProfileResourceVisibility {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GooglePrivacyDlpV2TableDataProfileResourceVisibility, ()>
+        {
+            Ok (match s { "RESOURCE_VISIBILITY_PUBLIC" => GooglePrivacyDlpV2TableDataProfileResourceVisibility :: ResourceVisibilityPublic , "RESOURCE_VISIBILITY_RESTRICTED" => GooglePrivacyDlpV2TableDataProfileResourceVisibility :: ResourceVisibilityRestricted , "RESOURCE_VISIBILITY_UNSPECIFIED" => GooglePrivacyDlpV2TableDataProfileResourceVisibility :: ResourceVisibilityUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2TableDataProfileResourceVisibility {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2TableDataProfileResourceVisibility {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GooglePrivacyDlpV2TableDataProfileResourceVisibility {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "RESOURCE_VISIBILITY_PUBLIC" => GooglePrivacyDlpV2TableDataProfileResourceVisibility :: ResourceVisibilityPublic , "RESOURCE_VISIBILITY_RESTRICTED" => GooglePrivacyDlpV2TableDataProfileResourceVisibility :: ResourceVisibilityRestricted , "RESOURCE_VISIBILITY_UNSPECIFIED" => GooglePrivacyDlpV2TableDataProfileResourceVisibility :: ResourceVisibilityUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GooglePrivacyDlpV2TableDataProfileResourceVisibility
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2TableDataProfileResourceVisibility {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2TableDataProfileState {
+        #[doc = "The profile is no longer generating. If profile_status.status.code is 0, the profile succeeded, otherwise, it failed."]
+        Done,
+        #[doc = "The profile is currently running. Once a profile has finished it will transition to DONE."]
+        Running,
+        #[doc = "Unused."]
+        StateUnspecified,
+    }
+    impl GooglePrivacyDlpV2TableDataProfileState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GooglePrivacyDlpV2TableDataProfileState::Done => "DONE",
+                GooglePrivacyDlpV2TableDataProfileState::Running => "RUNNING",
+                GooglePrivacyDlpV2TableDataProfileState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2TableDataProfileState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2TableDataProfileState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GooglePrivacyDlpV2TableDataProfileState, ()> {
+            Ok(match s {
+                "DONE" => GooglePrivacyDlpV2TableDataProfileState::Done,
+                "RUNNING" => GooglePrivacyDlpV2TableDataProfileState::Running,
+                "STATE_UNSPECIFIED" => GooglePrivacyDlpV2TableDataProfileState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2TableDataProfileState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2TableDataProfileState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GooglePrivacyDlpV2TableDataProfileState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DONE" => GooglePrivacyDlpV2TableDataProfileState::Done,
+                "RUNNING" => GooglePrivacyDlpV2TableDataProfileState::Running,
+                "STATE_UNSPECIFIED" => GooglePrivacyDlpV2TableDataProfileState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2TableDataProfileState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2TableDataProfileState {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -13209,8 +14971,8 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Actions that can be performed on the deidentify_templates resource"]                pub fn deidentify_templates ( & self ) -> crate :: resources :: organizations :: locations :: deidentify_templates :: DeidentifyTemplatesActions{
-                    crate :: resources :: organizations :: locations :: deidentify_templates :: DeidentifyTemplatesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the deidentify_templates resource"]                pub fn deidentify_templates (& self) -> crate :: resources :: organizations :: locations :: deidentify_templates :: DeidentifyTemplatesActions{
+                    crate :: resources :: organizations :: locations :: deidentify_templates :: DeidentifyTemplatesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
                 #[doc = "Actions that can be performed on the dlp_jobs resource"]
                 pub fn dlp_jobs(
@@ -13222,8 +14984,8 @@ pub mod resources {
                         auth: self.auth_ref(),
                     }
                 }
-                #[doc = "Actions that can be performed on the inspect_templates resource"]                pub fn inspect_templates ( & self ) -> crate :: resources :: organizations :: locations :: inspect_templates :: InspectTemplatesActions{
-                    crate :: resources :: organizations :: locations :: inspect_templates :: InspectTemplatesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the inspect_templates resource"]                pub fn inspect_templates (& self) -> crate :: resources :: organizations :: locations :: inspect_templates :: InspectTemplatesActions{
+                    crate :: resources :: organizations :: locations :: inspect_templates :: InspectTemplatesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
                 #[doc = "Actions that can be performed on the job_triggers resource"]
                 pub fn job_triggers(
@@ -13235,8 +14997,8 @@ pub mod resources {
                         auth: self.auth_ref(),
                     }
                 }
-                #[doc = "Actions that can be performed on the stored_info_types resource"]                pub fn stored_info_types ( & self ) -> crate :: resources :: organizations :: locations :: stored_info_types :: StoredInfoTypesActions{
-                    crate :: resources :: organizations :: locations :: stored_info_types :: StoredInfoTypesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the stored_info_types resource"]                pub fn stored_info_types (& self) -> crate :: resources :: organizations :: locations :: stored_info_types :: StoredInfoTypesActions{
+                    crate :: resources :: organizations :: locations :: stored_info_types :: StoredInfoTypesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
             }
             pub mod deidentify_templates {
@@ -14335,7 +16097,7 @@ pub mod resources {
                 pub mod params {
                     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                     pub enum ListType {
-                        #[doc = "Unused"]
+                        #[doc = "Defaults to INSPECT_JOB."]
                         DlpJobTypeUnspecified,
                         #[doc = "The job inspected Google Cloud for sensitive data."]
                         InspectJob,
@@ -15869,7 +17631,87 @@ pub mod resources {
                 }
             }
             pub mod job_triggers {
-                pub mod params {}
+                pub mod params {
+                    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+                    pub enum ListType {
+                        #[doc = "Defaults to INSPECT_JOB."]
+                        DlpJobTypeUnspecified,
+                        #[doc = "The job inspected Google Cloud for sensitive data."]
+                        InspectJob,
+                        #[doc = "The job executed a Risk Analysis computation."]
+                        RiskAnalysisJob,
+                    }
+                    impl ListType {
+                        pub fn as_str(self) -> &'static str {
+                            match self {
+                                ListType::DlpJobTypeUnspecified => "DLP_JOB_TYPE_UNSPECIFIED",
+                                ListType::InspectJob => "INSPECT_JOB",
+                                ListType::RiskAnalysisJob => "RISK_ANALYSIS_JOB",
+                            }
+                        }
+                    }
+                    impl ::std::convert::AsRef<str> for ListType {
+                        fn as_ref(&self) -> &str {
+                            self.as_str()
+                        }
+                    }
+                    impl ::std::str::FromStr for ListType {
+                        type Err = ();
+                        fn from_str(s: &str) -> ::std::result::Result<ListType, ()> {
+                            Ok(match s {
+                                "DLP_JOB_TYPE_UNSPECIFIED" => ListType::DlpJobTypeUnspecified,
+                                "INSPECT_JOB" => ListType::InspectJob,
+                                "RISK_ANALYSIS_JOB" => ListType::RiskAnalysisJob,
+                                _ => return Err(()),
+                            })
+                        }
+                    }
+                    impl ::std::fmt::Display for ListType {
+                        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                            f.write_str(self.as_str())
+                        }
+                    }
+                    impl ::serde::Serialize for ListType {
+                        fn serialize<S>(
+                            &self,
+                            serializer: S,
+                        ) -> ::std::result::Result<S::Ok, S::Error>
+                        where
+                            S: ::serde::ser::Serializer,
+                        {
+                            serializer.serialize_str(self.as_str())
+                        }
+                    }
+                    impl<'de> ::serde::Deserialize<'de> for ListType {
+                        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+                        where
+                            D: ::serde::de::Deserializer<'de>,
+                        {
+                            let value: &'de str = <&str>::deserialize(deserializer)?;
+                            Ok(match value {
+                                "DLP_JOB_TYPE_UNSPECIFIED" => ListType::DlpJobTypeUnspecified,
+                                "INSPECT_JOB" => ListType::InspectJob,
+                                "RISK_ANALYSIS_JOB" => ListType::RiskAnalysisJob,
+                                _ => {
+                                    return Err(::serde::de::Error::custom(format!(
+                                        "invalid enum for #name: {}",
+                                        value
+                                    )))
+                                }
+                            })
+                        }
+                    }
+                    impl ::google_field_selector::FieldSelector for ListType {
+                        fn fields() -> Vec<::google_field_selector::Field> {
+                            Vec::new()
+                        }
+                    }
+                    impl ::google_field_selector::ToFieldType for ListType {
+                        fn field_type() -> ::google_field_selector::FieldType {
+                            ::google_field_selector::FieldType::Leaf
+                        }
+                    }
+                }
                 pub struct JobTriggersActions<'a> {
                     pub(crate) reqwest: &'a reqwest::blocking::Client,
                     pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
@@ -15962,6 +17804,7 @@ pub mod resources {
                             order_by: None,
                             page_size: None,
                             page_token: None,
+                            r#type: None,
                         }
                     }
                     #[doc = "Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more."]
@@ -16489,6 +18332,9 @@ pub mod resources {
                     order_by: Option<String>,
                     page_size: Option<i32>,
                     page_token: Option<String>,
+                    r#type: Option<
+                        crate::resources::organizations::locations::job_triggers::params::ListType,
+                    >,
                     access_token: Option<String>,
                     alt: Option<crate::params::Alt>,
                     callback: Option<String>,
@@ -16525,6 +18371,14 @@ pub mod resources {
                     #[doc = "Page token to continue retrieval. Comes from previous call to ListJobTriggers. `order_by` field must not change for subsequent calls."]
                     pub fn page_token(mut self, value: impl Into<String>) -> Self {
                         self.page_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "The type of jobs. Will use `DlpJobType.INSPECT` if not set."]
+                    pub fn r#type(
+                        mut self,
+                        value : crate :: resources :: organizations :: locations :: job_triggers :: params :: ListType,
+                    ) -> Self {
+                        self.r#type = Some(value);
                         self
                     }
                     #[doc = "OAuth access token."]
@@ -16768,6 +18622,7 @@ pub mod resources {
                         req = req.query(&[("orderBy", &self.order_by)]);
                         req = req.query(&[("pageSize", &self.page_size)]);
                         req = req.query(&[("pageToken", &self.page_token)]);
+                        req = req.query(&[("type", &self.r#type)]);
                         req = req.query(&[("access_token", &self.access_token)]);
                         req = req.query(&[("alt", &self.alt)]);
                         req = req.query(&[("callback", &self.callback)]);
@@ -20877,7 +22732,7 @@ pub mod resources {
             pub mod params {
                 #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                 pub enum ListType {
-                    #[doc = "Unused"]
+                    #[doc = "Defaults to INSPECT_JOB."]
                     DlpJobTypeUnspecified,
                     #[doc = "The job inspected Google Cloud for sensitive data."]
                     InspectJob,
@@ -23327,7 +25182,84 @@ pub mod resources {
             }
         }
         pub mod job_triggers {
-            pub mod params {}
+            pub mod params {
+                #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+                pub enum ListType {
+                    #[doc = "Defaults to INSPECT_JOB."]
+                    DlpJobTypeUnspecified,
+                    #[doc = "The job inspected Google Cloud for sensitive data."]
+                    InspectJob,
+                    #[doc = "The job executed a Risk Analysis computation."]
+                    RiskAnalysisJob,
+                }
+                impl ListType {
+                    pub fn as_str(self) -> &'static str {
+                        match self {
+                            ListType::DlpJobTypeUnspecified => "DLP_JOB_TYPE_UNSPECIFIED",
+                            ListType::InspectJob => "INSPECT_JOB",
+                            ListType::RiskAnalysisJob => "RISK_ANALYSIS_JOB",
+                        }
+                    }
+                }
+                impl ::std::convert::AsRef<str> for ListType {
+                    fn as_ref(&self) -> &str {
+                        self.as_str()
+                    }
+                }
+                impl ::std::str::FromStr for ListType {
+                    type Err = ();
+                    fn from_str(s: &str) -> ::std::result::Result<ListType, ()> {
+                        Ok(match s {
+                            "DLP_JOB_TYPE_UNSPECIFIED" => ListType::DlpJobTypeUnspecified,
+                            "INSPECT_JOB" => ListType::InspectJob,
+                            "RISK_ANALYSIS_JOB" => ListType::RiskAnalysisJob,
+                            _ => return Err(()),
+                        })
+                    }
+                }
+                impl ::std::fmt::Display for ListType {
+                    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                        f.write_str(self.as_str())
+                    }
+                }
+                impl ::serde::Serialize for ListType {
+                    fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+                    where
+                        S: ::serde::ser::Serializer,
+                    {
+                        serializer.serialize_str(self.as_str())
+                    }
+                }
+                impl<'de> ::serde::Deserialize<'de> for ListType {
+                    fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+                    where
+                        D: ::serde::de::Deserializer<'de>,
+                    {
+                        let value: &'de str = <&str>::deserialize(deserializer)?;
+                        Ok(match value {
+                            "DLP_JOB_TYPE_UNSPECIFIED" => ListType::DlpJobTypeUnspecified,
+                            "INSPECT_JOB" => ListType::InspectJob,
+                            "RISK_ANALYSIS_JOB" => ListType::RiskAnalysisJob,
+                            _ => {
+                                return Err(::serde::de::Error::custom(format!(
+                                    "invalid enum for #name: {}",
+                                    value
+                                )))
+                            }
+                        })
+                    }
+                }
+                impl ::google_field_selector::FieldSelector for ListType {
+                    fn fields() -> Vec<::google_field_selector::Field> {
+                        Vec::new()
+                    }
+                }
+                impl ::google_field_selector::ToFieldType for ListType {
+                    fn field_type() -> ::google_field_selector::FieldType {
+                        ::google_field_selector::FieldType::Leaf
+                    }
+                }
+            }
             pub struct JobTriggersActions<'a> {
                 pub(crate) reqwest: &'a reqwest::blocking::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
@@ -23444,6 +25376,7 @@ pub mod resources {
                         order_by: None,
                         page_size: None,
                         page_token: None,
+                        r#type: None,
                     }
                 }
                 #[doc = "Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more."]
@@ -24130,6 +26063,7 @@ pub mod resources {
                 order_by: Option<String>,
                 page_size: Option<i32>,
                 page_token: Option<String>,
+                r#type: Option<crate::resources::projects::job_triggers::params::ListType>,
                 access_token: Option<String>,
                 alt: Option<crate::params::Alt>,
                 callback: Option<String>,
@@ -24166,6 +26100,14 @@ pub mod resources {
                 #[doc = "Page token to continue retrieval. Comes from previous call to ListJobTriggers. `order_by` field must not change for subsequent calls."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
+                    self
+                }
+                #[doc = "The type of jobs. Will use `DlpJobType.INSPECT` if not set."]
+                pub fn r#type(
+                    mut self,
+                    value: crate::resources::projects::job_triggers::params::ListType,
+                ) -> Self {
+                    self.r#type = Some(value);
                     self
                 }
                 #[doc = "OAuth access token."]
@@ -24403,6 +26345,7 @@ pub mod resources {
                     req = req.query(&[("orderBy", &self.order_by)]);
                     req = req.query(&[("pageSize", &self.page_size)]);
                     req = req.query(&[("pageToken", &self.page_token)]);
+                    req = req.query(&[("type", &self.r#type)]);
                     req = req.query(&[("access_token", &self.access_token)]);
                     req = req.query(&[("alt", &self.alt)]);
                     req = req.query(&[("callback", &self.callback)]);
@@ -24617,8 +26560,8 @@ pub mod resources {
                         auth: self.auth_ref(),
                     }
                 }
-                #[doc = "Actions that can be performed on the deidentify_templates resource"]                pub fn deidentify_templates ( & self ) -> crate :: resources :: projects :: locations :: deidentify_templates :: DeidentifyTemplatesActions{
-                    crate :: resources :: projects :: locations :: deidentify_templates :: DeidentifyTemplatesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the deidentify_templates resource"]                pub fn deidentify_templates (& self) -> crate :: resources :: projects :: locations :: deidentify_templates :: DeidentifyTemplatesActions{
+                    crate :: resources :: projects :: locations :: deidentify_templates :: DeidentifyTemplatesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
                 #[doc = "Actions that can be performed on the dlp_jobs resource"]
                 pub fn dlp_jobs(
@@ -24642,7 +26585,7 @@ pub mod resources {
                     &self,
                 ) -> crate::resources::projects::locations::inspect_templates::InspectTemplatesActions
                 {
-                    crate :: resources :: projects :: locations :: inspect_templates :: InspectTemplatesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    crate :: resources :: projects :: locations :: inspect_templates :: InspectTemplatesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
                 #[doc = "Actions that can be performed on the job_triggers resource"]
                 pub fn job_triggers(
@@ -24659,7 +26602,7 @@ pub mod resources {
                     &self,
                 ) -> crate::resources::projects::locations::stored_info_types::StoredInfoTypesActions
                 {
-                    crate :: resources :: projects :: locations :: stored_info_types :: StoredInfoTypesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    crate :: resources :: projects :: locations :: stored_info_types :: StoredInfoTypesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
             }
             pub mod content {
@@ -26349,7 +28292,7 @@ pub mod resources {
                 pub mod params {
                     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                     pub enum ListType {
-                        #[doc = "Unused"]
+                        #[doc = "Defaults to INSPECT_JOB."]
                         DlpJobTypeUnspecified,
                         #[doc = "The job inspected Google Cloud for sensitive data."]
                         InspectJob,
@@ -29201,7 +31144,87 @@ pub mod resources {
                 }
             }
             pub mod job_triggers {
-                pub mod params {}
+                pub mod params {
+                    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+                    pub enum ListType {
+                        #[doc = "Defaults to INSPECT_JOB."]
+                        DlpJobTypeUnspecified,
+                        #[doc = "The job inspected Google Cloud for sensitive data."]
+                        InspectJob,
+                        #[doc = "The job executed a Risk Analysis computation."]
+                        RiskAnalysisJob,
+                    }
+                    impl ListType {
+                        pub fn as_str(self) -> &'static str {
+                            match self {
+                                ListType::DlpJobTypeUnspecified => "DLP_JOB_TYPE_UNSPECIFIED",
+                                ListType::InspectJob => "INSPECT_JOB",
+                                ListType::RiskAnalysisJob => "RISK_ANALYSIS_JOB",
+                            }
+                        }
+                    }
+                    impl ::std::convert::AsRef<str> for ListType {
+                        fn as_ref(&self) -> &str {
+                            self.as_str()
+                        }
+                    }
+                    impl ::std::str::FromStr for ListType {
+                        type Err = ();
+                        fn from_str(s: &str) -> ::std::result::Result<ListType, ()> {
+                            Ok(match s {
+                                "DLP_JOB_TYPE_UNSPECIFIED" => ListType::DlpJobTypeUnspecified,
+                                "INSPECT_JOB" => ListType::InspectJob,
+                                "RISK_ANALYSIS_JOB" => ListType::RiskAnalysisJob,
+                                _ => return Err(()),
+                            })
+                        }
+                    }
+                    impl ::std::fmt::Display for ListType {
+                        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                            f.write_str(self.as_str())
+                        }
+                    }
+                    impl ::serde::Serialize for ListType {
+                        fn serialize<S>(
+                            &self,
+                            serializer: S,
+                        ) -> ::std::result::Result<S::Ok, S::Error>
+                        where
+                            S: ::serde::ser::Serializer,
+                        {
+                            serializer.serialize_str(self.as_str())
+                        }
+                    }
+                    impl<'de> ::serde::Deserialize<'de> for ListType {
+                        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+                        where
+                            D: ::serde::de::Deserializer<'de>,
+                        {
+                            let value: &'de str = <&str>::deserialize(deserializer)?;
+                            Ok(match value {
+                                "DLP_JOB_TYPE_UNSPECIFIED" => ListType::DlpJobTypeUnspecified,
+                                "INSPECT_JOB" => ListType::InspectJob,
+                                "RISK_ANALYSIS_JOB" => ListType::RiskAnalysisJob,
+                                _ => {
+                                    return Err(::serde::de::Error::custom(format!(
+                                        "invalid enum for #name: {}",
+                                        value
+                                    )))
+                                }
+                            })
+                        }
+                    }
+                    impl ::google_field_selector::FieldSelector for ListType {
+                        fn fields() -> Vec<::google_field_selector::Field> {
+                            Vec::new()
+                        }
+                    }
+                    impl ::google_field_selector::ToFieldType for ListType {
+                        fn field_type() -> ::google_field_selector::FieldType {
+                            ::google_field_selector::FieldType::Leaf
+                        }
+                    }
+                }
                 pub struct JobTriggersActions<'a> {
                     pub(crate) reqwest: &'a reqwest::blocking::Client,
                     pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
@@ -29342,6 +31365,7 @@ pub mod resources {
                             order_by: None,
                             page_size: None,
                             page_token: None,
+                            r#type: None,
                         }
                     }
                     #[doc = "Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more."]
@@ -30199,6 +32223,9 @@ pub mod resources {
                     order_by: Option<String>,
                     page_size: Option<i32>,
                     page_token: Option<String>,
+                    r#type: Option<
+                        crate::resources::projects::locations::job_triggers::params::ListType,
+                    >,
                     access_token: Option<String>,
                     alt: Option<crate::params::Alt>,
                     callback: Option<String>,
@@ -30235,6 +32262,14 @@ pub mod resources {
                     #[doc = "Page token to continue retrieval. Comes from previous call to ListJobTriggers. `order_by` field must not change for subsequent calls."]
                     pub fn page_token(mut self, value: impl Into<String>) -> Self {
                         self.page_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "The type of jobs. Will use `DlpJobType.INSPECT` if not set."]
+                    pub fn r#type(
+                        mut self,
+                        value : crate :: resources :: projects :: locations :: job_triggers :: params :: ListType,
+                    ) -> Self {
+                        self.r#type = Some(value);
                         self
                     }
                     #[doc = "OAuth access token."]
@@ -30478,6 +32513,7 @@ pub mod resources {
                         req = req.query(&[("orderBy", &self.order_by)]);
                         req = req.query(&[("pageSize", &self.page_size)]);
                         req = req.query(&[("pageToken", &self.page_token)]);
+                        req = req.query(&[("type", &self.r#type)]);
                         req = req.query(&[("access_token", &self.access_token)]);
                         req = req.query(&[("alt", &self.alt)]);
                         req = req.query(&[("callback", &self.callback)]);

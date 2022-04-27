@@ -1,6 +1,6 @@
-#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n        * [datasets](resources/projects/locations/datasets/struct.DatasetsActions.html)\n          * [*create*](resources/projects/locations/datasets/struct.CreateRequestBuilder.html), [*deidentify*](resources/projects/locations/datasets/struct.DeidentifyRequestBuilder.html), [*delete*](resources/projects/locations/datasets/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/datasets/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/struct.TestIamPermissionsRequestBuilder.html)\n          * [annotation_stores](resources/projects/locations/datasets/annotation_stores/struct.AnnotationStoresActions.html)\n            * [*create*](resources/projects/locations/datasets/annotation_stores/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/annotation_stores/struct.DeleteRequestBuilder.html), [*evaluate*](resources/projects/locations/datasets/annotation_stores/struct.EvaluateRequestBuilder.html), [*export*](resources/projects/locations/datasets/annotation_stores/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/datasets/annotation_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/annotation_stores/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/datasets/annotation_stores/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/datasets/annotation_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/annotation_stores/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/annotation_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/annotation_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [annotations](resources/projects/locations/datasets/annotation_stores/annotations/struct.AnnotationsActions.html)\n              * [*create*](resources/projects/locations/datasets/annotation_stores/annotations/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/annotation_stores/annotations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/annotation_stores/annotations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/annotation_stores/annotations/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/annotation_stores/annotations/struct.PatchRequestBuilder.html)\n          * [consent_stores](resources/projects/locations/datasets/consent_stores/struct.ConsentStoresActions.html)\n            * [*checkDataAccess*](resources/projects/locations/datasets/consent_stores/struct.CheckDataAccessRequestBuilder.html), [*create*](resources/projects/locations/datasets/consent_stores/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/struct.DeleteRequestBuilder.html), [*evaluateUserConsents*](resources/projects/locations/datasets/consent_stores/struct.EvaluateUserConsentsRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/consent_stores/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/struct.PatchRequestBuilder.html), [*queryAccessibleData*](resources/projects/locations/datasets/consent_stores/struct.QueryAccessibleDataRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/consent_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/consent_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [attribute_definitions](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.AttributeDefinitionsActions.html)\n              * [*create*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.PatchRequestBuilder.html)\n            * [consent_artifacts](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.ConsentArtifactsActions.html)\n              * [*create*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.ListRequestBuilder.html)\n            * [consents](resources/projects/locations/datasets/consent_stores/consents/struct.ConsentsActions.html)\n              * [*activate*](resources/projects/locations/datasets/consent_stores/consents/struct.ActivateRequestBuilder.html), [*create*](resources/projects/locations/datasets/consent_stores/consents/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/consents/struct.DeleteRequestBuilder.html), [*deleteRevision*](resources/projects/locations/datasets/consent_stores/consents/struct.DeleteRevisionRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/consents/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/consents/struct.ListRequestBuilder.html), [*listRevisions*](resources/projects/locations/datasets/consent_stores/consents/struct.ListRevisionsRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/consents/struct.PatchRequestBuilder.html), [*reject*](resources/projects/locations/datasets/consent_stores/consents/struct.RejectRequestBuilder.html), [*revoke*](resources/projects/locations/datasets/consent_stores/consents/struct.RevokeRequestBuilder.html)\n            * [user_data_mappings](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.UserDataMappingsActions.html)\n              * [*archive*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.ArchiveRequestBuilder.html), [*create*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.PatchRequestBuilder.html)\n          * [dicom_stores](resources/projects/locations/datasets/dicom_stores/struct.DicomStoresActions.html)\n            * [*create*](resources/projects/locations/datasets/dicom_stores/struct.CreateRequestBuilder.html), [*deidentify*](resources/projects/locations/datasets/dicom_stores/struct.DeidentifyRequestBuilder.html), [*delete*](resources/projects/locations/datasets/dicom_stores/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/datasets/dicom_stores/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/datasets/dicom_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/dicom_stores/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/datasets/dicom_stores/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/datasets/dicom_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/dicom_stores/struct.PatchRequestBuilder.html), [*searchForInstances*](resources/projects/locations/datasets/dicom_stores/struct.SearchForInstancesRequestBuilder.html), [*searchForSeries*](resources/projects/locations/datasets/dicom_stores/struct.SearchForSeriesRequestBuilder.html), [*searchForStudies*](resources/projects/locations/datasets/dicom_stores/struct.SearchForStudiesRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/dicom_stores/struct.SetIamPolicyRequestBuilder.html), [*storeInstances*](resources/projects/locations/datasets/dicom_stores/struct.StoreInstancesRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/dicom_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [studies](resources/projects/locations/datasets/dicom_stores/studies/struct.StudiesActions.html)\n              * [*delete*](resources/projects/locations/datasets/dicom_stores/studies/struct.DeleteRequestBuilder.html), [*retrieveMetadata*](resources/projects/locations/datasets/dicom_stores/studies/struct.RetrieveMetadataRequestBuilder.html), [*retrieveStudy*](resources/projects/locations/datasets/dicom_stores/studies/struct.RetrieveStudyRequestBuilder.html), [*searchForInstances*](resources/projects/locations/datasets/dicom_stores/studies/struct.SearchForInstancesRequestBuilder.html), [*searchForSeries*](resources/projects/locations/datasets/dicom_stores/studies/struct.SearchForSeriesRequestBuilder.html), [*storeInstances*](resources/projects/locations/datasets/dicom_stores/studies/struct.StoreInstancesRequestBuilder.html)\n              * [series](resources/projects/locations/datasets/dicom_stores/studies/series/struct.SeriesActions.html)\n                * [*delete*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.DeleteRequestBuilder.html), [*retrieveMetadata*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.RetrieveMetadataRequestBuilder.html), [*retrieveSeries*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.RetrieveSeriesRequestBuilder.html), [*searchForInstances*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.SearchForInstancesRequestBuilder.html)\n                * [instances](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.InstancesActions.html)\n                  * [*delete*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.DeleteRequestBuilder.html), [*retrieveInstance*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.RetrieveInstanceRequestBuilder.html), [*retrieveMetadata*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.RetrieveMetadataRequestBuilder.html), [*retrieveRendered*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.RetrieveRenderedRequestBuilder.html)\n                  * [frames](resources/projects/locations/datasets/dicom_stores/studies/series/instances/frames/struct.FramesActions.html)\n                    * [*retrieveFrames*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/frames/struct.RetrieveFramesRequestBuilder.html), [*retrieveRendered*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/frames/struct.RetrieveRenderedRequestBuilder.html)\n          * [fhir_stores](resources/projects/locations/datasets/fhir_stores/struct.FhirStoresActions.html)\n            * [*create*](resources/projects/locations/datasets/fhir_stores/struct.CreateRequestBuilder.html), [*deidentify*](resources/projects/locations/datasets/fhir_stores/struct.DeidentifyRequestBuilder.html), [*delete*](resources/projects/locations/datasets/fhir_stores/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/datasets/fhir_stores/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/datasets/fhir_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/fhir_stores/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/datasets/fhir_stores/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/datasets/fhir_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/fhir_stores/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/fhir_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/fhir_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [fhir](resources/projects/locations/datasets/fhir_stores/fhir/struct.FhirActions.html)\n              * [*ConceptMap-search-translate*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ConceptMapSearchTranslateRequestBuilder.html), [*ConceptMap-translate*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ConceptMapTranslateRequestBuilder.html), [*Observation-lastn*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ObservationLastnRequestBuilder.html), [*Patient-everything*](resources/projects/locations/datasets/fhir_stores/fhir/struct.PatientEverythingRequestBuilder.html), [*Resource-purge*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ResourcePurgeRequestBuilder.html), [*Resource-validate*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ResourceValidateRequestBuilder.html), [*capabilities*](resources/projects/locations/datasets/fhir_stores/fhir/struct.CapabilitiesRequestBuilder.html), [*conditionalDelete*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ConditionalDeleteRequestBuilder.html), [*conditionalPatch*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ConditionalPatchRequestBuilder.html), [*conditionalUpdate*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ConditionalUpdateRequestBuilder.html), [*create*](resources/projects/locations/datasets/fhir_stores/fhir/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/fhir_stores/fhir/struct.DeleteRequestBuilder.html), [*executeBundle*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ExecuteBundleRequestBuilder.html), [*history*](resources/projects/locations/datasets/fhir_stores/fhir/struct.HistoryRequestBuilder.html), [*patch*](resources/projects/locations/datasets/fhir_stores/fhir/struct.PatchRequestBuilder.html), [*read*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ReadRequestBuilder.html), [*search*](resources/projects/locations/datasets/fhir_stores/fhir/struct.SearchRequestBuilder.html), [*search-type*](resources/projects/locations/datasets/fhir_stores/fhir/struct.SearchTypeRequestBuilder.html), [*update*](resources/projects/locations/datasets/fhir_stores/fhir/struct.UpdateRequestBuilder.html), [*vread*](resources/projects/locations/datasets/fhir_stores/fhir/struct.VreadRequestBuilder.html)\n          * [hl_7v2_stores](resources/projects/locations/datasets/hl_7v2_stores/struct.Hl7V2StoresActions.html)\n            * [*create*](resources/projects/locations/datasets/hl_7v2_stores/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/hl_7v2_stores/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/datasets/hl_7v2_stores/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/datasets/hl_7v2_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/hl_7v2_stores/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/datasets/hl_7v2_stores/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/datasets/hl_7v2_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/hl_7v2_stores/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/hl_7v2_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/hl_7v2_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [messages](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.MessagesActions.html)\n              * [*batchGet*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.BatchGetRequestBuilder.html), [*create*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.GetRequestBuilder.html), [*ingest*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.IngestRequestBuilder.html), [*list*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.PatchRequestBuilder.html)\n          * [operations](resources/projects/locations/datasets/operations/struct.OperationsActions.html)\n            * [*cancel*](resources/projects/locations/datasets/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/locations/datasets/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/operations/struct.ListRequestBuilder.html)\n        * [services](resources/projects/locations/services/struct.ServicesActions.html)\n          * [nlp](resources/projects/locations/services/nlp/struct.NlpActions.html)\n            * [*analyzeEntities*](resources/projects/locations/services/nlp/struct.AnalyzeEntitiesRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n        * [datasets](resources/projects/locations/datasets/struct.DatasetsActions.html)\n          * [*create*](resources/projects/locations/datasets/struct.CreateRequestBuilder.html), [*deidentify*](resources/projects/locations/datasets/struct.DeidentifyRequestBuilder.html), [*delete*](resources/projects/locations/datasets/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/datasets/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/struct.TestIamPermissionsRequestBuilder.html)\n          * [annotation_stores](resources/projects/locations/datasets/annotation_stores/struct.AnnotationStoresActions.html)\n            * [*create*](resources/projects/locations/datasets/annotation_stores/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/annotation_stores/struct.DeleteRequestBuilder.html), [*evaluate*](resources/projects/locations/datasets/annotation_stores/struct.EvaluateRequestBuilder.html), [*export*](resources/projects/locations/datasets/annotation_stores/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/datasets/annotation_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/annotation_stores/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/datasets/annotation_stores/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/datasets/annotation_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/annotation_stores/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/annotation_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/annotation_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [annotations](resources/projects/locations/datasets/annotation_stores/annotations/struct.AnnotationsActions.html)\n              * [*create*](resources/projects/locations/datasets/annotation_stores/annotations/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/annotation_stores/annotations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/annotation_stores/annotations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/annotation_stores/annotations/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/annotation_stores/annotations/struct.PatchRequestBuilder.html)\n          * [consent_stores](resources/projects/locations/datasets/consent_stores/struct.ConsentStoresActions.html)\n            * [*checkDataAccess*](resources/projects/locations/datasets/consent_stores/struct.CheckDataAccessRequestBuilder.html), [*create*](resources/projects/locations/datasets/consent_stores/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/struct.DeleteRequestBuilder.html), [*evaluateUserConsents*](resources/projects/locations/datasets/consent_stores/struct.EvaluateUserConsentsRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/consent_stores/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/struct.PatchRequestBuilder.html), [*queryAccessibleData*](resources/projects/locations/datasets/consent_stores/struct.QueryAccessibleDataRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/consent_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/consent_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [attribute_definitions](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.AttributeDefinitionsActions.html)\n              * [*create*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.PatchRequestBuilder.html)\n            * [consent_artifacts](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.ConsentArtifactsActions.html)\n              * [*create*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.ListRequestBuilder.html)\n            * [consents](resources/projects/locations/datasets/consent_stores/consents/struct.ConsentsActions.html)\n              * [*activate*](resources/projects/locations/datasets/consent_stores/consents/struct.ActivateRequestBuilder.html), [*create*](resources/projects/locations/datasets/consent_stores/consents/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/consents/struct.DeleteRequestBuilder.html), [*deleteRevision*](resources/projects/locations/datasets/consent_stores/consents/struct.DeleteRevisionRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/consents/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/consents/struct.ListRequestBuilder.html), [*listRevisions*](resources/projects/locations/datasets/consent_stores/consents/struct.ListRevisionsRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/consents/struct.PatchRequestBuilder.html), [*reject*](resources/projects/locations/datasets/consent_stores/consents/struct.RejectRequestBuilder.html), [*revoke*](resources/projects/locations/datasets/consent_stores/consents/struct.RevokeRequestBuilder.html)\n            * [user_data_mappings](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.UserDataMappingsActions.html)\n              * [*archive*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.ArchiveRequestBuilder.html), [*create*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.PatchRequestBuilder.html)\n          * [dicom_stores](resources/projects/locations/datasets/dicom_stores/struct.DicomStoresActions.html)\n            * [*create*](resources/projects/locations/datasets/dicom_stores/struct.CreateRequestBuilder.html), [*deidentify*](resources/projects/locations/datasets/dicom_stores/struct.DeidentifyRequestBuilder.html), [*delete*](resources/projects/locations/datasets/dicom_stores/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/datasets/dicom_stores/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/datasets/dicom_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/dicom_stores/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/datasets/dicom_stores/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/datasets/dicom_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/dicom_stores/struct.PatchRequestBuilder.html), [*searchForInstances*](resources/projects/locations/datasets/dicom_stores/struct.SearchForInstancesRequestBuilder.html), [*searchForSeries*](resources/projects/locations/datasets/dicom_stores/struct.SearchForSeriesRequestBuilder.html), [*searchForStudies*](resources/projects/locations/datasets/dicom_stores/struct.SearchForStudiesRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/dicom_stores/struct.SetIamPolicyRequestBuilder.html), [*storeInstances*](resources/projects/locations/datasets/dicom_stores/struct.StoreInstancesRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/dicom_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [studies](resources/projects/locations/datasets/dicom_stores/studies/struct.StudiesActions.html)\n              * [*delete*](resources/projects/locations/datasets/dicom_stores/studies/struct.DeleteRequestBuilder.html), [*retrieveMetadata*](resources/projects/locations/datasets/dicom_stores/studies/struct.RetrieveMetadataRequestBuilder.html), [*retrieveStudy*](resources/projects/locations/datasets/dicom_stores/studies/struct.RetrieveStudyRequestBuilder.html), [*searchForInstances*](resources/projects/locations/datasets/dicom_stores/studies/struct.SearchForInstancesRequestBuilder.html), [*searchForSeries*](resources/projects/locations/datasets/dicom_stores/studies/struct.SearchForSeriesRequestBuilder.html), [*storeInstances*](resources/projects/locations/datasets/dicom_stores/studies/struct.StoreInstancesRequestBuilder.html)\n              * [series](resources/projects/locations/datasets/dicom_stores/studies/series/struct.SeriesActions.html)\n                * [*delete*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.DeleteRequestBuilder.html), [*retrieveMetadata*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.RetrieveMetadataRequestBuilder.html), [*retrieveSeries*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.RetrieveSeriesRequestBuilder.html), [*searchForInstances*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.SearchForInstancesRequestBuilder.html)\n                * [instances](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.InstancesActions.html)\n                  * [*delete*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.DeleteRequestBuilder.html), [*retrieveInstance*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.RetrieveInstanceRequestBuilder.html), [*retrieveMetadata*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.RetrieveMetadataRequestBuilder.html), [*retrieveRendered*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.RetrieveRenderedRequestBuilder.html)\n                  * [frames](resources/projects/locations/datasets/dicom_stores/studies/series/instances/frames/struct.FramesActions.html)\n                    * [*retrieveFrames*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/frames/struct.RetrieveFramesRequestBuilder.html), [*retrieveRendered*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/frames/struct.RetrieveRenderedRequestBuilder.html)\n          * [fhir_stores](resources/projects/locations/datasets/fhir_stores/struct.FhirStoresActions.html)\n            * [*configureSearch*](resources/projects/locations/datasets/fhir_stores/struct.ConfigureSearchRequestBuilder.html), [*create*](resources/projects/locations/datasets/fhir_stores/struct.CreateRequestBuilder.html), [*deidentify*](resources/projects/locations/datasets/fhir_stores/struct.DeidentifyRequestBuilder.html), [*delete*](resources/projects/locations/datasets/fhir_stores/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/datasets/fhir_stores/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/datasets/fhir_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/fhir_stores/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/datasets/fhir_stores/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/datasets/fhir_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/fhir_stores/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/fhir_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/fhir_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [fhir](resources/projects/locations/datasets/fhir_stores/fhir/struct.FhirActions.html)\n              * [*ConceptMap-search-translate*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ConceptMapSearchTranslateRequestBuilder.html), [*ConceptMap-translate*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ConceptMapTranslateRequestBuilder.html), [*Observation-lastn*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ObservationLastnRequestBuilder.html), [*Patient-everything*](resources/projects/locations/datasets/fhir_stores/fhir/struct.PatientEverythingRequestBuilder.html), [*Resource-purge*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ResourcePurgeRequestBuilder.html), [*Resource-validate*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ResourceValidateRequestBuilder.html), [*capabilities*](resources/projects/locations/datasets/fhir_stores/fhir/struct.CapabilitiesRequestBuilder.html), [*conditionalDelete*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ConditionalDeleteRequestBuilder.html), [*conditionalPatch*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ConditionalPatchRequestBuilder.html), [*conditionalUpdate*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ConditionalUpdateRequestBuilder.html), [*create*](resources/projects/locations/datasets/fhir_stores/fhir/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/fhir_stores/fhir/struct.DeleteRequestBuilder.html), [*executeBundle*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ExecuteBundleRequestBuilder.html), [*history*](resources/projects/locations/datasets/fhir_stores/fhir/struct.HistoryRequestBuilder.html), [*patch*](resources/projects/locations/datasets/fhir_stores/fhir/struct.PatchRequestBuilder.html), [*read*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ReadRequestBuilder.html), [*search*](resources/projects/locations/datasets/fhir_stores/fhir/struct.SearchRequestBuilder.html), [*search-type*](resources/projects/locations/datasets/fhir_stores/fhir/struct.SearchTypeRequestBuilder.html), [*update*](resources/projects/locations/datasets/fhir_stores/fhir/struct.UpdateRequestBuilder.html), [*vread*](resources/projects/locations/datasets/fhir_stores/fhir/struct.VreadRequestBuilder.html)\n          * [hl_7v2_stores](resources/projects/locations/datasets/hl_7v2_stores/struct.Hl7V2StoresActions.html)\n            * [*create*](resources/projects/locations/datasets/hl_7v2_stores/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/hl_7v2_stores/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/datasets/hl_7v2_stores/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/datasets/hl_7v2_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/hl_7v2_stores/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/datasets/hl_7v2_stores/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/datasets/hl_7v2_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/hl_7v2_stores/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/hl_7v2_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/hl_7v2_stores/struct.TestIamPermissionsRequestBuilder.html)\n            * [messages](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.MessagesActions.html)\n              * [*batchGet*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.BatchGetRequestBuilder.html), [*create*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.GetRequestBuilder.html), [*ingest*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.IngestRequestBuilder.html), [*list*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.PatchRequestBuilder.html)\n          * [operations](resources/projects/locations/datasets/operations/struct.OperationsActions.html)\n            * [*cancel*](resources/projects/locations/datasets/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/locations/datasets/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/operations/struct.ListRequestBuilder.html)\n        * [services](resources/projects/locations/services/struct.ServicesActions.html)\n          * [nlp](resources/projects/locations/services/nlp/struct.NlpActions.html)\n            * [*analyzeEntities*](resources/projects/locations/services/nlp/struct.AnalyzeEntitiesRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -69,6 +69,15 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub document_content: ::std::option::Option<String>,
+        #[doc = "A list of licensed vocabularies to use in the request, in addition to the default unlicensed vocabularies."]
+        #[serde(
+            rename = "licensedVocabularies",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub licensed_vocabularies: ::std::option::Option<
+            Vec<crate::schemas::AnalyzeEntitiesRequestLicensedVocabulariesItems>,
+        >,
     }
     impl ::google_field_selector::FieldSelector for AnalyzeEntitiesRequest {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -76,6 +85,90 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for AnalyzeEntitiesRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AnalyzeEntitiesRequestLicensedVocabulariesItems {
+        #[doc = "ICD-10-CM vocabulary"]
+        Icd10Cm,
+        #[doc = "No licensed vocabulary specified."]
+        LicensedVocabularyUnspecified,
+        #[doc = "SNOMED CT (US version) vocabulary"]
+        SnomedctUs,
+    }
+    impl AnalyzeEntitiesRequestLicensedVocabulariesItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AnalyzeEntitiesRequestLicensedVocabulariesItems::Icd10Cm => "ICD10CM",
+                AnalyzeEntitiesRequestLicensedVocabulariesItems::LicensedVocabularyUnspecified => {
+                    "LICENSED_VOCABULARY_UNSPECIFIED"
+                }
+                AnalyzeEntitiesRequestLicensedVocabulariesItems::SnomedctUs => "SNOMEDCT_US",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AnalyzeEntitiesRequestLicensedVocabulariesItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AnalyzeEntitiesRequestLicensedVocabulariesItems {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<AnalyzeEntitiesRequestLicensedVocabulariesItems, ()> {
+            Ok(match s {
+                "ICD10CM" => AnalyzeEntitiesRequestLicensedVocabulariesItems::Icd10Cm,
+                "LICENSED_VOCABULARY_UNSPECIFIED" => {
+                    AnalyzeEntitiesRequestLicensedVocabulariesItems::LicensedVocabularyUnspecified
+                }
+                "SNOMEDCT_US" => AnalyzeEntitiesRequestLicensedVocabulariesItems::SnomedctUs,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AnalyzeEntitiesRequestLicensedVocabulariesItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AnalyzeEntitiesRequestLicensedVocabulariesItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AnalyzeEntitiesRequestLicensedVocabulariesItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ICD10CM" => AnalyzeEntitiesRequestLicensedVocabulariesItems::Icd10Cm,
+                "LICENSED_VOCABULARY_UNSPECIFIED" => {
+                    AnalyzeEntitiesRequestLicensedVocabulariesItems::LicensedVocabularyUnspecified
+                }
+                "SNOMEDCT_US" => AnalyzeEntitiesRequestLicensedVocabulariesItems::SnomedctUs,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AnalyzeEntitiesRequestLicensedVocabulariesItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AnalyzeEntitiesRequestLicensedVocabulariesItems {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -379,7 +472,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AttributeDefinition {
-        #[doc = "Required. Possible values for the attribute. The number of allowed values must not exceed 100. An empty list is invalid. The list can only be expanded after creation."]
+        #[doc = "Required. Possible values for the attribute. The number of allowed values must not exceed 500. An empty list is invalid. The list can only be expanded after creation."]
         #[serde(
             rename = "allowedValues",
             default,
@@ -709,21 +802,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Binding {
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -1043,6 +1136,44 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct ConfigureSearchRequest {
+        #[doc = "The canonical URLs of the search parameters that are intended to be used for the FHIR store. See https://www.hl7.org/fhir/references.html#canonical for explanation on FHIR canonical urls"]
+        #[serde(
+            rename = "canonicalUrls",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub canonical_urls: ::std::option::Option<Vec<String>>,
+        #[doc = "If `validate_only` is set to true, the method will compile all the search parameters without actually setting the search config for the store and triggering the reindex."]
+        #[serde(
+            rename = "validateOnly",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub validate_only: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for ConfigureSearchRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ConfigureSearchRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Consent {
         #[doc = "Required. The resource name of the Consent artifact that contains proof of the end user's consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consentArtifacts/{consent_artifact_id}`."]
         #[serde(
@@ -1130,7 +1261,7 @@ pub mod schemas {
     pub enum ConsentState {
         #[doc = "The Consent is active and is considered when evaluating a user's consent on resources."]
         Active,
-        #[doc = "When a Consent is updated, the current version is archived and a new one is created with its state set to the updated Consent's previous state."]
+        #[doc = "The archived state is currently not being used."]
         Archived,
         #[doc = "A draft Consent is not considered when evaluating a user's consent on resources unless explicitly specified."]
         Draft,
@@ -1138,7 +1269,7 @@ pub mod schemas {
         Rejected,
         #[doc = "A revoked Consent is not considered when evaluating a user's consent on resources."]
         Revoked,
-        #[doc = "No state specified."]
+        #[doc = "No state specified. Treated as ACTIVE only at the time of resource creation."]
         StateUnspecified,
     }
     impl ConsentState {
@@ -1339,7 +1470,7 @@ pub mod schemas {
         NoMatchingPolicy,
         #[doc = "The Consent has at least one policy that matches the `resource_attributes` of the evaluated resource, but no `authorization_rule` was satisfied."]
         NoSatisfiedPolicy,
-        #[doc = "The Consent is not applicable to the requested access determination. For example, the Consent does not apply to the user for which the access determination is requested, or it has a `state` of `REVOKED`."]
+        #[doc = "The Consent is not applicable to the requested access determination. For example, the Consent does not apply to the user for which the access determination is requested, or it has a `state` of `REVOKED`, or it has expired."]
         NotApplicable,
     }
     impl ConsentEvaluationEvaluationResult {
@@ -1548,13 +1679,20 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CryptoHashConfig {
-        #[doc = "An AES 128/192/256 bit key. Causes the hash to be computed based on this key. A default key is generated for each Deidentify operation and is used wherever crypto_key is not specified."]
+        #[doc = "An AES 128/192/256 bit key. Causes the hash to be computed based on this key. A default key is generated for each Deidentify operation and is used when neither `crypto_key` nor `kms_wrapped` is specified. Must not be set if `kms_wrapped` is set."]
         #[serde(
             rename = "cryptoKey",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub crypto_key: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "KMS wrapped key. Must not be set if `crypto_key` is set."]
+        #[serde(
+            rename = "kmsWrapped",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kms_wrapped: ::std::option::Option<crate::schemas::KmsWrappedCryptoKey>,
     }
     impl ::google_field_selector::FieldSelector for CryptoHashConfig {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1617,13 +1755,20 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DateShiftConfig {
-        #[doc = "An AES 128/192/256 bit key. Causes the shift to be computed based on this key and the patient ID. A default key is generated for each Deidentify operation and is used wherever crypto_key is not specified."]
+        #[doc = "An AES 128/192/256 bit key. Causes the shift to be computed based on this key and the patient ID. A default key is generated for each de-identification operation and is used when neither `crypto_key` nor `kms_wrapped` is specified. Must not be set if `kms_wrapped` is set."]
         #[serde(
             rename = "cryptoKey",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub crypto_key: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "KMS wrapped key. Must not be set if `crypto_key` is set."]
+        #[serde(
+            rename = "kmsWrapped",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kms_wrapped: ::std::option::Option<crate::schemas::KmsWrappedCryptoKey>,
     }
     impl ::google_field_selector::FieldSelector for DateShiftConfig {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1676,6 +1821,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image: ::std::option::Option<crate::schemas::ImageConfig>,
+        #[doc = "Details about the work the de-identify operation performed."]
+        #[serde(
+            rename = "operationMetadata",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub operation_metadata: ::std::option::Option<crate::schemas::DeidentifyOperationMetadata>,
         #[doc = "Configures de-identification of text wherever it is found in the source_dataset."]
         #[serde(
             rename = "text",
@@ -1707,20 +1859,27 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DeidentifyDatasetRequest {
-        #[doc = "Deidentify configuration."]
+        #[doc = "Deidentify configuration. Only one of `config` and `gcs_config_uri` can be specified."]
         #[serde(
             rename = "config",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub config: ::std::option::Option<crate::schemas::DeidentifyConfig>,
-        #[doc = "The name of the dataset resource to create and write the redacted data to. * The destination dataset must not exist. * The destination dataset must be in the same project and location as the source dataset. De-identifying data across multiple projects or locations is not supported."]
+        #[doc = "The name of the dataset resource to create and write the redacted data to. * The destination dataset must not exist. * The destination dataset must be in the same location as the source dataset. De-identifying data across multiple locations is not supported."]
         #[serde(
             rename = "destinationDataset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub destination_dataset: ::std::option::Option<String>,
+        #[doc = "Cloud Storage location to read the JSON cloud.healthcare.deidentify.DeidentifyConfig from, overriding the default config. Must be of the form `gs://{bucket_id}/path/to/object`. The Cloud Storage location must grant the Cloud IAM role `roles/storage.objectViewer` to the project's Cloud Healthcare Service Agent service account. Only one of `config` and `gcs_config_uri` can be specified."]
+        #[serde(
+            rename = "gcsConfigUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcs_config_uri: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for DeidentifyDatasetRequest {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1745,14 +1904,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DeidentifyDicomStoreRequest {
-        #[doc = "De-identify configuration."]
+        #[doc = "Deidentify configuration. Only one of `config` and `gcs_config_uri` can be specified."]
         #[serde(
             rename = "config",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub config: ::std::option::Option<crate::schemas::DeidentifyConfig>,
-        #[doc = "The name of the DICOM store to create and write the redacted data to. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`. * The destination dataset must exist. * The source dataset and destination dataset must both reside in the same project. De-identifying data across multiple projects is not supported. * The destination DICOM store must not exist. * The caller must have the necessary permissions to create the destination DICOM store."]
+        #[doc = "The name of the DICOM store to create and write the redacted data to. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`. * The destination dataset must exist. * The source dataset and destination dataset must both reside in the same location. De-identifying data across multiple locations is not supported. * The destination DICOM store must not exist. * The caller must have the necessary permissions to create the destination DICOM store."]
         #[serde(
             rename = "destinationStore",
             default,
@@ -1766,6 +1925,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub filter_config: ::std::option::Option<crate::schemas::DicomFilterConfig>,
+        #[doc = "Cloud Storage location to read the JSON cloud.healthcare.deidentify.DeidentifyConfig from, overriding the default config. Must be of the form `gs://{bucket_id}/path/to/object`. The Cloud Storage location must grant the Cloud IAM role `roles/storage.objectViewer` to the project's Cloud Healthcare Service Agent service account. Only one of `config` and `gcs_config_uri` can be specified."]
+        #[serde(
+            rename = "gcsConfigUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcs_config_uri: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for DeidentifyDicomStoreRequest {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1790,20 +1956,27 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DeidentifyFhirStoreRequest {
-        #[doc = "Deidentify configuration."]
+        #[doc = "Deidentify configuration. Only one of `config` and `gcs_config_uri` can be specified."]
         #[serde(
             rename = "config",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub config: ::std::option::Option<crate::schemas::DeidentifyConfig>,
-        #[doc = "The name of the FHIR store to create and write the redacted data to. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`. * The destination dataset must exist. * The source dataset and destination dataset must both reside in the same project. De-identifying data across multiple projects is not supported. * The destination FHIR store must exist. * The caller must have the healthcare.fhirResources.update permission to write to the destination FHIR store."]
+        #[doc = "The name of the FHIR store to create and write the redacted data to. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`. * The destination dataset must exist. * The source dataset and destination dataset must both reside in the same location. De-identifying data across multiple locations is not supported. * The destination FHIR store must exist. * The caller must have the healthcare.fhirResources.update permission to write to the destination FHIR store."]
         #[serde(
             rename = "destinationStore",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub destination_store: ::std::option::Option<String>,
+        #[doc = "Cloud Storage location to read the JSON cloud.healthcare.deidentify.DeidentifyConfig from, overriding the default config. Must be of the form `gs://{bucket_id}/path/to/object`. The Cloud Storage location must grant the Cloud IAM role `roles/storage.objectViewer` to the project's Cloud Healthcare Service Agent service account. Only one of `config` and `gcs_config_uri` can be specified."]
+        #[serde(
+            rename = "gcsConfigUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcs_config_uri: ::std::option::Option<String>,
         #[doc = "A filter specifying the resources to include in the output. If not specified, all resources are included in the output."]
         #[serde(
             rename = "resourceFilter",
@@ -1818,6 +1991,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for DeidentifyFhirStoreRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DeidentifyOperationMetadata {
+        #[doc = "Details about the FHIR store to write the output to."]
+        #[serde(
+            rename = "fhirOutput",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub fhir_output: ::std::option::Option<crate::schemas::FhirOutput>,
+    }
+    impl ::google_field_selector::FieldSelector for DeidentifyOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DeidentifyOperationMetadata {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2759,12 +2963,36 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ExportMessagesResponse {}
+    impl ::google_field_selector::FieldSelector for ExportMessagesResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ExportMessagesResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
     pub struct ExportResourcesRequest {
-        #[doc = "The BigQuery output destination. The Cloud Healthcare Service Agent requires two IAM roles on the BigQuery location: `roles/bigquery.dataEditor` and `roles/bigquery.jobUser`. The output is one BigQuery table per resource type."]
+        #[doc = "The BigQuery output destination. The Cloud Healthcare Service Agent requires two IAM roles on the BigQuery location: `roles/bigquery.dataEditor` and `roles/bigquery.jobUser`. The output is one BigQuery table per resource type. Unlike when setting `BigQueryDestination` for `StreamConfig`, `ExportResources` does not create BigQuery views."]
         #[serde(
             rename = "bigqueryDestination",
             default,
@@ -2900,7 +3128,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FhirConfig {
-        #[doc = "Specifies FHIR paths to match and how to transform them. Any field that is not matched by a FieldMetadata is passed through to the output dataset unmodified. All extensions are removed in the output. If a field can be matched by more than one FieldMetadata, the first FieldMetadata.Action is applied."]
+        #[doc = "The behaviour for handling FHIR extensions that aren't otherwise specified for de-identification. If true, all extensions are preserved during de-identification by default. If false or unspecified, all extensions are removed during de-identification by default."]
+        #[serde(
+            rename = "defaultKeepExtensions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub default_keep_extensions: ::std::option::Option<bool>,
+        #[doc = "Specifies FHIR paths to match and how to transform them. Any field that is not matched by a FieldMetadata is passed through to the output dataset unmodified. All extensions will be processed according to `default_keep_extensions`. If a field can be matched by more than one FieldMetadata, the first FieldMetadata.Action is applied."]
         #[serde(
             rename = "fieldMetadataList",
             default,
@@ -2961,6 +3196,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct FhirOutput {
+        #[doc = "Name of the output FHIR store, which must already exist. You must grant the healthcare.fhirResources.update permission on the destination store to your project's **Cloud Healthcare Service Agent** [service account](https://cloud.google.com/healthcare/docs/how-tos/permissions-healthcare-api-gcp-products#the_cloud_healthcare_service_agent). The destination store must set `enable_update_create` to true. The destination store must use FHIR version R4. Writing these resources will consume FHIR operations quota from the project containing the source data. De-identify operation metadata is only generated for DICOM de-identification operations."]
+        #[serde(
+            rename = "fhirStore",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub fhir_store: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for FhirOutput {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FhirOutput {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct FhirStore {
         #[doc = "If true, overrides the default search behavior for this FHIR store to `handling=strict` which returns an error for unrecognized search parameters. If false, uses the FHIR specification default `handling=lenient` which ignores unrecognized search parameters. The handling can always be changed from the default on an individual API call by setting the HTTP header `Prefer: handling=strict` or `Prefer: handling=lenient`."]
         #[serde(
@@ -2983,7 +3249,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disable_resource_versioning: ::std::option::Option<bool>,
-        #[doc = "Whether this FHIR store has the [updateCreate capability](https://www.hl7.org/fhir/capabilitystatement-definitions.html#CapabilityStatement.rest.resource.updateCreate). This determines if the client can use an Update operation to create a new resource with a client-specified ID. If false, all IDs are server-assigned through the Create operation and attempts to update a non-existent resource return errors. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud audit logs and Cloud Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources."]
+        #[doc = "Whether this FHIR store has the [updateCreate capability](https://www.hl7.org/fhir/capabilitystatement-definitions.html#CapabilityStatement.rest.resource.updateCreate). This determines if the client can use an Update operation to create a new resource with a client-specified ID. If false, all IDs are server-assigned through the Create operation and attempts to update a non-existent resource return errors. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud audit logs and Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources."]
         #[serde(
             rename = "enableUpdateCreate",
             default,
@@ -3004,13 +3270,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "If non-empty, publish all resource modifications of this FHIR store to this destination. The Cloud Pub/Sub message attributes contain a map with a string describing the action that has triggered the notification. For example, \"action\":\"CreateResource\"."]
+        #[doc = "If non-empty, publish all resource modifications of this FHIR store to this destination. The Pub/Sub message attributes contain a map with a string describing the action that has triggered the notification. For example, \"action\":\"CreateResource\"."]
         #[serde(
             rename = "notificationConfig",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub notification_config: ::std::option::Option<crate::schemas::NotificationConfig>,
+        #[doc = "Configuration for how FHIR resources can be searched."]
+        #[serde(
+            rename = "searchConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub search_config: ::std::option::Option<crate::schemas::SearchConfig>,
         #[doc = "A list of streaming configs that configure the destinations of streaming export for every resource mutation in this FHIR store. Each store is allowed to have up to 10 streaming configs. After a new config is added, the next resource mutation is streamed to the new location in addition to the existing ones. When a location is removed from the list, the server stops streaming to that location. Before adding a new config, you must add the required [`bigquery.dataEditor`](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataEditor) role to your project's **Cloud Healthcare Service Agent** [service account](https://cloud.google.com/iam/docs/service-accounts). Some lag (typically on the order of dozens of seconds) is expected before the results show up in the streaming destination."]
         #[serde(
             rename = "streamConfigs",
@@ -3203,7 +3476,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub action: ::std::option::Option<crate::schemas::FieldMetadataAction>,
-        #[doc = "List of paths to FHIR fields to redact. Each path is a period-separated list where each component is either a field name or FHIR type name. All types begin with an upper case letter. For example, the resource field \"Patient.Address.city\", which uses a string type, can be matched by \"Patient.Address.String\". Path also supports partial matching. For example, \"Patient.Address.city\" can be matched by \"Address.city\" (Patient omitted). Partial matching and type matching can be combined. For example, \"Patient.Address.city\" can be matched by \"Address.String\". For \"choice\" types (those defined in the FHIR spec with the form: field[x]), use two separate components. For example, \"deceasedAge.unit\" is matched by \"Deceased.Age.unit\". Supported types are: AdministrativeGenderCode, Code, Date, DateTime, Decimal, HumanName, Id, LanguageCode, Markdown, Oid, String, Uri, Uuid, Xhtml. The sub-type for HumanName, such as HumanName.given or HumanName.family, can be omitted."]
+        #[doc = "List of paths to FHIR fields to redact. Each path is a period-separated list where each component is either a field name or FHIR type name. All types begin with an upper case letter. For example, the resource field \"Patient.Address.city\", which uses a string type, can be matched by \"Patient.Address.String\". Path also supports partial matching. For example, \"Patient.Address.city\" can be matched by \"Address.city\" (Patient omitted). Partial matching and type matching can be combined. For example, \"Patient.Address.city\" can be matched by \"Address.String\". For \"choice\" types (those defined in the FHIR spec with the form: field[x]), use two separate components. For example, \"deceasedAge.unit\" is matched by \"Deceased.Age.unit\". Supported types are: AdministrativeGenderCode, Base64Binary, Boolean, Code, Date, DateTime, Decimal, HumanName, Id, Instant, Integer, LanguageCode, Markdown, Oid, PositiveInt, String, UnsignedInt, Uri, Uuid, Xhtml. The sub-type for HumanName(for example HumanName.given, HumanName.family) can be omitted."]
         #[serde(
             rename = "paths",
             default,
@@ -3644,7 +3917,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestination { # [ doc = "Use `write_disposition` instead. If `write_disposition` is specified, this parameter is ignored. force=false is equivalent to write_disposition=WRITE_EMPTY and force=true is equivalent to write_disposition=WRITE_TRUNCATE." ] # [ serde ( rename = "force" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub force : :: std :: option :: Option < bool > , # [ doc = "Specifies the schema format to export." ] # [ serde ( rename = "schemaType" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub schema_type : :: std :: option :: Option < crate :: schemas :: GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationSchemaType > , # [ doc = "BigQuery URI to a table, up to 2000 characters long, must be of the form bq://projectId.bqDatasetId.tableId." ] # [ serde ( rename = "tableUri" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub table_uri : :: std :: option :: Option < String > , # [ doc = "Determines whether existing tables in the destination dataset are overwritten or appended to. If a write_disposition is specified, the `force` parameter is ignored." ] # [ serde ( rename = "writeDisposition" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub write_disposition : :: std :: option :: Option < crate :: schemas :: GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition > , }
+    pub struct GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestination { # [doc = "Use `write_disposition` instead. If `write_disposition` is specified, this parameter is ignored. force=false is equivalent to write_disposition=WRITE_EMPTY and force=true is equivalent to write_disposition=WRITE_TRUNCATE."] # [serde (rename = "force" , default , skip_serializing_if = "std::option::Option::is_none")] pub force : :: std :: option :: Option < bool > , # [doc = "Specifies the schema format to export."] # [serde (rename = "schemaType" , default , skip_serializing_if = "std::option::Option::is_none")] pub schema_type : :: std :: option :: Option < crate :: schemas :: GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationSchemaType > , # [doc = "BigQuery URI to a table, up to 2000 characters long, must be of the form bq://projectId.bqDatasetId.tableId."] # [serde (rename = "tableUri" , default , skip_serializing_if = "std::option::Option::is_none")] pub table_uri : :: std :: option :: Option < String > , # [doc = "Determines if existing data in the destination dataset is overwritten, appended to, or not written if the tables contain data. If a write_disposition is specified, the `force` parameter is ignored."] # [serde (rename = "writeDisposition" , default , skip_serializing_if = "std::option::Option::is_none")] pub write_disposition : :: std :: option :: Option < crate :: schemas :: GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestination
     {
@@ -3686,7 +3959,7 @@ pub mod schemas {
             GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationSchemaType,
             (),
         > {
-            Ok ( match s { "SCHEMA_TYPE_UNSPECIFIED" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationSchemaType :: SchemaTypeUnspecified , "SIMPLE" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationSchemaType :: Simple , _ => return Err ( ( ) ) , } )
+            Ok (match s { "SCHEMA_TYPE_UNSPECIFIED" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationSchemaType :: SchemaTypeUnspecified , "SIMPLE" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationSchemaType :: Simple , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationSchemaType {
@@ -3710,7 +3983,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "SCHEMA_TYPE_UNSPECIFIED" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationSchemaType :: SchemaTypeUnspecified , "SIMPLE" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationSchemaType :: Simple , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "SCHEMA_TYPE_UNSPECIFIED" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationSchemaType :: SchemaTypeUnspecified , "SIMPLE" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationSchemaType :: Simple , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -3760,7 +4033,7 @@ pub mod schemas {
             GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition,
             (),
         > {
-            Ok ( match s { "WRITE_APPEND" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err ( ( ) ) , } )
+            Ok (match s { "WRITE_APPEND" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display
@@ -3788,7 +4061,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "WRITE_APPEND" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "WRITE_APPEND" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1Beta1AnnotationBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -4074,7 +4347,7 @@ pub mod schemas {
             GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition,
             (),
         > {
-            Ok ( match s { "WRITE_APPEND" => GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err ( ( ) ) , } )
+            Ok (match s { "WRITE_APPEND" => GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition {
@@ -4098,7 +4371,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "WRITE_APPEND" => GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "WRITE_APPEND" => GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -4166,7 +4439,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudHealthcareV1Beta1DicomGcsSource {
-        #[doc = "Points to a Cloud Storage URI containing file(s) with content only. The URI must be in the following format: `gs://{bucket_id}/{object_id}`. The URI can include wildcards in `object_id` and thus identify multiple files. Supported wildcards: '*' to match 0 or more non-separator characters '**' to match 0 or more characters (including separators). Must be used at the end of a path and with no other wildcards in the path. Can also be used with a file extension (such as .dcm), which imports all files with the extension in the specified directory and its sub-directories. For example, `gs://my-bucket/my-directory/**.dcm` imports all files with .dcm extensions in `my-directory/` and its sub-directories. '?' to match 1 character All other URI formats are invalid. Files matching the wildcard are expected to contain content only, no metadata."]
+        #[doc = "Points to a Cloud Storage URI containing file(s) with content only. The URI must be in the following format: `gs://{bucket_id}/{object_id}`. The URI can include wildcards in `object_id` and thus identify multiple files. Supported wildcards: * '*' to match 0 or more non-separator characters * '**' to match 0 or more characters (including separators). Must be used at the end of a path and with no other wildcards in the path. Can also be used with a file extension (such as .dcm), which imports all files with the extension in the specified directory and its sub-directories. For example, `gs://my-bucket/my-directory/**.dcm` imports all files with .dcm extensions in `my-directory/` and its sub-directories. * '?' to match 1 character. All other URI formats are invalid. Files matching the wildcard are expected to contain content only, no metadata."]
         #[serde(
             rename = "uri",
             default,
@@ -4197,7 +4470,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudHealthcareV1Beta1DicomStreamConfig {
-        #[doc = "Results are appended to this table. The server creates a new table in the given BigQuery dataset if the specified table does not exist. To enable the Cloud Healthcare API to write to your BigQuery table, you must give the Cloud Healthcare API service account the bigquery.dataEditor role. The service account is: `service-{PROJECT_NUMBER}@gcp-sa-healthcare.iam.gserviceaccount.com`. The PROJECT_NUMBER identifies the project that the DICOM store resides in. To get the project number, go to the Cloud Console Dashboard. It is recommended to not have a custom schema in the destination table which could conflict with the schema created by the Cloud Healthcare API. Instance deletions are not applied to the destination table. The destination's table schema will be automatically updated in case a new instance's data is incompatible with the current schema. The schema should not be updated manually as this can cause incompatibilies that cannot be resolved automatically. One resolution in this case is to delete the incompatible table and let the server recreate one, though the newly created table only contains data after the table recreation. BigQuery imposes a 1 MB limit on streaming insert row size, therefore any instance that generates more than 1 MB of BigQuery data will not be streamed. If an instance cannot be streamed to BigQuery, errors will be logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how- [Viewing logs](/healthcare/docs/how-tos/logging))."]
+        #[doc = "Results are appended to this table. The server creates a new table in the given BigQuery dataset if the specified table does not exist. To enable the Cloud Healthcare API to write to your BigQuery table, you must give the Cloud Healthcare API service account the bigquery.dataEditor role. The service account is: `service-{PROJECT_NUMBER}@gcp-sa-healthcare.iam.gserviceaccount.com`. The PROJECT_NUMBER identifies the project that the DICOM store resides in. To get the project number, go to the Cloud Console Dashboard. It is recommended to not have a custom schema in the destination table which could conflict with the schema created by the Cloud Healthcare API. Instance deletions are not applied to the destination table. The destination's table schema will be automatically updated in case a new instance's data is incompatible with the current schema. The schema should not be updated manually as this can cause incompatibilies that cannot be resolved automatically. One resolution in this case is to delete the incompatible table and let the server recreate one, though the newly created table only contains data after the table recreation. BigQuery imposes a 1 MB limit on streaming insert row size, therefore any instance that generates more than 1 MB of BigQuery data will not be streamed. If an instance cannot be streamed to BigQuery, errors will be logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging))."]
         #[serde(
             rename = "bigqueryDestination",
             default,
@@ -4251,7 +4524,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub schema_config: ::std::option::Option<crate::schemas::SchemaConfig>,
-        #[doc = "Determines whether existing tables in the destination dataset are overwritten or appended to. If a write_disposition is specified, the `force` parameter is ignored."]
+        #[doc = "Determines if existing data in the destination dataset is overwritten, appended to, or not written if the tables contain data. If a write_disposition is specified, the `force` parameter is ignored."]
         #[serde(
             rename = "writeDisposition",
             default,
@@ -4304,7 +4577,7 @@ pub mod schemas {
             GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition,
             (),
         > {
-            Ok ( match s { "WRITE_APPEND" => GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err ( ( ) ) , } )
+            Ok (match s { "WRITE_APPEND" => GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition {
@@ -4328,7 +4601,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "WRITE_APPEND" => GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "WRITE_APPEND" => GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition :: WriteAppend , "WRITE_DISPOSITION_UNSPECIFIED" => GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition :: WriteDispositionUnspecified , "WRITE_EMPTY" => GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition :: WriteEmpty , "WRITE_TRUNCATE" => GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition :: WriteTruncate , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -4597,7 +4870,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub filter: ::std::option::Option<String>,
-        #[doc = "The [Cloud Pub/Sub](https://cloud.google.com/pubsub/docs/) topic that notifications of changes are published on. Supplied by the client. The notification is a `PubsubMessage` with the following fields: * `PubsubMessage.Data` contains the resource name. * `PubsubMessage.MessageId` is the ID of this notification. It is guaranteed to be unique within the topic. * `PubsubMessage.PublishTime` is the time when the message was published. Note that notifications are only sent if the topic is non-empty. [Topic names](https://cloud.google.com/pubsub/docs/overview#names) must be scoped to a project. Cloud Healthcare API service account must have publisher permissions on the given Pub/Sub topic. Not having adequate permissions causes the calls that send notifications to fail. If a notification can't be published to Cloud Pub/Sub, errors are logged to Cloud Logging. For more information, see [Viewing error logs in Cloud Logging](/healthcare/docs/how-tos/logging)."]
+        #[doc = "The [Pub/Sub](https://cloud.google.com/pubsub/docs/) topic that notifications of changes are published on. Supplied by the client. The notification is a `PubsubMessage` with the following fields: * `PubsubMessage.Data` contains the resource name. * `PubsubMessage.MessageId` is the ID of this notification. It is guaranteed to be unique within the topic. * `PubsubMessage.PublishTime` is the time when the message was published. Note that notifications are only sent if the topic is non-empty. [Topic names](https://cloud.google.com/pubsub/docs/overview#names) must be scoped to a project. Cloud Healthcare API service account must have publisher permissions on the given Pub/Sub topic. Not having adequate permissions causes the calls that send notifications to fail. If a notification can't be published to Pub/Sub, errors are logged to Cloud Logging. For more information, see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)."]
         #[serde(
             rename = "pubsubTopic",
             default,
@@ -5392,6 +5665,44 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct KmsWrappedCryptoKey {
+        #[doc = "Required. The resource name of the KMS CryptoKey to use for unwrapping."]
+        #[serde(
+            rename = "cryptoKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub crypto_key: ::std::option::Option<String>,
+        #[doc = "Required. The wrapped data crypto key."]
+        #[serde(
+            rename = "wrappedKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub wrapped_key: ::std::option::Option<::google_api_bytes::Bytes>,
+    }
+    impl ::google_field_selector::FieldSelector for KmsWrappedCryptoKey {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for KmsWrappedCryptoKey {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct LinkedEntity {
         #[doc = "entity_id is a concept unique identifier. These are prefixed by a string that identifies the entity coding system, followed by the unique identifier within that system. For example, \"UMLS/C0000970\". This also supports ad hoc entities, which are formed by normalizing entity mention content."]
         #[serde(
@@ -6106,13 +6417,20 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct NotificationConfig {
-        #[doc = "The [Cloud Pub/Sub](https://cloud.google.com/pubsub/docs/) topic that notifications of changes are published on. Supplied by the client. PubsubMessage.Data contains the resource name. PubsubMessage.MessageId is the ID of this message. It is guaranteed to be unique within the topic. PubsubMessage.PublishTime is the time at which the message was published. Notifications are only sent if the topic is non-empty. [Topic names](https://cloud.google.com/pubsub/docs/overview#names) must be scoped to a project. Cloud Healthcare API service account must have publisher permissions on the given Cloud Pub/Sub topic. Not having adequate permissions causes the calls that send notifications to fail. If a notification can't be published to Cloud Pub/Sub, errors are logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how-tos/logging)). If the number of errors exceeds a certain rate, some aren't submitted. Note that not all operations trigger notifications, see [Configuring Pub/Sub notifications](https://cloud.google.com/healthcare/docs/how-tos/pubsub) for specific details."]
+        #[doc = "The [Pub/Sub](https://cloud.google.com/pubsub/docs/) topic that notifications of changes are published on. Supplied by the client. PubsubMessage.Data contains the resource name. PubsubMessage.MessageId is the ID of this message. It is guaranteed to be unique within the topic. PubsubMessage.PublishTime is the time at which the message was published. Notifications are only sent if the topic is non-empty. [Topic names](https://cloud.google.com/pubsub/docs/overview#names) must be scoped to a project. Cloud Healthcare API service account must have publisher permissions on the given Pub/Sub topic. Not having adequate permissions causes the calls that send notifications to fail. If a notification can't be published to Pub/Sub, errors are logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)). If the number of errors exceeds a certain rate, some aren't submitted. Note that not all operations trigger notifications, see [Configuring Pub/Sub notifications](https://cloud.google.com/healthcare/docs/how-tos/pubsub) for specific details."]
         #[serde(
             rename = "pubsubTopic",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pubsub_topic: ::std::option::Option<String>,
+        #[doc = "Indicates whether or not to send Pub/Sub notifications on bulk import. Only supported for DICOM imports."]
+        #[serde(
+            rename = "sendForBulkImport",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub send_for_bulk_import: ::std::option::Option<bool>,
     }
     impl ::google_field_selector::FieldSelector for NotificationConfig {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -6221,7 +6539,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_time: ::std::option::Option<String>,
-        #[doc = "A link to audit and error logs in the log viewer. Error logs are generated only by some operations, listed at [Viewing logs](/healthcare/docs/how-tos/logging)."]
+        #[doc = "A link to audit and error logs in the log viewer. Error logs are generated only by some operations, listed at [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)."]
         #[serde(
             rename = "logsUrl",
             default,
@@ -6303,7 +6621,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub segment_terminator: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "Immutable. Determines the version of the unschematized parser to be used when `schema` is not given. This field is immutable after store creation."]
+        #[doc = "Immutable. Determines the version of both the default parser to be used when `schema` is not given, as well as the schematized parser used when `schema` is specified. This field is immutable after HL7v2 store creation."]
         #[serde(
             rename = "version",
             default,
@@ -6329,6 +6647,8 @@ pub mod schemas {
         V1,
         #[doc = "The `parsed_data` includes every given non-empty message field."]
         V2,
+        #[doc = "This version is the same as V2, with the following change. The `parsed_data` contains unescaped escaped field separators, component separators, sub-component separators, repetition separators, escape characters, and truncation characters. If `schema` is specified, the schematized parser uses improved parsing heuristics compared to previous versions."]
+        V3,
     }
     impl ParserConfigVersion {
         pub fn as_str(self) -> &'static str {
@@ -6336,6 +6656,7 @@ pub mod schemas {
                 ParserConfigVersion::ParserVersionUnspecified => "PARSER_VERSION_UNSPECIFIED",
                 ParserConfigVersion::V1 => "V1",
                 ParserConfigVersion::V2 => "V2",
+                ParserConfigVersion::V3 => "V3",
             }
         }
     }
@@ -6351,6 +6672,7 @@ pub mod schemas {
                 "PARSER_VERSION_UNSPECIFIED" => ParserConfigVersion::ParserVersionUnspecified,
                 "V1" => ParserConfigVersion::V1,
                 "V2" => ParserConfigVersion::V2,
+                "V3" => ParserConfigVersion::V3,
                 _ => return Err(()),
             })
         }
@@ -6378,6 +6700,7 @@ pub mod schemas {
                 "PARSER_VERSION_UNSPECIFIED" => ParserConfigVersion::ParserVersionUnspecified,
                 "V1" => ParserConfigVersion::V1,
                 "V2" => ParserConfigVersion::V2,
+                "V3" => ParserConfigVersion::V3,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -6455,7 +6778,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audit_configs: ::std::option::Option<Vec<crate::schemas::AuditConfig>>,
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,
@@ -6548,7 +6871,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct QueryAccessibleDataRequest {
-        #[doc = "The Cloud Storage destination. The Cloud Healthcare API service account must have the `roles/storage.objectAdmin` Cloud IAM role for this Cloud Storage location."]
+        #[doc = "The Cloud Storage destination. The Cloud Healthcare API service account must have the `roles/storage.objectAdmin` Cloud IAM role for this Cloud Storage location. The object name is in the following format: query-accessible-data-result-{operation_id}.txt where each line contains a single data_id."]
         #[serde(
             rename = "gcsDestination",
             default,
@@ -6579,6 +6902,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for QueryAccessibleDataRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct QueryAccessibleDataResponse {
+        #[doc = "List of files, each of which contains a list of data_id(s) that are consented for a specified use in the request."]
+        #[serde(
+            rename = "gcsUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcs_uris: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for QueryAccessibleDataResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for QueryAccessibleDataResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -6845,6 +7199,8 @@ pub mod schemas {
     pub enum SchemaConfigSchemaType {
         #[doc = "Analytics schema defined by the FHIR community. See https://github.com/FHIR/sql-on-fhir/blob/master/sql-on-fhir.md. BigQuery only allows a maximum of 10,000 columns per table. Due to this limitation, the server will not generate schemas for fields of type `Resource`, which can hold any resource type. The affected fields are `Parameters.parameter.resource`, `Bundle.entry.resource`, and `Bundle.entry.response.outcome`."]
         Analytics,
+        #[doc = "Analytics V2, similar to schema defined by the FHIR community, with added support for extensions with one or more occurrences and contained resources in stringified JSON."]
+        AnalyticsV2,
         #[doc = "A data-driven schema generated from the fields present in the FHIR data being exported, with no additional simplification."]
         Lossless,
         #[doc = "No schema type specified. This type is unsupported."]
@@ -6854,6 +7210,7 @@ pub mod schemas {
         pub fn as_str(self) -> &'static str {
             match self {
                 SchemaConfigSchemaType::Analytics => "ANALYTICS",
+                SchemaConfigSchemaType::AnalyticsV2 => "ANALYTICS_V2",
                 SchemaConfigSchemaType::Lossless => "LOSSLESS",
                 SchemaConfigSchemaType::SchemaTypeUnspecified => "SCHEMA_TYPE_UNSPECIFIED",
             }
@@ -6869,6 +7226,7 @@ pub mod schemas {
         fn from_str(s: &str) -> ::std::result::Result<SchemaConfigSchemaType, ()> {
             Ok(match s {
                 "ANALYTICS" => SchemaConfigSchemaType::Analytics,
+                "ANALYTICS_V2" => SchemaConfigSchemaType::AnalyticsV2,
                 "LOSSLESS" => SchemaConfigSchemaType::Lossless,
                 "SCHEMA_TYPE_UNSPECIFIED" => SchemaConfigSchemaType::SchemaTypeUnspecified,
                 _ => return Err(()),
@@ -6896,6 +7254,7 @@ pub mod schemas {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
                 "ANALYTICS" => SchemaConfigSchemaType::Analytics,
+                "ANALYTICS_V2" => SchemaConfigSchemaType::AnalyticsV2,
                 "LOSSLESS" => SchemaConfigSchemaType::Lossless,
                 "SCHEMA_TYPE_UNSPECIFIED" => SchemaConfigSchemaType::SchemaTypeUnspecified,
                 _ => {
@@ -7294,6 +7653,75 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct SearchConfig {
+        #[doc = "A list of search parameters in this FHIR store that are used to configure this FHIR store."]
+        #[serde(
+            rename = "searchParameters",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub search_parameters: ::std::option::Option<Vec<crate::schemas::SearchParameter>>,
+    }
+    impl ::google_field_selector::FieldSelector for SearchConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SearchConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SearchParameter {
+        #[doc = "The canonical url of the search parameter resource."]
+        #[serde(
+            rename = "canonicalUrl",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub canonical_url: ::std::option::Option<String>,
+        #[doc = "The versioned name of the search parameter resource. The format is projects/{project-id}/locations/{location}/datasets/{dataset-id}/fhirStores/{fhirStore-id}/fhir/SearchParameter/{resource-id}/_history/{version-id} For fhir stores with disable_resource_versioning=true, the format is projects/{project-id}/locations/{location}/datasets/{dataset-id}/fhirStores/{fhirStore-id}/fhir/SearchParameter/{resource-id}/"]
+        #[serde(
+            rename = "parameter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub parameter: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SearchParameter {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SearchParameter {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SearchResourcesRequest {
         #[doc = "The FHIR resource type to search, such as Patient or Observation. For a complete list, see the FHIR Resource Index ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/resourcelist.html), [R4](https://hl7.org/implement/standards/fhir/R4/resourcelist.html))."]
         #[serde(
@@ -7403,7 +7831,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SetIamPolicyRequest {
-        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -7528,7 +7956,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct StreamConfig {
-        #[doc = "The destination BigQuery structure that contains both the dataset location and corresponding schema config. The output is organized in one table per resource type. The server reuses the existing tables (if any) that are named after the resource types, e.g. \"Patient\", \"Observation\". When there is no existing table for a given resource type, the server attempts to create one. When a table schema doesn't align with the schema config, either because of existing incompatible schema or out of band incompatible modification, the server does not stream in new data. One resolution in this case is to delete the incompatible table and let the server recreate one, though the newly created table only contains data after the table recreation. BigQuery imposes a 1 MB limit on streaming insert row size, therefore any resource mutation that generates more than 1 MB of BigQuery data will not be streamed. Results are appended to the corresponding BigQuery tables. Different versions of the same resource are distinguishable by the meta.versionId and meta.lastUpdated columns. The operation (CREATE/UPDATE/DELETE) that results in the new version is recorded in the meta.tag. The tables contain all historical resource versions since streaming was enabled. For query convenience, the server also creates one view per table of the same name containing only the current resource version. The streamed data in the BigQuery dataset is not guaranteed to be completely unique. The combination of the id and meta.versionId columns should ideally identify a single unique row. But in rare cases, duplicates may exist. At query time, users may use the SQL select statement to keep only one of the duplicate rows given an id and meta.versionId pair. Alternatively, the server created view mentioned above also filters out duplicates. If a resource mutation cannot be streamed to BigQuery, errors will be logged to Cloud Logging (see [Viewing error logs in Cloud Logging](/healthcare/docs/how-tos/logging))."]
+        #[doc = "The destination BigQuery structure that contains both the dataset location and corresponding schema config. The output is organized in one table per resource type. The server reuses the existing tables (if any) that are named after the resource types, e.g. \"Patient\", \"Observation\". When there is no existing table for a given resource type, the server attempts to create one. When a table schema doesn't align with the schema config, either because of existing incompatible schema or out of band incompatible modification, the server does not stream in new data. One resolution in this case is to delete the incompatible table and let the server recreate one, though the newly created table only contains data after the table recreation. BigQuery imposes a 1 MB limit on streaming insert row size, therefore any resource mutation that generates more than 1 MB of BigQuery data will not be streamed. Results are written to BigQuery tables according to the parameters in BigQueryDestination.WriteDisposition. Different versions of the same resource are distinguishable by the meta.versionId and meta.lastUpdated columns. The operation (CREATE/UPDATE/DELETE) that results in the new version is recorded in the meta.tag. The tables contain all historical resource versions since streaming was enabled. For query convenience, the server also creates one view per table of the same name containing only the current resource version. The streamed data in the BigQuery dataset is not guaranteed to be completely unique. The combination of the id and meta.versionId columns should ideally identify a single unique row. But in rare cases, duplicates may exist. At query time, users may use the SQL select statement to keep only one of the duplicate rows given an id and meta.versionId pair. Alternatively, the server created view mentioned above also filters out duplicates. If a resource mutation cannot be streamed to BigQuery, errors will be logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging))."]
         #[serde(
             rename = "bigqueryDestination",
             default,
@@ -7599,7 +8027,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -7922,6 +8350,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ValidationConfig {
+        #[doc = "Whether to disable FHIRPath validation for incoming resources. Set this to true to disable checking incoming resources for conformance against FHIRPath requirement defined in the FHIR specification. This property only affects resource types that do not have profiles configured for them, any rules in enabled implementation guides will still be enforced."]
+        #[serde(
+            rename = "disableFhirpathValidation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub disable_fhirpath_validation: ::std::option::Option<bool>,
         #[doc = "Whether to disable profile validation for this FHIR store. Set this to true to disable checking incoming resources for conformance against StructureDefinitions in this FHIR store."]
         #[serde(
             rename = "disableProfileValidation",
@@ -7929,6 +8364,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disable_profile_validation: ::std::option::Option<bool>,
+        #[doc = "Whether to disable reference type validation for incoming resources. Set this to true to disable checking incoming resources for conformance against reference type requirement defined in the FHIR specification. This property only affects resource types that do not have profiles configured for them, any rules in enabled implementation guides will still be enforced."]
+        #[serde(
+            rename = "disableReferenceTypeValidation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub disable_reference_type_validation: ::std::option::Option<bool>,
+        #[doc = "Whether to disable required fields validation for incoming resources. Set this to true to disable checking incoming resources for conformance against required fields requirement defined in the FHIR specification. This property only affects resource types that do not have profiles configured for them, any rules in enabled implementation guides will still be enforced."]
+        #[serde(
+            rename = "disableRequiredFieldValidation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub disable_required_field_validation: ::std::option::Option<bool>,
         #[doc = "A list of ImplementationGuide URLs in this FHIR store that are used to configure the profiles to use for validation. For example, to use the US Core profiles for validation, set `enabled_implementation_guides` to `[\"http://hl7.org/fhir/us/core/ImplementationGuide/ig\"]`. If `enabled_implementation_guides` is empty or omitted, then incoming resources are only required to conform to the base FHIR profiles. Otherwise, a resource must conform to at least one profile listed in the `global` property of one of the enabled ImplementationGuides. The Cloud Healthcare API does not currently enforce all of the rules in a StructureDefinition. The following rules are supported: - min/max - minValue/maxValue - maxLength - type - fixed[x] - pattern[x] on simple types - slicing, when using \"value\" as the discriminator type When a URL cannot be resolved (for example, in a type assertion), the server does not return an error."]
         #[serde(
             rename = "enabledImplementationGuides",
@@ -8473,17 +8922,17 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "The standard list filter."]
+                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
                 }
-                #[doc = "The standard list page size."]
+                #[doc = "The maximum number of results to return. If not set, the service selects a default."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "The standard list page token."]
+                #[doc = "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -8778,7 +9227,7 @@ pub mod resources {
                             dataset_id: None,
                         }
                     }
-                    #[doc = "Creates a new dataset containing de-identified data from the source dataset. The metadata field type is OperationMetadata. If the request is successful, the response field type is DeidentifySummary. The LRO result may still be successful if de-identification fails for some resources. The new de-identified dataset will not contain these failed resources. The number of resources processed are tracked in Operation.metadata. Error details are logged to Cloud Logging. For more information, see [Viewing logs](/healthcare/docs/how-tos/logging)."]
+                    #[doc = "Creates a new dataset containing de-identified data from the source dataset. The metadata field type is OperationMetadata. If the request is successful, the response field type is DeidentifySummary. The LRO result may still be successful if de-identification fails for some resources. The new de-identified dataset will not contain these failed resources. The number of resources processed are tracked in Operation.metadata. Error details are logged to Cloud Logging. For more information, see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)."]
                     pub fn deidentify(
                         &self,
                         request: crate::schemas::DeidentifyDatasetRequest,
@@ -8957,23 +9406,23 @@ pub mod resources {
                             resource: resource.into(),
                         }
                     }
-                    #[doc = "Actions that can be performed on the annotation_stores resource"]                    pub fn annotation_stores ( & self ) -> crate :: resources :: projects :: locations :: datasets :: annotation_stores :: AnnotationStoresActions{
-                        crate :: resources :: projects :: locations :: datasets :: annotation_stores :: AnnotationStoresActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the annotation_stores resource"]                    pub fn annotation_stores (& self) -> crate :: resources :: projects :: locations :: datasets :: annotation_stores :: AnnotationStoresActions{
+                        crate :: resources :: projects :: locations :: datasets :: annotation_stores :: AnnotationStoresActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the consent_stores resource"]                    pub fn consent_stores ( & self ) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: ConsentStoresActions{
-                        crate :: resources :: projects :: locations :: datasets :: consent_stores :: ConsentStoresActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the consent_stores resource"]                    pub fn consent_stores (& self) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: ConsentStoresActions{
+                        crate :: resources :: projects :: locations :: datasets :: consent_stores :: ConsentStoresActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the dicom_stores resource"]                    pub fn dicom_stores ( & self ) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: DicomStoresActions{
-                        crate :: resources :: projects :: locations :: datasets :: dicom_stores :: DicomStoresActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the dicom_stores resource"]                    pub fn dicom_stores (& self) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: DicomStoresActions{
+                        crate :: resources :: projects :: locations :: datasets :: dicom_stores :: DicomStoresActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the fhir_stores resource"]                    pub fn fhir_stores ( & self ) -> crate :: resources :: projects :: locations :: datasets :: fhir_stores :: FhirStoresActions{
-                        crate :: resources :: projects :: locations :: datasets :: fhir_stores :: FhirStoresActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the fhir_stores resource"]                    pub fn fhir_stores (& self) -> crate :: resources :: projects :: locations :: datasets :: fhir_stores :: FhirStoresActions{
+                        crate :: resources :: projects :: locations :: datasets :: fhir_stores :: FhirStoresActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the hl_7v2_stores resource"]                    pub fn hl_7v2_stores ( & self ) -> crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: Hl7V2StoresActions{
-                        crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: Hl7V2StoresActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the hl_7v2_stores resource"]                    pub fn hl_7v2_stores (& self) -> crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: Hl7V2StoresActions{
+                        crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: Hl7V2StoresActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the operations resource"]                    pub fn operations ( & self ) -> crate :: resources :: projects :: locations :: datasets :: operations :: OperationsActions{
-                        crate :: resources :: projects :: locations :: datasets :: operations :: OperationsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the operations resource"]                    pub fn operations (& self) -> crate :: resources :: projects :: locations :: datasets :: operations :: OperationsActions{
+                        crate :: resources :: projects :: locations :: datasets :: operations :: OperationsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 #[doc = "Created via [DatasetsActions::create()](struct.DatasetsActions.html#method.create)"]
@@ -9649,7 +10098,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> GetIamPolicyRequestBuilder<'a> {
-                    #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                    #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                     pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                         self.options_requested_policy_version = Some(value);
                         self
@@ -10642,7 +11091,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Evaluate an Annotation store against a ground truth Annotation store. When the operation finishes successfully, a detailed response is returned of type EvaluateAnnotationStoreResponse, contained in the response. The metadata field type is OperationMetadata. Errors are logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how-tos/logging))."]
+                        #[doc = "Evaluate an Annotation store against a ground truth Annotation store. When the operation finishes successfully, a detailed response is returned of type EvaluateAnnotationStoreResponse, contained in the response. The metadata field type is OperationMetadata. Errors are logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging))."]
                         pub fn evaluate(
                             &self,
                             request: crate::schemas::EvaluateAnnotationStoreRequest,
@@ -10666,7 +11115,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Export Annotations from the Annotation store. If the request is successful, a detailed response is returned of type ExportAnnotationsResponse, contained in the response field when the operation finishes. The metadata field type is OperationMetadata. Errors are logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how-tos/logging))."]
+                        #[doc = "Export Annotations from the Annotation store. If the request is successful, a detailed response is returned of type ExportAnnotationsResponse, contained in the response field when the operation finishes. The metadata field type is OperationMetadata. Errors are logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging))."]
                         pub fn export(
                             &self,
                             request: crate::schemas::ExportAnnotationsRequest,
@@ -10732,7 +11181,7 @@ pub mod resources {
                                 options_requested_policy_version: None,
                             }
                         }
-                        #[doc = "Import Annotations to the Annotation store by loading data from the specified sources. If the request is successful, a detailed response is returned as of type ImportAnnotationsResponse, contained in the response field when the operation finishes. The metadata field type is OperationMetadata. Errors are logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how-tos/logging))."]
+                        #[doc = "Import Annotations to the Annotation store by loading data from the specified sources. If the request is successful, a detailed response is returned as of type ImportAnnotationsResponse, contained in the response field when the operation finishes. The metadata field type is OperationMetadata. Errors are logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging))."]
                         pub fn import(
                             &self,
                             request: crate::schemas::ImportAnnotationsRequest,
@@ -10851,8 +11300,8 @@ pub mod resources {
                                 resource: resource.into(),
                             }
                         }
-                        #[doc = "Actions that can be performed on the annotations resource"]                        pub fn annotations ( & self ) -> crate :: resources :: projects :: locations :: datasets :: annotation_stores :: annotations :: AnnotationsActions{
-                            crate :: resources :: projects :: locations :: datasets :: annotation_stores :: annotations :: AnnotationsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the annotations resource"]                        pub fn annotations (& self) -> crate :: resources :: projects :: locations :: datasets :: annotation_stores :: annotations :: AnnotationsActions{
+                            crate :: resources :: projects :: locations :: datasets :: annotation_stores :: annotations :: AnnotationsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
                     }
                     #[doc = "Created via [AnnotationStoresActions::create()](struct.AnnotationStoresActions.html#method.create)"]
@@ -11704,7 +12153,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> GetIamPolicyRequestBuilder<'a> {
-                        #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                        #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                         pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                             self.options_requested_policy_version = Some(value);
                             self
@@ -13533,7 +13982,7 @@ pub mod resources {
                         }
                         #[doc = "Created via [AnnotationsActions::list()](struct.AnnotationsActions.html#method.list)"]
                         #[derive(Debug, Clone)]
-                        pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , filter : Option < String > , page_size : Option < i32 > , page_token : Option < String > , view : Option < crate :: resources :: projects :: locations :: datasets :: annotation_stores :: annotations :: params :: ListView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                        pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , filter : Option < String > , page_size : Option < i32 > , page_token : Option < String > , view : Option < crate :: resources :: projects :: locations :: datasets :: annotation_stores :: annotations :: params :: ListView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                         impl<'a> ListRequestBuilder<'a> {
                             #[doc = "Restricts Annotations returned to those matching a filter. Functions available for filtering are: - `matches(\"annotation_source.cloud_healthcare_source.name\", substring)`. Filter on `cloud_healthcare_source.name`. For example: `matches(\"annotation_source.cloud_healthcare_source.name\", \"some source\")`. - `matches(\"annotation\", substring)`. Filter on all fields of annotation. For example: `matches(\"annotation\", \"some-content\")`. - `type(\"text\")`, `type(\"image\")`, `type(\"resource\")`. Filter on the type of annotation `data`."]
                             pub fn filter(mut self, value: impl Into<String>) -> Self {
@@ -14190,7 +14639,7 @@ pub mod resources {
                                 update_mask: None,
                             }
                         }
-                        #[doc = "Queries all data_ids that are consented for a specified use in the given consent store and writes them to a specified destination. The returned Operation includes a progress counter for the number of User data mappings processed. Errors are logged to Cloud Logging (see [Viewing logs] (cloud.google.com/healthcare/docs/how-tos/logging)). For example, the following sample log entry shows a `failed to evaluate consent policy` error that occurred during a QueryAccessibleData call to consent store `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}`. `json jsonPayload: { @type: \"type.googleapis.com/google.cloud.healthcare.logging.QueryAccessibleDataLogEntry\" error: { code: 9 message: \"failed to evaluate consent policy\" } resourceName: \"projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}\" } logName: \"projects/{project_id}/logs/healthcare.googleapis.com%2Fquery_accessible_data\" operation: { id: \"projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/operations/{operation_id}\" producer: \"healthcare.googleapis.com/QueryAccessibleData\" } receiveTimestamp: \"TIMESTAMP\" resource: { labels: { consent_store_id: \"{consent_store_id}\" dataset_id: \"{dataset_id}\" location: \"{location_id}\" project_id: \"{project_id}\" } type: \"healthcare_consent_store\" } severity: \"ERROR\" timestamp: \"TIMESTAMP\" `"]
+                        #[doc = "Queries all data_ids that are consented for a specified use in the given consent store and writes them to a specified destination. The returned Operation includes a progress counter for the number of User data mappings processed. If the request is successful, a detailed response is returned of type QueryAccessibleDataResponse, contained in the response field when the operation finishes. The metadata field type is OperationMetadata. Errors are logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)). For example, the following sample log entry shows a `failed to evaluate consent policy` error that occurred during a QueryAccessibleData call to consent store `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}`. `json jsonPayload: { @type: \"type.googleapis.com/google.cloud.healthcare.logging.QueryAccessibleDataLogEntry\" error: { code: 9 message: \"failed to evaluate consent policy\" } resourceName: \"projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}\" } logName: \"projects/{project_id}/logs/healthcare.googleapis.com%2Fquery_accessible_data\" operation: { id: \"projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/operations/{operation_id}\" producer: \"healthcare.googleapis.com/QueryAccessibleData\" } receiveTimestamp: \"TIMESTAMP\" resource: { labels: { consent_store_id: \"{consent_store_id}\" dataset_id: \"{dataset_id}\" location: \"{location_id}\" project_id: \"{project_id}\" } type: \"healthcare_consent_store\" } severity: \"ERROR\" timestamp: \"TIMESTAMP\" `"]
                         pub fn query_accessible_data(
                             &self,
                             request: crate::schemas::QueryAccessibleDataRequest,
@@ -14262,17 +14711,17 @@ pub mod resources {
                                 resource: resource.into(),
                             }
                         }
-                        #[doc = "Actions that can be performed on the attribute_definitions resource"]                        pub fn attribute_definitions ( & self ) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: attribute_definitions :: AttributeDefinitionsActions{
-                            crate :: resources :: projects :: locations :: datasets :: consent_stores :: attribute_definitions :: AttributeDefinitionsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the attribute_definitions resource"]                        pub fn attribute_definitions (& self) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: attribute_definitions :: AttributeDefinitionsActions{
+                            crate :: resources :: projects :: locations :: datasets :: consent_stores :: attribute_definitions :: AttributeDefinitionsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
-                        #[doc = "Actions that can be performed on the consent_artifacts resource"]                        pub fn consent_artifacts ( & self ) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: consent_artifacts :: ConsentArtifactsActions{
-                            crate :: resources :: projects :: locations :: datasets :: consent_stores :: consent_artifacts :: ConsentArtifactsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the consent_artifacts resource"]                        pub fn consent_artifacts (& self) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: consent_artifacts :: ConsentArtifactsActions{
+                            crate :: resources :: projects :: locations :: datasets :: consent_stores :: consent_artifacts :: ConsentArtifactsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
-                        #[doc = "Actions that can be performed on the consents resource"]                        pub fn consents ( & self ) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: consents :: ConsentsActions{
-                            crate :: resources :: projects :: locations :: datasets :: consent_stores :: consents :: ConsentsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the consents resource"]                        pub fn consents (& self) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: consents :: ConsentsActions{
+                            crate :: resources :: projects :: locations :: datasets :: consent_stores :: consents :: ConsentsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
-                        #[doc = "Actions that can be performed on the user_data_mappings resource"]                        pub fn user_data_mappings ( & self ) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: user_data_mappings :: UserDataMappingsActions{
-                            crate :: resources :: projects :: locations :: datasets :: consent_stores :: user_data_mappings :: UserDataMappingsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the user_data_mappings resource"]                        pub fn user_data_mappings (& self) -> crate :: resources :: projects :: locations :: datasets :: consent_stores :: user_data_mappings :: UserDataMappingsActions{
+                            crate :: resources :: projects :: locations :: datasets :: consent_stores :: user_data_mappings :: UserDataMappingsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
                     }
                     #[doc = "Created via [ConsentStoresActions::check_data_access()](struct.ConsentStoresActions.html#method.check_data_access)"]
@@ -15124,7 +15573,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> GetIamPolicyRequestBuilder<'a> {
-                        #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                        #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                         pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                             self.options_requested_policy_version = Some(value);
                             self
@@ -21753,7 +22202,7 @@ pub mod resources {
                                 dicom_store_id: None,
                             }
                         }
-                        #[doc = "De-identifies data from the source store and writes it to the destination store. The metadata field type is OperationMetadata. If the request is successful, the response field type is DeidentifyDicomStoreSummary. The LRO result may still be successful if de-identification fails for some DICOM instances. The output DICOM store will not contain these failed resources. The number of resources processed are tracked in Operation.metadata. Error details are logged to Cloud Logging. For more information, see [Viewing logs](/healthcare/docs/how-tos/logging)."]
+                        #[doc = "De-identifies data from the source store and writes it to the destination store. The metadata field type is OperationMetadata. If the request is successful, the response field type is DeidentifyDicomStoreSummary. The LRO result may still be successful if de-identification fails for some DICOM instances. The output DICOM store will not contain these failed resources. The number of resources processed are tracked in Operation.metadata. Error details are logged to Cloud Logging. For more information, see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)."]
                         pub fn deidentify(
                             &self,
                             request: crate::schemas::DeidentifyDicomStoreRequest,
@@ -21796,7 +22245,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Exports data to the specified destination by copying it from the DICOM store. Errors are also logged to Cloud Logging. For more information, see [Viewing logs](/healthcare/docs/how-tos/logging). The metadata field type is OperationMetadata."]
+                        #[doc = "Exports data to the specified destination by copying it from the DICOM store. Errors are also logged to Cloud Logging. For more information, see [Viewing errors in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging). The metadata field type is OperationMetadata."]
                         pub fn export(
                             &self,
                             request: crate::schemas::ExportDicomDataRequest,
@@ -21862,7 +22311,7 @@ pub mod resources {
                                 options_requested_policy_version: None,
                             }
                         }
-                        #[doc = "Imports data into the DICOM store by copying it from the specified source. Errors are logged to Cloud Logging. For more information, see [Viewing logs](/healthcare/docs/how-tos/logging). The metadata field type is OperationMetadata."]
+                        #[doc = "Imports data into the DICOM store by copying it from the specified source. Errors are logged to Cloud Logging. For more information, see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging). The metadata field type is OperationMetadata."]
                         pub fn import(
                             &self,
                             request: crate::schemas::ImportDicomDataRequest,
@@ -22079,8 +22528,8 @@ pub mod resources {
                                 resource: resource.into(),
                             }
                         }
-                        #[doc = "Actions that can be performed on the studies resource"]                        pub fn studies ( & self ) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: StudiesActions{
-                            crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: StudiesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the studies resource"]                        pub fn studies (& self) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: StudiesActions{
+                            crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: StudiesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
                     }
                     #[doc = "Created via [DicomStoresActions::create()](struct.DicomStoresActions.html#method.create)"]
@@ -22932,7 +23381,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> GetIamPolicyRequestBuilder<'a> {
-                        #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                        #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                         pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                             self.options_requested_policy_version = Some(value);
                             self
@@ -24755,7 +25204,7 @@ pub mod resources {
                             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                                 self.auth
                             }
-                            #[doc = "DeleteStudy deletes all instances within the given study using a long running operation. The method returns an Operation which will be marked successful when the deletion is complete. Warning: If you insert instances into a study while a delete operation is running for that study, the instances you insert might not appear in search results until after the deletion operation finishes. For samples that show how to call DeleteStudy, see [Deleting a study, series, or instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#deleting_a_study_series_or_instance)."]
+                            #[doc = "DeleteStudy deletes all instances within the given study using a long running operation. The method returns an Operation which will be marked successful when the deletion is complete. Warning: Instances cannot be inserted into a study that is being deleted by an operation until the operation completes. For samples that show how to call DeleteStudy, see [Deleting a study, series, or instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#deleting_a_study_series_or_instance)."]
                             pub fn delete(
                                 &self,
                                 parent: impl Into<String>,
@@ -24901,8 +25350,8 @@ pub mod resources {
                                     dicom_web_path: dicom_web_path.into(),
                                 }
                             }
-                            #[doc = "Actions that can be performed on the series resource"]                            pub fn series ( & self ) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: SeriesActions{
-                                crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: SeriesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                            #[doc = "Actions that can be performed on the series resource"]                            pub fn series (& self) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: SeriesActions{
+                                crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: SeriesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                             }
                         }
                         #[doc = "Created via [StudiesActions::delete()](struct.StudiesActions.html#method.delete)"]
@@ -25949,7 +26398,7 @@ pub mod resources {
                                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                                     self.auth
                                 }
-                                #[doc = "DeleteSeries deletes all instances within the given study and series using a long running operation. The method returns an Operation which will be marked successful when the deletion is complete. Warning: If you insert instances into a series while a delete operation is running for that series, the instances you insert might not appear in search results until after the deletion operation finishes. For samples that show how to call DeleteSeries, see [Deleting a study, series, or instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#deleting_a_study_series_or_instance)."]
+                                #[doc = "DeleteSeries deletes all instances within the given study and series using a long running operation. The method returns an Operation which will be marked successful when the deletion is complete. Warning: Instances cannot be inserted into a series that is being deleted by an operation until the operation completes. For samples that show how to call DeleteSeries, see [Deleting a study, series, or instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#deleting_a_study_series_or_instance)."]
                                 pub fn delete(
                                     &self,
                                     parent: impl Into<String>,
@@ -26047,8 +26496,8 @@ pub mod resources {
                                         dicom_web_path: dicom_web_path.into(),
                                     }
                                 }
-                                #[doc = "Actions that can be performed on the instances resource"]                                pub fn instances ( & self ) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: instances :: InstancesActions{
-                                    crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: instances :: InstancesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                                #[doc = "Actions that can be performed on the instances resource"]                                pub fn instances (& self) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: instances :: InstancesActions{
+                                    crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: instances :: InstancesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                                 }
                             }
                             #[doc = "Created via [SeriesActions::delete()](struct.SeriesActions.html#method.delete)"]
@@ -26856,8 +27305,8 @@ pub mod resources {
                                             dicom_web_path: dicom_web_path.into(),
                                         }
                                     }
-                                    #[doc = "Actions that can be performed on the frames resource"]                                    pub fn frames ( & self ) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: instances :: frames :: FramesActions{
-                                        crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: instances :: frames :: FramesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                                    #[doc = "Actions that can be performed on the frames resource"]                                    pub fn frames (& self) -> crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: instances :: frames :: FramesActions{
+                                        crate :: resources :: projects :: locations :: datasets :: dicom_stores :: studies :: series :: instances :: frames :: FramesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                                     }
                                 }
                                 #[doc = "Created via [InstancesActions::delete()](struct.InstancesActions.html#method.delete)"]
@@ -28069,6 +28518,30 @@ pub mod resources {
                         fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                             self.auth
                         }
+                        #[doc = "Configure the search parameters for the FHIR store and reindex resources in the FHIR store according to the defined search parameters. The search parameters provided in this request will replace any previous search configuration. The target SearchParameter resources need to exist in the store before calling ConfigureSearch, otherwise an error will occur. This method returns an Operation that can be used to track the progress of the reindexing by calling GetOperation."]
+                        pub fn configure_search(
+                            &self,
+                            request: crate::schemas::ConfigureSearchRequest,
+                            name: impl Into<String>,
+                        ) -> ConfigureSearchRequestBuilder {
+                            ConfigureSearchRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
+                            }
+                        }
                         #[doc = "Creates a new FHIR store within the parent dataset."]
                         pub fn create(
                             &self,
@@ -28094,7 +28567,7 @@ pub mod resources {
                                 fhir_store_id: None,
                             }
                         }
-                        #[doc = "De-identifies data from the source store and writes it to the destination store. The metadata field type is OperationMetadata. If the request is successful, the response field type is DeidentifyFhirStoreSummary. The number of resources processed are tracked in Operation.metadata. Error details are logged to Cloud Logging. For more information, see [Viewing logs](/healthcare/docs/how-tos/logging)."]
+                        #[doc = "De-identifies data from the source store and writes it to the destination store. The metadata field type is OperationMetadata. If the request is successful, the response field type is DeidentifyFhirStoreSummary. The number of resources processed are tracked in Operation.metadata. Error details are logged to Cloud Logging. For more information, see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)."]
                         pub fn deidentify(
                             &self,
                             request: crate::schemas::DeidentifyFhirStoreRequest,
@@ -28137,7 +28610,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Export resources from the FHIR store to the specified destination. This method returns an Operation that can be used to track the status of the export by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing error logs in Cloud Logging](/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a detailed response of type ExportResourcesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata."]
+                        #[doc = "Export resources from the FHIR store to the specified destination. This method returns an Operation that can be used to track the status of the export by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a detailed response of type ExportResourcesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata."]
                         pub fn export(
                             &self,
                             request: crate::schemas::ExportResourcesRequest,
@@ -28203,7 +28676,7 @@ pub mod resources {
                                 options_requested_policy_version: None,
                             }
                         }
-                        #[doc = "Import resources to the FHIR store by loading data from the specified sources. This method is optimized to load large quantities of data using import semantics that ignore some FHIR store configuration options and are not suitable for all use cases. It is primarily intended to load data into an empty FHIR store that is not being used by other clients. In cases where this method is not appropriate, consider using ExecuteBundle to load data. Every resource in the input must contain a client-supplied ID. Each resource is stored using the supplied ID regardless of the enable_update_create setting on the FHIR store. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud audit logs and Cloud Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources. The import process does not enforce referential integrity, regardless of the disable_referential_integrity setting on the FHIR store. This allows the import of resources with arbitrary interdependencies without considering grouping or ordering, but if the input data contains invalid references or if some resources fail to be imported, the FHIR store might be left in a state that violates referential integrity. The import process does not trigger Pub/Sub notification or BigQuery streaming update, regardless of how those are configured on the FHIR store. If a resource with the specified ID already exists, the most recent version of the resource is overwritten without creating a new historical version, regardless of the disable_resource_versioning setting on the FHIR store. If transient failures occur during the import, it is possible that successfully imported resources will be overwritten more than once. The import operation is idempotent unless the input data contains multiple valid resources with the same ID but different contents. In that case, after the import completes, the store contains exactly one resource with that ID but there is no ordering guarantee on which version of the contents it will have. The operation result counters do not count duplicate IDs as an error and count one success for each resource in the input, which might result in a success count larger than the number of resources in the FHIR store. This often occurs when importing data organized in bundles produced by Patient-everything where each bundle contains its own copy of a resource such as Practitioner that might be referred to by many patients. If some resources fail to import, for example due to parsing errors, successfully imported resources are not rolled back. The location and format of the input data are specified by the parameters in ImportResourcesRequest. Note that if no format is specified, this method assumes the `BUNDLE` format. When using the `BUNDLE` format this method ignores the `Bundle.type` field, except that `history` bundles are rejected, and does not apply any of the bundle processing semantics for batch or transaction bundles. Unlike in ExecuteBundle, transaction bundles are not executed as a single transaction and bundle-internal references are not rewritten. The bundle is treated as a collection of resources to be written as provided in `Bundle.entry.resource`, ignoring `Bundle.entry.request`. As an example, this allows the import of `searchset` bundles produced by a FHIR search or Patient-everything operation. This method returns an Operation that can be used to track the status of the import by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a detailed response of type ImportResourcesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata."]
+                        #[doc = "Import resources to the FHIR store by loading data from the specified sources. This method is optimized to load large quantities of data using import semantics that ignore some FHIR store configuration options and are not suitable for all use cases. It is primarily intended to load data into an empty FHIR store that is not being used by other clients. In cases where this method is not appropriate, consider using ExecuteBundle to load data. Every resource in the input must contain a client-supplied ID. Each resource is stored using the supplied ID regardless of the enable_update_create setting on the FHIR store. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud Audit Logs and Cloud Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources. The import process does not enforce referential integrity, regardless of the disable_referential_integrity setting on the FHIR store. This allows the import of resources with arbitrary interdependencies without considering grouping or ordering, but if the input data contains invalid references or if some resources fail to be imported, the FHIR store might be left in a state that violates referential integrity. The import process does not trigger Pub/Sub notification or BigQuery streaming update, regardless of how those are configured on the FHIR store. If a resource with the specified ID already exists, the most recent version of the resource is overwritten without creating a new historical version, regardless of the disable_resource_versioning setting on the FHIR store. If transient failures occur during the import, it is possible that successfully imported resources will be overwritten more than once. The import operation is idempotent unless the input data contains multiple valid resources with the same ID but different contents. In that case, after the import completes, the store contains exactly one resource with that ID but there is no ordering guarantee on which version of the contents it will have. The operation result counters do not count duplicate IDs as an error and count one success for each resource in the input, which might result in a success count larger than the number of resources in the FHIR store. This often occurs when importing data organized in bundles produced by Patient-everything where each bundle contains its own copy of a resource such as Practitioner that might be referred to by many patients. If some resources fail to import, for example due to parsing errors, successfully imported resources are not rolled back. The location and format of the input data are specified by the parameters in ImportResourcesRequest. Note that if no format is specified, this method assumes the `BUNDLE` format. When using the `BUNDLE` format this method ignores the `Bundle.type` field, except that `history` bundles are rejected, and does not apply any of the bundle processing semantics for batch or transaction bundles. Unlike in ExecuteBundle, transaction bundles are not executed as a single transaction and bundle-internal references are not rewritten. The bundle is treated as a collection of resources to be written as provided in `Bundle.entry.resource`, ignoring `Bundle.entry.request`. As an example, this allows the import of `searchset` bundles produced by a FHIR search or Patient-everything operation. This method returns an Operation that can be used to track the status of the import by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a detailed response of type ImportResourcesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata."]
                         pub fn import(
                             &self,
                             request: crate::schemas::ImportResourcesRequest,
@@ -28322,8 +28795,174 @@ pub mod resources {
                                 resource: resource.into(),
                             }
                         }
-                        #[doc = "Actions that can be performed on the fhir resource"]                        pub fn fhir ( & self ) -> crate :: resources :: projects :: locations :: datasets :: fhir_stores :: fhir :: FhirActions{
-                            crate :: resources :: projects :: locations :: datasets :: fhir_stores :: fhir :: FhirActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the fhir resource"]                        pub fn fhir (& self) -> crate :: resources :: projects :: locations :: datasets :: fhir_stores :: fhir :: FhirActions{
+                            crate :: resources :: projects :: locations :: datasets :: fhir_stores :: fhir :: FhirActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
+                        }
+                    }
+                    #[doc = "Created via [FhirStoresActions::configure_search()](struct.FhirStoresActions.html#method.configure_search)"]
+                    #[derive(Debug, Clone)]
+                    pub struct ConfigureSearchRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::ConfigureSearchRequest,
+                        name: String,
+                        access_token: Option<String>,
+                        alt: Option<crate::params::Alt>,
+                        callback: Option<String>,
+                        fields: Option<String>,
+                        key: Option<String>,
+                        oauth_token: Option<String>,
+                        pretty_print: Option<bool>,
+                        quota_user: Option<String>,
+                        upload_protocol: Option<String>,
+                        upload_type: Option<String>,
+                        xgafv: Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> ConfigureSearchRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields)
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::Operation, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>)
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::Operation, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*"))
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute()
+                        }
+                        fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path())?;
+                            let req = req.json(&self.request);
+                            Ok(crate::error_from_response(req.send()?)?.json()?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://healthcare.googleapis.com/".to_owned();
+                            output.push_str("v1beta1/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str(":configureSearch");
+                            output
+                        }
+                        fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            req = req.bearer_auth(
+                                self.auth
+                                    .access_token()
+                                    .map_err(|err| crate::Error::OAuth2(err))?,
+                            );
+                            Ok(req)
                         }
                     }
                     #[doc = "Created via [FhirStoresActions::create()](struct.FhirStoresActions.html#method.create)"]
@@ -29175,7 +29814,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> GetIamPolicyRequestBuilder<'a> {
-                        #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                        #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                         pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                             self.options_requested_policy_version = Some(value);
                             self
@@ -30483,7 +31122,7 @@ pub mod resources {
                                     name: name.into(),
                                 }
                             }
-                            #[doc = "Deletes FHIR resources that match a search query. Implements the FHIR standard conditional delete interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.12.1), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.13.1), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#3.1.0.7.1)). If multiple resources match, all matching resources are deleted. Search terms are provided as query parameters following the same pattern as the search method. Note: Unless resource versioning is disabled by setting the disable_resource_versioning flag on the FHIR store, the deleted resources are moved to a history repository that can still be retrieved through vread and related methods, unless they are removed by the purge method. This method requires the`healthcare.fhirStores.searchResources` and `healthcare.fhirResources.delete` permissions on the parent FHIR store. For samples that show how to call `conditionalDelete`, see [Conditionally deleting a FHIR resource](/healthcare/docs/how-tos/fhir-resources#conditionally_deleting_a_fhir_resource)."]
+                            #[doc = "Deletes FHIR resources that match a search query. Implements the FHIR standard conditional delete interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.12.1), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.13.1), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#3.1.0.7.1)). If multiple resources match, all matching resources are deleted. Search terms are provided as query parameters following the same pattern as the search method. Not all FHIR resources that match the search query might be deleted because, by default, a maximum of 100 FHIR resources can be deleted. The number of FHIR resources that can be deleted depends on the page size of the returned resources, which you can control using the `_count` query parameter. Even when using `_count`, you can delete a maximum 1,000 FHIR resources per each call of `conditionalDelete`. Note: Unless resource versioning is disabled by setting the disable_resource_versioning flag on the FHIR store, the deleted resources are moved to a history repository that can still be retrieved through vread and related methods, unless they are removed by the purge method. This method requires the`healthcare.fhirStores.searchResources` and `healthcare.fhirResources.delete` permissions on the parent FHIR store. For samples that show how to call `conditionalDelete`, see [Conditionally deleting a FHIR resource](/healthcare/docs/how-tos/fhir-resources#conditionally_deleting_a_fhir_resource)."]
                             pub fn conditional_delete(
                                 &self,
                                 parent: impl Into<String>,
@@ -30533,7 +31172,7 @@ pub mod resources {
                                     r#type: r#type.into(),
                                 }
                             }
-                            #[doc = "If a resource is found based on the search criteria specified in the query parameters, updates the entire contents of that resource. Implements the FHIR standard conditional update interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.10.2), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#cond-update), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#cond-update)). Search terms are provided as query parameters following the same pattern as the search method. If the search criteria identify more than one match, the request returns a `412 Precondition Failed` error. If the search criteria identify zero matches, and the supplied resource body contains an `id`, and the FHIR store has enable_update_create set, creates the resource with the client-specified ID. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud audit logs and Cloud Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources. If the search criteria identify zero matches, and the supplied resource body does not contain an `id`, the resource is created with a server-assigned ID as per the create method. The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. On success, the response body contains a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. This method requires the`healthcare.fhirStores.searchResources` and `healthcare.fhirResources.update` permissions on the parent FHIR store. For samples that show how to call `conditionalUpdate`, see [Conditionally updating a FHIR resource](/healthcare/docs/how-tos/fhir-resources#conditionally_updating_a_fhir_resource)."]
+                            #[doc = "If a resource is found based on the search criteria specified in the query parameters, updates the entire contents of that resource. Implements the FHIR standard conditional update interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.10.2), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#cond-update), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#cond-update)). Search terms are provided as query parameters following the same pattern as the search method. If the search criteria identify more than one match, the request returns a `412 Precondition Failed` error. If the search criteria identify zero matches, and the supplied resource body contains an `id`, and the FHIR store has enable_update_create set, creates the resource with the client-specified ID. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud Audit Logs and Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources. If the search criteria identify zero matches, and the supplied resource body does not contain an `id`, the resource is created with a server-assigned ID as per the create method. The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. On success, the response body contains a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. This method requires the`healthcare.fhirStores.searchResources` and `healthcare.fhirResources.update` permissions on the parent FHIR store. For samples that show how to call `conditionalUpdate`, see [Conditionally updating a FHIR resource](/healthcare/docs/how-tos/fhir-resources#conditionally_updating_a_fhir_resource)."]
                             pub fn conditional_update(
                                 &self,
                                 request: crate::schemas::HttpBody,
@@ -30697,7 +31336,7 @@ pub mod resources {
                                     name: name.into(),
                                 }
                             }
-                            #[doc = "Searches for resources in the given FHIR store according to criteria specified as query parameters. Implements the FHIR standard search interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#search), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#search), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#search)) using the search semantics described in the FHIR Search specification ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/search.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/search.html), [R4](https://hl7.org/implement/standards/fhir/R4/search.html)). Supports four methods of search defined by the specification: * `GET [base]?[parameters]` to search across all resources. * `GET [base]/[type]?[parameters]` to search resources of a specified type. * `POST [base]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method across all resources. * `POST [base]/[type]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method for the specified type. The `GET` and `POST` methods do not support compartment searches. The `POST` method does not support `application/x-www-form-urlencoded` search parameters. On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the search. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The server's capability statement, retrieved through capabilities, indicates what search parameters are supported on each FHIR resource. A list of all search parameters defined by the specification can be found in the FHIR Search Parameter Registry ([STU3](https://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html), [R4](https://hl7.org/implement/standards/fhir/R4/searchparameter-registry.html)). FHIR search parameters for DSTU2 can be found on each resource's definition page. Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`, `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `:recurse`. Supported search result parameters: `_sort`, `_count`, `_include`, `_revinclude`, `_summary=text`, `_summary=data`, and `_elements`. The maximum number of search results returned defaults to 100, which can be overridden by the `_count` parameter up to a maximum limit of 1000. If there are additional results, the returned `Bundle` contains pagination links. Resources with a total size larger than 5MB or a field count larger than 50,000 might not be fully searchable as the server might trim its generated search index in those cases. Note: FHIR resources are indexed asynchronously, so there might be a slight delay between the time a resource is created or changes and when the change is reflected in search results. For samples and detailed information, see [Searching for FHIR resources](/healthcare/docs/how-tos/fhir-search) and [Advanced FHIR search features](/healthcare/docs/how-tos/fhir-advanced-search)."]
+                            #[doc = "Searches for resources in the given FHIR store according to criteria specified as query parameters. Implements the FHIR standard search interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#search), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#search), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#search)) using the search semantics described in the FHIR Search specification ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/search.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/search.html), [R4](https://hl7.org/implement/standards/fhir/R4/search.html)). Supports four methods of search defined by the specification: * `GET [base]?[parameters]` to search across all resources. * `GET [base]/[type]?[parameters]` to search resources of a specified type. * `POST [base]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method across all resources. * `POST [base]/[type]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method for the specified type. The `GET` and `POST` methods do not support compartment searches. The `POST` method does not support `application/x-www-form-urlencoded` search parameters. On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the search. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The server's capability statement, retrieved through capabilities, indicates what search parameters are supported on each FHIR resource. A list of all search parameters defined by the specification can be found in the FHIR Search Parameter Registry ([STU3](https://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html), [R4](https://hl7.org/implement/standards/fhir/R4/searchparameter-registry.html)). FHIR search parameters for DSTU2 can be found on each resource's definition page. Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`, `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `:recurse`. Supported search result parameters: `_sort`, `_count`, `_include`, `_revinclude`, `_summary=text`, `_summary=data`, and `_elements`. The maximum number of search results returned defaults to 100, which can be overridden by the `_count` parameter up to a maximum limit of 1000. If there are additional results, the returned `Bundle` contains a link of `relation` \"next\", which has a `_page_token` parameter for an opaque pagination token that can be used to retrieve the next page. Resources with a total size larger than 5MB or a field count larger than 50,000 might not be fully searchable as the server might trim its generated search index in those cases. Note: FHIR resources are indexed asynchronously, so there might be a slight delay between the time a resource is created or changes and when the change is reflected in search results. For samples and detailed information, see [Searching for FHIR resources](/healthcare/docs/how-tos/fhir-search) and [Advanced FHIR search features](/healthcare/docs/how-tos/fhir-advanced-search)."]
                             pub fn search(
                                 &self,
                                 request: crate::schemas::SearchResourcesRequest,
@@ -30721,7 +31360,7 @@ pub mod resources {
                                     parent: parent.into(),
                                 }
                             }
-                            #[doc = "Searches for resources in the given FHIR store according to criteria specified as query parameters. Implements the FHIR standard search interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#search), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#search), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#search)) using the search semantics described in the FHIR Search specification ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/search.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/search.html), [R4](https://hl7.org/implement/standards/fhir/R4/search.html)). Supports four methods of search defined by the specification: * `GET [base]?[parameters]` to search across all resources. * `GET [base]/[type]?[parameters]` to search resources of a specified type. * `POST [base]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method across all resources. * `POST [base]/[type]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method for the specified type. The `GET` and `POST` methods do not support compartment searches. The `POST` method does not support `application/x-www-form-urlencoded` search parameters. On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the search. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The server's capability statement, retrieved through capabilities, indicates what search parameters are supported on each FHIR resource. A list of all search parameters defined by the specification can be found in the FHIR Search Parameter Registry ([STU3](https://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html), [R4](https://hl7.org/implement/standards/fhir/R4/searchparameter-registry.html)). FHIR search parameters for DSTU2 can be found on each resource's definition page. Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`, `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `:recurse`. Supported search result parameters: `_sort`, `_count`, `_include`, `_revinclude`, `_summary=text`, `_summary=data`, and `_elements`. The maximum number of search results returned defaults to 100, which can be overridden by the `_count` parameter up to a maximum limit of 1000. If there are additional results, the returned `Bundle` contains pagination links. Resources with a total size larger than 5MB or a field count larger than 50,000 might not be fully searchable as the server might trim its generated search index in those cases. Note: FHIR resources are indexed asynchronously, so there might be a slight delay between the time a resource is created or changes and when the change is reflected in search results. For samples and detailed information, see [Searching for FHIR resources](/healthcare/docs/how-tos/fhir-search) and [Advanced FHIR search features](/healthcare/docs/how-tos/fhir-advanced-search)."]
+                            #[doc = "Searches for resources in the given FHIR store according to criteria specified as query parameters. Implements the FHIR standard search interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#search), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#search), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#search)) using the search semantics described in the FHIR Search specification ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/search.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/search.html), [R4](https://hl7.org/implement/standards/fhir/R4/search.html)). Supports four methods of search defined by the specification: * `GET [base]?[parameters]` to search across all resources. * `GET [base]/[type]?[parameters]` to search resources of a specified type. * `POST [base]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method across all resources. * `POST [base]/[type]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method for the specified type. The `GET` and `POST` methods do not support compartment searches. The `POST` method does not support `application/x-www-form-urlencoded` search parameters. On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the search. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The server's capability statement, retrieved through capabilities, indicates what search parameters are supported on each FHIR resource. A list of all search parameters defined by the specification can be found in the FHIR Search Parameter Registry ([STU3](https://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html), [R4](https://hl7.org/implement/standards/fhir/R4/searchparameter-registry.html)). FHIR search parameters for DSTU2 can be found on each resource's definition page. Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`, `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `:recurse`. Supported search result parameters: `_sort`, `_count`, `_include`, `_revinclude`, `_summary=text`, `_summary=data`, and `_elements`. The maximum number of search results returned defaults to 100, which can be overridden by the `_count` parameter up to a maximum limit of 1000. If there are additional results, the returned `Bundle` contains a link of `relation` \"next\", which has a `_page_token` parameter for an opaque pagination token that can be used to retrieve the next page. Resources with a total size larger than 5MB or a field count larger than 50,000 might not be fully searchable as the server might trim its generated search index in those cases. Note: FHIR resources are indexed asynchronously, so there might be a slight delay between the time a resource is created or changes and when the change is reflected in search results. For samples and detailed information, see [Searching for FHIR resources](/healthcare/docs/how-tos/fhir-search) and [Advanced FHIR search features](/healthcare/docs/how-tos/fhir-advanced-search)."]
                             pub fn search_type(
                                 &self,
                                 request: crate::schemas::SearchResourcesRequest,
@@ -30747,7 +31386,7 @@ pub mod resources {
                                     resource_type: resource_type.into(),
                                 }
                             }
-                            #[doc = "Updates the entire contents of a resource. Implements the FHIR standard update interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#update), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#update), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#update)). If the specified resource does not exist and the FHIR store has enable_update_create set, creates the resource with the client-specified ID. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud audit logs and Cloud Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources. The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. The resource must contain an `id` element having an identical value to the ID in the REST path of the request. On success, the response body contains a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `update`, see [Updating a FHIR resource](/healthcare/docs/how-tos/fhir-resources#updating_a_fhir_resource)."]
+                            #[doc = "Updates the entire contents of a resource. Implements the FHIR standard update interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#update), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#update), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#update)). If the specified resource does not exist and the FHIR store has enable_update_create set, creates the resource with the client-specified ID. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud Audit Logs and Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources. The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. The resource must contain an `id` element having an identical value to the ID in the REST path of the request. On success, the response body contains a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `update`, see [Updating a FHIR resource](/healthcare/docs/how-tos/fhir-resources#updating_a_fhir_resource)."]
                             pub fn update(
                                 &self,
                                 request: crate::schemas::HttpBody,
@@ -34398,7 +35037,7 @@ pub mod resources {
                                 options_requested_policy_version: None,
                             }
                         }
-                        #[doc = "Import messages to the HL7v2 store by loading data from the specified sources. This method is optimized to load large quantities of data using import semantics that ignore some HL7v2 store configuration options and are not suitable for all use cases. It is primarily intended to load data into an empty HL7v2 store that is not being used by other clients. An existing message will be overwritten if a duplicate message is imported. A duplicate message is a message with the same raw bytes as a message that already exists in this HL7v2 store. When a message is overwritten, its labels will also be overwritten. The import operation is idempotent unless the input data contains multiple valid messages with the same raw bytes but different labels. In that case, after the import completes, the store contains exactly one message with those raw bytes but there is no ordering guarantee on which version of the labels it has. The operation result counters do not count duplicated raw bytes as an error and count one success for each message in the input, which might result in a success count larger than the number of messages in the HL7v2 store. If some messages fail to import, for example due to parsing errors, successfully imported messages are not rolled back. This method returns an Operation that can be used to track the status of the import by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a response of type ImportMessagesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata."]
+                        #[doc = "Import messages to the HL7v2 store by loading data from the specified sources. This method is optimized to load large quantities of data using import semantics that ignore some HL7v2 store configuration options and are not suitable for all use cases. It is primarily intended to load data into an empty HL7v2 store that is not being used by other clients. An existing message will be overwritten if a duplicate message is imported. A duplicate message is a message with the same raw bytes as a message that already exists in this HL7v2 store. When a message is overwritten, its labels will also be overwritten. The import operation is idempotent unless the input data contains multiple valid messages with the same raw bytes but different labels. In that case, after the import completes, the store contains exactly one message with those raw bytes but there is no ordering guarantee on which version of the labels it has. The operation result counters do not count duplicated raw bytes as an error and count one success for each message in the input, which might result in a success count larger than the number of messages in the HL7v2 store. If some messages fail to import, for example due to parsing errors, successfully imported messages are not rolled back. This method returns an Operation that can be used to track the status of the import by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a response of type ImportMessagesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata."]
                         pub fn import(
                             &self,
                             request: crate::schemas::ImportMessagesRequest,
@@ -34517,8 +35156,8 @@ pub mod resources {
                                 resource: resource.into(),
                             }
                         }
-                        #[doc = "Actions that can be performed on the messages resource"]                        pub fn messages ( & self ) -> crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: MessagesActions{
-                            crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: MessagesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the messages resource"]                        pub fn messages (& self) -> crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: MessagesActions{
+                            crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: MessagesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
                     }
                     #[doc = "Created via [Hl7V2StoresActions::create()](struct.Hl7V2StoresActions.html#method.create)"]
@@ -35204,7 +35843,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> GetIamPolicyRequestBuilder<'a> {
-                        #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                        #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                         pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                             self.options_requested_policy_version = Some(value);
                             self
@@ -36677,7 +37316,7 @@ pub mod resources {
                                     view: None,
                                 }
                             }
-                            #[doc = "Parses and stores an HL7v2 message. This method triggers an asynchronous notification to any Cloud Pub/Sub topic configured in projects.locations.datasets.hl7V2Stores.Hl7V2NotificationConfig, if the filtering matches the message. If an MLLP adapter is configured to listen to a Cloud Pub/Sub topic, the adapter transmits the message when a notification is received."]
+                            #[doc = "Parses and stores an HL7v2 message. This method triggers an asynchronous notification to any Pub/Sub topic configured in Hl7V2Store.Hl7V2NotificationConfig, if the filtering matches the message. If an MLLP adapter is configured to listen to a Pub/Sub topic, the adapter transmits the message when a notification is received."]
                             pub fn create(
                                 &self,
                                 request: crate::schemas::CreateMessageRequest,
@@ -36740,7 +37379,7 @@ pub mod resources {
                                     view: None,
                                 }
                             }
-                            #[doc = "Parses and stores an HL7v2 message. This method triggers an asynchronous notification to any Cloud Pub/Sub topic configured in projects.locations.datasets.hl7V2Stores.Hl7V2NotificationConfig, if the filtering matches the message. If an MLLP adapter is configured to listen to a Cloud Pub/Sub topic, the adapter transmits the message when a notification is received. This method also generates a response containing an HL7v2 acknowledgement (`ACK`) message when successful or a negative acknowledgement (`NACK`) message in case of error, suitable for replying to HL7v2 interface systems that expect these acknowledgements."]
+                            #[doc = "Parses and stores an HL7v2 message. This method triggers an asynchronous notification to any Pub/Sub topic configured in Hl7V2Store.Hl7V2NotificationConfig, if the filtering matches the message. If an MLLP adapter is configured to listen to a Pub/Sub topic, the adapter transmits the message when a notification is received. If the method is successful, it generates a response containing an HL7v2 acknowledgment (`ACK`) message. If the method encounters an error, it returns a negative acknowledgment (`NACK`) message. This behavior is suitable for replying to HL7v2 interface systems that expect these acknowledgments."]
                             pub fn ingest(
                                 &self,
                                 request: crate::schemas::IngestMessageRequest,
@@ -36816,7 +37455,7 @@ pub mod resources {
                         }
                         #[doc = "Created via [MessagesActions::batch_get()](struct.MessagesActions.html#method.batch_get)"]
                         #[derive(Debug, Clone)]
-                        pub struct BatchGetRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , ids : Option < Vec < String > > , view : Option < crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: params :: BatchGetView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                        pub struct BatchGetRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , ids : Option < Vec < String > > , view : Option < crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: params :: BatchGetView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                         impl<'a> BatchGetRequestBuilder<'a> {
                             #[doc = "The resource id of the HL7v2 messages to retrieve in the format: `{message_id}`, where the full resource name is `{parent}/messages/{message_id}` A maximum of 100 messages can be retrieved in a batch. All 'ids' have to be under parent."]
                             pub fn ids(mut self, value: impl Into<Vec<String>>) -> Self {
@@ -37311,7 +37950,7 @@ pub mod resources {
                         }
                         #[doc = "Created via [MessagesActions::get()](struct.MessagesActions.html#method.get)"]
                         #[derive(Debug, Clone)]
-                        pub struct GetRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , name : String , view : Option < crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: params :: GetView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                        pub struct GetRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , name : String , view : Option < crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: params :: GetView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                         impl<'a> GetRequestBuilder<'a> {
                             #[doc = "Specifies which parts of the Message resource to return in the response. When unspecified, equivalent to FULL."]
                             pub fn view(
@@ -37634,7 +38273,7 @@ pub mod resources {
                         }
                         #[doc = "Created via [MessagesActions::list()](struct.MessagesActions.html#method.list)"]
                         #[derive(Debug, Clone)]
-                        pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , filter : Option < String > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , view : Option < crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: params :: ListView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                        pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , filter : Option < String > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , view : Option < crate :: resources :: projects :: locations :: datasets :: hl_7v2_stores :: messages :: params :: ListView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                         impl<'a> ListRequestBuilder<'a> {
                             #[doc = "Restricts messages returned to those matching a filter. The following syntax is available: * A string field value can be written as text inside quotation marks, for example `\"query text\"`. The only valid relational operation for text fields is equality (`=`), where text is searched within the field, rather than having the field be equal to the text. For example, `\"Comment = great\"` returns messages with `great` in the comment field. * A number field value can be written as an integer, a decimal, or an exponential. The valid relational operators for number fields are the equality operator (`=`), along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * A date field value must be written in `yyyy-mm-dd` form. Fields with date and time use the RFC3339 time format. Leading zeros are required for one-digit months and days. The valid relational operators for date fields are the equality operator (`=`) , along with the less than/greater than operators (`<`, `<=`, `>`, `>=`). Note that there is no inequality (`!=`) operator. You can prepend the `NOT` operator to an expression to negate it. * Multiple field query expressions can be combined in one query by adding `AND` or `OR` operators between the expressions. If a boolean operator appears within a quoted string, it is not treated as special, it's just another part of the character string to be matched. You can prepend the `NOT` operator to an expression to negate it. Fields/functions available for filtering are: * `message_type`, from the MSH-9.1 field. For example, `NOT message_type = \"ADT\"`. * `send_date` or `sendDate`, the YYYY-MM-DD date the message was sent in the dataset's time_zone, from the MSH-7 segment. For example, `send_date < \"2017-01-02\"`. * `send_time`, the timestamp when the message was sent, using the RFC3339 time format for comparisons, from the MSH-7 segment. For example, `send_time < \"2017-01-02T00:00:00-05:00\"`. * `create_time`, the timestamp when the message was created in the HL7v2 store. Use the RFC3339 time format for comparisons. For example, `create_time < \"2017-01-02T00:00:00-05:00\"`. * `send_facility`, the care center that the message came from, from the MSH-4 segment. For example, `send_facility = \"ABC\"`. * `PatientId(value, type)`, which matches if the message lists a patient having an ID of the given value and type in the PID-2, PID-3, or PID-4 segments. For example, `PatientId(\"123456\", \"MRN\")`. * `labels.x`, a string value of the label with key `x` as set using the Message.labels map. For example, `labels.\"priority\"=\"high\"`. The operator `:*` can be used to assert the existence of a label. For example, `labels.\"priority\":*`."]
                             pub fn filter(mut self, value: impl Into<String>) -> Self {
@@ -38847,7 +39486,7 @@ pub mod resources {
                         fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                             self.auth
                         }
-                        #[doc = "Analyze heathcare entity in a document. Its response includes the recognized entity mentions and the relationships between them. AnalyzeEntities uses context aware models to detect entities."]
+                        #[doc = "Analyze heathcare entity in a document. Its response includes the recognized entity mentions and the relationships between them. AnalyzeEntities uses context aware models to detect entities. This method can only analyze documents written in English."]
                         pub fn analyze_entities(
                             &self,
                             request: crate::schemas::AnalyzeEntitiesRequest,

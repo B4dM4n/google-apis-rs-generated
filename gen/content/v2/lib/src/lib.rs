@@ -1,4 +1,4 @@
-#![doc = "# Resources and Methods\n    * [accounts](resources/accounts/struct.AccountsActions.html)\n      * [*authinfo*](resources/accounts/struct.AuthinfoRequestBuilder.html), [*claimwebsite*](resources/accounts/struct.ClaimwebsiteRequestBuilder.html), [*custombatch*](resources/accounts/struct.CustombatchRequestBuilder.html), [*delete*](resources/accounts/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/struct.GetRequestBuilder.html), [*insert*](resources/accounts/struct.InsertRequestBuilder.html), [*link*](resources/accounts/struct.LinkRequestBuilder.html), [*list*](resources/accounts/struct.ListRequestBuilder.html), [*update*](resources/accounts/struct.UpdateRequestBuilder.html)\n    * [accountstatuses](resources/accountstatuses/struct.AccountstatusesActions.html)\n      * [*custombatch*](resources/accountstatuses/struct.CustombatchRequestBuilder.html), [*get*](resources/accountstatuses/struct.GetRequestBuilder.html), [*list*](resources/accountstatuses/struct.ListRequestBuilder.html)\n    * [accounttax](resources/accounttax/struct.AccounttaxActions.html)\n      * [*custombatch*](resources/accounttax/struct.CustombatchRequestBuilder.html), [*get*](resources/accounttax/struct.GetRequestBuilder.html), [*list*](resources/accounttax/struct.ListRequestBuilder.html), [*update*](resources/accounttax/struct.UpdateRequestBuilder.html)\n    * [datafeeds](resources/datafeeds/struct.DatafeedsActions.html)\n      * [*custombatch*](resources/datafeeds/struct.CustombatchRequestBuilder.html), [*delete*](resources/datafeeds/struct.DeleteRequestBuilder.html), [*fetchnow*](resources/datafeeds/struct.FetchnowRequestBuilder.html), [*get*](resources/datafeeds/struct.GetRequestBuilder.html), [*insert*](resources/datafeeds/struct.InsertRequestBuilder.html), [*list*](resources/datafeeds/struct.ListRequestBuilder.html), [*update*](resources/datafeeds/struct.UpdateRequestBuilder.html)\n    * [datafeedstatuses](resources/datafeedstatuses/struct.DatafeedstatusesActions.html)\n      * [*custombatch*](resources/datafeedstatuses/struct.CustombatchRequestBuilder.html), [*get*](resources/datafeedstatuses/struct.GetRequestBuilder.html), [*list*](resources/datafeedstatuses/struct.ListRequestBuilder.html)\n    * [inventory](resources/inventory/struct.InventoryActions.html)\n      * [*custombatch*](resources/inventory/struct.CustombatchRequestBuilder.html), [*set*](resources/inventory/struct.SetRequestBuilder.html)\n    * [liasettings](resources/liasettings/struct.LiasettingsActions.html)\n      * [*custombatch*](resources/liasettings/struct.CustombatchRequestBuilder.html), [*get*](resources/liasettings/struct.GetRequestBuilder.html), [*getaccessiblegmbaccounts*](resources/liasettings/struct.GetaccessiblegmbaccountsRequestBuilder.html), [*list*](resources/liasettings/struct.ListRequestBuilder.html), [*listposdataproviders*](resources/liasettings/struct.ListposdataprovidersRequestBuilder.html), [*requestgmbaccess*](resources/liasettings/struct.RequestgmbaccessRequestBuilder.html), [*requestinventoryverification*](resources/liasettings/struct.RequestinventoryverificationRequestBuilder.html), [*setinventoryverificationcontact*](resources/liasettings/struct.SetinventoryverificationcontactRequestBuilder.html), [*setposdataprovider*](resources/liasettings/struct.SetposdataproviderRequestBuilder.html), [*update*](resources/liasettings/struct.UpdateRequestBuilder.html)\n    * [orderinvoices](resources/orderinvoices/struct.OrderinvoicesActions.html)\n      * [*createchargeinvoice*](resources/orderinvoices/struct.CreatechargeinvoiceRequestBuilder.html), [*createrefundinvoice*](resources/orderinvoices/struct.CreaterefundinvoiceRequestBuilder.html)\n    * [orderreports](resources/orderreports/struct.OrderreportsActions.html)\n      * [*listdisbursements*](resources/orderreports/struct.ListdisbursementsRequestBuilder.html), [*listtransactions*](resources/orderreports/struct.ListtransactionsRequestBuilder.html)\n    * [orderreturns](resources/orderreturns/struct.OrderreturnsActions.html)\n      * [*get*](resources/orderreturns/struct.GetRequestBuilder.html), [*list*](resources/orderreturns/struct.ListRequestBuilder.html)\n    * [orders](resources/orders/struct.OrdersActions.html)\n      * [*acknowledge*](resources/orders/struct.AcknowledgeRequestBuilder.html), [*advancetestorder*](resources/orders/struct.AdvancetestorderRequestBuilder.html), [*cancel*](resources/orders/struct.CancelRequestBuilder.html), [*cancellineitem*](resources/orders/struct.CancellineitemRequestBuilder.html), [*canceltestorderbycustomer*](resources/orders/struct.CanceltestorderbycustomerRequestBuilder.html), [*createtestorder*](resources/orders/struct.CreatetestorderRequestBuilder.html), [*createtestreturn*](resources/orders/struct.CreatetestreturnRequestBuilder.html), [*custombatch*](resources/orders/struct.CustombatchRequestBuilder.html), [*get*](resources/orders/struct.GetRequestBuilder.html), [*getbymerchantorderid*](resources/orders/struct.GetbymerchantorderidRequestBuilder.html), [*gettestordertemplate*](resources/orders/struct.GettestordertemplateRequestBuilder.html), [*instorerefundlineitem*](resources/orders/struct.InstorerefundlineitemRequestBuilder.html), [*list*](resources/orders/struct.ListRequestBuilder.html), [*refund*](resources/orders/struct.RefundRequestBuilder.html), [*rejectreturnlineitem*](resources/orders/struct.RejectreturnlineitemRequestBuilder.html), [*returnlineitem*](resources/orders/struct.ReturnlineitemRequestBuilder.html), [*returnrefundlineitem*](resources/orders/struct.ReturnrefundlineitemRequestBuilder.html), [*setlineitemmetadata*](resources/orders/struct.SetlineitemmetadataRequestBuilder.html), [*shiplineitems*](resources/orders/struct.ShiplineitemsRequestBuilder.html), [*updatelineitemshippingdetails*](resources/orders/struct.UpdatelineitemshippingdetailsRequestBuilder.html), [*updatemerchantorderid*](resources/orders/struct.UpdatemerchantorderidRequestBuilder.html), [*updateshipment*](resources/orders/struct.UpdateshipmentRequestBuilder.html)\n    * [pos](resources/pos/struct.PosActions.html)\n      * [*custombatch*](resources/pos/struct.CustombatchRequestBuilder.html), [*delete*](resources/pos/struct.DeleteRequestBuilder.html), [*get*](resources/pos/struct.GetRequestBuilder.html), [*insert*](resources/pos/struct.InsertRequestBuilder.html), [*inventory*](resources/pos/struct.InventoryRequestBuilder.html), [*list*](resources/pos/struct.ListRequestBuilder.html), [*sale*](resources/pos/struct.SaleRequestBuilder.html)\n    * [products](resources/products/struct.ProductsActions.html)\n      * [*custombatch*](resources/products/struct.CustombatchRequestBuilder.html), [*delete*](resources/products/struct.DeleteRequestBuilder.html), [*get*](resources/products/struct.GetRequestBuilder.html), [*insert*](resources/products/struct.InsertRequestBuilder.html), [*list*](resources/products/struct.ListRequestBuilder.html)\n    * [productstatuses](resources/productstatuses/struct.ProductstatusesActions.html)\n      * [*custombatch*](resources/productstatuses/struct.CustombatchRequestBuilder.html), [*get*](resources/productstatuses/struct.GetRequestBuilder.html), [*list*](resources/productstatuses/struct.ListRequestBuilder.html)\n    * [shippingsettings](resources/shippingsettings/struct.ShippingsettingsActions.html)\n      * [*custombatch*](resources/shippingsettings/struct.CustombatchRequestBuilder.html), [*get*](resources/shippingsettings/struct.GetRequestBuilder.html), [*getsupportedcarriers*](resources/shippingsettings/struct.GetsupportedcarriersRequestBuilder.html), [*getsupportedholidays*](resources/shippingsettings/struct.GetsupportedholidaysRequestBuilder.html), [*getsupportedpickupservices*](resources/shippingsettings/struct.GetsupportedpickupservicesRequestBuilder.html), [*list*](resources/shippingsettings/struct.ListRequestBuilder.html), [*update*](resources/shippingsettings/struct.UpdateRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [accounts](resources/accounts/struct.AccountsActions.html)\n      * [*authinfo*](resources/accounts/struct.AuthinfoRequestBuilder.html), [*claimwebsite*](resources/accounts/struct.ClaimwebsiteRequestBuilder.html), [*custombatch*](resources/accounts/struct.CustombatchRequestBuilder.html), [*delete*](resources/accounts/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/struct.GetRequestBuilder.html), [*insert*](resources/accounts/struct.InsertRequestBuilder.html), [*link*](resources/accounts/struct.LinkRequestBuilder.html), [*list*](resources/accounts/struct.ListRequestBuilder.html), [*update*](resources/accounts/struct.UpdateRequestBuilder.html)\n    * [accountstatuses](resources/accountstatuses/struct.AccountstatusesActions.html)\n      * [*custombatch*](resources/accountstatuses/struct.CustombatchRequestBuilder.html), [*get*](resources/accountstatuses/struct.GetRequestBuilder.html), [*list*](resources/accountstatuses/struct.ListRequestBuilder.html)\n    * [accounttax](resources/accounttax/struct.AccounttaxActions.html)\n      * [*custombatch*](resources/accounttax/struct.CustombatchRequestBuilder.html), [*get*](resources/accounttax/struct.GetRequestBuilder.html), [*list*](resources/accounttax/struct.ListRequestBuilder.html), [*update*](resources/accounttax/struct.UpdateRequestBuilder.html)\n    * [datafeeds](resources/datafeeds/struct.DatafeedsActions.html)\n      * [*custombatch*](resources/datafeeds/struct.CustombatchRequestBuilder.html), [*delete*](resources/datafeeds/struct.DeleteRequestBuilder.html), [*fetchnow*](resources/datafeeds/struct.FetchnowRequestBuilder.html), [*get*](resources/datafeeds/struct.GetRequestBuilder.html), [*insert*](resources/datafeeds/struct.InsertRequestBuilder.html), [*list*](resources/datafeeds/struct.ListRequestBuilder.html), [*update*](resources/datafeeds/struct.UpdateRequestBuilder.html)\n    * [datafeedstatuses](resources/datafeedstatuses/struct.DatafeedstatusesActions.html)\n      * [*custombatch*](resources/datafeedstatuses/struct.CustombatchRequestBuilder.html), [*get*](resources/datafeedstatuses/struct.GetRequestBuilder.html), [*list*](resources/datafeedstatuses/struct.ListRequestBuilder.html)\n    * [liasettings](resources/liasettings/struct.LiasettingsActions.html)\n      * [*custombatch*](resources/liasettings/struct.CustombatchRequestBuilder.html), [*get*](resources/liasettings/struct.GetRequestBuilder.html), [*getaccessiblegmbaccounts*](resources/liasettings/struct.GetaccessiblegmbaccountsRequestBuilder.html), [*list*](resources/liasettings/struct.ListRequestBuilder.html), [*listposdataproviders*](resources/liasettings/struct.ListposdataprovidersRequestBuilder.html), [*requestgmbaccess*](resources/liasettings/struct.RequestgmbaccessRequestBuilder.html), [*requestinventoryverification*](resources/liasettings/struct.RequestinventoryverificationRequestBuilder.html), [*setinventoryverificationcontact*](resources/liasettings/struct.SetinventoryverificationcontactRequestBuilder.html), [*setposdataprovider*](resources/liasettings/struct.SetposdataproviderRequestBuilder.html), [*update*](resources/liasettings/struct.UpdateRequestBuilder.html)\n    * [orderinvoices](resources/orderinvoices/struct.OrderinvoicesActions.html)\n      * [*createchargeinvoice*](resources/orderinvoices/struct.CreatechargeinvoiceRequestBuilder.html), [*createrefundinvoice*](resources/orderinvoices/struct.CreaterefundinvoiceRequestBuilder.html)\n    * [orderreports](resources/orderreports/struct.OrderreportsActions.html)\n      * [*listdisbursements*](resources/orderreports/struct.ListdisbursementsRequestBuilder.html), [*listtransactions*](resources/orderreports/struct.ListtransactionsRequestBuilder.html)\n    * [orderreturns](resources/orderreturns/struct.OrderreturnsActions.html)\n      * [*get*](resources/orderreturns/struct.GetRequestBuilder.html), [*list*](resources/orderreturns/struct.ListRequestBuilder.html)\n    * [orders](resources/orders/struct.OrdersActions.html)\n      * [*acknowledge*](resources/orders/struct.AcknowledgeRequestBuilder.html), [*advancetestorder*](resources/orders/struct.AdvancetestorderRequestBuilder.html), [*cancel*](resources/orders/struct.CancelRequestBuilder.html), [*cancellineitem*](resources/orders/struct.CancellineitemRequestBuilder.html), [*canceltestorderbycustomer*](resources/orders/struct.CanceltestorderbycustomerRequestBuilder.html), [*createtestorder*](resources/orders/struct.CreatetestorderRequestBuilder.html), [*createtestreturn*](resources/orders/struct.CreatetestreturnRequestBuilder.html), [*custombatch*](resources/orders/struct.CustombatchRequestBuilder.html), [*get*](resources/orders/struct.GetRequestBuilder.html), [*getbymerchantorderid*](resources/orders/struct.GetbymerchantorderidRequestBuilder.html), [*gettestordertemplate*](resources/orders/struct.GettestordertemplateRequestBuilder.html), [*instorerefundlineitem*](resources/orders/struct.InstorerefundlineitemRequestBuilder.html), [*list*](resources/orders/struct.ListRequestBuilder.html), [*refund*](resources/orders/struct.RefundRequestBuilder.html), [*rejectreturnlineitem*](resources/orders/struct.RejectreturnlineitemRequestBuilder.html), [*returnlineitem*](resources/orders/struct.ReturnlineitemRequestBuilder.html), [*returnrefundlineitem*](resources/orders/struct.ReturnrefundlineitemRequestBuilder.html), [*setlineitemmetadata*](resources/orders/struct.SetlineitemmetadataRequestBuilder.html), [*shiplineitems*](resources/orders/struct.ShiplineitemsRequestBuilder.html), [*updatelineitemshippingdetails*](resources/orders/struct.UpdatelineitemshippingdetailsRequestBuilder.html), [*updatemerchantorderid*](resources/orders/struct.UpdatemerchantorderidRequestBuilder.html), [*updateshipment*](resources/orders/struct.UpdateshipmentRequestBuilder.html)\n    * [pos](resources/pos/struct.PosActions.html)\n      * [*custombatch*](resources/pos/struct.CustombatchRequestBuilder.html), [*delete*](resources/pos/struct.DeleteRequestBuilder.html), [*get*](resources/pos/struct.GetRequestBuilder.html), [*insert*](resources/pos/struct.InsertRequestBuilder.html), [*inventory*](resources/pos/struct.InventoryRequestBuilder.html), [*list*](resources/pos/struct.ListRequestBuilder.html), [*sale*](resources/pos/struct.SaleRequestBuilder.html)\n    * [products](resources/products/struct.ProductsActions.html)\n      * [*custombatch*](resources/products/struct.CustombatchRequestBuilder.html), [*delete*](resources/products/struct.DeleteRequestBuilder.html), [*get*](resources/products/struct.GetRequestBuilder.html), [*insert*](resources/products/struct.InsertRequestBuilder.html), [*list*](resources/products/struct.ListRequestBuilder.html)\n    * [productstatuses](resources/productstatuses/struct.ProductstatusesActions.html)\n      * [*custombatch*](resources/productstatuses/struct.CustombatchRequestBuilder.html), [*get*](resources/productstatuses/struct.GetRequestBuilder.html), [*list*](resources/productstatuses/struct.ListRequestBuilder.html)\n    * [shippingsettings](resources/shippingsettings/struct.ShippingsettingsActions.html)\n      * [*custombatch*](resources/shippingsettings/struct.CustombatchRequestBuilder.html), [*get*](resources/shippingsettings/struct.GetRequestBuilder.html), [*getsupportedcarriers*](resources/shippingsettings/struct.GetsupportedcarriersRequestBuilder.html), [*getsupportedholidays*](resources/shippingsettings/struct.GetsupportedholidaysRequestBuilder.html), [*getsupportedpickupservices*](resources/shippingsettings/struct.GetsupportedpickupservicesRequestBuilder.html), [*list*](resources/shippingsettings/struct.ListRequestBuilder.html), [*update*](resources/shippingsettings/struct.UpdateRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Manage your product listings and accounts for Google Shopping\n\n`https://www.googleapis.com/auth/content`"]
     pub const CONTENT: &str = "https://www.googleapis.com/auth/content";
@@ -240,6 +240,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub customer_service: ::std::option::Option<crate::schemas::AccountCustomerService>,
+        #[doc = "The 10-digit [Korean business registration number](https://support.google.com/merchants/answer/9037766) separated with dashes in the format: XXX-XX-XXXXX. This field will only be updated if explicitly set."]
+        #[serde(
+            rename = "koreanBusinessRegistrationNumber",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub korean_business_registration_number: ::std::option::Option<String>,
         #[doc = "The phone number of the business."]
         #[serde(
             rename = "phoneNumber",
@@ -1978,6 +1985,65 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct Address {
+        #[doc = "Required. Top-level administrative subdivision of the country. For example, a state like California (\"CA\") or a province like Quebec (\"QC\")."]
+        #[serde(
+            rename = "administrativeArea",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub administrative_area: ::std::option::Option<String>,
+        #[doc = "Required. City, town or commune. May also include dependent localities or sublocalities (e.g. neighborhoods or suburbs)."]
+        #[serde(
+            rename = "city",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub city: ::std::option::Option<String>,
+        #[doc = "Required. [CLDR country code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)(e.g. \"US\")."]
+        #[serde(
+            rename = "country",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub country: ::std::option::Option<String>,
+        #[doc = "Required. Postal code or ZIP (e.g. \"94043\"). Required."]
+        #[serde(
+            rename = "postalCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub postal_code: ::std::option::Option<String>,
+        #[doc = "Street-level part of the address."]
+        #[serde(
+            rename = "streetAddress",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub street_address: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Address {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Address {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Amount {
         #[doc = "[required] Value before taxes."]
         #[serde(
@@ -2017,7 +2083,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BusinessDayConfig {
-        #[doc = "Regular business days. May not be empty."]
+        #[doc = "Regular business days, such as '\"monday\"'. May not be empty."]
         #[serde(
             rename = "businessDays",
             default,
@@ -2121,6 +2187,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub country: ::std::option::Option<String>,
+        #[doc = "A list of services supported for EDD (Estimated Delivery Date) calculation. This is the list of valid values for WarehouseBasedDeliveryTime.carrierService."]
+        #[serde(
+            rename = "eddServices",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub edd_services: ::std::option::Option<Vec<String>>,
         #[doc = "The name of the carrier (e.g., `\"UPS\"`). Always present."]
         #[serde(
             rename = "name",
@@ -2128,7 +2201,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "A list of supported services (e.g., `\"ground\"`) for that carrier. Contains at least one service."]
+        #[doc = "A list of supported services (e.g., `\"ground\"`) for that carrier. Contains at least one service. This is the list of valid values for CarrierRate.carrierService."]
         #[serde(
             rename = "services",
             default,
@@ -3362,6 +3435,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub transit_time_table: ::std::option::Option<crate::schemas::TransitTable>,
+        #[doc = "Indicates that the delivery time should be calculated per warehouse (shipping origin location) based on the settings of the selected carrier. When set, no other transit time related field in DeliveryTime should be set."]
+        #[serde(
+            rename = "warehouseBasedDeliveryTimes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub warehouse_based_delivery_times:
+            ::std::option::Option<Vec<crate::schemas::WarehouseBasedDeliveryTime>>,
     }
     impl ::google_field_selector::FieldSelector for DeliveryTime {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -3775,478 +3856,6 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Installment {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
-    )]
-    pub struct Inventory {
-        #[doc = "The availability of the product. Acceptable values are: - \"`in stock`\" - \"`out of stock`\" - \"`preorder`\" "]
-        #[serde(
-            rename = "availability",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub availability: ::std::option::Option<String>,
-        #[doc = "Custom label 0 for custom grouping of items in a Shopping campaign. Only supported for online products."]
-        #[serde(
-            rename = "customLabel0",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub custom_label_0: ::std::option::Option<String>,
-        #[doc = "Custom label 1 for custom grouping of items in a Shopping campaign. Only supported for online products."]
-        #[serde(
-            rename = "customLabel1",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub custom_label_1: ::std::option::Option<String>,
-        #[doc = "Custom label 2 for custom grouping of items in a Shopping campaign. Only supported for online products."]
-        #[serde(
-            rename = "customLabel2",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub custom_label_2: ::std::option::Option<String>,
-        #[doc = "Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products."]
-        #[serde(
-            rename = "customLabel3",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub custom_label_3: ::std::option::Option<String>,
-        #[doc = "Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products."]
-        #[serde(
-            rename = "customLabel4",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub custom_label_4: ::std::option::Option<String>,
-        #[doc = "Number and amount of installments to pay for an item. Brazil only."]
-        #[serde(
-            rename = "installment",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub installment: ::std::option::Option<crate::schemas::Installment>,
-        #[doc = "The instore product location. Supported only for local products."]
-        #[serde(
-            rename = "instoreProductLocation",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub instore_product_location: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#inventory`\""]
-        #[serde(
-            rename = "kind",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub kind: ::std::option::Option<String>,
-        #[doc = "Loyalty points that users receive after purchasing the item. Japan only."]
-        #[serde(
-            rename = "loyaltyPoints",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub loyalty_points: ::std::option::Option<crate::schemas::LoyaltyPoints>,
-        #[doc = "Store pickup information. Only supported for local inventory. Not setting `pickup` means \"don't update\" while setting it to the empty value (`{}` in JSON) means \"delete\". Otherwise, `pickupMethod` and `pickupSla` must be set together, unless `pickupMethod` is \"not supported\"."]
-        #[serde(
-            rename = "pickup",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub pickup: ::std::option::Option<crate::schemas::InventoryPickup>,
-        #[doc = "The price of the product."]
-        #[serde(
-            rename = "price",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub price: ::std::option::Option<crate::schemas::Price>,
-        #[doc = "The quantity of the product. Must be equal to or greater than zero. Supported only for local products."]
-        #[serde(
-            rename = "quantity",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub quantity: ::std::option::Option<u32>,
-        #[doc = "The sale price of the product. Mandatory if `sale_price_effective_date` is defined."]
-        #[serde(
-            rename = "salePrice",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub sale_price: ::std::option::Option<crate::schemas::Price>,
-        #[doc = "A date range represented by a pair of ISO 8601 dates separated by a space, comma, or slash. Both dates might be specified as 'null' if undecided."]
-        #[serde(
-            rename = "salePriceEffectiveDate",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub sale_price_effective_date: ::std::option::Option<String>,
-        #[doc = "The quantity of the product that is available for selling on Google. Supported only for online products."]
-        #[serde(
-            rename = "sellOnGoogleQuantity",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub sell_on_google_quantity: ::std::option::Option<u32>,
-    }
-    impl ::google_field_selector::FieldSelector for Inventory {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for Inventory {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
-    )]
-    pub struct InventoryCustomBatchRequest {
-        #[doc = "The request entries to be processed in the batch."]
-        #[serde(
-            rename = "entries",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub entries: ::std::option::Option<Vec<crate::schemas::InventoryCustomBatchRequestEntry>>,
-    }
-    impl ::google_field_selector::FieldSelector for InventoryCustomBatchRequest {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for InventoryCustomBatchRequest {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
-    )]
-    pub struct InventoryCustomBatchRequestEntry {
-        #[doc = "An entry ID, unique within the batch request."]
-        #[serde(
-            rename = "batchId",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub batch_id: ::std::option::Option<u32>,
-        #[doc = "Price and availability of the product."]
-        #[serde(
-            rename = "inventory",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub inventory: ::std::option::Option<crate::schemas::Inventory>,
-        #[doc = "The ID of the managing account."]
-        #[serde(
-            rename = "merchantId",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        #[serde(with = "crate::parsed_string")]
-        pub merchant_id: ::std::option::Option<u64>,
-        #[doc = "The ID of the product for which to update price and availability."]
-        #[serde(
-            rename = "productId",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub product_id: ::std::option::Option<String>,
-        #[doc = "The code of the store for which to update price and availability. Use `online` to update price and availability of an online product."]
-        #[serde(
-            rename = "storeCode",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub store_code: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for InventoryCustomBatchRequestEntry {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for InventoryCustomBatchRequestEntry {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct InventoryCustomBatchResponse {
-        #[doc = "The result of the execution of the batch requests."]
-        #[serde(
-            rename = "entries",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub entries: ::std::option::Option<Vec<crate::schemas::InventoryCustomBatchResponseEntry>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#inventoryCustomBatchResponse\"."]
-        #[serde(
-            rename = "kind",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub kind: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for InventoryCustomBatchResponse {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for InventoryCustomBatchResponse {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct InventoryCustomBatchResponseEntry {
-        #[doc = "The ID of the request entry this entry responds to."]
-        #[serde(
-            rename = "batchId",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub batch_id: ::std::option::Option<u32>,
-        #[doc = "A list of errors defined if and only if the request failed."]
-        #[serde(
-            rename = "errors",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub errors: ::std::option::Option<crate::schemas::Errors>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#inventoryCustomBatchResponseEntry`\""]
-        #[serde(
-            rename = "kind",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub kind: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for InventoryCustomBatchResponseEntry {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for InventoryCustomBatchResponseEntry {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct InventoryPickup {
-        #[doc = "Whether store pickup is available for this offer and whether the pickup option should be shown as buy, reserve, or not supported. Only supported for local inventory. Unless the value is \"not supported\", must be submitted together with `pickupSla`. Acceptable values are: - \"`buy`\" - \"`not supported`\" - \"`reserve`\" - \"`ship to store`\" "]
-        #[serde(
-            rename = "pickupMethod",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub pickup_method: ::std::option::Option<String>,
-        #[doc = "The expected date that an order will be ready for pickup, relative to when the order is placed. Only supported for local inventory. Must be submitted together with `pickupMethod`. Acceptable values are: - \"`five day`\" - \"`four day`\" - \"`multi day`\" - \"`multi week`\" - \"`next day`\" - \"`same day`\" - \"`seven day`\" - \"`six day`\" - \"`three day`\" - \"`two day`\" "]
-        #[serde(
-            rename = "pickupSla",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub pickup_sla: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for InventoryPickup {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for InventoryPickup {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
-    )]
-    pub struct InventorySetRequest {
-        #[doc = "The availability of the product. Acceptable values are: - \"`in stock`\" - \"`out of stock`\" - \"`preorder`\" "]
-        #[serde(
-            rename = "availability",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub availability: ::std::option::Option<String>,
-        #[doc = "Custom label 0 for custom grouping of items in a Shopping campaign. Only supported for online products."]
-        #[serde(
-            rename = "customLabel0",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub custom_label_0: ::std::option::Option<String>,
-        #[doc = "Custom label 1 for custom grouping of items in a Shopping campaign. Only supported for online products."]
-        #[serde(
-            rename = "customLabel1",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub custom_label_1: ::std::option::Option<String>,
-        #[doc = "Custom label 2 for custom grouping of items in a Shopping campaign. Only supported for online products."]
-        #[serde(
-            rename = "customLabel2",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub custom_label_2: ::std::option::Option<String>,
-        #[doc = "Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products."]
-        #[serde(
-            rename = "customLabel3",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub custom_label_3: ::std::option::Option<String>,
-        #[doc = "Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products."]
-        #[serde(
-            rename = "customLabel4",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub custom_label_4: ::std::option::Option<String>,
-        #[doc = "Number and amount of installments to pay for an item. Brazil only."]
-        #[serde(
-            rename = "installment",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub installment: ::std::option::Option<crate::schemas::Installment>,
-        #[doc = "The instore product location. Supported only for local products."]
-        #[serde(
-            rename = "instoreProductLocation",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub instore_product_location: ::std::option::Option<String>,
-        #[doc = "Loyalty points that users receive after purchasing the item. Japan only."]
-        #[serde(
-            rename = "loyaltyPoints",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub loyalty_points: ::std::option::Option<crate::schemas::LoyaltyPoints>,
-        #[doc = "Store pickup information. Only supported for local inventory. Not setting `pickup` means \"don't update\" while setting it to the empty value (`{}` in JSON) means \"delete\". Otherwise, `pickupMethod` and `pickupSla` must be set together, unless `pickupMethod` is \"not supported\"."]
-        #[serde(
-            rename = "pickup",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub pickup: ::std::option::Option<crate::schemas::InventoryPickup>,
-        #[doc = "The price of the product."]
-        #[serde(
-            rename = "price",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub price: ::std::option::Option<crate::schemas::Price>,
-        #[doc = "The quantity of the product. Must be equal to or greater than zero. Supported only for local products."]
-        #[serde(
-            rename = "quantity",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub quantity: ::std::option::Option<u32>,
-        #[doc = "The sale price of the product. Mandatory if `sale_price_effective_date` is defined."]
-        #[serde(
-            rename = "salePrice",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub sale_price: ::std::option::Option<crate::schemas::Price>,
-        #[doc = "A date range represented by a pair of ISO 8601 dates separated by a space, comma, or slash. Both dates might be specified as 'null' if undecided."]
-        #[serde(
-            rename = "salePriceEffectiveDate",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub sale_price_effective_date: ::std::option::Option<String>,
-        #[doc = "The quantity of the product that is available for selling on Google. Supported only for online products."]
-        #[serde(
-            rename = "sellOnGoogleQuantity",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub sell_on_google_quantity: ::std::option::Option<u32>,
-    }
-    impl ::google_field_selector::FieldSelector for InventorySetRequest {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for InventorySetRequest {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct InventorySetResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#inventorySetResponse\"."]
-        #[serde(
-            rename = "kind",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub kind: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for InventorySetResponse {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for InventorySetResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -11221,6 +10830,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PosStore {
+        #[doc = "The business type of the store."]
+        #[serde(
+            rename = "gcidCategory",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcid_category: ::std::option::Option<Vec<String>>,
         #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#posStore`\""]
         #[serde(
             rename = "kind",
@@ -11228,6 +10844,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
+        #[doc = "The store phone number."]
+        #[serde(
+            rename = "phoneNumber",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub phone_number: ::std::option::Option<String>,
+        #[doc = "The Google Place Id of the store location."]
+        #[serde(
+            rename = "placeId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub place_id: ::std::option::Option<String>,
         #[doc = "Required. The street address of the store."]
         #[serde(
             rename = "storeAddress",
@@ -11242,6 +10872,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub store_code: ::std::option::Option<String>,
+        #[doc = "The merchant or store name."]
+        #[serde(
+            rename = "storeName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub store_name: ::std::option::Option<String>,
+        #[doc = "The website url for the store or merchant."]
+        #[serde(
+            rename = "websiteUrl",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub website_url: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for PosStore {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -13544,6 +13188,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub services: ::std::option::Option<Vec<crate::schemas::Service>>,
+        #[doc = "Optional. A list of warehouses which can be referred to in `services`."]
+        #[serde(
+            rename = "warehouses",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub warehouses: ::std::option::Option<Vec<crate::schemas::Warehouse>>,
     }
     impl ::google_field_selector::FieldSelector for ShippingSettings {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -14717,6 +14368,184 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct Warehouse {
+        #[doc = "Business days of the warehouse. If not set, will be Monday to Friday by default."]
+        #[serde(
+            rename = "businessDayConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub business_day_config: ::std::option::Option<crate::schemas::BusinessDayConfig>,
+        #[doc = "Required. The latest time of day that an order can be accepted and begin processing. Later orders will be processed in the next day. The time is based on the warehouse postal code."]
+        #[serde(
+            rename = "cutoffTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cutoff_time: ::std::option::Option<crate::schemas::WarehouseCutoffTime>,
+        #[doc = "Required. The number of days it takes for this warehouse to pack up and ship an item. This is on the warehouse level, but can be overridden on the offer level based on the attributes of an item."]
+        #[serde(
+            rename = "handlingDays",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub handling_days: ::std::option::Option<i64>,
+        #[doc = "Required. The name of the warehouse. Must be unique within account."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Required. Shipping address of the warehouse."]
+        #[serde(
+            rename = "shippingAddress",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub shipping_address: ::std::option::Option<crate::schemas::Address>,
+    }
+    impl ::google_field_selector::FieldSelector for Warehouse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Warehouse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct WarehouseBasedDeliveryTime {
+        #[doc = "Required. Carrier, such as `\"UPS\"` or `\"Fedex\"`. The list of supported carriers can be retrieved via the `listSupportedCarriers` method."]
+        #[serde(
+            rename = "carrier",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub carrier: ::std::option::Option<String>,
+        #[doc = "Required. Carrier service, such as `\"ground\"` or `\"2 days\"`. The list of supported services for a carrier can be retrieved via the `listSupportedCarriers` method. The name of the service must be in the eddSupportedServices list."]
+        #[serde(
+            rename = "carrierService",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub carrier_service: ::std::option::Option<String>,
+        #[doc = "Shipping origin's state."]
+        #[serde(
+            rename = "originAdministrativeArea",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub origin_administrative_area: ::std::option::Option<String>,
+        #[doc = "Shipping origin's city."]
+        #[serde(
+            rename = "originCity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub origin_city: ::std::option::Option<String>,
+        #[doc = "Shipping origin's country represented as a [CLDR territory code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)."]
+        #[serde(
+            rename = "originCountry",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub origin_country: ::std::option::Option<String>,
+        #[doc = "Shipping origin."]
+        #[serde(
+            rename = "originPostalCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub origin_postal_code: ::std::option::Option<String>,
+        #[doc = "Shipping origin's street address"]
+        #[serde(
+            rename = "originStreetAddress",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub origin_street_address: ::std::option::Option<String>,
+        #[doc = "The name of the warehouse. Warehouse name need to be matched with name. If warehouseName is set, the below fields will be ignored. The warehouse info will be read from warehouse."]
+        #[serde(
+            rename = "warehouseName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub warehouse_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for WarehouseBasedDeliveryTime {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for WarehouseBasedDeliveryTime {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct WarehouseCutoffTime {
+        #[doc = "Required. Hour (24-hour clock) of the cutoff time until which an order has to be placed to be processed in the same day by the warehouse. Hour is based on the timezone of warehouse."]
+        #[serde(
+            rename = "hour",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub hour: ::std::option::Option<i32>,
+        #[doc = "Required. Minute of the cutoff time until which an order has to be placed to be processed in the same day by the warehouse. Minute is based on the timezone of warehouse."]
+        #[serde(
+            rename = "minute",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub minute: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for WarehouseCutoffTime {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for WarehouseCutoffTime {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Weight {
         #[doc = "Required. The weight unit. Acceptable values are: - \"`kg`\" - \"`lb`\" "]
         #[serde(
@@ -14725,7 +14554,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub unit: ::std::option::Option<String>,
-        #[doc = "Required. The weight represented as a number."]
+        #[doc = "Required. The weight represented as a number. The weight can have a maximum precision of four decimal places."]
         #[serde(
             rename = "value",
             default,
@@ -14953,13 +14782,6 @@ impl Client {
     #[doc = "Actions that can be performed on the datafeedstatuses resource"]
     pub fn datafeedstatuses(&self) -> crate::resources::datafeedstatuses::DatafeedstatusesActions {
         crate::resources::datafeedstatuses::DatafeedstatusesActions {
-            reqwest: &self.reqwest,
-            auth: self.auth_ref(),
-        }
-    }
-    #[doc = "Actions that can be performed on the inventory resource"]
-    pub fn inventory(&self) -> crate::resources::inventory::InventoryActions {
-        crate::resources::inventory::InventoryActions {
             reqwest: &self.reqwest,
             auth: self.auth_ref(),
         }
@@ -20474,410 +20296,6 @@ pub mod resources {
                 T: ::serde::de::DeserializeOwned,
             {
                 self._execute()
-            }
-        }
-    }
-    pub mod inventory {
-        pub mod params {}
-        pub struct InventoryActions<'a> {
-            pub(crate) reqwest: &'a reqwest::blocking::Client,
-            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-        }
-        impl<'a> InventoryActions<'a> {
-            fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
-                self.auth
-            }
-            #[doc = "Updates price and availability for multiple products or stores in a single request. This operation does not update the expiration date of the products."]
-            pub fn custombatch(
-                &self,
-                request: crate::schemas::InventoryCustomBatchRequest,
-            ) -> CustombatchRequestBuilder {
-                CustombatchRequestBuilder {
-                    reqwest: &self.reqwest,
-                    auth: self.auth_ref(),
-                    request,
-                    access_token: None,
-                    alt: None,
-                    callback: None,
-                    fields: None,
-                    key: None,
-                    oauth_token: None,
-                    pretty_print: None,
-                    quota_user: None,
-                    upload_protocol: None,
-                    upload_type: None,
-                    xgafv: None,
-                    dry_run: None,
-                }
-            }
-            #[doc = "Updates price and availability of a product in your Merchant Center account."]
-            pub fn set(
-                &self,
-                request: crate::schemas::InventorySetRequest,
-                merchant_id: u64,
-                store_code: impl Into<String>,
-                product_id: impl Into<String>,
-            ) -> SetRequestBuilder {
-                SetRequestBuilder {
-                    reqwest: &self.reqwest,
-                    auth: self.auth_ref(),
-                    request,
-                    access_token: None,
-                    alt: None,
-                    callback: None,
-                    fields: None,
-                    key: None,
-                    oauth_token: None,
-                    pretty_print: None,
-                    quota_user: None,
-                    upload_protocol: None,
-                    upload_type: None,
-                    xgafv: None,
-                    merchant_id,
-                    store_code: store_code.into(),
-                    product_id: product_id.into(),
-                    dry_run: None,
-                }
-            }
-        }
-        #[doc = "Created via [InventoryActions::custombatch()](struct.InventoryActions.html#method.custombatch)"]
-        #[derive(Debug, Clone)]
-        pub struct CustombatchRequestBuilder<'a> {
-            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
-            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-            request: crate::schemas::InventoryCustomBatchRequest,
-            dry_run: Option<bool>,
-            access_token: Option<String>,
-            alt: Option<crate::params::Alt>,
-            callback: Option<String>,
-            fields: Option<String>,
-            key: Option<String>,
-            oauth_token: Option<String>,
-            pretty_print: Option<bool>,
-            quota_user: Option<String>,
-            upload_protocol: Option<String>,
-            upload_type: Option<String>,
-            xgafv: Option<crate::params::Xgafv>,
-        }
-        impl<'a> CustombatchRequestBuilder<'a> {
-            #[doc = "Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any)."]
-            pub fn dry_run(mut self, value: bool) -> Self {
-                self.dry_run = Some(value);
-                self
-            }
-            #[doc = "OAuth access token."]
-            pub fn access_token(mut self, value: impl Into<String>) -> Self {
-                self.access_token = Some(value.into());
-                self
-            }
-            #[doc = "JSONP"]
-            pub fn callback(mut self, value: impl Into<String>) -> Self {
-                self.callback = Some(value.into());
-                self
-            }
-            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
-            pub fn key(mut self, value: impl Into<String>) -> Self {
-                self.key = Some(value.into());
-                self
-            }
-            #[doc = "OAuth 2.0 token for the current user."]
-            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
-                self.oauth_token = Some(value.into());
-                self
-            }
-            #[doc = "Returns response with indentations and line breaks."]
-            pub fn pretty_print(mut self, value: bool) -> Self {
-                self.pretty_print = Some(value);
-                self
-            }
-            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
-            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
-                self.quota_user = Some(value.into());
-                self
-            }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
-            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
-                self.upload_protocol = Some(value.into());
-                self
-            }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
-            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
-                self.upload_type = Some(value.into());
-                self
-            }
-            #[doc = "V1 error format."]
-            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
-                self.xgafv = Some(value);
-                self
-            }
-            #[doc = r" Execute the given operation. The fields requested are"]
-            #[doc = r" determined by the FieldSelector attribute of the return type."]
-            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
-            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
-            #[doc = r" are not generic over the return type and deserialize the"]
-            #[doc = r" response into an auto-generated struct will all possible"]
-            #[doc = r" fields."]
-            pub fn execute<T>(self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
-            {
-                let fields = ::google_field_selector::to_string::<T>();
-                let fields: Option<String> = if fields.is_empty() {
-                    None
-                } else {
-                    Some(fields)
-                };
-                self.execute_with_fields(fields)
-            }
-            #[doc = r" Execute the given operation. This will not provide any"]
-            #[doc = r" `fields` selector indicating that the server will determine"]
-            #[doc = r" the fields returned. This typically includes the most common"]
-            #[doc = r" fields, but it will not include every possible attribute of"]
-            #[doc = r" the response resource."]
-            pub fn execute_with_default_fields(
-                self,
-            ) -> Result<crate::schemas::InventoryCustomBatchResponse, crate::Error> {
-                self.execute_with_fields(None::<&str>)
-            }
-            #[doc = r" Execute the given operation. This will provide a `fields`"]
-            #[doc = r" selector of `*`. This will include every attribute of the"]
-            #[doc = r" response resource and should be limited to use during"]
-            #[doc = r" development or debugging."]
-            pub fn execute_with_all_fields(
-                self,
-            ) -> Result<crate::schemas::InventoryCustomBatchResponse, crate::Error> {
-                self.execute_with_fields(Some("*"))
-            }
-            #[doc = r" Execute the given operation. This will use the `fields`"]
-            #[doc = r" selector provided and will deserialize the response into"]
-            #[doc = r" whatever return value is provided."]
-            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-                F: Into<String>,
-            {
-                self.fields = fields.map(Into::into);
-                self._execute()
-            }
-            fn _execute<T>(&mut self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-            {
-                let req = self._request(&self._path())?;
-                let req = req.json(&self.request);
-                Ok(crate::error_from_response(req.send()?)?.json()?)
-            }
-            fn _path(&self) -> String {
-                let mut output = "https://shoppingcontent.googleapis.com/content/v2/".to_owned();
-                output.push_str("inventory/batch");
-                output
-            }
-            fn _request(
-                &self,
-                path: &str,
-            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
-                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
-                req = req.query(&[("dryRun", &self.dry_run)]);
-                req = req.query(&[("access_token", &self.access_token)]);
-                req = req.query(&[("alt", &self.alt)]);
-                req = req.query(&[("callback", &self.callback)]);
-                req = req.query(&[("fields", &self.fields)]);
-                req = req.query(&[("key", &self.key)]);
-                req = req.query(&[("oauth_token", &self.oauth_token)]);
-                req = req.query(&[("prettyPrint", &self.pretty_print)]);
-                req = req.query(&[("quotaUser", &self.quota_user)]);
-                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
-                req = req.query(&[("uploadType", &self.upload_type)]);
-                req = req.query(&[("$.xgafv", &self.xgafv)]);
-                req = req.bearer_auth(
-                    self.auth
-                        .access_token()
-                        .map_err(|err| crate::Error::OAuth2(err))?,
-                );
-                Ok(req)
-            }
-        }
-        #[doc = "Created via [InventoryActions::set()](struct.InventoryActions.html#method.set)"]
-        #[derive(Debug, Clone)]
-        pub struct SetRequestBuilder<'a> {
-            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
-            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-            request: crate::schemas::InventorySetRequest,
-            merchant_id: u64,
-            store_code: String,
-            product_id: String,
-            dry_run: Option<bool>,
-            access_token: Option<String>,
-            alt: Option<crate::params::Alt>,
-            callback: Option<String>,
-            fields: Option<String>,
-            key: Option<String>,
-            oauth_token: Option<String>,
-            pretty_print: Option<bool>,
-            quota_user: Option<String>,
-            upload_protocol: Option<String>,
-            upload_type: Option<String>,
-            xgafv: Option<crate::params::Xgafv>,
-        }
-        impl<'a> SetRequestBuilder<'a> {
-            #[doc = "Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any)."]
-            pub fn dry_run(mut self, value: bool) -> Self {
-                self.dry_run = Some(value);
-                self
-            }
-            #[doc = "OAuth access token."]
-            pub fn access_token(mut self, value: impl Into<String>) -> Self {
-                self.access_token = Some(value.into());
-                self
-            }
-            #[doc = "JSONP"]
-            pub fn callback(mut self, value: impl Into<String>) -> Self {
-                self.callback = Some(value.into());
-                self
-            }
-            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
-            pub fn key(mut self, value: impl Into<String>) -> Self {
-                self.key = Some(value.into());
-                self
-            }
-            #[doc = "OAuth 2.0 token for the current user."]
-            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
-                self.oauth_token = Some(value.into());
-                self
-            }
-            #[doc = "Returns response with indentations and line breaks."]
-            pub fn pretty_print(mut self, value: bool) -> Self {
-                self.pretty_print = Some(value);
-                self
-            }
-            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
-            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
-                self.quota_user = Some(value.into());
-                self
-            }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
-            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
-                self.upload_protocol = Some(value.into());
-                self
-            }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
-            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
-                self.upload_type = Some(value.into());
-                self
-            }
-            #[doc = "V1 error format."]
-            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
-                self.xgafv = Some(value);
-                self
-            }
-            #[doc = r" Execute the given operation. The fields requested are"]
-            #[doc = r" determined by the FieldSelector attribute of the return type."]
-            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
-            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
-            #[doc = r" are not generic over the return type and deserialize the"]
-            #[doc = r" response into an auto-generated struct will all possible"]
-            #[doc = r" fields."]
-            pub fn execute<T>(self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
-            {
-                let fields = ::google_field_selector::to_string::<T>();
-                let fields: Option<String> = if fields.is_empty() {
-                    None
-                } else {
-                    Some(fields)
-                };
-                self.execute_with_fields(fields)
-            }
-            #[doc = r" Execute the given operation. This will not provide any"]
-            #[doc = r" `fields` selector indicating that the server will determine"]
-            #[doc = r" the fields returned. This typically includes the most common"]
-            #[doc = r" fields, but it will not include every possible attribute of"]
-            #[doc = r" the response resource."]
-            pub fn execute_with_default_fields(
-                self,
-            ) -> Result<crate::schemas::InventorySetResponse, crate::Error> {
-                self.execute_with_fields(None::<&str>)
-            }
-            #[doc = r" Execute the given operation. This will provide a `fields`"]
-            #[doc = r" selector of `*`. This will include every attribute of the"]
-            #[doc = r" response resource and should be limited to use during"]
-            #[doc = r" development or debugging."]
-            pub fn execute_with_all_fields(
-                self,
-            ) -> Result<crate::schemas::InventorySetResponse, crate::Error> {
-                self.execute_with_fields(Some("*"))
-            }
-            #[doc = r" Execute the given operation. This will use the `fields`"]
-            #[doc = r" selector provided and will deserialize the response into"]
-            #[doc = r" whatever return value is provided."]
-            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-                F: Into<String>,
-            {
-                self.fields = fields.map(Into::into);
-                self._execute()
-            }
-            fn _execute<T>(&mut self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-            {
-                let req = self._request(&self._path())?;
-                let req = req.json(&self.request);
-                Ok(crate::error_from_response(req.send()?)?.json()?)
-            }
-            fn _path(&self) -> String {
-                let mut output = "https://shoppingcontent.googleapis.com/content/v2/".to_owned();
-                {
-                    let var_as_string = self.merchant_id.to_string();
-                    let var_as_str = &var_as_string;
-                    output.extend(::percent_encoding::utf8_percent_encode(
-                        &var_as_str,
-                        crate::SIMPLE,
-                    ));
-                }
-                output.push_str("/inventory/");
-                {
-                    let var_as_str = &self.store_code;
-                    output.extend(::percent_encoding::utf8_percent_encode(
-                        &var_as_str,
-                        crate::SIMPLE,
-                    ));
-                }
-                output.push_str("/products/");
-                {
-                    let var_as_str = &self.product_id;
-                    output.extend(::percent_encoding::utf8_percent_encode(
-                        &var_as_str,
-                        crate::SIMPLE,
-                    ));
-                }
-                output
-            }
-            fn _request(
-                &self,
-                path: &str,
-            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
-                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
-                req = req.query(&[("dryRun", &self.dry_run)]);
-                req = req.query(&[("access_token", &self.access_token)]);
-                req = req.query(&[("alt", &self.alt)]);
-                req = req.query(&[("callback", &self.callback)]);
-                req = req.query(&[("fields", &self.fields)]);
-                req = req.query(&[("key", &self.key)]);
-                req = req.query(&[("oauth_token", &self.oauth_token)]);
-                req = req.query(&[("prettyPrint", &self.pretty_print)]);
-                req = req.query(&[("quotaUser", &self.quota_user)]);
-                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
-                req = req.query(&[("uploadType", &self.upload_type)]);
-                req = req.query(&[("$.xgafv", &self.xgafv)]);
-                req = req.bearer_auth(
-                    self.auth
-                        .access_token()
-                        .map_err(|err| crate::Error::OAuth2(err))?,
-                );
-                Ok(req)
             }
         }
     }

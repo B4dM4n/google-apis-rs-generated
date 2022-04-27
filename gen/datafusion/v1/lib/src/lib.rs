@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n        * [instances](resources/projects/locations/instances/struct.InstancesActions.html)\n          * [*create*](resources/projects/locations/instances/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/instances/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/instances/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/instances/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/instances/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/instances/struct.PatchRequestBuilder.html), [*restart*](resources/projects/locations/instances/struct.RestartRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/instances/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/instances/struct.TestIamPermissionsRequestBuilder.html)\n        * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n          * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/locations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n        * [versions](resources/projects/locations/versions/struct.VersionsActions.html)\n          * [*list*](resources/projects/locations/versions/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "See, edit, configure, and delete your Google Cloud Platform data\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -46,6 +46,8 @@ pub mod schemas {
     pub enum AcceleratorAcceleratorType {
         #[doc = "Default value, if unspecified."]
         AcceleratorTypeUnspecified,
+        #[doc = "Contact Center AI Insights This accelerator is used to enable import and export pipelines custom built to streamline CCAI Insights processing."]
+        CcaiInsights,
         #[doc = "Change Data Capture accelerator for CDF."]
         Cdc,
         #[doc = "Cloud Healthcare accelerator for CDF. This accelerator is to enable Cloud Healthcare specific CDF plugins developed by Healthcare team."]
@@ -57,6 +59,7 @@ pub mod schemas {
                 AcceleratorAcceleratorType::AcceleratorTypeUnspecified => {
                     "ACCELERATOR_TYPE_UNSPECIFIED"
                 }
+                AcceleratorAcceleratorType::CcaiInsights => "CCAI_INSIGHTS",
                 AcceleratorAcceleratorType::Cdc => "CDC",
                 AcceleratorAcceleratorType::Healthcare => "HEALTHCARE",
             }
@@ -74,6 +77,7 @@ pub mod schemas {
                 "ACCELERATOR_TYPE_UNSPECIFIED" => {
                     AcceleratorAcceleratorType::AcceleratorTypeUnspecified
                 }
+                "CCAI_INSIGHTS" => AcceleratorAcceleratorType::CcaiInsights,
                 "CDC" => AcceleratorAcceleratorType::Cdc,
                 "HEALTHCARE" => AcceleratorAcceleratorType::Healthcare,
                 _ => return Err(()),
@@ -103,6 +107,7 @@ pub mod schemas {
                 "ACCELERATOR_TYPE_UNSPECIFIED" => {
                     AcceleratorAcceleratorType::AcceleratorTypeUnspecified
                 }
+                "CCAI_INSIGHTS" => AcceleratorAcceleratorType::CcaiInsights,
                 "CDC" => AcceleratorAcceleratorType::Cdc,
                 "HEALTHCARE" => AcceleratorAcceleratorType::Healthcare,
                 _ => {
@@ -375,21 +380,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Binding {
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -427,6 +432,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CancelOperationRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CryptoKeyConfig {
+        #[doc = "The name of the key which is used to encrypt/decrypt customer data. For key in Cloud KMS, the key should be in the format of `projects/*/locations/*/keyRings/*/cryptoKeys/*`."]
+        #[serde(
+            rename = "keyReference",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub key_reference: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for CryptoKeyConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CryptoKeyConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -548,6 +584,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
+        #[doc = "The crypto key configuration. This field is used by the Customer-Managed Encryption Keys (CMEK) feature."]
+        #[serde(
+            rename = "cryptoKeyConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub crypto_key_config: ::std::option::Option<crate::schemas::CryptoKeyConfig>,
         #[doc = "User-managed service account to set on Dataproc when Cloud Data Fusion creates Dataproc to run data processing pipelines. This allows users to have fine-grained access control on Dataproc's accesses to cloud resources."]
         #[serde(
             rename = "dataprocServiceAccount",
@@ -562,6 +605,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
+        #[doc = "Output only. If the instance state is DISABLED, the reason for disabling the instance."]
+        #[serde(
+            rename = "disabledReason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub disabled_reason:
+            ::std::option::Option<Vec<crate::schemas::InstanceDisabledReasonItems>>,
         #[doc = "Display name for an instance."]
         #[serde(
             rename = "displayName",
@@ -569,6 +620,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
+        #[doc = "Option to enable granular role-based access control."]
+        #[serde(
+            rename = "enableRbac",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_rbac: ::std::option::Option<bool>,
         #[doc = "Option to enable Stackdriver Logging."]
         #[serde(
             rename = "enableStackdriverLogging",
@@ -590,7 +648,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gcs_bucket: ::std::option::Option<String>,
-        #[doc = "The resource labels for instance to use to annotate any related underlying resources such as GCE VMs. The character '=' is not allowed to be used within the labels."]
+        #[doc = "The resource labels for instance to use to annotate any related underlying resources such as Compute Engine VMs. The character '=' is not allowed to be used within the labels."]
         #[serde(
             rename = "labels",
             default,
@@ -707,6 +765,83 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum InstanceDisabledReasonItems {
+        #[doc = "This is an unknown reason for disabling."]
+        DisabledReasonUnspecified,
+        #[doc = "The KMS key used by the instance is either revoked or denied access to"]
+        KmsKeyIssue,
+    }
+    impl InstanceDisabledReasonItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                InstanceDisabledReasonItems::DisabledReasonUnspecified => {
+                    "DISABLED_REASON_UNSPECIFIED"
+                }
+                InstanceDisabledReasonItems::KmsKeyIssue => "KMS_KEY_ISSUE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for InstanceDisabledReasonItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for InstanceDisabledReasonItems {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<InstanceDisabledReasonItems, ()> {
+            Ok(match s {
+                "DISABLED_REASON_UNSPECIFIED" => {
+                    InstanceDisabledReasonItems::DisabledReasonUnspecified
+                }
+                "KMS_KEY_ISSUE" => InstanceDisabledReasonItems::KmsKeyIssue,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for InstanceDisabledReasonItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for InstanceDisabledReasonItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for InstanceDisabledReasonItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DISABLED_REASON_UNSPECIFIED" => {
+                    InstanceDisabledReasonItems::DisabledReasonUnspecified
+                }
+                "KMS_KEY_ISSUE" => InstanceDisabledReasonItems::KmsKeyIssue,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for InstanceDisabledReasonItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for InstanceDisabledReasonItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum InstanceType {
         #[doc = "Basic Data Fusion instance. In Basic type, the user will be able to create data pipelines using point and click UI. However, there are certain limitations, such as fewer number of concurrent pipelines, no support for streaming pipelines, etc."]
         Basic,
@@ -799,6 +934,8 @@ pub mod schemas {
         Creating,
         #[doc = "Instance is being deleted"]
         Deleting,
+        #[doc = "Instance is disabled"]
+        Disabled,
         #[doc = "Instance creation failed"]
         Failed,
         #[doc = "Instance is being restarted"]
@@ -818,6 +955,7 @@ pub mod schemas {
                 InstanceState::AutoUpgrading => "AUTO_UPGRADING",
                 InstanceState::Creating => "CREATING",
                 InstanceState::Deleting => "DELETING",
+                InstanceState::Disabled => "DISABLED",
                 InstanceState::Failed => "FAILED",
                 InstanceState::Restarting => "RESTARTING",
                 InstanceState::StateUnspecified => "STATE_UNSPECIFIED",
@@ -840,6 +978,7 @@ pub mod schemas {
                 "AUTO_UPGRADING" => InstanceState::AutoUpgrading,
                 "CREATING" => InstanceState::Creating,
                 "DELETING" => InstanceState::Deleting,
+                "DISABLED" => InstanceState::Disabled,
                 "FAILED" => InstanceState::Failed,
                 "RESTARTING" => InstanceState::Restarting,
                 "STATE_UNSPECIFIED" => InstanceState::StateUnspecified,
@@ -874,6 +1013,7 @@ pub mod schemas {
                 "AUTO_UPGRADING" => InstanceState::AutoUpgrading,
                 "CREATING" => InstanceState::Creating,
                 "DELETING" => InstanceState::Deleting,
+                "DISABLED" => InstanceState::Disabled,
                 "FAILED" => InstanceState::Failed,
                 "RESTARTING" => InstanceState::Restarting,
                 "STATE_UNSPECIFIED" => InstanceState::StateUnspecified,
@@ -1185,7 +1325,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OperationMetadata {
-        #[doc = "Map to hold any additonal status info for the operation If there is an accelerator being enabled/disabled/deleted, this will be populated with accelerator name as key and status as ENABLING, DISABLING or DELETING"]
+        #[doc = "Map to hold any additional status info for the operation If there is an accelerator being enabled/disabled/deleted, this will be populated with accelerator name as key and status as ENABLING, DISABLING or DELETING"]
         #[serde(
             rename = "additionalStatus",
             default,
@@ -1272,7 +1412,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audit_configs: ::std::option::Option<Vec<crate::schemas::AuditConfig>>,
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,
@@ -1490,6 +1630,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_version: ::std::option::Option<bool>,
+        #[doc = "Type represents the release availability of the version"]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<crate::schemas::VersionType>,
         #[doc = "The version number of the Data Fusion instance, such as '6.0.1.0'."]
         #[serde(
             rename = "versionNumber",
@@ -1504,6 +1651,82 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Version {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum VersionType {
+        #[doc = "Version is available for public use"]
+        TypeGeneralAvailability,
+        #[doc = "Version is under development and not considered stable"]
+        TypePreview,
+        #[doc = "Version does not have availability yet"]
+        TypeUnspecified,
+    }
+    impl VersionType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                VersionType::TypeGeneralAvailability => "TYPE_GENERAL_AVAILABILITY",
+                VersionType::TypePreview => "TYPE_PREVIEW",
+                VersionType::TypeUnspecified => "TYPE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for VersionType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for VersionType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<VersionType, ()> {
+            Ok(match s {
+                "TYPE_GENERAL_AVAILABILITY" => VersionType::TypeGeneralAvailability,
+                "TYPE_PREVIEW" => VersionType::TypePreview,
+                "TYPE_UNSPECIFIED" => VersionType::TypeUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for VersionType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for VersionType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for VersionType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "TYPE_GENERAL_AVAILABILITY" => VersionType::TypeGeneralAvailability,
+                "TYPE_PREVIEW" => VersionType::TypePreview,
+                "TYPE_UNSPECIFIED" => VersionType::TypeUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for VersionType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for VersionType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1989,7 +2212,7 @@ pub mod resources {
                     self.include_unrevealed_locations = Some(value);
                     self
                 }
-                #[doc = "The maximum number of results to return. If not set, the service will select a default."]
+                #[doc = "The maximum number of results to return. If not set, the service selects a default."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
@@ -2496,7 +2719,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> CreateRequestBuilder<'a> {
-                    #[doc = "The name of the instance to create."]
+                    #[doc = "Required. The name of the instance to create."]
                     pub fn instance_id(mut self, value: impl Into<String>) -> Self {
                         self.instance_id = Some(value.into());
                         self
@@ -2985,7 +3208,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> GetIamPolicyRequestBuilder<'a> {
-                    #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                    #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                     pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                         self.options_requested_policy_version = Some(value);
                         self
@@ -3519,7 +3742,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> PatchRequestBuilder<'a> {
-                    #[doc = "Field mask is used to specify the fields that the update will overwrite in an instance resource. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it is in the mask. If the user does not provide a mask, all the supported fields (labels, options, and version currently) will be overwritten."]
+                    #[doc = "Field mask is used to specify the fields that the update will overwrite in an instance resource. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it is in the mask. If the user does not provide a mask, the label field will be overwritten."]
                     pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                         self.update_mask = Some(value.into());
                         self

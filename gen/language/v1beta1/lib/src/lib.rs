@@ -2,7 +2,7 @@
 pub mod scopes {
     #[doc = "Apply machine learning models to reveal the structure and meaning of text\n\n`https://www.googleapis.com/auth/cloud-language`"]
     pub const CLOUD_LANGUAGE: &str = "https://www.googleapis.com/auth/cloud-language";
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {

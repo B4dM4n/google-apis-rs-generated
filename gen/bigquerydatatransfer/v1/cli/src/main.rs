@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("bigquerydatatransfer1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210311")
+            .version("0.1.0-20220420")
             .about("Schedule queries or transfer external data from SaaS applications to Google BigQuery on a regular basis.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -35,25 +35,35 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .takes_value(false));
         let mut projects0 = SubCommand::with_name("projects")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: data_sources, locations and transfer_configs");
+            .about("methods: enroll_data_sources");
+        {
+            let mcmd = SubCommand::with_name("enroll_data_sources").about("Enroll data sources in a user project. This allows users to create transfer configurations for these data sources. They will also appear in the ListDataSources RPC and as such, will appear in the [BigQuery UI](https://console.cloud.google.com/bigquery), and the documents can be found in the public guide for [BigQuery Web UI](https://cloud.google.com/bigquery/bigquery-web-ui) and [Data Transfer Service](https://cloud.google.com/bigquery/docs/working-with-transfers).");
+            projects0 = projects0.subcommand(mcmd);
+        }
         let mut data_sources1 = SubCommand::with_name("data_sources")
             .setting(AppSettings::ColoredHelp)
             .about("methods: check_valid_creds, get and list");
         {
-            let mcmd = SubCommand::with_name("check_valid_creds").about("Returns true if valid credentials exist for the given data source and requesting user. Some data sources doesn\'t support service account, so we need to talk to them on behalf of the end user. This API just checks whether we have OAuth token for the particular user, which is a pre-requisite before user can create a transfer config.");
+            let mcmd = SubCommand::with_name("check_valid_creds").about("Returns true if valid credentials exist for the given data source and requesting user.");
             data_sources1 = data_sources1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Retrieves a supported data source and returns its settings, which can be used for UI rendering.");
+            let mcmd = SubCommand::with_name("get")
+                .about("Retrieves a supported data source and returns its settings.");
             data_sources1 = data_sources1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists supported data sources and returns their settings, which can be used for UI rendering.");
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists supported data sources and returns their settings.");
             data_sources1 = data_sources1.subcommand(mcmd);
         }
         let mut locations1 = SubCommand::with_name("locations")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get and list");
+            .about("methods: enroll_data_sources, get and list");
+        {
+            let mcmd = SubCommand::with_name("enroll_data_sources").about("Enroll data sources in a user project. This allows users to create transfer configurations for these data sources. They will also appear in the ListDataSources RPC and as such, will appear in the [BigQuery UI](https://console.cloud.google.com/bigquery), and the documents can be found in the public guide for [BigQuery Web UI](https://cloud.google.com/bigquery/bigquery-web-ui) and [Data Transfer Service](https://cloud.google.com/bigquery/docs/working-with-transfers).");
+            locations1 = locations1.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("get").about("Gets information about a location.");
             locations1 = locations1.subcommand(mcmd);
@@ -83,8 +93,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             transfer_configs1 = transfer_configs1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list")
-                .about("Returns information about all data transfers in the project.");
+            let mcmd = SubCommand::with_name("list").about("Returns information about all transfer configs owned by a project in the specified location.");
             transfer_configs1 = transfer_configs1.subcommand(mcmd);
         }
         {
@@ -103,15 +112,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: check_valid_creds, get and list");
         {
-            let mcmd = SubCommand::with_name("check_valid_creds").about("Returns true if valid credentials exist for the given data source and requesting user. Some data sources doesn\'t support service account, so we need to talk to them on behalf of the end user. This API just checks whether we have OAuth token for the particular user, which is a pre-requisite before user can create a transfer config.");
+            let mcmd = SubCommand::with_name("check_valid_creds").about("Returns true if valid credentials exist for the given data source and requesting user.");
             data_sources2 = data_sources2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Retrieves a supported data source and returns its settings, which can be used for UI rendering.");
+            let mcmd = SubCommand::with_name("get")
+                .about("Retrieves a supported data source and returns its settings.");
             data_sources2 = data_sources2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists supported data sources and returns their settings, which can be used for UI rendering.");
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists supported data sources and returns their settings.");
             data_sources2 = data_sources2.subcommand(mcmd);
         }
         let mut transfer_configs2 = SubCommand::with_name("transfer_configs")
@@ -134,8 +145,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             transfer_configs2 = transfer_configs2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list")
-                .about("Returns information about all data transfers in the project.");
+            let mcmd = SubCommand::with_name("list").about("Returns information about all transfer configs owned by a project in the specified location.");
             transfer_configs2 = transfer_configs2.subcommand(mcmd);
         }
         {
@@ -164,7 +174,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("list")
-                .about("Returns information about running and completed jobs.");
+                .about("Returns information about running and completed transfer runs.");
             runs2 = runs2.subcommand(mcmd);
         }
         let mut runs3 = SubCommand::with_name("runs")
@@ -181,23 +191,23 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("list")
-                .about("Returns information about running and completed jobs.");
+                .about("Returns information about running and completed transfer runs.");
             runs3 = runs3.subcommand(mcmd);
         }
         let mut transfer_logs3 = SubCommand::with_name("transfer_logs")
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
         {
-            let mcmd = SubCommand::with_name("list")
-                .about("Returns user facing log messages for the data transfer run.");
+            let mcmd =
+                SubCommand::with_name("list").about("Returns log messages for the transfer run.");
             transfer_logs3 = transfer_logs3.subcommand(mcmd);
         }
         let mut transfer_logs4 = SubCommand::with_name("transfer_logs")
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
         {
-            let mcmd = SubCommand::with_name("list")
-                .about("Returns user facing log messages for the data transfer run.");
+            let mcmd =
+                SubCommand::with_name("list").about("Returns log messages for the transfer run.");
             transfer_logs4 = transfer_logs4.subcommand(mcmd);
         }
         runs3 = runs3.subcommand(transfer_logs4);

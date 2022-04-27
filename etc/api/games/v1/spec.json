@@ -7,7 +7,7 @@
   "canonicalName": "Games",
   "fullyEncodeReservedExpansion": null,
   "version": "v1",
-  "revision": "20210311",
+  "revision": "20220420",
   "title": "Google Play Game Services",
   "description": "The Google Play games service allows developers to enhance games with social leaderboards, achievements, game state, sign-in with Google, and more.",
   "ownerDomain": "google.com",
@@ -2522,6 +2522,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "gamePlayerId": {
+          "description": "Per-application unique player identifier.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "kind": {
           "description": "Uniquely identifies the type of this resource. Value is always the fixed string `games#player`",
           "type": "string",
@@ -3425,68 +3435,6 @@
       "additionalProperties": null,
       "items": null
     },
-    "ResolveSnapshotHeadRequest": {
-      "id": "ResolveSnapshotHeadRequest",
-      "description": "Request for ResolveSnapshotHead RPC.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "maxConflictsPerSnapshot": {
-          "description": "The maximum number of SnapshotRevision resources for `conflictingRevisions` to return per SnapshotExtended resource in the response. For any response, the actual number of resources returned may be less than specified by `maxConflictsPerSnapshot`. The value provided should be greater or equal to 0. If no value is provided, the server will use a sensible default.",
-          "type": "integer",
-          "format": "int32",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "resolutionPolicy": {
-          "description": "Required. The automatic resolution policy. All conflicts are resolved in chronological order, starting from the/ least recent. If the comparison metric is equal for the tentative head and the conflict, the head wins.",
-          "type": "string",
-          "format": null,
-          "enum": [
-            "RESOLUTION_POLICY_UNSPECIFIED",
-            "USE_HEAD",
-            "LONGEST_PLAYTIME",
-            "MOST_RECENTLY_MODIFIED",
-            "HIGHEST_PROGRESS",
-            "NO_AUTOMATIC_RESOLUTION"
-          ],
-          "enumDescriptions": [
-            "Safe default, don't use explicitly.",
-            "Drops all conflicts and keeps the current head only.",
-            "Use the snapshot with the longest played time.",
-            "Use the snapshot that was most recently modified.",
-            "Use the snapshot with the highest progress value.",
-            "Don't resolve conflicts at all. Effectively only returns the current head revision of the snapshot. Corresponds to a game opening the snapshot with manual resolution policy."
-          ],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "ResolveSnapshotHeadResponse": {
-      "id": "ResolveSnapshotHeadResponse",
-      "description": "Response for ResolveSnapshotHead RPC.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "snapshot": {
-          "description": "The state of the snapshot.",
-          "$ref": "SnapshotExtended"
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
     "RevisionCheckResponse": {
       "id": "RevisionCheckResponse",
       "description": "A third party checking a revision response.",
@@ -3723,178 +3671,6 @@
       "additionalProperties": null,
       "items": null
     },
-    "SnapshotCoverImageResource": {
-      "id": "SnapshotCoverImageResource",
-      "description": "Identifies a snapshot cover image resource. The image is provided by the game.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "contentHash": {
-          "description": "Output only. Hash-like weak identifier of the uploaded image bytes, consistent per player per application. The content hash for a given resource will not change if the binary data hasn't changed. Except in very rare circumstances, the content_hash for matching binary data will be the same within a given player and application.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "downloadUrl": {
-          "description": "Output only. A URL the client can use to download the image. May vary across requests, and only guaranteed to be valid for a short time after it is returned.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "height": {
-          "description": "The height of the image in pixels.",
-          "type": "integer",
-          "format": "int32",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "mimeType": {
-          "description": "Output only. The MIME type of the image.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "resourceId": {
-          "description": "The ID of the image resource. It's guaranteed that if two IDs are equal then the contents are equal as well. It's not guaranteed that two identical blobs coming from separate uploads have the same ID. The resource ID can only be used within the application, user and resource type it was originally returned for. For example, it's not possible to use SnapshotDataResource's resource ID as the resource_id of a SnapshotCoverImageResource, even if the blob is a valid image file.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "width": {
-          "description": "The width of the image in pixels.",
-          "type": "integer",
-          "format": "int32",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "SnapshotDataResource": {
-      "id": "SnapshotDataResource",
-      "description": "Identifies a snapshot data resource. The data is provided by the game.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "contentHash": {
-          "description": "Output only. Hash-like weak identifier of the uploaded blob bytes, consistent per player per application. The content hash for a given resource will not change if the binary data hasn't changed. Except in very rare circumstances, the content_hash for matching binary data will be the same within a given player and application.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "downloadUrl": {
-          "description": "Output only. A URL that the client can use to download the blob. May vary across requests, and only guaranteed to be valid for a short time after it is returned.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "resourceId": {
-          "description": "The ID of the blob resource. It's guaranteed that if two IDs are equal then the contents are equal as well. It's not guaranteed that two identical blobs coming from separate uploads have the same resource ID. The resource ID can only be used within the application, user and resource type it was originally returned for. For example, it's not possible to use SnapshotDataResource's resource ID as the resource_id of a SnapshotCoverImageResource, even if the blob is a valid image file.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "size": {
-          "description": "Output only. Size of the saved game blob in bytes.",
-          "type": "string",
-          "format": "int64",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "SnapshotExtended": {
-      "id": "SnapshotExtended",
-      "description": "A snapshot represents a saved game state referred to using the developer-provided snapshot_name. The set of attributes and binary data for a specific state is called a revision. Each revision is itself immutable, and referred to by a snapshot revision id. At any time, a snapshot has a \"head\" revision, and updates are made against that revision. If a snapshot update is received that isn't against the current head revision, then instead of changing the head revision it will result in a conflicting revision that must be specifically resolved.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "conflictingRevisions": {
-          "description": "A list of conflicting revisions. Only set if explicitly requested (e.g. using a field mask or a request flag), or if the RPC guarantees that this field is set. The conflicting revisions are sorted chronologically by their server creation time (oldest first). If there are too many conflicting revisions to return all of them in a single request this will only contain the first batch. In such case, the presented conflicting revisions must be resolved first in order to fetch the next batch.",
-          "type": "array",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": {
-            "$ref": "SnapshotRevision"
-          }
-        },
-        "hasConflictingRevisions": {
-          "description": "An indicator whether the snapshot has any conflicting revisions or not. Always set.",
-          "type": "boolean",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "headRevision": {
-          "description": "The current head revision (the canonical revision as understood by the server).",
-          "$ref": "SnapshotRevision"
-        },
-        "snapshotName": {
-          "description": "An identifier of the snapshot, developer-specified. It must match the pattern [0-9a-zA-Z-._~]{1,100}.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
     "SnapshotImage": {
       "id": "SnapshotImage",
       "description": "An image of a snapshot.",
@@ -3996,102 +3772,6 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "SnapshotMetadata": {
-      "id": "SnapshotMetadata",
-      "description": "Metadata about a snapshot revision. Snapshot metadata is immutable - a metadata change corresponds to a new snapshot revision.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "description": {
-          "description": "The description of this snapshot.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "deviceName": {
-          "description": "The device that created the current revision.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "gameplayDuration": {
-          "description": "The duration associated with this snapshot. Values with sub-millisecond precision can be rounded or trimmed to the closest millisecond.",
-          "type": "string",
-          "format": "google-duration",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "lastModifyTime": {
-          "description": "The timestamp of the last modification to this snapshot as provided by the client. Values with sub-millisecond precision can be rounded or trimmed to the closest millisecond.",
-          "type": "string",
-          "format": "google-datetime",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "progressValue": {
-          "description": "The progress value (64-bit integer set by developer) associated with this snapshot.",
-          "type": "string",
-          "format": "int64",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "SnapshotRevision": {
-      "id": "SnapshotRevision",
-      "description": "A Snapshot revision resource. Snapshot revisions are immutable.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "blob": {
-          "description": "Reference to the game provided blob for this revision.",
-          "$ref": "SnapshotDataResource"
-        },
-        "coverImage": {
-          "description": "Reference to the cover image for this revision.",
-          "$ref": "SnapshotCoverImageResource"
-        },
-        "id": {
-          "description": "Output only. A server generated identifier of the snapshot revision.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "metadata": {
-          "description": "Metadata for this snapshot revision.",
-          "$ref": "SnapshotMetadata"
         }
       },
       "additionalProperties": null,
@@ -5251,6 +4931,20 @@
               "enum": [],
               "enumDescriptions": [],
               "repeated": false
+            },
+            "playerIdConsistencyToken": {
+              "description": "Consistency token of the player id. The call returns a 'not found' result when the token is present and invalid. Empty value is ignored. See also GlobalPlayerIdConsistencyTokenProto",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
             }
           },
           "parameterOrder": [
@@ -6079,51 +5773,6 @@
           "request": null,
           "response": {
             "$ref": "SnapshotListResponse"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/drive.appdata",
-            "https://www.googleapis.com/auth/games"
-          ],
-          "supportsMediaDownload": false,
-          "useMediaDownloadService": false,
-          "supportsSubscription": false,
-          "supportsMediaUpload": false,
-          "mediaUpload": null
-        }
-      }
-    },
-    "snapshotsExtended": {
-      "resources": {},
-      "methods": {
-        "resolveSnapshotHead": {
-          "id": "games.snapshotsExtended.resolveSnapshotHead",
-          "path": "games/v1/snapshotsExtended/{snapshotName}:resolveHead",
-          "httpMethod": "POST",
-          "description": "Resolves any potential conflicts according to the resolution policy specified in the request and returns the snapshot head after the resolution.",
-          "parameters": {
-            "snapshotName": {
-              "description": "Required. Name of the snapshot.",
-              "default": null,
-              "location": "path",
-              "required": true,
-              "type": "string",
-              "format": null,
-              "minimum": null,
-              "maximum": null,
-              "pattern": null,
-              "enum": [],
-              "enumDescriptions": [],
-              "repeated": false
-            }
-          },
-          "parameterOrder": [
-            "snapshotName"
-          ],
-          "request": {
-            "$ref": "ResolveSnapshotHeadRequest"
-          },
-          "response": {
-            "$ref": "ResolveSnapshotHeadResponse"
           },
           "scopes": [
             "https://www.googleapis.com/auth/drive.appdata",

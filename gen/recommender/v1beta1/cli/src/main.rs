@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("recommender1_beta1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210314")
+            .version("0.1.0-20220417")
             .about("")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -71,16 +71,52 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: recommendations");
         let mut insight_types2 = SubCommand::with_name("insight_types")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: insights");
+            .about("methods: get_config and update_config");
+        {
+            let mcmd = SubCommand::with_name("get_config").about("Gets the requested InsightTypeConfig. There is only one instance of the config for each InsightType.");
+            insight_types2 = insight_types2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("update_config").about("Updates an InsightTypeConfig change. This will create a new revision of the config.");
+            insight_types2 = insight_types2.subcommand(mcmd);
+        }
         let mut recommenders2 = SubCommand::with_name("recommenders")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: recommendations");
+            .about("methods: get_config and update_config");
+        {
+            let mcmd = SubCommand::with_name("get_config").about("Gets the requested Recommender Config. There is only one instance of the config for each Recommender.");
+            recommenders2 = recommenders2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("update_config").about(
+                "Updates a Recommender Config. This will create a new revision of the config.",
+            );
+            recommenders2 = recommenders2.subcommand(mcmd);
+        }
         let mut insight_types2 = SubCommand::with_name("insight_types")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: insights");
+            .about("methods: get_config and update_config");
+        {
+            let mcmd = SubCommand::with_name("get_config").about("Gets the requested InsightTypeConfig. There is only one instance of the config for each InsightType.");
+            insight_types2 = insight_types2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("update_config").about("Updates an InsightTypeConfig change. This will create a new revision of the config.");
+            insight_types2 = insight_types2.subcommand(mcmd);
+        }
         let mut recommenders2 = SubCommand::with_name("recommenders")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: recommendations");
+            .about("methods: get_config and update_config");
+        {
+            let mcmd = SubCommand::with_name("get_config").about("Gets the requested Recommender Config. There is only one instance of the config for each Recommender.");
+            recommenders2 = recommenders2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("update_config").about(
+                "Updates a Recommender Config. This will create a new revision of the config.",
+            );
+            recommenders2 = recommenders2.subcommand(mcmd);
+        }
         let mut insights3 = SubCommand::with_name("insights")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get, list and mark_accepted");
@@ -89,7 +125,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             insights3 = insights3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists insights for a Cloud project. Requires the recommender.*.list IAM permission for the specified insight type.");
+            let mcmd = SubCommand::with_name("list").about("Lists insights for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified insight type.");
             insights3 = insights3.subcommand(mcmd);
         }
         {
@@ -104,7 +140,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             recommendations3 = recommendations3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists recommendations for a Cloud project. Requires the recommender.*.list IAM permission for the specified recommender.");
+            let mcmd = SubCommand::with_name("list").about("Lists recommendations for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified recommender.");
             recommendations3 = recommendations3.subcommand(mcmd);
         }
         {
@@ -127,7 +163,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             insights3 = insights3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists insights for a Cloud project. Requires the recommender.*.list IAM permission for the specified insight type.");
+            let mcmd = SubCommand::with_name("list").about("Lists insights for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified insight type.");
             insights3 = insights3.subcommand(mcmd);
         }
         {
@@ -142,7 +178,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             recommendations3 = recommendations3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists recommendations for a Cloud project. Requires the recommender.*.list IAM permission for the specified recommender.");
+            let mcmd = SubCommand::with_name("list").about("Lists recommendations for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified recommender.");
             recommendations3 = recommendations3.subcommand(mcmd);
         }
         {
@@ -165,7 +201,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             insights3 = insights3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists insights for a Cloud project. Requires the recommender.*.list IAM permission for the specified insight type.");
+            let mcmd = SubCommand::with_name("list").about("Lists insights for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified insight type.");
             insights3 = insights3.subcommand(mcmd);
         }
         {
@@ -180,7 +216,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             recommendations3 = recommendations3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists recommendations for a Cloud project. Requires the recommender.*.list IAM permission for the specified recommender.");
+            let mcmd = SubCommand::with_name("list").about("Lists recommendations for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified recommender.");
             recommendations3 = recommendations3.subcommand(mcmd);
         }
         {
@@ -203,7 +239,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             insights3 = insights3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists insights for a Cloud project. Requires the recommender.*.list IAM permission for the specified insight type.");
+            let mcmd = SubCommand::with_name("list").about("Lists insights for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified insight type.");
             insights3 = insights3.subcommand(mcmd);
         }
         {
@@ -218,7 +254,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             recommendations3 = recommendations3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists recommendations for a Cloud project. Requires the recommender.*.list IAM permission for the specified recommender.");
+            let mcmd = SubCommand::with_name("list").about("Lists recommendations for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified recommender.");
             recommendations3 = recommendations3.subcommand(mcmd);
         }
         {

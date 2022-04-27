@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("jobs3_p1beta1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210309")
+            .version("0.1.0-20220325")
             .about("Cloud Talent Solution provides the capability to create, read, update, and delete job postings, as well as search jobs based on keywords and filters. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -44,7 +44,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create");
         {
-            let mcmd = SubCommand::with_name("create").about("Report events issued when end user interacts with customer\'s application that uses Cloud Talent Solution. You may inspect the created events in [self service tools](https://console.cloud.google.com/talent-solution/overview). [Learn more](https://cloud.google.com/talent-solution/docs/management-tools) about self service tools.");
+            let mcmd = SubCommand::with_name("create").about("Report events issued when end user interacts with customer's application that uses Cloud Talent Solution. You may inspect the created events in [self service tools](https://console.cloud.google.com/talent-solution/overview). [Learn more](https://cloud.google.com/talent-solution/docs/management-tools) about self service tools.");
             client_events1 = client_events1.subcommand(mcmd);
         }
         let mut companies1 = SubCommand::with_name("companies")
@@ -68,7 +68,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             companies1 = companies1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates specified company. Company names can\'t be updated. To update a company name, delete the company and all jobs associated with it, and only then re-create them.");
+            let mcmd = SubCommand::with_name("patch").about("Updates specified company. Company names can't be updated. To update a company name, delete the company and all jobs associated with it, and only then re-create them.");
             companies1 = companies1.subcommand(mcmd);
         }
         let mut jobs1 = SubCommand::with_name("jobs")

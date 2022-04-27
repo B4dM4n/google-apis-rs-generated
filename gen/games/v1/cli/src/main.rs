@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("games1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210311")
+            .version("0.1.0-20220420")
             .about("The Google Play games service allows developers to enhance games with social leaderboards, achievements, game state, sign-in with Google, and more.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -51,7 +51,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             achievements0 = achievements0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists the progress for all your application\'s achievements for the currently authenticated player.");
+            let mcmd = SubCommand::with_name("list").about("Lists the progress for all your application's achievements for the currently authenticated player.");
             achievements0 = achievements0.subcommand(mcmd);
         }
         {
@@ -159,7 +159,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: get, list, list_window, submit and submit_multiple");
         {
-            let mcmd = SubCommand::with_name("get").about("Get high scores, and optionally ranks, in leaderboards for the currently authenticated player. For a specific time span, `leaderboardId` can be set to `ALL` to retrieve data for all leaderboards in a given time span. `NOTE: You cannot ask for \'ALL\' leaderboards and \'ALL\' timeSpans in the same request; only one parameter may be set to \'ALL\'.");
+            let mcmd = SubCommand::with_name("get").about("Get high scores, and optionally ranks, in leaderboards for the currently authenticated player. For a specific time span, `leaderboardId` can be set to `ALL` to retrieve data for all leaderboards in a given time span. `NOTE: You cannot ask for 'ALL' leaderboards and 'ALL' timeSpans in the same request; only one parameter may be set to 'ALL'.");
             scores0 = scores0.subcommand(mcmd);
         }
         {
@@ -169,7 +169,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("list_window").about(
-                "Lists the scores in a leaderboard around (and including) a player\'s score.",
+                "Lists the scores in a leaderboard around (and including) a player's score.",
             );
             scores0 = scores0.subcommand(mcmd);
         }
@@ -195,13 +195,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list").about("Retrieves a list of snapshots created by your application for the player corresponding to the player ID.");
             snapshots0 = snapshots0.subcommand(mcmd);
         }
-        let mut snapshots_extended0 = SubCommand::with_name("snapshots_extended")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: resolve_snapshot_head");
-        {
-            let mcmd = SubCommand::with_name("resolve_snapshot_head").about("Resolves any potential conflicts according to the resolution policy specified in the request and returns the snapshot head after the resolution.");
-            snapshots_extended0 = snapshots_extended0.subcommand(mcmd);
-        }
         let mut stats0 = SubCommand::with_name("stats")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get");
@@ -210,7 +203,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             stats0 = stats0.subcommand(mcmd);
         }
         app = app.subcommand(stats0);
-        app = app.subcommand(snapshots_extended0);
         app = app.subcommand(snapshots0);
         app = app.subcommand(scores0);
         app = app.subcommand(revisions0);

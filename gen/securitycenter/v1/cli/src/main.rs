@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("securitycenter1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210312")
+            .version("0.1.0-20220414")
             .about("Security Command Center API provides access to temporal views of assets and findings within an organization.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -35,7 +35,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .takes_value(false));
         let mut folders0 = SubCommand::with_name("folders")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: assets and sources");
+            .about("sub-resources: assets, big_query_exports, findings, mute_configs and sources");
         let mut organizations0 = SubCommand::with_name("organizations")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get_organization_settings and update_organization_settings");
@@ -46,29 +46,83 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("update_organization_settings")
-                .about("Updates an organization\'s settings.");
+                .about("Updates an organization's settings.");
             organizations0 = organizations0.subcommand(mcmd);
         }
         let mut projects0 = SubCommand::with_name("projects")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: assets and sources");
+            .about("sub-resources: assets, big_query_exports, findings, mute_configs and sources");
         let mut assets1 = SubCommand::with_name("assets")
             .setting(AppSettings::ColoredHelp)
             .about("methods: group, list and update_security_marks");
         {
             let mcmd = SubCommand::with_name("group").about(
-                "Filters an organization\'s assets and groups them by their specified properties.",
+                "Filters an organization's assets and groups them by their specified properties.",
             );
             assets1 = assets1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists an organization\'s assets.");
+            let mcmd = SubCommand::with_name("list").about("Lists an organization's assets.");
             assets1 = assets1.subcommand(mcmd);
         }
         {
             let mcmd =
                 SubCommand::with_name("update_security_marks").about("Updates security marks.");
             assets1 = assets1.subcommand(mcmd);
+        }
+        let mut big_query_exports1 = SubCommand::with_name("big_query_exports")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a big query export.");
+            big_query_exports1 = big_query_exports1.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("delete").about("Deletes an existing big query export.");
+            big_query_exports1 = big_query_exports1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a big query export.");
+            big_query_exports1 = big_query_exports1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists BigQuery exports. Note that when requesting BigQuery exports at a given level all exports under that level are also returned e.g. if requesting BigQuery exports under a folder, then all BigQuery exports immediately under the folder plus the ones created under the projects within the folder are returned.");
+            big_query_exports1 = big_query_exports1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates a BigQuery export.");
+            big_query_exports1 = big_query_exports1.subcommand(mcmd);
+        }
+        let mut findings1 = SubCommand::with_name("findings")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: bulk_mute");
+        {
+            let mcmd = SubCommand::with_name("bulk_mute").about("Kicks off an LRO to bulk mute findings for a parent based on a filter. The parent can be either an organization, folder or project. The findings matched by the filter will be muted after the LRO is done.");
+            findings1 = findings1.subcommand(mcmd);
+        }
+        let mut mute_configs1 = SubCommand::with_name("mute_configs")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a mute config.");
+            mute_configs1 = mute_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes an existing mute config.");
+            mute_configs1 = mute_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a mute config.");
+            mute_configs1 = mute_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists mute configs.");
+            mute_configs1 = mute_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates a mute config.");
+            mute_configs1 = mute_configs1.subcommand(mcmd);
         }
         let mut sources1 = SubCommand::with_name("sources")
             .setting(AppSettings::ColoredHelp)
@@ -83,12 +137,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: group, list, run_discovery and update_security_marks");
         {
             let mcmd = SubCommand::with_name("group").about(
-                "Filters an organization\'s assets and groups them by their specified properties.",
+                "Filters an organization's assets and groups them by their specified properties.",
             );
             assets1 = assets1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists an organization\'s assets.");
+            let mcmd = SubCommand::with_name("list").about("Lists an organization's assets.");
             assets1 = assets1.subcommand(mcmd);
         }
         {
@@ -99,6 +153,60 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd =
                 SubCommand::with_name("update_security_marks").about("Updates security marks.");
             assets1 = assets1.subcommand(mcmd);
+        }
+        let mut big_query_exports1 = SubCommand::with_name("big_query_exports")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a big query export.");
+            big_query_exports1 = big_query_exports1.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("delete").about("Deletes an existing big query export.");
+            big_query_exports1 = big_query_exports1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a big query export.");
+            big_query_exports1 = big_query_exports1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists BigQuery exports. Note that when requesting BigQuery exports at a given level all exports under that level are also returned e.g. if requesting BigQuery exports under a folder, then all BigQuery exports immediately under the folder plus the ones created under the projects within the folder are returned.");
+            big_query_exports1 = big_query_exports1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates a BigQuery export.");
+            big_query_exports1 = big_query_exports1.subcommand(mcmd);
+        }
+        let mut findings1 = SubCommand::with_name("findings")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: bulk_mute");
+        {
+            let mcmd = SubCommand::with_name("bulk_mute").about("Kicks off an LRO to bulk mute findings for a parent based on a filter. The parent can be either an organization, folder or project. The findings matched by the filter will be muted after the LRO is done.");
+            findings1 = findings1.subcommand(mcmd);
+        }
+        let mut mute_configs1 = SubCommand::with_name("mute_configs")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a mute config.");
+            mute_configs1 = mute_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes an existing mute config.");
+            mute_configs1 = mute_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a mute config.");
+            mute_configs1 = mute_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists mute configs.");
+            mute_configs1 = mute_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates a mute config.");
+            mute_configs1 = mute_configs1.subcommand(mcmd);
         }
         let mut notification_configs1 = SubCommand::with_name("notification_configs")
             .setting(AppSettings::ColoredHelp)
@@ -127,11 +235,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: cancel, delete, get and list");
         {
-            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn\'t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
+            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
             operations1 = operations1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn\'t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.");
             operations1 = operations1.subcommand(mcmd);
         }
         {
@@ -139,7 +247,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             operations1 = operations1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn\'t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations1 = operations1.subcommand(mcmd);
         }
         let mut sources1 = SubCommand::with_name("sources")
@@ -182,18 +290,72 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: group, list and update_security_marks");
         {
             let mcmd = SubCommand::with_name("group").about(
-                "Filters an organization\'s assets and groups them by their specified properties.",
+                "Filters an organization's assets and groups them by their specified properties.",
             );
             assets1 = assets1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists an organization\'s assets.");
+            let mcmd = SubCommand::with_name("list").about("Lists an organization's assets.");
             assets1 = assets1.subcommand(mcmd);
         }
         {
             let mcmd =
                 SubCommand::with_name("update_security_marks").about("Updates security marks.");
             assets1 = assets1.subcommand(mcmd);
+        }
+        let mut big_query_exports1 = SubCommand::with_name("big_query_exports")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a big query export.");
+            big_query_exports1 = big_query_exports1.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("delete").about("Deletes an existing big query export.");
+            big_query_exports1 = big_query_exports1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a big query export.");
+            big_query_exports1 = big_query_exports1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists BigQuery exports. Note that when requesting BigQuery exports at a given level all exports under that level are also returned e.g. if requesting BigQuery exports under a folder, then all BigQuery exports immediately under the folder plus the ones created under the projects within the folder are returned.");
+            big_query_exports1 = big_query_exports1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates a BigQuery export.");
+            big_query_exports1 = big_query_exports1.subcommand(mcmd);
+        }
+        let mut findings1 = SubCommand::with_name("findings")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: bulk_mute");
+        {
+            let mcmd = SubCommand::with_name("bulk_mute").about("Kicks off an LRO to bulk mute findings for a parent based on a filter. The parent can be either an organization, folder or project. The findings matched by the filter will be muted after the LRO is done.");
+            findings1 = findings1.subcommand(mcmd);
+        }
+        let mut mute_configs1 = SubCommand::with_name("mute_configs")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a mute config.");
+            mute_configs1 = mute_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes an existing mute config.");
+            mute_configs1 = mute_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a mute config.");
+            mute_configs1 = mute_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists mute configs.");
+            mute_configs1 = mute_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates a mute config.");
+            mute_configs1 = mute_configs1.subcommand(mcmd);
         }
         let mut sources1 = SubCommand::with_name("sources")
             .setting(AppSettings::ColoredHelp)
@@ -205,17 +367,22 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut findings2 = SubCommand::with_name("findings")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: group, list, patch, set_state and update_security_marks");
+            .about("methods: group, list, patch, set_mute, set_state and update_security_marks");
         {
-            let mcmd = SubCommand::with_name("group").about("Filters an organization or source\'s findings and groups them by their specified properties. To group across all sources provide a `-` as the source id. Example: /v1/organizations/{organization_id}/sources/-/findings, /v1/folders/{folder_id}/sources/-/findings, /v1/projects/{project_id}/sources/-/findings");
+            let mcmd = SubCommand::with_name("group").about("Filters an organization or source's findings and groups them by their specified properties. To group across all sources provide a `-` as the source id. Example: /v1/organizations/{organization_id}/sources/-/findings, /v1/folders/{folder_id}/sources/-/findings, /v1/projects/{project_id}/sources/-/findings");
             findings2 = findings2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists an organization or source\'s findings. To list across all sources provide a `-` as the source id. Example: /v1/organizations/{organization_id}/sources/-/findings");
+            let mcmd = SubCommand::with_name("list").about("Lists an organization or source's findings. To list across all sources provide a `-` as the source id. Example: /v1/organizations/{organization_id}/sources/-/findings");
             findings2 = findings2.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("patch").about("Creates or updates a finding. The corresponding source must exist for a finding creation to succeed.");
+            findings2 = findings2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("set_mute").about("Updates the mute state of a finding.");
             findings2 = findings2.subcommand(mcmd);
         }
         {
@@ -228,22 +395,27 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             findings2 = findings2.subcommand(mcmd);
         }
         let mut findings2 = SubCommand::with_name("findings")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: create, group, list, patch, set_state and update_security_marks");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, group, list, patch, set_mute, set_state and update_security_marks");
         {
             let mcmd = SubCommand::with_name("create").about("Creates a finding. The corresponding source must exist for finding creation to succeed.");
             findings2 = findings2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("group").about("Filters an organization or source\'s findings and groups them by their specified properties. To group across all sources provide a `-` as the source id. Example: /v1/organizations/{organization_id}/sources/-/findings, /v1/folders/{folder_id}/sources/-/findings, /v1/projects/{project_id}/sources/-/findings");
+            let mcmd = SubCommand::with_name("group").about("Filters an organization or source's findings and groups them by their specified properties. To group across all sources provide a `-` as the source id. Example: /v1/organizations/{organization_id}/sources/-/findings, /v1/folders/{folder_id}/sources/-/findings, /v1/projects/{project_id}/sources/-/findings");
             findings2 = findings2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists an organization or source\'s findings. To list across all sources provide a `-` as the source id. Example: /v1/organizations/{organization_id}/sources/-/findings");
+            let mcmd = SubCommand::with_name("list").about("Lists an organization or source's findings. To list across all sources provide a `-` as the source id. Example: /v1/organizations/{organization_id}/sources/-/findings");
             findings2 = findings2.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("patch").about("Creates or updates a finding. The corresponding source must exist for a finding creation to succeed.");
+            findings2 = findings2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("set_mute").about("Updates the mute state of a finding.");
             findings2 = findings2.subcommand(mcmd);
         }
         {
@@ -257,17 +429,22 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut findings2 = SubCommand::with_name("findings")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: group, list, patch, set_state and update_security_marks");
+            .about("methods: group, list, patch, set_mute, set_state and update_security_marks");
         {
-            let mcmd = SubCommand::with_name("group").about("Filters an organization or source\'s findings and groups them by their specified properties. To group across all sources provide a `-` as the source id. Example: /v1/organizations/{organization_id}/sources/-/findings, /v1/folders/{folder_id}/sources/-/findings, /v1/projects/{project_id}/sources/-/findings");
+            let mcmd = SubCommand::with_name("group").about("Filters an organization or source's findings and groups them by their specified properties. To group across all sources provide a `-` as the source id. Example: /v1/organizations/{organization_id}/sources/-/findings, /v1/folders/{folder_id}/sources/-/findings, /v1/projects/{project_id}/sources/-/findings");
             findings2 = findings2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists an organization or source\'s findings. To list across all sources provide a `-` as the source id. Example: /v1/organizations/{organization_id}/sources/-/findings");
+            let mcmd = SubCommand::with_name("list").about("Lists an organization or source's findings. To list across all sources provide a `-` as the source id. Example: /v1/organizations/{organization_id}/sources/-/findings");
             findings2 = findings2.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("patch").about("Creates or updates a finding. The corresponding source must exist for a finding creation to succeed.");
+            findings2 = findings2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("set_mute").about("Updates the mute state of a finding.");
             findings2 = findings2.subcommand(mcmd);
         }
         {
@@ -279,16 +456,52 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 SubCommand::with_name("update_security_marks").about("Updates security marks.");
             findings2 = findings2.subcommand(mcmd);
         }
+        let mut external_systems3 = SubCommand::with_name("external_systems")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: patch");
+        {
+            let mcmd = SubCommand::with_name("patch")
+                .about("Updates external system. This is for a given finding.");
+            external_systems3 = external_systems3.subcommand(mcmd);
+        }
+        let mut external_systems3 = SubCommand::with_name("external_systems")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: patch");
+        {
+            let mcmd = SubCommand::with_name("patch")
+                .about("Updates external system. This is for a given finding.");
+            external_systems3 = external_systems3.subcommand(mcmd);
+        }
+        let mut external_systems3 = SubCommand::with_name("external_systems")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: patch");
+        {
+            let mcmd = SubCommand::with_name("patch")
+                .about("Updates external system. This is for a given finding.");
+            external_systems3 = external_systems3.subcommand(mcmd);
+        }
+        findings2 = findings2.subcommand(external_systems3);
+        findings2 = findings2.subcommand(external_systems3);
+        findings2 = findings2.subcommand(external_systems3);
         sources1 = sources1.subcommand(findings2);
         sources1 = sources1.subcommand(findings2);
         sources1 = sources1.subcommand(findings2);
         projects0 = projects0.subcommand(sources1);
+        projects0 = projects0.subcommand(mute_configs1);
+        projects0 = projects0.subcommand(findings1);
+        projects0 = projects0.subcommand(big_query_exports1);
         projects0 = projects0.subcommand(assets1);
         organizations0 = organizations0.subcommand(sources1);
         organizations0 = organizations0.subcommand(operations1);
         organizations0 = organizations0.subcommand(notification_configs1);
+        organizations0 = organizations0.subcommand(mute_configs1);
+        organizations0 = organizations0.subcommand(findings1);
+        organizations0 = organizations0.subcommand(big_query_exports1);
         organizations0 = organizations0.subcommand(assets1);
         folders0 = folders0.subcommand(sources1);
+        folders0 = folders0.subcommand(mute_configs1);
+        folders0 = folders0.subcommand(findings1);
+        folders0 = folders0.subcommand(big_query_exports1);
         folders0 = folders0.subcommand(assets1);
         app = app.subcommand(projects0);
         app = app.subcommand(organizations0);

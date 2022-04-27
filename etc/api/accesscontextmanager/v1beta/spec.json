@@ -7,7 +7,7 @@
   "canonicalName": "Access Context Manager",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta",
-  "revision": "20210314",
+  "revision": "20220422",
   "title": "Access Context Manager API",
   "description": "An API for setting attribute based access control to requests to GCP services.",
   "ownerDomain": "google.com",
@@ -201,12 +201,23 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         }
       }
     }
   },
   "schemas": {
+    "AccessContextManagerOperationMetadata": {
+      "id": "AccessContextManagerOperationMetadata",
+      "description": "Metadata of Access Context Manager's Long Running Operations.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
     "AccessLevel": {
       "id": "AccessLevel",
       "description": "An `AccessLevel` is a label that can be applied to requests to Google Cloud services, along with a list of requirements necessary for the label to be applied.",

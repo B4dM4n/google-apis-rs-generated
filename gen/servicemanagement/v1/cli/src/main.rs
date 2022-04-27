@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("servicemanagement1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210310")
+            .version("0.1.0-20220415")
             .about("Google Service Management allows service producers to publish their services on Google Cloud Platform so that they can be discovered and used by service consumers.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -47,17 +47,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut services0 = SubCommand::with_name("services")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: create, delete, enable, generate_config_report, get, get_config, get_iam_policy, list, set_iam_policy, test_iam_permissions and undelete");
+                        .about("methods: create, delete, generate_config_report, get, get_config, get_iam_policy, list, set_iam_policy, test_iam_permissions and undelete");
         {
             let mcmd = SubCommand::with_name("create").about("Creates a new managed service. A managed service is immutable, and is subject to mandatory 30-day data retention. You cannot move a service or recreate it within 30 days after deletion. One producer project can own no more than 500 services. For security and reliability purposes, a production service should be hosted in a dedicated producer project. Operation");
             services0 = services0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("delete").about("Deletes a managed service. This method will change the service to the `Soft-Delete` state for 30 days. Within this period, service producers may call UndeleteService to restore the service. After 30 days, the service will be permanently deleted. Operation");
-            services0 = services0.subcommand(mcmd);
-        }
-        {
-            let mcmd = SubCommand::with_name("enable").about("Enables a service for a project, so it can be used for the project. See [Cloud Auth Guide](https://cloud.google.com/docs/authentication) for more information. Operation");
             services0 = services0.subcommand(mcmd);
         }
         {
@@ -80,7 +76,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             services0 = services0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists managed services. Returns all public services. For authenticated users, also returns all services the calling user has \"servicemanagement.services.get\" permission for. **BETA:** If the caller specifies the `consumer_id`, it returns only the services enabled on the consumer. The `consumer_id` must have the format of \"project:{PROJECT-ID}\".");
+            let mcmd = SubCommand::with_name("list").about("Lists managed services. Returns all public services. For authenticated users, also returns all services the calling user has \"servicemanagement.services.get\" permission for.");
             services0 = services0.subcommand(mcmd);
         }
         {

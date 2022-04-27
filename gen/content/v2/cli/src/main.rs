@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("content2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210311")
+            .version("0.1.0-20220421")
             .about("Manage your product listings and accounts for Google Shopping")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -170,19 +170,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists the statuses of the datafeeds in your Merchant Center account.");
             datafeedstatuses0 = datafeedstatuses0.subcommand(mcmd);
-        }
-        let mut inventory0 = SubCommand::with_name("inventory")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: custombatch and set");
-        {
-            let mcmd = SubCommand::with_name("custombatch").about("Updates price and availability for multiple products or stores in a single request. This operation does not update the expiration date of the products.");
-            inventory0 = inventory0.subcommand(mcmd);
-        }
-        {
-            let mcmd = SubCommand::with_name("set").about(
-                "Updates price and availability of a product in your Merchant Center account.",
-            );
-            inventory0 = inventory0.subcommand(mcmd);
         }
         let mut liasettings0 = SubCommand::with_name("liasettings")
                         .setting(AppSettings::ColoredHelp)
@@ -375,7 +362,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("updateshipment")
-                .about("Updates a shipment\'s status, carrier, and/or tracking ID.");
+                .about("Updates a shipment's status, carrier, and/or tracking ID.");
             orders0 = orders0.subcommand(mcmd);
         }
         let mut pos0 = SubCommand::with_name("pos")
@@ -506,7 +493,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         app = app.subcommand(orderreports0);
         app = app.subcommand(orderinvoices0);
         app = app.subcommand(liasettings0);
-        app = app.subcommand(inventory0);
         app = app.subcommand(datafeedstatuses0);
         app = app.subcommand(datafeeds0);
         app = app.subcommand(accounttax0);

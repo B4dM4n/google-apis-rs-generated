@@ -1,9 +1,75 @@
 #![doc = "# Resources and Methods\n    * [organizations](resources/organizations/struct.OrganizationsActions.html)\n      * [*getOrganizationSettings*](resources/organizations/struct.GetOrganizationSettingsRequestBuilder.html), [*updateOrganizationSettings*](resources/organizations/struct.UpdateOrganizationSettingsRequestBuilder.html)\n      * [assets](resources/organizations/assets/struct.AssetsActions.html)\n        * [*group*](resources/organizations/assets/struct.GroupRequestBuilder.html), [*list*](resources/organizations/assets/struct.ListRequestBuilder.html), [*runDiscovery*](resources/organizations/assets/struct.RunDiscoveryRequestBuilder.html), [*updateSecurityMarks*](resources/organizations/assets/struct.UpdateSecurityMarksRequestBuilder.html)\n      * [operations](resources/organizations/operations/struct.OperationsActions.html)\n        * [*cancel*](resources/organizations/operations/struct.CancelRequestBuilder.html), [*delete*](resources/organizations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/operations/struct.GetRequestBuilder.html), [*list*](resources/organizations/operations/struct.ListRequestBuilder.html)\n      * [sources](resources/organizations/sources/struct.SourcesActions.html)\n        * [*create*](resources/organizations/sources/struct.CreateRequestBuilder.html), [*get*](resources/organizations/sources/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/organizations/sources/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/organizations/sources/struct.ListRequestBuilder.html), [*patch*](resources/organizations/sources/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/organizations/sources/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/organizations/sources/struct.TestIamPermissionsRequestBuilder.html)\n        * [findings](resources/organizations/sources/findings/struct.FindingsActions.html)\n          * [*create*](resources/organizations/sources/findings/struct.CreateRequestBuilder.html), [*group*](resources/organizations/sources/findings/struct.GroupRequestBuilder.html), [*list*](resources/organizations/sources/findings/struct.ListRequestBuilder.html), [*patch*](resources/organizations/sources/findings/struct.PatchRequestBuilder.html), [*setState*](resources/organizations/sources/findings/struct.SetStateRequestBuilder.html), [*updateSecurityMarks*](resources/organizations/sources/findings/struct.UpdateSecurityMarksRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Access {
+        #[doc = "Caller's IP address, such as \"1.1.1.1\"."]
+        #[serde(
+            rename = "callerIp",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub caller_ip: ::std::option::Option<String>,
+        #[doc = "The caller IP's geolocation, which identifies where the call came from."]
+        #[serde(
+            rename = "callerIpGeo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub caller_ip_geo: ::std::option::Option<crate::schemas::Geolocation>,
+        #[doc = "The method that the service account called, e.g. \"SetIamPolicy\"."]
+        #[serde(
+            rename = "methodName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub method_name: ::std::option::Option<String>,
+        #[doc = "Associated email, such as \"foo@google.com\"."]
+        #[serde(
+            rename = "principalEmail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub principal_email: ::std::option::Option<String>,
+        #[doc = "This is the API service that the service account made a call to, e.g. \"iam.googleapis.com\""]
+        #[serde(
+            rename = "serviceName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub service_name: ::std::option::Option<String>,
+        #[doc = "What kind of user agent is associated, e.g. operating system shells, embedded or stand-alone applications, etc."]
+        #[serde(
+            rename = "userAgentFamily",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_agent_family: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Access {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Access {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Asset {
         #[doc = "The time at which the asset was created in Security Command Center."]
@@ -353,21 +419,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Binding {
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -405,6 +471,928 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CancelOperationRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Connection {
+        #[doc = "Destination IP address. Not present for sockets that are listening and not connected."]
+        #[serde(
+            rename = "destinationIp",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub destination_ip: ::std::option::Option<String>,
+        #[doc = "Destination port. Not present for sockets that are listening and not connected."]
+        #[serde(
+            rename = "destinationPort",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub destination_port: ::std::option::Option<i32>,
+        #[doc = "IANA Internet Protocol Number such as TCP(6) and UDP(17)."]
+        #[serde(
+            rename = "protocol",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub protocol: ::std::option::Option<crate::schemas::ConnectionProtocol>,
+        #[doc = "Source IP address."]
+        #[serde(
+            rename = "sourceIp",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub source_ip: ::std::option::Option<String>,
+        #[doc = "Source port."]
+        #[serde(
+            rename = "sourcePort",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub source_port: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for Connection {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Connection {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ConnectionProtocol {
+        #[doc = "Encap Security Payload."]
+        Esp,
+        #[doc = "Generic Routing Encapsulation."]
+        Gre,
+        #[doc = "Internet Control Message Protocol."]
+        Icmp,
+        #[doc = "Unspecified protocol (not HOPOPT)."]
+        ProtocolUnspecified,
+        #[doc = "Transmission Control Protocol."]
+        Tcp,
+        #[doc = "User Datagram Protocol."]
+        Udp,
+    }
+    impl ConnectionProtocol {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ConnectionProtocol::Esp => "ESP",
+                ConnectionProtocol::Gre => "GRE",
+                ConnectionProtocol::Icmp => "ICMP",
+                ConnectionProtocol::ProtocolUnspecified => "PROTOCOL_UNSPECIFIED",
+                ConnectionProtocol::Tcp => "TCP",
+                ConnectionProtocol::Udp => "UDP",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ConnectionProtocol {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ConnectionProtocol {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ConnectionProtocol, ()> {
+            Ok(match s {
+                "ESP" => ConnectionProtocol::Esp,
+                "GRE" => ConnectionProtocol::Gre,
+                "ICMP" => ConnectionProtocol::Icmp,
+                "PROTOCOL_UNSPECIFIED" => ConnectionProtocol::ProtocolUnspecified,
+                "TCP" => ConnectionProtocol::Tcp,
+                "UDP" => ConnectionProtocol::Udp,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ConnectionProtocol {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ConnectionProtocol {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ConnectionProtocol {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ESP" => ConnectionProtocol::Esp,
+                "GRE" => ConnectionProtocol::Gre,
+                "ICMP" => ConnectionProtocol::Icmp,
+                "PROTOCOL_UNSPECIFIED" => ConnectionProtocol::ProtocolUnspecified,
+                "TCP" => ConnectionProtocol::Tcp,
+                "UDP" => ConnectionProtocol::Udp,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ConnectionProtocol {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ConnectionProtocol {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct Cve {
+        #[doc = "Describe Common Vulnerability Scoring System specified at https://www.first.org/cvss/v3.1/specification-document"]
+        #[serde(
+            rename = "cvssv3",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cvssv_3: ::std::option::Option<crate::schemas::Cvssv3>,
+        #[doc = "The unique identifier for the vulnerability. e.g. CVE-2021-34527"]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "Additional information about the CVE. e.g. https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34527"]
+        #[serde(
+            rename = "references",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub references: ::std::option::Option<Vec<crate::schemas::Reference>>,
+        #[doc = "Whether upstream fix is available for the CVE."]
+        #[serde(
+            rename = "upstreamFixAvailable",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub upstream_fix_available: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for Cve {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Cve {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct Cvssv3 {
+        #[doc = "This metric describes the conditions beyond the attacker's control that must exist in order to exploit the vulnerability."]
+        #[serde(
+            rename = "attackComplexity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub attack_complexity: ::std::option::Option<crate::schemas::Cvssv3AttackComplexity>,
+        #[doc = "Base Metrics Represents the intrinsic characteristics of a vulnerability that are constant over time and across user environments. This metric reflects the context by which vulnerability exploitation is possible."]
+        #[serde(
+            rename = "attackVector",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub attack_vector: ::std::option::Option<crate::schemas::Cvssv3AttackVector>,
+        #[doc = "This metric measures the impact to the availability of the impacted component resulting from a successfully exploited vulnerability."]
+        #[serde(
+            rename = "availabilityImpact",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub availability_impact: ::std::option::Option<crate::schemas::Cvssv3AvailabilityImpact>,
+        #[doc = "The base score is a function of the base metric scores."]
+        #[serde(
+            rename = "baseScore",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub base_score: ::std::option::Option<f64>,
+        #[doc = "This metric measures the impact to the confidentiality of the information resources managed by a software component due to a successfully exploited vulnerability."]
+        #[serde(
+            rename = "confidentialityImpact",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub confidentiality_impact:
+            ::std::option::Option<crate::schemas::Cvssv3ConfidentialityImpact>,
+        #[doc = "This metric measures the impact to integrity of a successfully exploited vulnerability."]
+        #[serde(
+            rename = "integrityImpact",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub integrity_impact: ::std::option::Option<crate::schemas::Cvssv3IntegrityImpact>,
+        #[doc = "This metric describes the level of privileges an attacker must possess before successfully exploiting the vulnerability."]
+        #[serde(
+            rename = "privilegesRequired",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub privileges_required: ::std::option::Option<crate::schemas::Cvssv3PrivilegesRequired>,
+        #[doc = "The Scope metric captures whether a vulnerability in one vulnerable component impacts resources in components beyond its security scope."]
+        #[serde(
+            rename = "scope",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub scope: ::std::option::Option<crate::schemas::Cvssv3Scope>,
+        #[doc = "This metric captures the requirement for a human user, other than the attacker, to participate in the successful compromise of the vulnerable component."]
+        #[serde(
+            rename = "userInteraction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_interaction: ::std::option::Option<crate::schemas::Cvssv3UserInteraction>,
+    }
+    impl ::google_field_selector::FieldSelector for Cvssv3 {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Cvssv3 {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum Cvssv3AttackComplexity {
+        #[doc = "A successful attack depends on conditions beyond the attacker's control. That is, a successful attack cannot be accomplished at will, but requires the attacker to invest in some measurable amount of effort in preparation or execution against the vulnerable component before a successful attack can be expected."]
+        AttackComplexityHigh,
+        #[doc = "Specialized access conditions or extenuating circumstances do not exist. An attacker can expect repeatable success when attacking the vulnerable component."]
+        AttackComplexityLow,
+        #[doc = "Invalid value."]
+        AttackComplexityUnspecified,
+    }
+    impl Cvssv3AttackComplexity {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                Cvssv3AttackComplexity::AttackComplexityHigh => "ATTACK_COMPLEXITY_HIGH",
+                Cvssv3AttackComplexity::AttackComplexityLow => "ATTACK_COMPLEXITY_LOW",
+                Cvssv3AttackComplexity::AttackComplexityUnspecified => {
+                    "ATTACK_COMPLEXITY_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for Cvssv3AttackComplexity {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for Cvssv3AttackComplexity {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<Cvssv3AttackComplexity, ()> {
+            Ok(match s {
+                "ATTACK_COMPLEXITY_HIGH" => Cvssv3AttackComplexity::AttackComplexityHigh,
+                "ATTACK_COMPLEXITY_LOW" => Cvssv3AttackComplexity::AttackComplexityLow,
+                "ATTACK_COMPLEXITY_UNSPECIFIED" => {
+                    Cvssv3AttackComplexity::AttackComplexityUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for Cvssv3AttackComplexity {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for Cvssv3AttackComplexity {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for Cvssv3AttackComplexity {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ATTACK_COMPLEXITY_HIGH" => Cvssv3AttackComplexity::AttackComplexityHigh,
+                "ATTACK_COMPLEXITY_LOW" => Cvssv3AttackComplexity::AttackComplexityLow,
+                "ATTACK_COMPLEXITY_UNSPECIFIED" => {
+                    Cvssv3AttackComplexity::AttackComplexityUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for Cvssv3AttackComplexity {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Cvssv3AttackComplexity {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum Cvssv3AttackVector {
+        #[doc = "The vulnerable component is bound to the network stack, but the attack is limited at the protocol level to a logically adjacent topology."]
+        AttackVectorAdjacent,
+        #[doc = "The vulnerable component is not bound to the network stack and the attacker's path is via read/write/execute capabilities."]
+        AttackVectorLocal,
+        #[doc = "The vulnerable component is bound to the network stack and the set of possible attackers extends beyond the other options listed below, up to and including the entire Internet."]
+        AttackVectorNetwork,
+        #[doc = "The attack requires the attacker to physically touch or manipulate the vulnerable component."]
+        AttackVectorPhysical,
+        #[doc = "Invalid value."]
+        AttackVectorUnspecified,
+    }
+    impl Cvssv3AttackVector {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                Cvssv3AttackVector::AttackVectorAdjacent => "ATTACK_VECTOR_ADJACENT",
+                Cvssv3AttackVector::AttackVectorLocal => "ATTACK_VECTOR_LOCAL",
+                Cvssv3AttackVector::AttackVectorNetwork => "ATTACK_VECTOR_NETWORK",
+                Cvssv3AttackVector::AttackVectorPhysical => "ATTACK_VECTOR_PHYSICAL",
+                Cvssv3AttackVector::AttackVectorUnspecified => "ATTACK_VECTOR_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for Cvssv3AttackVector {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for Cvssv3AttackVector {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<Cvssv3AttackVector, ()> {
+            Ok(match s {
+                "ATTACK_VECTOR_ADJACENT" => Cvssv3AttackVector::AttackVectorAdjacent,
+                "ATTACK_VECTOR_LOCAL" => Cvssv3AttackVector::AttackVectorLocal,
+                "ATTACK_VECTOR_NETWORK" => Cvssv3AttackVector::AttackVectorNetwork,
+                "ATTACK_VECTOR_PHYSICAL" => Cvssv3AttackVector::AttackVectorPhysical,
+                "ATTACK_VECTOR_UNSPECIFIED" => Cvssv3AttackVector::AttackVectorUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for Cvssv3AttackVector {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for Cvssv3AttackVector {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for Cvssv3AttackVector {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ATTACK_VECTOR_ADJACENT" => Cvssv3AttackVector::AttackVectorAdjacent,
+                "ATTACK_VECTOR_LOCAL" => Cvssv3AttackVector::AttackVectorLocal,
+                "ATTACK_VECTOR_NETWORK" => Cvssv3AttackVector::AttackVectorNetwork,
+                "ATTACK_VECTOR_PHYSICAL" => Cvssv3AttackVector::AttackVectorPhysical,
+                "ATTACK_VECTOR_UNSPECIFIED" => Cvssv3AttackVector::AttackVectorUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for Cvssv3AttackVector {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Cvssv3AttackVector {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum Cvssv3AvailabilityImpact {
+        #[doc = "High impact."]
+        ImpactHigh,
+        #[doc = "Low impact."]
+        ImpactLow,
+        #[doc = "No impact."]
+        ImpactNone,
+        #[doc = "Invalid value."]
+        ImpactUnspecified,
+    }
+    impl Cvssv3AvailabilityImpact {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                Cvssv3AvailabilityImpact::ImpactHigh => "IMPACT_HIGH",
+                Cvssv3AvailabilityImpact::ImpactLow => "IMPACT_LOW",
+                Cvssv3AvailabilityImpact::ImpactNone => "IMPACT_NONE",
+                Cvssv3AvailabilityImpact::ImpactUnspecified => "IMPACT_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for Cvssv3AvailabilityImpact {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for Cvssv3AvailabilityImpact {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<Cvssv3AvailabilityImpact, ()> {
+            Ok(match s {
+                "IMPACT_HIGH" => Cvssv3AvailabilityImpact::ImpactHigh,
+                "IMPACT_LOW" => Cvssv3AvailabilityImpact::ImpactLow,
+                "IMPACT_NONE" => Cvssv3AvailabilityImpact::ImpactNone,
+                "IMPACT_UNSPECIFIED" => Cvssv3AvailabilityImpact::ImpactUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for Cvssv3AvailabilityImpact {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for Cvssv3AvailabilityImpact {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for Cvssv3AvailabilityImpact {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "IMPACT_HIGH" => Cvssv3AvailabilityImpact::ImpactHigh,
+                "IMPACT_LOW" => Cvssv3AvailabilityImpact::ImpactLow,
+                "IMPACT_NONE" => Cvssv3AvailabilityImpact::ImpactNone,
+                "IMPACT_UNSPECIFIED" => Cvssv3AvailabilityImpact::ImpactUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for Cvssv3AvailabilityImpact {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Cvssv3AvailabilityImpact {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum Cvssv3ConfidentialityImpact {
+        #[doc = "High impact."]
+        ImpactHigh,
+        #[doc = "Low impact."]
+        ImpactLow,
+        #[doc = "No impact."]
+        ImpactNone,
+        #[doc = "Invalid value."]
+        ImpactUnspecified,
+    }
+    impl Cvssv3ConfidentialityImpact {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                Cvssv3ConfidentialityImpact::ImpactHigh => "IMPACT_HIGH",
+                Cvssv3ConfidentialityImpact::ImpactLow => "IMPACT_LOW",
+                Cvssv3ConfidentialityImpact::ImpactNone => "IMPACT_NONE",
+                Cvssv3ConfidentialityImpact::ImpactUnspecified => "IMPACT_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for Cvssv3ConfidentialityImpact {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for Cvssv3ConfidentialityImpact {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<Cvssv3ConfidentialityImpact, ()> {
+            Ok(match s {
+                "IMPACT_HIGH" => Cvssv3ConfidentialityImpact::ImpactHigh,
+                "IMPACT_LOW" => Cvssv3ConfidentialityImpact::ImpactLow,
+                "IMPACT_NONE" => Cvssv3ConfidentialityImpact::ImpactNone,
+                "IMPACT_UNSPECIFIED" => Cvssv3ConfidentialityImpact::ImpactUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for Cvssv3ConfidentialityImpact {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for Cvssv3ConfidentialityImpact {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for Cvssv3ConfidentialityImpact {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "IMPACT_HIGH" => Cvssv3ConfidentialityImpact::ImpactHigh,
+                "IMPACT_LOW" => Cvssv3ConfidentialityImpact::ImpactLow,
+                "IMPACT_NONE" => Cvssv3ConfidentialityImpact::ImpactNone,
+                "IMPACT_UNSPECIFIED" => Cvssv3ConfidentialityImpact::ImpactUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for Cvssv3ConfidentialityImpact {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Cvssv3ConfidentialityImpact {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum Cvssv3IntegrityImpact {
+        #[doc = "High impact."]
+        ImpactHigh,
+        #[doc = "Low impact."]
+        ImpactLow,
+        #[doc = "No impact."]
+        ImpactNone,
+        #[doc = "Invalid value."]
+        ImpactUnspecified,
+    }
+    impl Cvssv3IntegrityImpact {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                Cvssv3IntegrityImpact::ImpactHigh => "IMPACT_HIGH",
+                Cvssv3IntegrityImpact::ImpactLow => "IMPACT_LOW",
+                Cvssv3IntegrityImpact::ImpactNone => "IMPACT_NONE",
+                Cvssv3IntegrityImpact::ImpactUnspecified => "IMPACT_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for Cvssv3IntegrityImpact {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for Cvssv3IntegrityImpact {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<Cvssv3IntegrityImpact, ()> {
+            Ok(match s {
+                "IMPACT_HIGH" => Cvssv3IntegrityImpact::ImpactHigh,
+                "IMPACT_LOW" => Cvssv3IntegrityImpact::ImpactLow,
+                "IMPACT_NONE" => Cvssv3IntegrityImpact::ImpactNone,
+                "IMPACT_UNSPECIFIED" => Cvssv3IntegrityImpact::ImpactUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for Cvssv3IntegrityImpact {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for Cvssv3IntegrityImpact {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for Cvssv3IntegrityImpact {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "IMPACT_HIGH" => Cvssv3IntegrityImpact::ImpactHigh,
+                "IMPACT_LOW" => Cvssv3IntegrityImpact::ImpactLow,
+                "IMPACT_NONE" => Cvssv3IntegrityImpact::ImpactNone,
+                "IMPACT_UNSPECIFIED" => Cvssv3IntegrityImpact::ImpactUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for Cvssv3IntegrityImpact {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Cvssv3IntegrityImpact {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum Cvssv3PrivilegesRequired {
+        #[doc = "The attacker requires privileges that provide significant (e.g., administrative) control over the vulnerable component allowing access to component-wide settings and files."]
+        PrivilegesRequiredHigh,
+        #[doc = "The attacker requires privileges that provide basic user capabilities that could normally affect only settings and files owned by a user. Alternatively, an attacker with Low privileges has the ability to access only non-sensitive resources."]
+        PrivilegesRequiredLow,
+        #[doc = "The attacker is unauthorized prior to attack, and therefore does not require any access to settings or files of the vulnerable system to carry out an attack."]
+        PrivilegesRequiredNone,
+        #[doc = "Invalid value."]
+        PrivilegesRequiredUnspecified,
+    }
+    impl Cvssv3PrivilegesRequired {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                Cvssv3PrivilegesRequired::PrivilegesRequiredHigh => "PRIVILEGES_REQUIRED_HIGH",
+                Cvssv3PrivilegesRequired::PrivilegesRequiredLow => "PRIVILEGES_REQUIRED_LOW",
+                Cvssv3PrivilegesRequired::PrivilegesRequiredNone => "PRIVILEGES_REQUIRED_NONE",
+                Cvssv3PrivilegesRequired::PrivilegesRequiredUnspecified => {
+                    "PRIVILEGES_REQUIRED_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for Cvssv3PrivilegesRequired {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for Cvssv3PrivilegesRequired {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<Cvssv3PrivilegesRequired, ()> {
+            Ok(match s {
+                "PRIVILEGES_REQUIRED_HIGH" => Cvssv3PrivilegesRequired::PrivilegesRequiredHigh,
+                "PRIVILEGES_REQUIRED_LOW" => Cvssv3PrivilegesRequired::PrivilegesRequiredLow,
+                "PRIVILEGES_REQUIRED_NONE" => Cvssv3PrivilegesRequired::PrivilegesRequiredNone,
+                "PRIVILEGES_REQUIRED_UNSPECIFIED" => {
+                    Cvssv3PrivilegesRequired::PrivilegesRequiredUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for Cvssv3PrivilegesRequired {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for Cvssv3PrivilegesRequired {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for Cvssv3PrivilegesRequired {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "PRIVILEGES_REQUIRED_HIGH" => Cvssv3PrivilegesRequired::PrivilegesRequiredHigh,
+                "PRIVILEGES_REQUIRED_LOW" => Cvssv3PrivilegesRequired::PrivilegesRequiredLow,
+                "PRIVILEGES_REQUIRED_NONE" => Cvssv3PrivilegesRequired::PrivilegesRequiredNone,
+                "PRIVILEGES_REQUIRED_UNSPECIFIED" => {
+                    Cvssv3PrivilegesRequired::PrivilegesRequiredUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for Cvssv3PrivilegesRequired {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Cvssv3PrivilegesRequired {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum Cvssv3Scope {
+        #[doc = "An exploited vulnerability can affect resources beyond the security scope managed by the security authority of the vulnerable component."]
+        ScopeChanged,
+        #[doc = "An exploited vulnerability can only affect resources managed by the same security authority."]
+        ScopeUnchanged,
+        #[doc = "Invalid value."]
+        ScopeUnspecified,
+    }
+    impl Cvssv3Scope {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                Cvssv3Scope::ScopeChanged => "SCOPE_CHANGED",
+                Cvssv3Scope::ScopeUnchanged => "SCOPE_UNCHANGED",
+                Cvssv3Scope::ScopeUnspecified => "SCOPE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for Cvssv3Scope {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for Cvssv3Scope {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<Cvssv3Scope, ()> {
+            Ok(match s {
+                "SCOPE_CHANGED" => Cvssv3Scope::ScopeChanged,
+                "SCOPE_UNCHANGED" => Cvssv3Scope::ScopeUnchanged,
+                "SCOPE_UNSPECIFIED" => Cvssv3Scope::ScopeUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for Cvssv3Scope {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for Cvssv3Scope {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for Cvssv3Scope {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "SCOPE_CHANGED" => Cvssv3Scope::ScopeChanged,
+                "SCOPE_UNCHANGED" => Cvssv3Scope::ScopeUnchanged,
+                "SCOPE_UNSPECIFIED" => Cvssv3Scope::ScopeUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for Cvssv3Scope {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Cvssv3Scope {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum Cvssv3UserInteraction {
+        #[doc = "The vulnerable system can be exploited without interaction from any user."]
+        UserInteractionNone,
+        #[doc = "Successful exploitation of this vulnerability requires a user to take some action before the vulnerability can be exploited."]
+        UserInteractionRequired,
+        #[doc = "Invalid value."]
+        UserInteractionUnspecified,
+    }
+    impl Cvssv3UserInteraction {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                Cvssv3UserInteraction::UserInteractionNone => "USER_INTERACTION_NONE",
+                Cvssv3UserInteraction::UserInteractionRequired => "USER_INTERACTION_REQUIRED",
+                Cvssv3UserInteraction::UserInteractionUnspecified => "USER_INTERACTION_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for Cvssv3UserInteraction {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for Cvssv3UserInteraction {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<Cvssv3UserInteraction, ()> {
+            Ok(match s {
+                "USER_INTERACTION_NONE" => Cvssv3UserInteraction::UserInteractionNone,
+                "USER_INTERACTION_REQUIRED" => Cvssv3UserInteraction::UserInteractionRequired,
+                "USER_INTERACTION_UNSPECIFIED" => Cvssv3UserInteraction::UserInteractionUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for Cvssv3UserInteraction {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for Cvssv3UserInteraction {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for Cvssv3UserInteraction {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "USER_INTERACTION_NONE" => Cvssv3UserInteraction::UserInteractionNone,
+                "USER_INTERACTION_REQUIRED" => Cvssv3UserInteraction::UserInteractionRequired,
+                "USER_INTERACTION_UNSPECIFIED" => Cvssv3UserInteraction::UserInteractionUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for Cvssv3UserInteraction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Cvssv3UserInteraction {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -487,6 +1475,20 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Finding {
+        #[doc = "Access details associated to the Finding, such as more information on the caller, which method was accessed, from where, etc."]
+        #[serde(
+            rename = "access",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub access: ::std::option::Option<crate::schemas::Access>,
+        #[doc = "The canonical name of the finding. It's either \"organizations/{organization_id}/sources/{source_id}/findings/{finding_id}\", \"folders/{folder_id}/sources/{source_id}/findings/{finding_id}\" or \"projects/{project_number}/sources/{source_id}/findings/{finding_id}\", depending on the closest CRM ancestor of the resource associated with the finding."]
+        #[serde(
+            rename = "canonicalName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub canonical_name: ::std::option::Option<String>,
         #[doc = "The additional taxonomy group within findings from a given source. This field is immutable after creation time. Example: \"XSS_FLASH_INJECTION\""]
         #[serde(
             rename = "category",
@@ -494,6 +1496,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub category: ::std::option::Option<String>,
+        #[doc = "Contains information about the IP connection associated with the finding."]
+        #[serde(
+            rename = "connections",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub connections: ::std::option::Option<Vec<crate::schemas::Connection>>,
         #[doc = "The time at which the finding was created in Security Command Center."]
         #[serde(
             rename = "createTime",
@@ -501,13 +1510,32 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "The time at which the event took place, or when an update to the finding occurred. For example, if the finding represents an open firewall it would capture the time the detector believes the firewall became open. The accuracy is determined by the detector. If the finding were to be resolved afterward, this time would reflect when the finding was resolved."]
+        #[doc = "Contains more detail about the finding."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "The time the finding was first detected. If an existing finding is updated, then this is the time the update occurred. For example, if the finding represents an open firewall, this property captures the time the detector believes the firewall became open. The accuracy is determined by the detector. If the finding is later resolved, then this time reflects when the finding was resolved. This must not be set to a value greater than the current timestamp."]
         #[serde(
             rename = "eventTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub event_time: ::std::option::Option<String>,
+        #[doc = "Output only. Third party SIEM/SOAR fields within SCC, contains external system information and external system finding fields."]
+        #[serde(
+            rename = "externalSystems",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub external_systems: ::std::option::Option<
+            ::std::collections::BTreeMap<
+                String,
+                crate::schemas::GoogleCloudSecuritycenterV1ExternalSystem,
+            >,
+        >,
         #[doc = "The URI that, if available, points to a web page outside of Security Command Center where additional information about the finding can be found. This field is guaranteed to be either empty or a well formed URL."]
         #[serde(
             rename = "externalUri",
@@ -515,6 +1543,55 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub external_uri: ::std::option::Option<String>,
+        #[doc = "The class of the finding."]
+        #[serde(
+            rename = "findingClass",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub finding_class: ::std::option::Option<crate::schemas::FindingFindingClass>,
+        #[doc = "Represents IAM bindings associated with the Finding."]
+        #[serde(
+            rename = "iamBindings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub iam_bindings: ::std::option::Option<Vec<crate::schemas::IamBinding>>,
+        #[doc = "Represents what's commonly known as an Indicator of compromise (IoC) in computer forensics. This is an artifact observed on a network or in an operating system that, with high confidence, indicates a computer intrusion. Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise"]
+        #[serde(
+            rename = "indicator",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub indicator: ::std::option::Option<crate::schemas::Indicator>,
+        #[doc = "MITRE ATT&CK tactics and techniques related to this finding. See: https://attack.mitre.org"]
+        #[serde(
+            rename = "mitreAttack",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mitre_attack: ::std::option::Option<crate::schemas::MitreAttack>,
+        #[doc = "Indicates the mute state of a finding (either muted, unmuted or undefined). Unlike other attributes of a finding, a finding provider shouldn't set the value of mute."]
+        #[serde(
+            rename = "mute",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mute: ::std::option::Option<crate::schemas::FindingMute>,
+        #[doc = "First known as mute_annotation. Records additional information about the mute operation e.g. mute config that muted the finding, user who muted the finding, etc. Unlike other attributes of a finding, a finding provider shouldn't set the value of mute."]
+        #[serde(
+            rename = "muteInitiator",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mute_initiator: ::std::option::Option<String>,
+        #[doc = "Output only. The most recent time this finding was muted or unmuted."]
+        #[serde(
+            rename = "muteUpdateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mute_update_time: ::std::option::Option<String>,
         #[doc = "The relative resource name of this finding. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: \"organizations/{organization_id}/sources/{source_id}/findings/{finding_id}\""]
         #[serde(
             rename = "name",
@@ -522,6 +1599,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "Next steps associate to the finding."]
+        #[serde(
+            rename = "nextSteps",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_steps: ::std::option::Option<String>,
         #[doc = "The relative resource name of the source the finding belongs to. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name This field is immutable after creation time. For example: \"organizations/{organization_id}/sources/{source_id}\""]
         #[serde(
             rename = "parent",
@@ -565,6 +1649,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub state: ::std::option::Option<crate::schemas::FindingState>,
+        #[doc = "Represents vulnerability specific fields like cve, cvss scores etc. CVE stands for Common Vulnerabilities and Exposures (https://cve.mitre.org/about/)"]
+        #[serde(
+            rename = "vulnerability",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub vulnerability: ::std::option::Option<crate::schemas::Vulnerability>,
     }
     impl ::google_field_selector::FieldSelector for Finding {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -577,12 +1668,184 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum FindingFindingClass {
+        #[doc = "Unspecified finding class."]
+        FindingClassUnspecified,
+        #[doc = "Describes a potential weakness in cloud resource/asset configuration that increases risk."]
+        Misconfiguration,
+        #[doc = "Describes a security observation that is for informational purposes."]
+        Observation,
+        #[doc = "Describes an error that prevents some SCC functionality."]
+        SccError,
+        #[doc = "Describes unwanted or malicious activity."]
+        Threat,
+        #[doc = "Describes a potential weakness in software that increases risk to Confidentiality & Integrity & Availability."]
+        Vulnerability,
+    }
+    impl FindingFindingClass {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                FindingFindingClass::FindingClassUnspecified => "FINDING_CLASS_UNSPECIFIED",
+                FindingFindingClass::Misconfiguration => "MISCONFIGURATION",
+                FindingFindingClass::Observation => "OBSERVATION",
+                FindingFindingClass::SccError => "SCC_ERROR",
+                FindingFindingClass::Threat => "THREAT",
+                FindingFindingClass::Vulnerability => "VULNERABILITY",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for FindingFindingClass {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for FindingFindingClass {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<FindingFindingClass, ()> {
+            Ok(match s {
+                "FINDING_CLASS_UNSPECIFIED" => FindingFindingClass::FindingClassUnspecified,
+                "MISCONFIGURATION" => FindingFindingClass::Misconfiguration,
+                "OBSERVATION" => FindingFindingClass::Observation,
+                "SCC_ERROR" => FindingFindingClass::SccError,
+                "THREAT" => FindingFindingClass::Threat,
+                "VULNERABILITY" => FindingFindingClass::Vulnerability,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for FindingFindingClass {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for FindingFindingClass {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for FindingFindingClass {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "FINDING_CLASS_UNSPECIFIED" => FindingFindingClass::FindingClassUnspecified,
+                "MISCONFIGURATION" => FindingFindingClass::Misconfiguration,
+                "OBSERVATION" => FindingFindingClass::Observation,
+                "SCC_ERROR" => FindingFindingClass::SccError,
+                "THREAT" => FindingFindingClass::Threat,
+                "VULNERABILITY" => FindingFindingClass::Vulnerability,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for FindingFindingClass {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FindingFindingClass {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum FindingMute {
+        #[doc = "Unspecified."]
+        MuteUnspecified,
+        #[doc = "Finding has been muted."]
+        Muted,
+        #[doc = "Finding has never been muted/unmuted."]
+        Undefined,
+        #[doc = "Finding has been unmuted."]
+        Unmuted,
+    }
+    impl FindingMute {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                FindingMute::MuteUnspecified => "MUTE_UNSPECIFIED",
+                FindingMute::Muted => "MUTED",
+                FindingMute::Undefined => "UNDEFINED",
+                FindingMute::Unmuted => "UNMUTED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for FindingMute {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for FindingMute {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<FindingMute, ()> {
+            Ok(match s {
+                "MUTE_UNSPECIFIED" => FindingMute::MuteUnspecified,
+                "MUTED" => FindingMute::Muted,
+                "UNDEFINED" => FindingMute::Undefined,
+                "UNMUTED" => FindingMute::Unmuted,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for FindingMute {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for FindingMute {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for FindingMute {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "MUTE_UNSPECIFIED" => FindingMute::MuteUnspecified,
+                "MUTED" => FindingMute::Muted,
+                "UNDEFINED" => FindingMute::Undefined,
+                "UNMUTED" => FindingMute::Unmuted,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for FindingMute {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FindingMute {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum FindingSeverity {
         #[doc = "Vulnerability: A critical vulnerability is easily discoverable by an external actor, exploitable, and results in the direct ability to execute arbitrary code, exfiltrate data, and otherwise gain additional access and privileges to cloud resources and workloads. Examples include publicly accessible unprotected user data, public SSH access with weak or no passwords, etc. Threat: Indicates a threat that is able to access, modify, or delete data or execute unauthorized code within existing resources."]
         Critical,
         #[doc = "Vulnerability: A high risk vulnerability can be easily discovered and exploited in combination with other vulnerabilities in order to gain direct access and the ability to execute arbitrary code, exfiltrate data, and otherwise gain additional access and privileges to cloud resources and workloads. An example is a database with weak or no passwords that is only accessible internally. This database could easily be compromised by an actor that had access to the internal network. Threat: Indicates a threat that is able to create new computational resources in an environment but not able to access data or execute code in existing resources."]
         High,
-        #[doc = "Vulnerability: A low risk vulnerability hampers a security organization’s ability to detect vulnerabilities or active threats in their deployment, or prevents the root cause investigation of security issues. An example is monitoring and logs being disabled for resource configurations and access. Threat: Indicates a threat that has obtained minimal access to an environment but is not able to access data, execute code, or create resources."]
+        #[doc = "Vulnerability: A low risk vulnerability hampers a security organization's ability to detect vulnerabilities or active threats in their deployment, or prevents the root cause investigation of security issues. An example is monitoring and logs being disabled for resource configurations and access. Threat: Indicates a threat that has obtained minimal access to an environment but is not able to access data, execute code, or create resources."]
         Low,
         #[doc = "Vulnerability: A medium risk vulnerability could be used by an actor to gain access to resources or privileges that enable them to eventually (through multiple steps or a complex exploit) gain access and the ability to execute arbitrary code or exfiltrate data. An example is a service account with access to more projects than it should have. If an actor gains access to the service account, they could potentially use that access to manipulate a project the service account was not intended to. Threat: Indicates a threat that is able to cause operational impact but may not access data or execute unauthorized code."]
         Medium,
@@ -788,6 +2051,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct Geolocation {
+        #[doc = "A CLDR."]
+        #[serde(
+            rename = "regionCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub region_code: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Geolocation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Geolocation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GetIamPolicyRequest {
         #[doc = "OPTIONAL: A `GetPolicyOptions` object for specifying options to `GetIamPolicy`."]
         #[serde(
@@ -820,7 +2114,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GetPolicyOptions {
-        #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "requestedPolicyVersion",
             default,
@@ -1191,6 +2485,244 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudSecuritycenterV1BigQueryExport {
+        #[doc = "Output only. The time at which the big query export was created. This field is set by the server and will be ignored if provided on export on creation."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "The dataset to write findings' updates to. Its format is \"projects/[project_id]/datasets/[bigquery_dataset_id]\". BigQuery Dataset unique ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_)."]
+        #[serde(
+            rename = "dataset",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dataset: ::std::option::Option<String>,
+        #[doc = "The description of the export (max of 1024 characters)."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "Expression that defines the filter to apply across create/update events of findings. The expression is a list of zero or more restrictions combined via logical operators `AND` and `OR`. Parentheses are supported, and `OR` has higher precedence than `AND`. Restrictions have the form ` ` and may have a `-` character in front of them to indicate negation. The fields map to those defined in the corresponding resource. The supported operators are: * `=` for all value types. * `>`, `<`, `>=`, `<=` for integer values. * `:`, meaning substring matching, for strings. The supported value types are: * string literals in quotes. * integer literals without quotes. * boolean literals `true` and `false` without quotes."]
+        #[serde(
+            rename = "filter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filter: ::std::option::Option<String>,
+        #[doc = "Output only. Email address of the user who last edited the big query export. This field is set by the server and will be ignored if provided on export creation or update."]
+        #[serde(
+            rename = "mostRecentEditor",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub most_recent_editor: ::std::option::Option<String>,
+        #[doc = "The relative resource name of this export. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name. Example format: \"organizations/{organization_id}/bigQueryExports/{export_id}\" Example format: \"folders/{folder_id}/bigQueryExports/{export_id}\" Example format: \"projects/{project_id}/bigQueryExports/{export_id}\" This field is provided in responses, and is ignored when provided in create requests."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Output only. The service account that needs permission to create table, upload data to the big query dataset."]
+        #[serde(
+            rename = "principal",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub principal: ::std::option::Option<String>,
+        #[doc = "Output only. The most recent time at which the big export was updated. This field is set by the server and will be ignored if provided on export creation or update."]
+        #[serde(
+            rename = "updateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudSecuritycenterV1BigQueryExport {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudSecuritycenterV1BigQueryExport {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudSecuritycenterV1BulkMuteFindingsResponse {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudSecuritycenterV1BulkMuteFindingsResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudSecuritycenterV1BulkMuteFindingsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudSecuritycenterV1ExternalSystem {
+        #[doc = "References primary/secondary etc assignees in the external system."]
+        #[serde(
+            rename = "assignees",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub assignees: ::std::option::Option<Vec<String>>,
+        #[doc = "The most recent time when the corresponding finding's ticket/tracker was updated in the external system."]
+        #[serde(
+            rename = "externalSystemUpdateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub external_system_update_time: ::std::option::Option<String>,
+        #[doc = "Identifier that's used to track the given finding in the external system."]
+        #[serde(
+            rename = "externalUid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub external_uid: ::std::option::Option<String>,
+        #[doc = "External System Name e.g. jira, demisto, etc. e.g.: `organizations/1234/sources/5678/findings/123456/externalSystems/jira` `folders/1234/sources/5678/findings/123456/externalSystems/jira` `projects/1234/sources/5678/findings/123456/externalSystems/jira`"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Most recent status of the corresponding finding's ticket/tracker in the external system."]
+        #[serde(
+            rename = "status",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub status: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudSecuritycenterV1ExternalSystem {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudSecuritycenterV1ExternalSystem {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudSecuritycenterV1MuteConfig {
+        #[doc = "Output only. The time at which the mute config was created. This field is set by the server and will be ignored if provided on config creation."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "A description of the mute config."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "The human readable name to be displayed for the mute config."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "Required. An expression that defines the filter to apply across create/update events of findings. While creating a filter string, be mindful of the scope in which the mute configuration is being created. E.g., If a filter contains project = X but is created under the project = Y scope, it might not match any findings. The following field and operator combinations are supported: * severity: `=`, `:` * category: `=`, `:` * resource.name: `=`, `:` * resource.project_name: `=`, `:` * resource.project_display_name: `=`, `:` * resource.folders.resource_folder: `=`, `:` * resource.parent_name: `=`, `:` * resource.parent_display_name: `=`, `:` * resource.type: `=`, `:` * finding_class: `=`, `:` * indicator.ip_addresses: `=`, `:` * indicator.domains: `=`, `:`"]
+        #[serde(
+            rename = "filter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filter: ::std::option::Option<String>,
+        #[doc = "Output only. Email address of the user who last edited the mute config. This field is set by the server and will be ignored if provided on config creation or update."]
+        #[serde(
+            rename = "mostRecentEditor",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub most_recent_editor: ::std::option::Option<String>,
+        #[doc = "This field will be ignored if provided on config creation. Format \"organizations/{organization}/muteConfigs/{mute_config}\" \"folders/{folder}/muteConfigs/{mute_config}\" \"projects/{project}/muteConfigs/{mute_config}\""]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Output only. The most recent time at which the mute config was updated. This field is set by the server and will be ignored if provided on config creation or update."]
+        #[serde(
+            rename = "updateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudSecuritycenterV1MuteConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudSecuritycenterV1MuteConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudSecuritycenterV1NotificationMessage {
         #[doc = "If it's a Finding based notification config, this field will be populated."]
@@ -1227,6 +2759,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudSecuritycenterV1P1Beta1Finding {
+        #[doc = "The canonical name of the finding. It's either \"organizations/{organization_id}/sources/{source_id}/findings/{finding_id}\", \"folders/{folder_id}/sources/{source_id}/findings/{finding_id}\" or \"projects/{project_number}/sources/{source_id}/findings/{finding_id}\", depending on the closest CRM ancestor of the resource associated with the finding."]
+        #[serde(
+            rename = "canonicalName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub canonical_name: ::std::option::Option<String>,
         #[doc = "The additional taxonomy group within findings from a given source. This field is immutable after creation time. Example: \"XSS_FLASH_INJECTION\""]
         #[serde(
             rename = "category",
@@ -1241,7 +2780,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "The time at which the event took place, or when an update to the finding occurred. For example, if the finding represents an open firewall it would capture the time the detector believes the firewall became open. The accuracy is determined by the detector. If the finding were to be resolved afterward, this time would reflect when the finding was resolved."]
+        #[doc = "The time at which the event took place, or when an update to the finding occurred. For example, if the finding represents an open firewall it would capture the time the detector believes the firewall became open. The accuracy is determined by the detector. If the finding were to be resolved afterward, this time would reflect when the finding was resolved. Must not be set to a value greater than the current timestamp."]
         #[serde(
             rename = "eventTime",
             default,
@@ -1625,7 +3164,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project: ::std::option::Option<String>,
-        #[doc = "The human readable name of project that the resource belongs to."]
+        #[doc = "The project id that the resource belongs to."]
         #[serde(
             rename = "projectDisplayName",
             default,
@@ -1718,7 +3257,7 @@ pub mod schemas {
             GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState,
             (),
         > {
-            Ok ( match s { "COMPLETED" => GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState :: Completed , "STATE_UNSPECIFIED" => GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState :: StateUnspecified , "SUPERSEDED" => GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState :: Superseded , "TERMINATED" => GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState :: Terminated , _ => return Err ( ( ) ) , } )
+            Ok (match s { "COMPLETED" => GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState :: Completed , "STATE_UNSPECIFIED" => GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState :: StateUnspecified , "SUPERSEDED" => GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState :: Superseded , "TERMINATED" => GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState :: Terminated , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState {
@@ -1742,7 +3281,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "COMPLETED" => GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState :: Completed , "STATE_UNSPECIFIED" => GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState :: StateUnspecified , "SUPERSEDED" => GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState :: Superseded , "TERMINATED" => GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState :: Terminated , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "COMPLETED" => GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState :: Completed , "STATE_UNSPECIFIED" => GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState :: StateUnspecified , "SUPERSEDED" => GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState :: Superseded , "TERMINATED" => GoogleCloudSecuritycenterV1P1Beta1RunAssetDiscoveryResponseState :: Terminated , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1772,6 +3311,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudSecuritycenterV1P1Beta1SecurityMarks {
+        #[doc = "The canonical name of the marks. Examples: \"organizations/{organization_id}/assets/{asset_id}/securityMarks\" \"folders/{folder_id}/assets/{asset_id}/securityMarks\" \"projects/{project_number}/assets/{asset_id}/securityMarks\" \"organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks\" \"folders/{folder_id}/sources/{source_id}/findings/{finding_id}/securityMarks\" \"projects/{project_number}/sources/{source_id}/findings/{finding_id}/securityMarks\""]
+        #[serde(
+            rename = "canonicalName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub canonical_name: ::std::option::Option<String>,
         #[doc = "Mutable user specified security marks belonging to the parent resource. Constraints are as follows: * Keys and values are treated as case insensitive * Keys must be between 1 - 256 characters (inclusive) * Keys must be letters, numbers, underscores, or dashes * Values have leading and trailing whitespace trimmed, remaining characters must be between 1 - 4096 characters (inclusive)"]
         #[serde(
             rename = "marks",
@@ -1810,6 +3356,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudSecuritycenterV1Resource {
+        #[doc = "The human readable name of the resource."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
         #[doc = "Output only. Contains a Folder message for each folder in the assets ancestry. The first folder is the deepest nested folder, and the last folder is the folder directly under the Organization."]
         #[serde(
             rename = "folders",
@@ -1845,13 +3398,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project: ::std::option::Option<String>,
-        #[doc = "The human readable name of project that the resource belongs to."]
+        #[doc = "The project ID that the resource belongs to."]
         #[serde(
             rename = "projectDisplayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_display_name: ::std::option::Option<String>,
+        #[doc = "The full resource type of the resource."]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudSecuritycenterV1Resource {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2233,6 +3793,165 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct IamBinding {
+        #[doc = "The action that was performed on a Binding."]
+        #[serde(
+            rename = "action",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub action: ::std::option::Option<crate::schemas::IamBindingAction>,
+        #[doc = "A single identity requesting access for a Cloud Platform resource, e.g. \"foo@google.com\"."]
+        #[serde(
+            rename = "member",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub member: ::std::option::Option<String>,
+        #[doc = "Role that is assigned to \"members\". For example, \"roles/viewer\", \"roles/editor\", or \"roles/owner\"."]
+        #[serde(
+            rename = "role",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub role: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for IamBinding {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IamBinding {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum IamBindingAction {
+        #[doc = "Unspecified."]
+        ActionUnspecified,
+        #[doc = "Addition of a Binding."]
+        Add,
+        #[doc = "Removal of a Binding."]
+        Remove,
+    }
+    impl IamBindingAction {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                IamBindingAction::ActionUnspecified => "ACTION_UNSPECIFIED",
+                IamBindingAction::Add => "ADD",
+                IamBindingAction::Remove => "REMOVE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for IamBindingAction {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for IamBindingAction {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<IamBindingAction, ()> {
+            Ok(match s {
+                "ACTION_UNSPECIFIED" => IamBindingAction::ActionUnspecified,
+                "ADD" => IamBindingAction::Add,
+                "REMOVE" => IamBindingAction::Remove,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for IamBindingAction {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for IamBindingAction {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for IamBindingAction {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACTION_UNSPECIFIED" => IamBindingAction::ActionUnspecified,
+                "ADD" => IamBindingAction::Add,
+                "REMOVE" => IamBindingAction::Remove,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for IamBindingAction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IamBindingAction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Indicator {
+        #[doc = "List of domains associated to the Finding."]
+        #[serde(
+            rename = "domains",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub domains: ::std::option::Option<Vec<String>>,
+        #[doc = "List of ip addresses associated to the Finding."]
+        #[serde(
+            rename = "ipAddresses",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ip_addresses: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for Indicator {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Indicator {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct ListAssetsResponse {
         #[doc = "Assets matching the list request."]
@@ -2494,6 +4213,922 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MitreAttack {
+        #[doc = "Additional MITRE ATT&CK tactics related to this finding, if any."]
+        #[serde(
+            rename = "additionalTactics",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub additional_tactics:
+            ::std::option::Option<Vec<crate::schemas::MitreAttackAdditionalTacticsItems>>,
+        #[doc = "Additional MITRE ATT&CK techniques related to this finding, if any, along with any of their respective parent techniques."]
+        #[serde(
+            rename = "additionalTechniques",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub additional_techniques:
+            ::std::option::Option<Vec<crate::schemas::MitreAttackAdditionalTechniquesItems>>,
+        #[doc = "The MITRE ATT&CK tactic most closely represented by this finding, if any."]
+        #[serde(
+            rename = "primaryTactic",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub primary_tactic: ::std::option::Option<crate::schemas::MitreAttackPrimaryTactic>,
+        #[doc = "The MITRE ATT&CK technique most closely represented by this finding, if any. primary_techniques is a repeated field because there are multiple levels of MITRE ATT&CK techniques. If the technique most closely represented by this finding is a sub-technique (e.g. `SCANNING_IP_BLOCKS`), both the sub-technique and its parent technique(s) will be listed (e.g. `SCANNING_IP_BLOCKS`, `ACTIVE_SCANNING`)."]
+        #[serde(
+            rename = "primaryTechniques",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub primary_techniques:
+            ::std::option::Option<Vec<crate::schemas::MitreAttackPrimaryTechniquesItems>>,
+        #[doc = "The MITRE ATT&CK version referenced by the above fields. E.g. \"8\"."]
+        #[serde(
+            rename = "version",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for MitreAttack {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MitreAttack {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MitreAttackAdditionalTacticsItems {
+        #[doc = "TA0009"]
+        Collection,
+        #[doc = "TA0011"]
+        CommandAndControl,
+        #[doc = "TA0006"]
+        CredentialAccess,
+        #[doc = "TA0005"]
+        DefenseEvasion,
+        #[doc = "TA0007"]
+        Discovery,
+        #[doc = "TA0002"]
+        Execution,
+        #[doc = "TA0010"]
+        Exfiltration,
+        #[doc = "TA0040"]
+        Impact,
+        #[doc = "TA0001"]
+        InitialAccess,
+        #[doc = "TA0008"]
+        LateralMovement,
+        #[doc = "TA0003"]
+        Persistence,
+        #[doc = "TA0004"]
+        PrivilegeEscalation,
+        #[doc = "TA0043"]
+        Reconnaissance,
+        #[doc = "TA0042"]
+        ResourceDevelopment,
+        #[doc = "Unspecified value."]
+        TacticUnspecified,
+    }
+    impl MitreAttackAdditionalTacticsItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MitreAttackAdditionalTacticsItems::Collection => "COLLECTION",
+                MitreAttackAdditionalTacticsItems::CommandAndControl => "COMMAND_AND_CONTROL",
+                MitreAttackAdditionalTacticsItems::CredentialAccess => "CREDENTIAL_ACCESS",
+                MitreAttackAdditionalTacticsItems::DefenseEvasion => "DEFENSE_EVASION",
+                MitreAttackAdditionalTacticsItems::Discovery => "DISCOVERY",
+                MitreAttackAdditionalTacticsItems::Execution => "EXECUTION",
+                MitreAttackAdditionalTacticsItems::Exfiltration => "EXFILTRATION",
+                MitreAttackAdditionalTacticsItems::Impact => "IMPACT",
+                MitreAttackAdditionalTacticsItems::InitialAccess => "INITIAL_ACCESS",
+                MitreAttackAdditionalTacticsItems::LateralMovement => "LATERAL_MOVEMENT",
+                MitreAttackAdditionalTacticsItems::Persistence => "PERSISTENCE",
+                MitreAttackAdditionalTacticsItems::PrivilegeEscalation => "PRIVILEGE_ESCALATION",
+                MitreAttackAdditionalTacticsItems::Reconnaissance => "RECONNAISSANCE",
+                MitreAttackAdditionalTacticsItems::ResourceDevelopment => "RESOURCE_DEVELOPMENT",
+                MitreAttackAdditionalTacticsItems::TacticUnspecified => "TACTIC_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MitreAttackAdditionalTacticsItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MitreAttackAdditionalTacticsItems {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MitreAttackAdditionalTacticsItems, ()> {
+            Ok(match s {
+                "COLLECTION" => MitreAttackAdditionalTacticsItems::Collection,
+                "COMMAND_AND_CONTROL" => MitreAttackAdditionalTacticsItems::CommandAndControl,
+                "CREDENTIAL_ACCESS" => MitreAttackAdditionalTacticsItems::CredentialAccess,
+                "DEFENSE_EVASION" => MitreAttackAdditionalTacticsItems::DefenseEvasion,
+                "DISCOVERY" => MitreAttackAdditionalTacticsItems::Discovery,
+                "EXECUTION" => MitreAttackAdditionalTacticsItems::Execution,
+                "EXFILTRATION" => MitreAttackAdditionalTacticsItems::Exfiltration,
+                "IMPACT" => MitreAttackAdditionalTacticsItems::Impact,
+                "INITIAL_ACCESS" => MitreAttackAdditionalTacticsItems::InitialAccess,
+                "LATERAL_MOVEMENT" => MitreAttackAdditionalTacticsItems::LateralMovement,
+                "PERSISTENCE" => MitreAttackAdditionalTacticsItems::Persistence,
+                "PRIVILEGE_ESCALATION" => MitreAttackAdditionalTacticsItems::PrivilegeEscalation,
+                "RECONNAISSANCE" => MitreAttackAdditionalTacticsItems::Reconnaissance,
+                "RESOURCE_DEVELOPMENT" => MitreAttackAdditionalTacticsItems::ResourceDevelopment,
+                "TACTIC_UNSPECIFIED" => MitreAttackAdditionalTacticsItems::TacticUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MitreAttackAdditionalTacticsItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MitreAttackAdditionalTacticsItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MitreAttackAdditionalTacticsItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "COLLECTION" => MitreAttackAdditionalTacticsItems::Collection,
+                "COMMAND_AND_CONTROL" => MitreAttackAdditionalTacticsItems::CommandAndControl,
+                "CREDENTIAL_ACCESS" => MitreAttackAdditionalTacticsItems::CredentialAccess,
+                "DEFENSE_EVASION" => MitreAttackAdditionalTacticsItems::DefenseEvasion,
+                "DISCOVERY" => MitreAttackAdditionalTacticsItems::Discovery,
+                "EXECUTION" => MitreAttackAdditionalTacticsItems::Execution,
+                "EXFILTRATION" => MitreAttackAdditionalTacticsItems::Exfiltration,
+                "IMPACT" => MitreAttackAdditionalTacticsItems::Impact,
+                "INITIAL_ACCESS" => MitreAttackAdditionalTacticsItems::InitialAccess,
+                "LATERAL_MOVEMENT" => MitreAttackAdditionalTacticsItems::LateralMovement,
+                "PERSISTENCE" => MitreAttackAdditionalTacticsItems::Persistence,
+                "PRIVILEGE_ESCALATION" => MitreAttackAdditionalTacticsItems::PrivilegeEscalation,
+                "RECONNAISSANCE" => MitreAttackAdditionalTacticsItems::Reconnaissance,
+                "RESOURCE_DEVELOPMENT" => MitreAttackAdditionalTacticsItems::ResourceDevelopment,
+                "TACTIC_UNSPECIFIED" => MitreAttackAdditionalTacticsItems::TacticUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MitreAttackAdditionalTacticsItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MitreAttackAdditionalTacticsItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MitreAttackAdditionalTechniquesItems {
+        #[doc = "T1098"]
+        AccountManipulation,
+        #[doc = "T1595"]
+        ActiveScanning,
+        #[doc = "T1078.004"]
+        CloudAccounts,
+        #[doc = "T1069.003"]
+        CloudGroups,
+        #[doc = "T1059"]
+        CommandAndScriptingInterpreter,
+        #[doc = "T1543"]
+        CreateOrModifySystemProcess,
+        #[doc = "T1485"]
+        DataDestruction,
+        #[doc = "T1484"]
+        DomainPolicyModification,
+        #[doc = "T1568"]
+        DynamicResolution,
+        #[doc = "T1567"]
+        ExfiltrationOverWebService,
+        #[doc = "T1567.002"]
+        ExfiltrationToCloudStorage,
+        #[doc = "T1190"]
+        ExploitPublicFacingApplication,
+        #[doc = "T1090.002"]
+        ExternalProxy,
+        #[doc = "T1105"]
+        IngressToolTransfer,
+        #[doc = "T1078.003"]
+        LocalAccounts,
+        #[doc = "T1556"]
+        ModifyAuthenticationProcess,
+        #[doc = "T1578"]
+        ModifyCloudComputeInfrastructure,
+        #[doc = "T1090.003"]
+        MultiHopProxy,
+        #[doc = "T1106"]
+        NativeApi,
+        #[doc = "T1498"]
+        NetworkDenialOfService,
+        #[doc = "T1069"]
+        PermissionGroupsDiscovery,
+        #[doc = "T1090"]
+        Proxy,
+        #[doc = "T1496"]
+        ResourceHijacking,
+        #[doc = "T1595.001"]
+        ScanningIpBlocks,
+        #[doc = "T1129"]
+        SharedModules,
+        #[doc = "T1098.004"]
+        SshAuthorizedKeys,
+        #[doc = "T1539"]
+        StealWebSessionCookie,
+        #[doc = "Unspecified value."]
+        TechniqueUnspecified,
+        #[doc = "T1059.004"]
+        UnixShell,
+        #[doc = "T1552"]
+        UnsecuredCredentials,
+        #[doc = "T1078"]
+        ValidAccounts,
+    }
+    impl MitreAttackAdditionalTechniquesItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MitreAttackAdditionalTechniquesItems::AccountManipulation => "ACCOUNT_MANIPULATION",
+                MitreAttackAdditionalTechniquesItems::ActiveScanning => "ACTIVE_SCANNING",
+                MitreAttackAdditionalTechniquesItems::CloudAccounts => "CLOUD_ACCOUNTS",
+                MitreAttackAdditionalTechniquesItems::CloudGroups => "CLOUD_GROUPS",
+                MitreAttackAdditionalTechniquesItems::CommandAndScriptingInterpreter => {
+                    "COMMAND_AND_SCRIPTING_INTERPRETER"
+                }
+                MitreAttackAdditionalTechniquesItems::CreateOrModifySystemProcess => {
+                    "CREATE_OR_MODIFY_SYSTEM_PROCESS"
+                }
+                MitreAttackAdditionalTechniquesItems::DataDestruction => "DATA_DESTRUCTION",
+                MitreAttackAdditionalTechniquesItems::DomainPolicyModification => {
+                    "DOMAIN_POLICY_MODIFICATION"
+                }
+                MitreAttackAdditionalTechniquesItems::DynamicResolution => "DYNAMIC_RESOLUTION",
+                MitreAttackAdditionalTechniquesItems::ExfiltrationOverWebService => {
+                    "EXFILTRATION_OVER_WEB_SERVICE"
+                }
+                MitreAttackAdditionalTechniquesItems::ExfiltrationToCloudStorage => {
+                    "EXFILTRATION_TO_CLOUD_STORAGE"
+                }
+                MitreAttackAdditionalTechniquesItems::ExploitPublicFacingApplication => {
+                    "EXPLOIT_PUBLIC_FACING_APPLICATION"
+                }
+                MitreAttackAdditionalTechniquesItems::ExternalProxy => "EXTERNAL_PROXY",
+                MitreAttackAdditionalTechniquesItems::IngressToolTransfer => {
+                    "INGRESS_TOOL_TRANSFER"
+                }
+                MitreAttackAdditionalTechniquesItems::LocalAccounts => "LOCAL_ACCOUNTS",
+                MitreAttackAdditionalTechniquesItems::ModifyAuthenticationProcess => {
+                    "MODIFY_AUTHENTICATION_PROCESS"
+                }
+                MitreAttackAdditionalTechniquesItems::ModifyCloudComputeInfrastructure => {
+                    "MODIFY_CLOUD_COMPUTE_INFRASTRUCTURE"
+                }
+                MitreAttackAdditionalTechniquesItems::MultiHopProxy => "MULTI_HOP_PROXY",
+                MitreAttackAdditionalTechniquesItems::NativeApi => "NATIVE_API",
+                MitreAttackAdditionalTechniquesItems::NetworkDenialOfService => {
+                    "NETWORK_DENIAL_OF_SERVICE"
+                }
+                MitreAttackAdditionalTechniquesItems::PermissionGroupsDiscovery => {
+                    "PERMISSION_GROUPS_DISCOVERY"
+                }
+                MitreAttackAdditionalTechniquesItems::Proxy => "PROXY",
+                MitreAttackAdditionalTechniquesItems::ResourceHijacking => "RESOURCE_HIJACKING",
+                MitreAttackAdditionalTechniquesItems::ScanningIpBlocks => "SCANNING_IP_BLOCKS",
+                MitreAttackAdditionalTechniquesItems::SharedModules => "SHARED_MODULES",
+                MitreAttackAdditionalTechniquesItems::SshAuthorizedKeys => "SSH_AUTHORIZED_KEYS",
+                MitreAttackAdditionalTechniquesItems::StealWebSessionCookie => {
+                    "STEAL_WEB_SESSION_COOKIE"
+                }
+                MitreAttackAdditionalTechniquesItems::TechniqueUnspecified => {
+                    "TECHNIQUE_UNSPECIFIED"
+                }
+                MitreAttackAdditionalTechniquesItems::UnixShell => "UNIX_SHELL",
+                MitreAttackAdditionalTechniquesItems::UnsecuredCredentials => {
+                    "UNSECURED_CREDENTIALS"
+                }
+                MitreAttackAdditionalTechniquesItems::ValidAccounts => "VALID_ACCOUNTS",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MitreAttackAdditionalTechniquesItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MitreAttackAdditionalTechniquesItems {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MitreAttackAdditionalTechniquesItems, ()> {
+            Ok(match s {
+                "ACCOUNT_MANIPULATION" => MitreAttackAdditionalTechniquesItems::AccountManipulation,
+                "ACTIVE_SCANNING" => MitreAttackAdditionalTechniquesItems::ActiveScanning,
+                "CLOUD_ACCOUNTS" => MitreAttackAdditionalTechniquesItems::CloudAccounts,
+                "CLOUD_GROUPS" => MitreAttackAdditionalTechniquesItems::CloudGroups,
+                "COMMAND_AND_SCRIPTING_INTERPRETER" => {
+                    MitreAttackAdditionalTechniquesItems::CommandAndScriptingInterpreter
+                }
+                "CREATE_OR_MODIFY_SYSTEM_PROCESS" => {
+                    MitreAttackAdditionalTechniquesItems::CreateOrModifySystemProcess
+                }
+                "DATA_DESTRUCTION" => MitreAttackAdditionalTechniquesItems::DataDestruction,
+                "DOMAIN_POLICY_MODIFICATION" => {
+                    MitreAttackAdditionalTechniquesItems::DomainPolicyModification
+                }
+                "DYNAMIC_RESOLUTION" => MitreAttackAdditionalTechniquesItems::DynamicResolution,
+                "EXFILTRATION_OVER_WEB_SERVICE" => {
+                    MitreAttackAdditionalTechniquesItems::ExfiltrationOverWebService
+                }
+                "EXFILTRATION_TO_CLOUD_STORAGE" => {
+                    MitreAttackAdditionalTechniquesItems::ExfiltrationToCloudStorage
+                }
+                "EXPLOIT_PUBLIC_FACING_APPLICATION" => {
+                    MitreAttackAdditionalTechniquesItems::ExploitPublicFacingApplication
+                }
+                "EXTERNAL_PROXY" => MitreAttackAdditionalTechniquesItems::ExternalProxy,
+                "INGRESS_TOOL_TRANSFER" => {
+                    MitreAttackAdditionalTechniquesItems::IngressToolTransfer
+                }
+                "LOCAL_ACCOUNTS" => MitreAttackAdditionalTechniquesItems::LocalAccounts,
+                "MODIFY_AUTHENTICATION_PROCESS" => {
+                    MitreAttackAdditionalTechniquesItems::ModifyAuthenticationProcess
+                }
+                "MODIFY_CLOUD_COMPUTE_INFRASTRUCTURE" => {
+                    MitreAttackAdditionalTechniquesItems::ModifyCloudComputeInfrastructure
+                }
+                "MULTI_HOP_PROXY" => MitreAttackAdditionalTechniquesItems::MultiHopProxy,
+                "NATIVE_API" => MitreAttackAdditionalTechniquesItems::NativeApi,
+                "NETWORK_DENIAL_OF_SERVICE" => {
+                    MitreAttackAdditionalTechniquesItems::NetworkDenialOfService
+                }
+                "PERMISSION_GROUPS_DISCOVERY" => {
+                    MitreAttackAdditionalTechniquesItems::PermissionGroupsDiscovery
+                }
+                "PROXY" => MitreAttackAdditionalTechniquesItems::Proxy,
+                "RESOURCE_HIJACKING" => MitreAttackAdditionalTechniquesItems::ResourceHijacking,
+                "SCANNING_IP_BLOCKS" => MitreAttackAdditionalTechniquesItems::ScanningIpBlocks,
+                "SHARED_MODULES" => MitreAttackAdditionalTechniquesItems::SharedModules,
+                "SSH_AUTHORIZED_KEYS" => MitreAttackAdditionalTechniquesItems::SshAuthorizedKeys,
+                "STEAL_WEB_SESSION_COOKIE" => {
+                    MitreAttackAdditionalTechniquesItems::StealWebSessionCookie
+                }
+                "TECHNIQUE_UNSPECIFIED" => {
+                    MitreAttackAdditionalTechniquesItems::TechniqueUnspecified
+                }
+                "UNIX_SHELL" => MitreAttackAdditionalTechniquesItems::UnixShell,
+                "UNSECURED_CREDENTIALS" => {
+                    MitreAttackAdditionalTechniquesItems::UnsecuredCredentials
+                }
+                "VALID_ACCOUNTS" => MitreAttackAdditionalTechniquesItems::ValidAccounts,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MitreAttackAdditionalTechniquesItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MitreAttackAdditionalTechniquesItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MitreAttackAdditionalTechniquesItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACCOUNT_MANIPULATION" => MitreAttackAdditionalTechniquesItems::AccountManipulation,
+                "ACTIVE_SCANNING" => MitreAttackAdditionalTechniquesItems::ActiveScanning,
+                "CLOUD_ACCOUNTS" => MitreAttackAdditionalTechniquesItems::CloudAccounts,
+                "CLOUD_GROUPS" => MitreAttackAdditionalTechniquesItems::CloudGroups,
+                "COMMAND_AND_SCRIPTING_INTERPRETER" => {
+                    MitreAttackAdditionalTechniquesItems::CommandAndScriptingInterpreter
+                }
+                "CREATE_OR_MODIFY_SYSTEM_PROCESS" => {
+                    MitreAttackAdditionalTechniquesItems::CreateOrModifySystemProcess
+                }
+                "DATA_DESTRUCTION" => MitreAttackAdditionalTechniquesItems::DataDestruction,
+                "DOMAIN_POLICY_MODIFICATION" => {
+                    MitreAttackAdditionalTechniquesItems::DomainPolicyModification
+                }
+                "DYNAMIC_RESOLUTION" => MitreAttackAdditionalTechniquesItems::DynamicResolution,
+                "EXFILTRATION_OVER_WEB_SERVICE" => {
+                    MitreAttackAdditionalTechniquesItems::ExfiltrationOverWebService
+                }
+                "EXFILTRATION_TO_CLOUD_STORAGE" => {
+                    MitreAttackAdditionalTechniquesItems::ExfiltrationToCloudStorage
+                }
+                "EXPLOIT_PUBLIC_FACING_APPLICATION" => {
+                    MitreAttackAdditionalTechniquesItems::ExploitPublicFacingApplication
+                }
+                "EXTERNAL_PROXY" => MitreAttackAdditionalTechniquesItems::ExternalProxy,
+                "INGRESS_TOOL_TRANSFER" => {
+                    MitreAttackAdditionalTechniquesItems::IngressToolTransfer
+                }
+                "LOCAL_ACCOUNTS" => MitreAttackAdditionalTechniquesItems::LocalAccounts,
+                "MODIFY_AUTHENTICATION_PROCESS" => {
+                    MitreAttackAdditionalTechniquesItems::ModifyAuthenticationProcess
+                }
+                "MODIFY_CLOUD_COMPUTE_INFRASTRUCTURE" => {
+                    MitreAttackAdditionalTechniquesItems::ModifyCloudComputeInfrastructure
+                }
+                "MULTI_HOP_PROXY" => MitreAttackAdditionalTechniquesItems::MultiHopProxy,
+                "NATIVE_API" => MitreAttackAdditionalTechniquesItems::NativeApi,
+                "NETWORK_DENIAL_OF_SERVICE" => {
+                    MitreAttackAdditionalTechniquesItems::NetworkDenialOfService
+                }
+                "PERMISSION_GROUPS_DISCOVERY" => {
+                    MitreAttackAdditionalTechniquesItems::PermissionGroupsDiscovery
+                }
+                "PROXY" => MitreAttackAdditionalTechniquesItems::Proxy,
+                "RESOURCE_HIJACKING" => MitreAttackAdditionalTechniquesItems::ResourceHijacking,
+                "SCANNING_IP_BLOCKS" => MitreAttackAdditionalTechniquesItems::ScanningIpBlocks,
+                "SHARED_MODULES" => MitreAttackAdditionalTechniquesItems::SharedModules,
+                "SSH_AUTHORIZED_KEYS" => MitreAttackAdditionalTechniquesItems::SshAuthorizedKeys,
+                "STEAL_WEB_SESSION_COOKIE" => {
+                    MitreAttackAdditionalTechniquesItems::StealWebSessionCookie
+                }
+                "TECHNIQUE_UNSPECIFIED" => {
+                    MitreAttackAdditionalTechniquesItems::TechniqueUnspecified
+                }
+                "UNIX_SHELL" => MitreAttackAdditionalTechniquesItems::UnixShell,
+                "UNSECURED_CREDENTIALS" => {
+                    MitreAttackAdditionalTechniquesItems::UnsecuredCredentials
+                }
+                "VALID_ACCOUNTS" => MitreAttackAdditionalTechniquesItems::ValidAccounts,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MitreAttackAdditionalTechniquesItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MitreAttackAdditionalTechniquesItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MitreAttackPrimaryTactic {
+        #[doc = "TA0009"]
+        Collection,
+        #[doc = "TA0011"]
+        CommandAndControl,
+        #[doc = "TA0006"]
+        CredentialAccess,
+        #[doc = "TA0005"]
+        DefenseEvasion,
+        #[doc = "TA0007"]
+        Discovery,
+        #[doc = "TA0002"]
+        Execution,
+        #[doc = "TA0010"]
+        Exfiltration,
+        #[doc = "TA0040"]
+        Impact,
+        #[doc = "TA0001"]
+        InitialAccess,
+        #[doc = "TA0008"]
+        LateralMovement,
+        #[doc = "TA0003"]
+        Persistence,
+        #[doc = "TA0004"]
+        PrivilegeEscalation,
+        #[doc = "TA0043"]
+        Reconnaissance,
+        #[doc = "TA0042"]
+        ResourceDevelopment,
+        #[doc = "Unspecified value."]
+        TacticUnspecified,
+    }
+    impl MitreAttackPrimaryTactic {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MitreAttackPrimaryTactic::Collection => "COLLECTION",
+                MitreAttackPrimaryTactic::CommandAndControl => "COMMAND_AND_CONTROL",
+                MitreAttackPrimaryTactic::CredentialAccess => "CREDENTIAL_ACCESS",
+                MitreAttackPrimaryTactic::DefenseEvasion => "DEFENSE_EVASION",
+                MitreAttackPrimaryTactic::Discovery => "DISCOVERY",
+                MitreAttackPrimaryTactic::Execution => "EXECUTION",
+                MitreAttackPrimaryTactic::Exfiltration => "EXFILTRATION",
+                MitreAttackPrimaryTactic::Impact => "IMPACT",
+                MitreAttackPrimaryTactic::InitialAccess => "INITIAL_ACCESS",
+                MitreAttackPrimaryTactic::LateralMovement => "LATERAL_MOVEMENT",
+                MitreAttackPrimaryTactic::Persistence => "PERSISTENCE",
+                MitreAttackPrimaryTactic::PrivilegeEscalation => "PRIVILEGE_ESCALATION",
+                MitreAttackPrimaryTactic::Reconnaissance => "RECONNAISSANCE",
+                MitreAttackPrimaryTactic::ResourceDevelopment => "RESOURCE_DEVELOPMENT",
+                MitreAttackPrimaryTactic::TacticUnspecified => "TACTIC_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MitreAttackPrimaryTactic {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MitreAttackPrimaryTactic {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MitreAttackPrimaryTactic, ()> {
+            Ok(match s {
+                "COLLECTION" => MitreAttackPrimaryTactic::Collection,
+                "COMMAND_AND_CONTROL" => MitreAttackPrimaryTactic::CommandAndControl,
+                "CREDENTIAL_ACCESS" => MitreAttackPrimaryTactic::CredentialAccess,
+                "DEFENSE_EVASION" => MitreAttackPrimaryTactic::DefenseEvasion,
+                "DISCOVERY" => MitreAttackPrimaryTactic::Discovery,
+                "EXECUTION" => MitreAttackPrimaryTactic::Execution,
+                "EXFILTRATION" => MitreAttackPrimaryTactic::Exfiltration,
+                "IMPACT" => MitreAttackPrimaryTactic::Impact,
+                "INITIAL_ACCESS" => MitreAttackPrimaryTactic::InitialAccess,
+                "LATERAL_MOVEMENT" => MitreAttackPrimaryTactic::LateralMovement,
+                "PERSISTENCE" => MitreAttackPrimaryTactic::Persistence,
+                "PRIVILEGE_ESCALATION" => MitreAttackPrimaryTactic::PrivilegeEscalation,
+                "RECONNAISSANCE" => MitreAttackPrimaryTactic::Reconnaissance,
+                "RESOURCE_DEVELOPMENT" => MitreAttackPrimaryTactic::ResourceDevelopment,
+                "TACTIC_UNSPECIFIED" => MitreAttackPrimaryTactic::TacticUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MitreAttackPrimaryTactic {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MitreAttackPrimaryTactic {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MitreAttackPrimaryTactic {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "COLLECTION" => MitreAttackPrimaryTactic::Collection,
+                "COMMAND_AND_CONTROL" => MitreAttackPrimaryTactic::CommandAndControl,
+                "CREDENTIAL_ACCESS" => MitreAttackPrimaryTactic::CredentialAccess,
+                "DEFENSE_EVASION" => MitreAttackPrimaryTactic::DefenseEvasion,
+                "DISCOVERY" => MitreAttackPrimaryTactic::Discovery,
+                "EXECUTION" => MitreAttackPrimaryTactic::Execution,
+                "EXFILTRATION" => MitreAttackPrimaryTactic::Exfiltration,
+                "IMPACT" => MitreAttackPrimaryTactic::Impact,
+                "INITIAL_ACCESS" => MitreAttackPrimaryTactic::InitialAccess,
+                "LATERAL_MOVEMENT" => MitreAttackPrimaryTactic::LateralMovement,
+                "PERSISTENCE" => MitreAttackPrimaryTactic::Persistence,
+                "PRIVILEGE_ESCALATION" => MitreAttackPrimaryTactic::PrivilegeEscalation,
+                "RECONNAISSANCE" => MitreAttackPrimaryTactic::Reconnaissance,
+                "RESOURCE_DEVELOPMENT" => MitreAttackPrimaryTactic::ResourceDevelopment,
+                "TACTIC_UNSPECIFIED" => MitreAttackPrimaryTactic::TacticUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MitreAttackPrimaryTactic {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MitreAttackPrimaryTactic {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MitreAttackPrimaryTechniquesItems {
+        #[doc = "T1098"]
+        AccountManipulation,
+        #[doc = "T1595"]
+        ActiveScanning,
+        #[doc = "T1078.004"]
+        CloudAccounts,
+        #[doc = "T1069.003"]
+        CloudGroups,
+        #[doc = "T1059"]
+        CommandAndScriptingInterpreter,
+        #[doc = "T1543"]
+        CreateOrModifySystemProcess,
+        #[doc = "T1485"]
+        DataDestruction,
+        #[doc = "T1484"]
+        DomainPolicyModification,
+        #[doc = "T1568"]
+        DynamicResolution,
+        #[doc = "T1567"]
+        ExfiltrationOverWebService,
+        #[doc = "T1567.002"]
+        ExfiltrationToCloudStorage,
+        #[doc = "T1190"]
+        ExploitPublicFacingApplication,
+        #[doc = "T1090.002"]
+        ExternalProxy,
+        #[doc = "T1105"]
+        IngressToolTransfer,
+        #[doc = "T1078.003"]
+        LocalAccounts,
+        #[doc = "T1556"]
+        ModifyAuthenticationProcess,
+        #[doc = "T1578"]
+        ModifyCloudComputeInfrastructure,
+        #[doc = "T1090.003"]
+        MultiHopProxy,
+        #[doc = "T1106"]
+        NativeApi,
+        #[doc = "T1498"]
+        NetworkDenialOfService,
+        #[doc = "T1069"]
+        PermissionGroupsDiscovery,
+        #[doc = "T1090"]
+        Proxy,
+        #[doc = "T1496"]
+        ResourceHijacking,
+        #[doc = "T1595.001"]
+        ScanningIpBlocks,
+        #[doc = "T1129"]
+        SharedModules,
+        #[doc = "T1098.004"]
+        SshAuthorizedKeys,
+        #[doc = "T1539"]
+        StealWebSessionCookie,
+        #[doc = "Unspecified value."]
+        TechniqueUnspecified,
+        #[doc = "T1059.004"]
+        UnixShell,
+        #[doc = "T1552"]
+        UnsecuredCredentials,
+        #[doc = "T1078"]
+        ValidAccounts,
+    }
+    impl MitreAttackPrimaryTechniquesItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MitreAttackPrimaryTechniquesItems::AccountManipulation => "ACCOUNT_MANIPULATION",
+                MitreAttackPrimaryTechniquesItems::ActiveScanning => "ACTIVE_SCANNING",
+                MitreAttackPrimaryTechniquesItems::CloudAccounts => "CLOUD_ACCOUNTS",
+                MitreAttackPrimaryTechniquesItems::CloudGroups => "CLOUD_GROUPS",
+                MitreAttackPrimaryTechniquesItems::CommandAndScriptingInterpreter => {
+                    "COMMAND_AND_SCRIPTING_INTERPRETER"
+                }
+                MitreAttackPrimaryTechniquesItems::CreateOrModifySystemProcess => {
+                    "CREATE_OR_MODIFY_SYSTEM_PROCESS"
+                }
+                MitreAttackPrimaryTechniquesItems::DataDestruction => "DATA_DESTRUCTION",
+                MitreAttackPrimaryTechniquesItems::DomainPolicyModification => {
+                    "DOMAIN_POLICY_MODIFICATION"
+                }
+                MitreAttackPrimaryTechniquesItems::DynamicResolution => "DYNAMIC_RESOLUTION",
+                MitreAttackPrimaryTechniquesItems::ExfiltrationOverWebService => {
+                    "EXFILTRATION_OVER_WEB_SERVICE"
+                }
+                MitreAttackPrimaryTechniquesItems::ExfiltrationToCloudStorage => {
+                    "EXFILTRATION_TO_CLOUD_STORAGE"
+                }
+                MitreAttackPrimaryTechniquesItems::ExploitPublicFacingApplication => {
+                    "EXPLOIT_PUBLIC_FACING_APPLICATION"
+                }
+                MitreAttackPrimaryTechniquesItems::ExternalProxy => "EXTERNAL_PROXY",
+                MitreAttackPrimaryTechniquesItems::IngressToolTransfer => "INGRESS_TOOL_TRANSFER",
+                MitreAttackPrimaryTechniquesItems::LocalAccounts => "LOCAL_ACCOUNTS",
+                MitreAttackPrimaryTechniquesItems::ModifyAuthenticationProcess => {
+                    "MODIFY_AUTHENTICATION_PROCESS"
+                }
+                MitreAttackPrimaryTechniquesItems::ModifyCloudComputeInfrastructure => {
+                    "MODIFY_CLOUD_COMPUTE_INFRASTRUCTURE"
+                }
+                MitreAttackPrimaryTechniquesItems::MultiHopProxy => "MULTI_HOP_PROXY",
+                MitreAttackPrimaryTechniquesItems::NativeApi => "NATIVE_API",
+                MitreAttackPrimaryTechniquesItems::NetworkDenialOfService => {
+                    "NETWORK_DENIAL_OF_SERVICE"
+                }
+                MitreAttackPrimaryTechniquesItems::PermissionGroupsDiscovery => {
+                    "PERMISSION_GROUPS_DISCOVERY"
+                }
+                MitreAttackPrimaryTechniquesItems::Proxy => "PROXY",
+                MitreAttackPrimaryTechniquesItems::ResourceHijacking => "RESOURCE_HIJACKING",
+                MitreAttackPrimaryTechniquesItems::ScanningIpBlocks => "SCANNING_IP_BLOCKS",
+                MitreAttackPrimaryTechniquesItems::SharedModules => "SHARED_MODULES",
+                MitreAttackPrimaryTechniquesItems::SshAuthorizedKeys => "SSH_AUTHORIZED_KEYS",
+                MitreAttackPrimaryTechniquesItems::StealWebSessionCookie => {
+                    "STEAL_WEB_SESSION_COOKIE"
+                }
+                MitreAttackPrimaryTechniquesItems::TechniqueUnspecified => "TECHNIQUE_UNSPECIFIED",
+                MitreAttackPrimaryTechniquesItems::UnixShell => "UNIX_SHELL",
+                MitreAttackPrimaryTechniquesItems::UnsecuredCredentials => "UNSECURED_CREDENTIALS",
+                MitreAttackPrimaryTechniquesItems::ValidAccounts => "VALID_ACCOUNTS",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MitreAttackPrimaryTechniquesItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MitreAttackPrimaryTechniquesItems {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MitreAttackPrimaryTechniquesItems, ()> {
+            Ok(match s {
+                "ACCOUNT_MANIPULATION" => MitreAttackPrimaryTechniquesItems::AccountManipulation,
+                "ACTIVE_SCANNING" => MitreAttackPrimaryTechniquesItems::ActiveScanning,
+                "CLOUD_ACCOUNTS" => MitreAttackPrimaryTechniquesItems::CloudAccounts,
+                "CLOUD_GROUPS" => MitreAttackPrimaryTechniquesItems::CloudGroups,
+                "COMMAND_AND_SCRIPTING_INTERPRETER" => {
+                    MitreAttackPrimaryTechniquesItems::CommandAndScriptingInterpreter
+                }
+                "CREATE_OR_MODIFY_SYSTEM_PROCESS" => {
+                    MitreAttackPrimaryTechniquesItems::CreateOrModifySystemProcess
+                }
+                "DATA_DESTRUCTION" => MitreAttackPrimaryTechniquesItems::DataDestruction,
+                "DOMAIN_POLICY_MODIFICATION" => {
+                    MitreAttackPrimaryTechniquesItems::DomainPolicyModification
+                }
+                "DYNAMIC_RESOLUTION" => MitreAttackPrimaryTechniquesItems::DynamicResolution,
+                "EXFILTRATION_OVER_WEB_SERVICE" => {
+                    MitreAttackPrimaryTechniquesItems::ExfiltrationOverWebService
+                }
+                "EXFILTRATION_TO_CLOUD_STORAGE" => {
+                    MitreAttackPrimaryTechniquesItems::ExfiltrationToCloudStorage
+                }
+                "EXPLOIT_PUBLIC_FACING_APPLICATION" => {
+                    MitreAttackPrimaryTechniquesItems::ExploitPublicFacingApplication
+                }
+                "EXTERNAL_PROXY" => MitreAttackPrimaryTechniquesItems::ExternalProxy,
+                "INGRESS_TOOL_TRANSFER" => MitreAttackPrimaryTechniquesItems::IngressToolTransfer,
+                "LOCAL_ACCOUNTS" => MitreAttackPrimaryTechniquesItems::LocalAccounts,
+                "MODIFY_AUTHENTICATION_PROCESS" => {
+                    MitreAttackPrimaryTechniquesItems::ModifyAuthenticationProcess
+                }
+                "MODIFY_CLOUD_COMPUTE_INFRASTRUCTURE" => {
+                    MitreAttackPrimaryTechniquesItems::ModifyCloudComputeInfrastructure
+                }
+                "MULTI_HOP_PROXY" => MitreAttackPrimaryTechniquesItems::MultiHopProxy,
+                "NATIVE_API" => MitreAttackPrimaryTechniquesItems::NativeApi,
+                "NETWORK_DENIAL_OF_SERVICE" => {
+                    MitreAttackPrimaryTechniquesItems::NetworkDenialOfService
+                }
+                "PERMISSION_GROUPS_DISCOVERY" => {
+                    MitreAttackPrimaryTechniquesItems::PermissionGroupsDiscovery
+                }
+                "PROXY" => MitreAttackPrimaryTechniquesItems::Proxy,
+                "RESOURCE_HIJACKING" => MitreAttackPrimaryTechniquesItems::ResourceHijacking,
+                "SCANNING_IP_BLOCKS" => MitreAttackPrimaryTechniquesItems::ScanningIpBlocks,
+                "SHARED_MODULES" => MitreAttackPrimaryTechniquesItems::SharedModules,
+                "SSH_AUTHORIZED_KEYS" => MitreAttackPrimaryTechniquesItems::SshAuthorizedKeys,
+                "STEAL_WEB_SESSION_COOKIE" => {
+                    MitreAttackPrimaryTechniquesItems::StealWebSessionCookie
+                }
+                "TECHNIQUE_UNSPECIFIED" => MitreAttackPrimaryTechniquesItems::TechniqueUnspecified,
+                "UNIX_SHELL" => MitreAttackPrimaryTechniquesItems::UnixShell,
+                "UNSECURED_CREDENTIALS" => MitreAttackPrimaryTechniquesItems::UnsecuredCredentials,
+                "VALID_ACCOUNTS" => MitreAttackPrimaryTechniquesItems::ValidAccounts,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MitreAttackPrimaryTechniquesItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MitreAttackPrimaryTechniquesItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MitreAttackPrimaryTechniquesItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACCOUNT_MANIPULATION" => MitreAttackPrimaryTechniquesItems::AccountManipulation,
+                "ACTIVE_SCANNING" => MitreAttackPrimaryTechniquesItems::ActiveScanning,
+                "CLOUD_ACCOUNTS" => MitreAttackPrimaryTechniquesItems::CloudAccounts,
+                "CLOUD_GROUPS" => MitreAttackPrimaryTechniquesItems::CloudGroups,
+                "COMMAND_AND_SCRIPTING_INTERPRETER" => {
+                    MitreAttackPrimaryTechniquesItems::CommandAndScriptingInterpreter
+                }
+                "CREATE_OR_MODIFY_SYSTEM_PROCESS" => {
+                    MitreAttackPrimaryTechniquesItems::CreateOrModifySystemProcess
+                }
+                "DATA_DESTRUCTION" => MitreAttackPrimaryTechniquesItems::DataDestruction,
+                "DOMAIN_POLICY_MODIFICATION" => {
+                    MitreAttackPrimaryTechniquesItems::DomainPolicyModification
+                }
+                "DYNAMIC_RESOLUTION" => MitreAttackPrimaryTechniquesItems::DynamicResolution,
+                "EXFILTRATION_OVER_WEB_SERVICE" => {
+                    MitreAttackPrimaryTechniquesItems::ExfiltrationOverWebService
+                }
+                "EXFILTRATION_TO_CLOUD_STORAGE" => {
+                    MitreAttackPrimaryTechniquesItems::ExfiltrationToCloudStorage
+                }
+                "EXPLOIT_PUBLIC_FACING_APPLICATION" => {
+                    MitreAttackPrimaryTechniquesItems::ExploitPublicFacingApplication
+                }
+                "EXTERNAL_PROXY" => MitreAttackPrimaryTechniquesItems::ExternalProxy,
+                "INGRESS_TOOL_TRANSFER" => MitreAttackPrimaryTechniquesItems::IngressToolTransfer,
+                "LOCAL_ACCOUNTS" => MitreAttackPrimaryTechniquesItems::LocalAccounts,
+                "MODIFY_AUTHENTICATION_PROCESS" => {
+                    MitreAttackPrimaryTechniquesItems::ModifyAuthenticationProcess
+                }
+                "MODIFY_CLOUD_COMPUTE_INFRASTRUCTURE" => {
+                    MitreAttackPrimaryTechniquesItems::ModifyCloudComputeInfrastructure
+                }
+                "MULTI_HOP_PROXY" => MitreAttackPrimaryTechniquesItems::MultiHopProxy,
+                "NATIVE_API" => MitreAttackPrimaryTechniquesItems::NativeApi,
+                "NETWORK_DENIAL_OF_SERVICE" => {
+                    MitreAttackPrimaryTechniquesItems::NetworkDenialOfService
+                }
+                "PERMISSION_GROUPS_DISCOVERY" => {
+                    MitreAttackPrimaryTechniquesItems::PermissionGroupsDiscovery
+                }
+                "PROXY" => MitreAttackPrimaryTechniquesItems::Proxy,
+                "RESOURCE_HIJACKING" => MitreAttackPrimaryTechniquesItems::ResourceHijacking,
+                "SCANNING_IP_BLOCKS" => MitreAttackPrimaryTechniquesItems::ScanningIpBlocks,
+                "SHARED_MODULES" => MitreAttackPrimaryTechniquesItems::SharedModules,
+                "SSH_AUTHORIZED_KEYS" => MitreAttackPrimaryTechniquesItems::SshAuthorizedKeys,
+                "STEAL_WEB_SESSION_COOKIE" => {
+                    MitreAttackPrimaryTechniquesItems::StealWebSessionCookie
+                }
+                "TECHNIQUE_UNSPECIFIED" => MitreAttackPrimaryTechniquesItems::TechniqueUnspecified,
+                "UNIX_SHELL" => MitreAttackPrimaryTechniquesItems::UnixShell,
+                "UNSECURED_CREDENTIALS" => MitreAttackPrimaryTechniquesItems::UnsecuredCredentials,
+                "VALID_ACCOUNTS" => MitreAttackPrimaryTechniquesItems::ValidAccounts,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MitreAttackPrimaryTechniquesItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MitreAttackPrimaryTechniquesItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Operation {
         #[doc = "If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available."]
@@ -2609,7 +5244,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audit_configs: ::std::option::Option<Vec<crate::schemas::AuditConfig>>,
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,
@@ -2637,6 +5272,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Policy {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Reference {
+        #[doc = "Source of the reference e.g. NVD"]
+        #[serde(
+            rename = "source",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub source: ::std::option::Option<String>,
+        #[doc = "Uri for the mentioned source e.g. https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34527."]
+        #[serde(
+            rename = "uri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Reference {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Reference {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2737,6 +5410,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SecurityMarks {
+        #[doc = "The canonical name of the marks. Examples: \"organizations/{organization_id}/assets/{asset_id}/securityMarks\" \"folders/{folder_id}/assets/{asset_id}/securityMarks\" \"projects/{project_number}/assets/{asset_id}/securityMarks\" \"organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks\" \"folders/{folder_id}/sources/{source_id}/findings/{finding_id}/securityMarks\" \"projects/{project_number}/sources/{source_id}/findings/{finding_id}/securityMarks\""]
+        #[serde(
+            rename = "canonicalName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub canonical_name: ::std::option::Option<String>,
         #[doc = "Mutable user specified security marks belonging to the parent resource. Constraints are as follows: * Keys and values are treated as case insensitive * Keys must be between 1 - 256 characters (inclusive) * Keys must be letters, numbers, underscores, or dashes * Values have leading and trailing whitespace trimmed, remaining characters must be between 1 - 4096 characters (inclusive)"]
         #[serde(
             rename = "marks",
@@ -2889,7 +5569,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SetIamPolicyRequest {
-        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -3007,7 +5687,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -3052,6 +5732,28 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for TestIamPermissionsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct Vulnerability {
+        #[doc = "CVE stands for Common Vulnerabilities and Exposures (https://cve.mitre.org/about/)"]
+        #[serde(
+            rename = "cve",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cve: ::std::option::Option<crate::schemas::Cve>,
+    }
+    impl ::google_field_selector::FieldSelector for Vulnerability {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Vulnerability {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }

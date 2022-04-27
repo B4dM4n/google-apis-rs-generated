@@ -15,8 +15,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("licensing1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210316")
-            .about("The Google Enterprise License Manager API\'s allows you to license apps for all the users of a domain managed by you.")
+            .version("0.1.0-20220423")
+            .about("The Google Enterprise License Manager API's allows you to license apps for all the users of a domain managed by you.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
                 .long("scope")
@@ -41,8 +41,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             license_assignments0 = license_assignments0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get")
-                .about("Get a specific user\'s license by product SKU.");
+            let mcmd =
+                SubCommand::with_name("get").about("Get a specific user's license by product SKU.");
             license_assignments0 = license_assignments0.subcommand(mcmd);
         }
         {
@@ -60,12 +60,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             license_assignments0 = license_assignments0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Reassign a user\'s product SKU with a different SKU in the same product. This method supports patch semantics.");
+            let mcmd = SubCommand::with_name("patch").about("Reassign a user's product SKU with a different SKU in the same product. This method supports patch semantics.");
             license_assignments0 = license_assignments0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("update")
-                .about("Reassign a user\'s product SKU with a different SKU in the same product.");
+                .about("Reassign a user's product SKU with a different SKU in the same product.");
             license_assignments0 = license_assignments0.subcommand(mcmd);
         }
         app = app.subcommand(license_assignments0);

@@ -2,18 +2,18 @@
 pub mod scopes {
     #[doc = "See, edit, create, and delete all of your Google Drive files\n\n`https://www.googleapis.com/auth/drive`"]
     pub const DRIVE: &str = "https://www.googleapis.com/auth/drive";
-    #[doc = "View and manage Google Drive files and folders that you have opened or created with this app\n\n`https://www.googleapis.com/auth/drive.file`"]
+    #[doc = "See, edit, create, and delete only the specific Google Drive files you use with this app\n\n`https://www.googleapis.com/auth/drive.file`"]
     pub const DRIVE_FILE: &str = "https://www.googleapis.com/auth/drive.file";
     #[doc = "See and download all your Google Drive files\n\n`https://www.googleapis.com/auth/drive.readonly`"]
     pub const DRIVE_READONLY: &str = "https://www.googleapis.com/auth/drive.readonly";
-    #[doc = "View and manage your Google Slides presentations\n\n`https://www.googleapis.com/auth/presentations`"]
+    #[doc = "See, edit, create, and delete all your Google Slides presentations\n\n`https://www.googleapis.com/auth/presentations`"]
     pub const PRESENTATIONS: &str = "https://www.googleapis.com/auth/presentations";
-    #[doc = "View your Google Slides presentations\n\n`https://www.googleapis.com/auth/presentations.readonly`"]
+    #[doc = "See all your Google Slides presentations\n\n`https://www.googleapis.com/auth/presentations.readonly`"]
     pub const PRESENTATIONS_READONLY: &str =
         "https://www.googleapis.com/auth/presentations.readonly";
-    #[doc = "See, edit, create, and delete your spreadsheets in Google Drive\n\n`https://www.googleapis.com/auth/spreadsheets`"]
+    #[doc = "See, edit, create, and delete all your Google Sheets spreadsheets\n\n`https://www.googleapis.com/auth/spreadsheets`"]
     pub const SPREADSHEETS: &str = "https://www.googleapis.com/auth/spreadsheets";
-    #[doc = "View your Google Spreadsheets\n\n`https://www.googleapis.com/auth/spreadsheets.readonly`"]
+    #[doc = "See all your Google Sheets spreadsheets\n\n`https://www.googleapis.com/auth/spreadsheets.readonly`"]
     pub const SPREADSHEETS_READONLY: &str = "https://www.googleapis.com/auth/spreadsheets.readonly";
 }
 pub mod schemas {
@@ -2059,7 +2059,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub object_id: ::std::option::Option<String>,
-        #[doc = "The ID of the Google Sheets spreadsheet that contains the chart."]
+        #[doc = "The ID of the Google Sheets spreadsheet that contains the chart. You might need to add a resource key to the HTTP header for a subset of old files. For more information, see [Access link-shared files using resource keys](https://developers.google.com/drive/api/v3/resource-keys)."]
         #[serde(
             rename = "spreadsheetId",
             default,
@@ -2348,7 +2348,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub element_properties: ::std::option::Option<crate::schemas::PageElementProperties>,
-        #[doc = "The video source's unique identifier for this video. e.g. For YouTube video https://www.youtube.com/watch?v=7U3axjORYZ0, the ID is 7U3axjORYZ0. For a Google Drive video https://drive.google.com/file/d/1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q the ID is 1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q."]
+        #[doc = "The video source's unique identifier for this video. e.g. For YouTube video https://www.youtube.com/watch?v=7U3axjORYZ0, the ID is 7U3axjORYZ0. For a Google Drive video https://drive.google.com/file/d/1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q the ID is 1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q. To access a Google Drive video file, you might need to add a resource key to the HTTP header for a subset of old files. For more information, see [Access link-shared files using resource keys](https://developers.google.com/drive/api/v3/resource-keys)."]
         #[serde(
             rename = "id",
             default,
@@ -2550,7 +2550,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DeleteObjectRequest {
-        #[doc = "The object ID of the page or page element to delete. If after a delete operation a group contains only 1 or no page elements, the group is also deleted. If a placeholder is deleted on a layout, any empty inheriting shapes are also deleted."]
+        #[doc = "The object ID of the page or page element to delete. If after a delete operation a group contains only 1 or no page elements, the group is also deleted. If a placeholder is deleted on a layout, any empty inheriting placeholders are also deleted."]
         #[serde(
             rename = "objectId",
             default,
@@ -2943,7 +2943,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GroupObjectsRequest {
-        #[doc = "The object IDs of the objects to group. Only page elements can be grouped. There should be at least two page elements on the same page that are not already in another group. Some page elements, such as videos, tables and placeholder shapes cannot be grouped."]
+        #[doc = "The object IDs of the objects to group. Only page elements can be grouped. There should be at least two page elements on the same page that are not already in another group. Some page elements, such as videos, tables and placeholders cannot be grouped."]
         #[serde(
             rename = "childrenObjectIds",
             default,
@@ -3017,6 +3017,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_properties: ::std::option::Option<crate::schemas::ImageProperties>,
+        #[doc = "Placeholders are page elements that inherit from corresponding placeholders on layouts and masters. If set, the image is a placeholder image and any inherited properties can be resolved by looking at the parent placeholder identified by the Placeholder.parent_object_id field."]
+        #[serde(
+            rename = "placeholder",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub placeholder: ::std::option::Option<crate::schemas::Placeholder>,
         #[doc = "The source URL is the URL used to insert the image. The source URL can be empty."]
         #[serde(
             rename = "sourceUrl",
@@ -4994,7 +5001,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub page_type: ::std::option::Option<crate::schemas::PagePageType>,
-        #[doc = "The revision ID of the presentation containing this page. Can be used in update requests to assert that the presentation revision hasn't changed since the last read operation. Only populated if the user has edit access to the presentation. The format of the revision ID may change over time, so it should be treated opaquely. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the presentation has not changed. Conversely, a changed ID (for the same presentation and user) usually means the presentation has been updated; however, a changed ID can also be due to internal factors such as ID format changes."]
+        #[doc = "Output only. The revision ID of the presentation. Can be used in update requests to assert the presentation revision hasn't changed since the last read operation. Only populated if the user has edit access to the presentation. The revision ID is not a sequential number but an opaque string. The format of the revision ID might change over time. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the presentation has not changed. Conversely, a changed ID (for the same presentation and user) usually means the presentation has been updated. However, a changed ID can also be due to internal factors such as ID format changes."]
         #[serde(
             rename = "revisionId",
             default,
@@ -5970,7 +5977,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub presentation_id: ::std::option::Option<String>,
-        #[doc = "The revision ID of the presentation. Can be used in update requests to assert that the presentation revision hasn't changed since the last read operation. Only populated if the user has edit access to the presentation. The format of the revision ID may change over time, so it should be treated opaquely. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the presentation has not changed. Conversely, a changed ID (for the same presentation and user) usually means the presentation has been updated; however, a changed ID can also be due to internal factors such as ID format changes."]
+        #[doc = "Output only. The revision ID of the presentation. Can be used in update requests to assert the presentation revision hasn't changed since the last read operation. Only populated if the user has edit access to the presentation. The revision ID is not a sequential number but a nebulous string. The format of the revision ID may change over time, so it should be treated opaquely. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the presentation has not changed. Conversely, a changed ID (for the same presentation and user) usually means the presentation has been updated. However, a changed ID can also be due to internal factors such as ID format changes."]
         #[serde(
             rename = "revisionId",
             default,
@@ -6438,7 +6445,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ReplaceAllShapesWithImageRequestImageReplaceMethod {
-        #[doc = "Scales and centers the image to fill the bounds of the original shape. The image may be cropped in order to fill the shape. The rendered size of the image will be the same as that of the original shape."]
+        #[doc = "Scales and centers the image to fill the bounds of the original shape. The image may be cropped in order to fill the shape. The rendered size of the image will be the same as the original shape."]
         CenterCrop,
         #[doc = "Scales and centers the image to fit within the bounds of the original shape and maintains the image's aspect ratio. The rendered size of the image may be smaller than the size of the shape. This is the default method when one is not specified."]
         CenterInside,
@@ -6460,7 +6467,7 @@ pub mod schemas {
         fn from_str(
             s: &str,
         ) -> ::std::result::Result<ReplaceAllShapesWithImageRequestImageReplaceMethod, ()> {
-            Ok ( match s { "CENTER_CROP" => ReplaceAllShapesWithImageRequestImageReplaceMethod :: CenterCrop , "CENTER_INSIDE" => ReplaceAllShapesWithImageRequestImageReplaceMethod :: CenterInside , "IMAGE_REPLACE_METHOD_UNSPECIFIED" => ReplaceAllShapesWithImageRequestImageReplaceMethod :: ImageReplaceMethodUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "CENTER_CROP" => ReplaceAllShapesWithImageRequestImageReplaceMethod :: CenterCrop , "CENTER_INSIDE" => ReplaceAllShapesWithImageRequestImageReplaceMethod :: CenterInside , "IMAGE_REPLACE_METHOD_UNSPECIFIED" => ReplaceAllShapesWithImageRequestImageReplaceMethod :: ImageReplaceMethodUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for ReplaceAllShapesWithImageRequestImageReplaceMethod {
@@ -6482,7 +6489,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "CENTER_CROP" => ReplaceAllShapesWithImageRequestImageReplaceMethod :: CenterCrop , "CENTER_INSIDE" => ReplaceAllShapesWithImageRequestImageReplaceMethod :: CenterInside , "IMAGE_REPLACE_METHOD_UNSPECIFIED" => ReplaceAllShapesWithImageRequestImageReplaceMethod :: ImageReplaceMethodUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "CENTER_CROP" => ReplaceAllShapesWithImageRequestImageReplaceMethod :: CenterCrop , "CENTER_INSIDE" => ReplaceAllShapesWithImageRequestImageReplaceMethod :: CenterInside , "IMAGE_REPLACE_METHOD_UNSPECIFIED" => ReplaceAllShapesWithImageRequestImageReplaceMethod :: ImageReplaceMethodUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector for ReplaceAllShapesWithImageRequestImageReplaceMethod {
@@ -6859,7 +6866,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ReplaceImageRequest {
-        #[doc = "The ID of the existing image that will be replaced."]
+        #[doc = "The ID of the existing image that will be replaced. The ID can be retrieved from the response of a get request."]
         #[serde(
             rename = "imageObjectId",
             default,
@@ -6874,7 +6881,7 @@ pub mod schemas {
         )]
         pub image_replace_method:
             ::std::option::Option<crate::schemas::ReplaceImageRequestImageReplaceMethod>,
-        #[doc = "The image URL. The image is fetched once at insertion time and a copy is stored for display inside the presentation. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be in one of PNG, JPEG, or GIF format. The provided URL can be at most 2 kB in length. The URL itself is saved with the image, and exposed via the Image.source_url field."]
+        #[doc = "The image URL. The image is fetched once at insertion time and a copy is stored for display inside the presentation. Images must be less than 50MB, cannot exceed 25 megapixels, and must be in PNG, JPEG, or GIF format. The provided URL can't surpass 2 KB in length. The URL is saved with the image, and exposed through the Image.source_url field."]
         #[serde(
             rename = "url",
             default,
@@ -6894,7 +6901,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ReplaceImageRequestImageReplaceMethod {
-        #[doc = "Scales and centers the image to fill the bounds of the original shape. The image may be cropped in order to fill the shape. The rendered size of the image will be the same as that of the original shape."]
+        #[doc = "Scales and centers the image to fill the bounds of the original shape. The image may be cropped in order to fill the shape. The rendered size of the image will be the same as the original shape."]
         CenterCrop,
         #[doc = "Scales and centers the image to fit within the bounds of the original shape and maintains the image's aspect ratio. The rendered size of the image may be smaller than the size of the shape. This is the default method when one is not specified."]
         CenterInside,
@@ -7242,6 +7249,14 @@ pub mod schemas {
         )]
         pub update_shape_properties:
             ::std::option::Option<crate::schemas::UpdateShapePropertiesRequest>,
+        #[doc = "Updates the properties of a Slide"]
+        #[serde(
+            rename = "updateSlideProperties",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_slide_properties:
+            ::std::option::Option<crate::schemas::UpdateSlidePropertiesRequest>,
         #[doc = "Updates the position of a set of slides in the presentation."]
         #[serde(
             rename = "updateSlidesPosition",
@@ -7818,7 +7833,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Shape {
-        #[doc = "Placeholders are shapes that are inherit from corresponding placeholders on layouts and masters. If set, the shape is a placeholder shape and any inherited properties can be resolved by looking at the parent placeholder identified by the Placeholder.parent_object_id field."]
+        #[doc = "Placeholders are page elements that inherit from corresponding placeholders on layouts and masters. If set, the shape is a placeholder shape and any inherited properties can be resolved by looking at the parent placeholder identified by the Placeholder.parent_object_id field."]
         #[serde(
             rename = "placeholder",
             default,
@@ -8992,6 +9007,13 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct SlideProperties {
+        #[doc = "Whether the slide is skipped in the presentation mode. Defaults to false."]
+        #[serde(
+            rename = "isSkipped",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub is_skipped: ::std::option::Option<bool>,
         #[doc = "The object ID of the layout that this slide is based on. This property is read-only."]
         #[serde(
             rename = "layoutObjectId",
@@ -11028,6 +11050,42 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct UpdateSlidePropertiesRequest {
+        #[doc = "The fields that should be updated. At least one field must be specified. The root 'slideProperties' is implied and should not be specified. A single `\"*\"` can be used as short-hand for listing every field. For example to update whether a slide is skipped, set `fields` to `\"isSkipped\"`. To reset a property to its default value, include its field name in the field mask but leave the field itself unset."]
+        #[serde(
+            rename = "fields",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub fields: ::std::option::Option<String>,
+        #[doc = "The object ID of the slide the update is applied to."]
+        #[serde(
+            rename = "objectId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub object_id: ::std::option::Option<String>,
+        #[doc = "The slide properties to update."]
+        #[serde(
+            rename = "slideProperties",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub slide_properties: ::std::option::Option<crate::schemas::SlideProperties>,
+    }
+    impl ::google_field_selector::FieldSelector for UpdateSlidePropertiesRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UpdateSlidePropertiesRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug,
         Clone,
         PartialEq,
@@ -11696,7 +11754,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct WriteControl {
-        #[doc = "The revision ID of the presentation required for the write request. If specified and the `required_revision_id` doesn't exactly match the presentation's current `revision_id`, the request will not be processed and will return a 400 bad request error."]
+        #[doc = "The revision ID of the presentation required for the write request. If specified and the required revision ID doesn't match the presentation's current revision ID, the request is not processed and returns a 400 bad request error. When a required revision ID is returned in a response, it indicates the revision ID of the document after the request was applied."]
         #[serde(
             rename = "requiredRevisionId",
             default,
@@ -12545,7 +12603,7 @@ pub mod resources {
                         s: &str,
                     ) -> ::std::result::Result<GetThumbnailThumbnailPropertiesThumbnailSize, ()>
                     {
-                        Ok ( match s { "LARGE" => GetThumbnailThumbnailPropertiesThumbnailSize :: Large , "MEDIUM" => GetThumbnailThumbnailPropertiesThumbnailSize :: Medium , "SMALL" => GetThumbnailThumbnailPropertiesThumbnailSize :: Small , "THUMBNAIL_SIZE_UNSPECIFIED" => GetThumbnailThumbnailPropertiesThumbnailSize :: ThumbnailSizeUnspecified , _ => return Err ( ( ) ) , } )
+                        Ok (match s { "LARGE" => GetThumbnailThumbnailPropertiesThumbnailSize :: Large , "MEDIUM" => GetThumbnailThumbnailPropertiesThumbnailSize :: Medium , "SMALL" => GetThumbnailThumbnailPropertiesThumbnailSize :: Small , "THUMBNAIL_SIZE_UNSPECIFIED" => GetThumbnailThumbnailPropertiesThumbnailSize :: ThumbnailSizeUnspecified , _ => return Err (()) , })
                     }
                 }
                 impl ::std::fmt::Display for GetThumbnailThumbnailPropertiesThumbnailSize {
@@ -12567,7 +12625,7 @@ pub mod resources {
                         D: ::serde::de::Deserializer<'de>,
                     {
                         let value: &'de str = <&str>::deserialize(deserializer)?;
-                        Ok ( match value { "LARGE" => GetThumbnailThumbnailPropertiesThumbnailSize :: Large , "MEDIUM" => GetThumbnailThumbnailPropertiesThumbnailSize :: Medium , "SMALL" => GetThumbnailThumbnailPropertiesThumbnailSize :: Small , "THUMBNAIL_SIZE_UNSPECIFIED" => GetThumbnailThumbnailPropertiesThumbnailSize :: ThumbnailSizeUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+                        Ok (match value { "LARGE" => GetThumbnailThumbnailPropertiesThumbnailSize :: Large , "MEDIUM" => GetThumbnailThumbnailPropertiesThumbnailSize :: Medium , "SMALL" => GetThumbnailThumbnailPropertiesThumbnailSize :: Small , "THUMBNAIL_SIZE_UNSPECIFIED" => GetThumbnailThumbnailPropertiesThumbnailSize :: ThumbnailSizeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
                     }
                 }
                 impl ::google_field_selector::FieldSelector for GetThumbnailThumbnailPropertiesThumbnailSize {
@@ -12808,7 +12866,7 @@ pub mod resources {
             }
             #[doc = "Created via [PagesActions::get_thumbnail()](struct.PagesActions.html#method.get_thumbnail)"]
             #[derive(Debug, Clone)]
-            pub struct GetThumbnailRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , presentation_id : String , page_object_id : String , thumbnail_properties_mime_type : Option < crate :: resources :: presentations :: pages :: params :: GetThumbnailThumbnailPropertiesMimeType > , thumbnail_properties_thumbnail_size : Option < crate :: resources :: presentations :: pages :: params :: GetThumbnailThumbnailPropertiesThumbnailSize > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+            pub struct GetThumbnailRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , presentation_id : String , page_object_id : String , thumbnail_properties_mime_type : Option < crate :: resources :: presentations :: pages :: params :: GetThumbnailThumbnailPropertiesMimeType > , thumbnail_properties_thumbnail_size : Option < crate :: resources :: presentations :: pages :: params :: GetThumbnailThumbnailPropertiesThumbnailSize > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
             impl<'a> GetThumbnailRequestBuilder<'a> {
                 #[doc = "The optional mime type of the thumbnail image. If you don't specify the mime type, the mime type defaults to PNG."]
                 pub fn thumbnail_properties_mime_type(

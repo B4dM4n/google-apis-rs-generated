@@ -93,7 +93,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "Identifier of the ACL rule."]
+        #[doc = "Identifier of the Access Control List (ACL) rule. See Sharing calendars."]
         #[serde(
             rename = "id",
             default,
@@ -114,7 +114,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub role: ::std::option::Option<String>,
-        #[doc = "The scope of the rule."]
+        #[doc = "The extent to which calendar access is granted by this ACL rule."]
         #[serde(
             rename = "scope",
             default,
@@ -682,7 +682,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Colors {
-        #[doc = "A global palette of calendar colors, mapping from the color ID to its definition. A calendarListEntry resource refers to one of these color IDs in its color field. Read-only."]
+        #[doc = "A global palette of calendar colors, mapping from the color ID to its definition. A calendarListEntry resource refers to one of these color IDs in its colorId field. Read-only."]
         #[serde(
             rename = "calendar",
             default,
@@ -691,7 +691,7 @@ pub mod schemas {
         pub calendar: ::std::option::Option<
             ::std::collections::BTreeMap<String, crate::schemas::ColorDefinition>,
         >,
-        #[doc = "A global palette of event colors, mapping from the color ID to its definition. An event resource may refer to one of these color IDs in its color field. Read-only."]
+        #[doc = "A global palette of event colors, mapping from the color ID to its definition. An event resource may refer to one of these color IDs in its colorId field. Read-only."]
         #[serde(
             rename = "event",
             default,
@@ -738,14 +738,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ConferenceData {
-        #[doc = "The ID of the conference.\nCan be used by developers to keep track of conferences, should not be displayed to users.\nValues for solution types:\n\n* \"eventHangout\": unset.\n* \"eventNamedHangout\": the name of the Hangout.\n* \"hangoutsMeet\": the 10-letter meeting code, for example \"aaa-bbbb-ccc\".\n* \"addOn\": defined by 3P conference provider.  Optional."]
+        #[doc = "The ID of the conference.\nCan be used by developers to keep track of conferences, should not be displayed to users.\nThe ID value is formed differently for each conference solution type:\n\n* eventHangout: ID is not set. (This conference type is deprecated.)\n* eventNamedHangout: ID is the name of the Hangout. (This conference type is deprecated.)\n* hangoutsMeet: ID is the 10-letter meeting code, for example aaa-bbbb-ccc.\n* addOn: ID is defined by the third-party provider.  Optional."]
         #[serde(
             rename = "conferenceId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conference_id: ::std::option::Option<String>,
-        #[doc = "The conference solution, such as Hangouts or Google Meet.\nUnset for a conference with a failed create request.\nEither conferenceSolution and at least one entryPoint, or createRequest is required."]
+        #[doc = "The conference solution, such as Google Meet.\nUnset for a conference with a failed create request.\nEither conferenceSolution and at least one entryPoint, or createRequest is required."]
         #[serde(
             rename = "conferenceSolution",
             default,
@@ -780,7 +780,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parameters: ::std::option::Option<crate::schemas::ConferenceParameters>,
-        #[doc = "The signature of the conference data.\nGenerated on server side. Must be preserved while copying the conference data between events, otherwise the conference data will not be copied.\nUnset for a conference with a failed create request.\nOptional for a conference with a pending create request."]
+        #[doc = "The signature of the conference data.\nGenerated on server side.\nUnset for a conference with a failed create request.\nOptional for a conference with a pending create request."]
         #[serde(
             rename = "signature",
             default,
@@ -980,7 +980,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ConferenceSolutionKey {
-        #[doc = "The conference solution type.\nIf a client encounters an unfamiliar or empty type, it should still be able to display the entry points. However, it should disallow modifications.\nThe possible values are:\n\n* \"eventHangout\" for Hangouts for consumers (http://hangouts.google.com)\n* \"eventNamedHangout\" for classic Hangouts for Google Workspace users (http://hangouts.google.com)\n* \"hangoutsMeet\" for Google Meet (http://meet.google.com)\n* \"addOn\" for 3P conference providers"]
+        #[doc = "The conference solution type.\nIf a client encounters an unfamiliar or empty type, it should still be able to display the entry points. However, it should disallow modifications.\nThe possible values are:\n\n* \"eventHangout\" for Hangouts for consumers (deprecated; existing events may show this conference solution type but new conferences cannot be created)\n* \"eventNamedHangout\" for classic Hangouts for Google Workspace users (deprecated; existing events may show this conference solution type but new conferences cannot be created)\n* \"hangoutsMeet\" for Google Meet (http://meet.google.com)\n* \"addOn\" for 3P conference providers"]
         #[serde(
             rename = "type",
             default,
@@ -1188,14 +1188,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Event {
-        #[doc = "Whether anyone can invite themselves to the event (currently works for Google+ events only). Optional. The default is False."]
+        #[doc = "Whether anyone can invite themselves to the event (deprecated). Optional. The default is False."]
         #[serde(
             rename = "anyoneCanAddSelf",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub anyone_can_add_self: ::std::option::Option<bool>,
-        #[doc = "File attachments for the event. Currently only Google Drive attachments are supported.\nIn order to modify attachments the supportsAttachments request parameter should be set to true.\nThere can be at most 25 attachments per event,"]
+        #[doc = "File attachments for the event.\nIn order to modify attachments the supportsAttachments request parameter should be set to true.\nThere can be at most 25 attachments per event,"]
         #[serde(
             rename = "attachments",
             default,
@@ -1272,7 +1272,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "Specific type of the event. Read-only. Possible values are:\n\n* \"default\" - A regular event or not further specified. \n* \"outOfOffice\" - An out-of-office event."]
+        #[doc = "Specific type of the event. Read-only. Possible values are:\n\n* \"default\" - A regular event or not further specified. \n* \"outOfOffice\" - An out-of-office event. \n* \"focusTime\" - A focus-time event."]
         #[serde(
             rename = "eventType",
             default,
@@ -1314,7 +1314,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub guests_can_see_other_guests: ::std::option::Option<bool>,
-        #[doc = "An absolute link to the Google+ hangout associated with this event. Read-only."]
+        #[doc = "An absolute link to the Google Hangout associated with this event. Read-only."]
         #[serde(
             rename = "hangoutLink",
             default,
@@ -1506,7 +1506,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "The creator's Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API"]
+        #[doc = "The creator's Profile ID, if available."]
         #[serde(
             rename = "id",
             default,
@@ -1676,7 +1676,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "The organizer's Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API"]
+        #[doc = "The organizer's Profile ID, if available."]
         #[serde(
             rename = "id",
             default,
@@ -1797,7 +1797,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub file_url: ::std::option::Option<String>,
-        #[doc = "URL link to the attachment's icon. Read-only."]
+        #[doc = "URL link to the attachment's icon. This field can only be modified for custom third-party attachments."]
         #[serde(
             rename = "iconLink",
             default,
@@ -1877,7 +1877,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "The attendee's Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API"]
+        #[doc = "The attendee's Profile ID, if available."]
         #[serde(
             rename = "id",
             default,
@@ -6245,7 +6245,7 @@ pub mod resources {
                 All,
                 #[doc = "Notifications are sent to non-Google Calendar guests only."]
                 ExternalOnly,
-                #[doc = "No notifications are sent. This value should only be used for migration use cases (note that in most migration cases the import method should be used)."]
+                #[doc = "No notifications are sent. For calendar migration tasks, consider using the Events.import method instead."]
                 None,
             }
             impl DeleteSendUpdates {
@@ -6321,7 +6321,7 @@ pub mod resources {
                 All,
                 #[doc = "Notifications are sent to non-Google Calendar guests only."]
                 ExternalOnly,
-                #[doc = "No notifications are sent. This value should only be used for migration use cases (note that in most migration cases the import method should be used)."]
+                #[doc = "No notifications are sent. Warning: Using the value none can have significant adverse effects, including events not syncing to external calendars or events being lost altogether for some users. For calendar migration tasks, consider using the events.import method instead."]
                 None,
             }
             impl InsertSendUpdates {
@@ -6468,7 +6468,7 @@ pub mod resources {
                 All,
                 #[doc = "Notifications are sent to non-Google Calendar guests only."]
                 ExternalOnly,
-                #[doc = "No notifications are sent. This value should only be used for migration use cases (note that in most migration cases the import method should be used)."]
+                #[doc = "No notifications are sent. For calendar migration tasks, consider using the Events.import method instead."]
                 None,
             }
             impl MoveSendUpdates {
@@ -6544,7 +6544,7 @@ pub mod resources {
                 All,
                 #[doc = "Notifications are sent to non-Google Calendar guests only."]
                 ExternalOnly,
-                #[doc = "No notifications are sent. This value should only be used for migration use cases (note that in most migration cases the import method should be used)."]
+                #[doc = "No notifications are sent. For calendar migration tasks, consider using the Events.import method instead."]
                 None,
             }
             impl PatchSendUpdates {
@@ -6620,7 +6620,7 @@ pub mod resources {
                 All,
                 #[doc = "Notifications are sent to non-Google Calendar guests only."]
                 ExternalOnly,
-                #[doc = "No notifications are sent. This value should only be used for migration use cases (note that in most migration cases the import method should be used)."]
+                #[doc = "No notifications are sent. For calendar migration tasks, consider using the Events.import method instead."]
                 None,
             }
             impl QuickAddSendUpdates {
@@ -6696,7 +6696,7 @@ pub mod resources {
                 All,
                 #[doc = "Notifications are sent to non-Google Calendar guests only."]
                 ExternalOnly,
-                #[doc = "No notifications are sent. This value should only be used for migration use cases (note that in most migration cases the import method should be used)."]
+                #[doc = "No notifications are sent. For calendar migration tasks, consider using the Events.import method instead."]
                 None,
             }
             impl UpdateSendUpdates {

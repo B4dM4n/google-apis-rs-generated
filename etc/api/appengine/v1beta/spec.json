@@ -5,9 +5,9 @@
   "id": "appengine:v1beta",
   "name": "appengine",
   "canonicalName": null,
-  "fullyEncodeReservedExpansion": null,
+  "fullyEncodeReservedExpansion": true,
   "version": "v1beta",
-  "revision": "20210315",
+  "revision": "20220415",
   "title": "App Engine Admin API",
   "description": "Provisions and manages developers' App Engine applications.",
   "ownerDomain": "google.com",
@@ -204,10 +204,10 @@
           "description": "View and manage your applications deployed on Google App Engine"
         },
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         },
         "https://www.googleapis.com/auth/cloud-platform.read-only": {
-          "description": "View your data across Google Cloud Platform services"
+          "description": "View your data across Google Cloud services and see the email address of your Google Account"
         }
       }
     }
@@ -457,6 +457,16 @@
         },
         "name": {
           "description": "Full path to the Application resource in the API. Example: apps/myapp.@OutputOnly",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "serviceAccount": {
+          "description": "The service account associated with the application. This is the app-level default identity. If no identity provided during create version, Admin API will fallback to this one.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1264,7 +1274,7 @@
     },
     "Empty": {
       "id": "Empty",
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for Empty is empty JSON object {}.",
+      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } ",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1510,7 +1520,7 @@
           "items": null
         },
         "description": {
-          "description": "An optional string description of this rule. This field has a maximum length of 100 characters.",
+          "description": "An optional string description of this rule. This field has a maximum length of 400 characters.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1532,6 +1542,48 @@
         "sourceRange": {
           "description": "IP address or range, defined using CIDR notation, of requests that this rule applies to. You can use the wildcard character \"*\" to match all IPs equivalent to \"0/0\" and \"::/0\" together. Examples: 192.168.1.1 or 192.168.0.0/16 or 2001:db8::/32 or 2001:0db8:0000:0042:0000:8a2e:0370:7334. Truncation will be silently performed on addresses which are not properly truncated. For example, 1.2.3.4/24 is accepted as the same address as 1.2.3.0/24. Similarly, for IPv6, 2001:db8::1/32 is accepted as the same address as 2001:db8::/32.",
           "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppengineV1betaLocationMetadata": {
+      "id": "GoogleAppengineV1betaLocationMetadata",
+      "description": "Metadata for the given google.cloud.location.Location.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "flexibleEnvironmentAvailable": {
+          "description": "App Engine flexible environment is available in the given location.@OutputOnly",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "searchApiAvailable": {
+          "description": "Output only. Search API (https://cloud.google.com/appengine/docs/standard/python/search) is available in the given location.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "standardEnvironmentAvailable": {
+          "description": "App Engine standard environment is available in the given location.@OutputOnly",
+          "type": "boolean",
           "format": null,
           "enum": [],
           "enumDescriptions": [],
@@ -2519,6 +2571,24 @@
             "items": null
           }
         },
+        "instanceIpMode": {
+          "description": "The IP mode for instances. Only applicable in the App Engine flexible environment.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "INSTANCE_IP_MODE_UNSPECIFIED",
+            "EXTERNAL",
+            "INTERNAL"
+          ],
+          "enumDescriptions": [
+            "Unspecified is treated as EXTERNAL.",
+            "Instances are created with both internal and external IP addresses.",
+            "Instances are created with internal IP addresses only."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "instanceTag": {
           "description": "Tag to apply to the instance during creation. Only applicable in the App Engine flexible environment.",
           "type": "string",
@@ -3280,6 +3350,25 @@
           "enumDescriptions": [],
           "properties": {},
           "additionalProperties": null,
+          "items": null
+        },
+        "labels": {
+          "description": "A set of labels to apply to this service. Labels are key/value pairs that describe the service and all resources that belong to it (e.g., versions). The labels can be used to search and group resources, and are propagated to the usage and billing reports, enabling fine-grain analysis of costs. An example of using labels is to tag resources belonging to different environments (e.g., \"env=prod\", \"env=qa\"). Label keys and values can be no longer than 63 characters and can only contain lowercase letters, numeric characters, underscores, dashes, and international characters. Label keys must start with a lowercase letter or an international character. Each service can have at most 32 labels.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
           "items": null
         },
         "name": {
@@ -4224,6 +4313,24 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "egressSetting": {
+          "description": "The egress setting for the connector, controlling what traffic is diverted through it.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "EGRESS_SETTING_UNSPECIFIED",
+            "ALL_TRAFFIC",
+            "PRIVATE_IP_RANGES"
+          ],
+          "enumDescriptions": [
+            "",
+            "Force the use of VPC Access for all egress traffic from the function.",
+            "Use the VPC Access Connector for private IP space from RFC1918."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "name": {
           "description": "Full Serverless VPC Access Connector name e.g. /projects/my-project/locations/us-central1/connectors/c1.",
           "type": "string",
@@ -4943,7 +5050,7 @@
                   "repeated": false
                 },
                 "updateMask": {
-                  "description": "Standard field mask for the set of fields to be updated.",
+                  "description": "Required. Standard field mask for the set of fields to be updated.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -5413,7 +5520,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "The maximum number of results to return. If not set, the service will select a default.",
+                  "description": "The maximum number of results to return. If not set, the service selects a default.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -6580,7 +6687,7 @@
                   "repeated": false
                 },
                 "updateMask": {
-                  "description": "Standard field mask for the set of fields to be updated.",
+                  "description": "Required. Standard field mask for the set of fields to be updated.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -6682,7 +6789,7 @@
           "id": "appengine.apps.patch",
           "path": "v1beta/apps/{appsId}",
           "httpMethod": "PATCH",
-          "description": "Updates the specified Application resource. You can update the following fields: auth_domain - Google authentication domain for controlling user access to the application. default_cookie_expiration - Cookie expiration policy for the application.",
+          "description": "Updates the specified Application resource. You can update the following fields: auth_domain - Google authentication domain for controlling user access to the application. default_cookie_expiration - Cookie expiration policy for the application. iap - Identity-Aware Proxy properties for the application.",
           "parameters": {
             "appsId": {
               "description": "Part of `name`. Name of the Application resource to update. Example: apps/myapp.",
@@ -6699,7 +6806,7 @@
               "repeated": false
             },
             "updateMask": {
-              "description": "Standard field mask for the set of fields to be updated.",
+              "description": "Required. Standard field mask for the set of fields to be updated.",
               "default": null,
               "location": "query",
               "required": false,

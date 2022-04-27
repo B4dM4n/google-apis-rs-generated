@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("recommender1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210314")
+            .version("0.1.0-20220417")
             .about("")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -89,7 +89,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             insights3 = insights3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists insights for a Cloud project. Requires the recommender.*.list IAM permission for the specified insight type.");
+            let mcmd = SubCommand::with_name("list").about("Lists insights for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified insight type.");
             insights3 = insights3.subcommand(mcmd);
         }
         {
@@ -104,7 +104,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             recommendations3 = recommendations3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists recommendations for a Cloud project. Requires the recommender.*.list IAM permission for the specified recommender.");
+            let mcmd = SubCommand::with_name("list").about("Lists recommendations for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified recommender.");
             recommendations3 = recommendations3.subcommand(mcmd);
         }
         {
@@ -127,7 +127,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             insights3 = insights3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists insights for a Cloud project. Requires the recommender.*.list IAM permission for the specified insight type.");
+            let mcmd = SubCommand::with_name("list").about("Lists insights for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified insight type.");
             insights3 = insights3.subcommand(mcmd);
         }
         {
@@ -142,7 +142,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             recommendations3 = recommendations3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists recommendations for a Cloud project. Requires the recommender.*.list IAM permission for the specified recommender.");
+            let mcmd = SubCommand::with_name("list").about("Lists recommendations for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified recommender.");
             recommendations3 = recommendations3.subcommand(mcmd);
         }
         {
@@ -165,7 +165,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             insights3 = insights3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists insights for a Cloud project. Requires the recommender.*.list IAM permission for the specified insight type.");
+            let mcmd = SubCommand::with_name("list").about("Lists insights for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified insight type.");
             insights3 = insights3.subcommand(mcmd);
         }
         {
@@ -180,7 +180,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             recommendations3 = recommendations3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists recommendations for a Cloud project. Requires the recommender.*.list IAM permission for the specified recommender.");
+            let mcmd = SubCommand::with_name("list").about("Lists recommendations for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified recommender.");
             recommendations3 = recommendations3.subcommand(mcmd);
         }
         {
@@ -203,7 +203,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             insights3 = insights3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists insights for a Cloud project. Requires the recommender.*.list IAM permission for the specified insight type.");
+            let mcmd = SubCommand::with_name("list").about("Lists insights for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified insight type.");
             insights3 = insights3.subcommand(mcmd);
         }
         {
@@ -218,7 +218,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             recommendations3 = recommendations3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists recommendations for a Cloud project. Requires the recommender.*.list IAM permission for the specified recommender.");
+            let mcmd = SubCommand::with_name("list").about("Lists recommendations for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified recommender.");
             recommendations3 = recommendations3.subcommand(mcmd);
         }
         {

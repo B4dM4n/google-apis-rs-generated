@@ -1,6 +1,6 @@
-#![doc = "# Resources and Methods\n    * [operations](resources/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/operations/struct.CancelRequestBuilder.html), [*delete*](resources/operations/struct.DeleteRequestBuilder.html), [*get*](resources/operations/struct.GetRequestBuilder.html), [*list*](resources/operations/struct.ListRequestBuilder.html)\n    * [services](resources/services/struct.ServicesActions.html)\n      * [*addSubnetwork*](resources/services/struct.AddSubnetworkRequestBuilder.html), [*disableVpcServiceControls*](resources/services/struct.DisableVpcServiceControlsRequestBuilder.html), [*enableVpcServiceControls*](resources/services/struct.EnableVpcServiceControlsRequestBuilder.html), [*searchRange*](resources/services/struct.SearchRangeRequestBuilder.html), [*validate*](resources/services/struct.ValidateRequestBuilder.html)\n      * [connections](resources/services/connections/struct.ConnectionsActions.html)\n        * [*create*](resources/services/connections/struct.CreateRequestBuilder.html), [*list*](resources/services/connections/struct.ListRequestBuilder.html), [*patch*](resources/services/connections/struct.PatchRequestBuilder.html)\n      * [dns_record_sets](resources/services/dns_record_sets/struct.DnsRecordSetsActions.html)\n        * [*add*](resources/services/dns_record_sets/struct.AddRequestBuilder.html), [*remove*](resources/services/dns_record_sets/struct.RemoveRequestBuilder.html), [*update*](resources/services/dns_record_sets/struct.UpdateRequestBuilder.html)\n      * [dns_zones](resources/services/dns_zones/struct.DnsZonesActions.html)\n        * [*add*](resources/services/dns_zones/struct.AddRequestBuilder.html), [*remove*](resources/services/dns_zones/struct.RemoveRequestBuilder.html)\n      * [projects](resources/services/projects/struct.ProjectsActions.html)\n        * [global](resources/services/projects/global/struct.GlobalActions.html)\n          * [networks](resources/services/projects/global/networks/struct.NetworksActions.html)\n            * [*get*](resources/services/projects/global/networks/struct.GetRequestBuilder.html), [*updateConsumerConfig*](resources/services/projects/global/networks/struct.UpdateConsumerConfigRequestBuilder.html)\n            * [peered_dns_domains](resources/services/projects/global/networks/peered_dns_domains/struct.PeeredDnsDomainsActions.html)\n              * [*create*](resources/services/projects/global/networks/peered_dns_domains/struct.CreateRequestBuilder.html), [*delete*](resources/services/projects/global/networks/peered_dns_domains/struct.DeleteRequestBuilder.html), [*list*](resources/services/projects/global/networks/peered_dns_domains/struct.ListRequestBuilder.html)\n      * [roles](resources/services/roles/struct.RolesActions.html)\n        * [*add*](resources/services/roles/struct.AddRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [operations](resources/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/operations/struct.CancelRequestBuilder.html), [*delete*](resources/operations/struct.DeleteRequestBuilder.html), [*get*](resources/operations/struct.GetRequestBuilder.html), [*list*](resources/operations/struct.ListRequestBuilder.html)\n    * [services](resources/services/struct.ServicesActions.html)\n      * [*addSubnetwork*](resources/services/struct.AddSubnetworkRequestBuilder.html), [*disableVpcServiceControls*](resources/services/struct.DisableVpcServiceControlsRequestBuilder.html), [*enableVpcServiceControls*](resources/services/struct.EnableVpcServiceControlsRequestBuilder.html), [*searchRange*](resources/services/struct.SearchRangeRequestBuilder.html), [*validate*](resources/services/struct.ValidateRequestBuilder.html)\n      * [connections](resources/services/connections/struct.ConnectionsActions.html)\n        * [*create*](resources/services/connections/struct.CreateRequestBuilder.html), [*deleteConnection*](resources/services/connections/struct.DeleteConnectionRequestBuilder.html), [*list*](resources/services/connections/struct.ListRequestBuilder.html), [*patch*](resources/services/connections/struct.PatchRequestBuilder.html)\n      * [dns_record_sets](resources/services/dns_record_sets/struct.DnsRecordSetsActions.html)\n        * [*add*](resources/services/dns_record_sets/struct.AddRequestBuilder.html), [*remove*](resources/services/dns_record_sets/struct.RemoveRequestBuilder.html), [*update*](resources/services/dns_record_sets/struct.UpdateRequestBuilder.html)\n      * [dns_zones](resources/services/dns_zones/struct.DnsZonesActions.html)\n        * [*add*](resources/services/dns_zones/struct.AddRequestBuilder.html), [*remove*](resources/services/dns_zones/struct.RemoveRequestBuilder.html)\n      * [projects](resources/services/projects/struct.ProjectsActions.html)\n        * [global](resources/services/projects/global/struct.GlobalActions.html)\n          * [networks](resources/services/projects/global/networks/struct.NetworksActions.html)\n            * [*get*](resources/services/projects/global/networks/struct.GetRequestBuilder.html), [*updateConsumerConfig*](resources/services/projects/global/networks/struct.UpdateConsumerConfigRequestBuilder.html)\n            * [peered_dns_domains](resources/services/projects/global/networks/peered_dns_domains/struct.PeeredDnsDomainsActions.html)\n              * [*create*](resources/services/projects/global/networks/peered_dns_domains/struct.CreateRequestBuilder.html), [*delete*](resources/services/projects/global/networks/peered_dns_domains/struct.DeleteRequestBuilder.html), [*list*](resources/services/projects/global/networks/peered_dns_domains/struct.ListRequestBuilder.html)\n      * [roles](resources/services/roles/struct.RolesActions.html)\n        * [*add*](resources/services/roles/struct.AddRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
     #[doc = "Manage your Google API service configuration\n\n`https://www.googleapis.com/auth/service.management`"]
     pub const SERVICE_MANAGEMENT: &str = "https://www.googleapis.com/auth/service.management";
@@ -288,6 +288,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AddSubnetworkRequest {
+        #[doc = "Optional. The IAM permission check determines whether the consumer project has 'servicenetworking.services.use' permission or not."]
+        #[serde(
+            rename = "checkServiceNetworkingUsePermission",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub check_service_networking_use_permission: ::std::option::Option<bool>,
         #[doc = "Required. A resource that represents the service consumer, such as `projects/123456`. The project number can be different from the value in the consumer network parameter. For example, the network might be part of a Shared VPC network. In those cases, Service Networking validates that this resource belongs to that Shared VPC."]
         #[serde(
             rename = "consumer",
@@ -316,6 +323,27 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ip_prefix_length: ::std::option::Option<i32>,
+        #[doc = "Optional. Enable outside allocation using public IP addresses. Any public IP range may be specified. If this field is provided, we will not use customer reserved ranges for this primary IP range."]
+        #[serde(
+            rename = "outsideAllocationPublicIpRange",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub outside_allocation_public_ip_range: ::std::option::Option<String>,
+        #[doc = "Optional. The private IPv6 google access type for the VMs in this subnet. For information about the access types that can be set using this field, see [subnetwork](https://cloud.google.com/compute/docs/reference/rest/v1/subnetworks) in the Compute API documentation."]
+        #[serde(
+            rename = "privateIpv6GoogleAccess",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub private_ipv_6_google_access: ::std::option::Option<String>,
+        #[doc = "Optional. Defines the purpose field of the subnet, e.g. 'PRIVATE_SERVICE_CONNECT'. For information about the purposes that can be set using this field, see [subnetwork](https://cloud.google.com/compute/docs/reference/rest/v1/subnetworks) in the Compute API documentation."]
+        #[serde(
+            rename = "purpose",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub purpose: ::std::option::Option<String>,
         #[doc = "Required. The name of a [region](/compute/docs/regions-zones) for the subnet, such `europe-west1`."]
         #[serde(
             rename = "region",
@@ -551,7 +579,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub jwks_uri: ::std::option::Option<String>,
-        #[doc = "Defines the locations to extract the JWT. JWT locations can be either from HTTP headers or URL query parameters. The rule is that the first match wins. The checking order is: checking all headers first, then URL query parameters. If not specified, default to use following 3 locations: 1) Authorization: Bearer 2) x-goog-iap-jwt-assertion 3) access_token query parameter Default locations can be specified as followings: jwt_locations: - header: Authorization value_prefix: \"Bearer \" - header: x-goog-iap-jwt-assertion - query: access_token"]
+        #[doc = "Defines the locations to extract the JWT. For now it is only used by the Cloud Endpoints to store the OpenAPI extension [x-google-jwt-locations] (https://cloud.google.com/endpoints/docs/openapi/openapi-extensions#x-google-jwt-locations) JWT locations can be one of HTTP headers, URL query parameters or cookies. The rule is that the first match wins. If not specified, default to use following 3 locations: 1) Authorization: Bearer 2) x-goog-iap-jwt-assertion 3) access_token query parameter Default locations can be specified as followings: jwt_locations: - header: Authorization value_prefix: \"Bearer \" - header: x-goog-iap-jwt-assertion - query: access_token"]
         #[serde(
             rename = "jwtLocations",
             default,
@@ -751,13 +779,6 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub jwt_audience: ::std::option::Option<String>,
-        #[doc = "Minimum deadline in seconds needed for this method. Calls having deadline value lower than this will be rejected."]
-        #[serde(
-            rename = "minDeadline",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub min_deadline: ::std::option::Option<f64>,
         #[doc = "The number of seconds to wait for the completion of a long running operation. The default is no deadline."]
         #[serde(
             rename = "operationDeadline",
@@ -1107,6 +1128,13 @@ pub mod schemas {
         pub reserved_ranges: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudServicenetworkingV1ConsumerConfigReservedRange>,
         >,
+        #[doc = "Output only. The IP ranges already in use by consumer or producer"]
+        #[serde(
+            rename = "usedIpRanges",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub used_ip_ranges: ::std::option::Option<Vec<String>>,
         #[doc = "Output only. Indicates whether the VPC Service Controls reference architecture is configured for the producer VPC host network."]
         #[serde(
             rename = "vpcScReferenceArchitectureEnabled",
@@ -1284,7 +1312,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Control {
-        #[doc = "The service control environment to use. If empty, no control plane feature (like quota and billing) will be enabled."]
+        #[doc = "The service controller environment to use. If empty, no control plane feature (like quota and billing) will be enabled. The recommended value for most services is servicecontrol.googleapis.com"]
         #[serde(
             rename = "environment",
             default,
@@ -1436,6 +1464,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for DeleteConnectionMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DeleteConnectionRequest {
+        #[doc = "Required. The network that the consumer is using to connect with services. Must be in the form of projects/{project}/global/networks/{network} {project} is a project number, as in '12345' {network} is a network name."]
+        #[serde(
+            rename = "consumerNetwork",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub consumer_network: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for DeleteConnectionRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DeleteConnectionRequest {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1633,7 +1692,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub service_root_url: ::std::option::Option<String>,
-        #[doc = "A short summary of what the service does. Can only be provided by plain text."]
+        #[doc = "A short description of what the service does. The summary must be plain text. It becomes the overview of the service displayed in Google Cloud Console. NOTE: This field is equivalent to the standard field `description`."]
         #[serde(
             rename = "summary",
             default,
@@ -1671,14 +1730,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub deprecation_description: ::std::option::Option<String>,
-        #[doc = "Description of the selected API(s)."]
+        #[doc = "Description of the selected proto element (e.g. a message, a method, a 'service' definition, or a field). Defaults to leading & trailing comments taken from the proto source definition of the proto element."]
         #[serde(
             rename = "description",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "The selector is a comma-separated list of patterns. Each pattern is a qualified name of the element which may end in \"*\", indicating a wildcard. Wildcards are only allowed at the end and for a whole component of the qualified name, i.e. \"foo.*\" is ok, but not \"foo.b*\" or \"foo.*.bar\". A wildcard will match one or more components. To specify a default for all applicable elements, the whole pattern \"*\" is used."]
+        #[doc = "The selector is a comma-separated list of patterns for any element such as a method, a field, an enum value. Each pattern is a qualified name of the element which may end in \"*\", indicating a wildcard. Wildcards are only allowed at the end and for a whole component of the qualified name, i.e. \"foo.*\" is ok, but not \"foo.b*\" or \"foo.*.bar\". A wildcard will match one or more components. To specify a default for all applicable elements, the whole pattern \"*\" is used."]
         #[serde(
             rename = "selector",
             default,
@@ -1764,13 +1823,6 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Endpoint {
-        #[doc = "DEPRECATED: This field is no longer supported. Instead of using aliases, please specify multiple google.api.Endpoint for each of the intended aliases. Additional names that this endpoint will be hosted on."]
-        #[serde(
-            rename = "aliases",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub aliases: ::std::option::Option<Vec<String>>,
         #[doc = "Allowing [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing), aka cross-domain traffic, would allow the backends served from this endpoint to receive and respond to HTTP OPTIONS requests. The response will be used by the browser to determine whether the subsequent cross-origin request is allowed to proceed."]
         #[serde(
             rename = "allowCors",
@@ -2574,6 +2626,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct JwtLocation {
+        #[doc = "Specifies cookie name to extract JWT token."]
+        #[serde(
+            rename = "cookie",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cookie: ::std::option::Option<String>,
         #[doc = "Specifies HTTP header name to extract JWT token."]
         #[serde(
             rename = "header",
@@ -3180,11 +3239,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MetricDescriptorLaunchStage {
-        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don’t have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases."]
+        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don't have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases."]
         Alpha,
         #[doc = "Beta is the point at which we are ready to open a release for any customer to use. There are no SLA or technical support obligations in a Beta release. Products will be complete from a feature perspective, but may have some open outstanding issues. Beta releases are suitable for limited production use cases."]
         Beta,
-        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the “Deprecation Policy” section of our [Terms of Service](https://cloud.google.com/terms/) and the [Google Cloud Platform Subject to the Deprecation Policy](https://cloud.google.com/terms/deprecation) documentation."]
+        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the \"Deprecation Policy\" section of our [Terms of Service](https://cloud.google.com/terms/) and the [Google Cloud Platform Subject to the Deprecation Policy](https://cloud.google.com/terms/deprecation) documentation."]
         Deprecated,
         #[doc = "Early Access features are limited to a closed group of testers. To use these features, you must sign up in advance and sign a Trusted Tester agreement (which includes confidentiality provisions). These features may be unstable, changed in backward-incompatible ways, and are not guaranteed to be released."]
         EarlyAccess,
@@ -3504,11 +3563,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MetricDescriptorMetadataLaunchStage {
-        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don’t have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases."]
+        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don't have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases."]
         Alpha,
         #[doc = "Beta is the point at which we are ready to open a release for any customer to use. There are no SLA or technical support obligations in a Beta release. Products will be complete from a feature perspective, but may have some open outstanding issues. Beta releases are suitable for limited production use cases."]
         Beta,
-        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the “Deprecation Policy” section of our [Terms of Service](https://cloud.google.com/terms/) and the [Google Cloud Platform Subject to the Deprecation Policy](https://cloud.google.com/terms/deprecation) documentation."]
+        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the \"Deprecation Policy\" section of our [Terms of Service](https://cloud.google.com/terms/) and the [Google Cloud Platform Subject to the Deprecation Policy](https://cloud.google.com/terms/deprecation) documentation."]
         Deprecated,
         #[doc = "Early Access features are limited to a closed group of testers. To use these features, you must sign up in advance and sign a Trusted Tester agreement (which includes confidentiality provisions). These features may be unstable, changed in backward-incompatible ways, and are not guaranteed to be released."]
         EarlyAccess,
@@ -3734,7 +3793,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. The monitored resource type. For example, the type `\"cloudsql_database\"` represents databases in Google Cloud SQL."]
+        #[doc = "Required. The monitored resource type. For example, the type `\"cloudsql_database\"` represents databases in Google Cloud SQL. For a list of types, see [Monitoring resource types](https://cloud.google.com/monitoring/api/resources) and [Logging resource types](https://cloud.google.com/logging/docs/api/v2/resource-list)."]
         #[serde(
             rename = "type",
             default,
@@ -3754,11 +3813,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MonitoredResourceDescriptorLaunchStage {
-        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don’t have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases."]
+        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don't have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases."]
         Alpha,
         #[doc = "Beta is the point at which we are ready to open a release for any customer to use. There are no SLA or technical support obligations in a Beta release. Products will be complete from a feature perspective, but may have some open outstanding issues. Beta releases are suitable for limited production use cases."]
         Beta,
-        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the “Deprecation Policy” section of our [Terms of Service](https://cloud.google.com/terms/) and the [Google Cloud Platform Subject to the Deprecation Policy](https://cloud.google.com/terms/deprecation) documentation."]
+        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the \"Deprecation Policy\" section of our [Terms of Service](https://cloud.google.com/terms/) and the [Google Cloud Platform Subject to the Deprecation Policy](https://cloud.google.com/terms/deprecation) documentation."]
         Deprecated,
         #[doc = "Early Access features are limited to a closed group of testers. To use these features, you must sign up in advance and sign a Trusted Tester agreement (which includes confidentiality provisions). These features may be unstable, changed in backward-incompatible ways, and are not guaranteed to be released."]
         EarlyAccess,
@@ -4058,7 +4117,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Page {
-        #[doc = "The Markdown content of the page. You can use (== include {path} ==) to include content from a Markdown file."]
+        #[doc = "The Markdown content of the page. You can use (== include {path} ==) to include content from a Markdown file. The content can be used to produce the documentation page such as HTML format page."]
         #[serde(
             rename = "content",
             default,
@@ -4098,12 +4157,36 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PartialDeleteConnectionMetadata {}
+    impl ::google_field_selector::FieldSelector for PartialDeleteConnectionMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PartialDeleteConnectionMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
     pub struct PeeredDnsDomain {
-        #[doc = "The DNS domain name suffix e.g. `example.com.`."]
+        #[doc = "The DNS domain name suffix e.g. `example.com.`. Cloud DNS requires that a DNS suffix ends with a trailing dot."]
         #[serde(
             rename = "dnsSuffix",
             default,
@@ -4742,6 +4825,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ip_prefix_length: ::std::option::Option<i32>,
+        #[doc = "Optional. Enable outside allocation using public IP addresses. Any public IP range may be specified. If this field is provided, we will not use customer reserved ranges for this secondary IP range."]
+        #[serde(
+            rename = "outsideAllocationPublicIpRange",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub outside_allocation_public_ip_range: ::std::option::Option<String>,
         #[doc = "Required. A name for the secondary IP range. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork."]
         #[serde(
             rename = "rangeName",
@@ -4797,7 +4887,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub billing: ::std::option::Option<crate::schemas::Billing>,
-        #[doc = "Deprecated. The service config compiler always sets this field to `3`."]
+        #[doc = "Obsolete. Do not use. This field has no semantic meaning. The service config compiler always sets this field to `3`."]
         #[serde(
             rename = "configVersion",
             default,
@@ -4839,7 +4929,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub endpoints: ::std::option::Option<Vec<crate::schemas::Endpoint>>,
-        #[doc = "A list of all enum types included in this API service. Enums referenced directly or indirectly by the `apis` are automatically included. Enums which are not referenced but shall be included should be listed here by name. Example: enums: - name: google.someapi.v1.SomeEnum"]
+        #[doc = "A list of all enum types included in this API service. Enums referenced directly or indirectly by the `apis` are automatically included. Enums which are not referenced but shall be included should be listed here by name by the configuration author. Example: enums: - name: google.someapi.v1.SomeEnum"]
         #[serde(
             rename = "enums",
             default,
@@ -4938,14 +5028,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub system_types: ::std::option::Option<Vec<crate::schemas::Type>>,
-        #[doc = "The product title for this service."]
+        #[doc = "The product title for this service, it is the name displayed in Google Cloud Console."]
         #[serde(
             rename = "title",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub title: ::std::option::Option<String>,
-        #[doc = "A list of all proto message types included in this API service. Types referenced directly or indirectly by the `apis` are automatically included. Messages which are not referenced but shall be included, such as types used by the `google.protobuf.Any` type, should be listed here by name. Example: types: - name: google.protobuf.Int32"]
+        #[doc = "A list of all proto message types included in this API service. Types referenced directly or indirectly by the `apis` are automatically included. Messages which are not referenced but shall be included, such as types used by the `google.protobuf.Any` type, should be listed here by name by the configuration author. Example: types: - name: google.protobuf.Int32"]
         #[serde(
             rename = "types",
             default,
@@ -5573,6 +5663,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ValidateConsumerConfigRequest {
+        #[doc = "Optional. The IAM permission check determines whether the consumer project has 'servicenetworking.services.use' permission or not."]
+        #[serde(
+            rename = "checkServiceNetworkingUsePermission",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub check_service_networking_use_permission: ::std::option::Option<bool>,
         #[doc = "Required. The network that the consumer is using to connect with services. Must be in the form of projects/{project}/global/networks/{network} {project} is a project number, as in '12345' {network} is network name."]
         #[serde(
             rename = "consumerNetwork",
@@ -5683,6 +5780,8 @@ pub mod schemas {
         #[doc = "The IP ranges were not reserved."]
         RangesNotReserved,
         ServiceNetworkingNotEnabled,
+        #[doc = "The consumer project does not have the permission from the host project."]
+        UsePermissionNotFound,
         ValidationErrorUnspecified,
         #[doc = "In case none of the validations are requested."]
         ValidationNotRequested,
@@ -5725,6 +5824,9 @@ pub mod schemas {
                 }
                 ValidateConsumerConfigResponseValidationError::ServiceNetworkingNotEnabled => {
                     "SERVICE_NETWORKING_NOT_ENABLED"
+                }
+                ValidateConsumerConfigResponseValidationError::UsePermissionNotFound => {
+                    "USE_PERMISSION_NOT_FOUND"
                 }
                 ValidateConsumerConfigResponseValidationError::ValidationErrorUnspecified => {
                     "VALIDATION_ERROR_UNSPECIFIED"
@@ -5781,6 +5883,9 @@ pub mod schemas {
                 }
                 "SERVICE_NETWORKING_NOT_ENABLED" => {
                     ValidateConsumerConfigResponseValidationError::ServiceNetworkingNotEnabled
+                }
+                "USE_PERMISSION_NOT_FOUND" => {
+                    ValidateConsumerConfigResponseValidationError::UsePermissionNotFound
                 }
                 "VALIDATION_ERROR_UNSPECIFIED" => {
                     ValidateConsumerConfigResponseValidationError::ValidationErrorUnspecified
@@ -5847,6 +5952,9 @@ pub mod schemas {
                 }
                 "SERVICE_NETWORKING_NOT_ENABLED" => {
                     ValidateConsumerConfigResponseValidationError::ServiceNetworkingNotEnabled
+                }
+                "USE_PERMISSION_NOT_FOUND" => {
+                    ValidateConsumerConfigResponseValidationError::UsePermissionNotFound
                 }
                 "VALIDATION_ERROR_UNSPECIFIED" => {
                     ValidateConsumerConfigResponseValidationError::ValidationErrorUnspecified
@@ -7916,6 +8024,30 @@ pub mod resources {
                         parent: parent.into(),
                     }
                 }
+                #[doc = "Deletes a private service access connection."]
+                pub fn delete_connection(
+                    &self,
+                    request: crate::schemas::DeleteConnectionRequest,
+                    name: impl Into<String>,
+                ) -> DeleteConnectionRequestBuilder {
+                    DeleteConnectionRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                    }
+                }
                 #[doc = "List the private connections that are configured in a service consumer's VPC network."]
                 pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
@@ -8099,6 +8231,167 @@ pub mod resources {
                         ));
                     }
                     output.push_str("/connections");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [ConnectionsActions::delete_connection()](struct.ConnectionsActions.html#method.delete_connection)"]
+            #[derive(Debug, Clone)]
+            pub struct DeleteConnectionRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::DeleteConnectionRequest,
+                name: String,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> DeleteConnectionRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Operation, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Operation, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://servicenetworking.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
                     output
                 }
                 fn _request(
@@ -9490,6 +9783,7 @@ pub mod resources {
                                 upload_type: None,
                                 xgafv: None,
                                 name: name.into(),
+                                include_used_ip_ranges: None,
                             }
                         }
                         #[doc = "Service producers use this method to update the configuration of their connection including the import/export of custom routes and subnetwork routes with public IP."]
@@ -9516,8 +9810,8 @@ pub mod resources {
                                 parent: parent.into(),
                             }
                         }
-                        #[doc = "Actions that can be performed on the peered_dns_domains resource"]                        pub fn peered_dns_domains ( & self ) -> crate :: resources :: services :: projects :: global :: networks :: peered_dns_domains :: PeeredDnsDomainsActions{
-                            crate :: resources :: services :: projects :: global :: networks :: peered_dns_domains :: PeeredDnsDomainsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the peered_dns_domains resource"]                        pub fn peered_dns_domains (& self) -> crate :: resources :: services :: projects :: global :: networks :: peered_dns_domains :: PeeredDnsDomainsActions{
+                            crate :: resources :: services :: projects :: global :: networks :: peered_dns_domains :: PeeredDnsDomainsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
                     }
                     #[doc = "Created via [NetworksActions::get()](struct.NetworksActions.html#method.get)"]
@@ -9526,6 +9820,7 @@ pub mod resources {
                         pub(crate) reqwest: &'a ::reqwest::blocking::Client,
                         pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                         name: String,
+                        include_used_ip_ranges: Option<bool>,
                         access_token: Option<String>,
                         alt: Option<crate::params::Alt>,
                         callback: Option<String>,
@@ -9539,6 +9834,11 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> GetRequestBuilder<'a> {
+                        #[doc = "Optional. When true, include the used IP ranges as part of the GetConsumerConfig output. This includes routes created inside the service networking network, consumer network, peers of the consumer network, and reserved ranges inside the service networking network. By default, this is false"]
+                        pub fn include_used_ip_ranges(mut self, value: bool) -> Self {
+                            self.include_used_ip_ranges = Some(value);
+                            self
+                        }
                         #[doc = "OAuth access token."]
                         pub fn access_token(mut self, value: impl Into<String>) -> Self {
                             self.access_token = Some(value.into());
@@ -9664,6 +9964,8 @@ pub mod resources {
                         ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
                         {
                             let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                            req =
+                                req.query(&[("includeUsedIpRanges", &self.include_used_ip_ranges)]);
                             req = req.query(&[("access_token", &self.access_token)]);
                             req = req.query(&[("alt", &self.alt)]);
                             req = req.query(&[("callback", &self.callback)]);

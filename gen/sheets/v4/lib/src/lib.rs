@@ -2,13 +2,13 @@
 pub mod scopes {
     #[doc = "See, edit, create, and delete all of your Google Drive files\n\n`https://www.googleapis.com/auth/drive`"]
     pub const DRIVE: &str = "https://www.googleapis.com/auth/drive";
-    #[doc = "View and manage Google Drive files and folders that you have opened or created with this app\n\n`https://www.googleapis.com/auth/drive.file`"]
+    #[doc = "See, edit, create, and delete only the specific Google Drive files you use with this app\n\n`https://www.googleapis.com/auth/drive.file`"]
     pub const DRIVE_FILE: &str = "https://www.googleapis.com/auth/drive.file";
     #[doc = "See and download all your Google Drive files\n\n`https://www.googleapis.com/auth/drive.readonly`"]
     pub const DRIVE_READONLY: &str = "https://www.googleapis.com/auth/drive.readonly";
-    #[doc = "See, edit, create, and delete your spreadsheets in Google Drive\n\n`https://www.googleapis.com/auth/spreadsheets`"]
+    #[doc = "See, edit, create, and delete all your Google Sheets spreadsheets\n\n`https://www.googleapis.com/auth/spreadsheets`"]
     pub const SPREADSHEETS: &str = "https://www.googleapis.com/auth/spreadsheets";
-    #[doc = "View your Google Spreadsheets\n\n`https://www.googleapis.com/auth/spreadsheets.readonly`"]
+    #[doc = "See all your Google Sheets spreadsheets\n\n`https://www.googleapis.com/auth/spreadsheets.readonly`"]
     pub const SPREADSHEETS_READONLY: &str = "https://www.googleapis.com/auth/spreadsheets.readonly";
 }
 pub mod schemas {
@@ -959,7 +959,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub positive_color_style: ::std::option::Option<crate::schemas::ColorStyle>,
-        #[doc = "Text formatting options for baseline value."]
+        #[doc = "Text formatting options for baseline value. The link field is not supported."]
         #[serde(
             rename = "textFormat",
             default,
@@ -1063,7 +1063,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct BasicChartAxis {
-        #[doc = "The format of the title. Only valid if the axis is not associated with the domain."]
+        #[doc = "The format of the title. Only valid if the axis is not associated with the domain. The link field is not supported."]
         #[serde(
             rename = "format",
             default,
@@ -2096,7 +2096,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BatchClearValuesByDataFilterResponse {
-        #[doc = "The ranges that were cleared, in A1 notation. If the requests are for an unbounded range or a ranger larger than the bounds of the sheet, this is the actual ranges that were cleared, bounded to the sheet's limits."]
+        #[doc = "The ranges that were cleared, in [A1 notation](/sheets/api/guides/concepts#cell). If the requests are for an unbounded range or a ranger larger than the bounds of the sheet, this is the actual ranges that were cleared, bounded to the sheet's limits."]
         #[serde(
             rename = "clearedRanges",
             default,
@@ -2134,7 +2134,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BatchClearValuesRequest {
-        #[doc = "The ranges to clear, in A1 or R1C1 notation."]
+        #[doc = "The ranges to clear, in [A1 notation or R1C1 notation](/sheets/api/guides/concepts#cell)."]
         #[serde(
             rename = "ranges",
             default,
@@ -2210,7 +2210,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub data_filters: ::std::option::Option<Vec<crate::schemas::DataFilter>>,
-        #[doc = "How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER]."]
+        #[doc = "How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER."]
         #[serde(
             rename = "dateTimeRenderOption",
             default,
@@ -2227,7 +2227,7 @@ pub mod schemas {
         )]
         pub major_dimension:
             ::std::option::Option<crate::schemas::BatchGetValuesByDataFilterRequestMajorDimension>,
-        #[doc = "How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE."]
+        #[doc = "How values should be represented in the output. The default render option is FORMATTED_VALUE."]
         #[serde(
             rename = "valueRenderOption",
             default,
@@ -2249,9 +2249,9 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum BatchGetValuesByDataFilterRequestDateTimeRenderOption {
-        #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which is dependent on the spreadsheet locale)."]
+        #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."]
         FormattedString,
-        #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30st 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
+        #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
         SerialNumber,
     }
     impl BatchGetValuesByDataFilterRequestDateTimeRenderOption {
@@ -2626,7 +2626,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub spreadsheet_id: ::std::option::Option<String>,
-        #[doc = "The spreadsheet after updates were applied. This is only set if [BatchUpdateSpreadsheetRequest.include_spreadsheet_in_response] is `true`."]
+        #[doc = "The spreadsheet after updates were applied. This is only set if BatchUpdateSpreadsheetRequest.include_spreadsheet_in_response is `true`."]
         #[serde(
             rename = "updatedSpreadsheet",
             default,
@@ -2660,7 +2660,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub include_values_in_response: ::std::option::Option<bool>,
-        #[doc = "Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is DateTimeRenderOption.SERIAL_NUMBER."]
+        #[doc = "Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER."]
         #[serde(
             rename = "responseDateTimeRenderOption",
             default,
@@ -2669,7 +2669,7 @@ pub mod schemas {
         pub response_date_time_render_option: ::std::option::Option<
             crate::schemas::BatchUpdateValuesByDataFilterRequestResponseDateTimeRenderOption,
         >,
-        #[doc = "Determines how values in the response should be rendered. The default render option is ValueRenderOption.FORMATTED_VALUE."]
+        #[doc = "Determines how values in the response should be rendered. The default render option is FORMATTED_VALUE."]
         #[serde(
             rename = "responseValueRenderOption",
             default,
@@ -2700,9 +2700,9 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum BatchUpdateValuesByDataFilterRequestResponseDateTimeRenderOption {
-        #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which is dependent on the spreadsheet locale)."]
+        #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."]
         FormattedString,
-        #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30st 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
+        #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
         SerialNumber,
     }
     impl BatchUpdateValuesByDataFilterRequestResponseDateTimeRenderOption {
@@ -2725,7 +2725,7 @@ pub mod schemas {
             BatchUpdateValuesByDataFilterRequestResponseDateTimeRenderOption,
             (),
         > {
-            Ok ( match s { "FORMATTED_STRING" => BatchUpdateValuesByDataFilterRequestResponseDateTimeRenderOption :: FormattedString , "SERIAL_NUMBER" => BatchUpdateValuesByDataFilterRequestResponseDateTimeRenderOption :: SerialNumber , _ => return Err ( ( ) ) , } )
+            Ok (match s { "FORMATTED_STRING" => BatchUpdateValuesByDataFilterRequestResponseDateTimeRenderOption :: FormattedString , "SERIAL_NUMBER" => BatchUpdateValuesByDataFilterRequestResponseDateTimeRenderOption :: SerialNumber , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for BatchUpdateValuesByDataFilterRequestResponseDateTimeRenderOption {
@@ -2749,7 +2749,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "FORMATTED_STRING" => BatchUpdateValuesByDataFilterRequestResponseDateTimeRenderOption :: FormattedString , "SERIAL_NUMBER" => BatchUpdateValuesByDataFilterRequestResponseDateTimeRenderOption :: SerialNumber , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "FORMATTED_STRING" => BatchUpdateValuesByDataFilterRequestResponseDateTimeRenderOption :: FormattedString , "SERIAL_NUMBER" => BatchUpdateValuesByDataFilterRequestResponseDateTimeRenderOption :: SerialNumber , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -2888,7 +2888,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<BatchUpdateValuesByDataFilterRequestValueInputOption, ()>
         {
-            Ok ( match s { "INPUT_VALUE_OPTION_UNSPECIFIED" => BatchUpdateValuesByDataFilterRequestValueInputOption :: InputValueOptionUnspecified , "RAW" => BatchUpdateValuesByDataFilterRequestValueInputOption :: Raw , "USER_ENTERED" => BatchUpdateValuesByDataFilterRequestValueInputOption :: UserEntered , _ => return Err ( ( ) ) , } )
+            Ok (match s { "INPUT_VALUE_OPTION_UNSPECIFIED" => BatchUpdateValuesByDataFilterRequestValueInputOption :: InputValueOptionUnspecified , "RAW" => BatchUpdateValuesByDataFilterRequestValueInputOption :: Raw , "USER_ENTERED" => BatchUpdateValuesByDataFilterRequestValueInputOption :: UserEntered , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for BatchUpdateValuesByDataFilterRequestValueInputOption {
@@ -2910,7 +2910,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "INPUT_VALUE_OPTION_UNSPECIFIED" => BatchUpdateValuesByDataFilterRequestValueInputOption :: InputValueOptionUnspecified , "RAW" => BatchUpdateValuesByDataFilterRequestValueInputOption :: Raw , "USER_ENTERED" => BatchUpdateValuesByDataFilterRequestValueInputOption :: UserEntered , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "INPUT_VALUE_OPTION_UNSPECIFIED" => BatchUpdateValuesByDataFilterRequestValueInputOption :: InputValueOptionUnspecified , "RAW" => BatchUpdateValuesByDataFilterRequestValueInputOption :: Raw , "USER_ENTERED" => BatchUpdateValuesByDataFilterRequestValueInputOption :: UserEntered , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -2996,7 +2996,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub include_values_in_response: ::std::option::Option<bool>,
-        #[doc = "Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is DateTimeRenderOption.SERIAL_NUMBER."]
+        #[doc = "Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER."]
         #[serde(
             rename = "responseDateTimeRenderOption",
             default,
@@ -3005,7 +3005,7 @@ pub mod schemas {
         pub response_date_time_render_option: ::std::option::Option<
             crate::schemas::BatchUpdateValuesRequestResponseDateTimeRenderOption,
         >,
-        #[doc = "Determines how values in the response should be rendered. The default render option is ValueRenderOption.FORMATTED_VALUE."]
+        #[doc = "Determines how values in the response should be rendered. The default render option is FORMATTED_VALUE."]
         #[serde(
             rename = "responseValueRenderOption",
             default,
@@ -3035,9 +3035,9 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum BatchUpdateValuesRequestResponseDateTimeRenderOption {
-        #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which is dependent on the spreadsheet locale)."]
+        #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."]
         FormattedString,
-        #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30st 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
+        #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
         SerialNumber,
     }
     impl BatchUpdateValuesRequestResponseDateTimeRenderOption {
@@ -3999,7 +3999,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bubble_sizes: ::std::option::Option<crate::schemas::ChartData>,
-        #[doc = "The format of the text inside the bubbles. Strikethrough and underline are not supported."]
+        #[doc = "The format of the text inside the bubbles. Strikethrough, underline, and link are not supported."]
         #[serde(
             rename = "bubbleTextStyle",
             default,
@@ -4274,7 +4274,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct CellData {
-        #[doc = "Output only. Information about a data source formula on the cell. The field is set if user_entered_value is a formula referencing some DATA_SOURCE sheet, e.g `=SUM(DataSheet!Column)`."]
+        #[doc = "Output only. Information about a data source formula on the cell. The field is set if user_entered_value is a formula referencing some DATA_SOURCE sheet, e.g. `=SUM(DataSheet!Column)`."]
         #[serde(
             rename = "dataSourceFormula",
             default,
@@ -4316,7 +4316,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub formatted_value: ::std::option::Option<String>,
-        #[doc = "A hyperlink this cell points to, if any. If the cell contains multiple hyperlinks, this field will be empty. This field is read-only. To set it, use a `=HYPERLINK` formula in the userEnteredValue.formulaValue field."]
+        #[doc = "A hyperlink this cell points to, if any. If the cell contains multiple hyperlinks, this field will be empty. This field is read-only. To set it, use a `=HYPERLINK` formula in the userEnteredValue.formulaValue field. A cell-level link can also be set from the userEnteredFormat.textFormat field. Alternatively, set a hyperlink in the textFormatRun.format.link field that spans the entire cell."]
         #[serde(
             rename = "hyperlink",
             default,
@@ -4431,7 +4431,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub text_direction: ::std::option::Option<crate::schemas::CellFormatTextDirection>,
-        #[doc = "The format of the text in the cell (unless overridden by a format run)."]
+        #[doc = "The format of the text in the cell (unless overridden by a format run). Setting a cell-level link here will clear the cell's existing links. Setting the link field in a TextFormatRun will take precedence over the cell-level link."]
         #[serde(
             rename = "textFormat",
             default,
@@ -4808,7 +4808,7 @@ pub mod schemas {
         Clip,
         #[doc = "This wrap strategy represents the old Google Sheets wrap strategy where words that are longer than a line are clipped rather than broken. This strategy is not supported on all platforms and is being phased out. Example: | Cell has a | | loooooooooo| <- Word is clipped. | word. |"]
         LegacyWrap,
-        #[doc = "Lines that are longer than the cell width will be written in the next cell over, so long as that cell is empty. If the next cell over is non-empty, this behaves the same as CLIP. The text will never wrap to the next line unless the user manually inserts a new line. Example: | First sentence. | | Manual newline that is very long. <- Text continues into next cell | Next newline. |"]
+        #[doc = "Lines that are longer than the cell width will be written in the next cell over, so long as that cell is empty. If the next cell over is non-empty, this behaves the same as `CLIP`. The text will never wrap to the next line unless the user manually inserts a new line. Example: | First sentence. | | Manual newline that is very long. <- Text continues into next cell | Next newline. |"]
         OverflowCell,
         #[doc = "Words that are longer than a line are wrapped at the character level rather than clipped. Example: | Cell has a | | loooooooooo| <- Word is broken. | ong word. |"]
         Wrap,
@@ -5602,7 +5602,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub subtitle: ::std::option::Option<String>,
-        #[doc = "The subtitle text format. Strikethrough and underline are not supported."]
+        #[doc = "The subtitle text format. Strikethrough, underline, and link are not supported."]
         #[serde(
             rename = "subtitleTextFormat",
             default,
@@ -5623,7 +5623,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub title: ::std::option::Option<String>,
-        #[doc = "The title text format. Strikethrough and underline are not supported."]
+        #[doc = "The title text format. Strikethrough, underline, and link are not supported."]
         #[serde(
             rename = "titleTextFormat",
             default,
@@ -5857,7 +5857,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Color {
-        #[doc = "The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: pixel color = alpha * (this color) + (1.0 - alpha) * (background color) This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is to be rendered as a solid color (as if the alpha value had been explicitly given with a value of 1.0)."]
+        #[doc = "The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0)."]
         #[serde(
             rename = "alpha",
             default,
@@ -6340,7 +6340,7 @@ pub mod schemas {
         PasteFormat,
         #[doc = "Paste the formulas only."]
         PasteFormula,
-        #[doc = "Like PASTE_NORMAL but without borders."]
+        #[doc = "Like `PASTE_NORMAL` but without borders."]
         PasteNoBorders,
         #[doc = "Paste values, formulas, formats, and merges."]
         PasteNormal,
@@ -6580,7 +6580,7 @@ pub mod schemas {
         PasteFormat,
         #[doc = "Paste the formulas only."]
         PasteFormula,
-        #[doc = "Like PASTE_NORMAL but without borders."]
+        #[doc = "Like `PASTE_NORMAL` but without borders."]
         PasteNoBorders,
         #[doc = "Paste values, formulas, formats, and merges."]
         PasteNormal,
@@ -6758,6 +6758,8 @@ pub mod schemas {
         TooManyCells,
         #[doc = "The data execution returns values that exceed the maximum characters allowed in a single cell."]
         TooManyCharsPerCell,
+        #[doc = "The data execution returns more columns than the limit."]
+        TooManyColumns,
         #[doc = "The data execution returns more rows than the limit."]
         TooManyRows,
         #[doc = "The data execution returns an unsupported data type."]
@@ -6784,6 +6786,7 @@ pub mod schemas {
                 DataExecutionStatusErrorCode::TimedOut => "TIMED_OUT",
                 DataExecutionStatusErrorCode::TooManyCells => "TOO_MANY_CELLS",
                 DataExecutionStatusErrorCode::TooManyCharsPerCell => "TOO_MANY_CHARS_PER_CELL",
+                DataExecutionStatusErrorCode::TooManyColumns => "TOO_MANY_COLUMNS",
                 DataExecutionStatusErrorCode::TooManyRows => "TOO_MANY_ROWS",
                 DataExecutionStatusErrorCode::UnsupportedDataType => "UNSUPPORTED_DATA_TYPE",
             }
@@ -6816,6 +6819,7 @@ pub mod schemas {
                 "TIMED_OUT" => DataExecutionStatusErrorCode::TimedOut,
                 "TOO_MANY_CELLS" => DataExecutionStatusErrorCode::TooManyCells,
                 "TOO_MANY_CHARS_PER_CELL" => DataExecutionStatusErrorCode::TooManyCharsPerCell,
+                "TOO_MANY_COLUMNS" => DataExecutionStatusErrorCode::TooManyColumns,
                 "TOO_MANY_ROWS" => DataExecutionStatusErrorCode::TooManyRows,
                 "UNSUPPORTED_DATA_TYPE" => DataExecutionStatusErrorCode::UnsupportedDataType,
                 _ => return Err(()),
@@ -6860,6 +6864,7 @@ pub mod schemas {
                 "TIMED_OUT" => DataExecutionStatusErrorCode::TimedOut,
                 "TOO_MANY_CELLS" => DataExecutionStatusErrorCode::TooManyCells,
                 "TOO_MANY_CHARS_PER_CELL" => DataExecutionStatusErrorCode::TooManyCharsPerCell,
+                "TOO_MANY_COLUMNS" => DataExecutionStatusErrorCode::TooManyColumns,
                 "TOO_MANY_ROWS" => DataExecutionStatusErrorCode::TooManyRows,
                 "UNSUPPORTED_DATA_TYPE" => DataExecutionStatusErrorCode::UnsupportedDataType,
                 _ => {
@@ -7155,7 +7160,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<crate::schemas::DataLabelType>,
-        #[doc = "The text format used for the data label."]
+        #[doc = "The text format used for the data label. The link field is not supported."]
         #[serde(
             rename = "textFormat",
             default,
@@ -8271,7 +8276,7 @@ pub mod schemas {
     impl ::std::str::FromStr for DataSourceTableColumnSelectionType {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<DataSourceTableColumnSelectionType, ()> {
-            Ok ( match s { "DATA_SOURCE_TABLE_COLUMN_SELECTION_TYPE_UNSPECIFIED" => DataSourceTableColumnSelectionType :: DataSourceTableColumnSelectionTypeUnspecified , "SELECTED" => DataSourceTableColumnSelectionType :: Selected , "SYNC_ALL" => DataSourceTableColumnSelectionType :: SyncAll , _ => return Err ( ( ) ) , } )
+            Ok (match s { "DATA_SOURCE_TABLE_COLUMN_SELECTION_TYPE_UNSPECIFIED" => DataSourceTableColumnSelectionType :: DataSourceTableColumnSelectionTypeUnspecified , "SELECTED" => DataSourceTableColumnSelectionType :: Selected , "SYNC_ALL" => DataSourceTableColumnSelectionType :: SyncAll , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for DataSourceTableColumnSelectionType {
@@ -8293,7 +8298,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "DATA_SOURCE_TABLE_COLUMN_SELECTION_TYPE_UNSPECIFIED" => DataSourceTableColumnSelectionType :: DataSourceTableColumnSelectionTypeUnspecified , "SELECTED" => DataSourceTableColumnSelectionType :: Selected , "SYNC_ALL" => DataSourceTableColumnSelectionType :: SyncAll , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "DATA_SOURCE_TABLE_COLUMN_SELECTION_TYPE_UNSPECIFIED" => DataSourceTableColumnSelectionType :: DataSourceTableColumnSelectionTypeUnspecified , "SELECTED" => DataSourceTableColumnSelectionType :: Selected , "SYNC_ALL" => DataSourceTableColumnSelectionType :: SyncAll , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector for DataSourceTableColumnSelectionType {
@@ -9129,7 +9134,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DeleteSheetRequest {
-        #[doc = "The ID of the sheet to delete. If the sheet is of SheetType.DATA_SOURCE type, the associated DataSource is also deleted."]
+        #[doc = "The ID of the sheet to delete. If the sheet is of DATA_SOURCE type, the associated DataSource is also deleted."]
         #[serde(
             rename = "sheetId",
             default,
@@ -9532,7 +9537,7 @@ pub mod schemas {
         fn from_str(
             s: &str,
         ) -> ::std::result::Result<DeveloperMetadataLookupLocationMatchingStrategy, ()> {
-            Ok ( match s { "DEVELOPER_METADATA_LOCATION_MATCHING_STRATEGY_UNSPECIFIED" => DeveloperMetadataLookupLocationMatchingStrategy :: DeveloperMetadataLocationMatchingStrategyUnspecified , "EXACT_LOCATION" => DeveloperMetadataLookupLocationMatchingStrategy :: ExactLocation , "INTERSECTING_LOCATION" => DeveloperMetadataLookupLocationMatchingStrategy :: IntersectingLocation , _ => return Err ( ( ) ) , } )
+            Ok (match s { "DEVELOPER_METADATA_LOCATION_MATCHING_STRATEGY_UNSPECIFIED" => DeveloperMetadataLookupLocationMatchingStrategy :: DeveloperMetadataLocationMatchingStrategyUnspecified , "EXACT_LOCATION" => DeveloperMetadataLookupLocationMatchingStrategy :: ExactLocation , "INTERSECTING_LOCATION" => DeveloperMetadataLookupLocationMatchingStrategy :: IntersectingLocation , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for DeveloperMetadataLookupLocationMatchingStrategy {
@@ -9554,7 +9559,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "DEVELOPER_METADATA_LOCATION_MATCHING_STRATEGY_UNSPECIFIED" => DeveloperMetadataLookupLocationMatchingStrategy :: DeveloperMetadataLocationMatchingStrategyUnspecified , "EXACT_LOCATION" => DeveloperMetadataLookupLocationMatchingStrategy :: ExactLocation , "INTERSECTING_LOCATION" => DeveloperMetadataLookupLocationMatchingStrategy :: IntersectingLocation , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "DEVELOPER_METADATA_LOCATION_MATCHING_STRATEGY_UNSPECIFIED" => DeveloperMetadataLookupLocationMatchingStrategy :: DeveloperMetadataLocationMatchingStrategyUnspecified , "EXACT_LOCATION" => DeveloperMetadataLookupLocationMatchingStrategy :: ExactLocation , "INTERSECTING_LOCATION" => DeveloperMetadataLookupLocationMatchingStrategy :: IntersectingLocation , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector for DeveloperMetadataLookupLocationMatchingStrategy {
@@ -10437,7 +10442,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub formula_value: ::std::option::Option<String>,
-        #[doc = "Represents a double value. Note: Dates, Times and DateTimes are represented as doubles in \"serial number\" format."]
+        #[doc = "Represents a double value. Note: Dates, Times and DateTimes are represented as doubles in SERIAL_NUMBER format."]
         #[serde(
             rename = "numberValue",
             default,
@@ -11500,9 +11505,9 @@ pub mod schemas {
         Min,
         #[doc = "The interpolation point uses exactly the value in InterpolationPoint.value."]
         Number,
-        #[doc = "The interpolation point is the given percentage over all the cells in the range of the conditional format. This is equivalent to NUMBER if the value was: `=(MAX(FLATTEN(range)) * (value / 100)) + (MIN(FLATTEN(range)) * (1 - (value / 100)))` (where errors in the range are ignored when flattening)."]
+        #[doc = "The interpolation point is the given percentage over all the cells in the range of the conditional format. This is equivalent to `NUMBER` if the value was: `=(MAX(FLATTEN(range)) * (value / 100)) + (MIN(FLATTEN(range)) * (1 - (value / 100)))` (where errors in the range are ignored when flattening)."]
         Percent,
-        #[doc = "The interpolation point is the given percentile over all the cells in the range of the conditional format. This is equivalent to NUMBER if the value was: `=PERCENTILE(FLATTEN(range), value / 100)` (where errors in the range are ignored when flattening)."]
+        #[doc = "The interpolation point is the given percentile over all the cells in the range of the conditional format. This is equivalent to `NUMBER` if the value was: `=PERCENTILE(FLATTEN(range), value / 100)` (where errors in the range are ignored when flattening)."]
         Percentile,
     }
     impl InterpolationPointType {
@@ -11665,7 +11670,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub position: ::std::option::Option<crate::schemas::TextPosition>,
-        #[doc = "Text formatting options for key value."]
+        #[doc = "Text formatting options for key value. The link field is not supported."]
         #[serde(
             rename = "textFormat",
             default,
@@ -11823,6 +11828,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for LineStyleType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Link {
+        #[doc = "The link identifier."]
+        #[serde(
+            rename = "uri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Link {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Link {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -12622,7 +12658,7 @@ pub mod schemas {
         PasteFormat,
         #[doc = "Paste the formulas only."]
         PasteFormula,
-        #[doc = "Like PASTE_NORMAL but without borders."]
+        #[doc = "Like `PASTE_NORMAL` but without borders."]
         PasteNoBorders,
         #[doc = "Paste values, formulas, formats, and merges."]
         PasteNormal,
@@ -15534,7 +15570,7 @@ pub mod schemas {
         )]
         pub horizontal_alignment:
             ::std::option::Option<crate::schemas::SlicerSpecHorizontalAlignment>,
-        #[doc = "The text format of title in the slicer."]
+        #[doc = "The text format of title in the slicer. The link field is not supported."]
         #[serde(
             rename = "textFormat",
             default,
@@ -16236,6 +16272,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub italic: ::std::option::Option<bool>,
+        #[doc = "The link destination of the text, if any. Setting the link field in a TextFormatRun will clear the cell's existing links or a cell-level link set in the same request. When a link is set, the text foreground color will be set to the default link color and the text will be underlined. If these fields are modified in the same request, those values will be used instead of the link defaults."]
+        #[serde(
+            rename = "link",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub link: ::std::option::Option<crate::schemas::Link>,
         #[doc = "True if the text has a strikethrough."]
         #[serde(
             rename = "strikethrough",
@@ -16952,7 +16995,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub size_data: ::std::option::Option<crate::schemas::ChartData>,
-        #[doc = "The text format for all labels on the chart."]
+        #[doc = "The text format for all labels on the chart. The link field is not supported."]
         #[serde(
             rename = "textFormat",
             default,
@@ -17898,7 +17941,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub updated_data: ::std::option::Option<crate::schemas::ValueRange>,
-        #[doc = "The range (in A1 notation) that updates were applied to."]
+        #[doc = "The range (in [A1 notation](/sheets/api/guides/concepts#cell)) that updates were applied to."]
         #[serde(
             rename = "updatedRange",
             default,
@@ -17987,7 +18030,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub major_dimension: ::std::option::Option<crate::schemas::ValueRangeMajorDimension>,
-        #[doc = "The range the values cover, in A1 notation. For output, this range indicates the entire requested range, even though the values will exclude trailing rows and columns. When appending values, this field represents the range to search for a table, after which values will be appended."]
+        #[doc = "The range the values cover, in [A1 notation](/sheets/api/guides/concepts#cell). For output, this range indicates the entire requested range, even though the values will exclude trailing rows and columns. When appending values, this field represents the range to search for a table, after which values will be appended."]
         #[serde(
             rename = "range",
             default,
@@ -18653,7 +18696,7 @@ pub mod resources {
                     xgafv: None,
                 }
             }
-            #[doc = "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. By default, data within grids will not be returned. You can include grid data one of two ways: * Specify a field mask listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData URL parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, it is recommended to retrieve only the specific fields of the spreadsheet that you want. To retrieve only subsets of the spreadsheet, use the ranges URL parameter. Multiple ranges can be specified. Limiting the range will return only the portions of the spreadsheet that intersect the requested ranges. Ranges are specified using A1 notation."]
+            #[doc = "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. By default, data within grids is not returned. You can include grid data in one of 2 ways: * Specify a field mask listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData URL parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want. To retrieve only subsets of spreadsheet data, use the ranges URL parameter. Ranges are specified using [A1 notation](/sheets/api/guides/concepts#cell). You can define a single cell (for example, `A1`) or multiple cells (for example, `A1:D5`). You can also get cells from other sheets within the same spreadsheet (for example, `Sheet2!A1:C4`) or retrieve multiple ranges at once (for example, `?ranges=A1:D5&ranges=Sheet2!A1:C4`). Limiting the range returns only the portions of the spreadsheet that intersect the requested ranges."]
             pub fn get(&self, spreadsheet_id: impl Into<String>) -> GetRequestBuilder {
                 GetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -18674,7 +18717,7 @@ pub mod resources {
                     ranges: None,
                 }
             }
-            #[doc = "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. This method differs from GetSpreadsheet in that it allows selecting which subsets of spreadsheet data to return by specifying a dataFilters parameter. Multiple DataFilters can be specified. Specifying one or more data filters will return the portions of the spreadsheet that intersect ranges matched by any of the filters. By default, data within grids will not be returned. You can include grid data one of two ways: * Specify a field mask listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, it is recommended to retrieve only the specific fields of the spreadsheet that you want."]
+            #[doc = "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. This method differs from GetSpreadsheet in that it allows selecting which subsets of spreadsheet data to return by specifying a dataFilters parameter. Multiple DataFilters can be specified. Specifying one or more data filters returns the portions of the spreadsheet that intersect ranges matched by any of the filters. By default, data within grids is not returned. You can include grid data one of 2 ways: * Specify a field mask listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want."]
             pub fn get_by_data_filter(
                 &self,
                 request: crate::schemas::GetSpreadsheetByDataFilterRequest,
@@ -20041,9 +20084,9 @@ pub mod resources {
                 }
                 #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                 pub enum AppendResponseDateTimeRenderOption {
-                    #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which is dependent on the spreadsheet locale)."]
+                    #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."]
                     FormattedString,
-                    #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30st 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
+                    #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
                     SerialNumber,
                 }
                 impl AppendResponseDateTimeRenderOption {
@@ -20288,9 +20331,9 @@ pub mod resources {
                 }
                 #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                 pub enum BatchGetDateTimeRenderOption {
-                    #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which is dependent on the spreadsheet locale)."]
+                    #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."]
                     FormattedString,
-                    #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30st 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
+                    #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
                     SerialNumber,
                 }
                 impl BatchGetDateTimeRenderOption {
@@ -20514,9 +20557,9 @@ pub mod resources {
                 }
                 #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                 pub enum GetDateTimeRenderOption {
-                    #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which is dependent on the spreadsheet locale)."]
+                    #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."]
                     FormattedString,
-                    #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30st 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
+                    #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
                     SerialNumber,
                 }
                 impl GetDateTimeRenderOption {
@@ -20737,9 +20780,9 @@ pub mod resources {
                 }
                 #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                 pub enum UpdateResponseDateTimeRenderOption {
-                    #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which is dependent on the spreadsheet locale)."]
+                    #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."]
                     FormattedString,
-                    #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30st 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
+                    #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
                     SerialNumber,
                 }
                 impl UpdateResponseDateTimeRenderOption {
@@ -21022,7 +21065,7 @@ pub mod resources {
                         value_input_option: None,
                     }
                 }
-                #[doc = "Clears one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more ranges. Only values are cleared -- all other properties of the cell (such as formatting, data validation, etc..) are kept."]
+                #[doc = "Clears one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more ranges. Only values are cleared -- all other properties of the cell (such as formatting and data validation) are kept."]
                 pub fn batch_clear(
                     &self,
                     request: crate::schemas::BatchClearValuesRequest,
@@ -21254,7 +21297,7 @@ pub mod resources {
             }
             #[doc = "Created via [ValuesActions::append()](struct.ValuesActions.html#method.append)"]
             #[derive(Debug, Clone)]
-            pub struct AppendRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: ValueRange , spreadsheet_id : String , range : String , include_values_in_response : Option < bool > , insert_data_option : Option < crate :: resources :: spreadsheets :: values :: params :: AppendInsertDataOption > , response_date_time_render_option : Option < crate :: resources :: spreadsheets :: values :: params :: AppendResponseDateTimeRenderOption > , response_value_render_option : Option < crate :: resources :: spreadsheets :: values :: params :: AppendResponseValueRenderOption > , value_input_option : Option < crate :: resources :: spreadsheets :: values :: params :: AppendValueInputOption > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+            pub struct AppendRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: ValueRange , spreadsheet_id : String , range : String , include_values_in_response : Option < bool > , insert_data_option : Option < crate :: resources :: spreadsheets :: values :: params :: AppendInsertDataOption > , response_date_time_render_option : Option < crate :: resources :: spreadsheets :: values :: params :: AppendResponseDateTimeRenderOption > , response_value_render_option : Option < crate :: resources :: spreadsheets :: values :: params :: AppendResponseValueRenderOption > , value_input_option : Option < crate :: resources :: spreadsheets :: values :: params :: AppendValueInputOption > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
             impl<'a> AppendRequestBuilder<'a> {
                 #[doc = "Determines if the update response should include the values of the cells that were appended. By default, responses do not include the updated values."]
                 pub fn include_values_in_response(mut self, value: bool) -> Self {
@@ -21269,7 +21312,7 @@ pub mod resources {
                     self.insert_data_option = Some(value);
                     self
                 }
-                #[doc = "Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER]."]
+                #[doc = "Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER."]
                 pub fn response_date_time_render_option(
                     mut self,
                     value : crate :: resources :: spreadsheets :: values :: params :: AppendResponseDateTimeRenderOption,
@@ -21277,7 +21320,7 @@ pub mod resources {
                     self.response_date_time_render_option = Some(value);
                     self
                 }
-                #[doc = "Determines how values in the response should be rendered. The default render option is ValueRenderOption.FORMATTED_VALUE."]
+                #[doc = "Determines how values in the response should be rendered. The default render option is FORMATTED_VALUE."]
                 pub fn response_value_render_option(
                     mut self,
                     value : crate :: resources :: spreadsheets :: values :: params :: AppendResponseValueRenderOption,
@@ -21811,7 +21854,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> BatchGetRequestBuilder<'a> {
-                #[doc = "How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER]."]
+                #[doc = "How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER."]
                 pub fn date_time_render_option(
                     mut self,
                     value : crate :: resources :: spreadsheets :: values :: params :: BatchGetDateTimeRenderOption,
@@ -21819,7 +21862,7 @@ pub mod resources {
                     self.date_time_render_option = Some(value);
                     self
                 }
-                #[doc = "The major dimension that results should use. For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then requesting `range=A1:B2,majorDimension=ROWS` returns `[[1,2],[3,4]]`, whereas requesting `range=A1:B2,majorDimension=COLUMNS` returns `[[1,3],[2,4]]`."]
+                #[doc = "The major dimension that results should use. For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then requesting `ranges=[\"A1:B2\"],majorDimension=ROWS` returns `[[1,2],[3,4]]`, whereas requesting `ranges=[\"A1:B2\"],majorDimension=COLUMNS` returns `[[1,3],[2,4]]`."]
                 pub fn major_dimension(
                     mut self,
                     value: crate::resources::spreadsheets::values::params::BatchGetMajorDimension,
@@ -21827,7 +21870,7 @@ pub mod resources {
                     self.major_dimension = Some(value);
                     self
                 }
-                #[doc = "The A1 notation or R1C1 notation of the range to retrieve values from."]
+                #[doc = "The [A1 notation or R1C1 notation](/sheets/api/guides/concepts#cell) of the range to retrieve values from."]
                 pub fn ranges(mut self, value: impl Into<Vec<String>>) -> Self {
                     self.ranges = Some(value.into());
                     self
@@ -22676,7 +22719,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> GetRequestBuilder<'a> {
-                #[doc = "How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER]."]
+                #[doc = "How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER."]
                 pub fn date_time_render_option(
                     mut self,
                     value: crate::resources::spreadsheets::values::params::GetDateTimeRenderOption,
@@ -22692,7 +22735,7 @@ pub mod resources {
                     self.major_dimension = Some(value);
                     self
                 }
-                #[doc = "How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE."]
+                #[doc = "How values should be represented in the output. The default render option is FORMATTED_VALUE."]
                 pub fn value_render_option(
                     mut self,
                     value: crate::resources::spreadsheets::values::params::GetValueRenderOption,
@@ -22853,14 +22896,14 @@ pub mod resources {
             }
             #[doc = "Created via [ValuesActions::update()](struct.ValuesActions.html#method.update)"]
             #[derive(Debug, Clone)]
-            pub struct UpdateRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: ValueRange , spreadsheet_id : String , range : String , include_values_in_response : Option < bool > , response_date_time_render_option : Option < crate :: resources :: spreadsheets :: values :: params :: UpdateResponseDateTimeRenderOption > , response_value_render_option : Option < crate :: resources :: spreadsheets :: values :: params :: UpdateResponseValueRenderOption > , value_input_option : Option < crate :: resources :: spreadsheets :: values :: params :: UpdateValueInputOption > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+            pub struct UpdateRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: ValueRange , spreadsheet_id : String , range : String , include_values_in_response : Option < bool > , response_date_time_render_option : Option < crate :: resources :: spreadsheets :: values :: params :: UpdateResponseDateTimeRenderOption > , response_value_render_option : Option < crate :: resources :: spreadsheets :: values :: params :: UpdateResponseValueRenderOption > , value_input_option : Option < crate :: resources :: spreadsheets :: values :: params :: UpdateValueInputOption > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
             impl<'a> UpdateRequestBuilder<'a> {
                 #[doc = "Determines if the update response should include the values of the cells that were updated. By default, responses do not include the updated values. If the range to write was larger than the range actually written, the response includes all values in the requested range (excluding trailing empty rows and columns)."]
                 pub fn include_values_in_response(mut self, value: bool) -> Self {
                     self.include_values_in_response = Some(value);
                     self
                 }
-                #[doc = "Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is DateTimeRenderOption.SERIAL_NUMBER."]
+                #[doc = "Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER."]
                 pub fn response_date_time_render_option(
                     mut self,
                     value : crate :: resources :: spreadsheets :: values :: params :: UpdateResponseDateTimeRenderOption,
@@ -22868,7 +22911,7 @@ pub mod resources {
                     self.response_date_time_render_option = Some(value);
                     self
                 }
-                #[doc = "Determines how values in the response should be rendered. The default render option is ValueRenderOption.FORMATTED_VALUE."]
+                #[doc = "Determines how values in the response should be rendered. The default render option is FORMATTED_VALUE."]
                 pub fn response_value_render_option(
                     mut self,
                     value : crate :: resources :: spreadsheets :: values :: params :: UpdateResponseValueRenderOption,

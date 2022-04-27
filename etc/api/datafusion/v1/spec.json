@@ -7,7 +7,7 @@
   "canonicalName": "Data Fusion",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20210311",
+  "revision": "20220316",
   "title": "Cloud Data Fusion API",
   "description": "Cloud Data Fusion is a fully-managed, cloud native, enterprise data integration service for quickly building and managing data pipelines. It provides a graphical interface to increase time efficiency and reduce complexity, and allows business users, developers, and data scientists to easily and reliably build scalable data integration solutions to cleanse, prepare, blend, transfer and transform data without having to wrestle with infrastructure.",
   "ownerDomain": "google.com",
@@ -201,7 +201,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         }
       }
     }
@@ -222,12 +222,14 @@
           "enum": [
             "ACCELERATOR_TYPE_UNSPECIFIED",
             "CDC",
-            "HEALTHCARE"
+            "HEALTHCARE",
+            "CCAI_INSIGHTS"
           ],
           "enumDescriptions": [
             "Default value, if unspecified.",
             "Change Data Capture accelerator for CDF.",
-            "Cloud Healthcare accelerator for CDF. This accelerator is to enable Cloud Healthcare specific CDF plugins developed by Healthcare team."
+            "Cloud Healthcare accelerator for CDF. This accelerator is to enable Cloud Healthcare specific CDF plugins developed by Healthcare team.",
+            "Contact Center AI Insights This accelerator is used to enable import and export pipelines custom built to streamline CCAI Insights processing."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -343,18 +345,18 @@
     },
     "Binding": {
       "id": "Binding",
-      "description": "Associates `members` with a `role`.",
+      "description": "Associates `members`, or principals, with a `role`.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "condition": {
-          "description": "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+          "description": "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
           "$ref": "Expr"
         },
         "members": {
-          "description": "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. ",
+          "description": "Specifies the principals requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. ",
           "type": "array",
           "format": null,
           "enum": [],
@@ -372,7 +374,7 @@
           }
         },
         "role": {
-          "description": "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`.",
+          "description": "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -393,6 +395,28 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "CryptoKeyConfig": {
+      "id": "CryptoKeyConfig",
+      "description": "The crypto key configuration. This field is used by the Customer-managed encryption keys (CMEK) feature.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "keyReference": {
+          "description": "The name of the key which is used to encrypt/decrypt customer data. For key in Cloud KMS, the key should be in the format of `projects/*/locations/*/keyRings/*/cryptoKeys/*`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
       "additionalProperties": null,
       "items": null
     },
@@ -511,6 +535,10 @@
           "additionalProperties": null,
           "items": null
         },
+        "cryptoKeyConfig": {
+          "description": "The crypto key configuration. This field is used by the Customer-Managed Encryption Keys (CMEK) feature.",
+          "$ref": "CryptoKeyConfig"
+        },
         "dataprocServiceAccount": {
           "description": "User-managed service account to set on Dataproc when Cloud Data Fusion creates Dataproc to run data processing pipelines. This allows users to have fine-grained access control on Dataproc's accesses to cloud resources.",
           "type": "string",
@@ -531,9 +559,43 @@
           "additionalProperties": null,
           "items": null
         },
+        "disabledReason": {
+          "description": "Output only. If the instance state is DISABLED, the reason for disabling the instance.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [
+              "DISABLED_REASON_UNSPECIFIED",
+              "KMS_KEY_ISSUE"
+            ],
+            "enumDescriptions": [
+              "This is an unknown reason for disabling.",
+              "The KMS key used by the instance is either revoked or denied access to"
+            ],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
         "displayName": {
           "description": "Display name for an instance.",
           "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "enableRbac": {
+          "description": "Option to enable granular role-based access control.",
+          "type": "boolean",
           "format": null,
           "enum": [],
           "enumDescriptions": [],
@@ -572,7 +634,7 @@
           "items": null
         },
         "labels": {
-          "description": "The resource labels for instance to use to annotate any related underlying resources such as GCE VMs. The character '=' is not allowed to be used within the labels.",
+          "description": "The resource labels for instance to use to annotate any related underlying resources such as Compute Engine VMs. The character '=' is not allowed to be used within the labels.",
           "type": "object",
           "format": null,
           "enum": [],
@@ -677,7 +739,8 @@
             "RESTARTING",
             "UPDATING",
             "AUTO_UPDATING",
-            "AUTO_UPGRADING"
+            "AUTO_UPGRADING",
+            "DISABLED"
           ],
           "enumDescriptions": [
             "Instance does not have a state yet",
@@ -689,7 +752,8 @@
             "Instance is being restarted",
             "Instance is being updated on customer request",
             "Instance is being auto-updated",
-            "Instance is being auto-upgraded"
+            "Instance is being auto-upgraded",
+            "Instance is disabled"
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1118,7 +1182,7 @@
       "enumDescriptions": [],
       "properties": {
         "additionalStatus": {
-          "description": "Map to hold any additonal status info for the operation If there is an accelerator being enabled/disabled/deleted, this will be populated with accelerator name as key and status as ENABLING, DISABLING or DELETING",
+          "description": "Map to hold any additional status info for the operation If there is an accelerator being enabled/disabled/deleted, this will be populated with accelerator name as key and status as ENABLING, DISABLING or DELETING",
           "type": "object",
           "format": null,
           "enum": [],
@@ -1212,7 +1276,7 @@
     },
     "Policy": {
       "id": "Policy",
-      "description": "An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members` to a single `role`. Members can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [ \"user:eve@example.com\" ], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01T00:00:00.000Z')\", } } ], \"etag\": \"BwWWja0YfJA=\", \"version\": 3 } **YAML example:** bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') - etag: BwWWja0YfJA= - version: 3 For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).",
+      "description": "An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [ \"user:eve@example.com\" ], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01T00:00:00.000Z')\", } } ], \"etag\": \"BwWWja0YfJA=\", \"version\": 3 } **YAML example:** bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1231,7 +1295,7 @@
           }
         },
         "bindings": {
-          "description": "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.",
+          "description": "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1458,6 +1522,24 @@
           "additionalProperties": null,
           "items": null
         },
+        "type": {
+          "description": "Type represents the release availability of the version",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "TYPE_UNSPECIFIED",
+            "TYPE_PREVIEW",
+            "TYPE_GENERAL_AVAILABILITY"
+          ],
+          "enumDescriptions": [
+            "Version does not have availability yet",
+            "Version is under development and not considered stable",
+            "Version is available for public use"
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "versionNumber": {
           "description": "The version number of the Data Fusion instance, such as '6.0.1.0'.",
           "type": "string",
@@ -1488,7 +1570,7 @@
                   "description": "Creates a new Data Fusion instance in the specified project and location.",
                   "parameters": {
                     "instanceId": {
-                      "description": "The name of the instance to create.",
+                      "description": "Required. The name of the instance to create.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -1502,7 +1584,7 @@
                       "repeated": false
                     },
                     "parent": {
-                      "description": "The instance's project and location in the format projects/{project}/locations/{location}.",
+                      "description": "Required. The instance's project and location in the format projects/{project}/locations/{location}.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -1541,7 +1623,7 @@
                   "description": "Deletes a single Date Fusion instance.",
                   "parameters": {
                     "name": {
-                      "description": "The instance resource name in the format projects/{project}/locations/{location}/instances/{instance}",
+                      "description": "Required. The instance resource name in the format projects/{project}/locations/{location}/instances/{instance}",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -1578,7 +1660,7 @@
                   "description": "Gets details of a single Data Fusion instance.",
                   "parameters": {
                     "name": {
-                      "description": "The instance resource name in the format projects/{project}/locations/{location}/instances/{instance}.",
+                      "description": "Required. The instance resource name in the format projects/{project}/locations/{location}/instances/{instance}.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -1615,7 +1697,7 @@
                   "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
                   "parameters": {
                     "options.requestedPolicyVersion": {
-                      "description": "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+                      "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -1722,7 +1804,7 @@
                       "repeated": false
                     },
                     "parent": {
-                      "description": "The project and location for which to retrieve instance information in the format projects/{project}/locations/{location}. If the location is specified as '-' (wildcard), then all regions available to the project are queried, and the results are aggregated.",
+                      "description": "Required. The project and location for which to retrieve instance information in the format projects/{project}/locations/{location}. If the location is specified as '-' (wildcard), then all regions available to the project are queried, and the results are aggregated.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -1773,7 +1855,7 @@
                       "repeated": false
                     },
                     "updateMask": {
-                      "description": "Field mask is used to specify the fields that the update will overwrite in an instance resource. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it is in the mask. If the user does not provide a mask, all the supported fields (labels, options, and version currently) will be overwritten.",
+                      "description": "Field mask is used to specify the fields that the update will overwrite in an instance resource. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it is in the mask. If the user does not provide a mask, the label field will be overwritten.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -1812,7 +1894,7 @@
                   "description": "Restart a single Data Fusion instance. At the end of an operation instance is fully restarted.",
                   "parameters": {
                     "name": {
-                      "description": "Name of the Data Fusion instance which need to be restarted in the form of projects/{project}/locations/{location}/instances/{instance}",
+                      "description": "Required. Name of the Data Fusion instance which need to be restarted in the form of projects/{project}/locations/{location}/instances/{instance}",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -2293,7 +2375,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "The maximum number of results to return. If not set, the service will select a default.",
+                  "description": "The maximum number of results to return. If not set, the service selects a default.",
                   "default": null,
                   "location": "query",
                   "required": false,

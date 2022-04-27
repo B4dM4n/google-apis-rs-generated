@@ -7,7 +7,7 @@
   "canonicalName": "Firestore",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20210220",
+  "revision": "20220407",
   "title": "Cloud Firestore API",
   "description": "Accesses the NoSQL document database built for automatic scaling, high performance, and ease of application development. ",
   "ownerDomain": "google.com",
@@ -201,7 +201,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         },
         "https://www.googleapis.com/auth/datastore": {
           "description": "View and manage your Google Cloud Datastore data"
@@ -210,6 +210,57 @@
     }
   },
   "schemas": {
+    "Aggregation": {
+      "id": "Aggregation",
+      "description": "Defines a aggregation that produces a single result.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "alias": {
+          "description": "Required. The name of the field to store the result of the aggregation into. Requires: * Must be present. * Must be unique across all aggregation aliases. * Conform to existing document field name limitations.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "count": {
+          "description": "Count aggregator.",
+          "$ref": "Count"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "AggregationResult": {
+      "id": "AggregationResult",
+      "description": "The result of a single bucket from a Firestore aggregation query. The keys of `aggregate_fields` are the same for all results in an aggregation query, unlike document queries which can have different fields present for each result.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "aggregateFields": {
+          "description": "The result of the aggregation functions, ex: `COUNT(*) AS total_docs`. The key is the alias assigned to the aggregation function on input and the size of this map equals the number of aggregation functions in the query.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "$ref": "Value"
+          },
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "ArrayValue": {
       "id": "ArrayValue",
       "description": "An array value.",
@@ -564,7 +615,7 @@
       "enumDescriptions": [],
       "properties": {
         "filters": {
-          "description": "The list of filters to combine. Must contain at least one filter.",
+          "description": "The list of filters to combine. Requires: * At least one filter is present.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -585,8 +636,30 @@
           ],
           "enumDescriptions": [
             "Unspecified. This value must not be used.",
-            "The results are required to satisfy each of the combined filters."
+            "Documents are required to satisfy all of the combined filters."
           ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Count": {
+      "id": "Count",
+      "description": "Count of documents that match the query. The `COUNT(*)` aggregation function operates on the entire document so it does not require a field reference.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "upTo": {
+          "description": "Optional. Optional constraint on the maximum number of documents to count. This provides a way to set an upper bound on the number of documents to scan, limiting latency and cost. High-Level Example: ``` SELECT COUNT_UP_TO(1000) FROM ( SELECT * FROM k ); ``` Requires: * Must be greater than zero when present.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -932,7 +1005,7 @@
     },
     "Empty": {
       "id": "Empty",
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
+      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1126,6 +1199,114 @@
         "unaryFilter": {
           "description": "A filter that takes exactly one argument.",
           "$ref": "UnaryFilter"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleFirestoreAdminV1Database": {
+      "id": "GoogleFirestoreAdminV1Database",
+      "description": "A Cloud Firestore Database. Currently only one database is allowed per cloud project; this database must have a `database_id` of '(default)'.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "appEngineIntegrationMode": {
+          "description": "The App Engine integration mode to use for this database.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "APP_ENGINE_INTEGRATION_MODE_UNSPECIFIED",
+            "ENABLED",
+            "DISABLED"
+          ],
+          "enumDescriptions": [
+            "Not used.",
+            "If an App Engine application exists in the same region as this database, App Engine configuration will impact this database. This includes disabling of the application & database, as well as disabling writes to the database.",
+            "Appengine has no affect on the ability of this database to serve requests."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "concurrencyMode": {
+          "description": "The concurrency control mode to use for this database.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "CONCURRENCY_MODE_UNSPECIFIED",
+            "OPTIMISTIC",
+            "PESSIMISTIC",
+            "OPTIMISTIC_WITH_ENTITY_GROUPS"
+          ],
+          "enumDescriptions": [
+            "Not used.",
+            "Use optimistic concurrency control by default. This mode is available for Cloud Firestore databases.",
+            "Use pessimistic concurrency control by default. This mode is available for Cloud Firestore databases. This is the default setting for Cloud Firestore.",
+            "Use optimistic concurrency control with entity groups by default. This is the only available mode for Cloud Datastore. This mode is also available for Cloud Firestore with Datastore Mode but is not recommended."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "etag": {
+          "description": "This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "keyPrefix": {
+          "description": "Output only. The key_prefix for this database. This key_prefix is used, in combination with the project id (\"~\") to construct the application id that is returned from the Cloud Datastore APIs in Google App Engine first generation runtimes. This value may be empty in which case the appid to use for URL-encoded keys is the project_id (eg: foo instead of v~foo).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "locationId": {
+          "description": "The location of the database. Available databases are listed at https://cloud.google.com/firestore/docs/locations.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "The resource name of the Database. Format: `projects/{project}/databases/{database}`",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "type": {
+          "description": "The type of the database. See https://cloud.google.com/datastore/docs/firestore-or-datastore for information about how to choose.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "DATABASE_TYPE_UNSPECIFIED",
+            "FIRESTORE_NATIVE",
+            "DATASTORE_MODE"
+          ],
+          "enumDescriptions": [
+            "The default value. This value is used if the database type is omitted.",
+            "Firestore Native Mode",
+            "Firestore in Datastore Mode."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -1835,6 +2016,30 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleFirestoreAdminV1ListDatabasesResponse": {
+      "id": "GoogleFirestoreAdminV1ListDatabasesResponse",
+      "description": "The list of databases for a project.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "databases": {
+          "description": "The databases in the project.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleFirestoreAdminV1Database"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleFirestoreAdminV1ListFieldsResponse": {
       "id": "GoogleFirestoreAdminV1ListFieldsResponse",
       "description": "The response for FirestoreAdmin.ListFields.",
@@ -1943,6 +2148,17 @@
           "items": null
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleFirestoreAdminV1UpdateDatabaseMetadata": {
+      "id": "GoogleFirestoreAdminV1UpdateDatabaseMetadata",
+      "description": "Metadata related to the update database operation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -2067,7 +2283,7 @@
     },
     "LatLng": {
       "id": "LatLng",
-      "description": "An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this must conform to the WGS84 standard. Values must be within normalized ranges.",
+      "description": "An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -2552,7 +2768,7 @@
           "items": null
         },
         "updateTime": {
-          "description": "When set, the target document must exist and have been last updated at that time.",
+          "description": "When set, the target document must exist and have been last updated at that time. Timestamp must be microsecond aligned.",
           "type": "string",
           "format": "google-datetime",
           "enum": [],
@@ -2681,6 +2897,82 @@
       "additionalProperties": null,
       "items": null
     },
+    "RunAggregationQueryRequest": {
+      "id": "RunAggregationQueryRequest",
+      "description": "The request for Firestore.RunAggregationQuery.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "newTransaction": {
+          "description": "Starts a new transaction as part of the query, defaulting to read-only. The new transaction ID will be returned as the first response in the stream.",
+          "$ref": "TransactionOptions"
+        },
+        "readTime": {
+          "description": "Executes the query at the given timestamp. Requires: * Cannot be more than 270 seconds in the past.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "structuredAggregationQuery": {
+          "description": "An aggregation query.",
+          "$ref": "StructuredAggregationQuery"
+        },
+        "transaction": {
+          "description": "Run the aggregation within an already active transaction. The value here is the opaque transaction ID to execute the query in.",
+          "type": "string",
+          "format": "byte",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RunAggregationQueryResponse": {
+      "id": "RunAggregationQueryResponse",
+      "description": "The response for Firestore.RunAggregationQuery.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "readTime": {
+          "description": "The time at which the aggregate value is valid for.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "result": {
+          "description": "A single aggregation result. Not present when reporting partial progress or when the query produced zero results.",
+          "$ref": "AggregationResult"
+        },
+        "transaction": {
+          "description": "The transaction that was started as part of this request. Only present on the first response when the request requested to start a new transaction.",
+          "type": "string",
+          "format": "byte",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "RunQueryRequest": {
       "id": "RunQueryRequest",
       "description": "The request for Firestore.RunQuery.",
@@ -2708,7 +3000,7 @@
           "$ref": "StructuredQuery"
         },
         "transaction": {
-          "description": "Reads documents in a transaction.",
+          "description": "Run the query within an already active transaction. The value here is the opaque transaction ID to execute the query in.",
           "type": "string",
           "format": "byte",
           "enum": [],
@@ -2730,7 +3022,7 @@
       "enumDescriptions": [],
       "properties": {
         "document": {
-          "description": "A query result. Not set when reporting partial progress.",
+          "description": "A query result, not set when reporting partial progress.",
           "$ref": "Document"
         },
         "readTime": {
@@ -2821,6 +3113,34 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "StructuredAggregationQuery": {
+      "id": "StructuredAggregationQuery",
+      "description": "Firestore query for running an aggregation over a StructuredQuery.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "aggregations": {
+          "description": "Optional. Series of aggregations to apply on top of the `structured_query`.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Aggregation"
+          }
+        },
+        "structuredQuery": {
+          "description": "Nested structured query.",
+          "$ref": "StructuredQuery"
         }
       },
       "additionalProperties": null,
@@ -3454,10 +3774,10 @@
                       "id": "firestore.projects.databases.collectionGroups.fields.list",
                       "path": "v1/{+parent}/fields",
                       "httpMethod": "GET",
-                      "description": "Lists the field configuration and metadata for this database. Currently, FirestoreAdmin.ListFields only supports listing fields that have been explicitly overridden. To issue this query, call FirestoreAdmin.ListFields with the filter set to `indexConfig.usesAncestorConfig:false`.",
+                      "description": "Lists the field configuration and metadata for this database. Currently, FirestoreAdmin.ListFields only supports listing fields that have been explicitly overridden. To issue this query, call FirestoreAdmin.ListFields with the filter set to `indexConfig.usesAncestorConfig:false` .",
                       "parameters": {
                         "filter": {
-                          "description": "The filter to apply to list results. Currently, FirestoreAdmin.ListFields only supports listing fields that have been explicitly overridden. To issue this query, call FirestoreAdmin.ListFields with the filter set to `indexConfig.usesAncestorConfig:false`.",
+                          "description": "The filter to apply to list results. Currently, FirestoreAdmin.ListFields only supports listing fields that have been explicitly overridden. To issue this query, call FirestoreAdmin.ListFields with a filter that includes `indexConfig.usesAncestorConfig:false` .",
                           "default": null,
                           "location": "query",
                           "required": false,
@@ -4057,7 +4377,7 @@
                       "repeated": false
                     },
                     "currentDocument.updateTime": {
-                      "description": "When set, the target document must exist and have been last updated at that time.",
+                      "description": "When set, the target document must exist and have been last updated at that time. Timestamp must be microsecond aligned.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -4373,6 +4693,157 @@
                   "supportsMediaUpload": false,
                   "mediaUpload": null
                 },
+                "listDocuments": {
+                  "id": "firestore.projects.databases.documents.listDocuments",
+                  "path": "v1/{+parent}/{collectionId}",
+                  "httpMethod": "GET",
+                  "description": "Lists documents.",
+                  "parameters": {
+                    "collectionId": {
+                      "description": "Required. The collection ID, relative to `parent`, to list. For example: `chatrooms` or `messages`.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "mask.fieldPaths": {
+                      "description": "The list of field paths in the mask. See Document.fields for a field path syntax reference.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": true
+                    },
+                    "orderBy": {
+                      "description": "The order to sort results by. For example: `priority desc, name`.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageSize": {
+                      "description": "The maximum number of documents to return.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "integer",
+                      "format": "int32",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageToken": {
+                      "description": "The `next_page_token` value returned from a previous List request, if any.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "parent": {
+                      "description": "Required. The parent resource name. In the format: `projects/{project_id}/databases/{database_id}/documents` or `projects/{project_id}/databases/{database_id}/documents/{document_path}`. For example: `projects/my-project/databases/my-database/documents` or `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/databases/[^/]+/documents$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "readTime": {
+                      "description": "Reads documents as they were at the given time. This may not be older than 270 seconds.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": "google-datetime",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "showMissing": {
+                      "description": "If the list should show missing documents. A missing document is a document that does not exist but has sub-documents. These documents will be returned with a key but will not have fields, Document.create_time, or Document.update_time set. Requests with `show_missing` may not specify `where` or `order_by`.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "boolean",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "transaction": {
+                      "description": "Reads documents in a transaction.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": "byte",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent",
+                    "collectionId"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "ListDocumentsResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform",
+                    "https://www.googleapis.com/auth/datastore"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
                 "listen": {
                   "id": "firestore.projects.databases.documents.listen",
                   "path": "v1/{+database}/documents:listen",
@@ -4474,7 +4945,7 @@
                       "repeated": false
                     },
                     "currentDocument.updateTime": {
-                      "description": "When set, the target document must exist and have been last updated at that time.",
+                      "description": "When set, the target document must exist and have been last updated at that time. Timestamp must be microsecond aligned.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -4578,6 +5049,46 @@
                   },
                   "response": {
                     "$ref": "Empty"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform",
+                    "https://www.googleapis.com/auth/datastore"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "runAggregationQuery": {
+                  "id": "firestore.projects.databases.documents.runAggregationQuery",
+                  "path": "v1/{+parent}:runAggregationQuery",
+                  "httpMethod": "POST",
+                  "description": "Runs an aggregation query. Rather than producing Document results like Firestore.RunQuery, this API allows running an aggregation to produce a series of AggregationResult server-side. High-Level Example: ``` -- Return the number of documents in table given a filter. SELECT COUNT(*) FROM ( SELECT * FROM k where a = true ); ```",
+                  "parameters": {
+                    "parent": {
+                      "description": "Required. The parent resource name. In the format: `projects/{project_id}/databases/{database_id}/documents` or `projects/{project_id}/databases/{database_id}/documents/{document_path}`. For example: `projects/my-project/databases/my-database/documents` or `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/databases/[^/]+/documents/[^/]+/.*$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": {
+                    "$ref": "RunAggregationQueryRequest"
+                  },
+                  "response": {
+                    "$ref": "RunAggregationQueryResponse"
                   },
                   "scopes": [
                     "https://www.googleapis.com/auth/cloud-platform",
@@ -4878,7 +5389,7 @@
               "id": "firestore.projects.databases.exportDocuments",
               "path": "v1/{+name}:exportDocuments",
               "httpMethod": "POST",
-              "description": "Exports a copy of all or a subset of documents from Google Cloud Firestore to another storage system, such as Google Cloud Storage. Recent updates to documents may not be reflected in the export. The export occurs in the background and its progress can be monitored and managed via the Operation resource that is created. The output of an export may only be used once the associated operation is done. If an export operation is cancelled before completion it may leave partial data behind in Google Cloud Storage.",
+              "description": "Exports a copy of all or a subset of documents from Google Cloud Firestore to another storage system, such as Google Cloud Storage. Recent updates to documents may not be reflected in the export. The export occurs in the background and its progress can be monitored and managed via the Operation resource that is created. The output of an export may only be used once the associated operation is done. If an export operation is cancelled before completion it may leave partial data behind in Google Cloud Storage. For more details on export behavior and output format, refer to: https://cloud.google.com/firestore/docs/manage-data/export-import",
               "parameters": {
                 "name": {
                   "description": "Required. Database to export. Should be of the form: `projects/{project_id}/databases/{database_id}`.",
@@ -4903,6 +5414,44 @@
               },
               "response": {
                 "$ref": "GoogleLongrunningOperation"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform",
+                "https://www.googleapis.com/auth/datastore"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "get": {
+              "id": "firestore.projects.databases.get",
+              "path": "v1/{+name}",
+              "httpMethod": "GET",
+              "description": "Gets information about a database.",
+              "parameters": {
+                "name": {
+                  "description": "Required. A name of the form `projects/{project_id}/databases/{database_id}`",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^projects/[^/]+/databases/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "name"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "GoogleFirestoreAdminV1Database"
               },
               "scopes": [
                 "https://www.googleapis.com/auth/cloud-platform",
@@ -4940,6 +5489,98 @@
               ],
               "request": {
                 "$ref": "GoogleFirestoreAdminV1ImportDocumentsRequest"
+              },
+              "response": {
+                "$ref": "GoogleLongrunningOperation"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform",
+                "https://www.googleapis.com/auth/datastore"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "list": {
+              "id": "firestore.projects.databases.list",
+              "path": "v1/{+parent}/databases",
+              "httpMethod": "GET",
+              "description": "List all the databases in the project.",
+              "parameters": {
+                "parent": {
+                  "description": "Required. A parent name of the form `projects/{project_id}`",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^projects/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "parent"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "GoogleFirestoreAdminV1ListDatabasesResponse"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform",
+                "https://www.googleapis.com/auth/datastore"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "patch": {
+              "id": "firestore.projects.databases.patch",
+              "path": "v1/{+name}",
+              "httpMethod": "PATCH",
+              "description": "Updates a database.",
+              "parameters": {
+                "name": {
+                  "description": "The resource name of the Database. Format: `projects/{project}/databases/{database}`",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^projects/[^/]+/databases/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "updateMask": {
+                  "description": "The list of fields to be updated.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": "google-fieldmask",
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "name"
+              ],
+              "request": {
+                "$ref": "GoogleFirestoreAdminV1Database"
               },
               "response": {
                 "$ref": "GoogleLongrunningOperation"
@@ -5004,7 +5645,7 @@
               "description": "Lists information about the supported locations for this service.",
               "parameters": {
                 "filter": {
-                  "description": "The standard list filter.",
+                  "description": "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -5032,7 +5673,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "The standard list page size.",
+                  "description": "The maximum number of results to return. If not set, the service selects a default.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -5046,7 +5687,7 @@
                   "repeated": false
                 },
                 "pageToken": {
-                  "description": "The standard list page token.",
+                  "description": "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.",
                   "default": null,
                   "location": "query",
                   "required": false,

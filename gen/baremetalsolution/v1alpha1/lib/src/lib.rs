@@ -1,0 +1,2280 @@
+#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*submitProvisioningConfig*](resources/projects/locations/struct.SubmitProvisioningConfigRequestBuilder.html)\n      * [provisioning_quotas](resources/projects/provisioning_quotas/struct.ProvisioningQuotasActions.html)\n        * [*list*](resources/projects/provisioning_quotas/struct.ListRequestBuilder.html)\n"]
+pub mod scopes {
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
+}
+pub mod schemas {
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct InstanceConfig {
+        #[doc = "Client network address."]
+        #[serde(
+            rename = "clientNetwork",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub client_network: ::std::option::Option<crate::schemas::NetworkAddress>,
+        #[doc = "Whether the instance should be provisioned with Hyperthreading enabled."]
+        #[serde(
+            rename = "hyperthreading",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub hyperthreading: ::std::option::Option<bool>,
+        #[doc = "A transient unique identifier to idenfity an instance within an ProvisioningConfig request."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "Instance type."]
+        #[serde(
+            rename = "instanceType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub instance_type: ::std::option::Option<String>,
+        #[doc = "Location where to deploy the instance."]
+        #[serde(
+            rename = "location",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub location: ::std::option::Option<String>,
+        #[doc = "OS image to initialize the instance."]
+        #[serde(
+            rename = "osImage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub os_image: ::std::option::Option<String>,
+        #[doc = "Private network address, if any."]
+        #[serde(
+            rename = "privateNetwork",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub private_network: ::std::option::Option<crate::schemas::NetworkAddress>,
+        #[doc = "User note field, it can be used by customers to add additional information for the BMS Ops team (b/194021617)."]
+        #[serde(
+            rename = "userNote",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_note: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for InstanceConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for InstanceConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct InstanceQuota {
+        #[doc = "Number of machines than can be created for the given location and instance_type."]
+        #[serde(
+            rename = "availableMachineCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub available_machine_count: ::std::option::Option<i32>,
+        #[doc = "Instance type."]
+        #[serde(
+            rename = "instanceType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub instance_type: ::std::option::Option<String>,
+        #[doc = "Location where the quota applies."]
+        #[serde(
+            rename = "location",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub location: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for InstanceQuota {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for InstanceQuota {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ListProvisioningQuotasResponse {
+        #[doc = "Token to retrieve the next page of results, or empty if there are no more results in the list."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+        #[doc = "The provisioning quotas registered in this project."]
+        #[serde(
+            rename = "provisioningQuotas",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub provisioning_quotas: ::std::option::Option<Vec<crate::schemas::ProvisioningQuota>>,
+    }
+    impl ::google_field_selector::FieldSelector for ListProvisioningQuotasResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ListProvisioningQuotasResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct LunRange {
+        #[doc = "Number of LUNs to create."]
+        #[serde(
+            rename = "quantity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub quantity: ::std::option::Option<i32>,
+        #[doc = "The requested size of each LUN, in GB."]
+        #[serde(
+            rename = "sizeGb",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub size_gb: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for LunRange {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LunRange {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct NetworkAddress {
+        #[doc = "IP address to be assigned to the server."]
+        #[serde(
+            rename = "address",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub address: ::std::option::Option<String>,
+        #[doc = "Name of the existing network to use. Will be of the format at--vlan for pre-intake UI networks like for eg, at-123456-vlan001 or any user-defined name like for eg, my-network-name for networks provisioned using intake UI. The field is exclusively filled only in case of an already existing network. Mutually exclusive with network_id."]
+        #[serde(
+            rename = "existingNetworkId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub existing_network_id: ::std::option::Option<String>,
+        #[doc = "Name of the network to use, within the same ProvisioningConfig request. This represents a new network being provisioned in the same request. Can have any user-defined name like for eg, my-network-name. Mutually exclusive with existing_network_id."]
+        #[serde(
+            rename = "networkId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub network_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for NetworkAddress {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NetworkAddress {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct NetworkConfig {
+        #[doc = "Interconnect bandwidth. Set only when type is CLIENT."]
+        #[serde(
+            rename = "bandwidth",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bandwidth: ::std::option::Option<crate::schemas::NetworkConfigBandwidth>,
+        #[doc = "CIDR range of the network."]
+        #[serde(
+            rename = "cidr",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cidr: ::std::option::Option<String>,
+        #[doc = "A transient unique identifier to identify a volume within an ProvisioningConfig request."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "Location where to deploy the network."]
+        #[serde(
+            rename = "location",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub location: ::std::option::Option<String>,
+        #[doc = "The type of this network."]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<crate::schemas::NetworkConfigType>,
+        #[doc = "Service CIDR, if any."]
+        #[serde(
+            rename = "serviceCidr",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub service_cidr: ::std::option::Option<crate::schemas::NetworkConfigServiceCidr>,
+        #[doc = "User note field, it can be used by customers to add additional information for the BMS Ops team (b/194021617)."]
+        #[serde(
+            rename = "userNote",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_note: ::std::option::Option<String>,
+        #[doc = "List of VLAN attachments. As of now there are always 2 attachments, but it is going to change in the future (multi vlan)."]
+        #[serde(
+            rename = "vlanAttachments",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub vlan_attachments: ::std::option::Option<Vec<crate::schemas::VlanAttachment>>,
+    }
+    impl ::google_field_selector::FieldSelector for NetworkConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NetworkConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum NetworkConfigBandwidth {
+        #[doc = "Unspecified value."]
+        BandwidthUnspecified,
+        #[doc = "10 Gbps."]
+        Bw10Gbps,
+        #[doc = "1 Gbps."]
+        Bw1Gbps,
+        #[doc = "2 Gbps."]
+        Bw2Gbps,
+        #[doc = "5 Gbps."]
+        Bw5Gbps,
+    }
+    impl NetworkConfigBandwidth {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                NetworkConfigBandwidth::BandwidthUnspecified => "BANDWIDTH_UNSPECIFIED",
+                NetworkConfigBandwidth::Bw10Gbps => "BW_10_GBPS",
+                NetworkConfigBandwidth::Bw1Gbps => "BW_1_GBPS",
+                NetworkConfigBandwidth::Bw2Gbps => "BW_2_GBPS",
+                NetworkConfigBandwidth::Bw5Gbps => "BW_5_GBPS",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for NetworkConfigBandwidth {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for NetworkConfigBandwidth {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<NetworkConfigBandwidth, ()> {
+            Ok(match s {
+                "BANDWIDTH_UNSPECIFIED" => NetworkConfigBandwidth::BandwidthUnspecified,
+                "BW_10_GBPS" => NetworkConfigBandwidth::Bw10Gbps,
+                "BW_1_GBPS" => NetworkConfigBandwidth::Bw1Gbps,
+                "BW_2_GBPS" => NetworkConfigBandwidth::Bw2Gbps,
+                "BW_5_GBPS" => NetworkConfigBandwidth::Bw5Gbps,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for NetworkConfigBandwidth {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for NetworkConfigBandwidth {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for NetworkConfigBandwidth {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "BANDWIDTH_UNSPECIFIED" => NetworkConfigBandwidth::BandwidthUnspecified,
+                "BW_10_GBPS" => NetworkConfigBandwidth::Bw10Gbps,
+                "BW_1_GBPS" => NetworkConfigBandwidth::Bw1Gbps,
+                "BW_2_GBPS" => NetworkConfigBandwidth::Bw2Gbps,
+                "BW_5_GBPS" => NetworkConfigBandwidth::Bw5Gbps,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for NetworkConfigBandwidth {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NetworkConfigBandwidth {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum NetworkConfigType {
+        #[doc = "Client network, that is a network peered to a GCP VPC."]
+        Client,
+        #[doc = "Private network, that is a network local to the BMS POD."]
+        Private,
+        #[doc = "Unspecified value."]
+        TypeUnspecified,
+    }
+    impl NetworkConfigType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                NetworkConfigType::Client => "CLIENT",
+                NetworkConfigType::Private => "PRIVATE",
+                NetworkConfigType::TypeUnspecified => "TYPE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for NetworkConfigType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for NetworkConfigType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<NetworkConfigType, ()> {
+            Ok(match s {
+                "CLIENT" => NetworkConfigType::Client,
+                "PRIVATE" => NetworkConfigType::Private,
+                "TYPE_UNSPECIFIED" => NetworkConfigType::TypeUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for NetworkConfigType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for NetworkConfigType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for NetworkConfigType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CLIENT" => NetworkConfigType::Client,
+                "PRIVATE" => NetworkConfigType::Private,
+                "TYPE_UNSPECIFIED" => NetworkConfigType::TypeUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for NetworkConfigType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NetworkConfigType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum NetworkConfigServiceCidr {
+        #[doc = "Services are disabled for the given network."]
+        Disabled,
+        #[doc = "Use the highest /26 block of the network to host services."]
+        High26,
+        #[doc = "Use the highest /27 block of the network to host services."]
+        High27,
+        #[doc = "Use the highest /28 block of the network to host services."]
+        High28,
+        #[doc = "Unspecified value."]
+        ServiceCidrUnspecified,
+    }
+    impl NetworkConfigServiceCidr {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                NetworkConfigServiceCidr::Disabled => "DISABLED",
+                NetworkConfigServiceCidr::High26 => "HIGH_26",
+                NetworkConfigServiceCidr::High27 => "HIGH_27",
+                NetworkConfigServiceCidr::High28 => "HIGH_28",
+                NetworkConfigServiceCidr::ServiceCidrUnspecified => "SERVICE_CIDR_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for NetworkConfigServiceCidr {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for NetworkConfigServiceCidr {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<NetworkConfigServiceCidr, ()> {
+            Ok(match s {
+                "DISABLED" => NetworkConfigServiceCidr::Disabled,
+                "HIGH_26" => NetworkConfigServiceCidr::High26,
+                "HIGH_27" => NetworkConfigServiceCidr::High27,
+                "HIGH_28" => NetworkConfigServiceCidr::High28,
+                "SERVICE_CIDR_UNSPECIFIED" => NetworkConfigServiceCidr::ServiceCidrUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for NetworkConfigServiceCidr {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for NetworkConfigServiceCidr {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for NetworkConfigServiceCidr {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DISABLED" => NetworkConfigServiceCidr::Disabled,
+                "HIGH_26" => NetworkConfigServiceCidr::High26,
+                "HIGH_27" => NetworkConfigServiceCidr::High27,
+                "HIGH_28" => NetworkConfigServiceCidr::High28,
+                "SERVICE_CIDR_UNSPECIFIED" => NetworkConfigServiceCidr::ServiceCidrUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for NetworkConfigServiceCidr {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NetworkConfigServiceCidr {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct NfsExport {
+        #[doc = "Allow dev."]
+        #[serde(
+            rename = "allowDev",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allow_dev: ::std::option::Option<bool>,
+        #[doc = "Allow the setuid flag."]
+        #[serde(
+            rename = "allowSuid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allow_suid: ::std::option::Option<bool>,
+        #[doc = "A CIDR range."]
+        #[serde(
+            rename = "cidr",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cidr: ::std::option::Option<String>,
+        #[doc = "Either a single machine, identified by an ID, or a comma-separated list of machine IDs."]
+        #[serde(
+            rename = "machineId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub machine_id: ::std::option::Option<String>,
+        #[doc = "Network to use to publish the export."]
+        #[serde(
+            rename = "networkId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub network_id: ::std::option::Option<String>,
+        #[doc = "Disable root squashing."]
+        #[serde(
+            rename = "noRootSquash",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub no_root_squash: ::std::option::Option<bool>,
+        #[doc = "Export permissions."]
+        #[serde(
+            rename = "permissions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub permissions: ::std::option::Option<crate::schemas::NfsExportPermissions>,
+    }
+    impl ::google_field_selector::FieldSelector for NfsExport {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NfsExport {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum NfsExportPermissions {
+        #[doc = "Unspecified value."]
+        PermissionsUnspecified,
+        #[doc = "Read-only permission."]
+        ReadOnly,
+        #[doc = "Read-write permission."]
+        ReadWrite,
+    }
+    impl NfsExportPermissions {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                NfsExportPermissions::PermissionsUnspecified => "PERMISSIONS_UNSPECIFIED",
+                NfsExportPermissions::ReadOnly => "READ_ONLY",
+                NfsExportPermissions::ReadWrite => "READ_WRITE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for NfsExportPermissions {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for NfsExportPermissions {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<NfsExportPermissions, ()> {
+            Ok(match s {
+                "PERMISSIONS_UNSPECIFIED" => NfsExportPermissions::PermissionsUnspecified,
+                "READ_ONLY" => NfsExportPermissions::ReadOnly,
+                "READ_WRITE" => NfsExportPermissions::ReadWrite,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for NfsExportPermissions {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for NfsExportPermissions {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for NfsExportPermissions {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "PERMISSIONS_UNSPECIFIED" => NfsExportPermissions::PermissionsUnspecified,
+                "READ_ONLY" => NfsExportPermissions::ReadOnly,
+                "READ_WRITE" => NfsExportPermissions::ReadWrite,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for NfsExportPermissions {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NfsExportPermissions {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ProvisioningConfig {
+        #[doc = "Instances to be created."]
+        #[serde(
+            rename = "instances",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub instances: ::std::option::Option<Vec<crate::schemas::InstanceConfig>>,
+        #[doc = "Networks to be created."]
+        #[serde(
+            rename = "networks",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub networks: ::std::option::Option<Vec<crate::schemas::NetworkConfig>>,
+        #[doc = "A reference to track the request."]
+        #[serde(
+            rename = "ticketId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ticket_id: ::std::option::Option<String>,
+        #[doc = "Volumes to be created."]
+        #[serde(
+            rename = "volumes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub volumes: ::std::option::Option<Vec<crate::schemas::VolumeConfig>>,
+    }
+    impl ::google_field_selector::FieldSelector for ProvisioningConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProvisioningConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ProvisioningQuota {
+        #[doc = "Instance quota."]
+        #[serde(
+            rename = "instanceQuota",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub instance_quota: ::std::option::Option<crate::schemas::InstanceQuota>,
+    }
+    impl ::google_field_selector::FieldSelector for ProvisioningQuota {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProvisioningQuota {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SubmitProvisioningConfigRequest {
+        #[doc = "Optional. Email provided to send a confirmation with provisioning config to."]
+        #[serde(
+            rename = "email",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub email: ::std::option::Option<String>,
+        #[doc = "Required. The ProvisioningConfig to submit."]
+        #[serde(
+            rename = "provisioningConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub provisioning_config: ::std::option::Option<crate::schemas::ProvisioningConfig>,
+    }
+    impl ::google_field_selector::FieldSelector for SubmitProvisioningConfigRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SubmitProvisioningConfigRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct VlanAttachment {
+        #[doc = "Identifier of the VLAN attachment."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "Attachment pairing key."]
+        #[serde(
+            rename = "pairingKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pairing_key: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for VlanAttachment {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for VlanAttachment {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct VolumeConfig {
+        #[doc = "A transient unique identifier to identify a volume within an ProvisioningConfig request."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "Location where to deploy the volume."]
+        #[serde(
+            rename = "location",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub location: ::std::option::Option<String>,
+        #[doc = "LUN ranges to be configured. Set only when protocol is PROTOCOL_FC."]
+        #[serde(
+            rename = "lunRanges",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub lun_ranges: ::std::option::Option<Vec<crate::schemas::LunRange>>,
+        #[doc = "Machine ids connected to this volume. Set only when protocol is PROTOCOL_FC."]
+        #[serde(
+            rename = "machineIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub machine_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "NFS exports. Set only when protocol is PROTOCOL_NFS."]
+        #[serde(
+            rename = "nfsExports",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub nfs_exports: ::std::option::Option<Vec<crate::schemas::NfsExport>>,
+        #[doc = "Volume protocol."]
+        #[serde(
+            rename = "protocol",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub protocol: ::std::option::Option<crate::schemas::VolumeConfigProtocol>,
+        #[doc = "The type of this Volume."]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<crate::schemas::VolumeConfigType>,
+        #[doc = "The requested size of this volume, in GB. This will be updated in a later iteration with a generic size field."]
+        #[serde(
+            rename = "sizeGb",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub size_gb: ::std::option::Option<i32>,
+        #[doc = "Whether snapshots should be enabled."]
+        #[serde(
+            rename = "snapshotsEnabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub snapshots_enabled: ::std::option::Option<bool>,
+        #[doc = "User note field, it can be used by customers to add additional information for the BMS Ops team (b/194021617)."]
+        #[serde(
+            rename = "userNote",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_note: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for VolumeConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for VolumeConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum VolumeConfigProtocol {
+        #[doc = "Fibre channel."]
+        ProtocolFc,
+        #[doc = "Network file system."]
+        ProtocolNfs,
+        #[doc = "Unspecified value."]
+        ProtocolUnspecified,
+    }
+    impl VolumeConfigProtocol {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                VolumeConfigProtocol::ProtocolFc => "PROTOCOL_FC",
+                VolumeConfigProtocol::ProtocolNfs => "PROTOCOL_NFS",
+                VolumeConfigProtocol::ProtocolUnspecified => "PROTOCOL_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for VolumeConfigProtocol {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for VolumeConfigProtocol {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<VolumeConfigProtocol, ()> {
+            Ok(match s {
+                "PROTOCOL_FC" => VolumeConfigProtocol::ProtocolFc,
+                "PROTOCOL_NFS" => VolumeConfigProtocol::ProtocolNfs,
+                "PROTOCOL_UNSPECIFIED" => VolumeConfigProtocol::ProtocolUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for VolumeConfigProtocol {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for VolumeConfigProtocol {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for VolumeConfigProtocol {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "PROTOCOL_FC" => VolumeConfigProtocol::ProtocolFc,
+                "PROTOCOL_NFS" => VolumeConfigProtocol::ProtocolNfs,
+                "PROTOCOL_UNSPECIFIED" => VolumeConfigProtocol::ProtocolUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for VolumeConfigProtocol {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for VolumeConfigProtocol {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum VolumeConfigType {
+        #[doc = "This Volume is on disk."]
+        Disk,
+        #[doc = "This Volume is on flash."]
+        Flash,
+        #[doc = "The unspecified type."]
+        TypeUnspecified,
+    }
+    impl VolumeConfigType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                VolumeConfigType::Disk => "DISK",
+                VolumeConfigType::Flash => "FLASH",
+                VolumeConfigType::TypeUnspecified => "TYPE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for VolumeConfigType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for VolumeConfigType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<VolumeConfigType, ()> {
+            Ok(match s {
+                "DISK" => VolumeConfigType::Disk,
+                "FLASH" => VolumeConfigType::Flash,
+                "TYPE_UNSPECIFIED" => VolumeConfigType::TypeUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for VolumeConfigType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for VolumeConfigType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for VolumeConfigType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DISK" => VolumeConfigType::Disk,
+                "FLASH" => VolumeConfigType::Flash,
+                "TYPE_UNSPECIFIED" => VolumeConfigType::TypeUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for VolumeConfigType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for VolumeConfigType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+}
+pub mod params {
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum Alt {
+        #[doc = "Responses with Content-Type of application/json"]
+        Json,
+        #[doc = "Media download with context-dependent Content-Type"]
+        Media,
+        #[doc = "Responses with Content-Type of application/x-protobuf"]
+        Proto,
+    }
+    impl Alt {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                Alt::Json => "json",
+                Alt::Media => "media",
+                Alt::Proto => "proto",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for Alt {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for Alt {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<Alt, ()> {
+            Ok(match s {
+                "json" => Alt::Json,
+                "media" => Alt::Media,
+                "proto" => Alt::Proto,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for Alt {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for Alt {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for Alt {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "json" => Alt::Json,
+                "media" => Alt::Media,
+                "proto" => Alt::Proto,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for Alt {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Alt {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum Xgafv {
+        #[doc = "v1 error format"]
+        _1,
+        #[doc = "v2 error format"]
+        _2,
+    }
+    impl Xgafv {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                Xgafv::_1 => "1",
+                Xgafv::_2 => "2",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for Xgafv {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for Xgafv {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<Xgafv, ()> {
+            Ok(match s {
+                "1" => Xgafv::_1,
+                "2" => Xgafv::_2,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for Xgafv {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for Xgafv {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for Xgafv {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "1" => Xgafv::_1,
+                "2" => Xgafv::_2,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for Xgafv {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Xgafv {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+}
+pub struct Client {
+    reqwest: ::reqwest::blocking::Client,
+    auth: Box<dyn ::google_api_auth::GetAccessToken>,
+}
+impl Client {
+    pub fn new<A>(auth: A) -> Self
+    where
+        A: ::google_api_auth::GetAccessToken + 'static,
+    {
+        Client::with_reqwest_client(
+            auth,
+            ::reqwest::blocking::Client::builder()
+                .timeout(None)
+                .build()
+                .unwrap(),
+        )
+    }
+    pub fn with_reqwest_client<A>(auth: A, reqwest: ::reqwest::blocking::Client) -> Self
+    where
+        A: ::google_api_auth::GetAccessToken + 'static,
+    {
+        Client {
+            reqwest,
+            auth: Box::new(auth),
+        }
+    }
+    fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+        self.auth.as_ref()
+    }
+    #[doc = "Actions that can be performed on the projects resource"]
+    pub fn projects(&self) -> crate::resources::projects::ProjectsActions {
+        crate::resources::projects::ProjectsActions {
+            reqwest: &self.reqwest,
+            auth: self.auth_ref(),
+        }
+    }
+}
+pub mod resources {
+    pub mod projects {
+        pub mod params {}
+        pub struct ProjectsActions<'a> {
+            pub(crate) reqwest: &'a reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+        }
+        impl<'a> ProjectsActions<'a> {
+            fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                self.auth
+            }
+            #[doc = "Actions that can be performed on the locations resource"]
+            pub fn locations(&self) -> crate::resources::projects::locations::LocationsActions {
+                crate::resources::projects::locations::LocationsActions {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                }
+            }
+            #[doc = "Actions that can be performed on the provisioning_quotas resource"]
+            pub fn provisioning_quotas(
+                &self,
+            ) -> crate::resources::projects::provisioning_quotas::ProvisioningQuotasActions
+            {
+                crate::resources::projects::provisioning_quotas::ProvisioningQuotasActions {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                }
+            }
+        }
+        pub mod locations {
+            pub mod params {}
+            pub struct LocationsActions<'a> {
+                pub(crate) reqwest: &'a reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            }
+            impl<'a> LocationsActions<'a> {
+                fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                    self.auth
+                }
+                #[doc = "Submit a provisiong configuration for a given project."]
+                pub fn submit_provisioning_config(
+                    &self,
+                    request: crate::schemas::SubmitProvisioningConfigRequest,
+                    project: impl Into<String>,
+                    location: impl Into<String>,
+                ) -> SubmitProvisioningConfigRequestBuilder {
+                    SubmitProvisioningConfigRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        project: project.into(),
+                        location: location.into(),
+                    }
+                }
+            }
+            #[doc = "Created via [LocationsActions::submit_provisioning_config()](struct.LocationsActions.html#method.submit_provisioning_config)"]
+            #[derive(Debug, Clone)]
+            pub struct SubmitProvisioningConfigRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::SubmitProvisioningConfigRequest,
+                project: String,
+                location: String,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> SubmitProvisioningConfigRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::ProvisioningConfig, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::ProvisioningConfig, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://baremetalsolution.googleapis.com/".to_owned();
+                    output.push_str("v1alpha1/");
+                    {
+                        let var_as_str = &self.project;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/");
+                    {
+                        let var_as_str = &self.location;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str(":submitProvisioningConfig");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
+                }
+            }
+        }
+        pub mod provisioning_quotas {
+            pub mod params {}
+            pub struct ProvisioningQuotasActions<'a> {
+                pub(crate) reqwest: &'a reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            }
+            impl<'a> ProvisioningQuotasActions<'a> {
+                fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                    self.auth
+                }
+                #[doc = "List the budget details to provision resources on a given project."]
+                pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                    ListRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        parent: parent.into(),
+                        page_size: None,
+                        page_token: None,
+                    }
+                }
+            }
+            #[doc = "Created via [ProvisioningQuotasActions::list()](struct.ProvisioningQuotasActions.html#method.list)"]
+            #[derive(Debug, Clone)]
+            pub struct ListRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                parent: String,
+                page_size: Option<i32>,
+                page_token: Option<String>,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> ListRequestBuilder<'a> {
+                #[doc = "The maximum number of items to return."]
+                pub fn page_size(mut self, value: i32) -> Self {
+                    self.page_size = Some(value);
+                    self
+                }
+                #[doc = "The next_page_token value returned from a previous List request, if any."]
+                pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                    self.page_token = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                #[doc = r" items yielded by the iterator are chosen by the caller of this"]
+                #[doc = r" method and must implement `Deserialize` and `FieldSelector`. The"]
+                #[doc = r" populated fields in the yielded items will be determined by the"]
+                #[doc = r" `FieldSelector` implementation."]
+                pub fn iter_provisioning_quotas<T>(self) -> crate::iter::PageItemIter<Self, T>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.iter_provisioning_quotas_with_fields(fields)
+                }
+                #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                #[doc = r" fields in `#items_type` will be the default fields populated by"]
+                #[doc = r" the server."]
+                pub fn iter_provisioning_quotas_with_default_fields(
+                    self,
+                ) -> crate::iter::PageItemIter<Self, crate::schemas::ProvisioningQuota>
+                {
+                    self.iter_provisioning_quotas_with_fields(None::<String>)
+                }
+                #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                #[doc = r" fields in `#items_type` will be all fields available. This should"]
+                #[doc = r" primarily be used during developement and debugging as fetching"]
+                #[doc = r" all fields can be expensive both in bandwidth and server"]
+                #[doc = r" resources."]
+                pub fn iter_provisioning_quotas_with_all_fields(
+                    self,
+                ) -> crate::iter::PageItemIter<Self, crate::schemas::ProvisioningQuota>
+                {
+                    self.iter_provisioning_quotas_with_fields(Some("*"))
+                }
+                pub fn iter_provisioning_quotas_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> crate::iter::PageItemIter<Self, T>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: AsRef<str>,
+                {
+                    self.fields = Some({
+                        let mut selector =
+                            concat!("nextPageToken,", "provisioningQuotas").to_owned();
+                        let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                        if !items_fields.is_empty() {
+                            selector.push_str("(");
+                            selector.push_str(items_fields);
+                            selector.push_str(")");
+                        }
+                        selector
+                    });
+                    crate::iter::PageItemIter::new(self, "provisioningQuotas")
+                }
+                pub fn iter<T>(self) -> crate::iter::PageIter<Self, T>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.iter_with_fields(fields)
+                }
+                pub fn iter_with_default_fields(
+                    self,
+                ) -> crate::iter::PageIter<Self, crate::schemas::ListProvisioningQuotasResponse>
+                {
+                    self.iter_with_fields(None::<&str>)
+                }
+                pub fn iter_with_all_fields(
+                    self,
+                ) -> crate::iter::PageIter<Self, crate::schemas::ListProvisioningQuotasResponse>
+                {
+                    self.iter_with_fields(Some("*"))
+                }
+                pub fn iter_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> crate::iter::PageIter<Self, T>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: AsRef<str>,
+                {
+                    let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                    if !fields.is_empty() {
+                        match fields.chars().rev().nth(0) {
+                            Some(',') | None => {}
+                            _ => fields.push_str(","),
+                        }
+                        fields.push_str("nextPageToken");
+                        self.fields = Some(fields);
+                    }
+                    crate::iter::PageIter::new(self)
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::ListProvisioningQuotasResponse, crate::Error>
+                {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::ListProvisioningQuotasResponse, crate::Error>
+                {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://baremetalsolution.googleapis.com/".to_owned();
+                    output.push_str("v1alpha1/");
+                    {
+                        let var_as_str = &self.parent;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/provisioningQuotas");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("pageSize", &self.page_size)]);
+                    req = req.query(&[("pageToken", &self.page_token)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
+                }
+            }
+            impl<'a> crate::iter::IterableMethod for ListRequestBuilder<'a> {
+                fn set_page_token(&mut self, value: String) {
+                    self.page_token = value.into();
+                }
+                fn execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    self._execute()
+                }
+            }
+        }
+    }
+}
+#[derive(Debug)]
+pub enum Error {
+    OAuth2(Box<dyn ::std::error::Error + Send + Sync>),
+    JSON(::serde_json::Error),
+    Reqwest {
+        reqwest_err: ::reqwest::Error,
+        body: Option<String>,
+    },
+    Other(Box<dyn ::std::error::Error + Send + Sync>),
+}
+
+impl Error {
+    pub fn json_error(&self) -> Option<&::serde_json::Error> {
+        match self {
+            Error::OAuth2(_) => None,
+            Error::JSON(err) => Some(err),
+            Error::Reqwest { .. } => None,
+            Error::Other(_) => None,
+        }
+    }
+}
+
+impl ::std::fmt::Display for Error {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Error::OAuth2(err) => write!(f, "OAuth2 Error: {}", err),
+            Error::JSON(err) => write!(f, "JSON Error: {}", err),
+            Error::Reqwest { reqwest_err, body } => {
+                write!(f, "Reqwest Error: {}", reqwest_err)?;
+                if let Some(body) = body {
+                    write!(f, ": {}", body)?;
+                }
+                Ok(())
+            }
+            Error::Other(err) => write!(f, "Uknown Error: {}", err),
+        }
+    }
+}
+
+impl ::std::error::Error for Error {}
+
+impl From<::serde_json::Error> for Error {
+    fn from(err: ::serde_json::Error) -> Error {
+        Error::JSON(err)
+    }
+}
+
+impl From<::reqwest::Error> for Error {
+    fn from(reqwest_err: ::reqwest::Error) -> Error {
+        Error::Reqwest {
+            reqwest_err,
+            body: None,
+        }
+    }
+}
+
+/// Check the response to see if the status code represents an error. If so
+/// convert it into the Reqwest variant of Error.
+fn error_from_response(
+    response: ::reqwest::blocking::Response,
+) -> Result<::reqwest::blocking::Response, Error> {
+    match response.error_for_status_ref() {
+        Err(reqwest_err) => {
+            let body = response.text().ok();
+            Err(Error::Reqwest { reqwest_err, body })
+        }
+        Ok(_) => Ok(response),
+    }
+}
+#[allow(dead_code)]
+const SIMPLE: &::percent_encoding::AsciiSet = &::percent_encoding::NON_ALPHANUMERIC
+    .remove(b'-')
+    .remove(b'.')
+    .remove(b'_')
+    .remove(b'~');
+
+#[allow(dead_code)]
+const RESERVED: &::percent_encoding::AsciiSet = &SIMPLE
+    .remove(b'%')
+    .remove(b':')
+    .remove(b'/')
+    .remove(b'?')
+    .remove(b'#')
+    .remove(b'[')
+    .remove(b']')
+    .remove(b'@')
+    .remove(b'!')
+    .remove(b'$')
+    .remove(b'&')
+    .remove(b'\'')
+    .remove(b'(')
+    .remove(b')')
+    .remove(b'*')
+    .remove(b'+')
+    .remove(b',')
+    .remove(b';')
+    .remove(b'=');
+#[allow(dead_code)]
+mod multipart {
+    pub(crate) struct RelatedMultiPart {
+        parts: Vec<Part>,
+        boundary: String,
+    }
+
+    impl RelatedMultiPart {
+        pub(crate) fn new() -> Self {
+            RelatedMultiPart {
+                parts: Vec::new(),
+                boundary: ::textnonce::TextNonce::sized(68).unwrap().0,
+            }
+        }
+
+        pub(crate) fn new_part(&mut self, part: Part) {
+            self.parts.push(part);
+        }
+
+        pub(crate) fn boundary(&self) -> &str {
+            &self.boundary
+        }
+
+        pub(crate) fn into_reader(self) -> RelatedMultiPartReader {
+            let boundary_marker = boundary_marker(&self.boundary);
+            RelatedMultiPartReader {
+                state: RelatedMultiPartReaderState::WriteBoundary {
+                    start: 0,
+                    boundary: format!("{}\r\n", &boundary_marker),
+                },
+                boundary: boundary_marker,
+                next_body: None,
+                parts: self.parts.into_iter(),
+            }
+        }
+    }
+
+    pub(crate) struct Part {
+        content_type: ::mime::Mime,
+        body: Box<dyn ::std::io::Read + Send>,
+    }
+
+    impl Part {
+        pub(crate) fn new(
+            content_type: ::mime::Mime,
+            body: Box<dyn ::std::io::Read + Send>,
+        ) -> Part {
+            Part { content_type, body }
+        }
+    }
+
+    pub(crate) struct RelatedMultiPartReader {
+        state: RelatedMultiPartReaderState,
+        boundary: String,
+        next_body: Option<Box<dyn ::std::io::Read + Send>>,
+        parts: std::vec::IntoIter<Part>,
+    }
+
+    enum RelatedMultiPartReaderState {
+        WriteBoundary {
+            start: usize,
+            boundary: String,
+        },
+        WriteContentType {
+            start: usize,
+            content_type: Vec<u8>,
+        },
+        WriteBody {
+            body: Box<dyn ::std::io::Read + Send>,
+        },
+    }
+
+    impl ::std::io::Read for RelatedMultiPartReader {
+        fn read(&mut self, buf: &mut [u8]) -> ::std::io::Result<usize> {
+            use RelatedMultiPartReaderState::*;
+            let mut bytes_written: usize = 0;
+            loop {
+                let rem_buf = &mut buf[bytes_written..];
+                match &mut self.state {
+                    WriteBoundary { start, boundary } => {
+                        let bytes_to_copy = std::cmp::min(boundary.len() - *start, rem_buf.len());
+                        rem_buf[..bytes_to_copy]
+                            .copy_from_slice(&boundary.as_bytes()[*start..*start + bytes_to_copy]);
+                        *start += bytes_to_copy;
+                        bytes_written += bytes_to_copy;
+                        if *start == boundary.len() {
+                            let next_part = match self.parts.next() {
+                                None => break,
+                                Some(part) => part,
+                            };
+                            self.next_body = Some(next_part.body);
+                            self.state = WriteContentType {
+                                start: 0,
+                                content_type: format!(
+                                    "Content-Type: {}\r\n\r\n",
+                                    next_part.content_type
+                                )
+                                .into_bytes(),
+                            };
+                        } else {
+                            break;
+                        }
+                    }
+                    WriteContentType {
+                        start,
+                        content_type,
+                    } => {
+                        let bytes_to_copy =
+                            std::cmp::min(content_type.len() - *start, rem_buf.len());
+                        rem_buf[..bytes_to_copy]
+                            .copy_from_slice(&content_type[*start..*start + bytes_to_copy]);
+                        *start += bytes_to_copy;
+                        bytes_written += bytes_to_copy;
+                        if *start == content_type.len() {
+                            self.state = WriteBody {
+                                body: self.next_body.take().unwrap(),
+                            };
+                        } else {
+                            break;
+                        }
+                    }
+                    WriteBody { body } => {
+                        let written = body.read(rem_buf)?;
+                        bytes_written += written;
+                        if written == 0 {
+                            self.state = WriteBoundary {
+                                start: 0,
+                                boundary: format!("\r\n{}\r\n", &self.boundary),
+                            };
+                        } else {
+                            break;
+                        }
+                    }
+                }
+            }
+            Ok(bytes_written)
+        }
+    }
+
+    fn boundary_marker(boundary: &str) -> String {
+        let mut marker = String::with_capacity(boundary.len() + 2);
+        marker.push_str("--");
+        marker.push_str(boundary);
+        marker
+    }
+}
+// A serde helper module that can be used with the `with` attribute
+// to deserialize any string to a FromStr type and serialize any
+// Display type to a String. Google API's encode i64, u64 values as
+// strings.
+#[allow(dead_code)]
+mod parsed_string {
+    pub fn serialize<T, S>(
+        value: &Option<T>,
+        serializer: S,
+    ) -> ::std::result::Result<S::Ok, S::Error>
+    where
+        T: ::std::fmt::Display,
+        S: ::serde::Serializer,
+    {
+        use ::serde::Serialize;
+        value.as_ref().map(|x| x.to_string()).serialize(serializer)
+    }
+
+    pub fn deserialize<'de, T, D>(deserializer: D) -> ::std::result::Result<Option<T>, D::Error>
+    where
+        T: ::std::str::FromStr,
+        T::Err: ::std::fmt::Display,
+        D: ::serde::de::Deserializer<'de>,
+    {
+        use ::serde::Deserialize;
+        match Option::<String>::deserialize(deserializer)? {
+            Some(x) => Ok(Some(x.parse().map_err(::serde::de::Error::custom)?)),
+            None => Ok(None),
+        }
+    }
+}
+pub mod iter {
+    pub trait IterableMethod {
+        fn set_page_token(&mut self, value: String);
+        fn execute<T>(&mut self) -> Result<T, crate::Error>
+        where
+            T: ::serde::de::DeserializeOwned;
+    }
+
+    pub struct PageIter<M, T> {
+        pub method: M,
+        pub finished: bool,
+        pub _phantom: ::std::marker::PhantomData<T>,
+    }
+
+    impl<M, T> PageIter<M, T>
+    where
+        M: IterableMethod,
+        T: ::serde::de::DeserializeOwned,
+    {
+        pub(crate) fn new(method: M) -> Self {
+            PageIter {
+                method,
+                finished: false,
+                _phantom: ::std::marker::PhantomData,
+            }
+        }
+    }
+
+    impl<M, T> Iterator for PageIter<M, T>
+    where
+        M: IterableMethod,
+        T: ::serde::de::DeserializeOwned,
+    {
+        type Item = Result<T, crate::Error>;
+
+        fn next(&mut self) -> Option<Result<T, crate::Error>> {
+            if self.finished {
+                return None;
+            }
+            let paginated_result: ::serde_json::Map<String, ::serde_json::Value> =
+                match self.method.execute() {
+                    Ok(r) => r,
+                    Err(err) => return Some(Err(err)),
+                };
+            if let Some(next_page_token) = paginated_result
+                .get("nextPageToken")
+                .and_then(|t| t.as_str())
+            {
+                self.method.set_page_token(next_page_token.to_owned());
+            } else {
+                self.finished = true;
+            }
+
+            Some(
+                match ::serde_json::from_value(::serde_json::Value::Object(paginated_result)) {
+                    Ok(resp) => Ok(resp),
+                    Err(err) => Err(err.into()),
+                },
+            )
+        }
+    }
+
+    pub struct PageItemIter<M, T> {
+        items_field: &'static str,
+        page_iter: PageIter<M, ::serde_json::Map<String, ::serde_json::Value>>,
+        items: ::std::vec::IntoIter<T>,
+    }
+
+    impl<M, T> PageItemIter<M, T>
+    where
+        M: IterableMethod,
+        T: ::serde::de::DeserializeOwned,
+    {
+        pub(crate) fn new(method: M, items_field: &'static str) -> Self {
+            PageItemIter {
+                items_field,
+                page_iter: PageIter::new(method),
+                items: Vec::new().into_iter(),
+            }
+        }
+    }
+
+    impl<M, T> Iterator for PageItemIter<M, T>
+    where
+        M: IterableMethod,
+        T: ::serde::de::DeserializeOwned,
+    {
+        type Item = Result<T, crate::Error>;
+
+        fn next(&mut self) -> Option<Result<T, crate::Error>> {
+            loop {
+                if let Some(v) = self.items.next() {
+                    return Some(Ok(v));
+                }
+
+                let next_page = self.page_iter.next();
+                match next_page {
+                    None => return None,
+                    Some(Err(err)) => return Some(Err(err)),
+                    Some(Ok(next_page)) => {
+                        let mut next_page: ::serde_json::Map<String, ::serde_json::Value> =
+                            next_page;
+                        let items_array = match next_page.remove(self.items_field) {
+                            Some(items) => items,
+                            None => {
+                                return Some(Err(crate::Error::Other(
+                                    format!("no {} field found in iter response", self.items_field)
+                                        .into(),
+                                )))
+                            }
+                        };
+                        let items_vec: Result<Vec<T>, _> = ::serde_json::from_value(items_array);
+                        match items_vec {
+                            Ok(items) => self.items = items.into_iter(),
+                            Err(err) => return Some(Err(err.into())),
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

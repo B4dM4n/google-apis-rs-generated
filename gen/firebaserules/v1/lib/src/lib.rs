@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [*test*](resources/projects/struct.TestRequestBuilder.html)\n      * [releases](resources/projects/releases/struct.ReleasesActions.html)\n        * [*create*](resources/projects/releases/struct.CreateRequestBuilder.html), [*delete*](resources/projects/releases/struct.DeleteRequestBuilder.html), [*get*](resources/projects/releases/struct.GetRequestBuilder.html), [*getExecutable*](resources/projects/releases/struct.GetExecutableRequestBuilder.html), [*list*](resources/projects/releases/struct.ListRequestBuilder.html), [*patch*](resources/projects/releases/struct.PatchRequestBuilder.html)\n      * [rulesets](resources/projects/rulesets/struct.RulesetsActions.html)\n        * [*create*](resources/projects/rulesets/struct.CreateRequestBuilder.html), [*delete*](resources/projects/rulesets/struct.DeleteRequestBuilder.html), [*get*](resources/projects/rulesets/struct.GetRequestBuilder.html), [*list*](resources/projects/rulesets/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
     #[doc = "View and administer all your Firebase data and settings\n\n`https://www.googleapis.com/auth/firebase`"]
     pub const FIREBASE: &str = "https://www.googleapis.com/auth/firebase";
@@ -106,7 +106,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct File {
-        #[doc = "Textual Content."]
+        #[doc = "Required. Textual Content."]
         #[serde(
             rename = "content",
             default,
@@ -120,7 +120,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub fingerprint: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "File name."]
+        #[doc = "Required. File name."]
         #[serde(
             rename = "name",
             default,
@@ -290,7 +290,7 @@ pub mod schemas {
         fn from_str(
             s: &str,
         ) -> ::std::result::Result<GetReleaseExecutableResponseExecutableVersion, ()> {
-            Ok ( match s { "FIREBASE_RULES_EXECUTABLE_V1" => GetReleaseExecutableResponseExecutableVersion :: FirebaseRulesExecutableV1 , "FIREBASE_RULES_EXECUTABLE_V2" => GetReleaseExecutableResponseExecutableVersion :: FirebaseRulesExecutableV2 , "RELEASE_EXECUTABLE_VERSION_UNSPECIFIED" => GetReleaseExecutableResponseExecutableVersion :: ReleaseExecutableVersionUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "FIREBASE_RULES_EXECUTABLE_V1" => GetReleaseExecutableResponseExecutableVersion :: FirebaseRulesExecutableV1 , "FIREBASE_RULES_EXECUTABLE_V2" => GetReleaseExecutableResponseExecutableVersion :: FirebaseRulesExecutableV2 , "RELEASE_EXECUTABLE_VERSION_UNSPECIFIED" => GetReleaseExecutableResponseExecutableVersion :: ReleaseExecutableVersionUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GetReleaseExecutableResponseExecutableVersion {
@@ -312,7 +312,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "FIREBASE_RULES_EXECUTABLE_V1" => GetReleaseExecutableResponseExecutableVersion :: FirebaseRulesExecutableV1 , "FIREBASE_RULES_EXECUTABLE_V2" => GetReleaseExecutableResponseExecutableVersion :: FirebaseRulesExecutableV2 , "RELEASE_EXECUTABLE_VERSION_UNSPECIFIED" => GetReleaseExecutableResponseExecutableVersion :: ReleaseExecutableVersionUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "FIREBASE_RULES_EXECUTABLE_V1" => GetReleaseExecutableResponseExecutableVersion :: FirebaseRulesExecutableV1 , "FIREBASE_RULES_EXECUTABLE_V2" => GetReleaseExecutableResponseExecutableVersion :: FirebaseRulesExecutableV2 , "RELEASE_EXECUTABLE_VERSION_UNSPECIFIED" => GetReleaseExecutableResponseExecutableVersion :: ReleaseExecutableVersionUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector for GetReleaseExecutableResponseExecutableVersion {
@@ -647,28 +647,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Release {
-        #[doc = "Time the release was created. Output only."]
+        #[doc = "Output only. Time the release was created."]
         #[serde(
             rename = "createTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Resource name for the `Release`. `Release` names may be structured `app1/prod/v2` or flat `app1_prod_v2` which affords developers a great deal of flexibility in mapping the name to the style that best fits their existing development practices. For example, a name could refer to an environment, an app, a version, or some combination of three. In the table below, for the project name `projects/foo`, the following relative release paths show how flat and structured names might be chosen to match a desired development / deployment strategy. Use Case | Flat Name | Structured Name -------------|---------------------|---------------- Environments | releases/qa | releases/qa Apps | releases/app1_qa | releases/app1/qa Versions | releases/app1_v2_qa | releases/app1/v2/qa The delimiter between the release name path elements can be almost anything and it should work equally well with the release name list filter, but in many ways the structured paths provide a clearer picture of the relationship between `Release` instances. Format: `projects/{project_id}/releases/{release_id}`"]
+        #[doc = "Required. Format: `projects/{project_id}/releases/{release_id}`"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist the `Release` to be created."]
+        #[doc = "Required. Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist the `Release` to be created."]
         #[serde(
             rename = "rulesetName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ruleset_name: ::std::option::Option<String>,
-        #[doc = "Time the release was updated. Output only."]
+        #[doc = "Output only. Time the release was updated."]
         #[serde(
             rename = "updateTime",
             default,
@@ -726,28 +726,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Ruleset {
-        #[doc = "Time the `Ruleset` was created. Output only."]
+        #[doc = "Output only. Time the `Ruleset` was created."]
         #[serde(
             rename = "createTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "The metadata for this ruleset. Output only."]
+        #[doc = "Output only. The metadata for this ruleset."]
         #[serde(
             rename = "metadata",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metadata: ::std::option::Option<crate::schemas::Metadata>,
-        #[doc = "Name of the `Ruleset`. The ruleset_id is auto generated by the service. Format: `projects/{project_id}/rulesets/{ruleset_id}` Output only."]
+        #[doc = "Output only. Name of the `Ruleset`. The ruleset_id is auto generated by the service. Format: `projects/{project_id}/rulesets/{ruleset_id}`"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "`Source` for the `Ruleset`."]
+        #[doc = "Required. `Source` for the `Ruleset`."]
         #[serde(
             rename = "source",
             default,
@@ -778,7 +778,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Source {
-        #[doc = "`File` set constituting the `Source` bundle."]
+        #[doc = "Required. `File` set constituting the `Source` bundle."]
         #[serde(
             rename = "files",
             default,
@@ -1284,7 +1284,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub source: ::std::option::Option<crate::schemas::Source>,
-        #[doc = "Inline `TestSuite` to run."]
+        #[doc = "The tests to execute against the `Source`. When `Source` is provided inline, the test cases will only be run if the `Source` is syntactically and semantically valid. Inline `TestSuite` to run."]
         #[serde(
             rename = "testSuite",
             default,
@@ -1362,7 +1362,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UpdateReleaseRequest {
-        #[doc = "`Release` to update."]
+        #[doc = "Required. `Release` to update."]
         #[serde(
             rename = "release",
             default,
@@ -1945,7 +1945,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Create a `Release`. Release names should reflect the developer's deployment practices. For example, the release name may include the environment name, application name, application version, or any other name meaningful to the developer. Once a `Release` refers to a `Ruleset`, the rules can be enforced by Firebase Rules-enabled services. More than one `Release` may be 'live' concurrently. Consider the following three `Release` names for `projects/foo` and the `Ruleset` to which they refer. Release Name | Ruleset Name --------------------------------|------------- projects/foo/releases/prod | projects/foo/rulesets/uuid123 projects/foo/releases/prod/beta | projects/foo/rulesets/uuid123 projects/foo/releases/prod/v23 | projects/foo/rulesets/uuid456 The table reflects the `Ruleset` rollout in progress. The `prod` and `prod/beta` releases refer to the same `Ruleset`. However, `prod/v23` refers to a new `Ruleset`. The `Ruleset` reference for a `Release` may be updated using the UpdateRelease method."]
+                #[doc = "Create a `Release`. Release names should reflect the developer's deployment practices. For example, the release name may include the environment name, application name, application version, or any other name meaningful to the developer. Once a `Release` refers to a `Ruleset`, the rules can be enforced by Firebase Rules-enabled services. More than one `Release` may be 'live' concurrently. Consider the following three `Release` names for `projects/foo` and the `Ruleset` to which they refer. Release Name -> Ruleset Name * projects/foo/releases/prod -> projects/foo/rulesets/uuid123 * projects/foo/releases/prod/beta -> projects/foo/rulesets/uuid123 * projects/foo/releases/prod/v23 -> projects/foo/rulesets/uuid456 The relationships reflect a `Ruleset` rollout in progress. The `prod` and `prod/beta` releases refer to the same `Ruleset`. However, `prod/v23` refers to a new `Ruleset`. The `Ruleset` reference for a `Release` may be updated using the UpdateRelease method."]
                 pub fn create(
                     &self,
                     request: crate::schemas::Release,
@@ -2052,7 +2052,7 @@ pub mod resources {
                         page_token: None,
                     }
                 }
-                #[doc = "Update a `Release` via PATCH. Only updates to the `ruleset_name` and `test_suite_name` fields will be honored. `Release` rename is not supported. To create a `Release` use the CreateRelease method."]
+                #[doc = "Update a `Release` via PATCH. Only updates to `ruleset_name` will be honored. `Release` rename is not supported. To create a `Release` use the CreateRelease method."]
                 pub fn patch(
                     &self,
                     request: crate::schemas::UpdateReleaseRequest,
@@ -2753,7 +2753,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "`Release` filter. The list method supports filters with restrictions on the `Release.name`, `Release.ruleset_name`, and `Release.test_suite_name`. Example 1: A filter of 'name=prod*' might return `Release`s with names within 'projects/foo' prefixed with 'prod': Name | Ruleset Name ------------------------------|------------- projects/foo/releases/prod | projects/foo/rulesets/uuid1234 projects/foo/releases/prod/v1 | projects/foo/rulesets/uuid1234 projects/foo/releases/prod/v2 | projects/foo/rulesets/uuid8888 Example 2: A filter of `name=prod* ruleset_name=uuid1234` would return only `Release` instances for 'projects/foo' with names prefixed with 'prod' referring to the same `Ruleset` name of 'uuid1234': Name | Ruleset Name ------------------------------|------------- projects/foo/releases/prod | projects/foo/rulesets/1234 projects/foo/releases/prod/v1 | projects/foo/rulesets/1234 In the examples, the filter parameters refer to the search filters are relative to the project. Fully qualified prefixed may also be used. e.g. `test_suite_name=projects/foo/testsuites/uuid1`"]
+                #[doc = "`Release` filter. The list method supports filters with restrictions on the `Release.name`, and `Release.ruleset_name`. Example 1: A filter of 'name=prod*' might return `Release`s with names within 'projects/foo' prefixed with 'prod': Name -> Ruleset Name: * projects/foo/releases/prod -> projects/foo/rulesets/uuid1234 * projects/foo/releases/prod/v1 -> projects/foo/rulesets/uuid1234 * projects/foo/releases/prod/v2 -> projects/foo/rulesets/uuid8888 Example 2: A filter of `name=prod* ruleset_name=uuid1234` would return only `Release` instances for 'projects/foo' with names prefixed with 'prod' referring to the same `Ruleset` name of 'uuid1234': Name -> Ruleset Name: * projects/foo/releases/prod -> projects/foo/rulesets/1234 * projects/foo/releases/prod/v1 -> projects/foo/rulesets/1234 In the examples, the filter parameters refer to the search filters are relative to the project. Fully qualified prefixed may also be used."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self

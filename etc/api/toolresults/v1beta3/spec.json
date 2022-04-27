@@ -7,7 +7,7 @@
   "canonicalName": "Tool Results",
   "fullyEncodeReservedExpansion": null,
   "version": "v1beta3",
-  "revision": "20210308",
+  "revision": "20220426",
   "title": "Cloud Tool Results API",
   "description": "API to publish and access results from developer tools.",
   "ownerDomain": "google.com",
@@ -201,7 +201,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         }
       }
     }

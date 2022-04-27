@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [traces](resources/projects/traces/struct.TracesActions.html)\n        * [*batchWrite*](resources/projects/traces/struct.BatchWriteRequestBuilder.html)\n        * [spans](resources/projects/traces/spans/struct.SpansActions.html)\n          * [*createSpan*](resources/projects/traces/spans/struct.CreateSpanRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
     #[doc = "Write Trace data for a project or application\n\n`https://www.googleapis.com/auth/trace.append`"]
     pub const TRACE_APPEND: &str = "https://www.googleapis.com/auth/trace.append";
@@ -103,7 +103,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Attributes {
-        #[doc = "The set of attributes. Each attribute's key can be up to 128 bytes long. The value can be a string up to 256 bytes, a signed 64-bit integer, or the Boolean values `true` and `false`. For example: \"/instance_id\": { \"string_value\": { \"value\": \"my-instance\" } } \"/http/request_bytes\": { \"int_value\": 300 } \"abc.com/myattribute\": { \"bool_value\": false }"]
+        #[doc = "A set of attributes. Each attribute's key can be up to 128 bytes long. The value can be a string up to 256 bytes, a signed 64-bit integer, or the boolean values `true` or `false`. For example: \"/instance_id\": { \"string_value\": { \"value\": \"my-instance\" } } \"/http/request_bytes\": { \"int_value\": 300 } \"abc.com/myattribute\": { \"bool_value\": false }"]
         #[serde(
             rename = "attributeMap",
             default,
@@ -132,7 +132,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct BatchWriteSpansRequest {
-        #[doc = "Required. A list of new spans. The span names must not match existing spans, or the results are undefined."]
+        #[doc = "Required. A list of new spans. The span names must not match existing spans, otherwise the results are undefined."]
         #[serde(
             rename = "spans",
             default,
@@ -187,7 +187,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Link {
-        #[doc = "A set of attributes on the link. You have have up to 32 attributes per link."]
+        #[doc = "A set of attributes on the link. Up to 32 attributes can be specified per link."]
         #[serde(
             rename = "attributes",
             default,
@@ -201,14 +201,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<crate::schemas::LinkType>,
-        #[doc = "The [SPAN_ID] for a span within a trace."]
+        #[doc = "The `[SPAN_ID]` for a span within a trace."]
         #[serde(
             rename = "spanId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub span_id: ::std::option::Option<String>,
-        #[doc = "The [TRACE_ID] for a trace within a project."]
+        #[doc = "The `[TRACE_ID]` for a trace within a project."]
         #[serde(
             rename = "traceId",
             default,
@@ -353,7 +353,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct MessageEvent {
-        #[doc = "The number of compressed bytes sent or received. If missing assumed to be the same size as uncompressed."]
+        #[doc = "The number of compressed bytes sent or received. If missing, the compressed size is assumed to be the same size as the uncompressed size."]
         #[serde(
             rename = "compressedSizeBytes",
             default,
@@ -361,7 +361,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub compressed_size_bytes: ::std::option::Option<i64>,
-        #[doc = "An identifier for the MessageEvent's message that can be used to match SENT and RECEIVED MessageEvents. It is recommended to be unique within a Span."]
+        #[doc = "An identifier for the MessageEvent's message that can be used to match `SENT` and `RECEIVED` MessageEvents."]
         #[serde(
             rename = "id",
             default,
@@ -525,7 +525,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub child_span_count: ::std::option::Option<i32>,
-        #[doc = "Required. A description of the span's operation (up to 128 bytes). Trace displays the description in the Google Cloud Platform Console. For example, the display name can be a qualified method name or a file name and a line number where the operation is called. A best practice is to use the same display name within an application and at the same call point. This makes it easier to correlate spans in different traces."]
+        #[doc = "Required. A description of the span's operation (up to 128 bytes). Cloud Trace displays the description in the Cloud Console. For example, the display name can be a qualified method name or a file name and a line number where the operation is called. A best practice is to use the same display name within an application and at the same call point. This makes it easier to correlate spans in different traces."]
         #[serde(
             rename = "displayName",
             default,
@@ -546,14 +546,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub links: ::std::option::Option<crate::schemas::Links>,
-        #[doc = "Required. The resource name of the span in the following format: projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/SPAN_ID is a unique identifier for a trace within a project; it is a 32-character hexadecimal encoding of a 16-byte array. [SPAN_ID] is a unique identifier for a span within a trace; it is a 16-character hexadecimal encoding of an 8-byte array. It should not be zero."]
+        #[doc = "Required. The resource name of the span in the following format: * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]` `[TRACE_ID]` is a unique identifier for a trace within a project; it is a 32-character hexadecimal encoding of a 16-byte array. It should not be zero. `[SPAN_ID]` is a unique identifier for a span within a trace; it is a 16-character hexadecimal encoding of an 8-byte array. It should not be zero. ."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The [SPAN_ID] of this span's parent span. If this is a root span, then this field must be empty."]
+        #[doc = "The `[SPAN_ID]` of this span's parent span. If this is a root span, then this field must be empty."]
         #[serde(
             rename = "parentSpanId",
             default,
@@ -567,7 +567,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub same_process_as_parent_span: ::std::option::Option<bool>,
-        #[doc = "Required. The [SPAN_ID] portion of the span's resource name."]
+        #[doc = "Required. The `[SPAN_ID]` portion of the span's resource name."]
         #[serde(
             rename = "spanId",
             default,
@@ -1242,7 +1242,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Sends new spans to new or existing traces. You cannot update existing spans."]
+                #[doc = "Batch writes new spans to new or existing traces. You cannot update existing spans."]
                 pub fn batch_write(
                     &self,
                     request: crate::schemas::BatchWriteSpansRequest,

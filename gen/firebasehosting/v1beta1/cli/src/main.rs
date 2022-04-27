@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("firebasehosting1_beta1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210315")
+            .version("0.1.0-20220419")
             .about("The Firebase Hosting REST API enables programmatic and customizable management and deployments to your Firebase-hosted sites. Use this REST API to create and manage channels and sites as well as to deploy new or updated hosting configurations and content files.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -116,7 +116,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             channels1 = channels1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates information for the specified channel of the specified site. Implicitly creates the channel if it doesn\'t already exist.");
+            let mcmd = SubCommand::with_name("patch").about("Updates information for the specified channel of the specified site. Implicitly creates the channel if it doesn't already exist.");
             channels1 = channels1.subcommand(mcmd);
         }
         let mut domains1 = SubCommand::with_name("domains")
@@ -209,7 +209,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             channels2 = channels2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates information for the specified channel of the specified site. Implicitly creates the channel if it doesn\'t already exist.");
+            let mcmd = SubCommand::with_name("patch").about("Updates information for the specified channel of the specified site. Implicitly creates the channel if it doesn't already exist.");
             channels2 = channels2.subcommand(mcmd);
         }
         let mut domains2 = SubCommand::with_name("domains")

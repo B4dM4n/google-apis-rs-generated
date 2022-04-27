@@ -1,4 +1,4 @@
-#![doc = "# Resources and Methods\n    * [debug](resources/debug/struct.DebugActions.html)\n      * [datasources](resources/debug/datasources/struct.DatasourcesActions.html)\n        * [items](resources/debug/datasources/items/struct.ItemsActions.html)\n          * [*checkAccess*](resources/debug/datasources/items/struct.CheckAccessRequestBuilder.html), [*searchByViewUrl*](resources/debug/datasources/items/struct.SearchByViewUrlRequestBuilder.html)\n          * [unmappedids](resources/debug/datasources/items/unmappedids/struct.UnmappedidsActions.html)\n            * [*list*](resources/debug/datasources/items/unmappedids/struct.ListRequestBuilder.html)\n      * [identitysources](resources/debug/identitysources/struct.IdentitysourcesActions.html)\n        * [items](resources/debug/identitysources/items/struct.ItemsActions.html)\n          * [*listForunmappedidentity*](resources/debug/identitysources/items/struct.ListForunmappedidentityRequestBuilder.html)\n        * [unmappedids](resources/debug/identitysources/unmappedids/struct.UnmappedidsActions.html)\n          * [*list*](resources/debug/identitysources/unmappedids/struct.ListRequestBuilder.html)\n    * [indexing](resources/indexing/struct.IndexingActions.html)\n      * [datasources](resources/indexing/datasources/struct.DatasourcesActions.html)\n        * [*deleteSchema*](resources/indexing/datasources/struct.DeleteSchemaRequestBuilder.html), [*getSchema*](resources/indexing/datasources/struct.GetSchemaRequestBuilder.html), [*updateSchema*](resources/indexing/datasources/struct.UpdateSchemaRequestBuilder.html)\n        * [items](resources/indexing/datasources/items/struct.ItemsActions.html)\n          * [*delete*](resources/indexing/datasources/items/struct.DeleteRequestBuilder.html), [*deleteQueueItems*](resources/indexing/datasources/items/struct.DeleteQueueItemsRequestBuilder.html), [*get*](resources/indexing/datasources/items/struct.GetRequestBuilder.html), [*index*](resources/indexing/datasources/items/struct.IndexRequestBuilder.html), [*list*](resources/indexing/datasources/items/struct.ListRequestBuilder.html), [*poll*](resources/indexing/datasources/items/struct.PollRequestBuilder.html), [*push*](resources/indexing/datasources/items/struct.PushRequestBuilder.html), [*unreserve*](resources/indexing/datasources/items/struct.UnreserveRequestBuilder.html), [*upload*](resources/indexing/datasources/items/struct.UploadRequestBuilder.html)\n    * [media](resources/media/struct.MediaActions.html)\n      * [*upload*](resources/media/struct.UploadRequestBuilder.html)\n    * [operations](resources/operations/struct.OperationsActions.html)\n      * [*get*](resources/operations/struct.GetRequestBuilder.html)\n      * [lro](resources/operations/lro/struct.LroActions.html)\n        * [*list*](resources/operations/lro/struct.ListRequestBuilder.html)\n    * [query](resources/query/struct.QueryActions.html)\n      * [*search*](resources/query/struct.SearchRequestBuilder.html), [*suggest*](resources/query/struct.SuggestRequestBuilder.html)\n      * [sources](resources/query/sources/struct.SourcesActions.html)\n        * [*list*](resources/query/sources/struct.ListRequestBuilder.html)\n    * [settings](resources/settings/struct.SettingsActions.html)\n      * [datasources](resources/settings/datasources/struct.DatasourcesActions.html)\n        * [*create*](resources/settings/datasources/struct.CreateRequestBuilder.html), [*delete*](resources/settings/datasources/struct.DeleteRequestBuilder.html), [*get*](resources/settings/datasources/struct.GetRequestBuilder.html), [*list*](resources/settings/datasources/struct.ListRequestBuilder.html), [*update*](resources/settings/datasources/struct.UpdateRequestBuilder.html)\n      * [searchapplications](resources/settings/searchapplications/struct.SearchapplicationsActions.html)\n        * [*create*](resources/settings/searchapplications/struct.CreateRequestBuilder.html), [*delete*](resources/settings/searchapplications/struct.DeleteRequestBuilder.html), [*get*](resources/settings/searchapplications/struct.GetRequestBuilder.html), [*list*](resources/settings/searchapplications/struct.ListRequestBuilder.html), [*reset*](resources/settings/searchapplications/struct.ResetRequestBuilder.html), [*update*](resources/settings/searchapplications/struct.UpdateRequestBuilder.html)\n    * [stats](resources/stats/struct.StatsActions.html)\n      * [*getIndex*](resources/stats/struct.GetIndexRequestBuilder.html), [*getQuery*](resources/stats/struct.GetQueryRequestBuilder.html), [*getSession*](resources/stats/struct.GetSessionRequestBuilder.html), [*getUser*](resources/stats/struct.GetUserRequestBuilder.html)\n      * [index](resources/stats/index/struct.IndexActions.html)\n        * [datasources](resources/stats/index/datasources/struct.DatasourcesActions.html)\n          * [*get*](resources/stats/index/datasources/struct.GetRequestBuilder.html)\n      * [query](resources/stats/query/struct.QueryActions.html)\n        * [searchapplications](resources/stats/query/searchapplications/struct.SearchapplicationsActions.html)\n          * [*get*](resources/stats/query/searchapplications/struct.GetRequestBuilder.html)\n      * [session](resources/stats/session/struct.SessionActions.html)\n        * [searchapplications](resources/stats/session/searchapplications/struct.SearchapplicationsActions.html)\n          * [*get*](resources/stats/session/searchapplications/struct.GetRequestBuilder.html)\n      * [user](resources/stats/user/struct.UserActions.html)\n        * [searchapplications](resources/stats/user/searchapplications/struct.SearchapplicationsActions.html)\n          * [*get*](resources/stats/user/searchapplications/struct.GetRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [debug](resources/debug/struct.DebugActions.html)\n      * [datasources](resources/debug/datasources/struct.DatasourcesActions.html)\n        * [items](resources/debug/datasources/items/struct.ItemsActions.html)\n          * [*checkAccess*](resources/debug/datasources/items/struct.CheckAccessRequestBuilder.html), [*searchByViewUrl*](resources/debug/datasources/items/struct.SearchByViewUrlRequestBuilder.html)\n          * [unmappedids](resources/debug/datasources/items/unmappedids/struct.UnmappedidsActions.html)\n            * [*list*](resources/debug/datasources/items/unmappedids/struct.ListRequestBuilder.html)\n      * [identitysources](resources/debug/identitysources/struct.IdentitysourcesActions.html)\n        * [items](resources/debug/identitysources/items/struct.ItemsActions.html)\n          * [*listForunmappedidentity*](resources/debug/identitysources/items/struct.ListForunmappedidentityRequestBuilder.html)\n        * [unmappedids](resources/debug/identitysources/unmappedids/struct.UnmappedidsActions.html)\n          * [*list*](resources/debug/identitysources/unmappedids/struct.ListRequestBuilder.html)\n    * [indexing](resources/indexing/struct.IndexingActions.html)\n      * [datasources](resources/indexing/datasources/struct.DatasourcesActions.html)\n        * [*deleteSchema*](resources/indexing/datasources/struct.DeleteSchemaRequestBuilder.html), [*getSchema*](resources/indexing/datasources/struct.GetSchemaRequestBuilder.html), [*updateSchema*](resources/indexing/datasources/struct.UpdateSchemaRequestBuilder.html)\n        * [items](resources/indexing/datasources/items/struct.ItemsActions.html)\n          * [*delete*](resources/indexing/datasources/items/struct.DeleteRequestBuilder.html), [*deleteQueueItems*](resources/indexing/datasources/items/struct.DeleteQueueItemsRequestBuilder.html), [*get*](resources/indexing/datasources/items/struct.GetRequestBuilder.html), [*index*](resources/indexing/datasources/items/struct.IndexRequestBuilder.html), [*list*](resources/indexing/datasources/items/struct.ListRequestBuilder.html), [*poll*](resources/indexing/datasources/items/struct.PollRequestBuilder.html), [*push*](resources/indexing/datasources/items/struct.PushRequestBuilder.html), [*unreserve*](resources/indexing/datasources/items/struct.UnreserveRequestBuilder.html), [*upload*](resources/indexing/datasources/items/struct.UploadRequestBuilder.html)\n    * [media](resources/media/struct.MediaActions.html)\n      * [*upload*](resources/media/struct.UploadRequestBuilder.html)\n    * [operations](resources/operations/struct.OperationsActions.html)\n      * [*get*](resources/operations/struct.GetRequestBuilder.html)\n      * [lro](resources/operations/lro/struct.LroActions.html)\n        * [*list*](resources/operations/lro/struct.ListRequestBuilder.html)\n    * [query](resources/query/struct.QueryActions.html)\n      * [*search*](resources/query/struct.SearchRequestBuilder.html), [*suggest*](resources/query/struct.SuggestRequestBuilder.html)\n      * [sources](resources/query/sources/struct.SourcesActions.html)\n        * [*list*](resources/query/sources/struct.ListRequestBuilder.html)\n    * [settings](resources/settings/struct.SettingsActions.html)\n      * [*getCustomer*](resources/settings/struct.GetCustomerRequestBuilder.html), [*updateCustomer*](resources/settings/struct.UpdateCustomerRequestBuilder.html)\n      * [datasources](resources/settings/datasources/struct.DatasourcesActions.html)\n        * [*create*](resources/settings/datasources/struct.CreateRequestBuilder.html), [*delete*](resources/settings/datasources/struct.DeleteRequestBuilder.html), [*get*](resources/settings/datasources/struct.GetRequestBuilder.html), [*list*](resources/settings/datasources/struct.ListRequestBuilder.html), [*update*](resources/settings/datasources/struct.UpdateRequestBuilder.html)\n      * [searchapplications](resources/settings/searchapplications/struct.SearchapplicationsActions.html)\n        * [*create*](resources/settings/searchapplications/struct.CreateRequestBuilder.html), [*delete*](resources/settings/searchapplications/struct.DeleteRequestBuilder.html), [*get*](resources/settings/searchapplications/struct.GetRequestBuilder.html), [*list*](resources/settings/searchapplications/struct.ListRequestBuilder.html), [*reset*](resources/settings/searchapplications/struct.ResetRequestBuilder.html), [*update*](resources/settings/searchapplications/struct.UpdateRequestBuilder.html)\n    * [stats](resources/stats/struct.StatsActions.html)\n      * [*getIndex*](resources/stats/struct.GetIndexRequestBuilder.html), [*getQuery*](resources/stats/struct.GetQueryRequestBuilder.html), [*getSearchapplication*](resources/stats/struct.GetSearchapplicationRequestBuilder.html), [*getSession*](resources/stats/struct.GetSessionRequestBuilder.html), [*getUser*](resources/stats/struct.GetUserRequestBuilder.html)\n      * [index](resources/stats/index/struct.IndexActions.html)\n        * [datasources](resources/stats/index/datasources/struct.DatasourcesActions.html)\n          * [*get*](resources/stats/index/datasources/struct.GetRequestBuilder.html)\n      * [query](resources/stats/query/struct.QueryActions.html)\n        * [searchapplications](resources/stats/query/searchapplications/struct.SearchapplicationsActions.html)\n          * [*get*](resources/stats/query/searchapplications/struct.GetRequestBuilder.html)\n      * [session](resources/stats/session/struct.SessionActions.html)\n        * [searchapplications](resources/stats/session/searchapplications/struct.SearchapplicationsActions.html)\n          * [*get*](resources/stats/session/searchapplications/struct.GetRequestBuilder.html)\n      * [user](resources/stats/user/struct.UserActions.html)\n        * [searchapplications](resources/stats/user/searchapplications/struct.SearchapplicationsActions.html)\n          * [*get*](resources/stats/user/searchapplications/struct.GetRequestBuilder.html)\n    * [v_1](resources/v_1/struct.V1Actions.html)\n      * [*initializeCustomer*](resources/v_1/struct.InitializeCustomerRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Index and serve your organization's data with Cloud Search\n\n`https://www.googleapis.com/auth/cloud_search`"]
     pub const CLOUD_SEARCH: &str = "https://www.googleapis.com/auth/cloud_search";
@@ -23,6 +23,456 @@ pub mod scopes {
         "https://www.googleapis.com/auth/cloud_search.stats.indexing";
 }
 pub mod schemas {
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AclInfo {
+        #[doc = "Number of groups which have at least read access to the document."]
+        #[serde(
+            rename = "groupsCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub groups_count: ::std::option::Option<i32>,
+        #[doc = "The scope to which the content was shared."]
+        #[serde(
+            rename = "scope",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub scope: ::std::option::Option<crate::schemas::AclInfoScope>,
+        #[doc = "Number of users which have at least read access to the document."]
+        #[serde(
+            rename = "usersCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub users_count: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for AclInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AclInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AclInfoScope {
+        #[doc = "Now it works only for google.com. Anybody at the same domain. Now it works only"]
+        DasherDomain,
+        #[doc = "Anybody at the same domain with the link."]
+        DasherDomainWithLink,
+        #[doc = "Explicit set of people and groups."]
+        Limited,
+        #[doc = "Anybody."]
+        Public,
+        #[doc = "for google.com. Anybody with the link."]
+        PublicWithLink,
+        #[doc = "Special tag to indicate TeamDrive scope."]
+        TeamDrive,
+    }
+    impl AclInfoScope {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AclInfoScope::DasherDomain => "DASHER_DOMAIN",
+                AclInfoScope::DasherDomainWithLink => "DASHER_DOMAIN_WITH_LINK",
+                AclInfoScope::Limited => "LIMITED",
+                AclInfoScope::Public => "PUBLIC",
+                AclInfoScope::PublicWithLink => "PUBLIC_WITH_LINK",
+                AclInfoScope::TeamDrive => "TEAM_DRIVE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AclInfoScope {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AclInfoScope {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AclInfoScope, ()> {
+            Ok(match s {
+                "DASHER_DOMAIN" => AclInfoScope::DasherDomain,
+                "DASHER_DOMAIN_WITH_LINK" => AclInfoScope::DasherDomainWithLink,
+                "LIMITED" => AclInfoScope::Limited,
+                "PUBLIC" => AclInfoScope::Public,
+                "PUBLIC_WITH_LINK" => AclInfoScope::PublicWithLink,
+                "TEAM_DRIVE" => AclInfoScope::TeamDrive,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AclInfoScope {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AclInfoScope {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AclInfoScope {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DASHER_DOMAIN" => AclInfoScope::DasherDomain,
+                "DASHER_DOMAIN_WITH_LINK" => AclInfoScope::DasherDomainWithLink,
+                "LIMITED" => AclInfoScope::Limited,
+                "PUBLIC" => AclInfoScope::Public,
+                "PUBLIC_WITH_LINK" => AclInfoScope::PublicWithLink,
+                "TEAM_DRIVE" => AclInfoScope::TeamDrive,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AclInfoScope {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AclInfoScope {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AppId {
+        #[doc = "Enum indicating the type of App this is."]
+        #[serde(
+            rename = "appType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub app_type: ::std::option::Option<crate::schemas::AppIdAppType>,
+        #[doc = "Enum indicating which 1P App this is when app_type is GSUITE_APP. Determined & set by the 1P API as a convenience for all users of this identifier(Eg. clients, chime, backend etc.) to map to 1P properties."]
+        #[serde(
+            rename = "gsuiteAppType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gsuite_app_type: ::std::option::Option<crate::schemas::AppIdGsuiteAppType>,
+        #[doc = "Numeric identifier of the App. Set to Project number for 1/3P Apps. For Webhook, this is WebhookId. Determined & set by the 1P API from App credentials on the side channel."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub id: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for AppId {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AppId {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AppIdAppType {
+        #[doc = "3P APP eg. external Bots(Asana Bot), 1P Bots(Drive Bot)."]
+        App,
+        AppTypeUnspecified,
+        #[doc = "1P APP eg. Tasks, Meet, Docs, Calendar.."]
+        GsuiteApp,
+        #[doc = "Asynchronous messages via an incoming webhook."]
+        IncomingWebhook,
+    }
+    impl AppIdAppType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AppIdAppType::App => "APP",
+                AppIdAppType::AppTypeUnspecified => "APP_TYPE_UNSPECIFIED",
+                AppIdAppType::GsuiteApp => "GSUITE_APP",
+                AppIdAppType::IncomingWebhook => "INCOMING_WEBHOOK",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AppIdAppType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AppIdAppType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AppIdAppType, ()> {
+            Ok(match s {
+                "APP" => AppIdAppType::App,
+                "APP_TYPE_UNSPECIFIED" => AppIdAppType::AppTypeUnspecified,
+                "GSUITE_APP" => AppIdAppType::GsuiteApp,
+                "INCOMING_WEBHOOK" => AppIdAppType::IncomingWebhook,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AppIdAppType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AppIdAppType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AppIdAppType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "APP" => AppIdAppType::App,
+                "APP_TYPE_UNSPECIFIED" => AppIdAppType::AppTypeUnspecified,
+                "GSUITE_APP" => AppIdAppType::GsuiteApp,
+                "INCOMING_WEBHOOK" => AppIdAppType::IncomingWebhook,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AppIdAppType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AppIdAppType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AppIdGsuiteAppType {
+        ActivityFeedApp,
+        #[doc = "Powered by Bullseye"]
+        AssistiveSuggestionApp,
+        CalendarApp,
+        ContactsApp,
+        DocsApp,
+        DriveApp,
+        GsuiteAppTypeUnspecified,
+        MeetApp,
+        SheetsApp,
+        SlidesApp,
+        TasksApp,
+    }
+    impl AppIdGsuiteAppType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AppIdGsuiteAppType::ActivityFeedApp => "ACTIVITY_FEED_APP",
+                AppIdGsuiteAppType::AssistiveSuggestionApp => "ASSISTIVE_SUGGESTION_APP",
+                AppIdGsuiteAppType::CalendarApp => "CALENDAR_APP",
+                AppIdGsuiteAppType::ContactsApp => "CONTACTS_APP",
+                AppIdGsuiteAppType::DocsApp => "DOCS_APP",
+                AppIdGsuiteAppType::DriveApp => "DRIVE_APP",
+                AppIdGsuiteAppType::GsuiteAppTypeUnspecified => "GSUITE_APP_TYPE_UNSPECIFIED",
+                AppIdGsuiteAppType::MeetApp => "MEET_APP",
+                AppIdGsuiteAppType::SheetsApp => "SHEETS_APP",
+                AppIdGsuiteAppType::SlidesApp => "SLIDES_APP",
+                AppIdGsuiteAppType::TasksApp => "TASKS_APP",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AppIdGsuiteAppType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AppIdGsuiteAppType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AppIdGsuiteAppType, ()> {
+            Ok(match s {
+                "ACTIVITY_FEED_APP" => AppIdGsuiteAppType::ActivityFeedApp,
+                "ASSISTIVE_SUGGESTION_APP" => AppIdGsuiteAppType::AssistiveSuggestionApp,
+                "CALENDAR_APP" => AppIdGsuiteAppType::CalendarApp,
+                "CONTACTS_APP" => AppIdGsuiteAppType::ContactsApp,
+                "DOCS_APP" => AppIdGsuiteAppType::DocsApp,
+                "DRIVE_APP" => AppIdGsuiteAppType::DriveApp,
+                "GSUITE_APP_TYPE_UNSPECIFIED" => AppIdGsuiteAppType::GsuiteAppTypeUnspecified,
+                "MEET_APP" => AppIdGsuiteAppType::MeetApp,
+                "SHEETS_APP" => AppIdGsuiteAppType::SheetsApp,
+                "SLIDES_APP" => AppIdGsuiteAppType::SlidesApp,
+                "TASKS_APP" => AppIdGsuiteAppType::TasksApp,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AppIdGsuiteAppType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AppIdGsuiteAppType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AppIdGsuiteAppType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACTIVITY_FEED_APP" => AppIdGsuiteAppType::ActivityFeedApp,
+                "ASSISTIVE_SUGGESTION_APP" => AppIdGsuiteAppType::AssistiveSuggestionApp,
+                "CALENDAR_APP" => AppIdGsuiteAppType::CalendarApp,
+                "CONTACTS_APP" => AppIdGsuiteAppType::ContactsApp,
+                "DOCS_APP" => AppIdGsuiteAppType::DocsApp,
+                "DRIVE_APP" => AppIdGsuiteAppType::DriveApp,
+                "GSUITE_APP_TYPE_UNSPECIFIED" => AppIdGsuiteAppType::GsuiteAppTypeUnspecified,
+                "MEET_APP" => AppIdGsuiteAppType::MeetApp,
+                "SHEETS_APP" => AppIdGsuiteAppType::SheetsApp,
+                "SLIDES_APP" => AppIdGsuiteAppType::SlidesApp,
+                "TASKS_APP" => AppIdGsuiteAppType::TasksApp,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AppIdGsuiteAppType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AppIdGsuiteAppType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AuditLoggingSettings {
+        #[doc = "Indicates whether audit logging is on/off for admin activity read APIs i.e. Get/List DataSources, Get/List SearchApplications etc."]
+        #[serde(
+            rename = "logAdminReadActions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub log_admin_read_actions: ::std::option::Option<bool>,
+        #[doc = "Indicates whether audit logging is on/off for data access read APIs i.e. ListItems, GetItem etc."]
+        #[serde(
+            rename = "logDataReadActions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub log_data_read_actions: ::std::option::Option<bool>,
+        #[doc = "Indicates whether audit logging is on/off for data access write APIs i.e. IndexItem etc."]
+        #[serde(
+            rename = "logDataWriteActions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub log_data_write_actions: ::std::option::Option<bool>,
+        #[doc = "The resource name of the GCP Project to store audit logs. Cloud audit logging will be enabled after project_name has been updated through CustomerService. Format: projects/{project_id}"]
+        #[serde(
+            rename = "project",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub project: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for AuditLoggingSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AuditLoggingSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AvatarInfo {
+        #[serde(
+            rename = "emoji",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub emoji: ::std::option::Option<crate::schemas::Emoji>,
+    }
+    impl ::google_field_selector::FieldSelector for AvatarInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AvatarInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -232,6 +682,247 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct ContextAttribute {
+        #[doc = "The name of the attribute. It should not be empty. The maximum length is 32 characters. The name must start with a letter and can only contain letters (A-Z, a-z) or numbers (0-9). The name will be normalized (lower-cased) before being matched."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Text values of the attribute. The maximum number of elements is 10. The maximum length of an element in the array is 32 characters. The value will be normalized (lower-cased) before being matched."]
+        #[serde(
+            rename = "values",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub values: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for ContextAttribute {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ContextAttribute {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CustomEmoji {
+        #[doc = "ID for the underlying image data in Blobstore. This field should *only* be present in Spanner or within the server, but should not be exposed in public APIs."]
+        #[serde(
+            rename = "blobId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub blob_id: ::std::option::Option<String>,
+        #[doc = "Time when the Emoji was created, in microseconds. This field may be present in Spanner, within the server, or in public APIs."]
+        #[serde(
+            rename = "createTimeMicros",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub create_time_micros: ::std::option::Option<i64>,
+        #[doc = "This field should *never* be persisted to Spanner."]
+        #[serde(
+            rename = "creatorUserId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub creator_user_id: ::std::option::Option<crate::schemas::UserId>,
+        #[doc = "This field should *never* be persisted to Spanner."]
+        #[serde(
+            rename = "ownerCustomerId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub owner_customer_id: ::std::option::Option<crate::schemas::CustomerId>,
+        #[doc = "Opaque token that clients use to construct the URL for accessing the custom emoji’s image data. This field is intended for API consumption, and should *never* be persisted to Spanner."]
+        #[serde(
+            rename = "readToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub read_token: ::std::option::Option<String>,
+        #[doc = "User-provided, human-readable ID for the custom emoji. Users are expected to observe this field in the UI instead of the UUID. This shortcode should be unique within an organization, but has no global uniqueness guarantees, unlike the UUID. This field should *never* be persisted to Spanner."]
+        #[serde(
+            rename = "shortcode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub shortcode: ::std::option::Option<String>,
+        #[doc = "Snapshot of the current state of the emoji, which may differ from the source-of-truth in the CustomEmojis table. This field should *never* be persisted to Spanner."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::CustomEmojiState>,
+        #[serde(
+            rename = "updateTimeMicros",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub update_time_micros: ::std::option::Option<i64>,
+        #[doc = "Unique key for a custom emoji resource. Required. This field is *always* populated."]
+        #[serde(
+            rename = "uuid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uuid: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for CustomEmoji {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CustomEmoji {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum CustomEmojiState {
+        #[doc = "Emoji is removed everywhere and is not available to end-users."]
+        EmojiDeleted,
+        #[doc = "Emoji is visible and available to be used, subject to access control requirements."]
+        EmojiEnabled,
+        #[doc = "Emoji is hidden from pickers, so new usages are not allowed, but is not removed from existing embeddings."]
+        EmojiHidden,
+        EmojiStateUnspecified,
+        #[doc = "Emoji can no longer be used (e.g. due to a shortcode conflict), but is not removed from existing embeddings."]
+        EmojiSystemDisabled,
+    }
+    impl CustomEmojiState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                CustomEmojiState::EmojiDeleted => "EMOJI_DELETED",
+                CustomEmojiState::EmojiEnabled => "EMOJI_ENABLED",
+                CustomEmojiState::EmojiHidden => "EMOJI_HIDDEN",
+                CustomEmojiState::EmojiStateUnspecified => "EMOJI_STATE_UNSPECIFIED",
+                CustomEmojiState::EmojiSystemDisabled => "EMOJI_SYSTEM_DISABLED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for CustomEmojiState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for CustomEmojiState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<CustomEmojiState, ()> {
+            Ok(match s {
+                "EMOJI_DELETED" => CustomEmojiState::EmojiDeleted,
+                "EMOJI_ENABLED" => CustomEmojiState::EmojiEnabled,
+                "EMOJI_HIDDEN" => CustomEmojiState::EmojiHidden,
+                "EMOJI_STATE_UNSPECIFIED" => CustomEmojiState::EmojiStateUnspecified,
+                "EMOJI_SYSTEM_DISABLED" => CustomEmojiState::EmojiSystemDisabled,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for CustomEmojiState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for CustomEmojiState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for CustomEmojiState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "EMOJI_DELETED" => CustomEmojiState::EmojiDeleted,
+                "EMOJI_ENABLED" => CustomEmojiState::EmojiEnabled,
+                "EMOJI_HIDDEN" => CustomEmojiState::EmojiHidden,
+                "EMOJI_STATE_UNSPECIFIED" => CustomEmojiState::EmojiStateUnspecified,
+                "EMOJI_SYSTEM_DISABLED" => CustomEmojiState::EmojiSystemDisabled,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for CustomEmojiState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CustomEmojiState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CustomerId {
+        #[serde(
+            rename = "customerId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub customer_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for CustomerId {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CustomerId {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct CustomerIndexStats {
         #[doc = "Date for which statistics were calculated."]
         #[serde(
@@ -307,8 +998,47 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct CustomerSearchApplicationStats {
+        #[doc = "The count of search applications for the date."]
+        #[serde(
+            rename = "count",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub count: ::std::option::Option<i64>,
+        #[doc = "Date for which search application stats were calculated."]
+        #[serde(
+            rename = "date",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub date: ::std::option::Option<crate::schemas::Date>,
+    }
+    impl ::google_field_selector::FieldSelector for CustomerSearchApplicationStats {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CustomerSearchApplicationStats {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct CustomerSessionStats {
-        #[doc = "Date for which session stats were calculated. Stats calculated on the next day close to midnight are returned."]
+        #[doc = "Date for which session stats were calculated. Stats are calculated on the following day, close to midnight PST, and then returned."]
         #[serde(
             rename = "date",
             default,
@@ -330,6 +1060,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CustomerSessionStats {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CustomerSettings {
+        #[doc = "Audit Logging settings for the customer. If update_mask is empty then this field will be updated based on UpdateCustomerSettings request."]
+        #[serde(
+            rename = "auditLoggingSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub audit_logging_settings: ::std::option::Option<crate::schemas::AuditLoggingSettings>,
+        #[doc = "VPC SC settings for the customer. If update_mask is empty then this field will be updated based on UpdateCustomerSettings request."]
+        #[serde(
+            rename = "vpcSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub vpc_settings: ::std::option::Option<crate::schemas::Vpcsettings>,
+    }
+    impl ::google_field_selector::FieldSelector for CustomerSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CustomerSettings {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -451,6 +1219,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub operation_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "Can a user request to get thumbnail URI for Items indexed in this data source."]
+        #[serde(
+            rename = "returnThumbnailUrls",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub return_thumbnail_urls: ::std::option::Option<bool>,
         #[doc = "A short name or alias for the source. This value will be used to match the 'source' operator. For example, if the short name is *<value>* then queries like *source:<value>* will only return results for this source. The value must be unique across all datasources. The value must only contain alphanumeric characters (a-zA-Z0-9). The value cannot start with 'google' and cannot be one of the following: mail, gmail, docs, drive, groups, sites, calendar, hangouts, gplus, keep, people, teams. Its maximum length is 32 characters."]
         #[serde(
             rename = "shortName",
@@ -790,6 +1565,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for DisplayedProperty {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DmId {
+        #[doc = "Unique server assigned Id, per Direct Message Space."]
+        #[serde(
+            rename = "dmId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dm_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for DmId {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DmId {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1352,6 +2158,114 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct DynamiteSpacesScoringInfo {
+        #[serde(
+            rename = "affinityScore",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub affinity_score: ::std::option::Option<f64>,
+        #[serde(
+            rename = "commonContactCountAffinityScore",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub common_contact_count_affinity_score: ::std::option::Option<f64>,
+        #[serde(
+            rename = "contactsIntersectionCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub contacts_intersection_count: ::std::option::Option<f64>,
+        #[serde(
+            rename = "finalScore",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub final_score: ::std::option::Option<f64>,
+        #[serde(
+            rename = "freshnessScore",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub freshness_score: ::std::option::Option<f64>,
+        #[serde(
+            rename = "joinedSpacesAffinityScore",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub joined_spaces_affinity_score: ::std::option::Option<f64>,
+        #[serde(
+            rename = "lastMessagePostedTimestampMicros",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub last_message_posted_timestamp_micros: ::std::option::Option<i64>,
+        #[serde(
+            rename = "memberMetadataCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub member_metadata_count: ::std::option::Option<f64>,
+        #[serde(
+            rename = "messageScore",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub message_score: ::std::option::Option<f64>,
+        #[serde(
+            rename = "numAucContacts",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub num_auc_contacts: ::std::option::Option<i64>,
+        #[serde(
+            rename = "smallContactListAffinityScore",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub small_contact_list_affinity_score: ::std::option::Option<f64>,
+        #[serde(
+            rename = "smallUnjoinedSpacesAffinityScore",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub small_unjoined_spaces_affinity_score: ::std::option::Option<f64>,
+        #[serde(
+            rename = "spaceAgeInDays",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub space_age_in_days: ::std::option::Option<f64>,
+        #[serde(
+            rename = "spaceCreationTimestampMicros",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub space_creation_timestamp_micros: ::std::option::Option<i64>,
+        #[serde(
+            rename = "topicalityScore",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub topicality_score: ::std::option::Option<f64>,
+    }
+    impl ::google_field_selector::FieldSelector for DynamiteSpacesScoringInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DynamiteSpacesScoringInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug,
         Clone,
         PartialEq,
@@ -1378,6 +2292,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for EmailAddress {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Emoji {
+        #[doc = "A custom emoji."]
+        #[serde(
+            rename = "customEmoji",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub custom_emoji: ::std::option::Option<crate::schemas::CustomEmoji>,
+        #[doc = "A basic emoji represented by a unicode string."]
+        #[serde(
+            rename = "unicode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub unicode: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Emoji {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Emoji {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1674,7 +2626,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct FacetBucket {
-        #[doc = "Number of results that match the bucket value. Counts are only returned for searches when count accuracy is ensured. Can be empty."]
+        #[doc = "Number of results that match the bucket value. Counts are only returned for searches when count accuracy is ensured. Cloud Search does not guarantee facet counts for any query and facet counts might be present only intermittently, even for identical queries. Do not build dependencies on facet count existence; instead use facet ount percentages which are always returned."]
         #[serde(
             rename = "count",
             default,
@@ -1945,6 +2897,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GetCustomerIndexStatsResponse {
+        #[doc = "Average item count for the given date range for which billing is done."]
+        #[serde(
+            rename = "averageIndexedItemCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub average_indexed_item_count: ::std::option::Option<i64>,
         #[doc = "Summary of indexed item counts, one for each day in the requested range."]
         #[serde(
             rename = "stats",
@@ -1982,6 +2942,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub stats: ::std::option::Option<Vec<crate::schemas::CustomerQueryStats>>,
+        #[doc = "Total successful query count (status code 200) for the given date range."]
+        #[serde(
+            rename = "totalQueryCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub total_query_count: ::std::option::Option<i64>,
     }
     impl ::google_field_selector::FieldSelector for GetCustomerQueryStatsResponse {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1989,6 +2957,45 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GetCustomerQueryStatsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GetCustomerSearchApplicationStatsResponse {
+        #[doc = "Average search application count for the given date range."]
+        #[serde(
+            rename = "averageSearchApplicationCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub average_search_application_count: ::std::option::Option<i64>,
+        #[doc = "Search application stats by date."]
+        #[serde(
+            rename = "stats",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub stats: ::std::option::Option<Vec<crate::schemas::CustomerSearchApplicationStats>>,
+    }
+    impl ::google_field_selector::FieldSelector for GetCustomerSearchApplicationStatsResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GetCustomerSearchApplicationStatsResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2066,6 +3073,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GetDataSourceIndexStatsResponse {
+        #[doc = "Average item count for the given date range for which billing is done."]
+        #[serde(
+            rename = "averageIndexedItemCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub average_indexed_item_count: ::std::option::Option<i64>,
         #[doc = "Summary of indexed item counts, one for each day in the requested range."]
         #[serde(
             rename = "stats",
@@ -2097,12 +3112,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GetSearchApplicationQueryStatsResponse {
+        #[doc = "Query stats per date for a search application."]
         #[serde(
             rename = "stats",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub stats: ::std::option::Option<Vec<crate::schemas::SearchApplicationQueryStats>>,
+        #[doc = "Total successful query count (status code 200) for the given date range."]
+        #[serde(
+            rename = "totalQueryCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub total_query_count: ::std::option::Option<i64>,
     }
     impl ::google_field_selector::FieldSelector for GetSearchApplicationQueryStatsResponse {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2170,6 +3194,315 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GetSearchApplicationUserStatsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleDocsMetadata {
+        #[doc = "Contains number of users and groups which can access the document."]
+        #[serde(
+            rename = "aclInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub acl_info: ::std::option::Option<crate::schemas::AclInfo>,
+        #[doc = "The conceptual type (presentation, document, etc.) of this document."]
+        #[serde(
+            rename = "documentType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub document_type: ::std::option::Option<crate::schemas::GoogleDocsMetadataDocumentType>,
+        #[doc = "The file extension of the document. NOTE: As of October 2018 this field is not backfilled for old documents."]
+        #[serde(
+            rename = "fileExtension",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub file_extension: ::std::option::Option<String>,
+        #[doc = "The last time this document was modified, in seconds since epoch. Only counts content modifications."]
+        #[serde(
+            rename = "lastContentModifiedTimestamp",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub last_content_modified_timestamp: ::std::option::Option<i64>,
+        #[doc = "Additional per-result information, akin to Gmail's SingleThreadResponse. Note: GWS no longer seems to use this field, but there's still one reference to it for Scribe, so we can't remove it."]
+        #[serde(
+            rename = "resultInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub result_info: ::std::option::Option<crate::schemas::GoogleDocsResultInfo>,
+        #[doc = "Contains additional information about the document depending on its type."]
+        #[serde(
+            rename = "typeInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub type_info: ::std::option::Option<crate::schemas::TypeInfo>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleDocsMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleDocsMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleDocsMetadataDocumentType {
+        #[doc = "Fall-back for unknown Gdrive types."]
+        BinaryBlob,
+        #[doc = "Writely, Word, etc."]
+        Document,
+        #[doc = "For Atari page and site drafts"]
+        DraftSite,
+        DraftSitePage,
+        Drawing,
+        Folder,
+        Form,
+        FusionTable,
+        Image,
+        #[doc = "Jamboard Jams (go/jam)"]
+        Jam,
+        #[doc = "File types for Gdrive objects are below."]
+        Pdf,
+        #[doc = "Presently, PowerPoint, etc."]
+        Presentation,
+        Script,
+        #[doc = "Drive Shortcuts (go/shortcuts)"]
+        Shortcut,
+        #[doc = "Trix, Excel, etc."]
+        Spreadsheet,
+        #[doc = "If the type is unknown or not represented in this enum."]
+        Unknown,
+        Video,
+    }
+    impl GoogleDocsMetadataDocumentType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleDocsMetadataDocumentType::BinaryBlob => "BINARY_BLOB",
+                GoogleDocsMetadataDocumentType::Document => "DOCUMENT",
+                GoogleDocsMetadataDocumentType::DraftSite => "DRAFT_SITE",
+                GoogleDocsMetadataDocumentType::DraftSitePage => "DRAFT_SITE_PAGE",
+                GoogleDocsMetadataDocumentType::Drawing => "DRAWING",
+                GoogleDocsMetadataDocumentType::Folder => "FOLDER",
+                GoogleDocsMetadataDocumentType::Form => "FORM",
+                GoogleDocsMetadataDocumentType::FusionTable => "FUSION_TABLE",
+                GoogleDocsMetadataDocumentType::Image => "IMAGE",
+                GoogleDocsMetadataDocumentType::Jam => "JAM",
+                GoogleDocsMetadataDocumentType::Pdf => "PDF",
+                GoogleDocsMetadataDocumentType::Presentation => "PRESENTATION",
+                GoogleDocsMetadataDocumentType::Script => "SCRIPT",
+                GoogleDocsMetadataDocumentType::Shortcut => "SHORTCUT",
+                GoogleDocsMetadataDocumentType::Spreadsheet => "SPREADSHEET",
+                GoogleDocsMetadataDocumentType::Unknown => "UNKNOWN",
+                GoogleDocsMetadataDocumentType::Video => "VIDEO",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleDocsMetadataDocumentType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleDocsMetadataDocumentType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleDocsMetadataDocumentType, ()> {
+            Ok(match s {
+                "BINARY_BLOB" => GoogleDocsMetadataDocumentType::BinaryBlob,
+                "DOCUMENT" => GoogleDocsMetadataDocumentType::Document,
+                "DRAFT_SITE" => GoogleDocsMetadataDocumentType::DraftSite,
+                "DRAFT_SITE_PAGE" => GoogleDocsMetadataDocumentType::DraftSitePage,
+                "DRAWING" => GoogleDocsMetadataDocumentType::Drawing,
+                "FOLDER" => GoogleDocsMetadataDocumentType::Folder,
+                "FORM" => GoogleDocsMetadataDocumentType::Form,
+                "FUSION_TABLE" => GoogleDocsMetadataDocumentType::FusionTable,
+                "IMAGE" => GoogleDocsMetadataDocumentType::Image,
+                "JAM" => GoogleDocsMetadataDocumentType::Jam,
+                "PDF" => GoogleDocsMetadataDocumentType::Pdf,
+                "PRESENTATION" => GoogleDocsMetadataDocumentType::Presentation,
+                "SCRIPT" => GoogleDocsMetadataDocumentType::Script,
+                "SHORTCUT" => GoogleDocsMetadataDocumentType::Shortcut,
+                "SPREADSHEET" => GoogleDocsMetadataDocumentType::Spreadsheet,
+                "UNKNOWN" => GoogleDocsMetadataDocumentType::Unknown,
+                "VIDEO" => GoogleDocsMetadataDocumentType::Video,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleDocsMetadataDocumentType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleDocsMetadataDocumentType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleDocsMetadataDocumentType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "BINARY_BLOB" => GoogleDocsMetadataDocumentType::BinaryBlob,
+                "DOCUMENT" => GoogleDocsMetadataDocumentType::Document,
+                "DRAFT_SITE" => GoogleDocsMetadataDocumentType::DraftSite,
+                "DRAFT_SITE_PAGE" => GoogleDocsMetadataDocumentType::DraftSitePage,
+                "DRAWING" => GoogleDocsMetadataDocumentType::Drawing,
+                "FOLDER" => GoogleDocsMetadataDocumentType::Folder,
+                "FORM" => GoogleDocsMetadataDocumentType::Form,
+                "FUSION_TABLE" => GoogleDocsMetadataDocumentType::FusionTable,
+                "IMAGE" => GoogleDocsMetadataDocumentType::Image,
+                "JAM" => GoogleDocsMetadataDocumentType::Jam,
+                "PDF" => GoogleDocsMetadataDocumentType::Pdf,
+                "PRESENTATION" => GoogleDocsMetadataDocumentType::Presentation,
+                "SCRIPT" => GoogleDocsMetadataDocumentType::Script,
+                "SHORTCUT" => GoogleDocsMetadataDocumentType::Shortcut,
+                "SPREADSHEET" => GoogleDocsMetadataDocumentType::Spreadsheet,
+                "UNKNOWN" => GoogleDocsMetadataDocumentType::Unknown,
+                "VIDEO" => GoogleDocsMetadataDocumentType::Video,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleDocsMetadataDocumentType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleDocsMetadataDocumentType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleDocsResultInfo {
+        #[doc = "The SHA1 hash of the object in Drive, if any."]
+        #[serde(
+            rename = "attachmentSha1",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub attachment_sha_1: ::std::option::Option<String>,
+        #[doc = "The storage identifier for the object in Cosmo. This field is intended to used by Stratus/Moonshine integration only. It should not be exposed externally (please refer to encrypted_id for that purpose)."]
+        #[serde(
+            rename = "cosmoId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cosmo_id: ::std::option::Option<crate::schemas::Id>,
+        #[doc = "For Cosmo objects, the Cosmo namespace the object was in. This allows downstream clients to identify whether a document was created in Writely or Kix, Presently or Punch, or whether it was uploaded from GDrive. See storage_cosmo.Id.NAME_SPACE for a list of all Cosmo name spaces."]
+        #[serde(
+            rename = "cosmoNameSpace",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cosmo_name_space: ::std::option::Option<i32>,
+        #[doc = "The encrypted (user-visible) id of this object. Knowing the id is sufficient to create a canonical URL for this document."]
+        #[serde(
+            rename = "encryptedId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encrypted_id: ::std::option::Option<String>,
+        #[doc = "The mimetype of the document."]
+        #[serde(
+            rename = "mimeType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mime_type: ::std::option::Option<String>,
+        #[doc = "The visibility indicator in the UI will be based upon this."]
+        #[serde(
+            rename = "shareScope",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub share_scope: ::std::option::Option<crate::schemas::ShareScope>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleDocsResultInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleDocsResultInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GroupId {
+        #[doc = "Unique, immutable ID of the Direct Message Space"]
+        #[serde(
+            rename = "dmId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dm_id: ::std::option::Option<crate::schemas::DmId>,
+        #[doc = "Unique, immutable ID of the Space"]
+        #[serde(
+            rename = "spaceId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub space_id: ::std::option::Option<crate::schemas::SpaceId>,
+    }
+    impl ::google_field_selector::FieldSelector for GroupId {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GroupId {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2331,6 +3664,52 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct Id {
+        #[doc = "The User account in which the DirEntry was originally created. If name_space==GAIA, then it's the gaia_id of the user this id is referring to."]
+        #[serde(
+            rename = "creatorUserId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub creator_user_id: ::std::option::Option<u64>,
+        #[doc = "The local identifier for the DirEntry (local to the creator's account). local_id + app_name is guaranteed to be unique within the creator account, but not across all User accounts. The string is case sensitive. Ignore if name_space==GAIA. NB For name_space==COSMO, all local_id's should be defined in google3/java/com/google/storage/cosmo/server/api/SpecialObjectIds.java as they have a special predefined meaning. See cosmo.client.CosmoIdFactory.createObjectId(long,String) for IMPORTANT recommendations when generating IDs."]
+        #[serde(
+            rename = "localId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub local_id: ::std::option::Option<String>,
+        #[doc = "The name space in which this id is unique (typically the application that created it). Values should be drawn from the above enum, but for experimentation, use values greater than 1000."]
+        #[serde(
+            rename = "nameSpace",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name_space: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for Id {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Id {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct IndexItemOptions {
         #[doc = "Specifies if the index request should allow gsuite principals that do not exist or are deleted in the index request."]
         #[serde(
@@ -2471,6 +3850,30 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for IndexItemRequestMode {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct InitializeCustomerRequest {}
+    impl ::google_field_selector::FieldSelector for InitializeCustomerRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for InitializeCustomerRequest {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2868,7 +4271,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub structured_data: ::std::option::Option<crate::schemas::ItemStructuredData>,
-        #[doc = "Required. The indexing system stores the version from the datasource as a byte string and compares the Item version in the index to the version of the queued Item using lexical ordering. Cloud Search Indexing won't index or delete any queued item with a version value that is less than or equal to the version of the currently indexed item. The maximum length for this field is 1024 bytes."]
+        #[doc = "Required. The indexing system stores the version from the datasource as a byte string and compares the Item version in the index to the version of the queued Item using lexical ordering. Cloud Search Indexing won't index or delete any queued item with a version value that is less than or equal to the version of the currently indexed item. The maximum length for this field is 1024 bytes. For information on how item version affects the deletion process, refer to [Handle revisions after manual deletes](https://developers.google.com/cloud-search/docs/guides/operations)."]
         #[serde(
             rename = "version",
             default,
@@ -3259,6 +4662,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub count: ::std::option::Option<i64>,
+        #[doc = "Number of items matching the status code for which billing is done. This excludes virtual container items from the total count. This count would not be applicable for items with ERROR or NEW_ITEM status code."]
+        #[serde(
+            rename = "indexedItemsCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub indexed_items_count: ::std::option::Option<i64>,
         #[doc = "Status of the items."]
         #[serde(
             rename = "statusCode",
@@ -3381,6 +4792,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub content_language: ::std::option::Option<String>,
+        #[doc = "A set of named attributes associated with the item. This can be used for influencing the ranking of the item based on the context in the request. The maximum number of elements is 10."]
+        #[serde(
+            rename = "contextAttributes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub context_attributes: ::std::option::Option<Vec<crate::schemas::ContextAttribute>>,
         #[doc = "The time when the item was created in the source repository."]
         #[serde(
             rename = "createTime",
@@ -3430,7 +4848,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub search_quality_metadata: ::std::option::Option<crate::schemas::SearchQualityMetadata>,
-        #[doc = "Link to the source repository serving the data. Search results apply this link to the title. Whitespace or special characters may cause Cloud Search result links to trigger a redirect notice; to avoid this, encode the URL. The maximum length is 2048 characters."]
+        #[doc = "Link to the source repository serving the data. Seach results apply this link to the title. Whitespace or special characters may cause Cloud Seach result links to trigger a redirect notice; to avoid this, encode the URL. The maximum length is 2048 characters."]
         #[serde(
             rename = "sourceRepositoryUrl",
             default,
@@ -3974,6 +5392,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub source: ::std::option::Option<crate::schemas::Source>,
+        #[doc = "The thumbnail URL of the result."]
+        #[serde(
+            rename = "thumbnailUrl",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub thumbnail_url: ::std::option::Option<String>,
         #[doc = "The last modified date for the object in the search result. If not set in the item, the value returned here is empty. When `updateTime` is used for calculating freshness and is not set, this value defaults to 2 years from the current time."]
         #[serde(
             rename = "updateTime",
@@ -4901,7 +6326,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_returnable: ::std::option::Option<bool>,
-        #[doc = "Indicates that the property can be used for sorting. Cannot be true for properties that are repeatable. Cannot be true for properties whose type is object or user identifier. IsReturnable must be true to set this option. Only supported for Boolean, Date, Double, Integer, and Timestamp properties."]
+        #[doc = "Indicates that the property can be used for sorting. Cannot be true for properties that are repeatable. Cannot be true for properties whose type is object. IsReturnable must be true to set this option. Only supported for Boolean, Date, Double, Integer, and Timestamp properties."]
         #[serde(
             rename = "isSortable",
             default,
@@ -5452,6 +6877,44 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct QueryInterpretationConfig {
+        #[doc = "Set this flag to disable supplemental results retrieval, setting a flag here will not retrieve supplemental results for queries associated with a given search application. If this flag is set to True, it will take precedence over the option set at Query level. For the default value of False, query level flag will set the correct interpretation for supplemental results."]
+        #[serde(
+            rename = "forceDisableSupplementalResults",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub force_disable_supplemental_results: ::std::option::Option<bool>,
+        #[doc = "Enable this flag to turn off all internal optimizations like natural language (NL) interpretation of queries, supplemental results retrieval, and usage of synonyms including custom ones. If this flag is set to True, it will take precedence over the option set at Query level. For the default value of False, query level flag will set the correct interpretation for verbatim mode."]
+        #[serde(
+            rename = "forceVerbatimMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub force_verbatim_mode: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for QueryInterpretationConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for QueryInterpretationConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct QueryInterpretationOptions {
         #[doc = "Flag to disable natural language (NL) interpretation of queries. Default is false, Set to true to disable natural language interpretation. NL interpretation only applies to predefined datasources."]
         #[serde(
@@ -5460,6 +6923,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disable_nl_interpretation: ::std::option::Option<bool>,
+        #[doc = "Use this flag to disable supplemental results for a query. Supplemental results setting chosen at SearchApplication level will take precedence if set to True."]
+        #[serde(
+            rename = "disableSupplementalResults",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub disable_supplemental_results: ::std::option::Option<bool>,
         #[doc = "Enable this flag to turn off all internal optimizations like natural language (NL) interpretation of queries, supplemental result retrieval, and usage of synonyms including custom ones. Nl interpretation will be disabled if either one of the two flags is true."]
         #[serde(
             rename = "enableVerbatimMode",
@@ -6074,7 +7544,6 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RestrictItem {
-        #[doc = "LINT.ThenChange(//depot/google3/java/com/google/apps/search/quality/itemsuggest/utils/SubtypeRerankingUtils.java)"]
         #[serde(
             rename = "driveFollowUpRestrict",
             default,
@@ -6087,7 +7556,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub drive_location_restrict: ::std::option::Option<crate::schemas::DriveLocationRestrict>,
-        #[doc = "LINT.IfChange Drive Types."]
+        #[doc = "Drive Types."]
         #[serde(
             rename = "driveMimeTypeRestrict",
             default,
@@ -6492,6 +7961,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
+        #[doc = "Indicates whether audit logging is on/off for requests made for the search application in query APIs."]
+        #[serde(
+            rename = "enableAuditLog",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_audit_log: ::std::option::Option<bool>,
         #[doc = "Name of the Search Application. Format: searchapplications/{application_id}."]
         #[serde(
             rename = "name",
@@ -6506,6 +7982,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub operation_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "The default options for query interpretation"]
+        #[serde(
+            rename = "queryInterpretationConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub query_interpretation_config:
+            ::std::option::Option<crate::schemas::QueryInterpretationConfig>,
+        #[doc = "With each result we should return the URI for its thumbnail (when applicable)"]
+        #[serde(
+            rename = "returnResultThumbnailUrls",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub return_result_thumbnail_urls: ::std::option::Option<bool>,
         #[doc = "Configuration for ranking results."]
         #[serde(
             rename = "scoringConfig",
@@ -6581,7 +8072,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SearchApplicationSessionStats {
-        #[doc = "Date for which session stats were calculated. Stats calculated on the next day close to midnight are returned."]
+        #[doc = "Date for which session stats were calculated. Stats are calculated on the following day, close to midnight PST, and then returned."]
         #[serde(
             rename = "date",
             default,
@@ -6761,6 +8252,13 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct SearchRequest {
+        #[doc = "Context attributes for the request which will be used to adjust ranking of search results. The maximum number of elements is 10."]
+        #[serde(
+            rename = "contextAttributes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub context_attributes: ::std::option::Option<Vec<crate::schemas::ContextAttribute>>,
         #[doc = "The sources to use for querying. If not specified, all data sources from the current search application are used."]
         #[serde(
             rename = "dataSourceRestrictions",
@@ -6782,7 +8280,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub page_size: ::std::option::Option<i32>,
-        #[doc = "The raw query string. See supported search operators in the [Cloud search Cheat Sheet](https://support.google.com/a/users/answer/9299929)"]
+        #[doc = "The raw query string. See supported search operators in the [Narrow your search with operators](https://support.google.com/cloudsearch/answer/6172299)"]
         #[serde(
             rename = "query",
             default,
@@ -6976,6 +8474,132 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SearchResult {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ShareScope {
+        #[doc = "If scope is DOMAIN, this field contains the dasher domain, for example \"google.com\"."]
+        #[serde(
+            rename = "domain",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub domain: ::std::option::Option<String>,
+        #[doc = "The scope to which the content was shared."]
+        #[serde(
+            rename = "scope",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub scope: ::std::option::Option<crate::schemas::ShareScopeScope>,
+    }
+    impl ::google_field_selector::FieldSelector for ShareScope {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ShareScope {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ShareScopeScope {
+        DasherDomain,
+        #[doc = "Viewable by extended circles."]
+        Extended,
+        #[doc = "Viewable only by a set of people."]
+        Limited,
+        #[doc = "Only the author can view the post."]
+        Private,
+        Public,
+        Unknown,
+    }
+    impl ShareScopeScope {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ShareScopeScope::DasherDomain => "DASHER_DOMAIN",
+                ShareScopeScope::Extended => "EXTENDED",
+                ShareScopeScope::Limited => "LIMITED",
+                ShareScopeScope::Private => "PRIVATE",
+                ShareScopeScope::Public => "PUBLIC",
+                ShareScopeScope::Unknown => "UNKNOWN",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ShareScopeScope {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ShareScopeScope {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ShareScopeScope, ()> {
+            Ok(match s {
+                "DASHER_DOMAIN" => ShareScopeScope::DasherDomain,
+                "EXTENDED" => ShareScopeScope::Extended,
+                "LIMITED" => ShareScopeScope::Limited,
+                "PRIVATE" => ShareScopeScope::Private,
+                "PUBLIC" => ShareScopeScope::Public,
+                "UNKNOWN" => ShareScopeScope::Unknown,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ShareScopeScope {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ShareScopeScope {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ShareScopeScope {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DASHER_DOMAIN" => ShareScopeScope::DasherDomain,
+                "EXTENDED" => ShareScopeScope::Extended,
+                "LIMITED" => ShareScopeScope::Limited,
+                "PRIVATE" => ShareScopeScope::Private,
+                "PUBLIC" => ShareScopeScope::Public,
+                "UNKNOWN" => ShareScopeScope::Unknown,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ShareScopeScope {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ShareScopeScope {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -7320,7 +8944,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SourceCrowdingConfig {
-        #[doc = "Maximum number of results allowed from a source. No limits will be set on results if this value is less than or equal to 0."]
+        #[doc = "Maximum number of results allowed from a datasource in a result page as long as results from other sources are not exhausted. Value specified must not be negative. A default value is used if this value is equal to 0. To disable crowding, set the value greater than 100."]
         #[serde(
             rename = "numResults",
             default,
@@ -7500,6 +9124,205 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SourceScoringConfigSourceImportance {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SpaceId {
+        #[doc = "Unique, immutable ID of the Space"]
+        #[serde(
+            rename = "spaceId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub space_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SpaceId {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SpaceId {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SpaceInfo {
+        #[serde(
+            rename = "avatarInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub avatar_info: ::std::option::Option<crate::schemas::AvatarInfo>,
+        #[serde(
+            rename = "avatarUrl",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub avatar_url: ::std::option::Option<String>,
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[serde(
+            rename = "groupId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub group_id: ::std::option::Option<crate::schemas::GroupId>,
+        #[doc = "The email address of the user that invited the calling user to the room, if available. This field will only be populated for direct invites, it will be empty if the user was indirectly invited to the group."]
+        #[serde(
+            rename = "inviterEmail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub inviter_email: ::std::option::Option<String>,
+        #[doc = "Whether this is a space that enables guest access"]
+        #[serde(
+            rename = "isExternal",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub is_external: ::std::option::Option<bool>,
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[serde(
+            rename = "numMembers",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub num_members: ::std::option::Option<i32>,
+        #[doc = "searching user's membership state in this space"]
+        #[serde(
+            rename = "userMembershipState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_membership_state:
+            ::std::option::Option<crate::schemas::SpaceInfoUserMembershipState>,
+    }
+    impl ::google_field_selector::FieldSelector for SpaceInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SpaceInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum SpaceInfoUserMembershipState {
+        #[doc = "This state should never be stored in Spanner. It is a state for responses to the clients to indicate that membership mutations have failed and the member is in its previous state."]
+        MemberFailed,
+        #[doc = "An invitation to the space has been sent"]
+        MemberInvited,
+        #[doc = "User has joined the space"]
+        MemberJoined,
+        #[doc = "User is not a member"]
+        MemberNotAMember,
+        #[doc = "Default state, do not use"]
+        MemberUnknown,
+    }
+    impl SpaceInfoUserMembershipState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                SpaceInfoUserMembershipState::MemberFailed => "MEMBER_FAILED",
+                SpaceInfoUserMembershipState::MemberInvited => "MEMBER_INVITED",
+                SpaceInfoUserMembershipState::MemberJoined => "MEMBER_JOINED",
+                SpaceInfoUserMembershipState::MemberNotAMember => "MEMBER_NOT_A_MEMBER",
+                SpaceInfoUserMembershipState::MemberUnknown => "MEMBER_UNKNOWN",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for SpaceInfoUserMembershipState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for SpaceInfoUserMembershipState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<SpaceInfoUserMembershipState, ()> {
+            Ok(match s {
+                "MEMBER_FAILED" => SpaceInfoUserMembershipState::MemberFailed,
+                "MEMBER_INVITED" => SpaceInfoUserMembershipState::MemberInvited,
+                "MEMBER_JOINED" => SpaceInfoUserMembershipState::MemberJoined,
+                "MEMBER_NOT_A_MEMBER" => SpaceInfoUserMembershipState::MemberNotAMember,
+                "MEMBER_UNKNOWN" => SpaceInfoUserMembershipState::MemberUnknown,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for SpaceInfoUserMembershipState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for SpaceInfoUserMembershipState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for SpaceInfoUserMembershipState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "MEMBER_FAILED" => SpaceInfoUserMembershipState::MemberFailed,
+                "MEMBER_INVITED" => SpaceInfoUserMembershipState::MemberInvited,
+                "MEMBER_JOINED" => SpaceInfoUserMembershipState::MemberJoined,
+                "MEMBER_NOT_A_MEMBER" => SpaceInfoUserMembershipState::MemberNotAMember,
+                "MEMBER_UNKNOWN" => SpaceInfoUserMembershipState::MemberUnknown,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for SpaceInfoUserMembershipState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SpaceInfoUserMembershipState {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -8006,6 +9829,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct TypeInfo {
+        #[doc = "Contains additional video information only if document_type is VIDEO."]
+        #[serde(
+            rename = "videoInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub video_info: ::std::option::Option<crate::schemas::VideoInfo>,
+    }
+    impl ::google_field_selector::FieldSelector for TypeInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TypeInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct UnmappedIdentity {
         #[doc = "The resource name for an external user."]
         #[serde(
@@ -8301,6 +10155,128 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UserId {
+        #[doc = "Optional. Opaque, server-assigned ID of the user profile associated with App/user acting on behalf of the human user. This is currently only set when a 3P application is acting on the user's behalf."]
+        #[serde(
+            rename = "actingUserId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub acting_user_id: ::std::option::Option<String>,
+        #[doc = "Opaque, server-assigned ID of the User."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "Optional. Identifier of the App involved (directly or on behalf of a human creator) in creating this message. This is not set if the user posted a message directly, but is used in the case of, for example, a message being generated by a 1P integration based on a user action (creating an event, creating a task etc). This should only be used on the BE. For clients, please use the field in the FE message proto instead (google3/apps/dynamite/v1/frontend/api/message.proto?q=origin_app_id)."]
+        #[serde(
+            rename = "originAppId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub origin_app_id: ::std::option::Option<crate::schemas::AppId>,
+        #[doc = "Clients do not need to send UserType to Backend, but Backend will always send this field to clients per the following rule: 1. For HUMAN Ids, the field is empty but by default .getType() will return HUMAN. 2. For BOT Ids, the field is ALWAYS set to BOT."]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<crate::schemas::UserIdType>,
+    }
+    impl ::google_field_selector::FieldSelector for UserId {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UserId {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum UserIdType {
+        Bot,
+        #[doc = "Notes on HUMAN type: 1) Leaving UserId.UserType field empty will return HUMAN as default value. This is expected because all the existing UserIds are without explicitly setting UserType, most of which are HUMAN Ids. For Bot Ids we will always set BOT in UserType field. 2) DO NOT explicitly set HUMAN as type. This is a proto2 issue, that a UserId with explicitly set default value HUMAN as type is NOT equal to an id without setting the field. aka. UserId id1 = UserId.newBuilder() .setId(\"dummy\").setType(UserType.HUMAN).build(); UserId id2 = UserId.newBuilder().setId(\"dummy\").build(); AssertThat(id1).isNotEqual(id2); AssertThat(id2.getType()).isEqualTo(UserType.HUMAN);"]
+        Human,
+    }
+    impl UserIdType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                UserIdType::Bot => "BOT",
+                UserIdType::Human => "HUMAN",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for UserIdType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for UserIdType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<UserIdType, ()> {
+            Ok(match s {
+                "BOT" => UserIdType::Bot,
+                "HUMAN" => UserIdType::Human,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for UserIdType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for UserIdType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for UserIdType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "BOT" => UserIdType::Bot,
+                "HUMAN" => UserIdType::Human,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for UserIdType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UserIdType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Value {
@@ -8377,6 +10353,68 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ValueFilter {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct VideoInfo {
+        #[doc = "Duration of the video in milliseconds. This field can be absent for recently uploaded video or inaccurate sometimes."]
+        #[serde(
+            rename = "duration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub duration: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for VideoInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for VideoInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Vpcsettings {
+        #[doc = "The resource name of the GCP Project to be used for VPC SC policy check. VPC security settings on this project will be honored for Cloud Search APIs after project_name has been updated through CustomerService. Format: projects/{project_id}"]
+        #[serde(
+            rename = "project",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub project: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Vpcsettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Vpcsettings {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -8609,6 +10647,13 @@ impl Client {
             auth: self.auth_ref(),
         }
     }
+    #[doc = "Actions that can be performed on the v_1 resource"]
+    pub fn v_1(&self) -> crate::resources::v_1::V1Actions {
+        crate::resources::v_1::V1Actions {
+            reqwest: &self.reqwest,
+            auth: self.auth_ref(),
+        }
+    }
 }
 pub mod resources {
     pub mod debug {
@@ -8666,7 +10711,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Checks whether an item is accessible by specified principal. **Note:** This API requires an admin account to execute."]
+                    #[doc = "Checks whether an item is accessible by specified principal. Principal must be a user; groups and domain values aren't supported. **Note:** This API requires an admin account to execute."]
                     pub fn check_access(
                         &self,
                         request: crate::schemas::Principal,
@@ -8720,7 +10765,7 @@ pub mod resources {
                         &self,
                     ) -> crate::resources::debug::datasources::items::unmappedids::UnmappedidsActions
                     {
-                        crate :: resources :: debug :: datasources :: items :: unmappedids :: UnmappedidsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        crate :: resources :: debug :: datasources :: items :: unmappedids :: UnmappedidsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 #[doc = "Created via [ItemsActions::check_access()](struct.ItemsActions.html#method.check_access)"]
@@ -9953,7 +11998,7 @@ pub mod resources {
                 }
                 #[doc = "Created via [UnmappedidsActions::list()](struct.UnmappedidsActions.html#method.list)"]
                 #[derive(Debug, Clone)]
-                pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , debug_options_enable_debugging : Option < bool > , page_size : Option < i32 > , page_token : Option < String > , resolution_status_code : Option < crate :: resources :: debug :: identitysources :: unmappedids :: params :: ListResolutionStatusCode > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , debug_options_enable_debugging : Option < bool > , page_size : Option < i32 > , page_token : Option < String > , resolution_status_code : Option < crate :: resources :: debug :: identitysources :: unmappedids :: params :: ListResolutionStatusCode > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                 impl<'a> ListRequestBuilder<'a> {
                     #[doc = "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field."]
                     pub fn debug_options_enable_debugging(mut self, value: bool) -> Self {
@@ -11198,7 +13243,7 @@ pub mod resources {
                         self.mode = Some(value);
                         self
                     }
-                    #[doc = "Required. The incremented version of the item to delete from the index. The indexing system stores the version from the datasource as a byte string and compares the Item version in the index to the version of the queued Item using lexical ordering. Cloud Search Indexing won't delete any queued item with a version value that is less than or equal to the version of the currently indexed item. The maximum length for this field is 1024 bytes."]
+                    #[doc = "Required. The incremented version of the item to delete from the index. The indexing system stores the version from the datasource as a byte string and compares the Item version in the index to the version of the queued Item using lexical ordering. Cloud Search Indexing won't delete any queued item with a version value that is less than or equal to the version of the currently indexed item. The maximum length for this field is 1024 bytes. For information on how item version affects the deletion process, refer to [Handle revisions after manual deletes](https://developers.google.com/cloud-search/docs/guides/operations)."]
                     pub fn version(mut self, value: impl Into<Vec<u8>>) -> Self {
                         let v: Vec<u8> = value.into();
                         self.version = Some(v.into());
@@ -13591,7 +15636,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "The Cloud Search Query API provides the search method, which returns the most relevant results from a user query. The results can come from G Suite Apps, such as Gmail or Google Drive, or they can come from data that you have indexed from a third party. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [G Suite domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/)."]
+            #[doc = "The Cloud Search Query API provides the search method, which returns the most relevant results from a user query. The results can come from Google Workspace apps, such as Gmail or Google Drive, or they can come from data that you have indexed from a third party. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [Google Workspace domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/)."]
             pub fn search(&self, request: crate::schemas::SearchRequest) -> SearchRequestBuilder {
                 SearchRequestBuilder {
                     reqwest: &self.reqwest,
@@ -13610,7 +15655,7 @@ pub mod resources {
                     xgafv: None,
                 }
             }
-            #[doc = "Provides suggestions for autocompleting the query. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [G Suite domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/)."]
+            #[doc = "Provides suggestions for autocompleting the query. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [Google Workspace domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/)."]
             pub fn suggest(
                 &self,
                 request: crate::schemas::SuggestRequest,
@@ -13950,7 +15995,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Returns list of sources that user can use for Search and Suggest APIs. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [G Suite domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/)."]
+                #[doc = "Returns list of sources that user can use for Search and Suggest APIs. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [Google Workspace domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/)."]
                 pub fn list(&self) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -14301,6 +16346,47 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
+            #[doc = "Get customer settings. **Note:** This API requires an admin account to execute."]
+            pub fn get_customer(&self) -> GetCustomerRequestBuilder {
+                GetCustomerRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                }
+            }
+            #[doc = "Update customer settings. **Note:** This API requires an admin account to execute."]
+            pub fn update_customer(
+                &self,
+                request: crate::schemas::CustomerSettings,
+            ) -> UpdateCustomerRequestBuilder {
+                UpdateCustomerRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    request,
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    update_mask: None,
+                }
+            }
             #[doc = "Actions that can be performed on the datasources resource"]
             pub fn datasources(
                 &self,
@@ -14319,6 +16405,311 @@ pub mod resources {
                     reqwest: &self.reqwest,
                     auth: self.auth_ref(),
                 }
+            }
+        }
+        #[doc = "Created via [SettingsActions::get_customer()](struct.SettingsActions.html#method.get_customer)"]
+        #[derive(Debug, Clone)]
+        pub struct GetCustomerRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            access_token: Option<String>,
+            alt: Option<crate::params::Alt>,
+            callback: Option<String>,
+            fields: Option<String>,
+            key: Option<String>,
+            oauth_token: Option<String>,
+            pretty_print: Option<bool>,
+            quota_user: Option<String>,
+            upload_protocol: Option<String>,
+            upload_type: Option<String>,
+            xgafv: Option<crate::params::Xgafv>,
+        }
+        impl<'a> GetCustomerRequestBuilder<'a> {
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields)
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::CustomerSettings, crate::Error> {
+                self.execute_with_fields(None::<&str>)
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::CustomerSettings, crate::Error> {
+                self.execute_with_fields(Some("*"))
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute()
+            }
+            fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path())?;
+                Ok(crate::error_from_response(req.send()?)?.json()?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://cloudsearch.googleapis.com/".to_owned();
+                output.push_str("v1/settings/customer");
+                output
+            }
+            fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                req = req.bearer_auth(
+                    self.auth
+                        .access_token()
+                        .map_err(|err| crate::Error::OAuth2(err))?,
+                );
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [SettingsActions::update_customer()](struct.SettingsActions.html#method.update_customer)"]
+        #[derive(Debug, Clone)]
+        pub struct UpdateCustomerRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            request: crate::schemas::CustomerSettings,
+            update_mask: Option<String>,
+            access_token: Option<String>,
+            alt: Option<crate::params::Alt>,
+            callback: Option<String>,
+            fields: Option<String>,
+            key: Option<String>,
+            oauth_token: Option<String>,
+            pretty_print: Option<bool>,
+            quota_user: Option<String>,
+            upload_protocol: Option<String>,
+            upload_type: Option<String>,
+            xgafv: Option<crate::params::Xgafv>,
+        }
+        impl<'a> UpdateCustomerRequestBuilder<'a> {
+            #[doc = "Update mask to control which fields get updated. If you specify a field in the update_mask but don't specify its value here, that field will be cleared. If the mask is not present or empty, all fields will be updated. Currently supported field paths: vpc_settings and audit_logging_settings"]
+            pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                self.update_mask = Some(value.into());
+                self
+            }
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields)
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::Operation, crate::Error> {
+                self.execute_with_fields(None::<&str>)
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::Operation, crate::Error> {
+                self.execute_with_fields(Some("*"))
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute()
+            }
+            fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path())?;
+                let req = req.json(&self.request);
+                Ok(crate::error_from_response(req.send()?)?.json()?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://cloudsearch.googleapis.com/".to_owned();
+                output.push_str("v1/settings/customer");
+                output
+            }
+            fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                req = req.query(&[("updateMask", &self.update_mask)]);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                req = req.bearer_auth(
+                    self.auth
+                        .access_token()
+                        .map_err(|err| crate::Error::OAuth2(err))?,
+                );
+                Ok(req)
             }
         }
         pub mod datasources {
@@ -14953,7 +17344,7 @@ pub mod resources {
                     self.debug_options_enable_debugging = Some(value);
                     self
                 }
-                #[doc = "Maximum number of datasources to fetch in a request. The max value is 100. The default value is 10"]
+                #[doc = "Maximum number of datasources to fetch in a request. The max value is 1000. The default value is 1000."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
@@ -16682,6 +19073,30 @@ pub mod resources {
                     to_date_year: None,
                 }
             }
+            #[doc = "Get search application stats for customer. **Note:** This API requires a standard end user account to execute."]
+            pub fn get_searchapplication(&self) -> GetSearchapplicationRequestBuilder {
+                GetSearchapplicationRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    end_date_day: None,
+                    end_date_month: None,
+                    end_date_year: None,
+                    start_date_day: None,
+                    start_date_month: None,
+                    start_date_year: None,
+                }
+            }
             #[doc = "Get the # of search sessions, % of successful sessions with a click query statistics for customer. **Note:** This API requires a standard end user account to execute."]
             pub fn get_session(&self) -> GetSessionRequestBuilder {
                 GetSessionRequestBuilder {
@@ -17120,6 +19535,198 @@ pub mod resources {
                 req = req.query(&[("toDate.day", &self.to_date_day)]);
                 req = req.query(&[("toDate.month", &self.to_date_month)]);
                 req = req.query(&[("toDate.year", &self.to_date_year)]);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                req = req.bearer_auth(
+                    self.auth
+                        .access_token()
+                        .map_err(|err| crate::Error::OAuth2(err))?,
+                );
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [StatsActions::get_searchapplication()](struct.StatsActions.html#method.get_searchapplication)"]
+        #[derive(Debug, Clone)]
+        pub struct GetSearchapplicationRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            end_date_day: Option<i32>,
+            end_date_month: Option<i32>,
+            end_date_year: Option<i32>,
+            start_date_day: Option<i32>,
+            start_date_month: Option<i32>,
+            start_date_year: Option<i32>,
+            access_token: Option<String>,
+            alt: Option<crate::params::Alt>,
+            callback: Option<String>,
+            fields: Option<String>,
+            key: Option<String>,
+            oauth_token: Option<String>,
+            pretty_print: Option<bool>,
+            quota_user: Option<String>,
+            upload_protocol: Option<String>,
+            upload_type: Option<String>,
+            xgafv: Option<crate::params::Xgafv>,
+        }
+        impl<'a> GetSearchapplicationRequestBuilder<'a> {
+            #[doc = "Day of month. Must be from 1 to 31 and valid for the year and month."]
+            pub fn end_date_day(mut self, value: i32) -> Self {
+                self.end_date_day = Some(value);
+                self
+            }
+            #[doc = "Month of date. Must be from 1 to 12."]
+            pub fn end_date_month(mut self, value: i32) -> Self {
+                self.end_date_month = Some(value);
+                self
+            }
+            #[doc = "Year of date. Must be from 1 to 9999."]
+            pub fn end_date_year(mut self, value: i32) -> Self {
+                self.end_date_year = Some(value);
+                self
+            }
+            #[doc = "Day of month. Must be from 1 to 31 and valid for the year and month."]
+            pub fn start_date_day(mut self, value: i32) -> Self {
+                self.start_date_day = Some(value);
+                self
+            }
+            #[doc = "Month of date. Must be from 1 to 12."]
+            pub fn start_date_month(mut self, value: i32) -> Self {
+                self.start_date_month = Some(value);
+                self
+            }
+            #[doc = "Year of date. Must be from 1 to 9999."]
+            pub fn start_date_year(mut self, value: i32) -> Self {
+                self.start_date_year = Some(value);
+                self
+            }
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields)
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::GetCustomerSearchApplicationStatsResponse, crate::Error>
+            {
+                self.execute_with_fields(None::<&str>)
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::GetCustomerSearchApplicationStatsResponse, crate::Error>
+            {
+                self.execute_with_fields(Some("*"))
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute()
+            }
+            fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path())?;
+                Ok(crate::error_from_response(req.send()?)?.json()?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://cloudsearch.googleapis.com/".to_owned();
+                output.push_str("v1/stats/searchapplication");
+                output
+            }
+            fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                req = req.query(&[("endDate.day", &self.end_date_day)]);
+                req = req.query(&[("endDate.month", &self.end_date_month)]);
+                req = req.query(&[("endDate.year", &self.end_date_year)]);
+                req = req.query(&[("startDate.day", &self.start_date_day)]);
+                req = req.query(&[("startDate.month", &self.start_date_month)]);
+                req = req.query(&[("startDate.year", &self.start_date_year)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -18060,7 +20667,7 @@ pub mod resources {
                     &self,
                 ) -> crate::resources::stats::session::searchapplications::SearchapplicationsActions
                 {
-                    crate :: resources :: stats :: session :: searchapplications :: SearchapplicationsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    crate :: resources :: stats :: session :: searchapplications :: SearchapplicationsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
             }
             pub mod searchapplications {
@@ -18570,6 +21177,190 @@ pub mod resources {
                         Ok(req)
                     }
                 }
+            }
+        }
+    }
+    pub mod v_1 {
+        pub mod params {}
+        pub struct V1Actions<'a> {
+            pub(crate) reqwest: &'a reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+        }
+        impl<'a> V1Actions<'a> {
+            fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                self.auth
+            }
+            #[doc = "Enables `third party` support in Google Cloud Search. **Note:** This API requires an admin account to execute."]
+            pub fn initialize_customer(
+                &self,
+                request: crate::schemas::InitializeCustomerRequest,
+            ) -> InitializeCustomerRequestBuilder {
+                InitializeCustomerRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    request,
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                }
+            }
+        }
+        #[doc = "Created via [V1Actions::initialize_customer()](struct.V1Actions.html#method.initialize_customer)"]
+        #[derive(Debug, Clone)]
+        pub struct InitializeCustomerRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            request: crate::schemas::InitializeCustomerRequest,
+            access_token: Option<String>,
+            alt: Option<crate::params::Alt>,
+            callback: Option<String>,
+            fields: Option<String>,
+            key: Option<String>,
+            oauth_token: Option<String>,
+            pretty_print: Option<bool>,
+            quota_user: Option<String>,
+            upload_protocol: Option<String>,
+            upload_type: Option<String>,
+            xgafv: Option<crate::params::Xgafv>,
+        }
+        impl<'a> InitializeCustomerRequestBuilder<'a> {
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields)
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::Operation, crate::Error> {
+                self.execute_with_fields(None::<&str>)
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::Operation, crate::Error> {
+                self.execute_with_fields(Some("*"))
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute()
+            }
+            fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path())?;
+                let req = req.json(&self.request);
+                Ok(crate::error_from_response(req.send()?)?.json()?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://cloudsearch.googleapis.com/".to_owned();
+                output.push_str("v1:initializeCustomer");
+                output
+            }
+            fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                req = req.bearer_auth(
+                    self.auth
+                        .access_token()
+                        .map_err(|err| crate::Error::OAuth2(err))?,
+                );
+                Ok(req)
             }
         }
     }

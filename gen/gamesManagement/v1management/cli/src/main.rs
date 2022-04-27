@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("gamesManagement1_management")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210311")
+            .version("0.1.0-20220420")
             .about("The Google Play Game Management API allows developers to manage resources from the Google Play Game service.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -90,11 +90,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: hide and unhide");
         {
-            let mcmd = SubCommand::with_name("hide").about("Hide the given player\'s leaderboard scores from the given application. This method is only available to user accounts for your developer console.");
+            let mcmd = SubCommand::with_name("hide").about("Hide the given player's leaderboard scores from the given application. This method is only available to user accounts for your developer console.");
             players0 = players0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("unhide").about("Unhide the given player\'s leaderboard scores from the given application. This method is only available to user accounts for your developer console.");
+            let mcmd = SubCommand::with_name("unhide").about("Unhide the given player's leaderboard scores from the given application. This method is only available to user accounts for your developer console.");
             players0 = players0.subcommand(mcmd);
         }
         let mut scores0 = SubCommand::with_name("scores")

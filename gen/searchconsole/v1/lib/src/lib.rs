@@ -1,4 +1,4 @@
-#![doc = "# Resources and Methods\n    * [searchanalytics](resources/searchanalytics/struct.SearchanalyticsActions.html)\n      * [*query*](resources/searchanalytics/struct.QueryRequestBuilder.html)\n    * [sitemaps](resources/sitemaps/struct.SitemapsActions.html)\n      * [*delete*](resources/sitemaps/struct.DeleteRequestBuilder.html), [*get*](resources/sitemaps/struct.GetRequestBuilder.html), [*list*](resources/sitemaps/struct.ListRequestBuilder.html), [*submit*](resources/sitemaps/struct.SubmitRequestBuilder.html)\n    * [sites](resources/sites/struct.SitesActions.html)\n      * [*add*](resources/sites/struct.AddRequestBuilder.html), [*delete*](resources/sites/struct.DeleteRequestBuilder.html), [*get*](resources/sites/struct.GetRequestBuilder.html), [*list*](resources/sites/struct.ListRequestBuilder.html)\n    * [url_testing_tools](resources/url_testing_tools/struct.UrlTestingToolsActions.html)\n      * [mobile_friendly_test](resources/url_testing_tools/mobile_friendly_test/struct.MobileFriendlyTestActions.html)\n        * [*run*](resources/url_testing_tools/mobile_friendly_test/struct.RunRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [searchanalytics](resources/searchanalytics/struct.SearchanalyticsActions.html)\n      * [*query*](resources/searchanalytics/struct.QueryRequestBuilder.html)\n    * [sitemaps](resources/sitemaps/struct.SitemapsActions.html)\n      * [*delete*](resources/sitemaps/struct.DeleteRequestBuilder.html), [*get*](resources/sitemaps/struct.GetRequestBuilder.html), [*list*](resources/sitemaps/struct.ListRequestBuilder.html), [*submit*](resources/sitemaps/struct.SubmitRequestBuilder.html)\n    * [sites](resources/sites/struct.SitesActions.html)\n      * [*add*](resources/sites/struct.AddRequestBuilder.html), [*delete*](resources/sites/struct.DeleteRequestBuilder.html), [*get*](resources/sites/struct.GetRequestBuilder.html), [*list*](resources/sites/struct.ListRequestBuilder.html)\n    * [url_inspection](resources/url_inspection/struct.UrlInspectionActions.html)\n      * [index](resources/url_inspection/index/struct.IndexActions.html)\n        * [*inspect*](resources/url_inspection/index/struct.InspectRequestBuilder.html)\n    * [url_testing_tools](resources/url_testing_tools/struct.UrlTestingToolsActions.html)\n      * [mobile_friendly_test](resources/url_testing_tools/mobile_friendly_test/struct.MobileFriendlyTestActions.html)\n        * [*run*](resources/url_testing_tools/mobile_friendly_test/struct.RunRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "View and manage Search Console data for your verified sites\n\n`https://www.googleapis.com/auth/webmasters`"]
     pub const WEBMASTERS: &str = "https://www.googleapis.com/auth/webmasters";
@@ -6,6 +6,685 @@ pub mod scopes {
     pub const WEBMASTERS_READONLY: &str = "https://www.googleapis.com/auth/webmasters.readonly";
 }
 pub mod schemas {
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AmpInspectionResult {
+        #[doc = "Index status of the AMP URL."]
+        #[serde(
+            rename = "ampIndexStatusVerdict",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub amp_index_status_verdict:
+            ::std::option::Option<crate::schemas::AmpInspectionResultAmpIndexStatusVerdict>,
+        #[doc = "URL of the AMP that was inspected. If the submitted URL is a desktop page that refers to an AMP version, the AMP version will be inspected."]
+        #[serde(
+            rename = "ampUrl",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub amp_url: ::std::option::Option<String>,
+        #[doc = "Whether or not the page blocks indexing through a noindex rule."]
+        #[serde(
+            rename = "indexingState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub indexing_state: ::std::option::Option<crate::schemas::AmpInspectionResultIndexingState>,
+        #[doc = "A list of zero or more AMP issues found for the inspected URL."]
+        #[serde(
+            rename = "issues",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub issues: ::std::option::Option<Vec<crate::schemas::AmpIssue>>,
+        #[doc = "Last time this AMP version was crawled by Google. Absent if the URL was never crawled successfully."]
+        #[serde(
+            rename = "lastCrawlTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub last_crawl_time: ::std::option::Option<String>,
+        #[doc = "Whether or not Google could fetch the AMP."]
+        #[serde(
+            rename = "pageFetchState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub page_fetch_state:
+            ::std::option::Option<crate::schemas::AmpInspectionResultPageFetchState>,
+        #[doc = "Whether or not the page is blocked to Google by a robots.txt rule."]
+        #[serde(
+            rename = "robotsTxtState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub robots_txt_state:
+            ::std::option::Option<crate::schemas::AmpInspectionResultRobotsTxtState>,
+        #[doc = "The status of the most severe error on the page. If a page has both warnings and errors, the page status is error. Error status means the page cannot be shown in Search results."]
+        #[serde(
+            rename = "verdict",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verdict: ::std::option::Option<crate::schemas::AmpInspectionResultVerdict>,
+    }
+    impl ::google_field_selector::FieldSelector for AmpInspectionResult {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AmpInspectionResult {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AmpInspectionResultAmpIndexStatusVerdict {
+        #[doc = "Equivalent to \"Error\" or \"Invalid\" for the page or item in Search Console."]
+        Fail,
+        #[doc = "Equivalent to \"Excluded\" for the page or item in Search Console."]
+        Neutral,
+        #[doc = "Equivalent to \"Valid with warnings\" for the page or item in Search Console."]
+        Partial,
+        #[doc = "Equivalent to \"Valid\" for the page or item in Search Console."]
+        Pass,
+        #[doc = "Unknown verdict."]
+        VerdictUnspecified,
+    }
+    impl AmpInspectionResultAmpIndexStatusVerdict {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AmpInspectionResultAmpIndexStatusVerdict::Fail => "FAIL",
+                AmpInspectionResultAmpIndexStatusVerdict::Neutral => "NEUTRAL",
+                AmpInspectionResultAmpIndexStatusVerdict::Partial => "PARTIAL",
+                AmpInspectionResultAmpIndexStatusVerdict::Pass => "PASS",
+                AmpInspectionResultAmpIndexStatusVerdict::VerdictUnspecified => {
+                    "VERDICT_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AmpInspectionResultAmpIndexStatusVerdict {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AmpInspectionResultAmpIndexStatusVerdict {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<AmpInspectionResultAmpIndexStatusVerdict, ()> {
+            Ok(match s {
+                "FAIL" => AmpInspectionResultAmpIndexStatusVerdict::Fail,
+                "NEUTRAL" => AmpInspectionResultAmpIndexStatusVerdict::Neutral,
+                "PARTIAL" => AmpInspectionResultAmpIndexStatusVerdict::Partial,
+                "PASS" => AmpInspectionResultAmpIndexStatusVerdict::Pass,
+                "VERDICT_UNSPECIFIED" => {
+                    AmpInspectionResultAmpIndexStatusVerdict::VerdictUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AmpInspectionResultAmpIndexStatusVerdict {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AmpInspectionResultAmpIndexStatusVerdict {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AmpInspectionResultAmpIndexStatusVerdict {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "FAIL" => AmpInspectionResultAmpIndexStatusVerdict::Fail,
+                "NEUTRAL" => AmpInspectionResultAmpIndexStatusVerdict::Neutral,
+                "PARTIAL" => AmpInspectionResultAmpIndexStatusVerdict::Partial,
+                "PASS" => AmpInspectionResultAmpIndexStatusVerdict::Pass,
+                "VERDICT_UNSPECIFIED" => {
+                    AmpInspectionResultAmpIndexStatusVerdict::VerdictUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AmpInspectionResultAmpIndexStatusVerdict {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AmpInspectionResultAmpIndexStatusVerdict {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AmpInspectionResultIndexingState {
+        #[doc = "Indexing allowed."]
+        AmpIndexingAllowed,
+        #[doc = "Unknown indexing status."]
+        AmpIndexingStateUnspecified,
+        #[doc = "Indexing not allowed, 'unavailable_after' date expired."]
+        BlockedDueToExpiredUnavailableAfter,
+        #[doc = "Indexing not allowed, 'noindex' detected."]
+        BlockedDueToNoindex,
+    }
+    impl AmpInspectionResultIndexingState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AmpInspectionResultIndexingState::AmpIndexingAllowed => "AMP_INDEXING_ALLOWED",
+                AmpInspectionResultIndexingState::AmpIndexingStateUnspecified => {
+                    "AMP_INDEXING_STATE_UNSPECIFIED"
+                }
+                AmpInspectionResultIndexingState::BlockedDueToExpiredUnavailableAfter => {
+                    "BLOCKED_DUE_TO_EXPIRED_UNAVAILABLE_AFTER"
+                }
+                AmpInspectionResultIndexingState::BlockedDueToNoindex => "BLOCKED_DUE_TO_NOINDEX",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AmpInspectionResultIndexingState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AmpInspectionResultIndexingState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AmpInspectionResultIndexingState, ()> {
+            Ok(match s {
+                "AMP_INDEXING_ALLOWED" => AmpInspectionResultIndexingState::AmpIndexingAllowed,
+                "AMP_INDEXING_STATE_UNSPECIFIED" => {
+                    AmpInspectionResultIndexingState::AmpIndexingStateUnspecified
+                }
+                "BLOCKED_DUE_TO_EXPIRED_UNAVAILABLE_AFTER" => {
+                    AmpInspectionResultIndexingState::BlockedDueToExpiredUnavailableAfter
+                }
+                "BLOCKED_DUE_TO_NOINDEX" => AmpInspectionResultIndexingState::BlockedDueToNoindex,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AmpInspectionResultIndexingState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AmpInspectionResultIndexingState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AmpInspectionResultIndexingState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "AMP_INDEXING_ALLOWED" => AmpInspectionResultIndexingState::AmpIndexingAllowed,
+                "AMP_INDEXING_STATE_UNSPECIFIED" => {
+                    AmpInspectionResultIndexingState::AmpIndexingStateUnspecified
+                }
+                "BLOCKED_DUE_TO_EXPIRED_UNAVAILABLE_AFTER" => {
+                    AmpInspectionResultIndexingState::BlockedDueToExpiredUnavailableAfter
+                }
+                "BLOCKED_DUE_TO_NOINDEX" => AmpInspectionResultIndexingState::BlockedDueToNoindex,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AmpInspectionResultIndexingState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AmpInspectionResultIndexingState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AmpInspectionResultPageFetchState {
+        #[doc = "Blocked due to unauthorized request (401)."]
+        AccessDenied,
+        #[doc = "Blocked due to access forbidden (403)."]
+        AccessForbidden,
+        #[doc = "Blocked due to other 4xx issue (not 403, 404)."]
+        Blocked4Xx,
+        #[doc = "Blocked by robots.txt."]
+        BlockedRobotsTxt,
+        #[doc = "Internal error."]
+        InternalCrawlError,
+        #[doc = "Invalid URL."]
+        InvalidUrl,
+        #[doc = "Not found (404)."]
+        NotFound,
+        #[doc = "Unknown fetch state."]
+        PageFetchStateUnspecified,
+        #[doc = "Redirection error."]
+        RedirectError,
+        #[doc = "Server error (5xx)."]
+        ServerError,
+        #[doc = "Soft 404."]
+        Soft404,
+        #[doc = "Successful fetch."]
+        Successful,
+    }
+    impl AmpInspectionResultPageFetchState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AmpInspectionResultPageFetchState::AccessDenied => "ACCESS_DENIED",
+                AmpInspectionResultPageFetchState::AccessForbidden => "ACCESS_FORBIDDEN",
+                AmpInspectionResultPageFetchState::Blocked4Xx => "BLOCKED_4XX",
+                AmpInspectionResultPageFetchState::BlockedRobotsTxt => "BLOCKED_ROBOTS_TXT",
+                AmpInspectionResultPageFetchState::InternalCrawlError => "INTERNAL_CRAWL_ERROR",
+                AmpInspectionResultPageFetchState::InvalidUrl => "INVALID_URL",
+                AmpInspectionResultPageFetchState::NotFound => "NOT_FOUND",
+                AmpInspectionResultPageFetchState::PageFetchStateUnspecified => {
+                    "PAGE_FETCH_STATE_UNSPECIFIED"
+                }
+                AmpInspectionResultPageFetchState::RedirectError => "REDIRECT_ERROR",
+                AmpInspectionResultPageFetchState::ServerError => "SERVER_ERROR",
+                AmpInspectionResultPageFetchState::Soft404 => "SOFT_404",
+                AmpInspectionResultPageFetchState::Successful => "SUCCESSFUL",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AmpInspectionResultPageFetchState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AmpInspectionResultPageFetchState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AmpInspectionResultPageFetchState, ()> {
+            Ok(match s {
+                "ACCESS_DENIED" => AmpInspectionResultPageFetchState::AccessDenied,
+                "ACCESS_FORBIDDEN" => AmpInspectionResultPageFetchState::AccessForbidden,
+                "BLOCKED_4XX" => AmpInspectionResultPageFetchState::Blocked4Xx,
+                "BLOCKED_ROBOTS_TXT" => AmpInspectionResultPageFetchState::BlockedRobotsTxt,
+                "INTERNAL_CRAWL_ERROR" => AmpInspectionResultPageFetchState::InternalCrawlError,
+                "INVALID_URL" => AmpInspectionResultPageFetchState::InvalidUrl,
+                "NOT_FOUND" => AmpInspectionResultPageFetchState::NotFound,
+                "PAGE_FETCH_STATE_UNSPECIFIED" => {
+                    AmpInspectionResultPageFetchState::PageFetchStateUnspecified
+                }
+                "REDIRECT_ERROR" => AmpInspectionResultPageFetchState::RedirectError,
+                "SERVER_ERROR" => AmpInspectionResultPageFetchState::ServerError,
+                "SOFT_404" => AmpInspectionResultPageFetchState::Soft404,
+                "SUCCESSFUL" => AmpInspectionResultPageFetchState::Successful,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AmpInspectionResultPageFetchState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AmpInspectionResultPageFetchState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AmpInspectionResultPageFetchState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACCESS_DENIED" => AmpInspectionResultPageFetchState::AccessDenied,
+                "ACCESS_FORBIDDEN" => AmpInspectionResultPageFetchState::AccessForbidden,
+                "BLOCKED_4XX" => AmpInspectionResultPageFetchState::Blocked4Xx,
+                "BLOCKED_ROBOTS_TXT" => AmpInspectionResultPageFetchState::BlockedRobotsTxt,
+                "INTERNAL_CRAWL_ERROR" => AmpInspectionResultPageFetchState::InternalCrawlError,
+                "INVALID_URL" => AmpInspectionResultPageFetchState::InvalidUrl,
+                "NOT_FOUND" => AmpInspectionResultPageFetchState::NotFound,
+                "PAGE_FETCH_STATE_UNSPECIFIED" => {
+                    AmpInspectionResultPageFetchState::PageFetchStateUnspecified
+                }
+                "REDIRECT_ERROR" => AmpInspectionResultPageFetchState::RedirectError,
+                "SERVER_ERROR" => AmpInspectionResultPageFetchState::ServerError,
+                "SOFT_404" => AmpInspectionResultPageFetchState::Soft404,
+                "SUCCESSFUL" => AmpInspectionResultPageFetchState::Successful,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AmpInspectionResultPageFetchState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AmpInspectionResultPageFetchState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AmpInspectionResultRobotsTxtState {
+        #[doc = "Crawl allowed by robots.txt."]
+        Allowed,
+        #[doc = "Crawl blocked by robots.txt."]
+        Disallowed,
+        #[doc = "Unknown robots.txt state, typically because the page wasn't fetched or found, or because robots.txt itself couldn't be reached."]
+        RobotsTxtStateUnspecified,
+    }
+    impl AmpInspectionResultRobotsTxtState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AmpInspectionResultRobotsTxtState::Allowed => "ALLOWED",
+                AmpInspectionResultRobotsTxtState::Disallowed => "DISALLOWED",
+                AmpInspectionResultRobotsTxtState::RobotsTxtStateUnspecified => {
+                    "ROBOTS_TXT_STATE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AmpInspectionResultRobotsTxtState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AmpInspectionResultRobotsTxtState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AmpInspectionResultRobotsTxtState, ()> {
+            Ok(match s {
+                "ALLOWED" => AmpInspectionResultRobotsTxtState::Allowed,
+                "DISALLOWED" => AmpInspectionResultRobotsTxtState::Disallowed,
+                "ROBOTS_TXT_STATE_UNSPECIFIED" => {
+                    AmpInspectionResultRobotsTxtState::RobotsTxtStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AmpInspectionResultRobotsTxtState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AmpInspectionResultRobotsTxtState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AmpInspectionResultRobotsTxtState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ALLOWED" => AmpInspectionResultRobotsTxtState::Allowed,
+                "DISALLOWED" => AmpInspectionResultRobotsTxtState::Disallowed,
+                "ROBOTS_TXT_STATE_UNSPECIFIED" => {
+                    AmpInspectionResultRobotsTxtState::RobotsTxtStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AmpInspectionResultRobotsTxtState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AmpInspectionResultRobotsTxtState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AmpInspectionResultVerdict {
+        #[doc = "Equivalent to \"Error\" or \"Invalid\" for the page or item in Search Console."]
+        Fail,
+        #[doc = "Equivalent to \"Excluded\" for the page or item in Search Console."]
+        Neutral,
+        #[doc = "Equivalent to \"Valid with warnings\" for the page or item in Search Console."]
+        Partial,
+        #[doc = "Equivalent to \"Valid\" for the page or item in Search Console."]
+        Pass,
+        #[doc = "Unknown verdict."]
+        VerdictUnspecified,
+    }
+    impl AmpInspectionResultVerdict {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AmpInspectionResultVerdict::Fail => "FAIL",
+                AmpInspectionResultVerdict::Neutral => "NEUTRAL",
+                AmpInspectionResultVerdict::Partial => "PARTIAL",
+                AmpInspectionResultVerdict::Pass => "PASS",
+                AmpInspectionResultVerdict::VerdictUnspecified => "VERDICT_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AmpInspectionResultVerdict {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AmpInspectionResultVerdict {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AmpInspectionResultVerdict, ()> {
+            Ok(match s {
+                "FAIL" => AmpInspectionResultVerdict::Fail,
+                "NEUTRAL" => AmpInspectionResultVerdict::Neutral,
+                "PARTIAL" => AmpInspectionResultVerdict::Partial,
+                "PASS" => AmpInspectionResultVerdict::Pass,
+                "VERDICT_UNSPECIFIED" => AmpInspectionResultVerdict::VerdictUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AmpInspectionResultVerdict {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AmpInspectionResultVerdict {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AmpInspectionResultVerdict {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "FAIL" => AmpInspectionResultVerdict::Fail,
+                "NEUTRAL" => AmpInspectionResultVerdict::Neutral,
+                "PARTIAL" => AmpInspectionResultVerdict::Partial,
+                "PASS" => AmpInspectionResultVerdict::Pass,
+                "VERDICT_UNSPECIFIED" => AmpInspectionResultVerdict::VerdictUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AmpInspectionResultVerdict {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AmpInspectionResultVerdict {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AmpIssue {
+        #[doc = "Brief description of this issue."]
+        #[serde(
+            rename = "issueMessage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub issue_message: ::std::option::Option<String>,
+        #[doc = "Severity of this issue: WARNING or ERROR."]
+        #[serde(
+            rename = "severity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub severity: ::std::option::Option<crate::schemas::AmpIssueSeverity>,
+    }
+    impl ::google_field_selector::FieldSelector for AmpIssue {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AmpIssue {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AmpIssueSeverity {
+        #[doc = "Error."]
+        Error,
+        #[doc = "Unknown severity."]
+        SeverityUnspecified,
+        #[doc = "Warning."]
+        Warning,
+    }
+    impl AmpIssueSeverity {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AmpIssueSeverity::Error => "ERROR",
+                AmpIssueSeverity::SeverityUnspecified => "SEVERITY_UNSPECIFIED",
+                AmpIssueSeverity::Warning => "WARNING",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AmpIssueSeverity {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AmpIssueSeverity {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AmpIssueSeverity, ()> {
+            Ok(match s {
+                "ERROR" => AmpIssueSeverity::Error,
+                "SEVERITY_UNSPECIFIED" => AmpIssueSeverity::SeverityUnspecified,
+                "WARNING" => AmpIssueSeverity::Warning,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AmpIssueSeverity {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AmpIssueSeverity {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AmpIssueSeverity {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ERROR" => AmpIssueSeverity::Error,
+                "SEVERITY_UNSPECIFIED" => AmpIssueSeverity::SeverityUnspecified,
+                "WARNING" => AmpIssueSeverity::Warning,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AmpIssueSeverity {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AmpIssueSeverity {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
@@ -178,6 +857,8 @@ pub mod schemas {
     pub enum ApiDimensionFilterOperator {
         Contains,
         Equals,
+        ExcludingRegex,
+        IncludingRegex,
         NotContains,
         NotEquals,
     }
@@ -186,6 +867,8 @@ pub mod schemas {
             match self {
                 ApiDimensionFilterOperator::Contains => "CONTAINS",
                 ApiDimensionFilterOperator::Equals => "EQUALS",
+                ApiDimensionFilterOperator::ExcludingRegex => "EXCLUDING_REGEX",
+                ApiDimensionFilterOperator::IncludingRegex => "INCLUDING_REGEX",
                 ApiDimensionFilterOperator::NotContains => "NOT_CONTAINS",
                 ApiDimensionFilterOperator::NotEquals => "NOT_EQUALS",
             }
@@ -202,6 +885,8 @@ pub mod schemas {
             Ok(match s {
                 "CONTAINS" => ApiDimensionFilterOperator::Contains,
                 "EQUALS" => ApiDimensionFilterOperator::Equals,
+                "EXCLUDING_REGEX" => ApiDimensionFilterOperator::ExcludingRegex,
+                "INCLUDING_REGEX" => ApiDimensionFilterOperator::IncludingRegex,
                 "NOT_CONTAINS" => ApiDimensionFilterOperator::NotContains,
                 "NOT_EQUALS" => ApiDimensionFilterOperator::NotEquals,
                 _ => return Err(()),
@@ -230,6 +915,8 @@ pub mod schemas {
             Ok(match value {
                 "CONTAINS" => ApiDimensionFilterOperator::Contains,
                 "EQUALS" => ApiDimensionFilterOperator::Equals,
+                "EXCLUDING_REGEX" => ApiDimensionFilterOperator::ExcludingRegex,
+                "INCLUDING_REGEX" => ApiDimensionFilterOperator::IncludingRegex,
                 "NOT_CONTAINS" => ApiDimensionFilterOperator::NotContains,
                 "NOT_EQUALS" => ApiDimensionFilterOperator::NotEquals,
                 _ => {
@@ -395,6 +1082,44 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct DetectedItems {
+        #[doc = "List of Rich Results items."]
+        #[serde(
+            rename = "items",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub items: ::std::option::Option<Vec<crate::schemas::Item>>,
+        #[doc = "Rich Results type"]
+        #[serde(
+            rename = "richResultType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rich_result_type: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for DetectedItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DetectedItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Image {
         #[doc = "Image data in format determined by the mime type. Currently, the format will always be \"image/png\", but this might change in the future."]
         #[serde(
@@ -433,6 +1158,717 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct IndexStatusInspectionResult {
+        #[doc = "Could Google find and index the page. More details about page indexing appear in 'indexing_state'."]
+        #[serde(
+            rename = "coverageState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub coverage_state: ::std::option::Option<String>,
+        #[doc = "Primary crawler that was used by Google to crawl your site."]
+        #[serde(
+            rename = "crawledAs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub crawled_as: ::std::option::Option<crate::schemas::IndexStatusInspectionResultCrawledAs>,
+        #[doc = "The URL of the page that Google selected as canonical. If the page was not indexed, this field is absent."]
+        #[serde(
+            rename = "googleCanonical",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub google_canonical: ::std::option::Option<String>,
+        #[doc = "Whether or not the page blocks indexing through a noindex rule."]
+        #[serde(
+            rename = "indexingState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub indexing_state:
+            ::std::option::Option<crate::schemas::IndexStatusInspectionResultIndexingState>,
+        #[doc = "Last time this URL was crawled by Google using the [primary crawler](https://support.google.com/webmasters/answer/7440203#primary_crawler). Absent if the URL was never crawled successfully."]
+        #[serde(
+            rename = "lastCrawlTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub last_crawl_time: ::std::option::Option<String>,
+        #[doc = "Whether or not Google could retrieve the page from your server. Equivalent to [\"page fetch\"](https://support.google.com/webmasters/answer/9012289#index_coverage) in the URL inspection report."]
+        #[serde(
+            rename = "pageFetchState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub page_fetch_state:
+            ::std::option::Option<crate::schemas::IndexStatusInspectionResultPageFetchState>,
+        #[doc = "URLs that link to the inspected URL, directly and indirectly."]
+        #[serde(
+            rename = "referringUrls",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub referring_urls: ::std::option::Option<Vec<String>>,
+        #[doc = "Whether or not the page is blocked to Google by a robots.txt rule."]
+        #[serde(
+            rename = "robotsTxtState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub robots_txt_state:
+            ::std::option::Option<crate::schemas::IndexStatusInspectionResultRobotsTxtState>,
+        #[doc = "Any sitemaps that this URL was listed in, as known by Google. Not guaranteed to be an exhaustive list, especially if Google did not discover this URL through a sitemap. Absent if no sitemaps were found."]
+        #[serde(
+            rename = "sitemap",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sitemap: ::std::option::Option<Vec<String>>,
+        #[doc = "The URL that your page or site [declares as canonical](https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls?#define-canonical). If you did not declare a canonical URL, this field is absent."]
+        #[serde(
+            rename = "userCanonical",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_canonical: ::std::option::Option<String>,
+        #[doc = "High level verdict about whether the URL *is* indexed (indexed status), or *can be* indexed (live inspection)."]
+        #[serde(
+            rename = "verdict",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verdict: ::std::option::Option<crate::schemas::IndexStatusInspectionResultVerdict>,
+    }
+    impl ::google_field_selector::FieldSelector for IndexStatusInspectionResult {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IndexStatusInspectionResult {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum IndexStatusInspectionResultCrawledAs {
+        #[doc = "Unknown user agent."]
+        CrawlingUserAgentUnspecified,
+        #[doc = "Desktop user agent."]
+        Desktop,
+        #[doc = "Mobile user agent."]
+        Mobile,
+    }
+    impl IndexStatusInspectionResultCrawledAs {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                IndexStatusInspectionResultCrawledAs::CrawlingUserAgentUnspecified => {
+                    "CRAWLING_USER_AGENT_UNSPECIFIED"
+                }
+                IndexStatusInspectionResultCrawledAs::Desktop => "DESKTOP",
+                IndexStatusInspectionResultCrawledAs::Mobile => "MOBILE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for IndexStatusInspectionResultCrawledAs {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for IndexStatusInspectionResultCrawledAs {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<IndexStatusInspectionResultCrawledAs, ()> {
+            Ok(match s {
+                "CRAWLING_USER_AGENT_UNSPECIFIED" => {
+                    IndexStatusInspectionResultCrawledAs::CrawlingUserAgentUnspecified
+                }
+                "DESKTOP" => IndexStatusInspectionResultCrawledAs::Desktop,
+                "MOBILE" => IndexStatusInspectionResultCrawledAs::Mobile,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for IndexStatusInspectionResultCrawledAs {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for IndexStatusInspectionResultCrawledAs {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for IndexStatusInspectionResultCrawledAs {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CRAWLING_USER_AGENT_UNSPECIFIED" => {
+                    IndexStatusInspectionResultCrawledAs::CrawlingUserAgentUnspecified
+                }
+                "DESKTOP" => IndexStatusInspectionResultCrawledAs::Desktop,
+                "MOBILE" => IndexStatusInspectionResultCrawledAs::Mobile,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for IndexStatusInspectionResultCrawledAs {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IndexStatusInspectionResultCrawledAs {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum IndexStatusInspectionResultIndexingState {
+        #[doc = "Indexing not allowed, 'noindex' detected in 'X-Robots-Tag' http header."]
+        BlockedByHttpHeader,
+        #[doc = "Indexing not allowed, 'noindex' detected in 'robots' meta tag."]
+        BlockedByMetaTag,
+        #[doc = "Reserved, no longer in use."]
+        BlockedByRobotsTxt,
+        #[doc = "Indexing allowed."]
+        IndexingAllowed,
+        #[doc = "Unknown indexing status."]
+        IndexingStateUnspecified,
+    }
+    impl IndexStatusInspectionResultIndexingState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                IndexStatusInspectionResultIndexingState::BlockedByHttpHeader => {
+                    "BLOCKED_BY_HTTP_HEADER"
+                }
+                IndexStatusInspectionResultIndexingState::BlockedByMetaTag => "BLOCKED_BY_META_TAG",
+                IndexStatusInspectionResultIndexingState::BlockedByRobotsTxt => {
+                    "BLOCKED_BY_ROBOTS_TXT"
+                }
+                IndexStatusInspectionResultIndexingState::IndexingAllowed => "INDEXING_ALLOWED",
+                IndexStatusInspectionResultIndexingState::IndexingStateUnspecified => {
+                    "INDEXING_STATE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for IndexStatusInspectionResultIndexingState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for IndexStatusInspectionResultIndexingState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<IndexStatusInspectionResultIndexingState, ()> {
+            Ok(match s {
+                "BLOCKED_BY_HTTP_HEADER" => {
+                    IndexStatusInspectionResultIndexingState::BlockedByHttpHeader
+                }
+                "BLOCKED_BY_META_TAG" => IndexStatusInspectionResultIndexingState::BlockedByMetaTag,
+                "BLOCKED_BY_ROBOTS_TXT" => {
+                    IndexStatusInspectionResultIndexingState::BlockedByRobotsTxt
+                }
+                "INDEXING_ALLOWED" => IndexStatusInspectionResultIndexingState::IndexingAllowed,
+                "INDEXING_STATE_UNSPECIFIED" => {
+                    IndexStatusInspectionResultIndexingState::IndexingStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for IndexStatusInspectionResultIndexingState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for IndexStatusInspectionResultIndexingState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for IndexStatusInspectionResultIndexingState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "BLOCKED_BY_HTTP_HEADER" => {
+                    IndexStatusInspectionResultIndexingState::BlockedByHttpHeader
+                }
+                "BLOCKED_BY_META_TAG" => IndexStatusInspectionResultIndexingState::BlockedByMetaTag,
+                "BLOCKED_BY_ROBOTS_TXT" => {
+                    IndexStatusInspectionResultIndexingState::BlockedByRobotsTxt
+                }
+                "INDEXING_ALLOWED" => IndexStatusInspectionResultIndexingState::IndexingAllowed,
+                "INDEXING_STATE_UNSPECIFIED" => {
+                    IndexStatusInspectionResultIndexingState::IndexingStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for IndexStatusInspectionResultIndexingState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IndexStatusInspectionResultIndexingState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum IndexStatusInspectionResultPageFetchState {
+        #[doc = "Blocked due to unauthorized request (401)."]
+        AccessDenied,
+        #[doc = "Blocked due to access forbidden (403)."]
+        AccessForbidden,
+        #[doc = "Blocked due to other 4xx issue (not 403, 404)."]
+        Blocked4Xx,
+        #[doc = "Blocked by robots.txt."]
+        BlockedRobotsTxt,
+        #[doc = "Internal error."]
+        InternalCrawlError,
+        #[doc = "Invalid URL."]
+        InvalidUrl,
+        #[doc = "Not found (404)."]
+        NotFound,
+        #[doc = "Unknown fetch state."]
+        PageFetchStateUnspecified,
+        #[doc = "Redirection error."]
+        RedirectError,
+        #[doc = "Server error (5xx)."]
+        ServerError,
+        #[doc = "Soft 404."]
+        Soft404,
+        #[doc = "Successful fetch."]
+        Successful,
+    }
+    impl IndexStatusInspectionResultPageFetchState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                IndexStatusInspectionResultPageFetchState::AccessDenied => "ACCESS_DENIED",
+                IndexStatusInspectionResultPageFetchState::AccessForbidden => "ACCESS_FORBIDDEN",
+                IndexStatusInspectionResultPageFetchState::Blocked4Xx => "BLOCKED_4XX",
+                IndexStatusInspectionResultPageFetchState::BlockedRobotsTxt => "BLOCKED_ROBOTS_TXT",
+                IndexStatusInspectionResultPageFetchState::InternalCrawlError => {
+                    "INTERNAL_CRAWL_ERROR"
+                }
+                IndexStatusInspectionResultPageFetchState::InvalidUrl => "INVALID_URL",
+                IndexStatusInspectionResultPageFetchState::NotFound => "NOT_FOUND",
+                IndexStatusInspectionResultPageFetchState::PageFetchStateUnspecified => {
+                    "PAGE_FETCH_STATE_UNSPECIFIED"
+                }
+                IndexStatusInspectionResultPageFetchState::RedirectError => "REDIRECT_ERROR",
+                IndexStatusInspectionResultPageFetchState::ServerError => "SERVER_ERROR",
+                IndexStatusInspectionResultPageFetchState::Soft404 => "SOFT_404",
+                IndexStatusInspectionResultPageFetchState::Successful => "SUCCESSFUL",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for IndexStatusInspectionResultPageFetchState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for IndexStatusInspectionResultPageFetchState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<IndexStatusInspectionResultPageFetchState, ()> {
+            Ok(match s {
+                "ACCESS_DENIED" => IndexStatusInspectionResultPageFetchState::AccessDenied,
+                "ACCESS_FORBIDDEN" => IndexStatusInspectionResultPageFetchState::AccessForbidden,
+                "BLOCKED_4XX" => IndexStatusInspectionResultPageFetchState::Blocked4Xx,
+                "BLOCKED_ROBOTS_TXT" => IndexStatusInspectionResultPageFetchState::BlockedRobotsTxt,
+                "INTERNAL_CRAWL_ERROR" => {
+                    IndexStatusInspectionResultPageFetchState::InternalCrawlError
+                }
+                "INVALID_URL" => IndexStatusInspectionResultPageFetchState::InvalidUrl,
+                "NOT_FOUND" => IndexStatusInspectionResultPageFetchState::NotFound,
+                "PAGE_FETCH_STATE_UNSPECIFIED" => {
+                    IndexStatusInspectionResultPageFetchState::PageFetchStateUnspecified
+                }
+                "REDIRECT_ERROR" => IndexStatusInspectionResultPageFetchState::RedirectError,
+                "SERVER_ERROR" => IndexStatusInspectionResultPageFetchState::ServerError,
+                "SOFT_404" => IndexStatusInspectionResultPageFetchState::Soft404,
+                "SUCCESSFUL" => IndexStatusInspectionResultPageFetchState::Successful,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for IndexStatusInspectionResultPageFetchState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for IndexStatusInspectionResultPageFetchState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for IndexStatusInspectionResultPageFetchState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACCESS_DENIED" => IndexStatusInspectionResultPageFetchState::AccessDenied,
+                "ACCESS_FORBIDDEN" => IndexStatusInspectionResultPageFetchState::AccessForbidden,
+                "BLOCKED_4XX" => IndexStatusInspectionResultPageFetchState::Blocked4Xx,
+                "BLOCKED_ROBOTS_TXT" => IndexStatusInspectionResultPageFetchState::BlockedRobotsTxt,
+                "INTERNAL_CRAWL_ERROR" => {
+                    IndexStatusInspectionResultPageFetchState::InternalCrawlError
+                }
+                "INVALID_URL" => IndexStatusInspectionResultPageFetchState::InvalidUrl,
+                "NOT_FOUND" => IndexStatusInspectionResultPageFetchState::NotFound,
+                "PAGE_FETCH_STATE_UNSPECIFIED" => {
+                    IndexStatusInspectionResultPageFetchState::PageFetchStateUnspecified
+                }
+                "REDIRECT_ERROR" => IndexStatusInspectionResultPageFetchState::RedirectError,
+                "SERVER_ERROR" => IndexStatusInspectionResultPageFetchState::ServerError,
+                "SOFT_404" => IndexStatusInspectionResultPageFetchState::Soft404,
+                "SUCCESSFUL" => IndexStatusInspectionResultPageFetchState::Successful,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for IndexStatusInspectionResultPageFetchState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IndexStatusInspectionResultPageFetchState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum IndexStatusInspectionResultRobotsTxtState {
+        #[doc = "Crawl allowed by robots.txt."]
+        Allowed,
+        #[doc = "Crawl blocked by robots.txt."]
+        Disallowed,
+        #[doc = "Unknown robots.txt state, typically because the page wasn't fetched or found, or because robots.txt itself couldn't be reached."]
+        RobotsTxtStateUnspecified,
+    }
+    impl IndexStatusInspectionResultRobotsTxtState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                IndexStatusInspectionResultRobotsTxtState::Allowed => "ALLOWED",
+                IndexStatusInspectionResultRobotsTxtState::Disallowed => "DISALLOWED",
+                IndexStatusInspectionResultRobotsTxtState::RobotsTxtStateUnspecified => {
+                    "ROBOTS_TXT_STATE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for IndexStatusInspectionResultRobotsTxtState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for IndexStatusInspectionResultRobotsTxtState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<IndexStatusInspectionResultRobotsTxtState, ()> {
+            Ok(match s {
+                "ALLOWED" => IndexStatusInspectionResultRobotsTxtState::Allowed,
+                "DISALLOWED" => IndexStatusInspectionResultRobotsTxtState::Disallowed,
+                "ROBOTS_TXT_STATE_UNSPECIFIED" => {
+                    IndexStatusInspectionResultRobotsTxtState::RobotsTxtStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for IndexStatusInspectionResultRobotsTxtState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for IndexStatusInspectionResultRobotsTxtState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for IndexStatusInspectionResultRobotsTxtState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ALLOWED" => IndexStatusInspectionResultRobotsTxtState::Allowed,
+                "DISALLOWED" => IndexStatusInspectionResultRobotsTxtState::Disallowed,
+                "ROBOTS_TXT_STATE_UNSPECIFIED" => {
+                    IndexStatusInspectionResultRobotsTxtState::RobotsTxtStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for IndexStatusInspectionResultRobotsTxtState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IndexStatusInspectionResultRobotsTxtState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum IndexStatusInspectionResultVerdict {
+        #[doc = "Equivalent to \"Error\" or \"Invalid\" for the page or item in Search Console."]
+        Fail,
+        #[doc = "Equivalent to \"Excluded\" for the page or item in Search Console."]
+        Neutral,
+        #[doc = "Equivalent to \"Valid with warnings\" for the page or item in Search Console."]
+        Partial,
+        #[doc = "Equivalent to \"Valid\" for the page or item in Search Console."]
+        Pass,
+        #[doc = "Unknown verdict."]
+        VerdictUnspecified,
+    }
+    impl IndexStatusInspectionResultVerdict {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                IndexStatusInspectionResultVerdict::Fail => "FAIL",
+                IndexStatusInspectionResultVerdict::Neutral => "NEUTRAL",
+                IndexStatusInspectionResultVerdict::Partial => "PARTIAL",
+                IndexStatusInspectionResultVerdict::Pass => "PASS",
+                IndexStatusInspectionResultVerdict::VerdictUnspecified => "VERDICT_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for IndexStatusInspectionResultVerdict {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for IndexStatusInspectionResultVerdict {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<IndexStatusInspectionResultVerdict, ()> {
+            Ok(match s {
+                "FAIL" => IndexStatusInspectionResultVerdict::Fail,
+                "NEUTRAL" => IndexStatusInspectionResultVerdict::Neutral,
+                "PARTIAL" => IndexStatusInspectionResultVerdict::Partial,
+                "PASS" => IndexStatusInspectionResultVerdict::Pass,
+                "VERDICT_UNSPECIFIED" => IndexStatusInspectionResultVerdict::VerdictUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for IndexStatusInspectionResultVerdict {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for IndexStatusInspectionResultVerdict {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for IndexStatusInspectionResultVerdict {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "FAIL" => IndexStatusInspectionResultVerdict::Fail,
+                "NEUTRAL" => IndexStatusInspectionResultVerdict::Neutral,
+                "PARTIAL" => IndexStatusInspectionResultVerdict::Partial,
+                "PASS" => IndexStatusInspectionResultVerdict::Pass,
+                "VERDICT_UNSPECIFIED" => IndexStatusInspectionResultVerdict::VerdictUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for IndexStatusInspectionResultVerdict {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IndexStatusInspectionResultVerdict {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct InspectUrlIndexRequest {
+        #[doc = "Required. URL to inspect. Must be under the property specified in \"site_url\"."]
+        #[serde(
+            rename = "inspectionUrl",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub inspection_url: ::std::option::Option<String>,
+        #[doc = "Optional. An [IETF BCP-47](https://en.wikipedia.org/wiki/IETF_language_tag) language code representing the requested language for translated issue messages, e.g. \"en-US\", \"or \"de-CH\". Default value is \"en-US\"."]
+        #[serde(
+            rename = "languageCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub language_code: ::std::option::Option<String>,
+        #[doc = "Required. The URL of the property as defined in Search Console. **Examples:** `http://www.example.com/` for a URL-prefix property, or `sc-domain:example.com` for a Domain property."]
+        #[serde(
+            rename = "siteUrl",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub site_url: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for InspectUrlIndexRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for InspectUrlIndexRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct InspectUrlIndexResponse {
+        #[doc = "URL inspection results."]
+        #[serde(
+            rename = "inspectionResult",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub inspection_result: ::std::option::Option<crate::schemas::UrlInspectionResult>,
+    }
+    impl ::google_field_selector::FieldSelector for InspectUrlIndexResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for InspectUrlIndexResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Item {
+        #[doc = "A list of zero or more rich result issues found for this instance."]
+        #[serde(
+            rename = "issues",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub issues: ::std::option::Option<Vec<crate::schemas::RichResultsIssue>>,
+        #[doc = "The user-provided name of this item."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Item {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Item {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct MobileFriendlyIssue {
         #[doc = "Rule violated."]
         #[serde(
@@ -454,7 +1890,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MobileFriendlyIssueRule {
-        #[doc = "Viewsport is not specified using the meta viewport tag. [Learn more] (https://support.google.com/webmasters/answer/6352293#viewport_not_configured)."]
+        #[doc = "Viewport is not specified using the meta viewport tag. [Learn more] (https://support.google.com/webmasters/answer/6352293#viewport_not_configured)."]
         ConfigureViewport,
         #[doc = "Viewport defined to a fixed width. [Learn more] (https://support.google.com/webmasters/answer/6352293#fixed-width_viewport)."]
         FixedWidthViewport,
@@ -566,6 +2002,359 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct MobileUsabilityInspectionResult {
+        #[doc = "A list of zero or more mobile-usability issues detected for this URL."]
+        #[serde(
+            rename = "issues",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub issues: ::std::option::Option<Vec<crate::schemas::MobileUsabilityIssue>>,
+        #[doc = "High-level mobile-usability inspection result for this URL."]
+        #[serde(
+            rename = "verdict",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verdict: ::std::option::Option<crate::schemas::MobileUsabilityInspectionResultVerdict>,
+    }
+    impl ::google_field_selector::FieldSelector for MobileUsabilityInspectionResult {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MobileUsabilityInspectionResult {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MobileUsabilityInspectionResultVerdict {
+        #[doc = "Equivalent to \"Error\" or \"Invalid\" for the page or item in Search Console."]
+        Fail,
+        #[doc = "Equivalent to \"Excluded\" for the page or item in Search Console."]
+        Neutral,
+        #[doc = "Equivalent to \"Valid with warnings\" for the page or item in Search Console."]
+        Partial,
+        #[doc = "Equivalent to \"Valid\" for the page or item in Search Console."]
+        Pass,
+        #[doc = "Unknown verdict."]
+        VerdictUnspecified,
+    }
+    impl MobileUsabilityInspectionResultVerdict {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MobileUsabilityInspectionResultVerdict::Fail => "FAIL",
+                MobileUsabilityInspectionResultVerdict::Neutral => "NEUTRAL",
+                MobileUsabilityInspectionResultVerdict::Partial => "PARTIAL",
+                MobileUsabilityInspectionResultVerdict::Pass => "PASS",
+                MobileUsabilityInspectionResultVerdict::VerdictUnspecified => "VERDICT_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MobileUsabilityInspectionResultVerdict {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MobileUsabilityInspectionResultVerdict {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MobileUsabilityInspectionResultVerdict, ()> {
+            Ok(match s {
+                "FAIL" => MobileUsabilityInspectionResultVerdict::Fail,
+                "NEUTRAL" => MobileUsabilityInspectionResultVerdict::Neutral,
+                "PARTIAL" => MobileUsabilityInspectionResultVerdict::Partial,
+                "PASS" => MobileUsabilityInspectionResultVerdict::Pass,
+                "VERDICT_UNSPECIFIED" => MobileUsabilityInspectionResultVerdict::VerdictUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MobileUsabilityInspectionResultVerdict {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MobileUsabilityInspectionResultVerdict {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MobileUsabilityInspectionResultVerdict {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "FAIL" => MobileUsabilityInspectionResultVerdict::Fail,
+                "NEUTRAL" => MobileUsabilityInspectionResultVerdict::Neutral,
+                "PARTIAL" => MobileUsabilityInspectionResultVerdict::Partial,
+                "PASS" => MobileUsabilityInspectionResultVerdict::Pass,
+                "VERDICT_UNSPECIFIED" => MobileUsabilityInspectionResultVerdict::VerdictUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MobileUsabilityInspectionResultVerdict {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MobileUsabilityInspectionResultVerdict {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MobileUsabilityIssue {
+        #[doc = "Mobile-usability issue type."]
+        #[serde(
+            rename = "issueType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub issue_type: ::std::option::Option<crate::schemas::MobileUsabilityIssueIssueType>,
+        #[doc = "Additional information regarding the issue."]
+        #[serde(
+            rename = "message",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub message: ::std::option::Option<String>,
+        #[doc = "Not returned; reserved for future use."]
+        #[serde(
+            rename = "severity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub severity: ::std::option::Option<crate::schemas::MobileUsabilityIssueSeverity>,
+    }
+    impl ::google_field_selector::FieldSelector for MobileUsabilityIssue {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MobileUsabilityIssue {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MobileUsabilityIssueIssueType {
+        #[doc = "Viewport is not specified using the meta viewport tag. [Learn more] (https://support.google.com/webmasters/answer/6352293#viewport_not_configured#error-list)."]
+        ConfigureViewport,
+        #[doc = "Viewport defined to a fixed width. [Learn more] (https://support.google.com/webmasters/answer/6352293#fixed-width_viewport#error-list)."]
+        FixedWidthViewport,
+        #[doc = "Unknown issue. Sorry, we don't have any description for the rule that was broken."]
+        MobileUsabilityIssueTypeUnspecified,
+        #[doc = "Content not sized to viewport. [Learn more] (https://support.google.com/webmasters/answer/6352293#content_not_sized_to_viewport#error-list)."]
+        SizeContentToViewport,
+        #[doc = "Touch elements are too close to each other. [Learn more] (https://support.google.com/webmasters/answer/6352293#touch_elements_too_close#error-list)."]
+        TapTargetsTooClose,
+        #[doc = "Font size is too small for easy reading on a small screen. [Learn More] (https://support.google.com/webmasters/answer/6352293#small_font_size#error-list)."]
+        UseLegibleFontSizes,
+        #[doc = "Plugins incompatible with mobile devices are being used. [Learn more] (https://support.google.com/webmasters/answer/6352293#flash_usage#error-list)."]
+        UsesIncompatiblePlugins,
+    }
+    impl MobileUsabilityIssueIssueType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MobileUsabilityIssueIssueType::ConfigureViewport => "CONFIGURE_VIEWPORT",
+                MobileUsabilityIssueIssueType::FixedWidthViewport => "FIXED_WIDTH_VIEWPORT",
+                MobileUsabilityIssueIssueType::MobileUsabilityIssueTypeUnspecified => {
+                    "MOBILE_USABILITY_ISSUE_TYPE_UNSPECIFIED"
+                }
+                MobileUsabilityIssueIssueType::SizeContentToViewport => "SIZE_CONTENT_TO_VIEWPORT",
+                MobileUsabilityIssueIssueType::TapTargetsTooClose => "TAP_TARGETS_TOO_CLOSE",
+                MobileUsabilityIssueIssueType::UseLegibleFontSizes => "USE_LEGIBLE_FONT_SIZES",
+                MobileUsabilityIssueIssueType::UsesIncompatiblePlugins => {
+                    "USES_INCOMPATIBLE_PLUGINS"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MobileUsabilityIssueIssueType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MobileUsabilityIssueIssueType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MobileUsabilityIssueIssueType, ()> {
+            Ok(match s {
+                "CONFIGURE_VIEWPORT" => MobileUsabilityIssueIssueType::ConfigureViewport,
+                "FIXED_WIDTH_VIEWPORT" => MobileUsabilityIssueIssueType::FixedWidthViewport,
+                "MOBILE_USABILITY_ISSUE_TYPE_UNSPECIFIED" => {
+                    MobileUsabilityIssueIssueType::MobileUsabilityIssueTypeUnspecified
+                }
+                "SIZE_CONTENT_TO_VIEWPORT" => MobileUsabilityIssueIssueType::SizeContentToViewport,
+                "TAP_TARGETS_TOO_CLOSE" => MobileUsabilityIssueIssueType::TapTargetsTooClose,
+                "USE_LEGIBLE_FONT_SIZES" => MobileUsabilityIssueIssueType::UseLegibleFontSizes,
+                "USES_INCOMPATIBLE_PLUGINS" => {
+                    MobileUsabilityIssueIssueType::UsesIncompatiblePlugins
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MobileUsabilityIssueIssueType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MobileUsabilityIssueIssueType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MobileUsabilityIssueIssueType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CONFIGURE_VIEWPORT" => MobileUsabilityIssueIssueType::ConfigureViewport,
+                "FIXED_WIDTH_VIEWPORT" => MobileUsabilityIssueIssueType::FixedWidthViewport,
+                "MOBILE_USABILITY_ISSUE_TYPE_UNSPECIFIED" => {
+                    MobileUsabilityIssueIssueType::MobileUsabilityIssueTypeUnspecified
+                }
+                "SIZE_CONTENT_TO_VIEWPORT" => MobileUsabilityIssueIssueType::SizeContentToViewport,
+                "TAP_TARGETS_TOO_CLOSE" => MobileUsabilityIssueIssueType::TapTargetsTooClose,
+                "USE_LEGIBLE_FONT_SIZES" => MobileUsabilityIssueIssueType::UseLegibleFontSizes,
+                "USES_INCOMPATIBLE_PLUGINS" => {
+                    MobileUsabilityIssueIssueType::UsesIncompatiblePlugins
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MobileUsabilityIssueIssueType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MobileUsabilityIssueIssueType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MobileUsabilityIssueSeverity {
+        #[doc = "Error."]
+        Error,
+        #[doc = "Unknown severity."]
+        SeverityUnspecified,
+        #[doc = "Warning."]
+        Warning,
+    }
+    impl MobileUsabilityIssueSeverity {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MobileUsabilityIssueSeverity::Error => "ERROR",
+                MobileUsabilityIssueSeverity::SeverityUnspecified => "SEVERITY_UNSPECIFIED",
+                MobileUsabilityIssueSeverity::Warning => "WARNING",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MobileUsabilityIssueSeverity {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MobileUsabilityIssueSeverity {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MobileUsabilityIssueSeverity, ()> {
+            Ok(match s {
+                "ERROR" => MobileUsabilityIssueSeverity::Error,
+                "SEVERITY_UNSPECIFIED" => MobileUsabilityIssueSeverity::SeverityUnspecified,
+                "WARNING" => MobileUsabilityIssueSeverity::Warning,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MobileUsabilityIssueSeverity {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MobileUsabilityIssueSeverity {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MobileUsabilityIssueSeverity {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ERROR" => MobileUsabilityIssueSeverity::Error,
+                "SEVERITY_UNSPECIFIED" => MobileUsabilityIssueSeverity::SeverityUnspecified,
+                "WARNING" => MobileUsabilityIssueSeverity::Warning,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MobileUsabilityIssueSeverity {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MobileUsabilityIssueSeverity {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ResourceIssue {
         #[doc = "Describes a blocked resource issue."]
         #[serde(
@@ -581,6 +2370,244 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ResourceIssue {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct RichResultsInspectionResult {
+        #[doc = "A list of zero or more rich results detected on this page. Rich results that cannot even be parsed due to syntactic issues will not be listed here."]
+        #[serde(
+            rename = "detectedItems",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub detected_items: ::std::option::Option<Vec<crate::schemas::DetectedItems>>,
+        #[doc = "High-level rich results inspection result for this URL."]
+        #[serde(
+            rename = "verdict",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verdict: ::std::option::Option<crate::schemas::RichResultsInspectionResultVerdict>,
+    }
+    impl ::google_field_selector::FieldSelector for RichResultsInspectionResult {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RichResultsInspectionResult {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum RichResultsInspectionResultVerdict {
+        #[doc = "Equivalent to \"Error\" or \"Invalid\" for the page or item in Search Console."]
+        Fail,
+        #[doc = "Equivalent to \"Excluded\" for the page or item in Search Console."]
+        Neutral,
+        #[doc = "Equivalent to \"Valid with warnings\" for the page or item in Search Console."]
+        Partial,
+        #[doc = "Equivalent to \"Valid\" for the page or item in Search Console."]
+        Pass,
+        #[doc = "Unknown verdict."]
+        VerdictUnspecified,
+    }
+    impl RichResultsInspectionResultVerdict {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                RichResultsInspectionResultVerdict::Fail => "FAIL",
+                RichResultsInspectionResultVerdict::Neutral => "NEUTRAL",
+                RichResultsInspectionResultVerdict::Partial => "PARTIAL",
+                RichResultsInspectionResultVerdict::Pass => "PASS",
+                RichResultsInspectionResultVerdict::VerdictUnspecified => "VERDICT_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for RichResultsInspectionResultVerdict {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for RichResultsInspectionResultVerdict {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<RichResultsInspectionResultVerdict, ()> {
+            Ok(match s {
+                "FAIL" => RichResultsInspectionResultVerdict::Fail,
+                "NEUTRAL" => RichResultsInspectionResultVerdict::Neutral,
+                "PARTIAL" => RichResultsInspectionResultVerdict::Partial,
+                "PASS" => RichResultsInspectionResultVerdict::Pass,
+                "VERDICT_UNSPECIFIED" => RichResultsInspectionResultVerdict::VerdictUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for RichResultsInspectionResultVerdict {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for RichResultsInspectionResultVerdict {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for RichResultsInspectionResultVerdict {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "FAIL" => RichResultsInspectionResultVerdict::Fail,
+                "NEUTRAL" => RichResultsInspectionResultVerdict::Neutral,
+                "PARTIAL" => RichResultsInspectionResultVerdict::Partial,
+                "PASS" => RichResultsInspectionResultVerdict::Pass,
+                "VERDICT_UNSPECIFIED" => RichResultsInspectionResultVerdict::VerdictUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for RichResultsInspectionResultVerdict {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RichResultsInspectionResultVerdict {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct RichResultsIssue {
+        #[doc = "Rich Results issue type."]
+        #[serde(
+            rename = "issueMessage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub issue_message: ::std::option::Option<String>,
+        #[doc = "Severity of this issue: WARNING, or ERROR. Items with an issue of status ERROR cannot appear with rich result features in Google Search results."]
+        #[serde(
+            rename = "severity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub severity: ::std::option::Option<crate::schemas::RichResultsIssueSeverity>,
+    }
+    impl ::google_field_selector::FieldSelector for RichResultsIssue {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RichResultsIssue {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum RichResultsIssueSeverity {
+        #[doc = "Error."]
+        Error,
+        #[doc = "Unknown severity."]
+        SeverityUnspecified,
+        #[doc = "Warning."]
+        Warning,
+    }
+    impl RichResultsIssueSeverity {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                RichResultsIssueSeverity::Error => "ERROR",
+                RichResultsIssueSeverity::SeverityUnspecified => "SEVERITY_UNSPECIFIED",
+                RichResultsIssueSeverity::Warning => "WARNING",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for RichResultsIssueSeverity {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for RichResultsIssueSeverity {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<RichResultsIssueSeverity, ()> {
+            Ok(match s {
+                "ERROR" => RichResultsIssueSeverity::Error,
+                "SEVERITY_UNSPECIFIED" => RichResultsIssueSeverity::SeverityUnspecified,
+                "WARNING" => RichResultsIssueSeverity::Warning,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for RichResultsIssueSeverity {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for RichResultsIssueSeverity {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for RichResultsIssueSeverity {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ERROR" => RichResultsIssueSeverity::Error,
+                "SEVERITY_UNSPECIFIED" => RichResultsIssueSeverity::SeverityUnspecified,
+                "WARNING" => RichResultsIssueSeverity::Warning,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for RichResultsIssueSeverity {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RichResultsIssueSeverity {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -707,7 +2734,7 @@ pub mod schemas {
         fn from_str(
             s: &str,
         ) -> ::std::result::Result<RunMobileFriendlyTestResponseMobileFriendliness, ()> {
-            Ok ( match s { "MOBILE_FRIENDLY" => RunMobileFriendlyTestResponseMobileFriendliness :: MobileFriendly , "MOBILE_FRIENDLY_TEST_RESULT_UNSPECIFIED" => RunMobileFriendlyTestResponseMobileFriendliness :: MobileFriendlyTestResultUnspecified , "NOT_MOBILE_FRIENDLY" => RunMobileFriendlyTestResponseMobileFriendliness :: NotMobileFriendly , _ => return Err ( ( ) ) , } )
+            Ok (match s { "MOBILE_FRIENDLY" => RunMobileFriendlyTestResponseMobileFriendliness :: MobileFriendly , "MOBILE_FRIENDLY_TEST_RESULT_UNSPECIFIED" => RunMobileFriendlyTestResponseMobileFriendliness :: MobileFriendlyTestResultUnspecified , "NOT_MOBILE_FRIENDLY" => RunMobileFriendlyTestResponseMobileFriendliness :: NotMobileFriendly , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for RunMobileFriendlyTestResponseMobileFriendliness {
@@ -729,7 +2756,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "MOBILE_FRIENDLY" => RunMobileFriendlyTestResponseMobileFriendliness :: MobileFriendly , "MOBILE_FRIENDLY_TEST_RESULT_UNSPECIFIED" => RunMobileFriendlyTestResponseMobileFriendliness :: MobileFriendlyTestResultUnspecified , "NOT_MOBILE_FRIENDLY" => RunMobileFriendlyTestResponseMobileFriendliness :: NotMobileFriendly , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "MOBILE_FRIENDLY" => RunMobileFriendlyTestResponseMobileFriendliness :: MobileFriendly , "MOBILE_FRIENDLY_TEST_RESULT_UNSPECIFIED" => RunMobileFriendlyTestResponseMobileFriendliness :: MobileFriendlyTestResultUnspecified , "NOT_MOBILE_FRIENDLY" => RunMobileFriendlyTestResponseMobileFriendliness :: NotMobileFriendly , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector for RunMobileFriendlyTestResponseMobileFriendliness {
@@ -793,6 +2820,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_date: ::std::option::Option<String>,
+        #[doc = "Optional. [Optional; Default is \"web\"] Type of report: search type, or either Discover or Gnews."]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<crate::schemas::SearchAnalyticsQueryRequestType>,
         #[doc = "[Optional; Default is 1000] The maximum number of rows to return. Must be a number from 1 to 25,000 (inclusive)."]
         #[serde(
             rename = "rowLimit",
@@ -1078,8 +3112,101 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum SearchAnalyticsQueryRequestSearchType {
+    pub enum SearchAnalyticsQueryRequestType {
+        #[doc = "Discover."]
+        Discover,
+        #[doc = "Google News (news.google.com or mobile app)."]
+        GoogleNews,
         Image,
+        #[doc = "News tab in search."]
+        News,
+        Video,
+        Web,
+    }
+    impl SearchAnalyticsQueryRequestType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                SearchAnalyticsQueryRequestType::Discover => "DISCOVER",
+                SearchAnalyticsQueryRequestType::GoogleNews => "GOOGLE_NEWS",
+                SearchAnalyticsQueryRequestType::Image => "IMAGE",
+                SearchAnalyticsQueryRequestType::News => "NEWS",
+                SearchAnalyticsQueryRequestType::Video => "VIDEO",
+                SearchAnalyticsQueryRequestType::Web => "WEB",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for SearchAnalyticsQueryRequestType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for SearchAnalyticsQueryRequestType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<SearchAnalyticsQueryRequestType, ()> {
+            Ok(match s {
+                "DISCOVER" => SearchAnalyticsQueryRequestType::Discover,
+                "GOOGLE_NEWS" => SearchAnalyticsQueryRequestType::GoogleNews,
+                "IMAGE" => SearchAnalyticsQueryRequestType::Image,
+                "NEWS" => SearchAnalyticsQueryRequestType::News,
+                "VIDEO" => SearchAnalyticsQueryRequestType::Video,
+                "WEB" => SearchAnalyticsQueryRequestType::Web,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for SearchAnalyticsQueryRequestType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for SearchAnalyticsQueryRequestType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for SearchAnalyticsQueryRequestType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DISCOVER" => SearchAnalyticsQueryRequestType::Discover,
+                "GOOGLE_NEWS" => SearchAnalyticsQueryRequestType::GoogleNews,
+                "IMAGE" => SearchAnalyticsQueryRequestType::Image,
+                "NEWS" => SearchAnalyticsQueryRequestType::News,
+                "VIDEO" => SearchAnalyticsQueryRequestType::Video,
+                "WEB" => SearchAnalyticsQueryRequestType::Web,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for SearchAnalyticsQueryRequestType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SearchAnalyticsQueryRequestType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum SearchAnalyticsQueryRequestSearchType {
+        #[doc = "Discover."]
+        Discover,
+        #[doc = "Google News (news.google.com or mobile app)."]
+        GoogleNews,
+        Image,
+        #[doc = "News tab in search."]
         News,
         Video,
         Web,
@@ -1087,6 +3214,8 @@ pub mod schemas {
     impl SearchAnalyticsQueryRequestSearchType {
         pub fn as_str(self) -> &'static str {
             match self {
+                SearchAnalyticsQueryRequestSearchType::Discover => "DISCOVER",
+                SearchAnalyticsQueryRequestSearchType::GoogleNews => "GOOGLE_NEWS",
                 SearchAnalyticsQueryRequestSearchType::Image => "IMAGE",
                 SearchAnalyticsQueryRequestSearchType::News => "NEWS",
                 SearchAnalyticsQueryRequestSearchType::Video => "VIDEO",
@@ -1103,6 +3232,8 @@ pub mod schemas {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<SearchAnalyticsQueryRequestSearchType, ()> {
             Ok(match s {
+                "DISCOVER" => SearchAnalyticsQueryRequestSearchType::Discover,
+                "GOOGLE_NEWS" => SearchAnalyticsQueryRequestSearchType::GoogleNews,
                 "IMAGE" => SearchAnalyticsQueryRequestSearchType::Image,
                 "NEWS" => SearchAnalyticsQueryRequestSearchType::News,
                 "VIDEO" => SearchAnalyticsQueryRequestSearchType::Video,
@@ -1131,6 +3262,8 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "DISCOVER" => SearchAnalyticsQueryRequestSearchType::Discover,
+                "GOOGLE_NEWS" => SearchAnalyticsQueryRequestSearchType::GoogleNews,
                 "IMAGE" => SearchAnalyticsQueryRequestSearchType::Image,
                 "NEWS" => SearchAnalyticsQueryRequestSearchType::News,
                 "VIDEO" => SearchAnalyticsQueryRequestSearchType::Video,
@@ -1456,6 +3589,66 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct UrlInspectionResult {
+        #[doc = "Result of the AMP analysis. Absent if the page is not an AMP page."]
+        #[serde(
+            rename = "ampResult",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub amp_result: ::std::option::Option<crate::schemas::AmpInspectionResult>,
+        #[doc = "Result of the index status analysis."]
+        #[serde(
+            rename = "indexStatusResult",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub index_status_result: ::std::option::Option<crate::schemas::IndexStatusInspectionResult>,
+        #[doc = "Link to Search Console URL inspection."]
+        #[serde(
+            rename = "inspectionResultLink",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub inspection_result_link: ::std::option::Option<String>,
+        #[doc = "Result of the Mobile usability analysis."]
+        #[serde(
+            rename = "mobileUsabilityResult",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mobile_usability_result:
+            ::std::option::Option<crate::schemas::MobileUsabilityInspectionResult>,
+        #[doc = "Result of the Rich Results analysis. Absent if there are no rich results found."]
+        #[serde(
+            rename = "richResultsResult",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rich_results_result: ::std::option::Option<crate::schemas::RichResultsInspectionResult>,
+    }
+    impl ::google_field_selector::FieldSelector for UrlInspectionResult {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UrlInspectionResult {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct WmxSite {
         #[doc = "The user's permission level for the site."]
         #[serde(
@@ -1765,7 +3958,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct WmxSitemapContent {
-        #[doc = "The number of URLs from the sitemap that were indexed (of the content type)."]
+        #[doc = "*Deprecated; do not use.*"]
         #[serde(
             rename = "indexed",
             default,
@@ -2098,6 +4291,13 @@ impl Client {
             auth: self.auth_ref(),
         }
     }
+    #[doc = "Actions that can be performed on the url_inspection resource"]
+    pub fn url_inspection(&self) -> crate::resources::url_inspection::UrlInspectionActions {
+        crate::resources::url_inspection::UrlInspectionActions {
+            reqwest: &self.reqwest,
+            auth: self.auth_ref(),
+        }
+    }
     #[doc = "Actions that can be performed on the url_testing_tools resource"]
     pub fn url_testing_tools(&self) -> crate::resources::url_testing_tools::UrlTestingToolsActions {
         crate::resources::url_testing_tools::UrlTestingToolsActions {
@@ -2312,7 +4512,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Deletes a sitemap from this site."]
+            #[doc = "Deletes a sitemap from the Sitemaps report. Does not stop Google from crawling this sitemap or the URLs that were previously crawled in the deleted sitemap."]
             pub fn delete(
                 &self,
                 site_url: impl Into<String>,
@@ -3562,6 +5762,212 @@ pub mod resources {
             }
         }
     }
+    pub mod url_inspection {
+        pub mod params {}
+        pub struct UrlInspectionActions<'a> {
+            pub(crate) reqwest: &'a reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+        }
+        impl<'a> UrlInspectionActions<'a> {
+            fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                self.auth
+            }
+            #[doc = "Actions that can be performed on the index resource"]
+            pub fn index(&self) -> crate::resources::url_inspection::index::IndexActions {
+                crate::resources::url_inspection::index::IndexActions {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                }
+            }
+        }
+        pub mod index {
+            pub mod params {}
+            pub struct IndexActions<'a> {
+                pub(crate) reqwest: &'a reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            }
+            impl<'a> IndexActions<'a> {
+                fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                    self.auth
+                }
+                #[doc = "Index inspection."]
+                pub fn inspect(
+                    &self,
+                    request: crate::schemas::InspectUrlIndexRequest,
+                ) -> InspectRequestBuilder {
+                    InspectRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                    }
+                }
+            }
+            #[doc = "Created via [IndexActions::inspect()](struct.IndexActions.html#method.inspect)"]
+            #[derive(Debug, Clone)]
+            pub struct InspectRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::InspectUrlIndexRequest,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> InspectRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::InspectUrlIndexResponse, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::InspectUrlIndexResponse, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://searchconsole.googleapis.com/".to_owned();
+                    output.push_str("v1/urlInspection/index:inspect");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
+                }
+            }
+        }
+    }
     pub mod url_testing_tools {
         pub mod params {}
         pub struct UrlTestingToolsActions<'a> {
@@ -3577,7 +5983,7 @@ pub mod resources {
                 &self,
             ) -> crate::resources::url_testing_tools::mobile_friendly_test::MobileFriendlyTestActions
             {
-                crate :: resources :: url_testing_tools :: mobile_friendly_test :: MobileFriendlyTestActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                crate :: resources :: url_testing_tools :: mobile_friendly_test :: MobileFriendlyTestActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
             }
         }
         pub mod mobile_friendly_test {

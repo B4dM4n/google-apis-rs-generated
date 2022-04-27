@@ -15,8 +15,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("chat1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210314")
-            .about("Enables bots to fetch information and perform actions in Google Chat.")
+            .version("0.1.0-20220420")
+            .about("Enables apps to fetch information and perform actions in Google Chat. Authentication using a service account is a prerequisite for using the Google Chat REST API.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
                 .long("scope")
@@ -68,12 +68,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: get, list and webhooks");
         {
-            let mcmd = SubCommand::with_name("get").about("Returns a space.");
+            let mcmd = SubCommand::with_name("get").about("Returns a space. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).");
             spaces0 = spaces0.subcommand(mcmd);
         }
         {
-            let mcmd =
-                SubCommand::with_name("list").about("Lists spaces the caller is a member of.");
+            let mcmd = SubCommand::with_name("list").about("Lists spaces the caller is a member of. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).");
             spaces0 = spaces0.subcommand(mcmd);
         }
         {
@@ -98,37 +97,37 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: get and list");
         {
-            let mcmd = SubCommand::with_name("get").about("Returns a membership.");
+            let mcmd = SubCommand::with_name("get").about("Returns a membership. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).");
             members1 = members1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists human memberships in a space.");
+            let mcmd = SubCommand::with_name("list").about("Lists human memberships in a space. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).");
             members1 = members1.subcommand(mcmd);
         }
         let mut messages1 = SubCommand::with_name("messages")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get and update");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a message.");
+            let mcmd = SubCommand::with_name("create").about("Creates a message. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).");
             messages1 = messages1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a message.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a message. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).");
             messages1 = messages1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Returns a message.");
+            let mcmd = SubCommand::with_name("get").about("Returns a message. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).");
             messages1 = messages1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update").about("Updates a message.");
+            let mcmd = SubCommand::with_name("update").about("Updates a message. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).");
             messages1 = messages1.subcommand(mcmd);
         }
         let mut attachments2 = SubCommand::with_name("attachments")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get");
         {
-            let mcmd = SubCommand::with_name("get").about("Gets the metadata of a message attachment. The attachment data is fetched using the media API.");
+            let mcmd = SubCommand::with_name("get").about("Gets the metadata of a message attachment. The attachment data is fetched using the media API. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).");
             attachments2 = attachments2.subcommand(mcmd);
         }
         messages1 = messages1.subcommand(attachments2);

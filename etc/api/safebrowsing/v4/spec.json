@@ -7,7 +7,7 @@
   "canonicalName": "Safebrowsing",
   "fullyEncodeReservedExpansion": true,
   "version": "v4",
-  "revision": "20210317",
+  "revision": "20220425",
   "title": "Safe Browsing API",
   "description": "Enables client applications to check web resources (most commonly URLs) against Google-generated lists of unsafe web resources. The Safe Browsing APIs are for non-commercial use only. If you need to use APIs to detect malicious URLs for commercial purposes – meaning “for sale or revenue-generating purposes” – please refer to the Web Risk API.",
   "ownerDomain": "google.com",
@@ -201,7 +201,7 @@
   "schemas": {
     "GoogleProtobufEmpty": {
       "id": "GoogleProtobufEmpty",
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
+      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
       "type": "object",
       "format": null,
       "enum": [],
@@ -391,7 +391,9 @@
             "SUBRESOURCE_FILTER",
             "SUSPICIOUS",
             "TRICK_TO_BILL",
-            "HIGH_CONFIDENCE_ALLOWLIST"
+            "HIGH_CONFIDENCE_ALLOWLIST",
+            "ACCURACY_TIPS",
+            "SOCIAL_ENGINEERING_LOWER_PRECISION"
           ],
           "enumDescriptions": [
             "Unknown.",
@@ -410,7 +412,9 @@
             "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
             "Entities that are suspected to present a threat.",
             "Trick-to-bill threat list.",
-            "Safe list to ship hashes of known safe URL expressions."
+            "Safe list to ship hashes of known safe URL expressions.",
+            "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips.",
+            "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -683,7 +687,9 @@
             "SUBRESOURCE_FILTER",
             "SUSPICIOUS",
             "TRICK_TO_BILL",
-            "HIGH_CONFIDENCE_ALLOWLIST"
+            "HIGH_CONFIDENCE_ALLOWLIST",
+            "ACCURACY_TIPS",
+            "SOCIAL_ENGINEERING_LOWER_PRECISION"
           ],
           "enumDescriptions": [
             "Unknown.",
@@ -702,7 +708,9 @@
             "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
             "Entities that are suspected to present a threat.",
             "Trick-to-bill threat list.",
-            "Safe list to ship hashes of known safe URL expressions."
+            "Safe list to ship hashes of known safe URL expressions.",
+            "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips.",
+            "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1203,7 +1211,9 @@
             "SUBRESOURCE_FILTER",
             "SUSPICIOUS",
             "TRICK_TO_BILL",
-            "HIGH_CONFIDENCE_ALLOWLIST"
+            "HIGH_CONFIDENCE_ALLOWLIST",
+            "ACCURACY_TIPS",
+            "SOCIAL_ENGINEERING_LOWER_PRECISION"
           ],
           "enumDescriptions": [
             "Unknown.",
@@ -1222,7 +1232,9 @@
             "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
             "Entities that are suspected to present a threat.",
             "Trick-to-bill threat list.",
-            "Safe list to ship hashes of known safe URL expressions."
+            "Safe list to ship hashes of known safe URL expressions.",
+            "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips.",
+            "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1452,7 +1464,9 @@
               "SUBRESOURCE_FILTER",
               "SUSPICIOUS",
               "TRICK_TO_BILL",
-              "HIGH_CONFIDENCE_ALLOWLIST"
+              "HIGH_CONFIDENCE_ALLOWLIST",
+              "ACCURACY_TIPS",
+              "SOCIAL_ENGINEERING_LOWER_PRECISION"
             ],
             "enumDescriptions": [
               "Unknown.",
@@ -1471,7 +1485,9 @@
               "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
               "Entities that are suspected to present a threat.",
               "Trick-to-bill threat list.",
-              "Safe list to ship hashes of known safe URL expressions."
+              "Safe list to ship hashes of known safe URL expressions.",
+              "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips.",
+              "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."
             ],
             "properties": {},
             "additionalProperties": null,
@@ -1567,7 +1583,9 @@
             "SUBRESOURCE_FILTER",
             "SUSPICIOUS",
             "TRICK_TO_BILL",
-            "HIGH_CONFIDENCE_ALLOWLIST"
+            "HIGH_CONFIDENCE_ALLOWLIST",
+            "ACCURACY_TIPS",
+            "SOCIAL_ENGINEERING_LOWER_PRECISION"
           ],
           "enumDescriptions": [
             "Unknown.",
@@ -1586,7 +1604,9 @@
             "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
             "Entities that are suspected to present a threat.",
             "Trick-to-bill threat list.",
-            "Safe list to ship hashes of known safe URL expressions."
+            "Safe list to ship hashes of known safe URL expressions.",
+            "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips.",
+            "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1699,7 +1719,9 @@
             "SUBRESOURCE_FILTER",
             "SUSPICIOUS",
             "TRICK_TO_BILL",
-            "HIGH_CONFIDENCE_ALLOWLIST"
+            "HIGH_CONFIDENCE_ALLOWLIST",
+            "ACCURACY_TIPS",
+            "SOCIAL_ENGINEERING_LOWER_PRECISION"
           ],
           "enumDescriptions": [
             "Unknown.",
@@ -1718,7 +1740,9 @@
             "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
             "Entities that are suspected to present a threat.",
             "Trick-to-bill threat list.",
-            "Safe list to ship hashes of known safe URL expressions."
+            "Safe list to ship hashes of known safe URL expressions.",
+            "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips.",
+            "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."
           ],
           "properties": {},
           "additionalProperties": null,

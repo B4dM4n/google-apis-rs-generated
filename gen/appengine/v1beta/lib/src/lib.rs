@@ -2,9 +2,9 @@
 pub mod scopes {
     #[doc = "View and manage your applications deployed on Google App Engine\n\n`https://www.googleapis.com/auth/appengine.admin`"]
     pub const APPENGINE_ADMIN: &str = "https://www.googleapis.com/auth/appengine.admin";
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
-    #[doc = "View your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
+    #[doc = "View your data across Google Cloud services and see the email address of your Google Account\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
     pub const CLOUD_PLATFORM_READ_ONLY: &str =
         "https://www.googleapis.com/auth/cloud-platform.read-only";
 }
@@ -463,6 +463,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "The service account associated with the application. This is the app-level default identity. If no identity provided during create version, Admin API will fallback to this one."]
+        #[serde(
+            rename = "serviceAccount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub service_account: ::std::option::Option<String>,
         #[doc = "Serving status of this application."]
         #[serde(
             rename = "servingStatus",
@@ -1917,7 +1924,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub action: ::std::option::Option<crate::schemas::FirewallRuleAction>,
-        #[doc = "An optional string description of this rule. This field has a maximum length of 100 characters."]
+        #[doc = "An optional string description of this rule. This field has a maximum length of 400 characters."]
         #[serde(
             rename = "description",
             default,
@@ -2020,6 +2027,51 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for FirewallRuleAction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAppengineV1BetaLocationMetadata {
+        #[doc = "App Engine flexible environment is available in the given location.@OutputOnly"]
+        #[serde(
+            rename = "flexibleEnvironmentAvailable",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub flexible_environment_available: ::std::option::Option<bool>,
+        #[doc = "Output only. Search API (https://cloud.google.com/appengine/docs/standard/python/search) is available in the given location."]
+        #[serde(
+            rename = "searchApiAvailable",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub search_api_available: ::std::option::Option<bool>,
+        #[doc = "App Engine standard environment is available in the given location.@OutputOnly"]
+        #[serde(
+            rename = "standardEnvironmentAvailable",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub standard_environment_available: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAppengineV1BetaLocationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAppengineV1BetaLocationMetadata {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3148,6 +3200,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub forwarded_ports: ::std::option::Option<Vec<String>>,
+        #[doc = "The IP mode for instances. Only applicable in the App Engine flexible environment."]
+        #[serde(
+            rename = "instanceIpMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub instance_ip_mode: ::std::option::Option<crate::schemas::NetworkInstanceIpMode>,
         #[doc = "Tag to apply to the instance during creation. Only applicable in the App Engine flexible environment."]
         #[serde(
             rename = "instanceTag",
@@ -3183,6 +3242,82 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Network {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum NetworkInstanceIpMode {
+        #[doc = "Instances are created with both internal and external IP addresses."]
+        External,
+        #[doc = "Unspecified is treated as EXTERNAL."]
+        InstanceIpModeUnspecified,
+        #[doc = "Instances are created with internal IP addresses only."]
+        Internal,
+    }
+    impl NetworkInstanceIpMode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                NetworkInstanceIpMode::External => "EXTERNAL",
+                NetworkInstanceIpMode::InstanceIpModeUnspecified => "INSTANCE_IP_MODE_UNSPECIFIED",
+                NetworkInstanceIpMode::Internal => "INTERNAL",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for NetworkInstanceIpMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for NetworkInstanceIpMode {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<NetworkInstanceIpMode, ()> {
+            Ok(match s {
+                "EXTERNAL" => NetworkInstanceIpMode::External,
+                "INSTANCE_IP_MODE_UNSPECIFIED" => NetworkInstanceIpMode::InstanceIpModeUnspecified,
+                "INTERNAL" => NetworkInstanceIpMode::Internal,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for NetworkInstanceIpMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for NetworkInstanceIpMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for NetworkInstanceIpMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "EXTERNAL" => NetworkInstanceIpMode::External,
+                "INSTANCE_IP_MODE_UNSPECIFIED" => NetworkInstanceIpMode::InstanceIpModeUnspecified,
+                "INTERNAL" => NetworkInstanceIpMode::Internal,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for NetworkInstanceIpMode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NetworkInstanceIpMode {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4013,6 +4148,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
+        #[doc = "A set of labels to apply to this service. Labels are key/value pairs that describe the service and all resources that belong to it (e.g., versions). The labels can be used to search and group resources, and are propagated to the usage and billing reports, enabling fine-grain analysis of costs. An example of using labels is to tag resources belonging to different environments (e.g., \"env=prod\", \"env=qa\"). Label keys and values can be no longer than 63 characters and can only contain lowercase letters, numeric characters, underscores, dashes, and international characters. Label keys must start with a lowercase letter or an international character. Each service can have at most 32 labels."]
+        #[serde(
+            rename = "labels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
         #[doc = "Full path to the Service resource in the API. Example: apps/myapp/services/default.@OutputOnly"]
         #[serde(
             rename = "name",
@@ -5479,6 +5621,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct VpcAccessConnector {
+        #[doc = "The egress setting for the connector, controlling what traffic is diverted through it."]
+        #[serde(
+            rename = "egressSetting",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub egress_setting: ::std::option::Option<crate::schemas::VpcAccessConnectorEgressSetting>,
         #[doc = "Full Serverless VPC Access Connector name e.g. /projects/my-project/locations/us-central1/connectors/c1."]
         #[serde(
             rename = "name",
@@ -5493,6 +5642,87 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for VpcAccessConnector {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum VpcAccessConnectorEgressSetting {
+        #[doc = "Force the use of VPC Access for all egress traffic from the function."]
+        AllTraffic,
+        EgressSettingUnspecified,
+        #[doc = "Use the VPC Access Connector for private IP space from RFC1918."]
+        PrivateIpRanges,
+    }
+    impl VpcAccessConnectorEgressSetting {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                VpcAccessConnectorEgressSetting::AllTraffic => "ALL_TRAFFIC",
+                VpcAccessConnectorEgressSetting::EgressSettingUnspecified => {
+                    "EGRESS_SETTING_UNSPECIFIED"
+                }
+                VpcAccessConnectorEgressSetting::PrivateIpRanges => "PRIVATE_IP_RANGES",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for VpcAccessConnectorEgressSetting {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for VpcAccessConnectorEgressSetting {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<VpcAccessConnectorEgressSetting, ()> {
+            Ok(match s {
+                "ALL_TRAFFIC" => VpcAccessConnectorEgressSetting::AllTraffic,
+                "EGRESS_SETTING_UNSPECIFIED" => {
+                    VpcAccessConnectorEgressSetting::EgressSettingUnspecified
+                }
+                "PRIVATE_IP_RANGES" => VpcAccessConnectorEgressSetting::PrivateIpRanges,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for VpcAccessConnectorEgressSetting {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for VpcAccessConnectorEgressSetting {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for VpcAccessConnectorEgressSetting {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ALL_TRAFFIC" => VpcAccessConnectorEgressSetting::AllTraffic,
+                "EGRESS_SETTING_UNSPECIFIED" => {
+                    VpcAccessConnectorEgressSetting::EgressSettingUnspecified
+                }
+                "PRIVATE_IP_RANGES" => VpcAccessConnectorEgressSetting::PrivateIpRanges,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for VpcAccessConnectorEgressSetting {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for VpcAccessConnectorEgressSetting {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5771,7 +6001,7 @@ pub mod resources {
                     apps_id: apps_id.into(),
                 }
             }
-            #[doc = "Updates the specified Application resource. You can update the following fields: auth_domain - Google authentication domain for controlling user access to the application. default_cookie_expiration - Cookie expiration policy for the application."]
+            #[doc = "Updates the specified Application resource. You can update the following fields: auth_domain - Google authentication domain for controlling user access to the application. default_cookie_expiration - Cookie expiration policy for the application. iap - Identity-Aware Proxy properties for the application."]
             pub fn patch(
                 &self,
                 request: crate::schemas::Application,
@@ -6204,7 +6434,7 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> PatchRequestBuilder<'a> {
-            #[doc = "Standard field mask for the set of fields to be updated."]
+            #[doc = "Required. Standard field mask for the set of fields to be updated."]
             pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                 self.update_mask = Some(value.into());
                 self
@@ -9125,7 +9355,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> PatchRequestBuilder<'a> {
-                #[doc = "Standard field mask for the set of fields to be updated."]
+                #[doc = "Required. Standard field mask for the set of fields to be updated."]
                 pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                     self.update_mask = Some(value.into());
                     self
@@ -10854,7 +11084,7 @@ pub mod resources {
                     self.filter = Some(value.into());
                     self
                 }
-                #[doc = "The maximum number of results to return. If not set, the service will select a default."]
+                #[doc = "The maximum number of results to return. If not set, the service selects a default."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
@@ -12404,7 +12634,7 @@ pub mod resources {
                     self.migrate_traffic = Some(value);
                     self
                 }
-                #[doc = "Standard field mask for the set of fields to be updated."]
+                #[doc = "Required. Standard field mask for the set of fields to be updated."]
                 pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                     self.update_mask = Some(value.into());
                     self

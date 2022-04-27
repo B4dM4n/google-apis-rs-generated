@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [hashes](resources/hashes/struct.HashesActions.html)\n      * [*search*](resources/hashes/struct.SearchRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [operations](resources/projects/operations/struct.OperationsActions.html)\n        * [*cancel*](resources/projects/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/operations/struct.ListRequestBuilder.html)\n      * [submissions](resources/projects/submissions/struct.SubmissionsActions.html)\n        * [*create*](resources/projects/submissions/struct.CreateRequestBuilder.html)\n      * [uris](resources/projects/uris/struct.UrisActions.html)\n        * [*submit*](resources/projects/uris/struct.SubmitRequestBuilder.html)\n    * [threat_lists](resources/threat_lists/struct.ThreatListsActions.html)\n      * [*computeDiff*](resources/threat_lists/struct.ComputeDiffRequestBuilder.html)\n    * [uris](resources/uris/struct.UrisActions.html)\n      * [*search*](resources/uris/struct.SearchRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -101,7 +101,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudWebriskV1ComputeThreatListDiffResponseResponseType, ()>
         {
-            Ok ( match s { "DIFF" => GoogleCloudWebriskV1ComputeThreatListDiffResponseResponseType :: Diff , "RESET" => GoogleCloudWebriskV1ComputeThreatListDiffResponseResponseType :: Reset , "RESPONSE_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1ComputeThreatListDiffResponseResponseType :: ResponseTypeUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "DIFF" => GoogleCloudWebriskV1ComputeThreatListDiffResponseResponseType :: Diff , "RESET" => GoogleCloudWebriskV1ComputeThreatListDiffResponseResponseType :: Reset , "RESPONSE_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1ComputeThreatListDiffResponseResponseType :: ResponseTypeUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudWebriskV1ComputeThreatListDiffResponseResponseType {
@@ -125,7 +125,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "DIFF" => GoogleCloudWebriskV1ComputeThreatListDiffResponseResponseType :: Diff , "RESET" => GoogleCloudWebriskV1ComputeThreatListDiffResponseResponseType :: Reset , "RESPONSE_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1ComputeThreatListDiffResponseResponseType :: ResponseTypeUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "DIFF" => GoogleCloudWebriskV1ComputeThreatListDiffResponseResponseType :: Diff , "RESET" => GoogleCloudWebriskV1ComputeThreatListDiffResponseResponseType :: Reset , "RESPONSE_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1ComputeThreatListDiffResponseResponseType :: ResponseTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -417,7 +417,7 @@ pub mod schemas {
             GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems,
             (),
         > {
-            Ok ( match s { "MALWARE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: SocialEngineering , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: UnwantedSoftware , _ => return Err ( ( ) ) , } )
+            Ok (match s { "MALWARE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: SocialEngineering , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: UnwantedSoftware , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems {
@@ -441,7 +441,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "MALWARE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: SocialEngineering , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: UnwantedSoftware , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "MALWARE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: SocialEngineering , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: UnwantedSoftware , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -561,7 +561,7 @@ pub mod schemas {
             GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems,
             (),
         > {
-            Ok ( match s { "MALWARE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: SocialEngineering , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: UnwantedSoftware , _ => return Err ( ( ) ) , } )
+            Ok (match s { "MALWARE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: SocialEngineering , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: UnwantedSoftware , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems {
@@ -585,7 +585,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "MALWARE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: SocialEngineering , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: UnwantedSoftware , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "MALWARE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: SocialEngineering , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: UnwantedSoftware , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -2979,7 +2979,7 @@ pub mod resources {
                     s: &str,
                 ) -> ::std::result::Result<ComputeDiffConstraintsSupportedCompressionsItems, ()>
                 {
-                    Ok ( match s { "COMPRESSION_TYPE_UNSPECIFIED" => ComputeDiffConstraintsSupportedCompressionsItems :: CompressionTypeUnspecified , "RAW" => ComputeDiffConstraintsSupportedCompressionsItems :: Raw , "RICE" => ComputeDiffConstraintsSupportedCompressionsItems :: Rice , _ => return Err ( ( ) ) , } )
+                    Ok (match s { "COMPRESSION_TYPE_UNSPECIFIED" => ComputeDiffConstraintsSupportedCompressionsItems :: CompressionTypeUnspecified , "RAW" => ComputeDiffConstraintsSupportedCompressionsItems :: Raw , "RICE" => ComputeDiffConstraintsSupportedCompressionsItems :: Rice , _ => return Err (()) , })
                 }
             }
             impl ::std::fmt::Display for ComputeDiffConstraintsSupportedCompressionsItems {
@@ -3001,7 +3001,7 @@ pub mod resources {
                     D: ::serde::de::Deserializer<'de>,
                 {
                     let value: &'de str = <&str>::deserialize(deserializer)?;
-                    Ok ( match value { "COMPRESSION_TYPE_UNSPECIFIED" => ComputeDiffConstraintsSupportedCompressionsItems :: CompressionTypeUnspecified , "RAW" => ComputeDiffConstraintsSupportedCompressionsItems :: Raw , "RICE" => ComputeDiffConstraintsSupportedCompressionsItems :: Rice , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+                    Ok (match value { "COMPRESSION_TYPE_UNSPECIFIED" => ComputeDiffConstraintsSupportedCompressionsItems :: CompressionTypeUnspecified , "RAW" => ComputeDiffConstraintsSupportedCompressionsItems :: Raw , "RICE" => ComputeDiffConstraintsSupportedCompressionsItems :: Rice , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
                 }
             }
             impl ::google_field_selector::FieldSelector for ComputeDiffConstraintsSupportedCompressionsItems {
@@ -3130,7 +3130,7 @@ pub mod resources {
         }
         #[doc = "Created via [ThreatListsActions::compute_diff()](struct.ThreatListsActions.html#method.compute_diff)"]
         #[derive(Debug, Clone)]
-        pub struct ComputeDiffRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , constraints_max_database_entries : Option < i32 > , constraints_max_diff_entries : Option < i32 > , constraints_supported_compressions : Option < Vec < crate :: resources :: threat_lists :: params :: ComputeDiffConstraintsSupportedCompressionsItems > > , threat_type : Option < crate :: resources :: threat_lists :: params :: ComputeDiffThreatType > , version_token : Option < :: google_api_bytes :: Bytes > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+        pub struct ComputeDiffRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , constraints_max_database_entries : Option < i32 > , constraints_max_diff_entries : Option < i32 > , constraints_supported_compressions : Option < Vec < crate :: resources :: threat_lists :: params :: ComputeDiffConstraintsSupportedCompressionsItems > > , threat_type : Option < crate :: resources :: threat_lists :: params :: ComputeDiffThreatType > , version_token : Option < :: google_api_bytes :: Bytes > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
         impl<'a> ComputeDiffRequestBuilder<'a> {
             #[doc = "Sets the maximum number of entries that the client is willing to have in the local database. This should be a power of 2 between 2**10 and 2**20. If zero, no database size limit is set."]
             pub fn constraints_max_database_entries(mut self, value: i32) -> Self {

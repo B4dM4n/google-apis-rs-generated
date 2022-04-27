@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("books1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210317")
+            .version("0.1.0-20220422")
             .about("The Google Books API allows clients to access the Google Books repository.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -80,11 +80,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             familysharing0 = familysharing0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("share").about("Initiates sharing of the content with the user\'s family. Empty response indicates success.");
+            let mcmd = SubCommand::with_name("share").about("Initiates sharing of the content with the user's family. Empty response indicates success.");
             familysharing0 = familysharing0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("unshare").about("Initiates revoking content that has already been shared with the user\'s family. Empty response indicates success.");
+            let mcmd = SubCommand::with_name("unshare").about("Initiates revoking content that has already been shared with the user's family. Empty response indicates success.");
             familysharing0 = familysharing0.subcommand(mcmd);
         }
         let mut layers0 = SubCommand::with_name("layers")

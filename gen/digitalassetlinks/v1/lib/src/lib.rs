@@ -1,4 +1,4 @@
-#![doc = "# Resources and Methods\n    * [assetlinks](resources/assetlinks/struct.AssetlinksActions.html)\n      * [*check*](resources/assetlinks/struct.CheckRequestBuilder.html)\n    * [statements](resources/statements/struct.StatementsActions.html)\n      * [*list*](resources/statements/struct.ListRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [assetlinks](resources/assetlinks/struct.AssetlinksActions.html)\n      * [*bulkCheck*](resources/assetlinks/struct.BulkCheckRequestBuilder.html), [*check*](resources/assetlinks/struct.CheckRequestBuilder.html)\n    * [statements](resources/statements/struct.StatementsActions.html)\n      * [*list*](resources/statements/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {}
 pub mod schemas {
     #[derive(
@@ -73,6 +73,261 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Asset {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BulkCheckRequest {
+        #[doc = "Same configuration as in Check request, all statements checks will use same configurations."]
+        #[serde(
+            rename = "allowGoogleInternalDataSources",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allow_google_internal_data_sources: ::std::option::Option<bool>,
+        #[doc = "If specified, will be used in any given template statement that doesn’t specify a relation."]
+        #[serde(
+            rename = "defaultRelation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub default_relation: ::std::option::Option<String>,
+        #[doc = "If specified, will be used in any given template statement that doesn’t specify a source."]
+        #[serde(
+            rename = "defaultSource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub default_source: ::std::option::Option<crate::schemas::Asset>,
+        #[doc = "If specified, will be used in any given template statement that doesn’t specify a target."]
+        #[serde(
+            rename = "defaultTarget",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub default_target: ::std::option::Option<crate::schemas::Asset>,
+        #[doc = "Same configuration as in Check request, all statements checks will use same configurations."]
+        #[serde(
+            rename = "skipCacheLookup",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub skip_cache_lookup: ::std::option::Option<bool>,
+        #[doc = "List of statements to check. For each statement, you can omit a field if the corresponding default_* field below was supplied. Minimum 1 statement; maximum 1,000 statements. Any additional statements will be ignored."]
+        #[serde(
+            rename = "statements",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub statements: ::std::option::Option<Vec<crate::schemas::StatementTemplate>>,
+    }
+    impl ::google_field_selector::FieldSelector for BulkCheckRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BulkCheckRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BulkCheckResponse {
+        #[doc = "Error code for the entire request. Present only if the entire request failed. Individual check errors will not trigger the presence of this field."]
+        #[serde(
+            rename = "bulkErrorCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bulk_error_code: ::std::option::Option<crate::schemas::BulkCheckResponseBulkErrorCode>,
+        #[doc = "List of results for each check request. Results are returned in the same order in which they were sent in the request."]
+        #[serde(
+            rename = "checkResults",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub check_results: ::std::option::Option<Vec<crate::schemas::CheckResponse>>,
+    }
+    impl ::google_field_selector::FieldSelector for BulkCheckResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BulkCheckResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum BulkCheckResponseBulkErrorCode {
+        #[doc = "Invalid HTTPS certificate ."]
+        ErrorCodeFailedSslValidation,
+        #[doc = "Too many includes (maybe a loop)."]
+        ErrorCodeFetchBudgetExhausted,
+        #[doc = "Unable to fetch the asset links data."]
+        ErrorCodeFetchError,
+        #[doc = "Unable to parse query."]
+        ErrorCodeInvalidQuery,
+        #[doc = "JSON content is malformed."]
+        ErrorCodeMalformedContent,
+        #[doc = "Can't parse HTTP response."]
+        ErrorCodeMalformedHttpResponse,
+        #[doc = "HTTP redirects (e.g, 301) are not allowed."]
+        ErrorCodeRedirect,
+        #[doc = "A secure asset includes an insecure asset (security downgrade)."]
+        ErrorCodeSecureAssetIncludesInsecure,
+        #[doc = "Asset links data exceeds maximum size."]
+        ErrorCodeTooLarge,
+        ErrorCodeUnspecified,
+        #[doc = "HTTP Content-type should be application/json."]
+        ErrorCodeWrongContentType,
+    }
+    impl BulkCheckResponseBulkErrorCode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                BulkCheckResponseBulkErrorCode::ErrorCodeFailedSslValidation => {
+                    "ERROR_CODE_FAILED_SSL_VALIDATION"
+                }
+                BulkCheckResponseBulkErrorCode::ErrorCodeFetchBudgetExhausted => {
+                    "ERROR_CODE_FETCH_BUDGET_EXHAUSTED"
+                }
+                BulkCheckResponseBulkErrorCode::ErrorCodeFetchError => "ERROR_CODE_FETCH_ERROR",
+                BulkCheckResponseBulkErrorCode::ErrorCodeInvalidQuery => "ERROR_CODE_INVALID_QUERY",
+                BulkCheckResponseBulkErrorCode::ErrorCodeMalformedContent => {
+                    "ERROR_CODE_MALFORMED_CONTENT"
+                }
+                BulkCheckResponseBulkErrorCode::ErrorCodeMalformedHttpResponse => {
+                    "ERROR_CODE_MALFORMED_HTTP_RESPONSE"
+                }
+                BulkCheckResponseBulkErrorCode::ErrorCodeRedirect => "ERROR_CODE_REDIRECT",
+                BulkCheckResponseBulkErrorCode::ErrorCodeSecureAssetIncludesInsecure => {
+                    "ERROR_CODE_SECURE_ASSET_INCLUDES_INSECURE"
+                }
+                BulkCheckResponseBulkErrorCode::ErrorCodeTooLarge => "ERROR_CODE_TOO_LARGE",
+                BulkCheckResponseBulkErrorCode::ErrorCodeUnspecified => "ERROR_CODE_UNSPECIFIED",
+                BulkCheckResponseBulkErrorCode::ErrorCodeWrongContentType => {
+                    "ERROR_CODE_WRONG_CONTENT_TYPE"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for BulkCheckResponseBulkErrorCode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for BulkCheckResponseBulkErrorCode {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<BulkCheckResponseBulkErrorCode, ()> {
+            Ok(match s {
+                "ERROR_CODE_FAILED_SSL_VALIDATION" => {
+                    BulkCheckResponseBulkErrorCode::ErrorCodeFailedSslValidation
+                }
+                "ERROR_CODE_FETCH_BUDGET_EXHAUSTED" => {
+                    BulkCheckResponseBulkErrorCode::ErrorCodeFetchBudgetExhausted
+                }
+                "ERROR_CODE_FETCH_ERROR" => BulkCheckResponseBulkErrorCode::ErrorCodeFetchError,
+                "ERROR_CODE_INVALID_QUERY" => BulkCheckResponseBulkErrorCode::ErrorCodeInvalidQuery,
+                "ERROR_CODE_MALFORMED_CONTENT" => {
+                    BulkCheckResponseBulkErrorCode::ErrorCodeMalformedContent
+                }
+                "ERROR_CODE_MALFORMED_HTTP_RESPONSE" => {
+                    BulkCheckResponseBulkErrorCode::ErrorCodeMalformedHttpResponse
+                }
+                "ERROR_CODE_REDIRECT" => BulkCheckResponseBulkErrorCode::ErrorCodeRedirect,
+                "ERROR_CODE_SECURE_ASSET_INCLUDES_INSECURE" => {
+                    BulkCheckResponseBulkErrorCode::ErrorCodeSecureAssetIncludesInsecure
+                }
+                "ERROR_CODE_TOO_LARGE" => BulkCheckResponseBulkErrorCode::ErrorCodeTooLarge,
+                "ERROR_CODE_UNSPECIFIED" => BulkCheckResponseBulkErrorCode::ErrorCodeUnspecified,
+                "ERROR_CODE_WRONG_CONTENT_TYPE" => {
+                    BulkCheckResponseBulkErrorCode::ErrorCodeWrongContentType
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for BulkCheckResponseBulkErrorCode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for BulkCheckResponseBulkErrorCode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for BulkCheckResponseBulkErrorCode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ERROR_CODE_FAILED_SSL_VALIDATION" => {
+                    BulkCheckResponseBulkErrorCode::ErrorCodeFailedSslValidation
+                }
+                "ERROR_CODE_FETCH_BUDGET_EXHAUSTED" => {
+                    BulkCheckResponseBulkErrorCode::ErrorCodeFetchBudgetExhausted
+                }
+                "ERROR_CODE_FETCH_ERROR" => BulkCheckResponseBulkErrorCode::ErrorCodeFetchError,
+                "ERROR_CODE_INVALID_QUERY" => BulkCheckResponseBulkErrorCode::ErrorCodeInvalidQuery,
+                "ERROR_CODE_MALFORMED_CONTENT" => {
+                    BulkCheckResponseBulkErrorCode::ErrorCodeMalformedContent
+                }
+                "ERROR_CODE_MALFORMED_HTTP_RESPONSE" => {
+                    BulkCheckResponseBulkErrorCode::ErrorCodeMalformedHttpResponse
+                }
+                "ERROR_CODE_REDIRECT" => BulkCheckResponseBulkErrorCode::ErrorCodeRedirect,
+                "ERROR_CODE_SECURE_ASSET_INCLUDES_INSECURE" => {
+                    BulkCheckResponseBulkErrorCode::ErrorCodeSecureAssetIncludesInsecure
+                }
+                "ERROR_CODE_TOO_LARGE" => BulkCheckResponseBulkErrorCode::ErrorCodeTooLarge,
+                "ERROR_CODE_UNSPECIFIED" => BulkCheckResponseBulkErrorCode::ErrorCodeUnspecified,
+                "ERROR_CODE_WRONG_CONTENT_TYPE" => {
+                    BulkCheckResponseBulkErrorCode::ErrorCodeWrongContentType
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for BulkCheckResponseBulkErrorCode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BulkCheckResponseBulkErrorCode {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -571,6 +826,51 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct StatementTemplate {
+        #[doc = "The relationship being asserted between the source and target. If omitted, you must specify a BulkCheckRequest.default_relation value to use here."]
+        #[serde(
+            rename = "relation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub relation: ::std::option::Option<String>,
+        #[doc = "The source asset that is asserting the statement. If omitted, you must specify a BulkCheckRequest.default_source value to use here."]
+        #[serde(
+            rename = "source",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub source: ::std::option::Option<crate::schemas::Asset>,
+        #[doc = "The target that the source is declaring the relationship with. If omitted, you must specify a BulkCheckRequest.default_target to use here."]
+        #[serde(
+            rename = "target",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target: ::std::option::Option<crate::schemas::Asset>,
+    }
+    impl ::google_field_selector::FieldSelector for StatementTemplate {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for StatementTemplate {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct WebAsset {
         #[doc = "Web assets are identified by a URL that contains only the scheme, hostname and port parts. The format is http[s]://[:] Hostnames must be fully qualified: they must end in a single period (\"`.`\"). Only the schemes \"http\" and \"https\" are currently allowed. Port numbers are given as a decimal number, and they must be omitted if the standard port numbers are used: 80 for http and 443 for https. We call this limited URL the \"site\". All URLs that share the same scheme, hostname and port are considered to be a part of the site and thus belong to the web asset. Example: the asset with the site `https://www.google.com` contains all these URLs: * `https://www.google.com/` * `https://www.google.com:443/` * `https://www.google.com/foo` * `https://www.google.com/foo?bar` * `https://www.google.com/foo#bar` * `https://user@password:www.google.com/` But it does not contain these URLs: * `http://www.google.com/` (wrong scheme) * `https://google.com/` (hostname does not match) * `https://www.google.com:444/` (port does not match) REQUIRED"]
         #[serde(
@@ -795,6 +1095,28 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
+            #[doc = "Send a bundle of statement checks in a single RPC to minimize latency and service load. Statements need not be all for the same source and/or target. We recommend using this method when you need to check more than one statement in a short period of time."]
+            pub fn bulk_check(
+                &self,
+                request: crate::schemas::BulkCheckRequest,
+            ) -> BulkCheckRequestBuilder {
+                BulkCheckRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    request,
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                }
+            }
             #[doc = "Determines whether the specified (directional) relationship exists between the specified source and target assets. The relation describes the intent of the link between the two assets as claimed by the source asset. An example for such relationships is the delegation of privileges or permissions. This command is most often used by infrastructure systems to check preconditions for an action. For example, a client may want to know if it is OK to send a web URL to a particular mobile app instead. The client can check for the relevant asset link from the website to the mobile app to decide if the operation should be allowed. A note about security: if you specify a secure asset as the source, such as an HTTPS website or an Android app, the API will ensure that any statements used to generate the response have been made in a secure way by the owner of that asset. Conversely, if the source asset is an insecure HTTP website (that is, the URL starts with `http://` instead of `https://`), the API cannot verify its statements securely, and it is not possible to ensure that the website's statements have not been altered by a third party. For more information, see the [Digital Asset Links technical design specification](https://github.com/google/digitalassetlinks/blob/master/well-known/details.md)."]
             pub fn check(&self) -> CheckRequestBuilder {
                 CheckRequestBuilder {
@@ -819,6 +1141,156 @@ pub mod resources {
                     target_android_app_package_name: None,
                     target_web_site: None,
                 }
+            }
+        }
+        #[doc = "Created via [AssetlinksActions::bulk_check()](struct.AssetlinksActions.html#method.bulk_check)"]
+        #[derive(Debug, Clone)]
+        pub struct BulkCheckRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            request: crate::schemas::BulkCheckRequest,
+            access_token: Option<String>,
+            alt: Option<crate::params::Alt>,
+            callback: Option<String>,
+            fields: Option<String>,
+            key: Option<String>,
+            oauth_token: Option<String>,
+            pretty_print: Option<bool>,
+            quota_user: Option<String>,
+            upload_protocol: Option<String>,
+            upload_type: Option<String>,
+            xgafv: Option<crate::params::Xgafv>,
+        }
+        impl<'a> BulkCheckRequestBuilder<'a> {
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields)
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::BulkCheckResponse, crate::Error> {
+                self.execute_with_fields(None::<&str>)
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::BulkCheckResponse, crate::Error> {
+                self.execute_with_fields(Some("*"))
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute()
+            }
+            fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path())?;
+                let req = req.json(&self.request);
+                Ok(crate::error_from_response(req.send()?)?.json()?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://digitalassetlinks.googleapis.com/".to_owned();
+                output.push_str("v1/assetlinks:bulkCheck");
+                output
+            }
+            fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                req = req.bearer_auth(
+                    self.auth
+                        .access_token()
+                        .map_err(|err| crate::Error::OAuth2(err))?,
+                );
+                Ok(req)
             }
         }
         #[doc = "Created via [AssetlinksActions::check()](struct.AssetlinksActions.html#method.check)"]

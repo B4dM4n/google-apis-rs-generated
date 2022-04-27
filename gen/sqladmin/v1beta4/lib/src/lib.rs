@@ -1,6 +1,6 @@
-#![doc = "# Resources and Methods\n    * [backup_runs](resources/backup_runs/struct.BackupRunsActions.html)\n      * [*delete*](resources/backup_runs/struct.DeleteRequestBuilder.html), [*get*](resources/backup_runs/struct.GetRequestBuilder.html), [*insert*](resources/backup_runs/struct.InsertRequestBuilder.html), [*list*](resources/backup_runs/struct.ListRequestBuilder.html)\n    * [databases](resources/databases/struct.DatabasesActions.html)\n      * [*delete*](resources/databases/struct.DeleteRequestBuilder.html), [*get*](resources/databases/struct.GetRequestBuilder.html), [*insert*](resources/databases/struct.InsertRequestBuilder.html), [*list*](resources/databases/struct.ListRequestBuilder.html), [*patch*](resources/databases/struct.PatchRequestBuilder.html), [*update*](resources/databases/struct.UpdateRequestBuilder.html)\n    * [flags](resources/flags/struct.FlagsActions.html)\n      * [*list*](resources/flags/struct.ListRequestBuilder.html)\n    * [instances](resources/instances/struct.InstancesActions.html)\n      * [*addServerCa*](resources/instances/struct.AddServerCaRequestBuilder.html), [*clone*](resources/instances/struct.CloneRequestBuilder.html), [*delete*](resources/instances/struct.DeleteRequestBuilder.html), [*demoteMaster*](resources/instances/struct.DemoteMasterRequestBuilder.html), [*export*](resources/instances/struct.ExportRequestBuilder.html), [*failover*](resources/instances/struct.FailoverRequestBuilder.html), [*get*](resources/instances/struct.GetRequestBuilder.html), [*import*](resources/instances/struct.ImportRequestBuilder.html), [*insert*](resources/instances/struct.InsertRequestBuilder.html), [*list*](resources/instances/struct.ListRequestBuilder.html), [*listServerCas*](resources/instances/struct.ListServerCasRequestBuilder.html), [*patch*](resources/instances/struct.PatchRequestBuilder.html), [*promoteReplica*](resources/instances/struct.PromoteReplicaRequestBuilder.html), [*resetSslConfig*](resources/instances/struct.ResetSslConfigRequestBuilder.html), [*restart*](resources/instances/struct.RestartRequestBuilder.html), [*restoreBackup*](resources/instances/struct.RestoreBackupRequestBuilder.html), [*rotateServerCa*](resources/instances/struct.RotateServerCaRequestBuilder.html), [*startReplica*](resources/instances/struct.StartReplicaRequestBuilder.html), [*stopReplica*](resources/instances/struct.StopReplicaRequestBuilder.html), [*truncateLog*](resources/instances/struct.TruncateLogRequestBuilder.html), [*update*](resources/instances/struct.UpdateRequestBuilder.html)\n    * [operations](resources/operations/struct.OperationsActions.html)\n      * [*get*](resources/operations/struct.GetRequestBuilder.html), [*list*](resources/operations/struct.ListRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [instances](resources/projects/instances/struct.InstancesActions.html)\n        * [*rescheduleMaintenance*](resources/projects/instances/struct.RescheduleMaintenanceRequestBuilder.html), [*startExternalSync*](resources/projects/instances/struct.StartExternalSyncRequestBuilder.html), [*verifyExternalSyncSettings*](resources/projects/instances/struct.VerifyExternalSyncSettingsRequestBuilder.html)\n    * [ssl_certs](resources/ssl_certs/struct.SslCertsActions.html)\n      * [*createEphemeral*](resources/ssl_certs/struct.CreateEphemeralRequestBuilder.html), [*delete*](resources/ssl_certs/struct.DeleteRequestBuilder.html), [*get*](resources/ssl_certs/struct.GetRequestBuilder.html), [*insert*](resources/ssl_certs/struct.InsertRequestBuilder.html), [*list*](resources/ssl_certs/struct.ListRequestBuilder.html)\n    * [tiers](resources/tiers/struct.TiersActions.html)\n      * [*list*](resources/tiers/struct.ListRequestBuilder.html)\n    * [users](resources/users/struct.UsersActions.html)\n      * [*delete*](resources/users/struct.DeleteRequestBuilder.html), [*insert*](resources/users/struct.InsertRequestBuilder.html), [*list*](resources/users/struct.ListRequestBuilder.html), [*update*](resources/users/struct.UpdateRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [backup_runs](resources/backup_runs/struct.BackupRunsActions.html)\n      * [*delete*](resources/backup_runs/struct.DeleteRequestBuilder.html), [*get*](resources/backup_runs/struct.GetRequestBuilder.html), [*insert*](resources/backup_runs/struct.InsertRequestBuilder.html), [*list*](resources/backup_runs/struct.ListRequestBuilder.html)\n    * [connect](resources/connect/struct.ConnectActions.html)\n      * [*generateEphemeralCert*](resources/connect/struct.GenerateEphemeralCertRequestBuilder.html), [*get*](resources/connect/struct.GetRequestBuilder.html)\n    * [databases](resources/databases/struct.DatabasesActions.html)\n      * [*delete*](resources/databases/struct.DeleteRequestBuilder.html), [*get*](resources/databases/struct.GetRequestBuilder.html), [*insert*](resources/databases/struct.InsertRequestBuilder.html), [*list*](resources/databases/struct.ListRequestBuilder.html), [*patch*](resources/databases/struct.PatchRequestBuilder.html), [*update*](resources/databases/struct.UpdateRequestBuilder.html)\n    * [flags](resources/flags/struct.FlagsActions.html)\n      * [*list*](resources/flags/struct.ListRequestBuilder.html)\n    * [instances](resources/instances/struct.InstancesActions.html)\n      * [*addServerCa*](resources/instances/struct.AddServerCaRequestBuilder.html), [*clone*](resources/instances/struct.CloneRequestBuilder.html), [*delete*](resources/instances/struct.DeleteRequestBuilder.html), [*demoteMaster*](resources/instances/struct.DemoteMasterRequestBuilder.html), [*export*](resources/instances/struct.ExportRequestBuilder.html), [*failover*](resources/instances/struct.FailoverRequestBuilder.html), [*get*](resources/instances/struct.GetRequestBuilder.html), [*import*](resources/instances/struct.ImportRequestBuilder.html), [*insert*](resources/instances/struct.InsertRequestBuilder.html), [*list*](resources/instances/struct.ListRequestBuilder.html), [*listServerCas*](resources/instances/struct.ListServerCasRequestBuilder.html), [*patch*](resources/instances/struct.PatchRequestBuilder.html), [*promoteReplica*](resources/instances/struct.PromoteReplicaRequestBuilder.html), [*resetSslConfig*](resources/instances/struct.ResetSslConfigRequestBuilder.html), [*restart*](resources/instances/struct.RestartRequestBuilder.html), [*restoreBackup*](resources/instances/struct.RestoreBackupRequestBuilder.html), [*rotateServerCa*](resources/instances/struct.RotateServerCaRequestBuilder.html), [*startReplica*](resources/instances/struct.StartReplicaRequestBuilder.html), [*stopReplica*](resources/instances/struct.StopReplicaRequestBuilder.html), [*truncateLog*](resources/instances/struct.TruncateLogRequestBuilder.html), [*update*](resources/instances/struct.UpdateRequestBuilder.html)\n    * [operations](resources/operations/struct.OperationsActions.html)\n      * [*get*](resources/operations/struct.GetRequestBuilder.html), [*list*](resources/operations/struct.ListRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [instances](resources/projects/instances/struct.InstancesActions.html)\n        * [*rescheduleMaintenance*](resources/projects/instances/struct.RescheduleMaintenanceRequestBuilder.html), [*startExternalSync*](resources/projects/instances/struct.StartExternalSyncRequestBuilder.html), [*verifyExternalSyncSettings*](resources/projects/instances/struct.VerifyExternalSyncSettingsRequestBuilder.html)\n    * [ssl_certs](resources/ssl_certs/struct.SslCertsActions.html)\n      * [*createEphemeral*](resources/ssl_certs/struct.CreateEphemeralRequestBuilder.html), [*delete*](resources/ssl_certs/struct.DeleteRequestBuilder.html), [*get*](resources/ssl_certs/struct.GetRequestBuilder.html), [*insert*](resources/ssl_certs/struct.InsertRequestBuilder.html), [*list*](resources/ssl_certs/struct.ListRequestBuilder.html)\n    * [tiers](resources/tiers/struct.TiersActions.html)\n      * [*list*](resources/tiers/struct.ListRequestBuilder.html)\n    * [users](resources/users/struct.UsersActions.html)\n      * [*delete*](resources/users/struct.DeleteRequestBuilder.html), [*insert*](resources/users/struct.InsertRequestBuilder.html), [*list*](resources/users/struct.ListRequestBuilder.html), [*update*](resources/users/struct.UpdateRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "See, edit, configure, and delete your Google Cloud Platform data\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
     #[doc = "Manage your Google SQL Service instances\n\n`https://www.googleapis.com/auth/sqlservice.admin`"]
     pub const SQLSERVICE_ADMIN: &str = "https://www.googleapis.com/auth/sqlservice.admin";
@@ -19,14 +19,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AclEntry {
-        #[doc = "The time when this access control entry expires in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*."]
+        #[doc = "The time when this access control entry expires in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`."]
         #[serde(
             rename = "expirationTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub expiration_time: ::std::option::Option<String>,
-        #[doc = "This is always *sql#aclEntry*."]
+        #[doc = "This is always `sql#aclEntry`."]
         #[serde(
             rename = "kind",
             default,
@@ -209,7 +209,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enabled: ::std::option::Option<bool>,
-        #[doc = "This is always *sql#backupConfiguration*."]
+        #[doc = "This is always `sql#backupConfiguration`."]
         #[serde(
             rename = "kind",
             default,
@@ -223,7 +223,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location: ::std::option::Option<String>,
-        #[doc = "Reserved for future use."]
+        #[doc = "(Postgres only) Whether point in time recovery is enabled."]
         #[serde(
             rename = "pointInTimeRecoveryEnabled",
             default,
@@ -237,7 +237,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub replication_log_archiving_enabled: ::std::option::Option<bool>,
-        #[doc = "Start time for the daily backup configuration in UTC timezone in the 24 hour format - *HH:MM*."]
+        #[doc = "Start time for the daily backup configuration in UTC timezone in the 24 hour format - `HH:MM`."]
         #[serde(
             rename = "startTime",
             default,
@@ -283,7 +283,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub backup_id: ::std::option::Option<i64>,
-        #[doc = "This is always *sql#backupContext*."]
+        #[doc = "This is always `sql#backupContext`."]
         #[serde(
             rename = "kind",
             default,
@@ -444,7 +444,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Encryption configuration specific to a backup. Applies only to Second Generation instances."]
+        #[doc = "Encryption configuration specific to a backup."]
         #[serde(
             rename = "diskEncryptionConfiguration",
             default,
@@ -452,21 +452,21 @@ pub mod schemas {
         )]
         pub disk_encryption_configuration:
             ::std::option::Option<crate::schemas::DiskEncryptionConfiguration>,
-        #[doc = "Encryption status specific to a backup. Applies only to Second Generation instances."]
+        #[doc = "Encryption status specific to a backup."]
         #[serde(
             rename = "diskEncryptionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disk_encryption_status: ::std::option::Option<crate::schemas::DiskEncryptionStatus>,
-        #[doc = "The time the backup operation completed in UTC timezone in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*."]
+        #[doc = "The time the backup operation completed in UTC timezone in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`."]
         #[serde(
             rename = "endTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_time: ::std::option::Option<String>,
-        #[doc = "The time the run was enqueued in UTC timezone in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*."]
+        #[doc = "The time the run was enqueued in UTC timezone in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`."]
         #[serde(
             rename = "enqueuedTime",
             default,
@@ -495,7 +495,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub instance: ::std::option::Option<String>,
-        #[doc = "This is always *sql#backupRun*."]
+        #[doc = "This is always `sql#backupRun`."]
         #[serde(
             rename = "kind",
             default,
@@ -523,7 +523,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub self_link: ::std::option::Option<String>,
-        #[doc = "The time the backup operation actually started in UTC timezone in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*."]
+        #[doc = "The time the backup operation actually started in UTC timezone in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`."]
         #[serde(
             rename = "startTime",
             default,
@@ -537,7 +537,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status: ::std::option::Option<crate::schemas::BackupRunStatus>,
-        #[doc = "The start time of the backup window during which this the backup was attempted in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*."]
+        #[doc = "The start time of the backup window during which this the backup was attempted in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`."]
         #[serde(
             rename = "windowStartTime",
             default,
@@ -844,7 +844,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::BackupRun>>,
-        #[doc = "This is always *sql#backupRunsList*."]
+        #[doc = "This is always `sql#backupRunsList`."]
         #[serde(
             rename = "kind",
             default,
@@ -897,7 +897,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub bin_log_position: ::std::option::Option<i64>,
-        #[doc = "This is always *sql#binLogCoordinates*."]
+        #[doc = "This is always `sql#binLogCoordinates`."]
         #[serde(
             rename = "kind",
             default,
@@ -928,6 +928,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CloneContext {
+        #[doc = "The name of the allocated ip range for the private ip CloudSQL instance. For example: \"google-managed-services-default\". If set, the cloned instance ip will be created in the allocated range. The range name must comply with [RFC 1035](https://tools.ietf.org/html/rfc1035). Specifically, the name must be 1-63 characters long and match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. Reserved for future use."]
+        #[serde(
+            rename = "allocatedIpRange",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allocated_ip_range: ::std::option::Option<String>,
         #[doc = "Binary log coordinates, if specified, identify the position up to which the source instance is cloned. If not specified, the source instance is cloned up to the most recent binary log coordinates."]
         #[serde(
             rename = "binLogCoordinates",
@@ -942,7 +949,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub destination_instance_name: ::std::option::Option<String>,
-        #[doc = "This is always *sql#cloneContext*."]
+        #[doc = "This is always `sql#cloneContext`."]
         #[serde(
             rename = "kind",
             default,
@@ -957,7 +964,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub pitr_timestamp_ms: ::std::option::Option<i64>,
-        #[doc = "Reserved for future use."]
+        #[doc = "Timestamp, if specified, identifies the time to which the source instance is cloned."]
         #[serde(
             rename = "pointInTime",
             default,
@@ -971,6 +978,358 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CloneContext {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ConnectSettings {
+        #[doc = "`SECOND_GEN`: Cloud SQL database instance. `EXTERNAL`: A database server that is not managed by Google. This property is read-only; use the `tier` property in the `settings` object to determine the database type."]
+        #[serde(
+            rename = "backendType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub backend_type: ::std::option::Option<crate::schemas::ConnectSettingsBackendType>,
+        #[doc = "The database engine type and version. The `databaseVersion` field cannot be changed after instance creation. MySQL instances: `MYSQL_8_0`, `MYSQL_5_7` (default), or `MYSQL_5_6`. PostgreSQL instances: `POSTGRES_9_6`, `POSTGRES_10`, `POSTGRES_11` or `POSTGRES_12` (default), `POSTGRES_13`, or `POSTGRES_14`. SQL Server instances: `SQLSERVER_2017_STANDARD` (default), `SQLSERVER_2017_ENTERPRISE`, `SQLSERVER_2017_EXPRESS`, `SQLSERVER_2017_WEB`, `SQLSERVER_2019_STANDARD`, `SQLSERVER_2019_ENTERPRISE`, `SQLSERVER_2019_EXPRESS`, or `SQLSERVER_2019_WEB`."]
+        #[serde(
+            rename = "databaseVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub database_version: ::std::option::Option<crate::schemas::ConnectSettingsDatabaseVersion>,
+        #[doc = "The assigned IP addresses for the instance."]
+        #[serde(
+            rename = "ipAddresses",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ip_addresses: ::std::option::Option<Vec<crate::schemas::IpMapping>>,
+        #[doc = "This is always `sql#connectSettings`."]
+        #[serde(
+            rename = "kind",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kind: ::std::option::Option<String>,
+        #[doc = "The cloud region for the instance. e.g. `us-central1`, `europe-west1`. The region cannot be changed after instance creation."]
+        #[serde(
+            rename = "region",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub region: ::std::option::Option<String>,
+        #[doc = "SSL configuration."]
+        #[serde(
+            rename = "serverCaCert",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub server_ca_cert: ::std::option::Option<crate::schemas::SslCert>,
+    }
+    impl ::google_field_selector::FieldSelector for ConnectSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ConnectSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ConnectSettingsBackendType {
+        #[doc = "On premises instance."]
+        External,
+        #[doc = "V1 speckle instance."]
+        FirstGen,
+        #[doc = "V2 speckle instance."]
+        SecondGen,
+        #[doc = "This is an unknown backend type for instance."]
+        SqlBackendTypeUnspecified,
+    }
+    impl ConnectSettingsBackendType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ConnectSettingsBackendType::External => "EXTERNAL",
+                ConnectSettingsBackendType::FirstGen => "FIRST_GEN",
+                ConnectSettingsBackendType::SecondGen => "SECOND_GEN",
+                ConnectSettingsBackendType::SqlBackendTypeUnspecified => {
+                    "SQL_BACKEND_TYPE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ConnectSettingsBackendType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ConnectSettingsBackendType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ConnectSettingsBackendType, ()> {
+            Ok(match s {
+                "EXTERNAL" => ConnectSettingsBackendType::External,
+                "FIRST_GEN" => ConnectSettingsBackendType::FirstGen,
+                "SECOND_GEN" => ConnectSettingsBackendType::SecondGen,
+                "SQL_BACKEND_TYPE_UNSPECIFIED" => {
+                    ConnectSettingsBackendType::SqlBackendTypeUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ConnectSettingsBackendType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ConnectSettingsBackendType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ConnectSettingsBackendType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "EXTERNAL" => ConnectSettingsBackendType::External,
+                "FIRST_GEN" => ConnectSettingsBackendType::FirstGen,
+                "SECOND_GEN" => ConnectSettingsBackendType::SecondGen,
+                "SQL_BACKEND_TYPE_UNSPECIFIED" => {
+                    ConnectSettingsBackendType::SqlBackendTypeUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ConnectSettingsBackendType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ConnectSettingsBackendType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ConnectSettingsDatabaseVersion {
+        #[doc = "The database version is MySQL 5.1."]
+        Mysql51,
+        #[doc = "The database version is MySQL 5.5."]
+        Mysql55,
+        #[doc = "The database version is MySQL 5.6."]
+        Mysql56,
+        #[doc = "The database version is MySQL 5.7."]
+        Mysql57,
+        #[doc = "The database version is MySQL 8."]
+        Mysql80,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 18."]
+        Mysql8018,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 26."]
+        Mysql8026,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 27."]
+        Mysql8027,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 28."]
+        Mysql8028,
+        #[doc = "The database version is PostgreSQL 10."]
+        Postgres10,
+        #[doc = "The database version is PostgreSQL 11."]
+        Postgres11,
+        #[doc = "The database version is PostgreSQL 12."]
+        Postgres12,
+        #[doc = "The database version is PostgreSQL 13."]
+        Postgres13,
+        #[doc = "The database version is PostgreSQL 14."]
+        Postgres14,
+        #[doc = "The database version is PostgreSQL 9.6."]
+        Postgres96,
+        #[doc = "This is an unknown database version."]
+        SqlDatabaseVersionUnspecified,
+        #[doc = "The database version is SQL Server 2017 Enterprise."]
+        Sqlserver2017Enterprise,
+        #[doc = "The database version is SQL Server 2017 Express."]
+        Sqlserver2017Express,
+        #[doc = "The database version is SQL Server 2017 Standard."]
+        Sqlserver2017Standard,
+        #[doc = "The database version is SQL Server 2017 Web."]
+        Sqlserver2017Web,
+        #[doc = "The database version is SQL Server 2019 Enterprise."]
+        Sqlserver2019Enterprise,
+        #[doc = "The database version is SQL Server 2019 Express."]
+        Sqlserver2019Express,
+        #[doc = "The database version is SQL Server 2019 Standard."]
+        Sqlserver2019Standard,
+        #[doc = "The database version is SQL Server 2019 Web."]
+        Sqlserver2019Web,
+    }
+    impl ConnectSettingsDatabaseVersion {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ConnectSettingsDatabaseVersion::Mysql51 => "MYSQL_5_1",
+                ConnectSettingsDatabaseVersion::Mysql55 => "MYSQL_5_5",
+                ConnectSettingsDatabaseVersion::Mysql56 => "MYSQL_5_6",
+                ConnectSettingsDatabaseVersion::Mysql57 => "MYSQL_5_7",
+                ConnectSettingsDatabaseVersion::Mysql80 => "MYSQL_8_0",
+                ConnectSettingsDatabaseVersion::Mysql8018 => "MYSQL_8_0_18",
+                ConnectSettingsDatabaseVersion::Mysql8026 => "MYSQL_8_0_26",
+                ConnectSettingsDatabaseVersion::Mysql8027 => "MYSQL_8_0_27",
+                ConnectSettingsDatabaseVersion::Mysql8028 => "MYSQL_8_0_28",
+                ConnectSettingsDatabaseVersion::Postgres10 => "POSTGRES_10",
+                ConnectSettingsDatabaseVersion::Postgres11 => "POSTGRES_11",
+                ConnectSettingsDatabaseVersion::Postgres12 => "POSTGRES_12",
+                ConnectSettingsDatabaseVersion::Postgres13 => "POSTGRES_13",
+                ConnectSettingsDatabaseVersion::Postgres14 => "POSTGRES_14",
+                ConnectSettingsDatabaseVersion::Postgres96 => "POSTGRES_9_6",
+                ConnectSettingsDatabaseVersion::SqlDatabaseVersionUnspecified => {
+                    "SQL_DATABASE_VERSION_UNSPECIFIED"
+                }
+                ConnectSettingsDatabaseVersion::Sqlserver2017Enterprise => {
+                    "SQLSERVER_2017_ENTERPRISE"
+                }
+                ConnectSettingsDatabaseVersion::Sqlserver2017Express => "SQLSERVER_2017_EXPRESS",
+                ConnectSettingsDatabaseVersion::Sqlserver2017Standard => "SQLSERVER_2017_STANDARD",
+                ConnectSettingsDatabaseVersion::Sqlserver2017Web => "SQLSERVER_2017_WEB",
+                ConnectSettingsDatabaseVersion::Sqlserver2019Enterprise => {
+                    "SQLSERVER_2019_ENTERPRISE"
+                }
+                ConnectSettingsDatabaseVersion::Sqlserver2019Express => "SQLSERVER_2019_EXPRESS",
+                ConnectSettingsDatabaseVersion::Sqlserver2019Standard => "SQLSERVER_2019_STANDARD",
+                ConnectSettingsDatabaseVersion::Sqlserver2019Web => "SQLSERVER_2019_WEB",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ConnectSettingsDatabaseVersion {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ConnectSettingsDatabaseVersion {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ConnectSettingsDatabaseVersion, ()> {
+            Ok(match s {
+                "MYSQL_5_1" => ConnectSettingsDatabaseVersion::Mysql51,
+                "MYSQL_5_5" => ConnectSettingsDatabaseVersion::Mysql55,
+                "MYSQL_5_6" => ConnectSettingsDatabaseVersion::Mysql56,
+                "MYSQL_5_7" => ConnectSettingsDatabaseVersion::Mysql57,
+                "MYSQL_8_0" => ConnectSettingsDatabaseVersion::Mysql80,
+                "MYSQL_8_0_18" => ConnectSettingsDatabaseVersion::Mysql8018,
+                "MYSQL_8_0_26" => ConnectSettingsDatabaseVersion::Mysql8026,
+                "MYSQL_8_0_27" => ConnectSettingsDatabaseVersion::Mysql8027,
+                "MYSQL_8_0_28" => ConnectSettingsDatabaseVersion::Mysql8028,
+                "POSTGRES_10" => ConnectSettingsDatabaseVersion::Postgres10,
+                "POSTGRES_11" => ConnectSettingsDatabaseVersion::Postgres11,
+                "POSTGRES_12" => ConnectSettingsDatabaseVersion::Postgres12,
+                "POSTGRES_13" => ConnectSettingsDatabaseVersion::Postgres13,
+                "POSTGRES_14" => ConnectSettingsDatabaseVersion::Postgres14,
+                "POSTGRES_9_6" => ConnectSettingsDatabaseVersion::Postgres96,
+                "SQL_DATABASE_VERSION_UNSPECIFIED" => {
+                    ConnectSettingsDatabaseVersion::SqlDatabaseVersionUnspecified
+                }
+                "SQLSERVER_2017_ENTERPRISE" => {
+                    ConnectSettingsDatabaseVersion::Sqlserver2017Enterprise
+                }
+                "SQLSERVER_2017_EXPRESS" => ConnectSettingsDatabaseVersion::Sqlserver2017Express,
+                "SQLSERVER_2017_STANDARD" => ConnectSettingsDatabaseVersion::Sqlserver2017Standard,
+                "SQLSERVER_2017_WEB" => ConnectSettingsDatabaseVersion::Sqlserver2017Web,
+                "SQLSERVER_2019_ENTERPRISE" => {
+                    ConnectSettingsDatabaseVersion::Sqlserver2019Enterprise
+                }
+                "SQLSERVER_2019_EXPRESS" => ConnectSettingsDatabaseVersion::Sqlserver2019Express,
+                "SQLSERVER_2019_STANDARD" => ConnectSettingsDatabaseVersion::Sqlserver2019Standard,
+                "SQLSERVER_2019_WEB" => ConnectSettingsDatabaseVersion::Sqlserver2019Web,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ConnectSettingsDatabaseVersion {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ConnectSettingsDatabaseVersion {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ConnectSettingsDatabaseVersion {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "MYSQL_5_1" => ConnectSettingsDatabaseVersion::Mysql51,
+                "MYSQL_5_5" => ConnectSettingsDatabaseVersion::Mysql55,
+                "MYSQL_5_6" => ConnectSettingsDatabaseVersion::Mysql56,
+                "MYSQL_5_7" => ConnectSettingsDatabaseVersion::Mysql57,
+                "MYSQL_8_0" => ConnectSettingsDatabaseVersion::Mysql80,
+                "MYSQL_8_0_18" => ConnectSettingsDatabaseVersion::Mysql8018,
+                "MYSQL_8_0_26" => ConnectSettingsDatabaseVersion::Mysql8026,
+                "MYSQL_8_0_27" => ConnectSettingsDatabaseVersion::Mysql8027,
+                "MYSQL_8_0_28" => ConnectSettingsDatabaseVersion::Mysql8028,
+                "POSTGRES_10" => ConnectSettingsDatabaseVersion::Postgres10,
+                "POSTGRES_11" => ConnectSettingsDatabaseVersion::Postgres11,
+                "POSTGRES_12" => ConnectSettingsDatabaseVersion::Postgres12,
+                "POSTGRES_13" => ConnectSettingsDatabaseVersion::Postgres13,
+                "POSTGRES_14" => ConnectSettingsDatabaseVersion::Postgres14,
+                "POSTGRES_9_6" => ConnectSettingsDatabaseVersion::Postgres96,
+                "SQL_DATABASE_VERSION_UNSPECIFIED" => {
+                    ConnectSettingsDatabaseVersion::SqlDatabaseVersionUnspecified
+                }
+                "SQLSERVER_2017_ENTERPRISE" => {
+                    ConnectSettingsDatabaseVersion::Sqlserver2017Enterprise
+                }
+                "SQLSERVER_2017_EXPRESS" => ConnectSettingsDatabaseVersion::Sqlserver2017Express,
+                "SQLSERVER_2017_STANDARD" => ConnectSettingsDatabaseVersion::Sqlserver2017Standard,
+                "SQLSERVER_2017_WEB" => ConnectSettingsDatabaseVersion::Sqlserver2017Web,
+                "SQLSERVER_2019_ENTERPRISE" => {
+                    ConnectSettingsDatabaseVersion::Sqlserver2019Enterprise
+                }
+                "SQLSERVER_2019_EXPRESS" => ConnectSettingsDatabaseVersion::Sqlserver2019Express,
+                "SQLSERVER_2019_STANDARD" => ConnectSettingsDatabaseVersion::Sqlserver2019Standard,
+                "SQLSERVER_2019_WEB" => ConnectSettingsDatabaseVersion::Sqlserver2019Web,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ConnectSettingsDatabaseVersion {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ConnectSettingsDatabaseVersion {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1016,7 +1375,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub instance: ::std::option::Option<String>,
-        #[doc = "This is always *sql#database*."]
+        #[doc = "This is always `sql#database`."]
         #[serde(
             rename = "kind",
             default,
@@ -1075,14 +1434,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DatabaseFlags {
-        #[doc = "The name of the flag. These flags are passed at instance startup, so include both server options and system variables for MySQL. Flags are specified with underscores, not hyphens. For more information, see Configuring Database Flags in the Cloud SQL documentation."]
+        #[doc = "The name of the flag. These flags are passed at instance startup, so include both server options and system variables. Flags are specified with underscores, not hyphens. For more information, see [Configuring Database Flags](https://cloud.google.com/sql/docs/mysql/flags) in the Cloud SQL documentation."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The value of the flag. Booleans are set to *on* for true and *off* for false. This field must be omitted if the flag doesn't take a value."]
+        #[doc = "The value of the flag. Boolean flags are set to `on` for true and `off` for false. This field must be omitted if the flag doesn't take a value."]
         #[serde(
             rename = "value",
             default,
@@ -1113,7 +1472,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DatabaseInstance {
-        #[doc = "*SECOND_GEN*: Cloud SQL database instance. *EXTERNAL*: A database server that is not managed by Google. This property is read-only; use the *tier* property in the *settings* object to determine the database type."]
+        #[doc = "List all maintenance versions applicable on the instance"]
+        #[serde(
+            rename = "availableMaintenanceVersions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub available_maintenance_versions: ::std::option::Option<Vec<String>>,
+        #[doc = "The backend type. `SECOND_GEN`: Cloud SQL database instance. `EXTERNAL`: A database server that is not managed by Google. This property is read-only; use the `tier` property in the `settings` object to determine the database type."]
         #[serde(
             rename = "backendType",
             default,
@@ -1127,7 +1493,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub connection_name: ::std::option::Option<String>,
-        #[doc = "The current disk usage of the instance in bytes. This property has been deprecated. Use the \"cloudsql.googleapis.com/database/disk/bytes_used\" metric in Cloud Monitoring API instead. Please see this announcement for details."]
+        #[doc = "Output only. The time when the instance was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "The current disk usage of the instance in bytes. This property has been deprecated. Use the \"cloudsql.googleapis.com/database/disk/bytes_used\" metric in Cloud Monitoring API instead. Please see [this announcement](https://groups.google.com/d/msg/google-cloud-sql-announce/I_7-F9EBhT0/BtvFtdFeAgAJ) for details."]
         #[serde(
             rename = "currentDiskSize",
             default,
@@ -1135,7 +1508,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub current_disk_size: ::std::option::Option<i64>,
-        #[doc = "The database engine type and version. The *databaseVersion* field cannot be changed after instance creation. MySQL instances: *MYSQL_8_0*, *MYSQL_5_7* (default), or *MYSQL_5_6*. PostgreSQL instances: *POSTGRES_9_6*, *POSTGRES_10*, *POSTGRES_11* or *POSTGRES_12* (default). SQL Server instances: *SQLSERVER_2017_STANDARD* (default), *SQLSERVER_2017_ENTERPRISE*, *SQLSERVER_2017_EXPRESS*, or *SQLSERVER_2017_WEB*."]
+        #[doc = "Output only. Stores the current database version running on the instance including minor version such as `MYSQL_8_0_18`."]
+        #[serde(
+            rename = "databaseInstalledVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub database_installed_version: ::std::option::Option<String>,
+        #[doc = "The database engine type and version. The `databaseVersion` field cannot be changed after instance creation."]
         #[serde(
             rename = "databaseVersion",
             default,
@@ -1143,7 +1523,7 @@ pub mod schemas {
         )]
         pub database_version:
             ::std::option::Option<crate::schemas::DatabaseInstanceDatabaseVersion>,
-        #[doc = "Disk encryption configuration specific to an instance. Applies only to Second Generation instances."]
+        #[doc = "Disk encryption configuration specific to an instance."]
         #[serde(
             rename = "diskEncryptionConfiguration",
             default,
@@ -1151,21 +1531,21 @@ pub mod schemas {
         )]
         pub disk_encryption_configuration:
             ::std::option::Option<crate::schemas::DiskEncryptionConfiguration>,
-        #[doc = "Disk encryption status specific to an instance. Applies only to Second Generation instances."]
+        #[doc = "Disk encryption status specific to an instance."]
         #[serde(
             rename = "diskEncryptionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disk_encryption_status: ::std::option::Option<crate::schemas::DiskEncryptionStatus>,
-        #[doc = "This field is deprecated and will be removed from a future version of the API. Use the *settings.settingsVersion* field instead."]
+        #[doc = "This field is deprecated and will be removed from a future version of the API. Use the `settings.settingsVersion` field instead."]
         #[serde(
             rename = "etag",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "The name and status of the failover replica. This property is applicable only to Second Generation instances."]
+        #[doc = "The name and status of the failover replica."]
         #[serde(
             rename = "failoverReplica",
             default,
@@ -1173,14 +1553,14 @@ pub mod schemas {
         )]
         pub failover_replica:
             ::std::option::Option<crate::schemas::DatabaseInstanceFailoverReplica>,
-        #[doc = "The Compute Engine zone that the instance is currently serving from. This value could be different from the zone that was specified when the instance was created if the instance has failed over to its secondary zone."]
+        #[doc = "The Compute Engine zone that the instance is currently serving from. This value could be different from the zone that was specified when the instance was created if the instance has failed over to its secondary zone. WARNING: Changing this might restart the instance."]
         #[serde(
             rename = "gceZone",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gce_zone: ::std::option::Option<String>,
-        #[doc = "The instance type. This can be one of the following. *CLOUD_SQL_INSTANCE*: A Cloud SQL instance that is not replicating from a primary instance. *ON_PREMISES_INSTANCE*: An instance running on the customer's premises. *READ_REPLICA_INSTANCE*: A Cloud SQL instance configured as a read-replica."]
+        #[doc = "The instance type."]
         #[serde(
             rename = "instanceType",
             default,
@@ -1201,13 +1581,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ipv_6_address: ::std::option::Option<String>,
-        #[doc = "This is always *sql#instance*."]
+        #[doc = "This is always `sql#instance`."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
+        #[doc = "The current software version on the instance."]
+        #[serde(
+            rename = "maintenanceVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub maintenance_version: ::std::option::Option<String>,
         #[doc = "The name of the instance which will act as primary in the replication setup."]
         #[serde(
             rename = "masterInstanceName",
@@ -1238,6 +1625,13 @@ pub mod schemas {
         )]
         pub on_premises_configuration:
             ::std::option::Option<crate::schemas::OnPremisesConfiguration>,
+        #[doc = "This field represents the report generated by the proactive database wellness job for OutOfDisk issues. * Writers: * the proactive database wellness job for OOD. * Readers: * the proactive database wellness job"]
+        #[serde(
+            rename = "outOfDiskReport",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub out_of_disk_report: ::std::option::Option<crate::schemas::SqlOutOfDiskReport>,
         #[doc = "The project ID of the project containing the Cloud SQL instance. The Google apps domain is prefixed if applicable."]
         #[serde(
             rename = "project",
@@ -1245,7 +1639,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project: ::std::option::Option<String>,
-        #[doc = "The geographical region. Can be *us-central* (*FIRST_GEN* instances only) *us-central1* (*SECOND_GEN* instances only) *asia-east1* or *europe-west1*. Defaults to *us-central* or *us-central1* depending on the instance type. The region cannot be changed after instance creation."]
+        #[doc = "The geographical region. Can be: * `us-central` (`FIRST_GEN` instances only) * `us-central1` (`SECOND_GEN` instances only) * `asia-east1` or `europe-west1`. Defaults to `us-central` or `us-central1` depending on the instance type. The region cannot be changed after instance creation."]
         #[serde(
             rename = "region",
             default,
@@ -1287,7 +1681,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub scheduled_maintenance: ::std::option::Option<crate::schemas::SqlScheduledMaintenance>,
-        #[doc = "The Compute Engine zone that the failover instance is currently serving from for a regional instance. This value could be different from the zone that was specified when the instance was created if the instance has failed over to its secondary/failover zone. Reserved for future use."]
+        #[doc = "The Compute Engine zone that the failover instance is currently serving from for a regional instance. This value could be different from the zone that was specified when the instance was created if the instance has failed over to its secondary/failover zone."]
         #[serde(
             rename = "secondaryGceZone",
             default,
@@ -1308,7 +1702,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub server_ca_cert: ::std::option::Option<crate::schemas::SslCert>,
-        #[doc = "The service account email address assigned to the instance. This property is applicable only to Second Generation instances."]
+        #[doc = "The service account email address assigned to the instance. \\This property is read-only."]
         #[serde(
             rename = "serviceAccountEmailAddress",
             default,
@@ -1322,7 +1716,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub settings: ::std::option::Option<crate::schemas::Settings>,
-        #[doc = "The current serving state of the Cloud SQL instance. This can be one of the following. *SQL_INSTANCE_STATE_UNSPECIFIED*: The state of the instance is unknown. *RUNNABLE*: The instance is running, or has been stopped by owner. *SUSPENDED*: The instance is not available, for example due to problems with billing. *PENDING_DELETE*: The instance is being deleted. *PENDING_CREATE*: The instance is being created. *MAINTENANCE*: The instance is down for maintenance. *FAILED*: The instance creation failed."]
+        #[doc = "The current serving state of the Cloud SQL instance."]
         #[serde(
             rename = "state",
             default,
@@ -1447,6 +1841,14 @@ pub mod schemas {
         Mysql57,
         #[doc = "The database version is MySQL 8."]
         Mysql80,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 18."]
+        Mysql8018,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 26."]
+        Mysql8026,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 27."]
+        Mysql8027,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 28."]
+        Mysql8028,
         #[doc = "The database version is PostgreSQL 10."]
         Postgres10,
         #[doc = "The database version is PostgreSQL 11."]
@@ -1455,6 +1857,8 @@ pub mod schemas {
         Postgres12,
         #[doc = "The database version is PostgreSQL 13."]
         Postgres13,
+        #[doc = "The database version is PostgreSQL 14."]
+        Postgres14,
         #[doc = "The database version is PostgreSQL 9.6."]
         Postgres96,
         #[doc = "This is an unknown database version."]
@@ -1467,6 +1871,14 @@ pub mod schemas {
         Sqlserver2017Standard,
         #[doc = "The database version is SQL Server 2017 Web."]
         Sqlserver2017Web,
+        #[doc = "The database version is SQL Server 2019 Enterprise."]
+        Sqlserver2019Enterprise,
+        #[doc = "The database version is SQL Server 2019 Express."]
+        Sqlserver2019Express,
+        #[doc = "The database version is SQL Server 2019 Standard."]
+        Sqlserver2019Standard,
+        #[doc = "The database version is SQL Server 2019 Web."]
+        Sqlserver2019Web,
     }
     impl DatabaseInstanceDatabaseVersion {
         pub fn as_str(self) -> &'static str {
@@ -1476,10 +1888,15 @@ pub mod schemas {
                 DatabaseInstanceDatabaseVersion::Mysql56 => "MYSQL_5_6",
                 DatabaseInstanceDatabaseVersion::Mysql57 => "MYSQL_5_7",
                 DatabaseInstanceDatabaseVersion::Mysql80 => "MYSQL_8_0",
+                DatabaseInstanceDatabaseVersion::Mysql8018 => "MYSQL_8_0_18",
+                DatabaseInstanceDatabaseVersion::Mysql8026 => "MYSQL_8_0_26",
+                DatabaseInstanceDatabaseVersion::Mysql8027 => "MYSQL_8_0_27",
+                DatabaseInstanceDatabaseVersion::Mysql8028 => "MYSQL_8_0_28",
                 DatabaseInstanceDatabaseVersion::Postgres10 => "POSTGRES_10",
                 DatabaseInstanceDatabaseVersion::Postgres11 => "POSTGRES_11",
                 DatabaseInstanceDatabaseVersion::Postgres12 => "POSTGRES_12",
                 DatabaseInstanceDatabaseVersion::Postgres13 => "POSTGRES_13",
+                DatabaseInstanceDatabaseVersion::Postgres14 => "POSTGRES_14",
                 DatabaseInstanceDatabaseVersion::Postgres96 => "POSTGRES_9_6",
                 DatabaseInstanceDatabaseVersion::SqlDatabaseVersionUnspecified => {
                     "SQL_DATABASE_VERSION_UNSPECIFIED"
@@ -1490,6 +1907,12 @@ pub mod schemas {
                 DatabaseInstanceDatabaseVersion::Sqlserver2017Express => "SQLSERVER_2017_EXPRESS",
                 DatabaseInstanceDatabaseVersion::Sqlserver2017Standard => "SQLSERVER_2017_STANDARD",
                 DatabaseInstanceDatabaseVersion::Sqlserver2017Web => "SQLSERVER_2017_WEB",
+                DatabaseInstanceDatabaseVersion::Sqlserver2019Enterprise => {
+                    "SQLSERVER_2019_ENTERPRISE"
+                }
+                DatabaseInstanceDatabaseVersion::Sqlserver2019Express => "SQLSERVER_2019_EXPRESS",
+                DatabaseInstanceDatabaseVersion::Sqlserver2019Standard => "SQLSERVER_2019_STANDARD",
+                DatabaseInstanceDatabaseVersion::Sqlserver2019Web => "SQLSERVER_2019_WEB",
             }
         }
     }
@@ -1507,10 +1930,15 @@ pub mod schemas {
                 "MYSQL_5_6" => DatabaseInstanceDatabaseVersion::Mysql56,
                 "MYSQL_5_7" => DatabaseInstanceDatabaseVersion::Mysql57,
                 "MYSQL_8_0" => DatabaseInstanceDatabaseVersion::Mysql80,
+                "MYSQL_8_0_18" => DatabaseInstanceDatabaseVersion::Mysql8018,
+                "MYSQL_8_0_26" => DatabaseInstanceDatabaseVersion::Mysql8026,
+                "MYSQL_8_0_27" => DatabaseInstanceDatabaseVersion::Mysql8027,
+                "MYSQL_8_0_28" => DatabaseInstanceDatabaseVersion::Mysql8028,
                 "POSTGRES_10" => DatabaseInstanceDatabaseVersion::Postgres10,
                 "POSTGRES_11" => DatabaseInstanceDatabaseVersion::Postgres11,
                 "POSTGRES_12" => DatabaseInstanceDatabaseVersion::Postgres12,
                 "POSTGRES_13" => DatabaseInstanceDatabaseVersion::Postgres13,
+                "POSTGRES_14" => DatabaseInstanceDatabaseVersion::Postgres14,
                 "POSTGRES_9_6" => DatabaseInstanceDatabaseVersion::Postgres96,
                 "SQL_DATABASE_VERSION_UNSPECIFIED" => {
                     DatabaseInstanceDatabaseVersion::SqlDatabaseVersionUnspecified
@@ -1521,6 +1949,12 @@ pub mod schemas {
                 "SQLSERVER_2017_EXPRESS" => DatabaseInstanceDatabaseVersion::Sqlserver2017Express,
                 "SQLSERVER_2017_STANDARD" => DatabaseInstanceDatabaseVersion::Sqlserver2017Standard,
                 "SQLSERVER_2017_WEB" => DatabaseInstanceDatabaseVersion::Sqlserver2017Web,
+                "SQLSERVER_2019_ENTERPRISE" => {
+                    DatabaseInstanceDatabaseVersion::Sqlserver2019Enterprise
+                }
+                "SQLSERVER_2019_EXPRESS" => DatabaseInstanceDatabaseVersion::Sqlserver2019Express,
+                "SQLSERVER_2019_STANDARD" => DatabaseInstanceDatabaseVersion::Sqlserver2019Standard,
+                "SQLSERVER_2019_WEB" => DatabaseInstanceDatabaseVersion::Sqlserver2019Web,
                 _ => return Err(()),
             })
         }
@@ -1550,10 +1984,15 @@ pub mod schemas {
                 "MYSQL_5_6" => DatabaseInstanceDatabaseVersion::Mysql56,
                 "MYSQL_5_7" => DatabaseInstanceDatabaseVersion::Mysql57,
                 "MYSQL_8_0" => DatabaseInstanceDatabaseVersion::Mysql80,
+                "MYSQL_8_0_18" => DatabaseInstanceDatabaseVersion::Mysql8018,
+                "MYSQL_8_0_26" => DatabaseInstanceDatabaseVersion::Mysql8026,
+                "MYSQL_8_0_27" => DatabaseInstanceDatabaseVersion::Mysql8027,
+                "MYSQL_8_0_28" => DatabaseInstanceDatabaseVersion::Mysql8028,
                 "POSTGRES_10" => DatabaseInstanceDatabaseVersion::Postgres10,
                 "POSTGRES_11" => DatabaseInstanceDatabaseVersion::Postgres11,
                 "POSTGRES_12" => DatabaseInstanceDatabaseVersion::Postgres12,
                 "POSTGRES_13" => DatabaseInstanceDatabaseVersion::Postgres13,
+                "POSTGRES_14" => DatabaseInstanceDatabaseVersion::Postgres14,
                 "POSTGRES_9_6" => DatabaseInstanceDatabaseVersion::Postgres96,
                 "SQL_DATABASE_VERSION_UNSPECIFIED" => {
                     DatabaseInstanceDatabaseVersion::SqlDatabaseVersionUnspecified
@@ -1564,6 +2003,12 @@ pub mod schemas {
                 "SQLSERVER_2017_EXPRESS" => DatabaseInstanceDatabaseVersion::Sqlserver2017Express,
                 "SQLSERVER_2017_STANDARD" => DatabaseInstanceDatabaseVersion::Sqlserver2017Standard,
                 "SQLSERVER_2017_WEB" => DatabaseInstanceDatabaseVersion::Sqlserver2017Web,
+                "SQLSERVER_2019_ENTERPRISE" => {
+                    DatabaseInstanceDatabaseVersion::Sqlserver2019Enterprise
+                }
+                "SQLSERVER_2019_EXPRESS" => DatabaseInstanceDatabaseVersion::Sqlserver2019Express,
+                "SQLSERVER_2019_STANDARD" => DatabaseInstanceDatabaseVersion::Sqlserver2019Standard,
+                "SQLSERVER_2019_WEB" => DatabaseInstanceDatabaseVersion::Sqlserver2019Web,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -1603,7 +2048,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub available: ::std::option::Option<bool>,
-        #[doc = "The name of the failover replica. If specified at instance creation, a failover replica is created for the instance. The name doesn't include the project ID. This property is applicable only to Second Generation instances."]
+        #[doc = "The name of the failover replica. If specified at instance creation, a failover replica is created for the instance. The name doesn't include the project ID."]
         #[serde(
             rename = "name",
             default,
@@ -1623,7 +2068,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum DatabaseInstanceInstanceType {
-        #[doc = "A regular Cloud SQL instance."]
+        #[doc = "A regular Cloud SQL instance that is not replicating from a primary instance."]
         CloudSqlInstance,
         #[doc = "An instance running on the customer's premises that is not managed by Cloud SQL."]
         OnPremisesInstance,
@@ -1714,6 +2159,8 @@ pub mod schemas {
         Failed,
         #[doc = "The instance is down for maintenance."]
         Maintenance,
+        #[doc = "Deprecated"]
+        OnlineMaintenance,
         #[doc = "The instance is being created."]
         PendingCreate,
         #[doc = "The instance is being deleted."]
@@ -1730,6 +2177,7 @@ pub mod schemas {
             match self {
                 DatabaseInstanceState::Failed => "FAILED",
                 DatabaseInstanceState::Maintenance => "MAINTENANCE",
+                DatabaseInstanceState::OnlineMaintenance => "ONLINE_MAINTENANCE",
                 DatabaseInstanceState::PendingCreate => "PENDING_CREATE",
                 DatabaseInstanceState::PendingDelete => "PENDING_DELETE",
                 DatabaseInstanceState::Runnable => "RUNNABLE",
@@ -1751,6 +2199,7 @@ pub mod schemas {
             Ok(match s {
                 "FAILED" => DatabaseInstanceState::Failed,
                 "MAINTENANCE" => DatabaseInstanceState::Maintenance,
+                "ONLINE_MAINTENANCE" => DatabaseInstanceState::OnlineMaintenance,
                 "PENDING_CREATE" => DatabaseInstanceState::PendingCreate,
                 "PENDING_DELETE" => DatabaseInstanceState::PendingDelete,
                 "RUNNABLE" => DatabaseInstanceState::Runnable,
@@ -1784,6 +2233,7 @@ pub mod schemas {
             Ok(match value {
                 "FAILED" => DatabaseInstanceState::Failed,
                 "MAINTENANCE" => DatabaseInstanceState::Maintenance,
+                "ONLINE_MAINTENANCE" => DatabaseInstanceState::OnlineMaintenance,
                 "PENDING_CREATE" => DatabaseInstanceState::PendingCreate,
                 "PENDING_DELETE" => DatabaseInstanceState::PendingDelete,
                 "RUNNABLE" => DatabaseInstanceState::Runnable,
@@ -1922,7 +2372,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Database>>,
-        #[doc = "This is always *sql#databasesList*."]
+        #[doc = "This is always `sql#databasesList`."]
         #[serde(
             rename = "kind",
             default,
@@ -1953,14 +2403,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DemoteMasterConfiguration {
-        #[doc = "This is always *sql#demoteMasterConfiguration*."]
+        #[doc = "This is always `sql#demoteMasterConfiguration`."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "MySQL specific configuration when replicating from a MySQL on-premises primary instance. Replication configuration information such as the username, password, certificates, and keys are not stored in the instance metadata. The configuration information is used only to set up the replication connection and is stored by MySQL in a file named *master.info* in the data directory."]
+        #[doc = "MySQL specific configuration when replicating from a MySQL on-premises primary instance. Replication configuration information such as the username, password, certificates, and keys are not stored in the instance metadata. The configuration information is used only to set up the replication connection and is stored by MySQL in a file named `master.info` in the data directory."]
         #[serde(
             rename = "mysqlReplicaConfiguration",
             default,
@@ -1992,7 +2442,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DemoteMasterContext {
-        #[doc = "This is always *sql#demoteMasterContext*."]
+        #[doc = "This is always `sql#demoteMasterContext`."]
         #[serde(
             rename = "kind",
             default,
@@ -2013,7 +2463,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub replica_configuration: ::std::option::Option<crate::schemas::DemoteMasterConfiguration>,
-        #[doc = "Verify GTID consistency for demote operation. Default value: *True*. Second Generation instances only. Setting this flag to false enables you to bypass GTID consistency check between on-premises primary instance and Cloud SQL instance during the demotion operation but also exposes you to the risk of future replication failures. Change the value only if you know the reason for the GTID divergence and are confident that doing so will not cause any replication issues."]
+        #[doc = "Flag to skip replication setup on the instance."]
+        #[serde(
+            rename = "skipReplicationSetup",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub skip_replication_setup: ::std::option::Option<bool>,
+        #[doc = "Verify the GTID consistency for demote operation. Default value: `True`. Setting this flag to `false` enables you to bypass the GTID consistency check between on-premises primary instance and Cloud SQL instance during the demotion operation but also exposes you to the risk of future replication failures. Change the value only if you know the reason for the GTID divergence and are confident that doing so will not cause any replication issues."]
         #[serde(
             rename = "verifyGtidConsistency",
             default,
@@ -2065,7 +2522,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub client_key: ::std::option::Option<String>,
-        #[doc = "This is always *sql#demoteMasterMysqlReplicaConfiguration*."]
+        #[doc = "This is always `sql#demoteMasterMysqlReplicaConfiguration`."]
         #[serde(
             rename = "kind",
             default,
@@ -2155,7 +2612,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DiskEncryptionConfiguration {
-        #[doc = "This is always *sql#diskEncryptionConfiguration*."]
+        #[doc = "This is always `sql#diskEncryptionConfiguration`."]
         #[serde(
             rename = "kind",
             default,
@@ -2193,7 +2650,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DiskEncryptionStatus {
-        #[doc = "This is always *sql#diskEncryptionStatus*."]
+        #[doc = "This is always `sql#diskEncryptionStatus`."]
         #[serde(
             rename = "kind",
             default,
@@ -2231,7 +2688,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ExportContext {
-        #[doc = "Options for exporting data as CSV. *MySQL* and *PostgreSQL* instances only."]
+        #[doc = "Options for exporting data as CSV. `MySQL` and `PostgreSQL` instances only."]
         #[serde(
             rename = "csvExportOptions",
             default,
@@ -2239,21 +2696,21 @@ pub mod schemas {
         )]
         pub csv_export_options:
             ::std::option::Option<crate::schemas::ExportContextCsvExportOptions>,
-        #[doc = "Databases to be exported. *MySQL instances:* If *fileType* is *SQL* and no database is specified, all databases are exported, except for the *mysql* system database. If *fileType* is *CSV*, you can specify one database, either by using this property or by using the *csvExportOptions.selectQuery* property, which takes precedence over this property. *PostgreSQL instances:* You must specify one database to be exported. If *fileType* is *CSV*, this database must match the one specified in the *csvExportOptions.selectQuery* property. *SQL Server instances:* You must specify one database to be exported, and the *fileType* must be *BAK*."]
+        #[doc = "Databases to be exported. `MySQL instances:` If `fileType` is `SQL` and no database is specified, all databases are exported, except for the `mysql` system database. If `fileType` is `CSV`, you can specify one database, either by using this property or by using the `csvExportOptions.selectQuery` property, which takes precedence over this property. `PostgreSQL instances:` You must specify one database to be exported. If `fileType` is `CSV`, this database must match the one specified in the `csvExportOptions.selectQuery` property. `SQL Server instances:` You must specify one database to be exported, and the `fileType` must be `BAK`."]
         #[serde(
             rename = "databases",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub databases: ::std::option::Option<Vec<String>>,
-        #[doc = "The file type for the specified uri. *SQL*: The file contains SQL statements. *CSV*: The file contains CSV data. *BAK*: The file contains backup data for a SQL Server instance."]
+        #[doc = "The file type for the specified uri."]
         #[serde(
             rename = "fileType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub file_type: ::std::option::Option<crate::schemas::ExportContextFileType>,
-        #[doc = "This is always *sql#exportContext*."]
+        #[doc = "This is always `sql#exportContext`."]
         #[serde(
             rename = "kind",
             default,
@@ -2275,7 +2732,7 @@ pub mod schemas {
         )]
         pub sql_export_options:
             ::std::option::Option<crate::schemas::ExportContextSqlExportOptions>,
-        #[doc = "The path to the file in Google Cloud Storage where the export will be stored. The URI is in the form *gs://bucketName/fileName*. If the file already exists, the request succeeds, but the operation fails. If *fileType* is *SQL* and the filename ends with .gz, the contents are compressed."]
+        #[doc = "The path to the file in Google Cloud Storage where the export will be stored. The URI is in the form `gs://bucketName/fileName`. If the file already exists, the request succeeds, but the operation fails. If `fileType` is `SQL` and the filename ends with .gz, the contents are compressed."]
         #[serde(
             rename = "uri",
             default,
@@ -2306,6 +2763,34 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ExportContextCsvExportOptions {
+        #[doc = "Specifies the character that should appear before a data character that needs to be escaped."]
+        #[serde(
+            rename = "escapeCharacter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub escape_character: ::std::option::Option<String>,
+        #[doc = "Specifies the character that separates columns within each row (line) of the file."]
+        #[serde(
+            rename = "fieldsTerminatedBy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub fields_terminated_by: ::std::option::Option<String>,
+        #[doc = "This is used to separate lines. If a line does not contain all fields, the rest of the columns are set to their default values."]
+        #[serde(
+            rename = "linesTerminatedBy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub lines_terminated_by: ::std::option::Option<String>,
+        #[doc = "Specifies the quoting character to be used when a data value is quoted."]
+        #[serde(
+            rename = "quoteCharacter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub quote_character: ::std::option::Option<String>,
         #[doc = "The select query used to extract the data."]
         #[serde(
             rename = "selectQuery",
@@ -2463,7 +2948,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ExportContextSqlExportOptionsMysqlExportOptions {
-        #[doc = "Option to include SQL statement required to set up replication. If set to *1*, the dump file includes a CHANGE MASTER TO statement with the binary log coordinates, and --set-gtid-purged is set to ON. If set to *2*, the CHANGE MASTER TO statement is written as a SQL comment and has no effect. If set to any value other than *1*, --set-gtid-purged is set to OFF."]
+        #[doc = "Option to include SQL statement required to set up replication. If set to `1`, the dump file includes a CHANGE MASTER TO statement with the binary log coordinates, and --set-gtid-purged is set to ON. If set to `2`, the CHANGE MASTER TO statement is written as a SQL comment and has no effect. If set to any value other than `1`, --set-gtid-purged is set to OFF."]
         #[serde(
             rename = "masterData",
             default,
@@ -2494,7 +2979,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FailoverContext {
-        #[doc = "This is always *sql#failoverContext*."]
+        #[doc = "This is always `sql#failoverContext`."]
         #[serde(
             rename = "kind",
             default,
@@ -2540,14 +3025,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub allowed_int_values: ::std::option::Option<Vec<i64>>,
-        #[doc = "For *STRING* flags, a list of strings that the value can be set to."]
+        #[doc = "For `STRING` flags, a list of strings that the value can be set to."]
         #[serde(
             rename = "allowedStringValues",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub allowed_string_values: ::std::option::Option<Vec<String>>,
-        #[doc = "The database version this flag applies to. Can be *MYSQL_8_0*, *MYSQL_5_6*, or *MYSQL_5_7*."]
+        #[doc = "The database version this flag applies to. Can be MySQL instances: `MYSQL_8_0`, `MYSQL_8_0_18`, `MYSQL_8_0_26`, `MYSQL_5_7`, or `MYSQL_5_6`. PostgreSQL instances: `POSTGRES_9_6`, `POSTGRES_10`, `POSTGRES_11` or `POSTGRES_12`. SQL Server instances: `SQLSERVER_2017_STANDARD`, `SQLSERVER_2017_ENTERPRISE`, `SQLSERVER_2017_EXPRESS`, `SQLSERVER_2017_WEB`, `SQLSERVER_2019_STANDARD`, `SQLSERVER_2019_ENTERPRISE`, `SQLSERVER_2019_EXPRESS`, or `SQLSERVER_2019_WEB`. See [the complete list](/sql/docs/mysql/admin-api/rest/v1/SqlDatabaseVersion)."]
         #[serde(
             rename = "appliesTo",
             default,
@@ -2561,14 +3046,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub in_beta: ::std::option::Option<bool>,
-        #[doc = "This is always *sql#flag*."]
+        #[doc = "This is always `sql#flag`."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "For *INTEGER* flags, the maximum allowed value."]
+        #[doc = "For `INTEGER` flags, the maximum allowed value."]
         #[serde(
             rename = "maxValue",
             default,
@@ -2576,7 +3061,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub max_value: ::std::option::Option<i64>,
-        #[doc = "For *INTEGER* flags, the minimum allowed value."]
+        #[doc = "For `INTEGER` flags, the minimum allowed value."]
         #[serde(
             rename = "minValue",
             default,
@@ -2584,14 +3069,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub min_value: ::std::option::Option<i64>,
-        #[doc = "This is the name of the flag. Flag names always use underscores, not hyphens, for example: *max_allowed_packet*"]
+        #[doc = "This is the name of the flag. Flag names always use underscores, not hyphens, for example: `max_allowed_packet`"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The type of the flag. Flags are typed to being *BOOLEAN*, *STRING*, *INTEGER* or *NONE*. *NONE* is used for flags which do not take a value, such as *skip_grant_tables*."]
+        #[doc = "The type of the flag. Flags are typed to being `BOOLEAN`, `STRING`, `INTEGER` or `NONE`. `NONE` is used for flags which do not take a value, such as `skip_grant_tables`."]
         #[serde(
             rename = "type",
             default,
@@ -2628,6 +3113,14 @@ pub mod schemas {
         Mysql57,
         #[doc = "The database version is MySQL 8."]
         Mysql80,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 18."]
+        Mysql8018,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 26."]
+        Mysql8026,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 27."]
+        Mysql8027,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 28."]
+        Mysql8028,
         #[doc = "The database version is PostgreSQL 10."]
         Postgres10,
         #[doc = "The database version is PostgreSQL 11."]
@@ -2636,6 +3129,8 @@ pub mod schemas {
         Postgres12,
         #[doc = "The database version is PostgreSQL 13."]
         Postgres13,
+        #[doc = "The database version is PostgreSQL 14."]
+        Postgres14,
         #[doc = "The database version is PostgreSQL 9.6."]
         Postgres96,
         #[doc = "This is an unknown database version."]
@@ -2648,6 +3143,14 @@ pub mod schemas {
         Sqlserver2017Standard,
         #[doc = "The database version is SQL Server 2017 Web."]
         Sqlserver2017Web,
+        #[doc = "The database version is SQL Server 2019 Enterprise."]
+        Sqlserver2019Enterprise,
+        #[doc = "The database version is SQL Server 2019 Express."]
+        Sqlserver2019Express,
+        #[doc = "The database version is SQL Server 2019 Standard."]
+        Sqlserver2019Standard,
+        #[doc = "The database version is SQL Server 2019 Web."]
+        Sqlserver2019Web,
     }
     impl FlagAppliesToItems {
         pub fn as_str(self) -> &'static str {
@@ -2657,10 +3160,15 @@ pub mod schemas {
                 FlagAppliesToItems::Mysql56 => "MYSQL_5_6",
                 FlagAppliesToItems::Mysql57 => "MYSQL_5_7",
                 FlagAppliesToItems::Mysql80 => "MYSQL_8_0",
+                FlagAppliesToItems::Mysql8018 => "MYSQL_8_0_18",
+                FlagAppliesToItems::Mysql8026 => "MYSQL_8_0_26",
+                FlagAppliesToItems::Mysql8027 => "MYSQL_8_0_27",
+                FlagAppliesToItems::Mysql8028 => "MYSQL_8_0_28",
                 FlagAppliesToItems::Postgres10 => "POSTGRES_10",
                 FlagAppliesToItems::Postgres11 => "POSTGRES_11",
                 FlagAppliesToItems::Postgres12 => "POSTGRES_12",
                 FlagAppliesToItems::Postgres13 => "POSTGRES_13",
+                FlagAppliesToItems::Postgres14 => "POSTGRES_14",
                 FlagAppliesToItems::Postgres96 => "POSTGRES_9_6",
                 FlagAppliesToItems::SqlDatabaseVersionUnspecified => {
                     "SQL_DATABASE_VERSION_UNSPECIFIED"
@@ -2669,6 +3177,10 @@ pub mod schemas {
                 FlagAppliesToItems::Sqlserver2017Express => "SQLSERVER_2017_EXPRESS",
                 FlagAppliesToItems::Sqlserver2017Standard => "SQLSERVER_2017_STANDARD",
                 FlagAppliesToItems::Sqlserver2017Web => "SQLSERVER_2017_WEB",
+                FlagAppliesToItems::Sqlserver2019Enterprise => "SQLSERVER_2019_ENTERPRISE",
+                FlagAppliesToItems::Sqlserver2019Express => "SQLSERVER_2019_EXPRESS",
+                FlagAppliesToItems::Sqlserver2019Standard => "SQLSERVER_2019_STANDARD",
+                FlagAppliesToItems::Sqlserver2019Web => "SQLSERVER_2019_WEB",
             }
         }
     }
@@ -2686,10 +3198,15 @@ pub mod schemas {
                 "MYSQL_5_6" => FlagAppliesToItems::Mysql56,
                 "MYSQL_5_7" => FlagAppliesToItems::Mysql57,
                 "MYSQL_8_0" => FlagAppliesToItems::Mysql80,
+                "MYSQL_8_0_18" => FlagAppliesToItems::Mysql8018,
+                "MYSQL_8_0_26" => FlagAppliesToItems::Mysql8026,
+                "MYSQL_8_0_27" => FlagAppliesToItems::Mysql8027,
+                "MYSQL_8_0_28" => FlagAppliesToItems::Mysql8028,
                 "POSTGRES_10" => FlagAppliesToItems::Postgres10,
                 "POSTGRES_11" => FlagAppliesToItems::Postgres11,
                 "POSTGRES_12" => FlagAppliesToItems::Postgres12,
                 "POSTGRES_13" => FlagAppliesToItems::Postgres13,
+                "POSTGRES_14" => FlagAppliesToItems::Postgres14,
                 "POSTGRES_9_6" => FlagAppliesToItems::Postgres96,
                 "SQL_DATABASE_VERSION_UNSPECIFIED" => {
                     FlagAppliesToItems::SqlDatabaseVersionUnspecified
@@ -2698,6 +3215,10 @@ pub mod schemas {
                 "SQLSERVER_2017_EXPRESS" => FlagAppliesToItems::Sqlserver2017Express,
                 "SQLSERVER_2017_STANDARD" => FlagAppliesToItems::Sqlserver2017Standard,
                 "SQLSERVER_2017_WEB" => FlagAppliesToItems::Sqlserver2017Web,
+                "SQLSERVER_2019_ENTERPRISE" => FlagAppliesToItems::Sqlserver2019Enterprise,
+                "SQLSERVER_2019_EXPRESS" => FlagAppliesToItems::Sqlserver2019Express,
+                "SQLSERVER_2019_STANDARD" => FlagAppliesToItems::Sqlserver2019Standard,
+                "SQLSERVER_2019_WEB" => FlagAppliesToItems::Sqlserver2019Web,
                 _ => return Err(()),
             })
         }
@@ -2727,10 +3248,15 @@ pub mod schemas {
                 "MYSQL_5_6" => FlagAppliesToItems::Mysql56,
                 "MYSQL_5_7" => FlagAppliesToItems::Mysql57,
                 "MYSQL_8_0" => FlagAppliesToItems::Mysql80,
+                "MYSQL_8_0_18" => FlagAppliesToItems::Mysql8018,
+                "MYSQL_8_0_26" => FlagAppliesToItems::Mysql8026,
+                "MYSQL_8_0_27" => FlagAppliesToItems::Mysql8027,
+                "MYSQL_8_0_28" => FlagAppliesToItems::Mysql8028,
                 "POSTGRES_10" => FlagAppliesToItems::Postgres10,
                 "POSTGRES_11" => FlagAppliesToItems::Postgres11,
                 "POSTGRES_12" => FlagAppliesToItems::Postgres12,
                 "POSTGRES_13" => FlagAppliesToItems::Postgres13,
+                "POSTGRES_14" => FlagAppliesToItems::Postgres14,
                 "POSTGRES_9_6" => FlagAppliesToItems::Postgres96,
                 "SQL_DATABASE_VERSION_UNSPECIFIED" => {
                     FlagAppliesToItems::SqlDatabaseVersionUnspecified
@@ -2739,6 +3265,10 @@ pub mod schemas {
                 "SQLSERVER_2017_EXPRESS" => FlagAppliesToItems::Sqlserver2017Express,
                 "SQLSERVER_2017_STANDARD" => FlagAppliesToItems::Sqlserver2017Standard,
                 "SQLSERVER_2017_WEB" => FlagAppliesToItems::Sqlserver2017Web,
+                "SQLSERVER_2019_ENTERPRISE" => FlagAppliesToItems::Sqlserver2019Enterprise,
+                "SQLSERVER_2019_EXPRESS" => FlagAppliesToItems::Sqlserver2019Express,
+                "SQLSERVER_2019_STANDARD" => FlagAppliesToItems::Sqlserver2019Standard,
+                "SQLSERVER_2019_WEB" => FlagAppliesToItems::Sqlserver2019Web,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -2766,7 +3296,7 @@ pub mod schemas {
         Float,
         #[doc = "Integer type flag."]
         Integer,
-        #[doc = "Type introduced specically for MySQL TimeZone offset. Accept a string value with the format [-12:59, 13:00]."]
+        #[doc = "Type introduced specially for MySQL TimeZone offset. Accept a string value with the format [-12:59, 13:00]."]
         MysqlTimezoneOffset,
         #[doc = "Flag type used for a server startup option."]
         None,
@@ -2879,7 +3409,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Flag>>,
-        #[doc = "This is always *sql#flagsList*."]
+        #[doc = "This is always `sql#flagsList`."]
         #[serde(
             rename = "kind",
             default,
@@ -2893,6 +3423,89 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for FlagsListResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GenerateEphemeralCertRequest {
+        #[doc = "Optional. Access token to include in the signed certificate."]
+        #[serde(
+            rename = "access_token",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub access_token: ::std::option::Option<String>,
+        #[doc = "PEM encoded public key to include in the signed certificate."]
+        #[serde(
+            rename = "public_key",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub public_key: ::std::option::Option<String>,
+        #[doc = "Optional. Optional snapshot read timestamp to trade freshness for performance."]
+        #[serde(
+            rename = "readTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub read_time: ::std::option::Option<String>,
+        #[doc = "Optional. If set, it will contain the cert valid duration."]
+        #[serde(
+            rename = "validDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub valid_duration: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GenerateEphemeralCertRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GenerateEphemeralCertRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GenerateEphemeralCertResponse {
+        #[doc = "Generated cert"]
+        #[serde(
+            rename = "ephemeralCert",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ephemeral_cert: ::std::option::Option<crate::schemas::SslCert>,
+    }
+    impl ::google_field_selector::FieldSelector for GenerateEphemeralCertResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GenerateEphemeralCertResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2926,14 +3539,14 @@ pub mod schemas {
         )]
         pub csv_import_options:
             ::std::option::Option<crate::schemas::ImportContextCsvImportOptions>,
-        #[doc = "The target database for the import. If *fileType* is *SQL*, this field is required only if the import file does not specify a database, and is overridden by any database specification in the import file. If *fileType* is *CSV*, one database must be specified."]
+        #[doc = "The target database for the import. If `fileType` is `SQL`, this field is required only if the import file does not specify a database, and is overridden by any database specification in the import file. If `fileType` is `CSV`, one database must be specified."]
         #[serde(
             rename = "database",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub database: ::std::option::Option<String>,
-        #[doc = "The file type for the specified uri. *SQL*: The file contains SQL statements. *CSV*: The file contains CSV data."]
+        #[doc = "The file type for the specified uri. * `SQL`: The file contains SQL statements. * `CSV`: The file contains CSV data. * `BAK`: The file contains backup data for a SQL Server instance."]
         #[serde(
             rename = "fileType",
             default,
@@ -2947,14 +3560,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub import_user: ::std::option::Option<String>,
-        #[doc = "This is always *sql#importContext*."]
+        #[doc = "This is always `sql#importContext`."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Path to the import file in Cloud Storage, in the form *gs://bucketName/fileName*. Compressed gzip files (.gz) are supported when *fileType* is *SQL*. The instance must have write permissions to the bucket and read access to the file."]
+        #[doc = "Path to the import file in Cloud Storage, in the form `gs://bucketName/fileName`. Compressed gzip files (.gz) are supported when `fileType` is `SQL`. The instance must have write permissions to the bucket and read access to the file."]
         #[serde(
             rename = "uri",
             default,
@@ -3016,7 +3629,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ImportContextBakImportOptionsEncryptionOptions {
-        #[doc = "Path to the Certificate (.cer) in Cloud Storage, in the form *gs://bucketName/fileName*. The instance must have write permissions to the bucket and read access to the file."]
+        #[doc = "Path to the Certificate (.cer) in Cloud Storage, in the form `gs://bucketName/fileName`. The instance must have write permissions to the bucket and read access to the file."]
         #[serde(
             rename = "certPath",
             default,
@@ -3030,7 +3643,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pvk_password: ::std::option::Option<String>,
-        #[doc = "Path to the Certificate Private Key (.pvk) in Cloud Storage, in the form *gs://bucketName/fileName*. The instance must have write permissions to the bucket and read access to the file."]
+        #[doc = "Path to the Certificate Private Key (.pvk) in Cloud Storage, in the form `gs://bucketName/fileName`. The instance must have write permissions to the bucket and read access to the file."]
         #[serde(
             rename = "pvkPath",
             default,
@@ -3068,6 +3681,34 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub columns: ::std::option::Option<Vec<String>>,
+        #[doc = "Specifies the character that should appear before a data character that needs to be escaped."]
+        #[serde(
+            rename = "escapeCharacter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub escape_character: ::std::option::Option<String>,
+        #[doc = "Specifies the character that separates columns within each row (line) of the file."]
+        #[serde(
+            rename = "fieldsTerminatedBy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub fields_terminated_by: ::std::option::Option<String>,
+        #[doc = "This is used to separate lines. If a line does not contain all fields, the rest of the columns are set to their default values."]
+        #[serde(
+            rename = "linesTerminatedBy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub lines_terminated_by: ::std::option::Option<String>,
+        #[doc = "Specifies the quoting character to be used when a data value is quoted."]
+        #[serde(
+            rename = "quoteCharacter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub quote_character: ::std::option::Option<String>,
         #[doc = "The table to which CSV data is imported."]
         #[serde(
             rename = "table",
@@ -3186,6 +3827,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub query_insights_enabled: ::std::option::Option<bool>,
+        #[doc = "Number of query execution plans captured by Insights per minute for all queries combined. Default is 5."]
+        #[serde(
+            rename = "queryPlansPerMinute",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub query_plans_per_minute: ::std::option::Option<i32>,
         #[doc = "Maximum query length stored in bytes. Default value: 1024 bytes. Range: 256-4500 bytes. Query length more than this field value will be truncated to this value. When unset, query length will be the default value. Changing query length will restart the database."]
         #[serde(
             rename = "queryStringLength",
@@ -3214,6 +3862,51 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for InsightsConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct InstanceReference {
+        #[doc = "The name of the Cloud SQL instance being referenced. This does not include the project ID."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "The project ID of the Cloud SQL instance being referenced. The default is the same project ID as the instance references it."]
+        #[serde(
+            rename = "project",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub project: ::std::option::Option<String>,
+        #[doc = "The region of the Cloud SQL instance being referenced."]
+        #[serde(
+            rename = "region",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub region: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for InstanceReference {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for InstanceReference {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3393,7 +4086,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::DatabaseInstance>>,
-        #[doc = "This is always *sql#instancesList*."]
+        #[doc = "This is always `sql#instancesList`."]
         #[serde(
             rename = "kind",
             default,
@@ -3451,7 +4144,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub certs: ::std::option::Option<Vec<crate::schemas::SslCert>>,
-        #[doc = "This is always *sql#instancesListServerCas*."]
+        #[doc = "This is always `sql#instancesListServerCas`."]
         #[serde(
             rename = "kind",
             default,
@@ -3575,7 +4268,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct IpConfiguration {
-        #[doc = "The list of external networks that are allowed to connect to the instance using the IP. In 'CIDR' notation, also known as 'slash' notation (for example: *192.168.100.0/24*)."]
+        #[doc = "The name of the allocated ip range for the private ip CloudSQL instance. For example: \"google-managed-services-default\". If set, the instance ip will be created in the allocated range. The range name must comply with [RFC 1035](https://tools.ietf.org/html/rfc1035). Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?.`"]
+        #[serde(
+            rename = "allocatedIpRange",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allocated_ip_range: ::std::option::Option<String>,
+        #[doc = "The list of external networks that are allowed to connect to the instance using the IP. In 'CIDR' notation, also known as 'slash' notation (for example: `157.197.200.0/24`)."]
         #[serde(
             rename = "authorizedNetworks",
             default,
@@ -3589,7 +4289,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ipv_4_enabled: ::std::option::Option<bool>,
-        #[doc = "The resource link for the VPC network from which the Cloud SQL instance is accessible for private IP. For example, */projects/myProject/global/networks/default*. This setting can be updated, but it cannot be removed after it is set."]
+        #[doc = "The resource link for the VPC network from which the Cloud SQL instance is accessible for private IP. For example, `/projects/myProject/global/networks/default`. This setting can be updated, but it cannot be removed after it is set."]
         #[serde(
             rename = "privateNetwork",
             default,
@@ -3634,14 +4334,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ip_address: ::std::option::Option<String>,
-        #[doc = "The type of this IP address. A *PRIMARY* address is a public address that can accept incoming connections. A *PRIVATE* address is a private address that can accept incoming connections. An *OUTGOING* address is the source address of connections originating from the instance, if supported."]
+        #[doc = "The type of this IP address. A `PRIMARY` address is a public address that can accept incoming connections. A `PRIVATE` address is a private address that can accept incoming connections. An `OUTGOING` address is the source address of connections originating from the instance, if supported."]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<crate::schemas::IpMappingType>,
-        #[doc = "The due time for this IP to be retired in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*. This field is only available when the IP is scheduled to be retired."]
+        #[doc = "The due time for this IP to be retired in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`. This field is only available when the IP is scheduled to be retired."]
         #[serde(
             rename = "timeToRetire",
             default,
@@ -3758,28 +4458,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LocationPreference {
-        #[doc = "The App Engine application to follow, it must be in the same region as the Cloud SQL instance."]
+        #[doc = "The App Engine application to follow, it must be in the same region as the Cloud SQL instance. WARNING: Changing this might restart the instance."]
         #[serde(
             rename = "followGaeApplication",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub follow_gae_application: ::std::option::Option<String>,
-        #[doc = "This is always *sql#locationPreference*."]
+        #[doc = "This is always `sql#locationPreference`."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "The preferred Compute Engine zone for the secondary/failover (for example: us-central1-a, us-central1-b, etc.). Reserved for future use."]
+        #[doc = "The preferred Compute Engine zone for the secondary/failover (for example: us-central1-a, us-central1-b, etc.)."]
         #[serde(
             rename = "secondaryZone",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub secondary_zone: ::std::option::Option<String>,
-        #[doc = "The preferred Compute Engine zone (for example: us-central1-a, us-central1-b, etc.)."]
+        #[doc = "The preferred Compute Engine zone (for example: us-central1-a, us-central1-b, etc.). WARNING: Changing this might restart the instance."]
         #[serde(
             rename = "zone",
             default,
@@ -3824,14 +4524,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub hour: ::std::option::Option<i32>,
-        #[doc = "This is always *sql#maintenanceWindow*."]
+        #[doc = "This is always `sql#maintenanceWindow`."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Maintenance timing setting: *canary* (Earlier) or *stable* (Later). Learn more."]
+        #[doc = "Maintenance timing setting: `canary` (Earlier) or `stable` (Later). [Learn more](https://cloud.google.com/sql/docs/mysql/instance-settings#maintenance-timing-2ndgen)."]
         #[serde(
             rename = "updateTrack",
             default,
@@ -3979,7 +4679,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dump_file_path: ::std::option::Option<String>,
-        #[doc = "This is always *sql#mysqlReplicaConfiguration*."]
+        #[doc = "This is always `sql#mysqlReplicaConfiguration`."]
         #[serde(
             rename = "kind",
             default,
@@ -4045,6 +4745,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct MySqlSyncConfig {
+        #[doc = "Flags to use for the initial dump."]
+        #[serde(
+            rename = "initialSyncFlags",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub initial_sync_flags: ::std::option::Option<Vec<crate::schemas::SyncFlags>>,
+    }
+    impl ::google_field_selector::FieldSelector for MySqlSyncConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MySqlSyncConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct OnPremisesConfiguration {
         #[doc = "PEM representation of the trusted CA's x509 certificate."]
         #[serde(
@@ -4081,7 +4812,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub host_port: ::std::option::Option<String>,
-        #[doc = "This is always *sql#onPremisesConfiguration*."]
+        #[doc = "This is always `sql#onPremisesConfiguration`."]
         #[serde(
             rename = "kind",
             default,
@@ -4095,6 +4826,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub password: ::std::option::Option<String>,
+        #[doc = "The reference to Cloud SQL instance if the source is Cloud SQL."]
+        #[serde(
+            rename = "sourceInstance",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub source_instance: ::std::option::Option<crate::schemas::InstanceReference>,
         #[doc = "The username for connecting to on-premises instance."]
         #[serde(
             rename = "username",
@@ -4133,7 +4871,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub backup_context: ::std::option::Option<crate::schemas::BackupContext>,
-        #[doc = "The time this operation finished in UTC timezone in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*."]
+        #[doc = "The time this operation finished in UTC timezone in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`."]
         #[serde(
             rename = "endTime",
             default,
@@ -4161,14 +4899,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub import_context: ::std::option::Option<crate::schemas::ImportContext>,
-        #[doc = "The time this operation was enqueued in UTC timezone in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*."]
+        #[doc = "The time this operation was enqueued in UTC timezone in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`."]
         #[serde(
             rename = "insertTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub insert_time: ::std::option::Option<String>,
-        #[doc = "This is always *sql#operation*."]
+        #[doc = "This is always `sql#operation`."]
         #[serde(
             rename = "kind",
             default,
@@ -4182,7 +4920,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The type of the operation. Valid values are: *CREATE* *DELETE* *UPDATE* *RESTART* *IMPORT* *EXPORT* *BACKUP_VOLUME* *RESTORE_VOLUME* *CREATE_USER* *DELETE_USER* *CREATE_DATABASE* *DELETE_DATABASE*"]
+        #[doc = "The type of the operation. Valid values are: * `CREATE` * `DELETE` * `UPDATE` * `RESTART` * `IMPORT` * `EXPORT` * `BACKUP_VOLUME` * `RESTORE_VOLUME` * `CREATE_USER` * `DELETE_USER` * `CREATE_DATABASE` * `DELETE_DATABASE`"]
         #[serde(
             rename = "operationType",
             default,
@@ -4196,14 +4934,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub self_link: ::std::option::Option<String>,
-        #[doc = "The time this operation actually started in UTC timezone in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*."]
+        #[doc = "The time this operation actually started in UTC timezone in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`."]
         #[serde(
             rename = "startTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub start_time: ::std::option::Option<String>,
-        #[doc = "The status of an operation. Valid values are: *PENDING* *RUNNING* *DONE* *SQL_OPERATION_STATUS_UNSPECIFIED*"]
+        #[doc = "The status of an operation."]
         #[serde(
             rename = "status",
             default,
@@ -4593,7 +5331,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub code: ::std::option::Option<String>,
-        #[doc = "This is always *sql#operationError*."]
+        #[doc = "This is always `sql#operationError`."]
         #[serde(
             rename = "kind",
             default,
@@ -4638,7 +5376,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub errors: ::std::option::Option<Vec<crate::schemas::OperationError>>,
-        #[doc = "This is always *sql#operationErrors*."]
+        #[doc = "This is always `sql#operationErrors`."]
         #[serde(
             rename = "kind",
             default,
@@ -4676,7 +5414,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Operation>>,
-        #[doc = "This is always *sql#operationsList*."]
+        #[doc = "This is always `sql#operationsList`."]
         #[serde(
             rename = "kind",
             default,
@@ -4713,22 +5451,203 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct PasswordStatus {
+        #[doc = "If true, user does not have login privileges."]
+        #[serde(
+            rename = "locked",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub locked: ::std::option::Option<bool>,
+        #[doc = "The expiration time of the current password."]
+        #[serde(
+            rename = "passwordExpirationTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub password_expiration_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PasswordStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PasswordStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PasswordValidationPolicy {
+        #[doc = "The complexity of the password."]
+        #[serde(
+            rename = "complexity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub complexity: ::std::option::Option<crate::schemas::PasswordValidationPolicyComplexity>,
+        #[doc = "Disallow username as a part of the password."]
+        #[serde(
+            rename = "disallowUsernameSubstring",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub disallow_username_substring: ::std::option::Option<bool>,
+        #[doc = "Whether the password policy is enabled or not."]
+        #[serde(
+            rename = "enablePasswordPolicy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_password_policy: ::std::option::Option<bool>,
+        #[doc = "Minimum number of characters allowed."]
+        #[serde(
+            rename = "minLength",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub min_length: ::std::option::Option<i32>,
+        #[doc = "Minimum interval after which the password can be changed. This flag is only supported for PostgresSQL."]
+        #[serde(
+            rename = "passwordChangeInterval",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub password_change_interval: ::std::option::Option<String>,
+        #[doc = "Number of previous passwords that cannot be reused."]
+        #[serde(
+            rename = "reuseInterval",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reuse_interval: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for PasswordValidationPolicy {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PasswordValidationPolicy {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PasswordValidationPolicyComplexity {
+        #[doc = "A combination of lowercase, uppercase, numeric, and non-alphanumeric characters."]
+        ComplexityDefault,
+        #[doc = "Complexity check is not specified."]
+        ComplexityUnspecified,
+    }
+    impl PasswordValidationPolicyComplexity {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PasswordValidationPolicyComplexity::ComplexityDefault => "COMPLEXITY_DEFAULT",
+                PasswordValidationPolicyComplexity::ComplexityUnspecified => {
+                    "COMPLEXITY_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PasswordValidationPolicyComplexity {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PasswordValidationPolicyComplexity {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PasswordValidationPolicyComplexity, ()> {
+            Ok(match s {
+                "COMPLEXITY_DEFAULT" => PasswordValidationPolicyComplexity::ComplexityDefault,
+                "COMPLEXITY_UNSPECIFIED" => {
+                    PasswordValidationPolicyComplexity::ComplexityUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PasswordValidationPolicyComplexity {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PasswordValidationPolicyComplexity {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PasswordValidationPolicyComplexity {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "COMPLEXITY_DEFAULT" => PasswordValidationPolicyComplexity::ComplexityDefault,
+                "COMPLEXITY_UNSPECIFIED" => {
+                    PasswordValidationPolicyComplexity::ComplexityUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PasswordValidationPolicyComplexity {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PasswordValidationPolicyComplexity {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ReplicaConfiguration {
-        #[doc = "Specifies if the replica is the failover target. If the field is set to *true* the replica will be designated as a failover replica. In case the primary instance fails, the replica instance will be promoted as the new primary instance. Only one replica can be specified as failover target, and the replica has to be in different zone with the primary instance."]
+        #[doc = "Specifies if the replica is the failover target. If the field is set to `true` the replica will be designated as a failover replica. In case the primary instance fails, the replica instance will be promoted as the new primary instance. Only one replica can be specified as failover target, and the replica has to be in different zone with the primary instance."]
         #[serde(
             rename = "failoverTarget",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub failover_target: ::std::option::Option<bool>,
-        #[doc = "This is always *sql#replicaConfiguration*."]
+        #[doc = "This is always `sql#replicaConfiguration`."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "MySQL specific configuration when replicating from a MySQL on-premises primary instance. Replication configuration information such as the username, password, certificates, and keys are not stored in the instance metadata. The configuration information is used only to set up the replication connection and is stored by MySQL in a file named *master.info* in the data directory."]
+        #[doc = "MySQL specific configuration when replicating from a MySQL on-premises primary instance. Replication configuration information such as the username, password, certificates, and keys are not stored in the instance metadata. The configuration information is used only to set up the replication connection and is stored by MySQL in a file named `master.info` in the data directory."]
         #[serde(
             rename = "mysqlReplicaConfiguration",
             default,
@@ -4767,7 +5686,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub reschedule_type: ::std::option::Option<crate::schemas::RescheduleRescheduleType>,
-        #[doc = "Optional. Timestamp when the maintenance shall be rescheduled to if reschedule_type=SPECIFIC_TIME, in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*."]
+        #[doc = "Optional. Timestamp when the maintenance shall be rescheduled to if reschedule_type=SPECIFIC_TIME, in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`."]
         #[serde(
             rename = "scheduleTime",
             default,
@@ -4787,12 +5706,12 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum RescheduleRescheduleType {
-        #[doc = "If the user wants to schedule the maintenance to happen now."]
+        #[doc = "Reschedules maintenance to happen now (within 5 minutes)."]
         Immediate,
-        #[doc = "If the user wants to use the existing maintenance policy to find the next available window."]
+        #[doc = "Reschedules maintenance to occur within one week from the originally scheduled day and time."]
         NextAvailableWindow,
         RescheduleTypeUnspecified,
-        #[doc = "If the user wants to reschedule the maintenance to a specific time."]
+        #[doc = "Reschedules maintenance to a specific time and day."]
         SpecificTime,
     }
     impl RescheduleRescheduleType {
@@ -4899,7 +5818,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub instance_id: ::std::option::Option<String>,
-        #[doc = "This is always *sql#restoreBackupContext*."]
+        #[doc = "This is always `sql#restoreBackupContext`."]
         #[serde(
             rename = "kind",
             default,
@@ -4937,7 +5856,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RotateServerCaContext {
-        #[doc = "This is always *sql#rotateServerCaContext*."]
+        #[doc = "This is always `sql#rotateServerCaContext`."]
         #[serde(
             rename = "kind",
             default,
@@ -4975,7 +5894,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Settings {
-        #[doc = "The activation policy specifies when the instance is activated; it is applicable only when the instance state is RUNNABLE. Valid values: *ALWAYS*: The instance is on, and remains so even in the absence of connection requests. *NEVER*: The instance is off; it is not activated, even if a connection request arrives."]
+        #[doc = "The activation policy specifies when the instance is activated; it is applicable only when the instance state is RUNNABLE. Valid values: * `ALWAYS`: The instance is on, and remains so even in the absence of connection requests. * `NEVER`: The instance is off; it is not activated, even if a connection request arrives."]
         #[serde(
             rename = "activationPolicy",
             default,
@@ -4997,7 +5916,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub authorized_gae_applications: ::std::option::Option<Vec<String>>,
-        #[doc = "Availability type. Potential values: *ZONAL*: The instance serves data from only one zone. Outages in that zone affect data accessibility. *REGIONAL*: The instance can serve data from more than one zone in a region (it is highly available). For more information, see Overview of the High Availability Configuration."]
+        #[doc = "Availability type. Potential values: * `ZONAL`: The instance serves data from only one zone. Outages in that zone affect data accessibility. * `REGIONAL`: The instance can serve data from more than one zone in a region (it is highly available)./ For more information, see [Overview of the High Availability Configuration](https://cloud.google.com/sql/docs/mysql/high-availability)."]
         #[serde(
             rename = "availabilityType",
             default,
@@ -5033,7 +5952,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub data_disk_size_gb: ::std::option::Option<i64>,
-        #[doc = "The type of data disk: PD_SSD (default) or PD_HDD. Not used for First Generation instances."]
+        #[doc = "The type of data disk: `PD_SSD` (default) or `PD_HDD`. Not used for First Generation instances."]
         #[serde(
             rename = "dataDiskType",
             default,
@@ -5047,7 +5966,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub database_flags: ::std::option::Option<Vec<crate::schemas::DatabaseFlags>>,
-        #[doc = "Configuration specific to read replica instances. Indicates whether replication is enabled or not."]
+        #[doc = "Configuration specific to read replica instances. Indicates whether replication is enabled or not. WARNING: Changing this restarts the instance."]
         #[serde(
             rename = "databaseReplicationEnabled",
             default,
@@ -5076,7 +5995,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ip_configuration: ::std::option::Option<crate::schemas::IpConfiguration>,
-        #[doc = "This is always *sql#settings*."]
+        #[doc = "This is always `sql#settings`."]
         #[serde(
             rename = "kind",
             default,
@@ -5097,14 +6016,22 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub maintenance_window: ::std::option::Option<crate::schemas::MaintenanceWindow>,
-        #[doc = "The pricing plan for this instance. This can be either *PER_USE* or *PACKAGE*. Only *PER_USE* is supported for Second Generation instances."]
+        #[doc = "The local user password validation policy of the instance."]
+        #[serde(
+            rename = "passwordValidationPolicy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub password_validation_policy:
+            ::std::option::Option<crate::schemas::PasswordValidationPolicy>,
+        #[doc = "The pricing plan for this instance. This can be either `PER_USE` or `PACKAGE`. Only `PER_USE` is supported for Second Generation instances."]
         #[serde(
             rename = "pricingPlan",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pricing_plan: ::std::option::Option<crate::schemas::SettingsPricingPlan>,
-        #[doc = "The type of replication this instance uses. This can be either *ASYNCHRONOUS* or *SYNCHRONOUS*. (Deprecated_ This property was only applicable to First Generation instances."]
+        #[doc = "The type of replication this instance uses. This can be either `ASYNCHRONOUS` or `SYNCHRONOUS`. (Deprecated) This property was only applicable to First Generation instances."]
         #[serde(
             rename = "replicationType",
             default,
@@ -5119,6 +6046,13 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub settings_version: ::std::option::Option<i64>,
+        #[doc = "SQL Server specific audit configuration."]
+        #[serde(
+            rename = "sqlServerAuditConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sql_server_audit_config: ::std::option::Option<crate::schemas::SqlServerAuditConfig>,
         #[doc = "Configuration to increase storage size automatically. The default value is true."]
         #[serde(
             rename = "storageAutoResize",
@@ -5134,7 +6068,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub storage_auto_resize_limit: ::std::option::Option<i64>,
-        #[doc = "The tier (or machine type) for this instance, for example *db-n1-standard-1* (MySQL instances) or *db-custom-1-3840* (PostgreSQL instances)."]
+        #[doc = "The tier (or machine type) for this instance, for example `db-custom-1-3840`. WARNING: Changing this restarts the instance."]
         #[serde(
             rename = "tier",
             default,
@@ -5631,7 +6565,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub detail: ::std::option::Option<String>,
-        #[doc = "Can be *sql#externalSyncSettingError* or *sql#externalSyncSettingWarning*."]
+        #[doc = "Can be `sql#externalSyncSettingError` or `sql#externalSyncSettingWarning`."]
         #[serde(
             rename = "kind",
             default,
@@ -5659,6 +6593,8 @@ pub mod schemas {
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum SqlExternalSyncSettingErrorType {
         BinlogNotEnabled,
+        #[doc = "The primary instance's binary log retention setting."]
+        BinlogRetentionSetting,
         ConnectionFailure,
         IncompatibleDatabaseVersion,
         #[doc = "The value of parameter max_replication_slots is not sufficient."]
@@ -5682,10 +6618,16 @@ pub mod schemas {
         NoPglogicalInstalled,
         #[doc = "pglogical node already exists on databases, applicable for postgres."]
         PglogicalNodeAlreadyExists,
+        #[doc = "The primary instance has been setup and will fail the setup."]
+        PrimaryAlreadySetup,
         ReplicaAlreadySetup,
         SqlExternalSyncSettingErrorTypeUnspecified,
         #[doc = "SQL Server Agent is not running."]
         SqlserverAgentNotRunning,
+        #[doc = "SQL Server @@SERVERNAME does not match actual host name"]
+        SqlserverServernameMismatch,
+        #[doc = "The primary instance has unsupported binary log format."]
+        UnsupportedBinlogFormat,
         #[doc = "The customer has a definer that will break EM setup."]
         UnsupportedDefiner,
         #[doc = "Extensions installed are either not supported or having unsupported versions"]
@@ -5694,6 +6636,8 @@ pub mod schemas {
         UnsupportedGtidMode,
         #[doc = "Unsupported migration type."]
         UnsupportedMigrationType,
+        #[doc = "The primary instance has tables with unsupported storage engine."]
+        UnsupportedStorageEngine,
         #[doc = "The table definition is not support due to missing primary key or replica identity, applicable for postgres."]
         UnsupportedTableDefinition,
     }
@@ -5701,6 +6645,9 @@ pub mod schemas {
         pub fn as_str(self) -> &'static str {
             match self {
                 SqlExternalSyncSettingErrorType::BinlogNotEnabled => "BINLOG_NOT_ENABLED",
+                SqlExternalSyncSettingErrorType::BinlogRetentionSetting => {
+                    "BINLOG_RETENTION_SETTING"
+                }
                 SqlExternalSyncSettingErrorType::ConnectionFailure => "CONNECTION_FAILURE",
                 SqlExternalSyncSettingErrorType::IncompatibleDatabaseVersion => {
                     "INCOMPATIBLE_DATABASE_VERSION"
@@ -5728,6 +6675,7 @@ pub mod schemas {
                 SqlExternalSyncSettingErrorType::PglogicalNodeAlreadyExists => {
                     "PGLOGICAL_NODE_ALREADY_EXISTS"
                 }
+                SqlExternalSyncSettingErrorType::PrimaryAlreadySetup => "PRIMARY_ALREADY_SETUP",
                 SqlExternalSyncSettingErrorType::ReplicaAlreadySetup => "REPLICA_ALREADY_SETUP",
                 SqlExternalSyncSettingErrorType::SqlExternalSyncSettingErrorTypeUnspecified => {
                     "SQL_EXTERNAL_SYNC_SETTING_ERROR_TYPE_UNSPECIFIED"
@@ -5735,11 +6683,20 @@ pub mod schemas {
                 SqlExternalSyncSettingErrorType::SqlserverAgentNotRunning => {
                     "SQLSERVER_AGENT_NOT_RUNNING"
                 }
+                SqlExternalSyncSettingErrorType::SqlserverServernameMismatch => {
+                    "SQLSERVER_SERVERNAME_MISMATCH"
+                }
+                SqlExternalSyncSettingErrorType::UnsupportedBinlogFormat => {
+                    "UNSUPPORTED_BINLOG_FORMAT"
+                }
                 SqlExternalSyncSettingErrorType::UnsupportedDefiner => "UNSUPPORTED_DEFINER",
                 SqlExternalSyncSettingErrorType::UnsupportedExtensions => "UNSUPPORTED_EXTENSIONS",
                 SqlExternalSyncSettingErrorType::UnsupportedGtidMode => "UNSUPPORTED_GTID_MODE",
                 SqlExternalSyncSettingErrorType::UnsupportedMigrationType => {
                     "UNSUPPORTED_MIGRATION_TYPE"
+                }
+                SqlExternalSyncSettingErrorType::UnsupportedStorageEngine => {
+                    "UNSUPPORTED_STORAGE_ENGINE"
                 }
                 SqlExternalSyncSettingErrorType::UnsupportedTableDefinition => {
                     "UNSUPPORTED_TABLE_DEFINITION"
@@ -5757,6 +6714,9 @@ pub mod schemas {
         fn from_str(s: &str) -> ::std::result::Result<SqlExternalSyncSettingErrorType, ()> {
             Ok(match s {
                 "BINLOG_NOT_ENABLED" => SqlExternalSyncSettingErrorType::BinlogNotEnabled,
+                "BINLOG_RETENTION_SETTING" => {
+                    SqlExternalSyncSettingErrorType::BinlogRetentionSetting
+                }
                 "CONNECTION_FAILURE" => SqlExternalSyncSettingErrorType::ConnectionFailure,
                 "INCOMPATIBLE_DATABASE_VERSION" => {
                     SqlExternalSyncSettingErrorType::IncompatibleDatabaseVersion
@@ -5784,6 +6744,7 @@ pub mod schemas {
                 "PGLOGICAL_NODE_ALREADY_EXISTS" => {
                     SqlExternalSyncSettingErrorType::PglogicalNodeAlreadyExists
                 }
+                "PRIMARY_ALREADY_SETUP" => SqlExternalSyncSettingErrorType::PrimaryAlreadySetup,
                 "REPLICA_ALREADY_SETUP" => SqlExternalSyncSettingErrorType::ReplicaAlreadySetup,
                 "SQL_EXTERNAL_SYNC_SETTING_ERROR_TYPE_UNSPECIFIED" => {
                     SqlExternalSyncSettingErrorType::SqlExternalSyncSettingErrorTypeUnspecified
@@ -5791,11 +6752,20 @@ pub mod schemas {
                 "SQLSERVER_AGENT_NOT_RUNNING" => {
                     SqlExternalSyncSettingErrorType::SqlserverAgentNotRunning
                 }
+                "SQLSERVER_SERVERNAME_MISMATCH" => {
+                    SqlExternalSyncSettingErrorType::SqlserverServernameMismatch
+                }
+                "UNSUPPORTED_BINLOG_FORMAT" => {
+                    SqlExternalSyncSettingErrorType::UnsupportedBinlogFormat
+                }
                 "UNSUPPORTED_DEFINER" => SqlExternalSyncSettingErrorType::UnsupportedDefiner,
                 "UNSUPPORTED_EXTENSIONS" => SqlExternalSyncSettingErrorType::UnsupportedExtensions,
                 "UNSUPPORTED_GTID_MODE" => SqlExternalSyncSettingErrorType::UnsupportedGtidMode,
                 "UNSUPPORTED_MIGRATION_TYPE" => {
                     SqlExternalSyncSettingErrorType::UnsupportedMigrationType
+                }
+                "UNSUPPORTED_STORAGE_ENGINE" => {
+                    SqlExternalSyncSettingErrorType::UnsupportedStorageEngine
                 }
                 "UNSUPPORTED_TABLE_DEFINITION" => {
                     SqlExternalSyncSettingErrorType::UnsupportedTableDefinition
@@ -5825,6 +6795,9 @@ pub mod schemas {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
                 "BINLOG_NOT_ENABLED" => SqlExternalSyncSettingErrorType::BinlogNotEnabled,
+                "BINLOG_RETENTION_SETTING" => {
+                    SqlExternalSyncSettingErrorType::BinlogRetentionSetting
+                }
                 "CONNECTION_FAILURE" => SqlExternalSyncSettingErrorType::ConnectionFailure,
                 "INCOMPATIBLE_DATABASE_VERSION" => {
                     SqlExternalSyncSettingErrorType::IncompatibleDatabaseVersion
@@ -5852,6 +6825,7 @@ pub mod schemas {
                 "PGLOGICAL_NODE_ALREADY_EXISTS" => {
                     SqlExternalSyncSettingErrorType::PglogicalNodeAlreadyExists
                 }
+                "PRIMARY_ALREADY_SETUP" => SqlExternalSyncSettingErrorType::PrimaryAlreadySetup,
                 "REPLICA_ALREADY_SETUP" => SqlExternalSyncSettingErrorType::ReplicaAlreadySetup,
                 "SQL_EXTERNAL_SYNC_SETTING_ERROR_TYPE_UNSPECIFIED" => {
                     SqlExternalSyncSettingErrorType::SqlExternalSyncSettingErrorTypeUnspecified
@@ -5859,11 +6833,20 @@ pub mod schemas {
                 "SQLSERVER_AGENT_NOT_RUNNING" => {
                     SqlExternalSyncSettingErrorType::SqlserverAgentNotRunning
                 }
+                "SQLSERVER_SERVERNAME_MISMATCH" => {
+                    SqlExternalSyncSettingErrorType::SqlserverServernameMismatch
+                }
+                "UNSUPPORTED_BINLOG_FORMAT" => {
+                    SqlExternalSyncSettingErrorType::UnsupportedBinlogFormat
+                }
                 "UNSUPPORTED_DEFINER" => SqlExternalSyncSettingErrorType::UnsupportedDefiner,
                 "UNSUPPORTED_EXTENSIONS" => SqlExternalSyncSettingErrorType::UnsupportedExtensions,
                 "UNSUPPORTED_GTID_MODE" => SqlExternalSyncSettingErrorType::UnsupportedGtidMode,
                 "UNSUPPORTED_MIGRATION_TYPE" => {
                     SqlExternalSyncSettingErrorType::UnsupportedMigrationType
+                }
+                "UNSUPPORTED_STORAGE_ENGINE" => {
+                    SqlExternalSyncSettingErrorType::UnsupportedStorageEngine
                 }
                 "UNSUPPORTED_TABLE_DEFINITION" => {
                     SqlExternalSyncSettingErrorType::UnsupportedTableDefinition
@@ -5930,6 +6913,254 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct SqlInstancesStartExternalSyncRequest {
+        #[doc = "MySQL-specific settings for start external sync."]
+        #[serde(
+            rename = "mysqlSyncConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mysql_sync_config: ::std::option::Option<crate::schemas::MySqlSyncConfig>,
+        #[doc = "Whether to skip the verification step (VESS)."]
+        #[serde(
+            rename = "skipVerification",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub skip_verification: ::std::option::Option<bool>,
+        #[doc = "External sync mode."]
+        #[serde(
+            rename = "syncMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sync_mode:
+            ::std::option::Option<crate::schemas::SqlInstancesStartExternalSyncRequestSyncMode>,
+    }
+    impl ::google_field_selector::FieldSelector for SqlInstancesStartExternalSyncRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SqlInstancesStartExternalSyncRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum SqlInstancesStartExternalSyncRequestSyncMode {
+        #[doc = "Unknown external sync mode, will be defaulted to ONLINE mode"]
+        ExternalSyncModeUnspecified,
+        #[doc = "Offline external sync only dumps and loads a one-time snapshot of the primary instance's data"]
+        Offline,
+        #[doc = "Online external sync will set up replication after initial data external sync"]
+        Online,
+    }
+    impl SqlInstancesStartExternalSyncRequestSyncMode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                SqlInstancesStartExternalSyncRequestSyncMode::ExternalSyncModeUnspecified => {
+                    "EXTERNAL_SYNC_MODE_UNSPECIFIED"
+                }
+                SqlInstancesStartExternalSyncRequestSyncMode::Offline => "OFFLINE",
+                SqlInstancesStartExternalSyncRequestSyncMode::Online => "ONLINE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for SqlInstancesStartExternalSyncRequestSyncMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for SqlInstancesStartExternalSyncRequestSyncMode {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<SqlInstancesStartExternalSyncRequestSyncMode, ()> {
+            Ok(match s {
+                "EXTERNAL_SYNC_MODE_UNSPECIFIED" => {
+                    SqlInstancesStartExternalSyncRequestSyncMode::ExternalSyncModeUnspecified
+                }
+                "OFFLINE" => SqlInstancesStartExternalSyncRequestSyncMode::Offline,
+                "ONLINE" => SqlInstancesStartExternalSyncRequestSyncMode::Online,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for SqlInstancesStartExternalSyncRequestSyncMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for SqlInstancesStartExternalSyncRequestSyncMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for SqlInstancesStartExternalSyncRequestSyncMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "EXTERNAL_SYNC_MODE_UNSPECIFIED" => {
+                    SqlInstancesStartExternalSyncRequestSyncMode::ExternalSyncModeUnspecified
+                }
+                "OFFLINE" => SqlInstancesStartExternalSyncRequestSyncMode::Offline,
+                "ONLINE" => SqlInstancesStartExternalSyncRequestSyncMode::Online,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for SqlInstancesStartExternalSyncRequestSyncMode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SqlInstancesStartExternalSyncRequestSyncMode {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SqlInstancesVerifyExternalSyncSettingsRequest {
+        #[doc = "Optional. MySQL-specific settings for start external sync."]
+        #[serde(
+            rename = "mysqlSyncConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mysql_sync_config: ::std::option::Option<crate::schemas::MySqlSyncConfig>,
+        #[doc = "External sync mode"]
+        #[serde(
+            rename = "syncMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sync_mode: ::std::option::Option<
+            crate::schemas::SqlInstancesVerifyExternalSyncSettingsRequestSyncMode,
+        >,
+        #[doc = "Flag to enable verifying connection only"]
+        #[serde(
+            rename = "verifyConnectionOnly",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verify_connection_only: ::std::option::Option<bool>,
+        #[doc = "Optional. Flag to verify settings required by replication setup only"]
+        #[serde(
+            rename = "verifyReplicationOnly",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verify_replication_only: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for SqlInstancesVerifyExternalSyncSettingsRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SqlInstancesVerifyExternalSyncSettingsRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum SqlInstancesVerifyExternalSyncSettingsRequestSyncMode {
+        #[doc = "Unknown external sync mode, will be defaulted to ONLINE mode"]
+        ExternalSyncModeUnspecified,
+        #[doc = "Offline external sync only dumps and loads a one-time snapshot of the primary instance's data"]
+        Offline,
+        #[doc = "Online external sync will set up replication after initial data external sync"]
+        Online,
+    }
+    impl SqlInstancesVerifyExternalSyncSettingsRequestSyncMode {
+        pub fn as_str(self) -> &'static str {
+            match self { SqlInstancesVerifyExternalSyncSettingsRequestSyncMode :: ExternalSyncModeUnspecified => "EXTERNAL_SYNC_MODE_UNSPECIFIED" , SqlInstancesVerifyExternalSyncSettingsRequestSyncMode :: Offline => "OFFLINE" , SqlInstancesVerifyExternalSyncSettingsRequestSyncMode :: Online => "ONLINE" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for SqlInstancesVerifyExternalSyncSettingsRequestSyncMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for SqlInstancesVerifyExternalSyncSettingsRequestSyncMode {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<SqlInstancesVerifyExternalSyncSettingsRequestSyncMode, ()>
+        {
+            Ok (match s { "EXTERNAL_SYNC_MODE_UNSPECIFIED" => SqlInstancesVerifyExternalSyncSettingsRequestSyncMode :: ExternalSyncModeUnspecified , "OFFLINE" => SqlInstancesVerifyExternalSyncSettingsRequestSyncMode :: Offline , "ONLINE" => SqlInstancesVerifyExternalSyncSettingsRequestSyncMode :: Online , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for SqlInstancesVerifyExternalSyncSettingsRequestSyncMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for SqlInstancesVerifyExternalSyncSettingsRequestSyncMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for SqlInstancesVerifyExternalSyncSettingsRequestSyncMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "EXTERNAL_SYNC_MODE_UNSPECIFIED" => SqlInstancesVerifyExternalSyncSettingsRequestSyncMode :: ExternalSyncModeUnspecified , "OFFLINE" => SqlInstancesVerifyExternalSyncSettingsRequestSyncMode :: Offline , "ONLINE" => SqlInstancesVerifyExternalSyncSettingsRequestSyncMode :: Online , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for SqlInstancesVerifyExternalSyncSettingsRequestSyncMode
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for SqlInstancesVerifyExternalSyncSettingsRequestSyncMode
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SqlInstancesVerifyExternalSyncSettingsResponse {
         #[doc = "List of migration violations."]
         #[serde(
@@ -5938,7 +7169,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub errors: ::std::option::Option<Vec<crate::schemas::SqlExternalSyncSettingError>>,
-        #[doc = "This is always *sql#migrationSettingErrorList*."]
+        #[doc = "This is always `sql#migrationSettingErrorList`."]
         #[serde(
             rename = "kind",
             default,
@@ -5975,6 +7206,127 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct SqlOutOfDiskReport {
+        #[doc = "The minimum recommended increase size in GigaBytes This field is consumed by the frontend * Writers: * the proactive database wellness job for OOD. * Readers:"]
+        #[serde(
+            rename = "sqlMinRecommendedIncreaseSizeGb",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sql_min_recommended_increase_size_gb: ::std::option::Option<i32>,
+        #[doc = "This field represents the state generated by the proactive database wellness job for OutOfDisk issues. * Writers: * the proactive database wellness job for OOD. * Readers: * the proactive database wellness job"]
+        #[serde(
+            rename = "sqlOutOfDiskState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sql_out_of_disk_state:
+            ::std::option::Option<crate::schemas::SqlOutOfDiskReportSqlOutOfDiskState>,
+    }
+    impl ::google_field_selector::FieldSelector for SqlOutOfDiskReport {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SqlOutOfDiskReport {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum SqlOutOfDiskReportSqlOutOfDiskState {
+        #[doc = "The instance has plenty space on data disk"]
+        Normal,
+        #[doc = "Data disk is almost used up. It is shutdown to prevent data corruption."]
+        SoftShutdown,
+        #[doc = "Unspecified state"]
+        SqlOutOfDiskStateUnspecified,
+    }
+    impl SqlOutOfDiskReportSqlOutOfDiskState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                SqlOutOfDiskReportSqlOutOfDiskState::Normal => "NORMAL",
+                SqlOutOfDiskReportSqlOutOfDiskState::SoftShutdown => "SOFT_SHUTDOWN",
+                SqlOutOfDiskReportSqlOutOfDiskState::SqlOutOfDiskStateUnspecified => {
+                    "SQL_OUT_OF_DISK_STATE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for SqlOutOfDiskReportSqlOutOfDiskState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for SqlOutOfDiskReportSqlOutOfDiskState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<SqlOutOfDiskReportSqlOutOfDiskState, ()> {
+            Ok(match s {
+                "NORMAL" => SqlOutOfDiskReportSqlOutOfDiskState::Normal,
+                "SOFT_SHUTDOWN" => SqlOutOfDiskReportSqlOutOfDiskState::SoftShutdown,
+                "SQL_OUT_OF_DISK_STATE_UNSPECIFIED" => {
+                    SqlOutOfDiskReportSqlOutOfDiskState::SqlOutOfDiskStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for SqlOutOfDiskReportSqlOutOfDiskState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for SqlOutOfDiskReportSqlOutOfDiskState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for SqlOutOfDiskReportSqlOutOfDiskState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "NORMAL" => SqlOutOfDiskReportSqlOutOfDiskState::Normal,
+                "SOFT_SHUTDOWN" => SqlOutOfDiskReportSqlOutOfDiskState::SoftShutdown,
+                "SQL_OUT_OF_DISK_STATE_UNSPECIFIED" => {
+                    SqlOutOfDiskReportSqlOutOfDiskState::SqlOutOfDiskStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for SqlOutOfDiskReportSqlOutOfDiskState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SqlOutOfDiskReportSqlOutOfDiskState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SqlScheduledMaintenance {
         #[serde(
             rename = "canDefer",
@@ -5989,6 +7341,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub can_reschedule: ::std::option::Option<bool>,
+        #[doc = "Maintenance cannot be rescheduled to start beyond this deadline."]
+        #[serde(
+            rename = "scheduleDeadlineTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub schedule_deadline_time: ::std::option::Option<String>,
         #[doc = "The start time of any upcoming scheduled maintenance for this instance."]
         #[serde(
             rename = "startTime",
@@ -6003,6 +7362,58 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SqlScheduledMaintenance {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SqlServerAuditConfig {
+        #[doc = "The name of the destination bucket (e.g., gs://mybucket)."]
+        #[serde(
+            rename = "bucket",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bucket: ::std::option::Option<String>,
+        #[doc = "This is always sql#sqlServerAuditConfig"]
+        #[serde(
+            rename = "kind",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kind: ::std::option::Option<String>,
+        #[doc = "How long to keep generated audit files."]
+        #[serde(
+            rename = "retentionInterval",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub retention_interval: ::std::option::Option<String>,
+        #[doc = "How often to upload generated audit files."]
+        #[serde(
+            rename = "uploadInterval",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub upload_interval: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SqlServerAuditConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SqlServerAuditConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -6117,14 +7528,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub common_name: ::std::option::Option<String>,
-        #[doc = "The time when the certificate was created in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*"]
+        #[doc = "The time when the certificate was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`."]
         #[serde(
             rename = "createTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "The time when the certificate expires in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*."]
+        #[doc = "The time when the certificate expires in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`."]
         #[serde(
             rename = "expirationTime",
             default,
@@ -6138,7 +7549,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub instance: ::std::option::Option<String>,
-        #[doc = "This is always *sql#sslCert*."]
+        #[doc = "This is always `sql#sslCert`."]
         #[serde(
             rename = "kind",
             default,
@@ -6297,7 +7708,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub client_cert: ::std::option::Option<crate::schemas::SslCertDetail>,
-        #[doc = "This is always *sql#sslCertsInsert*."]
+        #[doc = "This is always `sql#sslCertsInsert`."]
         #[serde(
             rename = "kind",
             default,
@@ -6349,7 +7760,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::SslCert>>,
-        #[doc = "This is always *sql#sslCertsList*."]
+        #[doc = "This is always `sql#sslCertsList`."]
         #[serde(
             rename = "kind",
             default,
@@ -6379,6 +7790,44 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct SyncFlags {
+        #[doc = "The name of the flag."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "The value of the flag. This field must be omitted if the flag doesn't take a value."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SyncFlags {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SyncFlags {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Tier {
         #[doc = "The maximum disk size of this tier in bytes."]
         #[serde(
@@ -6388,7 +7837,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub disk_quota: ::std::option::Option<i64>,
-        #[doc = "This is always *sql#tier*."]
+        #[doc = "This is always `sql#tier`."]
         #[serde(
             rename = "kind",
             default,
@@ -6410,7 +7859,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub region: ::std::option::Option<Vec<String>>,
-        #[doc = "An identifier for the machine type, for example, db-n1-standard-1. For related information, see Pricing."]
+        #[doc = "An identifier for the machine type, for example, `db-custom-1-3840`. For related information, see [Pricing](/sql/pricing)."]
         #[serde(
             rename = "tier",
             default,
@@ -6448,7 +7897,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Tier>>,
-        #[doc = "This is always *sql#tiersList*."]
+        #[doc = "This is always `sql#tiersList`."]
         #[serde(
             rename = "kind",
             default,
@@ -6479,14 +7928,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TruncateLogContext {
-        #[doc = "This is always *sql#truncateLogContext*."]
+        #[doc = "This is always `sql#truncateLogContext`."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "The type of log to truncate. Valid values are *MYSQL_GENERAL_TABLE* and *MYSQL_SLOW_TABLE*."]
+        #[doc = "The type of log to truncate. Valid values are `MYSQL_GENERAL_TABLE` and `MYSQL_SLOW_TABLE`."]
         #[serde(
             rename = "logType",
             default,
@@ -6524,28 +7973,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "The host name from which the user can connect. For *insert* operations, host defaults to an empty string. For *update* operations, host is specified as part of the request URL. The host name cannot be updated after insertion."]
+        #[doc = "Optional. The host from which the user can connect. For `insert` operations, host defaults to an empty string. For `update` operations, host is specified as part of the request URL. The host name cannot be updated after insertion. For a MySQL instance, it's required; for a PostgreSQL or SQL Server instance, it's optional."]
         #[serde(
             rename = "host",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub host: ::std::option::Option<String>,
-        #[doc = "The name of the Cloud SQL instance. This does not include the project ID. Can be omitted for *update* since it is already specified on the URL."]
+        #[doc = "The name of the Cloud SQL instance. This does not include the project ID. Can be omitted for *update* because it is already specified on the URL."]
         #[serde(
             rename = "instance",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub instance: ::std::option::Option<String>,
-        #[doc = "This is always *sql#user*."]
+        #[doc = "This is always `sql#user`."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "The name of the user in the Cloud SQL instance. Can be omitted for *update* since it is already specified in the URL."]
+        #[doc = "The name of the user in the Cloud SQL instance. Can be omitted for `update` because it is already specified in the URL."]
         #[serde(
             rename = "name",
             default,
@@ -6559,7 +8008,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub password: ::std::option::Option<String>,
-        #[doc = "The project ID of the project containing the Cloud SQL database. The Google apps domain is prefixed if applicable. Can be omitted for *update* since it is already specified on the URL."]
+        #[doc = "User level password validation policy."]
+        #[serde(
+            rename = "passwordPolicy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub password_policy: ::std::option::Option<crate::schemas::UserPasswordValidationPolicy>,
+        #[doc = "The project ID of the project containing the Cloud SQL database. The Google apps domain is prefixed if applicable. Can be omitted for *update* because it is already specified on the URL."]
         #[serde(
             rename = "project",
             default,
@@ -6662,6 +8118,58 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for UserType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UserPasswordValidationPolicy {
+        #[doc = "Number of failed login attempts allowed before user get locked."]
+        #[serde(
+            rename = "allowedFailedAttempts",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allowed_failed_attempts: ::std::option::Option<i32>,
+        #[doc = "If true, failed login attempts check will be enabled."]
+        #[serde(
+            rename = "enableFailedAttemptsCheck",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_failed_attempts_check: ::std::option::Option<bool>,
+        #[doc = "Expiration duration after password is updated."]
+        #[serde(
+            rename = "passwordExpirationDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub password_expiration_duration: ::std::option::Option<String>,
+        #[doc = "Output only. Read-only password status."]
+        #[serde(
+            rename = "status",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub status: ::std::option::Option<crate::schemas::PasswordStatus>,
+    }
+    impl ::google_field_selector::FieldSelector for UserPasswordValidationPolicy {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UserPasswordValidationPolicy {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -6897,6 +8405,13 @@ impl Client {
             auth: self.auth_ref(),
         }
     }
+    #[doc = "Actions that can be performed on the connect resource"]
+    pub fn connect(&self) -> crate::resources::connect::ConnectActions {
+        crate::resources::connect::ConnectActions {
+            reqwest: &self.reqwest,
+            auth: self.auth_ref(),
+        }
+    }
     #[doc = "Actions that can be performed on the databases resource"]
     pub fn databases(&self) -> crate::resources::databases::DatabasesActions {
         crate::resources::databases::DatabasesActions {
@@ -7017,7 +8532,7 @@ pub mod resources {
                     id,
                 }
             }
-            #[doc = "Creates a new backup run on demand. This method is applicable only to Second Generation instances."]
+            #[doc = "Creates a new backup run on demand."]
             pub fn insert(
                 &self,
                 request: crate::schemas::BackupRun,
@@ -7043,7 +8558,7 @@ pub mod resources {
                     instance: instance.into(),
                 }
             }
-            #[doc = "Lists all backup runs associated with a given instance and configuration in the reverse chronological order of the backup initiation time."]
+            #[doc = "Lists all backup runs associated with the project or a given instance and configuration in the reverse chronological order of the backup initiation time."]
             pub fn list(
                 &self,
                 project: impl Into<String>,
@@ -7875,6 +9390,410 @@ pub mod resources {
                 T: ::serde::de::DeserializeOwned,
             {
                 self._execute()
+            }
+        }
+    }
+    pub mod connect {
+        pub mod params {}
+        pub struct ConnectActions<'a> {
+            pub(crate) reqwest: &'a reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+        }
+        impl<'a> ConnectActions<'a> {
+            fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                self.auth
+            }
+            #[doc = "Generates a short-lived X509 certificate containing the provided public key and signed by a private key specific to the target instance. Users may use the certificate to authenticate as themselves when connecting to the database."]
+            pub fn generate_ephemeral_cert(
+                &self,
+                request: crate::schemas::GenerateEphemeralCertRequest,
+                project: impl Into<String>,
+                instance: impl Into<String>,
+            ) -> GenerateEphemeralCertRequestBuilder {
+                GenerateEphemeralCertRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    request,
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    project: project.into(),
+                    instance: instance.into(),
+                }
+            }
+            #[doc = "Retrieves connect settings about a Cloud SQL instance."]
+            pub fn get(
+                &self,
+                project: impl Into<String>,
+                instance: impl Into<String>,
+            ) -> GetRequestBuilder {
+                GetRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    project: project.into(),
+                    instance: instance.into(),
+                    read_time: None,
+                }
+            }
+        }
+        #[doc = "Created via [ConnectActions::generate_ephemeral_cert()](struct.ConnectActions.html#method.generate_ephemeral_cert)"]
+        #[derive(Debug, Clone)]
+        pub struct GenerateEphemeralCertRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            request: crate::schemas::GenerateEphemeralCertRequest,
+            project: String,
+            instance: String,
+            access_token: Option<String>,
+            alt: Option<crate::params::Alt>,
+            callback: Option<String>,
+            fields: Option<String>,
+            key: Option<String>,
+            oauth_token: Option<String>,
+            pretty_print: Option<bool>,
+            quota_user: Option<String>,
+            upload_protocol: Option<String>,
+            upload_type: Option<String>,
+            xgafv: Option<crate::params::Xgafv>,
+        }
+        impl<'a> GenerateEphemeralCertRequestBuilder<'a> {
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields)
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::GenerateEphemeralCertResponse, crate::Error> {
+                self.execute_with_fields(None::<&str>)
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::GenerateEphemeralCertResponse, crate::Error> {
+                self.execute_with_fields(Some("*"))
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute()
+            }
+            fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path())?;
+                let req = req.json(&self.request);
+                Ok(crate::error_from_response(req.send()?)?.json()?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://sqladmin.googleapis.com/".to_owned();
+                output.push_str("sql/v1beta4/projects/");
+                {
+                    let var_as_str = &self.project;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output.push_str("/instances/");
+                {
+                    let var_as_str = &self.instance;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output.push_str(":generateEphemeralCert");
+                output
+            }
+            fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                req = req.bearer_auth(
+                    self.auth
+                        .access_token()
+                        .map_err(|err| crate::Error::OAuth2(err))?,
+                );
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [ConnectActions::get()](struct.ConnectActions.html#method.get)"]
+        #[derive(Debug, Clone)]
+        pub struct GetRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            project: String,
+            instance: String,
+            read_time: Option<String>,
+            access_token: Option<String>,
+            alt: Option<crate::params::Alt>,
+            callback: Option<String>,
+            fields: Option<String>,
+            key: Option<String>,
+            oauth_token: Option<String>,
+            pretty_print: Option<bool>,
+            quota_user: Option<String>,
+            upload_protocol: Option<String>,
+            upload_type: Option<String>,
+            xgafv: Option<crate::params::Xgafv>,
+        }
+        impl<'a> GetRequestBuilder<'a> {
+            #[doc = "Optional. Optional snapshot read timestamp to trade freshness for performance."]
+            pub fn read_time(mut self, value: impl Into<String>) -> Self {
+                self.read_time = Some(value.into());
+                self
+            }
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields)
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::ConnectSettings, crate::Error> {
+                self.execute_with_fields(None::<&str>)
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::ConnectSettings, crate::Error> {
+                self.execute_with_fields(Some("*"))
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute()
+            }
+            fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path())?;
+                Ok(crate::error_from_response(req.send()?)?.json()?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://sqladmin.googleapis.com/".to_owned();
+                output.push_str("sql/v1beta4/projects/");
+                {
+                    let var_as_str = &self.project;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output.push_str("/instances/");
+                {
+                    let var_as_str = &self.instance;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output.push_str("/connectSettings");
+                output
+            }
+            fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                req = req.query(&[("readTime", &self.read_time)]);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                req = req.bearer_auth(
+                    self.auth
+                        .access_token()
+                        .map_err(|err| crate::Error::OAuth2(err))?,
+                );
+                Ok(req)
             }
         }
     }
@@ -9090,7 +11009,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "List all available database flags for Cloud SQL instances."]
+            #[doc = "Lists all available database flags for Cloud SQL instances."]
             pub fn list(&self) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -9402,7 +11321,7 @@ pub mod resources {
                     instance: instance.into(),
                 }
             }
-            #[doc = "Failover the instance to its failover replica instance. Using this operation might cause your instance to restart."]
+            #[doc = "Initiates a manual failover of a high availability (HA) primary instance to a standby instance, which becomes the primary instance. Users are then rerouted to the new primary. For more information, see the [Overview of high availability](https://cloud.google.com/sql/docs/mysql/high-availability) page in the Cloud SQL documentation. If using Legacy HA (MySQL only), this causes the instance to failover to its failover replica instance."]
             pub fn failover(
                 &self,
                 request: crate::schemas::InstancesFailoverRequest,
@@ -14002,175 +15921,7 @@ pub mod resources {
             }
         }
         pub mod instances {
-            pub mod params {
-                #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-                pub enum StartExternalSyncSyncMode {
-                    #[doc = "Unknown external sync mode, will be defaulted to ONLINE mode"]
-                    ExternalSyncModeUnspecified,
-                    #[doc = "Offline external sync only dumps and loads a one-time snapshot of the primary instance's data"]
-                    Offline,
-                    #[doc = "Online external sync will set up replication after initial data external sync"]
-                    Online,
-                }
-                impl StartExternalSyncSyncMode {
-                    pub fn as_str(self) -> &'static str {
-                        match self {
-                            StartExternalSyncSyncMode::ExternalSyncModeUnspecified => {
-                                "EXTERNAL_SYNC_MODE_UNSPECIFIED"
-                            }
-                            StartExternalSyncSyncMode::Offline => "OFFLINE",
-                            StartExternalSyncSyncMode::Online => "ONLINE",
-                        }
-                    }
-                }
-                impl ::std::convert::AsRef<str> for StartExternalSyncSyncMode {
-                    fn as_ref(&self) -> &str {
-                        self.as_str()
-                    }
-                }
-                impl ::std::str::FromStr for StartExternalSyncSyncMode {
-                    type Err = ();
-                    fn from_str(s: &str) -> ::std::result::Result<StartExternalSyncSyncMode, ()> {
-                        Ok(match s {
-                            "EXTERNAL_SYNC_MODE_UNSPECIFIED" => {
-                                StartExternalSyncSyncMode::ExternalSyncModeUnspecified
-                            }
-                            "OFFLINE" => StartExternalSyncSyncMode::Offline,
-                            "ONLINE" => StartExternalSyncSyncMode::Online,
-                            _ => return Err(()),
-                        })
-                    }
-                }
-                impl ::std::fmt::Display for StartExternalSyncSyncMode {
-                    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-                        f.write_str(self.as_str())
-                    }
-                }
-                impl ::serde::Serialize for StartExternalSyncSyncMode {
-                    fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-                    where
-                        S: ::serde::ser::Serializer,
-                    {
-                        serializer.serialize_str(self.as_str())
-                    }
-                }
-                impl<'de> ::serde::Deserialize<'de> for StartExternalSyncSyncMode {
-                    fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-                    where
-                        D: ::serde::de::Deserializer<'de>,
-                    {
-                        let value: &'de str = <&str>::deserialize(deserializer)?;
-                        Ok(match value {
-                            "EXTERNAL_SYNC_MODE_UNSPECIFIED" => {
-                                StartExternalSyncSyncMode::ExternalSyncModeUnspecified
-                            }
-                            "OFFLINE" => StartExternalSyncSyncMode::Offline,
-                            "ONLINE" => StartExternalSyncSyncMode::Online,
-                            _ => {
-                                return Err(::serde::de::Error::custom(format!(
-                                    "invalid enum for #name: {}",
-                                    value
-                                )))
-                            }
-                        })
-                    }
-                }
-                impl ::google_field_selector::FieldSelector for StartExternalSyncSyncMode {
-                    fn fields() -> Vec<::google_field_selector::Field> {
-                        Vec::new()
-                    }
-                }
-                impl ::google_field_selector::ToFieldType for StartExternalSyncSyncMode {
-                    fn field_type() -> ::google_field_selector::FieldType {
-                        ::google_field_selector::FieldType::Leaf
-                    }
-                }
-                #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-                pub enum VerifyExternalSyncSettingsSyncMode {
-                    #[doc = "Unknown external sync mode, will be defaulted to ONLINE mode"]
-                    ExternalSyncModeUnspecified,
-                    #[doc = "Offline external sync only dumps and loads a one-time snapshot of the primary instance's data"]
-                    Offline,
-                    #[doc = "Online external sync will set up replication after initial data external sync"]
-                    Online,
-                }
-                impl VerifyExternalSyncSettingsSyncMode {
-                    pub fn as_str(self) -> &'static str {
-                        match self {
-                            VerifyExternalSyncSettingsSyncMode::ExternalSyncModeUnspecified => {
-                                "EXTERNAL_SYNC_MODE_UNSPECIFIED"
-                            }
-                            VerifyExternalSyncSettingsSyncMode::Offline => "OFFLINE",
-                            VerifyExternalSyncSettingsSyncMode::Online => "ONLINE",
-                        }
-                    }
-                }
-                impl ::std::convert::AsRef<str> for VerifyExternalSyncSettingsSyncMode {
-                    fn as_ref(&self) -> &str {
-                        self.as_str()
-                    }
-                }
-                impl ::std::str::FromStr for VerifyExternalSyncSettingsSyncMode {
-                    type Err = ();
-                    fn from_str(
-                        s: &str,
-                    ) -> ::std::result::Result<VerifyExternalSyncSettingsSyncMode, ()>
-                    {
-                        Ok(match s {
-                            "EXTERNAL_SYNC_MODE_UNSPECIFIED" => {
-                                VerifyExternalSyncSettingsSyncMode::ExternalSyncModeUnspecified
-                            }
-                            "OFFLINE" => VerifyExternalSyncSettingsSyncMode::Offline,
-                            "ONLINE" => VerifyExternalSyncSettingsSyncMode::Online,
-                            _ => return Err(()),
-                        })
-                    }
-                }
-                impl ::std::fmt::Display for VerifyExternalSyncSettingsSyncMode {
-                    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-                        f.write_str(self.as_str())
-                    }
-                }
-                impl ::serde::Serialize for VerifyExternalSyncSettingsSyncMode {
-                    fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-                    where
-                        S: ::serde::ser::Serializer,
-                    {
-                        serializer.serialize_str(self.as_str())
-                    }
-                }
-                impl<'de> ::serde::Deserialize<'de> for VerifyExternalSyncSettingsSyncMode {
-                    fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-                    where
-                        D: ::serde::de::Deserializer<'de>,
-                    {
-                        let value: &'de str = <&str>::deserialize(deserializer)?;
-                        Ok(match value {
-                            "EXTERNAL_SYNC_MODE_UNSPECIFIED" => {
-                                VerifyExternalSyncSettingsSyncMode::ExternalSyncModeUnspecified
-                            }
-                            "OFFLINE" => VerifyExternalSyncSettingsSyncMode::Offline,
-                            "ONLINE" => VerifyExternalSyncSettingsSyncMode::Online,
-                            _ => {
-                                return Err(::serde::de::Error::custom(format!(
-                                    "invalid enum for #name: {}",
-                                    value
-                                )))
-                            }
-                        })
-                    }
-                }
-                impl ::google_field_selector::FieldSelector for VerifyExternalSyncSettingsSyncMode {
-                    fn fields() -> Vec<::google_field_selector::Field> {
-                        Vec::new()
-                    }
-                }
-                impl ::google_field_selector::ToFieldType for VerifyExternalSyncSettingsSyncMode {
-                    fn field_type() -> ::google_field_selector::FieldType {
-                        ::google_field_selector::FieldType::Leaf
-                    }
-                }
-            }
+            pub mod params {}
             pub struct InstancesActions<'a> {
                 pub(crate) reqwest: &'a reqwest::blocking::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
@@ -14208,12 +15959,14 @@ pub mod resources {
                 #[doc = "Start External primary instance migration."]
                 pub fn start_external_sync(
                     &self,
+                    request: crate::schemas::SqlInstancesStartExternalSyncRequest,
                     project: impl Into<String>,
                     instance: impl Into<String>,
                 ) -> StartExternalSyncRequestBuilder {
                     StartExternalSyncRequestBuilder {
                         reqwest: &self.reqwest,
                         auth: self.auth_ref(),
+                        request,
                         access_token: None,
                         alt: None,
                         callback: None,
@@ -14227,19 +15980,19 @@ pub mod resources {
                         xgafv: None,
                         project: project.into(),
                         instance: instance.into(),
-                        skip_verification: None,
-                        sync_mode: None,
                     }
                 }
                 #[doc = "Verify External primary instance external sync settings."]
                 pub fn verify_external_sync_settings(
                     &self,
+                    request: crate::schemas::SqlInstancesVerifyExternalSyncSettingsRequest,
                     project: impl Into<String>,
                     instance: impl Into<String>,
                 ) -> VerifyExternalSyncSettingsRequestBuilder {
                     VerifyExternalSyncSettingsRequestBuilder {
                         reqwest: &self.reqwest,
                         auth: self.auth_ref(),
+                        request,
                         access_token: None,
                         alt: None,
                         callback: None,
@@ -14253,8 +16006,6 @@ pub mod resources {
                         xgafv: None,
                         project: project.into(),
                         instance: instance.into(),
-                        sync_mode: None,
-                        verify_connection_only: None,
                     }
                 }
             }
@@ -14434,12 +16185,9 @@ pub mod resources {
             pub struct StartExternalSyncRequestBuilder<'a> {
                 pub(crate) reqwest: &'a ::reqwest::blocking::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::SqlInstancesStartExternalSyncRequest,
                 project: String,
                 instance: String,
-                skip_verification: Option<bool>,
-                sync_mode: Option<
-                    crate::resources::projects::instances::params::StartExternalSyncSyncMode,
-                >,
                 access_token: Option<String>,
                 alt: Option<crate::params::Alt>,
                 callback: Option<String>,
@@ -14453,19 +16201,6 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> StartExternalSyncRequestBuilder<'a> {
-                #[doc = "Whether to skip the verification step (VESS)."]
-                pub fn skip_verification(mut self, value: bool) -> Self {
-                    self.skip_verification = Some(value);
-                    self
-                }
-                #[doc = "External sync mode."]
-                pub fn sync_mode(
-                    mut self,
-                    value: crate::resources::projects::instances::params::StartExternalSyncSyncMode,
-                ) -> Self {
-                    self.sync_mode = Some(value);
-                    self
-                }
                 #[doc = "OAuth access token."]
                 pub fn access_token(mut self, value: impl Into<String>) -> Self {
                     self.access_token = Some(value.into());
@@ -14568,6 +16303,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned,
                 {
                     let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
                     Ok(crate::error_from_response(req.send()?)?.json()?)
                 }
                 fn _path(&self) -> String {
@@ -14596,8 +16332,6 @@ pub mod resources {
                     path: &str,
                 ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                     let mut req = self.reqwest.request(::reqwest::Method::POST, path);
-                    req = req.query(&[("skipVerification", &self.skip_verification)]);
-                    req = req.query(&[("syncMode", &self.sync_mode)]);
                     req = req.query(&[("access_token", &self.access_token)]);
                     req = req.query(&[("alt", &self.alt)]);
                     req = req.query(&[("callback", &self.callback)]);
@@ -14619,21 +16353,25 @@ pub mod resources {
             }
             #[doc = "Created via [InstancesActions::verify_external_sync_settings()](struct.InstancesActions.html#method.verify_external_sync_settings)"]
             #[derive(Debug, Clone)]
-            pub struct VerifyExternalSyncSettingsRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , project : String , instance : String , sync_mode : Option < crate :: resources :: projects :: instances :: params :: VerifyExternalSyncSettingsSyncMode > , verify_connection_only : Option < bool > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+            pub struct VerifyExternalSyncSettingsRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::SqlInstancesVerifyExternalSyncSettingsRequest,
+                project: String,
+                instance: String,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
             impl<'a> VerifyExternalSyncSettingsRequestBuilder<'a> {
-                #[doc = "External sync mode"]
-                pub fn sync_mode(
-                    mut self,
-                    value : crate :: resources :: projects :: instances :: params :: VerifyExternalSyncSettingsSyncMode,
-                ) -> Self {
-                    self.sync_mode = Some(value);
-                    self
-                }
-                #[doc = "Flag to enable verifying connection only"]
-                pub fn verify_connection_only(mut self, value: bool) -> Self {
-                    self.verify_connection_only = Some(value);
-                    self
-                }
                 #[doc = "OAuth access token."]
                 pub fn access_token(mut self, value: impl Into<String>) -> Self {
                     self.access_token = Some(value.into());
@@ -14742,6 +16480,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned,
                 {
                     let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
                     Ok(crate::error_from_response(req.send()?)?.json()?)
                 }
                 fn _path(&self) -> String {
@@ -14770,8 +16509,6 @@ pub mod resources {
                     path: &str,
                 ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                     let mut req = self.reqwest.request(::reqwest::Method::POST, path);
-                    req = req.query(&[("syncMode", &self.sync_mode)]);
-                    req = req.query(&[("verifyConnectionOnly", &self.verify_connection_only)]);
                     req = req.query(&[("access_token", &self.access_token)]);
                     req = req.query(&[("alt", &self.alt)]);
                     req = req.query(&[("callback", &self.callback)]);
@@ -15789,7 +17526,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Lists all available machine types (tiers) for Cloud SQL, for example, db-n1-standard-1. For related information, see Pricing."]
+            #[doc = "Lists all available machine types (tiers) for Cloud SQL, for example, `db-custom-1-3840`. For related information, see [Pricing](/sql/pricing)."]
             pub fn list(&self, project: impl Into<String>) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("admin1_directory")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210316")
+            .version("0.1.0-20220325")
             .about("Admin SDK lets administrators of enterprise domains to view and manage resources like user, groups etc. It also provides audit and usage reports of domain.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -37,16 +37,16 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete, get and list");
         {
-            let mcmd = SubCommand::with_name("delete").about("Delete an ASP issued by a user.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes an ASP issued by a user.");
             asps0 = asps0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("get")
-                .about("Get information about an ASP issued by a user.");
+                .about("Gets information about an ASP issued by a user.");
             asps0 = asps0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("List the ASPs issued by a user.");
+            let mcmd = SubCommand::with_name("list").about("Lists the ASPs issued by a user.");
             asps0 = asps0.subcommand(mcmd);
         }
         let mut channels0 = SubCommand::with_name("channels")
@@ -54,7 +54,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: stop");
         {
             let mcmd = SubCommand::with_name("stop")
-                .about("Stop watching resources through this channel.");
+                .about("Stops watching resources through this channel.");
             channels0 = channels0.subcommand(mcmd);
         }
         let mut chromeosdevices0 = SubCommand::with_name("chromeosdevices")
@@ -66,7 +66,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd =
-                SubCommand::with_name("get").about("Retrieves a Chrome OS device\'s properties.");
+                SubCommand::with_name("get").about("Retrieves a Chrome OS device's properties.");
             chromeosdevices0 = chromeosdevices0.subcommand(mcmd);
         }
         {
@@ -75,15 +75,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             chromeosdevices0 = chromeosdevices0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("move_devices_to_ou").about("Move or insert multiple Chrome OS devices to an organizational unit. You can move up to 50 devices at once.");
+            let mcmd = SubCommand::with_name("move_devices_to_ou").about("Moves or inserts multiple Chrome OS devices to an organizational unit. You can move up to 50 devices at once.");
             chromeosdevices0 = chromeosdevices0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates a device\'s updatable properties, such as `annotatedUser`, `annotatedLocation`, `notes`, `orgUnitPath`, or `annotatedAssetId`. This method supports [patch semantics](/admin-sdk/directory/v1/guides/performance#patch).");
+            let mcmd = SubCommand::with_name("patch").about("Updates a device's updatable properties, such as `annotatedUser`, `annotatedLocation`, `notes`, `orgUnitPath`, or `annotatedAssetId`. This method supports [patch semantics](/admin-sdk/directory/v1/guides/performance#patch).");
             chromeosdevices0 = chromeosdevices0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update").about("Updates a device\'s updatable properties, such as `annotatedUser`, `annotatedLocation`, `notes`, `orgUnitPath`, or `annotatedAssetId`.");
+            let mcmd = SubCommand::with_name("update").about("Updates a device's updatable properties, such as `annotatedUser`, `annotatedLocation`, `notes`, `orgUnitPath`, or `annotatedAssetId`.");
             chromeosdevices0 = chromeosdevices0.subcommand(mcmd);
         }
         let mut customer0 = SubCommand::with_name("customer")
@@ -97,8 +97,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             customers0 = customers0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch")
-                .about("Patch Customers via Apiary Patch Orchestration");
+            let mcmd = SubCommand::with_name("patch").about("Patches a customer.");
             customers0 = customers0.subcommand(mcmd);
         }
         {
@@ -155,7 +154,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             groups0 = groups0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Retrieves a group\'s properties.");
+            let mcmd = SubCommand::with_name("get").about("Retrieves a group's properties.");
             groups0 = groups0.subcommand(mcmd);
         }
         {
@@ -163,16 +162,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             groups0 = groups0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list")
-                .about("Retrieve all groups of a domain or of a user given a userKey (paginated)");
+            let mcmd = SubCommand::with_name("list").about(
+                "Retrieves all groups of a domain or of a user given a userKey (paginated).",
+            );
             groups0 = groups0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates a group\'s properties. This method supports [patch semantics](/admin-sdk/directory/v1/guides/performance#patch).");
+            let mcmd = SubCommand::with_name("patch").about("Updates a group's properties. This method supports [patch semantics](/admin-sdk/directory/v1/guides/performance#patch).");
             groups0 = groups0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update").about("Updates a group\'s properties.");
+            let mcmd = SubCommand::with_name("update").about("Updates a group's properties.");
             groups0 = groups0.subcommand(mcmd);
         }
         let mut members0 = SubCommand::with_name("members")
@@ -183,8 +183,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             members0 = members0.subcommand(mcmd);
         }
         {
-            let mcmd =
-                SubCommand::with_name("get").about("Retrieves a group member\'s properties.");
+            let mcmd = SubCommand::with_name("get").about("Retrieves a group member's properties.");
             members0 = members0.subcommand(mcmd);
         }
         {
@@ -222,12 +221,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd =
-                SubCommand::with_name("get").about("Retrieves a mobile device\'s properties.");
+                SubCommand::with_name("get").about("Retrieves a mobile device's properties.");
             mobiledevices0 = mobiledevices0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list")
-                .about("Retrieves a paginated list of all mobile devices for an account.");
+            let mcmd = SubCommand::with_name("list").about("Retrieves a paginated list of all user-owned mobile devices for an account. To retrieve a list that includes company-owned devices, use the Cloud Identity [Devices API](https://cloud.google.com/identity/docs/concepts/overview-devices) instead.");
             mobiledevices0 = mobiledevices0.subcommand(mcmd);
         }
         let mut orgunits0 = SubCommand::with_name("orgunits")
@@ -277,7 +275,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             role_assignments0 = role_assignments0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Retrieve a role assignment.");
+            let mcmd = SubCommand::with_name("get").about("Retrieves a role assignment.");
             role_assignments0 = role_assignments0.subcommand(mcmd);
         }
         {
@@ -310,8 +308,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             roles0 = roles0.subcommand(mcmd);
         }
         {
-            let mcmd =
-                SubCommand::with_name("patch").about("Patch role via Apiary Patch Orchestration");
+            let mcmd = SubCommand::with_name("patch").about("Patches a role.");
             roles0 = roles0.subcommand(mcmd);
         }
         {
@@ -322,28 +319,27 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete, get, insert, list, patch and update");
         {
-            let mcmd = SubCommand::with_name("delete").about("Delete schema");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a schema.");
             schemas0 = schemas0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Retrieve schema");
+            let mcmd = SubCommand::with_name("get").about("Retrieves a schema.");
             schemas0 = schemas0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("insert").about("Create schema.");
+            let mcmd = SubCommand::with_name("insert").about("Creates a schema.");
             schemas0 = schemas0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Retrieve all schemas for a customer");
+            let mcmd = SubCommand::with_name("list").about("Retrieves all schemas for a customer.");
             schemas0 = schemas0.subcommand(mcmd);
         }
         {
-            let mcmd =
-                SubCommand::with_name("patch").about("Patch Schema via Apiary Patch Orchestration");
+            let mcmd = SubCommand::with_name("patch").about("Patches a schema.");
             schemas0 = schemas0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update").about("Update schema");
+            let mcmd = SubCommand::with_name("update").about("Updates a schema.");
             schemas0 = schemas0.subcommand(mcmd);
         }
         let mut tokens0 = SubCommand::with_name("tokens")
@@ -351,12 +347,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: delete, get and list");
         {
             let mcmd = SubCommand::with_name("delete")
-                .about("Delete all access tokens issued by a user for an application.");
+                .about("Deletes all access tokens issued by a user for an application.");
             tokens0 = tokens0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("get")
-                .about("Get information about an access token issued by a user.");
+                .about("Gets information about an access token issued by a user.");
             tokens0 = tokens0.subcommand(mcmd);
         }
         {
@@ -370,7 +366,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: turn_off");
         {
             let mcmd =
-                SubCommand::with_name("turn_off").about("Turn off 2-Step Verification for user.");
+                SubCommand::with_name("turn_off").about("Turns off 2-Step Verification for user.");
             two_step_verification0 = two_step_verification0.subcommand(mcmd);
         }
         let mut users0 = SubCommand::with_name("users")
@@ -404,7 +400,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             users0 = users0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("sign_out").about("Sign a user out of all web and device sessions and reset their sign-in cookies. User will have to sign in by authenticating again.");
+            let mcmd = SubCommand::with_name("sign_out").about("Signs a user out of all web and device sessions and reset their sign-in cookies. User will have to sign in by authenticating again.");
             users0 = users0.subcommand(mcmd);
         }
         {
@@ -416,7 +412,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             users0 = users0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("watch").about("Watch for changes in users list");
+            let mcmd = SubCommand::with_name("watch").about("Watches for changes in users list.");
             users0 = users0.subcommand(mcmd);
         }
         let mut verification_codes0 = SubCommand::with_name("verification_codes")
@@ -424,12 +420,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: generate, invalidate and list");
         {
             let mcmd = SubCommand::with_name("generate")
-                .about("Generate new backup verification codes for the user.");
+                .about("Generates new backup verification codes for the user.");
             verification_codes0 = verification_codes0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("invalidate")
-                .about("Invalidate the current backup verification codes for the user.");
+                .about("Invalidates the current backup verification codes for the user.");
             verification_codes0 = verification_codes0.subcommand(mcmd);
         }
         {
@@ -478,8 +474,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             buildings1 = buildings1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch")
-                .about("Patches a building via Apiary Patch Orchestration.");
+            let mcmd = SubCommand::with_name("patch").about("Patches a building.");
             buildings1 = buildings1.subcommand(mcmd);
         }
         {
@@ -507,8 +502,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             calendars1 = calendars1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch")
-                .about("Patches a calendar resource via Apiary Patch Orchestration.");
+            let mcmd = SubCommand::with_name("patch").about("Patches a calendar resource.");
             calendars1 = calendars1.subcommand(mcmd);
         }
         {
@@ -536,8 +530,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             features1 = features1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch")
-                .about("Patches a feature via Apiary Patch Orchestration.");
+            let mcmd = SubCommand::with_name("patch").about("Patches a feature.");
             features1 = features1.subcommand(mcmd);
         }
         {
@@ -564,18 +557,18 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             aliases1 = aliases1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("watch").about("Watch for changes in users list.");
+            let mcmd = SubCommand::with_name("watch").about("Watches for changes in users list.");
             aliases1 = aliases1.subcommand(mcmd);
         }
         let mut photos1 = SubCommand::with_name("photos")
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete, get, patch and update");
         {
-            let mcmd = SubCommand::with_name("delete").about("Removes the user\'s photo.");
+            let mcmd = SubCommand::with_name("delete").about("Removes the user's photo.");
             photos1 = photos1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Retrieves the user\'s photo.");
+            let mcmd = SubCommand::with_name("get").about("Retrieves the user's photo.");
             photos1 = photos1.subcommand(mcmd);
         }
         {
@@ -618,7 +611,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("get")
-                .about("Returns a `Printer` resource (printer\'s config).");
+                .about("Returns a `Printer` resource (printer's config).");
             printers2 = printers2.subcommand(mcmd);
         }
         {

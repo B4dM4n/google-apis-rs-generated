@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("secretmanager1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210308")
+            .version("0.1.0-20220408")
             .about("Stores sensitive data such as API keys, passwords, and certificates. Provides convenience while improving security. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -93,7 +93,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: access, destroy, disable, enable, get and list");
         {
-            let mcmd = SubCommand::with_name("access").about("Accesses a SecretVersion. This call returns the secret data. `projects/*/secrets/*/versions/latest` is an alias to the `latest` SecretVersion.");
+            let mcmd = SubCommand::with_name("access").about("Accesses a SecretVersion. This call returns the secret data. `projects/*/secrets/*/versions/latest` is an alias to the most recently created SecretVersion.");
             versions2 = versions2.subcommand(mcmd);
         }
         {
@@ -112,7 +112,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             versions2 = versions2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Gets metadata for a SecretVersion. `projects/*/secrets/*/versions/latest` is an alias to the `latest` SecretVersion.");
+            let mcmd = SubCommand::with_name("get").about("Gets metadata for a SecretVersion. `projects/*/secrets/*/versions/latest` is an alias to the most recently created SecretVersion.");
             versions2 = versions2.subcommand(mcmd);
         }
         {

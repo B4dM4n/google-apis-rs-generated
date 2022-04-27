@@ -7,7 +7,7 @@
   "canonicalName": "Chrome UX Report",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20210317",
+  "revision": "20220425",
   "title": "Chrome UX Report API",
   "description": "The Chrome UX Report API lets you view real user experience data for millions of websites. ",
   "ownerDomain": "google.com",

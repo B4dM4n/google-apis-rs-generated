@@ -1,4 +1,4 @@
-#![doc = "# Resources and Methods\n    * [abuse_reports](resources/abuse_reports/struct.AbuseReportsActions.html)\n      * [*insert*](resources/abuse_reports/struct.InsertRequestBuilder.html)\n    * [activities](resources/activities/struct.ActivitiesActions.html)\n      * [*list*](resources/activities/struct.ListRequestBuilder.html)\n    * [captions](resources/captions/struct.CaptionsActions.html)\n      * [*delete*](resources/captions/struct.DeleteRequestBuilder.html), [*download*](resources/captions/struct.DownloadRequestBuilder.html), [*insert*](resources/captions/struct.InsertRequestBuilder.html), [*list*](resources/captions/struct.ListRequestBuilder.html), [*update*](resources/captions/struct.UpdateRequestBuilder.html)\n    * [channel_banners](resources/channel_banners/struct.ChannelBannersActions.html)\n      * [*insert*](resources/channel_banners/struct.InsertRequestBuilder.html)\n    * [channel_sections](resources/channel_sections/struct.ChannelSectionsActions.html)\n      * [*delete*](resources/channel_sections/struct.DeleteRequestBuilder.html), [*insert*](resources/channel_sections/struct.InsertRequestBuilder.html), [*list*](resources/channel_sections/struct.ListRequestBuilder.html), [*update*](resources/channel_sections/struct.UpdateRequestBuilder.html)\n    * [channels](resources/channels/struct.ChannelsActions.html)\n      * [*list*](resources/channels/struct.ListRequestBuilder.html), [*update*](resources/channels/struct.UpdateRequestBuilder.html)\n    * [comment_threads](resources/comment_threads/struct.CommentThreadsActions.html)\n      * [*insert*](resources/comment_threads/struct.InsertRequestBuilder.html), [*list*](resources/comment_threads/struct.ListRequestBuilder.html), [*update*](resources/comment_threads/struct.UpdateRequestBuilder.html)\n    * [comments](resources/comments/struct.CommentsActions.html)\n      * [*delete*](resources/comments/struct.DeleteRequestBuilder.html), [*insert*](resources/comments/struct.InsertRequestBuilder.html), [*list*](resources/comments/struct.ListRequestBuilder.html), [*markAsSpam*](resources/comments/struct.MarkAsSpamRequestBuilder.html), [*setModerationStatus*](resources/comments/struct.SetModerationStatusRequestBuilder.html), [*update*](resources/comments/struct.UpdateRequestBuilder.html)\n    * [i_1_8n_languages](resources/i_1_8n_languages/struct.I18NLanguagesActions.html)\n      * [*list*](resources/i_1_8n_languages/struct.ListRequestBuilder.html)\n    * [i_1_8n_regions](resources/i_1_8n_regions/struct.I18NRegionsActions.html)\n      * [*list*](resources/i_1_8n_regions/struct.ListRequestBuilder.html)\n    * [live_broadcasts](resources/live_broadcasts/struct.LiveBroadcastsActions.html)\n      * [*bind*](resources/live_broadcasts/struct.BindRequestBuilder.html), [*delete*](resources/live_broadcasts/struct.DeleteRequestBuilder.html), [*insert*](resources/live_broadcasts/struct.InsertRequestBuilder.html), [*list*](resources/live_broadcasts/struct.ListRequestBuilder.html), [*transition*](resources/live_broadcasts/struct.TransitionRequestBuilder.html), [*update*](resources/live_broadcasts/struct.UpdateRequestBuilder.html)\n    * [live_chat_bans](resources/live_chat_bans/struct.LiveChatBansActions.html)\n      * [*delete*](resources/live_chat_bans/struct.DeleteRequestBuilder.html), [*insert*](resources/live_chat_bans/struct.InsertRequestBuilder.html)\n    * [live_chat_messages](resources/live_chat_messages/struct.LiveChatMessagesActions.html)\n      * [*delete*](resources/live_chat_messages/struct.DeleteRequestBuilder.html), [*insert*](resources/live_chat_messages/struct.InsertRequestBuilder.html), [*list*](resources/live_chat_messages/struct.ListRequestBuilder.html)\n    * [live_chat_moderators](resources/live_chat_moderators/struct.LiveChatModeratorsActions.html)\n      * [*delete*](resources/live_chat_moderators/struct.DeleteRequestBuilder.html), [*insert*](resources/live_chat_moderators/struct.InsertRequestBuilder.html), [*list*](resources/live_chat_moderators/struct.ListRequestBuilder.html)\n    * [live_streams](resources/live_streams/struct.LiveStreamsActions.html)\n      * [*delete*](resources/live_streams/struct.DeleteRequestBuilder.html), [*insert*](resources/live_streams/struct.InsertRequestBuilder.html), [*list*](resources/live_streams/struct.ListRequestBuilder.html), [*update*](resources/live_streams/struct.UpdateRequestBuilder.html)\n    * [members](resources/members/struct.MembersActions.html)\n      * [*list*](resources/members/struct.ListRequestBuilder.html)\n    * [memberships_levels](resources/memberships_levels/struct.MembershipsLevelsActions.html)\n      * [*list*](resources/memberships_levels/struct.ListRequestBuilder.html)\n    * [playlist_items](resources/playlist_items/struct.PlaylistItemsActions.html)\n      * [*delete*](resources/playlist_items/struct.DeleteRequestBuilder.html), [*insert*](resources/playlist_items/struct.InsertRequestBuilder.html), [*list*](resources/playlist_items/struct.ListRequestBuilder.html), [*update*](resources/playlist_items/struct.UpdateRequestBuilder.html)\n    * [playlists](resources/playlists/struct.PlaylistsActions.html)\n      * [*delete*](resources/playlists/struct.DeleteRequestBuilder.html), [*insert*](resources/playlists/struct.InsertRequestBuilder.html), [*list*](resources/playlists/struct.ListRequestBuilder.html), [*update*](resources/playlists/struct.UpdateRequestBuilder.html)\n    * [search](resources/search/struct.SearchActions.html)\n      * [*list*](resources/search/struct.ListRequestBuilder.html)\n    * [subscriptions](resources/subscriptions/struct.SubscriptionsActions.html)\n      * [*delete*](resources/subscriptions/struct.DeleteRequestBuilder.html), [*insert*](resources/subscriptions/struct.InsertRequestBuilder.html), [*list*](resources/subscriptions/struct.ListRequestBuilder.html)\n    * [super_chat_events](resources/super_chat_events/struct.SuperChatEventsActions.html)\n      * [*list*](resources/super_chat_events/struct.ListRequestBuilder.html)\n    * [tests](resources/tests/struct.TestsActions.html)\n      * [*insert*](resources/tests/struct.InsertRequestBuilder.html)\n    * [third_party_links](resources/third_party_links/struct.ThirdPartyLinksActions.html)\n      * [*delete*](resources/third_party_links/struct.DeleteRequestBuilder.html), [*insert*](resources/third_party_links/struct.InsertRequestBuilder.html), [*list*](resources/third_party_links/struct.ListRequestBuilder.html), [*update*](resources/third_party_links/struct.UpdateRequestBuilder.html)\n    * [thumbnails](resources/thumbnails/struct.ThumbnailsActions.html)\n      * [*set*](resources/thumbnails/struct.SetRequestBuilder.html)\n    * [video_abuse_report_reasons](resources/video_abuse_report_reasons/struct.VideoAbuseReportReasonsActions.html)\n      * [*list*](resources/video_abuse_report_reasons/struct.ListRequestBuilder.html)\n    * [video_categories](resources/video_categories/struct.VideoCategoriesActions.html)\n      * [*list*](resources/video_categories/struct.ListRequestBuilder.html)\n    * [videos](resources/videos/struct.VideosActions.html)\n      * [*delete*](resources/videos/struct.DeleteRequestBuilder.html), [*getRating*](resources/videos/struct.GetRatingRequestBuilder.html), [*insert*](resources/videos/struct.InsertRequestBuilder.html), [*list*](resources/videos/struct.ListRequestBuilder.html), [*rate*](resources/videos/struct.RateRequestBuilder.html), [*reportAbuse*](resources/videos/struct.ReportAbuseRequestBuilder.html), [*update*](resources/videos/struct.UpdateRequestBuilder.html)\n    * [watermarks](resources/watermarks/struct.WatermarksActions.html)\n      * [*set*](resources/watermarks/struct.SetRequestBuilder.html), [*unset*](resources/watermarks/struct.UnsetRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [abuse_reports](resources/abuse_reports/struct.AbuseReportsActions.html)\n      * [*insert*](resources/abuse_reports/struct.InsertRequestBuilder.html)\n    * [activities](resources/activities/struct.ActivitiesActions.html)\n      * [*list*](resources/activities/struct.ListRequestBuilder.html)\n    * [captions](resources/captions/struct.CaptionsActions.html)\n      * [*delete*](resources/captions/struct.DeleteRequestBuilder.html), [*download*](resources/captions/struct.DownloadRequestBuilder.html), [*insert*](resources/captions/struct.InsertRequestBuilder.html), [*list*](resources/captions/struct.ListRequestBuilder.html), [*update*](resources/captions/struct.UpdateRequestBuilder.html)\n    * [channel_banners](resources/channel_banners/struct.ChannelBannersActions.html)\n      * [*insert*](resources/channel_banners/struct.InsertRequestBuilder.html)\n    * [channel_sections](resources/channel_sections/struct.ChannelSectionsActions.html)\n      * [*delete*](resources/channel_sections/struct.DeleteRequestBuilder.html), [*insert*](resources/channel_sections/struct.InsertRequestBuilder.html), [*list*](resources/channel_sections/struct.ListRequestBuilder.html), [*update*](resources/channel_sections/struct.UpdateRequestBuilder.html)\n    * [channels](resources/channels/struct.ChannelsActions.html)\n      * [*list*](resources/channels/struct.ListRequestBuilder.html), [*update*](resources/channels/struct.UpdateRequestBuilder.html)\n    * [comment_threads](resources/comment_threads/struct.CommentThreadsActions.html)\n      * [*insert*](resources/comment_threads/struct.InsertRequestBuilder.html), [*list*](resources/comment_threads/struct.ListRequestBuilder.html)\n    * [comments](resources/comments/struct.CommentsActions.html)\n      * [*delete*](resources/comments/struct.DeleteRequestBuilder.html), [*insert*](resources/comments/struct.InsertRequestBuilder.html), [*list*](resources/comments/struct.ListRequestBuilder.html), [*markAsSpam*](resources/comments/struct.MarkAsSpamRequestBuilder.html), [*setModerationStatus*](resources/comments/struct.SetModerationStatusRequestBuilder.html), [*update*](resources/comments/struct.UpdateRequestBuilder.html)\n    * [i_1_8n_languages](resources/i_1_8n_languages/struct.I18NLanguagesActions.html)\n      * [*list*](resources/i_1_8n_languages/struct.ListRequestBuilder.html)\n    * [i_1_8n_regions](resources/i_1_8n_regions/struct.I18NRegionsActions.html)\n      * [*list*](resources/i_1_8n_regions/struct.ListRequestBuilder.html)\n    * [live_broadcasts](resources/live_broadcasts/struct.LiveBroadcastsActions.html)\n      * [*bind*](resources/live_broadcasts/struct.BindRequestBuilder.html), [*delete*](resources/live_broadcasts/struct.DeleteRequestBuilder.html), [*insert*](resources/live_broadcasts/struct.InsertRequestBuilder.html), [*list*](resources/live_broadcasts/struct.ListRequestBuilder.html), [*transition*](resources/live_broadcasts/struct.TransitionRequestBuilder.html), [*update*](resources/live_broadcasts/struct.UpdateRequestBuilder.html)\n    * [live_chat_bans](resources/live_chat_bans/struct.LiveChatBansActions.html)\n      * [*delete*](resources/live_chat_bans/struct.DeleteRequestBuilder.html), [*insert*](resources/live_chat_bans/struct.InsertRequestBuilder.html)\n    * [live_chat_messages](resources/live_chat_messages/struct.LiveChatMessagesActions.html)\n      * [*delete*](resources/live_chat_messages/struct.DeleteRequestBuilder.html), [*insert*](resources/live_chat_messages/struct.InsertRequestBuilder.html), [*list*](resources/live_chat_messages/struct.ListRequestBuilder.html)\n    * [live_chat_moderators](resources/live_chat_moderators/struct.LiveChatModeratorsActions.html)\n      * [*delete*](resources/live_chat_moderators/struct.DeleteRequestBuilder.html), [*insert*](resources/live_chat_moderators/struct.InsertRequestBuilder.html), [*list*](resources/live_chat_moderators/struct.ListRequestBuilder.html)\n    * [live_streams](resources/live_streams/struct.LiveStreamsActions.html)\n      * [*delete*](resources/live_streams/struct.DeleteRequestBuilder.html), [*insert*](resources/live_streams/struct.InsertRequestBuilder.html), [*list*](resources/live_streams/struct.ListRequestBuilder.html), [*update*](resources/live_streams/struct.UpdateRequestBuilder.html)\n    * [members](resources/members/struct.MembersActions.html)\n      * [*list*](resources/members/struct.ListRequestBuilder.html)\n    * [memberships_levels](resources/memberships_levels/struct.MembershipsLevelsActions.html)\n      * [*list*](resources/memberships_levels/struct.ListRequestBuilder.html)\n    * [playlist_items](resources/playlist_items/struct.PlaylistItemsActions.html)\n      * [*delete*](resources/playlist_items/struct.DeleteRequestBuilder.html), [*insert*](resources/playlist_items/struct.InsertRequestBuilder.html), [*list*](resources/playlist_items/struct.ListRequestBuilder.html), [*update*](resources/playlist_items/struct.UpdateRequestBuilder.html)\n    * [playlists](resources/playlists/struct.PlaylistsActions.html)\n      * [*delete*](resources/playlists/struct.DeleteRequestBuilder.html), [*insert*](resources/playlists/struct.InsertRequestBuilder.html), [*list*](resources/playlists/struct.ListRequestBuilder.html), [*update*](resources/playlists/struct.UpdateRequestBuilder.html)\n    * [search](resources/search/struct.SearchActions.html)\n      * [*list*](resources/search/struct.ListRequestBuilder.html)\n    * [subscriptions](resources/subscriptions/struct.SubscriptionsActions.html)\n      * [*delete*](resources/subscriptions/struct.DeleteRequestBuilder.html), [*insert*](resources/subscriptions/struct.InsertRequestBuilder.html), [*list*](resources/subscriptions/struct.ListRequestBuilder.html)\n    * [super_chat_events](resources/super_chat_events/struct.SuperChatEventsActions.html)\n      * [*list*](resources/super_chat_events/struct.ListRequestBuilder.html)\n    * [tests](resources/tests/struct.TestsActions.html)\n      * [*insert*](resources/tests/struct.InsertRequestBuilder.html)\n    * [third_party_links](resources/third_party_links/struct.ThirdPartyLinksActions.html)\n      * [*delete*](resources/third_party_links/struct.DeleteRequestBuilder.html), [*insert*](resources/third_party_links/struct.InsertRequestBuilder.html), [*list*](resources/third_party_links/struct.ListRequestBuilder.html), [*update*](resources/third_party_links/struct.UpdateRequestBuilder.html)\n    * [thumbnails](resources/thumbnails/struct.ThumbnailsActions.html)\n      * [*set*](resources/thumbnails/struct.SetRequestBuilder.html)\n    * [video_abuse_report_reasons](resources/video_abuse_report_reasons/struct.VideoAbuseReportReasonsActions.html)\n      * [*list*](resources/video_abuse_report_reasons/struct.ListRequestBuilder.html)\n    * [video_categories](resources/video_categories/struct.VideoCategoriesActions.html)\n      * [*list*](resources/video_categories/struct.ListRequestBuilder.html)\n    * [videos](resources/videos/struct.VideosActions.html)\n      * [*delete*](resources/videos/struct.DeleteRequestBuilder.html), [*getRating*](resources/videos/struct.GetRatingRequestBuilder.html), [*insert*](resources/videos/struct.InsertRequestBuilder.html), [*list*](resources/videos/struct.ListRequestBuilder.html), [*rate*](resources/videos/struct.RateRequestBuilder.html), [*reportAbuse*](resources/videos/struct.ReportAbuseRequestBuilder.html), [*update*](resources/videos/struct.UpdateRequestBuilder.html)\n    * [watermarks](resources/watermarks/struct.WatermarksActions.html)\n      * [*set*](resources/watermarks/struct.SetRequestBuilder.html), [*unset*](resources/watermarks/struct.UnsetRequestBuilder.html)\n    * [youtube](resources/youtube/struct.YoutubeActions.html)\n      * [v_3](resources/youtube/v_3/struct.V3Actions.html)\n        * [*updateCommentThreads*](resources/youtube/v_3/struct.UpdateCommentThreadsRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Manage your YouTube account\n\n`https://www.googleapis.com/auth/youtube`"]
     pub const YOUTUBE: &str = "https://www.googleapis.com/auth/youtube";
@@ -870,7 +870,7 @@ pub mod schemas {
         Facebook,
         GooglePlus,
         Twitter,
-        TypeUnspecified,
+        Unspecified,
     }
     impl ActivityContentDetailsSocialType {
         pub fn as_str(self) -> &'static str {
@@ -878,7 +878,7 @@ pub mod schemas {
                 ActivityContentDetailsSocialType::Facebook => "facebook",
                 ActivityContentDetailsSocialType::GooglePlus => "googlePlus",
                 ActivityContentDetailsSocialType::Twitter => "twitter",
-                ActivityContentDetailsSocialType::TypeUnspecified => "typeUnspecified",
+                ActivityContentDetailsSocialType::Unspecified => "unspecified",
             }
         }
     }
@@ -894,7 +894,7 @@ pub mod schemas {
                 "facebook" => ActivityContentDetailsSocialType::Facebook,
                 "googlePlus" => ActivityContentDetailsSocialType::GooglePlus,
                 "twitter" => ActivityContentDetailsSocialType::Twitter,
-                "typeUnspecified" => ActivityContentDetailsSocialType::TypeUnspecified,
+                "unspecified" => ActivityContentDetailsSocialType::Unspecified,
                 _ => return Err(()),
             })
         }
@@ -922,7 +922,7 @@ pub mod schemas {
                 "facebook" => ActivityContentDetailsSocialType::Facebook,
                 "googlePlus" => ActivityContentDetailsSocialType::GooglePlus,
                 "twitter" => ActivityContentDetailsSocialType::Twitter,
-                "typeUnspecified" => ActivityContentDetailsSocialType::TypeUnspecified,
+                "unspecified" => ActivityContentDetailsSocialType::Unspecified,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -1937,6 +1937,7 @@ pub mod schemas {
         Dash,
         Hls,
         Rtmp,
+        Srt,
         Webrtc,
     }
     impl CdnSettingsIngestionType {
@@ -1945,6 +1946,7 @@ pub mod schemas {
                 CdnSettingsIngestionType::Dash => "dash",
                 CdnSettingsIngestionType::Hls => "hls",
                 CdnSettingsIngestionType::Rtmp => "rtmp",
+                CdnSettingsIngestionType::Srt => "srt",
                 CdnSettingsIngestionType::Webrtc => "webrtc",
             }
         }
@@ -1961,6 +1963,7 @@ pub mod schemas {
                 "dash" => CdnSettingsIngestionType::Dash,
                 "hls" => CdnSettingsIngestionType::Hls,
                 "rtmp" => CdnSettingsIngestionType::Rtmp,
+                "srt" => CdnSettingsIngestionType::Srt,
                 "webrtc" => CdnSettingsIngestionType::Webrtc,
                 _ => return Err(()),
             })
@@ -1989,6 +1992,7 @@ pub mod schemas {
                 "dash" => CdnSettingsIngestionType::Dash,
                 "hls" => CdnSettingsIngestionType::Hls,
                 "rtmp" => CdnSettingsIngestionType::Rtmp,
+                "srt" => CdnSettingsIngestionType::Srt,
                 "webrtc" => CdnSettingsIngestionType::Webrtc,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -3085,7 +3089,7 @@ pub mod schemas {
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ChannelSectionSnippetType {
         AllPlaylists,
-        ChannelsectionTypeUnspecified,
+        ChannelsectionTypeUndefined,
         CompletedEvents,
         LikedPlaylists,
         Likes,
@@ -3106,8 +3110,8 @@ pub mod schemas {
         pub fn as_str(self) -> &'static str {
             match self {
                 ChannelSectionSnippetType::AllPlaylists => "allPlaylists",
-                ChannelSectionSnippetType::ChannelsectionTypeUnspecified => {
-                    "channelsectionTypeUnspecified"
+                ChannelSectionSnippetType::ChannelsectionTypeUndefined => {
+                    "channelsectionTypeUndefined"
                 }
                 ChannelSectionSnippetType::CompletedEvents => "completedEvents",
                 ChannelSectionSnippetType::LikedPlaylists => "likedPlaylists",
@@ -3137,8 +3141,8 @@ pub mod schemas {
         fn from_str(s: &str) -> ::std::result::Result<ChannelSectionSnippetType, ()> {
             Ok(match s {
                 "allPlaylists" => ChannelSectionSnippetType::AllPlaylists,
-                "channelsectionTypeUnspecified" => {
-                    ChannelSectionSnippetType::ChannelsectionTypeUnspecified
+                "channelsectionTypeUndefined" => {
+                    ChannelSectionSnippetType::ChannelsectionTypeUndefined
                 }
                 "completedEvents" => ChannelSectionSnippetType::CompletedEvents,
                 "likedPlaylists" => ChannelSectionSnippetType::LikedPlaylists,
@@ -3180,8 +3184,8 @@ pub mod schemas {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
                 "allPlaylists" => ChannelSectionSnippetType::AllPlaylists,
-                "channelsectionTypeUnspecified" => {
-                    ChannelSectionSnippetType::ChannelsectionTypeUnspecified
+                "channelsectionTypeUndefined" => {
+                    ChannelSectionSnippetType::ChannelsectionTypeUndefined
                 }
                 "completedEvents" => ChannelSectionSnippetType::CompletedEvents,
                 "likedPlaylists" => ChannelSectionSnippetType::LikedPlaylists,
@@ -3826,6 +3830,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ChannelToStoreLinkDetails {
+        #[doc = "Google Merchant Center id of the store."]
+        #[serde(
+            rename = "merchantId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub merchant_id: ::std::option::Option<u64>,
         #[doc = "Name of the store."]
         #[serde(
             rename = "storeName",
@@ -5914,6 +5926,12 @@ pub mod schemas {
         CbfcU,
         #[doc = "U/A"]
         CbfcUA,
+        #[doc = "U/A 13+"]
+        CbfcUA13Plus,
+        #[doc = "U/A 16+"]
+        CbfcUA16Plus,
+        #[doc = "U/A 7+"]
+        CbfcUA7Plus,
         CbfcUnrated,
         CbfcUnspecified,
     }
@@ -5924,6 +5942,9 @@ pub mod schemas {
                 ContentRatingCbfcRating::CbfcS => "cbfcS",
                 ContentRatingCbfcRating::CbfcU => "cbfcU",
                 ContentRatingCbfcRating::CbfcUA => "cbfcUA",
+                ContentRatingCbfcRating::CbfcUA13Plus => "cbfcUA13plus",
+                ContentRatingCbfcRating::CbfcUA16Plus => "cbfcUA16plus",
+                ContentRatingCbfcRating::CbfcUA7Plus => "cbfcUA7plus",
                 ContentRatingCbfcRating::CbfcUnrated => "cbfcUnrated",
                 ContentRatingCbfcRating::CbfcUnspecified => "cbfcUnspecified",
             }
@@ -5942,6 +5963,9 @@ pub mod schemas {
                 "cbfcS" => ContentRatingCbfcRating::CbfcS,
                 "cbfcU" => ContentRatingCbfcRating::CbfcU,
                 "cbfcUA" => ContentRatingCbfcRating::CbfcUA,
+                "cbfcUA13plus" => ContentRatingCbfcRating::CbfcUA13Plus,
+                "cbfcUA16plus" => ContentRatingCbfcRating::CbfcUA16Plus,
+                "cbfcUA7plus" => ContentRatingCbfcRating::CbfcUA7Plus,
                 "cbfcUnrated" => ContentRatingCbfcRating::CbfcUnrated,
                 "cbfcUnspecified" => ContentRatingCbfcRating::CbfcUnspecified,
                 _ => return Err(()),
@@ -5972,6 +5996,9 @@ pub mod schemas {
                 "cbfcS" => ContentRatingCbfcRating::CbfcS,
                 "cbfcU" => ContentRatingCbfcRating::CbfcU,
                 "cbfcUA" => ContentRatingCbfcRating::CbfcUA,
+                "cbfcUA13plus" => ContentRatingCbfcRating::CbfcUA13Plus,
+                "cbfcUA16plus" => ContentRatingCbfcRating::CbfcUA16Plus,
+                "cbfcUA7plus" => ContentRatingCbfcRating::CbfcUA7Plus,
                 "cbfcUnrated" => ContentRatingCbfcRating::CbfcUnrated,
                 "cbfcUnspecified" => ContentRatingCbfcRating::CbfcUnspecified,
                 _ => {
@@ -9906,7 +9933,9 @@ pub mod schemas {
         MibacVap,
         MibacVm12,
         MibacVm14,
+        MibacVm16,
         MibacVm18,
+        MibacVm6,
     }
     impl ContentRatingMibacRating {
         pub fn as_str(self) -> &'static str {
@@ -9917,7 +9946,9 @@ pub mod schemas {
                 ContentRatingMibacRating::MibacVap => "mibacVap",
                 ContentRatingMibacRating::MibacVm12 => "mibacVm12",
                 ContentRatingMibacRating::MibacVm14 => "mibacVm14",
+                ContentRatingMibacRating::MibacVm16 => "mibacVm16",
                 ContentRatingMibacRating::MibacVm18 => "mibacVm18",
+                ContentRatingMibacRating::MibacVm6 => "mibacVm6",
             }
         }
     }
@@ -9936,7 +9967,9 @@ pub mod schemas {
                 "mibacVap" => ContentRatingMibacRating::MibacVap,
                 "mibacVm12" => ContentRatingMibacRating::MibacVm12,
                 "mibacVm14" => ContentRatingMibacRating::MibacVm14,
+                "mibacVm16" => ContentRatingMibacRating::MibacVm16,
                 "mibacVm18" => ContentRatingMibacRating::MibacVm18,
+                "mibacVm6" => ContentRatingMibacRating::MibacVm6,
                 _ => return Err(()),
             })
         }
@@ -9967,7 +10000,9 @@ pub mod schemas {
                 "mibacVap" => ContentRatingMibacRating::MibacVap,
                 "mibacVm12" => ContentRatingMibacRating::MibacVm12,
                 "mibacVm14" => ContentRatingMibacRating::MibacVm14,
+                "mibacVm16" => ContentRatingMibacRating::MibacVm16,
                 "mibacVm18" => ContentRatingMibacRating::MibacVm18,
+                "mibacVm6" => ContentRatingMibacRating::MibacVm6,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -12794,7 +12829,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub rtmps_ingestion_address: ::std::option::Option<String>,
-        #[doc = "The HTTP or RTMP stream name that YouTube assigns to the video stream."]
+        #[doc = "The stream name that YouTube assigns to the video stream."]
         #[serde(
             rename = "streamName",
             default,
@@ -13953,14 +13988,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub published_at: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
-        #[doc = "The date and time that the broadcast is scheduled to start."]
+        #[doc = "The date and time that the broadcast is scheduled to end."]
         #[serde(
             rename = "scheduledEndTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub scheduled_end_time: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
-        #[doc = "The date and time that the broadcast is scheduled to end."]
+        #[doc = "The date and time that the broadcast is scheduled to start."]
         #[serde(
             rename = "scheduledStartTime",
             default,
@@ -14698,6 +14733,134 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct LiveChatGiftMembershipReceivedDetails {
+        #[doc = "The ID of the membership gifting message that is related to this gift membership. This ID will always refer to a message whose type is 'membershipGiftingEvent'."]
+        #[serde(
+            rename = "associatedMembershipGiftingMessageId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub associated_membership_gifting_message_id: ::std::option::Option<String>,
+        #[doc = "The ID of the user that made the membership gifting purchase. This matches the `snippet.authorChannelId` of the associated membership gifting message."]
+        #[serde(
+            rename = "gifterChannelId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gifter_channel_id: ::std::option::Option<String>,
+        #[doc = "The name of the Level at which the viewer is a member. This matches the `snippet.membershipGiftingDetails.giftMembershipsLevelName` of the associated membership gifting message. The Level names are defined by the YouTube channel offering the Membership. In some situations this field isn't filled."]
+        #[serde(
+            rename = "memberLevelName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub member_level_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for LiveChatGiftMembershipReceivedDetails {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LiveChatGiftMembershipReceivedDetails {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct LiveChatMemberMilestoneChatDetails {
+        #[doc = "The name of the Level at which the viever is a member. The Level names are defined by the YouTube channel offering the Membership. In some situations this field isn't filled."]
+        #[serde(
+            rename = "memberLevelName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub member_level_name: ::std::option::Option<String>,
+        #[doc = "The total amount of months (rounded up) the viewer has been a member that granted them this Member Milestone Chat. This is the same number of months as is being displayed to YouTube users."]
+        #[serde(
+            rename = "memberMonth",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub member_month: ::std::option::Option<u32>,
+        #[doc = "The comment added by the member to this Member Milestone Chat. This field is empty for messages without a comment from the member."]
+        #[serde(
+            rename = "userComment",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_comment: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for LiveChatMemberMilestoneChatDetails {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LiveChatMemberMilestoneChatDetails {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct LiveChatMembershipGiftingDetails {
+        #[doc = "The number of gift memberships purchased by the user."]
+        #[serde(
+            rename = "giftMembershipsCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gift_memberships_count: ::std::option::Option<i32>,
+        #[doc = "The name of the level of the gift memberships purchased by the user. The Level names are defined by the YouTube channel offering the Membership. In some situations this field isn't filled."]
+        #[serde(
+            rename = "giftMembershipsLevelName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gift_memberships_level_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for LiveChatMembershipGiftingDetails {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LiveChatMembershipGiftingDetails {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct LiveChatMessage {
         #[doc = "The authorDetails object contains basic details about the user that posted this message."]
         #[serde(
@@ -14989,7 +15152,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LiveChatMessageSnippet {
-        #[doc = "The ID of the user that authored this message, this field is not always filled. textMessageEvent - the user that wrote the message fanFundingEvent - the user that funded the broadcast newSponsorEvent - the user that just became a sponsor messageDeletedEvent - the moderator that took the action messageRetractedEvent - the author that retracted their message userBannedEvent - the moderator that took the action superChatEvent - the user that made the purchase"]
+        #[doc = "The ID of the user that authored this message, this field is not always filled. textMessageEvent - the user that wrote the message fanFundingEvent - the user that funded the broadcast newSponsorEvent - the user that just became a sponsor memberMilestoneChatEvent - the member that sent the message membershipGiftingEvent - the user that made the purchase giftMembershipReceivedEvent - the user that received the gift membership messageDeletedEvent - the moderator that took the action messageRetractedEvent - the author that retracted their message userBannedEvent - the moderator that took the action superChatEvent - the user that made the purchase superStickerEvent - the user that made the purchase"]
         #[serde(
             rename = "authorChannelId",
             default,
@@ -15011,6 +15174,14 @@ pub mod schemas {
         )]
         pub fan_funding_event_details:
             ::std::option::Option<crate::schemas::LiveChatFanFundingEventDetails>,
+        #[doc = "Details about the Gift Membership Received event, this is only set if the type is 'giftMembershipReceivedEvent'."]
+        #[serde(
+            rename = "giftMembershipReceivedDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gift_membership_received_details:
+            ::std::option::Option<crate::schemas::LiveChatGiftMembershipReceivedDetails>,
         #[doc = "Whether the message has display content that should be displayed to users."]
         #[serde(
             rename = "hasDisplayContent",
@@ -15024,6 +15195,22 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub live_chat_id: ::std::option::Option<String>,
+        #[doc = "Details about the Member Milestone Chat event, this is only set if the type is 'memberMilestoneChatEvent'."]
+        #[serde(
+            rename = "memberMilestoneChatDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub member_milestone_chat_details:
+            ::std::option::Option<crate::schemas::LiveChatMemberMilestoneChatDetails>,
+        #[doc = "Details about the Membership Gifting event, this is only set if the type is 'membershipGiftingEvent'."]
+        #[serde(
+            rename = "membershipGiftingDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub membership_gifting_details:
+            ::std::option::Option<crate::schemas::LiveChatMembershipGiftingDetails>,
         #[serde(
             rename = "messageDeletedDetails",
             default,
@@ -15038,6 +15225,13 @@ pub mod schemas {
         )]
         pub message_retracted_details:
             ::std::option::Option<crate::schemas::LiveChatMessageRetractedDetails>,
+        #[doc = "Details about the New Member Announcement event, this is only set if the type is 'newSponsorEvent'. Please note that \"member\" is the new term for \"sponsor\"."]
+        #[serde(
+            rename = "newSponsorDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub new_sponsor_details: ::std::option::Option<crate::schemas::LiveChatNewSponsorDetails>,
         #[doc = "The date and time when the message was orignally published."]
         #[serde(
             rename = "publishedAt",
@@ -15096,7 +15290,10 @@ pub mod schemas {
     pub enum LiveChatMessageSnippetType {
         ChatEndedEvent,
         FanFundingEvent,
+        GiftMembershipReceivedEvent,
         InvalidType,
+        MemberMilestoneChatEvent,
+        MembershipGiftingEvent,
         MessageDeletedEvent,
         MessageRetractedEvent,
         NewSponsorEvent,
@@ -15113,7 +15310,12 @@ pub mod schemas {
             match self {
                 LiveChatMessageSnippetType::ChatEndedEvent => "chatEndedEvent",
                 LiveChatMessageSnippetType::FanFundingEvent => "fanFundingEvent",
+                LiveChatMessageSnippetType::GiftMembershipReceivedEvent => {
+                    "giftMembershipReceivedEvent"
+                }
                 LiveChatMessageSnippetType::InvalidType => "invalidType",
+                LiveChatMessageSnippetType::MemberMilestoneChatEvent => "memberMilestoneChatEvent",
+                LiveChatMessageSnippetType::MembershipGiftingEvent => "membershipGiftingEvent",
                 LiveChatMessageSnippetType::MessageDeletedEvent => "messageDeletedEvent",
                 LiveChatMessageSnippetType::MessageRetractedEvent => "messageRetractedEvent",
                 LiveChatMessageSnippetType::NewSponsorEvent => "newSponsorEvent",
@@ -15142,7 +15344,12 @@ pub mod schemas {
             Ok(match s {
                 "chatEndedEvent" => LiveChatMessageSnippetType::ChatEndedEvent,
                 "fanFundingEvent" => LiveChatMessageSnippetType::FanFundingEvent,
+                "giftMembershipReceivedEvent" => {
+                    LiveChatMessageSnippetType::GiftMembershipReceivedEvent
+                }
                 "invalidType" => LiveChatMessageSnippetType::InvalidType,
+                "memberMilestoneChatEvent" => LiveChatMessageSnippetType::MemberMilestoneChatEvent,
+                "membershipGiftingEvent" => LiveChatMessageSnippetType::MembershipGiftingEvent,
                 "messageDeletedEvent" => LiveChatMessageSnippetType::MessageDeletedEvent,
                 "messageRetractedEvent" => LiveChatMessageSnippetType::MessageRetractedEvent,
                 "newSponsorEvent" => LiveChatMessageSnippetType::NewSponsorEvent,
@@ -15183,7 +15390,12 @@ pub mod schemas {
             Ok(match value {
                 "chatEndedEvent" => LiveChatMessageSnippetType::ChatEndedEvent,
                 "fanFundingEvent" => LiveChatMessageSnippetType::FanFundingEvent,
+                "giftMembershipReceivedEvent" => {
+                    LiveChatMessageSnippetType::GiftMembershipReceivedEvent
+                }
                 "invalidType" => LiveChatMessageSnippetType::InvalidType,
+                "memberMilestoneChatEvent" => LiveChatMessageSnippetType::MemberMilestoneChatEvent,
+                "membershipGiftingEvent" => LiveChatMessageSnippetType::MembershipGiftingEvent,
                 "messageDeletedEvent" => LiveChatMessageSnippetType::MessageDeletedEvent,
                 "messageRetractedEvent" => LiveChatMessageSnippetType::MessageRetractedEvent,
                 "newSponsorEvent" => LiveChatMessageSnippetType::NewSponsorEvent,
@@ -15389,6 +15601,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for LiveChatModeratorSnippet {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct LiveChatNewSponsorDetails {
+        #[doc = "If the viewer just had upgraded from a lower level. For viewers that were not members at the time of purchase, this field is false."]
+        #[serde(
+            rename = "isUpgrade",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub is_upgrade: ::std::option::Option<bool>,
+        #[doc = "The name of the Level that the viewer just had joined. The Level names are defined by the YouTube channel offering the Membership. In some situations this field isn't filled."]
+        #[serde(
+            rename = "memberLevelName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub member_level_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for LiveChatNewSponsorDetails {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LiveChatNewSponsorDetails {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -19119,6 +19369,12 @@ pub mod schemas {
     )]
     pub struct TestItem {
         #[serde(
+            rename = "featuredPart",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub featured_part: ::std::option::Option<bool>,
+        #[serde(
             rename = "gaia",
             default,
             skip_serializing_if = "std::option::Option::is_none"
@@ -21054,6 +21310,65 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct VideoGetRatingResponse {
+        #[doc = "Etag of this resource."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
+        #[doc = "Serialized EventId of the request which produced this response."]
+        #[serde(
+            rename = "eventId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event_id: ::std::option::Option<String>,
+        #[doc = "A list of ratings that match the request criteria."]
+        #[serde(
+            rename = "items",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub items: ::std::option::Option<Vec<crate::schemas::VideoRating>>,
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#videoGetRatingResponse\"."]
+        #[serde(
+            rename = "kind",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kind: ::std::option::Option<String>,
+        #[doc = "The visitorId identifies the visitor."]
+        #[serde(
+            rename = "visitorId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub visitor_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for VideoGetRatingResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for VideoGetRatingResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct VideoListResponse {
@@ -21731,65 +22046,6 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for VideoRatingRating {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct VideoRatingListResponse {
-        #[doc = "Etag of this resource."]
-        #[serde(
-            rename = "etag",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub etag: ::std::option::Option<String>,
-        #[doc = "Serialized EventId of the request which produced this response."]
-        #[serde(
-            rename = "eventId",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub event_id: ::std::option::Option<String>,
-        #[doc = "A list of ratings that match the request criteria."]
-        #[serde(
-            rename = "items",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub items: ::std::option::Option<Vec<crate::schemas::VideoRating>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#videoGetRatingResponse\"."]
-        #[serde(
-            rename = "kind",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub kind: ::std::option::Option<String>,
-        #[doc = "The visitorId identifies the visitor."]
-        #[serde(
-            rename = "visitorId",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub visitor_id: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for VideoRatingListResponse {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for VideoRatingListResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -23638,6 +23894,13 @@ impl Client {
     #[doc = "Actions that can be performed on the watermarks resource"]
     pub fn watermarks(&self) -> crate::resources::watermarks::WatermarksActions {
         crate::resources::watermarks::WatermarksActions {
+            reqwest: &self.reqwest,
+            auth: self.auth_ref(),
+        }
+    }
+    #[doc = "Actions that can be performed on the youtube resource"]
+    pub fn youtube(&self) -> crate::resources::youtube::YoutubeActions {
+        crate::resources::youtube::YoutubeActions {
             reqwest: &self.reqwest,
             auth: self.auth_ref(),
         }
@@ -27140,30 +27403,6 @@ pub mod resources {
                     video_id: None,
                 }
             }
-            #[doc = "Updates an existing resource."]
-            pub fn update(
-                &self,
-                request: crate::schemas::CommentThread,
-                part: impl Into<Vec<String>>,
-            ) -> UpdateRequestBuilder {
-                UpdateRequestBuilder {
-                    reqwest: &self.reqwest,
-                    auth: self.auth_ref(),
-                    request,
-                    access_token: None,
-                    alt: None,
-                    callback: None,
-                    fields: None,
-                    key: None,
-                    oauth_token: None,
-                    pretty_print: None,
-                    quota_user: None,
-                    upload_protocol: None,
-                    upload_type: None,
-                    xgafv: None,
-                    part: part.into(),
-                }
-            }
         }
         #[doc = "Created via [CommentThreadsActions::insert()](struct.CommentThreadsActions.html#method.insert)"]
         #[derive(Debug, Clone)]
@@ -27665,160 +27904,6 @@ pub mod resources {
                 T: ::serde::de::DeserializeOwned,
             {
                 self._execute()
-            }
-        }
-        #[doc = "Created via [CommentThreadsActions::update()](struct.CommentThreadsActions.html#method.update)"]
-        #[derive(Debug, Clone)]
-        pub struct UpdateRequestBuilder<'a> {
-            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
-            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-            request: crate::schemas::CommentThread,
-            part: Vec<String>,
-            access_token: Option<String>,
-            alt: Option<crate::params::Alt>,
-            callback: Option<String>,
-            fields: Option<String>,
-            key: Option<String>,
-            oauth_token: Option<String>,
-            pretty_print: Option<bool>,
-            quota_user: Option<String>,
-            upload_protocol: Option<String>,
-            upload_type: Option<String>,
-            xgafv: Option<crate::params::Xgafv>,
-        }
-        impl<'a> UpdateRequestBuilder<'a> {
-            #[doc = "OAuth access token."]
-            pub fn access_token(mut self, value: impl Into<String>) -> Self {
-                self.access_token = Some(value.into());
-                self
-            }
-            #[doc = "JSONP"]
-            pub fn callback(mut self, value: impl Into<String>) -> Self {
-                self.callback = Some(value.into());
-                self
-            }
-            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
-            pub fn key(mut self, value: impl Into<String>) -> Self {
-                self.key = Some(value.into());
-                self
-            }
-            #[doc = "OAuth 2.0 token for the current user."]
-            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
-                self.oauth_token = Some(value.into());
-                self
-            }
-            #[doc = "Returns response with indentations and line breaks."]
-            pub fn pretty_print(mut self, value: bool) -> Self {
-                self.pretty_print = Some(value);
-                self
-            }
-            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
-            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
-                self.quota_user = Some(value.into());
-                self
-            }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
-            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
-                self.upload_protocol = Some(value.into());
-                self
-            }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
-            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
-                self.upload_type = Some(value.into());
-                self
-            }
-            #[doc = "V1 error format."]
-            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
-                self.xgafv = Some(value);
-                self
-            }
-            #[doc = r" Execute the given operation. The fields requested are"]
-            #[doc = r" determined by the FieldSelector attribute of the return type."]
-            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
-            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
-            #[doc = r" are not generic over the return type and deserialize the"]
-            #[doc = r" response into an auto-generated struct will all possible"]
-            #[doc = r" fields."]
-            pub fn execute<T>(self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
-            {
-                let fields = ::google_field_selector::to_string::<T>();
-                let fields: Option<String> = if fields.is_empty() {
-                    None
-                } else {
-                    Some(fields)
-                };
-                self.execute_with_fields(fields)
-            }
-            #[doc = r" Execute the given operation. This will not provide any"]
-            #[doc = r" `fields` selector indicating that the server will determine"]
-            #[doc = r" the fields returned. This typically includes the most common"]
-            #[doc = r" fields, but it will not include every possible attribute of"]
-            #[doc = r" the response resource."]
-            pub fn execute_with_default_fields(
-                self,
-            ) -> Result<crate::schemas::CommentThread, crate::Error> {
-                self.execute_with_fields(None::<&str>)
-            }
-            #[doc = r" Execute the given operation. This will provide a `fields`"]
-            #[doc = r" selector of `*`. This will include every attribute of the"]
-            #[doc = r" response resource and should be limited to use during"]
-            #[doc = r" development or debugging."]
-            pub fn execute_with_all_fields(
-                self,
-            ) -> Result<crate::schemas::CommentThread, crate::Error> {
-                self.execute_with_fields(Some("*"))
-            }
-            #[doc = r" Execute the given operation. This will use the `fields`"]
-            #[doc = r" selector provided and will deserialize the response into"]
-            #[doc = r" whatever return value is provided."]
-            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-                F: Into<String>,
-            {
-                self.fields = fields.map(Into::into);
-                self._execute()
-            }
-            fn _execute<T>(&mut self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-            {
-                let req = self._request(&self._path())?;
-                let req = req.json(&self.request);
-                Ok(crate::error_from_response(req.send()?)?.json()?)
-            }
-            fn _path(&self) -> String {
-                let mut output = "https://youtube.googleapis.com/".to_owned();
-                output.push_str("youtube/v3/commentThreads");
-                output
-            }
-            fn _request(
-                &self,
-                path: &str,
-            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
-                let mut req = self.reqwest.request(::reqwest::Method::PUT, path);
-                for value in &self.part {
-                    req = req.query(&[("part", value)]);
-                }
-                req = req.query(&[("access_token", &self.access_token)]);
-                req = req.query(&[("alt", &self.alt)]);
-                req = req.query(&[("callback", &self.callback)]);
-                req = req.query(&[("fields", &self.fields)]);
-                req = req.query(&[("key", &self.key)]);
-                req = req.query(&[("oauth_token", &self.oauth_token)]);
-                req = req.query(&[("prettyPrint", &self.pretty_print)]);
-                req = req.query(&[("quotaUser", &self.quota_user)]);
-                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
-                req = req.query(&[("uploadType", &self.upload_type)]);
-                req = req.query(&[("$.xgafv", &self.xgafv)]);
-                req = req.bearer_auth(
-                    self.auth
-                        .access_token()
-                        .map_err(|err| crate::Error::OAuth2(err))?,
-                );
-                Ok(req)
             }
         }
     }
@@ -36210,6 +36295,7 @@ pub mod resources {
             }
             #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
             pub enum ListVideoDimension {
+                #[doc = "Include both 3D and non-3D videos in returned results. This is the default value."]
                 Any,
                 #[doc = "Restrict search results to exclude 3D videos."]
                 _2D,
@@ -38367,6 +38453,7 @@ pub mod resources {
                     upload_type: None,
                     xgafv: None,
                     part: part.into(),
+                    external_channel_id: None,
                 }
             }
         }
@@ -38377,6 +38464,7 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             request: crate::schemas::TestItem,
             part: Vec<String>,
+            external_channel_id: Option<String>,
             access_token: Option<String>,
             alt: Option<crate::params::Alt>,
             callback: Option<String>,
@@ -38390,6 +38478,11 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> InsertRequestBuilder<'a> {
+            #[doc = ""]
+            pub fn external_channel_id(mut self, value: impl Into<String>) -> Self {
+                self.external_channel_id = Some(value.into());
+                self
+            }
             #[doc = "OAuth access token."]
             pub fn access_token(mut self, value: impl Into<String>) -> Self {
                 self.access_token = Some(value.into());
@@ -38503,6 +38596,7 @@ pub mod resources {
                 for value in &self.part {
                     req = req.query(&[("part", value)]);
                 }
+                req = req.query(&[("externalChannelId", &self.external_channel_id)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -38696,6 +38790,7 @@ pub mod resources {
                     xgafv: None,
                     linking_token: linking_token.into(),
                     r#type,
+                    external_channel_id: None,
                     part: None,
                 }
             }
@@ -38721,6 +38816,7 @@ pub mod resources {
                     upload_type: None,
                     xgafv: None,
                     part: part.into(),
+                    external_channel_id: None,
                 }
             }
             #[doc = "Retrieves a list of resources, possibly filtered."]
@@ -38740,6 +38836,7 @@ pub mod resources {
                     upload_type: None,
                     xgafv: None,
                     part: part.into(),
+                    external_channel_id: None,
                     linking_token: None,
                     r#type: None,
                 }
@@ -38766,6 +38863,7 @@ pub mod resources {
                     upload_type: None,
                     xgafv: None,
                     part: part.into(),
+                    external_channel_id: None,
                 }
             }
         }
@@ -38776,6 +38874,7 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             linking_token: String,
             r#type: crate::resources::third_party_links::params::DeleteType,
+            external_channel_id: Option<String>,
             part: Option<Vec<String>>,
             access_token: Option<String>,
             alt: Option<crate::params::Alt>,
@@ -38790,6 +38889,11 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
+            #[doc = "Channel ID to which changes should be applied, for delegation."]
+            pub fn external_channel_id(mut self, value: impl Into<String>) -> Self {
+                self.external_channel_id = Some(value.into());
+                self
+            }
             #[doc = "Do not use. Required for compatibility."]
             pub fn part(mut self, value: impl Into<Vec<String>>) -> Self {
                 self.part = Some(value.into());
@@ -38857,6 +38961,7 @@ pub mod resources {
                 let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
                 req = req.query(&[("linkingToken", &self.linking_token)]);
                 req = req.query(&[("type", &self.r#type)]);
+                req = req.query(&[("externalChannelId", &self.external_channel_id)]);
                 for value in self.part.iter().flatten() {
                     req = req.query(&[("part", value)]);
                 }
@@ -38886,6 +38991,7 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             request: crate::schemas::ThirdPartyLink,
             part: Vec<String>,
+            external_channel_id: Option<String>,
             access_token: Option<String>,
             alt: Option<crate::params::Alt>,
             callback: Option<String>,
@@ -38899,6 +39005,11 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> InsertRequestBuilder<'a> {
+            #[doc = "Channel ID to which changes should be applied, for delegation."]
+            pub fn external_channel_id(mut self, value: impl Into<String>) -> Self {
+                self.external_channel_id = Some(value.into());
+                self
+            }
             #[doc = "OAuth access token."]
             pub fn access_token(mut self, value: impl Into<String>) -> Self {
                 self.access_token = Some(value.into());
@@ -39014,6 +39125,7 @@ pub mod resources {
                 for value in &self.part {
                     req = req.query(&[("part", value)]);
                 }
+                req = req.query(&[("externalChannelId", &self.external_channel_id)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -39039,6 +39151,7 @@ pub mod resources {
             pub(crate) reqwest: &'a ::reqwest::blocking::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             part: Vec<String>,
+            external_channel_id: Option<String>,
             linking_token: Option<String>,
             r#type: Option<crate::resources::third_party_links::params::ListType>,
             access_token: Option<String>,
@@ -39054,6 +39167,11 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
+            #[doc = "Channel ID to which changes should be applied, for delegation."]
+            pub fn external_channel_id(mut self, value: impl Into<String>) -> Self {
+                self.external_channel_id = Some(value.into());
+                self
+            }
             #[doc = "Get a third party link with the given linking token."]
             pub fn linking_token(mut self, value: impl Into<String>) -> Self {
                 self.linking_token = Some(value.into());
@@ -39181,6 +39299,7 @@ pub mod resources {
                 for value in &self.part {
                     req = req.query(&[("part", value)]);
                 }
+                req = req.query(&[("externalChannelId", &self.external_channel_id)]);
                 req = req.query(&[("linkingToken", &self.linking_token)]);
                 req = req.query(&[("type", &self.r#type)]);
                 req = req.query(&[("access_token", &self.access_token)]);
@@ -39209,6 +39328,7 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             request: crate::schemas::ThirdPartyLink,
             part: Vec<String>,
+            external_channel_id: Option<String>,
             access_token: Option<String>,
             alt: Option<crate::params::Alt>,
             callback: Option<String>,
@@ -39222,6 +39342,11 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> UpdateRequestBuilder<'a> {
+            #[doc = "Channel ID to which changes should be applied, for delegation."]
+            pub fn external_channel_id(mut self, value: impl Into<String>) -> Self {
+                self.external_channel_id = Some(value.into());
+                self
+            }
             #[doc = "OAuth access token."]
             pub fn access_token(mut self, value: impl Into<String>) -> Self {
                 self.access_token = Some(value.into());
@@ -39337,6 +39462,7 @@ pub mod resources {
                 for value in &self.part {
                     req = req.query(&[("part", value)]);
                 }
+                req = req.query(&[("externalChannelId", &self.external_channel_id)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -40623,7 +40749,7 @@ pub mod resources {
             #[doc = r" the response resource."]
             pub fn execute_with_default_fields(
                 self,
-            ) -> Result<crate::schemas::VideoRatingListResponse, crate::Error> {
+            ) -> Result<crate::schemas::VideoGetRatingResponse, crate::Error> {
                 self.execute_with_fields(None::<&str>)
             }
             #[doc = r" Execute the given operation. This will provide a `fields`"]
@@ -40632,7 +40758,7 @@ pub mod resources {
             #[doc = r" development or debugging."]
             pub fn execute_with_all_fields(
                 self,
-            ) -> Result<crate::schemas::VideoRatingListResponse, crate::Error> {
+            ) -> Result<crate::schemas::VideoGetRatingResponse, crate::Error> {
                 self.execute_with_fields(Some("*"))
             }
             #[doc = r" Execute the given operation. This will use the `fields`"]
@@ -42001,6 +42127,222 @@ pub mod resources {
                         .map_err(|err| crate::Error::OAuth2(err))?,
                 );
                 Ok(req)
+            }
+        }
+    }
+    pub mod youtube {
+        pub mod params {}
+        pub struct YoutubeActions<'a> {
+            pub(crate) reqwest: &'a reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+        }
+        impl<'a> YoutubeActions<'a> {
+            fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                self.auth
+            }
+            #[doc = "Actions that can be performed on the v_3 resource"]
+            pub fn v_3(&self) -> crate::resources::youtube::v_3::V3Actions {
+                crate::resources::youtube::v_3::V3Actions {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                }
+            }
+        }
+        pub mod v_3 {
+            pub mod params {}
+            pub struct V3Actions<'a> {
+                pub(crate) reqwest: &'a reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            }
+            impl<'a> V3Actions<'a> {
+                fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                    self.auth
+                }
+                #[doc = "Updates an existing resource."]
+                pub fn update_comment_threads(
+                    &self,
+                    request: crate::schemas::CommentThread,
+                ) -> UpdateCommentThreadsRequestBuilder {
+                    UpdateCommentThreadsRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        part: None,
+                    }
+                }
+            }
+            #[doc = "Created via [V3Actions::update_comment_threads()](struct.V3Actions.html#method.update_comment_threads)"]
+            #[derive(Debug, Clone)]
+            pub struct UpdateCommentThreadsRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::CommentThread,
+                part: Option<Vec<String>>,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> UpdateCommentThreadsRequestBuilder<'a> {
+                #[doc = "The *part* parameter specifies a comma-separated list of commentThread resource properties that the API response will include. You must at least include the snippet part in the parameter value since that part contains all of the properties that the API request can update."]
+                pub fn part(mut self, value: impl Into<Vec<String>>) -> Self {
+                    self.part = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::CommentThread, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::CommentThread, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://youtube.googleapis.com/".to_owned();
+                    output.push_str("youtube/v3/commentThreads");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::PUT, path);
+                    for value in self.part.iter().flatten() {
+                        req = req.query(&[("part", value)]);
+                    }
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
+                }
             }
         }
     }

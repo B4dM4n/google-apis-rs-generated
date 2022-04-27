@@ -1,4 +1,4 @@
-#![doc = "# Resources and Methods\n    * [conversion](resources/conversion/struct.ConversionActions.html)\n      * [*get*](resources/conversion/struct.GetRequestBuilder.html), [*insert*](resources/conversion/struct.InsertRequestBuilder.html), [*update*](resources/conversion/struct.UpdateRequestBuilder.html), [*updateAvailability*](resources/conversion/struct.UpdateAvailabilityRequestBuilder.html)\n    * [reports](resources/reports/struct.ReportsActions.html)\n      * [*generate*](resources/reports/struct.GenerateRequestBuilder.html), [*get*](resources/reports/struct.GetRequestBuilder.html), [*getFile*](resources/reports/struct.GetFileRequestBuilder.html), [*request*](resources/reports/struct.RequestRequestBuilder.html)\n    * [saved_columns](resources/saved_columns/struct.SavedColumnsActions.html)\n      * [*list*](resources/saved_columns/struct.ListRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [conversion](resources/conversion/struct.ConversionActions.html)\n      * [*get*](resources/conversion/struct.GetRequestBuilder.html), [*insert*](resources/conversion/struct.InsertRequestBuilder.html), [*update*](resources/conversion/struct.UpdateRequestBuilder.html), [*updateAvailability*](resources/conversion/struct.UpdateAvailabilityRequestBuilder.html)\n    * [reports](resources/reports/struct.ReportsActions.html)\n      * [*generate*](resources/reports/struct.GenerateRequestBuilder.html), [*get*](resources/reports/struct.GetRequestBuilder.html), [*getFile*](resources/reports/struct.GetFileRequestBuilder.html), [*getIdMappingFile*](resources/reports/struct.GetIdMappingFileRequestBuilder.html), [*request*](resources/reports/struct.RequestRequestBuilder.html)\n    * [saved_columns](resources/saved_columns/struct.SavedColumnsActions.html)\n      * [*list*](resources/saved_columns/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "View and manage your advertising data in DoubleClick Search\n\n`https://www.googleapis.com/auth/doubleclicksearch`"]
     pub const DOUBLECLICKSEARCH: &str = "https://www.googleapis.com/auth/doubleclicksearch";
@@ -426,6 +426,30 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CustomMetric {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct IdMappingFile {}
+    impl ::google_field_selector::FieldSelector for IdMappingFile {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IdMappingFile {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2151,6 +2175,30 @@ pub mod resources {
                     report_fragment,
                 }
             }
+            #[doc = "Downloads a csv file(encoded in UTF-8) that contains ID mappings between legacy SA360 and new SA360. The file includes all children entities of the given advertiser(e.g. engine accounts, campaigns, ad groups, etc.) that exist in both legacy SA360 and new SA360."]
+            pub fn get_id_mapping_file(
+                &self,
+                agency_id: i64,
+                advertiser_id: i64,
+            ) -> GetIdMappingFileRequestBuilder {
+                GetIdMappingFileRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    agency_id,
+                    advertiser_id,
+                }
+            }
             #[doc = "Inserts a report request into the reporting system."]
             pub fn request(&self, request: crate::schemas::ReportRequest) -> RequestRequestBuilder {
                 RequestRequestBuilder {
@@ -2593,6 +2641,207 @@ pub mod resources {
                         crate::SIMPLE,
                     ));
                 }
+                output
+            }
+            fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                req = req.bearer_auth(
+                    self.auth
+                        .access_token()
+                        .map_err(|err| crate::Error::OAuth2(err))?,
+                );
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [ReportsActions::get_id_mapping_file()](struct.ReportsActions.html#method.get_id_mapping_file)"]
+        #[derive(Debug, Clone)]
+        pub struct GetIdMappingFileRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            agency_id: i64,
+            advertiser_id: i64,
+            access_token: Option<String>,
+            alt: Option<crate::params::Alt>,
+            callback: Option<String>,
+            fields: Option<String>,
+            key: Option<String>,
+            oauth_token: Option<String>,
+            pretty_print: Option<bool>,
+            quota_user: Option<String>,
+            upload_protocol: Option<String>,
+            upload_type: Option<String>,
+            xgafv: Option<crate::params::Xgafv>,
+        }
+        impl<'a> GetIdMappingFileRequestBuilder<'a> {
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            fn _download_path(&self) -> String {
+                let mut output = "https://doubleclicksearch.googleapis.com/download/".to_owned();
+                output.push_str("doubleclicksearch/v2/agency/");
+                {
+                    let var_as_string = self.agency_id.to_string();
+                    let var_as_str = &var_as_string;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output.push_str("/advertiser/");
+                {
+                    let var_as_string = self.advertiser_id.to_string();
+                    let var_as_str = &var_as_string;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output.push_str("/idmapping");
+                output
+            }
+            pub fn download<W>(mut self, output: &mut W) -> Result<u64, crate::Error>
+            where
+                W: ::std::io::Write + ?Sized,
+            {
+                self.alt = Some(crate::params::Alt::Media);
+                Ok(
+                    crate::error_from_response(self._request(&self._path())?.send()?)?
+                        .copy_to(output)?,
+                )
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields)
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::IdMappingFile, crate::Error> {
+                self.execute_with_fields(None::<&str>)
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::IdMappingFile, crate::Error> {
+                self.execute_with_fields(Some("*"))
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute()
+            }
+            fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path())?;
+                Ok(crate::error_from_response(req.send()?)?.json()?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://doubleclicksearch.googleapis.com/".to_owned();
+                output.push_str("doubleclicksearch/v2/agency/");
+                {
+                    let var_as_string = self.agency_id.to_string();
+                    let var_as_str = &var_as_string;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output.push_str("/advertiser/");
+                {
+                    let var_as_string = self.advertiser_id.to_string();
+                    let var_as_str = &var_as_string;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output.push_str("/idmapping");
                 output
             }
             fn _request(

@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [customers](resources/customers/struct.CustomersActions.html)\n      * [*get*](resources/customers/struct.GetRequestBuilder.html), [*list*](resources/customers/struct.ListRequestBuilder.html), [*patch*](resources/customers/struct.PatchRequestBuilder.html)\n      * [deployments](resources/customers/deployments/struct.DeploymentsActions.html)\n        * [*create*](resources/customers/deployments/struct.CreateRequestBuilder.html), [*delete*](resources/customers/deployments/struct.DeleteRequestBuilder.html), [*get*](resources/customers/deployments/struct.GetRequestBuilder.html), [*list*](resources/customers/deployments/struct.ListRequestBuilder.html), [*move*](resources/customers/deployments/struct.MoveRequestBuilder.html), [*patch*](resources/customers/deployments/struct.PatchRequestBuilder.html)\n        * [devices](resources/customers/deployments/devices/struct.DevicesActions.html)\n          * [*create*](resources/customers/deployments/devices/struct.CreateRequestBuilder.html), [*createSigned*](resources/customers/deployments/devices/struct.CreateSignedRequestBuilder.html), [*list*](resources/customers/deployments/devices/struct.ListRequestBuilder.html)\n      * [devices](resources/customers/devices/struct.DevicesActions.html)\n        * [*create*](resources/customers/devices/struct.CreateRequestBuilder.html), [*createSigned*](resources/customers/devices/struct.CreateSignedRequestBuilder.html), [*delete*](resources/customers/devices/struct.DeleteRequestBuilder.html), [*get*](resources/customers/devices/struct.GetRequestBuilder.html), [*list*](resources/customers/devices/struct.ListRequestBuilder.html), [*move*](resources/customers/devices/struct.MoveRequestBuilder.html), [*patch*](resources/customers/devices/struct.PatchRequestBuilder.html), [*signDevice*](resources/customers/devices/struct.SignDeviceRequestBuilder.html), [*updateSigned*](resources/customers/devices/struct.UpdateSignedRequestBuilder.html)\n      * [nodes](resources/customers/nodes/struct.NodesActions.html)\n        * [*create*](resources/customers/nodes/struct.CreateRequestBuilder.html), [*delete*](resources/customers/nodes/struct.DeleteRequestBuilder.html), [*get*](resources/customers/nodes/struct.GetRequestBuilder.html), [*list*](resources/customers/nodes/struct.ListRequestBuilder.html), [*move*](resources/customers/nodes/struct.MoveRequestBuilder.html), [*patch*](resources/customers/nodes/struct.PatchRequestBuilder.html)\n        * [deployments](resources/customers/nodes/deployments/struct.DeploymentsActions.html)\n          * [*create*](resources/customers/nodes/deployments/struct.CreateRequestBuilder.html), [*list*](resources/customers/nodes/deployments/struct.ListRequestBuilder.html)\n        * [devices](resources/customers/nodes/devices/struct.DevicesActions.html)\n          * [*create*](resources/customers/nodes/devices/struct.CreateRequestBuilder.html), [*createSigned*](resources/customers/nodes/devices/struct.CreateSignedRequestBuilder.html), [*list*](resources/customers/nodes/devices/struct.ListRequestBuilder.html)\n        * [nodes](resources/customers/nodes/nodes/struct.NodesActions.html)\n          * [*create*](resources/customers/nodes/nodes/struct.CreateRequestBuilder.html), [*list*](resources/customers/nodes/nodes/struct.ListRequestBuilder.html)\n    * [deployments](resources/deployments/struct.DeploymentsActions.html)\n      * [*get*](resources/deployments/struct.GetRequestBuilder.html)\n      * [devices](resources/deployments/devices/struct.DevicesActions.html)\n        * [*delete*](resources/deployments/devices/struct.DeleteRequestBuilder.html), [*get*](resources/deployments/devices/struct.GetRequestBuilder.html), [*move*](resources/deployments/devices/struct.MoveRequestBuilder.html), [*patch*](resources/deployments/devices/struct.PatchRequestBuilder.html), [*signDevice*](resources/deployments/devices/struct.SignDeviceRequestBuilder.html), [*updateSigned*](resources/deployments/devices/struct.UpdateSignedRequestBuilder.html)\n    * [installer](resources/installer/struct.InstallerActions.html)\n      * [*generateSecret*](resources/installer/struct.GenerateSecretRequestBuilder.html), [*validate*](resources/installer/struct.ValidateRequestBuilder.html)\n    * [nodes](resources/nodes/struct.NodesActions.html)\n      * [*get*](resources/nodes/struct.GetRequestBuilder.html)\n      * [deployments](resources/nodes/deployments/struct.DeploymentsActions.html)\n        * [*delete*](resources/nodes/deployments/struct.DeleteRequestBuilder.html), [*get*](resources/nodes/deployments/struct.GetRequestBuilder.html), [*list*](resources/nodes/deployments/struct.ListRequestBuilder.html), [*move*](resources/nodes/deployments/struct.MoveRequestBuilder.html), [*patch*](resources/nodes/deployments/struct.PatchRequestBuilder.html)\n        * [devices](resources/nodes/deployments/devices/struct.DevicesActions.html)\n          * [*create*](resources/nodes/deployments/devices/struct.CreateRequestBuilder.html), [*createSigned*](resources/nodes/deployments/devices/struct.CreateSignedRequestBuilder.html), [*list*](resources/nodes/deployments/devices/struct.ListRequestBuilder.html)\n      * [devices](resources/nodes/devices/struct.DevicesActions.html)\n        * [*create*](resources/nodes/devices/struct.CreateRequestBuilder.html), [*createSigned*](resources/nodes/devices/struct.CreateSignedRequestBuilder.html), [*delete*](resources/nodes/devices/struct.DeleteRequestBuilder.html), [*get*](resources/nodes/devices/struct.GetRequestBuilder.html), [*list*](resources/nodes/devices/struct.ListRequestBuilder.html), [*move*](resources/nodes/devices/struct.MoveRequestBuilder.html), [*patch*](resources/nodes/devices/struct.PatchRequestBuilder.html), [*signDevice*](resources/nodes/devices/struct.SignDeviceRequestBuilder.html), [*updateSigned*](resources/nodes/devices/struct.UpdateSignedRequestBuilder.html)\n      * [nodes](resources/nodes/nodes/struct.NodesActions.html)\n        * [*create*](resources/nodes/nodes/struct.CreateRequestBuilder.html), [*delete*](resources/nodes/nodes/struct.DeleteRequestBuilder.html), [*get*](resources/nodes/nodes/struct.GetRequestBuilder.html), [*list*](resources/nodes/nodes/struct.ListRequestBuilder.html), [*move*](resources/nodes/nodes/struct.MoveRequestBuilder.html), [*patch*](resources/nodes/nodes/struct.PatchRequestBuilder.html)\n        * [deployments](resources/nodes/nodes/deployments/struct.DeploymentsActions.html)\n          * [*create*](resources/nodes/nodes/deployments/struct.CreateRequestBuilder.html), [*list*](resources/nodes/nodes/deployments/struct.ListRequestBuilder.html)\n        * [devices](resources/nodes/nodes/devices/struct.DevicesActions.html)\n          * [*create*](resources/nodes/nodes/devices/struct.CreateRequestBuilder.html), [*createSigned*](resources/nodes/nodes/devices/struct.CreateSignedRequestBuilder.html), [*list*](resources/nodes/nodes/devices/struct.ListRequestBuilder.html)\n        * [nodes](resources/nodes/nodes/nodes/struct.NodesActions.html)\n          * [*create*](resources/nodes/nodes/nodes/struct.CreateRequestBuilder.html), [*list*](resources/nodes/nodes/nodes/struct.ListRequestBuilder.html)\n    * [policies](resources/policies/struct.PoliciesActions.html)\n      * [*get*](resources/policies/struct.GetRequestBuilder.html), [*set*](resources/policies/struct.SetRequestBuilder.html), [*test*](resources/policies/struct.TestRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View your email address\n\n`https://www.googleapis.com/auth/userinfo.email`"]
+    #[doc = "See your primary Google Account email address\n\n`https://www.googleapis.com/auth/userinfo.email`"]
     pub const USERINFO_EMAIL: &str = "https://www.googleapis.com/auth/userinfo.email";
 }
 pub mod schemas {
@@ -167,22 +167,6 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SasPortalDeployment {
-        #[doc = "The allowed billing modes under this deployment."]
-        #[serde(
-            rename = "allowedBillingModes",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub allowed_billing_modes:
-            ::std::option::Option<Vec<crate::schemas::SasPortalDeploymentAllowedBillingModesItems>>,
-        #[doc = "Default billing mode for the deployment and devices under it."]
-        #[serde(
-            rename = "defaultBillingMode",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub default_billing_mode:
-            ::std::option::Option<crate::schemas::SasPortalDeploymentDefaultBillingMode>,
         #[doc = "The deployment's display name."]
         #[serde(
             rename = "displayName",
@@ -190,6 +174,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
+        #[doc = "Output only. The FRNs copied from its direct parent."]
+        #[serde(
+            rename = "frns",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub frns: ::std::option::Option<Vec<String>>,
         #[doc = "Output only. Resource name."]
         #[serde(
             rename = "name",
@@ -211,172 +202,6 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SasPortalDeployment {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum SasPortalDeploymentAllowedBillingModesItems {
-        #[doc = "Billing mode has not been specified."]
-        BillingModeUnspecified,
-        #[doc = "Price is based on type of CBSD: Base station or CPE."]
-        FixedWireless,
-        #[doc = "Price is based on category of CBSD: Category A, Category B registered with SAS."]
-        Mobile,
-    }
-    impl SasPortalDeploymentAllowedBillingModesItems {
-        pub fn as_str(self) -> &'static str {
-            match self {
-                SasPortalDeploymentAllowedBillingModesItems::BillingModeUnspecified => {
-                    "BILLING_MODE_UNSPECIFIED"
-                }
-                SasPortalDeploymentAllowedBillingModesItems::FixedWireless => "FIXED_WIRELESS",
-                SasPortalDeploymentAllowedBillingModesItems::Mobile => "MOBILE",
-            }
-        }
-    }
-    impl ::std::convert::AsRef<str> for SasPortalDeploymentAllowedBillingModesItems {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr for SasPortalDeploymentAllowedBillingModesItems {
-        type Err = ();
-        fn from_str(
-            s: &str,
-        ) -> ::std::result::Result<SasPortalDeploymentAllowedBillingModesItems, ()> {
-            Ok(match s {
-                "BILLING_MODE_UNSPECIFIED" => {
-                    SasPortalDeploymentAllowedBillingModesItems::BillingModeUnspecified
-                }
-                "FIXED_WIRELESS" => SasPortalDeploymentAllowedBillingModesItems::FixedWireless,
-                "MOBILE" => SasPortalDeploymentAllowedBillingModesItems::Mobile,
-                _ => return Err(()),
-            })
-        }
-    }
-    impl ::std::fmt::Display for SasPortalDeploymentAllowedBillingModesItems {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize for SasPortalDeploymentAllowedBillingModesItems {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de> for SasPortalDeploymentAllowedBillingModesItems {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok(match value {
-                "BILLING_MODE_UNSPECIFIED" => {
-                    SasPortalDeploymentAllowedBillingModesItems::BillingModeUnspecified
-                }
-                "FIXED_WIRELESS" => SasPortalDeploymentAllowedBillingModesItems::FixedWireless,
-                "MOBILE" => SasPortalDeploymentAllowedBillingModesItems::Mobile,
-                _ => {
-                    return Err(::serde::de::Error::custom(format!(
-                        "invalid enum for #name: {}",
-                        value
-                    )))
-                }
-            })
-        }
-    }
-    impl ::google_field_selector::FieldSelector for SasPortalDeploymentAllowedBillingModesItems {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for SasPortalDeploymentAllowedBillingModesItems {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum SasPortalDeploymentDefaultBillingMode {
-        #[doc = "Billing mode has not been specified."]
-        BillingModeUnspecified,
-        #[doc = "Price is based on type of CBSD: Base station or CPE."]
-        FixedWireless,
-        #[doc = "Price is based on category of CBSD: Category A, Category B registered with SAS."]
-        Mobile,
-    }
-    impl SasPortalDeploymentDefaultBillingMode {
-        pub fn as_str(self) -> &'static str {
-            match self {
-                SasPortalDeploymentDefaultBillingMode::BillingModeUnspecified => {
-                    "BILLING_MODE_UNSPECIFIED"
-                }
-                SasPortalDeploymentDefaultBillingMode::FixedWireless => "FIXED_WIRELESS",
-                SasPortalDeploymentDefaultBillingMode::Mobile => "MOBILE",
-            }
-        }
-    }
-    impl ::std::convert::AsRef<str> for SasPortalDeploymentDefaultBillingMode {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr for SasPortalDeploymentDefaultBillingMode {
-        type Err = ();
-        fn from_str(s: &str) -> ::std::result::Result<SasPortalDeploymentDefaultBillingMode, ()> {
-            Ok(match s {
-                "BILLING_MODE_UNSPECIFIED" => {
-                    SasPortalDeploymentDefaultBillingMode::BillingModeUnspecified
-                }
-                "FIXED_WIRELESS" => SasPortalDeploymentDefaultBillingMode::FixedWireless,
-                "MOBILE" => SasPortalDeploymentDefaultBillingMode::Mobile,
-                _ => return Err(()),
-            })
-        }
-    }
-    impl ::std::fmt::Display for SasPortalDeploymentDefaultBillingMode {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize for SasPortalDeploymentDefaultBillingMode {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de> for SasPortalDeploymentDefaultBillingMode {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok(match value {
-                "BILLING_MODE_UNSPECIFIED" => {
-                    SasPortalDeploymentDefaultBillingMode::BillingModeUnspecified
-                }
-                "FIXED_WIRELESS" => SasPortalDeploymentDefaultBillingMode::FixedWireless,
-                "MOBILE" => SasPortalDeploymentDefaultBillingMode::Mobile,
-                _ => {
-                    return Err(::serde::de::Error::custom(format!(
-                        "invalid enum for #name: {}",
-                        value
-                    )))
-                }
-            })
-        }
-    }
-    impl ::google_field_selector::FieldSelector for SasPortalDeploymentDefaultBillingMode {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for SasPortalDeploymentDefaultBillingMode {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -889,7 +714,7 @@ pub mod schemas {
         fn from_str(
             s: &str,
         ) -> ::std::result::Result<SasPortalDeviceConfigMeasurementCapabilitiesItems, ()> {
-            Ok ( match s { "MEASUREMENT_CAPABILITY_RECEIVED_POWER_WITH_GRANT" => SasPortalDeviceConfigMeasurementCapabilitiesItems :: MeasurementCapabilityReceivedPowerWithGrant , "MEASUREMENT_CAPABILITY_RECEIVED_POWER_WITHOUT_GRANT" => SasPortalDeviceConfigMeasurementCapabilitiesItems :: MeasurementCapabilityReceivedPowerWithoutGrant , "MEASUREMENT_CAPABILITY_UNSPECIFIED" => SasPortalDeviceConfigMeasurementCapabilitiesItems :: MeasurementCapabilityUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "MEASUREMENT_CAPABILITY_RECEIVED_POWER_WITH_GRANT" => SasPortalDeviceConfigMeasurementCapabilitiesItems :: MeasurementCapabilityReceivedPowerWithGrant , "MEASUREMENT_CAPABILITY_RECEIVED_POWER_WITHOUT_GRANT" => SasPortalDeviceConfigMeasurementCapabilitiesItems :: MeasurementCapabilityReceivedPowerWithoutGrant , "MEASUREMENT_CAPABILITY_UNSPECIFIED" => SasPortalDeviceConfigMeasurementCapabilitiesItems :: MeasurementCapabilityUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for SasPortalDeviceConfigMeasurementCapabilitiesItems {
@@ -911,7 +736,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "MEASUREMENT_CAPABILITY_RECEIVED_POWER_WITH_GRANT" => SasPortalDeviceConfigMeasurementCapabilitiesItems :: MeasurementCapabilityReceivedPowerWithGrant , "MEASUREMENT_CAPABILITY_RECEIVED_POWER_WITHOUT_GRANT" => SasPortalDeviceConfigMeasurementCapabilitiesItems :: MeasurementCapabilityReceivedPowerWithoutGrant , "MEASUREMENT_CAPABILITY_UNSPECIFIED" => SasPortalDeviceConfigMeasurementCapabilitiesItems :: MeasurementCapabilityUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "MEASUREMENT_CAPABILITY_RECEIVED_POWER_WITH_GRANT" => SasPortalDeviceConfigMeasurementCapabilitiesItems :: MeasurementCapabilityReceivedPowerWithGrant , "MEASUREMENT_CAPABILITY_RECEIVED_POWER_WITHOUT_GRANT" => SasPortalDeviceConfigMeasurementCapabilitiesItems :: MeasurementCapabilityReceivedPowerWithoutGrant , "MEASUREMENT_CAPABILITY_UNSPECIFIED" => SasPortalDeviceConfigMeasurementCapabilitiesItems :: MeasurementCapabilityUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector for SasPortalDeviceConfigMeasurementCapabilitiesItems {
@@ -1035,6 +860,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub grant_id: ::std::option::Option<String>,
+        #[doc = "The transmit expiration time of the last heartbeat."]
+        #[serde(
+            rename = "lastHeartbeatTransmitExpireTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub last_heartbeat_transmit_expire_time: ::std::option::Option<String>,
         #[doc = "Maximum Equivalent Isotropically Radiated Power (EIRP) permitted by the grant. The maximum EIRP is in units of dBm/MHz. The value of `maxEirp` represents the average (RMS) EIRP that would be measured by the procedure defined in FCC part 96.41(e)(3)."]
         #[serde(
             rename = "maxEirp",
@@ -1244,19 +1076,45 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Copy,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
-    pub struct SasPortalDeviceMetadata {}
+    pub struct SasPortalDeviceMetadata {
+        #[doc = "If populated, the Antenna Model Pattern to use. Format is: RecordCreatorId:PatternId"]
+        #[serde(
+            rename = "antennaModel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub antenna_model: ::std::option::Option<String>,
+        #[doc = "CCG. A group of CBSDs in the same ICG requesting a common primary channel assignment. See CBRSA-TS-2001 V3.0.0 for more details."]
+        #[serde(
+            rename = "commonChannelGroup",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub common_channel_group: ::std::option::Option<String>,
+        #[doc = "ICG. A group of CBSDs that manage their own interference with the group. See CBRSA-TS-2001 V3.0.0 for more details."]
+        #[serde(
+            rename = "interferenceCoordinationGroup",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub interference_coordination_group: ::std::option::Option<String>,
+        #[doc = "Output only. Whether a CPI has validated to have coordinated with the National Quiet Zone office."]
+        #[serde(
+            rename = "nrqzValidated",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub nrqz_validated: ::std::option::Option<bool>,
+        #[doc = "Output only. National Radio Quiet Zone validation info."]
+        #[serde(
+            rename = "nrqzValidation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub nrqz_validation: ::std::option::Option<crate::schemas::SasPortalNrqzValidation>,
+    }
     impl ::google_field_selector::FieldSelector for SasPortalDeviceMetadata {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
@@ -1971,6 +1829,132 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct SasPortalNrqzValidation {
+        #[doc = "Validation case id."]
+        #[serde(
+            rename = "caseId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub case_id: ::std::option::Option<String>,
+        #[doc = "CPI who signed the validation."]
+        #[serde(
+            rename = "cpiId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cpi_id: ::std::option::Option<String>,
+        #[doc = "Device latitude associated with the validation."]
+        #[serde(
+            rename = "latitude",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub latitude: ::std::option::Option<f64>,
+        #[doc = "Device longitude associated with the validation."]
+        #[serde(
+            rename = "longitude",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub longitude: ::std::option::Option<f64>,
+        #[doc = "State of the NRQZ validation info."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::SasPortalNrqzValidationState>,
+    }
+    impl ::google_field_selector::FieldSelector for SasPortalNrqzValidation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SasPortalNrqzValidation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum SasPortalNrqzValidationState {
+        #[doc = "Draft state."]
+        Draft,
+        #[doc = "Final state."]
+        Final,
+        #[doc = "Unspecified state."]
+        StateUnspecified,
+    }
+    impl SasPortalNrqzValidationState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                SasPortalNrqzValidationState::Draft => "DRAFT",
+                SasPortalNrqzValidationState::Final => "FINAL",
+                SasPortalNrqzValidationState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for SasPortalNrqzValidationState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for SasPortalNrqzValidationState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<SasPortalNrqzValidationState, ()> {
+            Ok(match s {
+                "DRAFT" => SasPortalNrqzValidationState::Draft,
+                "FINAL" => SasPortalNrqzValidationState::Final,
+                "STATE_UNSPECIFIED" => SasPortalNrqzValidationState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for SasPortalNrqzValidationState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for SasPortalNrqzValidationState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for SasPortalNrqzValidationState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DRAFT" => SasPortalNrqzValidationState::Draft,
+                "FINAL" => SasPortalNrqzValidationState::Final,
+                "STATE_UNSPECIFIED" => SasPortalNrqzValidationState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for SasPortalNrqzValidationState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SasPortalNrqzValidationState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct SasPortalOperation {
         #[doc = "If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available."]
@@ -2072,6 +2056,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SasPortalSetPolicyRequest {
+        #[doc = "Optional. Set the field as true when we would like to disable the onboarding notification."]
+        #[serde(
+            rename = "disableNotification",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub disable_notification: ::std::option::Option<bool>,
         #[doc = "Required. The policy to be applied to the `resource`."]
         #[serde(
             rename = "policy",

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("apigee1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210312")
+            .version("0.1.0-20220407")
             .about("Use the Apigee API to programmatically develop and manage APIs with a set of RESTful operations. Develop and secure API proxies, deploy and undeploy API proxy revisions, monitor APIs, configure environments, manage users, and more. Note: This product is available as a free trial for a time period of 60 days.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -38,7 +38,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: issuers");
         let mut organizations0 = SubCommand::with_name("organizations")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: create, delete, get, get_deployed_ingress_config, get_sync_authorization, list, set_sync_authorization and update");
+                        .about("methods: create, delete, get, get_deployed_ingress_config, get_runtime_config, get_sync_authorization, list, set_addons, set_sync_authorization and update");
         {
             let mcmd = SubCommand::with_name("create").about("Creates an Apigee organization. See [Create an Apigee organization](https://cloud.google.com/apigee/docs/api-platform/get-started/create-org).");
             organizations0 = organizations0.subcommand(mcmd);
@@ -58,7 +58,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             organizations0 = organizations0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get_sync_authorization").about("Lists the service accounts with the permissions required to allow the Synchronizer to download environment data from the control plane. An ETag is returned in the response to `getSyncAuthorization`. Pass that ETag when calling [setSyncAuthorization](setSyncAuthorization) to ensure that you are updating the correct version. If you don\'t pass the ETag in the call to `setSyncAuthorization`, then the existing authorization is overwritten indiscriminately. For more information, see [Configure the Synchronizer](https://cloud.google.com/apigee/docs/hybrid/latest/synchronizer-access). **Note**: Available to Apigee hybrid only.");
+            let mcmd = SubCommand::with_name("get_runtime_config")
+                .about("Get runtime config for an organization.");
+            organizations0 = organizations0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_sync_authorization").about("Lists the service accounts with the permissions required to allow the Synchronizer to download environment data from the control plane. An ETag is returned in the response to `getSyncAuthorization`. Pass that ETag when calling [setSyncAuthorization](setSyncAuthorization) to ensure that you are updating the correct version. If you don't pass the ETag in the call to `setSyncAuthorization`, then the existing authorization is overwritten indiscriminately. For more information, see [Configure the Synchronizer](https://cloud.google.com/apigee/docs/hybrid/latest/synchronizer-access). **Note**: Available to Apigee hybrid only.");
             organizations0 = organizations0.subcommand(mcmd);
         }
         {
@@ -66,7 +71,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             organizations0 = organizations0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("set_sync_authorization").about("Sets the permissions required to allow the Synchronizer to download environment data from the control plane. You must call this API to enable proper functioning of hybrid. Pass the ETag when calling `setSyncAuthorization` to ensure that you are updating the correct version. To get an ETag, call [getSyncAuthorization](getSyncAuthorization). If you don\'t pass the ETag in the call to `setSyncAuthorization`, then the existing authorization is overwritten indiscriminately. For more information, see [Configure the Synchronizer](https://cloud.google.com/apigee/docs/hybrid/latest/synchronizer-access). **Note**: Available to Apigee hybrid only.");
+            let mcmd = SubCommand::with_name("set_addons").about("Configures the add-ons for the Apigee organization. The existing add-on configuration will be fully replaced.");
+            organizations0 = organizations0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_sync_authorization").about("Sets the permissions required to allow the Synchronizer to download environment data from the control plane. You must call this API to enable proper functioning of hybrid. Pass the ETag when calling `setSyncAuthorization` to ensure that you are updating the correct version. To get an ETag, call [getSyncAuthorization](getSyncAuthorization). If you don't pass the ETag in the call to `setSyncAuthorization`, then the existing authorization is overwritten indiscriminately. For more information, see [Configure the Synchronizer](https://cloud.google.com/apigee/docs/hybrid/latest/synchronizer-access). **Note**: Available to Apigee hybrid only.");
             organizations0 = organizations0.subcommand(mcmd);
         }
         {
@@ -84,7 +93,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
         {
-            let mcmd = SubCommand::with_name("list").about("Lists hybrid services and its trusted issuers service account ids. This api is authenticated and unauthorized(allow all the users) and used by runtime authn-authz service to query control plane\'s issuer service account ids.");
+            let mcmd = SubCommand::with_name("list").about("Lists hybrid services and its trusted issuers service account ids. This api is authenticated and unauthorized(allow all the users) and used by runtime authn-authz service to query control plane's issuer service account ids.");
             issuers1 = issuers1.subcommand(mcmd);
         }
         let mut analytics1 = SubCommand::with_name("analytics")
@@ -94,11 +103,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: attributes_method, create, delete, get, list and update");
         {
-            let mcmd = SubCommand::with_name("attributes_method").about("Updates or creates API product attributes. This API **replaces** the current list of attributes with the attributes specified in the request body. In this way, you can update existing attributes, add new attributes, or delete existing attributes by omitting them from the request body. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with entities also get cached for at least 180 seconds after entity is accessed during runtime. In this case, the `ExpiresIn` element on the OAuthV2 policy won\'t be able to expire an access token in less than 180 seconds.");
+            let mcmd = SubCommand::with_name("attributes_method").about("Updates or creates API product attributes. This API **replaces** the current list of attributes with the attributes specified in the request body. In this way, you can update existing attributes, add new attributes, or delete existing attributes by omitting them from the request body. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with entities also get cached for at least 180 seconds after entity is accessed during runtime. In this case, the `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds.");
             apiproducts1 = apiproducts1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("create").about("Creates an API product in an organization. You create API products after you have proxied backend services using API proxies. An API product is a collection of API resources combined with quota settings and metadata that you can use to deliver customized and productized API bundles to your developer community. This metadata can include: - Scope - Environments - API proxies - Extensible profile API products enable you repackage APIs on-the-fly, without having to do any additional coding or configuration. Apigee recommends that you start with a simple API product including only required elements. You then provision credentials to apps to enable them to start testing your APIs. After you have authentication and authorization working against a simple API product, you can iterate to create finer grained API products, defining different sets of API resources for each API product. **WARNING:** - If you don\'t specify an API proxy in the request body, *any* app associated with the product can make calls to *any* API in your entire organization. - If you don\'t specify an environment in the request body, the product allows access to all environments. For more information, see What is an API product?");
+            let mcmd = SubCommand::with_name("create").about("Creates an API product in an organization. You create API products after you have proxied backend services using API proxies. An API product is a collection of API resources combined with quota settings and metadata that you can use to deliver customized and productized API bundles to your developer community. This metadata can include: - Scope - Environments - API proxies - Extensible profile API products enable you repackage APIs on the fly, without having to do any additional coding or configuration. Apigee recommends that you start with a simple API product including only required elements. You then provision credentials to apps to enable them to start testing your APIs. After you have authentication and authorization working against a simple API product, you can iterate to create finer-grained API products, defining different sets of API resources for each API product. **WARNING:** - If you don't specify an API proxy in the request body, *any* app associated with the product can make calls to *any* API in your entire organization. - If you don't specify an environment in the request body, the product allows access to all environments. For more information, see What is an API product?");
             apiproducts1 = apiproducts1.subcommand(mcmd);
         }
         {
@@ -110,16 +119,16 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             apiproducts1 = apiproducts1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists all API product names for an organization. Filter the list by passing an `attributename` and `attibutevalue`. The limit on the number of API products returned by the API is 1000. You can paginate the list of API products returned using the `startKey` and `count` query parameters.");
+            let mcmd = SubCommand::with_name("list").about("Lists all API product names for an organization. Filter the list by passing an `attributename` and `attibutevalue`. The maximum number of API products returned is 1000. You can paginate the list of API products returned using the `startKey` and `count` query parameters.");
             apiproducts1 = apiproducts1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update").about("Updates an existing API product. You must include all required values, whether or not you are updating them, as well as any optional values that you are updating. The API product name required in the request URL is the internal name of the product, not the Display Name. While they may be the same, it depends on whether the API product was created via UI or API. View the list of API products to identify their internal names.");
+            let mcmd = SubCommand::with_name("update").about("Updates an existing API product. You must include all required values, whether or not you are updating them, as well as any optional values that you are updating. The API product name required in the request URL is the internal name of the product, not the display name. While they may be the same, it depends on whether the API product was created via UI or API. View the list of API products to identify their internal names.");
             apiproducts1 = apiproducts1.subcommand(mcmd);
         }
         let mut apis1 = SubCommand::with_name("apis")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get and list");
+            .about("methods: create, delete, get, list and patch");
         {
             let mcmd = SubCommand::with_name("create").about("Creates an API proxy. The API proxy created will not be accessible at runtime until it is deployed to an environment. Create a new API proxy by setting the `name` query parameter to the name of the API proxy. Import an API proxy configuration bundle stored in zip format on your local machine to your organization by doing the following: * Set the `name` query parameter to the name of the API proxy. * Set the `action` query parameter to `import`. * Set the `Content-Type` header to `multipart/form-data`. * Pass as a file the name of API proxy configuration bundle stored in zip format on your local machine using the `file` form field. **Note**: To validate the API proxy configuration bundle only without importing it, set the `action` query parameter to `validate`. When importing an API proxy configuration bundle, if the API proxy does not exist, it will be created. If the API proxy exists, then a new revision is created. Invalid API proxy configurations are rejected, and a list of validation errors is returned to the client.");
             apis1 = apis1.subcommand(mcmd);
@@ -135,6 +144,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("list").about("Lists the names of all API proxies in an organization. The names returned correspond to the names defined in the configuration files for each API proxy.");
+            apis1 = apis1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates an existing API proxy.");
             apis1 = apis1.subcommand(mcmd);
         }
         let mut apps1 = SubCommand::with_name("apps")
@@ -182,9 +195,9 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut developers1 = SubCommand::with_name("developers")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: attributes_method, create, delete, get, list, set_developer_status and update");
+                        .about("methods: attributes_method, create, delete, get, get_balance, get_monetization_config, list, set_developer_status, update and update_monetization_config");
         {
-            let mcmd = SubCommand::with_name("attributes_method").about("Updates developer attributes. This API replaces the existing attributes with those specified in the request. Add new attributes, and include or exclude any existing attributes that you want to retain or remove, respectively. The custom attribute limit is 18. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won\'t be able to expire an access token in less than 180 seconds.");
+            let mcmd = SubCommand::with_name("attributes_method").about("Updates developer attributes. This API replaces the existing attributes with those specified in the request. Add new attributes, and include or exclude any existing attributes that you want to retain or remove, respectively. The custom attribute limit is 18. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds.");
             developers1 = developers1.subcommand(mcmd);
         }
         {
@@ -196,7 +209,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             developers1 = developers1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Returns the developer details, including the developer\'s name, email address, apps, and other information. **Note**: The response includes only the first 100 developer apps.");
+            let mcmd = SubCommand::with_name("get").about("Returns the developer details, including the developer's name, email address, apps, and other information. **Note**: The response includes only the first 100 developer apps.");
+            developers1 = developers1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_balance")
+                .about("Gets the account balance for the developer.");
+            developers1 = developers1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_monetization_config")
+                .about("Gets the monetization configuration for the developer.");
             developers1 = developers1.subcommand(mcmd);
         }
         {
@@ -204,12 +227,39 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             developers1 = developers1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("set_developer_status").about("Sets the status of a developer. Valid values are `active` or `inactive`. A developer is `active` by default. If you set a developer\'s status to `inactive`, the API keys assigned to the developer apps are no longer valid even though the API keys are set to `approved`. Inactive developers can still sign in to the developer portal and create apps; however, any new API keys generated during app creation won\'t work. If successful, the API call returns the following HTTP status code: `204 No Content`");
+            let mcmd = SubCommand::with_name("set_developer_status").about("Sets the status of a developer. A developer is `active` by default. If you set a developer's status to `inactive`, the API keys assigned to the developer apps are no longer valid even though the API keys are set to `approved`. Inactive developers can still sign in to the developer portal and create apps; however, any new API keys generated during app creation won't work. To set the status of a developer, set the `action` query parameter to `active` or `inactive`, and the `Content-Type` header to `application/octet-stream`. If successful, the API call returns the following HTTP status code: `204 No Content`");
             developers1 = developers1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update").about("Updates a developer. This API replaces the existing developer details with those specified in the request. Include or exclude any existing details that you want to retain or delete, respectively. The custom attribute limit is 18. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won\'t be able to expire an access token in less than 180 seconds.");
+            let mcmd = SubCommand::with_name("update").about("Updates a developer. This API replaces the existing developer details with those specified in the request. Include or exclude any existing details that you want to retain or delete, respectively. The custom attribute limit is 18. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds.");
             developers1 = developers1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("update_monetization_config")
+                .about("Updates the monetization configuration for the developer.");
+            developers1 = developers1.subcommand(mcmd);
+        }
+        let mut endpoint_attachments1 = SubCommand::with_name("endpoint_attachments")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get and list");
+        {
+            let mcmd = SubCommand::with_name("create").about(
+                "Creates an endpoint attachment. **Note:** Not supported for Apigee hybrid.",
+            );
+            endpoint_attachments1 = endpoint_attachments1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes an endpoint attachment.");
+            endpoint_attachments1 = endpoint_attachments1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets the endpoint attachment.");
+            endpoint_attachments1 = endpoint_attachments1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists the endpoint attachments in an organization.");
+            endpoint_attachments1 = endpoint_attachments1.subcommand(mcmd);
         }
         let mut envgroups1 = SubCommand::with_name("envgroups")
             .setting(AppSettings::ColoredHelp)
@@ -275,7 +325,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             environments1 = environments1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("subscribe").about("Creates a subscription for the environment\'s Pub/Sub topic. The server will assign a random name for this subscription. The \"name\" and \"push_config\" must *not* be specified.");
+            let mcmd = SubCommand::with_name("subscribe").about("Creates a subscription for the environment's Pub/Sub topic. The server will assign a random name for this subscription. The \"name\" and \"push_config\" must *not* be specified.");
             environments1 = environments1.subcommand(mcmd);
         }
         {
@@ -284,11 +334,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("unsubscribe")
-                .about("Deletes a subscription for the environment\'s Pub/Sub topic.");
+                .about("Deletes a subscription for the environment's Pub/Sub topic.");
             environments1 = environments1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update").about("Updates an existing environment. When updating properties, you must pass all existing properties to the API, even if they are not being changed. If you omit properties from the payload, the properties are removed. To get the current list of properties for the environment, use the [Get Environment API](get).");
+            let mcmd = SubCommand::with_name("update").about("Updates an existing environment. When updating properties, you must pass all existing properties to the API, even if they are not being changed. If you omit properties from the payload, the properties are removed. To get the current list of properties for the environment, use the [Get Environment API](get). **Note**: Both `PUT` and `POST` methods are supported for updating an existing environment.");
             environments1 = environments1.subcommand(mcmd);
         }
         {
@@ -297,7 +347,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             environments1 = environments1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update_environment").about("Updates an existing environment. When updating properties, you must pass all existing properties to the API, even if they are not being changed. If you omit properties from the payload, the properties are removed. To get the current list of properties for the environment, use the [Get Environment API](get).");
+            let mcmd = SubCommand::with_name("update_environment").about("Updates an existing environment. When updating properties, you must pass all existing properties to the API, even if they are not being changed. If you omit properties from the payload, the properties are removed. To get the current list of properties for the environment, use the [Get Environment API](get). **Note**: Both `PUT` and `POST` methods are supported for updating an existing environment.");
             environments1 = environments1.subcommand(mcmd);
         }
         {
@@ -332,12 +382,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: get");
         {
-            let mcmd = SubCommand::with_name("get").about("Retrieve metrics grouped by dimensions in host level. The types of metrics you can retrieve include traffic, message counts, API call latency, response size, and cache hits and counts. Dimensions let you view metrics in meaningful groups. The stats api does accept dimensions as path params. The dimensions are optional in which case the metrics are computed on the entire data for the given timerange.");
+            let mcmd = SubCommand::with_name("get").about("Retrieve metrics grouped by dimensions in host level. The types of metrics you can retrieve include traffic, message counts, API call latency, response size, and cache hits and counts. Dimensions let you view metrics in meaningful groups. You can optionally pass dimensions as path parameters to the `stats` API. If dimensions are not specified, the metrics are computed on the entire set of data for the given time range.");
             host_stats1 = host_stats1.subcommand(mcmd);
         }
         let mut instances1 = SubCommand::with_name("instances")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list and report_status");
+            .about("methods: create, delete, get, list, patch and report_status");
         {
             let mcmd = SubCommand::with_name("create").about("Creates an Apigee runtime instance. The instance is accessible from the authorized network configured on the organization. **Note:** Not supported for Apigee hybrid.");
             instances1 = instances1.subcommand(mcmd);
@@ -355,6 +405,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             instances1 = instances1.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("patch").about("Updates an Apigee runtime instance. You can update the fields described in NodeConfig. No other fields will be updated. **Note:** Not supported for Apigee hybrid.");
+            instances1 = instances1.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("report_status")
                 .about("Reports the latest status for a runtime instance.");
             instances1 = instances1.subcommand(mcmd);
@@ -368,8 +422,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             keyvaluemaps1 = keyvaluemaps1.subcommand(mcmd);
         }
         {
-            let mcmd =
-                SubCommand::with_name("delete").about("Delete a key value map in an organization.");
+            let mcmd = SubCommand::with_name("delete")
+                .about("Deletes a key value map from an organization.");
             keyvaluemaps1 = keyvaluemaps1.subcommand(mcmd);
         }
         let mut operations1 = SubCommand::with_name("operations")
@@ -380,16 +434,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             operations1 = operations1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn\'t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations1 = operations1.subcommand(mcmd);
         }
         let mut optimized_host_stats1 = SubCommand::with_name("optimized_host_stats")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get");
         {
-            let mcmd = SubCommand::with_name("get").about(
-                "This api is similar to GetHostStats except that the response is less verbose.",
-            );
+            let mcmd = SubCommand::with_name("get")
+                .about("Similar to GetHostStats except that the response is less verbose.");
             optimized_host_stats1 = optimized_host_stats1.subcommand(mcmd);
         }
         let mut reports1 = SubCommand::with_name("reports")
@@ -425,7 +478,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             sharedflows1 = sharedflows1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a shared flow and all it\'s revisions. The shared flow must be undeployed before you can delete it.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a shared flow and all it's revisions. The shared flow must be undeployed before you can delete it.");
             sharedflows1 = sharedflows1.subcommand(mcmd);
         }
         {
@@ -485,8 +538,32 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             attributes2 = attributes2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update_api_product_attribute").about("Updates the value of an API product attribute. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with entities also get cached for at least 180 seconds after entity is accessed during runtime. In this case, the `ExpiresIn` element on the OAuthV2 policy won\'t be able to expire an access token in less than 180 seconds.");
+            let mcmd = SubCommand::with_name("update_api_product_attribute").about("Updates the value of an API product attribute. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with entities also get cached for at least 180 seconds after entity is accessed during runtime. In this case, the `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds.");
             attributes2 = attributes2.subcommand(mcmd);
+        }
+        let mut rateplans2 = SubCommand::with_name("rateplans")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and update");
+        {
+            let mcmd = SubCommand::with_name("create").about("Create a rate plan that is associated with an API product in an organization. Using rate plans, API product owners can monetize their API products by configuring one or more of the following: - Billing frequency - Initial setup fees for using an API product - Payment funding model (postpaid only) - Fixed recurring or consumption-based charges for using an API product - Revenue sharing with developer partners An API product can have multiple rate plans associated with it but *only one* rate plan can be active at any point of time. **Note: From the developer's perspective, they purchase API products not rate plans.");
+            rateplans2 = rateplans2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a rate plan.");
+            rateplans2 = rateplans2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets the details of a rate plan.");
+            rateplans2 = rateplans2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("list").about("Lists all the rate plans for an API product.");
+            rateplans2 = rateplans2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("update").about("Updates an existing rate plan.");
+            rateplans2 = rateplans2.subcommand(mcmd);
         }
         let mut deployments2 = SubCommand::with_name("deployments")
             .setting(AppSettings::ColoredHelp)
@@ -501,12 +578,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: create and delete");
         {
             let mcmd =
-                SubCommand::with_name("create").about("Creates a key value map in an api proxy.");
+                SubCommand::with_name("create").about("Creates a key value map in an API proxy.");
             keyvaluemaps2 = keyvaluemaps2.subcommand(mcmd);
         }
         {
             let mcmd =
-                SubCommand::with_name("delete").about("Delete a key value map in an api proxy.");
+                SubCommand::with_name("delete").about("Deletes a key value map from an API proxy.");
             keyvaluemaps2 = keyvaluemaps2.subcommand(mcmd);
         }
         let mut revisions2 = SubCommand::with_name("revisions")
@@ -532,7 +609,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             apps2 = apps2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("create").about("Creates an app associated with a developer. This API associates the developer app with the specified API product and auto-generates an API key for the app to use in calls to API proxies inside that API product. The `name` is the unique ID of the app that you can use in API calls. The `DisplayName` (set as an attribute) appears in the UI. If you don\'t set the `DisplayName` attribute, the `name` appears in the UI.");
+            let mcmd = SubCommand::with_name("create").about("Creates an app associated with a developer. This API associates the developer app with the specified API product and auto-generates an API key for the app to use in calls to API proxies inside that API product. The `name` is the unique ID of the app that you can use in API calls. The `DisplayName` (set as an attribute) appears in the UI. If you don't set the `DisplayName` attribute, the `name` appears in the UI.");
             apps2 = apps2.subcommand(mcmd);
         }
         {
@@ -540,7 +617,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             apps2 = apps2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("generate_key_pair_or_update_developer_app_status").about("Manages access to a developer app by enabling you to: * Approve or revoke a developer app * Generate a new consumer key and secret for a developer app To approve or revoke a developer app, set the `action` query parameter to `approved` or `revoked`, respectively, and the `Content-Type` header to `application/octet-stream`. If a developer app is revoked, none of its API keys are valid for API calls even though the keys are still `approved`. If successful, the API call returns the following HTTP status code: `204 No Content` To generate a new consumer key and secret for a developer app, pass the new key/secret details. Rather than replace an existing key, this API generates a new key. In this case, multiple key pairs may be associated with a single developer app. Each key pair has an independent status (`approved` or `revoked`) and expiration time. Any approved, non-expired key can be used in an API call. For example, if you\'re using API key rotation, you can generate new keys with expiration times that overlap keys that are going to expire. You might also generate a new consumer key/secret if the security of the original key/secret is compromised. The `keyExpiresIn` property defines the expiration time for the API key in milliseconds. If you don\'t set this property or set it to `-1`, the API key never expires. **Notes**: * When generating a new key/secret, this API replaces the existing attributes, notes, and callback URLs with those specified in the request. Include or exclude any existing information that you want to retain or delete, respectively. * To migrate existing consumer keys and secrets to hybrid from another system, see the CreateDeveloperAppKey API.");
+            let mcmd = SubCommand::with_name("generate_key_pair_or_update_developer_app_status").about("Manages access to a developer app by enabling you to: * Approve or revoke a developer app * Generate a new consumer key and secret for a developer app To approve or revoke a developer app, set the `action` query parameter to `approved` or `revoked`, respectively, and the `Content-Type` header to `application/octet-stream`. If a developer app is revoked, none of its API keys are valid for API calls even though the keys are still `approved`. If successful, the API call returns the following HTTP status code: `204 No Content` To generate a new consumer key and secret for a developer app, pass the new key/secret details. Rather than replace an existing key, this API generates a new key. In this case, multiple key pairs may be associated with a single developer app. Each key pair has an independent status (`approved` or `revoked`) and expiration time. Any approved, non-expired key can be used in an API call. For example, if you're using API key rotation, you can generate new keys with expiration times that overlap keys that are going to expire. You might also generate a new consumer key/secret if the security of the original key/secret is compromised. The `keyExpiresIn` property defines the expiration time for the API key in milliseconds. If you don't set this property or set it to `-1`, the API key never expires. **Notes**: * When generating a new key/secret, this API replaces the existing attributes, notes, and callback URLs with those specified in the request. Include or exclude any existing information that you want to retain or delete, respectively. * To migrate existing consumer keys and secrets to hybrid from another system, see the CreateDeveloperAppKey API.");
             apps2 = apps2.subcommand(mcmd);
         }
         {
@@ -574,8 +651,43 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             attributes2 = attributes2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update_developer_attribute").about("Updates a developer attribute. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won\'t be able to expire an access token in less than 180 seconds.");
+            let mcmd = SubCommand::with_name("update_developer_attribute").about("Updates a developer attribute. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds.");
             attributes2 = attributes2.subcommand(mcmd);
+        }
+        let mut balance2 = SubCommand::with_name("balance")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: adjust and credit");
+        {
+            let mcmd = SubCommand::with_name("adjust").about("Adjust the prepaid balance for the developer. This API will be used in scenarios where the developer has been under-charged or over-charged.");
+            balance2 = balance2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("credit")
+                .about("Credits the account balance for the developer.");
+            balance2 = balance2.subcommand(mcmd);
+        }
+        let mut subscriptions2 = SubCommand::with_name("subscriptions")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, expire, get and list");
+        {
+            let mcmd =
+                SubCommand::with_name("create").about("Creates a subscription to an API product. ");
+            subscriptions2 = subscriptions2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("expire")
+                .about("Expires an API product subscription immediately.");
+            subscriptions2 = subscriptions2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("get").about("Gets details for an API product subscription.");
+            subscriptions2 = subscriptions2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists all API product subscriptions for a developer.");
+            subscriptions2 = subscriptions2.subcommand(mcmd);
         }
         let mut attachments2 = SubCommand::with_name("attachments")
             .setting(AppSettings::ColoredHelp)
@@ -605,6 +717,38 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut apis2 = SubCommand::with_name("apis")
             .setting(AppSettings::ColoredHelp)
             .about("sub-resources: deployments and revisions");
+        let mut archive_deployments2 = SubCommand::with_name("archive_deployments")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, generate_download_url, generate_upload_url, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a new ArchiveDeployment.");
+            archive_deployments2 = archive_deployments2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes an archive deployment.");
+            archive_deployments2 = archive_deployments2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("generate_download_url").about("Generates a signed URL for downloading the original zip file used to create an Archive Deployment. The URL is only valid for a limited period and should be used within minutes after generation. Each call returns a new upload URL.");
+            archive_deployments2 = archive_deployments2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("generate_upload_url").about("Generates a signed URL for uploading an Archive zip file to Google Cloud Storage. Once the upload is complete, the signed URL should be passed to CreateArchiveDeployment. When uploading to the generated signed URL, please follow these restrictions: * Source file type should be a zip file. * Source file size should not exceed 1GB limit. * No credentials should be attached - the signed URLs provide access to the target bucket using internal service identity; if credentials were attached, the identity from the credentials would be used, but that identity does not have permissions to upload files to the URL. When making a HTTP PUT request, these two headers need to be specified: * `content-type: application/zip` * `x-goog-content-length-range: 0,1073741824` And this header SHOULD NOT be specified: * `Authorization: Bearer YOUR_TOKEN`");
+            archive_deployments2 = archive_deployments2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets the specified ArchiveDeployment.");
+            archive_deployments2 = archive_deployments2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists the ArchiveDeployments in the specified Environment.");
+            archive_deployments2 = archive_deployments2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates an existing ArchiveDeployment. Labels can modified but most of the other fields are not modifiable.");
+            archive_deployments2 = archive_deployments2.subcommand(mcmd);
+        }
         let mut caches2 = SubCommand::with_name("caches")
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete");
@@ -634,14 +778,14 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             flowhooks2 = flowhooks2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Returns the name of the shared flow attached to the specified flow hook. If there\'s no shared flow attached to the flow hook, the API does not return an error; it simply does not return a name in the response.");
+            let mcmd = SubCommand::with_name("get").about("Returns the name of the shared flow attached to the specified flow hook. If there's no shared flow attached to the flow hook, the API does not return an error; it simply does not return a name in the response.");
             flowhooks2 = flowhooks2.subcommand(mcmd);
         }
         let mut keystores2 = SubCommand::with_name("keystores")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete and get");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a keystore or truststore. - Keystore: Contains certificates and their associated keys. - Truststore: Contains trusted certificates used to validate a server\'s certificate. These certificates are typically self-signed certificates or certificates that are not signed by a trusted CA.");
+            let mcmd = SubCommand::with_name("create").about("Creates a keystore or truststore. - Keystore: Contains certificates and their associated keys. - Truststore: Contains trusted certificates used to validate a server's certificate. These certificates are typically self-signed certificates or certificates that are not signed by a trusted CA.");
             keystores2 = keystores2.subcommand(mcmd);
         }
         {
@@ -661,20 +805,21 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             keyvaluemaps2 = keyvaluemaps2.subcommand(mcmd);
         }
         {
-            let mcmd =
-                SubCommand::with_name("delete").about("Delete a key value map in an environment.");
+            let mcmd = SubCommand::with_name("delete")
+                .about("Deletes a key value map from an environment.");
             keyvaluemaps2 = keyvaluemaps2.subcommand(mcmd);
         }
         let mut optimized_stats2 = SubCommand::with_name("optimized_stats")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get");
         {
-            let mcmd = SubCommand::with_name("get").about("This api is similar to GetStats except that the response is less verbose. In the current scheme, a query parameter _optimized instructs Edge Analytics to change the response but since this behavior is not possible with protocol buffer and since this parameter is predominantly used by Edge UI, we are introducing a separate api.");
+            let mcmd = SubCommand::with_name("get")
+                .about("Similar to GetStats except that the response is less verbose.");
             optimized_stats2 = optimized_stats2.subcommand(mcmd);
         }
         let mut queries2 = SubCommand::with_name("queries")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, get, get_result and list");
+            .about("methods: create, get, get_result, get_resulturl and list");
         {
             let mcmd = SubCommand::with_name("create").about("Submit a query to be processed in the background. If the submission of the query succeeds, the API returns a 201 status and an ID that refer to the query. In addition to the HTTP status 201, the `state` of \"enqueued\" means that the request succeeded.");
             queries2 = queries2.subcommand(mcmd);
@@ -685,6 +830,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("get_result").about("After the query is completed, use this API to retrieve the results. If the request succeeds, and there is a non-zero result set, the result is downloaded to the client as a zipped JSON file. The name of the downloaded file will be: OfflineQueryResult-.zip Example: `OfflineQueryResult-9cfc0d85-0f30-46d6-ae6f-318d0cb961bd.zip`");
+            queries2 = queries2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_resulturl").about("After the query is completed, use this API to retrieve the results. If the request succeeds, and there is a non-zero result set, the result is sent to the client as a list of urls to JSON files.");
             queries2 = queries2.subcommand(mcmd);
         }
         {
@@ -747,7 +896,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: get");
         {
-            let mcmd = SubCommand::with_name("get").about("Retrieve metrics grouped by dimensions. The types of metrics you can retrieve include traffic, message counts, API call latency, response size, and cache hits and counts. Dimensions let you view metrics in meaningful groups. The stats api does accept dimensions as path params. The dimensions are optional in which case the metrics are computed on the entire data for the given timerange.");
+            let mcmd = SubCommand::with_name("get").about("Retrieve metrics grouped by dimensions. The types of metrics you can retrieve include traffic, message counts, API call latency, response size, and cache hits and counts. Dimensions let you view metrics in meaningful groups. You can optionally pass dimensions as path parameters to the `stats` API. If dimensions are not specified, the metrics are computed on the entire set of data for the given time range.");
             stats2 = stats2.subcommand(mcmd);
         }
         let mut targetservers2 = SubCommand::with_name("targetservers")
@@ -906,22 +1055,22 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             attributes3 = attributes3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update_developer_app_attribute").about("Updates a developer app attribute. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won\'t be able to expire an access token in less than 180 seconds.");
+            let mcmd = SubCommand::with_name("update_developer_app_attribute").about("Updates a developer app attribute. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds.");
             attributes3 = attributes3.subcommand(mcmd);
         }
         let mut keys3 = SubCommand::with_name("keys")
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: create_method, delete, get, replace_developer_app_key and update_developer_app_key");
         {
-            let mcmd = SubCommand::with_name("create_method").about("Creates a custom consumer key and secret for a developer app. This is particularly useful if you want to migrate existing consumer keys and secrets to Apigee hybrid from another system. Consumer keys and secrets can contain letters, numbers, underscores, and hyphens. No other special characters are allowed. To avoid service disruptions, a consumer key and secret should not exceed 2 KBs each. **Note**: When creating the consumer key and secret, an association to API products will not be made. Therefore, you should not specify the associated API products in your request. Instead, use the UpdateDeveloperAppKey API to make the association after the consumer key and secret are created. If a consumer key and secret already exist, you can keep them or delete them using the DeleteDeveloperAppKey API.");
+            let mcmd = SubCommand::with_name("create_method").about("Creates a custom consumer key and secret for a developer app. This is particularly useful if you want to migrate existing consumer keys and secrets to Apigee from another system. Consumer keys and secrets can contain letters, numbers, underscores, and hyphens. No other special characters are allowed. To avoid service disruptions, a consumer key and secret should not exceed 2 KBs each. **Note**: When creating the consumer key and secret, an association to API products will not be made. Therefore, you should not specify the associated API products in your request. Instead, use the UpdateDeveloperAppKey API to make the association after the consumer key and secret are created. If a consumer key and secret already exist, you can keep them or delete them using the DeleteDeveloperAppKey API.");
             keys3 = keys3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes an app\'s consumer key and removes all API products associated with the app. After the consumer key is deleted, it cannot be used to access any APIs. **Note**: After you delete a consumer key, you may want to: 1. Create a new consumer key and secret for the developer app using the CreateDeveloperAppKey API, and subsequently add an API product to the key using the UpdateDeveloperAppKey API. 2. Delete the developer app, if it is no longer required.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes an app's consumer key and removes all API products associated with the app. After the consumer key is deleted, it cannot be used to access any APIs. **Note**: After you delete a consumer key, you may want to: 1. Create a new consumer key and secret for the developer app using the CreateDeveloperAppKey API, and subsequently add an API product to the key using the UpdateDeveloperAppKey API. 2. Delete the developer app, if it is no longer required.");
             keys3 = keys3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Returns details for a consumer key for a developer app, including the key and secret value, associated API products, and other information.");
+            let mcmd = SubCommand::with_name("get").about("Gets details for a consumer key for a developer app, including the key and secret value, associated API products, and other information.");
             keys3 = keys3.subcommand(mcmd);
         }
         {
@@ -936,7 +1085,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: get_schemav_2");
         {
-            let mcmd = SubCommand::with_name("get_schemav_2").about("Get a list of metrics and dimensions which can be used for creating analytics queries and reports. Each schema element contains the name of the field with its associated type and if it is either custom field or standard field.");
+            let mcmd = SubCommand::with_name("get_schemav_2").about("Gets a list of metrics and dimensions that can be used to create analytics queries and reports. Each schema element contains the name of the field, its associated type, and a flag indicating whether it is a standard or custom field.");
             admin3 = admin3.subcommand(mcmd);
         }
         let mut exports3 = SubCommand::with_name("exports")
@@ -1069,18 +1218,18 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete and update_developer_app_key_api_product");
         {
-            let mcmd = SubCommand::with_name("delete").about("Removes an API product from an app\'s consumer key. After the API product is removed, the app cannot access the API resources defined in that API product. **Note**: The consumer key is not removed, only its association with the API product.");
+            let mcmd = SubCommand::with_name("delete").about("Removes an API product from an app's consumer key. After the API product is removed, the app cannot access the API resources defined in that API product. **Note**: The consumer key is not removed, only its association with the API product.");
             apiproducts4 = apiproducts4.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update_developer_app_key_api_product").about("Approve or revoke an app\'s consumer key. After a consumer key is approved, the app can use it to access APIs. A consumer key that is revoked or pending cannot be used to access an API. Any access tokens associated with a revoked consumer key will remain active. However, Apigee hybrid checks the status of the consumer key and if set to `revoked` will not allow access to the API.");
+            let mcmd = SubCommand::with_name("update_developer_app_key_api_product").about("Approves or revokes the consumer key for an API product. After a consumer key is approved, the app can use it to access APIs. A consumer key that is revoked or pending cannot be used to access an API. Any access tokens associated with a revoked consumer key will remain active. However, Apigee checks the status of the consumer key and if set to `revoked` will not allow access to the API.");
             apiproducts4 = apiproducts4.subcommand(mcmd);
         }
         let mut create4 = SubCommand::with_name("create")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a custom consumer key and secret for a developer app. This is particularly useful if you want to migrate existing consumer keys and secrets to Apigee hybrid from another system. Consumer keys and secrets can contain letters, numbers, underscores, and hyphens. No other special characters are allowed. To avoid service disruptions, a consumer key and secret should not exceed 2 KBs each. **Note**: When creating the consumer key and secret, an association to API products will not be made. Therefore, you should not specify the associated API products in your request. Instead, use the UpdateDeveloperAppKey API to make the association after the consumer key and secret are created. If a consumer key and secret already exist, you can keep them or delete them using the DeleteDeveloperAppKey API.");
+            let mcmd = SubCommand::with_name("create").about("Creates a custom consumer key and secret for a developer app. This is particularly useful if you want to migrate existing consumer keys and secrets to Apigee from another system. Consumer keys and secrets can contain letters, numbers, underscores, and hyphens. No other special characters are allowed. To avoid service disruptions, a consumer key and secret should not exceed 2 KBs each. **Note**: When creating the consumer key and secret, an association to API products will not be made. Therefore, you should not specify the associated API products in your request. Instead, use the UpdateDeveloperAppKey API to make the association after the consumer key and secret are created. If a consumer key and secret already exist, you can keep them or delete them using the DeleteDeveloperAppKey API.");
             create4 = create4.subcommand(mcmd);
         }
         let mut debugsessions4 = SubCommand::with_name("debugsessions")
@@ -1160,14 +1309,18 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         environments1 = environments1.subcommand(flowhooks2);
         environments1 = environments1.subcommand(deployments2);
         environments1 = environments1.subcommand(caches2);
+        environments1 = environments1.subcommand(archive_deployments2);
         environments1 = environments1.subcommand(apis2);
         environments1 = environments1.subcommand(analytics2);
         envgroups1 = envgroups1.subcommand(attachments2);
+        developers1 = developers1.subcommand(subscriptions2);
+        developers1 = developers1.subcommand(balance2);
         developers1 = developers1.subcommand(attributes2);
         developers1 = developers1.subcommand(apps2);
         apis1 = apis1.subcommand(revisions2);
         apis1 = apis1.subcommand(keyvaluemaps2);
         apis1 = apis1.subcommand(deployments2);
+        apiproducts1 = apiproducts1.subcommand(rateplans2);
         apiproducts1 = apiproducts1.subcommand(attributes2);
         analytics1 = analytics1.subcommand(datastores2);
         organizations0 = organizations0.subcommand(sites1);
@@ -1181,6 +1334,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         organizations0 = organizations0.subcommand(host_queries1);
         organizations0 = organizations0.subcommand(environments1);
         organizations0 = organizations0.subcommand(envgroups1);
+        organizations0 = organizations0.subcommand(endpoint_attachments1);
         organizations0 = organizations0.subcommand(developers1);
         organizations0 = organizations0.subcommand(deployments1);
         organizations0 = organizations0.subcommand(datacollectors1);

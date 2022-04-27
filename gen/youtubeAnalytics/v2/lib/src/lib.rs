@@ -120,7 +120,7 @@ pub mod schemas {
     pub enum ErrorProtoLocationType {
         #[doc = "other location type which can safely be shared externally."]
         Other,
-        #[doc = "Location is request paramater. This maps to the {@link PARAMETERS} in {@link MessageLocation}."]
+        #[doc = "Location is request parameter. This maps to the {@link PARAMETERS} in {@link MessageLocation}."]
         Parameter,
         #[doc = "location is an xpath-like path pointing to the request field that caused the error."]
         Path,

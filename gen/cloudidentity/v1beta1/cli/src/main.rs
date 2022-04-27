@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudidentity1_beta1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210310")
+            .version("0.1.0-20220418")
             .about("API for provisioning and managing identity resources.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -65,8 +65,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             devices0 = devices0.subcommand(mcmd);
         }
         let mut groups0 = SubCommand::with_name("groups")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list, lookup, patch and search");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_security_settings, list, lookup, patch, search and update_security_settings");
         {
             let mcmd = SubCommand::with_name("create").about("Creates a `Group`.");
             groups0 = groups0.subcommand(mcmd);
@@ -80,8 +80,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             groups0 = groups0.subcommand(mcmd);
         }
         {
+            let mcmd =
+                SubCommand::with_name("get_security_settings").about("Get Security Settings");
+            groups0 = groups0.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("list")
-                .about("Lists the `Group`s under a customer or namespace.");
+                .about("Lists the `Group` resources under a customer or namespace.");
             groups0 = groups0.subcommand(mcmd);
         }
         {
@@ -94,9 +99,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("search")
-                .about("Searches for `Group`s matching a specified query.");
+                .about("Searches for `Group` resources matching a specified query.");
             groups0 = groups0.subcommand(mcmd);
         }
+        {
+            let mcmd =
+                SubCommand::with_name("update_security_settings").about("Update Security Settings");
+            groups0 = groups0.subcommand(mcmd);
+        }
+        let mut org_units0 = SubCommand::with_name("org_units")
+            .setting(AppSettings::ColoredHelp)
+            .about("sub-resources: memberships");
         let mut userinvitations1 = SubCommand::with_name("userinvitations")
             .setting(AppSettings::ColoredHelp)
             .about("methods: cancel, get, is_invitable_user, list and send");
@@ -106,15 +119,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             userinvitations1 = userinvitations1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Retrieves a UserInvitation resource. **Note:** New consumer accounts with the customer’s verified domain created within the previous 48 hours will not appear in the result. This delay also applies to newly-verified domains.");
+            let mcmd = SubCommand::with_name("get").about("Retrieves a UserInvitation resource. **Note:** New consumer accounts with the customer's verified domain created within the previous 48 hours will not appear in the result. This delay also applies to newly-verified domains.");
             userinvitations1 = userinvitations1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("is_invitable_user").about("Verifies whether a user account is eligible to receive a UserInvitation (is an unmanaged account). Eligibility is based on the following criteria: * the email address is a consumer account and it’s the primary email address of the account, and * the domain of the email address matches an existing verified Google Workspace or Cloud Identity domain If both conditions are met, the user is eligible. **Note:** This method is not supported for Workspace Essentials customers.");
+            let mcmd = SubCommand::with_name("is_invitable_user").about("Verifies whether a user account is eligible to receive a UserInvitation (is an unmanaged account). Eligibility is based on the following criteria: * the email address is a consumer account and it's the primary email address of the account, and * the domain of the email address matches an existing verified Google Workspace or Cloud Identity domain If both conditions are met, the user is eligible. **Note:** This method is not supported for Workspace Essentials customers.");
             userinvitations1 = userinvitations1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Retrieves a list of UserInvitation resources. **Note:** New consumer accounts with the customer’s verified domain created within the previous 48 hours will not appear in the result. This delay also applies to newly-verified domains.");
+            let mcmd = SubCommand::with_name("list").about("Retrieves a list of UserInvitation resources. **Note:** New consumer accounts with the customer's verified domain created within the previous 48 hours will not appear in the result. This delay also applies to newly-verified domains.");
             userinvitations1 = userinvitations1.subcommand(mcmd);
         }
         {
@@ -139,7 +152,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             device_users1 = device_users1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes the specified DeviceUser. This also revokes the user\'s access to device data.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes the specified DeviceUser. This also revokes the user's access to device data.");
             device_users1 = device_users1.subcommand(mcmd);
         }
         {
@@ -151,12 +164,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             device_users1 = device_users1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("lookup").about("Looks up resource names of the DeviceUsers associated with the caller\'s credentials, as well as the properties provided in the request. This method must be called with end-user credentials with the scope: https://www.googleapis.com/auth/cloud-identity.devices.lookup If multiple properties are provided, only DeviceUsers having all of these properties are considered as matches - i.e. the query behaves like an AND. Different platforms require different amounts of information from the caller to ensure that the DeviceUser is uniquely identified. - iOS: No properties need to be passed, the caller\'s credentials are sufficient to identify the corresponding DeviceUser. - Android: Specifying the \'android_id\' field is required. - Desktop: Specifying the \'raw_resource_id\' field is required.");
+            let mcmd = SubCommand::with_name("lookup").about("Looks up resource names of the DeviceUsers associated with the caller's credentials, as well as the properties provided in the request. This method must be called with end-user credentials with the scope: https://www.googleapis.com/auth/cloud-identity.devices.lookup If multiple properties are provided, only DeviceUsers having all of these properties are considered as matches - i.e. the query behaves like an AND. Different platforms require different amounts of information from the caller to ensure that the DeviceUser is uniquely identified. - iOS: No properties need to be passed, the caller's credentials are sufficient to identify the corresponding DeviceUser. - Android: Specifying the 'android_id' field is required. - Desktop: Specifying the 'raw_resource_id' field is required.");
             device_users1 = device_users1.subcommand(mcmd);
         }
         {
-            let mcmd =
-                SubCommand::with_name("wipe").about("Wipes the user\'s account on a device.");
+            let mcmd = SubCommand::with_name("wipe").about("Wipes the user's account on a device.");
             device_users1 = device_users1.subcommand(mcmd);
         }
         let mut memberships1 = SubCommand::with_name("memberships")
@@ -204,6 +216,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("search_transitive_memberships").about("Search transitive memberships of a group. **Note:** This feature is only available to Google Workspace Enterprise Standard, Enterprise Plus, and Enterprise for Education; and Cloud Identity Premium accounts. A transitive membership is any direct or indirect membership of a group. Actor must have view permissions to all transitive memberships.");
             memberships1 = memberships1.subcommand(mcmd);
         }
+        let mut memberships1 = SubCommand::with_name("memberships")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: list and r#move");
+        {
+            let mcmd = SubCommand::with_name("list").about("List OrgMembership resources in an OrgUnit treated as 'parent'. Parent format: orgUnits/{$orgUnitId} where `$orgUnitId` is the `orgUnitId` from the [Admin SDK `OrgUnit` resource](https://developers.google.com/admin-sdk/directory/reference/rest/v1/orgunits)");
+            memberships1 = memberships1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("r#move").about("Move an OrgMembership to a new OrgUnit. NOTE: This is an atomic copy-and-delete. The resource will have a new copy under the destination OrgUnit and be deleted from the source OrgUnit. The resource can only be searched under the destination OrgUnit afterwards.");
+            memberships1 = memberships1.subcommand(mcmd);
+        }
         let mut client_states2 = SubCommand::with_name("client_states")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get and patch");
@@ -217,9 +240,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             client_states2 = client_states2.subcommand(mcmd);
         }
         device_users1 = device_users1.subcommand(client_states2);
+        org_units0 = org_units0.subcommand(memberships1);
         groups0 = groups0.subcommand(memberships1);
         devices0 = devices0.subcommand(device_users1);
         customers0 = customers0.subcommand(userinvitations1);
+        app = app.subcommand(org_units0);
         app = app.subcommand(groups0);
         app = app.subcommand(devices0);
         app = app.subcommand(customers0);

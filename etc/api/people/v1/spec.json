@@ -7,7 +7,7 @@
   "canonicalName": "People Service",
   "fullyEncodeReservedExpansion": null,
   "version": "v1",
-  "revision": "20210317",
+  "revision": "20220421",
   "title": "People API",
   "description": "Provides access to information about profiles and contacts.",
   "ownerDomain": "google.com",
@@ -231,7 +231,7 @@
           "description": "See and download your personal phone numbers"
         },
         "https://www.googleapis.com/auth/userinfo.email": {
-          "description": "View your email address"
+          "description": "See your primary Google Account email address"
         },
         "https://www.googleapis.com/auth/userinfo.profile": {
           "description": "See your personal info, including any personal info you've made publicly available"
@@ -466,7 +466,7 @@
     },
     "BatchCreateContactsResponse": {
       "id": "BatchCreateContactsResponse",
-      "description": "The response to a request to create a batch of contacts.",
+      "description": "If not successful, returns BatchCreateContactsErrorDetails which contains a list of errors for each invalid contact. The response to a request to create a batch of contacts.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -617,7 +617,7 @@
     },
     "BatchUpdateContactsResponse": {
       "id": "BatchUpdateContactsResponse",
-      "description": "The response to a request to create a batch of contacts.",
+      "description": "If not successful, returns BatchUpdateContactsErrorDetails, a list of errors corresponding to each contact. The response to a request to update a batch of contacts.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -686,14 +686,14 @@
     },
     "Birthday": {
       "id": "Birthday",
-      "description": "A person's birthday. At least one of the `date` and `text` fields are specified. The `date` and `text` fields typically represent the same date, but are not guaranteed to.",
+      "description": "A person's birthday. At least one of the `date` and `text` fields are specified. The `date` and `text` fields typically represent the same date, but are not guaranteed to. Clients should always set the `date` field when mutating birthdays.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "date": {
-          "description": "The date of the birthday.",
+          "description": "The structured date of the birthday.",
           "$ref": "Date"
         },
         "metadata": {
@@ -701,7 +701,7 @@
           "$ref": "FieldMetadata"
         },
         "text": {
-          "description": "A free-form string representing the user's birthday.",
+          "description": "Prefer to use the `date` field if set. A free-form string representing the user's birthday. This value is not validated.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -913,7 +913,7 @@
           "$ref": "ContactGroupMetadata"
         },
         "name": {
-          "description": "The contact group name set by the group owner or a system provided name for system groups.",
+          "description": "The contact group name set by the group owner or a system provided name for system groups. For [`contactGroups.create`](/people/api/rest/v1/contactGroups/create) or [`contactGroups.update`](/people/api/rest/v1/contactGroups/update) the name must be unique to the users contact groups. Attempting to create a group with a duplicate name will return a HTTP 409 error.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1170,7 +1170,7 @@
     },
     "Date": {
       "id": "Date",
-      "description": "Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values * A month and day value, with a zero year, such as an anniversary * A year on its own, with zero month and day values * A year and month value, with a zero day, such as a credit card expiration date Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.",
+      "description": "Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1228,14 +1228,14 @@
     },
     "DomainMembership": {
       "id": "DomainMembership",
-      "description": "A G Suite Domain membership.",
+      "description": "A Google Workspace Domain membership.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "inViewerDomain": {
-          "description": "True if the person is in the viewer's G Suite domain.",
+          "description": "True if the person is in the viewer's Google Workspace domain.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -1306,7 +1306,7 @@
     },
     "Empty": {
       "id": "Empty",
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
+      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1410,7 +1410,7 @@
       "enumDescriptions": [],
       "properties": {
         "primary": {
-          "description": "True if the field is the primary field; false if the field is a secondary field.",
+          "description": "Output only. True if the field is the primary field for all sources in the person. Each person will have at most one field with `primary` set to true.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -1422,6 +1422,16 @@
         "source": {
           "description": "The source of the field.",
           "$ref": "Source"
+        },
+        "sourcePrimary": {
+          "description": "True if the field is the primary field for the source. Each source must have at most one field with `source_primary` set to true.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "verified": {
           "description": "Output only. True if the field is verified; false if the field is unverified. A verified field is typically a name, email address, phone number, or website that has been confirmed to be owned by the person.",
@@ -1472,7 +1482,7 @@
       "enumDescriptions": [],
       "properties": {
         "addressMeAs": {
-          "description": "The type of pronouns that should be used to address the person. The value can be custom or one of these predefined values: * `male` * `female` * `other`",
+          "description": "Free form text field for pronouns that should be used to address the person. Common values are: * `he`/`him` * `she`/`her` * `they`/`them`",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1858,6 +1868,16 @@
           "items": {
             "$ref": "Person"
           }
+        },
+        "totalSize": {
+          "description": "The total number of other contacts in the list without pagination.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -2409,6 +2429,16 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "costCenter": {
+          "description": "The person's cost center at the organization.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "current": {
           "description": "True if the organization is the person's current organization; false if the organization is a past organization.",
           "type": "boolean",
@@ -2447,6 +2477,16 @@
           "description": "Output only. The type of the organization translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale.",
           "type": "string",
           "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "fullTimeEquivalentMillipercent": {
+          "description": "The person's full-time equivalent millipercent within the organization (100000 = 100%).",
+          "type": "integer",
+          "format": "int32",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -2660,7 +2700,7 @@
           }
         },
         "emailAddresses": {
-          "description": "The person's email addresses.",
+          "description": "The person's email addresses. For `people.connections.list` and `otherContacts.list` the number of email addresses is limited to 100. If a Person has more email addresses the entire set can be obtained by calling GetPeople.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2854,7 +2894,7 @@
           }
         },
         "phoneNumbers": {
-          "description": "The person's phone numbers.",
+          "description": "The person's phone numbers. For `people.connections.list` and `otherContacts.list` the number of phone numbers is limited to 100. If a Person has more phone numbers the entire set can be obtained by calling GetPeople.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3008,7 +3048,7 @@
       "enumDescriptions": [],
       "properties": {
         "deleted": {
-          "description": "Output only. True if the person resource has been deleted. Populated only for [`connections.list`](/people/api/rest/v1/people.connections/list) requests that include a sync token.",
+          "description": "Output only. True if the person resource has been deleted. Populated only for `people.connections.list` and `otherContacts.list` sync requests.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -3047,14 +3087,14 @@
           "enumDescriptions": [
             "Unspecified.",
             "Person.",
-            "[Currents Page.](https://gsuite.google.com/products/currents/)"
+            "[Currents Page.](https://workspace.google.com/products/currents/)"
           ],
           "properties": {},
           "additionalProperties": null,
           "items": null
         },
         "previousResourceNames": {
-          "description": "Output only. Any former resource names this person has had. Populated only for [`connections.list`](/people/api/rest/v1/people.connections/list) requests that include a sync token. The resource name may change when adding or removing fields that link a contact and profile such as a verified email, verified phone number, or profile URL.",
+          "description": "Output only. Any former resource names this person has had. Populated only for `people.connections.list` requests that include a sync token. The resource name may change when adding or removing fields that link a contact and profile such as a verified email, verified phone number, or profile URL.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3239,7 +3279,7 @@
           "enumDescriptions": [
             "Unspecified.",
             "Person.",
-            "[Currents Page.](https://gsuite.google.com/products/currents/)"
+            "[Currents Page.](https://workspace.google.com/products/currents/)"
           ],
           "properties": {},
           "additionalProperties": null,
@@ -3266,7 +3306,7 @@
               "The user type is not known.",
               "The user is a Google user.",
               "The user is a Currents user.",
-              "The user is a G Suite user."
+              "The user is a Google Workspace user."
             ],
             "properties": {},
             "additionalProperties": null,
@@ -3636,10 +3676,10 @@
             "Unspecified.",
             "[Google Account](https://accounts.google.com).",
             "[Google profile](https://profiles.google.com). You can view the profile at [https://profiles.google.com/](https://profiles.google.com/){id}, where {id} is the source id.",
-            "[G Suite domain profile](https://support.google.com/a/answer/1628008).",
+            "[Google Workspace domain profile](https://support.google.com/a/answer/1628008).",
             "[Google contact](https://contacts.google.com). You can view the contact at [https://contact.google.com/](https://contact.google.com/){id}, where {id} is the source id.",
             "[Google \"Other contact\"](https://contacts.google.com/other).",
-            "[G Suite domain shared contact](https://support.google.com/a/answer/9281635)."
+            "[Google Workspace domain shared contact](https://support.google.com/a/answer/9281635)."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -4023,7 +4063,7 @@
               "repeated": false
             },
             "resourceNames": {
-              "description": "Required. The resource names of the contact groups to get.",
+              "description": "Required. The resource names of the contact groups to get. There is a maximum of 200 resource names.",
               "default": null,
               "location": "query",
               "required": false,
@@ -4056,7 +4096,7 @@
           "id": "people.contactGroups.create",
           "path": "v1/contactGroups",
           "httpMethod": "POST",
-          "description": "Create a new contact group owned by the authenticated user.",
+          "description": "Create a new contact group owned by the authenticated user. Created contact group names must be unique to the users contact groups. Attempting to create a group with a duplicate name will return a HTTP 409 error. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -4078,7 +4118,7 @@
           "id": "people.contactGroups.delete",
           "path": "v1/{+resourceName}",
           "httpMethod": "DELETE",
-          "description": "Delete an existing contact group owned by the authenticated user by specifying a contact group resource name.",
+          "description": "Delete an existing contact group owned by the authenticated user by specifying a contact group resource name. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.",
           "parameters": {
             "deleteContacts": {
               "description": "Optional. Set to true to also delete the contacts in the specified group.",
@@ -4273,7 +4313,7 @@
           "id": "people.contactGroups.update",
           "path": "v1/{+resourceName}",
           "httpMethod": "PUT",
-          "description": "Update the name of an existing contact group owned by the authenticated user.",
+          "description": "Update the name of an existing contact group owned by the authenticated user. Updated contact group names must be unique to the users contact groups. Attempting to create a group with a duplicate name will return a HTTP 409 error. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.",
           "parameters": {
             "resourceName": {
               "description": "The resource name for the contact group, assigned by the server. An ASCII string, in the form of `contactGroups/{contact_group_id}`.",
@@ -4317,7 +4357,7 @@
           "id": "people.otherContacts.copyOtherContactToMyContactsGroup",
           "path": "v1/{+resourceName}:copyOtherContactToMyContactsGroup",
           "httpMethod": "POST",
-          "description": "Copies an \"Other contact\" to a new contact in the user's \"myContacts\" group",
+          "description": "Copies an \"Other contact\" to a new contact in the user's \"myContacts\" group Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.",
           "parameters": {
             "resourceName": {
               "description": "Required. The resource name of the \"Other contact\" to copy.",
@@ -4357,7 +4397,7 @@
           "id": "people.otherContacts.list",
           "path": "v1/otherContacts",
           "httpMethod": "GET",
-          "description": "List all \"Other contacts\", that is contacts that are not in a contact group. \"Other contacts\" are typically auto created contacts from interactions.",
+          "description": "List all \"Other contacts\", that is contacts that are not in a contact group. \"Other contacts\" are typically auto created contacts from interactions. Sync tokens expire 7 days after the full sync. A request with an expired sync token will result in a 410 error. In the case of such an error clients should make a full sync request without a `sync_token`. The first page of a full sync request has an additional quota. If the quota is exceeded, a 429 error will be returned. This quota is fixed and can not be increased. When the `sync_token` is specified, resources deleted since the last sync will be returned as a person with `PersonMetadata.deleted` set to true. When the `page_token` or `sync_token` is specified, all other request parameters must match the first call. Writes may have a propagation delay of several minutes for sync requests. Incremental syncs are not intended for read-after-write use cases. See example usage at [List the user's other contacts that have changed](/people/v1/other-contacts#list_the_users_other_contacts_that_have_changed).",
           "parameters": {
             "pageSize": {
               "description": "Optional. The number of \"Other contacts\" to include in the response. Valid values are between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.",
@@ -4374,7 +4414,7 @@
               "repeated": false
             },
             "pageToken": {
-              "description": "Optional. A page token, received from a previous `ListOtherContacts` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListOtherContacts` must match the call that provided the page token.",
+              "description": "Optional. A page token, received from a previous response `next_page_token`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `otherContacts.list` must match the first call that provided the page token.",
               "default": null,
               "location": "query",
               "required": false,
@@ -4388,7 +4428,7 @@
               "repeated": false
             },
             "readMask": {
-              "description": "Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * emailAddresses * names * phoneNumbers",
+              "description": "Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. What values are valid depend on what ReadSourceType is used. If READ_SOURCE_TYPE_CONTACT is used, valid values are: * emailAddresses * metadata * names * phoneNumbers * photos If READ_SOURCE_TYPE_PROFILE is used, valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined",
               "default": null,
               "location": "query",
               "required": false,
@@ -4402,7 +4442,7 @@
               "repeated": false
             },
             "requestSyncToken": {
-              "description": "Optional. Whether the response should include `next_sync_token`, which can be used to get all changes since the last request. For subsequent sync requests use the `sync_token` param instead. Initial sync requests that specify `request_sync_token` have an additional rate limit.",
+              "description": "Optional. Whether the response should return `next_sync_token` on the last page of results. It can be used to get incremental changes since the last request by setting it on the request `sync_token`. More details about sync behavior at `otherContacts.list`.",
               "default": null,
               "location": "query",
               "required": false,
@@ -4415,8 +4455,32 @@
               "enumDescriptions": [],
               "repeated": false
             },
+            "sources": {
+              "description": "Optional. A mask of what source types to return. Defaults to READ_SOURCE_TYPE_CONTACT if not set. Possible values for this field are: * READ_SOURCE_TYPE_CONTACT * READ_SOURCE_TYPE_CONTACT,READ_SOURCE_TYPE_PROFILE Specifying READ_SOURCE_TYPE_PROFILE without specifying READ_SOURCE_TYPE_CONTACT is not permitted.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [
+                "READ_SOURCE_TYPE_UNSPECIFIED",
+                "READ_SOURCE_TYPE_PROFILE",
+                "READ_SOURCE_TYPE_CONTACT",
+                "READ_SOURCE_TYPE_DOMAIN_CONTACT"
+              ],
+              "enumDescriptions": [
+                "Unspecified.",
+                "Returns SourceType.ACCOUNT, SourceType.DOMAIN_PROFILE, and SourceType.PROFILE.",
+                "Returns SourceType.CONTACT.",
+                "Returns SourceType.DOMAIN_CONTACT."
+              ],
+              "repeated": true
+            },
             "syncToken": {
-              "description": "Optional. A sync token, received from a previous `ListOtherContacts` call. Provide this to retrieve only the resources changed since the last request. Sync requests that specify `sync_token` have an additional rate limit. When syncing, all other parameters provided to `ListOtherContacts` must match the call that provided the sync token.",
+              "description": "Optional. A sync token, received from a previous response `next_sync_token` Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to `otherContacts.list` must match the first call that provided the sync token. More details about sync behavior at `otherContacts.list`.",
               "default": null,
               "location": "query",
               "required": false,
@@ -4448,10 +4512,10 @@
           "id": "people.otherContacts.search",
           "path": "v1/otherContacts:search",
           "httpMethod": "GET",
-          "description": "Provides a list of contacts in the authenticated user's other contacts that matches the search query.",
+          "description": "Provides a list of contacts in the authenticated user's other contacts that matches the search query. The query matches on a contact's `names`, `emailAddresses`, and `phoneNumbers` fields that are from the OTHER_CONTACT source. **IMPORTANT**: Before searching, clients should send a warmup request with an empty query to update the cache. See https://developers.google.com/people/v1/other-contacts#search_the_users_other_contacts",
           "parameters": {
             "pageSize": {
-              "description": "Optional. The number of results to return. Defaults to 10 if field is not set, or set to 0.",
+              "description": "Optional. The number of results to return. Defaults to 10 if field is not set, or set to 0. Values greater than 30 will be capped to 30.",
               "default": null,
               "location": "query",
               "required": false,
@@ -4479,7 +4543,7 @@
               "repeated": false
             },
             "readMask": {
-              "description": "Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * emailAddresses * names * phoneNumbers",
+              "description": "Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * emailAddresses * metadata * names * phoneNumbers",
               "default": null,
               "location": "query",
               "required": false,
@@ -4518,7 +4582,7 @@
               "id": "people.people.connections.list",
               "path": "v1/{+resourceName}/connections",
               "httpMethod": "GET",
-              "description": "Provides a list of the authenticated user's contacts. The request returns a 400 error if `personFields` is not specified. The request returns a 410 error if `sync_token` is specified and is expired. Sync tokens expire after 7 days to prevent data drift between clients and the server. To handle a sync token expired error, a request should be sent without `sync_token` to get all contacts.",
+              "description": "Provides a list of the authenticated user's contacts. Sync tokens expire 7 days after the full sync. A request with an expired sync token will result in a 410 error. In the case of such an error clients should make a full sync request without a `sync_token`. The first page of a full sync request has an additional quota. If the quota is exceeded, a 429 error will be returned. This quota is fixed and can not be increased. When the `sync_token` is specified, resources deleted since the last sync will be returned as a person with `PersonMetadata.deleted` set to true. When the `page_token` or `sync_token` is specified, all other request parameters must match the first call. Writes may have a propagation delay of several minutes for sync requests. Incremental syncs are not intended for read-after-write use cases. See example usage at [List the user's contacts that have changed](/people/v1/contacts#list_the_users_contacts_that_have_changed).",
               "parameters": {
                 "pageSize": {
                   "description": "Optional. The number of connections to include in the response. Valid values are between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.",
@@ -4535,7 +4599,7 @@
                   "repeated": false
                 },
                 "pageToken": {
-                  "description": "Optional. A page token, received from a previous `ListConnections` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListConnections` must match the call that provided the page token.",
+                  "description": "Optional. A page token, received from a previous response `next_page_token`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `people.connections.list` must match the first call that provided the page token.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -4577,7 +4641,7 @@
                   "repeated": false
                 },
                 "requestSyncToken": {
-                  "description": "Optional. Whether the response should include `next_sync_token` on the last page, which can be used to get all changes since the last request. For subsequent sync requests use the `sync_token` param instead. Initial full sync requests that specify `request_sync_token` and do not specify `sync_token` have an additional rate limit per user. Each client should generally only be doing a full sync once every few days per user and so should not hit this limit.",
+                  "description": "Optional. Whether the response should return `next_sync_token` on the last page of results. It can be used to get incremental changes since the last request by setting it on the request `sync_token`. More details about sync behavior at `people.connections.list`.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -4653,7 +4717,7 @@
                   "repeated": true
                 },
                 "syncToken": {
-                  "description": "Optional. A sync token, received from a previous `ListConnections` call. Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to `ListConnections` except `page_size` and `page_token` must match the initial call that provided the sync token. Sync tokens expire after seven days, after which a full sync request without a `sync_token` should be made.",
+                  "description": "Optional. A sync token, received from a previous response `next_sync_token` Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to `people.connections.list` must match the first call that provided the sync token. More details about sync behavior at `people.connections.list`.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -4692,7 +4756,7 @@
           "id": "people.people.batchCreateContacts",
           "path": "v1/people:batchCreateContacts",
           "httpMethod": "POST",
-          "description": "Create a batch of new contacts and return the PersonResponses for the newly created contacts.",
+          "description": "Create a batch of new contacts and return the PersonResponses for the newly Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -4714,7 +4778,7 @@
           "id": "people.people.batchDeleteContacts",
           "path": "v1/people:batchDeleteContacts",
           "httpMethod": "POST",
-          "description": "Delete a batch of contacts. Any non-contact data will not be deleted.",
+          "description": "Delete a batch of contacts. Any non-contact data will not be deleted. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -4736,7 +4800,7 @@
           "id": "people.people.batchUpdateContacts",
           "path": "v1/people:batchUpdateContacts",
           "httpMethod": "POST",
-          "description": "Update a batch of contacts and return a map of resource names to PersonResponses for the updated contacts.",
+          "description": "Update a batch of contacts and return a map of resource names to PersonResponses for the updated contacts. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -4758,7 +4822,7 @@
           "id": "people.people.createContact",
           "path": "v1/people:createContact",
           "httpMethod": "POST",
-          "description": "Create a new contact and return the person resource for that contact. The request returns a 400 error if more than one field is specified on a field that is a singleton for contact sources: * biographies * birthdays * genders * names",
+          "description": "Create a new contact and return the person resource for that contact. The request returns a 400 error if more than one field is specified on a field that is a singleton for contact sources: * biographies * birthdays * genders * names Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.",
           "parameters": {
             "personFields": {
               "description": "Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Defaults to all fields if not set. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined",
@@ -4819,7 +4883,7 @@
           "id": "people.people.deleteContact",
           "path": "v1/{+resourceName}:deleteContact",
           "httpMethod": "DELETE",
-          "description": "Delete a contact person. Any non-contact data will not be deleted.",
+          "description": "Delete a contact person. Any non-contact data will not be deleted. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.",
           "parameters": {
             "resourceName": {
               "description": "Required. The resource name of the contact to delete.",
@@ -4856,7 +4920,7 @@
           "id": "people.people.deleteContactPhoto",
           "path": "v1/{+resourceName}:deleteContactPhoto",
           "httpMethod": "DELETE",
-          "description": "Delete a contact's photo.",
+          "description": "Delete a contact's photo. Mutate requests for the same user should be done sequentially to avoid // lock contention.",
           "parameters": {
             "personFields": {
               "description": "Optional. A field mask to restrict which fields on the person are returned. Multiple fields can be specified by separating them with commas. Defaults to empty if not set, which will skip the post mutate get. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined",
@@ -4962,7 +5026,7 @@
               "repeated": false
             },
             "resourceName": {
-              "description": "Required. The resource name of the person to provide information about. - To get information about the authenticated user, specify `people/me`. - To get information about a google account, specify `people/{account_id}`. - To get information about a contact, specify the resource name that identifies the contact as returned by [`people.connections.list`](/people/api/rest/v1/people.connections/list).",
+              "description": "Required. The resource name of the person to provide information about. - To get information about the authenticated user, specify `people/me`. - To get information about a google account, specify `people/{account_id}`. - To get information about a contact, specify the resource name that identifies the contact as returned by `people.connections.list`.",
               "default": null,
               "location": "path",
               "required": true,
@@ -5061,7 +5125,7 @@
               "repeated": false
             },
             "resourceNames": {
-              "description": "Required. The resource names of the people to provide information about. It's repeatable. The URL query parameter should be resourceNames=<name1>&resourceNames=<name2>&... - To get information about the authenticated user, specify `people/me`. - To get information about a google account, specify `people/{account_id}`. - To get information about a contact, specify the resource name that identifies the contact as returned by [`people.connections.list`](/people/api/rest/v1/people.connections/list). You can include up to 50 resource names in one request.",
+              "description": "Required. The resource names of the people to provide information about. It's repeatable. The URL query parameter should be resourceNames=<name1>&resourceNames=<name2>&... - To get information about the authenticated user, specify `people/me`. - To get information about a google account, specify `people/{account_id}`. - To get information about a contact, specify the resource name that identifies the contact as returned by `people.connections.list`. There is a maximum of 200 resource names.",
               "default": null,
               "location": "query",
               "required": false,
@@ -5127,7 +5191,7 @@
           "id": "people.people.listDirectoryPeople",
           "path": "v1/people:listDirectoryPeople",
           "httpMethod": "GET",
-          "description": "Provides a list of domain profiles and domain contacts in the authenticated user's domain directory.",
+          "description": "Provides a list of domain profiles and domain contacts in the authenticated user's domain directory. When the `sync_token` is specified, resources deleted since the last sync will be returned as a person with `PersonMetadata.deleted` set to true. When the `page_token` or `sync_token` is specified, all other request parameters must match the first call. Writes may have a propagation delay of several minutes for sync requests. Incremental syncs are not intended for read-after-write use cases. See example usage at [List the directory people that have changed](/people/v1/directory#list_the_directory_people_that_have_changed).",
           "parameters": {
             "mergeSources": {
               "description": "Optional. Additional data to merge into the directory sources if they are connected through verified join keys such as email addresses or phone numbers.",
@@ -5164,7 +5228,7 @@
               "repeated": false
             },
             "pageToken": {
-              "description": "Optional. A page token, received from a previous `ListDirectoryPeople` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListDirectoryPeople` must match the call that provided the page token.",
+              "description": "Optional. A page token, received from a previous response `next_page_token`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `people.listDirectoryPeople` must match the first call that provided the page token.",
               "default": null,
               "location": "query",
               "required": false,
@@ -5192,7 +5256,7 @@
               "repeated": false
             },
             "requestSyncToken": {
-              "description": "Optional. Whether the response should include `next_sync_token`, which can be used to get all changes since the last request. For subsequent sync requests use the `sync_token` param instead.",
+              "description": "Optional. Whether the response should return `next_sync_token`. It can be used to get incremental changes since the last request by setting it on the request `sync_token`. More details about sync behavior at `people.listDirectoryPeople`.",
               "default": null,
               "location": "query",
               "required": false,
@@ -5222,13 +5286,13 @@
               ],
               "enumDescriptions": [
                 "Unspecified.",
-                "G Suite domain shared contact.",
-                "G Suite domain profile."
+                "Google Workspace domain shared contact.",
+                "Google Workspace domain profile."
               ],
               "repeated": true
             },
             "syncToken": {
-              "description": "Optional. A sync token, received from a previous `ListDirectoryPeople` call. Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to `ListDirectoryPeople` must match the call that provided the sync token.",
+              "description": "Optional. A sync token, received from a previous response `next_sync_token` Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to `people.listDirectoryPeople` must match the first call that provided the sync token. More details about sync behavior at `people.listDirectoryPeople`.",
               "default": null,
               "location": "query",
               "required": false,
@@ -5260,10 +5324,10 @@
           "id": "people.people.searchContacts",
           "path": "v1/people:searchContacts",
           "httpMethod": "GET",
-          "description": "Provides a list of contacts in the authenticated user's grouped contacts that matches the search query.",
+          "description": "Provides a list of contacts in the authenticated user's grouped contacts that matches the search query. The query matches on a contact's `names`, `nickNames`, `emailAddresses`, `phoneNumbers`, and `organizations` fields that are from the CONTACT source. **IMPORTANT**: Before searching, clients should send a warmup request with an empty query to update the cache. See https://developers.google.com/people/v1/contacts#search_the_users_contacts",
           "parameters": {
             "pageSize": {
-              "description": "Optional. The number of results to return.",
+              "description": "Optional. The number of results to return. Defaults to 10 if field is not set, or set to 0. Values greater than 30 will be capped to 30.",
               "default": null,
               "location": "query",
               "required": false,
@@ -5303,6 +5367,30 @@
               "enum": [],
               "enumDescriptions": [],
               "repeated": false
+            },
+            "sources": {
+              "description": "Optional. A mask of what source types to return. Defaults to READ_SOURCE_TYPE_CONTACT if not set.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [
+                "READ_SOURCE_TYPE_UNSPECIFIED",
+                "READ_SOURCE_TYPE_PROFILE",
+                "READ_SOURCE_TYPE_CONTACT",
+                "READ_SOURCE_TYPE_DOMAIN_CONTACT"
+              ],
+              "enumDescriptions": [
+                "Unspecified.",
+                "Returns SourceType.ACCOUNT, SourceType.DOMAIN_PROFILE, and SourceType.PROFILE.",
+                "Returns SourceType.CONTACT.",
+                "Returns SourceType.DOMAIN_CONTACT."
+              ],
+              "repeated": true
             }
           },
           "parameterOrder": [],
@@ -5361,7 +5449,7 @@
               "repeated": false
             },
             "pageToken": {
-              "description": "Optional. A page token, received from a previous `SearchDirectoryPeople` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchDirectoryPeople` must match the call that provided the page token.",
+              "description": "Optional. A page token, received from a previous response `next_page_token`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchDirectoryPeople` must match the first call that provided the page token.",
               "default": null,
               "location": "query",
               "required": false,
@@ -5419,8 +5507,8 @@
               ],
               "enumDescriptions": [
                 "Unspecified.",
-                "G Suite domain shared contact.",
-                "G Suite domain profile."
+                "Google Workspace domain shared contact.",
+                "Google Workspace domain profile."
               ],
               "repeated": true
             }
@@ -5443,7 +5531,7 @@
           "id": "people.people.updateContact",
           "path": "v1/{+resourceName}:updateContact",
           "httpMethod": "PATCH",
-          "description": "Update contact data for an existing contact person. Any non-contact data will not be modified. Any non-contact data in the person to update will be ignored. All fields specified in the `update_mask` will be replaced. The server returns a 400 error if `person.metadata.sources` is not specified for the contact to be updated or if there is no contact source. The server returns a 400 error with reason `\"failedPrecondition\"` if `person.metadata.sources.etag` is different than the contact's etag, which indicates the contact has changed since its data was read. Clients should get the latest person and merge their updates into the latest person. The server returns a 400 error if `memberships` are being updated and there are no contact group memberships specified on the person. The server returns a 400 error if more than one field is specified on a field that is a singleton for contact sources: * biographies * birthdays * genders * names",
+          "description": "Update contact data for an existing contact person. Any non-contact data will not be modified. Any non-contact data in the person to update will be ignored. All fields specified in the `update_mask` will be replaced. The server returns a 400 error if `person.metadata.sources` is not specified for the contact to be updated or if there is no contact source. The server returns a 400 error with reason `\"failedPrecondition\"` if `person.metadata.sources.etag` is different than the contact's etag, which indicates the contact has changed since its data was read. Clients should get the latest person and merge their updates into the latest person. The server returns a 400 error if `memberships` are being updated and there are no contact group memberships specified on the person. The server returns a 400 error if more than one field is specified on a field that is a singleton for contact sources: * biographies * birthdays * genders * names Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.",
           "parameters": {
             "personFields": {
               "description": "Optional. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Defaults to all fields if not set. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined",
@@ -5534,7 +5622,7 @@
           "id": "people.people.updateContactPhoto",
           "path": "v1/{+resourceName}:updateContactPhoto",
           "httpMethod": "PATCH",
-          "description": "Update a contact's photo.",
+          "description": "Update a contact's photo. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.",
           "parameters": {
             "resourceName": {
               "description": "Required. Person resource name",

@@ -7,7 +7,7 @@
   "canonicalName": "Localservices",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20210317",
+  "revision": "20220425",
   "title": "Local Services API",
   "description": "",
   "ownerDomain": "google.com",
@@ -209,7 +209,7 @@
   "schemas": {
     "GoogleAdsHomeservicesLocalservicesV1AccountReport": {
       "id": "GoogleAdsHomeservicesLocalservicesV1AccountReport",
-      "description": "An Account Report of a GLS account identified by their account id containing aggregate data gathered from a particular date range.",
+      "description": "An Account Report of a GLS account identified by their account id containing aggregate data gathered from a particular date range. Next ID: 18",
       "type": "object",
       "format": null,
       "enum": [],
@@ -309,6 +309,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "impressionsLastTwoDays": {
+          "description": "Number of impressions that customers have had in the past 2 days.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "phoneLeadResponsiveness": {
           "description": "Phone lead responsiveness of the account for the past 90 days from current date. This is computed by taking the total number of connected calls from charged phone leads and dividing by the total number of calls received.",
           "type": "number",
@@ -395,6 +405,68 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleAdsHomeservicesLocalservicesV1BookingLead": {
+      "id": "GoogleAdsHomeservicesLocalservicesV1BookingLead",
+      "description": "Container for booking lead specific information.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "bookingAppointmentTimestamp": {
+          "description": "Timestamp of when service is provided by advertiser.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "consumerEmail": {
+          "description": "Consumer email associated with the booking lead.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "consumerPhoneNumber": {
+          "description": "Consumer phone number associated with the booking lead.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "customerName": {
+          "description": "Name of the customer who created the lead.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "jobType": {
+          "description": "The job type of the specified lead.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleAdsHomeservicesLocalservicesV1DetailedLeadReport": {
       "id": "GoogleAdsHomeservicesLocalservicesV1DetailedLeadReport",
       "description": "A Detailed Lead Report of a lead identified by their lead id and contains consumer, account, monetization, and lead data.",
@@ -416,6 +488,10 @@
         "aggregatorInfo": {
           "description": "Aggregator specific information related to the lead.",
           "$ref": "GoogleAdsHomeservicesLocalservicesV1AggregatorInfo"
+        },
+        "bookingLead": {
+          "description": "More information associated to only booking leads.",
+          "$ref": "GoogleAdsHomeservicesLocalservicesV1BookingLead"
         },
         "businessName": {
           "description": "Business name associated to the account.",
@@ -522,12 +598,14 @@
           "enum": [
             "LEAD_TYPE_UNSPECIFIED",
             "MESSAGE",
-            "PHONE_CALL"
+            "PHONE_CALL",
+            "BOOKING"
           ],
           "enumDescriptions": [
             "Not specified.",
             "Message lead.",
-            "Phone call lead."
+            "Phone call lead.",
+            "Booking lead."
           ],
           "properties": {},
           "additionalProperties": null,

@@ -22,7 +22,7 @@ pub mod scopes {
     pub const GMAIL_LABELS: &str = "https://www.googleapis.com/auth/gmail.labels";
     #[doc = "View your email message metadata such as labels and headers, but not the email body\n\n`https://www.googleapis.com/auth/gmail.metadata`"]
     pub const GMAIL_METADATA: &str = "https://www.googleapis.com/auth/gmail.metadata";
-    #[doc = "View and modify but not delete your email\n\n`https://www.googleapis.com/auth/gmail.modify`"]
+    #[doc = "Read, compose, and send emails from your Gmail account\n\n`https://www.googleapis.com/auth/gmail.modify`"]
     pub const GMAIL_MODIFY: &str = "https://www.googleapis.com/auth/gmail.modify";
     #[doc = "View your email messages and settings\n\n`https://www.googleapis.com/auth/gmail.readonly`"]
     pub const GMAIL_READONLY: &str = "https://www.googleapis.com/auth/gmail.readonly";
@@ -2123,14 +2123,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ModifyMessageRequest {
-        #[doc = "A list of IDs of labels to add to this message."]
+        #[doc = "A list of IDs of labels to add to this message. You can add up to 100 labels with each update."]
         #[serde(
             rename = "addLabelIds",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub add_label_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "A list IDs of labels to remove from this message."]
+        #[doc = "A list IDs of labels to remove from this message. You can remove up to 100 labels with each update."]
         #[serde(
             rename = "removeLabelIds",
             default,
@@ -2161,14 +2161,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ModifyThreadRequest {
-        #[doc = "A list of IDs of labels to add to this thread."]
+        #[doc = "A list of IDs of labels to add to this thread. You can add up to 100 labels with each update."]
         #[serde(
             rename = "addLabelIds",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub add_label_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "A list of IDs of labels to remove from this thread."]
+        #[doc = "A list of IDs of labels to remove from this thread. You can remove up to 100 labels with each update."]
         #[serde(
             rename = "removeLabelIds",
             default,
@@ -4654,7 +4654,7 @@ pub mod resources {
                     self.include_spam_trash = Some(value);
                     self
                 }
-                #[doc = "Maximum number of drafts to return."]
+                #[doc = "Maximum number of drafts to return. This field defaults to 100. The maximum allowed value for this field is 500."]
                 pub fn max_results(mut self, value: u32) -> Self {
                     self.max_results = Some(value);
                     self
@@ -5607,7 +5607,7 @@ pub mod resources {
                     self.label_id = Some(value.into());
                     self
                 }
-                #[doc = "The maximum number of history records to return."]
+                #[doc = "Maximum number of history records to return. This field defaults to 100. The maximum allowed value for this field is 500."]
                 pub fn max_results(mut self, value: u32) -> Self {
                     self.max_results = Some(value);
                     self
@@ -7313,7 +7313,7 @@ pub mod resources {
                         metadata_headers: None,
                     }
                 }
-                #[doc = "Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message. Note: This function doesn't trigger forwarding rules or filters set up by the user."]
+                #[doc = "Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing. This method does not send a message. Note: This function doesn't trigger forwarding rules or filters set up by the user."]
                 pub fn import(
                     &self,
                     request: crate::schemas::Message,
@@ -8607,7 +8607,7 @@ pub mod resources {
                     self.label_ids = Some(value.into());
                     self
                 }
-                #[doc = "Maximum number of messages to return."]
+                #[doc = "Maximum number of messages to return. This field defaults to 100. The maximum allowed value for this field is 500."]
                 pub fn max_results(mut self, value: u32) -> Self {
                     self.max_results = Some(value);
                     self
@@ -10113,8 +10113,8 @@ pub mod resources {
                         auth: self.auth_ref(),
                     }
                 }
-                #[doc = "Actions that can be performed on the forwarding_addresses resource"]                pub fn forwarding_addresses ( & self ) -> crate :: resources :: users :: settings :: forwarding_addresses :: ForwardingAddressesActions{
-                    crate :: resources :: users :: settings :: forwarding_addresses :: ForwardingAddressesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the forwarding_addresses resource"]                pub fn forwarding_addresses (& self) -> crate :: resources :: users :: settings :: forwarding_addresses :: ForwardingAddressesActions{
+                    crate :: resources :: users :: settings :: forwarding_addresses :: ForwardingAddressesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
                 #[doc = "Actions that can be performed on the send_as resource"]
                 pub fn send_as(&self) -> crate::resources::users::settings::send_as::SendAsActions {
@@ -12481,7 +12481,7 @@ pub mod resources {
                             user_id: user_id.into(),
                         }
                     }
-                    #[doc = "Deletes a filter."]
+                    #[doc = "Immediately and permanently deletes the specified filter."]
                     pub fn delete(
                         &self,
                         user_id: impl Into<String>,
@@ -16140,7 +16140,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Immediately and permanently deletes the specified thread. This operation cannot be undone. Prefer `threads.trash` instead."]
+                #[doc = "Immediately and permanently deletes the specified thread. Any messages that belong to the thread are also deleted. This operation cannot be undone. Prefer `threads.trash` instead."]
                 pub fn delete(
                     &self,
                     user_id: impl Into<String>,
@@ -16240,7 +16240,7 @@ pub mod resources {
                         id: id.into(),
                     }
                 }
-                #[doc = "Moves the specified thread to the trash."]
+                #[doc = "Moves the specified thread to the trash. Any messages that belong to the thread are also moved to the trash."]
                 pub fn trash(
                     &self,
                     user_id: impl Into<String>,
@@ -16264,7 +16264,7 @@ pub mod resources {
                         id: id.into(),
                     }
                 }
-                #[doc = "Removes the specified thread from the trash."]
+                #[doc = "Removes the specified thread from the trash. Any messages that belong to the thread are also removed from the trash."]
                 pub fn untrash(
                     &self,
                     user_id: impl Into<String>,
@@ -16624,7 +16624,7 @@ pub mod resources {
                     self.label_ids = Some(value.into());
                     self
                 }
-                #[doc = "Maximum number of threads to return."]
+                #[doc = "Maximum number of threads to return. This field defaults to 100. The maximum allowed value for this field is 500."]
                 pub fn max_results(mut self, value: u32) -> Self {
                     self.max_results = Some(value);
                     self

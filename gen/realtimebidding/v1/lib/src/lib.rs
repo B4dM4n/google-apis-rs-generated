@@ -1,4 +1,4 @@
-#![doc = "# Resources and Methods\n    * [bidders](resources/bidders/struct.BiddersActions.html)\n      * [*get*](resources/bidders/struct.GetRequestBuilder.html), [*list*](resources/bidders/struct.ListRequestBuilder.html)\n      * [creatives](resources/bidders/creatives/struct.CreativesActions.html)\n        * [*list*](resources/bidders/creatives/struct.ListRequestBuilder.html), [*watch*](resources/bidders/creatives/struct.WatchRequestBuilder.html)\n      * [endpoints](resources/bidders/endpoints/struct.EndpointsActions.html)\n        * [*get*](resources/bidders/endpoints/struct.GetRequestBuilder.html), [*list*](resources/bidders/endpoints/struct.ListRequestBuilder.html)\n      * [pretargeting_configs](resources/bidders/pretargeting_configs/struct.PretargetingConfigsActions.html)\n        * [*activate*](resources/bidders/pretargeting_configs/struct.ActivateRequestBuilder.html), [*addTargetedApps*](resources/bidders/pretargeting_configs/struct.AddTargetedAppsRequestBuilder.html), [*addTargetedPublishers*](resources/bidders/pretargeting_configs/struct.AddTargetedPublishersRequestBuilder.html), [*addTargetedSites*](resources/bidders/pretargeting_configs/struct.AddTargetedSitesRequestBuilder.html), [*create*](resources/bidders/pretargeting_configs/struct.CreateRequestBuilder.html), [*delete*](resources/bidders/pretargeting_configs/struct.DeleteRequestBuilder.html), [*get*](resources/bidders/pretargeting_configs/struct.GetRequestBuilder.html), [*list*](resources/bidders/pretargeting_configs/struct.ListRequestBuilder.html), [*patch*](resources/bidders/pretargeting_configs/struct.PatchRequestBuilder.html), [*removeTargetedApps*](resources/bidders/pretargeting_configs/struct.RemoveTargetedAppsRequestBuilder.html), [*removeTargetedPublishers*](resources/bidders/pretargeting_configs/struct.RemoveTargetedPublishersRequestBuilder.html), [*removeTargetedSites*](resources/bidders/pretargeting_configs/struct.RemoveTargetedSitesRequestBuilder.html), [*suspend*](resources/bidders/pretargeting_configs/struct.SuspendRequestBuilder.html)\n    * [buyers](resources/buyers/struct.BuyersActions.html)\n      * [*get*](resources/buyers/struct.GetRequestBuilder.html), [*getRemarketingTag*](resources/buyers/struct.GetRemarketingTagRequestBuilder.html), [*list*](resources/buyers/struct.ListRequestBuilder.html)\n      * [creatives](resources/buyers/creatives/struct.CreativesActions.html)\n        * [*create*](resources/buyers/creatives/struct.CreateRequestBuilder.html), [*get*](resources/buyers/creatives/struct.GetRequestBuilder.html), [*list*](resources/buyers/creatives/struct.ListRequestBuilder.html), [*patch*](resources/buyers/creatives/struct.PatchRequestBuilder.html)\n      * [user_lists](resources/buyers/user_lists/struct.UserListsActions.html)\n        * [*close*](resources/buyers/user_lists/struct.CloseRequestBuilder.html), [*create*](resources/buyers/user_lists/struct.CreateRequestBuilder.html), [*get*](resources/buyers/user_lists/struct.GetRequestBuilder.html), [*getRemarketingTag*](resources/buyers/user_lists/struct.GetRemarketingTagRequestBuilder.html), [*list*](resources/buyers/user_lists/struct.ListRequestBuilder.html), [*open*](resources/buyers/user_lists/struct.OpenRequestBuilder.html), [*update*](resources/buyers/user_lists/struct.UpdateRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [bidders](resources/bidders/struct.BiddersActions.html)\n      * [*get*](resources/bidders/struct.GetRequestBuilder.html), [*list*](resources/bidders/struct.ListRequestBuilder.html)\n      * [creatives](resources/bidders/creatives/struct.CreativesActions.html)\n        * [*list*](resources/bidders/creatives/struct.ListRequestBuilder.html), [*watch*](resources/bidders/creatives/struct.WatchRequestBuilder.html)\n      * [endpoints](resources/bidders/endpoints/struct.EndpointsActions.html)\n        * [*get*](resources/bidders/endpoints/struct.GetRequestBuilder.html), [*list*](resources/bidders/endpoints/struct.ListRequestBuilder.html), [*patch*](resources/bidders/endpoints/struct.PatchRequestBuilder.html)\n      * [pretargeting_configs](resources/bidders/pretargeting_configs/struct.PretargetingConfigsActions.html)\n        * [*activate*](resources/bidders/pretargeting_configs/struct.ActivateRequestBuilder.html), [*addTargetedApps*](resources/bidders/pretargeting_configs/struct.AddTargetedAppsRequestBuilder.html), [*addTargetedPublishers*](resources/bidders/pretargeting_configs/struct.AddTargetedPublishersRequestBuilder.html), [*addTargetedSites*](resources/bidders/pretargeting_configs/struct.AddTargetedSitesRequestBuilder.html), [*create*](resources/bidders/pretargeting_configs/struct.CreateRequestBuilder.html), [*delete*](resources/bidders/pretargeting_configs/struct.DeleteRequestBuilder.html), [*get*](resources/bidders/pretargeting_configs/struct.GetRequestBuilder.html), [*list*](resources/bidders/pretargeting_configs/struct.ListRequestBuilder.html), [*patch*](resources/bidders/pretargeting_configs/struct.PatchRequestBuilder.html), [*removeTargetedApps*](resources/bidders/pretargeting_configs/struct.RemoveTargetedAppsRequestBuilder.html), [*removeTargetedPublishers*](resources/bidders/pretargeting_configs/struct.RemoveTargetedPublishersRequestBuilder.html), [*removeTargetedSites*](resources/bidders/pretargeting_configs/struct.RemoveTargetedSitesRequestBuilder.html), [*suspend*](resources/bidders/pretargeting_configs/struct.SuspendRequestBuilder.html)\n    * [buyers](resources/buyers/struct.BuyersActions.html)\n      * [*get*](resources/buyers/struct.GetRequestBuilder.html), [*getRemarketingTag*](resources/buyers/struct.GetRemarketingTagRequestBuilder.html), [*list*](resources/buyers/struct.ListRequestBuilder.html)\n      * [creatives](resources/buyers/creatives/struct.CreativesActions.html)\n        * [*create*](resources/buyers/creatives/struct.CreateRequestBuilder.html), [*get*](resources/buyers/creatives/struct.GetRequestBuilder.html), [*list*](resources/buyers/creatives/struct.ListRequestBuilder.html), [*patch*](resources/buyers/creatives/struct.PatchRequestBuilder.html)\n      * [user_lists](resources/buyers/user_lists/struct.UserListsActions.html)\n        * [*close*](resources/buyers/user_lists/struct.CloseRequestBuilder.html), [*create*](resources/buyers/user_lists/struct.CreateRequestBuilder.html), [*get*](resources/buyers/user_lists/struct.GetRequestBuilder.html), [*getRemarketingTag*](resources/buyers/user_lists/struct.GetRemarketingTagRequestBuilder.html), [*list*](resources/buyers/user_lists/struct.ListRequestBuilder.html), [*open*](resources/buyers/user_lists/struct.OpenRequestBuilder.html), [*update*](resources/buyers/user_lists/struct.UpdateRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, create, edit, and delete your Authorized Buyers and Open Bidding account entities\n\n`https://www.googleapis.com/auth/realtime-bidding`"]
     pub const REALTIME_BIDDING: &str = "https://www.googleapis.com/auth/realtime-bidding";
@@ -1746,7 +1746,7 @@ pub mod schemas {
         fn from_str(
             s: &str,
         ) -> ::std::result::Result<CreativeServingDecisionDetectedAttributesItems, ()> {
-            Ok ( match s { "ADOBE_FLASH_FLV" => CreativeServingDecisionDetectedAttributesItems :: AdobeFlashFlv , "ANY_INTERSTITIAL" => CreativeServingDecisionDetectedAttributesItems :: AnyInterstitial , "ATTRIBUTE_UNSPECIFIED" => CreativeServingDecisionDetectedAttributesItems :: AttributeUnspecified , "CREATIVE_TYPE_HTML" => CreativeServingDecisionDetectedAttributesItems :: CreativeTypeHtml , "CREATIVE_TYPE_VAST_VIDEO" => CreativeServingDecisionDetectedAttributesItems :: CreativeTypeVastVideo , "EXPANDING_ACTION_ROLLOVER_TO_EXPAND" => CreativeServingDecisionDetectedAttributesItems :: ExpandingActionRolloverToExpand , "EXPANDING_DIRECTION_ANY_DIAGONAL" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionAnyDiagonal , "EXPANDING_DIRECTION_DOWN" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionDown , "EXPANDING_DIRECTION_DOWN_LEFT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionDownLeft , "EXPANDING_DIRECTION_DOWN_RIGHT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionDownRight , "EXPANDING_DIRECTION_LEFT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionLeft , "EXPANDING_DIRECTION_LEFT_OR_RIGHT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionLeftOrRight , "EXPANDING_DIRECTION_NONE" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionNone , "EXPANDING_DIRECTION_RIGHT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionRight , "EXPANDING_DIRECTION_UP" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionUp , "EXPANDING_DIRECTION_UP_LEFT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionUpLeft , "EXPANDING_DIRECTION_UP_OR_DOWN" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionUpOrDown , "EXPANDING_DIRECTION_UP_RIGHT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionUpRight , "IMAGE_RICH_MEDIA" => CreativeServingDecisionDetectedAttributesItems :: ImageRichMedia , "IN_BANNER_VIDEO" => CreativeServingDecisionDetectedAttributesItems :: InBannerVideo , "INSTREAM_VAST_VIDEO_TYPE_VPAID_FLASH" => CreativeServingDecisionDetectedAttributesItems :: InstreamVastVideoTypeVpaidFlash , "IS_COOKIE_TARGETED" => CreativeServingDecisionDetectedAttributesItems :: IsCookieTargeted , "IS_TAGGED" => CreativeServingDecisionDetectedAttributesItems :: IsTagged , "IS_USER_INTEREST_TARGETED" => CreativeServingDecisionDetectedAttributesItems :: IsUserInterestTargeted , "NATIVE_ELIGIBILITY_ELIGIBLE" => CreativeServingDecisionDetectedAttributesItems :: NativeEligibilityEligible , "NATIVE_ELIGIBILITY_NOT_ELIGIBLE" => CreativeServingDecisionDetectedAttributesItems :: NativeEligibilityNotEligible , "NON_INTERSTITIAL" => CreativeServingDecisionDetectedAttributesItems :: NonInterstitial , "NON_SKIPPABLE_INSTREAM_VIDEO" => CreativeServingDecisionDetectedAttributesItems :: NonSkippableInstreamVideo , "NON_VPAID" => CreativeServingDecisionDetectedAttributesItems :: NonVpaid , "OMSDK_1_0" => CreativeServingDecisionDetectedAttributesItems :: Omsdk10 , "RENDERING_SIZELESS_ADX" => CreativeServingDecisionDetectedAttributesItems :: RenderingSizelessAdx , "RICH_MEDIA_CAPABILITY_TYPE_FLASH" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeFlash , "RICH_MEDIA_CAPABILITY_TYPE_HTML5" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeHtml5 , "RICH_MEDIA_CAPABILITY_TYPE_INTERSTITIAL" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeInterstitial , "RICH_MEDIA_CAPABILITY_TYPE_MRAID" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeMraid , "RICH_MEDIA_CAPABILITY_TYPE_NON_SSL" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeNonSsl , "RICH_MEDIA_CAPABILITY_TYPE_SSL" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeSsl , "SKIPPABLE_INSTREAM_VIDEO" => CreativeServingDecisionDetectedAttributesItems :: SkippableInstreamVideo , _ => return Err ( ( ) ) , } )
+            Ok (match s { "ADOBE_FLASH_FLV" => CreativeServingDecisionDetectedAttributesItems :: AdobeFlashFlv , "ANY_INTERSTITIAL" => CreativeServingDecisionDetectedAttributesItems :: AnyInterstitial , "ATTRIBUTE_UNSPECIFIED" => CreativeServingDecisionDetectedAttributesItems :: AttributeUnspecified , "CREATIVE_TYPE_HTML" => CreativeServingDecisionDetectedAttributesItems :: CreativeTypeHtml , "CREATIVE_TYPE_VAST_VIDEO" => CreativeServingDecisionDetectedAttributesItems :: CreativeTypeVastVideo , "EXPANDING_ACTION_ROLLOVER_TO_EXPAND" => CreativeServingDecisionDetectedAttributesItems :: ExpandingActionRolloverToExpand , "EXPANDING_DIRECTION_ANY_DIAGONAL" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionAnyDiagonal , "EXPANDING_DIRECTION_DOWN" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionDown , "EXPANDING_DIRECTION_DOWN_LEFT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionDownLeft , "EXPANDING_DIRECTION_DOWN_RIGHT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionDownRight , "EXPANDING_DIRECTION_LEFT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionLeft , "EXPANDING_DIRECTION_LEFT_OR_RIGHT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionLeftOrRight , "EXPANDING_DIRECTION_NONE" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionNone , "EXPANDING_DIRECTION_RIGHT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionRight , "EXPANDING_DIRECTION_UP" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionUp , "EXPANDING_DIRECTION_UP_LEFT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionUpLeft , "EXPANDING_DIRECTION_UP_OR_DOWN" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionUpOrDown , "EXPANDING_DIRECTION_UP_RIGHT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionUpRight , "IMAGE_RICH_MEDIA" => CreativeServingDecisionDetectedAttributesItems :: ImageRichMedia , "IN_BANNER_VIDEO" => CreativeServingDecisionDetectedAttributesItems :: InBannerVideo , "INSTREAM_VAST_VIDEO_TYPE_VPAID_FLASH" => CreativeServingDecisionDetectedAttributesItems :: InstreamVastVideoTypeVpaidFlash , "IS_COOKIE_TARGETED" => CreativeServingDecisionDetectedAttributesItems :: IsCookieTargeted , "IS_TAGGED" => CreativeServingDecisionDetectedAttributesItems :: IsTagged , "IS_USER_INTEREST_TARGETED" => CreativeServingDecisionDetectedAttributesItems :: IsUserInterestTargeted , "NATIVE_ELIGIBILITY_ELIGIBLE" => CreativeServingDecisionDetectedAttributesItems :: NativeEligibilityEligible , "NATIVE_ELIGIBILITY_NOT_ELIGIBLE" => CreativeServingDecisionDetectedAttributesItems :: NativeEligibilityNotEligible , "NON_INTERSTITIAL" => CreativeServingDecisionDetectedAttributesItems :: NonInterstitial , "NON_SKIPPABLE_INSTREAM_VIDEO" => CreativeServingDecisionDetectedAttributesItems :: NonSkippableInstreamVideo , "NON_VPAID" => CreativeServingDecisionDetectedAttributesItems :: NonVpaid , "OMSDK_1_0" => CreativeServingDecisionDetectedAttributesItems :: Omsdk10 , "RENDERING_SIZELESS_ADX" => CreativeServingDecisionDetectedAttributesItems :: RenderingSizelessAdx , "RICH_MEDIA_CAPABILITY_TYPE_FLASH" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeFlash , "RICH_MEDIA_CAPABILITY_TYPE_HTML5" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeHtml5 , "RICH_MEDIA_CAPABILITY_TYPE_INTERSTITIAL" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeInterstitial , "RICH_MEDIA_CAPABILITY_TYPE_MRAID" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeMraid , "RICH_MEDIA_CAPABILITY_TYPE_NON_SSL" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeNonSsl , "RICH_MEDIA_CAPABILITY_TYPE_SSL" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeSsl , "SKIPPABLE_INSTREAM_VIDEO" => CreativeServingDecisionDetectedAttributesItems :: SkippableInstreamVideo , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for CreativeServingDecisionDetectedAttributesItems {
@@ -1768,7 +1768,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "ADOBE_FLASH_FLV" => CreativeServingDecisionDetectedAttributesItems :: AdobeFlashFlv , "ANY_INTERSTITIAL" => CreativeServingDecisionDetectedAttributesItems :: AnyInterstitial , "ATTRIBUTE_UNSPECIFIED" => CreativeServingDecisionDetectedAttributesItems :: AttributeUnspecified , "CREATIVE_TYPE_HTML" => CreativeServingDecisionDetectedAttributesItems :: CreativeTypeHtml , "CREATIVE_TYPE_VAST_VIDEO" => CreativeServingDecisionDetectedAttributesItems :: CreativeTypeVastVideo , "EXPANDING_ACTION_ROLLOVER_TO_EXPAND" => CreativeServingDecisionDetectedAttributesItems :: ExpandingActionRolloverToExpand , "EXPANDING_DIRECTION_ANY_DIAGONAL" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionAnyDiagonal , "EXPANDING_DIRECTION_DOWN" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionDown , "EXPANDING_DIRECTION_DOWN_LEFT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionDownLeft , "EXPANDING_DIRECTION_DOWN_RIGHT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionDownRight , "EXPANDING_DIRECTION_LEFT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionLeft , "EXPANDING_DIRECTION_LEFT_OR_RIGHT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionLeftOrRight , "EXPANDING_DIRECTION_NONE" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionNone , "EXPANDING_DIRECTION_RIGHT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionRight , "EXPANDING_DIRECTION_UP" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionUp , "EXPANDING_DIRECTION_UP_LEFT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionUpLeft , "EXPANDING_DIRECTION_UP_OR_DOWN" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionUpOrDown , "EXPANDING_DIRECTION_UP_RIGHT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionUpRight , "IMAGE_RICH_MEDIA" => CreativeServingDecisionDetectedAttributesItems :: ImageRichMedia , "IN_BANNER_VIDEO" => CreativeServingDecisionDetectedAttributesItems :: InBannerVideo , "INSTREAM_VAST_VIDEO_TYPE_VPAID_FLASH" => CreativeServingDecisionDetectedAttributesItems :: InstreamVastVideoTypeVpaidFlash , "IS_COOKIE_TARGETED" => CreativeServingDecisionDetectedAttributesItems :: IsCookieTargeted , "IS_TAGGED" => CreativeServingDecisionDetectedAttributesItems :: IsTagged , "IS_USER_INTEREST_TARGETED" => CreativeServingDecisionDetectedAttributesItems :: IsUserInterestTargeted , "NATIVE_ELIGIBILITY_ELIGIBLE" => CreativeServingDecisionDetectedAttributesItems :: NativeEligibilityEligible , "NATIVE_ELIGIBILITY_NOT_ELIGIBLE" => CreativeServingDecisionDetectedAttributesItems :: NativeEligibilityNotEligible , "NON_INTERSTITIAL" => CreativeServingDecisionDetectedAttributesItems :: NonInterstitial , "NON_SKIPPABLE_INSTREAM_VIDEO" => CreativeServingDecisionDetectedAttributesItems :: NonSkippableInstreamVideo , "NON_VPAID" => CreativeServingDecisionDetectedAttributesItems :: NonVpaid , "OMSDK_1_0" => CreativeServingDecisionDetectedAttributesItems :: Omsdk10 , "RENDERING_SIZELESS_ADX" => CreativeServingDecisionDetectedAttributesItems :: RenderingSizelessAdx , "RICH_MEDIA_CAPABILITY_TYPE_FLASH" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeFlash , "RICH_MEDIA_CAPABILITY_TYPE_HTML5" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeHtml5 , "RICH_MEDIA_CAPABILITY_TYPE_INTERSTITIAL" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeInterstitial , "RICH_MEDIA_CAPABILITY_TYPE_MRAID" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeMraid , "RICH_MEDIA_CAPABILITY_TYPE_NON_SSL" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeNonSsl , "RICH_MEDIA_CAPABILITY_TYPE_SSL" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeSsl , "SKIPPABLE_INSTREAM_VIDEO" => CreativeServingDecisionDetectedAttributesItems :: SkippableInstreamVideo , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "ADOBE_FLASH_FLV" => CreativeServingDecisionDetectedAttributesItems :: AdobeFlashFlv , "ANY_INTERSTITIAL" => CreativeServingDecisionDetectedAttributesItems :: AnyInterstitial , "ATTRIBUTE_UNSPECIFIED" => CreativeServingDecisionDetectedAttributesItems :: AttributeUnspecified , "CREATIVE_TYPE_HTML" => CreativeServingDecisionDetectedAttributesItems :: CreativeTypeHtml , "CREATIVE_TYPE_VAST_VIDEO" => CreativeServingDecisionDetectedAttributesItems :: CreativeTypeVastVideo , "EXPANDING_ACTION_ROLLOVER_TO_EXPAND" => CreativeServingDecisionDetectedAttributesItems :: ExpandingActionRolloverToExpand , "EXPANDING_DIRECTION_ANY_DIAGONAL" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionAnyDiagonal , "EXPANDING_DIRECTION_DOWN" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionDown , "EXPANDING_DIRECTION_DOWN_LEFT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionDownLeft , "EXPANDING_DIRECTION_DOWN_RIGHT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionDownRight , "EXPANDING_DIRECTION_LEFT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionLeft , "EXPANDING_DIRECTION_LEFT_OR_RIGHT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionLeftOrRight , "EXPANDING_DIRECTION_NONE" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionNone , "EXPANDING_DIRECTION_RIGHT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionRight , "EXPANDING_DIRECTION_UP" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionUp , "EXPANDING_DIRECTION_UP_LEFT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionUpLeft , "EXPANDING_DIRECTION_UP_OR_DOWN" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionUpOrDown , "EXPANDING_DIRECTION_UP_RIGHT" => CreativeServingDecisionDetectedAttributesItems :: ExpandingDirectionUpRight , "IMAGE_RICH_MEDIA" => CreativeServingDecisionDetectedAttributesItems :: ImageRichMedia , "IN_BANNER_VIDEO" => CreativeServingDecisionDetectedAttributesItems :: InBannerVideo , "INSTREAM_VAST_VIDEO_TYPE_VPAID_FLASH" => CreativeServingDecisionDetectedAttributesItems :: InstreamVastVideoTypeVpaidFlash , "IS_COOKIE_TARGETED" => CreativeServingDecisionDetectedAttributesItems :: IsCookieTargeted , "IS_TAGGED" => CreativeServingDecisionDetectedAttributesItems :: IsTagged , "IS_USER_INTEREST_TARGETED" => CreativeServingDecisionDetectedAttributesItems :: IsUserInterestTargeted , "NATIVE_ELIGIBILITY_ELIGIBLE" => CreativeServingDecisionDetectedAttributesItems :: NativeEligibilityEligible , "NATIVE_ELIGIBILITY_NOT_ELIGIBLE" => CreativeServingDecisionDetectedAttributesItems :: NativeEligibilityNotEligible , "NON_INTERSTITIAL" => CreativeServingDecisionDetectedAttributesItems :: NonInterstitial , "NON_SKIPPABLE_INSTREAM_VIDEO" => CreativeServingDecisionDetectedAttributesItems :: NonSkippableInstreamVideo , "NON_VPAID" => CreativeServingDecisionDetectedAttributesItems :: NonVpaid , "OMSDK_1_0" => CreativeServingDecisionDetectedAttributesItems :: Omsdk10 , "RENDERING_SIZELESS_ADX" => CreativeServingDecisionDetectedAttributesItems :: RenderingSizelessAdx , "RICH_MEDIA_CAPABILITY_TYPE_FLASH" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeFlash , "RICH_MEDIA_CAPABILITY_TYPE_HTML5" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeHtml5 , "RICH_MEDIA_CAPABILITY_TYPE_INTERSTITIAL" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeInterstitial , "RICH_MEDIA_CAPABILITY_TYPE_MRAID" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeMraid , "RICH_MEDIA_CAPABILITY_TYPE_NON_SSL" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeNonSsl , "RICH_MEDIA_CAPABILITY_TYPE_SSL" => CreativeServingDecisionDetectedAttributesItems :: RichMediaCapabilityTypeSsl , "SKIPPABLE_INSTREAM_VIDEO" => CreativeServingDecisionDetectedAttributesItems :: SkippableInstreamVideo , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector for CreativeServingDecisionDetectedAttributesItems {
@@ -3616,6 +3616,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub video_url: ::std::option::Option<String>,
+        #[doc = "The contents of a VAST document for a native video ad."]
+        #[serde(
+            rename = "videoVastXml",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub video_vast_xml: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for NativeContent {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -6447,7 +6454,7 @@ pub mod resources {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "A token identifying a page of results the server should return. Typically, this is the value of ListCreativesResponse.nextPageToken returned from the previous call to the 'ListCreatives' method."]
+                #[doc = "A token identifying a page of results the server should return. Typically, this is the value of ListCreativesResponse.nextPageToken returned from the previous call to the 'ListCreatives' method. Page tokens for continued pages are valid for up to five hours, counting from the call to 'ListCreatives' for the first page."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -6929,6 +6936,31 @@ pub mod resources {
                         page_token: None,
                     }
                 }
+                #[doc = "Updates a bidder's endpoint."]
+                pub fn patch(
+                    &self,
+                    request: crate::schemas::Endpoint,
+                    name: impl Into<String>,
+                ) -> PatchRequestBuilder {
+                    PatchRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                        update_mask: None,
+                    }
+                }
             }
             #[doc = "Created via [EndpointsActions::get()](struct.EndpointsActions.html#method.get)"]
             #[derive(Debug, Clone)]
@@ -7372,6 +7404,174 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned,
                 {
                     self._execute()
+                }
+            }
+            #[doc = "Created via [EndpointsActions::patch()](struct.EndpointsActions.html#method.patch)"]
+            #[derive(Debug, Clone)]
+            pub struct PatchRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::Endpoint,
+                name: String,
+                update_mask: Option<String>,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> PatchRequestBuilder<'a> {
+                #[doc = "Field mask to use for partial in-place updates."]
+                pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                    self.update_mask = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Endpoint, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Endpoint, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://realtimebidding.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                    req = req.query(&[("updateMask", &self.update_mask)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
                 }
             }
         }
@@ -11210,7 +11410,7 @@ pub mod resources {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "A token identifying a page of results the server should return. Typically, this is the value of ListCreativesResponse.nextPageToken returned from the previous call to the 'ListCreatives' method."]
+                #[doc = "A token identifying a page of results the server should return. Typically, this is the value of ListCreativesResponse.nextPageToken returned from the previous call to the 'ListCreatives' method. Page tokens for continued pages are valid for up to five hours, counting from the call to 'ListCreatives' for the first page."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self

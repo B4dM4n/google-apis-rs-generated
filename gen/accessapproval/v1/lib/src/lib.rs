@@ -1,6 +1,6 @@
-#![doc = "# Resources and Methods\n    * [folders](resources/folders/struct.FoldersActions.html)\n      * [*deleteAccessApprovalSettings*](resources/folders/struct.DeleteAccessApprovalSettingsRequestBuilder.html), [*getAccessApprovalSettings*](resources/folders/struct.GetAccessApprovalSettingsRequestBuilder.html), [*updateAccessApprovalSettings*](resources/folders/struct.UpdateAccessApprovalSettingsRequestBuilder.html)\n      * [approval_requests](resources/folders/approval_requests/struct.ApprovalRequestsActions.html)\n        * [*approve*](resources/folders/approval_requests/struct.ApproveRequestBuilder.html), [*dismiss*](resources/folders/approval_requests/struct.DismissRequestBuilder.html), [*get*](resources/folders/approval_requests/struct.GetRequestBuilder.html), [*list*](resources/folders/approval_requests/struct.ListRequestBuilder.html)\n    * [organizations](resources/organizations/struct.OrganizationsActions.html)\n      * [*deleteAccessApprovalSettings*](resources/organizations/struct.DeleteAccessApprovalSettingsRequestBuilder.html), [*getAccessApprovalSettings*](resources/organizations/struct.GetAccessApprovalSettingsRequestBuilder.html), [*updateAccessApprovalSettings*](resources/organizations/struct.UpdateAccessApprovalSettingsRequestBuilder.html)\n      * [approval_requests](resources/organizations/approval_requests/struct.ApprovalRequestsActions.html)\n        * [*approve*](resources/organizations/approval_requests/struct.ApproveRequestBuilder.html), [*dismiss*](resources/organizations/approval_requests/struct.DismissRequestBuilder.html), [*get*](resources/organizations/approval_requests/struct.GetRequestBuilder.html), [*list*](resources/organizations/approval_requests/struct.ListRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [*deleteAccessApprovalSettings*](resources/projects/struct.DeleteAccessApprovalSettingsRequestBuilder.html), [*getAccessApprovalSettings*](resources/projects/struct.GetAccessApprovalSettingsRequestBuilder.html), [*updateAccessApprovalSettings*](resources/projects/struct.UpdateAccessApprovalSettingsRequestBuilder.html)\n      * [approval_requests](resources/projects/approval_requests/struct.ApprovalRequestsActions.html)\n        * [*approve*](resources/projects/approval_requests/struct.ApproveRequestBuilder.html), [*dismiss*](resources/projects/approval_requests/struct.DismissRequestBuilder.html), [*get*](resources/projects/approval_requests/struct.GetRequestBuilder.html), [*list*](resources/projects/approval_requests/struct.ListRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [folders](resources/folders/struct.FoldersActions.html)\n      * [*deleteAccessApprovalSettings*](resources/folders/struct.DeleteAccessApprovalSettingsRequestBuilder.html), [*getAccessApprovalSettings*](resources/folders/struct.GetAccessApprovalSettingsRequestBuilder.html), [*getServiceAccount*](resources/folders/struct.GetServiceAccountRequestBuilder.html), [*updateAccessApprovalSettings*](resources/folders/struct.UpdateAccessApprovalSettingsRequestBuilder.html)\n      * [approval_requests](resources/folders/approval_requests/struct.ApprovalRequestsActions.html)\n        * [*approve*](resources/folders/approval_requests/struct.ApproveRequestBuilder.html), [*dismiss*](resources/folders/approval_requests/struct.DismissRequestBuilder.html), [*get*](resources/folders/approval_requests/struct.GetRequestBuilder.html), [*list*](resources/folders/approval_requests/struct.ListRequestBuilder.html)\n    * [organizations](resources/organizations/struct.OrganizationsActions.html)\n      * [*deleteAccessApprovalSettings*](resources/organizations/struct.DeleteAccessApprovalSettingsRequestBuilder.html), [*getAccessApprovalSettings*](resources/organizations/struct.GetAccessApprovalSettingsRequestBuilder.html), [*getServiceAccount*](resources/organizations/struct.GetServiceAccountRequestBuilder.html), [*updateAccessApprovalSettings*](resources/organizations/struct.UpdateAccessApprovalSettingsRequestBuilder.html)\n      * [approval_requests](resources/organizations/approval_requests/struct.ApprovalRequestsActions.html)\n        * [*approve*](resources/organizations/approval_requests/struct.ApproveRequestBuilder.html), [*dismiss*](resources/organizations/approval_requests/struct.DismissRequestBuilder.html), [*get*](resources/organizations/approval_requests/struct.GetRequestBuilder.html), [*list*](resources/organizations/approval_requests/struct.ListRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [*deleteAccessApprovalSettings*](resources/projects/struct.DeleteAccessApprovalSettingsRequestBuilder.html), [*getAccessApprovalSettings*](resources/projects/struct.GetAccessApprovalSettingsRequestBuilder.html), [*getServiceAccount*](resources/projects/struct.GetServiceAccountRequestBuilder.html), [*updateAccessApprovalSettings*](resources/projects/struct.UpdateAccessApprovalSettingsRequestBuilder.html)\n      * [approval_requests](resources/projects/approval_requests/struct.ApprovalRequestsActions.html)\n        * [*approve*](resources/projects/approval_requests/struct.ApproveRequestBuilder.html), [*dismiss*](resources/projects/approval_requests/struct.DismissRequestBuilder.html), [*get*](resources/projects/approval_requests/struct.GetRequestBuilder.html), [*list*](resources/projects/approval_requests/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -16,8 +16,60 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct AccessApprovalServiceAccount {
+        #[doc = "Email address of the service account."]
+        #[serde(
+            rename = "accountEmail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub account_email: ::std::option::Option<String>,
+        #[doc = "The resource name of the Access Approval service account. Format is one of: * \"projects/{project}/serviceAccount\" * \"folders/{folder}/serviceAccount\" * \"organizations/{organization}/serviceAccount\""]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for AccessApprovalServiceAccount {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AccessApprovalServiceAccount {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct AccessApprovalSettings {
-        #[doc = "Output only. This field is read only (not settable via UpdateAccessAccessApprovalSettings method). If the field is true, that indicates that at least one service is enrolled for Access Approval in one or more ancestors of the Project or Folder (this field will always be unset for the organization since organizations do not have ancestors)."]
+        #[doc = "The asymmetric crypto key version to use for signing approval requests. Empty active_key_version indicates that a Google-managed key should be used for signing. This property will be ignored if set by an ancestor of this resource, and new non-empty values may not be set."]
+        #[serde(
+            rename = "activeKeyVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub active_key_version: ::std::option::Option<String>,
+        #[doc = "Output only. This field is read only (not settable via UpdateAccessApprovalSettings method). If the field is true, that indicates that an ancestor of this Project or Folder has set active_key_version (this field will always be unset for the organization since organizations do not have ancestors)."]
+        #[serde(
+            rename = "ancestorHasActiveKeyVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ancestor_has_active_key_version: ::std::option::Option<bool>,
+        #[doc = "Output only. This field is read only (not settable via UpdateAccessApprovalSettings method). If the field is true, that indicates that at least one service is enrolled for Access Approval in one or more ancestors of the Project or Folder (this field will always be unset for the organization since organizations do not have ancestors)."]
         #[serde(
             rename = "enrolledAncestor",
             default,
@@ -31,6 +83,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enrolled_services: ::std::option::Option<Vec<crate::schemas::EnrolledService>>,
+        #[doc = "Output only. This field is read only (not settable via UpdateAccessApprovalSettings method). If the field is true, that indicates that there is some configuration issue with the active_key_version configured at this level in the resource hierarchy (e.g. it doesn't exist or the Access Approval service account doesn't have the correct permissions on it, etc.) This key version is not necessarily the effective key version at this level, as key versions are inherited top-down."]
+        #[serde(
+            rename = "invalidKeyVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub invalid_key_version: ::std::option::Option<bool>,
         #[doc = "The resource name of the settings. Format is one of: * \"projects/{project}/accessApprovalSettings\" * \"folders/{folder}/accessApprovalSettings\" * \"organizations/{organization}/accessApprovalSettings\""]
         #[serde(
             rename = "name",
@@ -138,8 +197,12 @@ pub mod schemas {
         CustomerInitiatedSupport,
         #[doc = "Google initiated service for security, fraud, abuse, or compliance purposes."]
         GoogleInitiatedReview,
-        #[doc = "The principal accessed customer data in order to diagnose or resolve a suspected issue in services or a known outage. Often this access is used to confirm that customers are not affected by a suspected service issue or to remediate a reversible system issue."]
+        #[doc = "The principal accessed customer data in order to diagnose or resolve a suspected issue in services. Often this access is used to confirm that customers are not affected by a suspected service issue or to remediate a reversible system issue."]
         GoogleInitiatedService,
+        #[doc = "The principal accessed customer data in order to diagnose or resolve a suspected issue in services or a known outage."]
+        GoogleResponseToProductionAlert,
+        #[doc = "The principal was compelled to access customer data in order to respond to a legal third party data request or process, including legal processes from customers themselves."]
+        ThirdPartyDataRequest,
         #[doc = "Default value for proto, shouldn't be used."]
         TypeUnspecified,
     }
@@ -149,6 +212,10 @@ pub mod schemas {
                 AccessReasonType::CustomerInitiatedSupport => "CUSTOMER_INITIATED_SUPPORT",
                 AccessReasonType::GoogleInitiatedReview => "GOOGLE_INITIATED_REVIEW",
                 AccessReasonType::GoogleInitiatedService => "GOOGLE_INITIATED_SERVICE",
+                AccessReasonType::GoogleResponseToProductionAlert => {
+                    "GOOGLE_RESPONSE_TO_PRODUCTION_ALERT"
+                }
+                AccessReasonType::ThirdPartyDataRequest => "THIRD_PARTY_DATA_REQUEST",
                 AccessReasonType::TypeUnspecified => "TYPE_UNSPECIFIED",
             }
         }
@@ -165,6 +232,10 @@ pub mod schemas {
                 "CUSTOMER_INITIATED_SUPPORT" => AccessReasonType::CustomerInitiatedSupport,
                 "GOOGLE_INITIATED_REVIEW" => AccessReasonType::GoogleInitiatedReview,
                 "GOOGLE_INITIATED_SERVICE" => AccessReasonType::GoogleInitiatedService,
+                "GOOGLE_RESPONSE_TO_PRODUCTION_ALERT" => {
+                    AccessReasonType::GoogleResponseToProductionAlert
+                }
+                "THIRD_PARTY_DATA_REQUEST" => AccessReasonType::ThirdPartyDataRequest,
                 "TYPE_UNSPECIFIED" => AccessReasonType::TypeUnspecified,
                 _ => return Err(()),
             })
@@ -193,6 +264,10 @@ pub mod schemas {
                 "CUSTOMER_INITIATED_SUPPORT" => AccessReasonType::CustomerInitiatedSupport,
                 "GOOGLE_INITIATED_REVIEW" => AccessReasonType::GoogleInitiatedReview,
                 "GOOGLE_INITIATED_SERVICE" => AccessReasonType::GoogleInitiatedService,
+                "GOOGLE_RESPONSE_TO_PRODUCTION_ALERT" => {
+                    AccessReasonType::GoogleResponseToProductionAlert
+                }
+                "THIRD_PARTY_DATA_REQUEST" => AccessReasonType::ThirdPartyDataRequest,
                 "TYPE_UNSPECIFIED" => AccessReasonType::TypeUnspecified,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -352,6 +427,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub approve_time: ::std::option::Option<String>,
+        #[doc = "True when the request has been auto-approved."]
+        #[serde(
+            rename = "autoApproved",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub auto_approved: ::std::option::Option<bool>,
         #[doc = "The time at which the approval expires."]
         #[serde(
             rename = "expireTime",
@@ -359,6 +441,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub expire_time: ::std::option::Option<String>,
+        #[doc = "The signature for the ApprovalRequest and details on how it was signed."]
+        #[serde(
+            rename = "signatureInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub signature_info: ::std::option::Option<crate::schemas::SignatureInfo>,
     }
     impl ::google_field_selector::FieldSelector for ApproveDecision {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -414,7 +503,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dismiss_time: ::std::option::Option<String>,
-        #[doc = "This field will be true if the ApprovalRequest was implcitly dismissed due to inaction by the access approval approvers (the request is not acted on by the approvers before the exiration time)."]
+        #[doc = "This field will be true if the ApprovalRequest was implicitly dismissed due to inaction by the access approval approvers (the request is not acted on by the approvers before the exiration time)."]
         #[serde(
             rename = "implicit",
             default,
@@ -469,7 +558,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct EnrolledService {
-        #[doc = "The product for which Access Approval will be enrolled. Allowed values are listed below (case-sensitive): * all * App Engine * BigQuery * Cloud Bigtable * Cloud Key Management Service * Compute Engine * Cloud Dataflow * Cloud Identity and Access Management * Cloud Pub/Sub * Cloud Storage * Persistent Disk Note: These values are supported as input for legacy purposes, but will not be returned from the API. * all * appengine.googleapis.com * bigquery.googleapis.com * bigtable.googleapis.com * cloudkms.googleapis.com * compute.googleapis.com * dataflow.googleapis.com * iam.googleapis.com * pubsub.googleapis.com * storage.googleapis.com Calls to UpdateAccessApprovalSettings using 'all' or any of the XXX.googleapis.com will be translated to the associated product name ('all', 'App Engine', etc.). Note: 'all' will enroll the resource in all products supported at both 'GA' and 'Preview' levels. More information about levels of support is available at https://cloud.google.com/access-approval/docs/supported-services"]
+        #[doc = "The product for which Access Approval will be enrolled. Allowed values are listed below (case-sensitive): * all * GA * App Engine * BigQuery * Cloud Bigtable * Cloud Key Management Service * Compute Engine * Cloud Dataflow * Cloud DLP * Cloud EKM * Cloud HSM * Cloud Identity and Access Management * Cloud Logging * Cloud Pub/Sub * Cloud Spanner * Cloud SQL * Cloud Storage * Google Kubernetes Engine * Organization Policy Serivice * Persistent Disk * Resource Manager * Speaker ID Note: These values are supported as input for legacy purposes, but will not be returned from the API. * all * ga-only * appengine.googleapis.com * bigquery.googleapis.com * bigtable.googleapis.com * container.googleapis.com * cloudkms.googleapis.com * cloudresourcemanager.googleapis.com * cloudsql.googleapis.com * compute.googleapis.com * dataflow.googleapis.com * dlp.googleapis.com * iam.googleapis.com * logging.googleapis.com * orgpolicy.googleapis.com * pubsub.googleapis.com * spanner.googleapis.com * speakerid.googleapis.com * storage.googleapis.com Calls to UpdateAccessApprovalSettings using 'all' or any of the XXX.googleapis.com will be translated to the associated product name ('all', 'App Engine', etc.). Note: 'all' will enroll the resource in all products supported at both 'GA' and 'Preview' levels. More information about levels of support is available at https://cloud.google.com/access-approval/docs/supported-services"]
         #[serde(
             rename = "cloudProduct",
             default,
@@ -636,6 +725,51 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ResourceProperties {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SignatureInfo {
+        #[doc = "The resource name of the customer CryptoKeyVersion used for signing."]
+        #[serde(
+            rename = "customerKmsKeyVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub customer_kms_key_version: ::std::option::Option<String>,
+        #[doc = "The public key for the Google default signing, encoded in PEM format. The signature was created using a private key which may be verified using this public key."]
+        #[serde(
+            rename = "googlePublicKeyPem",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub google_public_key_pem: ::std::option::Option<String>,
+        #[doc = "The digital signature."]
+        #[serde(
+            rename = "signature",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub signature: ::std::option::Option<::google_api_bytes::Bytes>,
+    }
+    impl ::google_field_selector::FieldSelector for SignatureInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SignatureInfo {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -880,6 +1014,28 @@ pub mod resources {
                 name: impl Into<String>,
             ) -> GetAccessApprovalSettingsRequestBuilder {
                 GetAccessApprovalSettingsRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    name: name.into(),
+                }
+            }
+            #[doc = "Retrieves the service account that is used by Access Approval to access KMS keys for signing approved approval requests."]
+            pub fn get_service_account(
+                &self,
+                name: impl Into<String>,
+            ) -> GetServiceAccountRequestBuilder {
+                GetServiceAccountRequestBuilder {
                     reqwest: &self.reqwest,
                     auth: self.auth_ref(),
                     access_token: None,
@@ -1185,6 +1341,162 @@ pub mod resources {
             pub fn execute_with_all_fields(
                 self,
             ) -> Result<crate::schemas::AccessApprovalSettings, crate::Error> {
+                self.execute_with_fields(Some("*"))
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute()
+            }
+            fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path())?;
+                Ok(crate::error_from_response(req.send()?)?.json()?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://accessapproval.googleapis.com/".to_owned();
+                output.push_str("v1/");
+                {
+                    let var_as_str = &self.name;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::RESERVED,
+                    ));
+                }
+                output
+            }
+            fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                req = req.bearer_auth(
+                    self.auth
+                        .access_token()
+                        .map_err(|err| crate::Error::OAuth2(err))?,
+                );
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [FoldersActions::get_service_account()](struct.FoldersActions.html#method.get_service_account)"]
+        #[derive(Debug, Clone)]
+        pub struct GetServiceAccountRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            name: String,
+            access_token: Option<String>,
+            alt: Option<crate::params::Alt>,
+            callback: Option<String>,
+            fields: Option<String>,
+            key: Option<String>,
+            oauth_token: Option<String>,
+            pretty_print: Option<bool>,
+            quota_user: Option<String>,
+            upload_protocol: Option<String>,
+            upload_type: Option<String>,
+            xgafv: Option<crate::params::Xgafv>,
+        }
+        impl<'a> GetServiceAccountRequestBuilder<'a> {
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields)
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::AccessApprovalServiceAccount, crate::Error> {
+                self.execute_with_fields(None::<&str>)
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::AccessApprovalServiceAccount, crate::Error> {
                 self.execute_with_fields(Some("*"))
             }
             #[doc = r" Execute the given operation. This will use the `fields`"]
@@ -2011,7 +2323,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "A filter on the type of approval requests to retrieve. Must be one of the following values: * [not set]: Requests that are pending or have active approvals. * ALL: All requests. * PENDING: Only pending requests. * ACTIVE: Only active (i.e. currently approved) requests. * DISMISSED: Only requests that have been dismissed, or requests that . are not approved and past expiration. * EXPIRED: Only requests that have been approved, and the approval has expired. * HISTORY: Active, dismissed and expired requests."]
+                #[doc = "A filter on the type of approval requests to retrieve. Must be one of the following values: * [not set]: Requests that are pending or have active approvals. * ALL: All requests. * PENDING: Only pending requests. * ACTIVE: Only active (i.e. currently approved) requests. * DISMISSED: Only requests that have been dismissed, or requests that are not approved and past expiration. * EXPIRED: Only requests that have been approved, and the approval has expired. * HISTORY: Active, dismissed and expired requests."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
@@ -2341,6 +2653,28 @@ pub mod resources {
                     name: name.into(),
                 }
             }
+            #[doc = "Retrieves the service account that is used by Access Approval to access KMS keys for signing approved approval requests."]
+            pub fn get_service_account(
+                &self,
+                name: impl Into<String>,
+            ) -> GetServiceAccountRequestBuilder {
+                GetServiceAccountRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    name: name.into(),
+                }
+            }
             #[doc = "Updates the settings associated with a project, folder, or organization. Settings to update are determined by the value of field_mask."]
             pub fn update_access_approval_settings(
                 &self,
@@ -2631,6 +2965,162 @@ pub mod resources {
             pub fn execute_with_all_fields(
                 self,
             ) -> Result<crate::schemas::AccessApprovalSettings, crate::Error> {
+                self.execute_with_fields(Some("*"))
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute()
+            }
+            fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path())?;
+                Ok(crate::error_from_response(req.send()?)?.json()?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://accessapproval.googleapis.com/".to_owned();
+                output.push_str("v1/");
+                {
+                    let var_as_str = &self.name;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::RESERVED,
+                    ));
+                }
+                output
+            }
+            fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                req = req.bearer_auth(
+                    self.auth
+                        .access_token()
+                        .map_err(|err| crate::Error::OAuth2(err))?,
+                );
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [OrganizationsActions::get_service_account()](struct.OrganizationsActions.html#method.get_service_account)"]
+        #[derive(Debug, Clone)]
+        pub struct GetServiceAccountRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            name: String,
+            access_token: Option<String>,
+            alt: Option<crate::params::Alt>,
+            callback: Option<String>,
+            fields: Option<String>,
+            key: Option<String>,
+            oauth_token: Option<String>,
+            pretty_print: Option<bool>,
+            quota_user: Option<String>,
+            upload_protocol: Option<String>,
+            upload_type: Option<String>,
+            xgafv: Option<crate::params::Xgafv>,
+        }
+        impl<'a> GetServiceAccountRequestBuilder<'a> {
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields)
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::AccessApprovalServiceAccount, crate::Error> {
+                self.execute_with_fields(None::<&str>)
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::AccessApprovalServiceAccount, crate::Error> {
                 self.execute_with_fields(Some("*"))
             }
             #[doc = r" Execute the given operation. This will use the `fields`"]
@@ -3457,7 +3947,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "A filter on the type of approval requests to retrieve. Must be one of the following values: * [not set]: Requests that are pending or have active approvals. * ALL: All requests. * PENDING: Only pending requests. * ACTIVE: Only active (i.e. currently approved) requests. * DISMISSED: Only requests that have been dismissed, or requests that . are not approved and past expiration. * EXPIRED: Only requests that have been approved, and the approval has expired. * HISTORY: Active, dismissed and expired requests."]
+                #[doc = "A filter on the type of approval requests to retrieve. Must be one of the following values: * [not set]: Requests that are pending or have active approvals. * ALL: All requests. * PENDING: Only pending requests. * ACTIVE: Only active (i.e. currently approved) requests. * DISMISSED: Only requests that have been dismissed, or requests that are not approved and past expiration. * EXPIRED: Only requests that have been approved, and the approval has expired. * HISTORY: Active, dismissed and expired requests."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
@@ -3787,6 +4277,28 @@ pub mod resources {
                     name: name.into(),
                 }
             }
+            #[doc = "Retrieves the service account that is used by Access Approval to access KMS keys for signing approved approval requests."]
+            pub fn get_service_account(
+                &self,
+                name: impl Into<String>,
+            ) -> GetServiceAccountRequestBuilder {
+                GetServiceAccountRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    name: name.into(),
+                }
+            }
             #[doc = "Updates the settings associated with a project, folder, or organization. Settings to update are determined by the value of field_mask."]
             pub fn update_access_approval_settings(
                 &self,
@@ -4077,6 +4589,162 @@ pub mod resources {
             pub fn execute_with_all_fields(
                 self,
             ) -> Result<crate::schemas::AccessApprovalSettings, crate::Error> {
+                self.execute_with_fields(Some("*"))
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute()
+            }
+            fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path())?;
+                Ok(crate::error_from_response(req.send()?)?.json()?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://accessapproval.googleapis.com/".to_owned();
+                output.push_str("v1/");
+                {
+                    let var_as_str = &self.name;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::RESERVED,
+                    ));
+                }
+                output
+            }
+            fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                req = req.bearer_auth(
+                    self.auth
+                        .access_token()
+                        .map_err(|err| crate::Error::OAuth2(err))?,
+                );
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [ProjectsActions::get_service_account()](struct.ProjectsActions.html#method.get_service_account)"]
+        #[derive(Debug, Clone)]
+        pub struct GetServiceAccountRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            name: String,
+            access_token: Option<String>,
+            alt: Option<crate::params::Alt>,
+            callback: Option<String>,
+            fields: Option<String>,
+            key: Option<String>,
+            oauth_token: Option<String>,
+            pretty_print: Option<bool>,
+            quota_user: Option<String>,
+            upload_protocol: Option<String>,
+            upload_type: Option<String>,
+            xgafv: Option<crate::params::Xgafv>,
+        }
+        impl<'a> GetServiceAccountRequestBuilder<'a> {
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields)
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::AccessApprovalServiceAccount, crate::Error> {
+                self.execute_with_fields(None::<&str>)
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::AccessApprovalServiceAccount, crate::Error> {
                 self.execute_with_fields(Some("*"))
             }
             #[doc = r" Execute the given operation. This will use the `fields`"]
@@ -4903,7 +5571,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "A filter on the type of approval requests to retrieve. Must be one of the following values: * [not set]: Requests that are pending or have active approvals. * ALL: All requests. * PENDING: Only pending requests. * ACTIVE: Only active (i.e. currently approved) requests. * DISMISSED: Only requests that have been dismissed, or requests that . are not approved and past expiration. * EXPIRED: Only requests that have been approved, and the approval has expired. * HISTORY: Active, dismissed and expired requests."]
+                #[doc = "A filter on the type of approval requests to retrieve. Must be one of the following values: * [not set]: Requests that are pending or have active approvals. * ALL: All requests. * PENDING: Only pending requests. * ACTIVE: Only active (i.e. currently approved) requests. * DISMISSED: Only requests that have been dismissed, or requests that are not approved and past expiration. * EXPIRED: Only requests that have been approved, and the approval has expired. * HISTORY: Active, dismissed and expired requests."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self

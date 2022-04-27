@@ -2,6 +2,9 @@
 pub mod scopes {
     #[doc = "See and/or control the devices that you selected\n\n`https://www.googleapis.com/auth/sdm.service`"]
     pub const SDM_SERVICE: &str = "https://www.googleapis.com/auth/sdm.service";
+    #[doc = "See and control the Nest thermostats that you select\n\n`https://www.googleapis.com/auth/sdm.thermostat.service`"]
+    pub const SDM_THERMOSTAT_SERVICE: &str =
+        "https://www.googleapis.com/auth/sdm.thermostat.service";
 }
 pub mod schemas {
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]

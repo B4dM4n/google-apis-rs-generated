@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("youtube3")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210314")
+            .version("0.1.0-20220425")
             .about("The YouTube Data API v3 is an API that provides access to YouTube data, such as videos, playlists, and channels.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -117,7 +117,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut comment_threads0 = SubCommand::with_name("comment_threads")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: insert, list and update");
+            .about("methods: insert and list");
         {
             let mcmd = SubCommand::with_name("insert")
                 .about("Inserts a new resource into this collection.");
@@ -126,10 +126,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("list")
                 .about("Retrieves a list of resources, possibly filtered.");
-            comment_threads0 = comment_threads0.subcommand(mcmd);
-        }
-        {
-            let mcmd = SubCommand::with_name("update").about("Updates an existing resource.");
             comment_threads0 = comment_threads0.subcommand(mcmd);
         }
         let mut comments0 = SubCommand::with_name("comments")
@@ -150,7 +146,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             comments0 = comments0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("mark_as_spam").about("Expresses the caller\'s opinion that one or more comments should be flagged as spam.");
+            let mcmd = SubCommand::with_name("mark_as_spam").about("Expresses the caller's opinion that one or more comments should be flagged as spam.");
             comments0 = comments0.subcommand(mcmd);
         }
         {
@@ -401,7 +397,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: set");
         {
-            let mcmd = SubCommand::with_name("set").about("As this is not an insert in a strict sense (it supports uploading/setting of a thumbnail for multiple videos, which doesn\'t result in creation of a single resource), I use a custom verb here.");
+            let mcmd = SubCommand::with_name("set").about("As this is not an insert in a strict sense (it supports uploading/setting of a thumbnail for multiple videos, which doesn't result in creation of a single resource), I use a custom verb here.");
             thumbnails0 = thumbnails0.subcommand(mcmd);
         }
         let mut video_abuse_report_reasons0 = SubCommand::with_name("video_abuse_report_reasons")
@@ -467,6 +463,19 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("unset").about("Allows removal of channel watermark.");
             watermarks0 = watermarks0.subcommand(mcmd);
         }
+        let mut youtube0 = SubCommand::with_name("youtube")
+            .setting(AppSettings::ColoredHelp)
+            .about("sub-resources: v_3");
+        let mut v_31 = SubCommand::with_name("v_3")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: update_comment_threads");
+        {
+            let mcmd = SubCommand::with_name("update_comment_threads")
+                .about("Updates an existing resource.");
+            v_31 = v_31.subcommand(mcmd);
+        }
+        youtube0 = youtube0.subcommand(v_31);
+        app = app.subcommand(youtube0);
         app = app.subcommand(watermarks0);
         app = app.subcommand(videos0);
         app = app.subcommand(video_categories0);

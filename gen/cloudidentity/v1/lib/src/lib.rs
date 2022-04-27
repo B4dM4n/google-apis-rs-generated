@@ -1,14 +1,20 @@
-#![doc = "# Resources and Methods\n    * [devices](resources/devices/struct.DevicesActions.html)\n      * [*cancelWipe*](resources/devices/struct.CancelWipeRequestBuilder.html), [*create*](resources/devices/struct.CreateRequestBuilder.html), [*delete*](resources/devices/struct.DeleteRequestBuilder.html), [*get*](resources/devices/struct.GetRequestBuilder.html), [*list*](resources/devices/struct.ListRequestBuilder.html), [*wipe*](resources/devices/struct.WipeRequestBuilder.html)\n      * [device_users](resources/devices/device_users/struct.DeviceUsersActions.html)\n        * [*approve*](resources/devices/device_users/struct.ApproveRequestBuilder.html), [*block*](resources/devices/device_users/struct.BlockRequestBuilder.html), [*cancelWipe*](resources/devices/device_users/struct.CancelWipeRequestBuilder.html), [*delete*](resources/devices/device_users/struct.DeleteRequestBuilder.html), [*get*](resources/devices/device_users/struct.GetRequestBuilder.html), [*list*](resources/devices/device_users/struct.ListRequestBuilder.html), [*lookup*](resources/devices/device_users/struct.LookupRequestBuilder.html), [*wipe*](resources/devices/device_users/struct.WipeRequestBuilder.html)\n        * [client_states](resources/devices/device_users/client_states/struct.ClientStatesActions.html)\n          * [*get*](resources/devices/device_users/client_states/struct.GetRequestBuilder.html), [*list*](resources/devices/device_users/client_states/struct.ListRequestBuilder.html), [*patch*](resources/devices/device_users/client_states/struct.PatchRequestBuilder.html)\n    * [groups](resources/groups/struct.GroupsActions.html)\n      * [*create*](resources/groups/struct.CreateRequestBuilder.html), [*delete*](resources/groups/struct.DeleteRequestBuilder.html), [*get*](resources/groups/struct.GetRequestBuilder.html), [*list*](resources/groups/struct.ListRequestBuilder.html), [*lookup*](resources/groups/struct.LookupRequestBuilder.html), [*patch*](resources/groups/struct.PatchRequestBuilder.html), [*search*](resources/groups/struct.SearchRequestBuilder.html)\n      * [memberships](resources/groups/memberships/struct.MembershipsActions.html)\n        * [*checkTransitiveMembership*](resources/groups/memberships/struct.CheckTransitiveMembershipRequestBuilder.html), [*create*](resources/groups/memberships/struct.CreateRequestBuilder.html), [*delete*](resources/groups/memberships/struct.DeleteRequestBuilder.html), [*get*](resources/groups/memberships/struct.GetRequestBuilder.html), [*getMembershipGraph*](resources/groups/memberships/struct.GetMembershipGraphRequestBuilder.html), [*list*](resources/groups/memberships/struct.ListRequestBuilder.html), [*lookup*](resources/groups/memberships/struct.LookupRequestBuilder.html), [*modifyMembershipRoles*](resources/groups/memberships/struct.ModifyMembershipRolesRequestBuilder.html), [*searchTransitiveGroups*](resources/groups/memberships/struct.SearchTransitiveGroupsRequestBuilder.html), [*searchTransitiveMemberships*](resources/groups/memberships/struct.SearchTransitiveMembershipsRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [devices](resources/devices/struct.DevicesActions.html)\n      * [*cancelWipe*](resources/devices/struct.CancelWipeRequestBuilder.html), [*create*](resources/devices/struct.CreateRequestBuilder.html), [*delete*](resources/devices/struct.DeleteRequestBuilder.html), [*get*](resources/devices/struct.GetRequestBuilder.html), [*list*](resources/devices/struct.ListRequestBuilder.html), [*wipe*](resources/devices/struct.WipeRequestBuilder.html)\n      * [device_users](resources/devices/device_users/struct.DeviceUsersActions.html)\n        * [*approve*](resources/devices/device_users/struct.ApproveRequestBuilder.html), [*block*](resources/devices/device_users/struct.BlockRequestBuilder.html), [*cancelWipe*](resources/devices/device_users/struct.CancelWipeRequestBuilder.html), [*delete*](resources/devices/device_users/struct.DeleteRequestBuilder.html), [*get*](resources/devices/device_users/struct.GetRequestBuilder.html), [*list*](resources/devices/device_users/struct.ListRequestBuilder.html), [*lookup*](resources/devices/device_users/struct.LookupRequestBuilder.html), [*wipe*](resources/devices/device_users/struct.WipeRequestBuilder.html)\n        * [client_states](resources/devices/device_users/client_states/struct.ClientStatesActions.html)\n          * [*get*](resources/devices/device_users/client_states/struct.GetRequestBuilder.html), [*list*](resources/devices/device_users/client_states/struct.ListRequestBuilder.html), [*patch*](resources/devices/device_users/client_states/struct.PatchRequestBuilder.html)\n    * [groups](resources/groups/struct.GroupsActions.html)\n      * [*create*](resources/groups/struct.CreateRequestBuilder.html), [*delete*](resources/groups/struct.DeleteRequestBuilder.html), [*get*](resources/groups/struct.GetRequestBuilder.html), [*getSecuritySettings*](resources/groups/struct.GetSecuritySettingsRequestBuilder.html), [*list*](resources/groups/struct.ListRequestBuilder.html), [*lookup*](resources/groups/struct.LookupRequestBuilder.html), [*patch*](resources/groups/struct.PatchRequestBuilder.html), [*search*](resources/groups/struct.SearchRequestBuilder.html), [*updateSecuritySettings*](resources/groups/struct.UpdateSecuritySettingsRequestBuilder.html)\n      * [memberships](resources/groups/memberships/struct.MembershipsActions.html)\n        * [*checkTransitiveMembership*](resources/groups/memberships/struct.CheckTransitiveMembershipRequestBuilder.html), [*create*](resources/groups/memberships/struct.CreateRequestBuilder.html), [*delete*](resources/groups/memberships/struct.DeleteRequestBuilder.html), [*get*](resources/groups/memberships/struct.GetRequestBuilder.html), [*getMembershipGraph*](resources/groups/memberships/struct.GetMembershipGraphRequestBuilder.html), [*list*](resources/groups/memberships/struct.ListRequestBuilder.html), [*lookup*](resources/groups/memberships/struct.LookupRequestBuilder.html), [*modifyMembershipRoles*](resources/groups/memberships/struct.ModifyMembershipRolesRequestBuilder.html), [*searchTransitiveGroups*](resources/groups/memberships/struct.SearchTransitiveGroupsRequestBuilder.html), [*searchTransitiveMemberships*](resources/groups/memberships/struct.SearchTransitiveMembershipsRequestBuilder.html)\n"]
 pub mod scopes {
+    #[doc = "Private Service: https://www.googleapis.com/auth/cloud-identity.devices\n\n`https://www.googleapis.com/auth/cloud-identity.devices`"]
+    pub const CLOUD_IDENTITY_DEVICES: &str =
+        "https://www.googleapis.com/auth/cloud-identity.devices";
     #[doc = "See your device details\n\n`https://www.googleapis.com/auth/cloud-identity.devices.lookup`"]
     pub const CLOUD_IDENTITY_DEVICES_LOOKUP: &str =
         "https://www.googleapis.com/auth/cloud-identity.devices.lookup";
+    #[doc = "Private Service: https://www.googleapis.com/auth/cloud-identity.devices.readonly\n\n`https://www.googleapis.com/auth/cloud-identity.devices.readonly`"]
+    pub const CLOUD_IDENTITY_DEVICES_READONLY: &str =
+        "https://www.googleapis.com/auth/cloud-identity.devices.readonly";
     #[doc = "See, change, create, and delete any of the Cloud Identity Groups that you can access, including the members of each group\n\n`https://www.googleapis.com/auth/cloud-identity.groups`"]
     pub const CLOUD_IDENTITY_GROUPS: &str = "https://www.googleapis.com/auth/cloud-identity.groups";
     #[doc = "See any Cloud Identity Groups that you can access, including group members and their emails\n\n`https://www.googleapis.com/auth/cloud-identity.groups.readonly`"]
     pub const CLOUD_IDENTITY_GROUPS_READONLY: &str =
         "https://www.googleapis.com/auth/cloud-identity.groups.readonly";
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -39,6 +45,102 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CheckTransitiveMembershipResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CreateGroupMetadata {}
+    impl ::google_field_selector::FieldSelector for CreateGroupMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CreateGroupMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CreateMembershipMetadata {}
+    impl ::google_field_selector::FieldSelector for CreateMembershipMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CreateMembershipMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DeleteGroupMetadata {}
+    impl ::google_field_selector::FieldSelector for DeleteGroupMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DeleteGroupMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DeleteMembershipMetadata {}
+    impl ::google_field_selector::FieldSelector for DeleteMembershipMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DeleteMembershipMetadata {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -94,7 +196,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DynamicGroupQuery {
-        #[doc = "Query that determines the memberships of the dynamic group. Examples: All users with at least one `organizations.department` of engineering. `user.organizations.exists(org, org.department=='engineering')` All users with at least one location that has `area` of `foo` and `building_id` of `bar`. `user.locations.exists(loc, loc.area=='foo' && loc.building_id=='bar')`"]
+        #[doc = "Query that determines the memberships of the dynamic group. Examples: All users with at least one `organizations.department` of engineering. `user.organizations.exists(org, org.department=='engineering')` All users with at least one location that has `area` of `foo` and `building_id` of `bar`. `user.locations.exists(loc, loc.area=='foo' && loc.building_id=='bar')` All users with any variation of the name John Doe (case-insensitive queries add `equalsIgnoreCase()` to the value being queried). `user.name.value.equalsIgnoreCase('jOhn DoE')`"]
         #[serde(
             rename = "query",
             default,
@@ -236,6 +338,8 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum DynamicGroupStatusStatus {
+        #[doc = "Group is in an unrecoverable state and its memberships can't be updated."]
+        InvalidQuery,
         #[doc = "Default."]
         StatusUnspecified,
         #[doc = "The dynamic group is up-to-date."]
@@ -246,6 +350,7 @@ pub mod schemas {
     impl DynamicGroupStatusStatus {
         pub fn as_str(self) -> &'static str {
             match self {
+                DynamicGroupStatusStatus::InvalidQuery => "INVALID_QUERY",
                 DynamicGroupStatusStatus::StatusUnspecified => "STATUS_UNSPECIFIED",
                 DynamicGroupStatusStatus::UpToDate => "UP_TO_DATE",
                 DynamicGroupStatusStatus::UpdatingMemberships => "UPDATING_MEMBERSHIPS",
@@ -261,6 +366,7 @@ pub mod schemas {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<DynamicGroupStatusStatus, ()> {
             Ok(match s {
+                "INVALID_QUERY" => DynamicGroupStatusStatus::InvalidQuery,
                 "STATUS_UNSPECIFIED" => DynamicGroupStatusStatus::StatusUnspecified,
                 "UP_TO_DATE" => DynamicGroupStatusStatus::UpToDate,
                 "UPDATING_MEMBERSHIPS" => DynamicGroupStatusStatus::UpdatingMemberships,
@@ -288,6 +394,7 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "INVALID_QUERY" => DynamicGroupStatusStatus::InvalidQuery,
                 "STATUS_UNSPECIFIED" => DynamicGroupStatusStatus::StatusUnspecified,
                 "UP_TO_DATE" => DynamicGroupStatusStatus::UpToDate,
                 "UPDATING_MEMBERSHIPS" => DynamicGroupStatusStatus::UpdatingMemberships,
@@ -330,7 +437,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source_id}."]
+        #[doc = "The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source}`."]
         #[serde(
             rename = "namespace",
             default,
@@ -375,6 +482,30 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ExpiryDetail {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GetMembershipGraphMetadata {}
+    impl ::google_field_selector::FieldSelector for GetMembershipGraphMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GetMembershipGraphMetadata {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -502,7 +633,7 @@ pub mod schemas {
             GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege,
             (),
         > {
-            Ok ( match s { "DEVICE_ADMINISTRATOR" => GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege :: DeviceAdministrator , "DEVICE_OWNER" => GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege :: DeviceOwner , "OWNERSHIP_PRIVILEGE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege :: OwnershipPrivilegeUnspecified , "PROFILE_OWNER" => GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege :: ProfileOwner , _ => return Err ( ( ) ) , } )
+            Ok (match s { "DEVICE_ADMINISTRATOR" => GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege :: DeviceAdministrator , "DEVICE_OWNER" => GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege :: DeviceOwner , "OWNERSHIP_PRIVILEGE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege :: OwnershipPrivilegeUnspecified , "PROFILE_OWNER" => GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege :: ProfileOwner , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege {
@@ -526,7 +657,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "DEVICE_ADMINISTRATOR" => GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege :: DeviceAdministrator , "DEVICE_OWNER" => GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege :: DeviceOwner , "OWNERSHIP_PRIVILEGE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege :: OwnershipPrivilegeUnspecified , "PROFILE_OWNER" => GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege :: ProfileOwner , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "DEVICE_ADMINISTRATOR" => GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege :: DeviceAdministrator , "DEVICE_OWNER" => GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege :: DeviceOwner , "OWNERSHIP_PRIVILEGE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege :: OwnershipPrivilegeUnspecified , "PROFILE_OWNER" => GoogleAppsCloudidentityDevicesV1AndroidAttributesOwnershipPrivilege :: ProfileOwner , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -551,12 +682,40 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAppsCloudidentityDevicesV1ApproveDeviceUserMetadata {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleAppsCloudidentityDevicesV1ApproveDeviceUserMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAppsCloudidentityDevicesV1ApproveDeviceUserMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCloudidentityDevicesV1ApproveDeviceUserRequest {
-        #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs."]
+        #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs."]
         #[serde(
             rename = "customer",
             default,
@@ -622,12 +781,40 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAppsCloudidentityDevicesV1BlockDeviceUserMetadata {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleAppsCloudidentityDevicesV1BlockDeviceUserMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAppsCloudidentityDevicesV1BlockDeviceUserMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCloudidentityDevicesV1BlockDeviceUserRequest {
-        #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs."]
+        #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs."]
         #[serde(
             rename = "customer",
             default,
@@ -693,12 +880,40 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAppsCloudidentityDevicesV1CancelWipeDeviceMetadata {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleAppsCloudidentityDevicesV1CancelWipeDeviceMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAppsCloudidentityDevicesV1CancelWipeDeviceMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCloudidentityDevicesV1CancelWipeDeviceRequest {
-        #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs."]
+        #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs."]
         #[serde(
             rename = "customer",
             default,
@@ -763,12 +978,40 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAppsCloudidentityDevicesV1CancelWipeDeviceUserMetadata {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleAppsCloudidentityDevicesV1CancelWipeDeviceUserMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAppsCloudidentityDevicesV1CancelWipeDeviceUserMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCloudidentityDevicesV1CancelWipeDeviceUserRequest {
-        #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs."]
+        #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs."]
         #[serde(
             rename = "customer",
             default,
@@ -904,7 +1147,7 @@ pub mod schemas {
         pub managed: ::std::option::Option<
             crate::schemas::GoogleAppsCloudidentityDevicesV1ClientStateManaged,
         >,
-        #[doc = "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the ClientState in format: `devices/{device_id}/deviceUsers/{device_user_id}/clientState/{partner_id}`, where partner_id corresponds to the partner storing the data. For partners belonging to the \"BeyondCorp Alliance\", this is the partner ID specified to you by Google. For all other callers, this is a string of the form: `{customer_id}-suffix`, where `customer_id` is your customer ID. The *suffix* is any string the caller specifies. This string will be displayed verbatim in the administration console. This suffix is used in setting up Custom Access Levels in Context-Aware Access. Your organization's customer ID can be obtained from the URL: `GET https://www.googleapis.com/admin/directory/v1/customers/my_customer` The `id` field in the response contains the customer ID starting with the letter 'C'. The customer ID to be used in this API is the string after the letter 'C' (not including 'C')"]
+        #[doc = "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the ClientState in format: `devices/{device}/deviceUsers/{device_user}/clientState/{partner}`, where partner corresponds to the partner storing the data. For partners belonging to the \"BeyondCorp Alliance\", this is the partner ID specified to you by Google. For all other callers, this is a string of the form: `{customer}-suffix`, where `customer` is your customer ID. The *suffix* is any string the caller specifies. This string will be displayed verbatim in the administration console. This suffix is used in setting up Custom Access Levels in Context-Aware Access. Your organization's customer ID can be obtained from the URL: `GET https://www.googleapis.com/admin/directory/v1/customers/my_customer` The `id` field in the response contains the customer ID starting with the letter 'C'. The customer ID to be used in this API is the string after the letter 'C' (not including 'C')"]
         #[serde(
             rename = "name",
             default,
@@ -963,7 +1206,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleAppsCloudidentityDevicesV1ClientStateComplianceState, ()>
         {
-            Ok ( match s { "COMPLIANCE_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1ClientStateComplianceState :: ComplianceStateUnspecified , "COMPLIANT" => GoogleAppsCloudidentityDevicesV1ClientStateComplianceState :: Compliant , "NON_COMPLIANT" => GoogleAppsCloudidentityDevicesV1ClientStateComplianceState :: NonCompliant , _ => return Err ( ( ) ) , } )
+            Ok (match s { "COMPLIANCE_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1ClientStateComplianceState :: ComplianceStateUnspecified , "COMPLIANT" => GoogleAppsCloudidentityDevicesV1ClientStateComplianceState :: Compliant , "NON_COMPLIANT" => GoogleAppsCloudidentityDevicesV1ClientStateComplianceState :: NonCompliant , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleAppsCloudidentityDevicesV1ClientStateComplianceState {
@@ -985,7 +1228,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "COMPLIANCE_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1ClientStateComplianceState :: ComplianceStateUnspecified , "COMPLIANT" => GoogleAppsCloudidentityDevicesV1ClientStateComplianceState :: Compliant , "NON_COMPLIANT" => GoogleAppsCloudidentityDevicesV1ClientStateComplianceState :: NonCompliant , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "COMPLIANCE_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1ClientStateComplianceState :: ComplianceStateUnspecified , "COMPLIANT" => GoogleAppsCloudidentityDevicesV1ClientStateComplianceState :: Compliant , "NON_COMPLIANT" => GoogleAppsCloudidentityDevicesV1ClientStateComplianceState :: NonCompliant , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1290,6 +1533,32 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAppsCloudidentityDevicesV1CreateDeviceMetadata {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleAppsCloudidentityDevicesV1CreateDeviceMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAppsCloudidentityDevicesV1CreateDeviceMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleAppsCloudidentityDevicesV1CustomAttributeValue {
@@ -1323,6 +1592,60 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleAppsCloudidentityDevicesV1CustomAttributeValue {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAppsCloudidentityDevicesV1DeleteDeviceMetadata {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleAppsCloudidentityDevicesV1DeleteDeviceMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAppsCloudidentityDevicesV1DeleteDeviceMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAppsCloudidentityDevicesV1DeleteDeviceUserMetadata {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleAppsCloudidentityDevicesV1DeleteDeviceUserMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAppsCloudidentityDevicesV1DeleteDeviceUserMetadata
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1482,7 +1805,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub model: ::std::option::Option<String>,
-        #[doc = "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Device in format: `devices/{device_id}`, where device_id is the unique id assigned to the Device."]
+        #[doc = "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Device in format: `devices/{device}`, where device is the unique id assigned to the Device."]
         #[serde(
             rename = "name",
             default,
@@ -1582,7 +1905,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleAppsCloudidentityDevicesV1DeviceCompromisedState, ()>
         {
-            Ok ( match s { "COMPROMISED" => GoogleAppsCloudidentityDevicesV1DeviceCompromisedState :: Compromised , "COMPROMISED_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceCompromisedState :: CompromisedStateUnspecified , "UNCOMPROMISED" => GoogleAppsCloudidentityDevicesV1DeviceCompromisedState :: Uncompromised , _ => return Err ( ( ) ) , } )
+            Ok (match s { "COMPROMISED" => GoogleAppsCloudidentityDevicesV1DeviceCompromisedState :: Compromised , "COMPROMISED_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceCompromisedState :: CompromisedStateUnspecified , "UNCOMPROMISED" => GoogleAppsCloudidentityDevicesV1DeviceCompromisedState :: Uncompromised , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleAppsCloudidentityDevicesV1DeviceCompromisedState {
@@ -1604,7 +1927,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "COMPROMISED" => GoogleAppsCloudidentityDevicesV1DeviceCompromisedState :: Compromised , "COMPROMISED_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceCompromisedState :: CompromisedStateUnspecified , "UNCOMPROMISED" => GoogleAppsCloudidentityDevicesV1DeviceCompromisedState :: Uncompromised , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "COMPROMISED" => GoogleAppsCloudidentityDevicesV1DeviceCompromisedState :: Compromised , "COMPROMISED_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceCompromisedState :: CompromisedStateUnspecified , "UNCOMPROMISED" => GoogleAppsCloudidentityDevicesV1DeviceCompromisedState :: Uncompromised , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1757,7 +2080,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleAppsCloudidentityDevicesV1DeviceEncryptionState, ()>
         {
-            Ok ( match s { "ENCRYPTED" => GoogleAppsCloudidentityDevicesV1DeviceEncryptionState :: Encrypted , "ENCRYPTION_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceEncryptionState :: EncryptionStateUnspecified , "NOT_ENCRYPTED" => GoogleAppsCloudidentityDevicesV1DeviceEncryptionState :: NotEncrypted , "UNSUPPORTED_BY_DEVICE" => GoogleAppsCloudidentityDevicesV1DeviceEncryptionState :: UnsupportedByDevice , _ => return Err ( ( ) ) , } )
+            Ok (match s { "ENCRYPTED" => GoogleAppsCloudidentityDevicesV1DeviceEncryptionState :: Encrypted , "ENCRYPTION_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceEncryptionState :: EncryptionStateUnspecified , "NOT_ENCRYPTED" => GoogleAppsCloudidentityDevicesV1DeviceEncryptionState :: NotEncrypted , "UNSUPPORTED_BY_DEVICE" => GoogleAppsCloudidentityDevicesV1DeviceEncryptionState :: UnsupportedByDevice , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleAppsCloudidentityDevicesV1DeviceEncryptionState {
@@ -1779,7 +2102,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "ENCRYPTED" => GoogleAppsCloudidentityDevicesV1DeviceEncryptionState :: Encrypted , "ENCRYPTION_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceEncryptionState :: EncryptionStateUnspecified , "NOT_ENCRYPTED" => GoogleAppsCloudidentityDevicesV1DeviceEncryptionState :: NotEncrypted , "UNSUPPORTED_BY_DEVICE" => GoogleAppsCloudidentityDevicesV1DeviceEncryptionState :: UnsupportedByDevice , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "ENCRYPTED" => GoogleAppsCloudidentityDevicesV1DeviceEncryptionState :: Encrypted , "ENCRYPTION_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceEncryptionState :: EncryptionStateUnspecified , "NOT_ENCRYPTED" => GoogleAppsCloudidentityDevicesV1DeviceEncryptionState :: NotEncrypted , "UNSUPPORTED_BY_DEVICE" => GoogleAppsCloudidentityDevicesV1DeviceEncryptionState :: UnsupportedByDevice , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1829,7 +2152,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleAppsCloudidentityDevicesV1DeviceManagementState, ()>
         {
-            Ok ( match s { "APPROVED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Approved , "BLOCKED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Blocked , "MANAGEMENT_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: ManagementStateUnspecified , "PENDING" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Pending , "UNPROVISIONED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Unprovisioned , "WIPED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Wiped , "WIPING" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Wiping , _ => return Err ( ( ) ) , } )
+            Ok (match s { "APPROVED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Approved , "BLOCKED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Blocked , "MANAGEMENT_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: ManagementStateUnspecified , "PENDING" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Pending , "UNPROVISIONED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Unprovisioned , "WIPED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Wiped , "WIPING" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Wiping , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleAppsCloudidentityDevicesV1DeviceManagementState {
@@ -1851,7 +2174,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "APPROVED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Approved , "BLOCKED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Blocked , "MANAGEMENT_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: ManagementStateUnspecified , "PENDING" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Pending , "UNPROVISIONED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Unprovisioned , "WIPED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Wiped , "WIPING" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Wiping , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "APPROVED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Approved , "BLOCKED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Blocked , "MANAGEMENT_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: ManagementStateUnspecified , "PENDING" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Pending , "UNPROVISIONED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Unprovisioned , "WIPED" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Wiped , "WIPING" => GoogleAppsCloudidentityDevicesV1DeviceManagementState :: Wiping , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -2011,7 +2334,7 @@ pub mod schemas {
         pub management_state: ::std::option::Option<
             crate::schemas::GoogleAppsCloudidentityDevicesV1DeviceUserManagementState,
         >,
-        #[doc = "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the DeviceUser in format: `devices/{device_id}/deviceUsers/{user_id}`, where user_id is the ID of the user associated with the user session."]
+        #[doc = "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the DeviceUser in format: `devices/{device}/deviceUsers/{device_user}`, where `device_user` uniquely identifies a user's use of a device."]
         #[serde(
             rename = "name",
             default,
@@ -2077,7 +2400,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleAppsCloudidentityDevicesV1DeviceUserCompromisedState, ()>
         {
-            Ok ( match s { "COMPROMISED" => GoogleAppsCloudidentityDevicesV1DeviceUserCompromisedState :: Compromised , "COMPROMISED_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceUserCompromisedState :: CompromisedStateUnspecified , "NOT_COMPROMISED" => GoogleAppsCloudidentityDevicesV1DeviceUserCompromisedState :: NotCompromised , _ => return Err ( ( ) ) , } )
+            Ok (match s { "COMPROMISED" => GoogleAppsCloudidentityDevicesV1DeviceUserCompromisedState :: Compromised , "COMPROMISED_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceUserCompromisedState :: CompromisedStateUnspecified , "NOT_COMPROMISED" => GoogleAppsCloudidentityDevicesV1DeviceUserCompromisedState :: NotCompromised , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleAppsCloudidentityDevicesV1DeviceUserCompromisedState {
@@ -2099,7 +2422,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "COMPROMISED" => GoogleAppsCloudidentityDevicesV1DeviceUserCompromisedState :: Compromised , "COMPROMISED_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceUserCompromisedState :: CompromisedStateUnspecified , "NOT_COMPROMISED" => GoogleAppsCloudidentityDevicesV1DeviceUserCompromisedState :: NotCompromised , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "COMPROMISED" => GoogleAppsCloudidentityDevicesV1DeviceUserCompromisedState :: Compromised , "COMPROMISED_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceUserCompromisedState :: CompromisedStateUnspecified , "NOT_COMPROMISED" => GoogleAppsCloudidentityDevicesV1DeviceUserCompromisedState :: NotCompromised , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -2149,7 +2472,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleAppsCloudidentityDevicesV1DeviceUserManagementState, ()>
         {
-            Ok ( match s { "APPROVED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Approved , "BLOCKED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Blocked , "MANAGEMENT_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: ManagementStateUnspecified , "PENDING_APPROVAL" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: PendingApproval , "UNENROLLED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Unenrolled , "WIPED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Wiped , "WIPING" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Wiping , _ => return Err ( ( ) ) , } )
+            Ok (match s { "APPROVED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Approved , "BLOCKED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Blocked , "MANAGEMENT_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: ManagementStateUnspecified , "PENDING_APPROVAL" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: PendingApproval , "UNENROLLED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Unenrolled , "WIPED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Wiped , "WIPING" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Wiping , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleAppsCloudidentityDevicesV1DeviceUserManagementState {
@@ -2171,7 +2494,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "APPROVED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Approved , "BLOCKED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Blocked , "MANAGEMENT_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: ManagementStateUnspecified , "PENDING_APPROVAL" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: PendingApproval , "UNENROLLED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Unenrolled , "WIPED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Wiped , "WIPING" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Wiping , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "APPROVED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Approved , "BLOCKED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Blocked , "MANAGEMENT_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: ManagementStateUnspecified , "PENDING_APPROVAL" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: PendingApproval , "UNENROLLED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Unenrolled , "WIPED" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Wiped , "WIPING" => GoogleAppsCloudidentityDevicesV1DeviceUserManagementState :: Wiping , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -2213,7 +2536,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleAppsCloudidentityDevicesV1DeviceUserPasswordState, ()>
         {
-            Ok ( match s { "PASSWORD_NOT_SET" => GoogleAppsCloudidentityDevicesV1DeviceUserPasswordState :: PasswordNotSet , "PASSWORD_SET" => GoogleAppsCloudidentityDevicesV1DeviceUserPasswordState :: PasswordSet , "PASSWORD_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceUserPasswordState :: PasswordStateUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "PASSWORD_NOT_SET" => GoogleAppsCloudidentityDevicesV1DeviceUserPasswordState :: PasswordNotSet , "PASSWORD_SET" => GoogleAppsCloudidentityDevicesV1DeviceUserPasswordState :: PasswordSet , "PASSWORD_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceUserPasswordState :: PasswordStateUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleAppsCloudidentityDevicesV1DeviceUserPasswordState {
@@ -2235,7 +2558,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "PASSWORD_NOT_SET" => GoogleAppsCloudidentityDevicesV1DeviceUserPasswordState :: PasswordNotSet , "PASSWORD_SET" => GoogleAppsCloudidentityDevicesV1DeviceUserPasswordState :: PasswordSet , "PASSWORD_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceUserPasswordState :: PasswordStateUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "PASSWORD_NOT_SET" => GoogleAppsCloudidentityDevicesV1DeviceUserPasswordState :: PasswordNotSet , "PASSWORD_SET" => GoogleAppsCloudidentityDevicesV1DeviceUserPasswordState :: PasswordSet , "PASSWORD_STATE_UNSPECIFIED" => GoogleAppsCloudidentityDevicesV1DeviceUserPasswordState :: PasswordStateUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -2378,6 +2701,34 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAppsCloudidentityDevicesV1ListEndpointAppsMetadata {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleAppsCloudidentityDevicesV1ListEndpointAppsMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAppsCloudidentityDevicesV1ListEndpointAppsMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
@@ -2390,7 +2741,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub customer: ::std::option::Option<String>,
-        #[doc = "[Resource names](https://cloud.google.com/apis/design/resource_names) of the DeviceUsers in the format: `devices/{device_id}/deviceUsers/{user_resource_id}`, where device_id is the unique ID assigned to a Device and user_resource_id is the unique user ID"]
+        #[doc = "[Resource names](https://cloud.google.com/apis/design/resource_names) of the DeviceUsers in the format: `devices/{device}/deviceUsers/{user_resource}`, where device is the unique ID assigned to a Device and user_resource is the unique user ID"]
         #[serde(
             rename = "names",
             default,
@@ -2427,18 +2778,131 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAppsCloudidentityDevicesV1SignoutDeviceUserMetadata {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleAppsCloudidentityDevicesV1SignoutDeviceUserMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAppsCloudidentityDevicesV1SignoutDeviceUserMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAppsCloudidentityDevicesV1UpdateClientStateMetadata {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleAppsCloudidentityDevicesV1UpdateClientStateMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAppsCloudidentityDevicesV1UpdateClientStateMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAppsCloudidentityDevicesV1UpdateDeviceMetadata {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleAppsCloudidentityDevicesV1UpdateDeviceMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAppsCloudidentityDevicesV1UpdateDeviceMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAppsCloudidentityDevicesV1WipeDeviceMetadata {}
+    impl ::google_field_selector::FieldSelector for GoogleAppsCloudidentityDevicesV1WipeDeviceMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAppsCloudidentityDevicesV1WipeDeviceMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCloudidentityDevicesV1WipeDeviceRequest {
-        #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs."]
+        #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs."]
         #[serde(
             rename = "customer",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub customer: ::std::option::Option<String>,
+        #[doc = "Optional. Specifies if a user is able to factory reset a device after a Device Wipe. On iOS, this is called \"Activation Lock\", while on Android, this is known as \"Factory Reset Protection\". If true, this protection will be removed from the device, so that a user can successfully factory reset. If false, the setting is untouched on the device."]
+        #[serde(
+            rename = "removeResetLock",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub remove_reset_lock: ::std::option::Option<bool>,
     }
     impl ::google_field_selector::FieldSelector for GoogleAppsCloudidentityDevicesV1WipeDeviceRequest {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2489,12 +2953,40 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAppsCloudidentityDevicesV1WipeDeviceUserMetadata {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleAppsCloudidentityDevicesV1WipeDeviceUserMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAppsCloudidentityDevicesV1WipeDeviceUserMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCloudidentityDevicesV1WipeDeviceUserRequest {
-        #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs."]
+        #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs."]
         #[serde(
             rename = "customer",
             default,
@@ -2593,28 +3085,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dynamic_group_metadata: ::std::option::Option<crate::schemas::DynamicGroupMetadata>,
-        #[doc = "Required. Immutable. The `EntityKey` of the `Group`."]
+        #[doc = "Required. The `EntityKey` of the `Group`."]
         #[serde(
             rename = "groupKey",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub group_key: ::std::option::Option<crate::schemas::EntityKey>,
-        #[doc = "Required. One or more label entries that apply to the Group. Currently supported labels contain a key with an empty value. Google Groups are the default type of group and have a label with a key of `cloudidentity.googleapis.com/groups.discussion_forum` and an empty value. Existing Google Groups can have an additional label with a key of `cloudidentity.googleapis.com/groups.security` and an empty value added to them. **This is an immutable change and the security label cannot be removed once added.** Dynamic groups have a label with a key of `cloudidentity.googleapis.com/groups.dynamic`. Identity-mapped groups for Cloud Search have a label with a key of `system/groups/external` and an empty value. Examples: {\"cloudidentity.googleapis.com/groups.discussion_forum\": \"\"} or {\"system/groups/external\": \"\"}."]
+        #[doc = "Required. One or more label entries that apply to the Group. Currently supported labels contain a key with an empty value. Google Groups are the default type of group and have a label with a key of `cloudidentity.googleapis.com/groups.discussion_forum` and an empty value. Existing Google Groups can have an additional label with a key of `cloudidentity.googleapis.com/groups.security` and an empty value added to them. **This is an immutable change and the security label cannot be removed once added.** Dynamic groups have a label with a key of `cloudidentity.googleapis.com/groups.dynamic`. Identity-mapped groups for Cloud Search have a label with a key of `system/groups/external` and an empty value."]
         #[serde(
             rename = "labels",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Output only. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Group`. Shall be of the form `groups/{group_id}`."]
+        #[doc = "Output only. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Group`. Shall be of the form `groups/{group}`."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. Immutable. The resource name of the entity under which this `Group` resides in the Cloud Identity resource hierarchy. Must be of the form `identitysources/{identity_source_id}` for external- identity-mapped groups or `customers/{customer_id}` for Google Groups."]
+        #[doc = "Required. Immutable. The resource name of the entity under which this `Group` resides in the Cloud Identity resource hierarchy. Must be of the form `identitysources/{identity_source}` for external- identity-mapped groups or `customers/{customer}` for Google Groups. The `customer` must begin with \"C\" (for example, 'C046psxkn')."]
         #[serde(
             rename = "parent",
             default,
@@ -2906,7 +3398,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LookupMembershipNameResponse {
-        #[doc = "The [resource name](https://cloud.google.com/apis/design/resource_names) of the looked-up `Membership`. Must be of the form `groups/{group_id}/memberships/{membership_id}`."]
+        #[doc = "The [resource name](https://cloud.google.com/apis/design/resource_names) of the looked-up `Membership`. Must be of the form `groups/{group}/memberships/{membership}`."]
         #[serde(
             rename = "name",
             default,
@@ -2937,7 +3429,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct MemberRelation {
-        #[doc = "Resource name for this member if member is a GROUP, otherwise it is empty."]
+        #[doc = "Resource name for this member."]
         #[serde(
             rename = "member",
             default,
@@ -3069,6 +3561,44 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct MemberRestriction {
+        #[doc = "The evaluated state of this restriction on a group."]
+        #[serde(
+            rename = "evaluation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub evaluation: ::std::option::Option<crate::schemas::RestrictionEvaluation>,
+        #[doc = "Member Restriction as defined by CEL expression. Supported restrictions are: `member.customer_id` and `member.type`. Valid values for `member.type` are `1`, `2` and `3`. They correspond to USER, SERVICE_ACCOUNT, and GROUP respectively. The value for `member.customer_id` only supports `groupCustomerId()` currently which means the customer id of the group will be used for restriction. Supported operators are `&&`, `||` and `==`, corresponding to AND, OR, and EQUAL. Examples: Allow only service accounts of given customer to be members. `member.type == 2 && member.customer_id == groupCustomerId()` Allow only users or groups to be members. `member.type == 1 || member.type == 3`"]
+        #[serde(
+            rename = "query",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub query: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for MemberRestriction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MemberRestriction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Membership {
         #[doc = "Output only. The time when the `Membership` was created."]
         #[serde(
@@ -3077,7 +3607,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Output only. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Membership`. Shall be of the form `groups/{group_id}/memberships/{membership_id}`."]
+        #[doc = "Output only. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Membership`. Shall be of the form `groups/{group}/memberships/{membership}`."]
         #[serde(
             rename = "name",
             default,
@@ -3131,6 +3661,8 @@ pub mod schemas {
         Other,
         #[doc = "Represents service account type."]
         ServiceAccount,
+        #[doc = "Represents Shared drive."]
+        SharedDrive,
         #[doc = "Default. Should not be used."]
         TypeUnspecified,
         #[doc = "Represents user type."]
@@ -3142,6 +3674,7 @@ pub mod schemas {
                 MembershipType::Group => "GROUP",
                 MembershipType::Other => "OTHER",
                 MembershipType::ServiceAccount => "SERVICE_ACCOUNT",
+                MembershipType::SharedDrive => "SHARED_DRIVE",
                 MembershipType::TypeUnspecified => "TYPE_UNSPECIFIED",
                 MembershipType::User => "USER",
             }
@@ -3159,6 +3692,7 @@ pub mod schemas {
                 "GROUP" => MembershipType::Group,
                 "OTHER" => MembershipType::Other,
                 "SERVICE_ACCOUNT" => MembershipType::ServiceAccount,
+                "SHARED_DRIVE" => MembershipType::SharedDrive,
                 "TYPE_UNSPECIFIED" => MembershipType::TypeUnspecified,
                 "USER" => MembershipType::User,
                 _ => return Err(()),
@@ -3188,6 +3722,7 @@ pub mod schemas {
                 "GROUP" => MembershipType::Group,
                 "OTHER" => MembershipType::Other,
                 "SERVICE_ACCOUNT" => MembershipType::ServiceAccount,
+                "SHARED_DRIVE" => MembershipType::SharedDrive,
                 "TYPE_UNSPECIFIED" => MembershipType::TypeUnspecified,
                 "USER" => MembershipType::User,
                 _ => {
@@ -3274,6 +3809,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "Evaluations of restrictions applied to parent group on this membership."]
+        #[serde(
+            rename = "restrictionEvaluations",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub restriction_evaluations: ::std::option::Option<crate::schemas::RestrictionEvaluations>,
     }
     impl ::google_field_selector::FieldSelector for MembershipRole {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -3281,6 +3823,125 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for MembershipRole {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MembershipRoleRestrictionEvaluation {
+        #[doc = "Output only. The current state of the restriction"]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::MembershipRoleRestrictionEvaluationState>,
+    }
+    impl ::google_field_selector::FieldSelector for MembershipRoleRestrictionEvaluation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MembershipRoleRestrictionEvaluation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MembershipRoleRestrictionEvaluationState {
+        #[doc = "The member adheres to the parent group's restriction."]
+        Compliant,
+        #[doc = "The state of the membership is under evaluation."]
+        Evaluating,
+        #[doc = "The group-group membership might be currently violating some parent group's restriction but in future, it will never allow any new member in the child group which can violate parent group's restriction."]
+        ForwardCompliant,
+        #[doc = "The member violates the parent group's restriction."]
+        NonCompliant,
+        #[doc = "Default. Should not be used."]
+        StateUnspecified,
+    }
+    impl MembershipRoleRestrictionEvaluationState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MembershipRoleRestrictionEvaluationState::Compliant => "COMPLIANT",
+                MembershipRoleRestrictionEvaluationState::Evaluating => "EVALUATING",
+                MembershipRoleRestrictionEvaluationState::ForwardCompliant => "FORWARD_COMPLIANT",
+                MembershipRoleRestrictionEvaluationState::NonCompliant => "NON_COMPLIANT",
+                MembershipRoleRestrictionEvaluationState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MembershipRoleRestrictionEvaluationState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MembershipRoleRestrictionEvaluationState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<MembershipRoleRestrictionEvaluationState, ()> {
+            Ok(match s {
+                "COMPLIANT" => MembershipRoleRestrictionEvaluationState::Compliant,
+                "EVALUATING" => MembershipRoleRestrictionEvaluationState::Evaluating,
+                "FORWARD_COMPLIANT" => MembershipRoleRestrictionEvaluationState::ForwardCompliant,
+                "NON_COMPLIANT" => MembershipRoleRestrictionEvaluationState::NonCompliant,
+                "STATE_UNSPECIFIED" => MembershipRoleRestrictionEvaluationState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MembershipRoleRestrictionEvaluationState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MembershipRoleRestrictionEvaluationState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MembershipRoleRestrictionEvaluationState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "COMPLIANT" => MembershipRoleRestrictionEvaluationState::Compliant,
+                "EVALUATING" => MembershipRoleRestrictionEvaluationState::Evaluating,
+                "FORWARD_COMPLIANT" => MembershipRoleRestrictionEvaluationState::ForwardCompliant,
+                "NON_COMPLIANT" => MembershipRoleRestrictionEvaluationState::NonCompliant,
+                "STATE_UNSPECIFIED" => MembershipRoleRestrictionEvaluationState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MembershipRoleRestrictionEvaluationState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MembershipRoleRestrictionEvaluationState {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3424,8 +4085,157 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct RestrictionEvaluation {
+        #[doc = "Output only. The current state of the restriction"]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::RestrictionEvaluationState>,
+    }
+    impl ::google_field_selector::FieldSelector for RestrictionEvaluation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RestrictionEvaluation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum RestrictionEvaluationState {
+        #[doc = "All transitive memberships are adhering to restriction."]
+        Compliant,
+        #[doc = "The restriction state is currently being evaluated."]
+        Evaluating,
+        #[doc = "Some transitive memberships violate the restriction. No new violating memberships can be added."]
+        ForwardCompliant,
+        #[doc = "Some transitive memberships violate the restriction. New violating direct memberships will be denied while indirect memberships may be added."]
+        NonCompliant,
+        #[doc = "Default. Should not be used."]
+        StateUnspecified,
+    }
+    impl RestrictionEvaluationState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                RestrictionEvaluationState::Compliant => "COMPLIANT",
+                RestrictionEvaluationState::Evaluating => "EVALUATING",
+                RestrictionEvaluationState::ForwardCompliant => "FORWARD_COMPLIANT",
+                RestrictionEvaluationState::NonCompliant => "NON_COMPLIANT",
+                RestrictionEvaluationState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for RestrictionEvaluationState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for RestrictionEvaluationState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<RestrictionEvaluationState, ()> {
+            Ok(match s {
+                "COMPLIANT" => RestrictionEvaluationState::Compliant,
+                "EVALUATING" => RestrictionEvaluationState::Evaluating,
+                "FORWARD_COMPLIANT" => RestrictionEvaluationState::ForwardCompliant,
+                "NON_COMPLIANT" => RestrictionEvaluationState::NonCompliant,
+                "STATE_UNSPECIFIED" => RestrictionEvaluationState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for RestrictionEvaluationState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for RestrictionEvaluationState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for RestrictionEvaluationState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "COMPLIANT" => RestrictionEvaluationState::Compliant,
+                "EVALUATING" => RestrictionEvaluationState::Evaluating,
+                "FORWARD_COMPLIANT" => RestrictionEvaluationState::ForwardCompliant,
+                "NON_COMPLIANT" => RestrictionEvaluationState::NonCompliant,
+                "STATE_UNSPECIFIED" => RestrictionEvaluationState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for RestrictionEvaluationState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RestrictionEvaluationState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct RestrictionEvaluations {
+        #[doc = "Evaluation of the member restriction applied to this membership. Empty if the user lacks permission to view the restriction evaluation."]
+        #[serde(
+            rename = "memberRestrictionEvaluation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub member_restriction_evaluation:
+            ::std::option::Option<crate::schemas::MembershipRoleRestrictionEvaluation>,
+    }
+    impl ::google_field_selector::FieldSelector for RestrictionEvaluations {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RestrictionEvaluations {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SearchGroupsResponse {
-        #[doc = "The `Group`s that match the search query."]
+        #[doc = "The `Group` resources that match the search query."]
         #[serde(
             rename = "groups",
             default,
@@ -3526,6 +4336,44 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SecuritySettings {
+        #[doc = "The Member Restriction value"]
+        #[serde(
+            rename = "memberRestriction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub member_restriction: ::std::option::Option<crate::schemas::MemberRestriction>,
+        #[doc = "Output only. The resource name of the security settings. Shall be of the form `groups/{group_id}/securitySettings`."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SecuritySettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SecuritySettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Status {
         #[doc = "The status code, which should be an enum value of google.rpc.Code."]
@@ -3600,12 +4448,60 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UpdateGroupMetadata {}
+    impl ::google_field_selector::FieldSelector for UpdateGroupMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UpdateGroupMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UpdateMembershipMetadata {}
+    impl ::google_field_selector::FieldSelector for UpdateMembershipMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UpdateMembershipMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
     pub struct UpdateMembershipRolesParams {
-        #[doc = "The fully-qualified names of fields to update. May only contain the field `expiry_detail`."]
+        #[doc = "The fully-qualified names of fields to update. May only contain the field `expiry_detail.expire_time`."]
         #[serde(
             rename = "fieldMask",
             default,
@@ -3626,145 +4522,6 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for UpdateMembershipRolesParams {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct UserInvitation {
-        #[doc = "Number of invitation emails sent to the user."]
-        #[serde(
-            rename = "mailsSentCount",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        #[serde(with = "crate::parsed_string")]
-        pub mails_sent_count: ::std::option::Option<i64>,
-        #[doc = "Shall be of the form `customers/{customer}/userinvitations/{user_email_address}`."]
-        #[serde(
-            rename = "name",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub name: ::std::option::Option<String>,
-        #[doc = "State of the `UserInvitation`."]
-        #[serde(
-            rename = "state",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub state: ::std::option::Option<crate::schemas::UserInvitationState>,
-        #[doc = "Time when the `UserInvitation` was last updated."]
-        #[serde(
-            rename = "updateTime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub update_time: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for UserInvitation {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for UserInvitation {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum UserInvitationState {
-        #[doc = "The user has accepted the invitation and is part of the organization."]
-        Accepted,
-        #[doc = "The user declined the invitation."]
-        Declined,
-        #[doc = "The user has been invited by email."]
-        Invited,
-        #[doc = "The `UserInvitation` has been created and is ready for sending as an email."]
-        NotYetSent,
-        #[doc = "The default value. This value is used if the state is omitted."]
-        StateUnspecified,
-    }
-    impl UserInvitationState {
-        pub fn as_str(self) -> &'static str {
-            match self {
-                UserInvitationState::Accepted => "ACCEPTED",
-                UserInvitationState::Declined => "DECLINED",
-                UserInvitationState::Invited => "INVITED",
-                UserInvitationState::NotYetSent => "NOT_YET_SENT",
-                UserInvitationState::StateUnspecified => "STATE_UNSPECIFIED",
-            }
-        }
-    }
-    impl ::std::convert::AsRef<str> for UserInvitationState {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr for UserInvitationState {
-        type Err = ();
-        fn from_str(s: &str) -> ::std::result::Result<UserInvitationState, ()> {
-            Ok(match s {
-                "ACCEPTED" => UserInvitationState::Accepted,
-                "DECLINED" => UserInvitationState::Declined,
-                "INVITED" => UserInvitationState::Invited,
-                "NOT_YET_SENT" => UserInvitationState::NotYetSent,
-                "STATE_UNSPECIFIED" => UserInvitationState::StateUnspecified,
-                _ => return Err(()),
-            })
-        }
-    }
-    impl ::std::fmt::Display for UserInvitationState {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize for UserInvitationState {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de> for UserInvitationState {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok(match value {
-                "ACCEPTED" => UserInvitationState::Accepted,
-                "DECLINED" => UserInvitationState::Declined,
-                "INVITED" => UserInvitationState::Invited,
-                "NOT_YET_SENT" => UserInvitationState::NotYetSent,
-                "STATE_UNSPECIFIED" => UserInvitationState::StateUnspecified,
-                _ => {
-                    return Err(::serde::de::Error::custom(format!(
-                        "invalid enum for #name: {}",
-                        value
-                    )))
-                }
-            })
-        }
-    }
-    impl ::google_field_selector::FieldSelector for UserInvitationState {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for UserInvitationState {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4375,7 +5132,7 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> CreateRequestBuilder<'a> {
-            #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs."]
+            #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs."]
             pub fn customer(mut self, value: impl Into<String>) -> Self {
                 self.customer = Some(value.into());
                 self
@@ -4532,7 +5289,7 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
-            #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs."]
+            #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs."]
             pub fn customer(mut self, value: impl Into<String>) -> Self {
                 self.customer = Some(value.into());
                 self
@@ -4695,7 +5452,7 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> GetRequestBuilder<'a> {
-            #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Customer in the format: `customers/{customer_id}`, where customer_id is the customer to whom the device belongs. If you're using this API for your own organization, use `customers/my_customer`. If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs."]
+            #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Customer in the format: `customers/{customer}`, where customer is the customer to whom the device belongs. If you're using this API for your own organization, use `customers/my_customer`. If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs."]
             pub fn customer(mut self, value: impl Into<String>) -> Self {
                 self.customer = Some(value.into());
                 self
@@ -4864,7 +5621,7 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer in the format: `customers/{customer_id}`, where customer_id is the customer to whom the device belongs. If you're using this API for your own organization, use `customers/my_customer`. If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs."]
+            #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer in the format: `customers/{customer}`, where customer is the customer to whom the device belongs. If you're using this API for your own organization, use `customers/my_customer`. If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs."]
             pub fn customer(mut self, value: impl Into<String>) -> Self {
                 self.customer = Some(value.into());
                 self
@@ -6028,7 +6785,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> DeleteRequestBuilder<'a> {
-                #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs."]
+                #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs."]
                 pub fn customer(mut self, value: impl Into<String>) -> Self {
                     self.customer = Some(value.into());
                     self
@@ -6194,7 +6951,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> GetRequestBuilder<'a> {
-                #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs."]
+                #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs."]
                 pub fn customer(mut self, value: impl Into<String>) -> Self {
                     self.customer = Some(value.into());
                     self
@@ -6366,7 +7123,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs."]
+                #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs."]
                 pub fn customer(mut self, value: impl Into<String>) -> Self {
                     self.customer = Some(value.into());
                     self
@@ -7240,7 +7997,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> GetRequestBuilder<'a> {
-                    #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs."]
+                    #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs."]
                     pub fn customer(mut self, value: impl Into<String>) -> Self {
                         self.customer = Some(value.into());
                         self
@@ -7416,7 +8173,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs."]
+                    #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs."]
                     pub fn customer(mut self, value: impl Into<String>) -> Self {
                         self.customer = Some(value.into());
                         self
@@ -7732,7 +8489,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> PatchRequestBuilder<'a> {
-                    #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs."]
+                    #[doc = "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer}`, where customer is the customer to whom the device belongs."]
                     pub fn customer(mut self, value: impl Into<String>) -> Self {
                         self.customer = Some(value.into());
                         self
@@ -8192,7 +8949,30 @@ pub mod resources {
                     name: name.into(),
                 }
             }
-            #[doc = "Lists the `Group`s under a customer or namespace."]
+            #[doc = "Get Security Settings"]
+            pub fn get_security_settings(
+                &self,
+                name: impl Into<String>,
+            ) -> GetSecuritySettingsRequestBuilder {
+                GetSecuritySettingsRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    name: name.into(),
+                    read_mask: None,
+                }
+            }
+            #[doc = "Lists the `Group` resources under a customer or namespace."]
             pub fn list(&self) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -8259,7 +9039,7 @@ pub mod resources {
                     update_mask: None,
                 }
             }
-            #[doc = "Searches for `Group`s matching a specified query."]
+            #[doc = "Searches for `Group` resources matching a specified query."]
             pub fn search(&self) -> SearchRequestBuilder {
                 SearchRequestBuilder {
                     reqwest: &self.reqwest,
@@ -8279,6 +9059,31 @@ pub mod resources {
                     page_token: None,
                     query: None,
                     view: None,
+                }
+            }
+            #[doc = "Update Security Settings"]
+            pub fn update_security_settings(
+                &self,
+                request: crate::schemas::SecuritySettings,
+                name: impl Into<String>,
+            ) -> UpdateSecuritySettingsRequestBuilder {
+                UpdateSecuritySettingsRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    request,
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    name: name.into(),
+                    update_mask: None,
                 }
             }
             #[doc = "Actions that can be performed on the memberships resource"]
@@ -8760,6 +9565,169 @@ pub mod resources {
                 Ok(req)
             }
         }
+        #[doc = "Created via [GroupsActions::get_security_settings()](struct.GroupsActions.html#method.get_security_settings)"]
+        #[derive(Debug, Clone)]
+        pub struct GetSecuritySettingsRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            name: String,
+            read_mask: Option<String>,
+            access_token: Option<String>,
+            alt: Option<crate::params::Alt>,
+            callback: Option<String>,
+            fields: Option<String>,
+            key: Option<String>,
+            oauth_token: Option<String>,
+            pretty_print: Option<bool>,
+            quota_user: Option<String>,
+            upload_protocol: Option<String>,
+            upload_type: Option<String>,
+            xgafv: Option<crate::params::Xgafv>,
+        }
+        impl<'a> GetSecuritySettingsRequestBuilder<'a> {
+            #[doc = "Field-level read mask of which fields to return. \"*\" returns all fields. If not specified, all fields will be returned. May only contain the following field: `member_restriction`."]
+            pub fn read_mask(mut self, value: impl Into<String>) -> Self {
+                self.read_mask = Some(value.into());
+                self
+            }
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields)
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::SecuritySettings, crate::Error> {
+                self.execute_with_fields(None::<&str>)
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::SecuritySettings, crate::Error> {
+                self.execute_with_fields(Some("*"))
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute()
+            }
+            fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path())?;
+                Ok(crate::error_from_response(req.send()?)?.json()?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://cloudidentity.googleapis.com/".to_owned();
+                output.push_str("v1/");
+                {
+                    let var_as_str = &self.name;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::RESERVED,
+                    ));
+                }
+                output
+            }
+            fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                req = req.query(&[("readMask", &self.read_mask)]);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                req = req.bearer_auth(
+                    self.auth
+                        .access_token()
+                        .map_err(|err| crate::Error::OAuth2(err))?,
+                );
+                Ok(req)
+            }
+        }
         #[doc = "Created via [GroupsActions::list()](struct.GroupsActions.html#method.list)"]
         #[derive(Debug, Clone)]
         pub struct ListRequestBuilder<'a> {
@@ -8792,7 +9760,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Required. The parent resource under which to list all `Group`s. Must be of the form `identitysources/{identity_source_id}` for external- identity-mapped groups or `customers/{customer_id}` for Google Groups."]
+            #[doc = "Required. The parent resource under which to list all `Group` resources. Must be of the form `identitysources/{identity_source}` for external- identity-mapped groups or `customers/{customer}` for Google Groups. The `customer` must begin with \"C\" (for example, 'C046psxkn')."]
             pub fn parent(mut self, value: impl Into<String>) -> Self {
                 self.parent = Some(value.into());
                 self
@@ -9070,7 +10038,7 @@ pub mod resources {
                 self.group_key_id = Some(value.into());
                 self
             }
-            #[doc = "The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source_id}."]
+            #[doc = "The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source}`."]
             pub fn group_key_namespace(mut self, value: impl Into<String>) -> Self {
                 self.group_key_namespace = Some(value.into());
                 self
@@ -9228,7 +10196,7 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> PatchRequestBuilder<'a> {
-            #[doc = "Required. The fully-qualified names of fields to update. May only contain the following fields: `display_name`, `description`."]
+            #[doc = "Required. The names of fields to update. May only contain the following field names: `display_name`, `description`, `labels`."]
             pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                 self.update_mask = Some(value.into());
                 self
@@ -9404,7 +10372,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Required. The search query. Must be specified in [Common Expression Language](https://opensource.google/projects/cel). May only contain equality operators on the parent and inclusion operators on labels (e.g., `parent == 'customers/{customer_id}' && 'cloudidentity.googleapis.com/groups.discussion_forum' in labels`)."]
+            #[doc = "Required. The search query. Must be specified in [Common Expression Language](https://opensource.google/projects/cel). May only contain equality operators on the parent and inclusion operators on labels (e.g., `parent == 'customers/{customer}' && 'cloudidentity.googleapis.com/groups.discussion_forum' in labels`). The `customer` must begin with \"C\" (for example, 'C046psxkn')."]
             pub fn query(mut self, value: impl Into<String>) -> Self {
                 self.query = Some(value.into());
                 self
@@ -9655,6 +10623,171 @@ pub mod resources {
                 T: ::serde::de::DeserializeOwned,
             {
                 self._execute()
+            }
+        }
+        #[doc = "Created via [GroupsActions::update_security_settings()](struct.GroupsActions.html#method.update_security_settings)"]
+        #[derive(Debug, Clone)]
+        pub struct UpdateSecuritySettingsRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            request: crate::schemas::SecuritySettings,
+            name: String,
+            update_mask: Option<String>,
+            access_token: Option<String>,
+            alt: Option<crate::params::Alt>,
+            callback: Option<String>,
+            fields: Option<String>,
+            key: Option<String>,
+            oauth_token: Option<String>,
+            pretty_print: Option<bool>,
+            quota_user: Option<String>,
+            upload_protocol: Option<String>,
+            upload_type: Option<String>,
+            xgafv: Option<crate::params::Xgafv>,
+        }
+        impl<'a> UpdateSecuritySettingsRequestBuilder<'a> {
+            #[doc = "Required. The fully-qualified names of fields to update. May only contain the following field: `member_restriction.query`."]
+            pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                self.update_mask = Some(value.into());
+                self
+            }
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields)
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::Operation, crate::Error> {
+                self.execute_with_fields(None::<&str>)
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::Operation, crate::Error> {
+                self.execute_with_fields(Some("*"))
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute()
+            }
+            fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path())?;
+                let req = req.json(&self.request);
+                Ok(crate::error_from_response(req.send()?)?.json()?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://cloudidentity.googleapis.com/".to_owned();
+                output.push_str("v1/");
+                {
+                    let var_as_str = &self.name;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::RESERVED,
+                    ));
+                }
+                output
+            }
+            fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                req = req.query(&[("updateMask", &self.update_mask)]);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                req = req.bearer_auth(
+                    self.auth
+                        .access_token()
+                        .map_err(|err| crate::Error::OAuth2(err))?,
+                );
+                Ok(req)
             }
         }
         pub mod memberships {
@@ -11106,7 +12239,7 @@ pub mod resources {
                     self.member_key_id = Some(value.into());
                     self
                 }
-                #[doc = "The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source_id}."]
+                #[doc = "The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source}`."]
                 pub fn member_key_namespace(mut self, value: impl Into<String>) -> Self {
                     self.member_key_namespace = Some(value.into());
                     self
@@ -11452,7 +12585,7 @@ pub mod resources {
                     self.page_token = Some(value.into());
                     self
                 }
-                #[doc = "Required. A CEL expression that MUST include member specification AND label(s). This is a `required` field. Users can search on label attributes of groups. CONTAINS match ('in') is supported on labels. Certain groups are uniquely identified by both a 'member_key_id' and a 'member_key_namespace', which requires an additional query input: 'member_key_namespace'. Example query: `member_key_id == 'member_key_id_value' && in labels`"]
+                #[doc = "Required. A CEL expression that MUST include member specification AND label(s). This is a `required` field. Users can search on label attributes of groups. CONTAINS match ('in') is supported on labels. Identity-mapped groups are uniquely identified by both a `member_key_id` and a `member_key_namespace`, which requires an additional query input: `member_key_namespace`. Example query: `member_key_id == 'member_key_id_value' && in labels`"]
                 pub fn query(mut self, value: impl Into<String>) -> Self {
                     self.query = Some(value.into());
                     self

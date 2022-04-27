@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n        * [global](resources/projects/locations/global/struct.GlobalActions.html)\n          * [connectivity_tests](resources/projects/locations/global/connectivity_tests/struct.ConnectivityTestsActions.html)\n            * [*create*](resources/projects/locations/global/connectivity_tests/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/global/connectivity_tests/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/global/connectivity_tests/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/global/connectivity_tests/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/global/connectivity_tests/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/global/connectivity_tests/struct.PatchRequestBuilder.html), [*rerun*](resources/projects/locations/global/connectivity_tests/struct.RerunRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/global/connectivity_tests/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/global/connectivity_tests/struct.TestIamPermissionsRequestBuilder.html)\n          * [operations](resources/projects/locations/global/operations/struct.OperationsActions.html)\n            * [*cancel*](resources/projects/locations/global/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/locations/global/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/global/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/global/operations/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -46,16 +46,24 @@ pub mod schemas {
     pub enum AbortInfoCause {
         #[doc = "Cause is unspecified."]
         CauseUnspecified,
+        #[doc = "Aborted because the destination endpoint could not be found."]
+        DestinationEndpointNotFound,
         #[doc = "Aborted due to internal server error."]
         InternalError,
         #[doc = "Aborted because the source and/or destination endpoint specified in the test are invalid. The possible reasons that an endpoint is invalid include: malformed IP address; nonexistent instance or network URI; IP address not in the range of specified network URI; and instance not owning the network interface in the specified network."]
         InvalidArgument,
+        #[doc = "Aborted because the destination network does not match the destination endpoint."]
+        MismatchedDestinationNetwork,
+        #[doc = "Aborted because the source network does not match the source endpoint."]
+        MismatchedSourceNetwork,
         #[doc = "Aborted because traffic is sent from a public IP to an instance without an external IP."]
         NoExternalIp,
         #[doc = "Aborted because no valid source endpoint is derived from the input test request."]
         NoSourceLocation,
         #[doc = "Aborted because the user lacks the permission to access all or part of the network configurations required to run the test."]
         PermissionDenied,
+        #[doc = "Aborted because the source endpoint could not be found."]
+        SourceEndpointNotFound,
         #[doc = "Aborted because the number of steps in the trace exceeding a certain limit which may be caused by routing loop."]
         TraceTooLong,
         #[doc = "Aborted because none of the traces matches destination information specified in the input test request."]
@@ -66,21 +74,28 @@ pub mod schemas {
         UnknownNetwork,
         #[doc = "Aborted because no project information can be derived from the test input."]
         UnknownProject,
+        #[doc = "Aborted because the test scenario is not supported."]
+        Unsupported,
     }
     impl AbortInfoCause {
         pub fn as_str(self) -> &'static str {
             match self {
                 AbortInfoCause::CauseUnspecified => "CAUSE_UNSPECIFIED",
+                AbortInfoCause::DestinationEndpointNotFound => "DESTINATION_ENDPOINT_NOT_FOUND",
                 AbortInfoCause::InternalError => "INTERNAL_ERROR",
                 AbortInfoCause::InvalidArgument => "INVALID_ARGUMENT",
+                AbortInfoCause::MismatchedDestinationNetwork => "MISMATCHED_DESTINATION_NETWORK",
+                AbortInfoCause::MismatchedSourceNetwork => "MISMATCHED_SOURCE_NETWORK",
                 AbortInfoCause::NoExternalIp => "NO_EXTERNAL_IP",
                 AbortInfoCause::NoSourceLocation => "NO_SOURCE_LOCATION",
                 AbortInfoCause::PermissionDenied => "PERMISSION_DENIED",
+                AbortInfoCause::SourceEndpointNotFound => "SOURCE_ENDPOINT_NOT_FOUND",
                 AbortInfoCause::TraceTooLong => "TRACE_TOO_LONG",
                 AbortInfoCause::UnintendedDestination => "UNINTENDED_DESTINATION",
                 AbortInfoCause::UnknownIp => "UNKNOWN_IP",
                 AbortInfoCause::UnknownNetwork => "UNKNOWN_NETWORK",
                 AbortInfoCause::UnknownProject => "UNKNOWN_PROJECT",
+                AbortInfoCause::Unsupported => "UNSUPPORTED",
             }
         }
     }
@@ -94,16 +109,21 @@ pub mod schemas {
         fn from_str(s: &str) -> ::std::result::Result<AbortInfoCause, ()> {
             Ok(match s {
                 "CAUSE_UNSPECIFIED" => AbortInfoCause::CauseUnspecified,
+                "DESTINATION_ENDPOINT_NOT_FOUND" => AbortInfoCause::DestinationEndpointNotFound,
                 "INTERNAL_ERROR" => AbortInfoCause::InternalError,
                 "INVALID_ARGUMENT" => AbortInfoCause::InvalidArgument,
+                "MISMATCHED_DESTINATION_NETWORK" => AbortInfoCause::MismatchedDestinationNetwork,
+                "MISMATCHED_SOURCE_NETWORK" => AbortInfoCause::MismatchedSourceNetwork,
                 "NO_EXTERNAL_IP" => AbortInfoCause::NoExternalIp,
                 "NO_SOURCE_LOCATION" => AbortInfoCause::NoSourceLocation,
                 "PERMISSION_DENIED" => AbortInfoCause::PermissionDenied,
+                "SOURCE_ENDPOINT_NOT_FOUND" => AbortInfoCause::SourceEndpointNotFound,
                 "TRACE_TOO_LONG" => AbortInfoCause::TraceTooLong,
                 "UNINTENDED_DESTINATION" => AbortInfoCause::UnintendedDestination,
                 "UNKNOWN_IP" => AbortInfoCause::UnknownIp,
                 "UNKNOWN_NETWORK" => AbortInfoCause::UnknownNetwork,
                 "UNKNOWN_PROJECT" => AbortInfoCause::UnknownProject,
+                "UNSUPPORTED" => AbortInfoCause::Unsupported,
                 _ => return Err(()),
             })
         }
@@ -129,16 +149,21 @@ pub mod schemas {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
                 "CAUSE_UNSPECIFIED" => AbortInfoCause::CauseUnspecified,
+                "DESTINATION_ENDPOINT_NOT_FOUND" => AbortInfoCause::DestinationEndpointNotFound,
                 "INTERNAL_ERROR" => AbortInfoCause::InternalError,
                 "INVALID_ARGUMENT" => AbortInfoCause::InvalidArgument,
+                "MISMATCHED_DESTINATION_NETWORK" => AbortInfoCause::MismatchedDestinationNetwork,
+                "MISMATCHED_SOURCE_NETWORK" => AbortInfoCause::MismatchedSourceNetwork,
                 "NO_EXTERNAL_IP" => AbortInfoCause::NoExternalIp,
                 "NO_SOURCE_LOCATION" => AbortInfoCause::NoSourceLocation,
                 "PERMISSION_DENIED" => AbortInfoCause::PermissionDenied,
+                "SOURCE_ENDPOINT_NOT_FOUND" => AbortInfoCause::SourceEndpointNotFound,
                 "TRACE_TOO_LONG" => AbortInfoCause::TraceTooLong,
                 "UNINTENDED_DESTINATION" => AbortInfoCause::UnintendedDestination,
                 "UNKNOWN_IP" => AbortInfoCause::UnknownIp,
                 "UNKNOWN_NETWORK" => AbortInfoCause::UnknownNetwork,
                 "UNKNOWN_PROJECT" => AbortInfoCause::UnknownProject,
+                "UNSUPPORTED" => AbortInfoCause::Unsupported,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -328,27 +353,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Binding {
-        #[serde(
-            rename = "bindingId",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub binding_id: ::std::option::Option<String>,
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -386,6 +405,72 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CancelOperationRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CloudSQLInstanceInfo {
+        #[doc = "Name of a Cloud SQL instance."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "External IP address of a Cloud SQL instance."]
+        #[serde(
+            rename = "externalIp",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub external_ip: ::std::option::Option<String>,
+        #[doc = "Internal IP address of a Cloud SQL instance."]
+        #[serde(
+            rename = "internalIp",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub internal_ip: ::std::option::Option<String>,
+        #[doc = "URI of a Cloud SQL instance network or empty string if the instance does not have one."]
+        #[serde(
+            rename = "networkUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub network_uri: ::std::option::Option<String>,
+        #[doc = "Region in which the Cloud SQL instance is running."]
+        #[serde(
+            rename = "region",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub region: ::std::option::Option<String>,
+        #[doc = "URI of a Cloud SQL instance."]
+        #[serde(
+            rename = "uri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for CloudSQLInstanceInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CloudSQLInstanceInfo {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -520,11 +605,15 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum DeliverInfoTarget {
+        #[doc = "Target is a Cloud SQL instance."]
+        CloudSqlInstance,
+        #[doc = "Target is a Google Kubernetes Engine cluster master."]
+        GkeMaster,
         #[doc = "Target is a Google API."]
         GoogleApi,
         #[doc = "Target is a Compute Engine instance."]
         Instance,
-        #[doc = "Target is the Internet."]
+        #[doc = "Target is the internet."]
         Internet,
         #[doc = "Target not specified."]
         TargetUnspecified,
@@ -532,6 +621,8 @@ pub mod schemas {
     impl DeliverInfoTarget {
         pub fn as_str(self) -> &'static str {
             match self {
+                DeliverInfoTarget::CloudSqlInstance => "CLOUD_SQL_INSTANCE",
+                DeliverInfoTarget::GkeMaster => "GKE_MASTER",
                 DeliverInfoTarget::GoogleApi => "GOOGLE_API",
                 DeliverInfoTarget::Instance => "INSTANCE",
                 DeliverInfoTarget::Internet => "INTERNET",
@@ -548,6 +639,8 @@ pub mod schemas {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<DeliverInfoTarget, ()> {
             Ok(match s {
+                "CLOUD_SQL_INSTANCE" => DeliverInfoTarget::CloudSqlInstance,
+                "GKE_MASTER" => DeliverInfoTarget::GkeMaster,
                 "GOOGLE_API" => DeliverInfoTarget::GoogleApi,
                 "INSTANCE" => DeliverInfoTarget::Instance,
                 "INTERNET" => DeliverInfoTarget::Internet,
@@ -576,6 +669,8 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "CLOUD_SQL_INSTANCE" => DeliverInfoTarget::CloudSqlInstance,
+                "GKE_MASTER" => DeliverInfoTarget::GkeMaster,
                 "GOOGLE_API" => DeliverInfoTarget::GoogleApi,
                 "INSTANCE" => DeliverInfoTarget::Instance,
                 "INTERNET" => DeliverInfoTarget::Internet,
@@ -641,43 +736,59 @@ pub mod schemas {
     pub enum DropInfoCause {
         #[doc = "Cause is unspecified."]
         CauseUnspecified,
-        #[doc = "Firewalls block the health check probes to the backends and cause the backends to be unavailable for traffic from the load balancer. See [Health check firewall rules](/load-balancing/docs/ health-checks#firewall_rules) for more details."]
+        #[doc = "Packet was dropped because the Cloud SQL instance has neither a private nor a public IP address."]
+        CloudSqlInstanceNoIpAddress,
+        #[doc = "Access to the Cloud SQL instance endpoint is not authorized. See [Authorizing with authorized networks](https://cloud.google.com/sql/docs/mysql/authorize-networks) for more details."]
+        CloudSqlInstanceUnauthorizedAccess,
+        #[doc = "Packet was dropped inside Cloud SQL Service."]
+        DroppedInsideCloudSqlService,
+        #[doc = "Packet was dropped inside Google Kubernetes Engine Service."]
+        DroppedInsideGkeService,
+        #[doc = "Firewalls block the health check probes to the backends and cause the backends to be unavailable for traffic from the load balancer. For more details, see [Health check firewall rules](https://cloud.google.com/load-balancing/docs/health-checks#firewall_rules)."]
         FirewallBlockingLoadBalancerBackendHealthCheck,
-        #[doc = "Dropped due to a firewall rule unless allowed due to connection tracking."]
+        #[doc = "Dropped due to a firewall rule, unless allowed due to connection tracking."]
         FirewallRule,
-        #[doc = "a Compute Engine instance can only send or receive a packet with a foreign IP if ip_forward is enabled."]
+        #[doc = "A Compute Engine instance can only send or receive a packet with a foreign IP address if ip_forward is enabled."]
         ForeignIpDisallowed,
         #[doc = "Forwarding rule's protocol and ports do not match the packet header."]
         ForwardingRuleMismatch,
         #[doc = "Forwarding rule does not have backends configured."]
         ForwardingRuleNoInstances,
-        #[doc = "Access to GKE master's endpoint is not authorized. See [Access to the cluster endpoints](/kubernetes-engine/docs/how-to/ private-clusters#access_to_the_cluster_endpoints) for more details."]
+        #[doc = "Access to Google Kubernetes Engine cluster master's endpoint is not authorized. See [Access to the cluster endpoints](https://cloud.google.com/kubernetes-engine/docs/how-to/private-clusters#access_to_the_cluster_endpoints) for more details."]
         GkeMasterUnauthorizedAccess,
+        #[doc = "Packet was dropped because there is no peering between the originating network and the Google Managed Services Network."]
+        GoogleManagedServiceNoPeering,
         #[doc = "Packet is sent from or to a Compute Engine instance that is not in a running state."]
         InstanceNotRunning,
-        #[doc = "Instance with only internal IP tries to access external hosts, but Cloud NAT is not enabled in the subnet, unless special configurations on a VM allows this connection. See [Special Configurations for VM instances](/vpc/docs/special-configurations) for details."]
+        #[doc = "Instance with only an internal IP address tries to access external hosts, but Cloud NAT is not enabled in the subnet, unless special configurations on a VM allow this connection."]
         NoExternalAddress,
         #[doc = "Dropped due to no routes."]
         NoRoute,
-        #[doc = "Instance with only an internal IP tries to access Google API and Services, and private Google access is not enabled."]
+        #[doc = "Instance with only an internal IP address tries to access Google API and services, but private Google access is not enabled."]
         PrivateGoogleAccessDisallowed,
-        #[doc = "Packet with internal destination address sent to Internet gateway."]
+        #[doc = "Packet with internal destination address sent to the internet gateway."]
         PrivateTrafficToInternet,
         #[doc = "Dropped due to invalid route. Route's next hop is a blackhole."]
         RouteBlackhole,
-        #[doc = "Packet is sent to a wrong (unintended) network. Example: user traces a packet from VM1:Network1 to VM2:Network2, however, the route configured in Network1 sends the packet destined for VM2's IP addresss to Network3."]
+        #[doc = "Packet is sent to a wrong (unintended) network. Example: you trace a packet from VM1:Network1 to VM2:Network2, however, the route configured in Network1 sends the packet destined for VM2's IP addresss to Network3."]
         RouteWrongNetwork,
-        #[doc = "The type of traffic is blocked and the user cannot configure a firewall rule to enable it. See [Always blocked traffic](/vpc/docs/firewalls# blockedtraffic) for more details."]
+        #[doc = "The type of traffic is blocked and the user cannot configure a firewall rule to enable it. See [Always blocked traffic](https://cloud.google.com/vpc/docs/firewalls#blockedtraffic) for more details."]
         TrafficTypeBlocked,
-        #[doc = "Destination external address cannot be resolved to a known target."]
+        #[doc = "Destination external address cannot be resolved to a known target. If the address is used in a Google Cloud project, provide the project ID as test input."]
         UnknownExternalAddress,
-        #[doc = "Destination internal address cannot be resolved to a known target."]
+        #[doc = "Destination internal address cannot be resolved to a known target. If this is a shared VPC scenario, verify if the service project ID is provided as test input. Otherwise, verify if the IP address is being used in the project."]
         UnknownInternalAddress,
     }
     impl DropInfoCause {
         pub fn as_str(self) -> &'static str {
             match self {
                 DropInfoCause::CauseUnspecified => "CAUSE_UNSPECIFIED",
+                DropInfoCause::CloudSqlInstanceNoIpAddress => "CLOUD_SQL_INSTANCE_NO_IP_ADDRESS",
+                DropInfoCause::CloudSqlInstanceUnauthorizedAccess => {
+                    "CLOUD_SQL_INSTANCE_UNAUTHORIZED_ACCESS"
+                }
+                DropInfoCause::DroppedInsideCloudSqlService => "DROPPED_INSIDE_CLOUD_SQL_SERVICE",
+                DropInfoCause::DroppedInsideGkeService => "DROPPED_INSIDE_GKE_SERVICE",
                 DropInfoCause::FirewallBlockingLoadBalancerBackendHealthCheck => {
                     "FIREWALL_BLOCKING_LOAD_BALANCER_BACKEND_HEALTH_CHECK"
                 }
@@ -686,6 +797,7 @@ pub mod schemas {
                 DropInfoCause::ForwardingRuleMismatch => "FORWARDING_RULE_MISMATCH",
                 DropInfoCause::ForwardingRuleNoInstances => "FORWARDING_RULE_NO_INSTANCES",
                 DropInfoCause::GkeMasterUnauthorizedAccess => "GKE_MASTER_UNAUTHORIZED_ACCESS",
+                DropInfoCause::GoogleManagedServiceNoPeering => "GOOGLE_MANAGED_SERVICE_NO_PEERING",
                 DropInfoCause::InstanceNotRunning => "INSTANCE_NOT_RUNNING",
                 DropInfoCause::NoExternalAddress => "NO_EXTERNAL_ADDRESS",
                 DropInfoCause::NoRoute => "NO_ROUTE",
@@ -709,6 +821,12 @@ pub mod schemas {
         fn from_str(s: &str) -> ::std::result::Result<DropInfoCause, ()> {
             Ok(match s {
                 "CAUSE_UNSPECIFIED" => DropInfoCause::CauseUnspecified,
+                "CLOUD_SQL_INSTANCE_NO_IP_ADDRESS" => DropInfoCause::CloudSqlInstanceNoIpAddress,
+                "CLOUD_SQL_INSTANCE_UNAUTHORIZED_ACCESS" => {
+                    DropInfoCause::CloudSqlInstanceUnauthorizedAccess
+                }
+                "DROPPED_INSIDE_CLOUD_SQL_SERVICE" => DropInfoCause::DroppedInsideCloudSqlService,
+                "DROPPED_INSIDE_GKE_SERVICE" => DropInfoCause::DroppedInsideGkeService,
                 "FIREWALL_BLOCKING_LOAD_BALANCER_BACKEND_HEALTH_CHECK" => {
                     DropInfoCause::FirewallBlockingLoadBalancerBackendHealthCheck
                 }
@@ -717,6 +835,7 @@ pub mod schemas {
                 "FORWARDING_RULE_MISMATCH" => DropInfoCause::ForwardingRuleMismatch,
                 "FORWARDING_RULE_NO_INSTANCES" => DropInfoCause::ForwardingRuleNoInstances,
                 "GKE_MASTER_UNAUTHORIZED_ACCESS" => DropInfoCause::GkeMasterUnauthorizedAccess,
+                "GOOGLE_MANAGED_SERVICE_NO_PEERING" => DropInfoCause::GoogleManagedServiceNoPeering,
                 "INSTANCE_NOT_RUNNING" => DropInfoCause::InstanceNotRunning,
                 "NO_EXTERNAL_ADDRESS" => DropInfoCause::NoExternalAddress,
                 "NO_ROUTE" => DropInfoCause::NoRoute,
@@ -752,6 +871,12 @@ pub mod schemas {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
                 "CAUSE_UNSPECIFIED" => DropInfoCause::CauseUnspecified,
+                "CLOUD_SQL_INSTANCE_NO_IP_ADDRESS" => DropInfoCause::CloudSqlInstanceNoIpAddress,
+                "CLOUD_SQL_INSTANCE_UNAUTHORIZED_ACCESS" => {
+                    DropInfoCause::CloudSqlInstanceUnauthorizedAccess
+                }
+                "DROPPED_INSIDE_CLOUD_SQL_SERVICE" => DropInfoCause::DroppedInsideCloudSqlService,
+                "DROPPED_INSIDE_GKE_SERVICE" => DropInfoCause::DroppedInsideGkeService,
                 "FIREWALL_BLOCKING_LOAD_BALANCER_BACKEND_HEALTH_CHECK" => {
                     DropInfoCause::FirewallBlockingLoadBalancerBackendHealthCheck
                 }
@@ -760,6 +885,7 @@ pub mod schemas {
                 "FORWARDING_RULE_MISMATCH" => DropInfoCause::ForwardingRuleMismatch,
                 "FORWARDING_RULE_NO_INSTANCES" => DropInfoCause::ForwardingRuleNoInstances,
                 "GKE_MASTER_UNAUTHORIZED_ACCESS" => DropInfoCause::GkeMasterUnauthorizedAccess,
+                "GOOGLE_MANAGED_SERVICE_NO_PEERING" => DropInfoCause::GoogleManagedServiceNoPeering,
                 "INSTANCE_NOT_RUNNING" => DropInfoCause::InstanceNotRunning,
                 "NO_EXTERNAL_ADDRESS" => DropInfoCause::NoExternalAddress,
                 "NO_ROUTE" => DropInfoCause::NoRoute,
@@ -826,6 +952,20 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Endpoint {
+        #[doc = "A [Cloud SQL](https://cloud.google.com/sql) instance URI."]
+        #[serde(
+            rename = "cloudSqlInstance",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cloud_sql_instance: ::std::option::Option<String>,
+        #[doc = "A cluster URI for [Google Kubernetes Engine master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture)."]
+        #[serde(
+            rename = "gkeMasterCluster",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gke_master_cluster: ::std::option::Option<String>,
         #[doc = "A Compute Engine instance URI."]
         #[serde(
             rename = "instance",
@@ -1107,42 +1247,56 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub direction: ::std::option::Option<String>,
-        #[doc = "Name of a Compute Engine firewall rule."]
+        #[doc = "The display name of the VPC firewall rule. This field is not applicable to hierarchical firewall policy rules."]
         #[serde(
             rename = "displayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "URI of a Compute Engine network."]
+        #[doc = "The firewall rule's type."]
+        #[serde(
+            rename = "firewallRuleType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub firewall_rule_type: ::std::option::Option<crate::schemas::FirewallInfoFirewallRuleType>,
+        #[doc = "The URI of the VPC network that the firewall rule is associated with. This field is not applicable to hierarchical firewall policy rules."]
         #[serde(
             rename = "networkUri",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub network_uri: ::std::option::Option<String>,
-        #[doc = "Priority of the firewall rule."]
+        #[doc = "The hierarchical firewall policy that this rule is associated with. This field is not applicable to VPC firewall rules."]
+        #[serde(
+            rename = "policy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub policy: ::std::option::Option<String>,
+        #[doc = "The priority of the firewall rule."]
         #[serde(
             rename = "priority",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub priority: ::std::option::Option<i32>,
-        #[doc = "Target service accounts of the firewall rule."]
+        #[doc = "The target service accounts specified by the firewall rule."]
         #[serde(
             rename = "targetServiceAccounts",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub target_service_accounts: ::std::option::Option<Vec<String>>,
-        #[doc = "Target tags of the firewall rule."]
+        #[doc = "The target tags defined by the VPC firewall rule. This field is not applicable to hierarchical firewall policy rules."]
         #[serde(
             rename = "targetTags",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub target_tags: ::std::option::Option<Vec<String>>,
-        #[doc = "URI of a Compute Engine firewall rule. Implied default rule does not have URI."]
+        #[doc = "The URI of the VPC firewall rule. This field is not applicable to implied firewall rules or hierarchical firewall policy rules."]
         #[serde(
             rename = "uri",
             default,
@@ -1156,6 +1310,99 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for FirewallInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum FirewallInfoFirewallRuleType {
+        #[doc = "Unspecified type."]
+        FirewallRuleTypeUnspecified,
+        #[doc = "Hierarchical firewall policy rule. For details, see [Hierarchical firewall policies overview](https://cloud.google.com/vpc/docs/firewall-policies)."]
+        HierarchicalFirewallPolicyRule,
+        #[doc = "Implied VPC firewall rule. For details, see [Implied rules](https://cloud.google.com/vpc/docs/firewalls#default_firewall_rules)."]
+        ImpliedVpcFirewallRule,
+        #[doc = "VPC firewall rule. For details, see [VPC firewall rules overview](https://cloud.google.com/vpc/docs/firewalls)."]
+        VpcFirewallRule,
+    }
+    impl FirewallInfoFirewallRuleType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                FirewallInfoFirewallRuleType::FirewallRuleTypeUnspecified => {
+                    "FIREWALL_RULE_TYPE_UNSPECIFIED"
+                }
+                FirewallInfoFirewallRuleType::HierarchicalFirewallPolicyRule => {
+                    "HIERARCHICAL_FIREWALL_POLICY_RULE"
+                }
+                FirewallInfoFirewallRuleType::ImpliedVpcFirewallRule => "IMPLIED_VPC_FIREWALL_RULE",
+                FirewallInfoFirewallRuleType::VpcFirewallRule => "VPC_FIREWALL_RULE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for FirewallInfoFirewallRuleType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for FirewallInfoFirewallRuleType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<FirewallInfoFirewallRuleType, ()> {
+            Ok(match s {
+                "FIREWALL_RULE_TYPE_UNSPECIFIED" => {
+                    FirewallInfoFirewallRuleType::FirewallRuleTypeUnspecified
+                }
+                "HIERARCHICAL_FIREWALL_POLICY_RULE" => {
+                    FirewallInfoFirewallRuleType::HierarchicalFirewallPolicyRule
+                }
+                "IMPLIED_VPC_FIREWALL_RULE" => FirewallInfoFirewallRuleType::ImpliedVpcFirewallRule,
+                "VPC_FIREWALL_RULE" => FirewallInfoFirewallRuleType::VpcFirewallRule,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for FirewallInfoFirewallRuleType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for FirewallInfoFirewallRuleType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for FirewallInfoFirewallRuleType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "FIREWALL_RULE_TYPE_UNSPECIFIED" => {
+                    FirewallInfoFirewallRuleType::FirewallRuleTypeUnspecified
+                }
+                "HIERARCHICAL_FIREWALL_POLICY_RULE" => {
+                    FirewallInfoFirewallRuleType::HierarchicalFirewallPolicyRule
+                }
+                "IMPLIED_VPC_FIREWALL_RULE" => FirewallInfoFirewallRuleType::ImpliedVpcFirewallRule,
+                "VPC_FIREWALL_RULE" => FirewallInfoFirewallRuleType::VpcFirewallRule,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for FirewallInfoFirewallRuleType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FirewallInfoFirewallRuleType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1200,11 +1447,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ForwardInfoTarget {
+        #[doc = "Forwarded to a Cloud SQL instance."]
+        CloudSqlInstance,
         #[doc = "Forwarded to a Google Kubernetes Engine Container cluster master."]
         GkeMaster,
         #[doc = "Forwarded to the next hop of a custom route imported from a peering VPC."]
         ImportedCustomRouteNextHop,
-        #[doc = "Forwarded to an Cloud Interconnect connection."]
+        #[doc = "Forwarded to a Cloud Interconnect connection."]
         Interconnect,
         #[doc = "Forwarded to a VPC peering network."]
         PeeringVpc,
@@ -1216,6 +1465,7 @@ pub mod schemas {
     impl ForwardInfoTarget {
         pub fn as_str(self) -> &'static str {
             match self {
+                ForwardInfoTarget::CloudSqlInstance => "CLOUD_SQL_INSTANCE",
                 ForwardInfoTarget::GkeMaster => "GKE_MASTER",
                 ForwardInfoTarget::ImportedCustomRouteNextHop => "IMPORTED_CUSTOM_ROUTE_NEXT_HOP",
                 ForwardInfoTarget::Interconnect => "INTERCONNECT",
@@ -1234,6 +1484,7 @@ pub mod schemas {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<ForwardInfoTarget, ()> {
             Ok(match s {
+                "CLOUD_SQL_INSTANCE" => ForwardInfoTarget::CloudSqlInstance,
                 "GKE_MASTER" => ForwardInfoTarget::GkeMaster,
                 "IMPORTED_CUSTOM_ROUTE_NEXT_HOP" => ForwardInfoTarget::ImportedCustomRouteNextHop,
                 "INTERCONNECT" => ForwardInfoTarget::Interconnect,
@@ -1264,6 +1515,7 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "CLOUD_SQL_INSTANCE" => ForwardInfoTarget::CloudSqlInstance,
                 "GKE_MASTER" => ForwardInfoTarget::GkeMaster,
                 "IMPORTED_CUSTOM_ROUTE_NEXT_HOP" => ForwardInfoTarget::ImportedCustomRouteNextHop,
                 "INTERCONNECT" => ForwardInfoTarget::Interconnect,
@@ -1358,6 +1610,58 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ForwardingRuleInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GkemasterInfo {
+        #[doc = "URI of a GKE cluster network."]
+        #[serde(
+            rename = "clusterNetworkUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cluster_network_uri: ::std::option::Option<String>,
+        #[doc = "URI of a GKE cluster."]
+        #[serde(
+            rename = "clusterUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cluster_uri: ::std::option::Option<String>,
+        #[doc = "External IP address of a GKE cluster master."]
+        #[serde(
+            rename = "externalIp",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub external_ip: ::std::option::Option<String>,
+        #[doc = "Internal IP address of a GKE cluster master."]
+        #[serde(
+            rename = "internalIp",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub internal_ip: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GkemasterInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GkemasterInfo {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2138,7 +2442,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audit_configs: ::std::option::Option<Vec<crate::schemas::AuditConfig>>,
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,
@@ -2179,7 +2483,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub error: ::std::option::Option<crate::schemas::Status>,
-        #[doc = "The overall reachability result of the test."]
+        #[doc = "The overall result of the test's configuration analysis."]
         #[serde(
             rename = "result",
             default,
@@ -2193,7 +2497,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub traces: ::std::option::Option<Vec<crate::schemas::Trace>>,
-        #[doc = "The time the reachability state was verified."]
+        #[doc = "The time of the configuration analysis."]
         #[serde(
             rename = "verifyTime",
             default,
@@ -2213,15 +2517,15 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ReachabilityDetailsResult {
-        #[doc = "If the source and destination endpoint does not uniquely identify the test location in the network, and the reachability result contains multiple traces with mixed reachable and unreachable states, then this result is returned."]
+        #[doc = "The source and destination endpoints do not uniquely identify the test location in the network, and the reachability result contains multiple traces. For some traces, a packet could be delivered, and for others, it would not be."]
         Ambiguous,
-        #[doc = "Packet originating from source is expected to reach destination."]
+        #[doc = "Possible scenarios are: * The configuration analysis determined that a packet originating from the source is expected to reach the destination. * The analysis didn't complete because the user lacks permission for some of the resources in the trace. However, at the time the user's permission became insufficient, the trace had been successful so far."]
         Reachable,
-        #[doc = "Result is not specified."]
+        #[doc = "No result was specified."]
         ResultUnspecified,
-        #[doc = "The reachability could not be determined. Possible reasons are: * Analysis is aborted due to permission error. User does not have read permission to the projects listed in the test. * Analysis is aborted due to internal errors. * Analysis is partially complete based on configurations where the user has permission. The Final state indicates that the packet is forwarded to another network where the user has no permission to access the configurations."]
+        #[doc = "The configuration analysis did not complete. Possible reasons are: * A permissions error occurred--for example, the user might not have read permission for all of the resources named in the test. * An internal error occurred. * The analyzer received an invalid or unsupported argument or was unable to identify a known endpoint."]
         Undetermined,
-        #[doc = "Packet originating from source is expected to be dropped before reaching destination."]
+        #[doc = "A packet originating from the source is expected to be dropped before reaching the destination."]
         Unreachable,
     }
     impl ReachabilityDetailsResult {
@@ -2426,9 +2730,11 @@ pub mod schemas {
         NextHopNetwork,
         #[doc = "Next hop is a peering VPC."]
         NextHopPeering,
+        #[doc = "Next hop is a [router appliance instance](https://cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ra-overview)."]
+        NextHopRouterAppliance,
         #[doc = "Unspecified type. Default value."]
         NextHopTypeUnspecified,
-        #[doc = "Next hop is a VPN Gateway. This scenario only happens when tracing connectivity from an on-premises network to GCP through a VPN. The analysis simulates a packet departing from the on-premises network through a VPN tunnel and arrives at a Cloud VPN gateway."]
+        #[doc = "Next hop is a VPN gateway. This scenario only happens when tracing connectivity from an on-premises network to Google Cloud through a VPN. The analysis simulates a packet departing from the on-premises network through a VPN tunnel and arriving at a Cloud VPN gateway."]
         NextHopVpnGateway,
         #[doc = "Next hop is a VPN tunnel."]
         NextHopVpnTunnel,
@@ -2444,6 +2750,7 @@ pub mod schemas {
                 RouteInfoNextHopType::NextHopIp => "NEXT_HOP_IP",
                 RouteInfoNextHopType::NextHopNetwork => "NEXT_HOP_NETWORK",
                 RouteInfoNextHopType::NextHopPeering => "NEXT_HOP_PEERING",
+                RouteInfoNextHopType::NextHopRouterAppliance => "NEXT_HOP_ROUTER_APPLIANCE",
                 RouteInfoNextHopType::NextHopTypeUnspecified => "NEXT_HOP_TYPE_UNSPECIFIED",
                 RouteInfoNextHopType::NextHopVpnGateway => "NEXT_HOP_VPN_GATEWAY",
                 RouteInfoNextHopType::NextHopVpnTunnel => "NEXT_HOP_VPN_TUNNEL",
@@ -2467,6 +2774,7 @@ pub mod schemas {
                 "NEXT_HOP_IP" => RouteInfoNextHopType::NextHopIp,
                 "NEXT_HOP_NETWORK" => RouteInfoNextHopType::NextHopNetwork,
                 "NEXT_HOP_PEERING" => RouteInfoNextHopType::NextHopPeering,
+                "NEXT_HOP_ROUTER_APPLIANCE" => RouteInfoNextHopType::NextHopRouterAppliance,
                 "NEXT_HOP_TYPE_UNSPECIFIED" => RouteInfoNextHopType::NextHopTypeUnspecified,
                 "NEXT_HOP_VPN_GATEWAY" => RouteInfoNextHopType::NextHopVpnGateway,
                 "NEXT_HOP_VPN_TUNNEL" => RouteInfoNextHopType::NextHopVpnTunnel,
@@ -2502,6 +2810,7 @@ pub mod schemas {
                 "NEXT_HOP_IP" => RouteInfoNextHopType::NextHopIp,
                 "NEXT_HOP_NETWORK" => RouteInfoNextHopType::NextHopNetwork,
                 "NEXT_HOP_PEERING" => RouteInfoNextHopType::NextHopPeering,
+                "NEXT_HOP_ROUTER_APPLIANCE" => RouteInfoNextHopType::NextHopRouterAppliance,
                 "NEXT_HOP_TYPE_UNSPECIFIED" => RouteInfoNextHopType::NextHopTypeUnspecified,
                 "NEXT_HOP_VPN_GATEWAY" => RouteInfoNextHopType::NextHopVpnGateway,
                 "NEXT_HOP_VPN_TUNNEL" => RouteInfoNextHopType::NextHopVpnTunnel,
@@ -2536,7 +2845,7 @@ pub mod schemas {
         PeeringSubnet,
         #[doc = "Unspecified type. Default value."]
         RouteTypeUnspecified,
-        #[doc = "Static route created by the user including the default route to the Internet."]
+        #[doc = "Static route created by the user, including the default route to the internet."]
         Static,
         #[doc = "Route is a subnet route automatically created by the system."]
         Subnet,
@@ -2633,7 +2942,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SetIamPolicyRequest {
-        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -2706,7 +3015,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Step {
-        #[doc = "Display info of the final state \"abort\" and reason."]
+        #[doc = "Display information of the final state \"abort\" and reason."]
         #[serde(
             rename = "abort",
             default,
@@ -2720,7 +3029,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub causes_drop: ::std::option::Option<bool>,
-        #[doc = "Display info of the final state \"deliver\" and reason."]
+        #[doc = "Display information of a Cloud SQL instance."]
+        #[serde(
+            rename = "cloudSqlInstance",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cloud_sql_instance: ::std::option::Option<crate::schemas::CloudSQLInstanceInfo>,
+        #[doc = "Display information of the final state \"deliver\" and reason."]
         #[serde(
             rename = "deliver",
             default,
@@ -2734,56 +3050,63 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Display info of the final state \"drop\" and reason."]
+        #[doc = "Display information of the final state \"drop\" and reason."]
         #[serde(
             rename = "drop",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub drop: ::std::option::Option<crate::schemas::DropInfo>,
-        #[doc = "Display info of the source and destination under analysis. The endpiont info in an intermediate state may differ with the initial input, as it might be modified by state like NAT, or Connection Proxy."]
+        #[doc = "Display information of the source and destination under analysis. The endpoint information in an intermediate state may differ with the initial input, as it might be modified by state like NAT, or Connection Proxy."]
         #[serde(
             rename = "endpoint",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub endpoint: ::std::option::Option<crate::schemas::EndpointInfo>,
-        #[doc = "Display info of a Compute Engine firewall rule."]
+        #[doc = "Display information of a Compute Engine firewall rule."]
         #[serde(
             rename = "firewall",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub firewall: ::std::option::Option<crate::schemas::FirewallInfo>,
-        #[doc = "Display info of the final state \"forward\" and reason."]
+        #[doc = "Display information of the final state \"forward\" and reason."]
         #[serde(
             rename = "forward",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub forward: ::std::option::Option<crate::schemas::ForwardInfo>,
-        #[doc = "Display info of a Compute Engine forwarding rule."]
+        #[doc = "Display information of a Compute Engine forwarding rule."]
         #[serde(
             rename = "forwardingRule",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub forwarding_rule: ::std::option::Option<crate::schemas::ForwardingRuleInfo>,
-        #[doc = "Display info of a Compute Engine instance."]
+        #[doc = "Display information of a Google Kubernetes Engine cluster master."]
+        #[serde(
+            rename = "gkeMaster",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gke_master: ::std::option::Option<crate::schemas::GkemasterInfo>,
+        #[doc = "Display information of a Compute Engine instance."]
         #[serde(
             rename = "instance",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub instance: ::std::option::Option<crate::schemas::InstanceInfo>,
-        #[doc = "Display info of the load balancers."]
+        #[doc = "Display information of the load balancers."]
         #[serde(
             rename = "loadBalancer",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub load_balancer: ::std::option::Option<crate::schemas::LoadBalancerInfo>,
-        #[doc = "Display info of a GCP network."]
+        #[doc = "Display information of a Google Cloud network."]
         #[serde(
             rename = "network",
             default,
@@ -2797,7 +3120,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_id: ::std::option::Option<String>,
-        #[doc = "Display info of a Compute Engine route."]
+        #[doc = "Display information of a Compute Engine route."]
         #[serde(
             rename = "route",
             default,
@@ -2811,14 +3134,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub state: ::std::option::Option<crate::schemas::StepState>,
-        #[doc = "Display info of a Compute Engine VPN gateway."]
+        #[doc = "Display information of a Compute Engine VPN gateway."]
         #[serde(
             rename = "vpnGateway",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub vpn_gateway: ::std::option::Option<crate::schemas::VpnGatewayInfo>,
-        #[doc = "Display info of a Compute Engine VPN tunnel."]
+        #[doc = "Display information of a Compute Engine VPN tunnel."]
         #[serde(
             rename = "vpnTunnel",
             default,
@@ -2858,11 +3181,11 @@ pub mod schemas {
         ArriveAtVpnGateway,
         #[doc = "Forwarding state: arriving at a Cloud VPN tunnel."]
         ArriveAtVpnTunnel,
-        #[doc = "Final state: packet delivered."]
+        #[doc = "Final state: packet could be delivered."]
         Deliver,
-        #[doc = "Final state: packet dropped."]
+        #[doc = "Final state: packet could be dropped."]
         Drop,
-        #[doc = "Final state: packet forwarded to a network with an unknown configuration."]
+        #[doc = "Final state: packet could be forwarded to a network with an unknown configuration."]
         Forward,
         #[doc = "Transition state: packet header translated."]
         Nat,
@@ -2870,11 +3193,15 @@ pub mod schemas {
         ProxyConnection,
         #[doc = "Config checking state: packet sent or received under foreign IP address and allowed."]
         SpoofingApproved,
-        #[doc = "Initial state: packet originating from a Compute Engine instance. An InstanceInfo will be populated with starting instance info."]
+        #[doc = "Initial state: packet originating from a Cloud SQL instance. A CloudSQLInstanceInfo is populated with starting instance information."]
+        StartFromCloudSqlInstance,
+        #[doc = "Initial state: packet originating from a Google Kubernetes Engine cluster master. A GKEMasterInfo is populated with starting instance information."]
+        StartFromGkeMaster,
+        #[doc = "Initial state: packet originating from a Compute Engine instance. An InstanceInfo is populated with starting instance information."]
         StartFromInstance,
-        #[doc = "Initial state: packet originating from Internet. The endpoint info will be populated."]
+        #[doc = "Initial state: packet originating from the internet. The endpoint information is populated."]
         StartFromInternet,
-        #[doc = "Initial state: packet originating from a VPC or on-premises network with internal source IP. If the source is a VPC network visible to the user, a NetworkInfo will be populated with details of the network."]
+        #[doc = "Initial state: packet originating from a VPC or on-premises network with internal source IP. If the source is a VPC network visible to the user, a NetworkInfo is populated with details of the network."]
         StartFromPrivateNetwork,
         #[doc = "Unspecified state."]
         StateUnspecified,
@@ -2900,6 +3227,8 @@ pub mod schemas {
                 StepState::Nat => "NAT",
                 StepState::ProxyConnection => "PROXY_CONNECTION",
                 StepState::SpoofingApproved => "SPOOFING_APPROVED",
+                StepState::StartFromCloudSqlInstance => "START_FROM_CLOUD_SQL_INSTANCE",
+                StepState::StartFromGkeMaster => "START_FROM_GKE_MASTER",
                 StepState::StartFromInstance => "START_FROM_INSTANCE",
                 StepState::StartFromInternet => "START_FROM_INTERNET",
                 StepState::StartFromPrivateNetwork => "START_FROM_PRIVATE_NETWORK",
@@ -2933,6 +3262,8 @@ pub mod schemas {
                 "NAT" => StepState::Nat,
                 "PROXY_CONNECTION" => StepState::ProxyConnection,
                 "SPOOFING_APPROVED" => StepState::SpoofingApproved,
+                "START_FROM_CLOUD_SQL_INSTANCE" => StepState::StartFromCloudSqlInstance,
+                "START_FROM_GKE_MASTER" => StepState::StartFromGkeMaster,
                 "START_FROM_INSTANCE" => StepState::StartFromInstance,
                 "START_FROM_INTERNET" => StepState::StartFromInternet,
                 "START_FROM_PRIVATE_NETWORK" => StepState::StartFromPrivateNetwork,
@@ -2978,6 +3309,8 @@ pub mod schemas {
                 "NAT" => StepState::Nat,
                 "PROXY_CONNECTION" => StepState::ProxyConnection,
                 "SPOOFING_APPROVED" => StepState::SpoofingApproved,
+                "START_FROM_CLOUD_SQL_INSTANCE" => StepState::StartFromCloudSqlInstance,
+                "START_FROM_GKE_MASTER" => StepState::StartFromGkeMaster,
                 "START_FROM_INSTANCE" => StepState::StartFromInstance,
                 "START_FROM_INTERNET" => StepState::StartFromInternet,
                 "START_FROM_PRIVATE_NETWORK" => StepState::StartFromPrivateNetwork,
@@ -3015,7 +3348,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -3077,7 +3410,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Trace {
-        #[doc = "Derived from the source and destination endpoints definition, and validated by the data plane model. If there are multiple traces starting from different source locations, then the endpoint_info may be different between traces."]
+        #[doc = "Derived from the source and destination endpoints definition specified by user request, and validated by the data plane model. If there are multiple traces starting from different source locations, then the endpoint_info may be different between traces."]
         #[serde(
             rename = "endpointInfo",
             default,
@@ -3136,7 +3469,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub network_uri: ::std::option::Option<String>,
-        #[doc = "Name of a GCP region where this VPN gateway is configured."]
+        #[doc = "Name of a Google Cloud region where this VPN gateway is configured."]
         #[serde(
             rename = "region",
             default,
@@ -3195,7 +3528,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub network_uri: ::std::option::Option<String>,
-        #[doc = "Name of a GCP region where this VPN tunnel is configured."]
+        #[doc = "Name of a Google Cloud region where this VPN tunnel is configured."]
         #[serde(
             rename = "region",
             default,
@@ -3784,17 +4117,17 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "The standard list filter."]
+                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
                 }
-                #[doc = "The standard list page size."]
+                #[doc = "The maximum number of results to return. If not set, the service selects a default."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "The standard list page token."]
+                #[doc = "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -4064,15 +4397,15 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Actions that can be performed on the connectivity_tests resource"]                    pub fn connectivity_tests ( & self ) -> crate :: resources :: projects :: locations :: global :: connectivity_tests :: ConnectivityTestsActions{
-                        crate :: resources :: projects :: locations :: global :: connectivity_tests :: ConnectivityTestsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the connectivity_tests resource"]                    pub fn connectivity_tests (& self) -> crate :: resources :: projects :: locations :: global :: connectivity_tests :: ConnectivityTestsActions{
+                        crate :: resources :: projects :: locations :: global :: connectivity_tests :: ConnectivityTestsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                     #[doc = "Actions that can be performed on the operations resource"]
                     pub fn operations(
                         &self,
                     ) -> crate::resources::projects::locations::global::operations::OperationsActions
                     {
-                        crate :: resources :: projects :: locations :: global :: operations :: OperationsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        crate :: resources :: projects :: locations :: global :: operations :: OperationsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 pub mod connectivity_tests {
@@ -4811,7 +5144,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> GetIamPolicyRequestBuilder<'a> {
-                        #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                        #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                         pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                             self.options_requested_policy_version = Some(value);
                             self

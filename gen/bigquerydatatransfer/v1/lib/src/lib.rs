@@ -1,12 +1,10 @@
-#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [data_sources](resources/projects/data_sources/struct.DataSourcesActions.html)\n        * [*checkValidCreds*](resources/projects/data_sources/struct.CheckValidCredsRequestBuilder.html), [*get*](resources/projects/data_sources/struct.GetRequestBuilder.html), [*list*](resources/projects/data_sources/struct.ListRequestBuilder.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n        * [data_sources](resources/projects/locations/data_sources/struct.DataSourcesActions.html)\n          * [*checkValidCreds*](resources/projects/locations/data_sources/struct.CheckValidCredsRequestBuilder.html), [*get*](resources/projects/locations/data_sources/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/data_sources/struct.ListRequestBuilder.html)\n        * [transfer_configs](resources/projects/locations/transfer_configs/struct.TransferConfigsActions.html)\n          * [*create*](resources/projects/locations/transfer_configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/transfer_configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/transfer_configs/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/transfer_configs/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/transfer_configs/struct.PatchRequestBuilder.html), [*scheduleRuns*](resources/projects/locations/transfer_configs/struct.ScheduleRunsRequestBuilder.html), [*startManualRuns*](resources/projects/locations/transfer_configs/struct.StartManualRunsRequestBuilder.html)\n          * [runs](resources/projects/locations/transfer_configs/runs/struct.RunsActions.html)\n            * [*delete*](resources/projects/locations/transfer_configs/runs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/transfer_configs/runs/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/transfer_configs/runs/struct.ListRequestBuilder.html)\n            * [transfer_logs](resources/projects/locations/transfer_configs/runs/transfer_logs/struct.TransferLogsActions.html)\n              * [*list*](resources/projects/locations/transfer_configs/runs/transfer_logs/struct.ListRequestBuilder.html)\n      * [transfer_configs](resources/projects/transfer_configs/struct.TransferConfigsActions.html)\n        * [*create*](resources/projects/transfer_configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/transfer_configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/transfer_configs/struct.GetRequestBuilder.html), [*list*](resources/projects/transfer_configs/struct.ListRequestBuilder.html), [*patch*](resources/projects/transfer_configs/struct.PatchRequestBuilder.html), [*scheduleRuns*](resources/projects/transfer_configs/struct.ScheduleRunsRequestBuilder.html), [*startManualRuns*](resources/projects/transfer_configs/struct.StartManualRunsRequestBuilder.html)\n        * [runs](resources/projects/transfer_configs/runs/struct.RunsActions.html)\n          * [*delete*](resources/projects/transfer_configs/runs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/transfer_configs/runs/struct.GetRequestBuilder.html), [*list*](resources/projects/transfer_configs/runs/struct.ListRequestBuilder.html)\n          * [transfer_logs](resources/projects/transfer_configs/runs/transfer_logs/struct.TransferLogsActions.html)\n            * [*list*](resources/projects/transfer_configs/runs/transfer_logs/struct.ListRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [*enrollDataSources*](resources/projects/struct.EnrollDataSourcesRequestBuilder.html)\n      * [data_sources](resources/projects/data_sources/struct.DataSourcesActions.html)\n        * [*checkValidCreds*](resources/projects/data_sources/struct.CheckValidCredsRequestBuilder.html), [*get*](resources/projects/data_sources/struct.GetRequestBuilder.html), [*list*](resources/projects/data_sources/struct.ListRequestBuilder.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*enrollDataSources*](resources/projects/locations/struct.EnrollDataSourcesRequestBuilder.html), [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n        * [data_sources](resources/projects/locations/data_sources/struct.DataSourcesActions.html)\n          * [*checkValidCreds*](resources/projects/locations/data_sources/struct.CheckValidCredsRequestBuilder.html), [*get*](resources/projects/locations/data_sources/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/data_sources/struct.ListRequestBuilder.html)\n        * [transfer_configs](resources/projects/locations/transfer_configs/struct.TransferConfigsActions.html)\n          * [*create*](resources/projects/locations/transfer_configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/transfer_configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/transfer_configs/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/transfer_configs/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/transfer_configs/struct.PatchRequestBuilder.html), [*scheduleRuns*](resources/projects/locations/transfer_configs/struct.ScheduleRunsRequestBuilder.html), [*startManualRuns*](resources/projects/locations/transfer_configs/struct.StartManualRunsRequestBuilder.html)\n          * [runs](resources/projects/locations/transfer_configs/runs/struct.RunsActions.html)\n            * [*delete*](resources/projects/locations/transfer_configs/runs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/transfer_configs/runs/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/transfer_configs/runs/struct.ListRequestBuilder.html)\n            * [transfer_logs](resources/projects/locations/transfer_configs/runs/transfer_logs/struct.TransferLogsActions.html)\n              * [*list*](resources/projects/locations/transfer_configs/runs/transfer_logs/struct.ListRequestBuilder.html)\n      * [transfer_configs](resources/projects/transfer_configs/struct.TransferConfigsActions.html)\n        * [*create*](resources/projects/transfer_configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/transfer_configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/transfer_configs/struct.GetRequestBuilder.html), [*list*](resources/projects/transfer_configs/struct.ListRequestBuilder.html), [*patch*](resources/projects/transfer_configs/struct.PatchRequestBuilder.html), [*scheduleRuns*](resources/projects/transfer_configs/struct.ScheduleRunsRequestBuilder.html), [*startManualRuns*](resources/projects/transfer_configs/struct.StartManualRunsRequestBuilder.html)\n        * [runs](resources/projects/transfer_configs/runs/struct.RunsActions.html)\n          * [*delete*](resources/projects/transfer_configs/runs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/transfer_configs/runs/struct.GetRequestBuilder.html), [*list*](resources/projects/transfer_configs/runs/struct.ListRequestBuilder.html)\n          * [transfer_logs](resources/projects/transfer_configs/runs/transfer_logs/struct.TransferLogsActions.html)\n            * [*list*](resources/projects/transfer_configs/runs/transfer_logs/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data in Google BigQuery\n\n`https://www.googleapis.com/auth/bigquery`"]
+    #[doc = "View and manage your data in Google BigQuery and see the email address for your Google Account\n\n`https://www.googleapis.com/auth/bigquery`"]
     pub const BIGQUERY: &str = "https://www.googleapis.com/auth/bigquery";
-    #[doc = "View your data in Google BigQuery\n\n`https://www.googleapis.com/auth/bigquery.readonly`"]
-    pub const BIGQUERY_READONLY: &str = "https://www.googleapis.com/auth/bigquery.readonly";
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
-    #[doc = "View your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
+    #[doc = "View your data across Google Cloud services and see the email address of your Google Account\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
     pub const CLOUD_PLATFORM_READ_ONLY: &str =
         "https://www.googleapis.com/auth/cloud-platform.read-only";
 }
@@ -213,7 +211,7 @@ pub mod schemas {
         AuthorizationCode,
         #[doc = "Type unspecified."]
         AuthorizationTypeUnspecified,
-        #[doc = "Use First Party OAuth based on Loas Owned Clients. First Party OAuth doesn't require a refresh token to get an offline access token. Instead, it uses a client-signed JWT assertion to retrieve an access token."]
+        #[doc = "Use First Party OAuth."]
         FirstPartyOauth,
         #[doc = "Return an authorization code for a given Google+ page that can then be exchanged for a refresh token on the backend."]
         GooglePlusAuthorizationCode,
@@ -737,6 +735,37 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct EnrollDataSourcesRequest {
+        #[doc = "Data sources that are enrolled. It is required to provide at least one data source id."]
+        #[serde(
+            rename = "dataSourceIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data_source_ids: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for EnrollDataSourcesRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for EnrollDataSourcesRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ListDataSourcesResponse {
@@ -1232,13 +1261,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub next_run_time: ::std::option::Option<String>,
-        #[doc = "Pub/Sub topic where notifications will be sent after transfer runs associated with this transfer config finish."]
+        #[doc = "Pub/Sub topic where notifications will be sent after transfer runs associated with this transfer config finish. The format for specifying a pubsub topic is: `projects/{project}/topics/{topic}`"]
         #[serde(
             rename = "notificationPubsubTopic",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub notification_pubsub_topic: ::std::option::Option<String>,
+        #[doc = "Output only. Information about the user whose credentials are used to transfer data. Populated only for `transferConfigs.get` requests. In case the user information is not available, this field will not be populated."]
+        #[serde(
+            rename = "ownerInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub owner_info: ::std::option::Option<crate::schemas::UserInfo>,
         #[doc = "Parameters specific to each data source. For more information see the bq tab in the 'Setting up a data transfer' section for each data source. For example the parameters for Cloud Storage transfers are listed here: https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq"]
         #[serde(
             rename = "params",
@@ -1247,7 +1283,7 @@ pub mod schemas {
         )]
         pub params:
             ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
-        #[doc = "Data transfer schedule. If the data source does not support a custom schedule, this should be empty. If it is empty, the default value for the data source will be used. The specified times are in UTC. Examples of valid format: `1st,3rd monday of month 15:30`, `every wed,fri of jan,jun 13:15`, and `first sunday of quarter 00:00`. See more explanation about the format here: https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format NOTE: the granularity should be at least 8 hours, or less frequent."]
+        #[doc = "Data transfer schedule. If the data source does not support a custom schedule, this should be empty. If it is empty, the default value for the data source will be used. The specified times are in UTC. Examples of valid format: `1st,3rd monday of month 15:30`, `every wed,fri of jan,jun 13:15`, and `first sunday of quarter 00:00`. See more explanation about the format here: https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format NOTE: The minimum interval time between recurring transfers depends on the data source; refer to the documentation for your data source."]
         #[serde(
             rename = "schedule",
             default,
@@ -1561,7 +1597,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Output only. Pub/Sub topic where a notification will be sent after this transfer run finishes"]
+        #[doc = "Output only. Pub/Sub topic where a notification will be sent after this transfer run finishes. The format for specifying a pubsub topic is: `projects/{project}/topics/{topic}`"]
         #[serde(
             rename = "notificationPubsubTopic",
             default,
@@ -1724,6 +1760,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for TransferRunState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UserInfo {
+        #[doc = "E-mail address of the user."]
+        #[serde(
+            rename = "email",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub email: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for UserInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UserInfo {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1926,6 +1993,30 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
+            #[doc = "Enroll data sources in a user project. This allows users to create transfer configurations for these data sources. They will also appear in the ListDataSources RPC and as such, will appear in the [BigQuery UI](https://console.cloud.google.com/bigquery), and the documents can be found in the public guide for [BigQuery Web UI](https://cloud.google.com/bigquery/bigquery-web-ui) and [Data Transfer Service](https://cloud.google.com/bigquery/docs/working-with-transfers)."]
+            pub fn enroll_data_sources(
+                &self,
+                request: crate::schemas::EnrollDataSourcesRequest,
+                name: impl Into<String>,
+            ) -> EnrollDataSourcesRequestBuilder {
+                EnrollDataSourcesRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    request,
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    name: name.into(),
+                }
+            }
             #[doc = "Actions that can be performed on the data_sources resource"]
             pub fn data_sources(
                 &self,
@@ -1952,6 +2043,163 @@ pub mod resources {
                 }
             }
         }
+        #[doc = "Created via [ProjectsActions::enroll_data_sources()](struct.ProjectsActions.html#method.enroll_data_sources)"]
+        #[derive(Debug, Clone)]
+        pub struct EnrollDataSourcesRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            request: crate::schemas::EnrollDataSourcesRequest,
+            name: String,
+            access_token: Option<String>,
+            alt: Option<crate::params::Alt>,
+            callback: Option<String>,
+            fields: Option<String>,
+            key: Option<String>,
+            oauth_token: Option<String>,
+            pretty_print: Option<bool>,
+            quota_user: Option<String>,
+            upload_protocol: Option<String>,
+            upload_type: Option<String>,
+            xgafv: Option<crate::params::Xgafv>,
+        }
+        impl<'a> EnrollDataSourcesRequestBuilder<'a> {
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields)
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::Empty, crate::Error> {
+                self.execute_with_fields(None::<&str>)
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub fn execute_with_all_fields(self) -> Result<crate::schemas::Empty, crate::Error> {
+                self.execute_with_fields(Some("*"))
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute()
+            }
+            fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path())?;
+                let req = req.json(&self.request);
+                Ok(crate::error_from_response(req.send()?)?.json()?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://bigquerydatatransfer.googleapis.com/".to_owned();
+                output.push_str("v1/");
+                {
+                    let var_as_str = &self.name;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::RESERVED,
+                    ));
+                }
+                output.push_str(":enrollDataSources");
+                output
+            }
+            fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                req = req.bearer_auth(
+                    self.auth
+                        .access_token()
+                        .map_err(|err| crate::Error::OAuth2(err))?,
+                );
+                Ok(req)
+            }
+        }
         pub mod data_sources {
             pub mod params {}
             pub struct DataSourcesActions<'a> {
@@ -1962,7 +2210,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Returns true if valid credentials exist for the given data source and requesting user. Some data sources doesn't support service account, so we need to talk to them on behalf of the end user. This API just checks whether we have OAuth token for the particular user, which is a pre-requisite before user can create a transfer config."]
+                #[doc = "Returns true if valid credentials exist for the given data source and requesting user."]
                 pub fn check_valid_creds(
                     &self,
                     request: crate::schemas::CheckValidCredsRequest,
@@ -1986,7 +2234,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Retrieves a supported data source and returns its settings, which can be used for UI rendering."]
+                #[doc = "Retrieves a supported data source and returns its settings."]
                 pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                     GetRequestBuilder {
                         reqwest: &self.reqwest,
@@ -2005,7 +2253,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Lists supported data sources and returns their settings, which can be used for UI rendering."]
+                #[doc = "Lists supported data sources and returns their settings."]
                 pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -2644,6 +2892,30 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
+                #[doc = "Enroll data sources in a user project. This allows users to create transfer configurations for these data sources. They will also appear in the ListDataSources RPC and as such, will appear in the [BigQuery UI](https://console.cloud.google.com/bigquery), and the documents can be found in the public guide for [BigQuery Web UI](https://cloud.google.com/bigquery/bigquery-web-ui) and [Data Transfer Service](https://cloud.google.com/bigquery/docs/working-with-transfers)."]
+                pub fn enroll_data_sources(
+                    &self,
+                    request: crate::schemas::EnrollDataSourcesRequest,
+                    name: impl Into<String>,
+                ) -> EnrollDataSourcesRequestBuilder {
+                    EnrollDataSourcesRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                    }
+                }
                 #[doc = "Gets information about a location."]
                 pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                     GetRequestBuilder {
@@ -2700,7 +2972,169 @@ pub mod resources {
                     &self,
                 ) -> crate::resources::projects::locations::transfer_configs::TransferConfigsActions
                 {
-                    crate :: resources :: projects :: locations :: transfer_configs :: TransferConfigsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    crate :: resources :: projects :: locations :: transfer_configs :: TransferConfigsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
+                }
+            }
+            #[doc = "Created via [LocationsActions::enroll_data_sources()](struct.LocationsActions.html#method.enroll_data_sources)"]
+            #[derive(Debug, Clone)]
+            pub struct EnrollDataSourcesRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::EnrollDataSourcesRequest,
+                name: String,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> EnrollDataSourcesRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Empty, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Empty, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://bigquerydatatransfer.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str(":enrollDataSources");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
                 }
             }
             #[doc = "Created via [LocationsActions::get()](struct.LocationsActions.html#method.get)"]
@@ -2884,12 +3318,12 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like \"displayName=tokyo\", and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
+                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
                 }
-                #[doc = "The maximum number of results to return. If not set, the service will select a default."]
+                #[doc = "The maximum number of results to return. If not set, the service selects a default."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
@@ -3164,7 +3598,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Returns true if valid credentials exist for the given data source and requesting user. Some data sources doesn't support service account, so we need to talk to them on behalf of the end user. This API just checks whether we have OAuth token for the particular user, which is a pre-requisite before user can create a transfer config."]
+                    #[doc = "Returns true if valid credentials exist for the given data source and requesting user."]
                     pub fn check_valid_creds(
                         &self,
                         request: crate::schemas::CheckValidCredsRequest,
@@ -3188,7 +3622,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Retrieves a supported data source and returns its settings, which can be used for UI rendering."]
+                    #[doc = "Retrieves a supported data source and returns its settings."]
                     pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                         GetRequestBuilder {
                             reqwest: &self.reqwest,
@@ -3207,7 +3641,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Lists supported data sources and returns their settings, which can be used for UI rendering."]
+                    #[doc = "Lists supported data sources and returns their settings."]
                     pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                         ListRequestBuilder {
                             reqwest: &self.reqwest,
@@ -3921,7 +4355,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Returns information about all data transfers in the project."]
+                    #[doc = "Returns information about all transfer configs owned by a project in the specified location."]
                     pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                         ListRequestBuilder {
                             reqwest: &self.reqwest,
@@ -4053,17 +4487,17 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> CreateRequestBuilder<'a> {
-                    #[doc = "Optional OAuth2 authorization code to use with this transfer configuration. This is required if new credentials are needed, as indicated by `CheckValidCreds`. In order to obtain authorization_code, please make a request to https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=&scope=&redirect_uri= * client_id should be OAuth client_id of BigQuery DTS API for the given data source returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. * redirect_uri is an optional parameter. If not specified, then authorization code is posted to the opener of authorization flow window. Otherwise it will be sent to the redirect uri. A special value of urn:ietf:wg:oauth:2.0:oob means that authorization code should be returned in the title bar of the browser, with the page text prompting the user to copy the code and paste it in the application."]
+                    #[doc = "Optional OAuth2 authorization code to use with this transfer configuration. This is required only if `transferConfig.dataSourceId` is 'youtube_channel' and new credentials are needed, as indicated by `CheckValidCreds`. In order to obtain authorization_code, make a request to the following URL: https://www.gstatic.com/bigquerydatatransfer/oauthz/auth? client_id=client_id&scope=data_source_scopes &redirect_uri=urn:ietf:wg:oauth:2.0:oob&response_type=authorization_code * The client_id is the OAuth client_id of the a data source as returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. Note that this should not be set when `service_account_name` is used to create the transfer config."]
                     pub fn authorization_code(mut self, value: impl Into<String>) -> Self {
                         self.authorization_code = Some(value.into());
                         self
                     }
-                    #[doc = "Optional service account name. If this field is set, transfer config will be created with this service account credentials. It requires that requesting user calling this API has permissions to act as this service account."]
+                    #[doc = "Optional service account name. If this field is set, the transfer config will be created with this service account's credentials. It requires that the requesting user calling this API has permissions to act as this service account. Note that not all data sources support service account credentials when creating a transfer config. For the latest list of data sources, read about [using service accounts](https://cloud.google.com/bigquery-transfer/docs/use-service-accounts)."]
                     pub fn service_account_name(mut self, value: impl Into<String>) -> Self {
                         self.service_account_name = Some(value.into());
                         self
                     }
-                    #[doc = "Optional version info. If users want to find a very recent access token, that is, immediately after approving access, users have to set the version_info claim in the token request. To obtain the version_info, users must use the \"none+gsession\" response type. which be return a version_info back in the authorization response which be be put in a JWT claim in the token request."]
+                    #[doc = "Optional version info. This is required only if `transferConfig.dataSourceId` is not 'youtube_channel' and new credentials are needed, as indicated by `CheckValidCreds`. In order to obtain version info, make a request to the following URL: https://www.gstatic.com/bigquerydatatransfer/oauthz/auth? client_id=client_id&scope=data_source_scopes &redirect_uri=urn:ietf:wg:oauth:2.0:oob&response_type=version_info * The client_id is the OAuth client_id of the a data source as returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. Note that this should not be set when `service_account_name` is used to create the transfer config."]
                     pub fn version_info(mut self, value: impl Into<String>) -> Self {
                         self.version_info = Some(value.into());
                         self
@@ -4859,12 +5293,12 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> PatchRequestBuilder<'a> {
-                    #[doc = "Optional OAuth2 authorization code to use with this transfer configuration. If it is provided, the transfer configuration will be associated with the authorizing user. In order to obtain authorization_code, please make a request to https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=&scope=&redirect_uri= * client_id should be OAuth client_id of BigQuery DTS API for the given data source returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. * redirect_uri is an optional parameter. If not specified, then authorization code is posted to the opener of authorization flow window. Otherwise it will be sent to the redirect uri. A special value of urn:ietf:wg:oauth:2.0:oob means that authorization code should be returned in the title bar of the browser, with the page text prompting the user to copy the code and paste it in the application."]
+                    #[doc = "Optional OAuth2 authorization code to use with this transfer configuration. This is required only if `transferConfig.dataSourceId` is 'youtube_channel' and new credentials are needed, as indicated by `CheckValidCreds`. In order to obtain authorization_code, make a request to the following URL: https://www.gstatic.com/bigquerydatatransfer/oauthz/auth? client_id=client_id&scope=data_source_scopes &redirect_uri=urn:ietf:wg:oauth:2.0:oob&response_type=authorization_code * The client_id is the OAuth client_id of the a data source as returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. Note that this should not be set when `service_account_name` is used to update the transfer config."]
                     pub fn authorization_code(mut self, value: impl Into<String>) -> Self {
                         self.authorization_code = Some(value.into());
                         self
                     }
-                    #[doc = "Optional service account name. If this field is set and \"service_account_name\" is set in update_mask, transfer config will be updated to use this service account credentials. It requires that requesting user calling this API has permissions to act as this service account."]
+                    #[doc = "Optional service account name. If this field is set, the transfer config will be created with this service account's credentials. It requires that the requesting user calling this API has permissions to act as this service account. Note that not all data sources support service account credentials when creating a transfer config. For the latest list of data sources, read about [using service accounts](https://cloud.google.com/bigquery-transfer/docs/use-service-accounts)."]
                     pub fn service_account_name(mut self, value: impl Into<String>) -> Self {
                         self.service_account_name = Some(value.into());
                         self
@@ -4874,7 +5308,7 @@ pub mod resources {
                         self.update_mask = Some(value.into());
                         self
                     }
-                    #[doc = "Optional version info. If users want to find a very recent access token, that is, immediately after approving access, users have to set the version_info claim in the token request. To obtain the version_info, users must use the \"none+gsession\" response type. which be return a version_info back in the authorization response which be be put in a JWT claim in the token request."]
+                    #[doc = "Optional version info. This is required only if `transferConfig.dataSourceId` is not 'youtube_channel' and new credentials are needed, as indicated by `CheckValidCreds`. In order to obtain version info, make a request to the following URL: https://www.gstatic.com/bigquerydatatransfer/oauthz/auth? client_id=client_id&scope=data_source_scopes &redirect_uri=urn:ietf:wg:oauth:2.0:oob&response_type=version_info * The client_id is the OAuth client_id of the a data source as returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. Note that this should not be set when `service_account_name` is used to update the transfer config."]
                     pub fn version_info(mut self, value: impl Into<String>) -> Self {
                         self.version_info = Some(value.into());
                         self
@@ -5588,7 +6022,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Returns information about running and completed jobs."]
+                        #[doc = "Returns information about running and completed transfer runs."]
                         pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                             ListRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -5611,8 +6045,8 @@ pub mod resources {
                                 states: None,
                             }
                         }
-                        #[doc = "Actions that can be performed on the transfer_logs resource"]                        pub fn transfer_logs ( & self ) -> crate :: resources :: projects :: locations :: transfer_configs :: runs :: transfer_logs :: TransferLogsActions{
-                            crate :: resources :: projects :: locations :: transfer_configs :: runs :: transfer_logs :: TransferLogsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the transfer_logs resource"]                        pub fn transfer_logs (& self) -> crate :: resources :: projects :: locations :: transfer_configs :: runs :: transfer_logs :: TransferLogsActions{
+                            crate :: resources :: projects :: locations :: transfer_configs :: runs :: transfer_logs :: TransferLogsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
                     }
                     #[doc = "Created via [RunsActions::delete()](struct.RunsActions.html#method.delete)"]
@@ -5943,7 +6377,7 @@ pub mod resources {
                     }
                     #[doc = "Created via [RunsActions::list()](struct.RunsActions.html#method.list)"]
                     #[derive(Debug, Clone)]
-                    pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , page_size : Option < i32 > , page_token : Option < String > , run_attempt : Option < crate :: resources :: projects :: locations :: transfer_configs :: runs :: params :: ListRunAttempt > , states : Option < Vec < crate :: resources :: projects :: locations :: transfer_configs :: runs :: params :: ListStatesItems > > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                    pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , page_size : Option < i32 > , page_token : Option < String > , run_attempt : Option < crate :: resources :: projects :: locations :: transfer_configs :: runs :: params :: ListRunAttempt > , states : Option < Vec < crate :: resources :: projects :: locations :: transfer_configs :: runs :: params :: ListStatesItems > > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> ListRequestBuilder<'a> {
                         #[doc = "Page size. The default page size is the maximum value of 1000 results."]
                         pub fn page_size(mut self, value: i32) -> Self {
@@ -6350,7 +6784,7 @@ pub mod resources {
                             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                                 self.auth
                             }
-                            #[doc = "Returns user facing log messages for the data transfer run."]
+                            #[doc = "Returns log messages for the transfer run."]
                             pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                                 ListRequestBuilder {
                                     reqwest: &self.reqwest,
@@ -6375,7 +6809,7 @@ pub mod resources {
                         }
                         #[doc = "Created via [TransferLogsActions::list()](struct.TransferLogsActions.html#method.list)"]
                         #[derive(Debug, Clone)]
-                        pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , message_types : Option < Vec < crate :: resources :: projects :: locations :: transfer_configs :: runs :: transfer_logs :: params :: ListMessageTypesItems > > , page_size : Option < i32 > , page_token : Option < String > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                        pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , message_types : Option < Vec < crate :: resources :: projects :: locations :: transfer_configs :: runs :: transfer_logs :: params :: ListMessageTypesItems > > , page_size : Option < i32 > , page_token : Option < String > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                         impl<'a> ListRequestBuilder<'a> {
                             #[doc = "Message types to return. If not populated - INFO, WARNING and ERROR messages are returned."]
                             pub fn message_types(
@@ -6745,7 +7179,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Returns information about all data transfers in the project."]
+                #[doc = "Returns information about all transfer configs owned by a project in the specified location."]
                 pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -6877,17 +7311,17 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> CreateRequestBuilder<'a> {
-                #[doc = "Optional OAuth2 authorization code to use with this transfer configuration. This is required if new credentials are needed, as indicated by `CheckValidCreds`. In order to obtain authorization_code, please make a request to https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=&scope=&redirect_uri= * client_id should be OAuth client_id of BigQuery DTS API for the given data source returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. * redirect_uri is an optional parameter. If not specified, then authorization code is posted to the opener of authorization flow window. Otherwise it will be sent to the redirect uri. A special value of urn:ietf:wg:oauth:2.0:oob means that authorization code should be returned in the title bar of the browser, with the page text prompting the user to copy the code and paste it in the application."]
+                #[doc = "Optional OAuth2 authorization code to use with this transfer configuration. This is required only if `transferConfig.dataSourceId` is 'youtube_channel' and new credentials are needed, as indicated by `CheckValidCreds`. In order to obtain authorization_code, make a request to the following URL: https://www.gstatic.com/bigquerydatatransfer/oauthz/auth? client_id=client_id&scope=data_source_scopes &redirect_uri=urn:ietf:wg:oauth:2.0:oob&response_type=authorization_code * The client_id is the OAuth client_id of the a data source as returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. Note that this should not be set when `service_account_name` is used to create the transfer config."]
                 pub fn authorization_code(mut self, value: impl Into<String>) -> Self {
                     self.authorization_code = Some(value.into());
                     self
                 }
-                #[doc = "Optional service account name. If this field is set, transfer config will be created with this service account credentials. It requires that requesting user calling this API has permissions to act as this service account."]
+                #[doc = "Optional service account name. If this field is set, the transfer config will be created with this service account's credentials. It requires that the requesting user calling this API has permissions to act as this service account. Note that not all data sources support service account credentials when creating a transfer config. For the latest list of data sources, read about [using service accounts](https://cloud.google.com/bigquery-transfer/docs/use-service-accounts)."]
                 pub fn service_account_name(mut self, value: impl Into<String>) -> Self {
                     self.service_account_name = Some(value.into());
                     self
                 }
-                #[doc = "Optional version info. If users want to find a very recent access token, that is, immediately after approving access, users have to set the version_info claim in the token request. To obtain the version_info, users must use the \"none+gsession\" response type. which be return a version_info back in the authorization response which be be put in a JWT claim in the token request."]
+                #[doc = "Optional version info. This is required only if `transferConfig.dataSourceId` is not 'youtube_channel' and new credentials are needed, as indicated by `CheckValidCreds`. In order to obtain version info, make a request to the following URL: https://www.gstatic.com/bigquerydatatransfer/oauthz/auth? client_id=client_id&scope=data_source_scopes &redirect_uri=urn:ietf:wg:oauth:2.0:oob&response_type=version_info * The client_id is the OAuth client_id of the a data source as returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. Note that this should not be set when `service_account_name` is used to create the transfer config."]
                 pub fn version_info(mut self, value: impl Into<String>) -> Self {
                     self.version_info = Some(value.into());
                     self
@@ -7677,12 +8111,12 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> PatchRequestBuilder<'a> {
-                #[doc = "Optional OAuth2 authorization code to use with this transfer configuration. If it is provided, the transfer configuration will be associated with the authorizing user. In order to obtain authorization_code, please make a request to https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=&scope=&redirect_uri= * client_id should be OAuth client_id of BigQuery DTS API for the given data source returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. * redirect_uri is an optional parameter. If not specified, then authorization code is posted to the opener of authorization flow window. Otherwise it will be sent to the redirect uri. A special value of urn:ietf:wg:oauth:2.0:oob means that authorization code should be returned in the title bar of the browser, with the page text prompting the user to copy the code and paste it in the application."]
+                #[doc = "Optional OAuth2 authorization code to use with this transfer configuration. This is required only if `transferConfig.dataSourceId` is 'youtube_channel' and new credentials are needed, as indicated by `CheckValidCreds`. In order to obtain authorization_code, make a request to the following URL: https://www.gstatic.com/bigquerydatatransfer/oauthz/auth? client_id=client_id&scope=data_source_scopes &redirect_uri=urn:ietf:wg:oauth:2.0:oob&response_type=authorization_code * The client_id is the OAuth client_id of the a data source as returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. Note that this should not be set when `service_account_name` is used to update the transfer config."]
                 pub fn authorization_code(mut self, value: impl Into<String>) -> Self {
                     self.authorization_code = Some(value.into());
                     self
                 }
-                #[doc = "Optional service account name. If this field is set and \"service_account_name\" is set in update_mask, transfer config will be updated to use this service account credentials. It requires that requesting user calling this API has permissions to act as this service account."]
+                #[doc = "Optional service account name. If this field is set, the transfer config will be created with this service account's credentials. It requires that the requesting user calling this API has permissions to act as this service account. Note that not all data sources support service account credentials when creating a transfer config. For the latest list of data sources, read about [using service accounts](https://cloud.google.com/bigquery-transfer/docs/use-service-accounts)."]
                 pub fn service_account_name(mut self, value: impl Into<String>) -> Self {
                     self.service_account_name = Some(value.into());
                     self
@@ -7692,7 +8126,7 @@ pub mod resources {
                     self.update_mask = Some(value.into());
                     self
                 }
-                #[doc = "Optional version info. If users want to find a very recent access token, that is, immediately after approving access, users have to set the version_info claim in the token request. To obtain the version_info, users must use the \"none+gsession\" response type. which be return a version_info back in the authorization response which be be put in a JWT claim in the token request."]
+                #[doc = "Optional version info. This is required only if `transferConfig.dataSourceId` is not 'youtube_channel' and new credentials are needed, as indicated by `CheckValidCreds`. In order to obtain version info, make a request to the following URL: https://www.gstatic.com/bigquerydatatransfer/oauthz/auth? client_id=client_id&scope=data_source_scopes &redirect_uri=urn:ietf:wg:oauth:2.0:oob&response_type=version_info * The client_id is the OAuth client_id of the a data source as returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. Note that this should not be set when `service_account_name` is used to update the transfer config."]
                 pub fn version_info(mut self, value: impl Into<String>) -> Self {
                     self.version_info = Some(value.into());
                     self
@@ -8393,7 +8827,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Returns information about running and completed jobs."]
+                    #[doc = "Returns information about running and completed transfer runs."]
                     pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                         ListRequestBuilder {
                             reqwest: &self.reqwest,
@@ -8416,8 +8850,8 @@ pub mod resources {
                             states: None,
                         }
                     }
-                    #[doc = "Actions that can be performed on the transfer_logs resource"]                    pub fn transfer_logs ( & self ) -> crate :: resources :: projects :: transfer_configs :: runs :: transfer_logs :: TransferLogsActions{
-                        crate :: resources :: projects :: transfer_configs :: runs :: transfer_logs :: TransferLogsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the transfer_logs resource"]                    pub fn transfer_logs (& self) -> crate :: resources :: projects :: transfer_configs :: runs :: transfer_logs :: TransferLogsActions{
+                        crate :: resources :: projects :: transfer_configs :: runs :: transfer_logs :: TransferLogsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 #[doc = "Created via [RunsActions::delete()](struct.RunsActions.html#method.delete)"]
@@ -8742,7 +9176,7 @@ pub mod resources {
                 }
                 #[doc = "Created via [RunsActions::list()](struct.RunsActions.html#method.list)"]
                 #[derive(Debug, Clone)]
-                pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , page_size : Option < i32 > , page_token : Option < String > , run_attempt : Option < crate :: resources :: projects :: transfer_configs :: runs :: params :: ListRunAttempt > , states : Option < Vec < crate :: resources :: projects :: transfer_configs :: runs :: params :: ListStatesItems > > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , page_size : Option < i32 > , page_token : Option < String > , run_attempt : Option < crate :: resources :: projects :: transfer_configs :: runs :: params :: ListRunAttempt > , states : Option < Vec < crate :: resources :: projects :: transfer_configs :: runs :: params :: ListStatesItems > > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                 impl<'a> ListRequestBuilder<'a> {
                     #[doc = "Page size. The default page size is the maximum value of 1000 results."]
                     pub fn page_size(mut self, value: i32) -> Self {
@@ -9140,7 +9574,7 @@ pub mod resources {
                         fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                             self.auth
                         }
-                        #[doc = "Returns user facing log messages for the data transfer run."]
+                        #[doc = "Returns log messages for the transfer run."]
                         pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                             ListRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -9165,7 +9599,7 @@ pub mod resources {
                     }
                     #[doc = "Created via [TransferLogsActions::list()](struct.TransferLogsActions.html#method.list)"]
                     #[derive(Debug, Clone)]
-                    pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , message_types : Option < Vec < crate :: resources :: projects :: transfer_configs :: runs :: transfer_logs :: params :: ListMessageTypesItems > > , page_size : Option < i32 > , page_token : Option < String > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                    pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , message_types : Option < Vec < crate :: resources :: projects :: transfer_configs :: runs :: transfer_logs :: params :: ListMessageTypesItems > > , page_size : Option < i32 > , page_token : Option < String > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> ListRequestBuilder<'a> {
                         #[doc = "Message types to return. If not populated - INFO, WARNING and ERROR messages are returned."]
                         pub fn message_types(

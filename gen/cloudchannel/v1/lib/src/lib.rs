@@ -1,4 +1,4 @@
-#![doc = "# Resources and Methods\n    * [accounts](resources/accounts/struct.AccountsActions.html)\n      * [*checkCloudIdentityAccountsExist*](resources/accounts/struct.CheckCloudIdentityAccountsExistRequestBuilder.html), [*listSubscribers*](resources/accounts/struct.ListSubscribersRequestBuilder.html), [*listTransferableOffers*](resources/accounts/struct.ListTransferableOffersRequestBuilder.html), [*listTransferableSkus*](resources/accounts/struct.ListTransferableSkusRequestBuilder.html), [*register*](resources/accounts/struct.RegisterRequestBuilder.html), [*unregister*](resources/accounts/struct.UnregisterRequestBuilder.html)\n      * [channel_partner_links](resources/accounts/channel_partner_links/struct.ChannelPartnerLinksActions.html)\n        * [*create*](resources/accounts/channel_partner_links/struct.CreateRequestBuilder.html), [*get*](resources/accounts/channel_partner_links/struct.GetRequestBuilder.html), [*list*](resources/accounts/channel_partner_links/struct.ListRequestBuilder.html), [*patch*](resources/accounts/channel_partner_links/struct.PatchRequestBuilder.html)\n      * [customers](resources/accounts/customers/struct.CustomersActions.html)\n        * [*create*](resources/accounts/customers/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/customers/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/customers/struct.GetRequestBuilder.html), [*list*](resources/accounts/customers/struct.ListRequestBuilder.html), [*listPurchasableOffers*](resources/accounts/customers/struct.ListPurchasableOffersRequestBuilder.html), [*listPurchasableSkus*](resources/accounts/customers/struct.ListPurchasableSkusRequestBuilder.html), [*patch*](resources/accounts/customers/struct.PatchRequestBuilder.html), [*provisionCloudIdentity*](resources/accounts/customers/struct.ProvisionCloudIdentityRequestBuilder.html), [*transferEntitlements*](resources/accounts/customers/struct.TransferEntitlementsRequestBuilder.html), [*transferEntitlementsToGoogle*](resources/accounts/customers/struct.TransferEntitlementsToGoogleRequestBuilder.html)\n        * [entitlements](resources/accounts/customers/entitlements/struct.EntitlementsActions.html)\n          * [*activate*](resources/accounts/customers/entitlements/struct.ActivateRequestBuilder.html), [*cancel*](resources/accounts/customers/entitlements/struct.CancelRequestBuilder.html), [*changeOffer*](resources/accounts/customers/entitlements/struct.ChangeOfferRequestBuilder.html), [*changeParameters*](resources/accounts/customers/entitlements/struct.ChangeParametersRequestBuilder.html), [*changeRenewalSettings*](resources/accounts/customers/entitlements/struct.ChangeRenewalSettingsRequestBuilder.html), [*create*](resources/accounts/customers/entitlements/struct.CreateRequestBuilder.html), [*get*](resources/accounts/customers/entitlements/struct.GetRequestBuilder.html), [*list*](resources/accounts/customers/entitlements/struct.ListRequestBuilder.html), [*startPaidService*](resources/accounts/customers/entitlements/struct.StartPaidServiceRequestBuilder.html), [*suspend*](resources/accounts/customers/entitlements/struct.SuspendRequestBuilder.html)\n      * [offers](resources/accounts/offers/struct.OffersActions.html)\n        * [*list*](resources/accounts/offers/struct.ListRequestBuilder.html)\n    * [operations](resources/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/operations/struct.CancelRequestBuilder.html), [*delete*](resources/operations/struct.DeleteRequestBuilder.html), [*get*](resources/operations/struct.GetRequestBuilder.html), [*list*](resources/operations/struct.ListRequestBuilder.html)\n    * [products](resources/products/struct.ProductsActions.html)\n      * [*list*](resources/products/struct.ListRequestBuilder.html)\n      * [skus](resources/products/skus/struct.SkusActions.html)\n        * [*list*](resources/products/skus/struct.ListRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [accounts](resources/accounts/struct.AccountsActions.html)\n      * [*checkCloudIdentityAccountsExist*](resources/accounts/struct.CheckCloudIdentityAccountsExistRequestBuilder.html), [*listSubscribers*](resources/accounts/struct.ListSubscribersRequestBuilder.html), [*listTransferableOffers*](resources/accounts/struct.ListTransferableOffersRequestBuilder.html), [*listTransferableSkus*](resources/accounts/struct.ListTransferableSkusRequestBuilder.html), [*register*](resources/accounts/struct.RegisterRequestBuilder.html), [*unregister*](resources/accounts/struct.UnregisterRequestBuilder.html)\n      * [channel_partner_links](resources/accounts/channel_partner_links/struct.ChannelPartnerLinksActions.html)\n        * [*create*](resources/accounts/channel_partner_links/struct.CreateRequestBuilder.html), [*get*](resources/accounts/channel_partner_links/struct.GetRequestBuilder.html), [*list*](resources/accounts/channel_partner_links/struct.ListRequestBuilder.html), [*patch*](resources/accounts/channel_partner_links/struct.PatchRequestBuilder.html)\n        * [channel_partner_repricing_configs](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.ChannelPartnerRepricingConfigsActions.html)\n          * [*create*](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.GetRequestBuilder.html), [*list*](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.ListRequestBuilder.html), [*patch*](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.PatchRequestBuilder.html)\n        * [customers](resources/accounts/channel_partner_links/customers/struct.CustomersActions.html)\n          * [*create*](resources/accounts/channel_partner_links/customers/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/channel_partner_links/customers/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/channel_partner_links/customers/struct.GetRequestBuilder.html), [*import*](resources/accounts/channel_partner_links/customers/struct.ImportRequestBuilder.html), [*list*](resources/accounts/channel_partner_links/customers/struct.ListRequestBuilder.html), [*patch*](resources/accounts/channel_partner_links/customers/struct.PatchRequestBuilder.html)\n      * [customers](resources/accounts/customers/struct.CustomersActions.html)\n        * [*create*](resources/accounts/customers/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/customers/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/customers/struct.GetRequestBuilder.html), [*import*](resources/accounts/customers/struct.ImportRequestBuilder.html), [*list*](resources/accounts/customers/struct.ListRequestBuilder.html), [*listPurchasableOffers*](resources/accounts/customers/struct.ListPurchasableOffersRequestBuilder.html), [*listPurchasableSkus*](resources/accounts/customers/struct.ListPurchasableSkusRequestBuilder.html), [*patch*](resources/accounts/customers/struct.PatchRequestBuilder.html), [*provisionCloudIdentity*](resources/accounts/customers/struct.ProvisionCloudIdentityRequestBuilder.html), [*transferEntitlements*](resources/accounts/customers/struct.TransferEntitlementsRequestBuilder.html), [*transferEntitlementsToGoogle*](resources/accounts/customers/struct.TransferEntitlementsToGoogleRequestBuilder.html)\n        * [customer_repricing_configs](resources/accounts/customers/customer_repricing_configs/struct.CustomerRepricingConfigsActions.html)\n          * [*create*](resources/accounts/customers/customer_repricing_configs/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/customers/customer_repricing_configs/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/customers/customer_repricing_configs/struct.GetRequestBuilder.html), [*list*](resources/accounts/customers/customer_repricing_configs/struct.ListRequestBuilder.html), [*patch*](resources/accounts/customers/customer_repricing_configs/struct.PatchRequestBuilder.html)\n        * [entitlements](resources/accounts/customers/entitlements/struct.EntitlementsActions.html)\n          * [*activate*](resources/accounts/customers/entitlements/struct.ActivateRequestBuilder.html), [*cancel*](resources/accounts/customers/entitlements/struct.CancelRequestBuilder.html), [*changeOffer*](resources/accounts/customers/entitlements/struct.ChangeOfferRequestBuilder.html), [*changeParameters*](resources/accounts/customers/entitlements/struct.ChangeParametersRequestBuilder.html), [*changeRenewalSettings*](resources/accounts/customers/entitlements/struct.ChangeRenewalSettingsRequestBuilder.html), [*create*](resources/accounts/customers/entitlements/struct.CreateRequestBuilder.html), [*get*](resources/accounts/customers/entitlements/struct.GetRequestBuilder.html), [*list*](resources/accounts/customers/entitlements/struct.ListRequestBuilder.html), [*lookupOffer*](resources/accounts/customers/entitlements/struct.LookupOfferRequestBuilder.html), [*startPaidService*](resources/accounts/customers/entitlements/struct.StartPaidServiceRequestBuilder.html), [*suspend*](resources/accounts/customers/entitlements/struct.SuspendRequestBuilder.html)\n      * [offers](resources/accounts/offers/struct.OffersActions.html)\n        * [*list*](resources/accounts/offers/struct.ListRequestBuilder.html)\n    * [operations](resources/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/operations/struct.CancelRequestBuilder.html), [*delete*](resources/operations/struct.DeleteRequestBuilder.html), [*get*](resources/operations/struct.GetRequestBuilder.html), [*list*](resources/operations/struct.ListRequestBuilder.html)\n    * [products](resources/products/struct.ProductsActions.html)\n      * [*list*](resources/products/struct.ListRequestBuilder.html)\n      * [skus](resources/products/skus/struct.SkusActions.html)\n        * [*list*](resources/products/skus/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Manage users on your domain\n\n`https://www.googleapis.com/auth/apps.order`"]
     pub const APPS_ORDER: &str = "https://www.googleapis.com/auth/apps.order";
@@ -198,12 +198,22 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudChannelV1Alpha1CustomerEventEventType {
-        #[doc = "Default value. This state doesn't show unless an error occurs."]
+        #[doc = "Primary domain for customer was changed."]
+        PrimaryDomainChanged,
+        #[doc = "Primary domain of the customer has been verified."]
+        PrimaryDomainVerified,
+        #[doc = "Not used."]
         TypeUnspecified,
     }
     impl GoogleCloudChannelV1Alpha1CustomerEventEventType {
         pub fn as_str(self) -> &'static str {
             match self {
+                GoogleCloudChannelV1Alpha1CustomerEventEventType::PrimaryDomainChanged => {
+                    "PRIMARY_DOMAIN_CHANGED"
+                }
+                GoogleCloudChannelV1Alpha1CustomerEventEventType::PrimaryDomainVerified => {
+                    "PRIMARY_DOMAIN_VERIFIED"
+                }
                 GoogleCloudChannelV1Alpha1CustomerEventEventType::TypeUnspecified => {
                     "TYPE_UNSPECIFIED"
                 }
@@ -221,6 +231,12 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudChannelV1Alpha1CustomerEventEventType, ()> {
             Ok(match s {
+                "PRIMARY_DOMAIN_CHANGED" => {
+                    GoogleCloudChannelV1Alpha1CustomerEventEventType::PrimaryDomainChanged
+                }
+                "PRIMARY_DOMAIN_VERIFIED" => {
+                    GoogleCloudChannelV1Alpha1CustomerEventEventType::PrimaryDomainVerified
+                }
                 "TYPE_UNSPECIFIED" => {
                     GoogleCloudChannelV1Alpha1CustomerEventEventType::TypeUnspecified
                 }
@@ -248,6 +264,12 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "PRIMARY_DOMAIN_CHANGED" => {
+                    GoogleCloudChannelV1Alpha1CustomerEventEventType::PrimaryDomainChanged
+                }
+                "PRIMARY_DOMAIN_VERIFIED" => {
+                    GoogleCloudChannelV1Alpha1CustomerEventEventType::PrimaryDomainVerified
+                }
                 "TYPE_UNSPECIFIED" => {
                     GoogleCloudChannelV1Alpha1CustomerEventEventType::TypeUnspecified
                 }
@@ -337,7 +359,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub offer: ::std::option::Option<String>,
-        #[doc = "Extended entitlement parameters. When creating an entitlement, valid parameters' names and values are defined in the offer's parameter definitions."]
+        #[doc = "Extended entitlement parameters. When creating an entitlement, valid parameter names and values are defined in the Offer.parameter_definitions. The response may include the following output-only Parameters: - assigned_units: The number of licenses assigned to users. - max_units: The maximum assignable units for a flexible offer. - num_units: The total commitment for commitment-based offers."]
         #[serde(
             rename = "parameters",
             default,
@@ -362,7 +384,7 @@ pub mod schemas {
         pub provisioning_state: ::std::option::Option<
             crate::schemas::GoogleCloudChannelV1Alpha1EntitlementProvisioningState,
         >,
-        #[doc = "Optional. This purchase order (PO) information is for resellers to use for their company tracking usage. If a purchaseOrderId value is given, it appears in the API responses and shows up in the invoice. The property accepts up to 80 plain text characters."]
+        #[doc = "Optional. This purchase order (PO) information is for resellers to use for their company tracking usage. If a purchaseOrderId value is given, it appears in the API responses and shows up in the invoice. The property accepts up to 80 plain text characters. This is only supported for Google Workspace entitlements."]
         #[serde(
             rename = "purchaseOrderId",
             default,
@@ -414,7 +436,7 @@ pub mod schemas {
         Complete,
         #[doc = "The entitlement is pending. Deprecated: This is represented as ProvisioningState=SUSPENDED and suspensionReason=PENDING_TOS_ACCEPTANCE"]
         Pending,
-        #[doc = "Default value. This state doesn't show unless an error occurs."]
+        #[doc = "Not used."]
         ProvisioningStateUnspecified,
         #[doc = "The entitlement is currently suspended."]
         Suspended,
@@ -435,7 +457,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudChannelV1Alpha1EntitlementProvisioningState, ()>
         {
-            Ok ( match s { "ACTIVE" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Active , "CANCELED" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Canceled , "COMPLETE" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Complete , "PENDING" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Pending , "PROVISIONING_STATE_UNSPECIFIED" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: ProvisioningStateUnspecified , "SUSPENDED" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Suspended , _ => return Err ( ( ) ) , } )
+            Ok (match s { "ACTIVE" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Active , "CANCELED" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Canceled , "COMPLETE" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Complete , "PENDING" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Pending , "PROVISIONING_STATE_UNSPECIFIED" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: ProvisioningStateUnspecified , "SUSPENDED" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Suspended , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudChannelV1Alpha1EntitlementProvisioningState {
@@ -457,7 +479,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "ACTIVE" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Active , "CANCELED" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Canceled , "COMPLETE" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Complete , "PENDING" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Pending , "PROVISIONING_STATE_UNSPECIFIED" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: ProvisioningStateUnspecified , "SUSPENDED" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Suspended , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "ACTIVE" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Active , "CANCELED" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Canceled , "COMPLETE" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Complete , "PENDING" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Pending , "PROVISIONING_STATE_UNSPECIFIED" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: ProvisioningStateUnspecified , "SUSPENDED" => GoogleCloudChannelV1Alpha1EntitlementProvisioningState :: Suspended , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -484,7 +506,7 @@ pub mod schemas {
         RenewalWithTypeCancel,
         #[doc = "Entitlement was manually suspended by the Reseller."]
         ResellerInitiated,
-        #[doc = "Default value. This state doesn't show unless an error occurs."]
+        #[doc = "Not used."]
         SuspensionReasonUnspecified,
         #[doc = "Trial ended."]
         TrialEnded,
@@ -505,7 +527,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems, ()>
         {
-            Ok ( match s { "OTHER" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: Other , "PENDING_TOS_ACCEPTANCE" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: PendingTosAcceptance , "RENEWAL_WITH_TYPE_CANCEL" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: RenewalWithTypeCancel , "RESELLER_INITIATED" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: ResellerInitiated , "SUSPENSION_REASON_UNSPECIFIED" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: SuspensionReasonUnspecified , "TRIAL_ENDED" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: TrialEnded , _ => return Err ( ( ) ) , } )
+            Ok (match s { "OTHER" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: Other , "PENDING_TOS_ACCEPTANCE" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: PendingTosAcceptance , "RENEWAL_WITH_TYPE_CANCEL" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: RenewalWithTypeCancel , "RESELLER_INITIATED" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: ResellerInitiated , "SUSPENSION_REASON_UNSPECIFIED" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: SuspensionReasonUnspecified , "TRIAL_ENDED" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: TrialEnded , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems {
@@ -529,7 +551,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "OTHER" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: Other , "PENDING_TOS_ACCEPTANCE" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: PendingTosAcceptance , "RENEWAL_WITH_TYPE_CANCEL" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: RenewalWithTypeCancel , "RESELLER_INITIATED" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: ResellerInitiated , "SUSPENSION_REASON_UNSPECIFIED" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: SuspensionReasonUnspecified , "TRIAL_ENDED" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: TrialEnded , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "OTHER" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: Other , "PENDING_TOS_ACCEPTANCE" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: PendingTosAcceptance , "RENEWAL_WITH_TYPE_CANCEL" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: RenewalWithTypeCancel , "RESELLER_INITIATED" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: ResellerInitiated , "SUSPENSION_REASON_UNSPECIFIED" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: SuspensionReasonUnspecified , "TRIAL_ENDED" => GoogleCloudChannelV1Alpha1EntitlementSuspensionReasonsItems :: TrialEnded , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -598,6 +620,8 @@ pub mod schemas {
         Created,
         #[doc = "License was assigned to or revoked from a user."]
         LicenseAssignmentChanged,
+        #[doc = "License cap was changed for the entitlement."]
+        LicenseCapChanged,
         #[doc = "Paid service has started on trial entitlement."]
         PaidServiceStarted,
         #[doc = "The offer type associated with an entitlement was changed. This is not triggered if an entitlement converts from a commit offer to a flexible offer as part of a renewal."]
@@ -610,7 +634,7 @@ pub mod schemas {
         SkuChanged,
         #[doc = "Entitlement was suspended."]
         Suspended,
-        #[doc = "Default value. This state doesn't show unless an error occurs."]
+        #[doc = "Not used."]
         TypeUnspecified,
     }
     impl GoogleCloudChannelV1Alpha1EntitlementEventEventType {
@@ -624,6 +648,9 @@ pub mod schemas {
                 GoogleCloudChannelV1Alpha1EntitlementEventEventType::Created => "CREATED",
                 GoogleCloudChannelV1Alpha1EntitlementEventEventType::LicenseAssignmentChanged => {
                     "LICENSE_ASSIGNMENT_CHANGED"
+                }
+                GoogleCloudChannelV1Alpha1EntitlementEventEventType::LicenseCapChanged => {
+                    "LICENSE_CAP_CHANGED"
                 }
                 GoogleCloudChannelV1Alpha1EntitlementEventEventType::PaidServiceStarted => {
                     "PAID_SERVICE_STARTED"
@@ -663,6 +690,9 @@ pub mod schemas {
                 "CREATED" => GoogleCloudChannelV1Alpha1EntitlementEventEventType::Created,
                 "LICENSE_ASSIGNMENT_CHANGED" => {
                     GoogleCloudChannelV1Alpha1EntitlementEventEventType::LicenseAssignmentChanged
+                }
+                "LICENSE_CAP_CHANGED" => {
+                    GoogleCloudChannelV1Alpha1EntitlementEventEventType::LicenseCapChanged
                 }
                 "PAID_SERVICE_STARTED" => {
                     GoogleCloudChannelV1Alpha1EntitlementEventEventType::PaidServiceStarted
@@ -711,6 +741,9 @@ pub mod schemas {
                 "CREATED" => GoogleCloudChannelV1Alpha1EntitlementEventEventType::Created,
                 "LICENSE_ASSIGNMENT_CHANGED" => {
                     GoogleCloudChannelV1Alpha1EntitlementEventEventType::LicenseAssignmentChanged
+                }
+                "LICENSE_CAP_CHANGED" => {
+                    GoogleCloudChannelV1Alpha1EntitlementEventEventType::LicenseCapChanged
                 }
                 "PAID_SERVICE_STARTED" => {
                     GoogleCloudChannelV1Alpha1EntitlementEventEventType::PaidServiceStarted
@@ -801,7 +834,7 @@ pub mod schemas {
         ChangeSku,
         #[doc = "Long Running Operation was triggered by CreateEntitlement."]
         CreateEntitlement,
-        #[doc = "Default value. This state doesn't show unless an error occurs."]
+        #[doc = "Not used."]
         OperationTypeUnspecified,
         #[doc = "Long Running Operation was triggered by ProvisionCloudIdentity."]
         ProvisionCloudIdentity,
@@ -830,7 +863,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudChannelV1Alpha1OperationMetadataOperationType, ()>
         {
-            Ok ( match s { "ACTIVATE_ENTITLEMENT" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ActivateEntitlement , "CANCEL_ENTITLEMENT" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: CancelEntitlement , "CHANGE_OFFER" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeOffer , "CHANGE_PARAMETERS" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeParameters , "CHANGE_PLAN" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangePlan , "CHANGE_QUANTITY" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeQuantity , "CHANGE_RENEWAL_SETTINGS" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeRenewalSettings , "CHANGE_SKU" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeSku , "CREATE_ENTITLEMENT" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: CreateEntitlement , "OPERATION_TYPE_UNSPECIFIED" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: OperationTypeUnspecified , "PROVISION_CLOUD_IDENTITY" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ProvisionCloudIdentity , "START_PAID_SERVICE" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: StartPaidService , "SUSPEND_ENTITLEMENT" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: SuspendEntitlement , "TRANSFER_ENTITLEMENTS" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: TransferEntitlements , "TRANSFER_ENTITLEMENTS_TO_GOOGLE" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: TransferEntitlementsToGoogle , _ => return Err ( ( ) ) , } )
+            Ok (match s { "ACTIVATE_ENTITLEMENT" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ActivateEntitlement , "CANCEL_ENTITLEMENT" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: CancelEntitlement , "CHANGE_OFFER" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeOffer , "CHANGE_PARAMETERS" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeParameters , "CHANGE_PLAN" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangePlan , "CHANGE_QUANTITY" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeQuantity , "CHANGE_RENEWAL_SETTINGS" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeRenewalSettings , "CHANGE_SKU" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeSku , "CREATE_ENTITLEMENT" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: CreateEntitlement , "OPERATION_TYPE_UNSPECIFIED" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: OperationTypeUnspecified , "PROVISION_CLOUD_IDENTITY" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ProvisionCloudIdentity , "START_PAID_SERVICE" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: StartPaidService , "SUSPEND_ENTITLEMENT" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: SuspendEntitlement , "TRANSFER_ENTITLEMENTS" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: TransferEntitlements , "TRANSFER_ENTITLEMENTS_TO_GOOGLE" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: TransferEntitlementsToGoogle , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudChannelV1Alpha1OperationMetadataOperationType {
@@ -852,7 +885,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "ACTIVATE_ENTITLEMENT" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ActivateEntitlement , "CANCEL_ENTITLEMENT" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: CancelEntitlement , "CHANGE_OFFER" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeOffer , "CHANGE_PARAMETERS" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeParameters , "CHANGE_PLAN" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangePlan , "CHANGE_QUANTITY" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeQuantity , "CHANGE_RENEWAL_SETTINGS" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeRenewalSettings , "CHANGE_SKU" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeSku , "CREATE_ENTITLEMENT" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: CreateEntitlement , "OPERATION_TYPE_UNSPECIFIED" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: OperationTypeUnspecified , "PROVISION_CLOUD_IDENTITY" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ProvisionCloudIdentity , "START_PAID_SERVICE" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: StartPaidService , "SUSPEND_ENTITLEMENT" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: SuspendEntitlement , "TRANSFER_ENTITLEMENTS" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: TransferEntitlements , "TRANSFER_ENTITLEMENTS_TO_GOOGLE" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: TransferEntitlementsToGoogle , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "ACTIVATE_ENTITLEMENT" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ActivateEntitlement , "CANCEL_ENTITLEMENT" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: CancelEntitlement , "CHANGE_OFFER" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeOffer , "CHANGE_PARAMETERS" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeParameters , "CHANGE_PLAN" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangePlan , "CHANGE_QUANTITY" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeQuantity , "CHANGE_RENEWAL_SETTINGS" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeRenewalSettings , "CHANGE_SKU" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ChangeSku , "CREATE_ENTITLEMENT" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: CreateEntitlement , "OPERATION_TYPE_UNSPECIFIED" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: OperationTypeUnspecified , "PROVISION_CLOUD_IDENTITY" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: ProvisionCloudIdentity , "START_PAID_SERVICE" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: StartPaidService , "SUSPEND_ENTITLEMENT" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: SuspendEntitlement , "TRANSFER_ENTITLEMENTS" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: TransferEntitlements , "TRANSFER_ENTITLEMENTS_TO_GOOGLE" => GoogleCloudChannelV1Alpha1OperationMetadataOperationType :: TransferEntitlementsToGoogle , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1051,7 +1084,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub product_id: ::std::option::Option<String>,
-        #[doc = "Output only. Provisioning ID of the entitlement. For Google Workspace, this would be the underlying Subscription ID."]
+        #[doc = "Output only. Provisioning ID of the entitlement. For Google Workspace, this is the underlying Subscription ID. For Google Cloud Platform, this is the Billing Account ID of the billing subaccount.\""]
         #[serde(
             rename = "provisioningId",
             default,
@@ -1152,7 +1185,7 @@ pub mod schemas {
         Annual,
         #[doc = "Paid in monthly installments."]
         Monthly,
-        #[doc = "Default value. This state doesn't show unless an error occurs."]
+        #[doc = "Not used."]
         PaymentOptionUnspecified,
     }
     impl GoogleCloudChannelV1Alpha1RenewalSettingsPaymentOption {
@@ -1344,7 +1377,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudChannelV1Alpha1SubscriberEvent {
-        #[doc = "Customer event send as part of Pub/Sub event to partners."]
+        #[doc = "Customer event sent as part of Pub/Sub event to partners."]
         #[serde(
             rename = "customerEvent",
             default,
@@ -1352,7 +1385,7 @@ pub mod schemas {
         )]
         pub customer_event:
             ::std::option::Option<crate::schemas::GoogleCloudChannelV1Alpha1CustomerEvent>,
-        #[doc = "Entitlement event send as part of Pub/Sub event to partners."]
+        #[doc = "Entitlement event sent as part of Pub/Sub event to partners."]
         #[serde(
             rename = "entitlementEvent",
             default,
@@ -1436,6 +1469,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudChannelV1Alpha1Value {
+        #[doc = "Represents a boolean value."]
+        #[serde(
+            rename = "boolValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bool_value: ::std::option::Option<bool>,
         #[doc = "Represents a double value."]
         #[serde(
             rename = "doubleValue",
@@ -1548,7 +1588,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub offer: ::std::option::Option<String>,
-        #[doc = "Optional. Parameters needed to purchase the Offer."]
+        #[doc = "Optional. Parameters needed to purchase the Offer. To view the available Parameters refer to the Offer.parameter_definitions from the desired offer."]
         #[serde(
             rename = "parameters",
             default,
@@ -1582,7 +1622,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudChannelV1ChangeParametersRequest {
-        #[doc = "Required. Entitlement parameters to update. You can only change editable parameters."]
+        #[doc = "Required. Entitlement parameters to update. You can only change editable parameters. To view the available Parameters for a request, refer to the Offer.parameter_definitions from the desired offer."]
         #[serde(
             rename = "parameters",
             default,
@@ -1739,7 +1779,7 @@ pub mod schemas {
     pub enum GoogleCloudChannelV1ChannelPartnerLinkLinkState {
         #[doc = "Status when the reseller is active."]
         Active,
-        #[doc = "The state is not specified."]
+        #[doc = "Not used."]
         ChannelPartnerLinkStateUnspecified,
         #[doc = "An invitation has been sent to the reseller to create a channel partner link."]
         Invited,
@@ -1763,7 +1803,7 @@ pub mod schemas {
         fn from_str(
             s: &str,
         ) -> ::std::result::Result<GoogleCloudChannelV1ChannelPartnerLinkLinkState, ()> {
-            Ok ( match s { "ACTIVE" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: Active , "CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: ChannelPartnerLinkStateUnspecified , "INVITED" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: Invited , "REVOKED" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: Revoked , "SUSPENDED" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: Suspended , _ => return Err ( ( ) ) , } )
+            Ok (match s { "ACTIVE" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: Active , "CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: ChannelPartnerLinkStateUnspecified , "INVITED" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: Invited , "REVOKED" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: Revoked , "SUSPENDED" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: Suspended , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudChannelV1ChannelPartnerLinkLinkState {
@@ -1785,7 +1825,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "ACTIVE" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: Active , "CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: ChannelPartnerLinkStateUnspecified , "INVITED" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: Invited , "REVOKED" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: Revoked , "SUSPENDED" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: Suspended , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "ACTIVE" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: Active , "CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: ChannelPartnerLinkStateUnspecified , "INVITED" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: Invited , "REVOKED" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: Revoked , "SUSPENDED" => GoogleCloudChannelV1ChannelPartnerLinkLinkState :: Suspended , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1ChannelPartnerLinkLinkState {
@@ -1794,6 +1834,52 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1ChannelPartnerLinkLinkState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1ChannelPartnerRepricingConfig {
+        #[doc = "Output only. Resource name of the ChannelPartnerRepricingConfig. Format: accounts/{account_id}/channelPartnerLinks/{channel_partner_id}/channelPartnerRepricingConfigs/{id}."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Required. The configuration for bill modifications made by a reseller before sending it to ChannelPartner."]
+        #[serde(
+            rename = "repricingConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub repricing_config:
+            ::std::option::Option<crate::schemas::GoogleCloudChannelV1RepricingConfig>,
+        #[doc = "Output only. Timestamp of an update to the repricing rule. If `update_time` is after RepricingConfig.effective_invoice_month then it indicates this was set mid-month."]
+        #[serde(
+            rename = "updateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1ChannelPartnerRepricingConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1ChannelPartnerRepricingConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1965,7 +2051,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub edu_data: ::std::option::Option<crate::schemas::GoogleCloudChannelV1EduData>,
-        #[doc = "Whether the domain is verified."]
+        #[doc = "Output only. Whether the domain is verified. This field is not returned for a Customer's cloud_identity_info resource. Partners can use the domains.get() method of the Workspace SDK's Directory API, or listen to the PRIMARY_DOMAIN_VERIFIED Pub/Sub event in to track domain verification of their resolve Workspace customers."]
         #[serde(
             rename = "isDomainVerified",
             default,
@@ -2006,7 +2092,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudChannelV1CloudIdentityInfoCustomerType {
-        #[doc = "Default value. This state doesn't show unless an error occurs."]
+        #[doc = "Not used."]
         CustomerTypeUnspecified,
         #[doc = "Domain-owning customer which needs domain verification to use services."]
         Domain,
@@ -2179,42 +2265,42 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudChannelV1ContactInfo {
-        #[doc = "Output only. Display name of the contact in the customer account. Populated by combining customer first name and last name."]
+        #[doc = "Output only. The customer account contact's display name, formatted as a combination of the customer's first and last name."]
         #[serde(
             rename = "displayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "Email of the contact in the customer account. Email is required for entitlements that need creation of admin.google.com accounts. The email will be the username used in credentials to access the admin.google.com account."]
+        #[doc = "The customer account's contact email. Required for entitlements that create admin.google.com accounts, and serves as the customer's username for those accounts. Use this email to invite Team customers."]
         #[serde(
             rename = "email",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "First name of the contact in the customer account."]
+        #[doc = "The customer account contact's first name. Optional for Team customers."]
         #[serde(
             rename = "firstName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub first_name: ::std::option::Option<String>,
-        #[doc = "Last name of the contact in the customer account."]
+        #[doc = "The customer account contact's last name. Optional for Team customers."]
         #[serde(
             rename = "lastName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub last_name: ::std::option::Option<String>,
-        #[doc = "Phone number of the contact in the customer account."]
+        #[doc = "The customer account's contact phone number."]
         #[serde(
             rename = "phone",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub phone: ::std::option::Option<String>,
-        #[doc = "Optional. Job title of the contact in the customer account."]
+        #[doc = "Optional. The customer account contact's job title."]
         #[serde(
             rename = "title",
             default,
@@ -2272,7 +2358,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudChannelV1Customer {
-        #[doc = "Secondary contact email. Alternate email and primary contact email are required to have different domains if primary contact email is present. When creating admin.google.com accounts, users get notified credentials at this email. This email address is also used as a recovery email."]
+        #[doc = "Secondary contact email. You need to provide an alternate email to create different domains if a primary contact email already exists. Users will receive a notification with credentials when you create an admin.google.com account. Secondary emails are also recovery email addresses. Alternate emails are optional when you create Team customers."]
         #[serde(
             rename = "alternateEmail",
             default,
@@ -2286,7 +2372,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channel_partner_id: ::std::option::Option<String>,
-        #[doc = "Output only. Customer's cloud_identity_id. Populated only if a Cloud Identity resource exists for this customer."]
+        #[doc = "Output only. The customer's Cloud Identity ID if the customer has a Cloud Identity resource."]
         #[serde(
             rename = "cloudIdentityId",
             default,
@@ -2301,14 +2387,14 @@ pub mod schemas {
         )]
         pub cloud_identity_info:
             ::std::option::Option<crate::schemas::GoogleCloudChannelV1CloudIdentityInfo>,
-        #[doc = "Output only. The time at which the customer is created."]
+        #[doc = "Output only. Time when the customer was created."]
         #[serde(
             rename = "createTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Required. Primary domain used by the customer. Domain of primary contact email is required to be same as the provided domain."]
+        #[doc = "Required. The customer's primary domain. Must match the primary contact email's domain."]
         #[serde(
             rename = "domain",
             default,
@@ -2336,7 +2422,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub org_display_name: ::std::option::Option<String>,
-        #[doc = "Required. Address of the organization of the customer entity. Region and zip codes are required to enforce US laws and embargoes. Valid address lines are required for all customers. Language code is discarded. Use the Customer-level language code to set the customer's language."]
+        #[doc = "Required. The organization address for the customer. To enforce US laws and embargoes, we require a region and zip code. You must provide valid addresses for every customer. To set the customer's language, use the Customer-level language code."]
         #[serde(
             rename = "orgPostalAddress",
             default,
@@ -2351,7 +2437,7 @@ pub mod schemas {
         )]
         pub primary_contact_info:
             ::std::option::Option<crate::schemas::GoogleCloudChannelV1ContactInfo>,
-        #[doc = "Output only. The time at which the customer is updated."]
+        #[doc = "Output only. Time when the customer was updated."]
         #[serde(
             rename = "updateTime",
             default,
@@ -2420,7 +2506,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudChannelV1CustomerConstraintsAllowedCustomerTypesItems {
-        #[doc = "Default value. This state doesn't show unless an error occurs."]
+        #[doc = "Not used."]
         CustomerTypeUnspecified,
         #[doc = "Domain-owning customer which needs domain verification to use services."]
         Domain,
@@ -2447,7 +2533,7 @@ pub mod schemas {
             GoogleCloudChannelV1CustomerConstraintsAllowedCustomerTypesItems,
             (),
         > {
-            Ok ( match s { "CUSTOMER_TYPE_UNSPECIFIED" => GoogleCloudChannelV1CustomerConstraintsAllowedCustomerTypesItems :: CustomerTypeUnspecified , "DOMAIN" => GoogleCloudChannelV1CustomerConstraintsAllowedCustomerTypesItems :: Domain , "TEAM" => GoogleCloudChannelV1CustomerConstraintsAllowedCustomerTypesItems :: Team , _ => return Err ( ( ) ) , } )
+            Ok (match s { "CUSTOMER_TYPE_UNSPECIFIED" => GoogleCloudChannelV1CustomerConstraintsAllowedCustomerTypesItems :: CustomerTypeUnspecified , "DOMAIN" => GoogleCloudChannelV1CustomerConstraintsAllowedCustomerTypesItems :: Domain , "TEAM" => GoogleCloudChannelV1CustomerConstraintsAllowedCustomerTypesItems :: Team , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudChannelV1CustomerConstraintsAllowedCustomerTypesItems {
@@ -2471,7 +2557,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "CUSTOMER_TYPE_UNSPECIFIED" => GoogleCloudChannelV1CustomerConstraintsAllowedCustomerTypesItems :: CustomerTypeUnspecified , "DOMAIN" => GoogleCloudChannelV1CustomerConstraintsAllowedCustomerTypesItems :: Domain , "TEAM" => GoogleCloudChannelV1CustomerConstraintsAllowedCustomerTypesItems :: Team , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "CUSTOMER_TYPE_UNSPECIFIED" => GoogleCloudChannelV1CustomerConstraintsAllowedCustomerTypesItems :: CustomerTypeUnspecified , "DOMAIN" => GoogleCloudChannelV1CustomerConstraintsAllowedCustomerTypesItems :: Domain , "TEAM" => GoogleCloudChannelV1CustomerConstraintsAllowedCustomerTypesItems :: Team , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -2519,7 +2605,7 @@ pub mod schemas {
             GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems,
             (),
         > {
-            Ok ( match s { "NEW_UPGRADE" => GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems :: NewUpgrade , "PROMOTION_SWITCH" => GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems :: PromotionSwitch , "PROMOTIONAL_TYPE_UNSPECIFIED" => GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems :: PromotionalTypeUnspecified , "TRANSFER" => GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems :: Transfer , _ => return Err ( ( ) ) , } )
+            Ok (match s { "NEW_UPGRADE" => GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems :: NewUpgrade , "PROMOTION_SWITCH" => GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems :: PromotionSwitch , "PROMOTIONAL_TYPE_UNSPECIFIED" => GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems :: PromotionalTypeUnspecified , "TRANSFER" => GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems :: Transfer , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems {
@@ -2543,7 +2629,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "NEW_UPGRADE" => GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems :: NewUpgrade , "PROMOTION_SWITCH" => GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems :: PromotionSwitch , "PROMOTIONAL_TYPE_UNSPECIFIED" => GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems :: PromotionalTypeUnspecified , "TRANSFER" => GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems :: Transfer , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "NEW_UPGRADE" => GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems :: NewUpgrade , "PROMOTION_SWITCH" => GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems :: PromotionSwitch , "PROMOTIONAL_TYPE_UNSPECIFIED" => GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems :: PromotionalTypeUnspecified , "TRANSFER" => GoogleCloudChannelV1CustomerConstraintsPromotionalOrderTypesItems :: Transfer , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -2601,12 +2687,22 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudChannelV1CustomerEventEventType {
-        #[doc = "Default value. This state doesn't show unless an error occurs."]
+        #[doc = "Primary domain for customer was changed."]
+        PrimaryDomainChanged,
+        #[doc = "Primary domain of the customer has been verified."]
+        PrimaryDomainVerified,
+        #[doc = "Not used."]
         TypeUnspecified,
     }
     impl GoogleCloudChannelV1CustomerEventEventType {
         pub fn as_str(self) -> &'static str {
             match self {
+                GoogleCloudChannelV1CustomerEventEventType::PrimaryDomainChanged => {
+                    "PRIMARY_DOMAIN_CHANGED"
+                }
+                GoogleCloudChannelV1CustomerEventEventType::PrimaryDomainVerified => {
+                    "PRIMARY_DOMAIN_VERIFIED"
+                }
                 GoogleCloudChannelV1CustomerEventEventType::TypeUnspecified => "TYPE_UNSPECIFIED",
             }
         }
@@ -2622,6 +2718,12 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudChannelV1CustomerEventEventType, ()> {
             Ok(match s {
+                "PRIMARY_DOMAIN_CHANGED" => {
+                    GoogleCloudChannelV1CustomerEventEventType::PrimaryDomainChanged
+                }
+                "PRIMARY_DOMAIN_VERIFIED" => {
+                    GoogleCloudChannelV1CustomerEventEventType::PrimaryDomainVerified
+                }
                 "TYPE_UNSPECIFIED" => GoogleCloudChannelV1CustomerEventEventType::TypeUnspecified,
                 _ => return Err(()),
             })
@@ -2647,6 +2749,12 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "PRIMARY_DOMAIN_CHANGED" => {
+                    GoogleCloudChannelV1CustomerEventEventType::PrimaryDomainChanged
+                }
+                "PRIMARY_DOMAIN_VERIFIED" => {
+                    GoogleCloudChannelV1CustomerEventEventType::PrimaryDomainVerified
+                }
                 "TYPE_UNSPECIFIED" => GoogleCloudChannelV1CustomerEventEventType::TypeUnspecified,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -2663,6 +2771,52 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1CustomerEventEventType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1CustomerRepricingConfig {
+        #[doc = "Output only. Resource name of the CustomerRepricingConfig. Format: accounts/{account_id}/customers/{customer_id}/customerRepricingConfigs/{id}."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Required. The configuration for bill modifications made by a reseller before sending it to customers."]
+        #[serde(
+            rename = "repricingConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub repricing_config:
+            ::std::option::Option<crate::schemas::GoogleCloudChannelV1RepricingConfig>,
+        #[doc = "Output only. Timestamp of an update to the repricing rule. If `update_time` is after RepricingConfig.effective_invoice_month then it indicates this was set mid-month."]
+        #[serde(
+            rename = "updateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1CustomerRepricingConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1CustomerRepricingConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2716,7 +2870,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudChannelV1EduDataInstituteSize {
-        #[doc = "Default value. This state doesn't show unless an error occurs."]
+        #[doc = "Not used."]
         InstituteSizeUnspecified,
         #[doc = "10,001 +"]
         Size10001OrMore,
@@ -2825,7 +2979,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudChannelV1EduDataInstituteType {
-        #[doc = "Default value. This state doesn't show unless an error occurs."]
+        #[doc = "Not used."]
         InstituteTypeUnspecified,
         #[doc = "Elementary/Secondary Schools & Districts"]
         K12,
@@ -2946,7 +3100,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub offer: ::std::option::Option<String>,
-        #[doc = "Extended entitlement parameters. When creating an entitlement, valid parameters' names and values are defined in the offer's parameter definitions."]
+        #[doc = "Extended entitlement parameters. When creating an entitlement, valid parameter names and values are defined in the Offer.parameter_definitions. The response may include the following output-only Parameters: - assigned_units: The number of licenses assigned to users. - max_units: The maximum assignable units for a flexible offer. - num_units: The total commitment for commitment-based offers."]
         #[serde(
             rename = "parameters",
             default,
@@ -2969,7 +3123,7 @@ pub mod schemas {
         )]
         pub provisioning_state:
             ::std::option::Option<crate::schemas::GoogleCloudChannelV1EntitlementProvisioningState>,
-        #[doc = "Optional. This purchase order (PO) information is for resellers to use for their company tracking usage. If a purchaseOrderId value is given, it appears in the API responses and shows up in the invoice. The property accepts up to 80 plain text characters."]
+        #[doc = "Optional. This purchase order (PO) information is for resellers to use for their company tracking usage. If a purchaseOrderId value is given, it appears in the API responses and shows up in the invoice. The property accepts up to 80 plain text characters. This is only supported for Google Workspace entitlements."]
         #[serde(
             rename = "purchaseOrderId",
             default,
@@ -3015,7 +3169,7 @@ pub mod schemas {
     pub enum GoogleCloudChannelV1EntitlementProvisioningState {
         #[doc = "The entitlement is currently active."]
         Active,
-        #[doc = "Default value. This state doesn't show unless an error occurs."]
+        #[doc = "Not used."]
         ProvisioningStateUnspecified,
         #[doc = "The entitlement is currently suspended."]
         Suspended,
@@ -3105,7 +3259,7 @@ pub mod schemas {
         RenewalWithTypeCancel,
         #[doc = "Entitlement was manually suspended by the Reseller."]
         ResellerInitiated,
-        #[doc = "Default value. This state doesn't show unless an error occurs."]
+        #[doc = "Not used."]
         SuspensionReasonUnspecified,
         #[doc = "Trial ended."]
         TrialEnded,
@@ -3126,7 +3280,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudChannelV1EntitlementSuspensionReasonsItems, ()>
         {
-            Ok ( match s { "OTHER" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: Other , "PENDING_TOS_ACCEPTANCE" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: PendingTosAcceptance , "RENEWAL_WITH_TYPE_CANCEL" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: RenewalWithTypeCancel , "RESELLER_INITIATED" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: ResellerInitiated , "SUSPENSION_REASON_UNSPECIFIED" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: SuspensionReasonUnspecified , "TRIAL_ENDED" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: TrialEnded , _ => return Err ( ( ) ) , } )
+            Ok (match s { "OTHER" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: Other , "PENDING_TOS_ACCEPTANCE" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: PendingTosAcceptance , "RENEWAL_WITH_TYPE_CANCEL" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: RenewalWithTypeCancel , "RESELLER_INITIATED" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: ResellerInitiated , "SUSPENSION_REASON_UNSPECIFIED" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: SuspensionReasonUnspecified , "TRIAL_ENDED" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: TrialEnded , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudChannelV1EntitlementSuspensionReasonsItems {
@@ -3148,7 +3302,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "OTHER" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: Other , "PENDING_TOS_ACCEPTANCE" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: PendingTosAcceptance , "RENEWAL_WITH_TYPE_CANCEL" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: RenewalWithTypeCancel , "RESELLER_INITIATED" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: ResellerInitiated , "SUSPENSION_REASON_UNSPECIFIED" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: SuspensionReasonUnspecified , "TRIAL_ENDED" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: TrialEnded , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "OTHER" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: Other , "PENDING_TOS_ACCEPTANCE" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: PendingTosAcceptance , "RENEWAL_WITH_TYPE_CANCEL" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: RenewalWithTypeCancel , "RESELLER_INITIATED" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: ResellerInitiated , "SUSPENSION_REASON_UNSPECIFIED" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: SuspensionReasonUnspecified , "TRIAL_ENDED" => GoogleCloudChannelV1EntitlementSuspensionReasonsItems :: TrialEnded , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -3216,6 +3370,8 @@ pub mod schemas {
         Created,
         #[doc = "License was assigned to or revoked from a user."]
         LicenseAssignmentChanged,
+        #[doc = "License cap was changed for the entitlement."]
+        LicenseCapChanged,
         #[doc = "Paid service has started on trial entitlement."]
         PaidServiceStarted,
         #[doc = "The offer type associated with an entitlement was changed. This is not triggered if an entitlement converts from a commit offer to a flexible offer as part of a renewal."]
@@ -3228,7 +3384,7 @@ pub mod schemas {
         SkuChanged,
         #[doc = "Entitlement was suspended."]
         Suspended,
-        #[doc = "Default value. This state doesn't show unless an error occurs."]
+        #[doc = "Not used."]
         TypeUnspecified,
     }
     impl GoogleCloudChannelV1EntitlementEventEventType {
@@ -3242,6 +3398,9 @@ pub mod schemas {
                 GoogleCloudChannelV1EntitlementEventEventType::Created => "CREATED",
                 GoogleCloudChannelV1EntitlementEventEventType::LicenseAssignmentChanged => {
                     "LICENSE_ASSIGNMENT_CHANGED"
+                }
+                GoogleCloudChannelV1EntitlementEventEventType::LicenseCapChanged => {
+                    "LICENSE_CAP_CHANGED"
                 }
                 GoogleCloudChannelV1EntitlementEventEventType::PaidServiceStarted => {
                     "PAID_SERVICE_STARTED"
@@ -3280,6 +3439,9 @@ pub mod schemas {
                 "CREATED" => GoogleCloudChannelV1EntitlementEventEventType::Created,
                 "LICENSE_ASSIGNMENT_CHANGED" => {
                     GoogleCloudChannelV1EntitlementEventEventType::LicenseAssignmentChanged
+                }
+                "LICENSE_CAP_CHANGED" => {
+                    GoogleCloudChannelV1EntitlementEventEventType::LicenseCapChanged
                 }
                 "PAID_SERVICE_STARTED" => {
                     GoogleCloudChannelV1EntitlementEventEventType::PaidServiceStarted
@@ -3329,6 +3491,9 @@ pub mod schemas {
                 "LICENSE_ASSIGNMENT_CHANGED" => {
                     GoogleCloudChannelV1EntitlementEventEventType::LicenseAssignmentChanged
                 }
+                "LICENSE_CAP_CHANGED" => {
+                    GoogleCloudChannelV1EntitlementEventEventType::LicenseCapChanged
+                }
                 "PAID_SERVICE_STARTED" => {
                     GoogleCloudChannelV1EntitlementEventEventType::PaidServiceStarted
                 }
@@ -3375,6 +3540,72 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudChannelV1ImportCustomerRequest {
+        #[doc = "Optional. The super admin of the resold customer generates this token to authorize a reseller to access their Cloud Identity and purchase entitlements on their behalf. You can omit this token after authorization. See https://support.google.com/a/answer/7643790 for more details."]
+        #[serde(
+            rename = "authToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub auth_token: ::std::option::Option<String>,
+        #[doc = "Optional. Cloud Identity ID of a channel partner who will be the direct reseller for the customer's order. This field is required for 2-tier transfer scenarios and can be provided via the request Parent binding as well."]
+        #[serde(
+            rename = "channelPartnerId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub channel_partner_id: ::std::option::Option<String>,
+        #[doc = "Required. Customer's Cloud Identity ID"]
+        #[serde(
+            rename = "cloudIdentityId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cloud_identity_id: ::std::option::Option<String>,
+        #[doc = "Optional. Specifies the customer that will receive imported Cloud Identity information. Format: accounts/{account_id}/customers/{customer_id}"]
+        #[serde(
+            rename = "customer",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub customer: ::std::option::Option<String>,
+        #[doc = "Required. Customer domain."]
+        #[serde(
+            rename = "domain",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub domain: ::std::option::Option<String>,
+        #[doc = "Required. Choose to overwrite an existing customer if found. This must be set to true if there is an existing customer with a conflicting region code or domain."]
+        #[serde(
+            rename = "overwriteIfExists",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub overwrite_if_exists: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1ImportCustomerRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1ImportCustomerRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudChannelV1ListChannelPartnerLinksResponse {
         #[doc = "The Channel partner links for a reseller."]
         #[serde(
@@ -3400,6 +3631,93 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1ListChannelPartnerLinksResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1ListChannelPartnerRepricingConfigsResponse {
+        #[doc = "The repricing configs for this channel partner."]
+        #[serde(
+            rename = "channelPartnerRepricingConfigs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub channel_partner_repricing_configs: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudChannelV1ChannelPartnerRepricingConfig>,
+        >,
+        #[doc = "A token to retrieve the next page of results. Pass to ListChannelPartnerRepricingConfigsRequest.page_token to obtain that page."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudChannelV1ListChannelPartnerRepricingConfigsResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudChannelV1ListChannelPartnerRepricingConfigsResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1ListCustomerRepricingConfigsResponse {
+        #[doc = "The repricing configs for this channel partner."]
+        #[serde(
+            rename = "customerRepricingConfigs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub customer_repricing_configs:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudChannelV1CustomerRepricingConfig>>,
+        #[doc = "A token to retrieve the next page of results. Pass to ListCustomerRepricingConfigsRequest.page_token to obtain that page."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudChannelV1ListCustomerRepricingConfigsResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudChannelV1ListCustomerRepricingConfigsResponse
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4171,7 +4489,7 @@ pub mod schemas {
         ChangeRenewalSettings,
         #[doc = "Long Running Operation was triggered by CreateEntitlement."]
         CreateEntitlement,
-        #[doc = "Default value. This state doesn't show unless an error occurs."]
+        #[doc = "Not used."]
         OperationTypeUnspecified,
         #[doc = "Long Running Operation was triggered by ProvisionCloudIdentity."]
         ProvisionCloudIdentity,
@@ -4490,6 +4808,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1ParameterDefinitionParameterType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1PercentageAdjustment {
+        #[doc = "The percentage of the bill to adjust. For example: Mark down by 1% => \"-1.00\" Mark up by 1% => \"1.00\" Pass-Through => \"0.00\""]
+        #[serde(
+            rename = "percentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub percentage: ::std::option::Option<crate::schemas::GoogleTypeDecimal>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1PercentageAdjustment {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1PercentageAdjustment {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5331,7 +5680,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub product_id: ::std::option::Option<String>,
-        #[doc = "Output only. Provisioning ID of the entitlement. For Google Workspace, this would be the underlying Subscription ID."]
+        #[doc = "Output only. Provisioning ID of the entitlement. For Google Workspace, this is the underlying Subscription ID. For Google Cloud Platform, this is the Billing Account ID of the billing subaccount.\""]
         #[serde(
             rename = "provisioningId",
             default,
@@ -5633,6 +5982,257 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudChannelV1RepricingAdjustment {
+        #[doc = "Flat markup or markdown on an entire bill."]
+        #[serde(
+            rename = "percentageAdjustment",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub percentage_adjustment:
+            ::std::option::Option<crate::schemas::GoogleCloudChannelV1PercentageAdjustment>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1RepricingAdjustment {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1RepricingAdjustment {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1RepricingConfig {
+        #[doc = "Required. Information about the adjustment."]
+        #[serde(
+            rename = "adjustment",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub adjustment:
+            ::std::option::Option<crate::schemas::GoogleCloudChannelV1RepricingAdjustment>,
+        #[doc = "Applies the repricing configuration at the channel partner level. This is the only supported value for ChannelPartnerRepricingConfig."]
+        #[serde(
+            rename = "channelPartnerGranularity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub channel_partner_granularity: ::std::option::Option<
+            crate::schemas::GoogleCloudChannelV1RepricingConfigChannelPartnerGranularity,
+        >,
+        #[doc = "Required. The YearMonth when these adjustments activate. The Day field needs to be \"0\" since we only accept YearMonth repricing boundaries."]
+        #[serde(
+            rename = "effectiveInvoiceMonth",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub effective_invoice_month: ::std::option::Option<crate::schemas::GoogleTypeDate>,
+        #[doc = "Applies the repricing configuration at the entitlement level. This is the only supported value for CustomerRepricingConfig."]
+        #[serde(
+            rename = "entitlementGranularity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub entitlement_granularity: ::std::option::Option<
+            crate::schemas::GoogleCloudChannelV1RepricingConfigEntitlementGranularity,
+        >,
+        #[doc = "Required. The RebillingBasis to use for this bill. Specifies the relative cost based on repricing costs you will apply."]
+        #[serde(
+            rename = "rebillingBasis",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rebilling_basis: ::std::option::Option<
+            crate::schemas::GoogleCloudChannelV1RepricingConfigRebillingBasis,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1RepricingConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1RepricingConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudChannelV1RepricingConfigRebillingBasis {
+        #[doc = "Use the list cost, also known as the MSRP."]
+        CostAtList,
+        #[doc = "Pass through all discounts except the Reseller Program Discount. If this is the default cost base and no adjustments are specified, the output cost will be exactly what the customer would see if they viewed the bill in the Google Cloud Console."]
+        DirectCustomerCost,
+        #[doc = "Not used."]
+        RebillingBasisUnspecified,
+    }
+    impl GoogleCloudChannelV1RepricingConfigRebillingBasis {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudChannelV1RepricingConfigRebillingBasis::CostAtList => "COST_AT_LIST",
+                GoogleCloudChannelV1RepricingConfigRebillingBasis::DirectCustomerCost => {
+                    "DIRECT_CUSTOMER_COST"
+                }
+                GoogleCloudChannelV1RepricingConfigRebillingBasis::RebillingBasisUnspecified => {
+                    "REBILLING_BASIS_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudChannelV1RepricingConfigRebillingBasis {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudChannelV1RepricingConfigRebillingBasis {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudChannelV1RepricingConfigRebillingBasis, ()> {
+            Ok(match s {
+                "COST_AT_LIST" => GoogleCloudChannelV1RepricingConfigRebillingBasis::CostAtList,
+                "DIRECT_CUSTOMER_COST" => {
+                    GoogleCloudChannelV1RepricingConfigRebillingBasis::DirectCustomerCost
+                }
+                "REBILLING_BASIS_UNSPECIFIED" => {
+                    GoogleCloudChannelV1RepricingConfigRebillingBasis::RebillingBasisUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudChannelV1RepricingConfigRebillingBasis {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudChannelV1RepricingConfigRebillingBasis {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudChannelV1RepricingConfigRebillingBasis {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "COST_AT_LIST" => GoogleCloudChannelV1RepricingConfigRebillingBasis::CostAtList,
+                "DIRECT_CUSTOMER_COST" => {
+                    GoogleCloudChannelV1RepricingConfigRebillingBasis::DirectCustomerCost
+                }
+                "REBILLING_BASIS_UNSPECIFIED" => {
+                    GoogleCloudChannelV1RepricingConfigRebillingBasis::RebillingBasisUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1RepricingConfigRebillingBasis {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1RepricingConfigRebillingBasis {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1RepricingConfigChannelPartnerGranularity {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudChannelV1RepricingConfigChannelPartnerGranularity
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudChannelV1RepricingConfigChannelPartnerGranularity
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1RepricingConfigEntitlementGranularity {
+        #[doc = "Resource name of the entitlement. Format: accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}"]
+        #[serde(
+            rename = "entitlement",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub entitlement: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudChannelV1RepricingConfigEntitlementGranularity
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudChannelV1RepricingConfigEntitlementGranularity
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudChannelV1Sku {
         #[doc = "Marketing information for the SKU."]
         #[serde(
@@ -5711,7 +6311,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudChannelV1SubscriberEvent {
-        #[doc = "Customer event send as part of Pub/Sub event to partners."]
+        #[doc = "Customer event sent as part of Pub/Sub event to partners."]
         #[serde(
             rename = "customerEvent",
             default,
@@ -5719,7 +6319,7 @@ pub mod schemas {
         )]
         pub customer_event:
             ::std::option::Option<crate::schemas::GoogleCloudChannelV1CustomerEvent>,
-        #[doc = "Entitlement event send as part of Pub/Sub event to partners."]
+        #[doc = "Entitlement event sent as part of Pub/Sub event to partners."]
         #[serde(
             rename = "entitlementEvent",
             default,
@@ -5820,7 +6420,7 @@ pub mod schemas {
     pub enum GoogleCloudChannelV1TransferEligibilityIneligibilityReason {
         #[doc = "Reseller needs to accept TOS before transferring the SKU."]
         PendingTosAcceptance,
-        #[doc = "Reason is not available."]
+        #[doc = "Not used."]
         ReasonUnspecified,
         #[doc = "Reseller not eligible to sell the SKU."]
         SkuNotEligible,
@@ -6036,6 +6636,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudChannelV1TransferableSku {
+        #[doc = "Optional. The customer to transfer has an entitlement with the populated legacy SKU."]
+        #[serde(
+            rename = "legacySku",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub legacy_sku: ::std::option::Option<crate::schemas::GoogleCloudChannelV1Sku>,
         #[doc = "The SKU pertaining to the provisioning resource as specified in the Offer."]
         #[serde(
             rename = "sku",
@@ -6205,6 +6812,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudChannelV1Value {
+        #[doc = "Represents a boolean value."]
+        #[serde(
+            rename = "boolValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bool_value: ::std::option::Option<bool>,
         #[doc = "Represents a double value."]
         #[serde(
             rename = "doubleValue",
@@ -6418,6 +7032,82 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleTypeDate {
+        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+        #[serde(
+            rename = "day",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub day: ::std::option::Option<i32>,
+        #[doc = "Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day."]
+        #[serde(
+            rename = "month",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub month: ::std::option::Option<i32>,
+        #[doc = "Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year."]
+        #[serde(
+            rename = "year",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub year: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleTypeDate {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleTypeDate {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleTypeDecimal {
+        #[doc = "The decimal value, as a string. The string representation consists of an optional sign, `+` (`U+002B`) or `-` (`U+002D`), followed by a sequence of zero or more decimal digits (\"the integer\"), optionally followed by a fraction, optionally followed by an exponent. The fraction consists of a decimal point followed by zero or more decimal digits. The string must contain at least one digit in either the integer or the fraction. The number formed by the sign, the integer and the fraction is referred to as the significand. The exponent consists of the character `e` (`U+0065`) or `E` (`U+0045`) followed by one or more decimal digits. Services **should** normalize decimal values before storing them by: - Removing an explicitly-provided `+` sign (`+2.5` -> `2.5`). - Replacing a zero-length integer value with `0` (`.5` -> `0.5`). - Coercing the exponent character to lower-case (`2.5E8` -> `2.5e8`). - Removing an explicitly-provided zero exponent (`2.5e0` -> `2.5`). Services **may** perform additional normalization based on its own needs and the internal decimal implementation selected, such as shifting the decimal point and exponent value together (example: `2.5e-1` <-> `0.25`). Additionally, services **may** preserve trailing zeroes in the fraction to indicate increased precision, but are not required to do so. Note that only the `.` character is supported to divide the integer and the fraction; `,` **should not** be supported regardless of locale. Additionally, thousand separators **should not** be supported. If a service does support them, values **must** be normalized. The ENBF grammar is: DecimalString = [Sign] Significand [Exponent]; Sign = '+' | '-'; Significand = Digits '.' | [Digits] '.' Digits; Exponent = ('e' | 'E') [Sign] Digits; Digits = { '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' }; Services **should** clearly document the range of supported values, the maximum supported precision (total number of digits), and, if applicable, the scale (number of digits after the decimal point), as well as how it behaves when receiving out-of-bounds values. Services **may** choose to accept values passed as input even when the value has a higher precision or scale than the service supports, and **should** round the value to fit the supported scale. Alternatively, the service **may** error with `400 Bad Request` (`INVALID_ARGUMENT` in gRPC) if precision would be lost. Services **should** error with `400 Bad Request` (`INVALID_ARGUMENT` in gRPC) if the service receives a value outside of the supported range."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleTypeDecimal {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleTypeDecimal {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleTypeMoney {
         #[doc = "The three-letter currency code defined in ISO 4217."]
         #[serde(
@@ -6514,7 +7204,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub recipients: ::std::option::Option<Vec<String>>,
-        #[doc = "Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See http://cldr.unicode.org/ and http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: \"CH\" for Switzerland."]
+        #[doc = "Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See https://cldr.unicode.org/ and https://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: \"CH\" for Switzerland."]
         #[serde(
             rename = "regionCode",
             default,
@@ -8230,7 +8920,7 @@ pub mod resources {
                         parent: parent.into(),
                     }
                 }
-                #[doc = "Returns a requested ChannelPartnerLink resource. You must be a distributor to call this method. Possible error codes: * PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request. * INVALID_ARGUMENT: Required request parameters are missing or invalid. * NOT_FOUND: ChannelPartnerLink resource not found because of an invalid channel partner link name. Return value: The ChannelPartnerLink resource."]
+                #[doc = "Returns the requested ChannelPartnerLink resource. You must be a distributor to call this method. Possible error codes: * PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request. * INVALID_ARGUMENT: Required request parameters are missing or invalid. * NOT_FOUND: ChannelPartnerLink resource not found because of an invalid channel partner link name. Return value: The ChannelPartnerLink resource."]
                 pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                     GetRequestBuilder {
                         reqwest: &self.reqwest,
@@ -8294,6 +8984,19 @@ pub mod resources {
                         upload_type: None,
                         xgafv: None,
                         name: name.into(),
+                    }
+                }
+                #[doc = "Actions that can be performed on the channel_partner_repricing_configs resource"]                pub fn channel_partner_repricing_configs (& self) -> crate :: resources :: accounts :: channel_partner_links :: channel_partner_repricing_configs :: ChannelPartnerRepricingConfigsActions{
+                    crate :: resources :: accounts :: channel_partner_links :: channel_partner_repricing_configs :: ChannelPartnerRepricingConfigsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
+                }
+                #[doc = "Actions that can be performed on the customers resource"]
+                pub fn customers(
+                    &self,
+                ) -> crate::resources::accounts::channel_partner_links::customers::CustomersActions
+                {
+                    crate::resources::accounts::channel_partner_links::customers::CustomersActions {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
                     }
                 }
             }
@@ -9107,6 +9810,2357 @@ pub mod resources {
                     Ok(req)
                 }
             }
+            pub mod channel_partner_repricing_configs {
+                pub mod params {}
+                pub struct ChannelPartnerRepricingConfigsActions<'a> {
+                    pub(crate) reqwest: &'a reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                }
+                impl<'a> ChannelPartnerRepricingConfigsActions<'a> {
+                    fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                        self.auth
+                    }
+                    #[doc = "Creates a ChannelPartnerRepricingConfig. Call this method to set modifications for a specific ChannelPartner's bill. You can only create configs if the RepricingConfig.effective_invoice_month is a future month. If needed, you can create a config for the current month, with some restrictions. When creating a config for a future month, make sure there are no existing configs for that RepricingConfig.effective_invoice_month. The following restrictions are for creating configs in the current month. * This functionality is reserved for recovering from an erroneous config, and should not be used for regular business cases. * The new config will not modify exports used with other configs. Changes to the config may be immediate, but may take up to 24 hours. * There is a limit of ten configs for any ChannelPartner or RepricingConfig.effective_invoice_month. * The contained ChannelPartnerRepricingConfig.repricing_config vaule must be different from the value used in the current config for a ChannelPartner. Possible Error Codes: * PERMISSION_DENIED: If the account making the request and the account being queried are different. * INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if the updated config is for the current month or past months. * NOT_FOUND: The ChannelPartnerRepricingConfig specified does not exist or is not associated with the given account. * INTERNAL: Any non-user error related to technical issues in the backend. In this case, contact Cloud Channel support. Return Value: If successful, the updated ChannelPartnerRepricingConfig resource, otherwise returns an error."]
+                    pub fn create(
+                        &self,
+                        request: crate::schemas::GoogleCloudChannelV1ChannelPartnerRepricingConfig,
+                        parent: impl Into<String>,
+                    ) -> CreateRequestBuilder {
+                        CreateRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                        }
+                    }
+                    #[doc = "Deletes the given ChannelPartnerRepricingConfig permanently. You can only delete configs if their RepricingConfig.effective_invoice_month is set to a date after the current month. Possible error codes: * PERMISSION_DENIED: The account making the request does not own this customer. * INVALID_ARGUMENT: Required request parameters are missing or invalid. * FAILED_PRECONDITION: The ChannelPartnerRepricingConfig is active or in the past. * NOT_FOUND: No ChannelPartnerRepricingConfig found for the name in the request."]
+                    pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
+                        DeleteRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                    #[doc = "Gets information about how a Distributor modifies their bill before sending it to a ChannelPartner. Possible Error Codes: * PERMISSION_DENIED: If the account making the request and the account being queried are different. * NOT_FOUND: The ChannelPartnerRepricingConfig was not found. * INTERNAL: Any non-user error related to technical issues in the backend. In this case, contact Cloud Channel support. Return Value: If successful, the ChannelPartnerRepricingConfig resource, otherwise returns an error."]
+                    pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                        GetRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                    #[doc = "Lists information about how a Reseller modifies their bill before sending it to a ChannelPartner. Possible Error Codes: * PERMISSION_DENIED: If the account making the request and the account being queried are different. * NOT_FOUND: The ChannelPartnerRepricingConfig specified does not exist or is not associated with the given account. * INTERNAL: Any non-user error related to technical issues in the backend. In this case, contact Cloud Channel support. Return Value: If successful, the ChannelPartnerRepricingConfig resources. The data for each resource is displayed in the ascending order of: * channel partner ID * RepricingConfig.effective_invoice_month * ChannelPartnerRepricingConfig.update_time If unsuccessful, returns an error."]
+                    pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                        ListRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                            filter: None,
+                            page_size: None,
+                            page_token: None,
+                        }
+                    }
+                    #[doc = "Updates a ChannelPartnerRepricingConfig. Call this method to set modifications for a specific ChannelPartner's bill. This method overwrites the existing CustomerRepricingConfig. You can only update configs if the RepricingConfig.effective_invoice_month is a future month. To make changes to configs for the current month, use CreateChannelPartnerRepricingConfig, taking note of its restrictions. You cannot update the RepricingConfig.effective_invoice_month. When updating a config in the future: * This config must already exist. Possible Error Codes: * PERMISSION_DENIED: If the account making the request and the account being queried are different. * INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if the updated config is for the current month or past months. * NOT_FOUND: The ChannelPartnerRepricingConfig specified does not exist or is not associated with the given account. * INTERNAL: Any non-user error related to technical issues in the backend. In this case, contact Cloud Channel support. Return Value: If successful, the updated ChannelPartnerRepricingConfig resource, otherwise returns an error."]
+                    pub fn patch(
+                        &self,
+                        request: crate::schemas::GoogleCloudChannelV1ChannelPartnerRepricingConfig,
+                        name: impl Into<String>,
+                    ) -> PatchRequestBuilder {
+                        PatchRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                }
+                #[doc = "Created via [ChannelPartnerRepricingConfigsActions::create()](struct.ChannelPartnerRepricingConfigsActions.html#method.create)"]
+                #[derive(Debug, Clone)]
+                pub struct CreateRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::GoogleCloudChannelV1ChannelPartnerRepricingConfig,
+                    parent: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> CreateRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudChannelV1ChannelPartnerRepricingConfig,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudChannelV1ChannelPartnerRepricingConfig,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        let req = req.json(&self.request);
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/channelPartnerRepricingConfigs");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [ChannelPartnerRepricingConfigsActions::delete()](struct.ChannelPartnerRepricingConfigsActions.html#method.delete)"]
+                #[derive(Debug, Clone)]
+                pub struct DeleteRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> DeleteRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [ChannelPartnerRepricingConfigsActions::get()](struct.ChannelPartnerRepricingConfigsActions.html#method.get)"]
+                #[derive(Debug, Clone)]
+                pub struct GetRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> GetRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudChannelV1ChannelPartnerRepricingConfig,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudChannelV1ChannelPartnerRepricingConfig,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [ChannelPartnerRepricingConfigsActions::list()](struct.ChannelPartnerRepricingConfigsActions.html#method.list)"]
+                #[derive(Debug, Clone)]
+                pub struct ListRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    parent: String,
+                    filter: Option<String>,
+                    page_size: Option<i32>,
+                    page_token: Option<String>,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> ListRequestBuilder<'a> {
+                    #[doc = "Optional. A filter for [CloudChannelService.ListChannelPartnerRepricingConfigs] results (channel_partner_link only). You can use this filter when you support a BatchGet-like query. To use the filter, you must set `parent=accounts/{account_id}/channelPartnerLinks/-`. Example: `channel_partner_link = accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link = accounts/account_id/channelPartnerLinks/c2`."]
+                    pub fn filter(mut self, value: impl Into<String>) -> Self {
+                        self.filter = Some(value.into());
+                        self
+                    }
+                    #[doc = "Optional. The maximum number of repricing configs to return. The service may return fewer than this value. If unspecified, returns a maximum of 50 rules. The maximum value is 100; values above 100 will be coerced to 100."]
+                    pub fn page_size(mut self, value: i32) -> Self {
+                        self.page_size = Some(value);
+                        self
+                    }
+                    #[doc = "Optional. A token identifying a page of results beyond the first page. Obtained through ListChannelPartnerRepricingConfigsResponse.next_page_token of the previous CloudChannelService.ListChannelPartnerRepricingConfigs call."]
+                    pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                        self.page_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                    #[doc = r" items yielded by the iterator are chosen by the caller of this"]
+                    #[doc = r" method and must implement `Deserialize` and `FieldSelector`. The"]
+                    #[doc = r" populated fields in the yielded items will be determined by the"]
+                    #[doc = r" `FieldSelector` implementation."]
+                    pub fn iter_channel_partner_repricing_configs<T>(
+                        self,
+                    ) -> crate::iter::PageItemIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.iter_channel_partner_repricing_configs_with_fields(fields)
+                    }
+                    #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                    #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                    #[doc = r" fields in `#items_type` will be the default fields populated by"]
+                    #[doc = r" the server."]
+                    pub fn iter_channel_partner_repricing_configs_with_default_fields(
+                        self,
+                    ) -> crate::iter::PageItemIter<
+                        Self,
+                        crate::schemas::GoogleCloudChannelV1ChannelPartnerRepricingConfig,
+                    > {
+                        self.iter_channel_partner_repricing_configs_with_fields(None::<String>)
+                    }
+                    #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                    #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                    #[doc = r" fields in `#items_type` will be all fields available. This should"]
+                    #[doc = r" primarily be used during developement and debugging as fetching"]
+                    #[doc = r" all fields can be expensive both in bandwidth and server"]
+                    #[doc = r" resources."]
+                    pub fn iter_channel_partner_repricing_configs_with_all_fields(
+                        self,
+                    ) -> crate::iter::PageItemIter<
+                        Self,
+                        crate::schemas::GoogleCloudChannelV1ChannelPartnerRepricingConfig,
+                    > {
+                        self.iter_channel_partner_repricing_configs_with_fields(Some("*"))
+                    }
+                    pub fn iter_channel_partner_repricing_configs_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> crate::iter::PageItemIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: AsRef<str>,
+                    {
+                        self.fields = Some({
+                            let mut selector =
+                                concat!("nextPageToken,", "channelPartnerRepricingConfigs")
+                                    .to_owned();
+                            let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                            if !items_fields.is_empty() {
+                                selector.push_str("(");
+                                selector.push_str(items_fields);
+                                selector.push_str(")");
+                            }
+                            selector
+                        });
+                        crate::iter::PageItemIter::new(self, "channelPartnerRepricingConfigs")
+                    }
+                    pub fn iter<T>(self) -> crate::iter::PageIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.iter_with_fields(fields)
+                    }                    pub fn iter_with_default_fields (self) -> crate :: iter :: PageIter < Self , crate :: schemas :: GoogleCloudChannelV1ListChannelPartnerRepricingConfigsResponse >{
+                        self.iter_with_fields(None::<&str>)
+                    }                    pub fn iter_with_all_fields (self) -> crate :: iter :: PageIter < Self , crate :: schemas :: GoogleCloudChannelV1ListChannelPartnerRepricingConfigsResponse >{
+                        self.iter_with_fields(Some("*"))
+                    }
+                    pub fn iter_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> crate::iter::PageIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: AsRef<str>,
+                    {
+                        let mut fields =
+                            fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                        if !fields.is_empty() {
+                            match fields.chars().rev().nth(0) {
+                                Some(',') | None => {}
+                                _ => fields.push_str(","),
+                            }
+                            fields.push_str("nextPageToken");
+                            self.fields = Some(fields);
+                        }
+                        crate::iter::PageIter::new(self)
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]                    pub fn execute_with_default_fields (self) -> Result < crate :: schemas :: GoogleCloudChannelV1ListChannelPartnerRepricingConfigsResponse , crate :: Error >{
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]                    pub fn execute_with_all_fields (self) -> Result < crate :: schemas :: GoogleCloudChannelV1ListChannelPartnerRepricingConfigsResponse , crate :: Error >{
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/channelPartnerRepricingConfigs");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("filter", &self.filter)]);
+                        req = req.query(&[("pageSize", &self.page_size)]);
+                        req = req.query(&[("pageToken", &self.page_token)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                impl<'a> crate::iter::IterableMethod for ListRequestBuilder<'a> {
+                    fn set_page_token(&mut self, value: String) {
+                        self.page_token = value.into();
+                    }
+                    fn execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        self._execute()
+                    }
+                }
+                #[doc = "Created via [ChannelPartnerRepricingConfigsActions::patch()](struct.ChannelPartnerRepricingConfigsActions.html#method.patch)"]
+                #[derive(Debug, Clone)]
+                pub struct PatchRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::GoogleCloudChannelV1ChannelPartnerRepricingConfig,
+                    name: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> PatchRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudChannelV1ChannelPartnerRepricingConfig,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudChannelV1ChannelPartnerRepricingConfig,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        let req = req.json(&self.request);
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+            }
+            pub mod customers {
+                pub mod params {}
+                pub struct CustomersActions<'a> {
+                    pub(crate) reqwest: &'a reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                }
+                impl<'a> CustomersActions<'a> {
+                    fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                        self.auth
+                    }
+                    #[doc = "Creates a new Customer resource under the reseller or distributor account. Possible error codes: * PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request. * INVALID_ARGUMENT: * Required request parameters are missing or invalid. * Domain field value doesn't match the primary email domain. Return value: The newly created Customer resource."]
+                    pub fn create(
+                        &self,
+                        request: crate::schemas::GoogleCloudChannelV1Customer,
+                        parent: impl Into<String>,
+                    ) -> CreateRequestBuilder {
+                        CreateRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                        }
+                    }
+                    #[doc = "Deletes the given Customer permanently. Possible error codes: * PERMISSION_DENIED: The account making the request does not own this customer. * INVALID_ARGUMENT: Required request parameters are missing or invalid. * FAILED_PRECONDITION: The customer has existing entitlements. * NOT_FOUND: No Customer resource found for the name in the request."]
+                    pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
+                        DeleteRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                    #[doc = "Returns the requested Customer resource. Possible error codes: * PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request. * INVALID_ARGUMENT: Required request parameters are missing or invalid. * NOT_FOUND: The customer resource doesn't exist. Usually the result of an invalid name parameter. Return value: The Customer resource."]
+                    pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                        GetRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                    #[doc = "Imports a Customer from the Cloud Identity associated with the provided Cloud Identity ID or domain before a TransferEntitlements call. If a linked Customer already exists and overwrite_if_exists is true, it will update that Customer's data. Possible error codes: * PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request. * NOT_FOUND: Cloud Identity doesn't exist or was deleted. * INVALID_ARGUMENT: Required parameters are missing, or the auth_token is expired or invalid. * ALREADY_EXISTS: A customer already exists and has conflicting critical fields. Requires an overwrite. Return value: The Customer."]
+                    pub fn import(
+                        &self,
+                        request: crate::schemas::GoogleCloudChannelV1ImportCustomerRequest,
+                        parent: impl Into<String>,
+                    ) -> ImportRequestBuilder {
+                        ImportRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                        }
+                    }
+                    #[doc = "List Customers. Possible error codes: * PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request. * INVALID_ARGUMENT: Required request parameters are missing or invalid. Return value: List of Customers, or an empty list if there are no customers."]
+                    pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                        ListRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                            filter: None,
+                            page_size: None,
+                            page_token: None,
+                        }
+                    }
+                    #[doc = "Updates an existing Customer resource for the reseller or distributor. Possible error codes: * PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request. * INVALID_ARGUMENT: Required request parameters are missing or invalid. * NOT_FOUND: No Customer resource found for the name in the request. Return value: The updated Customer resource."]
+                    pub fn patch(
+                        &self,
+                        request: crate::schemas::GoogleCloudChannelV1Customer,
+                        name: impl Into<String>,
+                    ) -> PatchRequestBuilder {
+                        PatchRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                            update_mask: None,
+                        }
+                    }
+                }
+                #[doc = "Created via [CustomersActions::create()](struct.CustomersActions.html#method.create)"]
+                #[derive(Debug, Clone)]
+                pub struct CreateRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::GoogleCloudChannelV1Customer,
+                    parent: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> CreateRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudChannelV1Customer, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudChannelV1Customer, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        let req = req.json(&self.request);
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/customers");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [CustomersActions::delete()](struct.CustomersActions.html#method.delete)"]
+                #[derive(Debug, Clone)]
+                pub struct DeleteRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> DeleteRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [CustomersActions::get()](struct.CustomersActions.html#method.get)"]
+                #[derive(Debug, Clone)]
+                pub struct GetRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> GetRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudChannelV1Customer, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudChannelV1Customer, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [CustomersActions::import()](struct.CustomersActions.html#method.import)"]
+                #[derive(Debug, Clone)]
+                pub struct ImportRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::GoogleCloudChannelV1ImportCustomerRequest,
+                    parent: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> ImportRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudChannelV1Customer, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudChannelV1Customer, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        let req = req.json(&self.request);
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/customers:import");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [CustomersActions::list()](struct.CustomersActions.html#method.list)"]
+                #[derive(Debug, Clone)]
+                pub struct ListRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    parent: String,
+                    filter: Option<String>,
+                    page_size: Option<i32>,
+                    page_token: Option<String>,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> ListRequestBuilder<'a> {
+                    #[doc = "Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers for more information."]
+                    pub fn filter(mut self, value: impl Into<String>) -> Self {
+                        self.filter = Some(value.into());
+                        self
+                    }
+                    #[doc = "Optional. The maximum number of customers to return. The service may return fewer than this value. If unspecified, returns at most 10 customers. The maximum value is 50."]
+                    pub fn page_size(mut self, value: i32) -> Self {
+                        self.page_size = Some(value);
+                        self
+                    }
+                    #[doc = "Optional. A token identifying a page of results other than the first page. Obtained through ListCustomersResponse.next_page_token of the previous CloudChannelService.ListCustomers call."]
+                    pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                        self.page_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                    #[doc = r" items yielded by the iterator are chosen by the caller of this"]
+                    #[doc = r" method and must implement `Deserialize` and `FieldSelector`. The"]
+                    #[doc = r" populated fields in the yielded items will be determined by the"]
+                    #[doc = r" `FieldSelector` implementation."]
+                    pub fn iter_customers<T>(self) -> crate::iter::PageItemIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.iter_customers_with_fields(fields)
+                    }
+                    #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                    #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                    #[doc = r" fields in `#items_type` will be the default fields populated by"]
+                    #[doc = r" the server."]
+                    pub fn iter_customers_with_default_fields(
+                        self,
+                    ) -> crate::iter::PageItemIter<Self, crate::schemas::GoogleCloudChannelV1Customer>
+                    {
+                        self.iter_customers_with_fields(None::<String>)
+                    }
+                    #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                    #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                    #[doc = r" fields in `#items_type` will be all fields available. This should"]
+                    #[doc = r" primarily be used during developement and debugging as fetching"]
+                    #[doc = r" all fields can be expensive both in bandwidth and server"]
+                    #[doc = r" resources."]
+                    pub fn iter_customers_with_all_fields(
+                        self,
+                    ) -> crate::iter::PageItemIter<Self, crate::schemas::GoogleCloudChannelV1Customer>
+                    {
+                        self.iter_customers_with_fields(Some("*"))
+                    }
+                    pub fn iter_customers_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> crate::iter::PageItemIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: AsRef<str>,
+                    {
+                        self.fields = Some({
+                            let mut selector = concat!("nextPageToken,", "customers").to_owned();
+                            let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                            if !items_fields.is_empty() {
+                                selector.push_str("(");
+                                selector.push_str(items_fields);
+                                selector.push_str(")");
+                            }
+                            selector
+                        });
+                        crate::iter::PageItemIter::new(self, "customers")
+                    }
+                    pub fn iter<T>(self) -> crate::iter::PageIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.iter_with_fields(fields)
+                    }
+                    pub fn iter_with_default_fields(
+                        self,
+                    ) -> crate::iter::PageIter<
+                        Self,
+                        crate::schemas::GoogleCloudChannelV1ListCustomersResponse,
+                    > {
+                        self.iter_with_fields(None::<&str>)
+                    }
+                    pub fn iter_with_all_fields(
+                        self,
+                    ) -> crate::iter::PageIter<
+                        Self,
+                        crate::schemas::GoogleCloudChannelV1ListCustomersResponse,
+                    > {
+                        self.iter_with_fields(Some("*"))
+                    }
+                    pub fn iter_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> crate::iter::PageIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: AsRef<str>,
+                    {
+                        let mut fields =
+                            fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                        if !fields.is_empty() {
+                            match fields.chars().rev().nth(0) {
+                                Some(',') | None => {}
+                                _ => fields.push_str(","),
+                            }
+                            fields.push_str("nextPageToken");
+                            self.fields = Some(fields);
+                        }
+                        crate::iter::PageIter::new(self)
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudChannelV1ListCustomersResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudChannelV1ListCustomersResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/customers");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("filter", &self.filter)]);
+                        req = req.query(&[("pageSize", &self.page_size)]);
+                        req = req.query(&[("pageToken", &self.page_token)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                impl<'a> crate::iter::IterableMethod for ListRequestBuilder<'a> {
+                    fn set_page_token(&mut self, value: String) {
+                        self.page_token = value.into();
+                    }
+                    fn execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        self._execute()
+                    }
+                }
+                #[doc = "Created via [CustomersActions::patch()](struct.CustomersActions.html#method.patch)"]
+                #[derive(Debug, Clone)]
+                pub struct PatchRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::GoogleCloudChannelV1Customer,
+                    name: String,
+                    update_mask: Option<String>,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> PatchRequestBuilder<'a> {
+                    #[doc = "The update mask that applies to the resource. Optional."]
+                    pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                        self.update_mask = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudChannelV1Customer, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudChannelV1Customer, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        let req = req.json(&self.request);
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                        req = req.query(&[("updateMask", &self.update_mask)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+            }
         }
         pub mod customers {
             pub mod params {
@@ -9135,7 +12189,7 @@ pub mod resources {
                         s: &str,
                     ) -> ::std::result::Result<ListPurchasableSkusChangeOfferPurchaseChangeType, ()>
                     {
-                        Ok ( match s { "CHANGE_TYPE_UNSPECIFIED" => ListPurchasableSkusChangeOfferPurchaseChangeType :: ChangeTypeUnspecified , "DOWNGRADE" => ListPurchasableSkusChangeOfferPurchaseChangeType :: Downgrade , "UPGRADE" => ListPurchasableSkusChangeOfferPurchaseChangeType :: Upgrade , _ => return Err ( ( ) ) , } )
+                        Ok (match s { "CHANGE_TYPE_UNSPECIFIED" => ListPurchasableSkusChangeOfferPurchaseChangeType :: ChangeTypeUnspecified , "DOWNGRADE" => ListPurchasableSkusChangeOfferPurchaseChangeType :: Downgrade , "UPGRADE" => ListPurchasableSkusChangeOfferPurchaseChangeType :: Upgrade , _ => return Err (()) , })
                     }
                 }
                 impl ::std::fmt::Display for ListPurchasableSkusChangeOfferPurchaseChangeType {
@@ -9157,7 +12211,7 @@ pub mod resources {
                         D: ::serde::de::Deserializer<'de>,
                     {
                         let value: &'de str = <&str>::deserialize(deserializer)?;
-                        Ok ( match value { "CHANGE_TYPE_UNSPECIFIED" => ListPurchasableSkusChangeOfferPurchaseChangeType :: ChangeTypeUnspecified , "DOWNGRADE" => ListPurchasableSkusChangeOfferPurchaseChangeType :: Downgrade , "UPGRADE" => ListPurchasableSkusChangeOfferPurchaseChangeType :: Upgrade , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+                        Ok (match value { "CHANGE_TYPE_UNSPECIFIED" => ListPurchasableSkusChangeOfferPurchaseChangeType :: ChangeTypeUnspecified , "DOWNGRADE" => ListPurchasableSkusChangeOfferPurchaseChangeType :: Downgrade , "UPGRADE" => ListPurchasableSkusChangeOfferPurchaseChangeType :: Upgrade , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
                     }
                 }
                 impl ::google_field_selector::FieldSelector for ListPurchasableSkusChangeOfferPurchaseChangeType {
@@ -9203,7 +12257,7 @@ pub mod resources {
                         parent: parent.into(),
                     }
                 }
-                #[doc = "Deletes the given Customer permanently and irreversibly. Possible error codes: * PERMISSION_DENIED: The account making the request does not own this customer. * INVALID_ARGUMENT: Required request parameters are missing or invalid. * FAILED_PRECONDITION: The customer has existing entitlements. * NOT_FOUND: No Customer resource found for the name in the request."]
+                #[doc = "Deletes the given Customer permanently. Possible error codes: * PERMISSION_DENIED: The account making the request does not own this customer. * INVALID_ARGUMENT: Required request parameters are missing or invalid. * FAILED_PRECONDITION: The customer has existing entitlements. * NOT_FOUND: No Customer resource found for the name in the request."]
                 pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                     DeleteRequestBuilder {
                         reqwest: &self.reqwest,
@@ -9222,7 +12276,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Returns a requested Customer resource. Possible error codes: * PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request. * INVALID_ARGUMENT: Required request parameters are missing or invalid. * NOT_FOUND: The customer resource doesn't exist. Usually the result of an invalid name parameter. Return value: The Customer resource."]
+                #[doc = "Returns the requested Customer resource. Possible error codes: * PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request. * INVALID_ARGUMENT: Required request parameters are missing or invalid. * NOT_FOUND: The customer resource doesn't exist. Usually the result of an invalid name parameter. Return value: The Customer resource."]
                 pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                     GetRequestBuilder {
                         reqwest: &self.reqwest,
@@ -9239,6 +12293,30 @@ pub mod resources {
                         upload_type: None,
                         xgafv: None,
                         name: name.into(),
+                    }
+                }
+                #[doc = "Imports a Customer from the Cloud Identity associated with the provided Cloud Identity ID or domain before a TransferEntitlements call. If a linked Customer already exists and overwrite_if_exists is true, it will update that Customer's data. Possible error codes: * PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request. * NOT_FOUND: Cloud Identity doesn't exist or was deleted. * INVALID_ARGUMENT: Required parameters are missing, or the auth_token is expired or invalid. * ALREADY_EXISTS: A customer already exists and has conflicting critical fields. Requires an overwrite. Return value: The Customer."]
+                pub fn import(
+                    &self,
+                    request: crate::schemas::GoogleCloudChannelV1ImportCustomerRequest,
+                    parent: impl Into<String>,
+                ) -> ImportRequestBuilder {
+                    ImportRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        parent: parent.into(),
                     }
                 }
                 #[doc = "List Customers. Possible error codes: * PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request. * INVALID_ARGUMENT: Required request parameters are missing or invalid. Return value: List of Customers, or an empty list if there are no customers."]
@@ -9258,6 +12336,7 @@ pub mod resources {
                         upload_type: None,
                         xgafv: None,
                         parent: parent.into(),
+                        filter: None,
                         page_size: None,
                         page_token: None,
                     }
@@ -9414,6 +12493,9 @@ pub mod resources {
                         xgafv: None,
                         parent: parent.into(),
                     }
+                }
+                #[doc = "Actions that can be performed on the customer_repricing_configs resource"]                pub fn customer_repricing_configs (& self) -> crate :: resources :: accounts :: customers :: customer_repricing_configs :: CustomerRepricingConfigsActions{
+                    crate :: resources :: accounts :: customers :: customer_repricing_configs :: CustomerRepricingConfigsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
                 #[doc = "Actions that can be performed on the entitlements resource"]
                 pub fn entitlements(
@@ -9910,12 +12992,177 @@ pub mod resources {
                     Ok(req)
                 }
             }
+            #[doc = "Created via [CustomersActions::import()](struct.CustomersActions.html#method.import)"]
+            #[derive(Debug, Clone)]
+            pub struct ImportRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::GoogleCloudChannelV1ImportCustomerRequest,
+                parent: String,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> ImportRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleCloudChannelV1Customer, crate::Error>
+                {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleCloudChannelV1Customer, crate::Error>
+                {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.parent;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/customers:import");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
+                }
+            }
             #[doc = "Created via [CustomersActions::list()](struct.CustomersActions.html#method.list)"]
             #[derive(Debug, Clone)]
             pub struct ListRequestBuilder<'a> {
                 pub(crate) reqwest: &'a ::reqwest::blocking::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 parent: String,
+                filter: Option<String>,
                 page_size: Option<i32>,
                 page_token: Option<String>,
                 access_token: Option<String>,
@@ -9931,6 +13178,11 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
+                #[doc = "Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers for more information."]
+                pub fn filter(mut self, value: impl Into<String>) -> Self {
+                    self.filter = Some(value.into());
+                    self
+                }
                 #[doc = "Optional. The maximum number of customers to return. The service may return fewer than this value. If unspecified, returns at most 10 customers. The maximum value is 50."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
@@ -10171,6 +13423,7 @@ pub mod resources {
                     path: &str,
                 ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                     let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("filter", &self.filter)]);
                     req = req.query(&[("pageSize", &self.page_size)]);
                     req = req.query(&[("pageToken", &self.page_token)]);
                     req = req.query(&[("access_token", &self.access_token)]);
@@ -10547,7 +13800,7 @@ pub mod resources {
             }
             #[doc = "Created via [CustomersActions::list_purchasable_skus()](struct.CustomersActions.html#method.list_purchasable_skus)"]
             #[derive(Debug, Clone)]
-            pub struct ListPurchasableSkusRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , customer : String , change_offer_purchase_change_type : Option < crate :: resources :: accounts :: customers :: params :: ListPurchasableSkusChangeOfferPurchaseChangeType > , change_offer_purchase_entitlement : Option < String > , create_entitlement_purchase_product : Option < String > , language_code : Option < String > , page_size : Option < i32 > , page_token : Option < String > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+            pub struct ListPurchasableSkusRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , customer : String , change_offer_purchase_change_type : Option < crate :: resources :: accounts :: customers :: params :: ListPurchasableSkusChangeOfferPurchaseChangeType > , change_offer_purchase_entitlement : Option < String > , create_entitlement_purchase_product : Option < String > , language_code : Option < String > , page_size : Option < i32 > , page_token : Option < String > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
             impl<'a> ListPurchasableSkusRequestBuilder<'a> {
                 #[doc = "Required. Change Type for the entitlement."]
                 pub fn change_offer_purchase_change_type(
@@ -11533,6 +14786,1104 @@ pub mod resources {
                     Ok(req)
                 }
             }
+            pub mod customer_repricing_configs {
+                pub mod params {}
+                pub struct CustomerRepricingConfigsActions<'a> {
+                    pub(crate) reqwest: &'a reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                }
+                impl<'a> CustomerRepricingConfigsActions<'a> {
+                    fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                        self.auth
+                    }
+                    #[doc = "Creates a CustomerRepricingConfig. Call this method to set modifications for a specific customer's bill. You can only create configs if the RepricingConfig.effective_invoice_month is a future month. If needed, you can create a config for the current month, with some restrictions. When creating a config for a future month, make sure there are no existing configs for that RepricingConfig.effective_invoice_month. The following restrictions are for creating configs in the current month. * This functionality is reserved for recovering from an erroneous config, and should not be used for regular business cases. * The new config will not modify exports used with other configs. Changes to the config may be immediate, but may take up to 24 hours. * There is a limit of ten configs for any RepricingConfig.EntitlementGranularity.entitlement or RepricingConfig.effective_invoice_month. * The contained CustomerRepricingConfig.repricing_config vaule must be different from the value used in the current config for a RepricingConfig.EntitlementGranularity.entitlement. Possible Error Codes: * PERMISSION_DENIED: If the account making the request and the account being queried are different. * INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if the updated config is for the current month or past months. * NOT_FOUND: The CustomerRepricingConfig specified does not exist or is not associated with the given account. * INTERNAL: Any non-user error related to technical issues in the backend. In this case, contact Cloud Channel support. Return Value: If successful, the updated CustomerRepricingConfig resource, otherwise returns an error."]
+                    pub fn create(
+                        &self,
+                        request: crate::schemas::GoogleCloudChannelV1CustomerRepricingConfig,
+                        parent: impl Into<String>,
+                    ) -> CreateRequestBuilder {
+                        CreateRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                        }
+                    }
+                    #[doc = "Deletes the given CustomerRepricingConfig permanently. You can only delete configs if their RepricingConfig.effective_invoice_month is set to a date after the current month. Possible error codes: * PERMISSION_DENIED: The account making the request does not own this customer. * INVALID_ARGUMENT: Required request parameters are missing or invalid. * FAILED_PRECONDITION: The CustomerRepricingConfig is active or in the past. * NOT_FOUND: No CustomerRepricingConfig found for the name in the request."]
+                    pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
+                        DeleteRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                    #[doc = "Gets information about how a Reseller modifies their bill before sending it to a Customer. Possible Error Codes: * PERMISSION_DENIED: If the account making the request and the account being queried are different. * NOT_FOUND: The CustomerRepricingConfig was not found. * INTERNAL: Any non-user error related to technical issues in the backend. In this case, contact Cloud Channel support. Return Value: If successful, the CustomerRepricingConfig resource, otherwise returns an error."]
+                    pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                        GetRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                    #[doc = "Lists information about how a Reseller modifies their bill before sending it to a Customer. Possible Error Codes: * PERMISSION_DENIED: If the account making the request and the account being queried are different. * NOT_FOUND: The CustomerRepricingConfig specified does not exist or is not associated with the given account. * INTERNAL: Any non-user error related to technical issues in the backend. In this case, contact Cloud Channel support. Return Value: If successful, the CustomerRepricingConfig resources. The data for each resource is displayed in the ascending order of: * customer ID * RepricingConfig.EntitlementGranularity.entitlement * RepricingConfig.effective_invoice_month * CustomerRepricingConfig.update_time If unsuccessful, returns an error."]
+                    pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                        ListRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                            filter: None,
+                            page_size: None,
+                            page_token: None,
+                        }
+                    }
+                    #[doc = "Updates a CustomerRepricingConfig. Call this method to set modifications for a specific customer's bill. This method overwrites the existing CustomerRepricingConfig. You can only update configs if the RepricingConfig.effective_invoice_month is a future month. To make changes to configs for the current month, use CreateCustomerRepricingConfig, taking note of its restrictions. You cannot update the RepricingConfig.effective_invoice_month. When updating a config in the future: * This config must already exist. Possible Error Codes: * PERMISSION_DENIED: If the account making the request and the account being queried are different. * INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if the updated config is for the current month or past months. * NOT_FOUND: The CustomerRepricingConfig specified does not exist or is not associated with the given account. * INTERNAL: Any non-user error related to technical issues in the backend. In this case, contact Cloud Channel support. Return Value: If successful, the updated CustomerRepricingConfig resource, otherwise returns an error."]
+                    pub fn patch(
+                        &self,
+                        request: crate::schemas::GoogleCloudChannelV1CustomerRepricingConfig,
+                        name: impl Into<String>,
+                    ) -> PatchRequestBuilder {
+                        PatchRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                }
+                #[doc = "Created via [CustomerRepricingConfigsActions::create()](struct.CustomerRepricingConfigsActions.html#method.create)"]
+                #[derive(Debug, Clone)]
+                pub struct CreateRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::GoogleCloudChannelV1CustomerRepricingConfig,
+                    parent: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> CreateRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudChannelV1CustomerRepricingConfig,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudChannelV1CustomerRepricingConfig,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        let req = req.json(&self.request);
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/customerRepricingConfigs");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [CustomerRepricingConfigsActions::delete()](struct.CustomerRepricingConfigsActions.html#method.delete)"]
+                #[derive(Debug, Clone)]
+                pub struct DeleteRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> DeleteRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [CustomerRepricingConfigsActions::get()](struct.CustomerRepricingConfigsActions.html#method.get)"]
+                #[derive(Debug, Clone)]
+                pub struct GetRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> GetRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudChannelV1CustomerRepricingConfig,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudChannelV1CustomerRepricingConfig,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [CustomerRepricingConfigsActions::list()](struct.CustomerRepricingConfigsActions.html#method.list)"]
+                #[derive(Debug, Clone)]
+                pub struct ListRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    parent: String,
+                    filter: Option<String>,
+                    page_size: Option<i32>,
+                    page_token: Option<String>,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> ListRequestBuilder<'a> {
+                    #[doc = "Optional. A filter for [CloudChannelService.ListCustomerRepricingConfigs] results (customer only). You can use this filter when you support a BatchGet-like query. To use the filter, you must set `parent=accounts/{account_id}/customers/-`. Example: customer = accounts/account_id/customers/c1 OR customer = accounts/account_id/customers/c2."]
+                    pub fn filter(mut self, value: impl Into<String>) -> Self {
+                        self.filter = Some(value.into());
+                        self
+                    }
+                    #[doc = "Optional. The maximum number of repricing configs to return. The service may return fewer than this value. If unspecified, returns a maximum of 50 rules. The maximum value is 100; values above 100 will be coerced to 100."]
+                    pub fn page_size(mut self, value: i32) -> Self {
+                        self.page_size = Some(value);
+                        self
+                    }
+                    #[doc = "Optional. A token identifying a page of results beyond the first page. Obtained through ListCustomerRepricingConfigsResponse.next_page_token of the previous CloudChannelService.ListCustomerRepricingConfigs call."]
+                    pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                        self.page_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                    #[doc = r" items yielded by the iterator are chosen by the caller of this"]
+                    #[doc = r" method and must implement `Deserialize` and `FieldSelector`. The"]
+                    #[doc = r" populated fields in the yielded items will be determined by the"]
+                    #[doc = r" `FieldSelector` implementation."]
+                    pub fn iter_customer_repricing_configs<T>(
+                        self,
+                    ) -> crate::iter::PageItemIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.iter_customer_repricing_configs_with_fields(fields)
+                    }
+                    #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                    #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                    #[doc = r" fields in `#items_type` will be the default fields populated by"]
+                    #[doc = r" the server."]
+                    pub fn iter_customer_repricing_configs_with_default_fields(
+                        self,
+                    ) -> crate::iter::PageItemIter<
+                        Self,
+                        crate::schemas::GoogleCloudChannelV1CustomerRepricingConfig,
+                    > {
+                        self.iter_customer_repricing_configs_with_fields(None::<String>)
+                    }
+                    #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                    #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                    #[doc = r" fields in `#items_type` will be all fields available. This should"]
+                    #[doc = r" primarily be used during developement and debugging as fetching"]
+                    #[doc = r" all fields can be expensive both in bandwidth and server"]
+                    #[doc = r" resources."]
+                    pub fn iter_customer_repricing_configs_with_all_fields(
+                        self,
+                    ) -> crate::iter::PageItemIter<
+                        Self,
+                        crate::schemas::GoogleCloudChannelV1CustomerRepricingConfig,
+                    > {
+                        self.iter_customer_repricing_configs_with_fields(Some("*"))
+                    }
+                    pub fn iter_customer_repricing_configs_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> crate::iter::PageItemIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: AsRef<str>,
+                    {
+                        self.fields = Some({
+                            let mut selector =
+                                concat!("nextPageToken,", "customerRepricingConfigs").to_owned();
+                            let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                            if !items_fields.is_empty() {
+                                selector.push_str("(");
+                                selector.push_str(items_fields);
+                                selector.push_str(")");
+                            }
+                            selector
+                        });
+                        crate::iter::PageItemIter::new(self, "customerRepricingConfigs")
+                    }
+                    pub fn iter<T>(self) -> crate::iter::PageIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.iter_with_fields(fields)
+                    }
+                    pub fn iter_with_default_fields(
+                        self,
+                    ) -> crate::iter::PageIter<
+                        Self,
+                        crate::schemas::GoogleCloudChannelV1ListCustomerRepricingConfigsResponse,
+                    > {
+                        self.iter_with_fields(None::<&str>)
+                    }
+                    pub fn iter_with_all_fields(
+                        self,
+                    ) -> crate::iter::PageIter<
+                        Self,
+                        crate::schemas::GoogleCloudChannelV1ListCustomerRepricingConfigsResponse,
+                    > {
+                        self.iter_with_fields(Some("*"))
+                    }
+                    pub fn iter_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> crate::iter::PageIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: AsRef<str>,
+                    {
+                        let mut fields =
+                            fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                        if !fields.is_empty() {
+                            match fields.chars().rev().nth(0) {
+                                Some(',') | None => {}
+                                _ => fields.push_str(","),
+                            }
+                            fields.push_str("nextPageToken");
+                            self.fields = Some(fields);
+                        }
+                        crate::iter::PageIter::new(self)
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudChannelV1ListCustomerRepricingConfigsResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudChannelV1ListCustomerRepricingConfigsResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/customerRepricingConfigs");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("filter", &self.filter)]);
+                        req = req.query(&[("pageSize", &self.page_size)]);
+                        req = req.query(&[("pageToken", &self.page_token)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                impl<'a> crate::iter::IterableMethod for ListRequestBuilder<'a> {
+                    fn set_page_token(&mut self, value: String) {
+                        self.page_token = value.into();
+                    }
+                    fn execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        self._execute()
+                    }
+                }
+                #[doc = "Created via [CustomerRepricingConfigsActions::patch()](struct.CustomerRepricingConfigsActions.html#method.patch)"]
+                #[derive(Debug, Clone)]
+                pub struct PatchRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::GoogleCloudChannelV1CustomerRepricingConfig,
+                    name: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> PatchRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudChannelV1CustomerRepricingConfig,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudChannelV1CustomerRepricingConfig,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        let req = req.json(&self.request);
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+            }
             pub mod entitlements {
                 pub mod params {}
                 pub struct EntitlementsActions<'a> {
@@ -11687,7 +16038,7 @@ pub mod resources {
                             parent: parent.into(),
                         }
                     }
-                    #[doc = "Returns a requested Entitlement resource. Possible error codes: * PERMISSION_DENIED: The customer doesn't belong to the reseller. * INVALID_ARGUMENT: Required request parameters are missing or invalid. * NOT_FOUND: The customer entitlement was not found. Return value: The requested Entitlement resource."]
+                    #[doc = "Returns the requested Entitlement resource. Possible error codes: * PERMISSION_DENIED: The customer doesn't belong to the reseller. * INVALID_ARGUMENT: Required request parameters are missing or invalid. * NOT_FOUND: The customer entitlement was not found. Return value: The requested Entitlement resource."]
                     pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                         GetRequestBuilder {
                             reqwest: &self.reqwest,
@@ -11725,6 +16076,28 @@ pub mod resources {
                             parent: parent.into(),
                             page_size: None,
                             page_token: None,
+                        }
+                    }
+                    #[doc = "Returns the requested Offer resource. Possible error codes: * PERMISSION_DENIED: The entitlement doesn't belong to the reseller. * INVALID_ARGUMENT: Required request parameters are missing or invalid. * NOT_FOUND: Entitlement or offer was not found. Return value: The Offer resource."]
+                    pub fn lookup_offer(
+                        &self,
+                        entitlement: impl Into<String>,
+                    ) -> LookupOfferRequestBuilder {
+                        LookupOfferRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            entitlement: entitlement.into(),
                         }
                     }
                     #[doc = "Starts paid service for a trial entitlement. Starts paid service for a trial entitlement immediately. This method is only applicable if a plan is set up for a trial entitlement but has some trial days remaining. Possible error codes: * PERMISSION_DENIED: The customer doesn't belong to the reseller. * INVALID_ARGUMENT: Required request parameters are missing or invalid. * NOT_FOUND: Entitlement resource not found. * FAILED_PRECONDITION/NOT_IN_TRIAL: This method only works for entitlement on trial plans. * INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support. * UNKNOWN: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support. Return value: The ID of a long-running operation. To get the results of the operation, call the GetOperation method of CloudChannelOperationsService. The Operation metadata will contain an instance of OperationMetadata."]
@@ -13229,6 +17602,169 @@ pub mod resources {
                         T: ::serde::de::DeserializeOwned,
                     {
                         self._execute()
+                    }
+                }
+                #[doc = "Created via [EntitlementsActions::lookup_offer()](struct.EntitlementsActions.html#method.lookup_offer)"]
+                #[derive(Debug, Clone)]
+                pub struct LookupOfferRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    entitlement: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> LookupOfferRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudChannelV1Offer, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudChannelV1Offer, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.entitlement;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str(":lookupOffer");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
                     }
                 }
                 #[doc = "Created via [EntitlementsActions::start_paid_service()](struct.EntitlementsActions.html#method.start_paid_service)"]

@@ -1,8 +1,8 @@
-#![doc = "# Resources and Methods\n    * [users](resources/users/struct.UsersActions.html)\n      * [*getLoginProfile*](resources/users/struct.GetLoginProfileRequestBuilder.html), [*importSshPublicKey*](resources/users/struct.ImportSshPublicKeyRequestBuilder.html)\n      * [projects](resources/users/projects/struct.ProjectsActions.html)\n        * [*delete*](resources/users/projects/struct.DeleteRequestBuilder.html)\n      * [ssh_public_keys](resources/users/ssh_public_keys/struct.SshPublicKeysActions.html)\n        * [*delete*](resources/users/ssh_public_keys/struct.DeleteRequestBuilder.html), [*get*](resources/users/ssh_public_keys/struct.GetRequestBuilder.html), [*patch*](resources/users/ssh_public_keys/struct.PatchRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [users](resources/users/struct.UsersActions.html)\n      * [*getLoginProfile*](resources/users/struct.GetLoginProfileRequestBuilder.html), [*importSshPublicKey*](resources/users/struct.ImportSshPublicKeyRequestBuilder.html)\n      * [projects](resources/users/projects/struct.ProjectsActions.html)\n        * [*delete*](resources/users/projects/struct.DeleteRequestBuilder.html)\n      * [ssh_public_keys](resources/users/ssh_public_keys/struct.SshPublicKeysActions.html)\n        * [*create*](resources/users/ssh_public_keys/struct.CreateRequestBuilder.html), [*delete*](resources/users/ssh_public_keys/struct.DeleteRequestBuilder.html), [*get*](resources/users/ssh_public_keys/struct.GetRequestBuilder.html), [*patch*](resources/users/ssh_public_keys/struct.PatchRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
-    #[doc = "View your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
+    #[doc = "View your data across Google Cloud services and see the email address of your Google Account\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
     pub const CLOUD_PLATFORM_READ_ONLY: &str =
         "https://www.googleapis.com/auth/cloud-platform.read-only";
     #[doc = "View and manage your Google Compute Engine resources\n\n`https://www.googleapis.com/auth/compute`"]
@@ -100,6 +100,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub posix_accounts: ::std::option::Option<Vec<crate::schemas::PosixAccount>>,
+        #[doc = "The registered security key credentials for a user."]
+        #[serde(
+            rename = "securityKeys",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub security_keys: ::std::option::Option<Vec<crate::schemas::SecurityKey>>,
         #[doc = "A map from SSH public key fingerprint to the associated key object."]
         #[serde(
             rename = "sshPublicKeys",
@@ -318,6 +325,58 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct SecurityKey {
+        #[doc = "Hardware-backed private key text in SSH format."]
+        #[serde(
+            rename = "privateKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub private_key: ::std::option::Option<String>,
+        #[doc = "Public key text in SSH format, defined by [RFC4253](\"https://www.ietf.org/rfc/rfc4253.txt\") section 6.6."]
+        #[serde(
+            rename = "publicKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub public_key: ::std::option::Option<String>,
+        #[doc = "The U2F protocol type."]
+        #[serde(
+            rename = "universalTwoFactor",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub universal_two_factor: ::std::option::Option<crate::schemas::UniversalTwoFactor>,
+        #[doc = "The Web Authentication protocol type."]
+        #[serde(
+            rename = "webAuthn",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub web_authn: ::std::option::Option<crate::schemas::WebAuthn>,
+    }
+    impl ::google_field_selector::FieldSelector for SecurityKey {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SecurityKey {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SshPublicKey {
         #[doc = "An expiration time in microseconds since epoch."]
         #[serde(
@@ -355,6 +414,68 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SshPublicKey {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UniversalTwoFactor {
+        #[doc = "Application ID for the U2F protocol."]
+        #[serde(
+            rename = "appId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub app_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for UniversalTwoFactor {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UniversalTwoFactor {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct WebAuthn {
+        #[doc = "Relying party ID for Web Authentication."]
+        #[serde(
+            rename = "rpId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rp_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for WebAuthn {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for WebAuthn {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -548,7 +669,172 @@ impl Client {
 }
 pub mod resources {
     pub mod users {
-        pub mod params {}
+        pub mod params {
+            #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+            pub enum GetLoginProfileView {
+                #[doc = "Includes POSIX and SSH key information."]
+                Basic,
+                #[doc = "The default login profile view. The API defaults to the BASIC view."]
+                LoginProfileViewUnspecified,
+                #[doc = "Include security key information for the user."]
+                SecurityKey,
+            }
+            impl GetLoginProfileView {
+                pub fn as_str(self) -> &'static str {
+                    match self {
+                        GetLoginProfileView::Basic => "BASIC",
+                        GetLoginProfileView::LoginProfileViewUnspecified => {
+                            "LOGIN_PROFILE_VIEW_UNSPECIFIED"
+                        }
+                        GetLoginProfileView::SecurityKey => "SECURITY_KEY",
+                    }
+                }
+            }
+            impl ::std::convert::AsRef<str> for GetLoginProfileView {
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+            impl ::std::str::FromStr for GetLoginProfileView {
+                type Err = ();
+                fn from_str(s: &str) -> ::std::result::Result<GetLoginProfileView, ()> {
+                    Ok(match s {
+                        "BASIC" => GetLoginProfileView::Basic,
+                        "LOGIN_PROFILE_VIEW_UNSPECIFIED" => {
+                            GetLoginProfileView::LoginProfileViewUnspecified
+                        }
+                        "SECURITY_KEY" => GetLoginProfileView::SecurityKey,
+                        _ => return Err(()),
+                    })
+                }
+            }
+            impl ::std::fmt::Display for GetLoginProfileView {
+                fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                    f.write_str(self.as_str())
+                }
+            }
+            impl ::serde::Serialize for GetLoginProfileView {
+                fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+                where
+                    S: ::serde::ser::Serializer,
+                {
+                    serializer.serialize_str(self.as_str())
+                }
+            }
+            impl<'de> ::serde::Deserialize<'de> for GetLoginProfileView {
+                fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+                where
+                    D: ::serde::de::Deserializer<'de>,
+                {
+                    let value: &'de str = <&str>::deserialize(deserializer)?;
+                    Ok(match value {
+                        "BASIC" => GetLoginProfileView::Basic,
+                        "LOGIN_PROFILE_VIEW_UNSPECIFIED" => {
+                            GetLoginProfileView::LoginProfileViewUnspecified
+                        }
+                        "SECURITY_KEY" => GetLoginProfileView::SecurityKey,
+                        _ => {
+                            return Err(::serde::de::Error::custom(format!(
+                                "invalid enum for #name: {}",
+                                value
+                            )))
+                        }
+                    })
+                }
+            }
+            impl ::google_field_selector::FieldSelector for GetLoginProfileView {
+                fn fields() -> Vec<::google_field_selector::Field> {
+                    Vec::new()
+                }
+            }
+            impl ::google_field_selector::ToFieldType for GetLoginProfileView {
+                fn field_type() -> ::google_field_selector::FieldType {
+                    ::google_field_selector::FieldType::Leaf
+                }
+            }
+            #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+            pub enum ImportSshPublicKeyView {
+                #[doc = "Includes POSIX and SSH key information."]
+                Basic,
+                #[doc = "The default login profile view. The API defaults to the BASIC view."]
+                LoginProfileViewUnspecified,
+                #[doc = "Include security key information for the user."]
+                SecurityKey,
+            }
+            impl ImportSshPublicKeyView {
+                pub fn as_str(self) -> &'static str {
+                    match self {
+                        ImportSshPublicKeyView::Basic => "BASIC",
+                        ImportSshPublicKeyView::LoginProfileViewUnspecified => {
+                            "LOGIN_PROFILE_VIEW_UNSPECIFIED"
+                        }
+                        ImportSshPublicKeyView::SecurityKey => "SECURITY_KEY",
+                    }
+                }
+            }
+            impl ::std::convert::AsRef<str> for ImportSshPublicKeyView {
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+            impl ::std::str::FromStr for ImportSshPublicKeyView {
+                type Err = ();
+                fn from_str(s: &str) -> ::std::result::Result<ImportSshPublicKeyView, ()> {
+                    Ok(match s {
+                        "BASIC" => ImportSshPublicKeyView::Basic,
+                        "LOGIN_PROFILE_VIEW_UNSPECIFIED" => {
+                            ImportSshPublicKeyView::LoginProfileViewUnspecified
+                        }
+                        "SECURITY_KEY" => ImportSshPublicKeyView::SecurityKey,
+                        _ => return Err(()),
+                    })
+                }
+            }
+            impl ::std::fmt::Display for ImportSshPublicKeyView {
+                fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                    f.write_str(self.as_str())
+                }
+            }
+            impl ::serde::Serialize for ImportSshPublicKeyView {
+                fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+                where
+                    S: ::serde::ser::Serializer,
+                {
+                    serializer.serialize_str(self.as_str())
+                }
+            }
+            impl<'de> ::serde::Deserialize<'de> for ImportSshPublicKeyView {
+                fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+                where
+                    D: ::serde::de::Deserializer<'de>,
+                {
+                    let value: &'de str = <&str>::deserialize(deserializer)?;
+                    Ok(match value {
+                        "BASIC" => ImportSshPublicKeyView::Basic,
+                        "LOGIN_PROFILE_VIEW_UNSPECIFIED" => {
+                            ImportSshPublicKeyView::LoginProfileViewUnspecified
+                        }
+                        "SECURITY_KEY" => ImportSshPublicKeyView::SecurityKey,
+                        _ => {
+                            return Err(::serde::de::Error::custom(format!(
+                                "invalid enum for #name: {}",
+                                value
+                            )))
+                        }
+                    })
+                }
+            }
+            impl ::google_field_selector::FieldSelector for ImportSshPublicKeyView {
+                fn fields() -> Vec<::google_field_selector::Field> {
+                    Vec::new()
+                }
+            }
+            impl ::google_field_selector::ToFieldType for ImportSshPublicKeyView {
+                fn field_type() -> ::google_field_selector::FieldType {
+                    ::google_field_selector::FieldType::Leaf
+                }
+            }
+        }
         pub struct UsersActions<'a> {
             pub(crate) reqwest: &'a reqwest::blocking::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
@@ -579,6 +865,7 @@ pub mod resources {
                     name: name.into(),
                     project_id: None,
                     system_id: None,
+                    view: None,
                 }
             }
             #[doc = "Adds an SSH public key and returns the profile information. Default POSIX account information is set when no username and UID exist as part of the login profile."]
@@ -604,6 +891,7 @@ pub mod resources {
                     xgafv: None,
                     parent: parent.into(),
                     project_id: None,
+                    view: None,
                 }
             }
             #[doc = "Actions that can be performed on the projects resource"]
@@ -631,6 +919,7 @@ pub mod resources {
             name: String,
             project_id: Option<String>,
             system_id: Option<String>,
+            view: Option<crate::resources::users::params::GetLoginProfileView>,
             access_token: Option<String>,
             alt: Option<crate::params::Alt>,
             callback: Option<String>,
@@ -652,6 +941,14 @@ pub mod resources {
             #[doc = "A system ID for filtering the results of the request."]
             pub fn system_id(mut self, value: impl Into<String>) -> Self {
                 self.system_id = Some(value.into());
+                self
+            }
+            #[doc = "The view configures whether to retrieve security keys information."]
+            pub fn view(
+                mut self,
+                value: crate::resources::users::params::GetLoginProfileView,
+            ) -> Self {
+                self.view = Some(value);
                 self
             }
             #[doc = "OAuth access token."]
@@ -775,6 +1072,7 @@ pub mod resources {
                 let mut req = self.reqwest.request(::reqwest::Method::GET, path);
                 req = req.query(&[("projectId", &self.project_id)]);
                 req = req.query(&[("systemId", &self.system_id)]);
+                req = req.query(&[("view", &self.view)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -802,6 +1100,7 @@ pub mod resources {
             request: crate::schemas::SshPublicKey,
             parent: String,
             project_id: Option<String>,
+            view: Option<crate::resources::users::params::ImportSshPublicKeyView>,
             access_token: Option<String>,
             alt: Option<crate::params::Alt>,
             callback: Option<String>,
@@ -818,6 +1117,14 @@ pub mod resources {
             #[doc = "The project ID of the Google Cloud Platform project."]
             pub fn project_id(mut self, value: impl Into<String>) -> Self {
                 self.project_id = Some(value.into());
+                self
+            }
+            #[doc = "The view configures whether to retrieve security keys information."]
+            pub fn view(
+                mut self,
+                value: crate::resources::users::params::ImportSshPublicKeyView,
+            ) -> Self {
+                self.view = Some(value);
                 self
             }
             #[doc = "OAuth access token."]
@@ -941,6 +1248,7 @@ pub mod resources {
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::POST, path);
                 req = req.query(&[("projectId", &self.project_id)]);
+                req = req.query(&[("view", &self.view)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -1160,6 +1468,30 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
+                #[doc = "Create an SSH public key"]
+                pub fn create(
+                    &self,
+                    request: crate::schemas::SshPublicKey,
+                    parent: impl Into<String>,
+                ) -> CreateRequestBuilder {
+                    CreateRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        parent: parent.into(),
+                    }
+                }
                 #[doc = "Deletes an SSH public key."]
                 pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                     DeleteRequestBuilder {
@@ -1222,6 +1554,168 @@ pub mod resources {
                         name: name.into(),
                         update_mask: None,
                     }
+                }
+            }
+            #[doc = "Created via [SshPublicKeysActions::create()](struct.SshPublicKeysActions.html#method.create)"]
+            #[derive(Debug, Clone)]
+            pub struct CreateRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::SshPublicKey,
+                parent: String,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> CreateRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::SshPublicKey, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::SshPublicKey, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://oslogin.googleapis.com/".to_owned();
+                    output.push_str("v1beta/");
+                    {
+                        let var_as_str = &self.parent;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/sshPublicKeys");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
                 }
             }
             #[doc = "Created via [SshPublicKeysActions::delete()](struct.SshPublicKeysActions.html#method.delete)"]

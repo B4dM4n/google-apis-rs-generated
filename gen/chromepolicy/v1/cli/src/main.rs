@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("chromepolicy1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210317")
+            .version("0.1.0-20220425")
             .about("The Chrome Policy API is a suite of services that allows Chrome administrators to control the policies applied to their managed Chrome OS devices and Chrome browsers.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -36,6 +36,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut customers0 = SubCommand::with_name("customers")
             .setting(AppSettings::ColoredHelp)
             .about("sub-resources: policies and policy_schemas");
+        let mut media0 = SubCommand::with_name("media")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: upload");
+        {
+            let mcmd = SubCommand::with_name("upload").about("Creates an enterprise file from the content provided by user. Returns a public download url for end user.");
+            media0 = media0.subcommand(mcmd);
+        }
         let mut policies1 = SubCommand::with_name("policies")
             .setting(AppSettings::ColoredHelp)
             .about("methods: resolve");
@@ -61,16 +68,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: batch_inherit and batch_modify");
         {
-            let mcmd = SubCommand::with_name("batch_inherit").about("Modify multiple policy values that are applied to a specific org unit so that they now inherit the value from a parent (if applicable). All targets must have the same target format. That is to say that they must point to the same target resource and must have the same keys specified in `additionalTargetKeyNames`. On failure the request will return the error details as part of the google.rpc.Status.");
+            let mcmd = SubCommand::with_name("batch_inherit").about("Modify multiple policy values that are applied to a specific org unit so that they now inherit the value from a parent (if applicable). All targets must have the same target format. That is to say that they must point to the same target resource and must have the same keys specified in `additionalTargetKeyNames`, though the values for those keys may be different. On failure the request will return the error details as part of the google.rpc.Status.");
             orgunits2 = orgunits2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("batch_modify").about("Modify multiple policy values that are applied to a specific org unit. All targets must have the same target format. That is to say that they must point to the same target resource and must have the same keys specified in `additionalTargetKeyNames`. On failure the request will return the error details as part of the google.rpc.Status.");
+            let mcmd = SubCommand::with_name("batch_modify").about("Modify multiple policy values that are applied to a specific org unit. All targets must have the same target format. That is to say that they must point to the same target resource and must have the same keys specified in `additionalTargetKeyNames`, though the values for those keys may be different. On failure the request will return the error details as part of the google.rpc.Status.");
             orgunits2 = orgunits2.subcommand(mcmd);
         }
         policies1 = policies1.subcommand(orgunits2);
         customers0 = customers0.subcommand(policy_schemas1);
         customers0 = customers0.subcommand(policies1);
+        app = app.subcommand(media0);
         app = app.subcommand(customers0);
 
         Self { app }

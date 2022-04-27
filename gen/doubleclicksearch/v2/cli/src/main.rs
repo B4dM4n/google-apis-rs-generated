@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("doubleclicksearch2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210309")
+            .version("0.1.0-20220420")
             .about("The Search Ads 360 API allows developers to automate uploading conversions and downloading reports from Search Ads 360.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -57,7 +57,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut reports0 = SubCommand::with_name("reports")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: generate, get, get_file and request");
+            .about("methods: generate, get, get_file, get_id_mapping_file and request");
         {
             let mcmd = SubCommand::with_name("generate")
                 .about("Generates and returns a report immediately.");
@@ -71,6 +71,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("get_file")
                 .about("Downloads a report file encoded in UTF-8.");
+            reports0 = reports0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_id_mapping_file").about("Downloads a csv file(encoded in UTF-8) that contains ID mappings between legacy SA360 and new SA360. The file includes all children entities of the given advertiser(e.g. engine accounts, campaigns, ad groups, etc.) that exist in both legacy SA360 and new SA360.");
             reports0 = reports0.subcommand(mcmd);
         }
         {

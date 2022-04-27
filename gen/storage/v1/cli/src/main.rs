@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("storage1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210314")
+            .version("0.1.0-20220421")
             .about("Stores and retrieves potentially large, immutable data objects.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -246,7 +246,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             objects0 = objects0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Patches an object\'s metadata.");
+            let mcmd = SubCommand::with_name("patch").about("Patches an object's metadata.");
             objects0 = objects0.subcommand(mcmd);
         }
         {
@@ -265,7 +265,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             objects0 = objects0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update").about("Updates an object\'s metadata.");
+            let mcmd = SubCommand::with_name("update").about("Updates an object's metadata.");
             objects0 = objects0.subcommand(mcmd);
         }
         {
@@ -289,7 +289,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             hmac_keys1 = hmac_keys1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Retrieves an HMAC key\'s metadata");
+            let mcmd = SubCommand::with_name("get").about("Retrieves an HMAC key's metadata");
             hmac_keys1 = hmac_keys1.subcommand(mcmd);
         }
         {
@@ -306,7 +306,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: get");
         {
             let mcmd = SubCommand::with_name("get").about(
-                "Get the email address of this project\'s Google Cloud Storage service account.",
+                "Get the email address of this project's Google Cloud Storage service account.",
             );
             service_account1 = service_account1.subcommand(mcmd);
         }

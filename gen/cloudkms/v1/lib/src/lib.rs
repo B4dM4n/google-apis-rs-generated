@@ -1,6 +1,6 @@
-#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n        * [key_rings](resources/projects/locations/key_rings/struct.KeyRingsActions.html)\n          * [*create*](resources/projects/locations/key_rings/struct.CreateRequestBuilder.html), [*get*](resources/projects/locations/key_rings/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/key_rings/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/key_rings/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/key_rings/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/key_rings/struct.TestIamPermissionsRequestBuilder.html)\n          * [crypto_keys](resources/projects/locations/key_rings/crypto_keys/struct.CryptoKeysActions.html)\n            * [*create*](resources/projects/locations/key_rings/crypto_keys/struct.CreateRequestBuilder.html), [*decrypt*](resources/projects/locations/key_rings/crypto_keys/struct.DecryptRequestBuilder.html), [*encrypt*](resources/projects/locations/key_rings/crypto_keys/struct.EncryptRequestBuilder.html), [*get*](resources/projects/locations/key_rings/crypto_keys/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/key_rings/crypto_keys/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/key_rings/crypto_keys/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/key_rings/crypto_keys/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/key_rings/crypto_keys/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/key_rings/crypto_keys/struct.TestIamPermissionsRequestBuilder.html), [*updatePrimaryVersion*](resources/projects/locations/key_rings/crypto_keys/struct.UpdatePrimaryVersionRequestBuilder.html)\n            * [crypto_key_versions](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.CryptoKeyVersionsActions.html)\n              * [*asymmetricDecrypt*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.AsymmetricDecryptRequestBuilder.html), [*asymmetricSign*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.AsymmetricSignRequestBuilder.html), [*create*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.CreateRequestBuilder.html), [*destroy*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.DestroyRequestBuilder.html), [*get*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.GetRequestBuilder.html), [*getPublicKey*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.GetPublicKeyRequestBuilder.html), [*import*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.PatchRequestBuilder.html), [*restore*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.RestoreRequestBuilder.html)\n          * [import_jobs](resources/projects/locations/key_rings/import_jobs/struct.ImportJobsActions.html)\n            * [*create*](resources/projects/locations/key_rings/import_jobs/struct.CreateRequestBuilder.html), [*get*](resources/projects/locations/key_rings/import_jobs/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/key_rings/import_jobs/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/key_rings/import_jobs/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/key_rings/import_jobs/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/key_rings/import_jobs/struct.TestIamPermissionsRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*generateRandomBytes*](resources/projects/locations/struct.GenerateRandomBytesRequestBuilder.html), [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n        * [ekm_connections](resources/projects/locations/ekm_connections/struct.EkmConnectionsActions.html)\n          * [*create*](resources/projects/locations/ekm_connections/struct.CreateRequestBuilder.html), [*get*](resources/projects/locations/ekm_connections/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/ekm_connections/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/ekm_connections/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/ekm_connections/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/ekm_connections/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/ekm_connections/struct.TestIamPermissionsRequestBuilder.html)\n        * [key_rings](resources/projects/locations/key_rings/struct.KeyRingsActions.html)\n          * [*create*](resources/projects/locations/key_rings/struct.CreateRequestBuilder.html), [*get*](resources/projects/locations/key_rings/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/key_rings/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/key_rings/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/key_rings/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/key_rings/struct.TestIamPermissionsRequestBuilder.html)\n          * [crypto_keys](resources/projects/locations/key_rings/crypto_keys/struct.CryptoKeysActions.html)\n            * [*create*](resources/projects/locations/key_rings/crypto_keys/struct.CreateRequestBuilder.html), [*decrypt*](resources/projects/locations/key_rings/crypto_keys/struct.DecryptRequestBuilder.html), [*encrypt*](resources/projects/locations/key_rings/crypto_keys/struct.EncryptRequestBuilder.html), [*get*](resources/projects/locations/key_rings/crypto_keys/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/key_rings/crypto_keys/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/key_rings/crypto_keys/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/key_rings/crypto_keys/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/key_rings/crypto_keys/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/key_rings/crypto_keys/struct.TestIamPermissionsRequestBuilder.html), [*updatePrimaryVersion*](resources/projects/locations/key_rings/crypto_keys/struct.UpdatePrimaryVersionRequestBuilder.html)\n            * [crypto_key_versions](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.CryptoKeyVersionsActions.html)\n              * [*asymmetricDecrypt*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.AsymmetricDecryptRequestBuilder.html), [*asymmetricSign*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.AsymmetricSignRequestBuilder.html), [*create*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.CreateRequestBuilder.html), [*destroy*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.DestroyRequestBuilder.html), [*get*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.GetRequestBuilder.html), [*getPublicKey*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.GetPublicKeyRequestBuilder.html), [*import*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.ListRequestBuilder.html), [*macSign*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.MacSignRequestBuilder.html), [*macVerify*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.MacVerifyRequestBuilder.html), [*patch*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.PatchRequestBuilder.html), [*restore*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.RestoreRequestBuilder.html)\n          * [import_jobs](resources/projects/locations/key_rings/import_jobs/struct.ImportJobsActions.html)\n            * [*create*](resources/projects/locations/key_rings/import_jobs/struct.CreateRequestBuilder.html), [*get*](resources/projects/locations/key_rings/import_jobs/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/key_rings/import_jobs/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/key_rings/import_jobs/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/key_rings/import_jobs/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/key_rings/import_jobs/struct.TestIamPermissionsRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
     #[doc = "View and manage your keys and secrets stored in Cloud Key Management Service\n\n`https://www.googleapis.com/auth/cloudkms`"]
     pub const CLOUDKMS: &str = "https://www.googleapis.com/auth/cloudkms";
@@ -26,7 +26,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ciphertext: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "Optional. An optional CRC32C checksum of the AsymmetricDecryptRequest.ciphertext. If specified, KeyManagementService will verify the integrity of the received AsymmetricDecryptRequest.ciphertext using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(AsymmetricDecryptRequest.ciphertext) is equal to AsymmetricDecryptRequest.ciphertext_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type. NOTE: This field is in Beta."]
+        #[doc = "Optional. An optional CRC32C checksum of the AsymmetricDecryptRequest.ciphertext. If specified, KeyManagementService will verify the integrity of the received AsymmetricDecryptRequest.ciphertext using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(AsymmetricDecryptRequest.ciphertext) is equal to AsymmetricDecryptRequest.ciphertext_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type."]
         #[serde(
             rename = "ciphertextCrc32c",
             default,
@@ -65,7 +65,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub plaintext: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "Integrity verification field. A CRC32C checksum of the returned AsymmetricDecryptResponse.plaintext. An integrity check of AsymmetricDecryptResponse.plaintext can be performed by computing the CRC32C checksum of AsymmetricDecryptResponse.plaintext and comparing your results to this field. Discard the response in case of non-matching checksum values, and perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type. NOTE: This field is in Beta."]
+        #[doc = "Integrity verification field. A CRC32C checksum of the returned AsymmetricDecryptResponse.plaintext. An integrity check of AsymmetricDecryptResponse.plaintext can be performed by computing the CRC32C checksum of AsymmetricDecryptResponse.plaintext and comparing your results to this field. Discard the response in case of non-matching checksum values, and perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type."]
         #[serde(
             rename = "plaintextCrc32c",
             default,
@@ -81,7 +81,7 @@ pub mod schemas {
         )]
         pub protection_level:
             ::std::option::Option<crate::schemas::AsymmetricDecryptResponseProtectionLevel>,
-        #[doc = "Integrity verification field. A flag indicating whether AsymmetricDecryptRequest.ciphertext_crc32c was received by KeyManagementService and used for the integrity verification of the ciphertext. A false value of this field indicates either that AsymmetricDecryptRequest.ciphertext_crc32c was left unset or that it was not delivered to KeyManagementService. If you've set AsymmetricDecryptRequest.ciphertext_crc32c but this field is still false, discard the response and perform a limited number of retries. NOTE: This field is in Beta."]
+        #[doc = "Integrity verification field. A flag indicating whether AsymmetricDecryptRequest.ciphertext_crc32c was received by KeyManagementService and used for the integrity verification of the ciphertext. A false value of this field indicates either that AsymmetricDecryptRequest.ciphertext_crc32c was left unset or that it was not delivered to KeyManagementService. If you've set AsymmetricDecryptRequest.ciphertext_crc32c but this field is still false, discard the response and perform a limited number of retries."]
         #[serde(
             rename = "verifiedCiphertextCrc32c",
             default,
@@ -103,6 +103,8 @@ pub mod schemas {
     pub enum AsymmetricDecryptResponseProtectionLevel {
         #[doc = "Crypto operations are performed by an external key manager."]
         External,
+        #[doc = "Crypto operations are performed in an EKM-over-VPC backend."]
+        ExternalVpc,
         #[doc = "Crypto operations are performed in a Hardware Security Module."]
         Hsm,
         #[doc = "Not specified."]
@@ -114,6 +116,7 @@ pub mod schemas {
         pub fn as_str(self) -> &'static str {
             match self {
                 AsymmetricDecryptResponseProtectionLevel::External => "EXTERNAL",
+                AsymmetricDecryptResponseProtectionLevel::ExternalVpc => "EXTERNAL_VPC",
                 AsymmetricDecryptResponseProtectionLevel::Hsm => "HSM",
                 AsymmetricDecryptResponseProtectionLevel::ProtectionLevelUnspecified => {
                     "PROTECTION_LEVEL_UNSPECIFIED"
@@ -134,6 +137,7 @@ pub mod schemas {
         ) -> ::std::result::Result<AsymmetricDecryptResponseProtectionLevel, ()> {
             Ok(match s {
                 "EXTERNAL" => AsymmetricDecryptResponseProtectionLevel::External,
+                "EXTERNAL_VPC" => AsymmetricDecryptResponseProtectionLevel::ExternalVpc,
                 "HSM" => AsymmetricDecryptResponseProtectionLevel::Hsm,
                 "PROTECTION_LEVEL_UNSPECIFIED" => {
                     AsymmetricDecryptResponseProtectionLevel::ProtectionLevelUnspecified
@@ -164,6 +168,7 @@ pub mod schemas {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
                 "EXTERNAL" => AsymmetricDecryptResponseProtectionLevel::External,
+                "EXTERNAL_VPC" => AsymmetricDecryptResponseProtectionLevel::ExternalVpc,
                 "HSM" => AsymmetricDecryptResponseProtectionLevel::Hsm,
                 "PROTECTION_LEVEL_UNSPECIFIED" => {
                     AsymmetricDecryptResponseProtectionLevel::ProtectionLevelUnspecified
@@ -201,14 +206,29 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AsymmetricSignRequest {
-        #[doc = "Optional. The digest of the data to sign. The digest must be produced with the same digest algorithm as specified by the key version's algorithm."]
+        #[doc = "Optional. The data to sign. It can't be supplied if AsymmetricSignRequest.digest is supplied."]
+        #[serde(
+            rename = "data",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "Optional. An optional CRC32C checksum of the AsymmetricSignRequest.data. If specified, KeyManagementService will verify the integrity of the received AsymmetricSignRequest.data using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(AsymmetricSignRequest.data) is equal to AsymmetricSignRequest.data_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type."]
+        #[serde(
+            rename = "dataCrc32c",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub data_crc_3_2c: ::std::option::Option<i64>,
+        #[doc = "Optional. The digest of the data to sign. The digest must be produced with the same digest algorithm as specified by the key version's algorithm. This field may not be supplied if AsymmetricSignRequest.data is supplied."]
         #[serde(
             rename = "digest",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub digest: ::std::option::Option<crate::schemas::Digest>,
-        #[doc = "Optional. An optional CRC32C checksum of the AsymmetricSignRequest.digest. If specified, KeyManagementService will verify the integrity of the received AsymmetricSignRequest.digest using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(AsymmetricSignRequest.digest) is equal to AsymmetricSignRequest.digest_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type. NOTE: This field is in Beta."]
+        #[doc = "Optional. An optional CRC32C checksum of the AsymmetricSignRequest.digest. If specified, KeyManagementService will verify the integrity of the received AsymmetricSignRequest.digest using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(AsymmetricSignRequest.digest) is equal to AsymmetricSignRequest.digest_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type."]
         #[serde(
             rename = "digestCrc32c",
             default,
@@ -240,7 +260,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AsymmetricSignResponse {
-        #[doc = "The resource name of the CryptoKeyVersion used for signing. Check this field to verify that the intended resource was used for signing. NOTE: This field is in Beta."]
+        #[doc = "The resource name of the CryptoKeyVersion used for signing. Check this field to verify that the intended resource was used for signing."]
         #[serde(
             rename = "name",
             default,
@@ -262,7 +282,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub signature: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "Integrity verification field. A CRC32C checksum of the returned AsymmetricSignResponse.signature. An integrity check of AsymmetricSignResponse.signature can be performed by computing the CRC32C checksum of AsymmetricSignResponse.signature and comparing your results to this field. Discard the response in case of non-matching checksum values, and perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type. NOTE: This field is in Beta."]
+        #[doc = "Integrity verification field. A CRC32C checksum of the returned AsymmetricSignResponse.signature. An integrity check of AsymmetricSignResponse.signature can be performed by computing the CRC32C checksum of AsymmetricSignResponse.signature and comparing your results to this field. Discard the response in case of non-matching checksum values, and perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type."]
         #[serde(
             rename = "signatureCrc32c",
             default,
@@ -270,7 +290,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub signature_crc_3_2c: ::std::option::Option<i64>,
-        #[doc = "Integrity verification field. A flag indicating whether AsymmetricSignRequest.digest_crc32c was received by KeyManagementService and used for the integrity verification of the digest. A false value of this field indicates either that AsymmetricSignRequest.digest_crc32c was left unset or that it was not delivered to KeyManagementService. If you've set AsymmetricSignRequest.digest_crc32c but this field is still false, discard the response and perform a limited number of retries. NOTE: This field is in Beta."]
+        #[doc = "Integrity verification field. A flag indicating whether AsymmetricSignRequest.data_crc32c was received by KeyManagementService and used for the integrity verification of the data. A false value of this field indicates either that AsymmetricSignRequest.data_crc32c was left unset or that it was not delivered to KeyManagementService. If you've set AsymmetricSignRequest.data_crc32c but this field is still false, discard the response and perform a limited number of retries."]
+        #[serde(
+            rename = "verifiedDataCrc32c",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verified_data_crc_3_2c: ::std::option::Option<bool>,
+        #[doc = "Integrity verification field. A flag indicating whether AsymmetricSignRequest.digest_crc32c was received by KeyManagementService and used for the integrity verification of the digest. A false value of this field indicates either that AsymmetricSignRequest.digest_crc32c was left unset or that it was not delivered to KeyManagementService. If you've set AsymmetricSignRequest.digest_crc32c but this field is still false, discard the response and perform a limited number of retries."]
         #[serde(
             rename = "verifiedDigestCrc32c",
             default,
@@ -292,6 +319,8 @@ pub mod schemas {
     pub enum AsymmetricSignResponseProtectionLevel {
         #[doc = "Crypto operations are performed by an external key manager."]
         External,
+        #[doc = "Crypto operations are performed in an EKM-over-VPC backend."]
+        ExternalVpc,
         #[doc = "Crypto operations are performed in a Hardware Security Module."]
         Hsm,
         #[doc = "Not specified."]
@@ -303,6 +332,7 @@ pub mod schemas {
         pub fn as_str(self) -> &'static str {
             match self {
                 AsymmetricSignResponseProtectionLevel::External => "EXTERNAL",
+                AsymmetricSignResponseProtectionLevel::ExternalVpc => "EXTERNAL_VPC",
                 AsymmetricSignResponseProtectionLevel::Hsm => "HSM",
                 AsymmetricSignResponseProtectionLevel::ProtectionLevelUnspecified => {
                     "PROTECTION_LEVEL_UNSPECIFIED"
@@ -321,6 +351,7 @@ pub mod schemas {
         fn from_str(s: &str) -> ::std::result::Result<AsymmetricSignResponseProtectionLevel, ()> {
             Ok(match s {
                 "EXTERNAL" => AsymmetricSignResponseProtectionLevel::External,
+                "EXTERNAL_VPC" => AsymmetricSignResponseProtectionLevel::ExternalVpc,
                 "HSM" => AsymmetricSignResponseProtectionLevel::Hsm,
                 "PROTECTION_LEVEL_UNSPECIFIED" => {
                     AsymmetricSignResponseProtectionLevel::ProtectionLevelUnspecified
@@ -351,6 +382,7 @@ pub mod schemas {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
                 "EXTERNAL" => AsymmetricSignResponseProtectionLevel::External,
+                "EXTERNAL_VPC" => AsymmetricSignResponseProtectionLevel::ExternalVpc,
                 "HSM" => AsymmetricSignResponseProtectionLevel::Hsm,
                 "PROTECTION_LEVEL_UNSPECIFIED" => {
                     AsymmetricSignResponseProtectionLevel::ProtectionLevelUnspecified
@@ -545,21 +577,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Binding {
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -573,6 +605,93 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Binding {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Certificate {
+        #[doc = "Output only. The issuer distinguished name in RFC 2253 format. Only present if parsed is true."]
+        #[serde(
+            rename = "issuer",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub issuer: ::std::option::Option<String>,
+        #[doc = "Output only. The certificate is not valid after this time. Only present if parsed is true."]
+        #[serde(
+            rename = "notAfterTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub not_after_time: ::std::option::Option<String>,
+        #[doc = "Output only. The certificate is not valid before this time. Only present if parsed is true."]
+        #[serde(
+            rename = "notBeforeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub not_before_time: ::std::option::Option<String>,
+        #[doc = "Output only. True if the certificate was parsed successfully."]
+        #[serde(
+            rename = "parsed",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub parsed: ::std::option::Option<bool>,
+        #[doc = "Required. The raw certificate bytes in DER format."]
+        #[serde(
+            rename = "rawDer",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub raw_der: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "Output only. The certificate serial number as a hex string. Only present if parsed is true."]
+        #[serde(
+            rename = "serialNumber",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub serial_number: ::std::option::Option<String>,
+        #[doc = "Output only. The SHA-256 certificate fingerprint as a hex string. Only present if parsed is true."]
+        #[serde(
+            rename = "sha256Fingerprint",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sha_256_fingerprint: ::std::option::Option<String>,
+        #[doc = "Output only. The subject distinguished name in RFC 2253 format. Only present if parsed is true."]
+        #[serde(
+            rename = "subject",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub subject: ::std::option::Option<String>,
+        #[doc = "Output only. The subject Alternative DNS names. Only present if parsed is true."]
+        #[serde(
+            rename = "subjectAlternativeDnsNames",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub subject_alternative_dns_names: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for Certificate {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Certificate {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -642,6 +761,27 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
+        #[doc = "Immutable. The resource name of the backend environment where the key material for all CryptoKeyVersions associated with this CryptoKey reside and where all related cryptographic operations are performed. Only applicable if CryptoKeyVersions have a ProtectionLevel of EXTERNAL_VPC, with the resource name in the format `projects/*/locations/*/ekmConnections/*`. Note, this list is non-exhaustive and may apply to additional ProtectionLevels in the future."]
+        #[serde(
+            rename = "cryptoKeyBackend",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub crypto_key_backend: ::std::option::Option<String>,
+        #[doc = "Immutable. The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED. If not specified at creation time, the default duration is 24 hours."]
+        #[serde(
+            rename = "destroyScheduledDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub destroy_scheduled_duration: ::std::option::Option<String>,
+        #[doc = "Immutable. Whether this key may contain imported versions only."]
+        #[serde(
+            rename = "importOnly",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub import_only: ::std::option::Option<bool>,
         #[doc = "Labels with user-defined metadata. For more information, see [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys)."]
         #[serde(
             rename = "labels",
@@ -712,6 +852,8 @@ pub mod schemas {
         CryptoKeyPurposeUnspecified,
         #[doc = "CryptoKeys with this purpose may be used with Encrypt and Decrypt."]
         EncryptDecrypt,
+        #[doc = "CryptoKeys with this purpose may be used with MacSign."]
+        Mac,
     }
     impl CryptoKeyPurpose {
         pub fn as_str(self) -> &'static str {
@@ -720,6 +862,7 @@ pub mod schemas {
                 CryptoKeyPurpose::AsymmetricSign => "ASYMMETRIC_SIGN",
                 CryptoKeyPurpose::CryptoKeyPurposeUnspecified => "CRYPTO_KEY_PURPOSE_UNSPECIFIED",
                 CryptoKeyPurpose::EncryptDecrypt => "ENCRYPT_DECRYPT",
+                CryptoKeyPurpose::Mac => "MAC",
             }
         }
     }
@@ -736,6 +879,7 @@ pub mod schemas {
                 "ASYMMETRIC_SIGN" => CryptoKeyPurpose::AsymmetricSign,
                 "CRYPTO_KEY_PURPOSE_UNSPECIFIED" => CryptoKeyPurpose::CryptoKeyPurposeUnspecified,
                 "ENCRYPT_DECRYPT" => CryptoKeyPurpose::EncryptDecrypt,
+                "MAC" => CryptoKeyPurpose::Mac,
                 _ => return Err(()),
             })
         }
@@ -764,6 +908,7 @@ pub mod schemas {
                 "ASYMMETRIC_SIGN" => CryptoKeyPurpose::AsymmetricSign,
                 "CRYPTO_KEY_PURPOSE_UNSPECIFIED" => CryptoKeyPurpose::CryptoKeyPurposeUnspecified,
                 "ENCRYPT_DECRYPT" => CryptoKeyPurpose::EncryptDecrypt,
+                "MAC" => CryptoKeyPurpose::Mac,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -831,7 +976,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub destroy_time: ::std::option::Option<String>,
-        #[doc = "ExternalProtectionLevelOptions stores a group of additional fields for configuring a CryptoKeyVersion that are specific to the EXTERNAL protection level."]
+        #[doc = "ExternalProtectionLevelOptions stores a group of additional fields for configuring a CryptoKeyVersion that are specific to the EXTERNAL protection level and EXTERNAL_VPC protection levels."]
         #[serde(
             rename = "externalProtectionLevelOptions",
             default,
@@ -846,21 +991,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub generate_time: ::std::option::Option<String>,
-        #[doc = "Output only. The root cause of an import failure. Only present if state is IMPORT_FAILED."]
+        #[doc = "Output only. The root cause of the most recent import failure. Only present if state is IMPORT_FAILED."]
         #[serde(
             rename = "importFailureReason",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub import_failure_reason: ::std::option::Option<String>,
-        #[doc = "Output only. The name of the ImportJob used to import this CryptoKeyVersion. Only present if the underlying key material was imported."]
+        #[doc = "Output only. The name of the ImportJob used in the most recent import of this CryptoKeyVersion. Only present if the underlying key material was imported."]
         #[serde(
             rename = "importJob",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub import_job: ::std::option::Option<String>,
-        #[doc = "Output only. The time at which this CryptoKeyVersion's key material was imported."]
+        #[doc = "Output only. The time at which this CryptoKeyVersion's key material was most recently imported."]
         #[serde(
             rename = "importTime",
             default,
@@ -882,6 +1027,13 @@ pub mod schemas {
         )]
         pub protection_level:
             ::std::option::Option<crate::schemas::CryptoKeyVersionProtectionLevel>,
+        #[doc = "Output only. Whether or not this key version is eligible for reimport, by being specified as a target in ImportCryptoKeyVersionRequest.crypto_key_version."]
+        #[serde(
+            rename = "reimportEligible",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reimport_eligible: ::std::option::Option<bool>,
         #[doc = "The current state of the CryptoKeyVersion."]
         #[serde(
             rename = "state",
@@ -908,14 +1060,24 @@ pub mod schemas {
         EcSignP256Sha256,
         #[doc = "ECDSA on the NIST P-384 curve with a SHA384 digest."]
         EcSignP384Sha384,
+        #[doc = "ECDSA on the non-NIST secp256k1 curve. This curve is only supported for HSM protection level."]
+        EcSignSecp256K1Sha256,
         #[doc = "Algorithm representing symmetric encryption by an external key manager."]
         ExternalSymmetricEncryption,
         #[doc = "Creates symmetric encryption keys."]
         GoogleSymmetricEncryption,
+        #[doc = "HMAC-SHA256 signing with a 256 bit key."]
+        HmacSha256,
+        #[doc = "RSAES-OAEP 2048 bit key with a SHA1 digest."]
+        RsaDecryptOaep2048Sha1,
         #[doc = "RSAES-OAEP 2048 bit key with a SHA256 digest."]
         RsaDecryptOaep2048Sha256,
+        #[doc = "RSAES-OAEP 3072 bit key with a SHA1 digest."]
+        RsaDecryptOaep3072Sha1,
         #[doc = "RSAES-OAEP 3072 bit key with a SHA256 digest."]
         RsaDecryptOaep3072Sha256,
+        #[doc = "RSAES-OAEP 4096 bit key with a SHA1 digest."]
+        RsaDecryptOaep4096Sha1,
         #[doc = "RSAES-OAEP 4096 bit key with a SHA256 digest."]
         RsaDecryptOaep4096Sha256,
         #[doc = "RSAES-OAEP 4096 bit key with a SHA512 digest."]
@@ -936,6 +1098,12 @@ pub mod schemas {
         RsaSignPss4096Sha256,
         #[doc = "RSASSA-PSS 4096 bit key with a SHA512 digest."]
         RsaSignPss4096Sha512,
+        #[doc = "RSASSA-PKCS1-v1_5 signing without encoding, with a 2048 bit key."]
+        RsaSignRawPkcs12048,
+        #[doc = "RSASSA-PKCS1-v1_5 signing without encoding, with a 3072 bit key."]
+        RsaSignRawPkcs13072,
+        #[doc = "RSASSA-PKCS1-v1_5 signing without encoding, with a 4096 bit key."]
+        RsaSignRawPkcs14096,
     }
     impl CryptoKeyVersionAlgorithm {
         pub fn as_str(self) -> &'static str {
@@ -945,18 +1113,23 @@ pub mod schemas {
                 }
                 CryptoKeyVersionAlgorithm::EcSignP256Sha256 => "EC_SIGN_P256_SHA256",
                 CryptoKeyVersionAlgorithm::EcSignP384Sha384 => "EC_SIGN_P384_SHA384",
+                CryptoKeyVersionAlgorithm::EcSignSecp256K1Sha256 => "EC_SIGN_SECP256K1_SHA256",
                 CryptoKeyVersionAlgorithm::ExternalSymmetricEncryption => {
                     "EXTERNAL_SYMMETRIC_ENCRYPTION"
                 }
                 CryptoKeyVersionAlgorithm::GoogleSymmetricEncryption => {
                     "GOOGLE_SYMMETRIC_ENCRYPTION"
                 }
+                CryptoKeyVersionAlgorithm::HmacSha256 => "HMAC_SHA256",
+                CryptoKeyVersionAlgorithm::RsaDecryptOaep2048Sha1 => "RSA_DECRYPT_OAEP_2048_SHA1",
                 CryptoKeyVersionAlgorithm::RsaDecryptOaep2048Sha256 => {
                     "RSA_DECRYPT_OAEP_2048_SHA256"
                 }
+                CryptoKeyVersionAlgorithm::RsaDecryptOaep3072Sha1 => "RSA_DECRYPT_OAEP_3072_SHA1",
                 CryptoKeyVersionAlgorithm::RsaDecryptOaep3072Sha256 => {
                     "RSA_DECRYPT_OAEP_3072_SHA256"
                 }
+                CryptoKeyVersionAlgorithm::RsaDecryptOaep4096Sha1 => "RSA_DECRYPT_OAEP_4096_SHA1",
                 CryptoKeyVersionAlgorithm::RsaDecryptOaep4096Sha256 => {
                     "RSA_DECRYPT_OAEP_4096_SHA256"
                 }
@@ -971,6 +1144,9 @@ pub mod schemas {
                 CryptoKeyVersionAlgorithm::RsaSignPss3072Sha256 => "RSA_SIGN_PSS_3072_SHA256",
                 CryptoKeyVersionAlgorithm::RsaSignPss4096Sha256 => "RSA_SIGN_PSS_4096_SHA256",
                 CryptoKeyVersionAlgorithm::RsaSignPss4096Sha512 => "RSA_SIGN_PSS_4096_SHA512",
+                CryptoKeyVersionAlgorithm::RsaSignRawPkcs12048 => "RSA_SIGN_RAW_PKCS1_2048",
+                CryptoKeyVersionAlgorithm::RsaSignRawPkcs13072 => "RSA_SIGN_RAW_PKCS1_3072",
+                CryptoKeyVersionAlgorithm::RsaSignRawPkcs14096 => "RSA_SIGN_RAW_PKCS1_4096",
             }
         }
     }
@@ -988,18 +1164,23 @@ pub mod schemas {
                 }
                 "EC_SIGN_P256_SHA256" => CryptoKeyVersionAlgorithm::EcSignP256Sha256,
                 "EC_SIGN_P384_SHA384" => CryptoKeyVersionAlgorithm::EcSignP384Sha384,
+                "EC_SIGN_SECP256K1_SHA256" => CryptoKeyVersionAlgorithm::EcSignSecp256K1Sha256,
                 "EXTERNAL_SYMMETRIC_ENCRYPTION" => {
                     CryptoKeyVersionAlgorithm::ExternalSymmetricEncryption
                 }
                 "GOOGLE_SYMMETRIC_ENCRYPTION" => {
                     CryptoKeyVersionAlgorithm::GoogleSymmetricEncryption
                 }
+                "HMAC_SHA256" => CryptoKeyVersionAlgorithm::HmacSha256,
+                "RSA_DECRYPT_OAEP_2048_SHA1" => CryptoKeyVersionAlgorithm::RsaDecryptOaep2048Sha1,
                 "RSA_DECRYPT_OAEP_2048_SHA256" => {
                     CryptoKeyVersionAlgorithm::RsaDecryptOaep2048Sha256
                 }
+                "RSA_DECRYPT_OAEP_3072_SHA1" => CryptoKeyVersionAlgorithm::RsaDecryptOaep3072Sha1,
                 "RSA_DECRYPT_OAEP_3072_SHA256" => {
                     CryptoKeyVersionAlgorithm::RsaDecryptOaep3072Sha256
                 }
+                "RSA_DECRYPT_OAEP_4096_SHA1" => CryptoKeyVersionAlgorithm::RsaDecryptOaep4096Sha1,
                 "RSA_DECRYPT_OAEP_4096_SHA256" => {
                     CryptoKeyVersionAlgorithm::RsaDecryptOaep4096Sha256
                 }
@@ -1014,6 +1195,9 @@ pub mod schemas {
                 "RSA_SIGN_PSS_3072_SHA256" => CryptoKeyVersionAlgorithm::RsaSignPss3072Sha256,
                 "RSA_SIGN_PSS_4096_SHA256" => CryptoKeyVersionAlgorithm::RsaSignPss4096Sha256,
                 "RSA_SIGN_PSS_4096_SHA512" => CryptoKeyVersionAlgorithm::RsaSignPss4096Sha512,
+                "RSA_SIGN_RAW_PKCS1_2048" => CryptoKeyVersionAlgorithm::RsaSignRawPkcs12048,
+                "RSA_SIGN_RAW_PKCS1_3072" => CryptoKeyVersionAlgorithm::RsaSignRawPkcs13072,
+                "RSA_SIGN_RAW_PKCS1_4096" => CryptoKeyVersionAlgorithm::RsaSignRawPkcs14096,
                 _ => return Err(()),
             })
         }
@@ -1043,18 +1227,23 @@ pub mod schemas {
                 }
                 "EC_SIGN_P256_SHA256" => CryptoKeyVersionAlgorithm::EcSignP256Sha256,
                 "EC_SIGN_P384_SHA384" => CryptoKeyVersionAlgorithm::EcSignP384Sha384,
+                "EC_SIGN_SECP256K1_SHA256" => CryptoKeyVersionAlgorithm::EcSignSecp256K1Sha256,
                 "EXTERNAL_SYMMETRIC_ENCRYPTION" => {
                     CryptoKeyVersionAlgorithm::ExternalSymmetricEncryption
                 }
                 "GOOGLE_SYMMETRIC_ENCRYPTION" => {
                     CryptoKeyVersionAlgorithm::GoogleSymmetricEncryption
                 }
+                "HMAC_SHA256" => CryptoKeyVersionAlgorithm::HmacSha256,
+                "RSA_DECRYPT_OAEP_2048_SHA1" => CryptoKeyVersionAlgorithm::RsaDecryptOaep2048Sha1,
                 "RSA_DECRYPT_OAEP_2048_SHA256" => {
                     CryptoKeyVersionAlgorithm::RsaDecryptOaep2048Sha256
                 }
+                "RSA_DECRYPT_OAEP_3072_SHA1" => CryptoKeyVersionAlgorithm::RsaDecryptOaep3072Sha1,
                 "RSA_DECRYPT_OAEP_3072_SHA256" => {
                     CryptoKeyVersionAlgorithm::RsaDecryptOaep3072Sha256
                 }
+                "RSA_DECRYPT_OAEP_4096_SHA1" => CryptoKeyVersionAlgorithm::RsaDecryptOaep4096Sha1,
                 "RSA_DECRYPT_OAEP_4096_SHA256" => {
                     CryptoKeyVersionAlgorithm::RsaDecryptOaep4096Sha256
                 }
@@ -1069,6 +1258,9 @@ pub mod schemas {
                 "RSA_SIGN_PSS_3072_SHA256" => CryptoKeyVersionAlgorithm::RsaSignPss3072Sha256,
                 "RSA_SIGN_PSS_4096_SHA256" => CryptoKeyVersionAlgorithm::RsaSignPss4096Sha256,
                 "RSA_SIGN_PSS_4096_SHA512" => CryptoKeyVersionAlgorithm::RsaSignPss4096Sha512,
+                "RSA_SIGN_RAW_PKCS1_2048" => CryptoKeyVersionAlgorithm::RsaSignRawPkcs12048,
+                "RSA_SIGN_RAW_PKCS1_3072" => CryptoKeyVersionAlgorithm::RsaSignRawPkcs13072,
+                "RSA_SIGN_RAW_PKCS1_4096" => CryptoKeyVersionAlgorithm::RsaSignRawPkcs14096,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -1092,6 +1284,8 @@ pub mod schemas {
     pub enum CryptoKeyVersionProtectionLevel {
         #[doc = "Crypto operations are performed by an external key manager."]
         External,
+        #[doc = "Crypto operations are performed in an EKM-over-VPC backend."]
+        ExternalVpc,
         #[doc = "Crypto operations are performed in a Hardware Security Module."]
         Hsm,
         #[doc = "Not specified."]
@@ -1103,6 +1297,7 @@ pub mod schemas {
         pub fn as_str(self) -> &'static str {
             match self {
                 CryptoKeyVersionProtectionLevel::External => "EXTERNAL",
+                CryptoKeyVersionProtectionLevel::ExternalVpc => "EXTERNAL_VPC",
                 CryptoKeyVersionProtectionLevel::Hsm => "HSM",
                 CryptoKeyVersionProtectionLevel::ProtectionLevelUnspecified => {
                     "PROTECTION_LEVEL_UNSPECIFIED"
@@ -1121,6 +1316,7 @@ pub mod schemas {
         fn from_str(s: &str) -> ::std::result::Result<CryptoKeyVersionProtectionLevel, ()> {
             Ok(match s {
                 "EXTERNAL" => CryptoKeyVersionProtectionLevel::External,
+                "EXTERNAL_VPC" => CryptoKeyVersionProtectionLevel::ExternalVpc,
                 "HSM" => CryptoKeyVersionProtectionLevel::Hsm,
                 "PROTECTION_LEVEL_UNSPECIFIED" => {
                     CryptoKeyVersionProtectionLevel::ProtectionLevelUnspecified
@@ -1151,6 +1347,7 @@ pub mod schemas {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
                 "EXTERNAL" => CryptoKeyVersionProtectionLevel::External,
+                "EXTERNAL_VPC" => CryptoKeyVersionProtectionLevel::ExternalVpc,
                 "HSM" => CryptoKeyVersionProtectionLevel::Hsm,
                 "PROTECTION_LEVEL_UNSPECIFIED" => {
                     CryptoKeyVersionProtectionLevel::ProtectionLevelUnspecified
@@ -1181,7 +1378,7 @@ pub mod schemas {
         CryptoKeyVersionStateUnspecified,
         #[doc = "This version is scheduled for destruction, and will be destroyed soon. Call RestoreCryptoKeyVersion to put it back into the DISABLED state."]
         DestroyScheduled,
-        #[doc = "This version is destroyed, and the key material is no longer stored. A version may not leave this state once entered."]
+        #[doc = "This version is destroyed, and the key material is no longer stored. This version may only become ENABLED again if this version is reimport_eligible and the original key material is reimported with a call to KeyManagementService.ImportCryptoKeyVersion."]
         Destroyed,
         #[doc = "This version may not be used, but the key material is still available, and the version can be placed back into the ENABLED state."]
         Disabled,
@@ -1329,14 +1526,24 @@ pub mod schemas {
         EcSignP256Sha256,
         #[doc = "ECDSA on the NIST P-384 curve with a SHA384 digest."]
         EcSignP384Sha384,
+        #[doc = "ECDSA on the non-NIST secp256k1 curve. This curve is only supported for HSM protection level."]
+        EcSignSecp256K1Sha256,
         #[doc = "Algorithm representing symmetric encryption by an external key manager."]
         ExternalSymmetricEncryption,
         #[doc = "Creates symmetric encryption keys."]
         GoogleSymmetricEncryption,
+        #[doc = "HMAC-SHA256 signing with a 256 bit key."]
+        HmacSha256,
+        #[doc = "RSAES-OAEP 2048 bit key with a SHA1 digest."]
+        RsaDecryptOaep2048Sha1,
         #[doc = "RSAES-OAEP 2048 bit key with a SHA256 digest."]
         RsaDecryptOaep2048Sha256,
+        #[doc = "RSAES-OAEP 3072 bit key with a SHA1 digest."]
+        RsaDecryptOaep3072Sha1,
         #[doc = "RSAES-OAEP 3072 bit key with a SHA256 digest."]
         RsaDecryptOaep3072Sha256,
+        #[doc = "RSAES-OAEP 4096 bit key with a SHA1 digest."]
+        RsaDecryptOaep4096Sha1,
         #[doc = "RSAES-OAEP 4096 bit key with a SHA256 digest."]
         RsaDecryptOaep4096Sha256,
         #[doc = "RSAES-OAEP 4096 bit key with a SHA512 digest."]
@@ -1357,6 +1564,12 @@ pub mod schemas {
         RsaSignPss4096Sha256,
         #[doc = "RSASSA-PSS 4096 bit key with a SHA512 digest."]
         RsaSignPss4096Sha512,
+        #[doc = "RSASSA-PKCS1-v1_5 signing without encoding, with a 2048 bit key."]
+        RsaSignRawPkcs12048,
+        #[doc = "RSASSA-PKCS1-v1_5 signing without encoding, with a 3072 bit key."]
+        RsaSignRawPkcs13072,
+        #[doc = "RSASSA-PKCS1-v1_5 signing without encoding, with a 4096 bit key."]
+        RsaSignRawPkcs14096,
     }
     impl CryptoKeyVersionTemplateAlgorithm {
         pub fn as_str(self) -> &'static str {
@@ -1366,17 +1579,30 @@ pub mod schemas {
                 }
                 CryptoKeyVersionTemplateAlgorithm::EcSignP256Sha256 => "EC_SIGN_P256_SHA256",
                 CryptoKeyVersionTemplateAlgorithm::EcSignP384Sha384 => "EC_SIGN_P384_SHA384",
+                CryptoKeyVersionTemplateAlgorithm::EcSignSecp256K1Sha256 => {
+                    "EC_SIGN_SECP256K1_SHA256"
+                }
                 CryptoKeyVersionTemplateAlgorithm::ExternalSymmetricEncryption => {
                     "EXTERNAL_SYMMETRIC_ENCRYPTION"
                 }
                 CryptoKeyVersionTemplateAlgorithm::GoogleSymmetricEncryption => {
                     "GOOGLE_SYMMETRIC_ENCRYPTION"
                 }
+                CryptoKeyVersionTemplateAlgorithm::HmacSha256 => "HMAC_SHA256",
+                CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep2048Sha1 => {
+                    "RSA_DECRYPT_OAEP_2048_SHA1"
+                }
                 CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep2048Sha256 => {
                     "RSA_DECRYPT_OAEP_2048_SHA256"
                 }
+                CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep3072Sha1 => {
+                    "RSA_DECRYPT_OAEP_3072_SHA1"
+                }
                 CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep3072Sha256 => {
                     "RSA_DECRYPT_OAEP_3072_SHA256"
+                }
+                CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep4096Sha1 => {
+                    "RSA_DECRYPT_OAEP_4096_SHA1"
                 }
                 CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep4096Sha256 => {
                     "RSA_DECRYPT_OAEP_4096_SHA256"
@@ -1408,6 +1634,9 @@ pub mod schemas {
                 CryptoKeyVersionTemplateAlgorithm::RsaSignPss4096Sha512 => {
                     "RSA_SIGN_PSS_4096_SHA512"
                 }
+                CryptoKeyVersionTemplateAlgorithm::RsaSignRawPkcs12048 => "RSA_SIGN_RAW_PKCS1_2048",
+                CryptoKeyVersionTemplateAlgorithm::RsaSignRawPkcs13072 => "RSA_SIGN_RAW_PKCS1_3072",
+                CryptoKeyVersionTemplateAlgorithm::RsaSignRawPkcs14096 => "RSA_SIGN_RAW_PKCS1_4096",
             }
         }
     }
@@ -1425,17 +1654,30 @@ pub mod schemas {
                 }
                 "EC_SIGN_P256_SHA256" => CryptoKeyVersionTemplateAlgorithm::EcSignP256Sha256,
                 "EC_SIGN_P384_SHA384" => CryptoKeyVersionTemplateAlgorithm::EcSignP384Sha384,
+                "EC_SIGN_SECP256K1_SHA256" => {
+                    CryptoKeyVersionTemplateAlgorithm::EcSignSecp256K1Sha256
+                }
                 "EXTERNAL_SYMMETRIC_ENCRYPTION" => {
                     CryptoKeyVersionTemplateAlgorithm::ExternalSymmetricEncryption
                 }
                 "GOOGLE_SYMMETRIC_ENCRYPTION" => {
                     CryptoKeyVersionTemplateAlgorithm::GoogleSymmetricEncryption
                 }
+                "HMAC_SHA256" => CryptoKeyVersionTemplateAlgorithm::HmacSha256,
+                "RSA_DECRYPT_OAEP_2048_SHA1" => {
+                    CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep2048Sha1
+                }
                 "RSA_DECRYPT_OAEP_2048_SHA256" => {
                     CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep2048Sha256
                 }
+                "RSA_DECRYPT_OAEP_3072_SHA1" => {
+                    CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep3072Sha1
+                }
                 "RSA_DECRYPT_OAEP_3072_SHA256" => {
                     CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep3072Sha256
+                }
+                "RSA_DECRYPT_OAEP_4096_SHA1" => {
+                    CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep4096Sha1
                 }
                 "RSA_DECRYPT_OAEP_4096_SHA256" => {
                     CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep4096Sha256
@@ -1467,6 +1709,9 @@ pub mod schemas {
                 "RSA_SIGN_PSS_4096_SHA512" => {
                     CryptoKeyVersionTemplateAlgorithm::RsaSignPss4096Sha512
                 }
+                "RSA_SIGN_RAW_PKCS1_2048" => CryptoKeyVersionTemplateAlgorithm::RsaSignRawPkcs12048,
+                "RSA_SIGN_RAW_PKCS1_3072" => CryptoKeyVersionTemplateAlgorithm::RsaSignRawPkcs13072,
+                "RSA_SIGN_RAW_PKCS1_4096" => CryptoKeyVersionTemplateAlgorithm::RsaSignRawPkcs14096,
                 _ => return Err(()),
             })
         }
@@ -1496,17 +1741,30 @@ pub mod schemas {
                 }
                 "EC_SIGN_P256_SHA256" => CryptoKeyVersionTemplateAlgorithm::EcSignP256Sha256,
                 "EC_SIGN_P384_SHA384" => CryptoKeyVersionTemplateAlgorithm::EcSignP384Sha384,
+                "EC_SIGN_SECP256K1_SHA256" => {
+                    CryptoKeyVersionTemplateAlgorithm::EcSignSecp256K1Sha256
+                }
                 "EXTERNAL_SYMMETRIC_ENCRYPTION" => {
                     CryptoKeyVersionTemplateAlgorithm::ExternalSymmetricEncryption
                 }
                 "GOOGLE_SYMMETRIC_ENCRYPTION" => {
                     CryptoKeyVersionTemplateAlgorithm::GoogleSymmetricEncryption
                 }
+                "HMAC_SHA256" => CryptoKeyVersionTemplateAlgorithm::HmacSha256,
+                "RSA_DECRYPT_OAEP_2048_SHA1" => {
+                    CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep2048Sha1
+                }
                 "RSA_DECRYPT_OAEP_2048_SHA256" => {
                     CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep2048Sha256
                 }
+                "RSA_DECRYPT_OAEP_3072_SHA1" => {
+                    CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep3072Sha1
+                }
                 "RSA_DECRYPT_OAEP_3072_SHA256" => {
                     CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep3072Sha256
+                }
+                "RSA_DECRYPT_OAEP_4096_SHA1" => {
+                    CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep4096Sha1
                 }
                 "RSA_DECRYPT_OAEP_4096_SHA256" => {
                     CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep4096Sha256
@@ -1538,6 +1796,9 @@ pub mod schemas {
                 "RSA_SIGN_PSS_4096_SHA512" => {
                     CryptoKeyVersionTemplateAlgorithm::RsaSignPss4096Sha512
                 }
+                "RSA_SIGN_RAW_PKCS1_2048" => CryptoKeyVersionTemplateAlgorithm::RsaSignRawPkcs12048,
+                "RSA_SIGN_RAW_PKCS1_3072" => CryptoKeyVersionTemplateAlgorithm::RsaSignRawPkcs13072,
+                "RSA_SIGN_RAW_PKCS1_4096" => CryptoKeyVersionTemplateAlgorithm::RsaSignRawPkcs14096,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -1561,6 +1822,8 @@ pub mod schemas {
     pub enum CryptoKeyVersionTemplateProtectionLevel {
         #[doc = "Crypto operations are performed by an external key manager."]
         External,
+        #[doc = "Crypto operations are performed in an EKM-over-VPC backend."]
+        ExternalVpc,
         #[doc = "Crypto operations are performed in a Hardware Security Module."]
         Hsm,
         #[doc = "Not specified."]
@@ -1572,6 +1835,7 @@ pub mod schemas {
         pub fn as_str(self) -> &'static str {
             match self {
                 CryptoKeyVersionTemplateProtectionLevel::External => "EXTERNAL",
+                CryptoKeyVersionTemplateProtectionLevel::ExternalVpc => "EXTERNAL_VPC",
                 CryptoKeyVersionTemplateProtectionLevel::Hsm => "HSM",
                 CryptoKeyVersionTemplateProtectionLevel::ProtectionLevelUnspecified => {
                     "PROTECTION_LEVEL_UNSPECIFIED"
@@ -1590,6 +1854,7 @@ pub mod schemas {
         fn from_str(s: &str) -> ::std::result::Result<CryptoKeyVersionTemplateProtectionLevel, ()> {
             Ok(match s {
                 "EXTERNAL" => CryptoKeyVersionTemplateProtectionLevel::External,
+                "EXTERNAL_VPC" => CryptoKeyVersionTemplateProtectionLevel::ExternalVpc,
                 "HSM" => CryptoKeyVersionTemplateProtectionLevel::Hsm,
                 "PROTECTION_LEVEL_UNSPECIFIED" => {
                     CryptoKeyVersionTemplateProtectionLevel::ProtectionLevelUnspecified
@@ -1620,6 +1885,7 @@ pub mod schemas {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
                 "EXTERNAL" => CryptoKeyVersionTemplateProtectionLevel::External,
+                "EXTERNAL_VPC" => CryptoKeyVersionTemplateProtectionLevel::ExternalVpc,
                 "HSM" => CryptoKeyVersionTemplateProtectionLevel::Hsm,
                 "PROTECTION_LEVEL_UNSPECIFIED" => {
                     CryptoKeyVersionTemplateProtectionLevel::ProtectionLevelUnspecified
@@ -1664,7 +1930,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub additional_authenticated_data: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "Optional. An optional CRC32C checksum of the DecryptRequest.additional_authenticated_data. If specified, KeyManagementService will verify the integrity of the received DecryptRequest.additional_authenticated_data using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(DecryptRequest.additional_authenticated_data) is equal to DecryptRequest.additional_authenticated_data_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type. NOTE: This field is in Beta."]
+        #[doc = "Optional. An optional CRC32C checksum of the DecryptRequest.additional_authenticated_data. If specified, KeyManagementService will verify the integrity of the received DecryptRequest.additional_authenticated_data using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(DecryptRequest.additional_authenticated_data) is equal to DecryptRequest.additional_authenticated_data_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type."]
         #[serde(
             rename = "additionalAuthenticatedDataCrc32c",
             default,
@@ -1679,7 +1945,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ciphertext: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "Optional. An optional CRC32C checksum of the DecryptRequest.ciphertext. If specified, KeyManagementService will verify the integrity of the received DecryptRequest.ciphertext using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(DecryptRequest.ciphertext) is equal to DecryptRequest.ciphertext_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type. NOTE: This field is in Beta."]
+        #[doc = "Optional. An optional CRC32C checksum of the DecryptRequest.ciphertext. If specified, KeyManagementService will verify the integrity of the received DecryptRequest.ciphertext using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(DecryptRequest.ciphertext) is equal to DecryptRequest.ciphertext_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type."]
         #[serde(
             rename = "ciphertextCrc32c",
             default,
@@ -1718,7 +1984,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub plaintext: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "Integrity verification field. A CRC32C checksum of the returned DecryptResponse.plaintext. An integrity check of DecryptResponse.plaintext can be performed by computing the CRC32C checksum of DecryptResponse.plaintext and comparing your results to this field. Discard the response in case of non-matching checksum values, and perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: receiving this response message indicates that KeyManagementService is able to successfully decrypt the ciphertext. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type. NOTE: This field is in Beta."]
+        #[doc = "Integrity verification field. A CRC32C checksum of the returned DecryptResponse.plaintext. An integrity check of DecryptResponse.plaintext can be performed by computing the CRC32C checksum of DecryptResponse.plaintext and comparing your results to this field. Discard the response in case of non-matching checksum values, and perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: receiving this response message indicates that KeyManagementService is able to successfully decrypt the ciphertext. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type."]
         #[serde(
             rename = "plaintextCrc32c",
             default,
@@ -1755,6 +2021,8 @@ pub mod schemas {
     pub enum DecryptResponseProtectionLevel {
         #[doc = "Crypto operations are performed by an external key manager."]
         External,
+        #[doc = "Crypto operations are performed in an EKM-over-VPC backend."]
+        ExternalVpc,
         #[doc = "Crypto operations are performed in a Hardware Security Module."]
         Hsm,
         #[doc = "Not specified."]
@@ -1766,6 +2034,7 @@ pub mod schemas {
         pub fn as_str(self) -> &'static str {
             match self {
                 DecryptResponseProtectionLevel::External => "EXTERNAL",
+                DecryptResponseProtectionLevel::ExternalVpc => "EXTERNAL_VPC",
                 DecryptResponseProtectionLevel::Hsm => "HSM",
                 DecryptResponseProtectionLevel::ProtectionLevelUnspecified => {
                     "PROTECTION_LEVEL_UNSPECIFIED"
@@ -1784,6 +2053,7 @@ pub mod schemas {
         fn from_str(s: &str) -> ::std::result::Result<DecryptResponseProtectionLevel, ()> {
             Ok(match s {
                 "EXTERNAL" => DecryptResponseProtectionLevel::External,
+                "EXTERNAL_VPC" => DecryptResponseProtectionLevel::ExternalVpc,
                 "HSM" => DecryptResponseProtectionLevel::Hsm,
                 "PROTECTION_LEVEL_UNSPECIFIED" => {
                     DecryptResponseProtectionLevel::ProtectionLevelUnspecified
@@ -1814,6 +2084,7 @@ pub mod schemas {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
                 "EXTERNAL" => DecryptResponseProtectionLevel::External,
+                "EXTERNAL_VPC" => DecryptResponseProtectionLevel::ExternalVpc,
                 "HSM" => DecryptResponseProtectionLevel::Hsm,
                 "PROTECTION_LEVEL_UNSPECIFIED" => {
                     DecryptResponseProtectionLevel::ProtectionLevelUnspecified
@@ -1919,15 +2190,67 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct EkmConnection {
+        #[doc = "Output only. The time at which the EkmConnection was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "This checksum is computed by the server based on the value of other fields, and may be sent on update requests to ensure the client has an up-to-date value before proceeding."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
+        #[doc = "Output only. The resource name for the EkmConnection in the format `projects/*/locations/*/ekmConnections/*`."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "A list of ServiceResolvers where the EKM can be reached. There should be one ServiceResolver per EKM replica. Currently, only a single ServiceResolver is supported."]
+        #[serde(
+            rename = "serviceResolvers",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub service_resolvers: ::std::option::Option<Vec<crate::schemas::ServiceResolver>>,
+    }
+    impl ::google_field_selector::FieldSelector for EkmConnection {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for EkmConnection {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct EncryptRequest {
-        #[doc = "Optional. Optional data that, if specified, must also be provided during decryption through DecryptRequest.additional_authenticated_data. The maximum size depends on the key version's protection_level. For SOFTWARE keys, the AAD must be no larger than 64KiB. For HSM keys, the combined length of the plaintext and additional_authenticated_data fields must be no larger than 8KiB."]
+        #[doc = "Optional. Optional data that, if specified, must also be provided during decryption through DecryptRequest.additional_authenticated_data. The maximum size depends on the key version's protection_level. For SOFTWARE, EXTERNAL, and EXTERNAL_VPC keys the AAD must be no larger than 64KiB. For HSM keys, the combined length of the plaintext and additional_authenticated_data fields must be no larger than 8KiB."]
         #[serde(
             rename = "additionalAuthenticatedData",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub additional_authenticated_data: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "Optional. An optional CRC32C checksum of the EncryptRequest.additional_authenticated_data. If specified, KeyManagementService will verify the integrity of the received EncryptRequest.additional_authenticated_data using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(EncryptRequest.additional_authenticated_data) is equal to EncryptRequest.additional_authenticated_data_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type. NOTE: This field is in Beta."]
+        #[doc = "Optional. An optional CRC32C checksum of the EncryptRequest.additional_authenticated_data. If specified, KeyManagementService will verify the integrity of the received EncryptRequest.additional_authenticated_data using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(EncryptRequest.additional_authenticated_data) is equal to EncryptRequest.additional_authenticated_data_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type."]
         #[serde(
             rename = "additionalAuthenticatedDataCrc32c",
             default,
@@ -1935,14 +2258,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub additional_authenticated_data_crc_3_2c: ::std::option::Option<i64>,
-        #[doc = "Required. The data to encrypt. Must be no larger than 64KiB. The maximum size depends on the key version's protection_level. For SOFTWARE keys, the plaintext must be no larger than 64KiB. For HSM keys, the combined length of the plaintext and additional_authenticated_data fields must be no larger than 8KiB."]
+        #[doc = "Required. The data to encrypt. Must be no larger than 64KiB. The maximum size depends on the key version's protection_level. For SOFTWARE, EXTERNAL, and EXTERNAL_VPC keys, the plaintext must be no larger than 64KiB. For HSM keys, the combined length of the plaintext and additional_authenticated_data fields must be no larger than 8KiB."]
         #[serde(
             rename = "plaintext",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub plaintext: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "Optional. An optional CRC32C checksum of the EncryptRequest.plaintext. If specified, KeyManagementService will verify the integrity of the received EncryptRequest.plaintext using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(EncryptRequest.plaintext) is equal to EncryptRequest.plaintext_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type. NOTE: This field is in Beta."]
+        #[doc = "Optional. An optional CRC32C checksum of the EncryptRequest.plaintext. If specified, KeyManagementService will verify the integrity of the received EncryptRequest.plaintext using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(EncryptRequest.plaintext) is equal to EncryptRequest.plaintext_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type."]
         #[serde(
             rename = "plaintextCrc32c",
             default,
@@ -1981,7 +2304,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ciphertext: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "Integrity verification field. A CRC32C checksum of the returned EncryptResponse.ciphertext. An integrity check of EncryptResponse.ciphertext can be performed by computing the CRC32C checksum of EncryptResponse.ciphertext and comparing your results to this field. Discard the response in case of non-matching checksum values, and perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type. NOTE: This field is in Beta."]
+        #[doc = "Integrity verification field. A CRC32C checksum of the returned EncryptResponse.ciphertext. An integrity check of EncryptResponse.ciphertext can be performed by computing the CRC32C checksum of EncryptResponse.ciphertext and comparing your results to this field. Discard the response in case of non-matching checksum values, and perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type."]
         #[serde(
             rename = "ciphertextCrc32c",
             default,
@@ -2003,14 +2326,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub protection_level: ::std::option::Option<crate::schemas::EncryptResponseProtectionLevel>,
-        #[doc = "Integrity verification field. A flag indicating whether EncryptRequest.additional_authenticated_data_crc32c was received by KeyManagementService and used for the integrity verification of the AAD. A false value of this field indicates either that EncryptRequest.additional_authenticated_data_crc32c was left unset or that it was not delivered to KeyManagementService. If you've set EncryptRequest.additional_authenticated_data_crc32c but this field is still false, discard the response and perform a limited number of retries. NOTE: This field is in Beta."]
+        #[doc = "Integrity verification field. A flag indicating whether EncryptRequest.additional_authenticated_data_crc32c was received by KeyManagementService and used for the integrity verification of the AAD. A false value of this field indicates either that EncryptRequest.additional_authenticated_data_crc32c was left unset or that it was not delivered to KeyManagementService. If you've set EncryptRequest.additional_authenticated_data_crc32c but this field is still false, discard the response and perform a limited number of retries."]
         #[serde(
             rename = "verifiedAdditionalAuthenticatedDataCrc32c",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub verified_additional_authenticated_data_crc_3_2c: ::std::option::Option<bool>,
-        #[doc = "Integrity verification field. A flag indicating whether EncryptRequest.plaintext_crc32c was received by KeyManagementService and used for the integrity verification of the plaintext. A false value of this field indicates either that EncryptRequest.plaintext_crc32c was left unset or that it was not delivered to KeyManagementService. If you've set EncryptRequest.plaintext_crc32c but this field is still false, discard the response and perform a limited number of retries. NOTE: This field is in Beta."]
+        #[doc = "Integrity verification field. A flag indicating whether EncryptRequest.plaintext_crc32c was received by KeyManagementService and used for the integrity verification of the plaintext. A false value of this field indicates either that EncryptRequest.plaintext_crc32c was left unset or that it was not delivered to KeyManagementService. If you've set EncryptRequest.plaintext_crc32c but this field is still false, discard the response and perform a limited number of retries."]
         #[serde(
             rename = "verifiedPlaintextCrc32c",
             default,
@@ -2032,6 +2355,8 @@ pub mod schemas {
     pub enum EncryptResponseProtectionLevel {
         #[doc = "Crypto operations are performed by an external key manager."]
         External,
+        #[doc = "Crypto operations are performed in an EKM-over-VPC backend."]
+        ExternalVpc,
         #[doc = "Crypto operations are performed in a Hardware Security Module."]
         Hsm,
         #[doc = "Not specified."]
@@ -2043,6 +2368,7 @@ pub mod schemas {
         pub fn as_str(self) -> &'static str {
             match self {
                 EncryptResponseProtectionLevel::External => "EXTERNAL",
+                EncryptResponseProtectionLevel::ExternalVpc => "EXTERNAL_VPC",
                 EncryptResponseProtectionLevel::Hsm => "HSM",
                 EncryptResponseProtectionLevel::ProtectionLevelUnspecified => {
                     "PROTECTION_LEVEL_UNSPECIFIED"
@@ -2061,6 +2387,7 @@ pub mod schemas {
         fn from_str(s: &str) -> ::std::result::Result<EncryptResponseProtectionLevel, ()> {
             Ok(match s {
                 "EXTERNAL" => EncryptResponseProtectionLevel::External,
+                "EXTERNAL_VPC" => EncryptResponseProtectionLevel::ExternalVpc,
                 "HSM" => EncryptResponseProtectionLevel::Hsm,
                 "PROTECTION_LEVEL_UNSPECIFIED" => {
                     EncryptResponseProtectionLevel::ProtectionLevelUnspecified
@@ -2091,6 +2418,7 @@ pub mod schemas {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
                 "EXTERNAL" => EncryptResponseProtectionLevel::External,
+                "EXTERNAL_VPC" => EncryptResponseProtectionLevel::ExternalVpc,
                 "HSM" => EncryptResponseProtectionLevel::Hsm,
                 "PROTECTION_LEVEL_UNSPECIFIED" => {
                     EncryptResponseProtectionLevel::ProtectionLevelUnspecified
@@ -2180,6 +2508,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ExternalProtectionLevelOptions {
+        #[doc = "The path to the external key material on the EKM when using EkmConnection e.g., \"v0/my/key\". Set this field instead of external_key_uri when using an EkmConnection."]
+        #[serde(
+            rename = "ekmConnectionKeyPath",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ekm_connection_key_path: ::std::option::Option<String>,
         #[doc = "The URI for an external resource that this CryptoKeyVersion represents."]
         #[serde(
             rename = "externalKeyUri",
@@ -2210,6 +2545,178 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GenerateRandomBytesRequest {
+        #[doc = "The length in bytes of the amount of randomness to retrieve. Minimum 8 bytes, maximum 1024 bytes."]
+        #[serde(
+            rename = "lengthBytes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub length_bytes: ::std::option::Option<i32>,
+        #[doc = "The ProtectionLevel to use when generating the random data. Currently, only HSM protection level is supported."]
+        #[serde(
+            rename = "protectionLevel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub protection_level:
+            ::std::option::Option<crate::schemas::GenerateRandomBytesRequestProtectionLevel>,
+    }
+    impl ::google_field_selector::FieldSelector for GenerateRandomBytesRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GenerateRandomBytesRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GenerateRandomBytesRequestProtectionLevel {
+        #[doc = "Crypto operations are performed by an external key manager."]
+        External,
+        #[doc = "Crypto operations are performed in an EKM-over-VPC backend."]
+        ExternalVpc,
+        #[doc = "Crypto operations are performed in a Hardware Security Module."]
+        Hsm,
+        #[doc = "Not specified."]
+        ProtectionLevelUnspecified,
+        #[doc = "Crypto operations are performed in software."]
+        Software,
+    }
+    impl GenerateRandomBytesRequestProtectionLevel {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GenerateRandomBytesRequestProtectionLevel::External => "EXTERNAL",
+                GenerateRandomBytesRequestProtectionLevel::ExternalVpc => "EXTERNAL_VPC",
+                GenerateRandomBytesRequestProtectionLevel::Hsm => "HSM",
+                GenerateRandomBytesRequestProtectionLevel::ProtectionLevelUnspecified => {
+                    "PROTECTION_LEVEL_UNSPECIFIED"
+                }
+                GenerateRandomBytesRequestProtectionLevel::Software => "SOFTWARE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GenerateRandomBytesRequestProtectionLevel {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GenerateRandomBytesRequestProtectionLevel {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GenerateRandomBytesRequestProtectionLevel, ()> {
+            Ok(match s {
+                "EXTERNAL" => GenerateRandomBytesRequestProtectionLevel::External,
+                "EXTERNAL_VPC" => GenerateRandomBytesRequestProtectionLevel::ExternalVpc,
+                "HSM" => GenerateRandomBytesRequestProtectionLevel::Hsm,
+                "PROTECTION_LEVEL_UNSPECIFIED" => {
+                    GenerateRandomBytesRequestProtectionLevel::ProtectionLevelUnspecified
+                }
+                "SOFTWARE" => GenerateRandomBytesRequestProtectionLevel::Software,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GenerateRandomBytesRequestProtectionLevel {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GenerateRandomBytesRequestProtectionLevel {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GenerateRandomBytesRequestProtectionLevel {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "EXTERNAL" => GenerateRandomBytesRequestProtectionLevel::External,
+                "EXTERNAL_VPC" => GenerateRandomBytesRequestProtectionLevel::ExternalVpc,
+                "HSM" => GenerateRandomBytesRequestProtectionLevel::Hsm,
+                "PROTECTION_LEVEL_UNSPECIFIED" => {
+                    GenerateRandomBytesRequestProtectionLevel::ProtectionLevelUnspecified
+                }
+                "SOFTWARE" => GenerateRandomBytesRequestProtectionLevel::Software,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GenerateRandomBytesRequestProtectionLevel {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GenerateRandomBytesRequestProtectionLevel {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GenerateRandomBytesResponse {
+        #[doc = "The generated data."]
+        #[serde(
+            rename = "data",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "Integrity verification field. A CRC32C checksum of the returned GenerateRandomBytesResponse.data. An integrity check of GenerateRandomBytesResponse.data can be performed by computing the CRC32C checksum of GenerateRandomBytesResponse.data and comparing your results to this field. Discard the response in case of non-matching checksum values, and perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type."]
+        #[serde(
+            rename = "dataCrc32c",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub data_crc_3_2c: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for GenerateRandomBytesResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GenerateRandomBytesResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ImportCryptoKeyVersionRequest {
         #[doc = "Required. The algorithm of the key being imported. This does not need to match the version_template of the CryptoKey this version imports into."]
         #[serde(
@@ -2219,6 +2726,13 @@ pub mod schemas {
         )]
         pub algorithm:
             ::std::option::Option<crate::schemas::ImportCryptoKeyVersionRequestAlgorithm>,
+        #[doc = "Optional. The optional name of an existing CryptoKeyVersion to target for an import operation. If this field is not present, a new CryptoKeyVersion containing the supplied key material is created. If this field is present, the supplied key material is imported into the existing CryptoKeyVersion. To import into an existing CryptoKeyVersion, the CryptoKeyVersion must be a child of ImportCryptoKeyVersionRequest.parent, have been previously created via ImportCryptoKeyVersion, and be in DESTROYED or IMPORT_FAILED state. The key material and algorithm must match the previous CryptoKeyVersion exactly if the CryptoKeyVersion has ever contained key material."]
+        #[serde(
+            rename = "cryptoKeyVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub crypto_key_version: ::std::option::Option<String>,
         #[doc = "Required. The name of the ImportJob that was used to wrap this key material."]
         #[serde(
             rename = "importJob",
@@ -2226,7 +2740,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub import_job: ::std::option::Option<String>,
-        #[doc = "Wrapped key material produced with RSA_OAEP_3072_SHA1_AES_256 or RSA_OAEP_4096_SHA1_AES_256. This field contains the concatenation of two wrapped keys: 1. An ephemeral AES-256 wrapping key wrapped with the public_key using RSAES-OAEP with SHA-1, MGF1 with SHA-1, and an empty label. 2. The key to be imported, wrapped with the ephemeral AES-256 key using AES-KWP (RFC 5649). If importing symmetric key material, it is expected that the unwrapped key contains plain bytes. If importing asymmetric key material, it is expected that the unwrapped key is in PKCS#8-encoded DER format (the PrivateKeyInfo structure from RFC 5208). This format is the same as the format produced by PKCS#11 mechanism CKM_RSA_AES_KEY_WRAP."]
+        #[doc = "Wrapped key material produced with RSA_OAEP_3072_SHA1_AES_256 or RSA_OAEP_4096_SHA1_AES_256. This field contains the concatenation of two wrapped keys: 1. An ephemeral AES-256 wrapping key wrapped with the public_key using RSAES-OAEP with SHA-1/SHA-256, MGF1 with SHA-1/SHA-256, and an empty label. 2. The key to be imported, wrapped with the ephemeral AES-256 key using AES-KWP (RFC 5649). If importing symmetric key material, it is expected that the unwrapped key contains plain bytes. If importing asymmetric key material, it is expected that the unwrapped key is in PKCS#8-encoded DER format (the PrivateKeyInfo structure from RFC 5208). This format is the same as the format produced by PKCS#11 mechanism CKM_RSA_AES_KEY_WRAP."]
         #[serde(
             rename = "rsaAesWrappedKey",
             default,
@@ -2252,14 +2766,24 @@ pub mod schemas {
         EcSignP256Sha256,
         #[doc = "ECDSA on the NIST P-384 curve with a SHA384 digest."]
         EcSignP384Sha384,
+        #[doc = "ECDSA on the non-NIST secp256k1 curve. This curve is only supported for HSM protection level."]
+        EcSignSecp256K1Sha256,
         #[doc = "Algorithm representing symmetric encryption by an external key manager."]
         ExternalSymmetricEncryption,
         #[doc = "Creates symmetric encryption keys."]
         GoogleSymmetricEncryption,
+        #[doc = "HMAC-SHA256 signing with a 256 bit key."]
+        HmacSha256,
+        #[doc = "RSAES-OAEP 2048 bit key with a SHA1 digest."]
+        RsaDecryptOaep2048Sha1,
         #[doc = "RSAES-OAEP 2048 bit key with a SHA256 digest."]
         RsaDecryptOaep2048Sha256,
+        #[doc = "RSAES-OAEP 3072 bit key with a SHA1 digest."]
+        RsaDecryptOaep3072Sha1,
         #[doc = "RSAES-OAEP 3072 bit key with a SHA256 digest."]
         RsaDecryptOaep3072Sha256,
+        #[doc = "RSAES-OAEP 4096 bit key with a SHA1 digest."]
+        RsaDecryptOaep4096Sha1,
         #[doc = "RSAES-OAEP 4096 bit key with a SHA256 digest."]
         RsaDecryptOaep4096Sha256,
         #[doc = "RSAES-OAEP 4096 bit key with a SHA512 digest."]
@@ -2280,6 +2804,12 @@ pub mod schemas {
         RsaSignPss4096Sha256,
         #[doc = "RSASSA-PSS 4096 bit key with a SHA512 digest."]
         RsaSignPss4096Sha512,
+        #[doc = "RSASSA-PKCS1-v1_5 signing without encoding, with a 2048 bit key."]
+        RsaSignRawPkcs12048,
+        #[doc = "RSASSA-PKCS1-v1_5 signing without encoding, with a 3072 bit key."]
+        RsaSignRawPkcs13072,
+        #[doc = "RSASSA-PKCS1-v1_5 signing without encoding, with a 4096 bit key."]
+        RsaSignRawPkcs14096,
     }
     impl ImportCryptoKeyVersionRequestAlgorithm {
         pub fn as_str(self) -> &'static str {
@@ -2289,17 +2819,30 @@ pub mod schemas {
                 }
                 ImportCryptoKeyVersionRequestAlgorithm::EcSignP256Sha256 => "EC_SIGN_P256_SHA256",
                 ImportCryptoKeyVersionRequestAlgorithm::EcSignP384Sha384 => "EC_SIGN_P384_SHA384",
+                ImportCryptoKeyVersionRequestAlgorithm::EcSignSecp256K1Sha256 => {
+                    "EC_SIGN_SECP256K1_SHA256"
+                }
                 ImportCryptoKeyVersionRequestAlgorithm::ExternalSymmetricEncryption => {
                     "EXTERNAL_SYMMETRIC_ENCRYPTION"
                 }
                 ImportCryptoKeyVersionRequestAlgorithm::GoogleSymmetricEncryption => {
                     "GOOGLE_SYMMETRIC_ENCRYPTION"
                 }
+                ImportCryptoKeyVersionRequestAlgorithm::HmacSha256 => "HMAC_SHA256",
+                ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep2048Sha1 => {
+                    "RSA_DECRYPT_OAEP_2048_SHA1"
+                }
                 ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep2048Sha256 => {
                     "RSA_DECRYPT_OAEP_2048_SHA256"
                 }
+                ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep3072Sha1 => {
+                    "RSA_DECRYPT_OAEP_3072_SHA1"
+                }
                 ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep3072Sha256 => {
                     "RSA_DECRYPT_OAEP_3072_SHA256"
+                }
+                ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep4096Sha1 => {
+                    "RSA_DECRYPT_OAEP_4096_SHA1"
                 }
                 ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep4096Sha256 => {
                     "RSA_DECRYPT_OAEP_4096_SHA256"
@@ -2331,6 +2874,15 @@ pub mod schemas {
                 ImportCryptoKeyVersionRequestAlgorithm::RsaSignPss4096Sha512 => {
                     "RSA_SIGN_PSS_4096_SHA512"
                 }
+                ImportCryptoKeyVersionRequestAlgorithm::RsaSignRawPkcs12048 => {
+                    "RSA_SIGN_RAW_PKCS1_2048"
+                }
+                ImportCryptoKeyVersionRequestAlgorithm::RsaSignRawPkcs13072 => {
+                    "RSA_SIGN_RAW_PKCS1_3072"
+                }
+                ImportCryptoKeyVersionRequestAlgorithm::RsaSignRawPkcs14096 => {
+                    "RSA_SIGN_RAW_PKCS1_4096"
+                }
             }
         }
     }
@@ -2348,17 +2900,30 @@ pub mod schemas {
                 }
                 "EC_SIGN_P256_SHA256" => ImportCryptoKeyVersionRequestAlgorithm::EcSignP256Sha256,
                 "EC_SIGN_P384_SHA384" => ImportCryptoKeyVersionRequestAlgorithm::EcSignP384Sha384,
+                "EC_SIGN_SECP256K1_SHA256" => {
+                    ImportCryptoKeyVersionRequestAlgorithm::EcSignSecp256K1Sha256
+                }
                 "EXTERNAL_SYMMETRIC_ENCRYPTION" => {
                     ImportCryptoKeyVersionRequestAlgorithm::ExternalSymmetricEncryption
                 }
                 "GOOGLE_SYMMETRIC_ENCRYPTION" => {
                     ImportCryptoKeyVersionRequestAlgorithm::GoogleSymmetricEncryption
                 }
+                "HMAC_SHA256" => ImportCryptoKeyVersionRequestAlgorithm::HmacSha256,
+                "RSA_DECRYPT_OAEP_2048_SHA1" => {
+                    ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep2048Sha1
+                }
                 "RSA_DECRYPT_OAEP_2048_SHA256" => {
                     ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep2048Sha256
                 }
+                "RSA_DECRYPT_OAEP_3072_SHA1" => {
+                    ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep3072Sha1
+                }
                 "RSA_DECRYPT_OAEP_3072_SHA256" => {
                     ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep3072Sha256
+                }
+                "RSA_DECRYPT_OAEP_4096_SHA1" => {
+                    ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep4096Sha1
                 }
                 "RSA_DECRYPT_OAEP_4096_SHA256" => {
                     ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep4096Sha256
@@ -2389,6 +2954,15 @@ pub mod schemas {
                 }
                 "RSA_SIGN_PSS_4096_SHA512" => {
                     ImportCryptoKeyVersionRequestAlgorithm::RsaSignPss4096Sha512
+                }
+                "RSA_SIGN_RAW_PKCS1_2048" => {
+                    ImportCryptoKeyVersionRequestAlgorithm::RsaSignRawPkcs12048
+                }
+                "RSA_SIGN_RAW_PKCS1_3072" => {
+                    ImportCryptoKeyVersionRequestAlgorithm::RsaSignRawPkcs13072
+                }
+                "RSA_SIGN_RAW_PKCS1_4096" => {
+                    ImportCryptoKeyVersionRequestAlgorithm::RsaSignRawPkcs14096
                 }
                 _ => return Err(()),
             })
@@ -2419,17 +2993,30 @@ pub mod schemas {
                 }
                 "EC_SIGN_P256_SHA256" => ImportCryptoKeyVersionRequestAlgorithm::EcSignP256Sha256,
                 "EC_SIGN_P384_SHA384" => ImportCryptoKeyVersionRequestAlgorithm::EcSignP384Sha384,
+                "EC_SIGN_SECP256K1_SHA256" => {
+                    ImportCryptoKeyVersionRequestAlgorithm::EcSignSecp256K1Sha256
+                }
                 "EXTERNAL_SYMMETRIC_ENCRYPTION" => {
                     ImportCryptoKeyVersionRequestAlgorithm::ExternalSymmetricEncryption
                 }
                 "GOOGLE_SYMMETRIC_ENCRYPTION" => {
                     ImportCryptoKeyVersionRequestAlgorithm::GoogleSymmetricEncryption
                 }
+                "HMAC_SHA256" => ImportCryptoKeyVersionRequestAlgorithm::HmacSha256,
+                "RSA_DECRYPT_OAEP_2048_SHA1" => {
+                    ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep2048Sha1
+                }
                 "RSA_DECRYPT_OAEP_2048_SHA256" => {
                     ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep2048Sha256
                 }
+                "RSA_DECRYPT_OAEP_3072_SHA1" => {
+                    ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep3072Sha1
+                }
                 "RSA_DECRYPT_OAEP_3072_SHA256" => {
                     ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep3072Sha256
+                }
+                "RSA_DECRYPT_OAEP_4096_SHA1" => {
+                    ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep4096Sha1
                 }
                 "RSA_DECRYPT_OAEP_4096_SHA256" => {
                     ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep4096Sha256
@@ -2460,6 +3047,15 @@ pub mod schemas {
                 }
                 "RSA_SIGN_PSS_4096_SHA512" => {
                     ImportCryptoKeyVersionRequestAlgorithm::RsaSignPss4096Sha512
+                }
+                "RSA_SIGN_RAW_PKCS1_2048" => {
+                    ImportCryptoKeyVersionRequestAlgorithm::RsaSignRawPkcs12048
+                }
+                "RSA_SIGN_RAW_PKCS1_3072" => {
+                    ImportCryptoKeyVersionRequestAlgorithm::RsaSignRawPkcs13072
+                }
+                "RSA_SIGN_RAW_PKCS1_4096" => {
+                    ImportCryptoKeyVersionRequestAlgorithm::RsaSignRawPkcs14096
                 }
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -2654,6 +3250,8 @@ pub mod schemas {
     pub enum ImportJobProtectionLevel {
         #[doc = "Crypto operations are performed by an external key manager."]
         External,
+        #[doc = "Crypto operations are performed in an EKM-over-VPC backend."]
+        ExternalVpc,
         #[doc = "Crypto operations are performed in a Hardware Security Module."]
         Hsm,
         #[doc = "Not specified."]
@@ -2665,6 +3263,7 @@ pub mod schemas {
         pub fn as_str(self) -> &'static str {
             match self {
                 ImportJobProtectionLevel::External => "EXTERNAL",
+                ImportJobProtectionLevel::ExternalVpc => "EXTERNAL_VPC",
                 ImportJobProtectionLevel::Hsm => "HSM",
                 ImportJobProtectionLevel::ProtectionLevelUnspecified => {
                     "PROTECTION_LEVEL_UNSPECIFIED"
@@ -2683,6 +3282,7 @@ pub mod schemas {
         fn from_str(s: &str) -> ::std::result::Result<ImportJobProtectionLevel, ()> {
             Ok(match s {
                 "EXTERNAL" => ImportJobProtectionLevel::External,
+                "EXTERNAL_VPC" => ImportJobProtectionLevel::ExternalVpc,
                 "HSM" => ImportJobProtectionLevel::Hsm,
                 "PROTECTION_LEVEL_UNSPECIFIED" => {
                     ImportJobProtectionLevel::ProtectionLevelUnspecified
@@ -2713,6 +3313,7 @@ pub mod schemas {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
                 "EXTERNAL" => ImportJobProtectionLevel::External,
+                "EXTERNAL_VPC" => ImportJobProtectionLevel::ExternalVpc,
                 "HSM" => ImportJobProtectionLevel::Hsm,
                 "PROTECTION_LEVEL_UNSPECIFIED" => {
                     ImportJobProtectionLevel::ProtectionLevelUnspecified
@@ -2867,7 +3468,7 @@ pub mod schemas {
     pub enum KeyOperationAttestationFormat {
         #[doc = "Not specified."]
         AttestationFormatUnspecified,
-        #[doc = "Cavium HSM attestation compressed with gzip. Note that this format is defined by Cavium and subject to change at any time."]
+        #[doc = "Cavium HSM attestation compressed with gzip. Note that this format is defined by Cavium and subject to change at any time. See https://www.marvell.com/products/security-solutions/nitrox-hs-adapters/software-key-attestation.html."]
         CaviumV1Compressed,
         #[doc = "Cavium HSM attestation V2 compressed with gzip. This is a new format introduced in Cavium's version 3.2-08."]
         CaviumV2Compressed,
@@ -3069,6 +3670,51 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ListCryptoKeysResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ListEkmConnectionsResponse {
+        #[doc = "The list of EkmConnections."]
+        #[serde(
+            rename = "ekmConnections",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ekm_connections: ::std::option::Option<Vec<crate::schemas::EkmConnection>>,
+        #[doc = "A token to retrieve next page of results. Pass this value in ListEkmConnectionsRequest.page_token to retrieve the next page of results."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+        #[doc = "The total number of EkmConnections that matched the query."]
+        #[serde(
+            rename = "totalSize",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_size: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for ListEkmConnectionsResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ListEkmConnectionsResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3289,6 +3935,410 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct MacSignRequest {
+        #[doc = "Required. The data to sign. The MAC tag is computed over this data field based on the specific algorithm."]
+        #[serde(
+            rename = "data",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "Optional. An optional CRC32C checksum of the MacSignRequest.data. If specified, KeyManagementService will verify the integrity of the received MacSignRequest.data using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(MacSignRequest.data) is equal to MacSignRequest.data_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type."]
+        #[serde(
+            rename = "dataCrc32c",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub data_crc_3_2c: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for MacSignRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MacSignRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MacSignResponse {
+        #[doc = "The created signature."]
+        #[serde(
+            rename = "mac",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mac: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "Integrity verification field. A CRC32C checksum of the returned MacSignResponse.mac. An integrity check of MacSignResponse.mac can be performed by computing the CRC32C checksum of MacSignResponse.mac and comparing your results to this field. Discard the response in case of non-matching checksum values, and perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type."]
+        #[serde(
+            rename = "macCrc32c",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub mac_crc_3_2c: ::std::option::Option<i64>,
+        #[doc = "The resource name of the CryptoKeyVersion used for signing. Check this field to verify that the intended resource was used for signing."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "The ProtectionLevel of the CryptoKeyVersion used for signing."]
+        #[serde(
+            rename = "protectionLevel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub protection_level: ::std::option::Option<crate::schemas::MacSignResponseProtectionLevel>,
+        #[doc = "Integrity verification field. A flag indicating whether MacSignRequest.data_crc32c was received by KeyManagementService and used for the integrity verification of the data. A false value of this field indicates either that MacSignRequest.data_crc32c was left unset or that it was not delivered to KeyManagementService. If you've set MacSignRequest.data_crc32c but this field is still false, discard the response and perform a limited number of retries."]
+        #[serde(
+            rename = "verifiedDataCrc32c",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verified_data_crc_3_2c: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for MacSignResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MacSignResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MacSignResponseProtectionLevel {
+        #[doc = "Crypto operations are performed by an external key manager."]
+        External,
+        #[doc = "Crypto operations are performed in an EKM-over-VPC backend."]
+        ExternalVpc,
+        #[doc = "Crypto operations are performed in a Hardware Security Module."]
+        Hsm,
+        #[doc = "Not specified."]
+        ProtectionLevelUnspecified,
+        #[doc = "Crypto operations are performed in software."]
+        Software,
+    }
+    impl MacSignResponseProtectionLevel {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MacSignResponseProtectionLevel::External => "EXTERNAL",
+                MacSignResponseProtectionLevel::ExternalVpc => "EXTERNAL_VPC",
+                MacSignResponseProtectionLevel::Hsm => "HSM",
+                MacSignResponseProtectionLevel::ProtectionLevelUnspecified => {
+                    "PROTECTION_LEVEL_UNSPECIFIED"
+                }
+                MacSignResponseProtectionLevel::Software => "SOFTWARE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MacSignResponseProtectionLevel {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MacSignResponseProtectionLevel {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MacSignResponseProtectionLevel, ()> {
+            Ok(match s {
+                "EXTERNAL" => MacSignResponseProtectionLevel::External,
+                "EXTERNAL_VPC" => MacSignResponseProtectionLevel::ExternalVpc,
+                "HSM" => MacSignResponseProtectionLevel::Hsm,
+                "PROTECTION_LEVEL_UNSPECIFIED" => {
+                    MacSignResponseProtectionLevel::ProtectionLevelUnspecified
+                }
+                "SOFTWARE" => MacSignResponseProtectionLevel::Software,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MacSignResponseProtectionLevel {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MacSignResponseProtectionLevel {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MacSignResponseProtectionLevel {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "EXTERNAL" => MacSignResponseProtectionLevel::External,
+                "EXTERNAL_VPC" => MacSignResponseProtectionLevel::ExternalVpc,
+                "HSM" => MacSignResponseProtectionLevel::Hsm,
+                "PROTECTION_LEVEL_UNSPECIFIED" => {
+                    MacSignResponseProtectionLevel::ProtectionLevelUnspecified
+                }
+                "SOFTWARE" => MacSignResponseProtectionLevel::Software,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MacSignResponseProtectionLevel {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MacSignResponseProtectionLevel {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MacVerifyRequest {
+        #[doc = "Required. The data used previously as a MacSignRequest.data to generate the MAC tag."]
+        #[serde(
+            rename = "data",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "Optional. An optional CRC32C checksum of the MacVerifyRequest.data. If specified, KeyManagementService will verify the integrity of the received MacVerifyRequest.data using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(MacVerifyRequest.data) is equal to MacVerifyRequest.data_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type."]
+        #[serde(
+            rename = "dataCrc32c",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub data_crc_3_2c: ::std::option::Option<i64>,
+        #[doc = "Required. The signature to verify."]
+        #[serde(
+            rename = "mac",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mac: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "Optional. An optional CRC32C checksum of the MacVerifyRequest.mac. If specified, KeyManagementService will verify the integrity of the received MacVerifyRequest.mac using this checksum. KeyManagementService will report an error if the checksum verification fails. If you receive a checksum error, your client should verify that CRC32C(MacVerifyRequest.tag) is equal to MacVerifyRequest.mac_crc32c, and if so, perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type."]
+        #[serde(
+            rename = "macCrc32c",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub mac_crc_3_2c: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for MacVerifyRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MacVerifyRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MacVerifyResponse {
+        #[doc = "The resource name of the CryptoKeyVersion used for verification. Check this field to verify that the intended resource was used for verification."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "The ProtectionLevel of the CryptoKeyVersion used for verification."]
+        #[serde(
+            rename = "protectionLevel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub protection_level:
+            ::std::option::Option<crate::schemas::MacVerifyResponseProtectionLevel>,
+        #[doc = "This field indicates whether or not the verification operation for MacVerifyRequest.mac over MacVerifyRequest.data was successful."]
+        #[serde(
+            rename = "success",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub success: ::std::option::Option<bool>,
+        #[doc = "Integrity verification field. A flag indicating whether MacVerifyRequest.data_crc32c was received by KeyManagementService and used for the integrity verification of the data. A false value of this field indicates either that MacVerifyRequest.data_crc32c was left unset or that it was not delivered to KeyManagementService. If you've set MacVerifyRequest.data_crc32c but this field is still false, discard the response and perform a limited number of retries."]
+        #[serde(
+            rename = "verifiedDataCrc32c",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verified_data_crc_3_2c: ::std::option::Option<bool>,
+        #[doc = "Integrity verification field. A flag indicating whether MacVerifyRequest.mac_crc32c was received by KeyManagementService and used for the integrity verification of the data. A false value of this field indicates either that MacVerifyRequest.mac_crc32c was left unset or that it was not delivered to KeyManagementService. If you've set MacVerifyRequest.mac_crc32c but this field is still false, discard the response and perform a limited number of retries."]
+        #[serde(
+            rename = "verifiedMacCrc32c",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verified_mac_crc_3_2c: ::std::option::Option<bool>,
+        #[doc = "Integrity verification field. This value is used for the integrity verification of [MacVerifyResponse.success]. If the value of this field contradicts the value of [MacVerifyResponse.success], discard the response and perform a limited number of retries."]
+        #[serde(
+            rename = "verifiedSuccessIntegrity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verified_success_integrity: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for MacVerifyResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MacVerifyResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MacVerifyResponseProtectionLevel {
+        #[doc = "Crypto operations are performed by an external key manager."]
+        External,
+        #[doc = "Crypto operations are performed in an EKM-over-VPC backend."]
+        ExternalVpc,
+        #[doc = "Crypto operations are performed in a Hardware Security Module."]
+        Hsm,
+        #[doc = "Not specified."]
+        ProtectionLevelUnspecified,
+        #[doc = "Crypto operations are performed in software."]
+        Software,
+    }
+    impl MacVerifyResponseProtectionLevel {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MacVerifyResponseProtectionLevel::External => "EXTERNAL",
+                MacVerifyResponseProtectionLevel::ExternalVpc => "EXTERNAL_VPC",
+                MacVerifyResponseProtectionLevel::Hsm => "HSM",
+                MacVerifyResponseProtectionLevel::ProtectionLevelUnspecified => {
+                    "PROTECTION_LEVEL_UNSPECIFIED"
+                }
+                MacVerifyResponseProtectionLevel::Software => "SOFTWARE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MacVerifyResponseProtectionLevel {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MacVerifyResponseProtectionLevel {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MacVerifyResponseProtectionLevel, ()> {
+            Ok(match s {
+                "EXTERNAL" => MacVerifyResponseProtectionLevel::External,
+                "EXTERNAL_VPC" => MacVerifyResponseProtectionLevel::ExternalVpc,
+                "HSM" => MacVerifyResponseProtectionLevel::Hsm,
+                "PROTECTION_LEVEL_UNSPECIFIED" => {
+                    MacVerifyResponseProtectionLevel::ProtectionLevelUnspecified
+                }
+                "SOFTWARE" => MacVerifyResponseProtectionLevel::Software,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MacVerifyResponseProtectionLevel {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MacVerifyResponseProtectionLevel {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MacVerifyResponseProtectionLevel {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "EXTERNAL" => MacVerifyResponseProtectionLevel::External,
+                "EXTERNAL_VPC" => MacVerifyResponseProtectionLevel::ExternalVpc,
+                "HSM" => MacVerifyResponseProtectionLevel::Hsm,
+                "PROTECTION_LEVEL_UNSPECIFIED" => {
+                    MacVerifyResponseProtectionLevel::ProtectionLevelUnspecified
+                }
+                "SOFTWARE" => MacVerifyResponseProtectionLevel::Software,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MacVerifyResponseProtectionLevel {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MacVerifyResponseProtectionLevel {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Policy {
         #[doc = "Specifies cloud audit logging configuration for this policy."]
         #[serde(
@@ -3297,7 +4347,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audit_configs: ::std::option::Option<Vec<crate::schemas::AuditConfig>>,
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,
@@ -3397,14 +4447,24 @@ pub mod schemas {
         EcSignP256Sha256,
         #[doc = "ECDSA on the NIST P-384 curve with a SHA384 digest."]
         EcSignP384Sha384,
+        #[doc = "ECDSA on the non-NIST secp256k1 curve. This curve is only supported for HSM protection level."]
+        EcSignSecp256K1Sha256,
         #[doc = "Algorithm representing symmetric encryption by an external key manager."]
         ExternalSymmetricEncryption,
         #[doc = "Creates symmetric encryption keys."]
         GoogleSymmetricEncryption,
+        #[doc = "HMAC-SHA256 signing with a 256 bit key."]
+        HmacSha256,
+        #[doc = "RSAES-OAEP 2048 bit key with a SHA1 digest."]
+        RsaDecryptOaep2048Sha1,
         #[doc = "RSAES-OAEP 2048 bit key with a SHA256 digest."]
         RsaDecryptOaep2048Sha256,
+        #[doc = "RSAES-OAEP 3072 bit key with a SHA1 digest."]
+        RsaDecryptOaep3072Sha1,
         #[doc = "RSAES-OAEP 3072 bit key with a SHA256 digest."]
         RsaDecryptOaep3072Sha256,
+        #[doc = "RSAES-OAEP 4096 bit key with a SHA1 digest."]
+        RsaDecryptOaep4096Sha1,
         #[doc = "RSAES-OAEP 4096 bit key with a SHA256 digest."]
         RsaDecryptOaep4096Sha256,
         #[doc = "RSAES-OAEP 4096 bit key with a SHA512 digest."]
@@ -3425,6 +4485,12 @@ pub mod schemas {
         RsaSignPss4096Sha256,
         #[doc = "RSASSA-PSS 4096 bit key with a SHA512 digest."]
         RsaSignPss4096Sha512,
+        #[doc = "RSASSA-PKCS1-v1_5 signing without encoding, with a 2048 bit key."]
+        RsaSignRawPkcs12048,
+        #[doc = "RSASSA-PKCS1-v1_5 signing without encoding, with a 3072 bit key."]
+        RsaSignRawPkcs13072,
+        #[doc = "RSASSA-PKCS1-v1_5 signing without encoding, with a 4096 bit key."]
+        RsaSignRawPkcs14096,
     }
     impl PublicKeyAlgorithm {
         pub fn as_str(self) -> &'static str {
@@ -3434,10 +4500,15 @@ pub mod schemas {
                 }
                 PublicKeyAlgorithm::EcSignP256Sha256 => "EC_SIGN_P256_SHA256",
                 PublicKeyAlgorithm::EcSignP384Sha384 => "EC_SIGN_P384_SHA384",
+                PublicKeyAlgorithm::EcSignSecp256K1Sha256 => "EC_SIGN_SECP256K1_SHA256",
                 PublicKeyAlgorithm::ExternalSymmetricEncryption => "EXTERNAL_SYMMETRIC_ENCRYPTION",
                 PublicKeyAlgorithm::GoogleSymmetricEncryption => "GOOGLE_SYMMETRIC_ENCRYPTION",
+                PublicKeyAlgorithm::HmacSha256 => "HMAC_SHA256",
+                PublicKeyAlgorithm::RsaDecryptOaep2048Sha1 => "RSA_DECRYPT_OAEP_2048_SHA1",
                 PublicKeyAlgorithm::RsaDecryptOaep2048Sha256 => "RSA_DECRYPT_OAEP_2048_SHA256",
+                PublicKeyAlgorithm::RsaDecryptOaep3072Sha1 => "RSA_DECRYPT_OAEP_3072_SHA1",
                 PublicKeyAlgorithm::RsaDecryptOaep3072Sha256 => "RSA_DECRYPT_OAEP_3072_SHA256",
+                PublicKeyAlgorithm::RsaDecryptOaep4096Sha1 => "RSA_DECRYPT_OAEP_4096_SHA1",
                 PublicKeyAlgorithm::RsaDecryptOaep4096Sha256 => "RSA_DECRYPT_OAEP_4096_SHA256",
                 PublicKeyAlgorithm::RsaDecryptOaep4096Sha512 => "RSA_DECRYPT_OAEP_4096_SHA512",
                 PublicKeyAlgorithm::RsaSignPkcs12048Sha256 => "RSA_SIGN_PKCS1_2048_SHA256",
@@ -3448,6 +4519,9 @@ pub mod schemas {
                 PublicKeyAlgorithm::RsaSignPss3072Sha256 => "RSA_SIGN_PSS_3072_SHA256",
                 PublicKeyAlgorithm::RsaSignPss4096Sha256 => "RSA_SIGN_PSS_4096_SHA256",
                 PublicKeyAlgorithm::RsaSignPss4096Sha512 => "RSA_SIGN_PSS_4096_SHA512",
+                PublicKeyAlgorithm::RsaSignRawPkcs12048 => "RSA_SIGN_RAW_PKCS1_2048",
+                PublicKeyAlgorithm::RsaSignRawPkcs13072 => "RSA_SIGN_RAW_PKCS1_3072",
+                PublicKeyAlgorithm::RsaSignRawPkcs14096 => "RSA_SIGN_RAW_PKCS1_4096",
             }
         }
     }
@@ -3465,10 +4539,15 @@ pub mod schemas {
                 }
                 "EC_SIGN_P256_SHA256" => PublicKeyAlgorithm::EcSignP256Sha256,
                 "EC_SIGN_P384_SHA384" => PublicKeyAlgorithm::EcSignP384Sha384,
+                "EC_SIGN_SECP256K1_SHA256" => PublicKeyAlgorithm::EcSignSecp256K1Sha256,
                 "EXTERNAL_SYMMETRIC_ENCRYPTION" => PublicKeyAlgorithm::ExternalSymmetricEncryption,
                 "GOOGLE_SYMMETRIC_ENCRYPTION" => PublicKeyAlgorithm::GoogleSymmetricEncryption,
+                "HMAC_SHA256" => PublicKeyAlgorithm::HmacSha256,
+                "RSA_DECRYPT_OAEP_2048_SHA1" => PublicKeyAlgorithm::RsaDecryptOaep2048Sha1,
                 "RSA_DECRYPT_OAEP_2048_SHA256" => PublicKeyAlgorithm::RsaDecryptOaep2048Sha256,
+                "RSA_DECRYPT_OAEP_3072_SHA1" => PublicKeyAlgorithm::RsaDecryptOaep3072Sha1,
                 "RSA_DECRYPT_OAEP_3072_SHA256" => PublicKeyAlgorithm::RsaDecryptOaep3072Sha256,
+                "RSA_DECRYPT_OAEP_4096_SHA1" => PublicKeyAlgorithm::RsaDecryptOaep4096Sha1,
                 "RSA_DECRYPT_OAEP_4096_SHA256" => PublicKeyAlgorithm::RsaDecryptOaep4096Sha256,
                 "RSA_DECRYPT_OAEP_4096_SHA512" => PublicKeyAlgorithm::RsaDecryptOaep4096Sha512,
                 "RSA_SIGN_PKCS1_2048_SHA256" => PublicKeyAlgorithm::RsaSignPkcs12048Sha256,
@@ -3479,6 +4558,9 @@ pub mod schemas {
                 "RSA_SIGN_PSS_3072_SHA256" => PublicKeyAlgorithm::RsaSignPss3072Sha256,
                 "RSA_SIGN_PSS_4096_SHA256" => PublicKeyAlgorithm::RsaSignPss4096Sha256,
                 "RSA_SIGN_PSS_4096_SHA512" => PublicKeyAlgorithm::RsaSignPss4096Sha512,
+                "RSA_SIGN_RAW_PKCS1_2048" => PublicKeyAlgorithm::RsaSignRawPkcs12048,
+                "RSA_SIGN_RAW_PKCS1_3072" => PublicKeyAlgorithm::RsaSignRawPkcs13072,
+                "RSA_SIGN_RAW_PKCS1_4096" => PublicKeyAlgorithm::RsaSignRawPkcs14096,
                 _ => return Err(()),
             })
         }
@@ -3508,10 +4590,15 @@ pub mod schemas {
                 }
                 "EC_SIGN_P256_SHA256" => PublicKeyAlgorithm::EcSignP256Sha256,
                 "EC_SIGN_P384_SHA384" => PublicKeyAlgorithm::EcSignP384Sha384,
+                "EC_SIGN_SECP256K1_SHA256" => PublicKeyAlgorithm::EcSignSecp256K1Sha256,
                 "EXTERNAL_SYMMETRIC_ENCRYPTION" => PublicKeyAlgorithm::ExternalSymmetricEncryption,
                 "GOOGLE_SYMMETRIC_ENCRYPTION" => PublicKeyAlgorithm::GoogleSymmetricEncryption,
+                "HMAC_SHA256" => PublicKeyAlgorithm::HmacSha256,
+                "RSA_DECRYPT_OAEP_2048_SHA1" => PublicKeyAlgorithm::RsaDecryptOaep2048Sha1,
                 "RSA_DECRYPT_OAEP_2048_SHA256" => PublicKeyAlgorithm::RsaDecryptOaep2048Sha256,
+                "RSA_DECRYPT_OAEP_3072_SHA1" => PublicKeyAlgorithm::RsaDecryptOaep3072Sha1,
                 "RSA_DECRYPT_OAEP_3072_SHA256" => PublicKeyAlgorithm::RsaDecryptOaep3072Sha256,
+                "RSA_DECRYPT_OAEP_4096_SHA1" => PublicKeyAlgorithm::RsaDecryptOaep4096Sha1,
                 "RSA_DECRYPT_OAEP_4096_SHA256" => PublicKeyAlgorithm::RsaDecryptOaep4096Sha256,
                 "RSA_DECRYPT_OAEP_4096_SHA512" => PublicKeyAlgorithm::RsaDecryptOaep4096Sha512,
                 "RSA_SIGN_PKCS1_2048_SHA256" => PublicKeyAlgorithm::RsaSignPkcs12048Sha256,
@@ -3522,6 +4609,9 @@ pub mod schemas {
                 "RSA_SIGN_PSS_3072_SHA256" => PublicKeyAlgorithm::RsaSignPss3072Sha256,
                 "RSA_SIGN_PSS_4096_SHA256" => PublicKeyAlgorithm::RsaSignPss4096Sha256,
                 "RSA_SIGN_PSS_4096_SHA512" => PublicKeyAlgorithm::RsaSignPss4096Sha512,
+                "RSA_SIGN_RAW_PKCS1_2048" => PublicKeyAlgorithm::RsaSignRawPkcs12048,
+                "RSA_SIGN_RAW_PKCS1_3072" => PublicKeyAlgorithm::RsaSignRawPkcs13072,
+                "RSA_SIGN_RAW_PKCS1_4096" => PublicKeyAlgorithm::RsaSignRawPkcs14096,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -3545,6 +4635,8 @@ pub mod schemas {
     pub enum PublicKeyProtectionLevel {
         #[doc = "Crypto operations are performed by an external key manager."]
         External,
+        #[doc = "Crypto operations are performed in an EKM-over-VPC backend."]
+        ExternalVpc,
         #[doc = "Crypto operations are performed in a Hardware Security Module."]
         Hsm,
         #[doc = "Not specified."]
@@ -3556,6 +4648,7 @@ pub mod schemas {
         pub fn as_str(self) -> &'static str {
             match self {
                 PublicKeyProtectionLevel::External => "EXTERNAL",
+                PublicKeyProtectionLevel::ExternalVpc => "EXTERNAL_VPC",
                 PublicKeyProtectionLevel::Hsm => "HSM",
                 PublicKeyProtectionLevel::ProtectionLevelUnspecified => {
                     "PROTECTION_LEVEL_UNSPECIFIED"
@@ -3574,6 +4667,7 @@ pub mod schemas {
         fn from_str(s: &str) -> ::std::result::Result<PublicKeyProtectionLevel, ()> {
             Ok(match s {
                 "EXTERNAL" => PublicKeyProtectionLevel::External,
+                "EXTERNAL_VPC" => PublicKeyProtectionLevel::ExternalVpc,
                 "HSM" => PublicKeyProtectionLevel::Hsm,
                 "PROTECTION_LEVEL_UNSPECIFIED" => {
                     PublicKeyProtectionLevel::ProtectionLevelUnspecified
@@ -3604,6 +4698,7 @@ pub mod schemas {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
                 "EXTERNAL" => PublicKeyProtectionLevel::External,
+                "EXTERNAL_VPC" => PublicKeyProtectionLevel::ExternalVpc,
                 "HSM" => PublicKeyProtectionLevel::Hsm,
                 "PROTECTION_LEVEL_UNSPECIFIED" => {
                     PublicKeyProtectionLevel::ProtectionLevelUnspecified
@@ -3664,8 +4759,60 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct ServiceResolver {
+        #[doc = "Optional. The filter applied to the endpoints of the resolved service. If no filter is specified, all endpoints will be considered. An endpoint will be chosen arbitrarily from the filtered list for each request. For endpoint filter syntax and examples, see https://cloud.google.com/service-directory/docs/reference/rpc/google.cloud.servicedirectory.v1#resolveservicerequest."]
+        #[serde(
+            rename = "endpointFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub endpoint_filter: ::std::option::Option<String>,
+        #[doc = "Required. The hostname of the EKM replica used at TLS and HTTP layers."]
+        #[serde(
+            rename = "hostname",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub hostname: ::std::option::Option<String>,
+        #[doc = "Required. A list of leaf server certificates used to authenticate HTTPS connections to the EKM replica. Currently, a maximum of 10 Certificate is supported."]
+        #[serde(
+            rename = "serverCertificates",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub server_certificates: ::std::option::Option<Vec<crate::schemas::Certificate>>,
+        #[doc = "Required. The resource name of the Service Directory service pointing to an EKM replica, in the format `projects/*/locations/*/namespaces/*/services/*`."]
+        #[serde(
+            rename = "serviceDirectoryService",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub service_directory_service: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ServiceResolver {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ServiceResolver {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SetIamPolicyRequest {
-        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -3703,7 +4850,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -4030,6 +5177,30 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
+                #[doc = "Generate random bytes using the Cloud KMS randomness source in the provided location."]
+                pub fn generate_random_bytes(
+                    &self,
+                    request: crate::schemas::GenerateRandomBytesRequest,
+                    location: impl Into<String>,
+                ) -> GenerateRandomBytesRequestBuilder {
+                    GenerateRandomBytesRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        location: location.into(),
+                    }
+                }
                 #[doc = "Gets information about a location."]
                 pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                     GetRequestBuilder {
@@ -4071,6 +5242,16 @@ pub mod resources {
                         page_token: None,
                     }
                 }
+                #[doc = "Actions that can be performed on the ekm_connections resource"]
+                pub fn ekm_connections(
+                    &self,
+                ) -> crate::resources::projects::locations::ekm_connections::EkmConnectionsActions
+                {
+                    crate::resources::projects::locations::ekm_connections::EkmConnectionsActions {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                    }
+                }
                 #[doc = "Actions that can be performed on the key_rings resource"]
                 pub fn key_rings(
                     &self,
@@ -4080,6 +5261,170 @@ pub mod resources {
                         reqwest: &self.reqwest,
                         auth: self.auth_ref(),
                     }
+                }
+            }
+            #[doc = "Created via [LocationsActions::generate_random_bytes()](struct.LocationsActions.html#method.generate_random_bytes)"]
+            #[derive(Debug, Clone)]
+            pub struct GenerateRandomBytesRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::GenerateRandomBytesRequest,
+                location: String,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> GenerateRandomBytesRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::GenerateRandomBytesResponse, crate::Error>
+                {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::GenerateRandomBytesResponse, crate::Error>
+                {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://cloudkms.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.location;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str(":generateRandomBytes");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
                 }
             }
             #[doc = "Created via [LocationsActions::get()](struct.LocationsActions.html#method.get)"]
@@ -4263,17 +5608,17 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "The standard list filter."]
+                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
                 }
-                #[doc = "The standard list page size."]
+                #[doc = "The maximum number of results to return. If not set, the service selects a default."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "The standard list page token."]
+                #[doc = "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -4533,6 +5878,1485 @@ pub mod resources {
                     self._execute()
                 }
             }
+            pub mod ekm_connections {
+                pub mod params {}
+                pub struct EkmConnectionsActions<'a> {
+                    pub(crate) reqwest: &'a reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                }
+                impl<'a> EkmConnectionsActions<'a> {
+                    fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                        self.auth
+                    }
+                    #[doc = "Creates a new EkmConnection in a given Project and Location."]
+                    pub fn create(
+                        &self,
+                        request: crate::schemas::EkmConnection,
+                        parent: impl Into<String>,
+                    ) -> CreateRequestBuilder {
+                        CreateRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                            ekm_connection_id: None,
+                        }
+                    }
+                    #[doc = "Returns metadata for a given EkmConnection."]
+                    pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                        GetRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                    #[doc = "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set."]
+                    pub fn get_iam_policy(
+                        &self,
+                        resource: impl Into<String>,
+                    ) -> GetIamPolicyRequestBuilder {
+                        GetIamPolicyRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            resource: resource.into(),
+                            options_requested_policy_version: None,
+                        }
+                    }
+                    #[doc = "Lists EkmConnections."]
+                    pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                        ListRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                            filter: None,
+                            order_by: None,
+                            page_size: None,
+                            page_token: None,
+                        }
+                    }
+                    #[doc = "Updates an EkmConnection's metadata."]
+                    pub fn patch(
+                        &self,
+                        request: crate::schemas::EkmConnection,
+                        name: impl Into<String>,
+                    ) -> PatchRequestBuilder {
+                        PatchRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                            update_mask: None,
+                        }
+                    }
+                    #[doc = "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors."]
+                    pub fn set_iam_policy(
+                        &self,
+                        request: crate::schemas::SetIamPolicyRequest,
+                        resource: impl Into<String>,
+                    ) -> SetIamPolicyRequestBuilder {
+                        SetIamPolicyRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            resource: resource.into(),
+                        }
+                    }
+                    #[doc = "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning."]
+                    pub fn test_iam_permissions(
+                        &self,
+                        request: crate::schemas::TestIamPermissionsRequest,
+                        resource: impl Into<String>,
+                    ) -> TestIamPermissionsRequestBuilder {
+                        TestIamPermissionsRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            resource: resource.into(),
+                        }
+                    }
+                }
+                #[doc = "Created via [EkmConnectionsActions::create()](struct.EkmConnectionsActions.html#method.create)"]
+                #[derive(Debug, Clone)]
+                pub struct CreateRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::EkmConnection,
+                    parent: String,
+                    ekm_connection_id: Option<String>,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> CreateRequestBuilder<'a> {
+                    #[doc = "Required. It must be unique within a location and match the regular expression `[a-zA-Z0-9_-]{1,63}`."]
+                    pub fn ekm_connection_id(mut self, value: impl Into<String>) -> Self {
+                        self.ekm_connection_id = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::EkmConnection, crate::Error> {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::EkmConnection, crate::Error> {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        let req = req.json(&self.request);
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudkms.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/ekmConnections");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("ekmConnectionId", &self.ekm_connection_id)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [EkmConnectionsActions::get()](struct.EkmConnectionsActions.html#method.get)"]
+                #[derive(Debug, Clone)]
+                pub struct GetRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> GetRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::EkmConnection, crate::Error> {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::EkmConnection, crate::Error> {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudkms.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [EkmConnectionsActions::get_iam_policy()](struct.EkmConnectionsActions.html#method.get_iam_policy)"]
+                #[derive(Debug, Clone)]
+                pub struct GetIamPolicyRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    resource: String,
+                    options_requested_policy_version: Option<i32>,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> GetIamPolicyRequestBuilder<'a> {
+                    #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                    pub fn options_requested_policy_version(mut self, value: i32) -> Self {
+                        self.options_requested_policy_version = Some(value);
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Policy, crate::Error> {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Policy, crate::Error> {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudkms.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.resource;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str(":getIamPolicy");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[(
+                            "options.requestedPolicyVersion",
+                            &self.options_requested_policy_version,
+                        )]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [EkmConnectionsActions::list()](struct.EkmConnectionsActions.html#method.list)"]
+                #[derive(Debug, Clone)]
+                pub struct ListRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    parent: String,
+                    filter: Option<String>,
+                    order_by: Option<String>,
+                    page_size: Option<i32>,
+                    page_token: Option<String>,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> ListRequestBuilder<'a> {
+                    #[doc = "Optional. Only include resources that match the filter in the response. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering)."]
+                    pub fn filter(mut self, value: impl Into<String>) -> Self {
+                        self.filter = Some(value.into());
+                        self
+                    }
+                    #[doc = "Optional. Specify how the results should be sorted. If not specified, the results will be sorted in the default order. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering)."]
+                    pub fn order_by(mut self, value: impl Into<String>) -> Self {
+                        self.order_by = Some(value.into());
+                        self
+                    }
+                    #[doc = "Optional. Optional limit on the number of EkmConnections to include in the response. Further EkmConnections can subsequently be obtained by including the ListEkmConnectionsResponse.next_page_token in a subsequent request. If unspecified, the server will pick an appropriate default."]
+                    pub fn page_size(mut self, value: i32) -> Self {
+                        self.page_size = Some(value);
+                        self
+                    }
+                    #[doc = "Optional. Optional pagination token, returned earlier via ListEkmConnectionsResponse.next_page_token."]
+                    pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                        self.page_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                    #[doc = r" items yielded by the iterator are chosen by the caller of this"]
+                    #[doc = r" method and must implement `Deserialize` and `FieldSelector`. The"]
+                    #[doc = r" populated fields in the yielded items will be determined by the"]
+                    #[doc = r" `FieldSelector` implementation."]
+                    pub fn iter_ekm_connections<T>(self) -> crate::iter::PageItemIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.iter_ekm_connections_with_fields(fields)
+                    }
+                    #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                    #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                    #[doc = r" fields in `#items_type` will be the default fields populated by"]
+                    #[doc = r" the server."]
+                    pub fn iter_ekm_connections_with_default_fields(
+                        self,
+                    ) -> crate::iter::PageItemIter<Self, crate::schemas::EkmConnection>
+                    {
+                        self.iter_ekm_connections_with_fields(None::<String>)
+                    }
+                    #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                    #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                    #[doc = r" fields in `#items_type` will be all fields available. This should"]
+                    #[doc = r" primarily be used during developement and debugging as fetching"]
+                    #[doc = r" all fields can be expensive both in bandwidth and server"]
+                    #[doc = r" resources."]
+                    pub fn iter_ekm_connections_with_all_fields(
+                        self,
+                    ) -> crate::iter::PageItemIter<Self, crate::schemas::EkmConnection>
+                    {
+                        self.iter_ekm_connections_with_fields(Some("*"))
+                    }
+                    pub fn iter_ekm_connections_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> crate::iter::PageItemIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: AsRef<str>,
+                    {
+                        self.fields = Some({
+                            let mut selector =
+                                concat!("nextPageToken,", "ekmConnections").to_owned();
+                            let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                            if !items_fields.is_empty() {
+                                selector.push_str("(");
+                                selector.push_str(items_fields);
+                                selector.push_str(")");
+                            }
+                            selector
+                        });
+                        crate::iter::PageItemIter::new(self, "ekmConnections")
+                    }
+                    pub fn iter<T>(self) -> crate::iter::PageIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.iter_with_fields(fields)
+                    }
+                    pub fn iter_with_default_fields(
+                        self,
+                    ) -> crate::iter::PageIter<Self, crate::schemas::ListEkmConnectionsResponse>
+                    {
+                        self.iter_with_fields(None::<&str>)
+                    }
+                    pub fn iter_with_all_fields(
+                        self,
+                    ) -> crate::iter::PageIter<Self, crate::schemas::ListEkmConnectionsResponse>
+                    {
+                        self.iter_with_fields(Some("*"))
+                    }
+                    pub fn iter_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> crate::iter::PageIter<Self, T>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: AsRef<str>,
+                    {
+                        let mut fields =
+                            fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                        if !fields.is_empty() {
+                            match fields.chars().rev().nth(0) {
+                                Some(',') | None => {}
+                                _ => fields.push_str(","),
+                            }
+                            fields.push_str("nextPageToken");
+                            self.fields = Some(fields);
+                        }
+                        crate::iter::PageIter::new(self)
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::ListEkmConnectionsResponse, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::ListEkmConnectionsResponse, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudkms.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/ekmConnections");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("filter", &self.filter)]);
+                        req = req.query(&[("orderBy", &self.order_by)]);
+                        req = req.query(&[("pageSize", &self.page_size)]);
+                        req = req.query(&[("pageToken", &self.page_token)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                impl<'a> crate::iter::IterableMethod for ListRequestBuilder<'a> {
+                    fn set_page_token(&mut self, value: String) {
+                        self.page_token = value.into();
+                    }
+                    fn execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        self._execute()
+                    }
+                }
+                #[doc = "Created via [EkmConnectionsActions::patch()](struct.EkmConnectionsActions.html#method.patch)"]
+                #[derive(Debug, Clone)]
+                pub struct PatchRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::EkmConnection,
+                    name: String,
+                    update_mask: Option<String>,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> PatchRequestBuilder<'a> {
+                    #[doc = "Required. List of fields to be updated in this request."]
+                    pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                        self.update_mask = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::EkmConnection, crate::Error> {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::EkmConnection, crate::Error> {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        let req = req.json(&self.request);
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudkms.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                        req = req.query(&[("updateMask", &self.update_mask)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [EkmConnectionsActions::set_iam_policy()](struct.EkmConnectionsActions.html#method.set_iam_policy)"]
+                #[derive(Debug, Clone)]
+                pub struct SetIamPolicyRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::SetIamPolicyRequest,
+                    resource: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> SetIamPolicyRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Policy, crate::Error> {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Policy, crate::Error> {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        let req = req.json(&self.request);
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudkms.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.resource;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str(":setIamPolicy");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [EkmConnectionsActions::test_iam_permissions()](struct.EkmConnectionsActions.html#method.test_iam_permissions)"]
+                #[derive(Debug, Clone)]
+                pub struct TestIamPermissionsRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::TestIamPermissionsRequest,
+                    resource: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> TestIamPermissionsRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::TestIamPermissionsResponse, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::TestIamPermissionsResponse, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        let req = req.json(&self.request);
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudkms.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.resource;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str(":testIamPermissions");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
+                    }
+                }
+            }
             pub mod key_rings {
                 pub mod params {}
                 pub struct KeyRingsActions<'a> {
@@ -4681,11 +7505,11 @@ pub mod resources {
                             resource: resource.into(),
                         }
                     }
-                    #[doc = "Actions that can be performed on the crypto_keys resource"]                    pub fn crypto_keys ( & self ) -> crate :: resources :: projects :: locations :: key_rings :: crypto_keys :: CryptoKeysActions{
-                        crate :: resources :: projects :: locations :: key_rings :: crypto_keys :: CryptoKeysActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the crypto_keys resource"]                    pub fn crypto_keys (& self) -> crate :: resources :: projects :: locations :: key_rings :: crypto_keys :: CryptoKeysActions{
+                        crate :: resources :: projects :: locations :: key_rings :: crypto_keys :: CryptoKeysActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the import_jobs resource"]                    pub fn import_jobs ( & self ) -> crate :: resources :: projects :: locations :: key_rings :: import_jobs :: ImportJobsActions{
-                        crate :: resources :: projects :: locations :: key_rings :: import_jobs :: ImportJobsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the import_jobs resource"]                    pub fn import_jobs (& self) -> crate :: resources :: projects :: locations :: key_rings :: import_jobs :: ImportJobsActions{
+                        crate :: resources :: projects :: locations :: key_rings :: import_jobs :: ImportJobsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 #[doc = "Created via [KeyRingsActions::create()](struct.KeyRingsActions.html#method.create)"]
@@ -5038,7 +7862,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> GetIamPolicyRequestBuilder<'a> {
-                    #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                    #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                     pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                         self.options_requested_policy_version = Some(value);
                         self
@@ -6128,7 +8952,7 @@ pub mod resources {
                                 resource: resource.into(),
                             }
                         }
-                        #[doc = "Update the version of a CryptoKey that will be used in Encrypt. Returns an error if called on an asymmetric key."]
+                        #[doc = "Update the version of a CryptoKey that will be used in Encrypt. Returns an error if called on a key whose purpose is not ENCRYPT_DECRYPT."]
                         pub fn update_primary_version(
                             &self,
                             request: crate::schemas::UpdateCryptoKeyPrimaryVersionRequest,
@@ -6152,8 +8976,8 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Actions that can be performed on the crypto_key_versions resource"]                        pub fn crypto_key_versions ( & self ) -> crate :: resources :: projects :: locations :: key_rings :: crypto_keys :: crypto_key_versions :: CryptoKeyVersionsActions{
-                            crate :: resources :: projects :: locations :: key_rings :: crypto_keys :: crypto_key_versions :: CryptoKeyVersionsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the crypto_key_versions resource"]                        pub fn crypto_key_versions (& self) -> crate :: resources :: projects :: locations :: key_rings :: crypto_keys :: crypto_key_versions :: CryptoKeyVersionsActions{
+                            crate :: resources :: projects :: locations :: key_rings :: crypto_keys :: crypto_key_versions :: CryptoKeyVersionsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
                     }
                     #[doc = "Created via [CryptoKeysActions::create()](struct.CryptoKeysActions.html#method.create)"]
@@ -6854,7 +9678,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> GetIamPolicyRequestBuilder<'a> {
-                        #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                        #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                         pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                             self.options_requested_policy_version = Some(value);
                             self
@@ -7008,7 +9832,7 @@ pub mod resources {
                     }
                     #[doc = "Created via [CryptoKeysActions::list()](struct.CryptoKeysActions.html#method.list)"]
                     #[derive(Debug, Clone)]
-                    pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , filter : Option < String > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , version_view : Option < crate :: resources :: projects :: locations :: key_rings :: crypto_keys :: params :: ListVersionView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                    pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , filter : Option < String > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , version_view : Option < crate :: resources :: projects :: locations :: key_rings :: crypto_keys :: params :: ListVersionView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> ListRequestBuilder<'a> {
                         #[doc = "Optional. Only include resources that match the filter in the response. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering)."]
                         pub fn filter(mut self, value: impl Into<String>) -> Self {
@@ -8142,7 +10966,7 @@ pub mod resources {
                                     parent: parent.into(),
                                 }
                             }
-                            #[doc = "Schedule a CryptoKeyVersion for destruction. Upon calling this method, CryptoKeyVersion.state will be set to DESTROY_SCHEDULED and destroy_time will be set to a time 24 hours in the future, at which point the state will be changed to DESTROYED, and the key material will be irrevocably destroyed. Before the destroy_time is reached, RestoreCryptoKeyVersion may be called to reverse the process."]
+                            #[doc = "Schedule a CryptoKeyVersion for destruction. Upon calling this method, CryptoKeyVersion.state will be set to DESTROY_SCHEDULED, and destroy_time will be set to the time destroy_scheduled_duration in the future. At that time, the state will automatically change to DESTROYED, and the key material will be irrevocably destroyed. Before the destroy_time is reached, RestoreCryptoKeyVersion may be called to reverse the process."]
                             pub fn destroy(
                                 &self,
                                 request: crate::schemas::DestroyCryptoKeyVersionRequest,
@@ -8207,7 +11031,7 @@ pub mod resources {
                                     name: name.into(),
                                 }
                             }
-                            #[doc = "Imports a new CryptoKeyVersion into an existing CryptoKey using the wrapped key material provided in the request. The version ID will be assigned the next sequential id within the CryptoKey."]
+                            #[doc = "Import wrapped key material into a CryptoKeyVersion. All requests must specify a CryptoKey. If a CryptoKeyVersion is additionally specified in the request, key material will be reimported into that version. Otherwise, a new version will be created, and will be assigned the next sequential id within the CryptoKey."]
                             pub fn import(
                                 &self,
                                 request: crate::schemas::ImportCryptoKeyVersionRequest,
@@ -8253,6 +11077,54 @@ pub mod resources {
                                     page_size: None,
                                     page_token: None,
                                     view: None,
+                                }
+                            }
+                            #[doc = "Signs data using a CryptoKeyVersion with CryptoKey.purpose MAC, producing a tag that can be verified by another source with the same key."]
+                            pub fn mac_sign(
+                                &self,
+                                request: crate::schemas::MacSignRequest,
+                                name: impl Into<String>,
+                            ) -> MacSignRequestBuilder {
+                                MacSignRequestBuilder {
+                                    reqwest: &self.reqwest,
+                                    auth: self.auth_ref(),
+                                    request,
+                                    access_token: None,
+                                    alt: None,
+                                    callback: None,
+                                    fields: None,
+                                    key: None,
+                                    oauth_token: None,
+                                    pretty_print: None,
+                                    quota_user: None,
+                                    upload_protocol: None,
+                                    upload_type: None,
+                                    xgafv: None,
+                                    name: name.into(),
+                                }
+                            }
+                            #[doc = "Verifies MAC tag using a CryptoKeyVersion with CryptoKey.purpose MAC, and returns a response that indicates whether or not the verification was successful."]
+                            pub fn mac_verify(
+                                &self,
+                                request: crate::schemas::MacVerifyRequest,
+                                name: impl Into<String>,
+                            ) -> MacVerifyRequestBuilder {
+                                MacVerifyRequestBuilder {
+                                    reqwest: &self.reqwest,
+                                    auth: self.auth_ref(),
+                                    request,
+                                    access_token: None,
+                                    alt: None,
+                                    callback: None,
+                                    fields: None,
+                                    key: None,
+                                    oauth_token: None,
+                                    pretty_print: None,
+                                    quota_user: None,
+                                    upload_protocol: None,
+                                    upload_type: None,
+                                    xgafv: None,
+                                    name: name.into(),
                                 }
                             }
                             #[doc = "Update a CryptoKeyVersion's metadata. state may be changed between ENABLED and DISABLED using this method. See DestroyCryptoKeyVersion and RestoreCryptoKeyVersion to move between other states."]
@@ -9464,7 +12336,7 @@ pub mod resources {
                         }
                         #[doc = "Created via [CryptoKeyVersionsActions::list()](struct.CryptoKeyVersionsActions.html#method.list)"]
                         #[derive(Debug, Clone)]
-                        pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , filter : Option < String > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , view : Option < crate :: resources :: projects :: locations :: key_rings :: crypto_keys :: crypto_key_versions :: params :: ListView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                        pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , filter : Option < String > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , view : Option < crate :: resources :: projects :: locations :: key_rings :: crypto_keys :: crypto_key_versions :: params :: ListView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                         impl<'a> ListRequestBuilder<'a> {
                             #[doc = "Optional. Only include resources that match the filter in the response. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering)."]
                             pub fn filter(mut self, value: impl Into<String>) -> Self {
@@ -9766,6 +12638,338 @@ pub mod resources {
                                 T: ::serde::de::DeserializeOwned,
                             {
                                 self._execute()
+                            }
+                        }
+                        #[doc = "Created via [CryptoKeyVersionsActions::mac_sign()](struct.CryptoKeyVersionsActions.html#method.mac_sign)"]
+                        #[derive(Debug, Clone)]
+                        pub struct MacSignRequestBuilder<'a> {
+                            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                            request: crate::schemas::MacSignRequest,
+                            name: String,
+                            access_token: Option<String>,
+                            alt: Option<crate::params::Alt>,
+                            callback: Option<String>,
+                            fields: Option<String>,
+                            key: Option<String>,
+                            oauth_token: Option<String>,
+                            pretty_print: Option<bool>,
+                            quota_user: Option<String>,
+                            upload_protocol: Option<String>,
+                            upload_type: Option<String>,
+                            xgafv: Option<crate::params::Xgafv>,
+                        }
+                        impl<'a> MacSignRequestBuilder<'a> {
+                            #[doc = "OAuth access token."]
+                            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                                self.access_token = Some(value.into());
+                                self
+                            }
+                            #[doc = "JSONP"]
+                            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                                self.callback = Some(value.into());
+                                self
+                            }
+                            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                            pub fn key(mut self, value: impl Into<String>) -> Self {
+                                self.key = Some(value.into());
+                                self
+                            }
+                            #[doc = "OAuth 2.0 token for the current user."]
+                            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                                self.oauth_token = Some(value.into());
+                                self
+                            }
+                            #[doc = "Returns response with indentations and line breaks."]
+                            pub fn pretty_print(mut self, value: bool) -> Self {
+                                self.pretty_print = Some(value);
+                                self
+                            }
+                            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                                self.quota_user = Some(value.into());
+                                self
+                            }
+                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                                self.upload_protocol = Some(value.into());
+                                self
+                            }
+                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                                self.upload_type = Some(value.into());
+                                self
+                            }
+                            #[doc = "V1 error format."]
+                            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                                self.xgafv = Some(value);
+                                self
+                            }
+                            #[doc = r" Execute the given operation. The fields requested are"]
+                            #[doc = r" determined by the FieldSelector attribute of the return type."]
+                            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                            #[doc = r" are not generic over the return type and deserialize the"]
+                            #[doc = r" response into an auto-generated struct will all possible"]
+                            #[doc = r" fields."]
+                            pub fn execute<T>(self) -> Result<T, crate::Error>
+                            where
+                                T: ::serde::de::DeserializeOwned
+                                    + ::google_field_selector::FieldSelector,
+                            {
+                                let fields = ::google_field_selector::to_string::<T>();
+                                let fields: Option<String> = if fields.is_empty() {
+                                    None
+                                } else {
+                                    Some(fields)
+                                };
+                                self.execute_with_fields(fields)
+                            }
+                            #[doc = r" Execute the given operation. This will not provide any"]
+                            #[doc = r" `fields` selector indicating that the server will determine"]
+                            #[doc = r" the fields returned. This typically includes the most common"]
+                            #[doc = r" fields, but it will not include every possible attribute of"]
+                            #[doc = r" the response resource."]
+                            pub fn execute_with_default_fields(
+                                self,
+                            ) -> Result<crate::schemas::MacSignResponse, crate::Error>
+                            {
+                                self.execute_with_fields(None::<&str>)
+                            }
+                            #[doc = r" Execute the given operation. This will provide a `fields`"]
+                            #[doc = r" selector of `*`. This will include every attribute of the"]
+                            #[doc = r" response resource and should be limited to use during"]
+                            #[doc = r" development or debugging."]
+                            pub fn execute_with_all_fields(
+                                self,
+                            ) -> Result<crate::schemas::MacSignResponse, crate::Error>
+                            {
+                                self.execute_with_fields(Some("*"))
+                            }
+                            #[doc = r" Execute the given operation. This will use the `fields`"]
+                            #[doc = r" selector provided and will deserialize the response into"]
+                            #[doc = r" whatever return value is provided."]
+                            pub fn execute_with_fields<T, F>(
+                                mut self,
+                                fields: Option<F>,
+                            ) -> Result<T, crate::Error>
+                            where
+                                T: ::serde::de::DeserializeOwned,
+                                F: Into<String>,
+                            {
+                                self.fields = fields.map(Into::into);
+                                self._execute()
+                            }
+                            fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                            where
+                                T: ::serde::de::DeserializeOwned,
+                            {
+                                let req = self._request(&self._path())?;
+                                let req = req.json(&self.request);
+                                Ok(crate::error_from_response(req.send()?)?.json()?)
+                            }
+                            fn _path(&self) -> String {
+                                let mut output = "https://cloudkms.googleapis.com/".to_owned();
+                                output.push_str("v1/");
+                                {
+                                    let var_as_str = &self.name;
+                                    output.extend(::percent_encoding::utf8_percent_encode(
+                                        &var_as_str,
+                                        crate::RESERVED,
+                                    ));
+                                }
+                                output.push_str(":macSign");
+                                output
+                            }
+                            fn _request(
+                                &self,
+                                path: &str,
+                            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                            {
+                                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                                req = req.query(&[("access_token", &self.access_token)]);
+                                req = req.query(&[("alt", &self.alt)]);
+                                req = req.query(&[("callback", &self.callback)]);
+                                req = req.query(&[("fields", &self.fields)]);
+                                req = req.query(&[("key", &self.key)]);
+                                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                                req = req.query(&[("quotaUser", &self.quota_user)]);
+                                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                                req = req.query(&[("uploadType", &self.upload_type)]);
+                                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                                req = req.bearer_auth(
+                                    self.auth
+                                        .access_token()
+                                        .map_err(|err| crate::Error::OAuth2(err))?,
+                                );
+                                Ok(req)
+                            }
+                        }
+                        #[doc = "Created via [CryptoKeyVersionsActions::mac_verify()](struct.CryptoKeyVersionsActions.html#method.mac_verify)"]
+                        #[derive(Debug, Clone)]
+                        pub struct MacVerifyRequestBuilder<'a> {
+                            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                            request: crate::schemas::MacVerifyRequest,
+                            name: String,
+                            access_token: Option<String>,
+                            alt: Option<crate::params::Alt>,
+                            callback: Option<String>,
+                            fields: Option<String>,
+                            key: Option<String>,
+                            oauth_token: Option<String>,
+                            pretty_print: Option<bool>,
+                            quota_user: Option<String>,
+                            upload_protocol: Option<String>,
+                            upload_type: Option<String>,
+                            xgafv: Option<crate::params::Xgafv>,
+                        }
+                        impl<'a> MacVerifyRequestBuilder<'a> {
+                            #[doc = "OAuth access token."]
+                            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                                self.access_token = Some(value.into());
+                                self
+                            }
+                            #[doc = "JSONP"]
+                            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                                self.callback = Some(value.into());
+                                self
+                            }
+                            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                            pub fn key(mut self, value: impl Into<String>) -> Self {
+                                self.key = Some(value.into());
+                                self
+                            }
+                            #[doc = "OAuth 2.0 token for the current user."]
+                            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                                self.oauth_token = Some(value.into());
+                                self
+                            }
+                            #[doc = "Returns response with indentations and line breaks."]
+                            pub fn pretty_print(mut self, value: bool) -> Self {
+                                self.pretty_print = Some(value);
+                                self
+                            }
+                            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                                self.quota_user = Some(value.into());
+                                self
+                            }
+                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                                self.upload_protocol = Some(value.into());
+                                self
+                            }
+                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                                self.upload_type = Some(value.into());
+                                self
+                            }
+                            #[doc = "V1 error format."]
+                            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                                self.xgafv = Some(value);
+                                self
+                            }
+                            #[doc = r" Execute the given operation. The fields requested are"]
+                            #[doc = r" determined by the FieldSelector attribute of the return type."]
+                            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                            #[doc = r" are not generic over the return type and deserialize the"]
+                            #[doc = r" response into an auto-generated struct will all possible"]
+                            #[doc = r" fields."]
+                            pub fn execute<T>(self) -> Result<T, crate::Error>
+                            where
+                                T: ::serde::de::DeserializeOwned
+                                    + ::google_field_selector::FieldSelector,
+                            {
+                                let fields = ::google_field_selector::to_string::<T>();
+                                let fields: Option<String> = if fields.is_empty() {
+                                    None
+                                } else {
+                                    Some(fields)
+                                };
+                                self.execute_with_fields(fields)
+                            }
+                            #[doc = r" Execute the given operation. This will not provide any"]
+                            #[doc = r" `fields` selector indicating that the server will determine"]
+                            #[doc = r" the fields returned. This typically includes the most common"]
+                            #[doc = r" fields, but it will not include every possible attribute of"]
+                            #[doc = r" the response resource."]
+                            pub fn execute_with_default_fields(
+                                self,
+                            ) -> Result<crate::schemas::MacVerifyResponse, crate::Error>
+                            {
+                                self.execute_with_fields(None::<&str>)
+                            }
+                            #[doc = r" Execute the given operation. This will provide a `fields`"]
+                            #[doc = r" selector of `*`. This will include every attribute of the"]
+                            #[doc = r" response resource and should be limited to use during"]
+                            #[doc = r" development or debugging."]
+                            pub fn execute_with_all_fields(
+                                self,
+                            ) -> Result<crate::schemas::MacVerifyResponse, crate::Error>
+                            {
+                                self.execute_with_fields(Some("*"))
+                            }
+                            #[doc = r" Execute the given operation. This will use the `fields`"]
+                            #[doc = r" selector provided and will deserialize the response into"]
+                            #[doc = r" whatever return value is provided."]
+                            pub fn execute_with_fields<T, F>(
+                                mut self,
+                                fields: Option<F>,
+                            ) -> Result<T, crate::Error>
+                            where
+                                T: ::serde::de::DeserializeOwned,
+                                F: Into<String>,
+                            {
+                                self.fields = fields.map(Into::into);
+                                self._execute()
+                            }
+                            fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                            where
+                                T: ::serde::de::DeserializeOwned,
+                            {
+                                let req = self._request(&self._path())?;
+                                let req = req.json(&self.request);
+                                Ok(crate::error_from_response(req.send()?)?.json()?)
+                            }
+                            fn _path(&self) -> String {
+                                let mut output = "https://cloudkms.googleapis.com/".to_owned();
+                                output.push_str("v1/");
+                                {
+                                    let var_as_str = &self.name;
+                                    output.extend(::percent_encoding::utf8_percent_encode(
+                                        &var_as_str,
+                                        crate::RESERVED,
+                                    ));
+                                }
+                                output.push_str(":macVerify");
+                                output
+                            }
+                            fn _request(
+                                &self,
+                                path: &str,
+                            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                            {
+                                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                                req = req.query(&[("access_token", &self.access_token)]);
+                                req = req.query(&[("alt", &self.alt)]);
+                                req = req.query(&[("callback", &self.callback)]);
+                                req = req.query(&[("fields", &self.fields)]);
+                                req = req.query(&[("key", &self.key)]);
+                                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                                req = req.query(&[("quotaUser", &self.quota_user)]);
+                                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                                req = req.query(&[("uploadType", &self.upload_type)]);
+                                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                                req = req.bearer_auth(
+                                    self.auth
+                                        .access_token()
+                                        .map_err(|err| crate::Error::OAuth2(err))?,
+                                );
+                                Ok(req)
                             }
                         }
                         #[doc = "Created via [CryptoKeyVersionsActions::patch()](struct.CryptoKeyVersionsActions.html#method.patch)"]
@@ -10613,7 +13817,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> GetIamPolicyRequestBuilder<'a> {
-                        #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                        #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                         pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                             self.options_requested_policy_version = Some(value);
                             self

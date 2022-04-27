@@ -7,7 +7,7 @@
   "canonicalName": "Libraryagent",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20210317",
+  "revision": "20220425",
   "title": "Library Agent API",
   "description": "A simple Google Example Library API.",
   "ownerDomain": "google.com",
@@ -201,7 +201,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         }
       }
     }

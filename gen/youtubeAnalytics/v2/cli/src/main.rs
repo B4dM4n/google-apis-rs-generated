@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("youtubeAnalytics2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210317")
+            .version("0.1.0-20220425")
             .about("Retrieves your YouTube Analytics data.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -67,7 +67,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("update")
-                .about("Modifies a group. For example, you could change a group\'s title.");
+                .about("Modifies a group. For example, you could change a group's title.");
             groups0 = groups0.subcommand(mcmd);
         }
         let mut reports0 = SubCommand::with_name("reports")

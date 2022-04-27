@@ -7,7 +7,7 @@
   "canonicalName": "Cloud Filestore",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20210304",
+  "revision": "20220407",
   "title": "Cloud Filestore API",
   "description": "The Cloud Filestore API is used for creating and managing cloud file servers.",
   "ownerDomain": "google.com",
@@ -201,7 +201,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         }
       }
     }
@@ -275,8 +275,18 @@
           "items": null
         },
         "name": {
-          "description": "Output only. The resource name of the backup, in the format projects/{project_number}/locations/{location_id}/backups/{backup_id}.",
+          "description": "Output only. The resource name of the backup, in the format `projects/{project_number}/locations/{location_id}/backups/{backup_id}`.",
           "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "satisfiesPzs": {
+          "description": "Output only. Reserved for future use.",
+          "type": "boolean",
           "format": null,
           "enum": [],
           "enumDescriptions": [],
@@ -295,7 +305,7 @@
           "items": null
         },
         "sourceInstance": {
-          "description": "The resource name of the source Cloud Filestore instance, in the format projects/{project_number}/locations/{location_id}/instances/{instance_id}, used to create this backup.",
+          "description": "The resource name of the source Cloud Filestore instance, in the format `projects/{project_number}/locations/{location_id}/instances/{instance_id}`, used to create this backup.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -314,7 +324,8 @@
             "PREMIUM",
             "BASIC_HDD",
             "BASIC_SSD",
-            "HIGH_SCALE_SSD"
+            "HIGH_SCALE_SSD",
+            "ENTERPRISE"
           ],
           "enumDescriptions": [
             "Not set.",
@@ -322,7 +333,8 @@
             "PREMIUM tier.",
             "BASIC instances offer a maximum capacity of 63.9 TB. BASIC_HDD is an alias for STANDARD Tier, offering economical performance backed by HDD.",
             "BASIC instances offer a maximum capacity of 63.9 TB. BASIC_SSD is an alias for PREMIUM Tier, and offers improved performance backed by SSD.",
-            "HIGH_SCALE instances offer expanded capacity and performance scaling capabilities."
+            "HIGH_SCALE instances offer expanded capacity and performance scaling capabilities.",
+            "ENTERPRISE instances offer the features and availability needed for mission-critical workloads."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -403,7 +415,7 @@
     },
     "Date": {
       "id": "Date",
-      "description": "Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values * A month and day value, with a zero year, such as an anniversary * A year on its own, with zero month and day values * A year and month value, with a zero day, such as a credit card expiration date Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.",
+      "description": "Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp",
       "type": "object",
       "format": null,
       "enum": [],
@@ -469,7 +481,7 @@
     },
     "Empty": {
       "id": "Empty",
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
+      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
       "type": "object",
       "format": null,
       "enum": [],
@@ -519,7 +531,7 @@
           }
         },
         "sourceBackup": {
-          "description": "The resource name of the backup, in the format projects/{project_number}/locations/{location_id}/backups/{backup_id}, that this file share has been restored from.",
+          "description": "The resource name of the backup, in the format `projects/{project_number}/locations/{location_id}/backups/{backup_id}`, that this file share has been restored from.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -554,6 +566,16 @@
           "description": "Output only. Timestamp when the resource was created.",
           "type": "string",
           "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "instanceType": {
+          "description": "Optional. The instance_type of this instance of format: projects/{project_number}/locations/{location_id}/instanceTypes/{instance_type_id}. Instance Type represents a high-level tier or SKU of the service that this instance belong to. When enabled(eg: Maintenance Rollout), Rollout uses 'instance_type' along with 'software_versions' to determine whether instance needs an update or not.",
+          "type": "string",
+          "format": null,
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -616,13 +638,26 @@
           "$ref": "GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSettings"
         },
         "name": {
-          "description": "Unique name of the resource. It uses the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}`",
+          "description": "Unique name of the resource. It uses the form: `projects/{project_number}/locations/{location_id}/instances/{instance_id}` Note: This name is passed, stored and logged across the rollout system. So use of consumer project_id or any other consumer PII in the name is strongly discouraged for wipeout (go/wipeout) compliance. See go/elysium/project_ids#storage-guidance for more details.",
           "type": "string",
           "format": null,
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
           "additionalProperties": null,
+          "items": null
+        },
+        "notificationParameters": {
+          "description": "Optional. notification_parameter are information that service producers may like to include that is not relevant to Rollout. This parameter will only be passed to Gamma and Cloud Logging for notification/logging purpose.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "$ref": "GoogleCloudSaasacceleratorManagementProvidersV1NotificationParameter"
+          },
           "items": null
         },
         "producerMetadata": {
@@ -748,7 +783,7 @@
       "enumDescriptions": [],
       "properties": {
         "canReschedule": {
-          "description": "Can this scheduled update be rescheduled? By default, it's true and API needs to do explicitly check whether it's set, if it's set as false explicitly, it's false",
+          "description": "This field is deprecated, and will be always set to true since reschedule can happen multiple times now. This field should not be removed until all service producers remove this for their customers.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -854,18 +889,6 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
-        "exclusions": {
-          "description": "By default node is eligible if instance is eligible. But individual node might be excluded from SLO by adding entry here. For semantic see SloMetadata.exclusions. If both instance and node level exclusions are present for time period, the node level's reason will be reported by Eligibility Exporter.",
-          "type": "array",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": {
-            "$ref": "GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion"
-          }
-        },
         "location": {
           "description": "The location of the node, if different from instance location.",
           "type": "string",
@@ -885,6 +908,40 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "perSliEligibility": {
+          "description": "If present, this will override eligibility for the node coming from instance or exclusions for specified SLIs.",
+          "$ref": "GoogleCloudSaasacceleratorManagementProvidersV1PerSliSloEligibility"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudSaasacceleratorManagementProvidersV1NotificationParameter": {
+      "id": "GoogleCloudSaasacceleratorManagementProvidersV1NotificationParameter",
+      "description": "Contains notification related data.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "values": {
+          "description": "Optional. Array of string values. e.g. instance's replica information.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
         }
       },
       "additionalProperties": null,
@@ -979,58 +1036,6 @@
       "additionalProperties": null,
       "items": null
     },
-    "GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion": {
-      "id": "GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion",
-      "description": "SloExclusion represents an exclusion in SLI calculation applies to all SLOs.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "duration": {
-          "description": "Exclusion duration. No restrictions on the possible values. When an ongoing operation is taking longer than initially expected, an existing entry in the exclusion list can be updated by extending the duration. This is supported by the subsystem exporting eligibility data as long as such extension is committed at least 10 minutes before the original exclusion expiration - otherwise it is possible that there will be \"gaps\" in the exclusion application in the exported timeseries.",
-          "type": "string",
-          "format": "google-duration",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "reason": {
-          "description": "Human-readable reason for the exclusion. This should be a static string (e.g. \"Disruptive update in progress\") and should not contain dynamically generated data (e.g. instance name). Can be left empty.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "sliName": {
-          "description": "Name of an SLI that this exclusion applies to. Can be left empty, signaling that the instance should be excluded from all SLIs.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "startTime": {
-          "description": "Start time of the exclusion. No alignment (e.g. to a full minute) needed.",
-          "type": "string",
-          "format": "google-datetime",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
     "GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata": {
       "id": "GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata",
       "description": "SloMetadata contains resources required for proper SLO classification of the instance.",
@@ -1039,22 +1044,6 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
-        "eligibility": {
-          "description": "Optional. Global per-instance SLI eligibility which applies to all defined SLIs. Exactly one of 'eligibility' and 'per_sli_eligibility' fields must be used.",
-          "$ref": "GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility"
-        },
-        "exclusions": {
-          "description": "List of SLO exclusion windows. When multiple entries in the list match (matching the exclusion time-window against current time point) the exclusion reason used in the first matching entry will be published. It is not needed to include expired exclusion in this list, as only the currently applicable exclusions are taken into account by the eligibility exporting subsystem (the historical state of exclusions will be reflected in the historically produced timeseries regardless of the current state). This field can be used to mark the instance as temporary ineligible for the purpose of SLO calculation. For permanent instance SLO exclusion, use of custom instance eligibility is recommended. See 'eligibility' field below.",
-          "type": "array",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": {
-            "$ref": "GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion"
-          }
-        },
         "nodes": {
           "description": "Optional. List of nodes. Some producers need to use per-node metadata to calculate SLO. This field allows such producers to publish per-node SLO meta data, which will be consumed by SSA Eligibility Exporter and published in the form of per node metric to Monarch.",
           "type": "array",
@@ -1068,7 +1057,7 @@
           }
         },
         "perSliEligibility": {
-          "description": "Optional. Multiple per-instance SLI eligibilities which apply for individual SLIs. Exactly one of 'eligibility' and 'per_sli_eligibility' fields must be used.",
+          "description": "Optional. Multiple per-instance SLI eligibilities which apply for individual SLIs.",
           "$ref": "GoogleCloudSaasacceleratorManagementProvidersV1PerSliSloEligibility"
         },
         "tier": {
@@ -1135,6 +1124,16 @@
             "$ref": "FileShareConfig"
           }
         },
+        "kmsKeyName": {
+          "description": "KMS key name used for data encryption.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "labels": {
           "description": "Resource labels to represent user provided metadata.",
           "type": "object",
@@ -1155,7 +1154,7 @@
           "items": null
         },
         "name": {
-          "description": "Output only. The resource name of the instance, in the format projects/{project}/locations/{location}/instances/{instance}.",
+          "description": "Output only. The resource name of the instance, in the format `projects/{project}/locations/{location}/instances/{instance}`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1176,6 +1175,16 @@
             "$ref": "NetworkConfig"
           }
         },
+        "satisfiesPzs": {
+          "description": "Output only. Reserved for future use.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "state": {
           "description": "Output only. The instance state.",
           "type": "string",
@@ -1187,7 +1196,8 @@
             "REPAIRING",
             "DELETING",
             "ERROR",
-            "RESTORING"
+            "RESTORING",
+            "SUSPENDED"
           ],
           "enumDescriptions": [
             "State not set.",
@@ -1196,7 +1206,8 @@
             "Work is being done on the instance. You can get further details from the `statusMessage` field of the `Instance` resource.",
             "The instance is shutting down.",
             "The instance is experiencing an issue and might be unusable. You can get further details from the `statusMessage` field of the `Instance` resource.",
-            "The instance is restoring a backup to an existing file share and may be unusable during this time."
+            "The instance is restoring a backup to an existing file share and may be unusable during this time.",
+            "The instance is suspended. You can get further details from the `suspension_reasons` field of the `Instance` resource."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1212,6 +1223,30 @@
           "additionalProperties": null,
           "items": null
         },
+        "suspensionReasons": {
+          "description": "Output only. Field indicates all the reasons the instance is in \"SUSPENDED\" state.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [
+              "SUSPENSION_REASON_UNSPECIFIED",
+              "KMS_KEY_ISSUE"
+            ],
+            "enumDescriptions": [
+              "Not set.",
+              "The KMS key used by the instance is either revoked or denied access to."
+            ],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
         "tier": {
           "description": "The service tier of the instance.",
           "type": "string",
@@ -1222,7 +1257,8 @@
             "PREMIUM",
             "BASIC_HDD",
             "BASIC_SSD",
-            "HIGH_SCALE_SSD"
+            "HIGH_SCALE_SSD",
+            "ENTERPRISE"
           ],
           "enumDescriptions": [
             "Not set.",
@@ -1230,7 +1266,8 @@
             "PREMIUM tier.",
             "BASIC instances offer a maximum capacity of 63.9 TB. BASIC_HDD is an alias for STANDARD Tier, offering economical performance backed by HDD.",
             "BASIC instances offer a maximum capacity of 63.9 TB. BASIC_SSD is an alias for PREMIUM Tier, and offers improved performance backed by SSD.",
-            "HIGH_SCALE instances offer expanded capacity and performance scaling capabilities."
+            "HIGH_SCALE instances offer expanded capacity and performance scaling capabilities.",
+            "ENTERPRISE instances offer the features and availability needed for mission-critical workloads."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1249,7 +1286,7 @@
       "enumDescriptions": [],
       "properties": {
         "backups": {
-          "description": "A list of backups in the project for the specified location. If the {location} value in the request is \"-\", the response contains a list of backups from all locations. If any location is unreachable, the response will only return backups in reachable locations and the \"unreachable\" field will be populated with a list of unreachable locations.",
+          "description": "A list of backups in the project for the specified location. If the `{location}` value in the request is \"-\", the response contains a list of backups from all locations. If any location is unreachable, the response will only return backups in reachable locations and the \"unreachable\" field will be populated with a list of unreachable locations.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1301,7 +1338,7 @@
       "enumDescriptions": [],
       "properties": {
         "instances": {
-          "description": "A list of instances in the project for the specified location. If the {location} value in the request is \"-\", the response contains a list of instances from all locations. If any location is unreachable, the response will only return instances in reachable locations and the \"unreachable\" field will be populated with a list of unreachable locations.",
+          "description": "A list of instances in the project for the specified location. If the `{location}` value in the request is \"-\", the response contains a list of instances from all locations. If any location is unreachable, the response will only return instances in reachable locations and the \"unreachable\" field will be populated with a list of unreachable locations.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1406,6 +1443,40 @@
           "additionalProperties": null,
           "items": {
             "$ref": "Operation"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListSnapshotsResponse": {
+      "id": "ListSnapshotsResponse",
+      "description": "ListSnapshotsResponse is the result of ListSnapshotsRequest.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "The token you can use to retrieve the next page of results. Not returned if there are no more results in the list.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "snapshots": {
+          "description": "A list of snapshots in the project for the specified instance.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Snapshot"
           }
         }
       },
@@ -1613,8 +1684,26 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "connectMode": {
+          "description": "The network connect mode of the Filestore instance. If not provided, the connect mode defaults to DIRECT_PEERING.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "CONNECT_MODE_UNSPECIFIED",
+            "DIRECT_PEERING",
+            "PRIVATE_SERVICE_ACCESS"
+          ],
+          "enumDescriptions": [
+            "Not set.",
+            "Connect via direct peering to the Filestore service.",
+            "Connect to your Filestore instance using Private Service Access. Private services access provides an IP address range for multiple Google Cloud services, including Filestore."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "ipAddresses": {
-          "description": "Output only. IPv4 addresses in the format {octet 1}.{octet 2}.{octet 3}.{octet 4} or IPv6 addresses in the format {block 1}:{block 2}:{block 3}:{block 4}:{block 5}:{block 6}:{block 7}:{block 8}.",
+          "description": "Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1656,7 +1745,7 @@
           }
         },
         "network": {
-          "description": "The name of the Google Compute Engine [VPC network](/compute/docs/networks-and-firewalls#networks) to which the instance is connected.",
+          "description": "The name of the Google Compute Engine [VPC network](https://cloud.google.com/vpc/docs/vpc) to which the instance is connected.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1666,7 +1755,7 @@
           "items": null
         },
         "reservedIpRange": {
-          "description": "A /29 CIDR block in one of the [internal IP address ranges](https://www.arin.net/knowledge/address_filters.html) that identifies the range of IP addresses reserved for this instance. For example, 10.0.0.0/29 or 192.168.0.0/29. The range you specify can't overlap with either existing subnets or assigned IP address ranges for other Cloud Filestore instances in the selected VPC network.",
+          "description": "Optional, reserved_ip_range can have one of the following two types of values. * CIDR range value when using DIRECT_PEERING connect mode. * [Allocated IP address range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address) when using PRIVATE_SERVICE_ACCESS connect mode. When the name of an allocated IP address range is specified, it must be one of the ranges associated with the private service access connection. When specified as a direct CIDR value, it must be a /29 CIDR block for Basic tier or a /24 CIDR block for High Scale or Enterprise tier in one of the [internal IP address ranges](https://www.arin.net/reference/research/statistics/address_filters/) that identifies the range of IP addresses reserved for this instance. For example, 10.0.0.0/29 or 192.168.0.0/24. The range you specify can't overlap with either existing subnets or assigned IP address ranges for other Cloud Filestore instances in the selected VPC network.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1726,7 +1815,7 @@
           "items": null
         },
         "ipRanges": {
-          "description": "List of either an IPv4 addresses in the format {octet 1}.{octet 2}.{octet 3}.{octet 4} or CIDR ranges in the format {octet 1}.{octet 2}.{octet 3}.{octet 4}/{mask size} which may mount the file share. Overlapping IP ranges are not allowed, both within and across NfsExportOptions. An error will be returned. The limit is 64 IP ranges/addresses for each FileShareConfig among all NfsExportOptions.",
+          "description": "List of either an IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or CIDR ranges in the format `{octet1}.{octet2}.{octet3}.{octet4}/{mask size}` which may mount the file share. Overlapping IP ranges are not allowed, both within and across NfsExportOptions. An error will be returned. The limit is 64 IP ranges/addresses for each FileShareConfig among all NfsExportOptions.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1848,7 +1937,7 @@
       "enumDescriptions": [],
       "properties": {
         "apiVersion": {
-          "description": "[Output only] API version used to start the operation.",
+          "description": "Output only. API version used to start the operation.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1858,7 +1947,7 @@
           "items": null
         },
         "cancelRequested": {
-          "description": "[Output only] Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.",
+          "description": "Output only. Identifies whether the user has requested cancellation of the operation. Operations that have been cancelled successfully have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -1868,7 +1957,7 @@
           "items": null
         },
         "createTime": {
-          "description": "[Output only] The time the operation was created.",
+          "description": "Output only. The time the operation was created.",
           "type": "string",
           "format": "google-datetime",
           "enum": [],
@@ -1878,7 +1967,7 @@
           "items": null
         },
         "endTime": {
-          "description": "[Output only] The time the operation finished running.",
+          "description": "Output only. The time the operation finished running.",
           "type": "string",
           "format": "google-datetime",
           "enum": [],
@@ -1888,7 +1977,7 @@
           "items": null
         },
         "statusDetail": {
-          "description": "[Output only] Human-readable status of the operation, if any.",
+          "description": "Output only. Human-readable status of the operation, if any.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1898,7 +1987,7 @@
           "items": null
         },
         "target": {
-          "description": "[Output only] Server-defined resource path for the target of the operation.",
+          "description": "Output only. Server-defined resource path for the target of the operation.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1908,7 +1997,7 @@
           "items": null
         },
         "verb": {
-          "description": "[Output only] Name of the verb executed by the operation.",
+          "description": "Output only. Name of the verb executed by the operation.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1923,7 +2012,7 @@
     },
     "RestoreInstanceRequest": {
       "id": "RestoreInstanceRequest",
-      "description": "RestoreInstanceRequest restores an existing instances's file share from a backup.",
+      "description": "RestoreInstanceRequest restores an existing instance's file share from a backup.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1940,7 +2029,7 @@
           "items": null
         },
         "sourceBackup": {
-          "description": "The resource name of the backup, in the format projects/{project_number}/locations/{location_id}/backups/{backup_id}.",
+          "description": "The resource name of the backup, in the format `projects/{project_number}/locations/{location_id}/backups/{backup_id}`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2002,6 +2091,97 @@
         "startTime": {
           "description": "Time within the window to start the operations.",
           "$ref": "TimeOfDay"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Snapshot": {
+      "id": "Snapshot",
+      "description": "A Filestore snapshot.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "createTime": {
+          "description": "Output only. The time when the snapshot was created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "description": {
+          "description": "A description of the snapshot with 2048 characters or less. Requests with longer descriptions will be rejected.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "filesystemUsedBytes": {
+          "description": "Output only. The amount of bytes needed to allocate a full copy of the snapshot content",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "labels": {
+          "description": "Resource labels to represent user provided metadata.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        },
+        "name": {
+          "description": "Output only. The resource name of the snapshot, in the format `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "state": {
+          "description": "Output only. The snapshot state.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "STATE_UNSPECIFIED",
+            "CREATING",
+            "READY",
+            "DELETING"
+          ],
+          "enumDescriptions": [
+            "State not set.",
+            "Snapshot is being created.",
+            "Snapshot is available for use.",
+            "Snapshot is being deleted."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -2145,7 +2325,7 @@
           "items": null
         },
         "denyMaintenancePeriods": {
-          "description": "Deny Maintenance Period that is applied to resource to indicate when maintenance is forbidden. User can specify zero or more non-overlapping deny periods. For V1, Maximum number of deny_maintenance_periods is expected to be one.",
+          "description": "Deny Maintenance Period that is applied to resource to indicate when maintenance is forbidden. User can specify zero or more non-overlapping deny periods. Maximum number of deny_maintenance_periods expected is one.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2218,7 +2398,7 @@
                       "repeated": false
                     },
                     "parent": {
-                      "description": "Required. The backup's project and location, in the format projects/{project_number}/locations/{location}. In Cloud Filestore, backup locations map to GCP regions, for example **us-west1**.",
+                      "description": "Required. The backup's project and location, in the format `projects/{project_number}/locations/{location}`. In Cloud Filestore, backup locations map to GCP regions, for example **us-west1**.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -2257,7 +2437,7 @@
                   "description": "Deletes a backup.",
                   "parameters": {
                     "name": {
-                      "description": "Required. The backup resource name, in the format projects/{project_number}/locations/{location}/backups/{backup_id}",
+                      "description": "Required. The backup resource name, in the format `projects/{project_number}/locations/{location}/backups/{backup_id}`",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -2294,7 +2474,7 @@
                   "description": "Gets the details of a specific backup.",
                   "parameters": {
                     "name": {
-                      "description": "Required. The backup resource name, in the format projects/{project_number}/locations/{location}/backups/{backup_id}.",
+                      "description": "Required. The backup resource name, in the format `projects/{project_number}/locations/{location}/backups/{backup_id}`.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -2387,7 +2567,7 @@
                       "repeated": false
                     },
                     "parent": {
-                      "description": "Required. The project and location for which to retrieve backup information, in the format projects/{project_number}/locations/{location}. In Cloud Filestore, backup locations map to GCP regions, for example **us-west1**. To retrieve backup information for all locations, use \"-\" for the {location} value.",
+                      "description": "Required. The project and location for which to retrieve backup information, in the format `projects/{project_number}/locations/{location}`. In Cloud Filestore, backup locations map to GCP regions, for example **us-west1**. To retrieve backup information for all locations, use \"-\" for the `{location}` value.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -2424,7 +2604,7 @@
                   "description": "Updates the settings of a specific backup.",
                   "parameters": {
                     "name": {
-                      "description": "Output only. The resource name of the backup, in the format projects/{project_number}/locations/{location_id}/backups/{backup_id}.",
+                      "description": "Output only. The resource name of the backup, in the format `projects/{project_number}/locations/{location_id}/backups/{backup_id}`.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -2473,7 +2653,286 @@
               }
             },
             "instances": {
-              "resources": {},
+              "resources": {
+                "snapshots": {
+                  "resources": {},
+                  "methods": {
+                    "create": {
+                      "id": "file.projects.locations.instances.snapshots.create",
+                      "path": "v1/{+parent}/snapshots",
+                      "httpMethod": "POST",
+                      "description": "Creates a snapshot.",
+                      "parameters": {
+                        "parent": {
+                          "description": "Required. The Filestore Instance to create the snapshots of, in the format `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "snapshotId": {
+                          "description": "Required. The ID to use for the snapshot. The ID must be unique within the specified instance. This value must start with a lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens, and cannot end with a hyphen.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "parent"
+                      ],
+                      "request": {
+                        "$ref": "Snapshot"
+                      },
+                      "response": {
+                        "$ref": "Operation"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "delete": {
+                      "id": "file.projects.locations.instances.snapshots.delete",
+                      "path": "v1/{+name}",
+                      "httpMethod": "DELETE",
+                      "description": "Deletes a snapshot.",
+                      "parameters": {
+                        "name": {
+                          "description": "Required. The snapshot resource name, in the format `projects/{project_id}/locations/{location}/instances/{instance_id}/snapshots/{snapshot_id}`",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+/snapshots/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "name"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "Operation"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "get": {
+                      "id": "file.projects.locations.instances.snapshots.get",
+                      "path": "v1/{+name}",
+                      "httpMethod": "GET",
+                      "description": "Gets the details of a specific snapshot.",
+                      "parameters": {
+                        "name": {
+                          "description": "Required. The snapshot resource name, in the format `projects/{project_id}/locations/{location}/instances/{instance_id}/snapshots/{snapshot_id}`",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+/snapshots/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "name"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "Snapshot"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "list": {
+                      "id": "file.projects.locations.instances.snapshots.list",
+                      "path": "v1/{+parent}/snapshots",
+                      "httpMethod": "GET",
+                      "description": "Lists all snapshots in a project for either a specified location or for all locations.",
+                      "parameters": {
+                        "filter": {
+                          "description": "List filter.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "orderBy": {
+                          "description": "Sort results. Supported values are \"name\", \"name desc\" or \"\" (unsorted).",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "pageSize": {
+                          "description": "The maximum number of items to return.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "integer",
+                          "format": "int32",
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "pageToken": {
+                          "description": "The next_page_token value to use if there are additional results to retrieve for this list request.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "parent": {
+                          "description": "Required. The instance for which to retrieve snapshot information, in the format `projects/{project_id}/locations/{location}/instances/{instance_id}`.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "parent"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "ListSnapshotsResponse"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "patch": {
+                      "id": "file.projects.locations.instances.snapshots.patch",
+                      "path": "v1/{+name}",
+                      "httpMethod": "PATCH",
+                      "description": "Updates the settings of a specific snapshot.",
+                      "parameters": {
+                        "name": {
+                          "description": "Output only. The resource name of the snapshot, in the format `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+/snapshots/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "updateMask": {
+                          "description": "Required. Mask of fields to update. At least one path must be supplied in this field.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": "google-fieldmask",
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "name"
+                      ],
+                      "request": {
+                        "$ref": "Snapshot"
+                      },
+                      "response": {
+                        "$ref": "Operation"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    }
+                  }
+                }
+              },
               "methods": {
                 "create": {
                   "id": "file.projects.locations.instances.create",
@@ -2496,7 +2955,7 @@
                       "repeated": false
                     },
                     "parent": {
-                      "description": "Required. The instance's project and location, in the format projects/{project_id}/locations/{location}. In Cloud Filestore, locations map to GCP zones, for example **us-west1-b**.",
+                      "description": "Required. The instance's project and location, in the format `projects/{project_id}/locations/{location}`. In Cloud Filestore, locations map to GCP zones, for example **us-west1-b**.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -2534,8 +2993,22 @@
                   "httpMethod": "DELETE",
                   "description": "Deletes an instance.",
                   "parameters": {
+                    "force": {
+                      "description": "If set to true, all snapshots of the instance will also be deleted. (Otherwise, the request will only work if the instance has no snapshots.)",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "boolean",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
                     "name": {
-                      "description": "Required. The instance resource name, in the format projects/{project_id}/locations/{location}/instances/{instance_id}",
+                      "description": "Required. The instance resource name, in the format `projects/{project_id}/locations/{location}/instances/{instance_id}`",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -2572,7 +3045,7 @@
                   "description": "Gets the details of a specific instance.",
                   "parameters": {
                     "name": {
-                      "description": "Required. The instance resource name, in the format projects/{project_id}/locations/{location}/instances/{instance_id}.",
+                      "description": "Required. The instance resource name, in the format `projects/{project_id}/locations/{location}/instances/{instance_id}`.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -2665,7 +3138,7 @@
                       "repeated": false
                     },
                     "parent": {
-                      "description": "Required. The project and location for which to retrieve instance information, in the format projects/{project_id}/locations/{location}. In Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To retrieve instance information for all locations, use \"-\" for the {location} value.",
+                      "description": "Required. The project and location for which to retrieve instance information, in the format `projects/{project_id}/locations/{location}`. In Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To retrieve instance information for all locations, use \"-\" for the `{location}` value.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -2702,7 +3175,7 @@
                   "description": "Updates the settings of a specific instance.",
                   "parameters": {
                     "name": {
-                      "description": "Output only. The resource name of the instance, in the format projects/{project}/locations/{location}/instances/{instance}.",
+                      "description": "Output only. The resource name of the instance, in the format `projects/{project}/locations/{location}/instances/{instance}`.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -2755,7 +3228,7 @@
                   "description": "Restores an existing instance's file share from a backup. The capacity of the instance needs to be equal to or larger than the capacity of the backup (and also equal to or larger than the minimum capacity of the tier).",
                   "parameters": {
                     "name": {
-                      "description": "Required. The resource name of the instance, in the format projects/{project_number}/locations/{location_id}/instances/{instance_id}.",
+                      "description": "Required. The resource name of the instance, in the format `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -3032,7 +3505,7 @@
               "description": "Lists information about the supported locations for this service.",
               "parameters": {
                 "filter": {
-                  "description": "The standard list filter.",
+                  "description": "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -3074,7 +3547,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "The standard list page size.",
+                  "description": "The maximum number of results to return. If not set, the service selects a default.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -3088,7 +3561,7 @@
                   "repeated": false
                 },
                 "pageToken": {
-                  "description": "The standard list page token.",
+                  "description": "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.",
                   "default": null,
                   "location": "query",
                   "required": false,

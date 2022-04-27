@@ -552,6 +552,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enrollment_code: ::std::option::Option<String>,
+        #[doc = "The gradebook settings that specify how a student's overall grade for the course will be calculated and who it will be displayed to. Read-only"]
+        #[serde(
+            rename = "gradebookSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gradebook_settings: ::std::option::Option<crate::schemas::GradebookSettings>,
         #[doc = "Whether or not guardian notifications are enabled for this course. Read-only."]
         #[serde(
             rename = "guardiansEnabled",
@@ -943,6 +950,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub due_time: ::std::option::Option<crate::schemas::TimeOfDay>,
+        #[doc = "The category that this coursework's grade contributes to. Present only when a category has been chosen for the coursework. May be used in calculating the overall grade. Read-only."]
+        #[serde(
+            rename = "gradeCategory",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub grade_category: ::std::option::Option<crate::schemas::GradeCategory>,
         #[doc = "Classroom-assigned identifier of this course work, unique per course. Read-only."]
         #[serde(
             rename = "id",
@@ -2137,6 +2151,58 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GradeCategory {
+        #[doc = "Default value of denominator. Only applicable when grade calculation type is TOTAL_POINTS."]
+        #[serde(
+            rename = "defaultGradeDenominator",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub default_grade_denominator: ::std::option::Option<i32>,
+        #[doc = "ID of the grade category."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "Name of the grade category."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "The weight of the category average as part of overall average. A weight of 12.34% is represented as 123400 (100% is 1,000,000). The last two digits should always be zero since we use two decimal precision. Only applicable when grade calculation type is WEIGHTED_CATEGORIES."]
+        #[serde(
+            rename = "weight",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub weight: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for GradeCategory {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GradeCategory {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GradeHistory {
@@ -2275,6 +2341,221 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GradeHistoryGradeChangeType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GradebookSettings {
+        #[doc = "Indicates how the overall grade is calculated."]
+        #[serde(
+            rename = "calculationType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub calculation_type:
+            ::std::option::Option<crate::schemas::GradebookSettingsCalculationType>,
+        #[doc = "Indicates who can see the overall grade.."]
+        #[serde(
+            rename = "displaySetting",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_setting: ::std::option::Option<crate::schemas::GradebookSettingsDisplaySetting>,
+        #[doc = "Grade categories that are available for coursework in the course."]
+        #[serde(
+            rename = "gradeCategories",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub grade_categories: ::std::option::Option<Vec<crate::schemas::GradeCategory>>,
+    }
+    impl ::google_field_selector::FieldSelector for GradebookSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GradebookSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GradebookSettingsCalculationType {
+        #[doc = "No method specified. This is never returned."]
+        CalculationTypeUnspecified,
+        #[doc = "Overall grade is the sum of grades divided by the sum of total points regardless of category."]
+        TotalPoints,
+        #[doc = "Overall grade is the weighted average by category."]
+        WeightedCategories,
+    }
+    impl GradebookSettingsCalculationType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GradebookSettingsCalculationType::CalculationTypeUnspecified => {
+                    "CALCULATION_TYPE_UNSPECIFIED"
+                }
+                GradebookSettingsCalculationType::TotalPoints => "TOTAL_POINTS",
+                GradebookSettingsCalculationType::WeightedCategories => "WEIGHTED_CATEGORIES",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GradebookSettingsCalculationType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GradebookSettingsCalculationType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GradebookSettingsCalculationType, ()> {
+            Ok(match s {
+                "CALCULATION_TYPE_UNSPECIFIED" => {
+                    GradebookSettingsCalculationType::CalculationTypeUnspecified
+                }
+                "TOTAL_POINTS" => GradebookSettingsCalculationType::TotalPoints,
+                "WEIGHTED_CATEGORIES" => GradebookSettingsCalculationType::WeightedCategories,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GradebookSettingsCalculationType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GradebookSettingsCalculationType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GradebookSettingsCalculationType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CALCULATION_TYPE_UNSPECIFIED" => {
+                    GradebookSettingsCalculationType::CalculationTypeUnspecified
+                }
+                "TOTAL_POINTS" => GradebookSettingsCalculationType::TotalPoints,
+                "WEIGHTED_CATEGORIES" => GradebookSettingsCalculationType::WeightedCategories,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GradebookSettingsCalculationType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GradebookSettingsCalculationType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GradebookSettingsDisplaySetting {
+        #[doc = "No setting specified. This is never returned."]
+        DisplaySettingUnspecified,
+        #[doc = "Does not show overall grade in the gradebook or student profile."]
+        HideOverallGrade,
+        #[doc = "Shows overall grade in the gradebook and student profile to both teachers and students."]
+        ShowOverallGrade,
+        #[doc = "Shows the overall grade to teachers in the gradebook and student profile. Hides from students in their student profile."]
+        ShowTeachersOnly,
+    }
+    impl GradebookSettingsDisplaySetting {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GradebookSettingsDisplaySetting::DisplaySettingUnspecified => {
+                    "DISPLAY_SETTING_UNSPECIFIED"
+                }
+                GradebookSettingsDisplaySetting::HideOverallGrade => "HIDE_OVERALL_GRADE",
+                GradebookSettingsDisplaySetting::ShowOverallGrade => "SHOW_OVERALL_GRADE",
+                GradebookSettingsDisplaySetting::ShowTeachersOnly => "SHOW_TEACHERS_ONLY",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GradebookSettingsDisplaySetting {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GradebookSettingsDisplaySetting {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GradebookSettingsDisplaySetting, ()> {
+            Ok(match s {
+                "DISPLAY_SETTING_UNSPECIFIED" => {
+                    GradebookSettingsDisplaySetting::DisplaySettingUnspecified
+                }
+                "HIDE_OVERALL_GRADE" => GradebookSettingsDisplaySetting::HideOverallGrade,
+                "SHOW_OVERALL_GRADE" => GradebookSettingsDisplaySetting::ShowOverallGrade,
+                "SHOW_TEACHERS_ONLY" => GradebookSettingsDisplaySetting::ShowTeachersOnly,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GradebookSettingsDisplaySetting {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GradebookSettingsDisplaySetting {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GradebookSettingsDisplaySetting {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DISPLAY_SETTING_UNSPECIFIED" => {
+                    GradebookSettingsDisplaySetting::DisplaySettingUnspecified
+                }
+                "HIDE_OVERALL_GRADE" => GradebookSettingsDisplaySetting::HideOverallGrade,
+                "SHOW_OVERALL_GRADE" => GradebookSettingsDisplaySetting::ShowOverallGrade,
+                "SHOW_TEACHERS_ONLY" => GradebookSettingsDisplaySetting::ShowTeachersOnly,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GradebookSettingsDisplaySetting {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GradebookSettingsDisplaySetting {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5002,7 +5283,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Creates a course. The user specified in `ownerId` is the owner of the created course and added as a teacher. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to create courses or for access errors. * `NOT_FOUND` if the primary teacher is not a valid user. * `FAILED_PRECONDITION` if the course owner's account is disabled or for the following request errors: * UserGroupsMembershipLimitReached * `ALREADY_EXISTS` if an alias was specified in the `id` and already exists."]
+            #[doc = "Creates a course. The user specified in `ownerId` is the owner of the created course and added as a teacher. A non-admin requesting user can only create a course with themselves as the owner. Domain admins can create courses owned by any user within their domain. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to create courses or for access errors. * `NOT_FOUND` if the primary teacher is not a valid user. * `FAILED_PRECONDITION` if the course owner's account is disabled or for the following request errors: * UserGroupsMembershipLimitReached * `ALREADY_EXISTS` if an alias was specified in the `id` and already exists."]
             pub fn create(&self, request: crate::schemas::Course) -> CreateRequestBuilder {
                 CreateRequestBuilder {
                     reqwest: &self.reqwest,
@@ -5082,7 +5363,7 @@ pub mod resources {
                     teacher_id: None,
                 }
             }
-            #[doc = "Updates one or more fields in a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to modify the requested course or for access errors. * `NOT_FOUND` if no course exists with the requested ID. * `INVALID_ARGUMENT` if invalid fields are specified in the update mask or if no update mask is supplied. * `FAILED_PRECONDITION` for the following request errors: * CourseNotModifiable"]
+            #[doc = "Updates one or more fields in a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to modify the requested course or for access errors. * `NOT_FOUND` if no course exists with the requested ID. * `INVALID_ARGUMENT` if invalid fields are specified in the update mask or if no update mask is supplied. * `FAILED_PRECONDITION` for the following request errors: * CourseNotModifiable * InactiveCourseOwner"]
             pub fn patch(
                 &self,
                 request: crate::schemas::Course,
@@ -7703,7 +7984,7 @@ pub mod resources {
             }
             #[doc = "Created via [AnnouncementsActions::list()](struct.AnnouncementsActions.html#method.list)"]
             #[derive(Debug, Clone)]
-            pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , course_id : String , announcement_states : Option < Vec < crate :: resources :: courses :: announcements :: params :: ListAnnouncementStatesItems > > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+            pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , course_id : String , announcement_states : Option < Vec < crate :: resources :: courses :: announcements :: params :: ListAnnouncementStatesItems > > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "Restriction on the `state` of announcements returned. If this argument is left unspecified, the default value is `PUBLISHED`."]
                 pub fn announcement_states(
@@ -8583,8 +8864,8 @@ pub mod resources {
                         update_mask: None,
                     }
                 }
-                #[doc = "Actions that can be performed on the student_submissions resource"]                pub fn student_submissions ( & self ) -> crate :: resources :: courses :: course_work :: student_submissions :: StudentSubmissionsActions{
-                    crate :: resources :: courses :: course_work :: student_submissions :: StudentSubmissionsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the student_submissions resource"]                pub fn student_submissions (& self) -> crate :: resources :: courses :: course_work :: student_submissions :: StudentSubmissionsActions{
+                    crate :: resources :: courses :: course_work :: student_submissions :: StudentSubmissionsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
             }
             #[doc = "Created via [CourseWorkActions::create()](struct.CourseWorkActions.html#method.create)"]
@@ -10308,7 +10589,7 @@ pub mod resources {
                 }
                 #[doc = "Created via [StudentSubmissionsActions::list()](struct.StudentSubmissionsActions.html#method.list)"]
                 #[derive(Debug, Clone)]
-                pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , course_id : String , course_work_id : String , late : Option < crate :: resources :: courses :: course_work :: student_submissions :: params :: ListLate > , page_size : Option < i32 > , page_token : Option < String > , states : Option < Vec < crate :: resources :: courses :: course_work :: student_submissions :: params :: ListStatesItems > > , user_id : Option < String > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , course_id : String , course_work_id : String , late : Option < crate :: resources :: courses :: course_work :: student_submissions :: params :: ListLate > , page_size : Option < i32 > , page_token : Option < String > , states : Option < Vec < crate :: resources :: courses :: course_work :: student_submissions :: params :: ListStatesItems > > , user_id : Option < String > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                 impl<'a> ListRequestBuilder<'a> {
                     #[doc = "Requested lateness value. If specified, returned student submissions are restricted by the requested value. If unspecified, submissions are returned regardless of `late` value."]
                     pub fn late(
@@ -11561,7 +11842,7 @@ pub mod resources {
                         s: &str,
                     ) -> ::std::result::Result<ListCourseWorkMaterialStatesItems, ()>
                     {
-                        Ok ( match s { "COURSEWORK_MATERIAL_STATE_UNSPECIFIED" => ListCourseWorkMaterialStatesItems :: CourseworkMaterialStateUnspecified , "DELETED" => ListCourseWorkMaterialStatesItems :: Deleted , "DRAFT" => ListCourseWorkMaterialStatesItems :: Draft , "PUBLISHED" => ListCourseWorkMaterialStatesItems :: Published , _ => return Err ( ( ) ) , } )
+                        Ok (match s { "COURSEWORK_MATERIAL_STATE_UNSPECIFIED" => ListCourseWorkMaterialStatesItems :: CourseworkMaterialStateUnspecified , "DELETED" => ListCourseWorkMaterialStatesItems :: Deleted , "DRAFT" => ListCourseWorkMaterialStatesItems :: Draft , "PUBLISHED" => ListCourseWorkMaterialStatesItems :: Published , _ => return Err (()) , })
                     }
                 }
                 impl ::std::fmt::Display for ListCourseWorkMaterialStatesItems {
@@ -11583,7 +11864,7 @@ pub mod resources {
                         D: ::serde::de::Deserializer<'de>,
                     {
                         let value: &'de str = <&str>::deserialize(deserializer)?;
-                        Ok ( match value { "COURSEWORK_MATERIAL_STATE_UNSPECIFIED" => ListCourseWorkMaterialStatesItems :: CourseworkMaterialStateUnspecified , "DELETED" => ListCourseWorkMaterialStatesItems :: Deleted , "DRAFT" => ListCourseWorkMaterialStatesItems :: Draft , "PUBLISHED" => ListCourseWorkMaterialStatesItems :: Published , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+                        Ok (match value { "COURSEWORK_MATERIAL_STATE_UNSPECIFIED" => ListCourseWorkMaterialStatesItems :: CourseworkMaterialStateUnspecified , "DELETED" => ListCourseWorkMaterialStatesItems :: Deleted , "DRAFT" => ListCourseWorkMaterialStatesItems :: Draft , "PUBLISHED" => ListCourseWorkMaterialStatesItems :: Published , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
                     }
                 }
                 impl ::google_field_selector::FieldSelector for ListCourseWorkMaterialStatesItems {
@@ -12230,7 +12511,7 @@ pub mod resources {
             }
             #[doc = "Created via [CourseWorkMaterialsActions::list()](struct.CourseWorkMaterialsActions.html#method.list)"]
             #[derive(Debug, Clone)]
-            pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , course_id : String , course_work_material_states : Option < Vec < crate :: resources :: courses :: course_work_materials :: params :: ListCourseWorkMaterialStatesItems > > , material_drive_id : Option < String > , material_link : Option < String > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+            pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , course_id : String , course_work_material_states : Option < Vec < crate :: resources :: courses :: course_work_materials :: params :: ListCourseWorkMaterialStatesItems > > , material_drive_id : Option < String > , material_link : Option < String > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "Restriction on the work status to return. Only course work material that matches is returned. If unspecified, items with a work status of `PUBLISHED` is returned."]
                 pub fn course_work_material_states(
@@ -12718,7 +12999,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Adds a user as a student of a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to create students in this course or for access errors. * `NOT_FOUND` if the requested course ID does not exist. * `FAILED_PRECONDITION` if the requested user's account is disabled, for the following request errors: * CourseMemberLimitReached * CourseNotModifiable * UserGroupsMembershipLimitReached * `ALREADY_EXISTS` if the user is already a student or teacher in the course."]
+                #[doc = "Adds a user as a student of a course. Domain administrators are permitted to [directly add](https://developers.google.com/classroom/guides/manage-users) users within their domain as students to courses within their domain. Students are permitted to add themselves to a course using an enrollment code. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to create students in this course or for access errors. * `NOT_FOUND` if the requested course ID does not exist. * `FAILED_PRECONDITION` if the requested user's account is disabled, for the following request errors: * CourseMemberLimitReached * CourseNotModifiable * UserGroupsMembershipLimitReached * InactiveCourseOwner * `ALREADY_EXISTS` if the user is already a student or teacher in the course."]
                 pub fn create(
                     &self,
                     request: crate::schemas::Student,
@@ -13614,7 +13895,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Creates a teacher of a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to create teachers in this course or for access errors. * `NOT_FOUND` if the requested course ID does not exist. * `FAILED_PRECONDITION` if the requested user's account is disabled, for the following request errors: * CourseMemberLimitReached * CourseNotModifiable * CourseTeacherLimitReached * UserGroupsMembershipLimitReached * `ALREADY_EXISTS` if the user is already a teacher or student in the course."]
+                #[doc = "Creates a teacher of a course. Domain administrators are permitted to [directly add](https://developers.google.com/classroom/guides/manage-users) users within their domain as teachers to courses within their domain. Non-admin users should send an Invitation instead. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to create teachers in this course or for access errors. * `NOT_FOUND` if the requested course ID does not exist. * `FAILED_PRECONDITION` if the requested user's account is disabled, for the following request errors: * CourseMemberLimitReached * CourseNotModifiable * CourseTeacherLimitReached * UserGroupsMembershipLimitReached * InactiveCourseOwner * `ALREADY_EXISTS` if the user is already a teacher or student in the course."]
                 pub fn create(
                     &self,
                     request: crate::schemas::Teacher,
@@ -13638,7 +13919,7 @@ pub mod resources {
                         course_id: course_id.into(),
                     }
                 }
-                #[doc = "Deletes a teacher of a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to delete teachers of this course or for access errors. * `NOT_FOUND` if no teacher of this course has the requested ID or if the course does not exist. * `FAILED_PRECONDITION` if the requested ID belongs to the primary teacher of this course."]
+                #[doc = "Removes the specified teacher from the specified course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to delete teachers of this course or for access errors. * `NOT_FOUND` if no teacher of this course has the requested ID or if the course does not exist. * `FAILED_PRECONDITION` if the requested ID belongs to the primary teacher of this course. * `FAILED_PRECONDITION` if the requested ID belongs to the owner of the course Drive folder. * `FAILED_PRECONDITION` if the course no longer has an active owner."]
                 pub fn delete(
                     &self,
                     course_id: impl Into<String>,
@@ -17678,7 +17959,7 @@ pub mod resources {
             }
             #[doc = "Created via [GuardianInvitationsActions::list()](struct.GuardianInvitationsActions.html#method.list)"]
             #[derive(Debug, Clone)]
-            pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , student_id : String , invited_email_address : Option < String > , page_size : Option < i32 > , page_token : Option < String > , states : Option < Vec < crate :: resources :: user_profiles :: guardian_invitations :: params :: ListStatesItems > > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+            pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , student_id : String , invited_email_address : Option < String > , page_size : Option < i32 > , page_token : Option < String > , states : Option < Vec < crate :: resources :: user_profiles :: guardian_invitations :: params :: ListStatesItems > > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "If specified, only results with the specified `invited_email_address` are returned."]
                 pub fn invited_email_address(mut self, value: impl Into<String>) -> Self {

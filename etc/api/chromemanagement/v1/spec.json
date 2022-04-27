@@ -7,7 +7,7 @@
   "canonicalName": "Chrome Management",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20210316",
+  "revision": "20220425",
   "title": "Chrome Management API",
   "description": "The Chrome Management API is a suite of services that allows Chrome administrators to view, manage and gain insights on their Chrome OS and Chrome Browser devices.",
   "ownerDomain": "google.com",
@@ -200,13 +200,583 @@
   "auth": {
     "oauth2": {
       "scopes": {
+        "https://www.googleapis.com/auth/chrome.management.appdetails.readonly": {
+          "description": "See detailed information about apps installed on Chrome browsers and devices managed by your organization"
+        },
         "https://www.googleapis.com/auth/chrome.management.reports.readonly": {
           "description": "See reports about devices and Chrome browsers managed within your organization"
+        },
+        "https://www.googleapis.com/auth/chrome.management.telemetry.readonly": {
+          "description": "See basic device and telemetry information collected from Chrome OS devices or users managed within your organization"
         }
       }
     }
   },
   "schemas": {
+    "GoogleChromeManagementV1AndroidAppInfo": {
+      "id": "GoogleChromeManagementV1AndroidAppInfo",
+      "description": "Android app information.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "permissions": {
+          "description": "Output only. Permissions requested by an Android app.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1AndroidAppPermission"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1AndroidAppPermission": {
+      "id": "GoogleChromeManagementV1AndroidAppPermission",
+      "description": "Permission requested by an Android app.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "type": {
+          "description": "Output only. The type of the permission.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1AppDetails": {
+      "id": "GoogleChromeManagementV1AppDetails",
+      "description": "Resource representing app details.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "androidAppInfo": {
+          "description": "Output only. Android app information.",
+          "$ref": "GoogleChromeManagementV1AndroidAppInfo"
+        },
+        "appId": {
+          "description": "Output only. Unique store identifier for the item. Examples: \"gmbmikajjgmnabiglmofipeabaddhgne\" for the Save to Google Drive Chrome extension, \"com.google.android.apps.docs\" for the Google Drive Android app.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "chromeAppInfo": {
+          "description": "Output only. Chrome Web Store app information.",
+          "$ref": "GoogleChromeManagementV1ChromeAppInfo"
+        },
+        "description": {
+          "description": "Output only. App's description.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "detailUri": {
+          "description": "Output only. The uri for the detail page of the item.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "displayName": {
+          "description": "Output only. App's display name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "firstPublishTime": {
+          "description": "Output only. First published time.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "homepageUri": {
+          "description": "Output only. Home page or Website uri.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "iconUri": {
+          "description": "Output only. A link to an image that can be used as an icon for the product.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "isPaidApp": {
+          "description": "Output only. Indicates if the app has to be paid for OR has paid content.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "latestPublishTime": {
+          "description": "Output only. Latest published time.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Output only. Format: name=customers/{customer_id}/apps/{chrome|android|web}/{app_id}@{version}",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "privacyPolicyUri": {
+          "description": "Output only. The URI pointing to the privacy policy of the app, if it was provided by the developer. Version-specific field that will only be set when the requested app version is found.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "publisher": {
+          "description": "Output only. The publisher of the item.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reviewNumber": {
+          "description": "Output only. Number of reviews received. Chrome Web Store review information will always be for the latest version of an app.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reviewRating": {
+          "description": "Output only. The rating of the app (on 5 stars). Chrome Web Store review information will always be for the latest version of an app.",
+          "type": "number",
+          "format": "float",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "revisionId": {
+          "description": "Output only. App version. A new revision is committed whenever a new version of the app is published.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "serviceError": {
+          "description": "Output only. Information about a partial service error if applicable.",
+          "$ref": "GoogleRpcStatus"
+        },
+        "type": {
+          "description": "Output only. App type.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "APP_ITEM_TYPE_UNSPECIFIED",
+            "CHROME",
+            "ANDROID",
+            "WEB"
+          ],
+          "enumDescriptions": [
+            "App type unspecified.",
+            "Chrome app.",
+            "ARC++ app.",
+            "Web app."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1AudioStatusReport": {
+      "id": "GoogleChromeManagementV1AudioStatusReport",
+      "description": "Audio report.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "inputDevice": {
+          "description": "Output only. Active input device's name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "inputGain": {
+          "description": "Output only. Active input device's gain in [0, 100].",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "inputMute": {
+          "description": "Output only. Is active input device mute or not.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "outputDevice": {
+          "description": "Output only. Active output device's name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "outputMute": {
+          "description": "Output only. Is active output device mute or not.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "outputVolume": {
+          "description": "Output only. Active output device's volume in [0, 100].",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reportTime": {
+          "description": "Output only. Timestamp of when the sample was collected on device.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1BatteryInfo": {
+      "id": "GoogleChromeManagementV1BatteryInfo",
+      "description": "Battery info",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "designCapacity": {
+          "description": "Output only. Design capacity (mAmpere-hours).",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "designMinVoltage": {
+          "description": "Output only. Designed minimum output voltage (mV)",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "manufactureDate": {
+          "description": "Output only. The date the battery was manufactured.",
+          "$ref": "GoogleTypeDate"
+        },
+        "manufacturer": {
+          "description": "Output only. Battery manufacturer.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "serialNumber": {
+          "description": "Output only. Battery serial number.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "technology": {
+          "description": "Output only. Technology of the battery. Example: Li-ion",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1BatterySampleReport": {
+      "id": "GoogleChromeManagementV1BatterySampleReport",
+      "description": "Sampling data for battery.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "chargeRate": {
+          "description": "Output only. Battery charge percentage.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "current": {
+          "description": "Output only. Battery current (mA).",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "dischargeRate": {
+          "description": "Output only. The battery discharge rate measured in mW. Positive if the battery is being discharged, negative if it's being charged.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "remainingCapacity": {
+          "description": "Output only. Battery remaining capacity (mAmpere-hours).",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reportTime": {
+          "description": "Output only. Timestamp of when the sample was collected on device",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "status": {
+          "description": "Output only. Battery status read from sysfs. Example: Discharging",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "temperature": {
+          "description": "Output only. Temperature in Celsius degrees.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "voltage": {
+          "description": "Output only. Battery voltage (millivolt).",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1BatteryStatusReport": {
+      "id": "GoogleChromeManagementV1BatteryStatusReport",
+      "description": "Status data for battery.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "batteryHealth": {
+          "description": "Output only. Battery health.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "BATTERY_HEALTH_UNSPECIFIED",
+            "BATTERY_HEALTH_NORMAL",
+            "BATTERY_REPLACE_SOON",
+            "BATTERY_REPLACE_NOW"
+          ],
+          "enumDescriptions": [
+            "Health unknown.",
+            "Battery is healthy.",
+            "Battery is moderately unhealthy and should be replaced soon.",
+            "Battery is unhealthy and should be replaced."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "cycleCount": {
+          "description": "Output only. Cycle count.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "fullChargeCapacity": {
+          "description": "Output only. Full charge capacity (mAmpere-hours).",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reportTime": {
+          "description": "Output only. Timestamp of when the sample was collected on device",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "sample": {
+          "description": "Output only. Sampling data for the battery sorted in a decreasing order of report_time.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1BatterySampleReport"
+          }
+        },
+        "serialNumber": {
+          "description": "Output only. Battery serial number.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleChromeManagementV1BrowserVersion": {
       "id": "GoogleChromeManagementV1BrowserVersion",
       "description": "Describes a browser version and its install count.",
@@ -276,7 +846,7 @@
             "Other operating system.",
             "Android operating system.",
             "Apple iOS operating system.",
-            "Chrome OS operating system.",
+            "ChromeOS operating system.",
             "Microsoft Windows operating system.",
             "Apple macOS operating system.",
             "Linux operating system."
@@ -289,6 +859,302 @@
           "description": "Output only. The full version of the installed browser.",
           "type": "string",
           "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1ChromeAppInfo": {
+      "id": "GoogleChromeManagementV1ChromeAppInfo",
+      "description": "Chrome Web Store app information.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "googleOwned": {
+          "description": "Output only. Whether the app or extension is built and maintained by Google. Version-specific field that will only be set when the requested app version is found.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "isCwsHosted": {
+          "description": "Output only. Whether the app or extension is in a published state in the Chrome Web Store.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "isKioskOnly": {
+          "description": "Output only. Whether the app is only for Kiosk mode on ChromeOS devices",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "isTheme": {
+          "description": "Output only. Whether the app or extension is a theme.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "kioskEnabled": {
+          "description": "Output only. Whether this app is enabled for Kiosk mode on ChromeOS devices",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "minUserCount": {
+          "description": "Output only. The minimum number of users using this app.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "permissions": {
+          "description": "Output only. Every custom permission requested by the app. Version-specific field that will only be set when the requested app version is found.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1ChromeAppPermission"
+          }
+        },
+        "siteAccess": {
+          "description": "Output only. Every permission giving access to domains or broad host patterns. ( e.g. www.google.com). This includes the matches from content scripts as well as hosts in the permissions node of the manifest. Version-specific field that will only be set when the requested app version is found.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1ChromeAppSiteAccess"
+          }
+        },
+        "supportEnabled": {
+          "description": "Output only. The app developer has enabled support for their app. Version-specific field that will only be set when the requested app version is found.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1ChromeAppPermission": {
+      "id": "GoogleChromeManagementV1ChromeAppPermission",
+      "description": "Permission requested by a Chrome app or extension.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "accessUserData": {
+          "description": "Output only. If available, whether this permissions grants the app/extension access to user data.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "documentationUri": {
+          "description": "Output only. If available, a URI to a page that has documentation for the current permission.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "type": {
+          "description": "Output only. The type of the permission.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1ChromeAppRequest": {
+      "id": "GoogleChromeManagementV1ChromeAppRequest",
+      "description": "Details of an app installation request.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "appDetails": {
+          "description": "Output only. Format: app_details=customers/{customer_id}/apps/chrome/{app_id}",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "appId": {
+          "description": "Output only. Unique store identifier for the app. Example: \"gmbmikajjgmnabiglmofipeabaddhgne\" for the Save to Google Drive Chrome extension.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "detailUri": {
+          "description": "Output only. The uri for the detail page of the item.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "displayName": {
+          "description": "Output only. App's display name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "iconUri": {
+          "description": "Output only. A link to an image that can be used as an icon for the product.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "latestRequestTime": {
+          "description": "Output only. The timestamp of the most recently made request for this app.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "requestCount": {
+          "description": "Output only. Total count of requests for this app.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1ChromeAppSiteAccess": {
+      "id": "GoogleChromeManagementV1ChromeAppSiteAccess",
+      "description": "Represent one host permission.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "hostMatch": {
+          "description": "Output only. This can contain very specific hosts, or patterns like \"*.com\" for instance.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1CountChromeAppRequestsResponse": {
+      "id": "GoogleChromeManagementV1CountChromeAppRequestsResponse",
+      "description": "Response containing summary of requested app installations.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "Token to specify the next page in the list.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "requestedApps": {
+          "description": "Count of requested apps matching request.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1ChromeAppRequest"
+          }
+        },
+        "totalSize": {
+          "description": "Total number of matching app requests.",
+          "type": "integer",
+          "format": "int32",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -320,7 +1186,7 @@
           }
         },
         "nextPageToken": {
-          "description": "Token to specify the next page in the list.",
+          "description": "Token to specify the next page of the request.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -364,7 +1230,7 @@
           }
         },
         "nextPageToken": {
-          "description": "Token to specify next page in the list.",
+          "description": "Token to specify the next page of the request.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -375,6 +1241,140 @@
         },
         "totalSize": {
           "description": "Total number of installed apps matching request.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1CpuInfo": {
+      "id": "GoogleChromeManagementV1CpuInfo",
+      "description": "CPU specs for a CPU.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "architecture": {
+          "description": "Output only. The CPU architecture.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ARCHITECTURE_UNSPECIFIED",
+            "X64"
+          ],
+          "enumDescriptions": [
+            "Architecture unknown.",
+            "x64 architecture"
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "maxClockSpeed": {
+          "description": "Output only. The max CPU clock speed in kHz.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "model": {
+          "description": "Output only. The CPU model name. Example: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1CpuStatusReport": {
+      "id": "GoogleChromeManagementV1CpuStatusReport",
+      "description": "Contains samples of the cpu status reports.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "cpuTemperatureInfo": {
+          "description": "Output only. CPU temperature sample info per CPU core in Celsius",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1CpuTemperatureInfo"
+          }
+        },
+        "cpuUtilizationPct": {
+          "description": "Output only. Sample of CPU utilization (0-100 percent).",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reportTime": {
+          "description": "Output only. The timestamp in milliseconds representing time at which this report was sampled.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "sampleFrequency": {
+          "description": "Output only. Frequency the report is sampled.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1CpuTemperatureInfo": {
+      "id": "GoogleChromeManagementV1CpuTemperatureInfo",
+      "description": "CPU temperature of a device. Sampled per CPU core in Celsius",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "label": {
+          "description": "Output only. CPU label. Example: Core 0",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "temperatureCelsius": {
+          "description": "Output only. CPU temperature in Celsius.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -419,6 +1419,218 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleChromeManagementV1DiskInfo": {
+      "id": "GoogleChromeManagementV1DiskInfo",
+      "description": "Status of the single storage device.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "bytesReadThisSession": {
+          "description": "Output only. Number of bytes read since last boot.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "bytesWrittenThisSession": {
+          "description": "Output only. Number of bytes written since last boot.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "discardTimeThisSession": {
+          "description": "Output only. Time spent discarding since last boot. Discarding is writing to clear blocks which are no longer in use. Supported on kernels 4.18+.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "health": {
+          "description": "Output only. Disk health.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "ioTimeThisSession": {
+          "description": "Output only. Counts the time the disk and queue were busy, so unlike the fields above, parallel requests are not counted multiple times.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "manufacturer": {
+          "description": "Output only. Disk manufacturer.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "model": {
+          "description": "Output only. Disk model.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "readTimeThisSession": {
+          "description": "Output only. Time spent reading from disk since last boot.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "serialNumber": {
+          "description": "Output only. Disk serial number.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "sizeBytes": {
+          "description": "Output only. Disk size.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "type": {
+          "description": "Output only. Disk type: eMMC / NVMe / ATA / SCSI.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "volumeIds": {
+          "description": "Output only. Disk volumes.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "writeTimeThisSession": {
+          "description": "Output only. Time spent writing to disk since last boot.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1DisplayInfo": {
+      "id": "GoogleChromeManagementV1DisplayInfo",
+      "description": "Information for a display.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "deviceId": {
+          "description": "Output only. Represents the graphics card device id.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "isInternal": {
+          "description": "Output only. Indicates if display is internal or not.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "refreshRate": {
+          "description": "Output only. Refresh rate in Hz.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "resolutionHeight": {
+          "description": "Output only. Resolution height in pixels.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "resolutionWidth": {
+          "description": "Output only. Resolution width in pixels.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleChromeManagementV1FindInstalledAppDevicesResponse": {
       "id": "GoogleChromeManagementV1FindInstalledAppDevicesResponse",
       "description": "Response containing a list of devices with queried app installed.",
@@ -440,7 +1652,7 @@
           }
         },
         "nextPageToken": {
-          "description": "Token to specify the next page in the list.",
+          "description": "Token to specify the next page of the request.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -453,6 +1665,98 @@
           "description": "Total number of devices matching request.",
           "type": "integer",
           "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1GraphicsAdapterInfo": {
+      "id": "GoogleChromeManagementV1GraphicsAdapterInfo",
+      "description": "Information of a graphics adapter (GPU).",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "adapter": {
+          "description": "Output only. Adapter name. Example: Mesa DRI Intel(R) UHD Graphics 620 (Kabylake GT2).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "deviceId": {
+          "description": "Output only. Represents the graphics card device id.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "driverVersion": {
+          "description": "Output only. Version of the GPU driver.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1GraphicsInfo": {
+      "id": "GoogleChromeManagementV1GraphicsInfo",
+      "description": "Information of the graphics subsystem.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "adapterInfo": {
+          "description": "Output only. Information about the graphics adapter (GPU).",
+          "$ref": "GoogleChromeManagementV1GraphicsAdapterInfo"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1GraphicsStatusReport": {
+      "id": "GoogleChromeManagementV1GraphicsStatusReport",
+      "description": "Information of the graphics subsystem.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "displays": {
+          "description": "Output only. Information about the displays for the device.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1DisplayInfo"
+          }
+        },
+        "reportTime": {
+          "description": "Output only. Time at which the graphics data was reported.",
+          "type": "string",
+          "format": "google-datetime",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -630,11 +1934,913 @@
       },
       "additionalProperties": null,
       "items": null
+    },
+    "GoogleChromeManagementV1ListTelemetryDevicesResponse": {
+      "id": "GoogleChromeManagementV1ListTelemetryDevicesResponse",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "devices": {
+          "description": "Telemetry devices returned in the response.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1TelemetryDevice"
+          }
+        },
+        "nextPageToken": {
+          "description": "Token to specify next page in the list.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1MemoryInfo": {
+      "id": "GoogleChromeManagementV1MemoryInfo",
+      "description": "Memory information of a device.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "availableRamBytes": {
+          "description": "Output only. Amount of available RAM in bytes.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "totalRamBytes": {
+          "description": "Output only. Total RAM in bytes.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1MemoryStatusReport": {
+      "id": "GoogleChromeManagementV1MemoryStatusReport",
+      "description": "Contains samples of memory status reports.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "pageFaults": {
+          "description": "Output only. Number of page faults during this collection",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reportTime": {
+          "description": "Output only. The timestamp in milliseconds representing time at which this report was sampled.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "sampleFrequency": {
+          "description": "Output only. Frequency the report is sampled.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "systemRamFreeBytes": {
+          "description": "Output only. Amount of free RAM in bytes (unreliable due to Garbage Collection).",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1NetworkStatusReport": {
+      "id": "GoogleChromeManagementV1NetworkStatusReport",
+      "description": "State of visible/configured networks.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "gatewayIpAddress": {
+          "description": "Output only. Gateway IP address.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "lanIpAddress": {
+          "description": "Output only. LAN IP address.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reportTime": {
+          "description": "Output only. Time at which the network state was reported.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "sampleFrequency": {
+          "description": "Output only. Frequency the report is sampled.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "signalStrengthDbm": {
+          "description": "Output only. Signal strength for wireless networks measured in decibels.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1OsUpdateStatus": {
+      "id": "GoogleChromeManagementV1OsUpdateStatus",
+      "description": "Contains information regarding the current OS update status.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "lastRebootTime": {
+          "description": "Output only. Timestamp of the last reboot.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "lastUpdateCheckTime": {
+          "description": "Output only. Timestamp of the last update check.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "lastUpdateTime": {
+          "description": "Output only. Timestamp of the last successful update.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "newPlatformVersion": {
+          "description": "Output only. New platform version of the os image being downloaded and applied. It is only set when update status is OS_IMAGE_DOWNLOAD_IN_PROGRESS or OS_UPDATE_NEED_REBOOT. Note this could be a dummy \"0.0.0.0\" for OS_UPDATE_NEED_REBOOT status for some edge cases, e.g. update engine is restarted without a reboot.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "newRequestedPlatformVersion": {
+          "description": "Output only. New requested platform version from the pending updated kiosk app.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "updateState": {
+          "description": "Output only. Current state of the os update.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "UPDATE_STATE_UNSPECIFIED",
+            "OS_IMAGE_DOWNLOAD_NOT_STARTED",
+            "OS_IMAGE_DOWNLOAD_IN_PROGRESS",
+            "OS_UPDATE_NEED_REBOOT"
+          ],
+          "enumDescriptions": [
+            "State unspecified.",
+            "OS has not started downloading.",
+            "OS has started download on device.",
+            "Device needs reboot to finish upload."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1StorageInfo": {
+      "id": "GoogleChromeManagementV1StorageInfo",
+      "description": "Status data for storage.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "availableDiskBytes": {
+          "description": "The available space for user data storage in the device in bytes.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "totalDiskBytes": {
+          "description": "The total space for user data storage in the device in bytes.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "volume": {
+          "description": "Information for disk volumes",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1StorageInfoDiskVolume"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1StorageInfoDiskVolume": {
+      "id": "GoogleChromeManagementV1StorageInfoDiskVolume",
+      "description": "Information for disk volumes",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "storageFreeBytes": {
+          "description": "Free storage space in bytes.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "storageTotalBytes": {
+          "description": "Total storage space in bytes.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "volumeId": {
+          "description": "Disk volume id.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1StorageStatusReport": {
+      "id": "GoogleChromeManagementV1StorageStatusReport",
+      "description": "Status data for storage.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "disk": {
+          "description": "Output only. Reports on disk",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1DiskInfo"
+          }
+        },
+        "reportTime": {
+          "description": "Output only. Timestamp of when the sample was collected on device",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1TelemetryDevice": {
+      "id": "GoogleChromeManagementV1TelemetryDevice",
+      "description": "Telemetry data collected from a managed device.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "audioStatusReport": {
+          "description": "Output only. Audio reports collected periodically sorted in a decreasing order of report_time.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1AudioStatusReport"
+          }
+        },
+        "batteryInfo": {
+          "description": "Output only. Information on battery specs for the device.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1BatteryInfo"
+          }
+        },
+        "batteryStatusReport": {
+          "description": "Output only. Battery reports collected periodically.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1BatteryStatusReport"
+          }
+        },
+        "cpuInfo": {
+          "description": "Output only. Information regarding CPU specs for the device.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1CpuInfo"
+          }
+        },
+        "cpuStatusReport": {
+          "description": "Output only. CPU status reports collected periodically sorted in a decreasing order of report_time.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1CpuStatusReport"
+          }
+        },
+        "customer": {
+          "description": "Output only. Google Workspace Customer whose enterprise enrolled the device.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "deviceId": {
+          "description": "Output only. The unique Directory API ID of the device. This value is the same as the Admin Console's Directory API ID in the ChromeOS Devices tab",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "graphicsInfo": {
+          "description": "Output only. Contains information regarding Graphic peripherals for the device.",
+          "$ref": "GoogleChromeManagementV1GraphicsInfo"
+        },
+        "graphicsStatusReport": {
+          "description": "Output only. Graphics reports collected periodically.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1GraphicsStatusReport"
+          }
+        },
+        "memoryInfo": {
+          "description": "Output only. Information regarding memory specs for the device.",
+          "$ref": "GoogleChromeManagementV1MemoryInfo"
+        },
+        "memoryStatusReport": {
+          "description": "Output only. Memory status reports collected periodically sorted decreasing by report_time.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1MemoryStatusReport"
+          }
+        },
+        "name": {
+          "description": "Output only. Resource name of the device.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "networkStatusReport": {
+          "description": "Output only. Network specs collected periodically.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1NetworkStatusReport"
+          }
+        },
+        "orgUnitId": {
+          "description": "Output only. Organization unit ID of the device.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "osUpdateStatus": {
+          "description": "Output only. Contains relevant information regarding ChromeOS update status.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1OsUpdateStatus"
+          }
+        },
+        "serialNumber": {
+          "description": "Output only. Device serial number. This value is the same as the Admin Console's Serial Number in the ChromeOS Devices tab.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "storageInfo": {
+          "description": "Output only. Information of storage specs for the device.",
+          "$ref": "GoogleChromeManagementV1StorageInfo"
+        },
+        "storageStatusReport": {
+          "description": "Output only. Storage reports collected periodically.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1StorageStatusReport"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleRpcStatus": {
+      "id": "GoogleRpcStatus",
+      "description": "The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "code": {
+          "description": "The status code, which should be an enum value of google.rpc.Code.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "details": {
+          "description": "A list of messages that carry the error details. There is a common set of message types for APIs to use.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "object",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": {
+              "description": "Properties of the object. Contains field @type with type URL.",
+              "type": "any",
+              "format": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "properties": {},
+              "additionalProperties": null,
+              "items": null
+            },
+            "items": null
+          }
+        },
+        "message": {
+          "description": "A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleTypeDate": {
+      "id": "GoogleTypeDate",
+      "description": "Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "day": {
+          "description": "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "month": {
+          "description": "Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "year": {
+          "description": "Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
     }
   },
   "resources": {
     "customers": {
       "resources": {
+        "apps": {
+          "resources": {
+            "android": {
+              "resources": {},
+              "methods": {
+                "get": {
+                  "id": "chromemanagement.customers.apps.android.get",
+                  "path": "v1/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Get a specific app for a customer by its resource name.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The app for which details are being queried. Examples: \"customers/my_customer/apps/chrome/gmbmikajjgmnabiglmofipeabaddhgne@2.1.2\" for the Save to Google Drive Chrome extension version 2.1.2, \"customers/my_customer/apps/android/com.google.android.apps.docs\" for the Google Drive Android app's latest version.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^customers/[^/]+/apps/android/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleChromeManagementV1AppDetails"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/chrome.management.appdetails.readonly"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
+            },
+            "chrome": {
+              "resources": {},
+              "methods": {
+                "get": {
+                  "id": "chromemanagement.customers.apps.chrome.get",
+                  "path": "v1/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Get a specific app for a customer by its resource name.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The app for which details are being queried. Examples: \"customers/my_customer/apps/chrome/gmbmikajjgmnabiglmofipeabaddhgne@2.1.2\" for the Save to Google Drive Chrome extension version 2.1.2, \"customers/my_customer/apps/android/com.google.android.apps.docs\" for the Google Drive Android app's latest version.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^customers/[^/]+/apps/chrome/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleChromeManagementV1AppDetails"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/chrome.management.appdetails.readonly"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
+            },
+            "web": {
+              "resources": {},
+              "methods": {
+                "get": {
+                  "id": "chromemanagement.customers.apps.web.get",
+                  "path": "v1/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Get a specific app for a customer by its resource name.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The app for which details are being queried. Examples: \"customers/my_customer/apps/chrome/gmbmikajjgmnabiglmofipeabaddhgne@2.1.2\" for the Save to Google Drive Chrome extension version 2.1.2, \"customers/my_customer/apps/android/com.google.android.apps.docs\" for the Google Drive Android app's latest version.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^customers/[^/]+/apps/web/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleChromeManagementV1AppDetails"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/chrome.management.appdetails.readonly"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
+            }
+          },
+          "methods": {
+            "countChromeAppRequests": {
+              "id": "chromemanagement.customers.apps.countChromeAppRequests",
+              "path": "v1/{+customer}/apps:countChromeAppRequests",
+              "httpMethod": "GET",
+              "description": "Generate summary of app installation requests.",
+              "parameters": {
+                "customer": {
+                  "description": "Required. Customer id or \"my_customer\" to use the customer associated to the account making the request.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^customers/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "orderBy": {
+                  "description": "Field used to order results. Supported fields: * request_count * latest_request_time",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "orgUnitId": {
+                  "description": "The ID of the organizational unit.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "pageSize": {
+                  "description": "Maximum number of results to return. Maximum and default are 50, anything above will be coerced to 50.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "integer",
+                  "format": "int32",
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "pageToken": {
+                  "description": "Token to specify the page of the request to be returned.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "customer"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "GoogleChromeManagementV1CountChromeAppRequestsResponse"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/chrome.management.appdetails.readonly"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            }
+          }
+        },
         "reports": {
           "resources": {},
           "methods": {
@@ -701,7 +2907,7 @@
                   "repeated": false
                 },
                 "pageToken": {
-                  "description": "Token to specify the next page in the list.",
+                  "description": "Token to specify the page of the request to be returned.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -808,7 +3014,7 @@
                   "repeated": false
                 },
                 "pageToken": {
-                  "description": "Token to specify next page in the list.",
+                  "description": "Token to specify the page of the request to be returned.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -915,7 +3121,7 @@
                   "repeated": false
                 },
                 "orderBy": {
-                  "description": "Field used to order results. Supported order by fields: * machine_name * device_id",
+                  "description": "Field used to order results. Supported order by fields: * machine * device_id",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -957,7 +3163,7 @@
                   "repeated": false
                 },
                 "pageToken": {
-                  "description": "Token to specify the next page in the list.",
+                  "description": "Token to specify the page of the request to be returned.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -988,6 +3194,109 @@
               "mediaUpload": null
             }
           }
+        },
+        "telemetry": {
+          "resources": {
+            "devices": {
+              "resources": {},
+              "methods": {
+                "list": {
+                  "id": "chromemanagement.customers.telemetry.devices.list",
+                  "path": "v1/{+parent}/telemetry/devices",
+                  "httpMethod": "GET",
+                  "description": "List all telemetry devices.",
+                  "parameters": {
+                    "filter": {
+                      "description": "Optional. Only include resources that match the filter. Supported filter fields: - org_unit_id - serial_number - device_id ",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageSize": {
+                      "description": "Maximum number of results to return. Default value is 100. Maximum value is 200.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "integer",
+                      "format": "int32",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageToken": {
+                      "description": "Token to specify next page in the list.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "parent": {
+                      "description": "Required. Customer id or \"my_customer\" to use the customer associated to the account making the request.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^customers/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "readMask": {
+                      "description": "Required. Read mask to specify which fields to return.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": "google-fieldmask",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleChromeManagementV1ListTelemetryDevicesResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/chrome.management.telemetry.readonly"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
+            }
+          },
+          "methods": {}
         }
       },
       "methods": {}

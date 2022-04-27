@@ -1,6 +1,6 @@
-#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [workflows](resources/projects/locations/workflows/struct.WorkflowsActions.html)\n          * [executions](resources/projects/locations/workflows/executions/struct.ExecutionsActions.html)\n            * [*cancel*](resources/projects/locations/workflows/executions/struct.CancelRequestBuilder.html), [*create*](resources/projects/locations/workflows/executions/struct.CreateRequestBuilder.html), [*get*](resources/projects/locations/workflows/executions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/workflows/executions/struct.ListRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [workflows](resources/projects/locations/workflows/struct.WorkflowsActions.html)\n          * [*triggerPubsubExecution*](resources/projects/locations/workflows/struct.TriggerPubsubExecutionRequestBuilder.html)\n          * [executions](resources/projects/locations/workflows/executions/struct.ExecutionsActions.html)\n            * [*cancel*](resources/projects/locations/workflows/executions/struct.CancelRequestBuilder.html), [*create*](resources/projects/locations/workflows/executions/struct.CreateRequestBuilder.html), [*get*](resources/projects/locations/workflows/executions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/workflows/executions/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "See, edit, configure, and delete your Google Cloud Platform data\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -41,7 +41,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Error {
-        #[doc = "Human readable stack trace string."]
+        #[doc = "Human-readable stack trace string."]
         #[serde(
             rename = "context",
             default,
@@ -93,6 +93,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub argument: ::std::option::Option<String>,
+        #[doc = "The call logging level associated to this execution."]
+        #[serde(
+            rename = "callLogLevel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub call_log_level: ::std::option::Option<crate::schemas::ExecutionCallLogLevel>,
         #[doc = "Output only. Marks the end of execution, successful or not."]
         #[serde(
             rename = "endTime",
@@ -149,6 +156,82 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Execution {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ExecutionCallLogLevel {
+        #[doc = "No call logging specified."]
+        CallLogLevelUnspecified,
+        #[doc = "Log all call steps within workflows, all call returns, and all exceptions raised."]
+        LogAllCalls,
+        #[doc = "Log only exceptions that are raised from call steps within workflows."]
+        LogErrorsOnly,
+    }
+    impl ExecutionCallLogLevel {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ExecutionCallLogLevel::CallLogLevelUnspecified => "CALL_LOG_LEVEL_UNSPECIFIED",
+                ExecutionCallLogLevel::LogAllCalls => "LOG_ALL_CALLS",
+                ExecutionCallLogLevel::LogErrorsOnly => "LOG_ERRORS_ONLY",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ExecutionCallLogLevel {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ExecutionCallLogLevel {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ExecutionCallLogLevel, ()> {
+            Ok(match s {
+                "CALL_LOG_LEVEL_UNSPECIFIED" => ExecutionCallLogLevel::CallLogLevelUnspecified,
+                "LOG_ALL_CALLS" => ExecutionCallLogLevel::LogAllCalls,
+                "LOG_ERRORS_ONLY" => ExecutionCallLogLevel::LogErrorsOnly,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ExecutionCallLogLevel {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ExecutionCallLogLevel {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ExecutionCallLogLevel {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CALL_LOG_LEVEL_UNSPECIFIED" => ExecutionCallLogLevel::CallLogLevelUnspecified,
+                "LOG_ALL_CALLS" => ExecutionCallLogLevel::LogAllCalls,
+                "LOG_ERRORS_ONLY" => ExecutionCallLogLevel::LogErrorsOnly,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ExecutionCallLogLevel {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ExecutionCallLogLevel {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -298,7 +381,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub column: ::std::option::Option<i64>,
-        #[doc = "The length in bytes of text in this character group, e.g. digits of a number, string length, or AST (abstract syntax tree) node."]
+        #[doc = "The number of bytes of source code making up this stack trace element."]
         #[serde(
             rename = "length",
             default,
@@ -337,8 +420,67 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct PubsubMessage {
+        #[doc = "Attributes for this message. If this field is empty, the message must contain non-empty data. This can be used to filter messages on the subscription."]
+        #[serde(
+            rename = "attributes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub attributes: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "The message data field. If this field is empty, the message must contain at least one attribute."]
+        #[serde(
+            rename = "data",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "ID of this message, assigned by the server when the message is published. Guaranteed to be unique within the topic. This value may be read by a subscriber that receives a `PubsubMessage` via a `Pull` call or a push delivery. It must not be populated by the publisher in a `Publish` call."]
+        #[serde(
+            rename = "messageId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub message_id: ::std::option::Option<String>,
+        #[doc = "If non-empty, identifies related messages for which publish order should be respected. If a `Subscription` has `enable_message_ordering` set to `true`, messages published with the same non-empty `ordering_key` value will be delivered to subscribers in the order in which they are received by the Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest` must specify the same `ordering_key` value. For more information, see [ordering messages](https://cloud.google.com/pubsub/docs/ordering)."]
+        #[serde(
+            rename = "orderingKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ordering_key: ::std::option::Option<String>,
+        #[doc = "The time at which the message was published, populated by the server when it receives the `Publish` call. It must not be populated by the publisher in a `Publish` call."]
+        #[serde(
+            rename = "publishTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub publish_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PubsubMessage {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PubsubMessage {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct StackTrace {
-        #[doc = "An array of Stack elements."]
+        #[doc = "An array of stack elements."]
         #[serde(
             rename = "elements",
             default,
@@ -369,7 +511,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct StackTraceElement {
-        #[doc = "The source position information of the stacktrace element."]
+        #[doc = "The source position information of the stack trace element."]
         #[serde(
             rename = "position",
             default,
@@ -397,6 +539,51 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for StackTraceElement {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct TriggerPubsubExecutionRequest {
+        #[doc = "Required. LINT: LEGACY_NAMES The query parameter value for __GCP_CloudEventsMode, set by the Eventarc service when configuring triggers."]
+        #[serde(
+            rename = "GCPCloudEventsMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcp_cloud_events_mode: ::std::option::Option<String>,
+        #[doc = "Required. The message of the Pub/Sub push notification."]
+        #[serde(
+            rename = "message",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub message: ::std::option::Option<crate::schemas::PubsubMessage>,
+        #[doc = "Required. The subscription of the Pub/Sub push notification. Format: projects/{project}/subscriptions/{sub}"]
+        #[serde(
+            rename = "subscription",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub subscription: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for TriggerPubsubExecutionRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TriggerPubsubExecutionRequest {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -638,8 +825,195 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Actions that can be performed on the executions resource"]                    pub fn executions ( & self ) -> crate :: resources :: projects :: locations :: workflows :: executions :: ExecutionsActions{
-                        crate :: resources :: projects :: locations :: workflows :: executions :: ExecutionsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Triggers a new execution using the latest revision of the given workflow by a Pub/Sub push notification."]
+                    pub fn trigger_pubsub_execution(
+                        &self,
+                        request: crate::schemas::TriggerPubsubExecutionRequest,
+                        workflow: impl Into<String>,
+                    ) -> TriggerPubsubExecutionRequestBuilder {
+                        TriggerPubsubExecutionRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            workflow: workflow.into(),
+                        }
+                    }
+                    #[doc = "Actions that can be performed on the executions resource"]                    pub fn executions (& self) -> crate :: resources :: projects :: locations :: workflows :: executions :: ExecutionsActions{
+                        crate :: resources :: projects :: locations :: workflows :: executions :: ExecutionsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
+                    }
+                }
+                #[doc = "Created via [WorkflowsActions::trigger_pubsub_execution()](struct.WorkflowsActions.html#method.trigger_pubsub_execution)"]
+                #[derive(Debug, Clone)]
+                pub struct TriggerPubsubExecutionRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::TriggerPubsubExecutionRequest,
+                    workflow: String,
+                    access_token: Option<String>,
+                    alt: Option<crate::params::Alt>,
+                    callback: Option<String>,
+                    fields: Option<String>,
+                    key: Option<String>,
+                    oauth_token: Option<String>,
+                    pretty_print: Option<bool>,
+                    quota_user: Option<String>,
+                    upload_protocol: Option<String>,
+                    upload_type: Option<String>,
+                    xgafv: Option<crate::params::Xgafv>,
+                }
+                impl<'a> TriggerPubsubExecutionRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields)
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Execution, crate::Error> {
+                        self.execute_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Execution, crate::Error> {
+                        self.execute_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute()
+                    }
+                    fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path())?;
+                        let req = req.json(&self.request);
+                        Ok(crate::error_from_response(req.send()?)?.json()?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://workflowexecutions.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.workflow;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str(":triggerPubsubExecution");
+                        output
+                    }
+                    fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                    {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        req = req.bearer_auth(
+                            self.auth
+                                .access_token()
+                                .map_err(|err| crate::Error::OAuth2(err))?,
+                        );
+                        Ok(req)
                     }
                 }
                 pub mod executions {
@@ -1254,7 +1628,7 @@ pub mod resources {
                     }
                     #[doc = "Created via [ExecutionsActions::get()](struct.ExecutionsActions.html#method.get)"]
                     #[derive(Debug, Clone)]
-                    pub struct GetRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , name : String , view : Option < crate :: resources :: projects :: locations :: workflows :: executions :: params :: GetView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                    pub struct GetRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , name : String , view : Option < crate :: resources :: projects :: locations :: workflows :: executions :: params :: GetView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> GetRequestBuilder<'a> {
                         #[doc = "Optional. A view defining which fields should be filled in the returned execution. The API will default to the FULL view."]
                         pub fn view(
@@ -1412,7 +1786,7 @@ pub mod resources {
                     }
                     #[doc = "Created via [ExecutionsActions::list()](struct.ExecutionsActions.html#method.list)"]
                     #[derive(Debug, Clone)]
-                    pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , page_size : Option < i32 > , page_token : Option < String > , view : Option < crate :: resources :: projects :: locations :: workflows :: executions :: params :: ListView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                    pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , page_size : Option < i32 > , page_token : Option < String > , view : Option < crate :: resources :: projects :: locations :: workflows :: executions :: params :: ListView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> ListRequestBuilder<'a> {
                         #[doc = "Maximum number of executions to return per call. Max supported value depends on the selected Execution view: it's 10000 for BASIC and 100 for FULL. The default value used if the field is not specified is 100, regardless of the selected view. Values greater than the max value will be coerced down to it."]
                         pub fn page_size(mut self, value: i32) -> Self {

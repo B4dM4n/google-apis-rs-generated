@@ -1,8 +1,8 @@
 #![doc = "# Resources and Methods\n    * [application_detail_service](resources/application_detail_service/struct.ApplicationDetailServiceActions.html)\n      * [*getApkDetails*](resources/application_detail_service/struct.GetApkDetailsRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [test_matrices](resources/projects/test_matrices/struct.TestMatricesActions.html)\n        * [*cancel*](resources/projects/test_matrices/struct.CancelRequestBuilder.html), [*create*](resources/projects/test_matrices/struct.CreateRequestBuilder.html), [*get*](resources/projects/test_matrices/struct.GetRequestBuilder.html)\n    * [test_environment_catalog](resources/test_environment_catalog/struct.TestEnvironmentCatalogActions.html)\n      * [*get*](resources/test_environment_catalog/struct.GetRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
-    #[doc = "View your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
+    #[doc = "View your data across Google Cloud services and see the email address of your Google Account\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
     pub const CLOUD_PLATFORM_READ_ONLY: &str =
         "https://www.googleapis.com/auth/cloud-platform.read-only";
 }
@@ -192,7 +192,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub app_package_id: ::std::option::Option<String>,
-        #[doc = "The option of whether running each test within its own invocation of instrumentation with Android Test Orchestrator or not. ** Orchestrator is only compatible with AndroidJUnitRunner version 1.0 or higher! ** Orchestrator offers the following benefits: - No shared state - Crashes are isolated - Logs are scoped per test See for more information about Android Test Orchestrator. If not set, the test will be run without the orchestrator."]
+        #[doc = "The option of whether running each test within its own invocation of instrumentation with Android Test Orchestrator or not. ** Orchestrator is only compatible with AndroidJUnitRunner version 1.1 or higher! ** Orchestrator offers the following benefits: - No shared state - Crashes are isolated - Logs are scoped per test See for more information about Android Test Orchestrator. If not set, the test will be run without the orchestrator."]
         #[serde(
             rename = "orchestratorOption",
             default,
@@ -252,7 +252,7 @@ pub mod schemas {
         DoNotUseOrchestrator,
         #[doc = "Default value: the server will choose the mode. Currently implies that the test will run without the orchestrator. In the future, all instrumentation tests will be run with the orchestrator. Using the orchestrator is highly encouraged because of all the benefits it offers."]
         OrchestratorOptionUnspecified,
-        #[doc = "Run test using orchestrator. ** Only compatible with AndroidJUnitRunner version 1.0 or higher! ** Recommended."]
+        #[doc = "Run test using orchestrator. ** Only compatible with AndroidJUnitRunner version 1.1 or higher! ** Recommended."]
         UseOrchestrator,
     }
     impl AndroidInstrumentationTestOrchestratorOption {
@@ -499,7 +499,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tags: ::std::option::Option<Vec<String>>,
-        #[doc = "URL of a thumbnail image (photo) of the device. e.g. https://lh3.googleusercontent.com/90WcauuJiCYABEl8U0lcZeuS5STUbf2yW..."]
+        #[doc = "URL of a thumbnail image (photo) of the device."]
         #[serde(
             rename = "thumbnailUrl",
             default,
@@ -747,6 +747,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub robo_directives: ::std::option::Option<Vec<crate::schemas::RoboDirective>>,
+        #[doc = "The mode in which Robo should run. Most clients should allow the server to populate this field automatically."]
+        #[serde(
+            rename = "roboMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub robo_mode: ::std::option::Option<crate::schemas::AndroidRoboTestRoboMode>,
         #[doc = "A JSON file with a sequence of actions Robo should perform as a prologue for the crawl."]
         #[serde(
             rename = "roboScript",
@@ -768,6 +775,82 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for AndroidRoboTest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AndroidRoboTestRoboMode {
+        #[doc = "This means that the server should choose the mode. Recommended."]
+        RoboModeUnspecified,
+        #[doc = "Runs Robo in UIAutomator-only mode without app resigning"]
+        RoboVersion1,
+        #[doc = "Runs Robo in standard Espresso with UIAutomator fallback"]
+        RoboVersion2,
+    }
+    impl AndroidRoboTestRoboMode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AndroidRoboTestRoboMode::RoboModeUnspecified => "ROBO_MODE_UNSPECIFIED",
+                AndroidRoboTestRoboMode::RoboVersion1 => "ROBO_VERSION_1",
+                AndroidRoboTestRoboMode::RoboVersion2 => "ROBO_VERSION_2",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AndroidRoboTestRoboMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AndroidRoboTestRoboMode {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AndroidRoboTestRoboMode, ()> {
+            Ok(match s {
+                "ROBO_MODE_UNSPECIFIED" => AndroidRoboTestRoboMode::RoboModeUnspecified,
+                "ROBO_VERSION_1" => AndroidRoboTestRoboMode::RoboVersion1,
+                "ROBO_VERSION_2" => AndroidRoboTestRoboMode::RoboVersion2,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AndroidRoboTestRoboMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AndroidRoboTestRoboMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AndroidRoboTestRoboMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ROBO_MODE_UNSPECIFIED" => AndroidRoboTestRoboMode::RoboModeUnspecified,
+                "ROBO_VERSION_1" => AndroidRoboTestRoboMode::RoboVersion1,
+                "ROBO_VERSION_2" => AndroidRoboTestRoboMode::RoboVersion2,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AndroidRoboTestRoboMode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AndroidRoboTestRoboMode {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2355,7 +2438,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub network_profile: ::std::option::Option<String>,
-        #[doc = "List of directories on the device to upload to Cloud Storage at the end of the test. Directories should either be in a shared directory (e.g. /private/var/mobile/Media) or within an accessible directory inside the app's filesystem (e.g. /Documents) by specifying the bundle id."]
+        #[doc = "List of directories on the device to upload to Cloud Storage at the end of the test. Directories should either be in a shared directory (such as /private/var/mobile/Media) or within an accessible directory inside the app's filesystem (such as /Documents) by specifying the bundle ID."]
         #[serde(
             rename = "pullDirectories",
             default,
@@ -2765,7 +2848,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub androidx_orchestrator_version: ::std::option::Option<String>,
-        #[doc = "A string representing the current version of Android Test Orchestrator that is used in the environment. The package is available at https://maven.google.com/web/index.html#com.android.support.test:orchestrator."]
+        #[doc = "Deprecated: Use AndroidX Test Orchestrator going forward. A string representing the current version of Android Test Orchestrator that is used in the environment. The package is available at https://maven.google.com/web/index.html#com.android.support.test:orchestrator."]
         #[serde(
             rename = "orchestratorVersion",
             default,
@@ -3071,7 +3154,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub shard_index: ::std::option::Option<i32>,
-        #[doc = "Output only. Test targets for each shard."]
+        #[doc = "Output only. Test targets for each shard. Only set for manual sharding."]
         #[serde(
             rename = "testTargetsForShard",
             default,
@@ -3628,7 +3711,7 @@ pub mod schemas {
         DeviceAdminReceiver,
         #[doc = "The app declares one or more permissions that are not allowed."]
         ForbiddenPermissions,
-        #[doc = "The test runner class specified by user or in the test APK's manifest file is not compatible with Android Test Orchestrator. Orchestrator is only compatible with AndroidJUnitRunner version 1.0 or higher. Orchestrator can be disabled by using DO_NOT_USE_ORCHESTRATOR OrchestratorOption."]
+        #[doc = "The test runner class specified by user or in the test APK's manifest file is not compatible with Android Test Orchestrator. Orchestrator is only compatible with AndroidJUnitRunner version 1.1 or higher. Orchestrator can be disabled by using DO_NOT_USE_ORCHESTRATOR OrchestratorOption."]
         InstrumentationOrchestratorIncompatible,
         #[doc = "APK is built for a preview SDK which is unsupported"]
         InvalidApkPreviewSdk,
@@ -4166,7 +4249,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub network_profile: ::std::option::Option<String>,
-        #[doc = "Systrace configuration for the run. If set a systrace will be taken, starting on test start and lasting for the configured duration. The systrace file thus obtained is put in the results bucket together with the other artifacts from the run."]
+        #[doc = "Deprecated: Systrace uses Python 2 which has been sunset 2020-01-01. Support of Systrace may stop at any time, at which point no Systrace file will be provided in the results. Systrace configuration for the run. If set a systrace will be taken, starting on test start and lasting for the configured duration. The systrace file thus obtained is put in the results bucket together with the other artifacts from the run."]
         #[serde(
             rename = "systrace",
             default,
@@ -4292,7 +4375,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestTargetsForShard {
-        #[doc = "Group of packages, classes, and/or test methods to be run for each shard. The targets need to be specified in AndroidJUnitRunner argument format. For example, \"package com.my.packages\" \"class com.my.package.MyClass\". The number of shard_test_targets must be greater than 0."]
+        #[doc = "Group of packages, classes, and/or test methods to be run for each shard. The targets need to be specified in AndroidJUnitRunner argument format. For example, \"package com.my.packages\" \"class com.my.package.MyClass\". The number of test_targets must be greater than 0."]
         #[serde(
             rename = "testTargets",
             default,

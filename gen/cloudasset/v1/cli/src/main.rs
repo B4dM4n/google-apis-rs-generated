@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudasset1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210312")
+            .version("0.1.0-20220415")
             .about("The cloud asset API manages the history and inventory of cloud resources.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -33,6 +33,23 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .help("Provide more output to aid with debugging")
                 .multiple(false)
                 .takes_value(false));
+        let mut assets0 = SubCommand::with_name("assets")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: list");
+        {
+            let mcmd = SubCommand::with_name("list").about(
+                "Lists assets with time and resource types and returns paged results in response.",
+            );
+            assets0 = assets0.subcommand(mcmd);
+        }
+        let mut effective_iam_policies0 = SubCommand::with_name("effective_iam_policies")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: batch_get");
+        {
+            let mcmd = SubCommand::with_name("batch_get")
+                .about("Gets effective IAM policies for a batch of resources.");
+            effective_iam_policies0 = effective_iam_policies0.subcommand(mcmd);
+        }
         let mut feeds0 = SubCommand::with_name("feeds")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
@@ -64,15 +81,44 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("get").about("Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.");
             operations0 = operations0.subcommand(mcmd);
         }
+        let mut saved_queries0 = SubCommand::with_name("saved_queries")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a saved query in a parent project/folder/organization.");
+            saved_queries0 = saved_queries0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a saved query.");
+            saved_queries0 = saved_queries0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets details about a saved query.");
+            saved_queries0 = saved_queries0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists all saved queries in a parent project/folder/organization.");
+            saved_queries0 = saved_queries0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates a saved query.");
+            saved_queries0 = saved_queries0.subcommand(mcmd);
+        }
         let mut v_10 = SubCommand::with_name("v_1")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: analyze_iam_policy, analyze_iam_policy_longrunning, batch_get_assets_history, export_assets, search_all_iam_policies and search_all_resources");
+                        .about("methods: analyze_iam_policy, analyze_iam_policy_longrunning, analyze_move, batch_get_assets_history, export_assets, search_all_iam_policies and search_all_resources");
         {
             let mcmd = SubCommand::with_name("analyze_iam_policy").about("Analyzes IAM policies to answer which identities have what accesses on which resources.");
             v_10 = v_10.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("analyze_iam_policy_longrunning").about("Analyzes IAM policies asynchronously to answer which identities have what accesses on which resources, and writes the analysis results to a Google Cloud Storage or a BigQuery destination. For Cloud Storage destination, the output format is the JSON format that represents a AnalyzeIamPolicyResponse. This method implements the google.longrunning.Operation, which allows you to track the operation status. We recommend intervals of at least 2 seconds with exponential backoff retry to poll the operation result. The metadata contains the request to help callers to map responses to requests.");
+            let mcmd = SubCommand::with_name("analyze_iam_policy_longrunning").about("Analyzes IAM policies asynchronously to answer which identities have what accesses on which resources, and writes the analysis results to a Google Cloud Storage or a BigQuery destination. For Cloud Storage destination, the output format is the JSON format that represents a AnalyzeIamPolicyResponse. This method implements the google.longrunning.Operation, which allows you to track the operation status. We recommend intervals of at least 2 seconds with exponential backoff retry to poll the operation result. The metadata contains the metadata for the long-running operation.");
+            v_10 = v_10.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("analyze_move").about("Analyze moving a resource to a specified destination without kicking off the actual move. The analysis is best effort depending on the user's permissions of viewing different hierarchical policies and configurations. The policies and configuration are subject to change before the actual resource migration takes place.");
             v_10 = v_10.subcommand(mcmd);
         }
         {
@@ -80,7 +126,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             v_10 = v_10.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("export_assets").about("Exports assets with time and resource types to a given Cloud Storage location/BigQuery table. For Cloud Storage location destinations, the output format is newline-delimited JSON. Each line represents a google.cloud.asset.v1.Asset in the JSON format; for BigQuery table destinations, the output table stores the fields in asset proto as columns. This API implements the google.longrunning.Operation API , which allows you to keep track of the export. We recommend intervals of at least 2 seconds with exponential retry to poll the export operation result. For regular-size resource parent, the export operation usually finishes within 5 minutes.");
+            let mcmd = SubCommand::with_name("export_assets").about("Exports assets with time and resource types to a given Cloud Storage location/BigQuery table. For Cloud Storage location destinations, the output format is newline-delimited JSON. Each line represents a google.cloud.asset.v1.Asset in the JSON format; for BigQuery table destinations, the output table stores the fields in asset Protobuf as columns. This API implements the google.longrunning.Operation API, which allows you to keep track of the export. We recommend intervals of at least 2 seconds with exponential retry to poll the export operation result. For regular-size resource parent, the export operation usually finishes within 5 minutes.");
             v_10 = v_10.subcommand(mcmd);
         }
         {
@@ -92,8 +138,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             v_10 = v_10.subcommand(mcmd);
         }
         app = app.subcommand(v_10);
+        app = app.subcommand(saved_queries0);
         app = app.subcommand(operations0);
         app = app.subcommand(feeds0);
+        app = app.subcommand(effective_iam_policies0);
+        app = app.subcommand(assets0);
 
         Self { app }
     }

@@ -1,9 +1,33 @@
 #![doc = "# Resources and Methods\n    * [access_policies](resources/access_policies/struct.AccessPoliciesActions.html)\n      * [*create*](resources/access_policies/struct.CreateRequestBuilder.html), [*delete*](resources/access_policies/struct.DeleteRequestBuilder.html), [*get*](resources/access_policies/struct.GetRequestBuilder.html), [*list*](resources/access_policies/struct.ListRequestBuilder.html), [*patch*](resources/access_policies/struct.PatchRequestBuilder.html)\n      * [access_levels](resources/access_policies/access_levels/struct.AccessLevelsActions.html)\n        * [*create*](resources/access_policies/access_levels/struct.CreateRequestBuilder.html), [*delete*](resources/access_policies/access_levels/struct.DeleteRequestBuilder.html), [*get*](resources/access_policies/access_levels/struct.GetRequestBuilder.html), [*list*](resources/access_policies/access_levels/struct.ListRequestBuilder.html), [*patch*](resources/access_policies/access_levels/struct.PatchRequestBuilder.html)\n      * [service_perimeters](resources/access_policies/service_perimeters/struct.ServicePerimetersActions.html)\n        * [*create*](resources/access_policies/service_perimeters/struct.CreateRequestBuilder.html), [*delete*](resources/access_policies/service_perimeters/struct.DeleteRequestBuilder.html), [*get*](resources/access_policies/service_perimeters/struct.GetRequestBuilder.html), [*list*](resources/access_policies/service_perimeters/struct.ListRequestBuilder.html), [*patch*](resources/access_policies/service_perimeters/struct.PatchRequestBuilder.html)\n    * [operations](resources/operations/struct.OperationsActions.html)\n      * [*get*](resources/operations/struct.GetRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AccessContextManagerOperationMetadata {}
+    impl ::google_field_selector::FieldSelector for AccessContextManagerOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AccessContextManagerOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,

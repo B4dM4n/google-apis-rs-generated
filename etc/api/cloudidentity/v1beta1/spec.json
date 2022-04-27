@@ -7,7 +7,7 @@
   "canonicalName": "Cloud Identity",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta1",
-  "revision": "20210310",
+  "revision": "20220418",
   "title": "Cloud Identity API",
   "description": "API for provisioning and managing identity resources.",
   "ownerDomain": "google.com",
@@ -200,8 +200,14 @@
   "auth": {
     "oauth2": {
       "scopes": {
+        "https://www.googleapis.com/auth/cloud-identity.devices": {
+          "description": "Private Service: https://www.googleapis.com/auth/cloud-identity.devices"
+        },
         "https://www.googleapis.com/auth/cloud-identity.devices.lookup": {
           "description": "See your device details"
+        },
+        "https://www.googleapis.com/auth/cloud-identity.devices.readonly": {
+          "description": "Private Service: https://www.googleapis.com/auth/cloud-identity.devices.readonly"
         },
         "https://www.googleapis.com/auth/cloud-identity.groups": {
           "description": "See, change, create, and delete any of the Cloud Identity Groups that you can access, including the members of each group"
@@ -210,7 +216,7 @@
           "description": "See any Cloud Identity Groups that you can access, including group members and their emails"
         },
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         }
       }
     }
@@ -392,6 +398,152 @@
         "deviceUser": {
           "description": "Resultant DeviceUser object for the action.",
           "$ref": "DeviceUser"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "CertificateAttributes": {
+      "id": "CertificateAttributes",
+      "description": "Stores information about a certificate.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "certificateTemplate": {
+          "description": "The X.509 extension for CertificateTemplate.",
+          "$ref": "CertificateTemplate"
+        },
+        "fingerprint": {
+          "description": "The encoded certificate fingerprint.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "issuer": {
+          "description": "The name of the issuer of this certificate.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "serialNumber": {
+          "description": "Serial number of the certificate, Example: \"123456789\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "subject": {
+          "description": "The subject name of this certificate.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "thumbprint": {
+          "description": "The certificate thumbprint.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "validationState": {
+          "description": "Validation state of this certificate.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "CERTIFICATE_VALIDATION_STATE_UNSPECIFIED",
+            "VALIDATION_SUCCESSFUL",
+            "VALIDATION_FAILED"
+          ],
+          "enumDescriptions": [
+            "Default value.",
+            "Certificate validation was successful.",
+            "Certificate validation failed."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "validityExpirationTime": {
+          "description": "Certificate not valid at or after this timestamp.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "validityStartTime": {
+          "description": "Certificate not valid before this timestamp.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "CertificateTemplate": {
+      "id": "CertificateTemplate",
+      "description": "CertificateTemplate (v3 Extension in X.509).",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "id": {
+          "description": "The template id of the template. Example: \"1.3.6.1.4.1.311.21.8.15608621.11768144.5720724.16068415.6889630.81.2472537.7784047\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "majorVersion": {
+          "description": "The Major version of the template. Example: 100.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "minorVersion": {
+          "description": "The minor version of the template. Example: 12.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -748,6 +900,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "deviceId": {
+          "description": "Unique identifier for the device.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "deviceType": {
           "description": "Output only. Type of device.",
           "type": "string",
@@ -815,6 +977,10 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "endpointVerificationSpecificAttributes": {
+          "description": "Output only. Attributes specific to Endpoint Verification devices.",
+          "$ref": "EndpointVerificationSpecificAttributes"
         },
         "imei": {
           "description": "Output only. IMEI number of device if GSM device; empty otherwise.",
@@ -1113,7 +1279,7 @@
           "items": null
         },
         "name": {
-          "description": "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the DeviceUser in format: `devices/{device_id}/deviceUsers/{user_id}`, where user_id is the ID of the user associated with the user session.",
+          "description": "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the DeviceUser in format: `devices/{device_id}/deviceUsers/{device_user_id}`, where `device_user_id` uniquely identifies a user's use of a device.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1201,7 +1367,7 @@
       "enumDescriptions": [],
       "properties": {
         "query": {
-          "description": "Query that determines the memberships of the dynamic group. Examples: All users with at least one `organizations.department` of engineering. `user.organizations.exists(org, org.department=='engineering')` All users with at least one location that has `area` of `foo` and `building_id` of `bar`. `user.locations.exists(loc, loc.area=='foo' && loc.building_id=='bar')`",
+          "description": "Query that determines the memberships of the dynamic group. Examples: All users with at least one `organizations.department` of engineering. `user.organizations.exists(org, org.department=='engineering')` All users with at least one location that has `area` of `foo` and `building_id` of `bar`. `user.locations.exists(loc, loc.area=='foo' && loc.building_id=='bar')` All users with any variation of the name John Doe (case-insensitive queries add `equalsIgnoreCase()` to the value being queried). `user.name.value.equalsIgnoreCase('jOhn DoE')`",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1245,12 +1411,14 @@
           "enum": [
             "STATUS_UNSPECIFIED",
             "UP_TO_DATE",
-            "UPDATING_MEMBERSHIPS"
+            "UPDATING_MEMBERSHIPS",
+            "INVALID_QUERY"
           ],
           "enumDescriptions": [
             "Default.",
             "The dynamic group is up-to-date.",
-            "The dynamic group has just been created and memberships are being updated."
+            "The dynamic group has just been created and memberships are being updated.",
+            "Group is in an unrecoverable state and its memberships can't be updated."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1265,6 +1433,30 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "EndpointVerificationSpecificAttributes": {
+      "id": "EndpointVerificationSpecificAttributes",
+      "description": "Resource representing the Endpoint Verification-specific attributes of a Device. https://cloud.google.com/endpoint-verification/docs/overview",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "certificateAttributes": {
+          "description": "Details of certificates.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "CertificateAttributes"
+          }
         }
       },
       "additionalProperties": null,
@@ -1289,7 +1481,7 @@
           "items": null
         },
         "namespace": {
-          "description": "The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source_id}.",
+          "description": "The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source_id}`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1314,6 +1506,38 @@
           "description": "The time at which the `MembershipRole` will expire.",
           "type": "string",
           "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "FirstAdminInvitationInfo": {
+      "id": "FirstAdminInvitationInfo",
+      "description": "Message containing first admin invitation info for customers",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "isFirstAdmin": {
+          "description": "Optional. To enable First Admin Invitation for Domained Customer",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "primaryDomain": {
+          "description": "Optional. Domain information of first admin invited",
+          "type": "string",
+          "format": null,
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -1422,6 +1646,17 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleAppsCloudidentityDevicesV1ApproveDeviceUserMetadata": {
+      "id": "GoogleAppsCloudidentityDevicesV1ApproveDeviceUserMetadata",
+      "description": "Metadata for ApproveDeviceUser LRO.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleAppsCloudidentityDevicesV1ApproveDeviceUserResponse": {
       "id": "GoogleAppsCloudidentityDevicesV1ApproveDeviceUserResponse",
       "description": "Response message for approving the device to access user data.",
@@ -1435,6 +1670,17 @@
           "$ref": "GoogleAppsCloudidentityDevicesV1DeviceUser"
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsCloudidentityDevicesV1BlockDeviceUserMetadata": {
+      "id": "GoogleAppsCloudidentityDevicesV1BlockDeviceUserMetadata",
+      "description": "Metadata for BlockDeviceUser LRO.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -1454,6 +1700,17 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleAppsCloudidentityDevicesV1CancelWipeDeviceMetadata": {
+      "id": "GoogleAppsCloudidentityDevicesV1CancelWipeDeviceMetadata",
+      "description": "Metadata for CancelWipeDevice LRO.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleAppsCloudidentityDevicesV1CancelWipeDeviceResponse": {
       "id": "GoogleAppsCloudidentityDevicesV1CancelWipeDeviceResponse",
       "description": "Response message for cancelling an unfinished device wipe.",
@@ -1467,6 +1724,17 @@
           "$ref": "GoogleAppsCloudidentityDevicesV1Device"
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsCloudidentityDevicesV1CancelWipeDeviceUserMetadata": {
+      "id": "GoogleAppsCloudidentityDevicesV1CancelWipeDeviceUserMetadata",
+      "description": "Metadata for CancelWipeDeviceUser LRO.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -1626,7 +1894,7 @@
           "items": null
         },
         "name": {
-          "description": "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the ClientState in format: `devices/{device_id}/deviceUsers/{device_user_id}/clientState/{partner_id}`, where partner_id corresponds to the partner storing the data. For partners belonging to the \"BeyondCorp Alliance\", this is the partner ID specified to you by Google. For all other callers, this is a string of the form: `{customer_id}-suffix`, where `customer_id` is your customer ID. The *suffix* is any string the caller specifies. This string will be displayed verbatim in the administration console. This suffix is used in setting up Custom Access Levels in Context-Aware Access. Your organization's customer ID can be obtained from the URL: `GET https://www.googleapis.com/admin/directory/v1/customers/my_customer` The `id` field in the response contains the customer ID starting with the letter 'C'. The customer ID to be used in this API is the string after the letter 'C' (not including 'C')",
+          "description": "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the ClientState in format: `devices/{device}/deviceUsers/{device_user}/clientState/{partner}`, where partner corresponds to the partner storing the data. For partners belonging to the \"BeyondCorp Alliance\", this is the partner ID specified to you by Google. For all other callers, this is a string of the form: `{customer}-suffix`, where `customer` is your customer ID. The *suffix* is any string the caller specifies. This string will be displayed verbatim in the administration console. This suffix is used in setting up Custom Access Levels in Context-Aware Access. Your organization's customer ID can be obtained from the URL: `GET https://www.googleapis.com/admin/directory/v1/customers/my_customer` The `id` field in the response contains the customer ID starting with the letter 'C'. The customer ID to be used in this API is the string after the letter 'C' (not including 'C')",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1664,6 +1932,17 @@
           "items": null
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsCloudidentityDevicesV1CreateDeviceMetadata": {
+      "id": "GoogleAppsCloudidentityDevicesV1CreateDeviceMetadata",
+      "description": "Metadata for CreateDevice LRO.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -1706,6 +1985,28 @@
           "items": null
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsCloudidentityDevicesV1DeleteDeviceMetadata": {
+      "id": "GoogleAppsCloudidentityDevicesV1DeleteDeviceMetadata",
+      "description": "Metadata for DeleteDevice LRO.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsCloudidentityDevicesV1DeleteDeviceUserMetadata": {
+      "id": "GoogleAppsCloudidentityDevicesV1DeleteDeviceUserMetadata",
+      "description": "Metadata for DeleteDeviceUser LRO.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -1954,7 +2255,7 @@
           "items": null
         },
         "name": {
-          "description": "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Device in format: `devices/{device_id}`, where device_id is the unique id assigned to the Device.",
+          "description": "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Device in format: `devices/{device}`, where device is the unique id assigned to the Device.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2164,7 +2465,7 @@
           "items": null
         },
         "name": {
-          "description": "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the DeviceUser in format: `devices/{device_id}/deviceUsers/{user_id}`, where user_id is the ID of the user associated with the user session.",
+          "description": "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the DeviceUser in format: `devices/{device}/deviceUsers/{device_user}`, where `device_user` uniquely identifies a user's use of a device.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2215,6 +2516,61 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleAppsCloudidentityDevicesV1ListEndpointAppsMetadata": {
+      "id": "GoogleAppsCloudidentityDevicesV1ListEndpointAppsMetadata",
+      "description": "Metadata for ListEndpointApps LRO.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsCloudidentityDevicesV1SignoutDeviceUserMetadata": {
+      "id": "GoogleAppsCloudidentityDevicesV1SignoutDeviceUserMetadata",
+      "description": "Metadata for SignoutDeviceUser LRO.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsCloudidentityDevicesV1UpdateClientStateMetadata": {
+      "id": "GoogleAppsCloudidentityDevicesV1UpdateClientStateMetadata",
+      "description": "Metadata for UpdateClientState LRO.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsCloudidentityDevicesV1UpdateDeviceMetadata": {
+      "id": "GoogleAppsCloudidentityDevicesV1UpdateDeviceMetadata",
+      "description": "Metadata for UpdateDevice LRO.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsCloudidentityDevicesV1WipeDeviceMetadata": {
+      "id": "GoogleAppsCloudidentityDevicesV1WipeDeviceMetadata",
+      "description": "Metadata for WipeDevice LRO.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleAppsCloudidentityDevicesV1WipeDeviceResponse": {
       "id": "GoogleAppsCloudidentityDevicesV1WipeDeviceResponse",
       "description": "Response message for wiping all data on the device.",
@@ -2228,6 +2584,17 @@
           "$ref": "GoogleAppsCloudidentityDevicesV1Device"
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsCloudidentityDevicesV1WipeDeviceUserMetadata": {
+      "id": "GoogleAppsCloudidentityDevicesV1WipeDeviceUserMetadata",
+      "description": "Metadata for WipeDeviceUser LRO.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -2302,11 +2669,11 @@
           "$ref": "DynamicGroupMetadata"
         },
         "groupKey": {
-          "description": "Required. Immutable. The `EntityKey` of the `Group`.",
+          "description": "Required. The `EntityKey` of the `Group`.",
           "$ref": "EntityKey"
         },
         "labels": {
-          "description": "Required. One or more label entries that apply to the Group. Currently supported labels contain a key with an empty value. Google Groups are the default type of group and have a label with a key of `cloudidentity.googleapis.com/groups.discussion_forum` and an empty value. Existing Google Groups can have an additional label with a key of `cloudidentity.googleapis.com/groups.security` and an empty value added to them. **This is an immutable change and the security label cannot be removed once added.** Dynamic groups have a label with a key of `cloudidentity.googleapis.com/groups.dynamic`. Identity-mapped groups for Cloud Search have a label with a key of `system/groups/external` and an empty value. Examples: {\"cloudidentity.googleapis.com/groups.discussion_forum\": \"\"} or {\"system/groups/external\": \"\"}.",
+          "description": "Required. One or more label entries that apply to the Group. Currently supported labels contain a key with an empty value. Google Groups are the default type of group and have a label with a key of `cloudidentity.googleapis.com/groups.discussion_forum` and an empty value. Existing Google Groups can have an additional label with a key of `cloudidentity.googleapis.com/groups.security` and an empty value added to them. **This is an immutable change and the security label cannot be removed once added.** Dynamic groups have a label with a key of `cloudidentity.googleapis.com/groups.dynamic`. Identity-mapped groups for Cloud Search have a label with a key of `system/groups/external` and an empty value.",
           "type": "object",
           "format": null,
           "enum": [],
@@ -2335,7 +2702,7 @@
           "items": null
         },
         "parent": {
-          "description": "Required. Immutable. The resource name of the entity under which this `Group` resides in the Cloud Identity resource hierarchy. Must be of the form `identitysources/{identity_source_id}` for external- identity-mapped groups or `customers/{customer_id}` for Google Groups.",
+          "description": "Required. Immutable. The resource name of the entity under which this `Group` resides in the Cloud Identity resource hierarchy. Must be of the form `identitysources/{identity_source_id}` for external- identity-mapped groups or `customers/{customer_id}` for Google Groups. The `customer_id` must begin with \"C\" (for example, 'C046psxkn').",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2343,6 +2710,18 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "posixGroups": {
+          "description": "Optional. The POSIX groups associated with the `Group`.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "PosixGroup"
+          }
         },
         "updateTime": {
           "description": "Output only. The time when the `Group` was last updated.",
@@ -2578,7 +2957,7 @@
       "enumDescriptions": [],
       "properties": {
         "groups": {
-          "description": "The `Group`s under the specified `parent`.",
+          "description": "The `Group` resources under the specified `parent`.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2632,6 +3011,40 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListOrgMembershipsResponse": {
+      "id": "ListOrgMembershipsResponse",
+      "description": "The response message for OrgMembershipsService.ListOrgMemberships.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "A token, which can be sent as `page_token` to retrieve the next page. If this field is empty, there are no subsequent pages.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "orgMemberships": {
+          "description": "The non-vacuous membership in an orgUnit.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "OrgMembership"
+          }
         }
       },
       "additionalProperties": null,
@@ -2774,7 +3187,7 @@
       "enumDescriptions": [],
       "properties": {
         "member": {
-          "description": "Resource name for this member if member is a GROUP, otherwise it is empty.",
+          "description": "Resource name for this member.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2796,7 +3209,7 @@
           }
         },
         "relationType": {
-          "description": "The relation between the group and the transitive member.",
+          "description": "The relation between the group and the transitive membership.",
           "type": "string",
           "format": null,
           "enum": [
@@ -2826,6 +3239,32 @@
           "items": {
             "$ref": "TransitiveMembershipRole"
           }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "MemberRestriction": {
+      "id": "MemberRestriction",
+      "description": "The definition of MemberRestriction",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "evaluation": {
+          "description": "The evaluated state of this restriction on a group.",
+          "$ref": "RestrictionEvaluation"
+        },
+        "query": {
+          "description": "Member Restriction as defined by CEL expression. Supported restrictions are: `member.customer_id` and `member.type`. Valid values for `member.type` are `1`, `2` and `3`. They correspond to USER, SERVICE_ACCOUNT, and GROUP respectively. The value for `member.customer_id` only supports `groupCustomerId()` currently which means the customer id of the group will be used for restriction. Supported operators are `&&`, `||` and `==`, corresponding to AND, OR, and EQUAL. Examples: Allow only service accounts of given customer to be members. `member.type == 2 && member.customer_id == groupCustomerId()` Allow only users or groups to be members. `member.type == 1 || member.type == 3`",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -2888,6 +3327,7 @@
             "USER",
             "SERVICE_ACCOUNT",
             "GROUP",
+            "SHARED_DRIVE",
             "OTHER"
           ],
           "enumDescriptions": [
@@ -2895,6 +3335,7 @@
             "Represents user type.",
             "Represents service account type.",
             "Represents group type.",
+            "Represents Shared drive.",
             "Represents other type."
           ],
           "properties": {},
@@ -2970,6 +3411,44 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "restrictionEvaluations": {
+          "description": "Evaluations of restrictions applied to parent group on this membership.",
+          "$ref": "RestrictionEvaluations"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "MembershipRoleRestrictionEvaluation": {
+      "id": "MembershipRoleRestrictionEvaluation",
+      "description": "The evaluated state of this restriction.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "state": {
+          "description": "Output only. The current state of the restriction",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "STATE_UNSPECIFIED",
+            "COMPLIANT",
+            "FORWARD_COMPLIANT",
+            "NON_COMPLIANT",
+            "EVALUATING"
+          ],
+          "enumDescriptions": [
+            "Default. Should not be used.",
+            "The member adheres to the parent group's restriction.",
+            "The group-group membership might be currently violating some parent group's restriction but in future, it will never allow any new member in the child group which can violate parent group's restriction.",
+            "The member violates the parent group's restriction.",
+            "The state of the membership is under evaluation."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -3040,6 +3519,38 @@
         "membership": {
           "description": "The `Membership` resource after modifying its `MembershipRole`s.",
           "$ref": "Membership"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "MoveOrgMembershipRequest": {
+      "id": "MoveOrgMembershipRequest",
+      "description": "The request message for OrgMembershipsService.MoveOrgMembership.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "customer": {
+          "description": "Required. Immutable. Customer on whose membership change is made. All authorization will happen on the role assignments of this customer. Format: customers/{$customerId} where `$customerId` is the `id` from the [Admin SDK `Customer` resource](https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers). You may also use `customers/my_customer` to specify your own organization.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "destinationOrgUnit": {
+          "description": "Required. Immutable. OrgUnit where the membership will be moved to. Format: orgUnits/{$orgUnitId} where `$orgUnitId` is the `orgUnitId` from the [Admin SDK `OrgUnit` resource](https://developers.google.com/admin-sdk/directory/reference/rest/v1/orgunits).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -3119,6 +3630,156 @@
       "additionalProperties": null,
       "items": null
     },
+    "OrgMembership": {
+      "id": "OrgMembership",
+      "description": "A membership in an OrgUnit. An `OrgMembership` defines a relationship between an `OrgUnit` and an entity belonging to that `OrgUnit`, referred to as a \"member\".",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "member": {
+          "description": "Immutable. Org member id as full resource name. Format for shared drive resource: //drive.googleapis.com/drives/{$memberId} where `$memberId` is the `id` from [Drive API (V3) `Drive` resource](https://developers.google.com/drive/api/v3/reference/drives#resource).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "memberUri": {
+          "description": "Uri with which you can read the member. This follows https://aip.dev/122 Format for shared drive resource: https://drive.googleapis.com/drive/v3/drives/{$memberId} where `$memberId` is the `id` from [Drive API (V3) `Drive` resource](https://developers.google.com/drive/api/v3/reference/drives#resource).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Required. Immutable. The [resource name](https://cloud.google.com/apis/design/resource_names) of the OrgMembership. Format: orgUnits/{$orgUnitId}/memberships/{$membership} The `$orgUnitId` is the `orgUnitId` from the [Admin SDK `OrgUnit` resource](https://developers.google.com/admin-sdk/directory/reference/rest/v1/orgunits). The `$membership` shall be of the form `{$entityType};{$memberId}`, where `$entityType` is the enum value of [OrgMembership.EntityType], and `memberId` is the `id` from [Drive API (V3) `Drive` resource](https://developers.google.com/drive/api/v3/reference/drives#resource) for OrgMembership.EntityType.SHARED_DRIVE.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "type": {
+          "description": "Immutable. Entity type for the org member.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ENTITY_TYPE_UNSPECIFIED",
+            "SHARED_DRIVE"
+          ],
+          "enumDescriptions": [
+            "Equivalent to no resource type mentioned",
+            "Shared drive as resource type"
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "PosixGroup": {
+      "id": "PosixGroup",
+      "description": "POSIX Group definition to represent a group in a POSIX compliant system.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "gid": {
+          "description": "GID of the POSIX group.",
+          "type": "string",
+          "format": "uint64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Name of the POSIX group.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "systemId": {
+          "description": "System identifier for which group name and gid apply to. If not specified it will default to empty value.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RestrictionEvaluation": {
+      "id": "RestrictionEvaluation",
+      "description": "The evaluated state of this restriction.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "state": {
+          "description": "Output only. The current state of the restriction",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "STATE_UNSPECIFIED",
+            "EVALUATING",
+            "COMPLIANT",
+            "FORWARD_COMPLIANT",
+            "NON_COMPLIANT"
+          ],
+          "enumDescriptions": [
+            "Default. Should not be used.",
+            "The restriction state is currently being evaluated.",
+            "All transitive memberships are adhering to restriction.",
+            "Some transitive memberships violate the restriction. No new violating memberships can be added.",
+            "Some transitive memberships violate the restriction. New violating direct memberships will be denied while indirect memberships may be added."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RestrictionEvaluations": {
+      "id": "RestrictionEvaluations",
+      "description": "Evaluations of restrictions applied to parent group on this membership.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "memberRestrictionEvaluation": {
+          "description": "Evaluation of the member restriction applied to this membership. Empty if the user lacks permission to view the restriction evaluation.",
+          "$ref": "MembershipRoleRestrictionEvaluation"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "SearchGroupsResponse": {
       "id": "SearchGroupsResponse",
       "description": "The response message for GroupsService.SearchGroups.",
@@ -3128,7 +3789,7 @@
       "enumDescriptions": [],
       "properties": {
         "groups": {
-          "description": "The `Group`s that match the search query.",
+          "description": "The `Group` resources that match the search query.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3196,7 +3857,7 @@
       "enumDescriptions": [],
       "properties": {
         "memberships": {
-          "description": "List of transitive members satisfying the query.",
+          "description": "List of transitive memberships satisfying the query.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3221,6 +3882,32 @@
       "additionalProperties": null,
       "items": null
     },
+    "SecuritySettings": {
+      "id": "SecuritySettings",
+      "description": "The definiion of security settings.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "memberRestriction": {
+          "description": "The Member Restriction value",
+          "$ref": "MemberRestriction"
+        },
+        "name": {
+          "description": "Output only. The resource name of the security settings. Shall be of the form `groups/{group_id}/securitySettings`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "SendUserInvitationRequest": {
       "id": "SendUserInvitationRequest",
       "description": "A request to send email for inviting target user corresponding to the UserInvitation.",
@@ -3228,7 +3915,12 @@
       "format": null,
       "enum": [],
       "enumDescriptions": [],
-      "properties": {},
+      "properties": {
+        "firstAdminInvitationInfo": {
+          "description": "Optional. First admin invitation info for customers",
+          "$ref": "FirstAdminInvitationInfo"
+        }
+      },
       "additionalProperties": null,
       "items": null
     },
@@ -3322,7 +4014,7 @@
       "enumDescriptions": [],
       "properties": {
         "fieldMask": {
-          "description": "The fully-qualified names of fields to update. May only contain the field `expiry_detail`.",
+          "description": "The fully-qualified names of fields to update. May only contain the field `expiry_detail.expire_time`.",
           "type": "string",
           "format": "google-fieldmask",
           "enum": [],
@@ -3341,7 +4033,7 @@
     },
     "UserInvitation": {
       "id": "UserInvitation",
-      "description": "The `UserInvitation` resource represents an email that can be sent to an unmanaged user account inviting them to join the customer’s Google Workspace or Cloud Identity account. An unmanaged account shares an email address domain with the Google Workspace or Cloud Identity account but is not managed by it yet. If the user accepts the `UserInvitation`, the user account will become managed.",
+      "description": "The `UserInvitation` resource represents an email that can be sent to an unmanaged user account inviting them to join the customer's Google Workspace or Cloud Identity account. An unmanaged account shares an email address domain with the Google Workspace or Cloud Identity account but is not managed by it yet. If the user accepts the `UserInvitation`, the user account will become managed.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -3410,7 +4102,18 @@
       "format": null,
       "enum": [],
       "enumDescriptions": [],
-      "properties": {},
+      "properties": {
+        "removeResetLock": {
+          "description": "Optional. Specifies if a user is able to factory reset a device after a Device Wipe. On iOS, this is called \"Activation Lock\", while on Android, this is known as \"Factory Reset Protection\". If true, this protection will be removed from the device, so that a user can successfully factory reset. If false, the setting is untouched on the device.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
       "additionalProperties": null,
       "items": null
     },
@@ -3505,7 +4208,7 @@
               "id": "cloudidentity.customers.userinvitations.get",
               "path": "v1beta1/{+name}",
               "httpMethod": "GET",
-              "description": "Retrieves a UserInvitation resource. **Note:** New consumer accounts with the customer’s verified domain created within the previous 48 hours will not appear in the result. This delay also applies to newly-verified domains.",
+              "description": "Retrieves a UserInvitation resource. **Note:** New consumer accounts with the customer's verified domain created within the previous 48 hours will not appear in the result. This delay also applies to newly-verified domains.",
               "parameters": {
                 "name": {
                   "description": "Required. `UserInvitation` name in the format `customers/{customer}/userinvitations/{user_email_address}`",
@@ -3540,7 +4243,7 @@
               "id": "cloudidentity.customers.userinvitations.isInvitableUser",
               "path": "v1beta1/{+name}:isInvitableUser",
               "httpMethod": "GET",
-              "description": "Verifies whether a user account is eligible to receive a UserInvitation (is an unmanaged account). Eligibility is based on the following criteria: * the email address is a consumer account and it’s the primary email address of the account, and * the domain of the email address matches an existing verified Google Workspace or Cloud Identity domain If both conditions are met, the user is eligible. **Note:** This method is not supported for Workspace Essentials customers.",
+              "description": "Verifies whether a user account is eligible to receive a UserInvitation (is an unmanaged account). Eligibility is based on the following criteria: * the email address is a consumer account and it's the primary email address of the account, and * the domain of the email address matches an existing verified Google Workspace or Cloud Identity domain If both conditions are met, the user is eligible. **Note:** This method is not supported for Workspace Essentials customers.",
               "parameters": {
                 "name": {
                   "description": "Required. `UserInvitation` name in the format `customers/{customer}/userinvitations/{user_email_address}`",
@@ -3575,7 +4278,7 @@
               "id": "cloudidentity.customers.userinvitations.list",
               "path": "v1beta1/{+parent}/userinvitations",
               "httpMethod": "GET",
-              "description": "Retrieves a list of UserInvitation resources. **Note:** New consumer accounts with the customer’s verified domain created within the previous 48 hours will not appear in the result. This delay also applies to newly-verified domains.",
+              "description": "Retrieves a list of UserInvitation resources. **Note:** New consumer accounts with the customer's verified domain created within the previous 48 hours will not appear in the result. This delay also applies to newly-verified domains.",
               "parameters": {
                 "filter": {
                   "description": "Optional. A query string for filtering `UserInvitation` results by their current state, in the format: `\"state=='invited'\"`.",
@@ -3753,7 +4456,10 @@
                   "response": {
                     "$ref": "ClientState"
                   },
-                  "scopes": [],
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-identity.devices",
+                    "https://www.googleapis.com/auth/cloud-identity.devices.readonly"
+                  ],
                   "supportsMediaDownload": false,
                   "useMediaDownloadService": false,
                   "supportsSubscription": false,
@@ -3818,7 +4524,9 @@
                   "response": {
                     "$ref": "Operation"
                   },
-                  "scopes": [],
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-identity.devices"
+                  ],
                   "supportsMediaDownload": false,
                   "useMediaDownloadService": false,
                   "supportsSubscription": false,
@@ -3859,7 +4567,9 @@
               "response": {
                 "$ref": "Operation"
               },
-              "scopes": [],
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-identity.devices"
+              ],
               "supportsMediaDownload": false,
               "useMediaDownloadService": false,
               "supportsSubscription": false,
@@ -3896,7 +4606,9 @@
               "response": {
                 "$ref": "Operation"
               },
-              "scopes": [],
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-identity.devices"
+              ],
               "supportsMediaDownload": false,
               "useMediaDownloadService": false,
               "supportsSubscription": false,
@@ -3933,7 +4645,9 @@
               "response": {
                 "$ref": "Operation"
               },
-              "scopes": [],
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-identity.devices"
+              ],
               "supportsMediaDownload": false,
               "useMediaDownloadService": false,
               "supportsSubscription": false,
@@ -3968,7 +4682,9 @@
               "response": {
                 "$ref": "Operation"
               },
-              "scopes": [],
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-identity.devices"
+              ],
               "supportsMediaDownload": false,
               "useMediaDownloadService": false,
               "supportsSubscription": false,
@@ -4003,7 +4719,10 @@
               "response": {
                 "$ref": "DeviceUser"
               },
-              "scopes": [],
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-identity.devices",
+                "https://www.googleapis.com/auth/cloud-identity.devices.readonly"
+              ],
               "supportsMediaDownload": false,
               "useMediaDownloadService": false,
               "supportsSubscription": false,
@@ -4094,7 +4813,10 @@
               "response": {
                 "$ref": "ListDeviceUsersResponse"
               },
-              "scopes": [],
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-identity.devices",
+                "https://www.googleapis.com/auth/cloud-identity.devices.readonly"
+              ],
               "supportsMediaDownload": false,
               "useMediaDownloadService": false,
               "supportsSubscription": false,
@@ -4238,7 +4960,9 @@
               "response": {
                 "$ref": "Operation"
               },
-              "scopes": [],
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-identity.devices"
+              ],
               "supportsMediaDownload": false,
               "useMediaDownloadService": false,
               "supportsSubscription": false,
@@ -4279,7 +5003,9 @@
           "response": {
             "$ref": "Operation"
           },
-          "scopes": [],
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-identity.devices"
+          ],
           "supportsMediaDownload": false,
           "useMediaDownloadService": false,
           "supportsSubscription": false,
@@ -4299,7 +5025,9 @@
           "response": {
             "$ref": "Operation"
           },
-          "scopes": [],
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-identity.devices"
+          ],
           "supportsMediaDownload": false,
           "useMediaDownloadService": false,
           "supportsSubscription": false,
@@ -4334,7 +5062,9 @@
           "response": {
             "$ref": "Operation"
           },
-          "scopes": [],
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-identity.devices"
+          ],
           "supportsMediaDownload": false,
           "useMediaDownloadService": false,
           "supportsSubscription": false,
@@ -4369,7 +5099,10 @@
           "response": {
             "$ref": "Device"
           },
-          "scopes": [],
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-identity.devices",
+            "https://www.googleapis.com/auth/cloud-identity.devices.readonly"
+          ],
           "supportsMediaDownload": false,
           "useMediaDownloadService": false,
           "supportsSubscription": false,
@@ -4466,7 +5199,10 @@
           "response": {
             "$ref": "ListDevicesResponse"
           },
-          "scopes": [],
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-identity.devices",
+            "https://www.googleapis.com/auth/cloud-identity.devices.readonly"
+          ],
           "supportsMediaDownload": false,
           "useMediaDownloadService": false,
           "supportsSubscription": false,
@@ -4503,7 +5239,9 @@
           "response": {
             "$ref": "Operation"
           },
-          "scopes": [],
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-identity.devices"
+          ],
           "supportsMediaDownload": false,
           "useMediaDownloadService": false,
           "supportsSubscription": false,
@@ -4848,7 +5586,7 @@
                   "repeated": false
                 },
                 "memberKey.namespace": {
-                  "description": "The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source_id}.",
+                  "description": "The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source_id}`.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -4983,7 +5721,7 @@
                   "repeated": false
                 },
                 "query": {
-                  "description": "Required. A CEL expression that MUST include member specification AND label(s). This is a `required` field. Users can search on label attributes of groups. CONTAINS match ('in') is supported on labels. Certain groups are uniquely identified by both a 'member_key_id' and a 'member_key_namespace', which requires an additional query input: 'member_key_namespace'. Example query: `member_key_id == 'member_key_id_value' && in labels`",
+                  "description": "Required. A CEL expression that MUST include member specification AND label(s). This is a `required` field. Users can search on label attributes of groups. CONTAINS match ('in') is supported on labels. Identity-mapped groups are uniquely identified by both a `member_key_id` and a `member_key_namespace`, which requires an additional query input: `member_key_namespace`. Example query: `member_key_id == 'member_key_id_value' && in labels`",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -5209,11 +5947,64 @@
           "supportsMediaUpload": false,
           "mediaUpload": null
         },
+        "getSecuritySettings": {
+          "id": "cloudidentity.groups.getSecuritySettings",
+          "path": "v1beta1/{+name}",
+          "httpMethod": "GET",
+          "description": "Get Security Settings",
+          "parameters": {
+            "name": {
+              "description": "Required. The security settings to retrieve. Format: `groups/{group_id}/securitySettings`",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^groups/[^/]+/securitySettings$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "readMask": {
+              "description": "Field-level read mask of which fields to return. \"*\" returns all fields. If not specified, all fields will be returned. May only contain the following field: `member_restriction`.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "google-fieldmask",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": null,
+          "response": {
+            "$ref": "SecuritySettings"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-identity.groups",
+            "https://www.googleapis.com/auth/cloud-identity.groups.readonly",
+            "https://www.googleapis.com/auth/cloud-platform"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
         "list": {
           "id": "cloudidentity.groups.list",
           "path": "v1beta1/groups",
           "httpMethod": "GET",
-          "description": "Lists the `Group`s under a customer or namespace.",
+          "description": "Lists the `Group` resources under a customer or namespace.",
           "parameters": {
             "pageSize": {
               "description": "The maximum number of results to return. Note that the number of results returned may be less than this value even if there are more available results. To fetch all results, clients must continue calling this method repeatedly until the response no longer contains a `next_page_token`. If unspecified, defaults to 200 for `View.BASIC` and to 50 for `View.FULL`. Must not be greater than 1000 for `View.BASIC` or 500 for `View.FULL`.",
@@ -5244,7 +6035,7 @@
               "repeated": false
             },
             "parent": {
-              "description": "Required. The parent resource under which to list all `Group`s. Must be of the form `identitysources/{identity_source_id}` for external- identity-mapped groups or `customers/{customer_id}` for Google Groups.",
+              "description": "Required. The parent resource under which to list all `Group` resources. Must be of the form `identitysources/{identity_source_id}` for external- identity-mapped groups or `customers/{customer_id}` for Google Groups. The `customer_id` must begin with \"C\" (for example, 'C046psxkn').",
               "default": null,
               "location": "query",
               "required": false,
@@ -5317,7 +6108,7 @@
               "repeated": false
             },
             "groupKey.namespace": {
-              "description": "The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source_id}.",
+              "description": "The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source_id}`.",
               "default": null,
               "location": "query",
               "required": false,
@@ -5368,7 +6159,7 @@
               "repeated": false
             },
             "updateMask": {
-              "description": "Required. The fully-qualified names of fields to update. May only contain the following fields: `display_name`, `description`.",
+              "description": "Required. The names of fields to update. May only contain the following field names: `display_name`, `description`, `labels`, `dynamic_group_metadata`, `posix_groups`.",
               "default": null,
               "location": "query",
               "required": false,
@@ -5405,7 +6196,7 @@
           "id": "cloudidentity.groups.search",
           "path": "v1beta1/groups:search",
           "httpMethod": "GET",
-          "description": "Searches for `Group`s matching a specified query.",
+          "description": "Searches for `Group` resources matching a specified query.",
           "parameters": {
             "pageSize": {
               "description": "The maximum number of results to return. Note that the number of results returned may be less than this value even if there are more available results. To fetch all results, clients must continue calling this method repeatedly until the response no longer contains a `next_page_token`. If unspecified, defaults to 200 for `GroupView.BASIC` and to 50 for `GroupView.FULL`. Must not be greater than 1000 for `GroupView.BASIC` or 500 for `GroupView.FULL`.",
@@ -5436,7 +6227,7 @@
               "repeated": false
             },
             "query": {
-              "description": "Required. The search query. Must be specified in [Common Expression Language](https://opensource.google/projects/cel). May only contain equality operators on the parent and inclusion operators on labels (e.g., `parent == 'customers/{customer_id}' && 'cloudidentity.googleapis.com/groups.discussion_forum' in labels`).",
+              "description": "Required. The search query. Must be specified in [Common Expression Language](https://opensource.google/projects/cel). May only contain equality operators on the parent and inclusion operators on labels (e.g., `parent == 'customers/{customer_id}' && 'cloudidentity.googleapis.com/groups.discussion_forum' in labels`). The `customer_id` must begin with \"C\" (for example, 'C046psxkn').",
               "default": null,
               "location": "query",
               "required": false,
@@ -5485,8 +6276,200 @@
           "supportsSubscription": false,
           "supportsMediaUpload": false,
           "mediaUpload": null
+        },
+        "updateSecuritySettings": {
+          "id": "cloudidentity.groups.updateSecuritySettings",
+          "path": "v1beta1/{+name}",
+          "httpMethod": "PATCH",
+          "description": "Update Security Settings",
+          "parameters": {
+            "name": {
+              "description": "Output only. The resource name of the security settings. Shall be of the form `groups/{group_id}/securitySettings`.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^groups/[^/]+/securitySettings$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "updateMask": {
+              "description": "Required. The fully-qualified names of fields to update. May only contain the following field: `member_restriction.query`.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "google-fieldmask",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": {
+            "$ref": "SecuritySettings"
+          },
+          "response": {
+            "$ref": "Operation"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-identity.groups",
+            "https://www.googleapis.com/auth/cloud-platform"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
         }
       }
+    },
+    "orgUnits": {
+      "resources": {
+        "memberships": {
+          "resources": {},
+          "methods": {
+            "list": {
+              "id": "cloudidentity.orgUnits.memberships.list",
+              "path": "v1beta1/{+parent}/memberships",
+              "httpMethod": "GET",
+              "description": "List OrgMembership resources in an OrgUnit treated as 'parent'. Parent format: orgUnits/{$orgUnitId} where `$orgUnitId` is the `orgUnitId` from the [Admin SDK `OrgUnit` resource](https://developers.google.com/admin-sdk/directory/reference/rest/v1/orgunits)",
+              "parameters": {
+                "customer": {
+                  "description": "Required. Immutable. Customer that this OrgMembership belongs to. All authorization will happen on the role assignments of this customer. Format: customers/{$customerId} where `$customerId` is the `id` from the [Admin SDK `Customer` resource](https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers). You may also use `customers/my_customer` to specify your own organization.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "filter": {
+                  "description": "The search query. Must be specified in [Common Expression Language](https://opensource.google/projects/cel). May only contain equality operators on the `type` (e.g., `type == 'shared_drive'`).",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "pageSize": {
+                  "description": "The maximum number of results to return. The service may return fewer than this value. If omitted (or defaulted to zero) the server will default to 50. The maximum allowed value is 100, though requests with page_size greater than that will be silently interpreted as 100.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "integer",
+                  "format": "int32",
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "pageToken": {
+                  "description": "A page token, received from a previous `OrgMembershipsService.ListOrgMemberships` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListOrgMembershipsRequest` must match the call that provided the page token.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "parent": {
+                  "description": "Required. Immutable. OrgUnit which is queried for a list of memberships. Format: orgUnits/{$orgUnitId} where `$orgUnitId` is the `orgUnitId` from the [Admin SDK `OrgUnit` resource](https://developers.google.com/admin-sdk/directory/reference/rest/v1/orgunits).",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^orgUnits/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "parent"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "ListOrgMembershipsResponse"
+              },
+              "scopes": [],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "move": {
+              "id": "cloudidentity.orgUnits.memberships.move",
+              "path": "v1beta1/{+name}:move",
+              "httpMethod": "POST",
+              "description": "Move an OrgMembership to a new OrgUnit. NOTE: This is an atomic copy-and-delete. The resource will have a new copy under the destination OrgUnit and be deleted from the source OrgUnit. The resource can only be searched under the destination OrgUnit afterwards.",
+              "parameters": {
+                "name": {
+                  "description": "Required. Immutable. The [resource name](https://cloud.google.com/apis/design/resource_names) of the OrgMembership. Format: orgUnits/{$orgUnitId}/memberships/{$membership} The `$orgUnitId` is the `orgUnitId` from the [Admin SDK `OrgUnit` resource](https://developers.google.com/admin-sdk/directory/reference/rest/v1/orgunits). To manage a Membership without specifying source `orgUnitId`, this API also supports the wildcard character '-' for `$orgUnitId` per https://google.aip.dev/159. The `$membership` shall be of the form `{$entityType};{$memberId}`, where `$entityType` is the enum value of OrgMembership.EntityType, and `memberId` is the `id` from [Drive API (V3) `Drive` resource](https://developers.google.com/drive/api/v3/reference/drives#resource) for OrgMembership.EntityType.SHARED_DRIVE.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^orgUnits/[^/]+/memberships/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "name"
+              ],
+              "request": {
+                "$ref": "MoveOrgMembershipRequest"
+              },
+              "response": {
+                "$ref": "Operation"
+              },
+              "scopes": [],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            }
+          }
+        }
+      },
+      "methods": {}
     }
   },
   "methods": {}

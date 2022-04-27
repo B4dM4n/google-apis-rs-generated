@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("container1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210311")
+            .version("0.1.0-20220328")
             .about("Builds and manages container-based applications, powered by the open source Kubernetes technology.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -72,11 +72,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             clusters2 = clusters2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a cluster, consisting of the specified number and type of Google Compute Engine instances. By default, the cluster is created in the project\'s [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks). One firewall is added for the cluster. After cluster creation, the Kubelet creates routes for each node to allow the containers on that node to communicate with all other instances in the cluster. Finally, an entry is added to the project\'s global metadata indicating which CIDR range the cluster is using.");
+            let mcmd = SubCommand::with_name("create").about("Creates a cluster, consisting of the specified number and type of Google Compute Engine instances. By default, the cluster is created in the project's [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks). One firewall is added for the cluster. After cluster creation, the Kubelet creates routes for each node to allow the containers on that node to communicate with all other instances in the cluster. Finally, an entry is added to the project's global metadata indicating which CIDR range the cluster is using.");
             clusters2 = clusters2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes the cluster, including the Kubernetes endpoint and all worker nodes. Firewalls and routes that were configured during cluster creation are also deleted. Other Google Compute Engine resources that might be in use by the cluster, such as load balancer resources, are not deleted if they weren\'t present when the cluster was initially created.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes the cluster, including the Kubernetes endpoint and all worker nodes. Firewalls and routes that were configured during cluster creation are also deleted. Other Google Compute Engine resources that might be in use by the cluster, such as load balancer resources, are not deleted if they weren't present when the cluster was initially created.");
             clusters2 = clusters2.subcommand(mcmd);
         }
         {
@@ -182,11 +182,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             clusters2 = clusters2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a cluster, consisting of the specified number and type of Google Compute Engine instances. By default, the cluster is created in the project\'s [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks). One firewall is added for the cluster. After cluster creation, the Kubelet creates routes for each node to allow the containers on that node to communicate with all other instances in the cluster. Finally, an entry is added to the project\'s global metadata indicating which CIDR range the cluster is using.");
+            let mcmd = SubCommand::with_name("create").about("Creates a cluster, consisting of the specified number and type of Google Compute Engine instances. By default, the cluster is created in the project's [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks). One firewall is added for the cluster. After cluster creation, the Kubelet creates routes for each node to allow the containers on that node to communicate with all other instances in the cluster. Finally, an entry is added to the project's global metadata indicating which CIDR range the cluster is using.");
             clusters2 = clusters2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes the cluster, including the Kubernetes endpoint and all worker nodes. Firewalls and routes that were configured during cluster creation are also deleted. Other Google Compute Engine resources that might be in use by the cluster, such as load balancer resources, are not deleted if they weren\'t present when the cluster was initially created.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes the cluster, including the Kubernetes endpoint and all worker nodes. Firewalls and routes that were configured during cluster creation are also deleted. Other Google Compute Engine resources that might be in use by the cluster, such as load balancer resources, are not deleted if they weren't present when the cluster was initially created.");
             clusters2 = clusters2.subcommand(mcmd);
         }
         {

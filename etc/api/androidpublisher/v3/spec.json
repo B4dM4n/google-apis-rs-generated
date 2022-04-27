@@ -7,7 +7,7 @@
   "canonicalName": "Android Publisher",
   "fullyEncodeReservedExpansion": null,
   "version": "v3",
-  "revision": "20210318",
+  "revision": "20220427",
   "title": "Google Play Android Developer API",
   "description": "Lets Android application developers access their Google Play accounts.",
   "ownerDomain": "google.com",
@@ -417,7 +417,7 @@
     },
     "Bundle": {
       "id": "Bundle",
-      "description": "Information about a bundle. The resource for BundlesService.",
+      "description": "Information about an app bundle. The resource for BundlesService.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -459,14 +459,14 @@
     },
     "BundlesListResponse": {
       "id": "BundlesListResponse",
-      "description": "Response listing all bundles.",
+      "description": "Response listing all app bundles.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "bundles": {
-          "description": "All bundles.",
+          "description": "All app bundles.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -506,6 +506,101 @@
         "userComment": {
           "description": "A comment from a user.",
           "$ref": "UserComment"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ConvertRegionPricesRequest": {
+      "id": "ConvertRegionPricesRequest",
+      "description": "Request message for ConvertRegionPrices.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "price": {
+          "description": "The intital price to convert other regions from. Tax exclusive.",
+          "$ref": "Money"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ConvertRegionPricesResponse": {
+      "id": "ConvertRegionPricesResponse",
+      "description": "Response message for ConvertRegionPrices.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "convertedOtherRegionsPrice": {
+          "description": "Converted other regions prices in USD and EUR, to use for countries where Play doesn't support a country's local currency.",
+          "$ref": "ConvertedOtherRegionsPrice"
+        },
+        "convertedRegionPrices": {
+          "description": "Map from region code to converted region price.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "$ref": "ConvertedRegionPrice"
+          },
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ConvertedOtherRegionsPrice": {
+      "id": "ConvertedOtherRegionsPrice",
+      "description": "Converted other regions prices.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "eurPrice": {
+          "description": "Price in EUR to use for the \"Other regions\" location exclusive of taxes.",
+          "$ref": "Money"
+        },
+        "usdPrice": {
+          "description": "Price in USD to use for the \"Other regions\" location exclusive of taxes.",
+          "$ref": "Money"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ConvertedRegionPrice": {
+      "id": "ConvertedRegionPrice",
+      "description": "A converted region price.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "price": {
+          "description": "The converted price tax inclusive.",
+          "$ref": "Money"
+        },
+        "regionCode": {
+          "description": "The region code of the region.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "taxAmount": {
+          "description": "The tax amount of the converted price.",
+          "$ref": "Money"
         }
       },
       "additionalProperties": null,
@@ -611,6 +706,72 @@
         },
         "text": {
           "description": "The content of the comment, i.e. reply body.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "DeviceGroup": {
+      "id": "DeviceGroup",
+      "description": "LINT.IfChange A group of devices. A group is defined by a set of device selectors. A device belongs to the group if it matches any selector (logical OR).",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "deviceSelectors": {
+          "description": "Device selectors for this group. A device matching any of the selectors is included in this group.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "DeviceSelector"
+          }
+        },
+        "name": {
+          "description": "The name of the group.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "DeviceId": {
+      "id": "DeviceId",
+      "description": "Identifier of a device.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "buildBrand": {
+          "description": "Value of Build.BRAND.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "buildDevice": {
+          "description": "Value of Build.DEVICE.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -745,6 +906,102 @@
       "additionalProperties": null,
       "items": null
     },
+    "DeviceRam": {
+      "id": "DeviceRam",
+      "description": "Conditions about a device's RAM capabilities.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "maxBytes": {
+          "description": "Maximum RAM in bytes (bound excluded).",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "minBytes": {
+          "description": "Minimum RAM in bytes (bound included).",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "DeviceSelector": {
+      "id": "DeviceSelector",
+      "description": "Selector for a device group. A selector consists of a set of conditions on the device that should all match (logical AND) to determine a device group eligibility. For instance, if a selector specifies RAM conditions, device model inclusion and device model exclusion, a device is considered to match if: device matches RAM conditions AND device matches one of the included device models AND device doesn't match excluded device models",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "deviceRam": {
+          "description": "Conditions on the device's RAM.",
+          "$ref": "DeviceRam"
+        },
+        "excludedDeviceIds": {
+          "description": "Device models excluded by this selector, even if they match all other conditions.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "DeviceId"
+          }
+        },
+        "forbiddenSystemFeatures": {
+          "description": "A device that has any of these system features is excluded by this selector, even if it matches all other conditions.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "SystemFeature"
+          }
+        },
+        "includedDeviceIds": {
+          "description": "Device models included by this selector.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "DeviceId"
+          }
+        },
+        "requiredSystemFeatures": {
+          "description": "A device needs to have all these system features to be included by the selector.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "SystemFeature"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "DeviceSpec": {
       "id": "DeviceSpec",
       "description": "The device spec used to generate a system APK.",
@@ -797,6 +1054,108 @@
             "properties": {},
             "additionalProperties": null,
             "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "DeviceTier": {
+      "id": "DeviceTier",
+      "description": "A single device tier. Devices matching any of the device groups in device_group_names are considered to match the tier.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "deviceGroupNames": {
+          "description": "Groups of devices included in this tier. These groups must be defined explicitly under device_groups in this configuration.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "level": {
+          "description": "The priority level of the tier. Tiers are evaluated in descending order of level: the highest level tier has the highest priority. The highest tier matching a given device is selected for that device. You should use a contiguous range of levels for your tiers in a tier set; tier levels in a tier set must be unique. For instance, if your tier set has 4 tiers (including the global fallback), you should define tiers 1, 2 and 3 in this configuration. Note: tier 0 is implicitly defined as a global fallback and selected for devices that don't match any of the tiers explicitly defined here. You mustn't define level 0 explicitly in this configuration.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "DeviceTierConfig": {
+      "id": "DeviceTierConfig",
+      "description": "LINT.IfChange Configuration describing device targeting criteria for the content of an app.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "deviceGroups": {
+          "description": "Definition of device groups for the app.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "DeviceGroup"
+          }
+        },
+        "deviceTierConfigId": {
+          "description": "Output only. The device tier config ID.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "deviceTierSet": {
+          "description": "Definition of the set of device tiers for the app.",
+          "$ref": "DeviceTierSet"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "DeviceTierSet": {
+      "id": "DeviceTierSet",
+      "description": "A set of device tiers. A tier set determines what variation of app content gets served to a specific device, for device-targeted content. You should assign a priority level to each tier, which determines the ordering by which they are evaluated by Play. See the documentation of DeviceTier.level for more details.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "deviceTiers": {
+          "description": "Device tiers belonging to the set.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "DeviceTier"
           }
         }
       },
@@ -1039,6 +1398,324 @@
       "additionalProperties": null,
       "items": null
     },
+    "GeneratedApksListResponse": {
+      "id": "GeneratedApksListResponse",
+      "description": "Response to list generated APKs.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "generatedApks": {
+          "description": "All generated APKs, grouped by the APK signing key.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GeneratedApksPerSigningKey"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GeneratedApksPerSigningKey": {
+      "id": "GeneratedApksPerSigningKey",
+      "description": "Download metadata for split, standalone and universal APKs, as well as asset pack slices, signed with a given key.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "certificateSha256Hash": {
+          "description": "SHA256 hash of the APK signing public key certificate.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "generatedAssetPackSlices": {
+          "description": "List of asset pack slices which will be served for this app bundle, signed with a key corresponding to certificate_sha256_hash.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GeneratedAssetPackSlice"
+          }
+        },
+        "generatedSplitApks": {
+          "description": "List of generated split APKs, signed with a key corresponding to certificate_sha256_hash.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GeneratedSplitApk"
+          }
+        },
+        "generatedStandaloneApks": {
+          "description": "List of generated standalone APKs, signed with a key corresponding to certificate_sha256_hash.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GeneratedStandaloneApk"
+          }
+        },
+        "generatedUniversalApk": {
+          "description": "Generated universal APK, signed with a key corresponding to certificate_sha256_hash. This field is not set if no universal APK was generated for this signing key.",
+          "$ref": "GeneratedUniversalApk"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GeneratedAssetPackSlice": {
+      "id": "GeneratedAssetPackSlice",
+      "description": "Download metadata for an asset pack slice.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "downloadId": {
+          "description": "Download ID, which uniquely identifies the APK to download. Should be supplied to `generatedapks.download` method.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "moduleName": {
+          "description": "Name of the module that this asset slice belongs to.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "sliceId": {
+          "description": "Asset slice ID.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "version": {
+          "description": "Asset module version.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GeneratedSplitApk": {
+      "id": "GeneratedSplitApk",
+      "description": "Download metadata for a split APK.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "downloadId": {
+          "description": "Download ID, which uniquely identifies the APK to download. Should be supplied to `generatedapks.download` method.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "moduleName": {
+          "description": "Name of the module that this APK belongs to.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "splitId": {
+          "description": "Split ID. Empty for the main split of the base module.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "variantId": {
+          "description": "ID of the generated variant.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GeneratedStandaloneApk": {
+      "id": "GeneratedStandaloneApk",
+      "description": "Download metadata for a standalone APK.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "downloadId": {
+          "description": "Download ID, which uniquely identifies the APK to download. Should be supplied to `generatedapks.download` method.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "variantId": {
+          "description": "ID of the generated variant.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GeneratedUniversalApk": {
+      "id": "GeneratedUniversalApk",
+      "description": "Download metadata for a universal APK.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "downloadId": {
+          "description": "Download ID, which uniquely identifies the APK to download. Should be supplied to `generatedapks.download` method.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Grant": {
+      "id": "Grant",
+      "description": "An access grant resource.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "appLevelPermissions": {
+          "description": "The permissions granted to the user for this app.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [
+              "APP_LEVEL_PERMISSION_UNSPECIFIED",
+              "CAN_ACCESS_APP",
+              "CAN_VIEW_FINANCIAL_DATA",
+              "CAN_MANAGE_PERMISSIONS",
+              "CAN_REPLY_TO_REVIEWS",
+              "CAN_MANAGE_PUBLIC_APKS",
+              "CAN_MANAGE_TRACK_APKS",
+              "CAN_MANAGE_TRACK_USERS",
+              "CAN_MANAGE_PUBLIC_LISTING",
+              "CAN_MANAGE_DRAFT_APPS",
+              "CAN_MANAGE_ORDERS"
+            ],
+            "enumDescriptions": [
+              "Unknown or unspecified permission.",
+              "View app information (read-only).",
+              "View financial data.",
+              "Admin (all permissions).",
+              "Reply to reviews.",
+              "Release to production, exclude devices, and use app signing by Google Play.",
+              "Release to testing tracks.",
+              "Manage testing tracks and edit tester lists.",
+              "Manage store presence.",
+              "Edit and delete draft apps.",
+              "Manage orders and subscriptions."
+            ],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "name": {
+          "description": "Required. Resource name for this grant, following the pattern \"developers/{developer}/users/{email}/grants/{package_name}\". If this grant is for a draft app, the app ID will be used in this resource name instead of the package name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "packageName": {
+          "description": "Immutable. The package name of the app. This will be empty for draft apps.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Image": {
       "id": "Image",
       "description": "An uploaded image. The resource for ImagesService.",
@@ -1200,6 +1877,10 @@
           },
           "items": null
         },
+        "managedProductTaxesAndComplianceSettings": {
+          "description": "Details about taxes and legal compliance. Only applicable to managed products.",
+          "$ref": "ManagedProductTaxAndComplianceSettings"
+        },
         "packageName": {
           "description": "Package name of the parent app.",
           "type": "string",
@@ -1278,6 +1959,10 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "subscriptionTaxesAndComplianceSettings": {
+          "description": "Details about taxes and legal compliance. Only applicable to subscription products.",
+          "$ref": "SubscriptionTaxAndComplianceSettings"
         },
         "trialPeriod": {
           "description": "Trial period, specified in ISO 8601 format. Acceptable values are anything between P7D (seven days) and P999D (999 days).",
@@ -1374,7 +2059,7 @@
           "items": null
         },
         "pageInfo": {
-          "description": "Information about the current page.",
+          "description": "Deprecated and unset.",
           "$ref": "PageInfo"
         },
         "tokenPagination": {
@@ -1479,6 +2164,74 @@
       "additionalProperties": null,
       "items": null
     },
+    "ListDeviceTierConfigsResponse": {
+      "id": "ListDeviceTierConfigsResponse",
+      "description": "Response listing existing device tier configs.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "deviceTierConfigs": {
+          "description": "Device tier configs created by the developer.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "DeviceTierConfig"
+          }
+        },
+        "nextPageToken": {
+          "description": "A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListUsersResponse": {
+      "id": "ListUsersResponse",
+      "description": "A response containing one or more users with access to an account.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "A token to pass to subsequent calls in order to retrieve subsequent results. This will not be set if there are no more results to return.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "users": {
+          "description": "The resulting users.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "User"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Listing": {
       "id": "Listing",
       "description": "A localized store listing. The resource for ListingsService.",
@@ -1577,7 +2330,7 @@
     },
     "LocalizedText": {
       "id": "LocalizedText",
-      "description": "Release notes specification, i.e. language and text.",
+      "description": "Localized text in given language.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1597,6 +2350,91 @@
           "description": "The text in the given language.",
           "type": "string",
           "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ManagedProductTaxAndComplianceSettings": {
+      "id": "ManagedProductTaxAndComplianceSettings",
+      "description": "Details about taxation and legal compliance for managed products.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "eeaWithdrawalRightType": {
+          "description": "Digital content or service classification for products distributed to users in the European Economic Area (EEA). The withdrawal regime under EEA consumer laws depends on this classification. Refer to the [Help Center article](https://support.google.com/googleplay/android-developer/answer/10463498) for more information.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "WITHDRAWAL_RIGHT_TYPE_UNSPECIFIED",
+            "WITHDRAWAL_RIGHT_DIGITAL_CONTENT",
+            "WITHDRAWAL_RIGHT_SERVICE"
+          ],
+          "enumDescriptions": [
+            "",
+            "",
+            ""
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "taxRateInfoByRegionCode": {
+          "description": "A mapping from region code to tax rate details. The keys are region codes as defined by Unicode's \"CLDR\".",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "$ref": "RegionalTaxRateInfo"
+          },
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Money": {
+      "id": "Money",
+      "description": "Represents an amount of money with its currency type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "currencyCode": {
+          "description": "The three-letter currency code defined in ISO 4217.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "nanos": {
+          "description": "Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "units": {
+          "description": "The whole units of the amount. For example if `currencyCode` is `\"USD\"`, then 1 unit is one US dollar.",
+          "type": "string",
+          "format": "int64",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -1847,6 +2685,52 @@
           "format": null,
           "enum": [],
           "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RegionalTaxRateInfo": {
+      "id": "RegionalTaxRateInfo",
+      "description": "Specified details about taxation in a given geographical region.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "eligibleForStreamingServiceTaxRate": {
+          "description": "You must tell us if your app contains streaming products to correctly charge US state and local sales tax. Field only supported in United States.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "taxTier": {
+          "description": "Tax tier to specify reduced tax rate. Developers who sell digital news, magazines, newspapers, books, or audiobooks in various regions may be eligible for reduced tax rates. [Learn more](https://support.google.com/googleplay/android-developer/answer/10463498).",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "TAX_TIER_UNSPECIFIED",
+            "TAX_TIER_BOOKS_1",
+            "TAX_TIER_NEWS_1",
+            "TAX_TIER_NEWS_2",
+            "TAX_TIER_MUSIC_OR_AUDIO_1",
+            "TAX_TIER_LIVE_OR_BROADCAST_1"
+          ],
+          "enumDescriptions": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -2252,7 +3136,7 @@
           "items": null
         },
         "orderId": {
-          "description": "The order id of the latest recurring order associated with the purchase of the subscription.",
+          "description": "The order id of the latest recurring order associated with the purchase of the subscription. If the subscription was canceled because payment was declined, this will be the order id from the payment declined order.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2272,7 +3156,7 @@
           "items": null
         },
         "priceAmountMicros": {
-          "description": "Price of the subscription, not including tax. Price is expressed in micro-units, where 1,000,000 micro-units represents one unit of the currency. For example, if the subscription price is €1.99, price_amount_micros is 1990000.",
+          "description": "Price of the subscription, For tax exclusive countries, the price doesn't include tax. For tax inclusive countries, the price includes tax. Price is expressed in micro-units, where 1,000,000 micro-units represents one unit of the currency. For example, if the subscription price is €1.99, price_amount_micros is 1990000.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -2429,6 +3313,49 @@
       "additionalProperties": null,
       "items": null
     },
+    "SubscriptionTaxAndComplianceSettings": {
+      "id": "SubscriptionTaxAndComplianceSettings",
+      "description": "Details about taxation, Google Play policy and legal compliance for subscription products.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "eeaWithdrawalRightType": {
+          "description": "Digital content or service classification for products distributed to users in the European Economic Area (EEA). The withdrawal regime under EEA consumer laws depends on this classification. Refer to the [Help Center article](https://support.google.com/googleplay/android-developer/answer/10463498) for more information.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "WITHDRAWAL_RIGHT_TYPE_UNSPECIFIED",
+            "WITHDRAWAL_RIGHT_DIGITAL_CONTENT",
+            "WITHDRAWAL_RIGHT_SERVICE"
+          ],
+          "enumDescriptions": [
+            "",
+            "",
+            ""
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "taxRateInfoByRegionCode": {
+          "description": "A mapping from region code to tax rate details. The keys are region codes as defined by Unicode's \"CLDR\".",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "$ref": "RegionalTaxRateInfo"
+          },
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "SystemApksListResponse": {
       "id": "SystemApksListResponse",
       "description": "Response to list previously created system APK variants.",
@@ -2453,9 +3380,31 @@
       "additionalProperties": null,
       "items": null
     },
+    "SystemFeature": {
+      "id": "SystemFeature",
+      "description": "Representation of a system feature.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "name": {
+          "description": "The name of the feature.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Testers": {
       "id": "Testers",
-      "description": "The testers of an app. The resource for TestersService.",
+      "description": "The testers of an app. The resource for TestersService. Note: while it is possible in the Play Console UI to add testers via email lists, email lists are not supported by this resource.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -2581,6 +3530,50 @@
       "additionalProperties": null,
       "items": null
     },
+    "TrackCountryAvailability": {
+      "id": "TrackCountryAvailability",
+      "description": "Resource for per-track country availability information.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "countries": {
+          "description": "A list of one or more countries where artifacts in this track are available. This list includes all countries that are targeted by the track, even if only specific carriers are targeted in that country.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "TrackTargetedCountry"
+          }
+        },
+        "restOfWorld": {
+          "description": "Whether artifacts in this track are available to \"rest of the world\" countries.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "syncWithProduction": {
+          "description": "Whether this track's availability is synced with the default production track. See https://support.google.com/googleplay/android-developer/answer/7550024 for more information on syncing country availability with production. Note that if this is true, the returned \"countries\" and \"rest_of_world\" fields will reflect the values for the default production track.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "TrackRelease": {
       "id": "TrackRelease",
       "description": "A release within a track.",
@@ -2679,6 +3672,28 @@
       "additionalProperties": null,
       "items": null
     },
+    "TrackTargetedCountry": {
+      "id": "TrackTargetedCountry",
+      "description": "Representation of a single country where the contents of a track are available.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "countryCode": {
+          "description": "The country to target, as a two-letter CLDR code.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "TracksListResponse": {
       "id": "TracksListResponse",
       "description": "Response listing all tracks.",
@@ -2708,6 +3723,142 @@
           "items": {
             "$ref": "Track"
           }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "User": {
+      "id": "User",
+      "description": "A user resource.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "accessState": {
+          "description": "Output only. The state of the user's access to the Play Console.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ACCESS_STATE_UNSPECIFIED",
+            "INVITED",
+            "INVITATION_EXPIRED",
+            "ACCESS_GRANTED",
+            "ACCESS_EXPIRED"
+          ],
+          "enumDescriptions": [
+            "Unknown or unspecified access state.",
+            "User is invited but has not yet accepted the invitation.",
+            "Invitation has expired.",
+            "User has accepted an invitation and has access to the Play Console.",
+            "Account access has expired."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "developerAccountPermissions": {
+          "description": "Permissions for the user which apply across the developer account.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [
+              "DEVELOPER_LEVEL_PERMISSION_UNSPECIFIED",
+              "CAN_SEE_ALL_APPS",
+              "CAN_VIEW_FINANCIAL_DATA_GLOBAL",
+              "CAN_MANAGE_PERMISSIONS_GLOBAL",
+              "CAN_EDIT_GAMES_GLOBAL",
+              "CAN_PUBLISH_GAMES_GLOBAL",
+              "CAN_REPLY_TO_REVIEWS_GLOBAL",
+              "CAN_MANAGE_PUBLIC_APKS_GLOBAL",
+              "CAN_MANAGE_TRACK_APKS_GLOBAL",
+              "CAN_MANAGE_TRACK_USERS_GLOBAL",
+              "CAN_MANAGE_PUBLIC_LISTING_GLOBAL",
+              "CAN_MANAGE_DRAFT_APPS_GLOBAL",
+              "CAN_CREATE_MANAGED_PLAY_APPS_GLOBAL",
+              "CAN_CHANGE_MANAGED_PLAY_SETTING_GLOBAL",
+              "CAN_MANAGE_ORDERS_GLOBAL"
+            ],
+            "enumDescriptions": [
+              "Unknown or unspecified permission.",
+              "View app information and download bulk reports (read-only).",
+              "View financial data, orders, and cancellation survey responses.",
+              "Admin (all permissions).",
+              "Edit Play Games Services projects.",
+              "Publish Play Games Services projects.",
+              "Reply to reviews.",
+              "Release to production, exclude devices, and use app signing by Google Play.",
+              "Release to testing tracks.",
+              "Manage testing tracks and edit tester lists.",
+              "Manage store presence.",
+              "Create, edit, and delete draft apps.",
+              "Create and publish private apps to your organization.",
+              "Choose whether apps are public, or only available to your organization.",
+              "Manage orders and subscriptions."
+            ],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "email": {
+          "description": "Immutable. The user's email address.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "expirationTime": {
+          "description": "The time at which the user's access expires, if set. When setting this value, it must always be in the future.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "grants": {
+          "description": "Output only. Per-app permissions for the user.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Grant"
+          }
+        },
+        "name": {
+          "description": "Required. Resource name for this user, following the pattern \"developers/{developer}/users/{email}\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "partial": {
+          "description": "Output only. Whether there are more permissions for the user that are not represented here. This can happen if the caller does not have permission to manage all apps in the account. This is also `true` if this user is the account owner. If this field is `true`, it should be taken as a signal that this user cannot be fully managed via the API. That is, the API caller is not be able to manage all of the permissions this user holds, either because it doesn't know about them or because the user is the account owner.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -3007,6 +4158,186 @@
     }
   },
   "resources": {
+    "applications": {
+      "resources": {
+        "deviceTierConfigs": {
+          "resources": {},
+          "methods": {
+            "create": {
+              "id": "androidpublisher.applications.deviceTierConfigs.create",
+              "path": "androidpublisher/v3/applications/{packageName}/deviceTierConfigs",
+              "httpMethod": "POST",
+              "description": "Creates a new device tier config for an app.",
+              "parameters": {
+                "allowUnknownDevices": {
+                  "description": "Whether the service should accept device IDs that are unknown to Play's device catalog.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "boolean",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "packageName": {
+                  "description": "Package name of the app.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "packageName"
+              ],
+              "request": {
+                "$ref": "DeviceTierConfig"
+              },
+              "response": {
+                "$ref": "DeviceTierConfig"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/androidpublisher"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "get": {
+              "id": "androidpublisher.applications.deviceTierConfigs.get",
+              "path": "androidpublisher/v3/applications/{packageName}/deviceTierConfigs/{deviceTierConfigId}",
+              "httpMethod": "GET",
+              "description": "Returns a particular device tier config.",
+              "parameters": {
+                "deviceTierConfigId": {
+                  "description": "Required. Id of an existing device tier config.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": "int64",
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "packageName": {
+                  "description": "Package name of the app.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "packageName",
+                "deviceTierConfigId"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "DeviceTierConfig"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/androidpublisher"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "list": {
+              "id": "androidpublisher.applications.deviceTierConfigs.list",
+              "path": "androidpublisher/v3/applications/{packageName}/deviceTierConfigs",
+              "httpMethod": "GET",
+              "description": "Returns created device tier configs, ordered by descending creation time.",
+              "parameters": {
+                "packageName": {
+                  "description": "Package name of the app.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "pageSize": {
+                  "description": "The maximum number of device tier configs to return. The service may return fewer than this value. If unspecified, at most 10 device tier configs will be returned. The maximum value for this field is 100; values above 100 will be coerced to 100. Device tier configs will be ordered by descending creation time.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "integer",
+                  "format": "int32",
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "pageToken": {
+                  "description": "A page token, received from a previous `ListDeviceTierConfigs` call. Provide this to retrieve the subsequent page.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "packageName"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "ListDeviceTierConfigsResponse"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/androidpublisher"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            }
+          }
+        }
+      },
+      "methods": {}
+    },
     "edits": {
       "resources": {
         "apks": {
@@ -3250,7 +4581,7 @@
               "description": "Uploads a new Android App Bundle to this edit. If you are using the Google API client libraries, please increase the timeout of the http request before calling this endpoint (a timeout of 2 minutes is recommended). See [Timeouts and Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors) for an example in java.",
               "parameters": {
                 "ackBundleInstallationWarning": {
-                  "description": "Must be set to true if the bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).",
+                  "description": "Must be set to true if the app bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -3323,6 +4654,78 @@
                   }
                 }
               }
+            }
+          }
+        },
+        "countryavailability": {
+          "resources": {},
+          "methods": {
+            "get": {
+              "id": "androidpublisher.edits.countryavailability.get",
+              "path": "androidpublisher/v3/applications/{packageName}/edits/{editId}/countryAvailability/{track}",
+              "httpMethod": "GET",
+              "description": "Gets country availability.",
+              "parameters": {
+                "editId": {
+                  "description": "Identifier of the edit.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "packageName": {
+                  "description": "Package name of the app.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "track": {
+                  "description": "The track to read from.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "packageName",
+                "editId",
+                "track"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "TrackCountryAvailability"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/androidpublisher"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
             }
           }
         },
@@ -3421,7 +4824,7 @@
                 "accept": [
                   "application/octet-stream"
                 ],
-                "maxSize": "314572800",
+                "maxSize": "629145600",
                 "protocols": {
                   "simple": {
                     "multipart": true,
@@ -4810,7 +6213,7 @@
               "id": "androidpublisher.edits.testers.get",
               "path": "androidpublisher/v3/applications/{packageName}/edits/{editId}/testers/{track}",
               "httpMethod": "GET",
-              "description": "Gets testers.",
+              "description": "Gets testers. Note: Testers resource does not support email lists.",
               "parameters": {
                 "editId": {
                   "description": "Identifier of the edit.",
@@ -4877,7 +6280,7 @@
               "id": "androidpublisher.edits.testers.patch",
               "path": "androidpublisher/v3/applications/{packageName}/edits/{editId}/testers/{track}",
               "httpMethod": "PATCH",
-              "description": "Patches testers.",
+              "description": "Patches testers. Note: Testers resource does not support email lists.",
               "parameters": {
                 "editId": {
                   "description": "Identifier of the edit.",
@@ -4946,7 +6349,7 @@
               "id": "androidpublisher.edits.testers.update",
               "path": "androidpublisher/v3/applications/{packageName}/edits/{editId}/testers/{track}",
               "httpMethod": "PUT",
-              "description": "Updates testers.",
+              "description": "Updates testers. Note: Testers resource does not support email lists.",
               "parameters": {
                 "editId": {
                   "description": "Identifier of the edit.",
@@ -5283,6 +6686,20 @@
           "httpMethod": "POST",
           "description": "Commits an app edit.",
           "parameters": {
+            "changesNotSentForReview": {
+              "description": "Indicates that the changes in this edit will not be reviewed until they are explicitly sent for review from the Google Play Console UI. These changes will be added to any other changes that are not yet sent for review.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "boolean",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
             "editId": {
               "description": "Identifier of the edit.",
               "default": null,
@@ -5524,6 +6941,260 @@
         }
       }
     },
+    "generatedapks": {
+      "resources": {},
+      "methods": {
+        "download": {
+          "id": "androidpublisher.generatedapks.download",
+          "path": "androidpublisher/v3/applications/{packageName}/generatedApks/{versionCode}/downloads/{downloadId}:download",
+          "httpMethod": "GET",
+          "description": "Downloads a single signed APK generated from an app bundle.",
+          "parameters": {
+            "downloadId": {
+              "description": "Download ID, which uniquely identifies the APK to download. Can be obtained from the response of `generatedapks.list` method.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "packageName": {
+              "description": "Package name of the app.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "versionCode": {
+              "description": "Version code of the app bundle.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "integer",
+              "format": "int32",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "packageName",
+            "versionCode",
+            "downloadId"
+          ],
+          "request": null,
+          "response": null,
+          "scopes": [
+            "https://www.googleapis.com/auth/androidpublisher"
+          ],
+          "supportsMediaDownload": true,
+          "useMediaDownloadService": true,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "list": {
+          "id": "androidpublisher.generatedapks.list",
+          "path": "androidpublisher/v3/applications/{packageName}/generatedApks/{versionCode}",
+          "httpMethod": "GET",
+          "description": "Returns download metadata for all APKs that were generated from a given app bundle.",
+          "parameters": {
+            "packageName": {
+              "description": "Package name of the app.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "versionCode": {
+              "description": "Version code of the app bundle.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "integer",
+              "format": "int32",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "packageName",
+            "versionCode"
+          ],
+          "request": null,
+          "response": {
+            "$ref": "GeneratedApksListResponse"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/androidpublisher"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        }
+      }
+    },
+    "grants": {
+      "resources": {},
+      "methods": {
+        "create": {
+          "id": "androidpublisher.grants.create",
+          "path": "androidpublisher/v3/{+parent}/grants",
+          "httpMethod": "POST",
+          "description": "Grant access for a user to the given package.",
+          "parameters": {
+            "parent": {
+              "description": "Required. The user which needs permission. Format: developers/{developer}/users/{user}",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^developers/[^/]+/users/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "parent"
+          ],
+          "request": {
+            "$ref": "Grant"
+          },
+          "response": {
+            "$ref": "Grant"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/androidpublisher"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "delete": {
+          "id": "androidpublisher.grants.delete",
+          "path": "androidpublisher/v3/{+name}",
+          "httpMethod": "DELETE",
+          "description": "Removes all access for the user to the given package or developer account.",
+          "parameters": {
+            "name": {
+              "description": "Required. The name of the grant to delete. Format: developers/{developer}/users/{email}/grants/{package_name}",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^developers/[^/]+/users/[^/]+/grants/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": null,
+          "response": null,
+          "scopes": [
+            "https://www.googleapis.com/auth/androidpublisher"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "patch": {
+          "id": "androidpublisher.grants.patch",
+          "path": "androidpublisher/v3/{+name}",
+          "httpMethod": "PATCH",
+          "description": "Updates access for the user to the given package.",
+          "parameters": {
+            "name": {
+              "description": "Required. Resource name for this grant, following the pattern \"developers/{developer}/users/{email}/grants/{package_name}\". If this grant is for a draft app, the app ID will be used in this resource name instead of the package name.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^developers/[^/]+/users/[^/]+/grants/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "updateMask": {
+              "description": "Optional. The list of fields to be updated.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "google-fieldmask",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": {
+            "$ref": "Grant"
+          },
+          "response": {
+            "$ref": "Grant"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/androidpublisher"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        }
+      }
+    },
     "inappproducts": {
       "resources": {},
       "methods": {
@@ -5686,10 +7357,10 @@
           "id": "androidpublisher.inappproducts.list",
           "path": "androidpublisher/v3/applications/{packageName}/inappproducts",
           "httpMethod": "GET",
-          "description": "Lists all in-app products - both managed products and subscriptions.",
+          "description": "Lists all in-app products - both managed products and subscriptions. If an app has a large number of in-app products, the response may be paginated. In this case the response field `tokenPagination.nextPageToken` will be set and the caller should provide its value as a `token` request parameter to retrieve the next page.",
           "parameters": {
             "maxResults": {
-              "description": "How many results the list operation should return.",
+              "description": "Deprecated and ignored. The page size is determined by the server.",
               "default": null,
               "location": "query",
               "required": false,
@@ -5717,7 +7388,7 @@
               "repeated": false
             },
             "startIndex": {
-              "description": "The index of the first element to return.",
+              "description": "Deprecated and ignored. Set the `token` parameter to rertieve the next page.",
               "default": null,
               "location": "query",
               "required": false,
@@ -5835,6 +7506,20 @@
           "httpMethod": "PUT",
           "description": "Updates an in-app product (i.e. a managed product or a subscriptions).",
           "parameters": {
+            "allowMissing": {
+              "description": "If set to true, and the in-app product with the given package_name and sku doesn't exist, the in-app product will be created.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "boolean",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
             "autoConvertMissingPrices": {
               "description": "If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.",
               "default": null,
@@ -6009,6 +7694,50 @@
         }
       }
     },
+    "monetization": {
+      "resources": {},
+      "methods": {
+        "convertRegionPrices": {
+          "id": "androidpublisher.monetization.convertRegionPrices",
+          "path": "androidpublisher/v3/applications/{packageName}/pricing:convertRegionPrices",
+          "httpMethod": "POST",
+          "description": "Calculates the region prices, using today's exchange rate and country-specific pricing patterns, based on the price in the request for a set of regions.",
+          "parameters": {
+            "packageName": {
+              "description": "Required. The app package name.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "packageName"
+          ],
+          "request": {
+            "$ref": "ConvertRegionPricesRequest"
+          },
+          "response": {
+            "$ref": "ConvertRegionPricesResponse"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/androidpublisher"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        }
+      }
+    },
     "orders": {
       "resources": {},
       "methods": {
@@ -6016,7 +7745,7 @@
           "id": "androidpublisher.orders.refund",
           "path": "androidpublisher/v3/applications/{packageName}/orders/{orderId}:refund",
           "httpMethod": "POST",
-          "description": "Refund a user's subscription or in-app purchase order.",
+          "description": "Refunds a user's subscription or in-app purchase order. Orders older than 1 year cannot be refunded.",
           "parameters": {
             "orderId": {
               "description": "The order ID provided to the user when the subscription or in-app order was purchased.",
@@ -7216,6 +8945,203 @@
         }
       },
       "methods": {}
+    },
+    "users": {
+      "resources": {},
+      "methods": {
+        "create": {
+          "id": "androidpublisher.users.create",
+          "path": "androidpublisher/v3/{+parent}/users",
+          "httpMethod": "POST",
+          "description": "Grant access for a user to the given developer account.",
+          "parameters": {
+            "parent": {
+              "description": "Required. The developer account to add the user to. Format: developers/{developer}",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^developers/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "parent"
+          ],
+          "request": {
+            "$ref": "User"
+          },
+          "response": {
+            "$ref": "User"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/androidpublisher"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "delete": {
+          "id": "androidpublisher.users.delete",
+          "path": "androidpublisher/v3/{+name}",
+          "httpMethod": "DELETE",
+          "description": "Removes all access for the user to the given developer account.",
+          "parameters": {
+            "name": {
+              "description": "Required. The name of the user to delete. Format: developers/{developer}/users/{email}",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^developers/[^/]+/users/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": null,
+          "response": null,
+          "scopes": [
+            "https://www.googleapis.com/auth/androidpublisher"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "list": {
+          "id": "androidpublisher.users.list",
+          "path": "androidpublisher/v3/{+parent}/users",
+          "httpMethod": "GET",
+          "description": "Lists all users with access to a developer account.",
+          "parameters": {
+            "pageSize": {
+              "description": "The maximum number of results to return. This must be set to -1 to disable pagination.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "pageToken": {
+              "description": "A token received from a previous call to this method, in order to retrieve further results.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "parent": {
+              "description": "Required. The developer account to fetch users from. Format: developers/{developer}",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^developers/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "parent"
+          ],
+          "request": null,
+          "response": {
+            "$ref": "ListUsersResponse"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/androidpublisher"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "patch": {
+          "id": "androidpublisher.users.patch",
+          "path": "androidpublisher/v3/{+name}",
+          "httpMethod": "PATCH",
+          "description": "Updates access for the user to the developer account.",
+          "parameters": {
+            "name": {
+              "description": "Required. Resource name for this user, following the pattern \"developers/{developer}/users/{email}\".",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^developers/[^/]+/users/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "updateMask": {
+              "description": "Optional. The list of fields to be updated.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "google-fieldmask",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": {
+            "$ref": "User"
+          },
+          "response": {
+            "$ref": "User"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/androidpublisher"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        }
+      }
     }
   },
   "methods": {}

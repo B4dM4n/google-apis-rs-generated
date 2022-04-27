@@ -7,7 +7,7 @@
   "canonicalName": "My Business Account Management",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20210318",
+  "revision": "20220426",
   "title": "My Business Account Management API",
   "description": "The My Business Account Management API provides an interface for managing access to a location on Google.",
   "ownerDomain": "google.com",
@@ -445,7 +445,7 @@
     },
     "Empty": {
       "id": "Empty",
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
+      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
       "type": "object",
       "format": null,
       "enum": [],
@@ -761,7 +761,7 @@
           }
         },
         "regionCode": {
-          "description": "Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See http://cldr.unicode.org/ and http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: \"CH\" for Switzerland.",
+          "description": "Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See https://cldr.unicode.org/ and https://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: \"CH\" for Switzerland.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -824,6 +824,28 @@
         },
         "locationName": {
           "description": "The name of the location to which the user is invited.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "TransferLocationRequest": {
+      "id": "TransferLocationRequest",
+      "description": "Request message for AccessControl.TransferLocation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "destinationAccount": {
+          "description": "Required. Name of the account resource to transfer the location to (for example, \"accounts/{account}\").",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1496,7 +1518,45 @@
           }
         }
       },
-      "methods": {}
+      "methods": {
+        "transfer": {
+          "id": "mybusinessaccountmanagement.locations.transfer",
+          "path": "v1/{+name}:transfer",
+          "httpMethod": "POST",
+          "description": "Moves a location from an account that the user owns to another account that the same user administers. The user must be an owner of the account the location is currently associated with and must also be at least a manager of the destination account.",
+          "parameters": {
+            "name": {
+              "description": "Required. The name of the location to transfer. `locations/{location_id}`.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^locations/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": {
+            "$ref": "TransferLocationRequest"
+          },
+          "response": {
+            "$ref": "Empty"
+          },
+          "scopes": [],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        }
+      }
     }
   },
   "methods": {}

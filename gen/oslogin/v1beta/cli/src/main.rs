@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("oslogin1_beta")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210307")
+            .version("0.1.0-20220415")
             .about("You can use OS Login to manage access to your VM instances using IAM roles.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -53,7 +53,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut ssh_public_keys1 = SubCommand::with_name("ssh_public_keys")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: delete, get and patch");
+            .about("methods: create, delete, get and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Create an SSH public key");
+            ssh_public_keys1 = ssh_public_keys1.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("delete").about("Deletes an SSH public key.");
             ssh_public_keys1 = ssh_public_keys1.subcommand(mcmd);

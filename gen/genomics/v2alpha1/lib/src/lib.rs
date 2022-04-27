@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [pipelines](resources/pipelines/struct.PipelinesActions.html)\n      * [*run*](resources/pipelines/struct.RunRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [operations](resources/projects/operations/struct.OperationsActions.html)\n        * [*cancel*](resources/projects/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/operations/struct.ListRequestBuilder.html)\n      * [workers](resources/projects/workers/struct.WorkersActions.html)\n        * [*checkIn*](resources/projects/workers/struct.CheckInRequestBuilder.html)\n    * [workers](resources/workers/struct.WorkersActions.html)\n      * [*checkIn*](resources/workers/struct.CheckInRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
     #[doc = "View and manage Genomics data\n\n`https://www.googleapis.com/auth/genomics`"]
     pub const GENOMICS: &str = "https://www.googleapis.com/auth/genomics";
@@ -72,6 +72,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub credentials: ::std::option::Option<crate::schemas::Secret>,
+        #[doc = "The encrypted environment to pass into the container. This environment is merged with values specified in the google.genomics.v2alpha1.Pipeline message, overwriting any duplicate values. The secret must decrypt to a JSON-encoded dictionary where key-value pairs serve as environment variable names and their values. The decoded environment variables can overwrite the values specified by the `environment` field."]
+        #[serde(
+            rename = "encryptedEnvironment",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encrypted_environment: ::std::option::Option<crate::schemas::Secret>,
         #[doc = "If specified, overrides the `ENTRYPOINT` specified in the container."]
         #[serde(
             rename = "entrypoint",
@@ -370,58 +377,6 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CheckInResponse {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct ComputeEngine {
-        #[doc = "The names of the disks that were created for this pipeline."]
-        #[serde(
-            rename = "diskNames",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub disk_names: ::std::option::Option<Vec<String>>,
-        #[doc = "The instance on which the operation is running."]
-        #[serde(
-            rename = "instanceName",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub instance_name: ::std::option::Option<String>,
-        #[doc = "The machine type of the instance."]
-        #[serde(
-            rename = "machineType",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub machine_type: ::std::option::Option<String>,
-        #[doc = "The availability zone in which the instance resides."]
-        #[serde(
-            rename = "zone",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub zone: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for ComputeEngine {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for ComputeEngine {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -817,7 +772,7 @@ pub mod schemas {
         DataLoss,
         #[doc = "The deadline expired before the operation could complete. For operations that change the state of the system, this error may be returned even if the operation has completed successfully. For example, a successful response from a server could have been delayed long enough for the deadline to expire. HTTP Mapping: 504 Gateway Timeout"]
         DeadlineExceeded,
-        #[doc = "The operation was rejected because the system is not in a state required for the operation's execution. For example, the directory to be deleted is non-empty, an rmdir operation is applied to a non-directory, etc. Service implementors can use the following guidelines to decide between `FAILED_PRECONDITION`, `ABORTED`, and `UNAVAILABLE`: (a) Use `UNAVAILABLE` if the client can retry just the failing call. (b) Use `ABORTED` if the client should retry at a higher level (e.g., when a client-specified test-and-set fails, indicating the client should restart a read-modify-write sequence). (c) Use `FAILED_PRECONDITION` if the client should not retry until the system state has been explicitly fixed. E.g., if an \"rmdir\" fails because the directory is non-empty, `FAILED_PRECONDITION` should be returned since the client should not retry unless the files are deleted from the directory. HTTP Mapping: 400 Bad Request"]
+        #[doc = "The operation was rejected because the system is not in a state required for the operation's execution. For example, the directory to be deleted is non-empty, an rmdir operation is applied to a non-directory, etc. Service implementors can use the following guidelines to decide between `FAILED_PRECONDITION`, `ABORTED`, and `UNAVAILABLE`: (a) Use `UNAVAILABLE` if the client can retry just the failing call. (b) Use `ABORTED` if the client should retry at a higher level. For example, when a client-specified test-and-set fails, indicating the client should restart a read-modify-write sequence. (c) Use `FAILED_PRECONDITION` if the client should not retry until the system state has been explicitly fixed. For example, if an \"rmdir\" fails because the directory is non-empty, `FAILED_PRECONDITION` should be returned since the client should not retry unless the files are deleted from the directory. HTTP Mapping: 400 Bad Request"]
         FailedPrecondition,
         #[doc = "Internal errors. This means that some invariants expected by the underlying system have been broken. This error code is reserved for serious errors. HTTP Mapping: 500 Internal Server Error"]
         Internal,
@@ -1216,129 +1171,6 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct OperationEvent {
-        #[doc = "Required description of event."]
-        #[serde(
-            rename = "description",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub description: ::std::option::Option<String>,
-        #[doc = "Optional time of when event finished. An event can have a start time and no finish time. If an event has a finish time, there must be a start time."]
-        #[serde(
-            rename = "endTime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub end_time: ::std::option::Option<String>,
-        #[doc = "Optional time of when event started."]
-        #[serde(
-            rename = "startTime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub start_time: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for OperationEvent {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for OperationEvent {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
-    pub struct OperationMetadata {
-        #[doc = "This field is deprecated. Use `labels` instead. Optionally provided by the caller when submitting the request that creates the operation."]
-        #[serde(
-            rename = "clientId",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub client_id: ::std::option::Option<String>,
-        #[doc = "The time at which the job was submitted to the Genomics service."]
-        #[serde(
-            rename = "createTime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub create_time: ::std::option::Option<String>,
-        #[doc = "The time at which the job stopped running."]
-        #[serde(
-            rename = "endTime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub end_time: ::std::option::Option<String>,
-        #[doc = "Optional event messages that were generated during the job's execution. This also contains any warnings that were generated during import or export."]
-        #[serde(
-            rename = "events",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub events: ::std::option::Option<Vec<crate::schemas::OperationEvent>>,
-        #[doc = "Optionally provided by the caller when submitting the request that creates the operation."]
-        #[serde(
-            rename = "labels",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "The Google Cloud Project in which the job is scoped."]
-        #[serde(
-            rename = "projectId",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub project_id: ::std::option::Option<String>,
-        #[doc = "The original request that started the operation. Note that this will be in current version of the API. If the operation was started with v1beta2 API and a GetOperation is performed on v1 API, a v1 request will be returned."]
-        #[serde(
-            rename = "request",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub request:
-            ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
-        #[doc = "Runtime metadata on this Operation."]
-        #[serde(
-            rename = "runtimeMetadata",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub runtime_metadata:
-            ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
-        #[doc = "The time at which the job began to run."]
-        #[serde(
-            rename = "startTime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub start_time: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for OperationMetadata {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for OperationMetadata {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
     pub struct PersistentDisk {
         #[doc = "The Compute Engine disk type. If unspecified, `pd-standard` is used."]
         #[serde(
@@ -1392,6 +1224,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub actions: ::std::option::Option<Vec<crate::schemas::Action>>,
+        #[doc = "The encrypted environment to pass into every action. Each action can also specify its own encrypted environment. The secret must decrypt to a JSON-encoded dictionary where key-value pairs serve as environment variable names and their values. The decoded environment variables can overwrite the values specified by the `environment` field."]
+        #[serde(
+            rename = "encryptedEnvironment",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encrypted_environment: ::std::option::Option<crate::schemas::Secret>,
         #[doc = "The environment to pass into every action. Each action can also specify additional environment variables but cannot delete an entry from this map (though they can overwrite it with a different value)."]
         #[serde(
             rename = "environment",
@@ -1603,37 +1442,6 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for RunPipelineResponse {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct RuntimeMetadata {
-        #[doc = "Execution information specific to Google Compute Engine."]
-        #[serde(
-            rename = "computeEngine",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub compute_engine: ::std::option::Option<crate::schemas::ComputeEngine>,
-    }
-    impl ::google_field_selector::FieldSelector for RuntimeMetadata {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for RuntimeMetadata {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1911,6 +1719,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub preemptible: ::std::option::Option<bool>,
+        #[doc = "If specified, the VM will only be allocated inside the matching reservation. It will fail if the VM parameters don't match the reservation."]
+        #[serde(
+            rename = "reservation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reservation: ::std::option::Option<String>,
         #[doc = "The service account to install on the VM. This account does not need any permissions other than those required by the pipeline."]
         #[serde(
             rename = "serviceAccount",
@@ -2961,7 +2776,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "A string for filtering Operations. In v2alpha1, the following filter fields are supported: * createTime: The time this job was created * events: The set of event (names) that have occurred while running the pipeline. The : operator can be used to determine if a particular event has occurred. * error: If the pipeline is running, this value is NULL. Once the pipeline finishes, the value is the standard Google error code. * labels.key or labels.\"key with space\" where key is a label key. * done: If the pipeline is running, this value is false. Once the pipeline finishes, the value is true. In v1 and v1alpha2, the following filter fields are supported: * projectId: Required. Corresponds to OperationMetadata.projectId. * createTime: The time this job was created, in seconds from the [epoch](http://en.wikipedia.org/wiki/Unix_time). Can use `>=` and/or `<=` operators. * status: Can be `RUNNING`, `SUCCESS`, `FAILURE`, or `CANCELED`. Only one status may be specified. * labels.key where key is a label key. Examples: * `projectId = my-project AND createTime >= 1432140000` * `projectId = my-project AND createTime >= 1432140000 AND createTime <= 1432150000 AND status = RUNNING` * `projectId = my-project AND labels.color = *` * `projectId = my-project AND labels.color = red`"]
+                #[doc = "A string for filtering Operations. In v2alpha1, the following filter fields are supported: * createTime: The time this job was created * events: The set of event (names) that have occurred while running the pipeline. The : operator can be used to determine if a particular event has occurred. * error: If the pipeline is running, this value is NULL. Once the pipeline finishes, the value is the standard Google error code. * labels.key or labels.\"key with space\" where key is a label key. * done: If the pipeline is running, this value is false. Once the pipeline finishes, the value is true. Examples: * `projectId = my-project AND createTime >= 1432140000` * `projectId = my-project AND createTime >= 1432140000 AND createTime <= 1432150000 AND status = RUNNING` * `projectId = my-project AND labels.color = *` * `projectId = my-project AND labels.color = red`"]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self

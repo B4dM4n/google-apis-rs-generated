@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("calendar3")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210316")
+            .version("0.1.0-20220408")
             .about("Manipulates events and other calendar data.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -71,31 +71,31 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: delete, get, insert, list, patch, update and watch");
         {
             let mcmd = SubCommand::with_name("delete")
-                .about("Removes a calendar from the user\'s calendar list.");
+                .about("Removes a calendar from the user's calendar list.");
             calendar_list0 = calendar_list0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("get")
-                .about("Returns a calendar from the user\'s calendar list.");
+                .about("Returns a calendar from the user's calendar list.");
             calendar_list0 = calendar_list0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("insert")
-                .about("Inserts an existing calendar into the user\'s calendar list.");
+                .about("Inserts an existing calendar into the user's calendar list.");
             calendar_list0 = calendar_list0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("list")
-                .about("Returns the calendars on the user\'s calendar list.");
+                .about("Returns the calendars on the user's calendar list.");
             calendar_list0 = calendar_list0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates an existing calendar on the user\'s calendar list. This method supports patch semantics.");
+            let mcmd = SubCommand::with_name("patch").about("Updates an existing calendar on the user's calendar list. This method supports patch semantics.");
             calendar_list0 = calendar_list0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("update")
-                .about("Updates an existing calendar on the user\'s calendar list.");
+                .about("Updates an existing calendar on the user's calendar list.");
             calendar_list0 = calendar_list0.subcommand(mcmd);
         }
         {
@@ -178,7 +178,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("r#move")
-                .about("Moves an event to another calendar, i.e. changes an event\'s organizer.");
+                .about("Moves an event to another calendar, i.e. changes an event's organizer.");
             events0 = events0.subcommand(mcmd);
         }
         {

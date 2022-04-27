@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("firestore1_beta1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210220")
+            .version("0.1.0-20220407")
             .about("Accesses the NoSQL document database built for automatic scaling, high performance, and ease of application development. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -49,7 +49,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut documents2 = SubCommand::with_name("documents")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: batch_get, batch_write, begin_transaction, commit, create_document, delete, get, list, list_collection_ids, listen, partition_query, patch, rollback, run_query and write");
+                        .about("methods: batch_get, batch_write, begin_transaction, commit, create_document, delete, get, list, list_collection_ids, list_documents, listen, partition_query, patch, rollback, run_aggregation_query, run_query and write");
         {
             let mcmd = SubCommand::with_name("batch_get").about("Gets multiple documents. Documents returned by this method are not guaranteed to be returned in the same order that they were requested.");
             documents2 = documents2.subcommand(mcmd);
@@ -90,6 +90,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             documents2 = documents2.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("list_documents").about("Lists documents.");
+            documents2 = documents2.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("listen").about("Listens to changes.");
             documents2 = documents2.subcommand(mcmd);
         }
@@ -106,6 +110,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             documents2 = documents2.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("run_aggregation_query").about("Runs an aggregation query. Rather than producing Document results like Firestore.RunQuery, this API allows running an aggregation to produce a series of AggregationResult server-side. High-Level Example: ``` -- Return the number of documents in table given a filter. SELECT COUNT(*) FROM ( SELECT * FROM k where a = true ); ```");
+            documents2 = documents2.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("run_query").about("Runs a query.");
             documents2 = documents2.subcommand(mcmd);
         }
@@ -118,7 +126,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get and list");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates the specified index. A newly created index\'s initial state is `CREATING`. On completion of the returned google.longrunning.Operation, the state will be `READY`. If the index already exists, the call will return an `ALREADY_EXISTS` status. During creation, the process could result in an error, in which case the index will move to the `ERROR` state. The process can be recovered by fixing the data that caused the error, removing the index with delete, then re-creating the index with create. Indexes with a single field cannot be created.");
+            let mcmd = SubCommand::with_name("create").about("Creates the specified index. A newly created index's initial state is `CREATING`. On completion of the returned google.longrunning.Operation, the state will be `READY`. If the index already exists, the call will return an `ALREADY_EXISTS` status. During creation, the process could result in an error, in which case the index will move to the `ERROR` state. The process can be recovered by fixing the data that caused the error, removing the index with delete, then re-creating the index with create. Indexes with a single field cannot be created.");
             indexes2 = indexes2.subcommand(mcmd);
         }
         {

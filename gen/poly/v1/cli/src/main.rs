@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("poly1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20201208")
+            .version("0.1.0-20210817")
             .about("The Poly API provides read access to assets hosted on poly.google.com to all, and upload access to poly.google.com for whitelisted accounts. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -51,14 +51,14 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
         {
-            let mcmd = SubCommand::with_name("list").about("Lists assets authored by the given user. Only the value \'me\', representing the currently-authenticated user, is supported. May include assets with an access level of PRIVATE or UNLISTED and assets which are All Rights Reserved for the currently-authenticated user.");
+            let mcmd = SubCommand::with_name("list").about("Lists assets authored by the given user. Only the value 'me', representing the currently-authenticated user, is supported. May include assets with an access level of PRIVATE or UNLISTED and assets which are All Rights Reserved for the currently-authenticated user.");
             assets1 = assets1.subcommand(mcmd);
         }
         let mut likedassets1 = SubCommand::with_name("likedassets")
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
         {
-            let mcmd = SubCommand::with_name("list").about("Lists assets that the user has liked. Only the value \'me\', representing the currently-authenticated user, is supported. May include assets with an access level of UNLISTED.");
+            let mcmd = SubCommand::with_name("list").about("Lists assets that the user has liked. Only the value 'me', representing the currently-authenticated user, is supported. May include assets with an access level of UNLISTED.");
             likedassets1 = likedassets1.subcommand(mcmd);
         }
         users0 = users0.subcommand(likedassets1);

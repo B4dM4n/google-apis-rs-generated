@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [*deleteEvents*](resources/projects/struct.DeleteEventsRequestBuilder.html)\n      * [events](resources/projects/events/struct.EventsActions.html)\n        * [*list*](resources/projects/events/struct.ListRequestBuilder.html), [*report*](resources/projects/events/struct.ReportRequestBuilder.html)\n      * [group_stats](resources/projects/group_stats/struct.GroupStatsActions.html)\n        * [*list*](resources/projects/group_stats/struct.ListRequestBuilder.html)\n      * [groups](resources/projects/groups/struct.GroupsActions.html)\n        * [*get*](resources/projects/groups/struct.GetRequestBuilder.html), [*update*](resources/projects/groups/struct.UpdateRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -565,7 +565,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub context: ::std::option::Option<crate::schemas::ErrorContext>,
-        #[doc = "Optional. Time when the event occurred. If not provided, the time when the event was received by the Error Reporting system will be used."]
+        #[doc = "Optional. Time when the event occurred. If not provided, the time when the event was received by the Error Reporting system is used. If provided, the time must not exceed the [logs retention period](https://cloud.google.com/logging/quotas#logs_retention_periods) in the past, or be more than 24 hours in the future. If an invalid time is provided, then an error is returned."]
         #[serde(
             rename = "eventTime",
             default,
@@ -1331,7 +1331,7 @@ pub mod resources {
                         time_range_period: None,
                     }
                 }
-                #[doc = "Report an individual error event and record the event to a log. This endpoint accepts **either** an OAuth token, **or** an [API key](https://support.google.com/cloud/answer/6158862) for authentication. To use an API key, append it to the URL as the value of a `key` parameter. For example: `POST https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456` **Note:** [Error Reporting](/error-reporting) is a global service built on Cloud Logging and doesn't analyze logs stored in regional log buckets or logs routed to other Google Cloud projects. For more information, see [Using Error Reporting with regionalized logs](/error-reporting/docs/regionalization)."]
+                #[doc = "Report an individual error event and record the event to a log. This endpoint accepts **either** an OAuth token, **or** an [API key](https://support.google.com/cloud/answer/6158862) for authentication. To use an API key, append it to the URL as the value of a `key` parameter. For example: `POST https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456` **Note:** [Error Reporting] (https://cloud.google.com/error-reporting) is a global service built on Cloud Logging and doesn't analyze logs stored in regional log buckets or logs routed to other Google Cloud projects. For more information, see [Using Error Reporting with regionalized logs] (https://cloud.google.com/error-reporting/docs/regionalization)."]
                 pub fn report(
                     &self,
                     request: crate::schemas::ReportedErrorEvent,

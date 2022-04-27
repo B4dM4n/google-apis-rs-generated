@@ -1,12 +1,12 @@
 #![doc = "# Resources and Methods\n    * [documents](resources/documents/struct.DocumentsActions.html)\n      * [*batchUpdate*](resources/documents/struct.BatchUpdateRequestBuilder.html), [*create*](resources/documents/struct.CreateRequestBuilder.html), [*get*](resources/documents/struct.GetRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "See, create, and edit all Google Docs documents you have access to\n\n`https://www.googleapis.com/auth/documents`"]
+    #[doc = "See, edit, create, and delete all your Google Docs documents\n\n`https://www.googleapis.com/auth/documents`"]
     pub const DOCUMENTS: &str = "https://www.googleapis.com/auth/documents";
-    #[doc = "View your Google Docs documents\n\n`https://www.googleapis.com/auth/documents.readonly`"]
+    #[doc = "See all your Google Docs documents\n\n`https://www.googleapis.com/auth/documents.readonly`"]
     pub const DOCUMENTS_READONLY: &str = "https://www.googleapis.com/auth/documents.readonly";
     #[doc = "See, edit, create, and delete all of your Google Drive files\n\n`https://www.googleapis.com/auth/drive`"]
     pub const DRIVE: &str = "https://www.googleapis.com/auth/drive";
-    #[doc = "View and manage Google Drive files and folders that you have opened or created with this app\n\n`https://www.googleapis.com/auth/drive.file`"]
+    #[doc = "See, edit, create, and delete only the specific Google Drive files you use with this app\n\n`https://www.googleapis.com/auth/drive.file`"]
     pub const DRIVE_FILE: &str = "https://www.googleapis.com/auth/drive.file";
     #[doc = "See and download all your Google Drive files\n\n`https://www.googleapis.com/auth/drive.readonly`"]
     pub const DRIVE_READONLY: &str = "https://www.googleapis.com/auth/drive.readonly";
@@ -1695,7 +1695,7 @@ pub mod schemas {
         pub positioned_objects: ::std::option::Option<
             ::std::collections::BTreeMap<String, crate::schemas::PositionedObject>,
         >,
-        #[doc = "Output only. The revision ID of the document. Can be used in update requests to specify which revision of a document to apply updates to and how the request should behave if the document has been edited since that revision. Only populated if the user has edit access to the document. The format of the revision ID may change over time, so it should be treated opaquely. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the document has not changed. Conversely, a changed ID (for the same document and user) usually means the document has been updated; however, a changed ID can also be due to internal factors such as ID format changes."]
+        #[doc = "Output only. The revision ID of the document. Can be used in update requests to specify which revision of a document to apply updates to and how the request should behave if the document has been edited since that revision. Only populated if the user has edit access to the document. The revision ID is not a sequential number but an opaque string. The format of the revision ID might change over time. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the document has not changed. Conversely, a changed ID (for the same document and user) usually means the document has been updated. However, a changed ID can also be due to internal factors such as ID format changes."]
         #[serde(
             rename = "revisionId",
             default,
@@ -3040,7 +3040,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub inline_object_properties: ::std::option::Option<crate::schemas::InlineObjectProperties>,
-        #[doc = "The ID of this inline object."]
+        #[doc = "The ID of this inline object. Can be used to update an object’s properties."]
         #[serde(
             rename = "objectId",
             default,
@@ -5061,6 +5061,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub person: ::std::option::Option<crate::schemas::Person>,
+        #[doc = "A paragraph element that links to a Google resource (such as a file in Drive, a Youtube video, a Calendar event, etc.)"]
+        #[serde(
+            rename = "richLink",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rich_link: ::std::option::Option<crate::schemas::RichLink>,
         #[doc = "The zero-based start index of this paragraph element, in UTF-16 code units."]
         #[serde(
             rename = "startIndex",
@@ -5964,6 +5971,8 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum PositionedObjectPositioningLayout {
+        #[doc = "The positioned object is behind the text."]
+        BehindText,
         #[doc = "Breaks text such that the positioned object is on the left and text is on the right."]
         BreakLeft,
         #[doc = "Breaks text such that there is no text on the left or right of the positioned object."]
@@ -5980,6 +5989,7 @@ pub mod schemas {
     impl PositionedObjectPositioningLayout {
         pub fn as_str(self) -> &'static str {
             match self {
+                PositionedObjectPositioningLayout::BehindText => "BEHIND_TEXT",
                 PositionedObjectPositioningLayout::BreakLeft => "BREAK_LEFT",
                 PositionedObjectPositioningLayout::BreakLeftRight => "BREAK_LEFT_RIGHT",
                 PositionedObjectPositioningLayout::BreakRight => "BREAK_RIGHT",
@@ -6000,6 +6010,7 @@ pub mod schemas {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<PositionedObjectPositioningLayout, ()> {
             Ok(match s {
+                "BEHIND_TEXT" => PositionedObjectPositioningLayout::BehindText,
                 "BREAK_LEFT" => PositionedObjectPositioningLayout::BreakLeft,
                 "BREAK_LEFT_RIGHT" => PositionedObjectPositioningLayout::BreakLeftRight,
                 "BREAK_RIGHT" => PositionedObjectPositioningLayout::BreakRight,
@@ -6032,6 +6043,7 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "BEHIND_TEXT" => PositionedObjectPositioningLayout::BehindText,
                 "BREAK_LEFT" => PositionedObjectPositioningLayout::BreakLeft,
                 "BREAK_LEFT_RIGHT" => PositionedObjectPositioningLayout::BreakLeftRight,
                 "BREAK_RIGHT" => PositionedObjectPositioningLayout::BreakRight,
@@ -6300,7 +6312,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ReplaceImageRequest {
-        #[doc = "The ID of the existing image that will be replaced."]
+        #[doc = "The ID of the existing image that will be replaced. The ID can be retrieved from the response of a get request."]
         #[serde(
             rename = "imageObjectId",
             default,
@@ -6315,7 +6327,7 @@ pub mod schemas {
         )]
         pub image_replace_method:
             ::std::option::Option<crate::schemas::ReplaceImageRequestImageReplaceMethod>,
-        #[doc = "The URI of the new image. The image is fetched once at insertion time and a copy is stored for display inside the document. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be in one of PNG, JPEG, or GIF format. The provided URI can be at most 2 kB in length. The URI itself is saved with the image, and exposed via the ImageProperties.source_uri field."]
+        #[doc = "The URI of the new image. The image is fetched once at insertion time and a copy is stored for display inside the document. Images must be less than 50MB, cannot exceed 25 megapixels, and must be in PNG, JPEG, or GIF format. The provided URI can't surpass 2 KB in length. The URI is saved with the image, and exposed through the ImageProperties.source_uri field."]
         #[serde(
             rename = "uri",
             default,
@@ -6335,7 +6347,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ReplaceImageRequestImageReplaceMethod {
-        #[doc = "Scales and centers the image to fill the bounds of the original image. The image may be cropped in order to fill the original image's bounds. The rendered size of the image will be the same as that of the original image."]
+        #[doc = "Scales and centers the image to fill the bounds of the original image. The image may be cropped in order to fill the original image's bounds. The rendered size of the image will be the same as the original image."]
         CenterCrop,
         #[doc = "Unspecified image replace method. This value must not be used."]
         ImageReplaceMethodUnspecified,
@@ -6809,6 +6821,110 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for RgbColor {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct RichLink {
+        #[doc = "Output only. The ID of this link."]
+        #[serde(
+            rename = "richLinkId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rich_link_id: ::std::option::Option<String>,
+        #[doc = "Output only. The properties of this RichLink. This field is always present."]
+        #[serde(
+            rename = "richLinkProperties",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rich_link_properties: ::std::option::Option<crate::schemas::RichLinkProperties>,
+        #[doc = "IDs for suggestions that remove this link from the document. A RichLink might have multiple deletion IDs if, for example, multiple users suggest to delete it. If empty, then this person link isn't suggested for deletion."]
+        #[serde(
+            rename = "suggestedDeletionIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub suggested_deletion_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "IDs for suggestions that insert this link into the document. A RichLink might have multiple insertion IDs if it is a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn't a suggested insertion."]
+        #[serde(
+            rename = "suggestedInsertionIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub suggested_insertion_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "The suggested text style changes to this RichLink, keyed by suggestion ID."]
+        #[serde(
+            rename = "suggestedTextStyleChanges",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub suggested_text_style_changes: ::std::option::Option<
+            ::std::collections::BTreeMap<String, crate::schemas::SuggestedTextStyle>,
+        >,
+        #[doc = "The text style of this RichLink."]
+        #[serde(
+            rename = "textStyle",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub text_style: ::std::option::Option<crate::schemas::TextStyle>,
+    }
+    impl ::google_field_selector::FieldSelector for RichLink {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RichLink {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct RichLinkProperties {
+        #[doc = "Output only. The [MIME type](https://developers.google.com/drive/api/v3/mime-types) of the RichLink, if there is one (i.e., when it is a file in Drive)."]
+        #[serde(
+            rename = "mimeType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mime_type: ::std::option::Option<String>,
+        #[doc = "Output only. The title of the RichLink as displayed in the link. This title matches the title of the linked resource at the time of the insertion or last update of the link. This field is always present."]
+        #[serde(
+            rename = "title",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub title: ::std::option::Option<String>,
+        #[doc = "Output only. The URI to the RichLink. This is always present."]
+        #[serde(
+            rename = "uri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for RichLinkProperties {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RichLinkProperties {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -9554,14 +9670,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct WriteControl {
-        #[doc = "The revision ID of the document that the write request will be applied to. If this is not the latest revision of the document, the request will not be processed and will return a 400 bad request error. When a required revision ID is returned in a response, it indicates the revision ID of the document after the request was applied."]
+        #[doc = "The optional revision ID of the document the write request is applied to. If this is not the latest revision of the document, the request is not processed and returns a 400 bad request error. When a required revision ID is returned in a response, it indicates the revision ID of the document after the request was applied."]
         #[serde(
             rename = "requiredRevisionId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub required_revision_id: ::std::option::Option<String>,
-        #[doc = "The target revision ID of the document that the write request will be applied to. If collaborator changes have occurred after the document was read using the API, the changes produced by this write request will be transformed against the collaborator changes. This results in a new revision of the document which incorporates both the changes in the request and the collaborator changes, and the Docs server will resolve conflicting changes. When using `target_revision_id`, the API client can be thought of as another collaborator of the document. The target revision ID may only be used to write to recent versions of a document. If the target revision is too far behind the latest revision, the request will not be processed and will return a 400 bad request error and the request should be retried after reading the latest version of the document. In most cases a `revision_id` will remain valid for use as a target revision for several minutes after it is read, but for frequently-edited documents this window may be shorter."]
+        #[doc = "The optional target revision ID of the document the write request is applied to. If collaborator changes have occurred after the document was read using the API, the changes produced by this write request are applied against the collaborator changes. This results in a new revision of the document that incorporates both the collaborator changes and the changes in the request, with the Docs server resolving conflicting changes. When using target revision ID, the API client can be thought of as another collaborator of the document. The target revision ID can only be used to write to recent versions of a document. If the target revision is too far behind the latest revision, the request is not processed and returns a 400 bad request error. The request should be tried again after retrieving the latest version of the document. Usually a revision ID remains valid for use as a target revision for several minutes after it's read, but for frequently edited documents this window might be shorter."]
         #[serde(
             rename = "targetRevisionId",
             default,

@@ -7,7 +7,7 @@
   "canonicalName": "Slides",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20210317",
+  "revision": "20220419",
   "title": "Google Slides API",
   "description": "Reads and writes Google Slides presentations.",
   "ownerDomain": "google.com",
@@ -204,22 +204,22 @@
           "description": "See, edit, create, and delete all of your Google Drive files"
         },
         "https://www.googleapis.com/auth/drive.file": {
-          "description": "View and manage Google Drive files and folders that you have opened or created with this app"
+          "description": "See, edit, create, and delete only the specific Google Drive files you use with this app"
         },
         "https://www.googleapis.com/auth/drive.readonly": {
           "description": "See and download all your Google Drive files"
         },
         "https://www.googleapis.com/auth/presentations": {
-          "description": "View and manage your Google Slides presentations"
+          "description": "See, edit, create, and delete all your Google Slides presentations"
         },
         "https://www.googleapis.com/auth/presentations.readonly": {
-          "description": "View your Google Slides presentations"
+          "description": "See all your Google Slides presentations"
         },
         "https://www.googleapis.com/auth/spreadsheets": {
-          "description": "See, edit, create, and delete your spreadsheets in Google Drive"
+          "description": "See, edit, create, and delete all your Google Sheets spreadsheets"
         },
         "https://www.googleapis.com/auth/spreadsheets.readonly": {
-          "description": "View your Google Spreadsheets"
+          "description": "See all your Google Sheets spreadsheets"
         }
       }
     }
@@ -1192,7 +1192,7 @@
           "items": null
         },
         "spreadsheetId": {
-          "description": "The ID of the Google Sheets spreadsheet that contains the chart.",
+          "description": "The ID of the Google Sheets spreadsheet that contains the chart. You might need to add a resource key to the HTTP header for a subset of old files. For more information, see [Access link-shared files using resource keys](https://developers.google.com/drive/api/v3/resource-keys).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1378,7 +1378,7 @@
           "$ref": "PageElementProperties"
         },
         "id": {
-          "description": "The video source's unique identifier for this video. e.g. For YouTube video https://www.youtube.com/watch?v=7U3axjORYZ0, the ID is 7U3axjORYZ0. For a Google Drive video https://drive.google.com/file/d/1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q the ID is 1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q.",
+          "description": "The video source's unique identifier for this video. e.g. For YouTube video https://www.youtube.com/watch?v=7U3axjORYZ0, the ID is 7U3axjORYZ0. For a Google Drive video https://drive.google.com/file/d/1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q the ID is 1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q. To access a Google Drive video file, you might need to add a resource key to the HTTP header for a subset of old files. For more information, see [Access link-shared files using resource keys](https://developers.google.com/drive/api/v3/resource-keys).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1512,7 +1512,7 @@
       "enumDescriptions": [],
       "properties": {
         "objectId": {
-          "description": "The object ID of the page or page element to delete. If after a delete operation a group contains only 1 or no page elements, the group is also deleted. If a placeholder is deleted on a layout, any empty inheriting shapes are also deleted.",
+          "description": "The object ID of the page or page element to delete. If after a delete operation a group contains only 1 or no page elements, the group is also deleted. If a placeholder is deleted on a layout, any empty inheriting placeholders are also deleted.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1773,7 +1773,7 @@
       "enumDescriptions": [],
       "properties": {
         "childrenObjectIds": {
-          "description": "The object IDs of the objects to group. Only page elements can be grouped. There should be at least two page elements on the same page that are not already in another group. Some page elements, such as videos, tables and placeholder shapes cannot be grouped.",
+          "description": "The object IDs of the objects to group. Only page elements can be grouped. There should be at least two page elements on the same page that are not already in another group. Some page elements, such as videos, tables and placeholders cannot be grouped.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1847,6 +1847,10 @@
         "imageProperties": {
           "description": "The properties of the image.",
           "$ref": "ImageProperties"
+        },
+        "placeholder": {
+          "description": "Placeholders are page elements that inherit from corresponding placeholders on layouts and masters. If set, the image is a placeholder image and any inherited properties can be resolved by looking at the parent placeholder identified by the Placeholder.parent_object_id field.",
+          "$ref": "Placeholder"
         },
         "sourceUrl": {
           "description": "The source URL is the URL used to insert the image. The source URL can be empty.",
@@ -2854,7 +2858,7 @@
           "items": null
         },
         "revisionId": {
-          "description": "The revision ID of the presentation containing this page. Can be used in update requests to assert that the presentation revision hasn't changed since the last read operation. Only populated if the user has edit access to the presentation. The format of the revision ID may change over time, so it should be treated opaquely. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the presentation has not changed. Conversely, a changed ID (for the same presentation and user) usually means the presentation has been updated; however, a changed ID can also be due to internal factors such as ID format changes.",
+          "description": "Output only. The revision ID of the presentation. Can be used in update requests to assert the presentation revision hasn't changed since the last read operation. Only populated if the user has edit access to the presentation. The revision ID is not a sequential number but an opaque string. The format of the revision ID might change over time. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the presentation has not changed. Conversely, a changed ID (for the same presentation and user) usually means the presentation has been updated. However, a changed ID can also be due to internal factors such as ID format changes.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3300,7 +3304,7 @@
           "items": null
         },
         "revisionId": {
-          "description": "The revision ID of the presentation. Can be used in update requests to assert that the presentation revision hasn't changed since the last read operation. Only populated if the user has edit access to the presentation. The format of the revision ID may change over time, so it should be treated opaquely. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the presentation has not changed. Conversely, a changed ID (for the same presentation and user) usually means the presentation has been updated; however, a changed ID can also be due to internal factors such as ID format changes.",
+          "description": "Output only. The revision ID of the presentation. Can be used in update requests to assert the presentation revision hasn't changed since the last read operation. Only populated if the user has edit access to the presentation. The revision ID is not a sequential number but a nebulous string. The format of the revision ID may change over time, so it should be treated opaquely. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the presentation has not changed. Conversely, a changed ID (for the same presentation and user) usually means the presentation has been updated. However, a changed ID can also be due to internal factors such as ID format changes.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3519,7 +3523,7 @@
           "enumDescriptions": [
             "Unspecified image replace method. This value must not be used.",
             "Scales and centers the image to fit within the bounds of the original shape and maintains the image's aspect ratio. The rendered size of the image may be smaller than the size of the shape. This is the default method when one is not specified.",
-            "Scales and centers the image to fill the bounds of the original shape. The image may be cropped in order to fill the shape. The rendered size of the image will be the same as that of the original shape."
+            "Scales and centers the image to fill the bounds of the original shape. The image may be cropped in order to fill the shape. The rendered size of the image will be the same as the original shape."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -3762,7 +3766,7 @@
       "enumDescriptions": [],
       "properties": {
         "imageObjectId": {
-          "description": "The ID of the existing image that will be replaced.",
+          "description": "The ID of the existing image that will be replaced. The ID can be retrieved from the response of a get request.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3783,14 +3787,14 @@
           "enumDescriptions": [
             "Unspecified image replace method. This value must not be used.",
             "Scales and centers the image to fit within the bounds of the original shape and maintains the image's aspect ratio. The rendered size of the image may be smaller than the size of the shape. This is the default method when one is not specified.",
-            "Scales and centers the image to fill the bounds of the original shape. The image may be cropped in order to fill the shape. The rendered size of the image will be the same as that of the original shape."
+            "Scales and centers the image to fill the bounds of the original shape. The image may be cropped in order to fill the shape. The rendered size of the image will be the same as the original shape."
           ],
           "properties": {},
           "additionalProperties": null,
           "items": null
         },
         "url": {
-          "description": "The image URL. The image is fetched once at insertion time and a copy is stored for display inside the presentation. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be in one of PNG, JPEG, or GIF format. The provided URL can be at most 2 kB in length. The URL itself is saved with the image, and exposed via the Image.source_url field.",
+          "description": "The image URL. The image is fetched once at insertion time and a copy is stored for display inside the presentation. Images must be less than 50MB, cannot exceed 25 megapixels, and must be in PNG, JPEG, or GIF format. The provided URL can't surpass 2 KB in length. The URL is saved with the image, and exposed through the Image.source_url field.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3954,6 +3958,10 @@
         "updateShapeProperties": {
           "description": "Updates the properties of a Shape.",
           "$ref": "UpdateShapePropertiesRequest"
+        },
+        "updateSlideProperties": {
+          "description": "Updates the properties of a Slide",
+          "$ref": "UpdateSlidePropertiesRequest"
         },
         "updateSlidesPosition": {
           "description": "Updates the position of a set of slides in the presentation.",
@@ -4230,7 +4238,7 @@
       "enumDescriptions": [],
       "properties": {
         "placeholder": {
-          "description": "Placeholders are shapes that are inherit from corresponding placeholders on layouts and masters. If set, the shape is a placeholder shape and any inherited properties can be resolved by looking at the parent placeholder identified by the Placeholder.parent_object_id field.",
+          "description": "Placeholders are page elements that inherit from corresponding placeholders on layouts and masters. If set, the shape is a placeholder shape and any inherited properties can be resolved by looking at the parent placeholder identified by the Placeholder.parent_object_id field.",
           "$ref": "Placeholder"
         },
         "shapeProperties": {
@@ -4721,6 +4729,16 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "isSkipped": {
+          "description": "Whether the slide is skipped in the presentation mode. Defaults to false.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "layoutObjectId": {
           "description": "The object ID of the layout that this slide is based on. This property is read-only.",
           "type": "string",
@@ -6014,6 +6032,42 @@
       "additionalProperties": null,
       "items": null
     },
+    "UpdateSlidePropertiesRequest": {
+      "id": "UpdateSlidePropertiesRequest",
+      "description": "Updates the properties of a Slide.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "fields": {
+          "description": "The fields that should be updated. At least one field must be specified. The root 'slideProperties' is implied and should not be specified. A single `\"*\"` can be used as short-hand for listing every field. For example to update whether a slide is skipped, set `fields` to `\"isSkipped\"`. To reset a property to its default value, include its field name in the field mask but leave the field itself unset.",
+          "type": "string",
+          "format": "google-fieldmask",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "objectId": {
+          "description": "The object ID of the slide the update is applied to.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "slideProperties": {
+          "description": "The slide properties to update.",
+          "$ref": "SlideProperties"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "UpdateSlidesPositionRequest": {
       "id": "UpdateSlidesPositionRequest",
       "description": "Updates the position of slides in the presentation.",
@@ -6525,7 +6579,7 @@
       "enumDescriptions": [],
       "properties": {
         "requiredRevisionId": {
-          "description": "The revision ID of the presentation required for the write request. If specified and the `required_revision_id` doesn't exactly match the presentation's current `revision_id`, the request will not be processed and will return a 400 bad request error.",
+          "description": "The revision ID of the presentation required for the write request. If specified and the required revision ID doesn't match the presentation's current revision ID, the request is not processed and returns a 400 bad request error. When a required revision ID is returned in a response, it indicates the revision ID of the document after the request was applied.",
           "type": "string",
           "format": null,
           "enum": [],

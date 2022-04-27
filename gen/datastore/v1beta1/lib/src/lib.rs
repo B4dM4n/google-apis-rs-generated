@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [*export*](resources/projects/struct.ExportRequestBuilder.html), [*import*](resources/projects/struct.ImportRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
     #[doc = "View and manage your Google Cloud Datastore data\n\n`https://www.googleapis.com/auth/datastore`"]
     pub const DATASTORE: &str = "https://www.googleapis.com/auth/datastore";
@@ -877,6 +877,214 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadata {
+        #[doc = "The current state of migration from Cloud Datastore to Cloud Firestore in Datastore mode."]
+        #[serde(
+            rename = "migrationState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub migration_state: ::std::option::Option<
+            crate::schemas::GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState,
+        >,
+        #[doc = "The current step of migration from Cloud Datastore to Cloud Firestore in Datastore mode."]
+        #[serde(
+            rename = "migrationStep",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub migration_step: ::std::option::Option<
+            crate::schemas::GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState {
+        #[doc = "The migration is complete."]
+        Complete,
+        #[doc = "Unspecified."]
+        MigrationStateUnspecified,
+        #[doc = "The migration is paused."]
+        Paused,
+        #[doc = "The migration is running."]
+        Running,
+    }
+    impl GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState :: Complete => "COMPLETE" , GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState :: MigrationStateUnspecified => "MIGRATION_STATE_UNSPECIFIED" , GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState :: Paused => "PAUSED" , GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState :: Running => "RUNNING" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr
+        for GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState
+    {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState,
+            (),
+        > {
+            Ok (match s { "COMPLETE" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState :: Complete , "MIGRATION_STATE_UNSPECIFIED" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState :: MigrationStateUnspecified , "PAUSED" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState :: Paused , "RUNNING" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState :: Running , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display
+        for GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState
+    {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize
+        for GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState
+    {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "COMPLETE" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState :: Complete , "MIGRATION_STATE_UNSPECIFIED" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState :: MigrationStateUnspecified , "PAUSED" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState :: Paused , "RUNNING" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState :: Running , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationState
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep {
+        #[doc = "Writes are applied synchronously to at least one replica."]
+        ApplyWritesSynchronously,
+        #[doc = "Data is copied to Cloud Firestore and then verified to match the data in Cloud Datastore."]
+        CopyAndVerify,
+        #[doc = "Unspecified."]
+        MigrationStepUnspecified,
+        #[doc = "Pre-migration: the database is prepared for migration."]
+        Prepare,
+        #[doc = "Eventually-consistent reads are redirected to Cloud Firestore."]
+        RedirectEventuallyConsistentReads,
+        #[doc = "Strongly-consistent reads are redirected to Cloud Firestore."]
+        RedirectStronglyConsistentReads,
+        #[doc = "Writes are redirected to Cloud Firestore."]
+        RedirectWrites,
+        #[doc = "Start of migration."]
+        Start,
+    }
+    impl GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: ApplyWritesSynchronously => "APPLY_WRITES_SYNCHRONOUSLY" , GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: CopyAndVerify => "COPY_AND_VERIFY" , GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: MigrationStepUnspecified => "MIGRATION_STEP_UNSPECIFIED" , GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: Prepare => "PREPARE" , GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: RedirectEventuallyConsistentReads => "REDIRECT_EVENTUALLY_CONSISTENT_READS" , GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: RedirectStronglyConsistentReads => "REDIRECT_STRONGLY_CONSISTENT_READS" , GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: RedirectWrites => "REDIRECT_WRITES" , GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: Start => "START" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr
+        for GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep
+    {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep,
+            (),
+        > {
+            Ok (match s { "APPLY_WRITES_SYNCHRONOUSLY" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: ApplyWritesSynchronously , "COPY_AND_VERIFY" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: CopyAndVerify , "MIGRATION_STEP_UNSPECIFIED" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: MigrationStepUnspecified , "PREPARE" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: Prepare , "REDIRECT_EVENTUALLY_CONSISTENT_READS" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: RedirectEventuallyConsistentReads , "REDIRECT_STRONGLY_CONSISTENT_READS" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: RedirectStronglyConsistentReads , "REDIRECT_WRITES" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: RedirectWrites , "START" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: Start , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display
+        for GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep
+    {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "APPLY_WRITES_SYNCHRONOUSLY" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: ApplyWritesSynchronously , "COPY_AND_VERIFY" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: CopyAndVerify , "MIGRATION_STEP_UNSPECIFIED" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: MigrationStepUnspecified , "PREPARE" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: Prepare , "REDIRECT_EVENTUALLY_CONSISTENT_READS" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: RedirectEventuallyConsistentReads , "REDIRECT_STRONGLY_CONSISTENT_READS" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: RedirectStronglyConsistentReads , "REDIRECT_WRITES" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: RedirectWrites , "START" => GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep :: Start , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleDatastoreAdminV1DatastoreFirestoreMigrationMetadataMigrationStep
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleDatastoreAdminV1EntityFilter {
         #[doc = "If empty, then this represents all kinds."]
         #[serde(
@@ -1114,6 +1322,343 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleDatastoreAdminV1MigrationProgressEvent {
+        #[doc = "Details for the `PREPARE` step."]
+        #[serde(
+            rename = "prepareStepDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub prepare_step_details:
+            ::std::option::Option<crate::schemas::GoogleDatastoreAdminV1PrepareStepDetails>,
+        #[doc = "Details for the `REDIRECT_WRITES` step."]
+        #[serde(
+            rename = "redirectWritesStepDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub redirect_writes_step_details:
+            ::std::option::Option<crate::schemas::GoogleDatastoreAdminV1RedirectWritesStepDetails>,
+        #[doc = "The step that is starting. An event with step set to `START` indicates that the migration has been reverted back to the initial pre-migration state."]
+        #[serde(
+            rename = "step",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub step:
+            ::std::option::Option<crate::schemas::GoogleDatastoreAdminV1MigrationProgressEventStep>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleDatastoreAdminV1MigrationProgressEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleDatastoreAdminV1MigrationProgressEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleDatastoreAdminV1MigrationProgressEventStep {
+        #[doc = "Writes are applied synchronously to at least one replica."]
+        ApplyWritesSynchronously,
+        #[doc = "Data is copied to Cloud Firestore and then verified to match the data in Cloud Datastore."]
+        CopyAndVerify,
+        #[doc = "Unspecified."]
+        MigrationStepUnspecified,
+        #[doc = "Pre-migration: the database is prepared for migration."]
+        Prepare,
+        #[doc = "Eventually-consistent reads are redirected to Cloud Firestore."]
+        RedirectEventuallyConsistentReads,
+        #[doc = "Strongly-consistent reads are redirected to Cloud Firestore."]
+        RedirectStronglyConsistentReads,
+        #[doc = "Writes are redirected to Cloud Firestore."]
+        RedirectWrites,
+        #[doc = "Start of migration."]
+        Start,
+    }
+    impl GoogleDatastoreAdminV1MigrationProgressEventStep {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleDatastoreAdminV1MigrationProgressEventStep :: ApplyWritesSynchronously => "APPLY_WRITES_SYNCHRONOUSLY" , GoogleDatastoreAdminV1MigrationProgressEventStep :: CopyAndVerify => "COPY_AND_VERIFY" , GoogleDatastoreAdminV1MigrationProgressEventStep :: MigrationStepUnspecified => "MIGRATION_STEP_UNSPECIFIED" , GoogleDatastoreAdminV1MigrationProgressEventStep :: Prepare => "PREPARE" , GoogleDatastoreAdminV1MigrationProgressEventStep :: RedirectEventuallyConsistentReads => "REDIRECT_EVENTUALLY_CONSISTENT_READS" , GoogleDatastoreAdminV1MigrationProgressEventStep :: RedirectStronglyConsistentReads => "REDIRECT_STRONGLY_CONSISTENT_READS" , GoogleDatastoreAdminV1MigrationProgressEventStep :: RedirectWrites => "REDIRECT_WRITES" , GoogleDatastoreAdminV1MigrationProgressEventStep :: Start => "START" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleDatastoreAdminV1MigrationProgressEventStep {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleDatastoreAdminV1MigrationProgressEventStep {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleDatastoreAdminV1MigrationProgressEventStep, ()> {
+            Ok (match s { "APPLY_WRITES_SYNCHRONOUSLY" => GoogleDatastoreAdminV1MigrationProgressEventStep :: ApplyWritesSynchronously , "COPY_AND_VERIFY" => GoogleDatastoreAdminV1MigrationProgressEventStep :: CopyAndVerify , "MIGRATION_STEP_UNSPECIFIED" => GoogleDatastoreAdminV1MigrationProgressEventStep :: MigrationStepUnspecified , "PREPARE" => GoogleDatastoreAdminV1MigrationProgressEventStep :: Prepare , "REDIRECT_EVENTUALLY_CONSISTENT_READS" => GoogleDatastoreAdminV1MigrationProgressEventStep :: RedirectEventuallyConsistentReads , "REDIRECT_STRONGLY_CONSISTENT_READS" => GoogleDatastoreAdminV1MigrationProgressEventStep :: RedirectStronglyConsistentReads , "REDIRECT_WRITES" => GoogleDatastoreAdminV1MigrationProgressEventStep :: RedirectWrites , "START" => GoogleDatastoreAdminV1MigrationProgressEventStep :: Start , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleDatastoreAdminV1MigrationProgressEventStep {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleDatastoreAdminV1MigrationProgressEventStep {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleDatastoreAdminV1MigrationProgressEventStep {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "APPLY_WRITES_SYNCHRONOUSLY" => GoogleDatastoreAdminV1MigrationProgressEventStep :: ApplyWritesSynchronously , "COPY_AND_VERIFY" => GoogleDatastoreAdminV1MigrationProgressEventStep :: CopyAndVerify , "MIGRATION_STEP_UNSPECIFIED" => GoogleDatastoreAdminV1MigrationProgressEventStep :: MigrationStepUnspecified , "PREPARE" => GoogleDatastoreAdminV1MigrationProgressEventStep :: Prepare , "REDIRECT_EVENTUALLY_CONSISTENT_READS" => GoogleDatastoreAdminV1MigrationProgressEventStep :: RedirectEventuallyConsistentReads , "REDIRECT_STRONGLY_CONSISTENT_READS" => GoogleDatastoreAdminV1MigrationProgressEventStep :: RedirectStronglyConsistentReads , "REDIRECT_WRITES" => GoogleDatastoreAdminV1MigrationProgressEventStep :: RedirectWrites , "START" => GoogleDatastoreAdminV1MigrationProgressEventStep :: Start , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleDatastoreAdminV1MigrationProgressEventStep {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleDatastoreAdminV1MigrationProgressEventStep {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleDatastoreAdminV1MigrationStateEvent {
+        #[doc = "The new state of the migration."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state:
+            ::std::option::Option<crate::schemas::GoogleDatastoreAdminV1MigrationStateEventState>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleDatastoreAdminV1MigrationStateEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleDatastoreAdminV1MigrationStateEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleDatastoreAdminV1MigrationStateEventState {
+        #[doc = "The migration is complete."]
+        Complete,
+        #[doc = "Unspecified."]
+        MigrationStateUnspecified,
+        #[doc = "The migration is paused."]
+        Paused,
+        #[doc = "The migration is running."]
+        Running,
+    }
+    impl GoogleDatastoreAdminV1MigrationStateEventState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleDatastoreAdminV1MigrationStateEventState::Complete => "COMPLETE",
+                GoogleDatastoreAdminV1MigrationStateEventState::MigrationStateUnspecified => {
+                    "MIGRATION_STATE_UNSPECIFIED"
+                }
+                GoogleDatastoreAdminV1MigrationStateEventState::Paused => "PAUSED",
+                GoogleDatastoreAdminV1MigrationStateEventState::Running => "RUNNING",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleDatastoreAdminV1MigrationStateEventState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleDatastoreAdminV1MigrationStateEventState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleDatastoreAdminV1MigrationStateEventState, ()> {
+            Ok(match s {
+                "COMPLETE" => GoogleDatastoreAdminV1MigrationStateEventState::Complete,
+                "MIGRATION_STATE_UNSPECIFIED" => {
+                    GoogleDatastoreAdminV1MigrationStateEventState::MigrationStateUnspecified
+                }
+                "PAUSED" => GoogleDatastoreAdminV1MigrationStateEventState::Paused,
+                "RUNNING" => GoogleDatastoreAdminV1MigrationStateEventState::Running,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleDatastoreAdminV1MigrationStateEventState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleDatastoreAdminV1MigrationStateEventState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleDatastoreAdminV1MigrationStateEventState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "COMPLETE" => GoogleDatastoreAdminV1MigrationStateEventState::Complete,
+                "MIGRATION_STATE_UNSPECIFIED" => {
+                    GoogleDatastoreAdminV1MigrationStateEventState::MigrationStateUnspecified
+                }
+                "PAUSED" => GoogleDatastoreAdminV1MigrationStateEventState::Paused,
+                "RUNNING" => GoogleDatastoreAdminV1MigrationStateEventState::Running,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleDatastoreAdminV1MigrationStateEventState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleDatastoreAdminV1MigrationStateEventState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleDatastoreAdminV1PrepareStepDetails {
+        #[doc = "The concurrency mode this database will use when it reaches the `REDIRECT_WRITES` step."]
+        #[serde(
+            rename = "concurrencyMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub concurrency_mode: ::std::option::Option<
+            crate::schemas::GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleDatastoreAdminV1PrepareStepDetails {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleDatastoreAdminV1PrepareStepDetails {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode {
+        #[doc = "Unspecified."]
+        ConcurrencyModeUnspecified,
+        #[doc = "Optimistic concurrency."]
+        Optimistic,
+        #[doc = "Optimistic concurrency with entity groups."]
+        OptimisticWithEntityGroups,
+        #[doc = "Pessimistic concurrency."]
+        Pessimistic,
+    }
+    impl GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode :: ConcurrencyModeUnspecified => "CONCURRENCY_MODE_UNSPECIFIED" , GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode :: Optimistic => "OPTIMISTIC" , GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode :: OptimisticWithEntityGroups => "OPTIMISTIC_WITH_ENTITY_GROUPS" , GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode :: Pessimistic => "PESSIMISTIC" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode, ()>
+        {
+            Ok (match s { "CONCURRENCY_MODE_UNSPECIFIED" => GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode :: ConcurrencyModeUnspecified , "OPTIMISTIC" => GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode :: Optimistic , "OPTIMISTIC_WITH_ENTITY_GROUPS" => GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode :: OptimisticWithEntityGroups , "PESSIMISTIC" => GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode :: Pessimistic , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "CONCURRENCY_MODE_UNSPECIFIED" => GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode :: ConcurrencyModeUnspecified , "OPTIMISTIC" => GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode :: Optimistic , "OPTIMISTIC_WITH_ENTITY_GROUPS" => GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode :: OptimisticWithEntityGroups , "PESSIMISTIC" => GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode :: Pessimistic , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleDatastoreAdminV1PrepareStepDetailsConcurrencyMode
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleDatastoreAdminV1Progress {
         #[doc = "The amount of work that has been completed. Note that this may be greater than work_estimated."]
         #[serde(
@@ -1138,6 +1683,107 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleDatastoreAdminV1Progress {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleDatastoreAdminV1RedirectWritesStepDetails {
+        #[doc = "Ths concurrency mode for this database."]
+        #[serde(
+            rename = "concurrencyMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub concurrency_mode: ::std::option::Option<
+            crate::schemas::GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleDatastoreAdminV1RedirectWritesStepDetails {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleDatastoreAdminV1RedirectWritesStepDetails {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode {
+        #[doc = "Unspecified."]
+        ConcurrencyModeUnspecified,
+        #[doc = "Optimistic concurrency."]
+        Optimistic,
+        #[doc = "Optimistic concurrency with entity groups."]
+        OptimisticWithEntityGroups,
+        #[doc = "Pessimistic concurrency."]
+        Pessimistic,
+    }
+    impl GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode :: ConcurrencyModeUnspecified => "CONCURRENCY_MODE_UNSPECIFIED" , GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode :: Optimistic => "OPTIMISTIC" , GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode :: OptimisticWithEntityGroups => "OPTIMISTIC_WITH_ENTITY_GROUPS" , GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode :: Pessimistic => "PESSIMISTIC" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode, ()>
+        {
+            Ok (match s { "CONCURRENCY_MODE_UNSPECIFIED" => GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode :: ConcurrencyModeUnspecified , "OPTIMISTIC" => GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode :: Optimistic , "OPTIMISTIC_WITH_ENTITY_GROUPS" => GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode :: OptimisticWithEntityGroups , "PESSIMISTIC" => GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode :: Pessimistic , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "CONCURRENCY_MODE_UNSPECIFIED" => GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode :: ConcurrencyModeUnspecified , "OPTIMISTIC" => GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode :: Optimistic , "OPTIMISTIC_WITH_ENTITY_GROUPS" => GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode :: OptimisticWithEntityGroups , "PESSIMISTIC" => GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode :: Pessimistic , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleDatastoreAdminV1RedirectWritesStepDetailsConcurrencyMode
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }

@@ -7,7 +7,7 @@
   "canonicalName": "Texttospeech",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta1",
-  "revision": "20210312",
+  "revision": "20220422",
   "title": "Cloud Text-to-Speech API",
   "description": "Synthesizes natural-sounding speech by applying powerful neural network models.",
   "ownerDomain": "google.com",
@@ -201,7 +201,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         }
       }
     }
@@ -303,6 +303,46 @@
       "additionalProperties": null,
       "items": null
     },
+    "CustomVoiceParams": {
+      "id": "CustomVoiceParams",
+      "description": "Description of the custom voice to be synthesized.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "model": {
+          "description": "Required. The name of the AutoML model that synthesizes the custom voice.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reportedUsage": {
+          "description": "Optional. The usage of the synthesized audio to be reported.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "REPORTED_USAGE_UNSPECIFIED",
+            "REALTIME",
+            "OFFLINE"
+          ],
+          "enumDescriptions": [
+            "Request with reported usage unspecified will be rejected.",
+            "For scenarios where the synthesized audio is not downloadable and can only be used once. For example, real-time request in IVR system.",
+            "For scenarios where the synthesized audio is downloadable and can be reused. For example, the synthesized audio is downloaded, stored in customer service system and played repeatedly."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "ListVoicesResponse": {
       "id": "ListVoicesResponse",
       "description": "The message returned to the client by the `ListVoices` method.",
@@ -388,7 +428,7 @@
             ],
             "enumDescriptions": [
               "Not specified. No timepoint information will be returned.",
-              "Timepoint information of tags in SSML input will be returned."
+              "Timepoint information of `` tags in SSML input will be returned."
             ],
             "properties": {},
             "additionalProperties": null,
@@ -430,7 +470,7 @@
           "items": null
         },
         "timepoints": {
-          "description": "A link between a position in the original request input and a corresponding time in the output audio. It's only supported via of SSML input.",
+          "description": "A link between a position in the original request input and a corresponding time in the output audio. It's only supported via `` of SSML input.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -454,7 +494,7 @@
       "enumDescriptions": [],
       "properties": {
         "markName": {
-          "description": "Timepoint name as received from the client within tag.",
+          "description": "Timepoint name as received from the client within `` tag.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -555,6 +595,10 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "customVoice": {
+          "description": "The configuration for a custom voice. If [CustomVoiceParams.model] is set, the service will choose the custom voice matching the specified configuration.",
+          "$ref": "CustomVoiceParams"
+        },
         "languageCode": {
           "description": "Required. The language (and potentially also the region) of the voice expressed as a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag, e.g. \"en-US\". This should not include a script tag (e.g. use \"cmn-cn\" rather than \"cmn-Hant-cn\"), because the script will be inferred from the input provided in the SynthesisInput. The TTS service will use this parameter to help choose an appropriate voice. Note that the TTS service may choose a voice with a slightly different language code than the one selected; it may substitute a different region (e.g. using en-US rather than en-CA if there isn't a Canadian voice available), or even a different language, e.g. using \"nb\" (Norwegian Bokmal) instead of \"no\" (Norwegian)\".",
           "type": "string",
@@ -638,7 +682,7 @@
           "description": "Returns a list of Voice supported for synthesis.",
           "parameters": {
             "languageCode": {
-              "description": "Optional. Recommended. [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If not specified, the API will return all supported voices. If specified, the ListVoices call will only return voices that can be used to synthesize this language_code. E.g. when specifying \"en-NZ\", you will get supported \"en-NZ\" voices; when specifying \"no\", you will get supported \"no-\\*\" (Norwegian) and \"nb-\\*\" (Norwegian Bokmal) voices; specifying \"zh\" will also get supported \"cmn-\\*\" voices; specifying \"zh-hk\" will also get supported \"yue-hk\" voices.",
+              "description": "Optional. Recommended. [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If not specified, the API will return all supported voices. If specified, the ListVoices call will only return voices that can be used to synthesize this language_code. For example, if you specify `\"en-NZ\"`, all `\"en-NZ\"` voices will be returned. If you specify `\"no\"`, both `\"no-\\*\"` (Norwegian) and `\"nb-\\*\"` (Norwegian Bokmal) voices will be returned.",
               "default": null,
               "location": "query",
               "required": false,

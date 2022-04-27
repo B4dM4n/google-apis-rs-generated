@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [operations](resources/operations/struct.OperationsActions.html)\n      * [*get*](resources/operations/struct.GetRequestBuilder.html), [*list*](resources/operations/struct.ListRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n        * [functions](resources/projects/locations/functions/struct.FunctionsActions.html)\n          * [*call*](resources/projects/locations/functions/struct.CallRequestBuilder.html), [*create*](resources/projects/locations/functions/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/functions/struct.DeleteRequestBuilder.html), [*generateDownloadUrl*](resources/projects/locations/functions/struct.GenerateDownloadUrlRequestBuilder.html), [*generateUploadUrl*](resources/projects/locations/functions/struct.GenerateUploadUrlRequestBuilder.html), [*get*](resources/projects/locations/functions/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/functions/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/functions/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/functions/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/functions/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/functions/struct.TestIamPermissionsRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -174,21 +174,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Binding {
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -317,7 +317,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub build_id: ::std::option::Option<String>,
-        #[doc = "Name of the Cloud Build Custom Worker Pool that should be used to build the function. The format of this field is `projects/{project}/locations/{region}/workerPools/{workerPool}` where {project} and {region} are the project id and region respectively where the worker pool is defined and {workerPool} is the short name of the worker pool. If the project id is not the same as the function, then the Cloud Functions Service Agent (service-@gcf-admin-robot.iam.gserviceaccount.com) must be granted the role Cloud Build Custom Workers Builder (roles/cloudbuild.customworkers.builder) in the project."]
+        #[doc = "Output only. The Cloud Build Name of the function deployment. `projects//locations//builds/`."]
+        #[serde(
+            rename = "buildName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub build_name: ::std::option::Option<String>,
+        #[doc = "Name of the Cloud Build Custom Worker Pool that should be used to build the function. The format of this field is `projects/{project}/locations/{region}/workerPools/{workerPool}` where `{project}` and `{region}` are the project id and region respectively where the worker pool is defined and `{workerPool}` is the short name of the worker pool. If the project id is not the same as the function, then the Cloud Functions Service Agent (`service-@gcf-admin-robot.iam.gserviceaccount.com`) must be granted the role Cloud Build Custom Workers Builder (`roles/cloudbuild.customworkers.builder`) in the project."]
         #[serde(
             rename = "buildWorkerPool",
             default,
@@ -331,6 +338,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
+        #[doc = "Docker Registry to use for this deployment. If `docker_repository` field is specified, this field will be automatically set as `ARTIFACT_REGISTRY`. If unspecified, it currently defaults to `CONTAINER_REGISTRY`. This field may be overridden by the backend for eligible deployments."]
+        #[serde(
+            rename = "dockerRegistry",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub docker_registry: ::std::option::Option<crate::schemas::CloudFunctionDockerRegistry>,
+        #[doc = "User managed repository created in Artifact Registry optionally with a customer managed encryption key. If specified, deployments will use Artifact Registry. If unspecified and the deployment is eligible to use Artifact Registry, GCF will create and use a repository named 'gcf-artifacts' for every deployed region. This is the repository to which the function docker image will be pushed after it is built by Cloud Build. It must match the pattern `projects/{project}/locations/{location}/repositories/{repository}`. Cross-project repositories are not supported. Cross-location repositories are not supported. Repository format must be 'DOCKER'."]
+        #[serde(
+            rename = "dockerRepository",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub docker_repository: ::std::option::Option<String>,
         #[doc = "The name of the function (as defined in source code) that will be executed. Defaults to the resource name suffix, if not specified. For backward compatibility, if function with given name is not found, then the system will try to use function named \"function\". For Node.js this is name of a function exported by the module specified in `source_location`."]
         #[serde(
             rename = "entryPoint",
@@ -367,6 +388,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ingress_settings: ::std::option::Option<crate::schemas::CloudFunctionIngressSettings>,
+        #[doc = "Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt function resources. It must match the pattern `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`. If specified, you must also provide an artifact registry repository using the `docker_repository` field that was created with the same KMS crypto key. The following service accounts need to be granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)' on the Key/KeyRing/Project/Organization (least access preferred). 1. Google Cloud Functions service account (service-{project_number}@gcf-admin-robot.iam.gserviceaccount.com) - Required to protect the function's image. 2. Google Storage service account (service-{project_number}@gs-project-accounts.iam.gserviceaccount.com) - Required to protect the function's source code. If this service account does not exist, deploying a function without a KMS key or retrieving the service agent name provisions it. For more information, see https://cloud.google.com/storage/docs/projects#service-agents and https://cloud.google.com/storage/docs/getting-service-agent#gsutil. Google Cloud Functions delegates access to service agents to protect function resources in internal projects that are not accessible by the end user."]
+        #[serde(
+            rename = "kmsKeyName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kms_key_name: ::std::option::Option<String>,
         #[doc = "Labels associated with this Cloud Function."]
         #[serde(
             rename = "labels",
@@ -381,6 +409,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_instances: ::std::option::Option<i32>,
+        #[doc = "A lower bound for the number function instances that may coexist at a given time."]
+        #[serde(
+            rename = "minInstances",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub min_instances: ::std::option::Option<i32>,
         #[doc = "A user-defined name of the function. Function names must be unique globally and match pattern `projects/*/locations/*/functions/*`"]
         #[serde(
             rename = "name",
@@ -388,20 +423,34 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The VPC Network that this cloud function can connect to. It can be either the fully-qualified URI, or the short name of the network resource. If the short network name is used, the network must belong to the same project. Otherwise, it must belong to a project within the same organization. The format of this field is either `projects/{project}/global/networks/{network}` or `{network}`, where {project} is a project id where the network is defined, and {network} is the short name of the network. This field is mutually exclusive with `vpc_connector` and will be replaced by it. See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for more information on connecting Cloud projects."]
+        #[doc = "The VPC Network that this cloud function can connect to. It can be either the fully-qualified URI, or the short name of the network resource. If the short network name is used, the network must belong to the same project. Otherwise, it must belong to a project within the same organization. The format of this field is either `projects/{project}/global/networks/{network}` or `{network}`, where `{project}` is a project id where the network is defined, and `{network}` is the short name of the network. This field is mutually exclusive with `vpc_connector` and will be replaced by it. See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for more information on connecting Cloud projects."]
         #[serde(
             rename = "network",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub network: ::std::option::Option<String>,
-        #[doc = "The runtime in which to run the function. Required when deploying a new function, optional when updating an existing function. For a complete list of possible choices, see the [`gcloud` command reference](/sdk/gcloud/reference/functions/deploy#--runtime)."]
+        #[doc = "The runtime in which to run the function. Required when deploying a new function, optional when updating an existing function. For a complete list of possible choices, see the [`gcloud` command reference](https://cloud.google.com/sdk/gcloud/reference/functions/deploy#--runtime)."]
         #[serde(
             rename = "runtime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub runtime: ::std::option::Option<String>,
+        #[doc = "Secret environment variables configuration."]
+        #[serde(
+            rename = "secretEnvironmentVariables",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub secret_environment_variables: ::std::option::Option<Vec<crate::schemas::SecretEnvVar>>,
+        #[doc = "Secret volumes configuration."]
+        #[serde(
+            rename = "secretVolumes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub secret_volumes: ::std::option::Option<Vec<crate::schemas::SecretVolume>>,
         #[doc = "The email of the function's service account. If empty, defaults to `{project_id}@appspot.gserviceaccount.com`."]
         #[serde(
             rename = "serviceAccountEmail",
@@ -409,7 +458,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub service_account_email: ::std::option::Option<String>,
-        #[doc = "The Google Cloud Storage URL, starting with gs://, pointing to the zip archive which contains the function."]
+        #[doc = "The Google Cloud Storage URL, starting with `gs://`, pointing to the zip archive which contains the function."]
         #[serde(
             rename = "sourceArchiveUrl",
             default,
@@ -430,7 +479,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub source_token: ::std::option::Option<String>,
-        #[doc = "The Google Cloud Storage signed URL used for source uploading, generated by google.cloud.functions.v1.GenerateUploadUrl"]
+        #[doc = "The Google Cloud Storage signed URL used for source uploading, generated by calling [google.cloud.functions.v1.GenerateUploadUrl]. The signature is validated on write methods (Create, Update) The signature is stripped from the Function object on read methods (Get, List)"]
         #[serde(
             rename = "sourceUploadUrl",
             default,
@@ -488,6 +537,88 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CloudFunction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum CloudFunctionDockerRegistry {
+        #[doc = "Docker images will be stored in regional Artifact Registry repositories. By default, GCF will create and use repositories named `gcf-artifacts` in every region in which a function is deployed. But the repository to use can also be specified by the user using the `docker_repository` field."]
+        ArtifactRegistry,
+        #[doc = "Docker images will be stored in multi-regional Container Registry repositories named `gcf`."]
+        ContainerRegistry,
+        #[doc = "Unspecified."]
+        DockerRegistryUnspecified,
+    }
+    impl CloudFunctionDockerRegistry {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                CloudFunctionDockerRegistry::ArtifactRegistry => "ARTIFACT_REGISTRY",
+                CloudFunctionDockerRegistry::ContainerRegistry => "CONTAINER_REGISTRY",
+                CloudFunctionDockerRegistry::DockerRegistryUnspecified => {
+                    "DOCKER_REGISTRY_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for CloudFunctionDockerRegistry {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for CloudFunctionDockerRegistry {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<CloudFunctionDockerRegistry, ()> {
+            Ok(match s {
+                "ARTIFACT_REGISTRY" => CloudFunctionDockerRegistry::ArtifactRegistry,
+                "CONTAINER_REGISTRY" => CloudFunctionDockerRegistry::ContainerRegistry,
+                "DOCKER_REGISTRY_UNSPECIFIED" => {
+                    CloudFunctionDockerRegistry::DockerRegistryUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for CloudFunctionDockerRegistry {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for CloudFunctionDockerRegistry {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for CloudFunctionDockerRegistry {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ARTIFACT_REGISTRY" => CloudFunctionDockerRegistry::ArtifactRegistry,
+                "CONTAINER_REGISTRY" => CloudFunctionDockerRegistry::ContainerRegistry,
+                "DOCKER_REGISTRY_UNSPECIFIED" => {
+                    CloudFunctionDockerRegistry::DockerRegistryUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for CloudFunctionDockerRegistry {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CloudFunctionDockerRegistry {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -964,12 +1095,19 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
-        Copy,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GenerateUploadUrlRequest {}
+    pub struct GenerateUploadUrlRequest {
+        #[doc = "Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt function source code objects in staging Cloud Storage buckets. When you generate an upload url and upload your source code, it gets copied to a staging Cloud Storage bucket in an internal regional project. The source code is then copied to a versioned directory in the sources bucket in the consumer project during the function deployment. It must match the pattern `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`. The Google Cloud Functions service account (service-{project_number}@gcf-admin-robot.iam.gserviceaccount.com) must be granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)' on the Key/KeyRing/Project/Organization (least access preferred). GCF will delegate access to the Google Storage service account in the internal project."]
+        #[serde(
+            rename = "kmsKeyName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kms_key_name: ::std::option::Option<String>,
+    }
     impl ::google_field_selector::FieldSelector for GenerateUploadUrlRequest {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
@@ -1007,6 +1145,918 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GenerateUploadUrlResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleCloudFunctionsV2AlphaOperationMetadata {
+        #[doc = "API version used to start the operation."]
+        #[serde(
+            rename = "apiVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub api_version: ::std::option::Option<String>,
+        #[doc = "Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
+        #[serde(
+            rename = "cancelRequested",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cancel_requested: ::std::option::Option<bool>,
+        #[doc = "The time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "The time the operation finished running."]
+        #[serde(
+            rename = "endTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub end_time: ::std::option::Option<String>,
+        #[doc = "The original request that started the operation."]
+        #[serde(
+            rename = "requestResource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub request_resource:
+            ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
+        #[doc = "Mechanism for reporting in-progress stages"]
+        #[serde(
+            rename = "stages",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub stages: ::std::option::Option<Vec<crate::schemas::GoogleCloudFunctionsV2AlphaStage>>,
+        #[doc = "Human-readable status of the operation, if any."]
+        #[serde(
+            rename = "statusDetail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub status_detail: ::std::option::Option<String>,
+        #[doc = "Server-defined resource path for the target of the operation."]
+        #[serde(
+            rename = "target",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target: ::std::option::Option<String>,
+        #[doc = "Name of the verb executed by the operation."]
+        #[serde(
+            rename = "verb",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verb: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudFunctionsV2AlphaOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudFunctionsV2AlphaOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudFunctionsV2AlphaStage {
+        #[doc = "Message describing the Stage"]
+        #[serde(
+            rename = "message",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub message: ::std::option::Option<String>,
+        #[doc = "Name of the Stage. This will be unique for each Stage."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<crate::schemas::GoogleCloudFunctionsV2AlphaStageName>,
+        #[doc = "Resource of the Stage"]
+        #[serde(
+            rename = "resource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resource: ::std::option::Option<String>,
+        #[doc = "Link to the current Stage resource"]
+        #[serde(
+            rename = "resourceUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resource_uri: ::std::option::Option<String>,
+        #[doc = "Current state of the Stage"]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::GoogleCloudFunctionsV2AlphaStageState>,
+        #[doc = "State messages from the current Stage."]
+        #[serde(
+            rename = "stateMessages",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state_messages:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudFunctionsV2AlphaStateMessage>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudFunctionsV2AlphaStage {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudFunctionsV2AlphaStage {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudFunctionsV2AlphaStageName {
+        #[doc = "Artifact Regsitry Stage"]
+        ArtifactRegistry,
+        #[doc = "Build Stage"]
+        Build,
+        #[doc = "Not specified. Invalid name."]
+        NameUnspecified,
+        #[doc = "Service Stage"]
+        Service,
+        #[doc = "Service Rollback Stage"]
+        ServiceRollback,
+        #[doc = "Trigger Stage"]
+        Trigger,
+        #[doc = "Trigger Rollback Stage"]
+        TriggerRollback,
+    }
+    impl GoogleCloudFunctionsV2AlphaStageName {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudFunctionsV2AlphaStageName::ArtifactRegistry => "ARTIFACT_REGISTRY",
+                GoogleCloudFunctionsV2AlphaStageName::Build => "BUILD",
+                GoogleCloudFunctionsV2AlphaStageName::NameUnspecified => "NAME_UNSPECIFIED",
+                GoogleCloudFunctionsV2AlphaStageName::Service => "SERVICE",
+                GoogleCloudFunctionsV2AlphaStageName::ServiceRollback => "SERVICE_ROLLBACK",
+                GoogleCloudFunctionsV2AlphaStageName::Trigger => "TRIGGER",
+                GoogleCloudFunctionsV2AlphaStageName::TriggerRollback => "TRIGGER_ROLLBACK",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudFunctionsV2AlphaStageName {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudFunctionsV2AlphaStageName {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleCloudFunctionsV2AlphaStageName, ()> {
+            Ok(match s {
+                "ARTIFACT_REGISTRY" => GoogleCloudFunctionsV2AlphaStageName::ArtifactRegistry,
+                "BUILD" => GoogleCloudFunctionsV2AlphaStageName::Build,
+                "NAME_UNSPECIFIED" => GoogleCloudFunctionsV2AlphaStageName::NameUnspecified,
+                "SERVICE" => GoogleCloudFunctionsV2AlphaStageName::Service,
+                "SERVICE_ROLLBACK" => GoogleCloudFunctionsV2AlphaStageName::ServiceRollback,
+                "TRIGGER" => GoogleCloudFunctionsV2AlphaStageName::Trigger,
+                "TRIGGER_ROLLBACK" => GoogleCloudFunctionsV2AlphaStageName::TriggerRollback,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudFunctionsV2AlphaStageName {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudFunctionsV2AlphaStageName {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudFunctionsV2AlphaStageName {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ARTIFACT_REGISTRY" => GoogleCloudFunctionsV2AlphaStageName::ArtifactRegistry,
+                "BUILD" => GoogleCloudFunctionsV2AlphaStageName::Build,
+                "NAME_UNSPECIFIED" => GoogleCloudFunctionsV2AlphaStageName::NameUnspecified,
+                "SERVICE" => GoogleCloudFunctionsV2AlphaStageName::Service,
+                "SERVICE_ROLLBACK" => GoogleCloudFunctionsV2AlphaStageName::ServiceRollback,
+                "TRIGGER" => GoogleCloudFunctionsV2AlphaStageName::Trigger,
+                "TRIGGER_ROLLBACK" => GoogleCloudFunctionsV2AlphaStageName::TriggerRollback,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudFunctionsV2AlphaStageName {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudFunctionsV2AlphaStageName {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudFunctionsV2AlphaStageState {
+        #[doc = "Stage has completed."]
+        Complete,
+        #[doc = "Stage is in progress."]
+        InProgress,
+        #[doc = "Stage has not started."]
+        NotStarted,
+        #[doc = "Not specified. Invalid state."]
+        StateUnspecified,
+    }
+    impl GoogleCloudFunctionsV2AlphaStageState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudFunctionsV2AlphaStageState::Complete => "COMPLETE",
+                GoogleCloudFunctionsV2AlphaStageState::InProgress => "IN_PROGRESS",
+                GoogleCloudFunctionsV2AlphaStageState::NotStarted => "NOT_STARTED",
+                GoogleCloudFunctionsV2AlphaStageState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudFunctionsV2AlphaStageState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudFunctionsV2AlphaStageState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleCloudFunctionsV2AlphaStageState, ()> {
+            Ok(match s {
+                "COMPLETE" => GoogleCloudFunctionsV2AlphaStageState::Complete,
+                "IN_PROGRESS" => GoogleCloudFunctionsV2AlphaStageState::InProgress,
+                "NOT_STARTED" => GoogleCloudFunctionsV2AlphaStageState::NotStarted,
+                "STATE_UNSPECIFIED" => GoogleCloudFunctionsV2AlphaStageState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudFunctionsV2AlphaStageState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudFunctionsV2AlphaStageState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudFunctionsV2AlphaStageState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "COMPLETE" => GoogleCloudFunctionsV2AlphaStageState::Complete,
+                "IN_PROGRESS" => GoogleCloudFunctionsV2AlphaStageState::InProgress,
+                "NOT_STARTED" => GoogleCloudFunctionsV2AlphaStageState::NotStarted,
+                "STATE_UNSPECIFIED" => GoogleCloudFunctionsV2AlphaStageState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudFunctionsV2AlphaStageState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudFunctionsV2AlphaStageState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudFunctionsV2AlphaStateMessage {
+        #[doc = "The message."]
+        #[serde(
+            rename = "message",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub message: ::std::option::Option<String>,
+        #[doc = "One-word CamelCase type of the state message."]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<String>,
+        #[doc = "Severity of the state message."]
+        #[serde(
+            rename = "severity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub severity:
+            ::std::option::Option<crate::schemas::GoogleCloudFunctionsV2AlphaStateMessageSeverity>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudFunctionsV2AlphaStateMessage {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudFunctionsV2AlphaStateMessage {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudFunctionsV2AlphaStateMessageSeverity {
+        #[doc = "ERROR-level severity."]
+        Error,
+        #[doc = "INFO-level severity."]
+        Info,
+        #[doc = "Not specified. Invalid severity."]
+        SeverityUnspecified,
+        #[doc = "WARNING-level severity."]
+        Warning,
+    }
+    impl GoogleCloudFunctionsV2AlphaStateMessageSeverity {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudFunctionsV2AlphaStateMessageSeverity::Error => "ERROR",
+                GoogleCloudFunctionsV2AlphaStateMessageSeverity::Info => "INFO",
+                GoogleCloudFunctionsV2AlphaStateMessageSeverity::SeverityUnspecified => {
+                    "SEVERITY_UNSPECIFIED"
+                }
+                GoogleCloudFunctionsV2AlphaStateMessageSeverity::Warning => "WARNING",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudFunctionsV2AlphaStateMessageSeverity {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudFunctionsV2AlphaStateMessageSeverity {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudFunctionsV2AlphaStateMessageSeverity, ()> {
+            Ok(match s {
+                "ERROR" => GoogleCloudFunctionsV2AlphaStateMessageSeverity::Error,
+                "INFO" => GoogleCloudFunctionsV2AlphaStateMessageSeverity::Info,
+                "SEVERITY_UNSPECIFIED" => {
+                    GoogleCloudFunctionsV2AlphaStateMessageSeverity::SeverityUnspecified
+                }
+                "WARNING" => GoogleCloudFunctionsV2AlphaStateMessageSeverity::Warning,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudFunctionsV2AlphaStateMessageSeverity {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudFunctionsV2AlphaStateMessageSeverity {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudFunctionsV2AlphaStateMessageSeverity {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ERROR" => GoogleCloudFunctionsV2AlphaStateMessageSeverity::Error,
+                "INFO" => GoogleCloudFunctionsV2AlphaStateMessageSeverity::Info,
+                "SEVERITY_UNSPECIFIED" => {
+                    GoogleCloudFunctionsV2AlphaStateMessageSeverity::SeverityUnspecified
+                }
+                "WARNING" => GoogleCloudFunctionsV2AlphaStateMessageSeverity::Warning,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudFunctionsV2AlphaStateMessageSeverity {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudFunctionsV2AlphaStateMessageSeverity {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleCloudFunctionsV2BetaOperationMetadata {
+        #[doc = "API version used to start the operation."]
+        #[serde(
+            rename = "apiVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub api_version: ::std::option::Option<String>,
+        #[doc = "Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
+        #[serde(
+            rename = "cancelRequested",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cancel_requested: ::std::option::Option<bool>,
+        #[doc = "The time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "The time the operation finished running."]
+        #[serde(
+            rename = "endTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub end_time: ::std::option::Option<String>,
+        #[doc = "The original request that started the operation."]
+        #[serde(
+            rename = "requestResource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub request_resource:
+            ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
+        #[doc = "Mechanism for reporting in-progress stages"]
+        #[serde(
+            rename = "stages",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub stages: ::std::option::Option<Vec<crate::schemas::GoogleCloudFunctionsV2BetaStage>>,
+        #[doc = "Human-readable status of the operation, if any."]
+        #[serde(
+            rename = "statusDetail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub status_detail: ::std::option::Option<String>,
+        #[doc = "Server-defined resource path for the target of the operation."]
+        #[serde(
+            rename = "target",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target: ::std::option::Option<String>,
+        #[doc = "Name of the verb executed by the operation."]
+        #[serde(
+            rename = "verb",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verb: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudFunctionsV2BetaOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudFunctionsV2BetaOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudFunctionsV2BetaStage {
+        #[doc = "Message describing the Stage"]
+        #[serde(
+            rename = "message",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub message: ::std::option::Option<String>,
+        #[doc = "Name of the Stage. This will be unique for each Stage."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<crate::schemas::GoogleCloudFunctionsV2BetaStageName>,
+        #[doc = "Resource of the Stage"]
+        #[serde(
+            rename = "resource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resource: ::std::option::Option<String>,
+        #[doc = "Link to the current Stage resource"]
+        #[serde(
+            rename = "resourceUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resource_uri: ::std::option::Option<String>,
+        #[doc = "Current state of the Stage"]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::GoogleCloudFunctionsV2BetaStageState>,
+        #[doc = "State messages from the current Stage."]
+        #[serde(
+            rename = "stateMessages",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state_messages:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudFunctionsV2BetaStateMessage>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudFunctionsV2BetaStage {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudFunctionsV2BetaStage {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudFunctionsV2BetaStageName {
+        #[doc = "Artifact Regsitry Stage"]
+        ArtifactRegistry,
+        #[doc = "Build Stage"]
+        Build,
+        #[doc = "Not specified. Invalid name."]
+        NameUnspecified,
+        #[doc = "Service Stage"]
+        Service,
+        #[doc = "Service Rollback Stage"]
+        ServiceRollback,
+        #[doc = "Trigger Stage"]
+        Trigger,
+        #[doc = "Trigger Rollback Stage"]
+        TriggerRollback,
+    }
+    impl GoogleCloudFunctionsV2BetaStageName {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudFunctionsV2BetaStageName::ArtifactRegistry => "ARTIFACT_REGISTRY",
+                GoogleCloudFunctionsV2BetaStageName::Build => "BUILD",
+                GoogleCloudFunctionsV2BetaStageName::NameUnspecified => "NAME_UNSPECIFIED",
+                GoogleCloudFunctionsV2BetaStageName::Service => "SERVICE",
+                GoogleCloudFunctionsV2BetaStageName::ServiceRollback => "SERVICE_ROLLBACK",
+                GoogleCloudFunctionsV2BetaStageName::Trigger => "TRIGGER",
+                GoogleCloudFunctionsV2BetaStageName::TriggerRollback => "TRIGGER_ROLLBACK",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudFunctionsV2BetaStageName {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudFunctionsV2BetaStageName {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleCloudFunctionsV2BetaStageName, ()> {
+            Ok(match s {
+                "ARTIFACT_REGISTRY" => GoogleCloudFunctionsV2BetaStageName::ArtifactRegistry,
+                "BUILD" => GoogleCloudFunctionsV2BetaStageName::Build,
+                "NAME_UNSPECIFIED" => GoogleCloudFunctionsV2BetaStageName::NameUnspecified,
+                "SERVICE" => GoogleCloudFunctionsV2BetaStageName::Service,
+                "SERVICE_ROLLBACK" => GoogleCloudFunctionsV2BetaStageName::ServiceRollback,
+                "TRIGGER" => GoogleCloudFunctionsV2BetaStageName::Trigger,
+                "TRIGGER_ROLLBACK" => GoogleCloudFunctionsV2BetaStageName::TriggerRollback,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudFunctionsV2BetaStageName {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudFunctionsV2BetaStageName {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudFunctionsV2BetaStageName {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ARTIFACT_REGISTRY" => GoogleCloudFunctionsV2BetaStageName::ArtifactRegistry,
+                "BUILD" => GoogleCloudFunctionsV2BetaStageName::Build,
+                "NAME_UNSPECIFIED" => GoogleCloudFunctionsV2BetaStageName::NameUnspecified,
+                "SERVICE" => GoogleCloudFunctionsV2BetaStageName::Service,
+                "SERVICE_ROLLBACK" => GoogleCloudFunctionsV2BetaStageName::ServiceRollback,
+                "TRIGGER" => GoogleCloudFunctionsV2BetaStageName::Trigger,
+                "TRIGGER_ROLLBACK" => GoogleCloudFunctionsV2BetaStageName::TriggerRollback,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudFunctionsV2BetaStageName {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudFunctionsV2BetaStageName {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudFunctionsV2BetaStageState {
+        #[doc = "Stage has completed."]
+        Complete,
+        #[doc = "Stage is in progress."]
+        InProgress,
+        #[doc = "Stage has not started."]
+        NotStarted,
+        #[doc = "Not specified. Invalid state."]
+        StateUnspecified,
+    }
+    impl GoogleCloudFunctionsV2BetaStageState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudFunctionsV2BetaStageState::Complete => "COMPLETE",
+                GoogleCloudFunctionsV2BetaStageState::InProgress => "IN_PROGRESS",
+                GoogleCloudFunctionsV2BetaStageState::NotStarted => "NOT_STARTED",
+                GoogleCloudFunctionsV2BetaStageState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudFunctionsV2BetaStageState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudFunctionsV2BetaStageState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleCloudFunctionsV2BetaStageState, ()> {
+            Ok(match s {
+                "COMPLETE" => GoogleCloudFunctionsV2BetaStageState::Complete,
+                "IN_PROGRESS" => GoogleCloudFunctionsV2BetaStageState::InProgress,
+                "NOT_STARTED" => GoogleCloudFunctionsV2BetaStageState::NotStarted,
+                "STATE_UNSPECIFIED" => GoogleCloudFunctionsV2BetaStageState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudFunctionsV2BetaStageState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudFunctionsV2BetaStageState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudFunctionsV2BetaStageState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "COMPLETE" => GoogleCloudFunctionsV2BetaStageState::Complete,
+                "IN_PROGRESS" => GoogleCloudFunctionsV2BetaStageState::InProgress,
+                "NOT_STARTED" => GoogleCloudFunctionsV2BetaStageState::NotStarted,
+                "STATE_UNSPECIFIED" => GoogleCloudFunctionsV2BetaStageState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudFunctionsV2BetaStageState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudFunctionsV2BetaStageState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudFunctionsV2BetaStateMessage {
+        #[doc = "The message."]
+        #[serde(
+            rename = "message",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub message: ::std::option::Option<String>,
+        #[doc = "One-word CamelCase type of the state message."]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<String>,
+        #[doc = "Severity of the state message."]
+        #[serde(
+            rename = "severity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub severity:
+            ::std::option::Option<crate::schemas::GoogleCloudFunctionsV2BetaStateMessageSeverity>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudFunctionsV2BetaStateMessage {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudFunctionsV2BetaStateMessage {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudFunctionsV2BetaStateMessageSeverity {
+        #[doc = "ERROR-level severity."]
+        Error,
+        #[doc = "INFO-level severity."]
+        Info,
+        #[doc = "Not specified. Invalid severity."]
+        SeverityUnspecified,
+        #[doc = "WARNING-level severity."]
+        Warning,
+    }
+    impl GoogleCloudFunctionsV2BetaStateMessageSeverity {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudFunctionsV2BetaStateMessageSeverity::Error => "ERROR",
+                GoogleCloudFunctionsV2BetaStateMessageSeverity::Info => "INFO",
+                GoogleCloudFunctionsV2BetaStateMessageSeverity::SeverityUnspecified => {
+                    "SEVERITY_UNSPECIFIED"
+                }
+                GoogleCloudFunctionsV2BetaStateMessageSeverity::Warning => "WARNING",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudFunctionsV2BetaStateMessageSeverity {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudFunctionsV2BetaStateMessageSeverity {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudFunctionsV2BetaStateMessageSeverity, ()> {
+            Ok(match s {
+                "ERROR" => GoogleCloudFunctionsV2BetaStateMessageSeverity::Error,
+                "INFO" => GoogleCloudFunctionsV2BetaStateMessageSeverity::Info,
+                "SEVERITY_UNSPECIFIED" => {
+                    GoogleCloudFunctionsV2BetaStateMessageSeverity::SeverityUnspecified
+                }
+                "WARNING" => GoogleCloudFunctionsV2BetaStateMessageSeverity::Warning,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudFunctionsV2BetaStateMessageSeverity {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudFunctionsV2BetaStateMessageSeverity {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudFunctionsV2BetaStateMessageSeverity {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ERROR" => GoogleCloudFunctionsV2BetaStateMessageSeverity::Error,
+                "INFO" => GoogleCloudFunctionsV2BetaStateMessageSeverity::Info,
+                "SEVERITY_UNSPECIFIED" => {
+                    GoogleCloudFunctionsV2BetaStateMessageSeverity::SeverityUnspecified
+                }
+                "WARNING" => GoogleCloudFunctionsV2BetaStateMessageSeverity::Warning,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudFunctionsV2BetaStateMessageSeverity {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudFunctionsV2BetaStateMessageSeverity {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1332,6 +2382,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub build_id: ::std::option::Option<String>,
+        #[doc = "The Cloud Build Name of the function deployment. This field is only populated for Create and Update operations. `projects//locations//builds/`."]
+        #[serde(
+            rename = "buildName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub build_name: ::std::option::Option<String>,
         #[doc = "Type of operation."]
         #[serde(
             rename = "type",
@@ -1354,7 +2411,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub source_token: ::std::option::Option<String>,
-        #[doc = "Target of the operation - for example projects/project-1/locations/region-1/functions/function-1"]
+        #[doc = "Target of the operation - for example `projects/project-1/locations/region-1/functions/function-1`"]
         #[serde(
             rename = "target",
             default,
@@ -1488,7 +2545,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audit_configs: ::std::option::Option<Vec<crate::schemas::AuditConfig>>,
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,
@@ -1556,8 +2613,150 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct SecretEnvVar {
+        #[doc = "Name of the environment variable."]
+        #[serde(
+            rename = "key",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub key: ::std::option::Option<String>,
+        #[doc = "Project identifier (preferrably project number but can also be the project ID) of the project that contains the secret. If not set, it will be populated with the function's project assuming that the secret exists in the same project as of the function."]
+        #[serde(
+            rename = "projectId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub project_id: ::std::option::Option<String>,
+        #[doc = "Name of the secret in secret manager (not the full resource name)."]
+        #[serde(
+            rename = "secret",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub secret: ::std::option::Option<String>,
+        #[doc = "Version of the secret (version number or the string 'latest'). It is recommended to use a numeric version for secret environment variables as any updates to the secret value is not reflected until new instances start."]
+        #[serde(
+            rename = "version",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SecretEnvVar {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SecretEnvVar {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SecretVersion {
+        #[doc = "Relative path of the file under the mount path where the secret value for this version will be fetched and made available. For example, setting the mount_path as '/etc/secrets' and path as `/secret_foo` would mount the secret value file at `/etc/secrets/secret_foo`."]
+        #[serde(
+            rename = "path",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub path: ::std::option::Option<String>,
+        #[doc = "Version of the secret (version number or the string 'latest'). It is preferrable to use `latest` version with secret volumes as secret value changes are reflected immediately."]
+        #[serde(
+            rename = "version",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SecretVersion {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SecretVersion {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SecretVolume {
+        #[doc = "The path within the container to mount the secret volume. For example, setting the mount_path as `/etc/secrets` would mount the secret value files under the `/etc/secrets` directory. This directory will also be completely shadowed and unavailable to mount any other secrets. Recommended mount paths: /etc/secrets Restricted mount paths: /cloudsql, /dev/log, /pod, /proc, /var/log"]
+        #[serde(
+            rename = "mountPath",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mount_path: ::std::option::Option<String>,
+        #[doc = "Project identifier (preferrably project number but can also be the project ID) of the project that contains the secret. If not set, it will be populated with the function's project assuming that the secret exists in the same project as of the function."]
+        #[serde(
+            rename = "projectId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub project_id: ::std::option::Option<String>,
+        #[doc = "Name of the secret in secret manager (not the full resource name)."]
+        #[serde(
+            rename = "secret",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub secret: ::std::option::Option<String>,
+        #[doc = "List of secret versions to mount for this secret. If empty, the `latest` version of the secret will be made available in a file named after the secret under the mount point."]
+        #[serde(
+            rename = "versions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub versions: ::std::option::Option<Vec<crate::schemas::SecretVersion>>,
+    }
+    impl ::google_field_selector::FieldSelector for SecretVolume {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SecretVolume {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SetIamPolicyRequest {
-        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -1668,7 +2867,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -2489,12 +3688,12 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like \"displayName=tokyo\", and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
+                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
                 }
-                #[doc = "The maximum number of results to return. If not set, the service will select a default."]
+                #[doc = "The maximum number of results to return. If not set, the service selects a default."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
@@ -4019,7 +5218,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> GetIamPolicyRequestBuilder<'a> {
-                    #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                    #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
                     pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                         self.options_requested_policy_version = Some(value);
                         self
@@ -4539,7 +5738,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> PatchRequestBuilder<'a> {
-                    #[doc = "Required list of fields to be updated in this request."]
+                    #[doc = "Required. The list of fields in `CloudFunction` that have to be updated."]
                     pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                         self.update_mask = Some(value.into());
                         self

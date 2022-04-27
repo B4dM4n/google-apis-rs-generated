@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("searchconsole1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210317")
+            .version("0.1.0-20220425")
             .about("The Search Console API provides access to both Search Console data (verified users only) and to public information on an URL basis (anyone)")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -44,7 +44,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete, get, list and submit");
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a sitemap from this site.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a sitemap from the Sitemaps report. Does not stop Google from crawling this sitemap or the URLs that were previously crawled in the deleted sitemap.");
             sitemaps0 = sitemaps0.subcommand(mcmd);
         }
         {
@@ -65,12 +65,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: add, delete, get and list");
         {
             let mcmd = SubCommand::with_name("add")
-                .about(" Adds a site to the set of the user\'s sites in Search Console.");
+                .about(" Adds a site to the set of the user's sites in Search Console.");
             sites0 = sites0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("delete")
-                .about(" Removes a site from the set of the user\'s Search Console sites.");
+                .about(" Removes a site from the set of the user's Search Console sites.");
             sites0 = sites0.subcommand(mcmd);
         }
         {
@@ -80,12 +80,22 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd =
-                SubCommand::with_name("list").about(" Lists the user\'s Search Console sites.");
+                SubCommand::with_name("list").about(" Lists the user's Search Console sites.");
             sites0 = sites0.subcommand(mcmd);
         }
+        let mut url_inspection0 = SubCommand::with_name("url_inspection")
+            .setting(AppSettings::ColoredHelp)
+            .about("sub-resources: index");
         let mut url_testing_tools0 = SubCommand::with_name("url_testing_tools")
             .setting(AppSettings::ColoredHelp)
             .about("sub-resources: mobile_friendly_test");
+        let mut index1 = SubCommand::with_name("index")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: inspect");
+        {
+            let mcmd = SubCommand::with_name("inspect").about("Index inspection.");
+            index1 = index1.subcommand(mcmd);
+        }
         let mut mobile_friendly_test1 = SubCommand::with_name("mobile_friendly_test")
             .setting(AppSettings::ColoredHelp)
             .about("methods: run");
@@ -95,7 +105,9 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             mobile_friendly_test1 = mobile_friendly_test1.subcommand(mcmd);
         }
         url_testing_tools0 = url_testing_tools0.subcommand(mobile_friendly_test1);
+        url_inspection0 = url_inspection0.subcommand(index1);
         app = app.subcommand(url_testing_tools0);
+        app = app.subcommand(url_inspection0);
         app = app.subcommand(sites0);
         app = app.subcommand(sitemaps0);
         app = app.subcommand(searchanalytics0);

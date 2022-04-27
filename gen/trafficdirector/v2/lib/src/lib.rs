@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [discovery](resources/discovery/struct.DiscoveryActions.html)\n      * [*client_status*](resources/discovery/struct.ClientStatusRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {

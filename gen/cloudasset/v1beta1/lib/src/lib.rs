@@ -1,9 +1,40 @@
 #![doc = "# Resources and Methods\n    * [folders](resources/folders/struct.FoldersActions.html)\n      * [*exportAssets*](resources/folders/struct.ExportAssetsRequestBuilder.html)\n      * [operations](resources/folders/operations/struct.OperationsActions.html)\n        * [*get*](resources/folders/operations/struct.GetRequestBuilder.html)\n    * [organizations](resources/organizations/struct.OrganizationsActions.html)\n      * [*batchGetAssetsHistory*](resources/organizations/struct.BatchGetAssetsHistoryRequestBuilder.html), [*exportAssets*](resources/organizations/struct.ExportAssetsRequestBuilder.html)\n      * [operations](resources/organizations/operations/struct.OperationsActions.html)\n        * [*get*](resources/organizations/operations/struct.GetRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [*batchGetAssetsHistory*](resources/projects/struct.BatchGetAssetsHistoryRequestBuilder.html), [*exportAssets*](resources/projects/struct.ExportAssetsRequestBuilder.html)\n      * [operations](resources/projects/operations/struct.OperationsActions.html)\n        * [*get*](resources/projects/operations/struct.GetRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AnalyzeIamPolicyLongrunningMetadata {
+        #[doc = "Output only. The time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for AnalyzeIamPolicyLongrunningMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AnalyzeIamPolicyLongrunningMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -291,21 +322,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Binding {
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -1151,7 +1182,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Required. Resource name for the Access Level. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length of the `short_name` component is 50 characters."]
+        #[doc = "Required. Resource name for the Access Level. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{access_policy}/accessLevels/{access_level}`. The maximum length of the `access_level` component is 50 characters."]
         #[serde(
             rename = "name",
             default,
@@ -1196,7 +1227,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "Output only. Resource name of the `AccessPolicy`. Format: `accessPolicies/{policy_id}`"]
+        #[doc = "Output only. Resource name of the `AccessPolicy`. Format: `accessPolicies/{access_policy}`"]
         #[serde(
             rename = "name",
             default,
@@ -1210,6 +1241,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parent: ::std::option::Option<String>,
+        #[doc = "The scopes of a policy define which resources an ACM policy can restrict, and where ACM resources can be referenced. For example, a policy with scopes=[\"folders/123\"] has the following behavior: - vpcsc perimeters can only restrict projects within folders/123 - access levels can only be referenced by resources within folders/123. If empty, there are no limitations on which resources can be restricted by an ACM policy, and there are no limitations on where ACM resources can be referenced. Only one policy can include a given scope (attempting to create a second policy which includes \"folders/123\" will result in an error). Currently, scopes cannot be modified after a policy is created. Currently, policies can only have a single scope. Format: list of `folders/{folder_number}` or `projects/{project_number}`"]
+        #[serde(
+            rename = "scopes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub scopes: ::std::option::Option<Vec<String>>,
         #[doc = "Required. Human readable title. Does not affect behavior."]
         #[serde(
             rename = "title",
@@ -1504,7 +1542,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleIdentityAccesscontextmanagerV1DevicePolicy { # [ doc = "Allowed device management levels, an empty list allows all management levels." ] # [ serde ( rename = "allowedDeviceManagementLevels" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub allowed_device_management_levels : :: std :: option :: Option < Vec < crate :: schemas :: GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems > > , # [ doc = "Allowed encryptions statuses, an empty list allows all statuses." ] # [ serde ( rename = "allowedEncryptionStatuses" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub allowed_encryption_statuses : :: std :: option :: Option < Vec < crate :: schemas :: GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems > > , # [ doc = "Allowed OS versions, an empty list allows all types and all versions." ] # [ serde ( rename = "osConstraints" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub os_constraints : :: std :: option :: Option < Vec < crate :: schemas :: GoogleIdentityAccesscontextmanagerV1OsConstraint > > , # [ doc = "Whether the device needs to be approved by the customer admin." ] # [ serde ( rename = "requireAdminApproval" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub require_admin_approval : :: std :: option :: Option < bool > , # [ doc = "Whether the device needs to be corp owned." ] # [ serde ( rename = "requireCorpOwned" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub require_corp_owned : :: std :: option :: Option < bool > , # [ doc = "Whether or not screenlock is required for the DevicePolicy to be true. Defaults to `false`." ] # [ serde ( rename = "requireScreenlock" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub require_screenlock : :: std :: option :: Option < bool > , }
+    pub struct GoogleIdentityAccesscontextmanagerV1DevicePolicy { # [doc = "Allowed device management levels, an empty list allows all management levels."] # [serde (rename = "allowedDeviceManagementLevels" , default , skip_serializing_if = "std::option::Option::is_none")] pub allowed_device_management_levels : :: std :: option :: Option < Vec < crate :: schemas :: GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems > > , # [doc = "Allowed encryptions statuses, an empty list allows all statuses."] # [serde (rename = "allowedEncryptionStatuses" , default , skip_serializing_if = "std::option::Option::is_none")] pub allowed_encryption_statuses : :: std :: option :: Option < Vec < crate :: schemas :: GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems > > , # [doc = "Allowed OS versions, an empty list allows all types and all versions."] # [serde (rename = "osConstraints" , default , skip_serializing_if = "std::option::Option::is_none")] pub os_constraints : :: std :: option :: Option < Vec < crate :: schemas :: GoogleIdentityAccesscontextmanagerV1OsConstraint > > , # [doc = "Whether the device needs to be approved by the customer admin."] # [serde (rename = "requireAdminApproval" , default , skip_serializing_if = "std::option::Option::is_none")] pub require_admin_approval : :: std :: option :: Option < bool > , # [doc = "Whether the device needs to be corp owned."] # [serde (rename = "requireCorpOwned" , default , skip_serializing_if = "std::option::Option::is_none")] pub require_corp_owned : :: std :: option :: Option < bool > , # [doc = "Whether or not screenlock is required for the DevicePolicy to be true. Defaults to `false`."] # [serde (rename = "requireScreenlock" , default , skip_serializing_if = "std::option::Option::is_none")] pub require_screenlock : :: std :: option :: Option < bool > , }
     impl ::google_field_selector::FieldSelector for GoogleIdentityAccesscontextmanagerV1DevicePolicy {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
@@ -1548,7 +1586,7 @@ pub mod schemas {
             GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems,
             (),
         > {
-            Ok ( match s { "BASIC" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems :: Basic , "COMPLETE" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems :: Complete , "MANAGEMENT_UNSPECIFIED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems :: ManagementUnspecified , "NONE" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems :: None , _ => return Err ( ( ) ) , } )
+            Ok (match s { "BASIC" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems :: Basic , "COMPLETE" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems :: Complete , "MANAGEMENT_UNSPECIFIED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems :: ManagementUnspecified , "NONE" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems :: None , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display
@@ -1576,7 +1614,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "BASIC" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems :: Basic , "COMPLETE" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems :: Complete , "MANAGEMENT_UNSPECIFIED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems :: ManagementUnspecified , "NONE" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems :: None , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "BASIC" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems :: Basic , "COMPLETE" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems :: Complete , "MANAGEMENT_UNSPECIFIED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems :: ManagementUnspecified , "NONE" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedDeviceManagementLevelsItems :: None , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1626,7 +1664,7 @@ pub mod schemas {
             GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems,
             (),
         > {
-            Ok ( match s { "ENCRYPTED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems :: Encrypted , "ENCRYPTION_UNSPECIFIED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems :: EncryptionUnspecified , "ENCRYPTION_UNSUPPORTED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems :: EncryptionUnsupported , "UNENCRYPTED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems :: Unencrypted , _ => return Err ( ( ) ) , } )
+            Ok (match s { "ENCRYPTED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems :: Encrypted , "ENCRYPTION_UNSPECIFIED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems :: EncryptionUnspecified , "ENCRYPTION_UNSUPPORTED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems :: EncryptionUnsupported , "UNENCRYPTED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems :: Unencrypted , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display
@@ -1654,7 +1692,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "ENCRYPTED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems :: Encrypted , "ENCRYPTION_UNSPECIFIED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems :: EncryptionUnspecified , "ENCRYPTION_UNSUPPORTED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems :: EncryptionUnsupported , "UNENCRYPTED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems :: Unencrypted , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "ENCRYPTED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems :: Encrypted , "ENCRYPTION_UNSPECIFIED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems :: EncryptionUnspecified , "ENCRYPTION_UNSUPPORTED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems :: EncryptionUnsupported , "UNENCRYPTED" => GoogleIdentityAccesscontextmanagerV1DevicePolicyAllowedEncryptionStatusesItems :: Unencrypted , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1738,7 +1776,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType, ()>
         {
-            Ok ( match s { "ANY_IDENTITY" => GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType :: AnyIdentity , "ANY_SERVICE_ACCOUNT" => GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType :: AnyServiceAccount , "ANY_USER_ACCOUNT" => GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType :: AnyUserAccount , "IDENTITY_TYPE_UNSPECIFIED" => GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType :: IdentityTypeUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "ANY_IDENTITY" => GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType :: AnyIdentity , "ANY_SERVICE_ACCOUNT" => GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType :: AnyServiceAccount , "ANY_USER_ACCOUNT" => GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType :: AnyUserAccount , "IDENTITY_TYPE_UNSPECIFIED" => GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType :: IdentityTypeUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType {
@@ -1760,7 +1798,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "ANY_IDENTITY" => GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType :: AnyIdentity , "ANY_SERVICE_ACCOUNT" => GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType :: AnyServiceAccount , "ANY_USER_ACCOUNT" => GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType :: AnyUserAccount , "IDENTITY_TYPE_UNSPECIFIED" => GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType :: IdentityTypeUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "ANY_IDENTITY" => GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType :: AnyIdentity , "ANY_SERVICE_ACCOUNT" => GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType :: AnyServiceAccount , "ANY_USER_ACCOUNT" => GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType :: AnyUserAccount , "IDENTITY_TYPE_UNSPECIFIED" => GoogleIdentityAccesscontextmanagerV1EgressFromIdentityType :: IdentityTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1830,7 +1868,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleIdentityAccesscontextmanagerV1EgressTo {
-        #[doc = "A list of ApiOperations that this egress rule applies to. A request matches if it contains an operation/service in this list."]
+        #[doc = "A list of ApiOperations allowed to be performed by the sources specified in the corresponding EgressFrom. A request matches if it uses an operation/service in this list."]
         #[serde(
             rename = "operations",
             default,
@@ -1839,7 +1877,7 @@ pub mod schemas {
         pub operations: ::std::option::Option<
             Vec<crate::schemas::GoogleIdentityAccesscontextmanagerV1ApiOperation>,
         >,
-        #[doc = "A list of resources, currently only projects in the form `projects/`, that match this to stanza. A request matches if it contains a resource in this list. If `*` is specified for resources, then this EgressTo rule will authorize access to all resources outside the perimeter."]
+        #[doc = "A list of resources, currently only projects in the form `projects/`, that are allowed to be accessed by sources defined in the corresponding EgressFrom. A request matches if it contains a resource in this list. If `*` is specified for `resources`, then this EgressTo rule will authorize access to all resources outside the perimeter."]
         #[serde(
             rename = "resources",
             default,
@@ -1933,7 +1971,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType, ()>
         {
-            Ok ( match s { "ANY_IDENTITY" => GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType :: AnyIdentity , "ANY_SERVICE_ACCOUNT" => GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType :: AnyServiceAccount , "ANY_USER_ACCOUNT" => GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType :: AnyUserAccount , "IDENTITY_TYPE_UNSPECIFIED" => GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType :: IdentityTypeUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "ANY_IDENTITY" => GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType :: AnyIdentity , "ANY_SERVICE_ACCOUNT" => GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType :: AnyServiceAccount , "ANY_USER_ACCOUNT" => GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType :: AnyUserAccount , "IDENTITY_TYPE_UNSPECIFIED" => GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType :: IdentityTypeUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType {
@@ -1957,7 +1995,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "ANY_IDENTITY" => GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType :: AnyIdentity , "ANY_SERVICE_ACCOUNT" => GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType :: AnyServiceAccount , "ANY_USER_ACCOUNT" => GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType :: AnyUserAccount , "IDENTITY_TYPE_UNSPECIFIED" => GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType :: IdentityTypeUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "ANY_IDENTITY" => GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType :: AnyIdentity , "ANY_SERVICE_ACCOUNT" => GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType :: AnyServiceAccount , "ANY_USER_ACCOUNT" => GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType :: AnyUserAccount , "IDENTITY_TYPE_UNSPECIFIED" => GoogleIdentityAccesscontextmanagerV1IngressFromIdentityType :: IdentityTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -2027,7 +2065,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleIdentityAccesscontextmanagerV1IngressSource {
-        #[doc = "An AccessLevel resource name that allow resources within the ServicePerimeters to be accessed from the internet. AccessLevels listed must be in the same policy as this ServicePerimeter. Referencing a nonexistent AccessLevel will cause an error. If no AccessLevel names are listed, resources within the perimeter can only be accessed via Google Cloud calls with request origins within the perimeter. Example: `accessPolicies/MY_POLICY/accessLevels/MY_LEVEL`. If `*` is specified, then all IngressSources will be allowed."]
+        #[doc = "An AccessLevel resource name that allow resources within the ServicePerimeters to be accessed from the internet. AccessLevels listed must be in the same policy as this ServicePerimeter. Referencing a nonexistent AccessLevel will cause an error. If no AccessLevel names are listed, resources within the perimeter can only be accessed via Google Cloud calls with request origins within the perimeter. Example: `accessPolicies/MY_POLICY/accessLevels/MY_LEVEL`. If a single `*` is specified for `access_level`, then all IngressSources will be allowed."]
         #[serde(
             rename = "accessLevel",
             default,
@@ -2065,7 +2103,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleIdentityAccesscontextmanagerV1IngressTo {
-        #[doc = "A list of ApiOperations the sources specified in corresponding IngressFrom are allowed to perform in this ServicePerimeter."]
+        #[doc = "A list of ApiOperations allowed to be performed by the sources specified in corresponding IngressFrom in this ServicePerimeter."]
         #[serde(
             rename = "operations",
             default,
@@ -2074,7 +2112,7 @@ pub mod schemas {
         pub operations: ::std::option::Option<
             Vec<crate::schemas::GoogleIdentityAccesscontextmanagerV1ApiOperation>,
         >,
-        #[doc = "A list of resources, currently only projects in the form `projects/`, protected by this ServicePerimeter that are allowed to be accessed by sources defined in the corresponding IngressFrom. A request matches if it contains a resource in this list. If `*` is specified for resources, then this IngressTo rule will authorize access to all resources inside the perimeter, provided that the request also matches the `operations` field."]
+        #[doc = "A list of resources, currently only projects in the form `projects/`, protected by this ServicePerimeter that are allowed to be accessed by sources defined in the corresponding IngressFrom. If a single `*` is specified, then access to all resources inside the perimeter are allowed."]
         #[serde(
             rename = "resources",
             default,
@@ -2324,7 +2362,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Required. Resource name for the ServicePerimeter. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`"]
+        #[doc = "Required. Resource name for the ServicePerimeter. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}`"]
         #[serde(
             rename = "name",
             default,
@@ -2412,7 +2450,7 @@ pub mod schemas {
             GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType,
             (),
         > {
-            Ok ( match s { "PERIMETER_TYPE_BRIDGE" => GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType :: PerimeterTypeBridge , "PERIMETER_TYPE_REGULAR" => GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType :: PerimeterTypeRegular , _ => return Err ( ( ) ) , } )
+            Ok (match s { "PERIMETER_TYPE_BRIDGE" => GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType :: PerimeterTypeBridge , "PERIMETER_TYPE_REGULAR" => GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType :: PerimeterTypeRegular , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType {
@@ -2436,7 +2474,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "PERIMETER_TYPE_BRIDGE" => GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType :: PerimeterTypeBridge , "PERIMETER_TYPE_REGULAR" => GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType :: PerimeterTypeRegular , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "PERIMETER_TYPE_BRIDGE" => GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType :: PerimeterTypeBridge , "PERIMETER_TYPE_REGULAR" => GoogleIdentityAccesscontextmanagerV1ServicePerimeterPerimeterType :: PerimeterTypeRegular , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -2672,7 +2710,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audit_configs: ::std::option::Option<Vec<crate::schemas::AuditConfig>>,
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,

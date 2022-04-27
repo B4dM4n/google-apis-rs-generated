@@ -1,8 +1,8 @@
 #![doc = "# Resources and Methods\n    * [available_projects](resources/available_projects/struct.AvailableProjectsActions.html)\n      * [*list*](resources/available_projects/struct.ListRequestBuilder.html)\n    * [operations](resources/operations/struct.OperationsActions.html)\n      * [*get*](resources/operations/struct.GetRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [*addFirebase*](resources/projects/struct.AddFirebaseRequestBuilder.html), [*addGoogleAnalytics*](resources/projects/struct.AddGoogleAnalyticsRequestBuilder.html), [*get*](resources/projects/struct.GetRequestBuilder.html), [*getAdminSdkConfig*](resources/projects/struct.GetAdminSdkConfigRequestBuilder.html), [*getAnalyticsDetails*](resources/projects/struct.GetAnalyticsDetailsRequestBuilder.html), [*list*](resources/projects/struct.ListRequestBuilder.html), [*patch*](resources/projects/struct.PatchRequestBuilder.html), [*removeAnalytics*](resources/projects/struct.RemoveAnalyticsRequestBuilder.html), [*searchApps*](resources/projects/struct.SearchAppsRequestBuilder.html)\n      * [android_apps](resources/projects/android_apps/struct.AndroidAppsActions.html)\n        * [*create*](resources/projects/android_apps/struct.CreateRequestBuilder.html), [*get*](resources/projects/android_apps/struct.GetRequestBuilder.html), [*getConfig*](resources/projects/android_apps/struct.GetConfigRequestBuilder.html), [*list*](resources/projects/android_apps/struct.ListRequestBuilder.html), [*patch*](resources/projects/android_apps/struct.PatchRequestBuilder.html)\n        * [sha](resources/projects/android_apps/sha/struct.ShaActions.html)\n          * [*create*](resources/projects/android_apps/sha/struct.CreateRequestBuilder.html), [*delete*](resources/projects/android_apps/sha/struct.DeleteRequestBuilder.html), [*list*](resources/projects/android_apps/sha/struct.ListRequestBuilder.html)\n      * [available_locations](resources/projects/available_locations/struct.AvailableLocationsActions.html)\n        * [*list*](resources/projects/available_locations/struct.ListRequestBuilder.html)\n      * [default_location](resources/projects/default_location/struct.DefaultLocationActions.html)\n        * [*finalize*](resources/projects/default_location/struct.FinalizeRequestBuilder.html)\n      * [ios_apps](resources/projects/ios_apps/struct.IosAppsActions.html)\n        * [*create*](resources/projects/ios_apps/struct.CreateRequestBuilder.html), [*get*](resources/projects/ios_apps/struct.GetRequestBuilder.html), [*getConfig*](resources/projects/ios_apps/struct.GetConfigRequestBuilder.html), [*list*](resources/projects/ios_apps/struct.ListRequestBuilder.html), [*patch*](resources/projects/ios_apps/struct.PatchRequestBuilder.html)\n      * [web_apps](resources/projects/web_apps/struct.WebAppsActions.html)\n        * [*create*](resources/projects/web_apps/struct.CreateRequestBuilder.html), [*get*](resources/projects/web_apps/struct.GetRequestBuilder.html), [*getConfig*](resources/projects/web_apps/struct.GetConfigRequestBuilder.html), [*list*](resources/projects/web_apps/struct.ListRequestBuilder.html), [*patch*](resources/projects/web_apps/struct.PatchRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
-    #[doc = "View your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
+    #[doc = "View your data across Google Cloud services and see the email address of your Google Account\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
     pub const CLOUD_PLATFORM_READ_ONLY: &str =
         "https://www.googleapis.com/auth/cloud-platform.read-only";
     #[doc = "View and administer all your Firebase data and settings\n\n`https://www.googleapis.com/auth/firebase`"]
@@ -31,20 +31,6 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location_id: ::std::option::Option<String>,
-        #[doc = "Deprecated. Instead, to link a Project with a Google Analytics account, call [`AddGoogleAnalytics`](../../v1beta1/projects/addGoogleAnalytics) after you add Firebase resources to the GCP `Project`. The region code (CLDR) that the account will use for Google Analytics data For example: US, GB, or DE In Java, use `com.google.i18n.identifiers.RegionCode`."]
-        #[serde(
-            rename = "regionCode",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub region_code: ::std::option::Option<String>,
-        #[doc = "Deprecated. Instead, to link a Project with a Google Analytics account, call [`AddGoogleAnalytics`](../../v1beta1/projects/addGoogleAnalytics) after you add Firebase resources to the GCP `Project`. The time zone that the account will use for Google Analytics data. For example: America/Los_Angeles or Africa/Abidjan"]
-        #[serde(
-            rename = "timeZone",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub time_zone: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for AddFirebaseRequest {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -197,6 +183,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AnalyticsProperty {
+        #[doc = "Output only. The ID of the [Google Analytics account](https://www.google.com/analytics/) for the Google Analytics property associated with the specified FirebaseProject."]
+        #[serde(
+            rename = "analyticsAccountId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub analytics_account_id: ::std::option::Option<String>,
         #[doc = "The display name of the Google Analytics property associated with the specified `FirebaseProject`."]
         #[serde(
             rename = "displayName",
@@ -235,6 +228,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AndroidApp {
+        #[doc = "The key_id of the GCP ApiKey associated with this App. If set must have no restrictions, or only have restrictions that are valid for the associated Firebase App. Cannot be set in create requests, instead an existing valid API Key will be chosen, or if no valid API Keys exist, one will be provisioned for you. Cannot be set to an empty value in update requests."]
+        #[serde(
+            rename = "apiKeyId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub api_key_id: ::std::option::Option<String>,
         #[doc = "Immutable. The globally unique, Firebase-assigned identifier for the `AndroidApp`. This identifier should be treated as an opaque token, as the data format is not specified."]
         #[serde(
             rename = "appId",
@@ -722,6 +722,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct IosApp {
+        #[doc = "The key_id of the GCP ApiKey associated with this App. If set must have no restrictions, or only have restrictions that are valid for the associated Firebase App. Cannot be set in create requests, instead an existing valid API Key will be chosen, or if no valid API Keys exist, one will be provisioned for you. Cannot be set to an empty value in update requests."]
+        #[serde(
+            rename = "apiKeyId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub api_key_id: ::std::option::Option<String>,
         #[doc = "Immutable. The globally unique, Firebase-assigned identifier for the `IosApp`. This identifier should be treated as an opaque token, as the data format is not specified."]
         #[serde(
             rename = "appId",
@@ -764,6 +771,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_id: ::std::option::Option<String>,
+        #[doc = "The Apple Developer Team ID associated with the App in the App Store."]
+        #[serde(
+            rename = "teamId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub team_id: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for IosApp {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1703,7 +1717,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub app: ::std::option::Option<String>,
-        #[doc = "Applicable for Firebase Web Apps only. The unique Google-assigned identifier of the Google Analytics web stream associated with the Firebase Web App. Firebase SDKs use this ID to interact with Google Analytics APIs. Learn more about this ID and Google Analytics web streams in the [Analytics documentation](https://support.google.com/analytics/topic/9303475)."]
+        #[doc = "Applicable for Firebase Web Apps only. The unique Google-assigned identifier of the Google Analytics web stream associated with the Firebase Web App. Firebase SDKs use this ID to interact with Google Analytics APIs. Learn more about this ID and Google Analytics web streams in the [Analytics documentation](https://support.google.com/analytics/answer/9304153)."]
         #[serde(
             rename = "measurementId",
             default,
@@ -1742,6 +1756,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct WebApp {
+        #[doc = "The key_id of the GCP ApiKey associated with this App. If set must have no restrictions, or only have restrictions that are valid for the associated Firebase App. Cannot be set in create requests, instead an existing valid API Key will be chosen, or if no valid API Keys exist, one will be provisioned for you. Cannot be set to an empty value in update requests."]
+        #[serde(
+            rename = "apiKeyId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub api_key_id: ::std::option::Option<String>,
         #[doc = "Immutable. The globally unique, Firebase-assigned identifier for the `WebApp`. This identifier should be treated as an opaque token, as the data format is not specified."]
         #[serde(
             rename = "appId",
@@ -1843,7 +1864,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location_id: ::std::option::Option<String>,
-        #[doc = "The unique Google-assigned identifier of the Google Analytics web stream associated with the `WebApp`. Firebase SDKs use this ID to interact with Google Analytics APIs. This field is only present if the `WebApp` is linked to a web stream in a Google Analytics App + Web property. Learn more about this ID and Google Analytics web streams in the [Analytics documentation](https://support.google.com/analytics/topic/9303475). To generate a `measurementId` and link the `WebApp` with a Google Analytics web stream, call [`AddGoogleAnalytics`](../../v1beta1/projects/addGoogleAnalytics). For apps using the Firebase JavaScript SDK v7.20.0 and later, Firebase dynamically fetches the `measurementId` when your app initializes Analytics. Having this ID in your config object is optional, but it does serve as a fallback in the rare case that the dynamic fetch fails."]
+        #[doc = "The unique Google-assigned identifier of the Google Analytics web stream associated with the `WebApp`. Firebase SDKs use this ID to interact with Google Analytics APIs. This field is only present if the `WebApp` is linked to a web stream in a Google Analytics App + Web property. Learn more about this ID and Google Analytics web streams in the [Analytics documentation](https://support.google.com/analytics/answer/9304153). To generate a `measurementId` and link the `WebApp` with a Google Analytics web stream, call [`AddGoogleAnalytics`](../../v1beta1/projects/addGoogleAnalytics). For apps using the Firebase JavaScript SDK v7.20.0 and later, Firebase dynamically fetches the `measurementId` when your app initializes Analytics. Having this ID in your config object is optional, but it does serve as a fallback in the rare case that the dynamic fetch fails."]
         #[serde(
             rename = "measurementId",
             default,

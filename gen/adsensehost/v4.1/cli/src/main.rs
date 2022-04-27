@@ -134,7 +134,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: get and list");
         {
-            let mcmd = SubCommand::with_name("get").about("Get information about one of the ad clients in the specified publisher\'s AdSense account.");
+            let mcmd = SubCommand::with_name("get").about("Get information about one of the ad clients in the specified publisher's AdSense account.");
             adclients1 = adclients1.subcommand(mcmd);
         }
         {
@@ -167,7 +167,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("list")
-                .about("List all ad units in the specified publisher\'s AdSense account.");
+                .about("List all ad units in the specified publisher's AdSense account.");
             adunits1 = adunits1.subcommand(mcmd);
         }
         {

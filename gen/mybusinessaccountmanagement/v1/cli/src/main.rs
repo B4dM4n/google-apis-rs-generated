@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("mybusinessaccountmanagement1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210318")
+            .version("0.1.0-20220426")
             .about("The My Business Account Management API provides an interface for managing access to a location on Google.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -54,7 +54,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut locations0 = SubCommand::with_name("locations")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: admins");
+            .about("methods: transfer");
+        {
+            let mcmd = SubCommand::with_name("transfer").about("Moves a location from an account that the user owns to another account that the same user administers. The user must be an owner of the account the location is currently associated with and must also be at least a manager of the destination account.");
+            locations0 = locations0.subcommand(mcmd);
+        }
         let mut admins1 = SubCommand::with_name("admins")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, list and patch");

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("composer1_beta1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210310")
+            .version("0.1.0-20220420")
             .about("Manages Apache Airflow environments on Google Cloud Platform.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -40,8 +40,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("sub-resources: environments, image_versions and operations");
         let mut environments2 = SubCommand::with_name("environments")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list, patch and restart_web_server");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: check_upgrade, create, delete, get, list, load_snapshot, patch, restart_web_server and save_snapshot");
+        {
+            let mcmd = SubCommand::with_name("check_upgrade").about("Check if an upgrade operation on the environment will succeed. In case of problems detailed info can be found in the returned Operation.");
+            environments2 = environments2.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("create").about("Create a new environment.");
             environments2 = environments2.subcommand(mcmd);
@@ -59,12 +63,20 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             environments2 = environments2.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("load_snapshot").about("Loads a snapshot of a Cloud Composer environment. As a result of this operation, a snapshot of environment's specified in LoadSnapshotRequest is loaded into the environment.");
+            environments2 = environments2.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("patch").about("Update an environment.");
             environments2 = environments2.subcommand(mcmd);
         }
         {
             let mcmd =
                 SubCommand::with_name("restart_web_server").about("Restart Airflow web server.");
+            environments2 = environments2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("save_snapshot").about("Creates a snapshots of a Cloud Composer environment. As a result of this operation, snapshot of environment's state is stored in a location specified in the SaveSnapshotRequest.");
             environments2 = environments2.subcommand(mcmd);
         }
         let mut image_versions2 = SubCommand::with_name("image_versions")
@@ -79,7 +91,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete, get and list");
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn\'t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.");
             operations2 = operations2.subcommand(mcmd);
         }
         {
@@ -87,7 +99,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             operations2 = operations2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn\'t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations2 = operations2.subcommand(mcmd);
         }
         locations1 = locations1.subcommand(operations2);

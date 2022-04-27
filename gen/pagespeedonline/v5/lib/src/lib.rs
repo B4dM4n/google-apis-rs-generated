@@ -8,6 +8,13 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct AuditRefs {
+        #[doc = "The conventional acronym for the audit/metric."]
+        #[serde(
+            rename = "acronym",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub acronym: ::std::option::Option<String>,
         #[doc = "The category group that the audit belongs to (optional)."]
         #[serde(
             rename = "group",
@@ -22,6 +29,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
+        #[doc = "Any audit IDs closely relevant to this one."]
+        #[serde(
+            rename = "relevantAudits",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub relevant_audits: ::std::option::Option<Vec<String>>,
         #[doc = "The weight this audit's score has on the overall category score."]
         #[serde(
             rename = "weight",
@@ -323,6 +337,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
+        #[doc = "The unit of the numeric_value field. Used to format the numeric value for display."]
+        #[serde(
+            rename = "numericUnit",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub numeric_unit: ::std::option::Option<String>,
         #[doc = "A numeric value that has a meaning specific to the audit, e.g. the number of nodes in the DOM or the timestamp of a specific load event. More information can be found in the audit details, if present."]
         #[serde(
             rename = "numericValue",
@@ -727,6 +748,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audit_group_expand_tooltip: ::std::option::Option<String>,
+        #[doc = "Text link pointing to the Lighthouse scoring calculator. This link immediately follows a sentence stating the performance score is calculated from the perf metrics."]
+        #[serde(
+            rename = "calculatorLink",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub calculator_link: ::std::option::Option<String>,
         #[doc = "The label for the initial request in a critical request chain."]
         #[serde(
             rename = "crcInitialNavigation",
@@ -741,6 +769,62 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub crc_longest_duration_label: ::std::option::Option<String>,
+        #[doc = "Option in a dropdown menu that copies the Lighthouse JSON object to the system clipboard."]
+        #[serde(
+            rename = "dropdownCopyJSON",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dropdown_copy_json: ::std::option::Option<String>,
+        #[doc = "Option in a dropdown menu that toggles the themeing of the report between Light(default) and Dark themes."]
+        #[serde(
+            rename = "dropdownDarkTheme",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dropdown_dark_theme: ::std::option::Option<String>,
+        #[doc = "Option in a dropdown menu that opens a full Lighthouse report in a print dialog."]
+        #[serde(
+            rename = "dropdownPrintExpanded",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dropdown_print_expanded: ::std::option::Option<String>,
+        #[doc = "Option in a dropdown menu that opens a small, summary report in a print dialog."]
+        #[serde(
+            rename = "dropdownPrintSummary",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dropdown_print_summary: ::std::option::Option<String>,
+        #[doc = "Option in a dropdown menu that saves the current report as a new GitHub Gist."]
+        #[serde(
+            rename = "dropdownSaveGist",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dropdown_save_gist: ::std::option::Option<String>,
+        #[doc = "Option in a dropdown menu that saves the Lighthouse report HTML locally to the system as a '.html' file."]
+        #[serde(
+            rename = "dropdownSaveHTML",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dropdown_save_html: ::std::option::Option<String>,
+        #[doc = "Option in a dropdown menu that saves the Lighthouse JSON object to the local system as a '.json' file."]
+        #[serde(
+            rename = "dropdownSaveJSON",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dropdown_save_json: ::std::option::Option<String>,
+        #[doc = "Option in a dropdown menu that opens the current report in the Lighthouse Viewer Application."]
+        #[serde(
+            rename = "dropdownViewer",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dropdown_viewer: ::std::option::Option<String>,
         #[doc = "The label shown next to an audit or metric that has had an error."]
         #[serde(
             rename = "errorLabel",
@@ -755,6 +839,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub error_missing_audit_info: ::std::option::Option<String>,
+        #[doc = "Label for button to create an issue against the Lighthouse GitHub project."]
+        #[serde(
+            rename = "footerIssue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub footer_issue: ::std::option::Option<String>,
         #[doc = "The title of the lab data performance category."]
         #[serde(
             rename = "labDataTitle",
@@ -762,7 +853,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub lab_data_title: ::std::option::Option<String>,
-        #[doc = "The disclaimer shown under performance explaning that the network can vary."]
+        #[doc = "The disclaimer shown under performance explaining that the network can vary."]
         #[serde(
             rename = "lsPerformanceCategoryDescription",
             default,
@@ -804,6 +895,111 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub passed_audits_group_title: ::std::option::Option<String>,
+        #[doc = "Descriptive explanation for emulation setting when emulating a generic desktop form factor, as opposed to a mobile-device like form factor."]
+        #[serde(
+            rename = "runtimeDesktopEmulation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_desktop_emulation: ::std::option::Option<String>,
+        #[doc = "Descriptive explanation for emulation setting when emulating a Nexus 5X mobile device."]
+        #[serde(
+            rename = "runtimeMobileEmulation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_mobile_emulation: ::std::option::Option<String>,
+        #[doc = "Descriptive explanation for emulation setting when no device emulation is set."]
+        #[serde(
+            rename = "runtimeNoEmulation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_no_emulation: ::std::option::Option<String>,
+        #[doc = "Label for a row in a table that shows the version of the Axe library used"]
+        #[serde(
+            rename = "runtimeSettingsAxeVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_settings_axe_version: ::std::option::Option<String>,
+        #[doc = "Label for a row in a table that shows the estimated CPU power of the machine running Lighthouse. Example row values: 532, 1492, 783."]
+        #[serde(
+            rename = "runtimeSettingsBenchmark",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_settings_benchmark: ::std::option::Option<String>,
+        #[doc = "Label for a row in a table that shows in what tool Lighthouse is being run (e.g. The lighthouse CLI, Chrome DevTools, Lightrider, WebPageTest, etc)."]
+        #[serde(
+            rename = "runtimeSettingsChannel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_settings_channel: ::std::option::Option<String>,
+        #[doc = "Label for a row in a table that describes the CPU throttling conditions that were used during a Lighthouse run, if any."]
+        #[serde(
+            rename = "runtimeSettingsCPUThrottling",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_settings_cpu_throttling: ::std::option::Option<String>,
+        #[doc = "Label for a row in a table that describes the kind of device that was emulated for the Lighthouse run. Example values for row elements: 'No Emulation', 'Emulated Desktop', etc."]
+        #[serde(
+            rename = "runtimeSettingsDevice",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_settings_device: ::std::option::Option<String>,
+        #[doc = "Label for a row in a table that shows the time at which a Lighthouse run was conducted; formatted as a timestamp, e.g. Jan 1, 1970 12:00 AM UTC."]
+        #[serde(
+            rename = "runtimeSettingsFetchTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_settings_fetch_time: ::std::option::Option<String>,
+        #[doc = "Label for a row in a table that describes the network throttling conditions that were used during a Lighthouse run, if any."]
+        #[serde(
+            rename = "runtimeSettingsNetworkThrottling",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_settings_network_throttling: ::std::option::Option<String>,
+        #[doc = "Title of the Runtime settings table in a Lighthouse report. Runtime settings are the environment configurations that a specific report used at auditing time."]
+        #[serde(
+            rename = "runtimeSettingsTitle",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_settings_title: ::std::option::Option<String>,
+        #[doc = "Label for a row in a table that shows the User Agent that was detected on the Host machine that ran Lighthouse."]
+        #[serde(
+            rename = "runtimeSettingsUA",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_settings_ua: ::std::option::Option<String>,
+        #[doc = "Label for a row in a table that shows the User Agent that was used to send out all network requests during the Lighthouse run."]
+        #[serde(
+            rename = "runtimeSettingsUANetwork",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_settings_ua_network: ::std::option::Option<String>,
+        #[doc = "Label for a row in a table that shows the URL that was audited during a Lighthouse run."]
+        #[serde(
+            rename = "runtimeSettingsUrl",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_settings_url: ::std::option::Option<String>,
+        #[doc = "Descriptive explanation for a runtime setting that is set to an unknown value."]
+        #[serde(
+            rename = "runtimeUnknown",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_unknown: ::std::option::Option<String>,
         #[doc = "The label that explains the score gauges scale (0-49, 50-89, 90-100)."]
         #[serde(
             rename = "scorescaleLabel",
@@ -811,6 +1007,41 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub scorescale_label: ::std::option::Option<String>,
+        #[doc = "Label preceding a radio control for filtering the list of audits. The radio choices are various performance metrics (FCP, LCP, TBT), and if chosen, the audits in the report are hidden if they are not relevant to the selected metric."]
+        #[serde(
+            rename = "showRelevantAudits",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub show_relevant_audits: ::std::option::Option<String>,
+        #[doc = "The label for the button to show only a few lines of a snippet"]
+        #[serde(
+            rename = "snippetCollapseButtonLabel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub snippet_collapse_button_label: ::std::option::Option<String>,
+        #[doc = "The label for the button to show all lines of a snippet"]
+        #[serde(
+            rename = "snippetExpandButtonLabel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub snippet_expand_button_label: ::std::option::Option<String>,
+        #[doc = "This label is for a filter checkbox above a table of items"]
+        #[serde(
+            rename = "thirdPartyResourcesLabel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub third_party_resources_label: ::std::option::Option<String>,
+        #[doc = "Descriptive explanation for environment throttling that was provided by the runtime environment instead of provided by Lighthouse throttling."]
+        #[serde(
+            rename = "throttlingProvided",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub throttling_provided: ::std::option::Option<String>,
         #[doc = "The label shown preceding important warnings that may have invalidated an entire report."]
         #[serde(
             rename = "toplevelWarningsMessage",
@@ -825,6 +1056,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub variance_disclaimer: ::std::option::Option<String>,
+        #[doc = "Label for a button that opens the Treemap App"]
+        #[serde(
+            rename = "viewTreemapLabel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub view_treemap_label: ::std::option::Option<String>,
+        #[doc = "The heading that is shown above a list of audits that have warnings"]
+        #[serde(
+            rename = "warningAuditsGroupTitle",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub warning_audits_group_title: ::std::option::Option<String>,
         #[doc = "The label shown above a bulleted list of warnings."]
         #[serde(
             rename = "warningHeader",

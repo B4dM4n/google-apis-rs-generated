@@ -1,8 +1,8 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [operations](resources/projects/operations/struct.OperationsActions.html)\n        * [*get*](resources/projects/operations/struct.GetRequestBuilder.html)\n      * [sites](resources/projects/sites/struct.SitesActions.html)\n        * [*create*](resources/projects/sites/struct.CreateRequestBuilder.html), [*delete*](resources/projects/sites/struct.DeleteRequestBuilder.html), [*get*](resources/projects/sites/struct.GetRequestBuilder.html), [*getConfig*](resources/projects/sites/struct.GetConfigRequestBuilder.html), [*list*](resources/projects/sites/struct.ListRequestBuilder.html), [*patch*](resources/projects/sites/struct.PatchRequestBuilder.html), [*updateConfig*](resources/projects/sites/struct.UpdateConfigRequestBuilder.html)\n        * [channels](resources/projects/sites/channels/struct.ChannelsActions.html)\n          * [*create*](resources/projects/sites/channels/struct.CreateRequestBuilder.html), [*delete*](resources/projects/sites/channels/struct.DeleteRequestBuilder.html), [*get*](resources/projects/sites/channels/struct.GetRequestBuilder.html), [*list*](resources/projects/sites/channels/struct.ListRequestBuilder.html), [*patch*](resources/projects/sites/channels/struct.PatchRequestBuilder.html)\n          * [releases](resources/projects/sites/channels/releases/struct.ReleasesActions.html)\n            * [*create*](resources/projects/sites/channels/releases/struct.CreateRequestBuilder.html), [*list*](resources/projects/sites/channels/releases/struct.ListRequestBuilder.html)\n        * [domains](resources/projects/sites/domains/struct.DomainsActions.html)\n          * [*create*](resources/projects/sites/domains/struct.CreateRequestBuilder.html), [*delete*](resources/projects/sites/domains/struct.DeleteRequestBuilder.html), [*get*](resources/projects/sites/domains/struct.GetRequestBuilder.html), [*list*](resources/projects/sites/domains/struct.ListRequestBuilder.html), [*update*](resources/projects/sites/domains/struct.UpdateRequestBuilder.html)\n        * [releases](resources/projects/sites/releases/struct.ReleasesActions.html)\n          * [*create*](resources/projects/sites/releases/struct.CreateRequestBuilder.html), [*list*](resources/projects/sites/releases/struct.ListRequestBuilder.html)\n        * [versions](resources/projects/sites/versions/struct.VersionsActions.html)\n          * [*clone*](resources/projects/sites/versions/struct.CloneRequestBuilder.html), [*create*](resources/projects/sites/versions/struct.CreateRequestBuilder.html), [*delete*](resources/projects/sites/versions/struct.DeleteRequestBuilder.html), [*list*](resources/projects/sites/versions/struct.ListRequestBuilder.html), [*patch*](resources/projects/sites/versions/struct.PatchRequestBuilder.html), [*populateFiles*](resources/projects/sites/versions/struct.PopulateFilesRequestBuilder.html)\n          * [files](resources/projects/sites/versions/files/struct.FilesActions.html)\n            * [*list*](resources/projects/sites/versions/files/struct.ListRequestBuilder.html)\n    * [sites](resources/sites/struct.SitesActions.html)\n      * [*getConfig*](resources/sites/struct.GetConfigRequestBuilder.html), [*updateConfig*](resources/sites/struct.UpdateConfigRequestBuilder.html)\n      * [channels](resources/sites/channels/struct.ChannelsActions.html)\n        * [*create*](resources/sites/channels/struct.CreateRequestBuilder.html), [*delete*](resources/sites/channels/struct.DeleteRequestBuilder.html), [*get*](resources/sites/channels/struct.GetRequestBuilder.html), [*list*](resources/sites/channels/struct.ListRequestBuilder.html), [*patch*](resources/sites/channels/struct.PatchRequestBuilder.html)\n        * [releases](resources/sites/channels/releases/struct.ReleasesActions.html)\n          * [*create*](resources/sites/channels/releases/struct.CreateRequestBuilder.html), [*list*](resources/sites/channels/releases/struct.ListRequestBuilder.html)\n      * [domains](resources/sites/domains/struct.DomainsActions.html)\n        * [*create*](resources/sites/domains/struct.CreateRequestBuilder.html), [*delete*](resources/sites/domains/struct.DeleteRequestBuilder.html), [*get*](resources/sites/domains/struct.GetRequestBuilder.html), [*list*](resources/sites/domains/struct.ListRequestBuilder.html), [*update*](resources/sites/domains/struct.UpdateRequestBuilder.html)\n      * [releases](resources/sites/releases/struct.ReleasesActions.html)\n        * [*create*](resources/sites/releases/struct.CreateRequestBuilder.html), [*list*](resources/sites/releases/struct.ListRequestBuilder.html)\n      * [versions](resources/sites/versions/struct.VersionsActions.html)\n        * [*clone*](resources/sites/versions/struct.CloneRequestBuilder.html), [*create*](resources/sites/versions/struct.CreateRequestBuilder.html), [*delete*](resources/sites/versions/struct.DeleteRequestBuilder.html), [*list*](resources/sites/versions/struct.ListRequestBuilder.html), [*patch*](resources/sites/versions/struct.PatchRequestBuilder.html), [*populateFiles*](resources/sites/versions/struct.PopulateFilesRequestBuilder.html)\n        * [files](resources/sites/versions/files/struct.FilesActions.html)\n          * [*list*](resources/sites/versions/files/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
-    #[doc = "View your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
+    #[doc = "View your data across Google Cloud services and see the email address of your Google Account\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
     pub const CLOUD_PLATFORM_READ_ONLY: &str =
         "https://www.googleapis.com/auth/cloud-platform.read-only";
     #[doc = "View and administer all your Firebase data and settings\n\n`https://www.googleapis.com/auth/firebase`"]
@@ -1320,44 +1320,6 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct PreviewConfig {
-        #[doc = "If true, preview URLs are enabled for this version."]
-        #[serde(
-            rename = "active",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub active: ::std::option::Option<bool>,
-        #[doc = "Indicates the expiration time for previewing this version; preview URL requests received after this time will 404."]
-        #[serde(
-            rename = "expireTime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub expire_time: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for PreviewConfig {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for PreviewConfig {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
     pub struct Redirect {
         #[doc = "The user-supplied [glob](https://firebase.google.com/docs/hosting/full-config#glob_pattern_matching) to match against the request URL path."]
         #[serde(
@@ -2131,13 +2093,6 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Deprecated in favor of [site channels](sites.channels)."]
-        #[serde(
-            rename = "preview",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub preview: ::std::option::Option<crate::schemas::PreviewConfig>,
         #[doc = "The deploy status of the version. For a successful deploy, call [`CreateVersion`](sites.versions/create) to make a new version (`CREATED` status), [upload all desired files](sites.versions/populateFiles) to the version, then [update](sites.versions/patch) the version to the `FINALIZED` status. Note that if you leave the version in the `CREATED` state for more than 12 hours, the system will automatically mark the version as `ABANDONED`. You can also change the status of a version to `DELETED` by calling [`DeleteVersion`](sites.versions/delete)."]
         #[serde(
             rename = "status",

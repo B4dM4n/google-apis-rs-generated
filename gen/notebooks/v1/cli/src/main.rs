@@ -15,8 +15,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("notebooks1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210305")
-            .about("AI Platform Notebooks API is used to manage notebook resources in Google Cloud.")
+            .version("0.1.0-20220419")
+            .about("Notebooks API is used to manage notebook resources in Google Cloud.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
                 .long("scope")
@@ -72,7 +72,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: create, delete, get and list");
         {
             let mcmd = SubCommand::with_name("create")
-                .about("Creates a new Scheduled Notebook in a given project and location.");
+                .about("Creates a new Execution in a given project and location.");
             executions2 = executions2.subcommand(mcmd);
         }
         {
@@ -90,7 +90,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut instances2 = SubCommand::with_name("instances")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: create, delete, get, get_iam_policy, get_instance_health, is_upgradeable, list, register, report, reset, set_accelerator, set_iam_policy, set_labels, set_machine_type, start, stop, test_iam_permissions, upgrade and upgrade_internal");
+                        .about("methods: create, delete, get, get_iam_policy, get_instance_health, is_upgradeable, list, register, report, reset, rollback, set_accelerator, set_iam_policy, set_labels, set_machine_type, start, stop, test_iam_permissions, update_config, update_metadata_items, update_shielded_instance_config, upgrade and upgrade_internal");
         {
             let mcmd = SubCommand::with_name("create")
                 .about("Creates a new Instance in a given project and location.");
@@ -136,6 +136,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             instances2 = instances2.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("rollback")
+                .about("Rollbacks a notebook instance to the previous version.");
+            instances2 = instances2.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("set_accelerator")
                 .about("Updates the guest accelerators of a single Instance.");
             instances2 = instances2.subcommand(mcmd);
@@ -167,6 +172,21 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             instances2 = instances2.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("update_config")
+                .about("Update Notebook Instance configurations.");
+            instances2 = instances2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("update_metadata_items")
+                .about("Add/update metadata items for an instance.");
+            instances2 = instances2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("update_shielded_instance_config")
+                .about("Updates the Shielded instance configuration of a single Instance.");
+            instances2 = instances2.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("upgrade")
                 .about("Upgrades a notebook instance to the latest version.");
             instances2 = instances2.subcommand(mcmd);
@@ -179,11 +199,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: cancel, delete, get and list");
         {
-            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn\'t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
+            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
             operations2 = operations2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn\'t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.");
             operations2 = operations2.subcommand(mcmd);
         }
         {
@@ -191,8 +211,66 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             operations2 = operations2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn\'t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations2 = operations2.subcommand(mcmd);
+        }
+        let mut runtimes2 = SubCommand::with_name("runtimes")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_iam_policy, list, refresh_runtime_token_internal, report_event, reset, set_iam_policy, start, stop, switch and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a new Runtime in a given project and location.");
+            runtimes2 = runtimes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a single Runtime.");
+            runtimes2 = runtimes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets details of a single Runtime. The location must be a regional endpoint rather than zonal.");
+            runtimes2 = runtimes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            runtimes2 = runtimes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists Runtimes in a given project and location.");
+            runtimes2 = runtimes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("refresh_runtime_token_internal").about("Gets an access token for the consumer service account that the customer attached to the runtime. Only accessible from the tenant instance.");
+            runtimes2 = runtimes2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("report_event").about("Report and process a runtime event.");
+            runtimes2 = runtimes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("reset").about("Resets a Managed Notebook Runtime.");
+            runtimes2 = runtimes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.");
+            runtimes2 = runtimes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("start").about("Starts a Managed Notebook Runtime. Perform \"Start\" on GPU instances; \"Resume\" on CPU instances See: https://cloud.google.com/compute/docs/instances/stop-start-instance https://cloud.google.com/compute/docs/instances/suspend-resume-instance");
+            runtimes2 = runtimes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("stop").about("Stops a Managed Notebook Runtime. Perform \"Stop\" on GPU instances; \"Suspend\" on CPU instances See: https://cloud.google.com/compute/docs/instances/stop-start-instance https://cloud.google.com/compute/docs/instances/suspend-resume-instance");
+            runtimes2 = runtimes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("switch").about("Switch a Managed Notebook Runtime.");
+            runtimes2 = runtimes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
+            runtimes2 = runtimes2.subcommand(mcmd);
         }
         let mut schedules2 = SubCommand::with_name("schedules")
             .setting(AppSettings::ColoredHelp)
@@ -222,6 +300,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             schedules2 = schedules2.subcommand(mcmd);
         }
         locations1 = locations1.subcommand(schedules2);
+        locations1 = locations1.subcommand(runtimes2);
         locations1 = locations1.subcommand(operations2);
         locations1 = locations1.subcommand(instances2);
         locations1 = locations1.subcommand(executions2);

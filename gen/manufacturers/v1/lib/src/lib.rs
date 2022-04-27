@@ -73,7 +73,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disclosure_date: ::std::option::Option<String>,
-        #[doc = "A list of excluded destinations."]
+        #[doc = "A list of excluded destinations such as \"ClientExport\", \"ClientShoppingCatalog\" or \"PartnerShoppingCatalog\". For more information, see https://support.google.com/manufacturers/answer/7443550"]
         #[serde(
             rename = "excludedDestination",
             default,
@@ -122,7 +122,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_link: ::std::option::Option<crate::schemas::Image>,
-        #[doc = "A list of included destinations."]
+        #[doc = "A list of included destinations such as \"ClientExport\", \"ClientShoppingCatalog\" or \"PartnerShoppingCatalog\". For more information, see https://support.google.com/manufacturers/answer/7443550"]
         #[serde(
             rename = "includedDestination",
             default,
@@ -240,7 +240,7 @@ pub mod schemas {
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub size_type: ::std::option::Option<String>,
+        pub size_type: ::std::option::Option<Vec<String>>,
         #[doc = "The suggested retail price (MSRP) of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#price."]
         #[serde(
             rename = "suggestedRetailPrice",
@@ -248,7 +248,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub suggested_retail_price: ::std::option::Option<crate::schemas::Price>,
-        #[doc = "The target client id. Should only be used in the accounts of the data partners."]
+        #[doc = "The target client id. Should only be used in the accounts of the data partners. For more information, see https://support.google.com/manufacturers/answer/10857344"]
         #[serde(
             rename = "targetClientId",
             default,

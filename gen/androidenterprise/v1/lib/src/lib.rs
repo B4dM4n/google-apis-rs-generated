@@ -132,6 +132,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub web_apps: ::std::option::Option<crate::schemas::AdministratorWebTokenSpecWebApps>,
+        #[doc = "Options for displaying the Zero Touch page."]
+        #[serde(
+            rename = "zeroTouch",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub zero_touch: ::std::option::Option<crate::schemas::AdministratorWebTokenSpecZeroTouch>,
     }
     impl ::google_field_selector::FieldSelector for AdministratorWebTokenSpec {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -379,6 +386,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for AdministratorWebTokenSpecWebApps {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AdministratorWebTokenSpecZeroTouch {
+        #[doc = "Whether zero-touch embedded UI is usable with this token. If enabled, the admin can link zero-touch customers to this enterprise."]
+        #[serde(
+            rename = "enabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enabled: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for AdministratorWebTokenSpecZeroTouch {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AdministratorWebTokenSpecZeroTouch {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1229,7 +1267,7 @@ pub mod schemas {
         fn from_str(
             s: &str,
         ) -> ::std::result::Result<AutoInstallConstraintDeviceIdleStateConstraint, ()> {
-            Ok ( match s { "deviceIdleNotRequired" => AutoInstallConstraintDeviceIdleStateConstraint :: DeviceIdleNotRequired , "deviceIdleRequired" => AutoInstallConstraintDeviceIdleStateConstraint :: DeviceIdleRequired , "deviceIdleStateConstraintUnspecified" => AutoInstallConstraintDeviceIdleStateConstraint :: DeviceIdleStateConstraintUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "deviceIdleNotRequired" => AutoInstallConstraintDeviceIdleStateConstraint :: DeviceIdleNotRequired , "deviceIdleRequired" => AutoInstallConstraintDeviceIdleStateConstraint :: DeviceIdleRequired , "deviceIdleStateConstraintUnspecified" => AutoInstallConstraintDeviceIdleStateConstraint :: DeviceIdleStateConstraintUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for AutoInstallConstraintDeviceIdleStateConstraint {
@@ -1251,7 +1289,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "deviceIdleNotRequired" => AutoInstallConstraintDeviceIdleStateConstraint :: DeviceIdleNotRequired , "deviceIdleRequired" => AutoInstallConstraintDeviceIdleStateConstraint :: DeviceIdleRequired , "deviceIdleStateConstraintUnspecified" => AutoInstallConstraintDeviceIdleStateConstraint :: DeviceIdleStateConstraintUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "deviceIdleNotRequired" => AutoInstallConstraintDeviceIdleStateConstraint :: DeviceIdleNotRequired , "deviceIdleRequired" => AutoInstallConstraintDeviceIdleStateConstraint :: DeviceIdleRequired , "deviceIdleStateConstraintUnspecified" => AutoInstallConstraintDeviceIdleStateConstraint :: DeviceIdleStateConstraintUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector for AutoInstallConstraintDeviceIdleStateConstraint {
@@ -1948,6 +1986,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for EnterpriseAccount {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct EnterpriseAuthenticationAppLinkConfig {
+        #[doc = "An authentication url."]
+        #[serde(
+            rename = "uri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for EnterpriseAuthenticationAppLinkConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for EnterpriseAuthenticationAppLinkConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3826,7 +3895,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Policy {
-        #[doc = "The auto-update policy for apps installed on the device. \"choiceToTheUser\" allows the device's user to configure the app update policy. \"always\" enables auto updates. \"never\" disables auto updates. \"wifiOnly\" enables auto updates only when the device is connected to wifi."]
+        #[doc = "Deprecated. Use autoUpdateMode instead. When autoUpdateMode is set to AUTO_UPDATE_POSTPONED or AUTO_UPDATE_HIGH_PRIORITY, this field has no effect. \"choiceToTheUser\" allows the device's user to configure the app update policy. \"always\" enables auto updates. \"never\" disables auto updates. \"wifiOnly\" enables auto updates only when the device is connected to wifi."]
         #[serde(
             rename = "autoUpdatePolicy",
             default,
@@ -5115,6 +5184,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub auto_update_mode: ::std::option::Option<crate::schemas::ProductPolicyAutoUpdateMode>,
+        #[doc = "An authentication URL configuration for the authenticator app of an identity provider. This helps to launch the identity provider's authenticator app during the authentication happening in a private app using Android WebView. Authenticator app should already be the [default handler](https://developer.android.com/training/app-links/verify-site-associations) for the authentication url on the device."]
+        #[serde(
+            rename = "enterpriseAuthenticationAppLinkConfigs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enterprise_authentication_app_link_configs:
+            ::std::option::Option<Vec<crate::schemas::EnterpriseAuthenticationAppLinkConfig>>,
         #[doc = "The managed configuration for the product."]
         #[serde(
             rename = "managedConfiguration",
@@ -5156,7 +5233,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ProductPolicyAutoUpdateMode {
-        #[doc = "The app is automatically updated with low priority to minimize the impact on the user. The app is updated when the following constraints are met: * The device is not actively used * The device is connected to a Wi-Fi network. * The device is charging * If the system update policy is set to `WINDOWED`: the local time of the device is within the daily maintenance window The device is notified about a new update within 24 hours after it is published by the developer, after which the app is updated the next time the constraints above are met."]
+        #[doc = "The app is automatically updated with low priority to minimize the impact on the user. The app is updated when the following constraints are met: * The device is not actively used * The device is connected to an unmetered network * The device is charging The device is notified about a new update within 24 hours after it is published by the developer, after which the app is updated the next time the constraints above are met."]
         AutoUpdateDefault,
         #[doc = "The app is updated as soon as possible. No constraints are applied. The device is notified immediately about a new app update after it is published by the developer."]
         AutoUpdateHighPriority,
@@ -7316,7 +7393,7 @@ pub mod resources {
                     device_id: device_id.into(),
                 }
             }
-            #[doc = "Updates the device policy. To ensure the policy is properly enforced, you need to prevent unmanaged accounts from accessing Google Play by setting the allowed_accounts in the managed configuration for the Google Play package. See restrict accounts in Google Play."]
+            #[doc = "Updates the device policy. To ensure the policy is properly enforced, you need to prevent unmanaged accounts from accessing Google Play by setting the allowed_accounts in the managed configuration for the Google Play package. See restrict accounts in Google Play. When provisioning a new device, you should set the device policy using this method before adding the managed Google Play Account to the device, otherwise the policy will not be applied for a short period of time after adding the account to the device."]
             pub fn update(
                 &self,
                 request: crate::schemas::Device,

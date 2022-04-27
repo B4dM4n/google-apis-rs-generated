@@ -1,7 +1,9 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [messages](resources/projects/messages/struct.MessagesActions.html)\n        * [*send*](resources/projects/messages/struct.SendRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
+    #[doc = "Send messages and manage messaging subscriptions for your Firebase applications\n\n`https://www.googleapis.com/auth/firebase.messaging`"]
+    pub const FIREBASE_MESSAGING: &str = "https://www.googleapis.com/auth/firebase.messaging";
 }
 pub mod schemas {
     #[derive(
@@ -202,6 +204,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub body_loc_key: ::std::option::Option<String>,
+        #[doc = "If set, display notifications delivered to the device will be handled by the app instead of the proxy."]
+        #[serde(
+            rename = "bypassProxyNotification",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bypass_proxy_notification: ::std::option::Option<bool>,
         #[doc = "The [notification's channel id](https://developer.android.com/guide/topics/ui/notifiers/notifications#ManageChannels) (new in Android O). The app must create a channel with this channel ID before any notification with this channel ID is received. If you don't send this channel ID in the request, or if the channel ID provided has not yet been created by the app, FCM uses the channel ID specified in the app manifest."]
         #[serde(
             rename = "channelId",
@@ -555,14 +564,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub fcm_options: ::std::option::Option<crate::schemas::ApnsFcmOptions>,
-        #[doc = "HTTP request headers defined in Apple Push Notification Service. Refer to [APNs request headers](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns) for supported headers, e.g. \"apns-priority\": \"10\"."]
+        #[doc = "HTTP request headers defined in Apple Push Notification Service. Refer to [APNs request headers](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns) for supported headers such as `apns-expiration` and `apns-priority`."]
         #[serde(
             rename = "headers",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub headers: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "APNs payload as a JSON object, including both `aps` dictionary and custom payload. See [Payload Key Reference](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification). If present, it overrides google.firebase.fcm.v1.Notification.title and google.firebase.fcm.v1.Notification.body."]
+        #[doc = "APNs payload as a JSON object, including both `aps` dictionary and custom payload. See [Payload Key Reference](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification). If present, it overrides google.firebase.fcm.v1.Notification.title and google.firebase.fcm.v1.Notification.body. The backend sets a default value for `apns-expiration` of 30 days and a default value for `apns-priority` of 10 if not explicitly set."]
         #[serde(
             rename = "payload",
             default,
@@ -623,7 +632,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Color {
-        #[doc = "The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: pixel color = alpha * (this color) + (1.0 - alpha) * (background color) This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is to be rendered as a solid color (as if the alpha value had been explicitly given with a value of 1.0)."]
+        #[doc = "The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0)."]
         #[serde(
             rename = "alpha",
             default,
@@ -752,7 +761,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<String>,
-        #[doc = "Input only. Arbitrary key/value payload. The key should not be a reserved word (\"from\", \"message_type\", or any word starting with \"google\" or \"gcm\")."]
+        #[doc = "Input only. Arbitrary key/value payload, which must be UTF-8 encoded. The key should not be a reserved word (\"from\", \"message_type\", or any word starting with \"google\" or \"gcm\"). When sending payloads containing only data fields to iOS devices, only normal priority (`\"apns-priority\": \"5\"`) is allowed in [`ApnsConfig`](/docs/reference/fcm/rest/v1/projects.messages#apnsconfig)."]
         #[serde(
             rename = "data",
             default,

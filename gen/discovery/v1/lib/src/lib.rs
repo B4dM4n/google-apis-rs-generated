@@ -865,6 +865,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag_required: ::std::option::Option<bool>,
+        #[doc = "The URI path of this REST method in (RFC 6570) format without level 2 features ({+var}). Supplementary to the path property."]
+        #[serde(
+            rename = "flatPath",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub flat_path: ::std::option::Option<String>,
         #[doc = "HTTP method used by this method."]
         #[serde(
             rename = "httpMethod",

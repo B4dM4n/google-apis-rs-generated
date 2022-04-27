@@ -7,7 +7,7 @@
   "canonicalName": null,
   "fullyEncodeReservedExpansion": null,
   "version": "v1",
-  "revision": "20210308",
+  "revision": "20220427",
   "title": "Digital Asset Links API",
   "description": "Discovers relationships between online assets such as websites or mobile apps.",
   "ownerDomain": "google.com",
@@ -245,6 +245,126 @@
       "additionalProperties": null,
       "items": null
     },
+    "BulkCheckRequest": {
+      "id": "BulkCheckRequest",
+      "description": "Message used to check for the existence of multiple digital asset links within a single RPC.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "allowGoogleInternalDataSources": {
+          "description": "Same configuration as in Check request, all statements checks will use same configurations.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "defaultRelation": {
+          "description": "If specified, will be used in any given template statement that doesn’t specify a relation.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "defaultSource": {
+          "description": "If specified, will be used in any given template statement that doesn’t specify a source.",
+          "$ref": "Asset"
+        },
+        "defaultTarget": {
+          "description": "If specified, will be used in any given template statement that doesn’t specify a target.",
+          "$ref": "Asset"
+        },
+        "skipCacheLookup": {
+          "description": "Same configuration as in Check request, all statements checks will use same configurations.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "statements": {
+          "description": "List of statements to check. For each statement, you can omit a field if the corresponding default_* field below was supplied. Minimum 1 statement; maximum 1,000 statements. Any additional statements will be ignored.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "StatementTemplate"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "BulkCheckResponse": {
+      "id": "BulkCheckResponse",
+      "description": "Response for BulkCheck call. Results are sent in a list in the same order in which they were sent. Individual check errors are described in the appropriate check_results entry. If the entire call fails, the response will include a bulk_error_code field describing the error.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "bulkErrorCode": {
+          "description": "Error code for the entire request. Present only if the entire request failed. Individual check errors will not trigger the presence of this field.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ERROR_CODE_UNSPECIFIED",
+            "ERROR_CODE_INVALID_QUERY",
+            "ERROR_CODE_FETCH_ERROR",
+            "ERROR_CODE_FAILED_SSL_VALIDATION",
+            "ERROR_CODE_REDIRECT",
+            "ERROR_CODE_TOO_LARGE",
+            "ERROR_CODE_MALFORMED_HTTP_RESPONSE",
+            "ERROR_CODE_WRONG_CONTENT_TYPE",
+            "ERROR_CODE_MALFORMED_CONTENT",
+            "ERROR_CODE_SECURE_ASSET_INCLUDES_INSECURE",
+            "ERROR_CODE_FETCH_BUDGET_EXHAUSTED"
+          ],
+          "enumDescriptions": [
+            "",
+            "Unable to parse query.",
+            "Unable to fetch the asset links data.",
+            "Invalid HTTPS certificate .",
+            "HTTP redirects (e.g, 301) are not allowed.",
+            "Asset links data exceeds maximum size.",
+            "Can't parse HTTP response.",
+            "HTTP Content-type should be application/json.",
+            "JSON content is malformed.",
+            "A secure asset includes an insecure asset (security downgrade).",
+            "Too many includes (maybe a loop)."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "checkResults": {
+          "description": "List of results for each check request. Results are returned in the same order in which they were sent in the request.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "CheckResponse"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "CertificateInfo": {
       "id": "CertificateInfo",
       "description": "Describes an X509 certificate.",
@@ -467,6 +587,36 @@
       "additionalProperties": null,
       "items": null
     },
+    "StatementTemplate": {
+      "id": "StatementTemplate",
+      "description": "A single statement to check in a bulk call using BulkCheck. See CheckRequest for details about each field.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "relation": {
+          "description": "The relationship being asserted between the source and target. If omitted, you must specify a BulkCheckRequest.default_relation value to use here.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "source": {
+          "description": "The source asset that is asserting the statement. If omitted, you must specify a BulkCheckRequest.default_source value to use here.",
+          "$ref": "Asset"
+        },
+        "target": {
+          "description": "The target that the source is declaring the relationship with. If omitted, you must specify a BulkCheckRequest.default_target to use here.",
+          "$ref": "Asset"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "WebAsset": {
       "id": "WebAsset",
       "description": "Describes a web asset.",
@@ -494,6 +644,26 @@
     "assetlinks": {
       "resources": {},
       "methods": {
+        "bulkCheck": {
+          "id": "digitalassetlinks.assetlinks.bulkCheck",
+          "path": "v1/assetlinks:bulkCheck",
+          "httpMethod": "POST",
+          "description": "Send a bundle of statement checks in a single RPC to minimize latency and service load. Statements need not be all for the same source and/or target. We recommend using this method when you need to check more than one statement in a short period of time.",
+          "parameters": {},
+          "parameterOrder": [],
+          "request": {
+            "$ref": "BulkCheckRequest"
+          },
+          "response": {
+            "$ref": "BulkCheckResponse"
+          },
+          "scopes": [],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
         "check": {
           "id": "digitalassetlinks.assetlinks.check",
           "path": "v1/assetlinks:check",

@@ -24,6 +24,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub language_code: ::std::option::Option<String>,
+        #[doc = "Organizations to which the custom app should be made available. If the request contains any organizations, then the app will be restricted to only these organizations. To support the organization linked to the developer account, the organization ID should be provided explicitly together with other organizations. If no organizations are provided, then the app is only available to the organization linked to the developer account."]
+        #[serde(
+            rename = "organizations",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub organizations: ::std::option::Option<Vec<crate::schemas::Organization>>,
         #[doc = "Output only. Package name of the created Android app. Only present in the API response."]
         #[serde(
             rename = "packageName",
@@ -45,6 +52,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CustomApp {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Organization {
+        #[doc = "Required. ID of the organization."]
+        #[serde(
+            rename = "organizationId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub organization_id: ::std::option::Option<String>,
+        #[doc = "Optional. A human-readable name of the organization, to help recognize the organization."]
+        #[serde(
+            rename = "organizationName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub organization_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Organization {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Organization {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }

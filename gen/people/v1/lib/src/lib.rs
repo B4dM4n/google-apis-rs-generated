@@ -23,7 +23,7 @@ pub mod scopes {
     #[doc = "See and download your personal phone numbers\n\n`https://www.googleapis.com/auth/user.phonenumbers.read`"]
     pub const USER_PHONENUMBERS_READ: &str =
         "https://www.googleapis.com/auth/user.phonenumbers.read";
-    #[doc = "View your email address\n\n`https://www.googleapis.com/auth/userinfo.email`"]
+    #[doc = "See your primary Google Account email address\n\n`https://www.googleapis.com/auth/userinfo.email`"]
     pub const USERINFO_EMAIL: &str = "https://www.googleapis.com/auth/userinfo.email";
     #[doc = "See your personal info, including any personal info you've made publicly available\n\n`https://www.googleapis.com/auth/userinfo.profile`"]
     pub const USERINFO_PROFILE: &str = "https://www.googleapis.com/auth/userinfo.profile";
@@ -793,7 +793,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Birthday {
-        #[doc = "The date of the birthday."]
+        #[doc = "The structured date of the birthday."]
         #[serde(
             rename = "date",
             default,
@@ -807,7 +807,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metadata: ::std::option::Option<crate::schemas::FieldMetadata>,
-        #[doc = "A free-form string representing the user's birthday."]
+        #[doc = "Prefer to use the `date` field if set. A free-form string representing the user's birthday. This value is not validated."]
         #[serde(
             rename = "text",
             default,
@@ -1022,7 +1022,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metadata: ::std::option::Option<crate::schemas::ContactGroupMetadata>,
-        #[doc = "The contact group name set by the group owner or a system provided name for system groups."]
+        #[doc = "The contact group name set by the group owner or a system provided name for system groups. For [`contactGroups.create`](/people/api/rest/v1/contactGroups/create) or [`contactGroups.update`](/people/api/rest/v1/contactGroups/update) the name must be unique to the users contact groups. Attempting to create a group with a duplicate name will return a HTTP 409 error."]
         #[serde(
             rename = "name",
             default,
@@ -1338,7 +1338,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<CopyOtherContactToMyContactsGroupRequestSourcesItems, ()>
         {
-            Ok ( match s { "READ_SOURCE_TYPE_CONTACT" => CopyOtherContactToMyContactsGroupRequestSourcesItems :: ReadSourceTypeContact , "READ_SOURCE_TYPE_DOMAIN_CONTACT" => CopyOtherContactToMyContactsGroupRequestSourcesItems :: ReadSourceTypeDomainContact , "READ_SOURCE_TYPE_PROFILE" => CopyOtherContactToMyContactsGroupRequestSourcesItems :: ReadSourceTypeProfile , "READ_SOURCE_TYPE_UNSPECIFIED" => CopyOtherContactToMyContactsGroupRequestSourcesItems :: ReadSourceTypeUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "READ_SOURCE_TYPE_CONTACT" => CopyOtherContactToMyContactsGroupRequestSourcesItems :: ReadSourceTypeContact , "READ_SOURCE_TYPE_DOMAIN_CONTACT" => CopyOtherContactToMyContactsGroupRequestSourcesItems :: ReadSourceTypeDomainContact , "READ_SOURCE_TYPE_PROFILE" => CopyOtherContactToMyContactsGroupRequestSourcesItems :: ReadSourceTypeProfile , "READ_SOURCE_TYPE_UNSPECIFIED" => CopyOtherContactToMyContactsGroupRequestSourcesItems :: ReadSourceTypeUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for CopyOtherContactToMyContactsGroupRequestSourcesItems {
@@ -1360,7 +1360,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "READ_SOURCE_TYPE_CONTACT" => CopyOtherContactToMyContactsGroupRequestSourcesItems :: ReadSourceTypeContact , "READ_SOURCE_TYPE_DOMAIN_CONTACT" => CopyOtherContactToMyContactsGroupRequestSourcesItems :: ReadSourceTypeDomainContact , "READ_SOURCE_TYPE_PROFILE" => CopyOtherContactToMyContactsGroupRequestSourcesItems :: ReadSourceTypeProfile , "READ_SOURCE_TYPE_UNSPECIFIED" => CopyOtherContactToMyContactsGroupRequestSourcesItems :: ReadSourceTypeUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "READ_SOURCE_TYPE_CONTACT" => CopyOtherContactToMyContactsGroupRequestSourcesItems :: ReadSourceTypeContact , "READ_SOURCE_TYPE_DOMAIN_CONTACT" => CopyOtherContactToMyContactsGroupRequestSourcesItems :: ReadSourceTypeDomainContact , "READ_SOURCE_TYPE_PROFILE" => CopyOtherContactToMyContactsGroupRequestSourcesItems :: ReadSourceTypeProfile , "READ_SOURCE_TYPE_UNSPECIFIED" => CopyOtherContactToMyContactsGroupRequestSourcesItems :: ReadSourceTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1547,7 +1547,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DomainMembership {
-        #[doc = "True if the person is in the viewer's G Suite domain."]
+        #[doc = "True if the person is in the viewer's Google Workspace domain."]
         #[serde(
             rename = "inViewerDomain",
             default,
@@ -1765,7 +1765,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FieldMetadata {
-        #[doc = "True if the field is the primary field; false if the field is a secondary field."]
+        #[doc = "Output only. True if the field is the primary field for all sources in the person. Each person will have at most one field with `primary` set to true."]
         #[serde(
             rename = "primary",
             default,
@@ -1779,6 +1779,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub source: ::std::option::Option<crate::schemas::Source>,
+        #[doc = "True if the field is the primary field for the source. Each source must have at most one field with `source_primary` set to true."]
+        #[serde(
+            rename = "sourcePrimary",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub source_primary: ::std::option::Option<bool>,
         #[doc = "Output only. True if the field is verified; false if the field is unverified. A verified field is typically a name, email address, phone number, or website that has been confirmed to be owned by the person."]
         #[serde(
             rename = "verified",
@@ -1848,7 +1855,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Gender {
-        #[doc = "The type of pronouns that should be used to address the person. The value can be custom or one of these predefined values: * `male` * `female` * `other`"]
+        #[doc = "Free form text field for pronouns that should be used to address the person. Common values are: * `he`/`him` * `she`/`her` * `they`/`them`"]
         #[serde(
             rename = "addressMeAs",
             default,
@@ -2239,6 +2246,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub other_contacts: ::std::option::Option<Vec<crate::schemas::Person>>,
+        #[doc = "The total number of other contacts in the list without pagination."]
+        #[serde(
+            rename = "totalSize",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_size: ::std::option::Option<i32>,
     }
     impl ::google_field_selector::FieldSelector for ListOtherContactsResponse {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2983,6 +2997,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Organization {
+        #[doc = "The person's cost center at the organization."]
+        #[serde(
+            rename = "costCenter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cost_center: ::std::option::Option<String>,
         #[doc = "True if the organization is the person's current organization; false if the organization is a past organization."]
         #[serde(
             rename = "current",
@@ -3018,6 +3039,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub formatted_type: ::std::option::Option<String>,
+        #[doc = "The person's full-time equivalent millipercent within the organization (100000 = 100%)."]
+        #[serde(
+            rename = "fullTimeEquivalentMillipercent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub full_time_equivalent_millipercent: ::std::option::Option<i32>,
         #[doc = "The person's job description at the organization."]
         #[serde(
             rename = "jobDescription",
@@ -3168,7 +3196,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cover_photos: ::std::option::Option<Vec<crate::schemas::CoverPhoto>>,
-        #[doc = "The person's email addresses."]
+        #[doc = "The person's email addresses. For `people.connections.list` and `otherContacts.list` the number of email addresses is limited to 100. If a Person has more email addresses the entire set can be obtained by calling GetPeople."]
         #[serde(
             rename = "emailAddresses",
             default,
@@ -3287,7 +3315,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub organizations: ::std::option::Option<Vec<crate::schemas::Organization>>,
-        #[doc = "The person's phone numbers."]
+        #[doc = "The person's phone numbers. For `people.connections.list` and `otherContacts.list` the number of phone numbers is limited to 100. If a Person has more phone numbers the entire set can be obtained by calling GetPeople."]
         #[serde(
             rename = "phoneNumbers",
             default,
@@ -3477,7 +3505,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PersonMetadata {
-        #[doc = "Output only. True if the person resource has been deleted. Populated only for [`connections.list`](/people/api/rest/v1/people.connections/list) requests that include a sync token."]
+        #[doc = "Output only. True if the person resource has been deleted. Populated only for `people.connections.list` and `otherContacts.list` sync requests."]
         #[serde(
             rename = "deleted",
             default,
@@ -3498,7 +3526,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub object_type: ::std::option::Option<crate::schemas::PersonMetadataObjectType>,
-        #[doc = "Output only. Any former resource names this person has had. Populated only for [`connections.list`](/people/api/rest/v1/people.connections/list) requests that include a sync token. The resource name may change when adding or removing fields that link a contact and profile such as a verified email, verified phone number, or profile URL."]
+        #[doc = "Output only. Any former resource names this person has had. Populated only for `people.connections.list` requests that include a sync token. The resource name may change when adding or removing fields that link a contact and profile such as a verified email, verified phone number, or profile URL."]
         #[serde(
             rename = "previousResourceNames",
             default,
@@ -3527,7 +3555,7 @@ pub mod schemas {
     pub enum PersonMetadataObjectType {
         #[doc = "Unspecified."]
         ObjectTypeUnspecified,
-        #[doc = "[Currents Page.](https://gsuite.google.com/products/currents/)"]
+        #[doc = "[Currents Page.](https://workspace.google.com/products/currents/)"]
         Page,
         #[doc = "Person."]
         Person,
@@ -3786,7 +3814,7 @@ pub mod schemas {
     pub enum ProfileMetadataObjectType {
         #[doc = "Unspecified."]
         ObjectTypeUnspecified,
-        #[doc = "[Currents Page.](https://gsuite.google.com/products/currents/)"]
+        #[doc = "[Currents Page.](https://workspace.google.com/products/currents/)"]
         Page,
         #[doc = "Person."]
         Person,
@@ -3860,7 +3888,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ProfileMetadataUserTypesItems {
-        #[doc = "The user is a G Suite user."]
+        #[doc = "The user is a Google Workspace user."]
         GoogleAppsUser,
         #[doc = "The user is a Google user."]
         GoogleUser,
@@ -4388,9 +4416,9 @@ pub mod schemas {
         Account,
         #[doc = "[Google contact](https://contacts.google.com). You can view the contact at [https://contact.google.com/](https://contact.google.com/){id}, where {id} is the source id."]
         Contact,
-        #[doc = "[G Suite domain shared contact](https://support.google.com/a/answer/9281635)."]
+        #[doc = "[Google Workspace domain shared contact](https://support.google.com/a/answer/9281635)."]
         DomainContact,
-        #[doc = "[G Suite domain profile](https://support.google.com/a/answer/1628008)."]
+        #[doc = "[Google Workspace domain profile](https://support.google.com/a/answer/1628008)."]
         DomainProfile,
         #[doc = "[Google \"Other contact\"](https://contacts.google.com/other)."]
         OtherContact,
@@ -5108,7 +5136,7 @@ pub mod resources {
                     resource_names: None,
                 }
             }
-            #[doc = "Create a new contact group owned by the authenticated user."]
+            #[doc = "Create a new contact group owned by the authenticated user. Created contact group names must be unique to the users contact groups. Attempting to create a group with a duplicate name will return a HTTP 409 error. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures."]
             pub fn create(
                 &self,
                 request: crate::schemas::CreateContactGroupRequest,
@@ -5130,7 +5158,7 @@ pub mod resources {
                     xgafv: None,
                 }
             }
-            #[doc = "Delete an existing contact group owned by the authenticated user by specifying a contact group resource name."]
+            #[doc = "Delete an existing contact group owned by the authenticated user by specifying a contact group resource name. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures."]
             pub fn delete(&self, resource_name: impl Into<String>) -> DeleteRequestBuilder {
                 DeleteRequestBuilder {
                     reqwest: &self.reqwest,
@@ -5193,7 +5221,7 @@ pub mod resources {
                     sync_token: None,
                 }
             }
-            #[doc = "Update the name of an existing contact group owned by the authenticated user."]
+            #[doc = "Update the name of an existing contact group owned by the authenticated user. Updated contact group names must be unique to the users contact groups. Attempting to create a group with a duplicate name will return a HTTP 409 error. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures."]
             pub fn update(
                 &self,
                 request: crate::schemas::UpdateContactGroupRequest,
@@ -5256,7 +5284,7 @@ pub mod resources {
                 self.max_members = Some(value);
                 self
             }
-            #[doc = "Required. The resource names of the contact groups to get."]
+            #[doc = "Required. The resource names of the contact groups to get. There is a maximum of 200 resource names."]
             pub fn resource_names(mut self, value: impl Into<Vec<String>>) -> Self {
                 self.resource_names = Some(value.into());
                 self
@@ -6524,7 +6552,101 @@ pub mod resources {
         }
     }
     pub mod other_contacts {
-        pub mod params {}
+        pub mod params {
+            #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+            pub enum ListSourcesItems {
+                #[doc = "Returns SourceType.CONTACT."]
+                ReadSourceTypeContact,
+                #[doc = "Returns SourceType.DOMAIN_CONTACT."]
+                ReadSourceTypeDomainContact,
+                #[doc = "Returns SourceType.ACCOUNT, SourceType.DOMAIN_PROFILE, and SourceType.PROFILE."]
+                ReadSourceTypeProfile,
+                #[doc = "Unspecified."]
+                ReadSourceTypeUnspecified,
+            }
+            impl ListSourcesItems {
+                pub fn as_str(self) -> &'static str {
+                    match self {
+                        ListSourcesItems::ReadSourceTypeContact => "READ_SOURCE_TYPE_CONTACT",
+                        ListSourcesItems::ReadSourceTypeDomainContact => {
+                            "READ_SOURCE_TYPE_DOMAIN_CONTACT"
+                        }
+                        ListSourcesItems::ReadSourceTypeProfile => "READ_SOURCE_TYPE_PROFILE",
+                        ListSourcesItems::ReadSourceTypeUnspecified => {
+                            "READ_SOURCE_TYPE_UNSPECIFIED"
+                        }
+                    }
+                }
+            }
+            impl ::std::convert::AsRef<str> for ListSourcesItems {
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+            impl ::std::str::FromStr for ListSourcesItems {
+                type Err = ();
+                fn from_str(s: &str) -> ::std::result::Result<ListSourcesItems, ()> {
+                    Ok(match s {
+                        "READ_SOURCE_TYPE_CONTACT" => ListSourcesItems::ReadSourceTypeContact,
+                        "READ_SOURCE_TYPE_DOMAIN_CONTACT" => {
+                            ListSourcesItems::ReadSourceTypeDomainContact
+                        }
+                        "READ_SOURCE_TYPE_PROFILE" => ListSourcesItems::ReadSourceTypeProfile,
+                        "READ_SOURCE_TYPE_UNSPECIFIED" => {
+                            ListSourcesItems::ReadSourceTypeUnspecified
+                        }
+                        _ => return Err(()),
+                    })
+                }
+            }
+            impl ::std::fmt::Display for ListSourcesItems {
+                fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                    f.write_str(self.as_str())
+                }
+            }
+            impl ::serde::Serialize for ListSourcesItems {
+                fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+                where
+                    S: ::serde::ser::Serializer,
+                {
+                    serializer.serialize_str(self.as_str())
+                }
+            }
+            impl<'de> ::serde::Deserialize<'de> for ListSourcesItems {
+                fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+                where
+                    D: ::serde::de::Deserializer<'de>,
+                {
+                    let value: &'de str = <&str>::deserialize(deserializer)?;
+                    Ok(match value {
+                        "READ_SOURCE_TYPE_CONTACT" => ListSourcesItems::ReadSourceTypeContact,
+                        "READ_SOURCE_TYPE_DOMAIN_CONTACT" => {
+                            ListSourcesItems::ReadSourceTypeDomainContact
+                        }
+                        "READ_SOURCE_TYPE_PROFILE" => ListSourcesItems::ReadSourceTypeProfile,
+                        "READ_SOURCE_TYPE_UNSPECIFIED" => {
+                            ListSourcesItems::ReadSourceTypeUnspecified
+                        }
+                        _ => {
+                            return Err(::serde::de::Error::custom(format!(
+                                "invalid enum for #name: {}",
+                                value
+                            )))
+                        }
+                    })
+                }
+            }
+            impl ::google_field_selector::FieldSelector for ListSourcesItems {
+                fn fields() -> Vec<::google_field_selector::Field> {
+                    Vec::new()
+                }
+            }
+            impl ::google_field_selector::ToFieldType for ListSourcesItems {
+                fn field_type() -> ::google_field_selector::FieldType {
+                    ::google_field_selector::FieldType::Leaf
+                }
+            }
+        }
         pub struct OtherContactsActions<'a> {
             pub(crate) reqwest: &'a reqwest::blocking::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
@@ -6533,7 +6655,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Copies an \"Other contact\" to a new contact in the user's \"myContacts\" group"]
+            #[doc = "Copies an \"Other contact\" to a new contact in the user's \"myContacts\" group Mutate requests for the same user should be sent sequentially to avoid increased latency and failures."]
             pub fn copy_other_contact_to_my_contacts_group(
                 &self,
                 request: crate::schemas::CopyOtherContactToMyContactsGroupRequest,
@@ -6557,7 +6679,7 @@ pub mod resources {
                     resource_name: resource_name.into(),
                 }
             }
-            #[doc = "List all \"Other contacts\", that is contacts that are not in a contact group. \"Other contacts\" are typically auto created contacts from interactions."]
+            #[doc = "List all \"Other contacts\", that is contacts that are not in a contact group. \"Other contacts\" are typically auto created contacts from interactions. Sync tokens expire 7 days after the full sync. A request with an expired sync token will result in a 410 error. In the case of such an error clients should make a full sync request without a `sync_token`. The first page of a full sync request has an additional quota. If the quota is exceeded, a 429 error will be returned. This quota is fixed and can not be increased. When the `sync_token` is specified, resources deleted since the last sync will be returned as a person with `PersonMetadata.deleted` set to true. When the `page_token` or `sync_token` is specified, all other request parameters must match the first call. Writes may have a propagation delay of several minutes for sync requests. Incremental syncs are not intended for read-after-write use cases. See example usage at [List the user's other contacts that have changed](/people/v1/other-contacts#list_the_users_other_contacts_that_have_changed)."]
             pub fn list(&self) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -6577,10 +6699,11 @@ pub mod resources {
                     page_token: None,
                     read_mask: None,
                     request_sync_token: None,
+                    sources: None,
                     sync_token: None,
                 }
             }
-            #[doc = "Provides a list of contacts in the authenticated user's other contacts that matches the search query."]
+            #[doc = "Provides a list of contacts in the authenticated user's other contacts that matches the search query. The query matches on a contact's `names`, `emailAddresses`, and `phoneNumbers` fields that are from the OTHER_CONTACT source. **IMPORTANT**: Before searching, clients should send a warmup request with an empty query to update the cache. See https://developers.google.com/people/v1/other-contacts#search_the_users_other_contacts"]
             pub fn search(&self) -> SearchRequestBuilder {
                 SearchRequestBuilder {
                     reqwest: &self.reqwest,
@@ -6768,6 +6891,7 @@ pub mod resources {
             page_token: Option<String>,
             read_mask: Option<String>,
             request_sync_token: Option<bool>,
+            sources: Option<Vec<crate::resources::other_contacts::params::ListSourcesItems>>,
             sync_token: Option<String>,
             access_token: Option<String>,
             alt: Option<crate::params::Alt>,
@@ -6787,22 +6911,30 @@ pub mod resources {
                 self.page_size = Some(value);
                 self
             }
-            #[doc = "Optional. A page token, received from a previous `ListOtherContacts` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListOtherContacts` must match the call that provided the page token."]
+            #[doc = "Optional. A page token, received from a previous response `next_page_token`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `otherContacts.list` must match the first call that provided the page token."]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * emailAddresses * names * phoneNumbers"]
+            #[doc = "Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. What values are valid depend on what ReadSourceType is used. If READ_SOURCE_TYPE_CONTACT is used, valid values are: * emailAddresses * metadata * names * phoneNumbers * photos If READ_SOURCE_TYPE_PROFILE is used, valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined"]
             pub fn read_mask(mut self, value: impl Into<String>) -> Self {
                 self.read_mask = Some(value.into());
                 self
             }
-            #[doc = "Optional. Whether the response should include `next_sync_token`, which can be used to get all changes since the last request. For subsequent sync requests use the `sync_token` param instead. Initial sync requests that specify `request_sync_token` have an additional rate limit."]
+            #[doc = "Optional. Whether the response should return `next_sync_token` on the last page of results. It can be used to get incremental changes since the last request by setting it on the request `sync_token`. More details about sync behavior at `otherContacts.list`."]
             pub fn request_sync_token(mut self, value: bool) -> Self {
                 self.request_sync_token = Some(value);
                 self
             }
-            #[doc = "Optional. A sync token, received from a previous `ListOtherContacts` call. Provide this to retrieve only the resources changed since the last request. Sync requests that specify `sync_token` have an additional rate limit. When syncing, all other parameters provided to `ListOtherContacts` must match the call that provided the sync token."]
+            #[doc = "Optional. A mask of what source types to return. Defaults to READ_SOURCE_TYPE_CONTACT if not set. Possible values for this field are: * READ_SOURCE_TYPE_CONTACT * READ_SOURCE_TYPE_CONTACT,READ_SOURCE_TYPE_PROFILE Specifying READ_SOURCE_TYPE_PROFILE without specifying READ_SOURCE_TYPE_CONTACT is not permitted."]
+            pub fn sources(
+                mut self,
+                value: impl Into<Vec<crate::resources::other_contacts::params::ListSourcesItems>>,
+            ) -> Self {
+                self.sources = Some(value.into());
+                self
+            }
+            #[doc = "Optional. A sync token, received from a previous response `next_sync_token` Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to `otherContacts.list` must match the first call that provided the sync token. More details about sync behavior at `otherContacts.list`."]
             pub fn sync_token(mut self, value: impl Into<String>) -> Self {
                 self.sync_token = Some(value.into());
                 self
@@ -7022,6 +7154,9 @@ pub mod resources {
                 req = req.query(&[("pageToken", &self.page_token)]);
                 req = req.query(&[("readMask", &self.read_mask)]);
                 req = req.query(&[("requestSyncToken", &self.request_sync_token)]);
+                for value in self.sources.iter().flatten() {
+                    req = req.query(&[("sources", value)]);
+                }
                 req = req.query(&[("syncToken", &self.sync_token)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
@@ -7074,7 +7209,7 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> SearchRequestBuilder<'a> {
-            #[doc = "Optional. The number of results to return. Defaults to 10 if field is not set, or set to 0."]
+            #[doc = "Optional. The number of results to return. Defaults to 10 if field is not set, or set to 0. Values greater than 30 will be capped to 30."]
             pub fn page_size(mut self, value: i32) -> Self {
                 self.page_size = Some(value);
                 self
@@ -7084,7 +7219,7 @@ pub mod resources {
                 self.query = Some(value.into());
                 self
             }
-            #[doc = "Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * emailAddresses * names * phoneNumbers"]
+            #[doc = "Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * emailAddresses * metadata * names * phoneNumbers"]
             pub fn read_mask(mut self, value: impl Into<String>) -> Self {
                 self.read_mask = Some(value.into());
                 self
@@ -7656,7 +7791,7 @@ pub mod resources {
                     s: &str,
                 ) -> ::std::result::Result<ListDirectoryPeopleMergeSourcesItems, ()>
                 {
-                    Ok ( match s { "DIRECTORY_MERGE_SOURCE_TYPE_CONTACT" => ListDirectoryPeopleMergeSourcesItems :: DirectoryMergeSourceTypeContact , "DIRECTORY_MERGE_SOURCE_TYPE_UNSPECIFIED" => ListDirectoryPeopleMergeSourcesItems :: DirectoryMergeSourceTypeUnspecified , _ => return Err ( ( ) ) , } )
+                    Ok (match s { "DIRECTORY_MERGE_SOURCE_TYPE_CONTACT" => ListDirectoryPeopleMergeSourcesItems :: DirectoryMergeSourceTypeContact , "DIRECTORY_MERGE_SOURCE_TYPE_UNSPECIFIED" => ListDirectoryPeopleMergeSourcesItems :: DirectoryMergeSourceTypeUnspecified , _ => return Err (()) , })
                 }
             }
             impl ::std::fmt::Display for ListDirectoryPeopleMergeSourcesItems {
@@ -7678,7 +7813,7 @@ pub mod resources {
                     D: ::serde::de::Deserializer<'de>,
                 {
                     let value: &'de str = <&str>::deserialize(deserializer)?;
-                    Ok ( match value { "DIRECTORY_MERGE_SOURCE_TYPE_CONTACT" => ListDirectoryPeopleMergeSourcesItems :: DirectoryMergeSourceTypeContact , "DIRECTORY_MERGE_SOURCE_TYPE_UNSPECIFIED" => ListDirectoryPeopleMergeSourcesItems :: DirectoryMergeSourceTypeUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+                    Ok (match value { "DIRECTORY_MERGE_SOURCE_TYPE_CONTACT" => ListDirectoryPeopleMergeSourcesItems :: DirectoryMergeSourceTypeContact , "DIRECTORY_MERGE_SOURCE_TYPE_UNSPECIFIED" => ListDirectoryPeopleMergeSourcesItems :: DirectoryMergeSourceTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
                 }
             }
             impl ::google_field_selector::FieldSelector for ListDirectoryPeopleMergeSourcesItems {
@@ -7693,9 +7828,9 @@ pub mod resources {
             }
             #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
             pub enum ListDirectoryPeopleSourcesItems {
-                #[doc = "G Suite domain shared contact."]
+                #[doc = "Google Workspace domain shared contact."]
                 DirectorySourceTypeDomainContact,
-                #[doc = "G Suite domain profile."]
+                #[doc = "Google Workspace domain profile."]
                 DirectorySourceTypeDomainProfile,
                 #[doc = "Unspecified."]
                 DirectorySourceTypeUnspecified,
@@ -7786,6 +7921,111 @@ pub mod resources {
                 }
             }
             #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+            pub enum SearchContactsSourcesItems {
+                #[doc = "Returns SourceType.CONTACT."]
+                ReadSourceTypeContact,
+                #[doc = "Returns SourceType.DOMAIN_CONTACT."]
+                ReadSourceTypeDomainContact,
+                #[doc = "Returns SourceType.ACCOUNT, SourceType.DOMAIN_PROFILE, and SourceType.PROFILE."]
+                ReadSourceTypeProfile,
+                #[doc = "Unspecified."]
+                ReadSourceTypeUnspecified,
+            }
+            impl SearchContactsSourcesItems {
+                pub fn as_str(self) -> &'static str {
+                    match self {
+                        SearchContactsSourcesItems::ReadSourceTypeContact => {
+                            "READ_SOURCE_TYPE_CONTACT"
+                        }
+                        SearchContactsSourcesItems::ReadSourceTypeDomainContact => {
+                            "READ_SOURCE_TYPE_DOMAIN_CONTACT"
+                        }
+                        SearchContactsSourcesItems::ReadSourceTypeProfile => {
+                            "READ_SOURCE_TYPE_PROFILE"
+                        }
+                        SearchContactsSourcesItems::ReadSourceTypeUnspecified => {
+                            "READ_SOURCE_TYPE_UNSPECIFIED"
+                        }
+                    }
+                }
+            }
+            impl ::std::convert::AsRef<str> for SearchContactsSourcesItems {
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+            impl ::std::str::FromStr for SearchContactsSourcesItems {
+                type Err = ();
+                fn from_str(s: &str) -> ::std::result::Result<SearchContactsSourcesItems, ()> {
+                    Ok(match s {
+                        "READ_SOURCE_TYPE_CONTACT" => {
+                            SearchContactsSourcesItems::ReadSourceTypeContact
+                        }
+                        "READ_SOURCE_TYPE_DOMAIN_CONTACT" => {
+                            SearchContactsSourcesItems::ReadSourceTypeDomainContact
+                        }
+                        "READ_SOURCE_TYPE_PROFILE" => {
+                            SearchContactsSourcesItems::ReadSourceTypeProfile
+                        }
+                        "READ_SOURCE_TYPE_UNSPECIFIED" => {
+                            SearchContactsSourcesItems::ReadSourceTypeUnspecified
+                        }
+                        _ => return Err(()),
+                    })
+                }
+            }
+            impl ::std::fmt::Display for SearchContactsSourcesItems {
+                fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                    f.write_str(self.as_str())
+                }
+            }
+            impl ::serde::Serialize for SearchContactsSourcesItems {
+                fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+                where
+                    S: ::serde::ser::Serializer,
+                {
+                    serializer.serialize_str(self.as_str())
+                }
+            }
+            impl<'de> ::serde::Deserialize<'de> for SearchContactsSourcesItems {
+                fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+                where
+                    D: ::serde::de::Deserializer<'de>,
+                {
+                    let value: &'de str = <&str>::deserialize(deserializer)?;
+                    Ok(match value {
+                        "READ_SOURCE_TYPE_CONTACT" => {
+                            SearchContactsSourcesItems::ReadSourceTypeContact
+                        }
+                        "READ_SOURCE_TYPE_DOMAIN_CONTACT" => {
+                            SearchContactsSourcesItems::ReadSourceTypeDomainContact
+                        }
+                        "READ_SOURCE_TYPE_PROFILE" => {
+                            SearchContactsSourcesItems::ReadSourceTypeProfile
+                        }
+                        "READ_SOURCE_TYPE_UNSPECIFIED" => {
+                            SearchContactsSourcesItems::ReadSourceTypeUnspecified
+                        }
+                        _ => {
+                            return Err(::serde::de::Error::custom(format!(
+                                "invalid enum for #name: {}",
+                                value
+                            )))
+                        }
+                    })
+                }
+            }
+            impl ::google_field_selector::FieldSelector for SearchContactsSourcesItems {
+                fn fields() -> Vec<::google_field_selector::Field> {
+                    Vec::new()
+                }
+            }
+            impl ::google_field_selector::ToFieldType for SearchContactsSourcesItems {
+                fn field_type() -> ::google_field_selector::FieldType {
+                    ::google_field_selector::FieldType::Leaf
+                }
+            }
+            #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
             pub enum SearchDirectoryPeopleMergeSourcesItems {
                 #[doc = "User owned contact."]
                 DirectoryMergeSourceTypeContact,
@@ -7808,7 +8048,7 @@ pub mod resources {
                     s: &str,
                 ) -> ::std::result::Result<SearchDirectoryPeopleMergeSourcesItems, ()>
                 {
-                    Ok ( match s { "DIRECTORY_MERGE_SOURCE_TYPE_CONTACT" => SearchDirectoryPeopleMergeSourcesItems :: DirectoryMergeSourceTypeContact , "DIRECTORY_MERGE_SOURCE_TYPE_UNSPECIFIED" => SearchDirectoryPeopleMergeSourcesItems :: DirectoryMergeSourceTypeUnspecified , _ => return Err ( ( ) ) , } )
+                    Ok (match s { "DIRECTORY_MERGE_SOURCE_TYPE_CONTACT" => SearchDirectoryPeopleMergeSourcesItems :: DirectoryMergeSourceTypeContact , "DIRECTORY_MERGE_SOURCE_TYPE_UNSPECIFIED" => SearchDirectoryPeopleMergeSourcesItems :: DirectoryMergeSourceTypeUnspecified , _ => return Err (()) , })
                 }
             }
             impl ::std::fmt::Display for SearchDirectoryPeopleMergeSourcesItems {
@@ -7830,7 +8070,7 @@ pub mod resources {
                     D: ::serde::de::Deserializer<'de>,
                 {
                     let value: &'de str = <&str>::deserialize(deserializer)?;
-                    Ok ( match value { "DIRECTORY_MERGE_SOURCE_TYPE_CONTACT" => SearchDirectoryPeopleMergeSourcesItems :: DirectoryMergeSourceTypeContact , "DIRECTORY_MERGE_SOURCE_TYPE_UNSPECIFIED" => SearchDirectoryPeopleMergeSourcesItems :: DirectoryMergeSourceTypeUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+                    Ok (match value { "DIRECTORY_MERGE_SOURCE_TYPE_CONTACT" => SearchDirectoryPeopleMergeSourcesItems :: DirectoryMergeSourceTypeContact , "DIRECTORY_MERGE_SOURCE_TYPE_UNSPECIFIED" => SearchDirectoryPeopleMergeSourcesItems :: DirectoryMergeSourceTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
                 }
             }
             impl ::google_field_selector::FieldSelector for SearchDirectoryPeopleMergeSourcesItems {
@@ -7845,9 +8085,9 @@ pub mod resources {
             }
             #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
             pub enum SearchDirectoryPeopleSourcesItems {
-                #[doc = "G Suite domain shared contact."]
+                #[doc = "Google Workspace domain shared contact."]
                 DirectorySourceTypeDomainContact,
-                #[doc = "G Suite domain profile."]
+                #[doc = "Google Workspace domain profile."]
                 DirectorySourceTypeDomainProfile,
                 #[doc = "Unspecified."]
                 DirectorySourceTypeUnspecified,
@@ -8053,7 +8293,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Create a batch of new contacts and return the PersonResponses for the newly created contacts."]
+            #[doc = "Create a batch of new contacts and return the PersonResponses for the newly Mutate requests for the same user should be sent sequentially to avoid increased latency and failures."]
             pub fn batch_create_contacts(
                 &self,
                 request: crate::schemas::BatchCreateContactsRequest,
@@ -8075,7 +8315,7 @@ pub mod resources {
                     xgafv: None,
                 }
             }
-            #[doc = "Delete a batch of contacts. Any non-contact data will not be deleted."]
+            #[doc = "Delete a batch of contacts. Any non-contact data will not be deleted. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures."]
             pub fn batch_delete_contacts(
                 &self,
                 request: crate::schemas::BatchDeleteContactsRequest,
@@ -8097,7 +8337,7 @@ pub mod resources {
                     xgafv: None,
                 }
             }
-            #[doc = "Update a batch of contacts and return a map of resource names to PersonResponses for the updated contacts."]
+            #[doc = "Update a batch of contacts and return a map of resource names to PersonResponses for the updated contacts. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures."]
             pub fn batch_update_contacts(
                 &self,
                 request: crate::schemas::BatchUpdateContactsRequest,
@@ -8119,7 +8359,7 @@ pub mod resources {
                     xgafv: None,
                 }
             }
-            #[doc = "Create a new contact and return the person resource for that contact. The request returns a 400 error if more than one field is specified on a field that is a singleton for contact sources: * biographies * birthdays * genders * names"]
+            #[doc = "Create a new contact and return the person resource for that contact. The request returns a 400 error if more than one field is specified on a field that is a singleton for contact sources: * biographies * birthdays * genders * names Mutate requests for the same user should be sent sequentially to avoid increased latency and failures."]
             pub fn create_contact(
                 &self,
                 request: crate::schemas::Person,
@@ -8143,7 +8383,7 @@ pub mod resources {
                     sources: None,
                 }
             }
-            #[doc = "Delete a contact person. Any non-contact data will not be deleted."]
+            #[doc = "Delete a contact person. Any non-contact data will not be deleted. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures."]
             pub fn delete_contact(
                 &self,
                 resource_name: impl Into<String>,
@@ -8165,7 +8405,7 @@ pub mod resources {
                     resource_name: resource_name.into(),
                 }
             }
-            #[doc = "Delete a contact's photo."]
+            #[doc = "Delete a contact's photo. Mutate requests for the same user should be done sequentially to avoid // lock contention."]
             pub fn delete_contact_photo(
                 &self,
                 resource_name: impl Into<String>,
@@ -8233,7 +8473,7 @@ pub mod resources {
                     sources: None,
                 }
             }
-            #[doc = "Provides a list of domain profiles and domain contacts in the authenticated user's domain directory."]
+            #[doc = "Provides a list of domain profiles and domain contacts in the authenticated user's domain directory. When the `sync_token` is specified, resources deleted since the last sync will be returned as a person with `PersonMetadata.deleted` set to true. When the `page_token` or `sync_token` is specified, all other request parameters must match the first call. Writes may have a propagation delay of several minutes for sync requests. Incremental syncs are not intended for read-after-write use cases. See example usage at [List the directory people that have changed](/people/v1/directory#list_the_directory_people_that_have_changed)."]
             pub fn list_directory_people(&self) -> ListDirectoryPeopleRequestBuilder {
                 ListDirectoryPeopleRequestBuilder {
                     reqwest: &self.reqwest,
@@ -8258,7 +8498,7 @@ pub mod resources {
                     sync_token: None,
                 }
             }
-            #[doc = "Provides a list of contacts in the authenticated user's grouped contacts that matches the search query."]
+            #[doc = "Provides a list of contacts in the authenticated user's grouped contacts that matches the search query. The query matches on a contact's `names`, `nickNames`, `emailAddresses`, `phoneNumbers`, and `organizations` fields that are from the CONTACT source. **IMPORTANT**: Before searching, clients should send a warmup request with an empty query to update the cache. See https://developers.google.com/people/v1/contacts#search_the_users_contacts"]
             pub fn search_contacts(&self) -> SearchContactsRequestBuilder {
                 SearchContactsRequestBuilder {
                     reqwest: &self.reqwest,
@@ -8277,6 +8517,7 @@ pub mod resources {
                     page_size: None,
                     query: None,
                     read_mask: None,
+                    sources: None,
                 }
             }
             #[doc = "Provides a list of domain profiles and domain contacts in the authenticated user's domain directory that match the search query."]
@@ -8303,7 +8544,7 @@ pub mod resources {
                     sources: None,
                 }
             }
-            #[doc = "Update contact data for an existing contact person. Any non-contact data will not be modified. Any non-contact data in the person to update will be ignored. All fields specified in the `update_mask` will be replaced. The server returns a 400 error if `person.metadata.sources` is not specified for the contact to be updated or if there is no contact source. The server returns a 400 error with reason `\"failedPrecondition\"` if `person.metadata.sources.etag` is different than the contact's etag, which indicates the contact has changed since its data was read. Clients should get the latest person and merge their updates into the latest person. The server returns a 400 error if `memberships` are being updated and there are no contact group memberships specified on the person. The server returns a 400 error if more than one field is specified on a field that is a singleton for contact sources: * biographies * birthdays * genders * names"]
+            #[doc = "Update contact data for an existing contact person. Any non-contact data will not be modified. Any non-contact data in the person to update will be ignored. All fields specified in the `update_mask` will be replaced. The server returns a 400 error if `person.metadata.sources` is not specified for the contact to be updated or if there is no contact source. The server returns a 400 error with reason `\"failedPrecondition\"` if `person.metadata.sources.etag` is different than the contact's etag, which indicates the contact has changed since its data was read. Clients should get the latest person and merge their updates into the latest person. The server returns a 400 error if `memberships` are being updated and there are no contact group memberships specified on the person. The server returns a 400 error if more than one field is specified on a field that is a singleton for contact sources: * biographies * birthdays * genders * names Mutate requests for the same user should be sent sequentially to avoid increased latency and failures."]
             pub fn update_contact(
                 &self,
                 request: crate::schemas::Person,
@@ -8330,7 +8571,7 @@ pub mod resources {
                     update_person_fields: None,
                 }
             }
-            #[doc = "Update a contact's photo."]
+            #[doc = "Update a contact's photo. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures."]
             pub fn update_contact_photo(
                 &self,
                 request: crate::schemas::UpdateContactPhotoRequest,
@@ -9520,7 +9761,7 @@ pub mod resources {
                 self.request_mask_include_field = Some(value.into());
                 self
             }
-            #[doc = "Required. The resource names of the people to provide information about. It's repeatable. The URL query parameter should be resourceNames=<name1>&resourceNames=<name2>&... - To get information about the authenticated user, specify `people/me`. - To get information about a google account, specify `people/{account_id}`. - To get information about a contact, specify the resource name that identifies the contact as returned by [`people.connections.list`](/people/api/rest/v1/people.connections/list). You can include up to 50 resource names in one request."]
+            #[doc = "Required. The resource names of the people to provide information about. It's repeatable. The URL query parameter should be resourceNames=<name1>&resourceNames=<name2>&... - To get information about the authenticated user, specify `people/me`. - To get information about a google account, specify `people/{account_id}`. - To get information about a contact, specify the resource name that identifies the contact as returned by `people.connections.list`. There is a maximum of 200 resource names."]
             pub fn resource_names(mut self, value: impl Into<Vec<String>>) -> Self {
                 self.resource_names = Some(value.into());
                 self
@@ -9712,7 +9953,7 @@ pub mod resources {
                 self.page_size = Some(value);
                 self
             }
-            #[doc = "Optional. A page token, received from a previous `ListDirectoryPeople` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListDirectoryPeople` must match the call that provided the page token."]
+            #[doc = "Optional. A page token, received from a previous response `next_page_token`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `people.listDirectoryPeople` must match the first call that provided the page token."]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
                 self
@@ -9722,7 +9963,7 @@ pub mod resources {
                 self.read_mask = Some(value.into());
                 self
             }
-            #[doc = "Optional. Whether the response should include `next_sync_token`, which can be used to get all changes since the last request. For subsequent sync requests use the `sync_token` param instead."]
+            #[doc = "Optional. Whether the response should return `next_sync_token`. It can be used to get incremental changes since the last request by setting it on the request `sync_token`. More details about sync behavior at `people.listDirectoryPeople`."]
             pub fn request_sync_token(mut self, value: bool) -> Self {
                 self.request_sync_token = Some(value);
                 self
@@ -9735,7 +9976,7 @@ pub mod resources {
                 self.sources = Some(value.into());
                 self
             }
-            #[doc = "Optional. A sync token, received from a previous `ListDirectoryPeople` call. Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to `ListDirectoryPeople` must match the call that provided the sync token."]
+            #[doc = "Optional. A sync token, received from a previous response `next_sync_token` Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to `people.listDirectoryPeople` must match the first call that provided the sync token. More details about sync behavior at `people.listDirectoryPeople`."]
             pub fn sync_token(mut self, value: impl Into<String>) -> Self {
                 self.sync_token = Some(value.into());
                 self
@@ -10000,6 +10241,7 @@ pub mod resources {
             page_size: Option<i32>,
             query: Option<String>,
             read_mask: Option<String>,
+            sources: Option<Vec<crate::resources::people::params::SearchContactsSourcesItems>>,
             access_token: Option<String>,
             alt: Option<crate::params::Alt>,
             callback: Option<String>,
@@ -10013,7 +10255,7 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> SearchContactsRequestBuilder<'a> {
-            #[doc = "Optional. The number of results to return."]
+            #[doc = "Optional. The number of results to return. Defaults to 10 if field is not set, or set to 0. Values greater than 30 will be capped to 30."]
             pub fn page_size(mut self, value: i32) -> Self {
                 self.page_size = Some(value);
                 self
@@ -10026,6 +10268,14 @@ pub mod resources {
             #[doc = "Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined"]
             pub fn read_mask(mut self, value: impl Into<String>) -> Self {
                 self.read_mask = Some(value.into());
+                self
+            }
+            #[doc = "Optional. A mask of what source types to return. Defaults to READ_SOURCE_TYPE_CONTACT if not set."]
+            pub fn sources(
+                mut self,
+                value: impl Into<Vec<crate::resources::people::params::SearchContactsSourcesItems>>,
+            ) -> Self {
+                self.sources = Some(value.into());
                 self
             }
             #[doc = "OAuth access token."]
@@ -10142,6 +10392,9 @@ pub mod resources {
                 req = req.query(&[("pageSize", &self.page_size)]);
                 req = req.query(&[("query", &self.query)]);
                 req = req.query(&[("readMask", &self.read_mask)]);
+                for value in self.sources.iter().flatten() {
+                    req = req.query(&[("sources", value)]);
+                }
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -10203,7 +10456,7 @@ pub mod resources {
                 self.page_size = Some(value);
                 self
             }
-            #[doc = "Optional. A page token, received from a previous `SearchDirectoryPeople` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchDirectoryPeople` must match the call that provided the page token."]
+            #[doc = "Optional. A page token, received from a previous response `next_page_token`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchDirectoryPeople` must match the first call that provided the page token."]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
                 self
@@ -11006,7 +11259,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Provides a list of the authenticated user's contacts. The request returns a 400 error if `personFields` is not specified. The request returns a 410 error if `sync_token` is specified and is expired. Sync tokens expire after 7 days to prevent data drift between clients and the server. To handle a sync token expired error, a request should be sent without `sync_token` to get all contacts."]
+                #[doc = "Provides a list of the authenticated user's contacts. Sync tokens expire 7 days after the full sync. A request with an expired sync token will result in a 410 error. In the case of such an error clients should make a full sync request without a `sync_token`. The first page of a full sync request has an additional quota. If the quota is exceeded, a 429 error will be returned. This quota is fixed and can not be increased. When the `sync_token` is specified, resources deleted since the last sync will be returned as a person with `PersonMetadata.deleted` set to true. When the `page_token` or `sync_token` is specified, all other request parameters must match the first call. Writes may have a propagation delay of several minutes for sync requests. Incremental syncs are not intended for read-after-write use cases. See example usage at [List the user's contacts that have changed](/people/v1/contacts#list_the_users_contacts_that_have_changed)."]
                 pub fn list(&self, resource_name: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -11067,7 +11320,7 @@ pub mod resources {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "Optional. A page token, received from a previous `ListConnections` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListConnections` must match the call that provided the page token."]
+                #[doc = "Optional. A page token, received from a previous response `next_page_token`. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `people.connections.list` must match the first call that provided the page token."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -11082,7 +11335,7 @@ pub mod resources {
                     self.request_mask_include_field = Some(value.into());
                     self
                 }
-                #[doc = "Optional. Whether the response should include `next_sync_token` on the last page, which can be used to get all changes since the last request. For subsequent sync requests use the `sync_token` param instead. Initial full sync requests that specify `request_sync_token` and do not specify `sync_token` have an additional rate limit per user. Each client should generally only be doing a full sync once every few days per user and so should not hit this limit."]
+                #[doc = "Optional. Whether the response should return `next_sync_token` on the last page of results. It can be used to get incremental changes since the last request by setting it on the request `sync_token`. More details about sync behavior at `people.connections.list`."]
                 pub fn request_sync_token(mut self, value: bool) -> Self {
                     self.request_sync_token = Some(value);
                     self
@@ -11105,7 +11358,7 @@ pub mod resources {
                     self.sources = Some(value.into());
                     self
                 }
-                #[doc = "Optional. A sync token, received from a previous `ListConnections` call. Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to `ListConnections` except `page_size` and `page_token` must match the initial call that provided the sync token. Sync tokens expire after seven days, after which a full sync request without a `sync_token` should be made."]
+                #[doc = "Optional. A sync token, received from a previous response `next_sync_token` Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to `people.connections.list` must match the first call that provided the sync token. More details about sync behavior at `people.connections.list`."]
                 pub fn sync_token(mut self, value: impl Into<String>) -> Self {
                     self.sync_token = Some(value.into());
                     self

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("translate3")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210312")
+            .version("0.1.0-20220415")
             .about("Integrates text translation into your website or application.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -53,9 +53,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut locations1 = SubCommand::with_name("locations")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: batch_translate_text, detect_language, get, get_supported_languages, list and translate_text");
+                        .about("methods: batch_translate_document, batch_translate_text, detect_language, get, get_supported_languages, list, translate_document and translate_text");
         {
-            let mcmd = SubCommand::with_name("batch_translate_text").about("Translates a large volume of text in asynchronous batch mode. This function provides real-time output as the inputs are being processed. If caller cancels a request, the partial results (for an input file, it\'s all or nothing) may still be available on the specified output location. This call returns immediately and you can use google.longrunning.Operation.name to poll the status of the call.");
+            let mcmd = SubCommand::with_name("batch_translate_document").about("Translates a large volume of document in asynchronous batch mode. This function provides real-time output as the inputs are being processed. If caller cancels a request, the partial results (for an input file, it's all or nothing) may still be available on the specified output location. This call returns immediately and you can use google.longrunning.Operation.name to poll the status of the call.");
+            locations1 = locations1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("batch_translate_text").about("Translates a large volume of text in asynchronous batch mode. This function provides real-time output as the inputs are being processed. If caller cancels a request, the partial results (for an input file, it's all or nothing) may still be available on the specified output location. This call returns immediately and you can use google.longrunning.Operation.name to poll the status of the call.");
             locations1 = locations1.subcommand(mcmd);
         }
         {
@@ -78,6 +82,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             locations1 = locations1.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("translate_document")
+                .about("Translates documents in synchronous mode.");
+            locations1 = locations1.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("translate_text")
                 .about("Translates input text and returns translated text.");
             locations1 = locations1.subcommand(mcmd);
@@ -86,21 +95,21 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get and list");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a glossary and returns the long-running operation. Returns NOT_FOUND, if the project doesn\'t exist.");
+            let mcmd = SubCommand::with_name("create").about("Creates a glossary and returns the long-running operation. Returns NOT_FOUND, if the project doesn't exist.");
             glossaries2 = glossaries2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a glossary, or cancels glossary construction if the glossary isn\'t created yet. Returns NOT_FOUND, if the glossary doesn\'t exist.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns NOT_FOUND, if the glossary doesn't exist.");
             glossaries2 = glossaries2.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("get")
-                .about("Gets a glossary. Returns NOT_FOUND, if the glossary doesn\'t exist.");
+                .about("Gets a glossary. Returns NOT_FOUND, if the glossary doesn't exist.");
             glossaries2 = glossaries2.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("list").about(
-                "Lists glossaries in a project. Returns NOT_FOUND, if the project doesn\'t exist.",
+                "Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't exist.",
             );
             glossaries2 = glossaries2.subcommand(mcmd);
         }
@@ -108,11 +117,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: cancel, delete, get, list and wait");
         {
-            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn\'t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
+            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
             operations2 = operations2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn\'t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.");
             operations2 = operations2.subcommand(mcmd);
         }
         {
@@ -120,7 +129,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             operations2 = operations2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn\'t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations2 = operations2.subcommand(mcmd);
         }
         {

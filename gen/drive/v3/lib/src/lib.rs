@@ -527,7 +527,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Comment {
-        #[doc = "A region of the document represented as a JSON string. See anchor documentation for details on how to define and interpret anchor properties."]
+        #[doc = "A region of the document represented as a JSON string. For details on defining anchor properties, refer to  Add comments and replies."]
         #[serde(
             rename = "anchor",
             default,
@@ -831,6 +831,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "The organizational unit of this shared drive. This field is only populated on drives.list responses when the useDomainAdminAccess parameter is set to true."]
+        #[serde(
+            rename = "orgUnitId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub org_unit_id: ::std::option::Option<String>,
         #[doc = "A set of restrictions that apply to this shared drive or items inside this shared drive."]
         #[serde(
             rename = "restrictions",
@@ -1218,7 +1225,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub file_extension: ::std::option::Option<String>,
-        #[doc = "The color for a folder as an RGB hex string. The supported colors are published in the folderColorPalette field of the About resource.\nIf an unsupported color is specified, the closest color in the palette will be used instead."]
+        #[doc = "The color for a folder or shortcut to a folder as an RGB hex string. The supported colors are published in the folderColorPalette field of the About resource.\nIf an unsupported color is specified, the closest color in the palette will be used instead."]
         #[serde(
             rename = "folderColorRgb",
             default,
@@ -1295,6 +1302,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub last_modifying_user: ::std::option::Option<crate::schemas::User>,
+        #[doc = "Contains details about the link URLs that clients are using to refer to this item."]
+        #[serde(
+            rename = "linkShareMetadata",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub link_share_metadata: ::std::option::Option<crate::schemas::FileLinkShareMetadata>,
         #[doc = "The MD5 checksum for the content of the file. This is only applicable to files with binary content in Google Drive."]
         #[serde(
             rename = "md5Checksum",
@@ -1351,7 +1365,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub owned_by_me: ::std::option::Option<bool>,
-        #[doc = "The owners of the file. Currently, only certain legacy files may have more than one owner. Not populated for items in shared drives."]
+        #[doc = "The owner of this file. Only certain legacy files may have more than one owner. This field isn't populated for items in shared drives."]
         #[serde(
             rename = "owners",
             default,
@@ -1394,6 +1408,13 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub quota_bytes_used: ::std::option::Option<i64>,
+        #[doc = "A key needed to access the item via a shared link."]
+        #[serde(
+            rename = "resourceKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resource_key: ::std::option::Option<String>,
         #[doc = "Whether the file has been shared. Not populated for items in shared drives."]
         #[serde(
             rename = "shared",
@@ -1568,6 +1589,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FileCapabilities {
+        #[doc = "Whether the current user is the pending owner of the file. Not populated for shared drive files."]
+        #[serde(
+            rename = "canAcceptOwnership",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub can_accept_ownership: ::std::option::Option<bool>,
         #[doc = "Whether the current user can add children to this folder. This is always false when the item is not a folder."]
         #[serde(
             rename = "canAddChildren",
@@ -1596,6 +1624,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub can_change_copy_requires_writer_permission: ::std::option::Option<bool>,
+        #[doc = "Whether the current user can change the securityUpdateEnabled field on link share metadata."]
+        #[serde(
+            rename = "canChangeSecurityUpdateEnabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub can_change_security_update_enabled: ::std::option::Option<bool>,
         #[doc = "Deprecated"]
         #[serde(
             rename = "canChangeViewersCanCopyContent",
@@ -2103,6 +2138,44 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct FileLinkShareMetadata {
+        #[doc = "Whether the file is eligible for security update."]
+        #[serde(
+            rename = "securityUpdateEligible",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub security_update_eligible: ::std::option::Option<bool>,
+        #[doc = "Whether the security update is enabled for this file."]
+        #[serde(
+            rename = "securityUpdateEnabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub security_update_enabled: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for FileLinkShareMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FileLinkShareMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct FileShortcutDetails {
         #[doc = "The ID of the file that this shortcut points to."]
         #[serde(
@@ -2118,6 +2191,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub target_mime_type: ::std::option::Option<String>,
+        #[doc = "The ResourceKey for the target file."]
+        #[serde(
+            rename = "targetResourceKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target_resource_key: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for FileShortcutDetails {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2332,6 +2412,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
+        #[doc = "Whether the account associated with this permission is a pending owner. Only populated for user type permissions for files that are not in a shared drive."]
+        #[serde(
+            rename = "pendingOwner",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pending_owner: ::std::option::Option<bool>,
         #[doc = "Details of whether the permissions on this shared drive item are inherited or directly on this item. This is an output-only field which is present only for shared drive items."]
         #[serde(
             rename = "permissionDetails",
@@ -2935,6 +3022,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "The organizational unit of this shared drive. This field is only populated on drives.list responses when the useDomainAdminAccess parameter is set to true."]
+        #[serde(
+            rename = "orgUnitId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub org_unit_id: ::std::option::Option<String>,
         #[doc = "A set of restrictions that apply to this Team Drive or items inside this Team Drive."]
         #[serde(
             rename = "restrictions",
@@ -5418,6 +5512,8 @@ pub mod resources {
                     quota_user: None,
                     user_ip: None,
                     drive_id: drive_id.into(),
+                    allow_item_deletion: None,
+                    use_domain_admin_access: None,
                 }
             }
             #[doc = "Gets a shared drive's metadata by ID."]
@@ -5634,6 +5730,8 @@ pub mod resources {
             pub(crate) reqwest: &'a ::reqwest::blocking::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             drive_id: String,
+            allow_item_deletion: Option<bool>,
+            use_domain_admin_access: Option<bool>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
             key: Option<String>,
@@ -5643,6 +5741,16 @@ pub mod resources {
             user_ip: Option<String>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
+            #[doc = "Whether any items inside the shared drive should also be deleted. This option is only supported when useDomainAdminAccess is also set to true."]
+            pub fn allow_item_deletion(mut self, value: bool) -> Self {
+                self.allow_item_deletion = Some(value);
+                self
+            }
+            #[doc = "Issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the shared drive belongs."]
+            pub fn use_domain_admin_access(mut self, value: bool) -> Self {
+                self.use_domain_admin_access = Some(value);
+                self
+            }
             #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
             pub fn key(mut self, value: impl Into<String>) -> Self {
                 self.key = Some(value.into());
@@ -5690,6 +5798,8 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                req = req.query(&[("allowItemDeletion", &self.allow_item_deletion)]);
+                req = req.query(&[("useDomainAdminAccess", &self.use_domain_admin_access)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
                 req = req.query(&[("key", &self.key)]);
@@ -5983,7 +6093,7 @@ pub mod resources {
             user_ip: Option<String>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "Maximum number of shared drives to return."]
+            #[doc = "Maximum number of shared drives to return per page."]
             pub fn page_size(mut self, value: i32) -> Self {
                 self.page_size = Some(value);
                 self
@@ -6650,7 +6760,7 @@ pub mod resources {
                     enforce_single_parent: None,
                 }
             }
-            #[doc = "Exports a Google Doc to the requested MIME type and returns the exported content. Please note that the exported content is limited to 10MB."]
+            #[doc = "Exports a Google Workspace document to the requested MIME type and returns exported byte content. Note that the exported content is limited to 10MB."]
             pub fn export(
                 &self,
                 file_id: impl Into<String>,
@@ -6683,6 +6793,7 @@ pub mod resources {
                     quota_user: None,
                     user_ip: None,
                     count: None,
+                    r#type: None,
                     space: None,
                 }
             }
@@ -6733,7 +6844,7 @@ pub mod resources {
                     team_drive_id: None,
                 }
             }
-            #[doc = "Updates a file's metadata and/or content. This method supports patch semantics."]
+            #[doc = "Updates a file's metadata and/or content. When calling this method, only populate fields in the request that you want to modify. When updating fields, some fields might change automatically, such as modifiedDate. This method supports patch semantics."]
             pub fn update(
                 &self,
                 request: crate::schemas::File,
@@ -6762,7 +6873,7 @@ pub mod resources {
                     use_content_as_indexable_text: None,
                 }
             }
-            #[doc = "Subscribes to changes to a file"]
+            #[doc = "Subscribes to changes to a file. While you can establish a channel for changes to a file on a shared drive, a change to a shared drive file won't create a notification."]
             pub fn watch(
                 &self,
                 request: crate::schemas::Channel,
@@ -7504,6 +7615,7 @@ pub mod resources {
             pub(crate) reqwest: &'a ::reqwest::blocking::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             count: Option<i32>,
+            r#type: Option<String>,
             space: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -7519,7 +7631,12 @@ pub mod resources {
                 self.count = Some(value);
                 self
             }
-            #[doc = "The space in which the IDs can be used to create new files. Supported values are 'drive' and 'appDataFolder'."]
+            #[doc = "The type of items which the IDs can be used for. Supported values are 'files' and 'shortcuts'. Note that 'shortcuts' are only supported in the drive 'space'. (Default: 'files')"]
+            pub fn r#type(mut self, value: impl Into<String>) -> Self {
+                self.r#type = Some(value.into());
+                self
+            }
+            #[doc = "The space in which the IDs can be used to create new files. Supported values are 'drive' and 'appDataFolder'. (Default: 'drive')"]
             pub fn space(mut self, value: impl Into<String>) -> Self {
                 self.space = Some(value.into());
                 self
@@ -7616,6 +7733,7 @@ pub mod resources {
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::GET, path);
                 req = req.query(&[("count", &self.count)]);
+                req = req.query(&[("type", &self.r#type)]);
                 req = req.query(&[("space", &self.space)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -7887,7 +8005,7 @@ pub mod resources {
                 self.q = Some(value.into());
                 self
             }
-            #[doc = "A comma-separated list of spaces to query within the corpus. Supported values are 'drive', 'appDataFolder' and 'photos'."]
+            #[doc = "A comma-separated list of spaces to query within the corpus. Supported values are 'drive' and 'appDataFolder'."]
             pub fn spaces(mut self, value: impl Into<String>) -> Self {
                 self.spaces = Some(value.into());
                 self
@@ -8795,7 +8913,7 @@ pub mod resources {
                 self.supports_team_drives = Some(value);
                 self
             }
-            #[doc = "Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect."]
+            #[doc = "Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect. File owners can only transfer ownership of files existing on My Drive. Files existing in a shared drive are owned by the organization that owns that shared drive. Ownership transfers are not supported for files and folders in shared drives. Organizers of a shared drive can move items from that shared drive into their My Drive which transfers the ownership to them."]
             pub fn transfer_ownership(mut self, value: bool) -> Self {
                 self.transfer_ownership = Some(value);
                 self
@@ -9513,7 +9631,7 @@ pub mod resources {
                 self.supports_team_drives = Some(value);
                 self
             }
-            #[doc = "Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect."]
+            #[doc = "Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect. File owners can only transfer ownership of files existing on My Drive. Files existing in a shared drive are owned by the organization that owns that shared drive. Ownership transfers are not supported for files and folders in shared drives. Organizers of a shared drive can move items from that shared drive into their My Drive which transfers the ownership to them."]
             pub fn transfer_ownership(mut self, value: bool) -> Self {
                 self.transfer_ownership = Some(value);
                 self

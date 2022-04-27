@@ -25,6 +25,30 @@ pub mod schemas {
         )]
         pub common_criteria_mode:
             ::std::option::Option<crate::schemas::AdvancedSecurityOverridesCommonCriteriaMode>,
+        #[doc = "Controls access to developer settings: developer options and safe boot. Replaces safeBootDisabled (deprecated) and debuggingFeaturesAllowed (deprecated)."]
+        #[serde(
+            rename = "developerSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub developer_settings:
+            ::std::option::Option<crate::schemas::AdvancedSecurityOverridesDeveloperSettings>,
+        #[doc = "Whether Google Play Protect verification (https://support.google.com/accounts/answer/2812853) is enforced. Replaces ensureVerifyAppsEnabled (deprecated)."]
+        #[serde(
+            rename = "googlePlayProtectVerifyApps",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub google_play_protect_verify_apps: ::std::option::Option<
+            crate::schemas::AdvancedSecurityOverridesGooglePlayProtectVerifyApps,
+        >,
+        #[doc = "Personal apps that can read work profile notifications using a NotificationListenerService (https://developer.android.com/reference/android/service/notification/NotificationListenerService). By default, no personal apps (aside from system apps) can read work notifications. Each value in the list must be a package name."]
+        #[serde(
+            rename = "personalAppsThatCanReadWorkNotifications",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub personal_apps_that_can_read_work_notifications: ::std::option::Option<Vec<String>>,
         #[doc = "The policy for untrusted apps (apps from unknown sources) enforced on the device. Replaces install_unknown_sources_allowed (deprecated)."]
         #[serde(
             rename = "untrustedAppsPolicy",
@@ -136,6 +160,164 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for AdvancedSecurityOverridesCommonCriteriaMode {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AdvancedSecurityOverridesDeveloperSettings {
+        #[doc = "Allows all developer settings. The user can access and optionally configure the settings."]
+        DeveloperSettingsAllowed,
+        #[doc = "Default. Disables all developer settings and prevents the user from accessing them."]
+        DeveloperSettingsDisabled,
+        #[doc = "Unspecified. Defaults to DEVELOPER_SETTINGS_DISABLED."]
+        DeveloperSettingsUnspecified,
+    }
+    impl AdvancedSecurityOverridesDeveloperSettings {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AdvancedSecurityOverridesDeveloperSettings::DeveloperSettingsAllowed => {
+                    "DEVELOPER_SETTINGS_ALLOWED"
+                }
+                AdvancedSecurityOverridesDeveloperSettings::DeveloperSettingsDisabled => {
+                    "DEVELOPER_SETTINGS_DISABLED"
+                }
+                AdvancedSecurityOverridesDeveloperSettings::DeveloperSettingsUnspecified => {
+                    "DEVELOPER_SETTINGS_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AdvancedSecurityOverridesDeveloperSettings {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AdvancedSecurityOverridesDeveloperSettings {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<AdvancedSecurityOverridesDeveloperSettings, ()> {
+            Ok(match s {
+                "DEVELOPER_SETTINGS_ALLOWED" => {
+                    AdvancedSecurityOverridesDeveloperSettings::DeveloperSettingsAllowed
+                }
+                "DEVELOPER_SETTINGS_DISABLED" => {
+                    AdvancedSecurityOverridesDeveloperSettings::DeveloperSettingsDisabled
+                }
+                "DEVELOPER_SETTINGS_UNSPECIFIED" => {
+                    AdvancedSecurityOverridesDeveloperSettings::DeveloperSettingsUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AdvancedSecurityOverridesDeveloperSettings {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AdvancedSecurityOverridesDeveloperSettings {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AdvancedSecurityOverridesDeveloperSettings {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DEVELOPER_SETTINGS_ALLOWED" => {
+                    AdvancedSecurityOverridesDeveloperSettings::DeveloperSettingsAllowed
+                }
+                "DEVELOPER_SETTINGS_DISABLED" => {
+                    AdvancedSecurityOverridesDeveloperSettings::DeveloperSettingsDisabled
+                }
+                "DEVELOPER_SETTINGS_UNSPECIFIED" => {
+                    AdvancedSecurityOverridesDeveloperSettings::DeveloperSettingsUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AdvancedSecurityOverridesDeveloperSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AdvancedSecurityOverridesDeveloperSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AdvancedSecurityOverridesGooglePlayProtectVerifyApps {
+        #[doc = "Unspecified. Defaults to VERIFY_APPS_ENFORCED."]
+        GooglePlayProtectVerifyAppsUnspecified,
+        #[doc = "Default. Force-enables app verification."]
+        VerifyAppsEnforced,
+        #[doc = "Allows the user to choose whether to enable app verification."]
+        VerifyAppsUserChoice,
+    }
+    impl AdvancedSecurityOverridesGooglePlayProtectVerifyApps {
+        pub fn as_str(self) -> &'static str {
+            match self { AdvancedSecurityOverridesGooglePlayProtectVerifyApps :: GooglePlayProtectVerifyAppsUnspecified => "GOOGLE_PLAY_PROTECT_VERIFY_APPS_UNSPECIFIED" , AdvancedSecurityOverridesGooglePlayProtectVerifyApps :: VerifyAppsEnforced => "VERIFY_APPS_ENFORCED" , AdvancedSecurityOverridesGooglePlayProtectVerifyApps :: VerifyAppsUserChoice => "VERIFY_APPS_USER_CHOICE" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AdvancedSecurityOverridesGooglePlayProtectVerifyApps {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AdvancedSecurityOverridesGooglePlayProtectVerifyApps {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<AdvancedSecurityOverridesGooglePlayProtectVerifyApps, ()>
+        {
+            Ok (match s { "GOOGLE_PLAY_PROTECT_VERIFY_APPS_UNSPECIFIED" => AdvancedSecurityOverridesGooglePlayProtectVerifyApps :: GooglePlayProtectVerifyAppsUnspecified , "VERIFY_APPS_ENFORCED" => AdvancedSecurityOverridesGooglePlayProtectVerifyApps :: VerifyAppsEnforced , "VERIFY_APPS_USER_CHOICE" => AdvancedSecurityOverridesGooglePlayProtectVerifyApps :: VerifyAppsUserChoice , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for AdvancedSecurityOverridesGooglePlayProtectVerifyApps {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AdvancedSecurityOverridesGooglePlayProtectVerifyApps {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AdvancedSecurityOverridesGooglePlayProtectVerifyApps {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "GOOGLE_PLAY_PROTECT_VERIFY_APPS_UNSPECIFIED" => AdvancedSecurityOverridesGooglePlayProtectVerifyApps :: GooglePlayProtectVerifyAppsUnspecified , "VERIFY_APPS_ENFORCED" => AdvancedSecurityOverridesGooglePlayProtectVerifyApps :: VerifyAppsEnforced , "VERIFY_APPS_USER_CHOICE" => AdvancedSecurityOverridesGooglePlayProtectVerifyApps :: VerifyAppsUserChoice , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for AdvancedSecurityOverridesGooglePlayProtectVerifyApps
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AdvancedSecurityOverridesGooglePlayProtectVerifyApps {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -348,8 +530,67 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AppVersion {
+        #[doc = "If the value is True, it indicates that this version is a production track."]
+        #[serde(
+            rename = "production",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub production: ::std::option::Option<bool>,
+        #[doc = "Track identifiers that the app version is published in. This does not include the production track (see production instead)."]
+        #[serde(
+            rename = "trackIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub track_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "Unique increasing identifier for the app version."]
+        #[serde(
+            rename = "versionCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version_code: ::std::option::Option<i32>,
+        #[doc = "The string used in the Play store by the app developer to identify the version. The string is not necessarily unique or localized (for example, the string could be \"1.4\")."]
+        #[serde(
+            rename = "versionString",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version_string: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for AppVersion {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AppVersion {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Application {
+        #[doc = "Whether this app is free, free with in-app purchases, or paid. If the pricing is unspecified, this means the app is not generally available anymore (even though it might still be available to people who own it)."]
+        #[serde(
+            rename = "appPricing",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub app_pricing: ::std::option::Option<crate::schemas::ApplicationAppPricing>,
         #[doc = "Application tracks visible to the enterprise."]
         #[serde(
             rename = "appTracks",
@@ -357,6 +598,77 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub app_tracks: ::std::option::Option<Vec<crate::schemas::AppTrackInfo>>,
+        #[doc = "Versions currently available for this app."]
+        #[serde(
+            rename = "appVersions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub app_versions: ::std::option::Option<Vec<crate::schemas::AppVersion>>,
+        #[doc = "The name of the author of the apps (for example, the app developer)."]
+        #[serde(
+            rename = "author",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub author: ::std::option::Option<String>,
+        #[doc = "The countries which this app is available in as per ISO 3166-1 alpha-2."]
+        #[serde(
+            rename = "availableCountries",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub available_countries: ::std::option::Option<Vec<String>>,
+        #[doc = "The app category (e.g. RACING, SOCIAL, etc.)"]
+        #[serde(
+            rename = "category",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub category: ::std::option::Option<String>,
+        #[doc = "The content rating for this app."]
+        #[serde(
+            rename = "contentRating",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub content_rating: ::std::option::Option<crate::schemas::ApplicationContentRating>,
+        #[doc = "The localized promotional description, if available."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "How and to whom the package is made available."]
+        #[serde(
+            rename = "distributionChannel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub distribution_channel:
+            ::std::option::Option<crate::schemas::ApplicationDistributionChannel>,
+        #[doc = "Noteworthy features (if any) of this app."]
+        #[serde(
+            rename = "features",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub features: ::std::option::Option<Vec<crate::schemas::ApplicationFeaturesItems>>,
+        #[doc = "Full app description, if available."]
+        #[serde(
+            rename = "fullDescription",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub full_description: ::std::option::Option<String>,
+        #[doc = "A link to an image that can be used as an icon for the app. This image is suitable for use up to a pixel size of 512 x 512."]
+        #[serde(
+            rename = "iconUrl",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub icon_url: ::std::option::Option<String>,
         #[doc = "The set of managed properties available to be pre-configured for the app."]
         #[serde(
             rename = "managedProperties",
@@ -364,7 +676,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub managed_properties: ::std::option::Option<Vec<crate::schemas::ManagedProperty>>,
-        #[doc = "The name of the app in the form enterprises/{enterpriseId}/applications/{package_name}."]
+        #[doc = "The minimum Android SDK necessary to run the app."]
+        #[serde(
+            rename = "minAndroidSdkVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub min_android_sdk_version: ::std::option::Option<i32>,
+        #[doc = "The name of the app in the form enterprises/{enterprise}/applications/{package_name}."]
         #[serde(
             rename = "name",
             default,
@@ -378,6 +697,34 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub permissions: ::std::option::Option<Vec<crate::schemas::ApplicationPermission>>,
+        #[doc = "A link to the (consumer) Google Play details page for the app."]
+        #[serde(
+            rename = "playStoreUrl",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub play_store_url: ::std::option::Option<String>,
+        #[doc = "A localised description of the recent changes made to the app."]
+        #[serde(
+            rename = "recentChanges",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub recent_changes: ::std::option::Option<String>,
+        #[doc = "A list of screenshot links representing the app."]
+        #[serde(
+            rename = "screenshotUrls",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub screenshot_urls: ::std::option::Option<Vec<String>>,
+        #[doc = "A link to a smaller image that can be used as an icon for the app. This image is suitable for use up to a pixel size of 128 x 128."]
+        #[serde(
+            rename = "smallIconUrl",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub small_icon_url: ::std::option::Option<String>,
         #[doc = "The title of the app. Localized."]
         #[serde(
             rename = "title",
@@ -385,6 +732,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub title: ::std::option::Option<String>,
+        #[doc = "Output only. The approximate time (within 7 days) the app was last published."]
+        #[serde(
+            rename = "updateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_time: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for Application {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -392,6 +746,336 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Application {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ApplicationAppPricing {
+        #[doc = "Unknown pricing, used to denote an approved app that is not generally available."]
+        AppPricingUnspecified,
+        #[doc = "The app is free."]
+        Free,
+        #[doc = "The app is free, but offers in-app purchases."]
+        FreeWithInAppPurchase,
+        #[doc = "The app is paid."]
+        Paid,
+    }
+    impl ApplicationAppPricing {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ApplicationAppPricing::AppPricingUnspecified => "APP_PRICING_UNSPECIFIED",
+                ApplicationAppPricing::Free => "FREE",
+                ApplicationAppPricing::FreeWithInAppPurchase => "FREE_WITH_IN_APP_PURCHASE",
+                ApplicationAppPricing::Paid => "PAID",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ApplicationAppPricing {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ApplicationAppPricing {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ApplicationAppPricing, ()> {
+            Ok(match s {
+                "APP_PRICING_UNSPECIFIED" => ApplicationAppPricing::AppPricingUnspecified,
+                "FREE" => ApplicationAppPricing::Free,
+                "FREE_WITH_IN_APP_PURCHASE" => ApplicationAppPricing::FreeWithInAppPurchase,
+                "PAID" => ApplicationAppPricing::Paid,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ApplicationAppPricing {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ApplicationAppPricing {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ApplicationAppPricing {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "APP_PRICING_UNSPECIFIED" => ApplicationAppPricing::AppPricingUnspecified,
+                "FREE" => ApplicationAppPricing::Free,
+                "FREE_WITH_IN_APP_PURCHASE" => ApplicationAppPricing::FreeWithInAppPurchase,
+                "PAID" => ApplicationAppPricing::Paid,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ApplicationAppPricing {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ApplicationAppPricing {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ApplicationContentRating {
+        #[doc = "Unspecified."]
+        ContentRatingUnspecified,
+        #[doc = "Content suitable for ages 18 and above only."]
+        EighteenYears,
+        #[doc = "Content suitable for ages 7 and above only."]
+        SevenYears,
+        #[doc = "Content suitable for ages 16 and above only."]
+        SixteenYears,
+        #[doc = "Content suitable for ages 3 and above only."]
+        ThreeYears,
+        #[doc = "Content suitable for ages 12 and above only."]
+        TwelveYears,
+    }
+    impl ApplicationContentRating {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ApplicationContentRating::ContentRatingUnspecified => "CONTENT_RATING_UNSPECIFIED",
+                ApplicationContentRating::EighteenYears => "EIGHTEEN_YEARS",
+                ApplicationContentRating::SevenYears => "SEVEN_YEARS",
+                ApplicationContentRating::SixteenYears => "SIXTEEN_YEARS",
+                ApplicationContentRating::ThreeYears => "THREE_YEARS",
+                ApplicationContentRating::TwelveYears => "TWELVE_YEARS",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ApplicationContentRating {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ApplicationContentRating {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ApplicationContentRating, ()> {
+            Ok(match s {
+                "CONTENT_RATING_UNSPECIFIED" => ApplicationContentRating::ContentRatingUnspecified,
+                "EIGHTEEN_YEARS" => ApplicationContentRating::EighteenYears,
+                "SEVEN_YEARS" => ApplicationContentRating::SevenYears,
+                "SIXTEEN_YEARS" => ApplicationContentRating::SixteenYears,
+                "THREE_YEARS" => ApplicationContentRating::ThreeYears,
+                "TWELVE_YEARS" => ApplicationContentRating::TwelveYears,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ApplicationContentRating {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ApplicationContentRating {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ApplicationContentRating {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CONTENT_RATING_UNSPECIFIED" => ApplicationContentRating::ContentRatingUnspecified,
+                "EIGHTEEN_YEARS" => ApplicationContentRating::EighteenYears,
+                "SEVEN_YEARS" => ApplicationContentRating::SevenYears,
+                "SIXTEEN_YEARS" => ApplicationContentRating::SixteenYears,
+                "THREE_YEARS" => ApplicationContentRating::ThreeYears,
+                "TWELVE_YEARS" => ApplicationContentRating::TwelveYears,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ApplicationContentRating {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ApplicationContentRating {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ApplicationDistributionChannel {
+        #[doc = "Unspecified."]
+        DistributionChannelUnspecified,
+        #[doc = "Package is a private app (restricted to an enterprise) but hosted by Google."]
+        PrivateGoogleHosted,
+        #[doc = "Private app (restricted to an enterprise) and is privately hosted."]
+        PrivateSelfHosted,
+        #[doc = "Package is available through the Play store and not restricted to a specific enterprise."]
+        PublicGoogleHosted,
+    }
+    impl ApplicationDistributionChannel {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ApplicationDistributionChannel::DistributionChannelUnspecified => {
+                    "DISTRIBUTION_CHANNEL_UNSPECIFIED"
+                }
+                ApplicationDistributionChannel::PrivateGoogleHosted => "PRIVATE_GOOGLE_HOSTED",
+                ApplicationDistributionChannel::PrivateSelfHosted => "PRIVATE_SELF_HOSTED",
+                ApplicationDistributionChannel::PublicGoogleHosted => "PUBLIC_GOOGLE_HOSTED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ApplicationDistributionChannel {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ApplicationDistributionChannel {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ApplicationDistributionChannel, ()> {
+            Ok(match s {
+                "DISTRIBUTION_CHANNEL_UNSPECIFIED" => {
+                    ApplicationDistributionChannel::DistributionChannelUnspecified
+                }
+                "PRIVATE_GOOGLE_HOSTED" => ApplicationDistributionChannel::PrivateGoogleHosted,
+                "PRIVATE_SELF_HOSTED" => ApplicationDistributionChannel::PrivateSelfHosted,
+                "PUBLIC_GOOGLE_HOSTED" => ApplicationDistributionChannel::PublicGoogleHosted,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ApplicationDistributionChannel {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ApplicationDistributionChannel {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ApplicationDistributionChannel {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DISTRIBUTION_CHANNEL_UNSPECIFIED" => {
+                    ApplicationDistributionChannel::DistributionChannelUnspecified
+                }
+                "PRIVATE_GOOGLE_HOSTED" => ApplicationDistributionChannel::PrivateGoogleHosted,
+                "PRIVATE_SELF_HOSTED" => ApplicationDistributionChannel::PrivateSelfHosted,
+                "PUBLIC_GOOGLE_HOSTED" => ApplicationDistributionChannel::PublicGoogleHosted,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ApplicationDistributionChannel {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ApplicationDistributionChannel {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ApplicationFeaturesItems {
+        #[doc = "Unspecified."]
+        AppFeatureUnspecified,
+        #[doc = "The app is a VPN."]
+        VpnApp,
+    }
+    impl ApplicationFeaturesItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ApplicationFeaturesItems::AppFeatureUnspecified => "APP_FEATURE_UNSPECIFIED",
+                ApplicationFeaturesItems::VpnApp => "VPN_APP",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ApplicationFeaturesItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ApplicationFeaturesItems {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ApplicationFeaturesItems, ()> {
+            Ok(match s {
+                "APP_FEATURE_UNSPECIFIED" => ApplicationFeaturesItems::AppFeatureUnspecified,
+                "VPN_APP" => ApplicationFeaturesItems::VpnApp,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ApplicationFeaturesItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ApplicationFeaturesItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ApplicationFeaturesItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "APP_FEATURE_UNSPECIFIED" => ApplicationFeaturesItems::AppFeatureUnspecified,
+                "VPN_APP" => ApplicationFeaturesItems::VpnApp,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ApplicationFeaturesItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ApplicationFeaturesItems {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -600,7 +1284,15 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub accessible_track_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "This feature is not generally available yet."]
+        #[doc = "Specifies whether the app is allowed networking when the VPN is not connected and alwaysOnVpnPackage.lockdownEnabled is enabled. If set to VPN_LOCKDOWN_ENFORCED, the app is not allowed networking, and if set to VPN_LOCKDOWN_EXEMPTION, the app is allowed networking. Only supported on devices running Android 10 and above. If this is not supported by the device, the device will contain a NonComplianceDetail with non_compliance_reason set to API_LEVEL and a fieldPath. If this is not applicable to the app, the device will contain a NonComplianceDetail with non_compliance_reason set to UNSUPPORTED and a fieldPath. The fieldPath is set to applications[i].alwaysOnVpnLockdownExemption, where i is the index of the package in the applications policy."]
+        #[serde(
+            rename = "alwaysOnVpnLockdownExemption",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub always_on_vpn_lockdown_exemption:
+            ::std::option::Option<crate::schemas::ApplicationPolicyAlwaysOnVpnLockdownExemption>,
+        #[doc = "Controls the auto-update mode for the app."]
         #[serde(
             rename = "autoUpdateMode",
             default,
@@ -639,6 +1331,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disabled: ::std::option::Option<bool>,
+        #[doc = "Configuration to enable this app as an extension app, with the capability of interacting with Android Device Policy offline.This field can be set for at most one app."]
+        #[serde(
+            rename = "extensionConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub extension_config: ::std::option::Option<crate::schemas::ExtensionConfig>,
         #[doc = "The type of installation to perform."]
         #[serde(
             rename = "installType",
@@ -702,14 +1401,73 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ApplicationPolicyAlwaysOnVpnLockdownExemption {
+        #[doc = "Unspecified. Defaults to VPN_LOCKDOWN_ENFORCED."]
+        AlwaysOnVpnLockdownExemptionUnspecified,
+        #[doc = "The app respects the always-on VPN lockdown setting."]
+        VpnLockdownEnforced,
+        #[doc = "The app is exempt from the always-on VPN lockdown setting."]
+        VpnLockdownExemption,
+    }
+    impl ApplicationPolicyAlwaysOnVpnLockdownExemption {
+        pub fn as_str(self) -> &'static str {
+            match self { ApplicationPolicyAlwaysOnVpnLockdownExemption :: AlwaysOnVpnLockdownExemptionUnspecified => "ALWAYS_ON_VPN_LOCKDOWN_EXEMPTION_UNSPECIFIED" , ApplicationPolicyAlwaysOnVpnLockdownExemption :: VpnLockdownEnforced => "VPN_LOCKDOWN_ENFORCED" , ApplicationPolicyAlwaysOnVpnLockdownExemption :: VpnLockdownExemption => "VPN_LOCKDOWN_EXEMPTION" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ApplicationPolicyAlwaysOnVpnLockdownExemption {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ApplicationPolicyAlwaysOnVpnLockdownExemption {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<ApplicationPolicyAlwaysOnVpnLockdownExemption, ()> {
+            Ok (match s { "ALWAYS_ON_VPN_LOCKDOWN_EXEMPTION_UNSPECIFIED" => ApplicationPolicyAlwaysOnVpnLockdownExemption :: AlwaysOnVpnLockdownExemptionUnspecified , "VPN_LOCKDOWN_ENFORCED" => ApplicationPolicyAlwaysOnVpnLockdownExemption :: VpnLockdownEnforced , "VPN_LOCKDOWN_EXEMPTION" => ApplicationPolicyAlwaysOnVpnLockdownExemption :: VpnLockdownExemption , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for ApplicationPolicyAlwaysOnVpnLockdownExemption {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ApplicationPolicyAlwaysOnVpnLockdownExemption {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ApplicationPolicyAlwaysOnVpnLockdownExemption {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "ALWAYS_ON_VPN_LOCKDOWN_EXEMPTION_UNSPECIFIED" => ApplicationPolicyAlwaysOnVpnLockdownExemption :: AlwaysOnVpnLockdownExemptionUnspecified , "VPN_LOCKDOWN_ENFORCED" => ApplicationPolicyAlwaysOnVpnLockdownExemption :: VpnLockdownEnforced , "VPN_LOCKDOWN_EXEMPTION" => ApplicationPolicyAlwaysOnVpnLockdownExemption :: VpnLockdownExemption , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ApplicationPolicyAlwaysOnVpnLockdownExemption {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ApplicationPolicyAlwaysOnVpnLockdownExemption {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ApplicationPolicyAutoUpdateMode {
-        #[doc = "This feature is not generally available yet."]
+        #[doc = "The app is automatically updated with low priority to minimize the impact on the user.The app is updated when all of the following constraints are met: The device is not actively used. The device is connected to an unmetered network. The device is charging.The device is notified about a new update within 24 hours after it is published by the developer, after which the app is updated the next time the constraints above are met."]
         AutoUpdateDefault,
-        #[doc = "This feature is not generally available yet."]
+        #[doc = "The app is updated as soon as possible. No constraints are applied.The device is notified immediately about a new update after it becomes available."]
         AutoUpdateHighPriority,
-        #[doc = "This feature is not generally available yet."]
+        #[doc = "Unspecified. Defaults to AUTO_UPDATE_DEFAULT."]
         AutoUpdateModeUnspecified,
-        #[doc = "This feature is not generally available yet."]
+        #[doc = "The app is not automatically updated for a maximum of 90 days after the app becomes out of date.90 days after the app becomes out of date, the latest available version is installed automatically with low priority (see AUTO_UPDATE_DEFAULT). After the app is updated it is not automatically updated again until 90 days after it becomes out of date again.The user can still manually update the app from the Play Store at any time."]
         AutoUpdatePostponed,
     }
     impl ApplicationPolicyAutoUpdateMode {
@@ -818,7 +1576,7 @@ pub mod schemas {
         fn from_str(
             s: &str,
         ) -> ::std::result::Result<ApplicationPolicyConnectedWorkAndPersonalApp, ()> {
-            Ok ( match s { "CONNECTED_WORK_AND_PERSONAL_APP_ALLOWED" => ApplicationPolicyConnectedWorkAndPersonalApp :: ConnectedWorkAndPersonalAppAllowed , "CONNECTED_WORK_AND_PERSONAL_APP_DISALLOWED" => ApplicationPolicyConnectedWorkAndPersonalApp :: ConnectedWorkAndPersonalAppDisallowed , "CONNECTED_WORK_AND_PERSONAL_APP_UNSPECIFIED" => ApplicationPolicyConnectedWorkAndPersonalApp :: ConnectedWorkAndPersonalAppUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "CONNECTED_WORK_AND_PERSONAL_APP_ALLOWED" => ApplicationPolicyConnectedWorkAndPersonalApp :: ConnectedWorkAndPersonalAppAllowed , "CONNECTED_WORK_AND_PERSONAL_APP_DISALLOWED" => ApplicationPolicyConnectedWorkAndPersonalApp :: ConnectedWorkAndPersonalAppDisallowed , "CONNECTED_WORK_AND_PERSONAL_APP_UNSPECIFIED" => ApplicationPolicyConnectedWorkAndPersonalApp :: ConnectedWorkAndPersonalAppUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for ApplicationPolicyConnectedWorkAndPersonalApp {
@@ -840,7 +1598,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "CONNECTED_WORK_AND_PERSONAL_APP_ALLOWED" => ApplicationPolicyConnectedWorkAndPersonalApp :: ConnectedWorkAndPersonalAppAllowed , "CONNECTED_WORK_AND_PERSONAL_APP_DISALLOWED" => ApplicationPolicyConnectedWorkAndPersonalApp :: ConnectedWorkAndPersonalAppDisallowed , "CONNECTED_WORK_AND_PERSONAL_APP_UNSPECIFIED" => ApplicationPolicyConnectedWorkAndPersonalApp :: ConnectedWorkAndPersonalAppUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "CONNECTED_WORK_AND_PERSONAL_APP_ALLOWED" => ApplicationPolicyConnectedWorkAndPersonalApp :: ConnectedWorkAndPersonalAppAllowed , "CONNECTED_WORK_AND_PERSONAL_APP_DISALLOWED" => ApplicationPolicyConnectedWorkAndPersonalApp :: ConnectedWorkAndPersonalAppDisallowed , "CONNECTED_WORK_AND_PERSONAL_APP_UNSPECIFIED" => ApplicationPolicyConnectedWorkAndPersonalApp :: ConnectedWorkAndPersonalAppUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector for ApplicationPolicyConnectedWorkAndPersonalApp {
@@ -1593,7 +2351,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ChoosePrivateKeyRule {
-        #[doc = "The package names for which outgoing requests are subject to this rule. If no package names are specified, then the rule applies to all packages. For each package name listed, the rule applies to that package and all other packages that shared the same Android UID. The SHA256 hash of the signing key signatures of each package_name will be verified against those provided by Play"]
+        #[doc = "The package names to which this rule applies. The hash of the signing certificate for each app is verified against the hash provided by Play. If no package names are specified, then the alias is provided to all apps that call KeyChain.choosePrivateKeyAlias (https://developer.android.com/reference/android/security/KeyChain#choosePrivateKeyAlias%28android.app.Activity,%20android.security.KeyChainAliasCallback,%20java.lang.String[],%20java.security.Principal[],%20java.lang.String,%20int,%20java.lang.String%29) or any overloads (but not without calling KeyChain.choosePrivateKeyAlias, even on Android 11 and above). Any app with the same Android UID as a package specified here will have access when they call KeyChain.choosePrivateKeyAlias."]
         #[serde(
             rename = "packageNames",
             default,
@@ -1607,7 +2365,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub private_key_alias: ::std::option::Option<String>,
-        #[doc = "The URL pattern to match against the URL of the outgoing request. The pattern may contain asterisk (*) wildcards. Any URL is matched if unspecified."]
+        #[doc = "The URL pattern to match against the URL of the request. If not set or empty, it matches all URLs. This uses the regular expression syntax of java.util.regex.Pattern."]
         #[serde(
             rename = "urlPattern",
             default,
@@ -2280,6 +3038,276 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct CrossProfilePolicies {
+        #[doc = "Whether text copied from one profile (personal or work) can be pasted in the other profile."]
+        #[serde(
+            rename = "crossProfileCopyPaste",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cross_profile_copy_paste:
+            ::std::option::Option<crate::schemas::CrossProfilePoliciesCrossProfileCopyPaste>,
+        #[doc = "Whether data from one profile (personal or work) can be shared with apps in the other profile. Specifically controls simple data sharing via intents. Management of other cross-profile communication channels, such as contact search, copy/paste, or connected work & personal apps, are configured separately."]
+        #[serde(
+            rename = "crossProfileDataSharing",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cross_profile_data_sharing:
+            ::std::option::Option<crate::schemas::CrossProfilePoliciesCrossProfileDataSharing>,
+        #[doc = "Whether contacts stored in the work profile can be shown in personal profile contact searches and incoming calls."]
+        #[serde(
+            rename = "showWorkContactsInPersonalProfile",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub show_work_contacts_in_personal_profile: ::std::option::Option<
+            crate::schemas::CrossProfilePoliciesShowWorkContactsInPersonalProfile,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for CrossProfilePolicies {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CrossProfilePolicies {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum CrossProfilePoliciesCrossProfileCopyPaste {
+        #[doc = "Default. Prevents users from pasting into the personal profile text copied from the work profile. Text copied from the personal profile can be pasted into the work profile, and text copied from the work profile can be pasted into the work profile."]
+        CopyFromWorkToPersonalDisallowed,
+        #[doc = "Text copied in either profile can be pasted in the other profile."]
+        CrossProfileCopyPasteAllowed,
+        #[doc = "Unspecified. Defaults to COPY_FROM_WORK_TO_PERSONAL_DISALLOWED"]
+        CrossProfileCopyPasteUnspecified,
+    }
+    impl CrossProfilePoliciesCrossProfileCopyPaste {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                CrossProfilePoliciesCrossProfileCopyPaste::CopyFromWorkToPersonalDisallowed => {
+                    "COPY_FROM_WORK_TO_PERSONAL_DISALLOWED"
+                }
+                CrossProfilePoliciesCrossProfileCopyPaste::CrossProfileCopyPasteAllowed => {
+                    "CROSS_PROFILE_COPY_PASTE_ALLOWED"
+                }
+                CrossProfilePoliciesCrossProfileCopyPaste::CrossProfileCopyPasteUnspecified => {
+                    "CROSS_PROFILE_COPY_PASTE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for CrossProfilePoliciesCrossProfileCopyPaste {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for CrossProfilePoliciesCrossProfileCopyPaste {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<CrossProfilePoliciesCrossProfileCopyPaste, ()> {
+            Ok(match s {
+                "COPY_FROM_WORK_TO_PERSONAL_DISALLOWED" => {
+                    CrossProfilePoliciesCrossProfileCopyPaste::CopyFromWorkToPersonalDisallowed
+                }
+                "CROSS_PROFILE_COPY_PASTE_ALLOWED" => {
+                    CrossProfilePoliciesCrossProfileCopyPaste::CrossProfileCopyPasteAllowed
+                }
+                "CROSS_PROFILE_COPY_PASTE_UNSPECIFIED" => {
+                    CrossProfilePoliciesCrossProfileCopyPaste::CrossProfileCopyPasteUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for CrossProfilePoliciesCrossProfileCopyPaste {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for CrossProfilePoliciesCrossProfileCopyPaste {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for CrossProfilePoliciesCrossProfileCopyPaste {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "COPY_FROM_WORK_TO_PERSONAL_DISALLOWED" => {
+                    CrossProfilePoliciesCrossProfileCopyPaste::CopyFromWorkToPersonalDisallowed
+                }
+                "CROSS_PROFILE_COPY_PASTE_ALLOWED" => {
+                    CrossProfilePoliciesCrossProfileCopyPaste::CrossProfileCopyPasteAllowed
+                }
+                "CROSS_PROFILE_COPY_PASTE_UNSPECIFIED" => {
+                    CrossProfilePoliciesCrossProfileCopyPaste::CrossProfileCopyPasteUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for CrossProfilePoliciesCrossProfileCopyPaste {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CrossProfilePoliciesCrossProfileCopyPaste {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum CrossProfilePoliciesCrossProfileDataSharing {
+        #[doc = "Data from either profile can be shared with the other profile."]
+        CrossProfileDataSharingAllowed,
+        #[doc = "Prevents data from being shared from both the personal profile to the work profile and the work profile to the personal profile."]
+        CrossProfileDataSharingDisallowed,
+        #[doc = "Unspecified. Defaults to DATA_SHARING_FROM_WORK_TO_PERSONAL_DISALLOWED."]
+        CrossProfileDataSharingUnspecified,
+        #[doc = "Default. Prevents users from sharing data from the work profile to apps in the personal profile. Personal data can be shared with work apps."]
+        DataSharingFromWorkToPersonalDisallowed,
+    }
+    impl CrossProfilePoliciesCrossProfileDataSharing {
+        pub fn as_str(self) -> &'static str {
+            match self { CrossProfilePoliciesCrossProfileDataSharing :: CrossProfileDataSharingAllowed => "CROSS_PROFILE_DATA_SHARING_ALLOWED" , CrossProfilePoliciesCrossProfileDataSharing :: CrossProfileDataSharingDisallowed => "CROSS_PROFILE_DATA_SHARING_DISALLOWED" , CrossProfilePoliciesCrossProfileDataSharing :: CrossProfileDataSharingUnspecified => "CROSS_PROFILE_DATA_SHARING_UNSPECIFIED" , CrossProfilePoliciesCrossProfileDataSharing :: DataSharingFromWorkToPersonalDisallowed => "DATA_SHARING_FROM_WORK_TO_PERSONAL_DISALLOWED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for CrossProfilePoliciesCrossProfileDataSharing {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for CrossProfilePoliciesCrossProfileDataSharing {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<CrossProfilePoliciesCrossProfileDataSharing, ()> {
+            Ok (match s { "CROSS_PROFILE_DATA_SHARING_ALLOWED" => CrossProfilePoliciesCrossProfileDataSharing :: CrossProfileDataSharingAllowed , "CROSS_PROFILE_DATA_SHARING_DISALLOWED" => CrossProfilePoliciesCrossProfileDataSharing :: CrossProfileDataSharingDisallowed , "CROSS_PROFILE_DATA_SHARING_UNSPECIFIED" => CrossProfilePoliciesCrossProfileDataSharing :: CrossProfileDataSharingUnspecified , "DATA_SHARING_FROM_WORK_TO_PERSONAL_DISALLOWED" => CrossProfilePoliciesCrossProfileDataSharing :: DataSharingFromWorkToPersonalDisallowed , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for CrossProfilePoliciesCrossProfileDataSharing {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for CrossProfilePoliciesCrossProfileDataSharing {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for CrossProfilePoliciesCrossProfileDataSharing {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "CROSS_PROFILE_DATA_SHARING_ALLOWED" => CrossProfilePoliciesCrossProfileDataSharing :: CrossProfileDataSharingAllowed , "CROSS_PROFILE_DATA_SHARING_DISALLOWED" => CrossProfilePoliciesCrossProfileDataSharing :: CrossProfileDataSharingDisallowed , "CROSS_PROFILE_DATA_SHARING_UNSPECIFIED" => CrossProfilePoliciesCrossProfileDataSharing :: CrossProfileDataSharingUnspecified , "DATA_SHARING_FROM_WORK_TO_PERSONAL_DISALLOWED" => CrossProfilePoliciesCrossProfileDataSharing :: DataSharingFromWorkToPersonalDisallowed , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for CrossProfilePoliciesCrossProfileDataSharing {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CrossProfilePoliciesCrossProfileDataSharing {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum CrossProfilePoliciesShowWorkContactsInPersonalProfile {
+        #[doc = "Default. Allows work profile contacts to appear in personal profile contact searches and incoming calls"]
+        ShowWorkContactsInPersonalProfileAllowed,
+        #[doc = "Prevents work profile contacts from appearing in personal profile contact searches and incoming calls"]
+        ShowWorkContactsInPersonalProfileDisallowed,
+        #[doc = "Unspecified. Defaults to SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_ALLOWED."]
+        ShowWorkContactsInPersonalProfileUnspecified,
+    }
+    impl CrossProfilePoliciesShowWorkContactsInPersonalProfile {
+        pub fn as_str(self) -> &'static str {
+            match self { CrossProfilePoliciesShowWorkContactsInPersonalProfile :: ShowWorkContactsInPersonalProfileAllowed => "SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_ALLOWED" , CrossProfilePoliciesShowWorkContactsInPersonalProfile :: ShowWorkContactsInPersonalProfileDisallowed => "SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_DISALLOWED" , CrossProfilePoliciesShowWorkContactsInPersonalProfile :: ShowWorkContactsInPersonalProfileUnspecified => "SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for CrossProfilePoliciesShowWorkContactsInPersonalProfile {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for CrossProfilePoliciesShowWorkContactsInPersonalProfile {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<CrossProfilePoliciesShowWorkContactsInPersonalProfile, ()>
+        {
+            Ok (match s { "SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_ALLOWED" => CrossProfilePoliciesShowWorkContactsInPersonalProfile :: ShowWorkContactsInPersonalProfileAllowed , "SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_DISALLOWED" => CrossProfilePoliciesShowWorkContactsInPersonalProfile :: ShowWorkContactsInPersonalProfileDisallowed , "SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_UNSPECIFIED" => CrossProfilePoliciesShowWorkContactsInPersonalProfile :: ShowWorkContactsInPersonalProfileUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for CrossProfilePoliciesShowWorkContactsInPersonalProfile {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for CrossProfilePoliciesShowWorkContactsInPersonalProfile {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for CrossProfilePoliciesShowWorkContactsInPersonalProfile {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_ALLOWED" => CrossProfilePoliciesShowWorkContactsInPersonalProfile :: ShowWorkContactsInPersonalProfileAllowed , "SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_DISALLOWED" => CrossProfilePoliciesShowWorkContactsInPersonalProfile :: ShowWorkContactsInPersonalProfileDisallowed , "SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_UNSPECIFIED" => CrossProfilePoliciesShowWorkContactsInPersonalProfile :: ShowWorkContactsInPersonalProfileUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for CrossProfilePoliciesShowWorkContactsInPersonalProfile
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for CrossProfilePoliciesShowWorkContactsInPersonalProfile
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Date {
         #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
         #[serde(
@@ -2329,6 +3357,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub application_reports: ::std::option::Option<Vec<crate::schemas::ApplicationReport>>,
+        #[doc = "The password requirements currently applied to the device. The applied requirements may be slightly different from those specified in passwordPolicies in some cases. fieldPath is set based on passwordPolicies."]
+        #[serde(
+            rename = "appliedPasswordPolicies",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub applied_password_policies:
+            ::std::option::Option<Vec<crate::schemas::PasswordRequirements>>,
         #[doc = "The name of the policy currently applied to the device."]
         #[serde(
             rename = "appliedPolicyName",
@@ -2450,7 +3486,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub memory_events: ::std::option::Option<Vec<crate::schemas::MemoryEvent>>,
-        #[doc = "Memory information. This information is only available if memoryInfoEnabled is true in the device's policy."]
+        #[doc = "Memory information: contains information about device memory and storage."]
         #[serde(
             rename = "memoryInfo",
             default,
@@ -2571,7 +3607,7 @@ pub mod schemas {
     pub enum DeviceAppliedState {
         #[doc = "The device is active."]
         Active,
-        #[doc = "The device was deleted. This state will never be returned by an API call, but is used in the final status report published to Cloud Pub/Sub when the device acknowledges the deletion."]
+        #[doc = "The device was deleted. This state is never returned by an API call, but is used in the final status report when the device acknowledges the deletion. If the device is deleted via the API call, this state is published to Pub/Sub. If the user deletes the work profile or resets the device, the device state will remain unknown to the server."]
         Deleted,
         #[doc = "This value is disallowed."]
         DeviceStateUnspecified,
@@ -2809,7 +3845,7 @@ pub mod schemas {
     pub enum DeviceState {
         #[doc = "The device is active."]
         Active,
-        #[doc = "The device was deleted. This state will never be returned by an API call, but is used in the final status report published to Cloud Pub/Sub when the device acknowledges the deletion."]
+        #[doc = "The device was deleted. This state is never returned by an API call, but is used in the final status report when the device acknowledges the deletion. If the device is deleted via the API call, this state is published to Pub/Sub. If the user deletes the work profile or resets the device, the device state will remain unknown to the server."]
         Deleted,
         #[doc = "This value is disallowed."]
         DeviceStateUnspecified,
@@ -2947,7 +3983,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub unknown_sources_enabled: ::std::option::Option<bool>,
-        #[doc = "Whether Verify Apps (Google Play Protect (https://support.google.com/googleplay/answer/2812853)) is enabled on the device."]
+        #[doc = "Whether Google Play Protect verification (https://support.google.com/accounts/answer/2812853) is enforced on the device."]
         #[serde(
             rename = "verifyAppsEnabled",
             default,
@@ -3453,7 +4489,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub app_auto_approval_enabled: ::std::option::Option<bool>,
-        #[doc = "This feature is not generally available yet. The enterprise contact info of an EMM owned enterprise"]
+        #[doc = "The enterprise contact info of an EMM-managed enterprise."]
         #[serde(
             rename = "contactInfo",
             default,
@@ -3496,7 +4532,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub primary_color: ::std::option::Option<i32>,
-        #[doc = "The topic that Cloud Pub/Sub notifications are published to, in the form projects/{project}/topics/{topic}. This field is only required if Pub/Sub notifications are enabled."]
+        #[doc = "The topic which Pub/Sub notifications are published to, in the form projects/{project}/topics/{topic}. This field is only required if Pub/Sub notifications are enabled."]
         #[serde(
             rename = "pubsubTopic",
             default,
@@ -3540,6 +4576,8 @@ pub mod schemas {
         NotificationTypeUnspecified,
         #[doc = "A notification sent when a device issues a status report."]
         StatusReport,
+        #[doc = "A notification sent when device sends BatchUsageLogEvents."]
+        UsageLogs,
     }
     impl EnterpriseEnabledNotificationTypesItems {
         pub fn as_str(self) -> &'static str {
@@ -3551,6 +4589,7 @@ pub mod schemas {
                     "NOTIFICATION_TYPE_UNSPECIFIED"
                 }
                 EnterpriseEnabledNotificationTypesItems::StatusReport => "STATUS_REPORT",
+                EnterpriseEnabledNotificationTypesItems::UsageLogs => "USAGE_LOGS",
             }
         }
     }
@@ -3570,6 +4609,7 @@ pub mod schemas {
                     EnterpriseEnabledNotificationTypesItems::NotificationTypeUnspecified
                 }
                 "STATUS_REPORT" => EnterpriseEnabledNotificationTypesItems::StatusReport,
+                "USAGE_LOGS" => EnterpriseEnabledNotificationTypesItems::UsageLogs,
                 _ => return Err(()),
             })
         }
@@ -3601,6 +4641,7 @@ pub mod schemas {
                     EnterpriseEnabledNotificationTypesItems::NotificationTypeUnspecified
                 }
                 "STATUS_REPORT" => EnterpriseEnabledNotificationTypesItems::StatusReport,
+                "USAGE_LOGS" => EnterpriseEnabledNotificationTypesItems::UsageLogs,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -3616,6 +4657,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for EnterpriseEnabledNotificationTypesItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ExtensionConfig {
+        #[doc = "Fully qualified class name of the receiver service class for Android Device Policy to notify the extension app of any local command status updates."]
+        #[serde(
+            rename = "notificationReceiver",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub notification_receiver: ::std::option::Option<String>,
+        #[doc = "Hex-encoded SHA-256 hash of the signing certificate of the extension app. Only hexadecimal string representations of 64 characters are valid.If not specified, the signature for the corresponding package name is obtained from the Play Store instead.If this list is empty, the signature of the extension app on the device must match the signature obtained from the Play Store for the app to be able to communicate with Android Device Policy.If this list is not empty, the signature of the extension app on the device must match one of the entries in this list for the app to be able to communicate with Android Device Policy.In production use cases, it is recommended to leave this empty."]
+        #[serde(
+            rename = "signingKeyFingerprintsSha256",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub signing_key_fingerprints_sha_256: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for ExtensionConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ExtensionConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3742,6 +4821,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub device_baseband_version: ::std::option::Option<String>,
+        #[doc = "Output only. ID that uniquely identifies a personally-owned device in a particular organization. On the same physical device when enrolled with the same organization, this ID persists across setups and even factory resets. This ID is available on personally-owned devices with a work profile on devices running Android 12 and above."]
+        #[serde(
+            rename = "enterpriseSpecificId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enterprise_specific_id: ::std::option::Option<String>,
         #[doc = "GPU shutdown temperature thresholds in Celsius for each GPU on the device."]
         #[serde(
             rename = "gpuShutdownTemperatures",
@@ -3869,6 +4955,30 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for HardwareStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct IssueCommandResponse {}
+    impl ::google_field_selector::FieldSelector for IssueCommandResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IssueCommandResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4605,14 +5715,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListEnterprisesResponse {
-        #[doc = "This feature is not generally available yet. The list of enterprises."]
+        #[doc = "The list of enterprises."]
         #[serde(
             rename = "enterprises",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enterprises: ::std::option::Option<Vec<crate::schemas::Enterprise>>,
-        #[doc = "This feature is not generally available yet. If there are more results, a token to retrieve next page of results."]
+        #[doc = "If there are more results, a token to retrieve next page of results."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -5306,7 +6416,7 @@ pub mod schemas {
         fn from_str(
             s: &str,
         ) -> ::std::result::Result<NonComplianceDetailInstallationFailureReason, ()> {
-            Ok ( match s { "IN_PROGRESS" => NonComplianceDetailInstallationFailureReason :: InProgress , "INSTALLATION_FAILURE_REASON_UNKNOWN" => NonComplianceDetailInstallationFailureReason :: InstallationFailureReasonUnknown , "INSTALLATION_FAILURE_REASON_UNSPECIFIED" => NonComplianceDetailInstallationFailureReason :: InstallationFailureReasonUnspecified , "NO_LICENSES_REMAINING" => NonComplianceDetailInstallationFailureReason :: NoLicensesRemaining , "NOT_APPROVED" => NonComplianceDetailInstallationFailureReason :: NotApproved , "NOT_AVAILABLE_IN_COUNTRY" => NonComplianceDetailInstallationFailureReason :: NotAvailableInCountry , "NOT_COMPATIBLE_WITH_DEVICE" => NonComplianceDetailInstallationFailureReason :: NotCompatibleWithDevice , "NOT_ENROLLED" => NonComplianceDetailInstallationFailureReason :: NotEnrolled , "NOT_FOUND" => NonComplianceDetailInstallationFailureReason :: NotFound , "PERMISSIONS_NOT_ACCEPTED" => NonComplianceDetailInstallationFailureReason :: PermissionsNotAccepted , "USER_INVALID" => NonComplianceDetailInstallationFailureReason :: UserInvalid , _ => return Err ( ( ) ) , } )
+            Ok (match s { "IN_PROGRESS" => NonComplianceDetailInstallationFailureReason :: InProgress , "INSTALLATION_FAILURE_REASON_UNKNOWN" => NonComplianceDetailInstallationFailureReason :: InstallationFailureReasonUnknown , "INSTALLATION_FAILURE_REASON_UNSPECIFIED" => NonComplianceDetailInstallationFailureReason :: InstallationFailureReasonUnspecified , "NO_LICENSES_REMAINING" => NonComplianceDetailInstallationFailureReason :: NoLicensesRemaining , "NOT_APPROVED" => NonComplianceDetailInstallationFailureReason :: NotApproved , "NOT_AVAILABLE_IN_COUNTRY" => NonComplianceDetailInstallationFailureReason :: NotAvailableInCountry , "NOT_COMPATIBLE_WITH_DEVICE" => NonComplianceDetailInstallationFailureReason :: NotCompatibleWithDevice , "NOT_ENROLLED" => NonComplianceDetailInstallationFailureReason :: NotEnrolled , "NOT_FOUND" => NonComplianceDetailInstallationFailureReason :: NotFound , "PERMISSIONS_NOT_ACCEPTED" => NonComplianceDetailInstallationFailureReason :: PermissionsNotAccepted , "USER_INVALID" => NonComplianceDetailInstallationFailureReason :: UserInvalid , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for NonComplianceDetailInstallationFailureReason {
@@ -5328,7 +6438,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "IN_PROGRESS" => NonComplianceDetailInstallationFailureReason :: InProgress , "INSTALLATION_FAILURE_REASON_UNKNOWN" => NonComplianceDetailInstallationFailureReason :: InstallationFailureReasonUnknown , "INSTALLATION_FAILURE_REASON_UNSPECIFIED" => NonComplianceDetailInstallationFailureReason :: InstallationFailureReasonUnspecified , "NO_LICENSES_REMAINING" => NonComplianceDetailInstallationFailureReason :: NoLicensesRemaining , "NOT_APPROVED" => NonComplianceDetailInstallationFailureReason :: NotApproved , "NOT_AVAILABLE_IN_COUNTRY" => NonComplianceDetailInstallationFailureReason :: NotAvailableInCountry , "NOT_COMPATIBLE_WITH_DEVICE" => NonComplianceDetailInstallationFailureReason :: NotCompatibleWithDevice , "NOT_ENROLLED" => NonComplianceDetailInstallationFailureReason :: NotEnrolled , "NOT_FOUND" => NonComplianceDetailInstallationFailureReason :: NotFound , "PERMISSIONS_NOT_ACCEPTED" => NonComplianceDetailInstallationFailureReason :: PermissionsNotAccepted , "USER_INVALID" => NonComplianceDetailInstallationFailureReason :: UserInvalid , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "IN_PROGRESS" => NonComplianceDetailInstallationFailureReason :: InProgress , "INSTALLATION_FAILURE_REASON_UNKNOWN" => NonComplianceDetailInstallationFailureReason :: InstallationFailureReasonUnknown , "INSTALLATION_FAILURE_REASON_UNSPECIFIED" => NonComplianceDetailInstallationFailureReason :: InstallationFailureReasonUnspecified , "NO_LICENSES_REMAINING" => NonComplianceDetailInstallationFailureReason :: NoLicensesRemaining , "NOT_APPROVED" => NonComplianceDetailInstallationFailureReason :: NotApproved , "NOT_AVAILABLE_IN_COUNTRY" => NonComplianceDetailInstallationFailureReason :: NotAvailableInCountry , "NOT_COMPATIBLE_WITH_DEVICE" => NonComplianceDetailInstallationFailureReason :: NotCompatibleWithDevice , "NOT_ENROLLED" => NonComplianceDetailInstallationFailureReason :: NotEnrolled , "NOT_FOUND" => NonComplianceDetailInstallationFailureReason :: NotFound , "PERMISSIONS_NOT_ACCEPTED" => NonComplianceDetailInstallationFailureReason :: PermissionsNotAccepted , "USER_INVALID" => NonComplianceDetailInstallationFailureReason :: UserInvalid , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector for NonComplianceDetailInstallationFailureReason {
@@ -5891,21 +7001,27 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum PasswordRequirementsPasswordQuality {
-        #[doc = "The password must contain alphabetic (or symbol) characters."]
+        #[doc = "The password must contain alphabetic (or symbol) characters.This, when applied on personally owned work profile devices on Android 12 device-scoped, will be treated as COMPLEXITY_HIGH for application. See PasswordQuality for details."]
         Alphabetic,
-        #[doc = "The password must contain both numeric and alphabetic (or symbol) characters."]
+        #[doc = "The password must contain both numeric and alphabetic (or symbol) characters.This, when applied on personally owned work profile devices on Android 12 device-scoped, will be treated as COMPLEXITY_HIGH for application. See PasswordQuality for details."]
         Alphanumeric,
-        #[doc = "The device must be secured with a low-security biometric recognition technology, at minimum. This includes technologies that can recognize the identity of an individual that are roughly equivalent to a 3-digit PIN (false detection is less than 1 in 1,000)."]
+        #[doc = "The device must be secured with a low-security biometric recognition technology, at minimum. This includes technologies that can recognize the identity of an individual that are roughly equivalent to a 3-digit PIN (false detection is less than 1 in 1,000).This, when applied on personally owned work profile devices on Android 12 device-scoped, will be treated as COMPLEXITY_LOW for application. See PasswordQuality for details."]
         BiometricWeak,
-        #[doc = "The password must meet the minimum requirements specified in passwordMinimumLength, passwordMinimumLetters, passwordMinimumSymbols, etc. For example, if passwordMinimumSymbols is 2, the password must contain at least two symbols."]
+        #[doc = "The password must meet the minimum requirements specified in passwordMinimumLength, passwordMinimumLetters, passwordMinimumSymbols, etc. For example, if passwordMinimumSymbols is 2, the password must contain at least two symbols.This, when applied on personally owned work profile devices on Android 12 device-scoped, will be treated as COMPLEXITY_HIGH for application. In this case, the requirements in passwordMinimumLength, passwordMinimumLetters, passwordMinimumSymbols, etc are not applied. See PasswordQuality for details."]
         Complex,
-        #[doc = "The password must contain numeric characters."]
+        #[doc = "Define the high password complexity band as:On Android 12 and above: PIN with no repeating (4444) or ordered (1234, 4321, 2468) sequences, length at least 8 alphabetic, length at least 6 alphanumeric, length at least 6This sets the minimum complexity band which the password must meet.Enforcement varies among different Android versions, management modes and password scopes. See PasswordQuality for details."]
+        ComplexityHigh,
+        #[doc = "Define the low password complexity band as: pattern PIN with repeating (4444) or ordered (1234, 4321, 2468) sequencesThis sets the minimum complexity band which the password must meet.Enforcement varies among different Android versions, management modes and password scopes. See PasswordQuality for details."]
+        ComplexityLow,
+        #[doc = "Define the medium password complexity band as: PIN with no repeating (4444) or ordered (1234, 4321, 2468) sequences, length at least 4 alphabetic, length at least 4 alphanumeric, length at least 4This sets the minimum complexity band which the password must meet.Enforcement varies among different Android versions, management modes and password scopes. See PasswordQuality for details."]
+        ComplexityMedium,
+        #[doc = "The password must contain numeric characters.This, when applied on personally owned work profile devices on Android 12 device-scoped, will be treated as COMPLEXITY_MEDIUM for application. See PasswordQuality for details."]
         Numeric,
-        #[doc = "The password must contain numeric characters with no repeating (4444) or ordered (1234, 4321, 2468) sequences."]
+        #[doc = "The password must contain numeric characters with no repeating (4444) or ordered (1234, 4321, 2468) sequences.This, when applied on personally owned work profile devices on Android 12 device-scoped, will be treated as COMPLEXITY_MEDIUM for application. See PasswordQuality for details."]
         NumericComplex,
         #[doc = "There are no password requirements."]
         PasswordQualityUnspecified,
-        #[doc = "A password is required, but there are no restrictions on what the password must contain."]
+        #[doc = "A password is required, but there are no restrictions on what the password must contain.This, when applied on personally owned work profile devices on Android 12 device-scoped, will be treated as COMPLEXITY_LOW for application. See PasswordQuality for details."]
         Something,
     }
     impl PasswordRequirementsPasswordQuality {
@@ -5915,6 +7031,9 @@ pub mod schemas {
                 PasswordRequirementsPasswordQuality::Alphanumeric => "ALPHANUMERIC",
                 PasswordRequirementsPasswordQuality::BiometricWeak => "BIOMETRIC_WEAK",
                 PasswordRequirementsPasswordQuality::Complex => "COMPLEX",
+                PasswordRequirementsPasswordQuality::ComplexityHigh => "COMPLEXITY_HIGH",
+                PasswordRequirementsPasswordQuality::ComplexityLow => "COMPLEXITY_LOW",
+                PasswordRequirementsPasswordQuality::ComplexityMedium => "COMPLEXITY_MEDIUM",
                 PasswordRequirementsPasswordQuality::Numeric => "NUMERIC",
                 PasswordRequirementsPasswordQuality::NumericComplex => "NUMERIC_COMPLEX",
                 PasswordRequirementsPasswordQuality::PasswordQualityUnspecified => {
@@ -5937,6 +7056,9 @@ pub mod schemas {
                 "ALPHANUMERIC" => PasswordRequirementsPasswordQuality::Alphanumeric,
                 "BIOMETRIC_WEAK" => PasswordRequirementsPasswordQuality::BiometricWeak,
                 "COMPLEX" => PasswordRequirementsPasswordQuality::Complex,
+                "COMPLEXITY_HIGH" => PasswordRequirementsPasswordQuality::ComplexityHigh,
+                "COMPLEXITY_LOW" => PasswordRequirementsPasswordQuality::ComplexityLow,
+                "COMPLEXITY_MEDIUM" => PasswordRequirementsPasswordQuality::ComplexityMedium,
                 "NUMERIC" => PasswordRequirementsPasswordQuality::Numeric,
                 "NUMERIC_COMPLEX" => PasswordRequirementsPasswordQuality::NumericComplex,
                 "PASSWORD_QUALITY_UNSPECIFIED" => {
@@ -5971,6 +7093,9 @@ pub mod schemas {
                 "ALPHANUMERIC" => PasswordRequirementsPasswordQuality::Alphanumeric,
                 "BIOMETRIC_WEAK" => PasswordRequirementsPasswordQuality::BiometricWeak,
                 "COMPLEX" => PasswordRequirementsPasswordQuality::Complex,
+                "COMPLEXITY_HIGH" => PasswordRequirementsPasswordQuality::ComplexityHigh,
+                "COMPLEXITY_LOW" => PasswordRequirementsPasswordQuality::ComplexityLow,
+                "COMPLEXITY_MEDIUM" => PasswordRequirementsPasswordQuality::ComplexityMedium,
                 "NUMERIC" => PasswordRequirementsPasswordQuality::Numeric,
                 "NUMERIC_COMPLEX" => PasswordRequirementsPasswordQuality::NumericComplex,
                 "PASSWORD_QUALITY_UNSPECIFIED" => {
@@ -6633,7 +7758,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub adjust_volume_disabled: ::std::option::Option<bool>,
-        #[doc = "Security policies set to the most secure values by default. To maintain the security posture of a device, we don't recommend overriding any of the default values."]
+        #[doc = "Security policies set to secure values by default. To maintain the security posture of a device, we don't recommend overriding any of the default values."]
         #[serde(
             rename = "advancedSecurityOverrides",
             default,
@@ -6656,7 +7781,7 @@ pub mod schemas {
         )]
         pub android_device_policy_tracks:
             ::std::option::Option<Vec<crate::schemas::PolicyAndroidDevicePolicyTracksItems>>,
-        #[doc = "The app auto update policy, which controls when automatic app updates can be applied."]
+        #[doc = "Deprecated. Use autoUpdateMode instead.When autoUpdateMode is set to AUTO_UPDATE_POSTPONED or AUTO_UPDATE_HIGH_PRIORITY, this field has no effect.The app auto update policy, which controls when automatic app updates can be applied."]
         #[serde(
             rename = "appAutoUpdatePolicy",
             default,
@@ -6714,7 +7839,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bluetooth_disabled: ::std::option::Option<bool>,
-        #[doc = "Whether all cameras on the device are disabled."]
+        #[doc = "Controls the use of the camera and whether the user has access to the camera access toggle."]
+        #[serde(
+            rename = "cameraAccess",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub camera_access: ::std::option::Option<crate::schemas::PolicyCameraAccess>,
+        #[doc = "If camera_access is set to any value other than CAMERA_ACCESS_UNSPECIFIED, this has no effect. Otherwise this field controls whether cameras are disabled: If true, all cameras are disabled, otherwise they are available. For fully managed devices this field applies for all apps on the device. For work profiles, this field applies only to apps in the work profile, and the camera access of apps outside the work profile is unaffected."]
         #[serde(
             rename = "cameraDisabled",
             default,
@@ -6728,7 +7860,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cell_broadcasts_config_disabled: ::std::option::Option<bool>,
-        #[doc = "Rules for automatically choosing a private key and certificate to authenticate the device to a server. The rules are ordered by increasing precedence, so if an outgoing request matches more than one rule, the last rule defines which private key to use."]
+        #[doc = "Rules for determining apps' access to private keys. See ChoosePrivateKeyRule for details."]
         #[serde(
             rename = "choosePrivateKeyRules",
             default,
@@ -6757,6 +7889,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub credentials_config_disabled: ::std::option::Option<bool>,
+        #[doc = "Cross-profile policies applied on the device."]
+        #[serde(
+            rename = "crossProfilePolicies",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cross_profile_policies: ::std::option::Option<crate::schemas::CrossProfilePolicies>,
         #[doc = "Whether roaming data services are disabled."]
         #[serde(
             rename = "dataRoamingDisabled",
@@ -6886,6 +8025,13 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub maximum_time_to_lock: ::std::option::Option<i64>,
+        #[doc = "Controls the use of the microphone and whether the user has access to the microphone access toggle. This applies only on fully managed devices."]
+        #[serde(
+            rename = "microphoneAccess",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub microphone_access: ::std::option::Option<crate::schemas::PolicyMicrophoneAccess>,
         #[doc = "The minimum allowed Android API level."]
         #[serde(
             rename = "minimumApiLevel",
@@ -6921,7 +8067,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Whether the network escape hatch is enabled. If a network connection can't be made at boot time, the escape hatch prompts the user to temporarily connect to a network in order to refresh the device policy. After applying policy, the temporary network will be forgotten and the device will continue booting. This prevents being unable to connect to a network if there is no suitable network in the last policy and the device boots into an app in lock task mode, or the user is otherwise unable to reach device settings."]
+        #[doc = "Whether the network escape hatch is enabled. If a network connection can't be made at boot time, the escape hatch prompts the user to temporarily connect to a network in order to refresh the device policy. After applying policy, the temporary network will be forgotten and the device will continue booting. This prevents being unable to connect to a network if there is no suitable network in the last policy and the device boots into an app in lock task mode, or the user is otherwise unable to reach device settings.Note: Setting wifiConfigDisabled to true will override this setting under specific circumstances. Please see wifiConfigDisabled for further details."]
         #[serde(
             rename = "networkEscapeHatchEnabled",
             default,
@@ -6972,7 +8118,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub password_policies: ::std::option::Option<Vec<crate::schemas::PasswordRequirements>>,
-        #[doc = "Password requirements. The field password_requirements.require_password_unlock must not be set. DEPRECATED - Use password_policies."]
+        #[doc = "Password requirements. The field password_requirements.require_password_unlock must not be set. DEPRECATED - Use passwordPolicies.Note:Complexity-based values of PasswordQuality, that is, COMPLEXITY_LOW, COMPLEXITY_MEDIUM, and COMPLEXITY_HIGH, cannot be used here."]
         #[serde(
             rename = "passwordRequirements",
             default,
@@ -6986,7 +8132,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub permission_grants: ::std::option::Option<Vec<crate::schemas::PermissionGrant>>,
-        #[doc = "Specifies permitted accessibility services. If the field is not set, any accessibility service can be used. If the field is set, only the accessibility services in this list and the system's built-in accessibility service can be used. In particular, if the field is set to empty, only the system's built-in accessibility servicess can be used."]
+        #[doc = "Specifies permitted accessibility services. If the field is not set, any accessibility service can be used. If the field is set, only the accessibility services in this list and the system's built-in accessibility service can be used. In particular, if the field is set to empty, only the system's built-in accessibility servicess can be used. This can be set on fully managed devices and on work profiles. When applied to a work profile, this affects both the personal profile and the work profile."]
         #[serde(
             rename = "permittedAccessibilityServices",
             default,
@@ -7031,6 +8177,14 @@ pub mod schemas {
         )]
         pub policy_enforcement_rules:
             ::std::option::Option<Vec<crate::schemas::PolicyEnforcementRule>>,
+        #[doc = "Controls whether preferential network service is enabled on the work profile. For example, an organization may have an agreement with a carrier that all of the work data from its employees' devices will be sent via a network service dedicated for enterprise use. An example of a supported preferential network service is the enterprise slice on 5G networks. This has no effect on fully managed devices."]
+        #[serde(
+            rename = "preferentialNetworkService",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub preferential_network_service:
+            ::std::option::Option<crate::schemas::PolicyPreferentialNetworkService>,
         #[doc = "Allows showing UI on a device for a user to choose a private key alias if there are no matching rules in ChoosePrivateKeyRules. For devices below Android P, setting this may leave enterprise keys vulnerable."]
         #[serde(
             rename = "privateKeySelectionEnabled",
@@ -7080,7 +8234,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub set_wallpaper_disabled: ::std::option::Option<bool>,
-        #[doc = "Actions to take during the setup process."]
+        #[doc = "Action to take during the setup process. At most one action may be specified."]
         #[serde(
             rename = "setupActions",
             default,
@@ -7159,13 +8313,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub uninstall_apps_disabled: ::std::option::Option<bool>,
-        #[doc = "Whether the microphone is muted and adjusting microphone volume is disabled."]
+        #[doc = "If microphone_access is set to any value other than MICROPHONE_ACCESS_UNSPECIFIED, this has no effect. Otherwise this field controls whether microphones are disabled: If true, all microphones are disabled, otherwise they are available. This is available only on fully managed devices."]
         #[serde(
             rename = "unmuteMicrophoneDisabled",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub unmute_microphone_disabled: ::std::option::Option<bool>,
+        #[doc = "Configuration of device activity logging."]
+        #[serde(
+            rename = "usageLog",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub usage_log: ::std::option::Option<crate::schemas::UsageLog>,
         #[doc = "Whether transferring files over USB is disabled."]
         #[serde(
             rename = "usbFileTransferDisabled",
@@ -7195,7 +8356,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub vpn_config_disabled: ::std::option::Option<bool>,
-        #[doc = "Whether configuring Wi-Fi access points is disabled."]
+        #[doc = "Whether configuring Wi-Fi access points is disabled.Note: If a network connection can't be made at boot time and configuring Wi-Fi is disabled then network escape hatch will be shown in order to refresh the device policy (see networkEscapeHatchEnabled)."]
         #[serde(
             rename = "wifiConfigDisabled",
             default,
@@ -7489,6 +8650,87 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PolicyCameraAccess {
+        #[doc = "The field camera_disabled is ignored. All cameras on the device are disabled (for fully managed devices, this applies device-wide and for work profiles this applies only to the work profile).There are no explicit restrictions placed on the camera access toggle on Android 12 and above: on fully managed devices, the camera access toggle has no effect as all cameras are disabled. On devices with a work profile, this toggle has no effect on apps in the work profile, but it affects apps outside the work profile."]
+        CameraAccessDisabled,
+        #[doc = "The field camera_disabled is ignored. All cameras on the device are available. On fully managed devices running Android 12 and above, the user is unable to use the camera access toggle. On devices which are not fully managed or which run Android 11 or below, this is equivalent to CAMERA_ACCESS_USER_CHOICE."]
+        CameraAccessEnforced,
+        #[doc = "If camera_disabled is true, this is equivalent to CAMERA_ACCESS_DISABLED. Otherwise, this is equivalent to CAMERA_ACCESS_USER_CHOICE."]
+        CameraAccessUnspecified,
+        #[doc = "The field camera_disabled is ignored. This is the default device behaviour: all cameras on the device are available. On Android 12 and above, the user can use the camera access toggle."]
+        CameraAccessUserChoice,
+    }
+    impl PolicyCameraAccess {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PolicyCameraAccess::CameraAccessDisabled => "CAMERA_ACCESS_DISABLED",
+                PolicyCameraAccess::CameraAccessEnforced => "CAMERA_ACCESS_ENFORCED",
+                PolicyCameraAccess::CameraAccessUnspecified => "CAMERA_ACCESS_UNSPECIFIED",
+                PolicyCameraAccess::CameraAccessUserChoice => "CAMERA_ACCESS_USER_CHOICE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PolicyCameraAccess {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PolicyCameraAccess {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PolicyCameraAccess, ()> {
+            Ok(match s {
+                "CAMERA_ACCESS_DISABLED" => PolicyCameraAccess::CameraAccessDisabled,
+                "CAMERA_ACCESS_ENFORCED" => PolicyCameraAccess::CameraAccessEnforced,
+                "CAMERA_ACCESS_UNSPECIFIED" => PolicyCameraAccess::CameraAccessUnspecified,
+                "CAMERA_ACCESS_USER_CHOICE" => PolicyCameraAccess::CameraAccessUserChoice,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PolicyCameraAccess {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PolicyCameraAccess {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PolicyCameraAccess {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CAMERA_ACCESS_DISABLED" => PolicyCameraAccess::CameraAccessDisabled,
+                "CAMERA_ACCESS_ENFORCED" => PolicyCameraAccess::CameraAccessEnforced,
+                "CAMERA_ACCESS_UNSPECIFIED" => PolicyCameraAccess::CameraAccessUnspecified,
+                "CAMERA_ACCESS_USER_CHOICE" => PolicyCameraAccess::CameraAccessUserChoice,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PolicyCameraAccess {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PolicyCameraAccess {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum PolicyDefaultPermissionPolicy {
         #[doc = "Automatically deny a permission."]
         Deny,
@@ -7667,7 +8909,7 @@ pub mod schemas {
         Camera,
         #[doc = "Disable fingerprint sensor on secure keyguard screens."]
         DisableFingerprint,
-        #[doc = "Disable text entry into notifications on secure keyguard screens."]
+        #[doc = "On devices running Android 6 and below, disables text entry into notifications on secure keyguard screens. Has no effect on Android 7 and above."]
         DisableRemoteInput,
         #[doc = "Disable face authentication on secure keyguard screens."]
         Face,
@@ -7887,6 +9129,99 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PolicyMicrophoneAccess {
+        #[doc = "The field unmute_microphone_disabled is ignored. The microphone on the device is disabled (for fully managed devices, this applies device-wide).The microphone access toggle has no effect as the microphone is disabled."]
+        MicrophoneAccessDisabled,
+        #[doc = "The field unmute_microphone_disabled is ignored. The microphone on the device is available. On devices running Android 12 and above, the user is unable to use the microphone access toggle. On devices which run Android 11 or below, this is equivalent to MICROPHONE_ACCESS_USER_CHOICE."]
+        MicrophoneAccessEnforced,
+        #[doc = "If unmute_microphone_disabled is true, this is equivalent to MICROPHONE_ACCESS_DISABLED. Otherwise, this is equivalent to MICROPHONE_ACCESS_USER_CHOICE."]
+        MicrophoneAccessUnspecified,
+        #[doc = "The field unmute_microphone_disabled is ignored. This is the default device behaviour: the microphone on the device is available. On Android 12 and above, the user can use the microphone access toggle."]
+        MicrophoneAccessUserChoice,
+    }
+    impl PolicyMicrophoneAccess {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PolicyMicrophoneAccess::MicrophoneAccessDisabled => "MICROPHONE_ACCESS_DISABLED",
+                PolicyMicrophoneAccess::MicrophoneAccessEnforced => "MICROPHONE_ACCESS_ENFORCED",
+                PolicyMicrophoneAccess::MicrophoneAccessUnspecified => {
+                    "MICROPHONE_ACCESS_UNSPECIFIED"
+                }
+                PolicyMicrophoneAccess::MicrophoneAccessUserChoice => {
+                    "MICROPHONE_ACCESS_USER_CHOICE"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PolicyMicrophoneAccess {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PolicyMicrophoneAccess {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PolicyMicrophoneAccess, ()> {
+            Ok(match s {
+                "MICROPHONE_ACCESS_DISABLED" => PolicyMicrophoneAccess::MicrophoneAccessDisabled,
+                "MICROPHONE_ACCESS_ENFORCED" => PolicyMicrophoneAccess::MicrophoneAccessEnforced,
+                "MICROPHONE_ACCESS_UNSPECIFIED" => {
+                    PolicyMicrophoneAccess::MicrophoneAccessUnspecified
+                }
+                "MICROPHONE_ACCESS_USER_CHOICE" => {
+                    PolicyMicrophoneAccess::MicrophoneAccessUserChoice
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PolicyMicrophoneAccess {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PolicyMicrophoneAccess {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PolicyMicrophoneAccess {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "MICROPHONE_ACCESS_DISABLED" => PolicyMicrophoneAccess::MicrophoneAccessDisabled,
+                "MICROPHONE_ACCESS_ENFORCED" => PolicyMicrophoneAccess::MicrophoneAccessEnforced,
+                "MICROPHONE_ACCESS_UNSPECIFIED" => {
+                    PolicyMicrophoneAccess::MicrophoneAccessUnspecified
+                }
+                "MICROPHONE_ACCESS_USER_CHOICE" => {
+                    PolicyMicrophoneAccess::MicrophoneAccessUserChoice
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PolicyMicrophoneAccess {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PolicyMicrophoneAccess {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum PolicyPlayStoreMode {
         #[doc = "All apps are available and any app that should not be on the device should be explicitly marked as 'BLOCKED' in the applications policy."]
         Blacklist,
@@ -7958,6 +9293,100 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for PolicyPlayStoreMode {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PolicyPreferentialNetworkService {
+        #[doc = "Preferential network service is disabled on the work profile."]
+        PreferentialNetworkServiceDisabled,
+        #[doc = "Preferential network service is enabled on the work profile."]
+        PreferentialNetworkServiceEnabled,
+        #[doc = "Unspecified. Defaults to PREFERENTIAL_NETWORK_SERVICES_DISABLED."]
+        PreferentialNetworkServiceUnspecified,
+    }
+    impl PolicyPreferentialNetworkService {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PolicyPreferentialNetworkService::PreferentialNetworkServiceDisabled => {
+                    "PREFERENTIAL_NETWORK_SERVICE_DISABLED"
+                }
+                PolicyPreferentialNetworkService::PreferentialNetworkServiceEnabled => {
+                    "PREFERENTIAL_NETWORK_SERVICE_ENABLED"
+                }
+                PolicyPreferentialNetworkService::PreferentialNetworkServiceUnspecified => {
+                    "PREFERENTIAL_NETWORK_SERVICE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PolicyPreferentialNetworkService {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PolicyPreferentialNetworkService {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PolicyPreferentialNetworkService, ()> {
+            Ok(match s {
+                "PREFERENTIAL_NETWORK_SERVICE_DISABLED" => {
+                    PolicyPreferentialNetworkService::PreferentialNetworkServiceDisabled
+                }
+                "PREFERENTIAL_NETWORK_SERVICE_ENABLED" => {
+                    PolicyPreferentialNetworkService::PreferentialNetworkServiceEnabled
+                }
+                "PREFERENTIAL_NETWORK_SERVICE_UNSPECIFIED" => {
+                    PolicyPreferentialNetworkService::PreferentialNetworkServiceUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PolicyPreferentialNetworkService {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PolicyPreferentialNetworkService {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PolicyPreferentialNetworkService {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "PREFERENTIAL_NETWORK_SERVICE_DISABLED" => {
+                    PolicyPreferentialNetworkService::PreferentialNetworkServiceDisabled
+                }
+                "PREFERENTIAL_NETWORK_SERVICE_ENABLED" => {
+                    PolicyPreferentialNetworkService::PreferentialNetworkServiceEnabled
+                }
+                "PREFERENTIAL_NETWORK_SERVICE_UNSPECIFIED" => {
+                    PolicyPreferentialNetworkService::PreferentialNetworkServiceUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PolicyPreferentialNetworkService {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PolicyPreferentialNetworkService {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -8136,6 +9565,8 @@ pub mod schemas {
     pub enum PostureDetailSecurityRisk {
         #[doc = "SafetyNet detects that the device is running a compromised OS (basicIntegrity check fails)."]
         CompromisedOs,
+        #[doc = "SafetyNet detects that the device does not have a strong guarantee of system integrity, such as a hardware-backed keystore (https://developer.android.com/training/articles/security-key-attestation)."]
+        HardwareBackedEvaluationFailed,
         #[doc = "Unspecified."]
         SecurityRiskUnspecified,
         #[doc = "SafetyNet detects that the device is running an unknown OS (basicIntegrity check succeeds but ctsProfileMatch fails)."]
@@ -8145,6 +9576,9 @@ pub mod schemas {
         pub fn as_str(self) -> &'static str {
             match self {
                 PostureDetailSecurityRisk::CompromisedOs => "COMPROMISED_OS",
+                PostureDetailSecurityRisk::HardwareBackedEvaluationFailed => {
+                    "HARDWARE_BACKED_EVALUATION_FAILED"
+                }
                 PostureDetailSecurityRisk::SecurityRiskUnspecified => "SECURITY_RISK_UNSPECIFIED",
                 PostureDetailSecurityRisk::UnknownOs => "UNKNOWN_OS",
             }
@@ -8160,6 +9594,9 @@ pub mod schemas {
         fn from_str(s: &str) -> ::std::result::Result<PostureDetailSecurityRisk, ()> {
             Ok(match s {
                 "COMPROMISED_OS" => PostureDetailSecurityRisk::CompromisedOs,
+                "HARDWARE_BACKED_EVALUATION_FAILED" => {
+                    PostureDetailSecurityRisk::HardwareBackedEvaluationFailed
+                }
                 "SECURITY_RISK_UNSPECIFIED" => PostureDetailSecurityRisk::SecurityRiskUnspecified,
                 "UNKNOWN_OS" => PostureDetailSecurityRisk::UnknownOs,
                 _ => return Err(()),
@@ -8187,6 +9624,9 @@ pub mod schemas {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
                 "COMPROMISED_OS" => PostureDetailSecurityRisk::CompromisedOs,
+                "HARDWARE_BACKED_EVALUATION_FAILED" => {
+                    PostureDetailSecurityRisk::HardwareBackedEvaluationFailed
+                }
                 "SECURITY_RISK_UNSPECIFIED" => PostureDetailSecurityRisk::SecurityRiskUnspecified,
                 "UNKNOWN_OS" => PostureDetailSecurityRisk::UnknownOs,
                 _ => {
@@ -8542,7 +9982,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<crate::schemas::UserFacingMessage>,
-        #[doc = "An action to launch an app."]
+        #[doc = "An action to launch an app. The app will be launched with an intent containing an extra with key com.google.android.apps.work.clouddpc.EXTRA_LAUNCHED_AS_SETUP_ACTION set to the boolean value true to indicate that this is a setup action flow."]
         #[serde(
             rename = "launchApp",
             default,
@@ -8938,7 +10378,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub hardware_status_enabled: ::std::option::Option<bool>,
-        #[doc = "Whether memory reporting is enabled."]
+        #[doc = "Whether memory event reporting is enabled."]
         #[serde(
             rename = "memoryInfoEnabled",
             default,
@@ -9044,7 +10484,7 @@ pub mod schemas {
         Postpone,
         #[doc = "Follow the default update behavior for the device, which typically requires the user to accept system updates."]
         SystemUpdateTypeUnspecified,
-        #[doc = "Install automatically within a daily maintenance window. This also configures Play apps to be updated within the window. This is strongly recommended for kiosk devices because this is the only way apps persistently pinned to the foreground can be updated by Play."]
+        #[doc = "Install automatically within a daily maintenance window. This also configures Play apps to be updated within the window. This is strongly recommended for kiosk devices because this is the only way apps persistently pinned to the foreground can be updated by Play.If autoUpdateMode is set to AUTO_UPDATE_HIGH_PRIORITY for an app, then the maintenance window is ignored for that app and it is updated as soon as possible even outside of the maintenance window."]
         Windowed,
     }
     impl SystemUpdateType {
@@ -9319,6 +10759,204 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for TermsAndConditions {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UsageLog {
+        #[doc = "Specifies which log types are enabled. Note that users will receive on-device messaging when usage logging is enabled."]
+        #[serde(
+            rename = "enabledLogTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enabled_log_types:
+            ::std::option::Option<Vec<crate::schemas::UsageLogEnabledLogTypesItems>>,
+        #[doc = "Specifies which of the enabled log types can be uploaded over mobile data. By default logs are queued for upload when the device connects to WiFi."]
+        #[serde(
+            rename = "uploadOnCellularAllowed",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub upload_on_cellular_allowed:
+            ::std::option::Option<Vec<crate::schemas::UsageLogUploadOnCellularAllowedItems>>,
+    }
+    impl ::google_field_selector::FieldSelector for UsageLog {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UsageLog {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum UsageLogEnabledLogTypesItems {
+        #[doc = "This value is not used."]
+        LogTypeUnspecified,
+        #[doc = "Enable logging of on-device network events, like DNS lookups and TCP connections. See event for a complete description of the logged network events. Supported for fully managed devices on Android 8 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only network events from the work profile are logged."]
+        NetworkActivityLogs,
+        #[doc = "Enable logging of on-device security events, like when the device password is incorrectly entered or removable storage is mounted. See event for a complete description of the logged security events. Supported for fully managed devices on Android 7.0 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only security events from the work profile are logged."]
+        SecurityLogs,
+    }
+    impl UsageLogEnabledLogTypesItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                UsageLogEnabledLogTypesItems::LogTypeUnspecified => "LOG_TYPE_UNSPECIFIED",
+                UsageLogEnabledLogTypesItems::NetworkActivityLogs => "NETWORK_ACTIVITY_LOGS",
+                UsageLogEnabledLogTypesItems::SecurityLogs => "SECURITY_LOGS",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for UsageLogEnabledLogTypesItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for UsageLogEnabledLogTypesItems {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<UsageLogEnabledLogTypesItems, ()> {
+            Ok(match s {
+                "LOG_TYPE_UNSPECIFIED" => UsageLogEnabledLogTypesItems::LogTypeUnspecified,
+                "NETWORK_ACTIVITY_LOGS" => UsageLogEnabledLogTypesItems::NetworkActivityLogs,
+                "SECURITY_LOGS" => UsageLogEnabledLogTypesItems::SecurityLogs,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for UsageLogEnabledLogTypesItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for UsageLogEnabledLogTypesItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for UsageLogEnabledLogTypesItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "LOG_TYPE_UNSPECIFIED" => UsageLogEnabledLogTypesItems::LogTypeUnspecified,
+                "NETWORK_ACTIVITY_LOGS" => UsageLogEnabledLogTypesItems::NetworkActivityLogs,
+                "SECURITY_LOGS" => UsageLogEnabledLogTypesItems::SecurityLogs,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for UsageLogEnabledLogTypesItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UsageLogEnabledLogTypesItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum UsageLogUploadOnCellularAllowedItems {
+        #[doc = "This value is not used."]
+        LogTypeUnspecified,
+        #[doc = "Enable logging of on-device network events, like DNS lookups and TCP connections. See event for a complete description of the logged network events. Supported for fully managed devices on Android 8 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only network events from the work profile are logged."]
+        NetworkActivityLogs,
+        #[doc = "Enable logging of on-device security events, like when the device password is incorrectly entered or removable storage is mounted. See event for a complete description of the logged security events. Supported for fully managed devices on Android 7.0 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only security events from the work profile are logged."]
+        SecurityLogs,
+    }
+    impl UsageLogUploadOnCellularAllowedItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                UsageLogUploadOnCellularAllowedItems::LogTypeUnspecified => "LOG_TYPE_UNSPECIFIED",
+                UsageLogUploadOnCellularAllowedItems::NetworkActivityLogs => {
+                    "NETWORK_ACTIVITY_LOGS"
+                }
+                UsageLogUploadOnCellularAllowedItems::SecurityLogs => "SECURITY_LOGS",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for UsageLogUploadOnCellularAllowedItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for UsageLogUploadOnCellularAllowedItems {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<UsageLogUploadOnCellularAllowedItems, ()> {
+            Ok(match s {
+                "LOG_TYPE_UNSPECIFIED" => UsageLogUploadOnCellularAllowedItems::LogTypeUnspecified,
+                "NETWORK_ACTIVITY_LOGS" => {
+                    UsageLogUploadOnCellularAllowedItems::NetworkActivityLogs
+                }
+                "SECURITY_LOGS" => UsageLogUploadOnCellularAllowedItems::SecurityLogs,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for UsageLogUploadOnCellularAllowedItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for UsageLogUploadOnCellularAllowedItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for UsageLogUploadOnCellularAllowedItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "LOG_TYPE_UNSPECIFIED" => UsageLogUploadOnCellularAllowedItems::LogTypeUnspecified,
+                "NETWORK_ACTIVITY_LOGS" => {
+                    UsageLogUploadOnCellularAllowedItems::NetworkActivityLogs
+                }
+                "SECURITY_LOGS" => UsageLogUploadOnCellularAllowedItems::SecurityLogs,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for UsageLogUploadOnCellularAllowedItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UsageLogUploadOnCellularAllowedItems {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -9645,6 +11283,8 @@ pub mod schemas {
         StoreBuilder,
         #[doc = "The Web Apps page (https://developers.google.com/android/management/apps#web-apps)."]
         WebApps,
+        #[doc = "The zero-touch iframe (https://developers.google.com/android/management/zero-touch-iframe)."]
+        ZeroTouchCustomerManagement,
     }
     impl WebTokenEnabledFeaturesItems {
         pub fn as_str(self) -> &'static str {
@@ -9655,6 +11295,9 @@ pub mod schemas {
                 WebTokenEnabledFeaturesItems::PrivateApps => "PRIVATE_APPS",
                 WebTokenEnabledFeaturesItems::StoreBuilder => "STORE_BUILDER",
                 WebTokenEnabledFeaturesItems::WebApps => "WEB_APPS",
+                WebTokenEnabledFeaturesItems::ZeroTouchCustomerManagement => {
+                    "ZERO_TOUCH_CUSTOMER_MANAGEMENT"
+                }
             }
         }
     }
@@ -9673,6 +11316,9 @@ pub mod schemas {
                 "PRIVATE_APPS" => WebTokenEnabledFeaturesItems::PrivateApps,
                 "STORE_BUILDER" => WebTokenEnabledFeaturesItems::StoreBuilder,
                 "WEB_APPS" => WebTokenEnabledFeaturesItems::WebApps,
+                "ZERO_TOUCH_CUSTOMER_MANAGEMENT" => {
+                    WebTokenEnabledFeaturesItems::ZeroTouchCustomerManagement
+                }
                 _ => return Err(()),
             })
         }
@@ -9703,6 +11349,9 @@ pub mod schemas {
                 "PRIVATE_APPS" => WebTokenEnabledFeaturesItems::PrivateApps,
                 "STORE_BUILDER" => WebTokenEnabledFeaturesItems::StoreBuilder,
                 "WEB_APPS" => WebTokenEnabledFeaturesItems::WebApps,
+                "ZERO_TOUCH_CUSTOMER_MANAGEMENT" => {
+                    WebTokenEnabledFeaturesItems::ZeroTouchCustomerManagement
+                }
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -10036,9 +11685,9 @@ pub mod resources {
         pub mod params {
             #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
             pub enum ListView {
-                #[doc = "This feature is not generally available yet. Includes name and enterprise_display_name fields."]
+                #[doc = "Includes name and enterprise_display_name fields."]
                 Basic,
-                #[doc = "This feature is not generally available yet. The API will default to the BASIC view for the List method."]
+                #[doc = "The API will default to the BASIC view for the List method."]
                 EnterpriseViewUnspecified,
             }
             impl ListView {
@@ -10137,7 +11786,7 @@ pub mod resources {
                     signup_url_name: None,
                 }
             }
-            #[doc = "This feature is not generally available yet. Deletes an enterprise."]
+            #[doc = "Deletes an enterprise. Only available for EMM-managed enterprises."]
             pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                 DeleteRequestBuilder {
                     reqwest: &self.reqwest,
@@ -10175,7 +11824,7 @@ pub mod resources {
                     name: name.into(),
                 }
             }
-            #[doc = "This feature is not generally available yet. Lists enterprises that are managed by an EMM. Only partial views are returned."]
+            #[doc = "Lists EMM-managed enterprises. Only BASIC fields are returned."]
             pub fn list(&self) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -10295,12 +11944,12 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> CreateRequestBuilder<'a> {
-            #[doc = "This feature is not generally available yet. Whether the managed Google Play Agreement is presented and agreed."]
+            #[doc = "Whether the enterprise admin has seen and agreed to the managed Google Play Agreement (https://www.android.com/enterprise/terms/). Do not set this field for any customer-managed enterprise (https://developers.google.com/android/management/create-enterprise#customer-managed_enterprises). Set this to field to true for all EMM-managed enterprises (https://developers.google.com/android/management/create-enterprise#emm-managed_enterprises)."]
             pub fn agreement_accepted(mut self, value: bool) -> Self {
                 self.agreement_accepted = Some(value);
                 self
             }
-            #[doc = "The enterprise token appended to the callback URL."]
+            #[doc = "The enterprise token appended to the callback URL. Set this when creating a customer-managed enterprise (https://developers.google.com/android/management/create-enterprise#customer-managed_enterprises) and not when creating a deprecated EMM-managed enterprise (https://developers.google.com/android/management/create-enterprise#emm-managed_enterprises)."]
             pub fn enterprise_token(mut self, value: impl Into<String>) -> Self {
                 self.enterprise_token = Some(value.into());
                 self
@@ -10310,7 +11959,7 @@ pub mod resources {
                 self.project_id = Some(value.into());
                 self
             }
-            #[doc = "The name of the SignupUrl used to sign up for the enterprise."]
+            #[doc = "The name of the SignupUrl used to sign up for the enterprise. Set this when creating a customer-managed enterprise (https://developers.google.com/android/management/create-enterprise#customer-managed_enterprises) and not when creating a deprecated EMM-managed enterprise (https://developers.google.com/android/management/create-enterprise#emm-managed_enterprises)."]
             pub fn signup_url_name(mut self, value: impl Into<String>) -> Self {
                 self.signup_url_name = Some(value.into());
                 self
@@ -10782,22 +12431,22 @@ pub mod resources {
             xgafv: Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "This feature is not generally available yet. The requested page size. The actual page size may be fixed to a min or max value."]
+            #[doc = "The requested page size. The actual page size may be fixed to a min or max value."]
             pub fn page_size(mut self, value: i32) -> Self {
                 self.page_size = Some(value);
                 self
             }
-            #[doc = "This feature is not generally available yet. A token identifying a page of results returned by the server."]
+            #[doc = "A token identifying a page of results returned by the server."]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Required. This feature is not generally available yet. The ID of the Cloud project of the EMM the enterprises belongs to."]
+            #[doc = "Required. The Cloud project ID of the EMM managing the enterprises."]
             pub fn project_id(mut self, value: impl Into<String>) -> Self {
                 self.project_id = Some(value.into());
                 self
             }
-            #[doc = "This feature is not generally available yet. View that specify that partial response should be returned."]
+            #[doc = "Specifies which Enterprise fields to return. This method only supports BASIC."]
             pub fn view(mut self, value: crate::resources::enterprises::params::ListView) -> Self {
                 self.view = Some(value);
                 self
@@ -15321,7 +16970,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "The requested page size. The actual page size may be fixed to a min or max value."]
+                #[doc = "The requested page size. This is a hint and the actual page size in the response may be different."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self

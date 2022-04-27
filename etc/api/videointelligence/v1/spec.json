@@ -7,7 +7,7 @@
   "canonicalName": "Cloud Video Intelligence",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20210311",
+  "revision": "20220303",
   "title": "Cloud Video Intelligence API",
   "description": "Detects objects, explicit content, and scene changes in videos. It also specifies the region for annotation and transcribes speech to text. Supports both asynchronous API and streaming API.",
   "ownerDomain": "google.com",
@@ -201,7 +201,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         }
       }
     }
@@ -1290,7 +1290,7 @@
       "enumDescriptions": [],
       "properties": {
         "model": {
-          "description": "Model to use for shot change detection. Supported values: \"builtin/stable\" (the default if unset) and \"builtin/latest\".",
+          "description": "Model to use for shot change detection. Supported values: \"builtin/stable\" (the default if unset), \"builtin/latest\", and \"builtin/legacy\".",
           "type": "string",
           "format": null,
           "enum": [],

@@ -2,7 +2,7 @@
 pub mod scopes {
     #[doc = "View and manage your Google Cloud Platform billing accounts\n\n`https://www.googleapis.com/auth/cloud-billing`"]
     pub const CLOUD_BILLING: &str = "https://www.googleapis.com/auth/cloud-billing";
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -15,7 +15,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub amount: ::std::option::Option<crate::schemas::GoogleCloudBillingBudgetsV1BudgetAmount>,
-        #[doc = "Optional. Filters that define which resources are used to compute the actual spend against the budget."]
+        #[doc = "Optional. Filters that define which resources are used to compute the actual spend against the budget amount, such as projects, services, and the budget's time period, as well as other filters."]
         #[serde(
             rename = "budgetFilter",
             default,
@@ -29,7 +29,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "Optional. Etag to validate that the object is unchanged for a read-modify-write operation. An empty etag will cause an update to overwrite other changes."]
+        #[doc = "Optional. Etag to validate that the object is unchanged for a read-modify-write operation. An empty etag causes an update to overwrite other changes."]
         #[serde(
             rename = "etag",
             default,
@@ -51,7 +51,7 @@ pub mod schemas {
         )]
         pub notifications_rule:
             ::std::option::Option<crate::schemas::GoogleCloudBillingBudgetsV1NotificationsRule>,
-        #[doc = "Optional. Rules that trigger alerts (notifications of thresholds being crossed) when spend exceeds the specified percentages of the budget."]
+        #[doc = "Optional. Rules that trigger alerts (notifications of thresholds being crossed) when spend exceeds the specified percentages of the budget. Optional for `pubsubTopic` notifications. Required if using email notifications."]
         #[serde(
             rename = "thresholdRules",
             default,
@@ -83,7 +83,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudBillingBudgetsV1BudgetAmount {
-        #[doc = "Use the last period's actual spend as the budget for the present period. Cannot be set in combination with Filter.custom_period."]
+        #[doc = "Use the last period's actual spend as the budget for the present period. LastPeriodAmount can only be set when the budget's time period is a Filter.calendar_period. It cannot be set in combination with Filter.custom_period."]
         #[serde(
             rename = "lastPeriodAmount",
             default,
@@ -149,7 +149,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudBillingBudgetsV1Filter {
-        #[doc = "Optional. Specifies to track usage for recurring calendar period. E.g. Assume that CalendarPeriod.QUARTER is set. The budget will track usage from April 1 to June 30, when current calendar month is April, May, June. After that, it will track usage from July 1 to September 30 when current calendar month is July, August, September, and so on."]
+        #[doc = "Optional. Specifies to track usage for recurring calendar period. For example, assume that CalendarPeriod.QUARTER is set. The budget tracks usage from April 1 to June 30, when the current calendar month is April, May, June. After that, it tracks usage from July 1 to September 30 when the current calendar month is July, August, September, so on."]
         #[serde(
             rename = "calendarPeriod",
             default,
@@ -157,7 +157,7 @@ pub mod schemas {
         )]
         pub calendar_period:
             ::std::option::Option<crate::schemas::GoogleCloudBillingBudgetsV1FilterCalendarPeriod>,
-        #[doc = "Optional. If Filter.credit_types_treatment is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be subtracted from gross cost to determine the spend for threshold calculations. If Filter.credit_types_treatment is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list of acceptable credit type values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type)."]
+        #[doc = "Optional. If Filter.credit_types_treatment is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be subtracted from gross cost to determine the spend for threshold calculations. See [a list of acceptable credit type values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type). If Filter.credit_types_treatment is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty."]
         #[serde(
             rename = "creditTypes",
             default,
@@ -173,7 +173,7 @@ pub mod schemas {
         pub credit_types_treatment: ::std::option::Option<
             crate::schemas::GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment,
         >,
-        #[doc = "Optional. Specifies to track usage from any start date (required) to any end date (optional)."]
+        #[doc = "Optional. Specifies to track usage from any start date (required) to any end date (optional). This time period is static, it does not recur."]
         #[serde(
             rename = "customPeriod",
             default,
@@ -181,7 +181,7 @@ pub mod schemas {
         )]
         pub custom_period:
             ::std::option::Option<crate::schemas::GoogleCloudBillingBudgetsV1CustomPeriod>,
-        #[doc = "Optional. A single label and value pair specifying that usage from only this set of labeled resources should be included in the budget. Currently, multiple entries or multiple values per entry are not allowed. If omitted, the report will include all labeled and unlabeled usage."]
+        #[doc = "Optional. A single label and value pair specifying that usage from only this set of labeled resources should be included in the budget. If omitted, the report includes all labeled and unlabeled usage. An object containing a single `\"key\": value` pair. Example: `{ \"name\": \"wrench\" }`. *Currently, multiple entries or multiple values per entry are not allowed.*"]
         #[serde(
             rename = "labels",
             default,
@@ -189,21 +189,21 @@ pub mod schemas {
         )]
         pub labels:
             ::std::option::Option<::std::collections::BTreeMap<String, Vec<::serde_json::Value>>>,
-        #[doc = "Optional. A set of projects of the form `projects/{project}`, specifying that usage from only this set of projects should be included in the budget. If omitted, the report will include all usage for the billing account, regardless of which project the usage occurred on. Only zero or one project can be specified currently."]
+        #[doc = "Optional. A set of projects of the form `projects/{project}`, specifying that usage from only this set of projects should be included in the budget. If omitted, the report includes all usage for the billing account, regardless of which project the usage occurred on. Only zero or one project can be specified currently."]
         #[serde(
             rename = "projects",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub projects: ::std::option::Option<Vec<String>>,
-        #[doc = "Optional. A set of services of the form `services/{service_id}`, specifying that usage from only this set of services should be included in the budget. If omitted, the report will include usage for all the services. The service names are available through the Catalog API: https://cloud.google.com/billing/v1/how-tos/catalog-api."]
+        #[doc = "Optional. A set of services of the form `services/{service_id}`, specifying that usage from only this set of services should be included in the budget. If omitted, the report includes usage for all the services. The service names are available through the Catalog API: https://cloud.google.com/billing/v1/how-tos/catalog-api."]
         #[serde(
             rename = "services",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub services: ::std::option::Option<Vec<String>>,
-        #[doc = "Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying that usage from only this set of subaccounts should be included in the budget. If a subaccount is set to the name of the parent account, usage from the parent account will be included. If the field is omitted, the report will include usage from the parent account and all subaccounts, if they exist."]
+        #[doc = "Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying that usage from only this set of subaccounts should be included in the budget. If a subaccount is set to the name of the parent account, usage from the parent account is included. If the field is omitted, the report includes usage from the parent account and all subaccounts, if they exist."]
         #[serde(
             rename = "subaccounts",
             default,
@@ -223,6 +223,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudBillingBudgetsV1FilterCalendarPeriod {
+        #[doc = "Calendar period is unset. This is the default if the budget is for a custom time period (CustomPeriod)."]
         CalendarPeriodUnspecified,
         #[doc = "A month. Month starts on the first day of each month, such as January 1, February 1, March 1, and so on."]
         Month,
@@ -316,7 +317,7 @@ pub mod schemas {
         ExcludeAllCredits,
         #[doc = "All types of credit are subtracted from the gross cost to determine the spend for threshold calculations."]
         IncludeAllCredits,
-        #[doc = "Credit types specified in the credit_types field are subtracted from the gross cost to determine the spend for threshold calculations."]
+        #[doc = "[Credit types](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type) specified in the credit_types field are subtracted from the gross cost to determine the spend for threshold calculations."]
         IncludeSpecifiedCredits,
     }
     impl GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment {
@@ -335,7 +336,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment, ()>
         {
-            Ok ( match s { "CREDIT_TYPES_TREATMENT_UNSPECIFIED" => GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment :: CreditTypesTreatmentUnspecified , "EXCLUDE_ALL_CREDITS" => GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment :: ExcludeAllCredits , "INCLUDE_ALL_CREDITS" => GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment :: IncludeAllCredits , "INCLUDE_SPECIFIED_CREDITS" => GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment :: IncludeSpecifiedCredits , _ => return Err ( ( ) ) , } )
+            Ok (match s { "CREDIT_TYPES_TREATMENT_UNSPECIFIED" => GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment :: CreditTypesTreatmentUnspecified , "EXCLUDE_ALL_CREDITS" => GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment :: ExcludeAllCredits , "INCLUDE_ALL_CREDITS" => GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment :: IncludeAllCredits , "INCLUDE_SPECIFIED_CREDITS" => GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment :: IncludeSpecifiedCredits , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment {
@@ -357,7 +358,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "CREDIT_TYPES_TREATMENT_UNSPECIFIED" => GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment :: CreditTypesTreatmentUnspecified , "EXCLUDE_ALL_CREDITS" => GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment :: ExcludeAllCredits , "INCLUDE_ALL_CREDITS" => GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment :: IncludeAllCredits , "INCLUDE_SPECIFIED_CREDITS" => GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment :: IncludeSpecifiedCredits , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "CREDIT_TYPES_TREATMENT_UNSPECIFIED" => GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment :: CreditTypesTreatmentUnspecified , "EXCLUDE_ALL_CREDITS" => GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment :: ExcludeAllCredits , "INCLUDE_ALL_CREDITS" => GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment :: IncludeAllCredits , "INCLUDE_SPECIFIED_CREDITS" => GoogleCloudBillingBudgetsV1FilterCreditTypesTreatment :: IncludeSpecifiedCredits , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -445,14 +446,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disable_default_iam_recipients: ::std::option::Option<bool>,
-        #[doc = "Optional. Targets to send notifications to when a threshold is exceeded. This is in addition to default recipients who have billing account IAM roles. The value is the full REST resource name of a monitoring notification channel with the form `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5 channels are allowed. See https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients for more details."]
+        #[doc = "Optional. Email targets to send notifications to when a threshold is exceeded. This is in addition to the `DefaultIamRecipients` who receive alert emails based on their billing account IAM role. The value is the full REST resource name of a Cloud Monitoring email notification channel with the form `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5 email notifications are allowed. To customize budget alert email recipients with monitoring notification channels, you *must create the monitoring notification channels before you link them to a budget*. For guidance on setting up notification channels to use with budgets, see [Customize budget alert email recipients](https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients). For Cloud Billing budget alerts, you *must use email notification channels*. The other types of notification channels are *not* supported, such as Slack, SMS, or PagerDuty. If you want to [send budget notifications to Slack](https://cloud.google.com/billing/docs/how-to/notify#send_notifications_to_slack), use a pubsubTopic and configure [programmatic notifications](https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications)."]
         #[serde(
             rename = "monitoringNotificationChannels",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub monitoring_notification_channels: ::std::option::Option<Vec<String>>,
-        #[doc = "Optional. The name of the Pub/Sub topic where budget related messages will be published, in the form `projects/{project_id}/topics/{topic_id}`. Updates are sent at regular intervals to the topic. The topic needs to be created before the budget is created; see https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications for more details. Caller is expected to have `pubsub.topics.setIamPolicy` permission on the topic when it's set for a budget, otherwise, the API call will fail with PERMISSION_DENIED. See https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications for more details on Pub/Sub roles and permissions."]
+        #[doc = "Optional. The name of the Pub/Sub topic where budget-related messages are published, in the form `projects/{project_id}/topics/{topic_id}`. Updates are sent to the topic at regular intervals; the timing of the updates is not dependent on the [threshold rules](#thresholdrule) you've set. Note that if you want your [Pub/Sub JSON object](https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format) to contain data for `alertThresholdExceeded`, you need at least one [alert threshold rule](#thresholdrule). When you set threshold rules, you must also enable at least one of the email notification options, either using the default IAM recipients or Cloud Monitoring email notification channels. To use Pub/Sub topics with budgets, you must do the following: 1. Create the Pub/Sub topic before connecting it to your budget. For guidance, see [Manage programmatic budget alert notifications](https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications). 2. Grant the API caller the `pubsub.topics.setIamPolicy` permission on the Pub/Sub topic. If not set, the API call fails with PERMISSION_DENIED. For additional details on Pub/Sub roles and permissions, see [Permissions required for this task](https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#permissions_required_for_this_task)."]
         #[serde(
             rename = "pubsubTopic",
             default,
@@ -514,7 +515,7 @@ pub mod schemas {
         BasisUnspecified,
         #[doc = "Use current spend as the basis for comparison against the threshold."]
         CurrentSpend,
-        #[doc = "Use forecasted spend for the period as the basis for comparison against the threshold. Cannot be set in combination with Filter.custom_period."]
+        #[doc = "Use forecasted spend for the period as the basis for comparison against the threshold. FORECASTED_SPEND can only be set when the budget's time period is a Filter.calendar_period. It cannot be set in combination with Filter.custom_period."]
         ForecastedSpend,
     }
     impl GoogleCloudBillingBudgetsV1ThresholdRuleSpendBasis {

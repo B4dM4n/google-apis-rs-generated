@@ -611,6 +611,7 @@ pub mod schemas {
         Judge,
         LegislatorLowerBody,
         LegislatorUpperBody,
+        OtherRole,
         SchoolBoard,
         SpecialPurposeOfficer,
     }
@@ -626,6 +627,7 @@ pub mod schemas {
                 ContestRolesItems::Judge => "judge",
                 ContestRolesItems::LegislatorLowerBody => "legislatorLowerBody",
                 ContestRolesItems::LegislatorUpperBody => "legislatorUpperBody",
+                ContestRolesItems::OtherRole => "otherRole",
                 ContestRolesItems::SchoolBoard => "schoolBoard",
                 ContestRolesItems::SpecialPurposeOfficer => "specialPurposeOfficer",
             }
@@ -649,6 +651,7 @@ pub mod schemas {
                 "judge" => ContestRolesItems::Judge,
                 "legislatorLowerBody" => ContestRolesItems::LegislatorLowerBody,
                 "legislatorUpperBody" => ContestRolesItems::LegislatorUpperBody,
+                "otherRole" => ContestRolesItems::OtherRole,
                 "schoolBoard" => ContestRolesItems::SchoolBoard,
                 "specialPurposeOfficer" => ContestRolesItems::SpecialPurposeOfficer,
                 _ => return Err(()),
@@ -684,6 +687,7 @@ pub mod schemas {
                 "judge" => ContestRolesItems::Judge,
                 "legislatorLowerBody" => ContestRolesItems::LegislatorLowerBody,
                 "legislatorUpperBody" => ContestRolesItems::LegislatorUpperBody,
+                "otherRole" => ContestRolesItems::OtherRole,
                 "schoolBoard" => ContestRolesItems::SchoolBoard,
                 "specialPurposeOfficer" => ContestRolesItems::SpecialPurposeOfficer,
                 _ => {
@@ -1111,6 +1115,1990 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct FeatureIdProto {
+        #[doc = "The S2CellId corresponding to the approximate location of this feature as of when it was first created. This can be of variable accuracy, ranging from the exact centroid of the feature at creation, a very large S2 Cell, or even being completely randomized for locationless features. Cell ids have the nice property that they follow a space-filling curve over the surface of the earth. (See s2cellid.h for details.) WARNING: Clients should only use cell IDs to perform spatial locality optimizations. There is no strict guarantee that the cell ID of a feature is related to the current geometry of the feature in any way."]
+        #[serde(
+            rename = "cellId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub cell_id: ::std::option::Option<u64>,
+        #[doc = "A 64-bit fingerprint used to identify features. Most clients should rely on MapFacts or OneRing to choose fingerprints. If creating new fprints, the strategy should be chosen so that the chance of collision is remote or non-existent, and the distribution should be reasonably uniform. For example, if the source data assigns unique ids to features, then a fingerprint of the provider name, version, and source id is sufficient."]
+        #[serde(
+            rename = "fprint",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub fprint: ::std::option::Option<u64>,
+        #[doc = "A place for clients to attach arbitrary data to a feature ID. Never set in MapFacts."]
+        #[serde(
+            rename = "temporaryData",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub temporary_data: ::std::option::Option<crate::schemas::MessageSet>,
+    }
+    impl ::google_field_selector::FieldSelector for FeatureIdProto {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FeatureIdProto {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GeocodingSummary {
+        #[doc = "Represents the best estimate of whether or not the input address was fully understood and the address is correctly componentized. Mirrors the same-name field in geostore.staging.AddressLinkupScoringProto."]
+        #[serde(
+            rename = "addressUnderstood",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub address_understood: ::std::option::Option<bool>,
+        #[doc = "The ID of the FeatureProto returned by the geocoder"]
+        #[serde(
+            rename = "featureId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub feature_id: ::std::option::Option<crate::schemas::FeatureIdProto>,
+        #[doc = "The feature type for the FeatureProto returned by the geocoder"]
+        #[serde(
+            rename = "featureType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub feature_type: ::std::option::Option<crate::schemas::GeocodingSummaryFeatureType>,
+        #[doc = "Precision of the center point (lat/long) of the geocoded FeatureProto"]
+        #[serde(
+            rename = "positionPrecisionMeters",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub position_precision_meters: ::std::option::Option<f64>,
+        #[doc = "The query sent to the geocoder"]
+        #[serde(
+            rename = "queryString",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub query_string: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GeocodingSummary {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GeocodingSummary {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GeocodingSummaryFeatureType {
+        #[doc = "An address template feature provides region-specific conventions for structuring addresses. These features aren't necessarily defined by physical geographic features, so they are classified as meta-features."]
+        TypeAddressTemplate,
+        #[doc = "ABSTRACT"]
+        TypeAdministrativeArea,
+        TypeAdministrativeArea1,
+        TypeAdministrativeArea2,
+        TypeAdministrativeArea3,
+        TypeAdministrativeArea4,
+        TypeAdministrativeArea5,
+        TypeAdministrativeArea6,
+        TypeAdministrativeArea7,
+        TypeAdministrativeArea8,
+        TypeAdministrativeArea9,
+        TypeAgricultural,
+        #[doc = "DEPRECATED"]
+        TypeAirport,
+        #[doc = "DEPRECATED"]
+        TypeAirportCivil,
+        #[doc = "DEPRECATED"]
+        TypeAirportGrounds,
+        #[doc = "DEPRECATED"]
+        TypeAirportMilitary,
+        #[doc = "DEPRECATED"]
+        TypeAirportMixed,
+        #[doc = "DEPRECATED"]
+        TypeAirstrip,
+        #[doc = "Subtype within a zoo - a cage or fenced-off or otherwise delineated area containing animals."]
+        TypeAnimalEnclosure,
+        #[doc = "ABSTRACT"]
+        TypeAny,
+        #[doc = "A feature representing a group or chain of islands. "]
+        TypeArchipelago,
+        TypeAtoll,
+        #[doc = "DEPRECATED"]
+        TypeBank,
+        #[doc = "DEPRECATED"]
+        TypeBar,
+        #[doc = "An ocean subdivision formed by a coastal indentation. Includes coves and gulfs."]
+        TypeBay,
+        TypeBeach,
+        #[doc = "A designated bicycle route, whose segments may consist of any combination of bicycle paths, bicycle lanes, or city streets."]
+        TypeBicycleRoute,
+        #[doc = "An open body of water formed by a slight coastal indentation."]
+        TypeBight,
+        #[doc = "DEPRECATED"]
+        TypeBirdWatching,
+        #[doc = "A line representing the boundary between two features. See border.proto for details."]
+        TypeBorder,
+        #[doc = "DEPRECATED"]
+        TypeBorderCrossing,
+        TypeBroadTrack,
+        #[doc = "DEPRECATED"]
+        TypeBuilding,
+        #[doc = "DEPRECATED"]
+        TypeBuildingGrounds,
+        #[doc = "Terrain that looks populated."]
+        TypeBuiltUpArea,
+        #[doc = "DEPRECATED"]
+        TypeBusStation,
+        #[doc = "DEPRECATED"]
+        TypeBusiness,
+        #[doc = "A business chain feature is used to represent a chain, e.g. Starbucks, McDonald's, etc. Other features representing specific stores/franchises of this chain may refer to one such feature via RELATION_MEMBER_OF_CHAIN. This is not strictly reserved to commercial chains but can also be used to model organizations such as the Red Cross or the United Nations."]
+        TypeBusinessChain,
+        #[doc = "A Business Corridor is a dense cluster of semantically similar establishments. TYPE_BUSINESS_CORRIDOR features are distinguished from TYPE_COLLOQUIAL_AREA features because the corridors are not under the political hierarchy, are allowed to be nameless, and may not correspond to well-known real world locations. For more details, see go/geo-corridors-schema."]
+        TypeBusinessCorridor,
+        #[doc = "DEPRECATED"]
+        TypeCableCarStation,
+        TypeCampfirePit,
+        #[doc = "DEPRECATED"]
+        TypeCampgrounds,
+        #[doc = "DEPRECATED"]
+        TypeCampingSite,
+        #[doc = "A narrow passage used by boats. Normally artificial."]
+        TypeCanal,
+        #[doc = "DEPRECATED"]
+        TypeCarRental,
+        #[doc = "DEPRECATED"]
+        TypeCarRepair,
+        #[doc = "Cartographic features are used to capture real-world objects for which there is no current desire to model any specific attributes. These are only useful to make the map tiles look pretty."]
+        TypeCartographic,
+        #[doc = "A line for a cartographic detail. For example the international date line. Such features should have polyline geometry."]
+        TypeCartographicLine,
+        #[doc = "DEPRECATED"]
+        TypeCashMachine,
+        #[doc = "Don't use 0xA7. Use 8 bits for additional types under TYPE_NATURAL_FEATURE, so we don't run out of space. The following are miscellaneous natural features that don't fit any of the categories above."]
+        TypeCave,
+        #[doc = "A small, low-elevation, sandy island formed on the surface of coral reefs"]
+        TypeCay,
+        #[doc = "The root of types of features that are in the sky, rather than on the earth. There will eventually be a hierarchy of types here."]
+        TypeCelestial,
+        #[doc = "DEPRECATED"]
+        TypeCemetery,
+        #[doc = "A deep part in a body of water that is suitable for navigation. Includes narrows."]
+        TypeChannel,
+        #[doc = "DEPRECATED"]
+        TypeChurch,
+        #[doc = "DEPRECATED"]
+        TypeCityHall,
+        #[doc = "A vertical or nearly vertical slope. Includes escarpments."]
+        TypeCliff,
+        #[doc = "DEPRECATED"]
+        TypeCoffee,
+        #[doc = "e.g. Silicon Valley"]
+        TypeColloquialArea,
+        #[doc = "An entity widely considered to be a city, that may itself be made up of smaller political entities, some of which are cities/towns/villages themselves. For example, the colloquial view of Sydney, Australia actually comprises many smaller cities, but is regarded as a city itself. This type is not suitable for modeling official metro-/micropolitan or other statistical areas."]
+        TypeColloquialCity,
+        #[doc = "ABSTRACT"]
+        TypeCompound,
+        #[doc = "e.g. single family dwelling, office building."]
+        TypeCompoundBuilding,
+        #[doc = "e.g. campus, compound, parcel."]
+        TypeCompoundGrounds,
+        #[doc = "e.g. suite, room, hallway, cubicle."]
+        TypeCompoundSection,
+        #[doc = "A place where two or more rivers join."]
+        TypeConfluence,
+        TypeConstituency,
+        #[doc = "RESERVED"]
+        TypeConstituencyFuture,
+        TypeContinent,
+        #[doc = "All the points on the polygon are at the same elevation."]
+        TypeContourLine,
+        TypeCountry,
+        #[doc = "DEPRECATED"]
+        TypeCourthouse,
+        #[doc = "Depressions causes by impact, explosion, and sometimes sink-holes."]
+        TypeCrater,
+        #[doc = "Includes overfalls."]
+        TypeCurrent,
+        #[doc = "DEPRECATED"]
+        TypeDam,
+        #[doc = "Every data source used in constructing a data repository has a corresponding feature that provides more information about that data source. The extra information is stored in the optional data_source field below."]
+        TypeDataSource,
+        #[doc = "DEPRECATED"]
+        TypeDentist,
+        #[doc = "DEPRECATED"]
+        TypeDeprecatedGolfShop,
+        #[doc = "DEPRECATED"]
+        TypeDeprecatedHighwayDoNotUse,
+        #[doc = "DEPRECATED"]
+        TypeDeprecatedTarmac,
+        TypeDesert,
+        TypeDesignatedBarbecuePit,
+        TypeDesignatedCookingArea,
+        #[doc = "Designated Market Areas (or DMAs) are used by marketing and ratings companies (such as the Nielsen Media Research company) to describe geographical regions (such as the greater New York metropolitan area) that are covered by a set of television stations. (See http://www.schooldata.com/pdfs/DMA.pdf) In the United States, DMAs should have a DMA numeric ID name, tagged with the FLAG_DESIGNATED_MARKET_AREA_ID flag."]
+        TypeDesignatedMarketArea,
+        #[doc = "RESERVED"]
+        TypeDigitalElevationModel,
+        #[doc = "Eventually we'll have more data for disputed areas (e.g., who makes claims on the area, who has de facto control, etc.). For the moment, we just define a type so we can simply mark areas as disputed."]
+        TypeDisputedArea,
+        #[doc = "A branch which flows away from the main river. Includes deltas."]
+        TypeDistributary,
+        #[doc = "DEPRECATED"]
+        TypeDoNotUseReservedToCatchGeneratedFiles,
+        #[doc = "DEPRECATED"]
+        TypeDoctor,
+        #[doc = "DEPRECATED"]
+        TypeDoodle,
+        TypeDrinkingWater,
+        TypeDune,
+        #[doc = "DEPRECATED"]
+        TypeEarthquake,
+        #[doc = "DEPRECATED"]
+        TypeEcoTouristDestination,
+        #[doc = "Features that are notable for being high (or low), or for having sudden changes in elevation. These features might have an \"elevation\" extension to specify the actual elevation. See ElevationProto for more information."]
+        TypeElevated,
+        #[doc = "DEPRECATED"]
+        TypeEmbassy,
+        #[doc = "DEPRECATED"]
+        TypeEmergency,
+        #[doc = "DEPRECATED"]
+        TypeEnclosedTrafficArea,
+        #[doc = "A portal of entry or exit to another feature. Examples: - Subway station entrance. - Parking lot entrance."]
+        TypeEntrance,
+        #[doc = "ABSTRACT This type is being replaced by TYPE_COMPOUND_GROUNDS. For further details, see go/compounds-v2"]
+        TypeEstablishment,
+        #[doc = "DEPRECATED"]
+        TypeEstablishmentBuilding,
+        #[doc = "DEPRECATED This type has been replaced by TYPE_COMPOUND_BUILDING. For further details, see go/oyster-compounds"]
+        TypeEstablishmentGrounds,
+        #[doc = "Establishment POIs can be referenced by TYPE_COMPOUND features using the RELATION_PRIMARILY_OCCUPIED_BY. This is the reciprocal relation of the RELATION_OCCUPIES."]
+        TypeEstablishmentPoi,
+        #[doc = "Represents service-only establishments (those without a storefront location). NOTE(tcain): Using value 0xD441, since we could find ourselves with a need to differentiate service areas from online-only at this level in the future, but still benefit from being able to group those under a common parent, disjoint from TYPE_ESTABLISHMENT_POI."]
+        TypeEstablishmentService,
+        #[doc = "A place at the end of a river where fresh and salt water mix. Includes tidal creeks and limans."]
+        TypeEstuary,
+        #[doc = "DEPRECATED"]
+        TypeEvent,
+        TypeFault,
+        #[doc = "ABSTRACT"]
+        TypeFerry,
+        #[doc = "The vast majority of ferries are ferry boats."]
+        TypeFerryBoat,
+        #[doc = "DEPRECATED"]
+        TypeFerryTerminal,
+        #[doc = "Also called a \"car transport\", a ferry train is a rail service that carries passengers and their vehicles across undrivable terrain. The Channel Tunnel (\"Chunnel\") is the most famous example, but they are also common in the Alps where they connect neighboring valleys otherwise separated by impassable mountains."]
+        TypeFerryTrain,
+        #[doc = "DEPRECATED"]
+        TypeFire,
+        #[doc = "DEPRECATED"]
+        TypeFishing,
+        TypeFissure,
+        TypeFjord,
+        #[doc = "A shallow place where water may be waded through."]
+        TypeFord,
+        #[doc = "DEPRECATED"]
+        TypeFunicularStation,
+        #[doc = "A feature whose geometry is planned to replace the geometry on another feature."]
+        TypeFutureGeometry,
+        #[doc = "DEPRECATED"]
+        TypeGasStation,
+        #[doc = "DEPRECATED"]
+        TypeGbCountry,
+        #[doc = "DEPRECATED"]
+        TypeGbDependentLocality,
+        #[doc = "DEPRECATED"]
+        TypeGbDoubleDependentLocality,
+        #[doc = "DEPRECATED"]
+        TypeGbFormerPostalCounty,
+        #[doc = "DEPRECATED"]
+        TypeGbPostTown,
+        #[doc = "DEPRECATED"]
+        TypeGbTraditionalCounty,
+        #[doc = "An association of a point with an address, with no other information."]
+        TypeGeocodedAddress,
+        TypeGeyser,
+        TypeGlacier,
+        #[doc = "DEPRECATED"]
+        TypeGolf,
+        #[doc = "DEPRECATED"]
+        TypeGolfCourse,
+        TypeGolfFairway,
+        #[doc = "Use TYPE_ESTABLISHMENT_POI and gcid:golf_shop for golf shops instead."]
+        TypeGolfHole,
+        TypeGolfPuttingGreen,
+        TypeGolfRough,
+        TypeGolfSandBunker,
+        #[doc = "Sub-types within a golf course."]
+        TypeGolfTeeingGround,
+        #[doc = "DEPRECATED"]
+        TypeGondolaLiftStation,
+        #[doc = "DEPRECATED"]
+        TypeGovernment,
+        TypeGrassland,
+        #[doc = "DEPRECATED"]
+        TypeGrocery,
+        #[doc = "DEPRECATED"]
+        TypeGrounds,
+        #[doc = "DEPRECATED"]
+        TypeGurudwara,
+        #[doc = "A deep place near a shore where ships commonly drop anchor."]
+        TypeHarbor,
+        #[doc = "DEPRECATED"]
+        TypeHeliport,
+        TypeHighSpeedRail,
+        #[doc = "DEPRECATED"]
+        TypeHighTension,
+        #[doc = "ABSTRACT"]
+        TypeHighway,
+        TypeHighway1,
+        TypeHighway2,
+        TypeHighway3,
+        TypeHighway4,
+        TypeHighway5,
+        TypeHighway6,
+        TypeHighway7,
+        TypeHighway8,
+        TypeHighway9,
+        #[doc = "DEPRECATED"]
+        TypeHikingArea,
+        #[doc = "DEPRECATED"]
+        TypeHinduTemple,
+        #[doc = "DEPRECATED"]
+        TypeHorseCarriageStation,
+        #[doc = "DEPRECATED"]
+        TypeHospital,
+        #[doc = "DEPRECATED"]
+        TypeHospitalGrounds,
+        TypeHotSpring,
+        #[doc = "DEPRECATED"]
+        TypeHunting,
+        #[doc = "DEPRECATED"]
+        TypeHurricane,
+        TypeIce,
+        #[doc = "DEPRECATED"]
+        TypeIndustrial,
+        TypeInlet,
+        #[doc = "An intersection consists of a collection of segments that terminate at the same location. This is topological definition: it may not match what a typical user would think of as an \"intersection\". See TYPE_INTERSECTION_GROUP, below, for more information. Each segment terminating at an intersection has an \"endpoint type\" that specifies how that segment is terminated: stop sign, yield sign, three-way light, etc."]
+        TypeIntersection,
+        #[doc = "Our TYPE_INTERSECTION feature, above, models the point where one or more segments terminate. This is topological definition: it may not match what a typical user would think of as an \"intersection\". Consider the intersections where Hayes, Market, Larkin, and 9th Street meet near (37.77765, -122.41638) in San Francisco. Most people would probably consider this a single feature, even though we model it as four separate TYPE_INTERSECTION features. This TYPE_INTERSECTION_GROUP is used to model the user's concept of a complex intersection."]
+        TypeIntersectionGroup,
+        #[doc = "Man-made (and sometimes natural) channels used to move water. This type was used for both dam structures and water that is hold back by dams. We should use TYPE_COMPOUND_BUILDING for dam structures and TYPE_RESERVOIR for water."]
+        TypeIrrigation,
+        TypeIsland,
+        #[doc = "A strip of land connecting two larger land masses, such as continents."]
+        TypeIsthmus,
+        #[doc = "DEPRECATED"]
+        TypeJpChiban,
+        #[doc = "DEPRECATED"]
+        TypeJpEdaban,
+        #[doc = "DEPRECATED"]
+        TypeJpGaiku,
+        #[doc = "DEPRECATED"]
+        TypeJpGun,
+        #[doc = "DEPRECATED"]
+        TypeJpKoaza,
+        #[doc = "DEPRECATED"]
+        TypeJpOoaza,
+        #[doc = "DEPRECATED"]
+        TypeJpShikuchouson,
+        #[doc = "DEPRECATED"]
+        TypeJpSubShikuchouson,
+        #[doc = "DEPRECATED"]
+        TypeJpTodoufuken,
+        TypeJrTrack,
+        #[doc = "Topography formed on limestone and gypsum by dissolution with sinkholes, caves, etc."]
+        TypeKarst,
+        TypeLagoon,
+        #[doc = "An inland body of standing water."]
+        TypeLake,
+        TypeLandMass,
+        TypeLandParcel,
+        TypeLavaField,
+        #[doc = "A feature used to represent a logical level, e.g. floor."]
+        TypeLevel,
+        #[doc = "DEPRECATED"]
+        TypeLibrary,
+        TypeLightRailTrack,
+        TypeLitterReceptacle,
+        #[doc = "DEPRECATED"]
+        TypeLocalPark,
+        #[doc = "A locale feature provides region specific conventions such as preferred language and formatting details for time, date, and currency values. Locales aren't necessary defined by physical geographic features, so they are classified as meta-features."]
+        TypeLocale,
+        TypeLocality,
+        TypeLockerArea,
+        #[doc = "DEPRECATED"]
+        TypeLodging,
+        #[doc = "ABSTRACT"]
+        TypeMetaFeature,
+        #[doc = "DEPRECATED"]
+        TypeMilitary,
+        #[doc = "DEPRECATED"]
+        TypeMonorailStation,
+        TypeMonorailTrack,
+        #[doc = "DEPRECATED"]
+        TypeMosque,
+        #[doc = "A series of mountains or hills ranged in a line and connected by high ground. Mountain ranges usually consist of many smaller ridges. For example, the Himalayas, the Andes. the Alps, etc."]
+        TypeMountainRange,
+        #[doc = "DEPRECATED"]
+        TypeMovieRental,
+        TypeNarrowTrack,
+        #[doc = "DEPRECATED"]
+        TypeNationalForest,
+        #[doc = "DEPRECATED"]
+        TypeNationalPark,
+        #[doc = "ABSTRACT"]
+        TypeNaturalFeature,
+        #[doc = "DEPRECATED"]
+        TypeNatureReserve,
+        TypeNeighborhood,
+        #[doc = "A peak or ridge of a mountain that extends through a glacier."]
+        TypeNunatak,
+        #[doc = "One of the large salt-water bodies that covers most of the globe."]
+        TypeOcean,
+        #[doc = "An exposed rock in the water."]
+        TypeOceanRockExposed,
+        #[doc = "DEPRECATED"]
+        TypeOffRoadArea,
+        #[doc = "A near-level shallow, natural depression or basin, usually containing an intermittent lake, pond, or pool."]
+        TypePan,
+        #[doc = "DEPRECATED"]
+        TypePark,
+        #[doc = "DEPRECATED"]
+        TypeParking,
+        #[doc = "DEPRECATED"]
+        TypeParkingGarage,
+        #[doc = "DEPRECATED"]
+        TypeParkingLot,
+        #[doc = "A route over an otherwise difficult to traverse feature. Includes saddle."]
+        TypePass,
+        #[doc = "RESERVED"]
+        TypePathway,
+        #[doc = "Elevations that have a distinctive peak."]
+        TypePeak,
+        #[doc = "A stretch of land projecting into water. Includes capes and spits."]
+        TypePeninsula,
+        #[doc = "DEPRECATED"]
+        TypePharmacy,
+        #[doc = "A phone number area code is a prefix which also coincides with the area code, or national destination code, of a particular region."]
+        TypePhoneNumberAreaCode,
+        #[doc = "A phone number prefix feature is used to specify the region where phone numbers (typically fixed-line numbers) must begin with a certain prefix. Any phone number prefix down to any level of granularity could be represented by this type."]
+        TypePhoneNumberPrefix,
+        #[doc = "DEPRECATED"]
+        TypePicnicArea,
+        #[doc = "Elevations that are flat on top. Includes mesas and buttes."]
+        TypePlateau,
+        #[doc = "DEPRECATED"]
+        TypePlayGround,
+        #[doc = "DEPRECATED"]
+        TypePolice,
+        #[doc = "Boundaries representing the jurisdiction of a particular police station."]
+        TypePoliceJurisdiction,
+        #[doc = "ABSTRACT"]
+        TypePolitical,
+        TypePond,
+        #[doc = "DEPRECATED"]
+        TypePostOffice,
+        #[doc = "The term \"post town\" is used for a locality-like-entity that is only used for postal addresses."]
+        TypePostTown,
+        #[doc = "ABSTRACT"]
+        TypePostal,
+        #[doc = "This is the type for postal codes which are complete and independent enough that there should be a feature for them (e.g. US 5-digit ZIP codes). For even more detailed suffixes that further subdivide a postal code (such as the +4 component in US ZIP codes), store the information in a TYPE_POSTAL_CODE_SUFFIX address component. When a range or set of postal codes share the same geographical area, e.g. because a precise subdivision does not exist or this subdivision is unknown, this type is used for each individual postal code."]
+        TypePostalCode,
+        #[doc = "A prefix portion of a postal code which does not meet the requirements for TYPE_POSTAL_CODE, but which is useful to search for, for example UK outcodes."]
+        TypePostalCodePrefix,
+        #[doc = "DEPRECATED"]
+        TypePostalRound,
+        #[doc = "DEPRECATED"]
+        TypePremise,
+        #[doc = "DEPRECATED"]
+        TypeProvincialForest,
+        #[doc = "DEPRECATED"]
+        TypeProvincialPark,
+        #[doc = "ABSTRACT"]
+        TypePublicSpacesAndMonuments,
+        #[doc = "Railroads use several different incompatible track types."]
+        TypeRailway,
+        TypeRapids,
+        #[doc = "Steep declines usually carved by erosion. Includes valleys, canyons, ditches, and gorges."]
+        TypeRavine,
+        #[doc = "Rocks, coral, sandbars, or other features beneath the surface of the water that pose a hazard to passing ships. Includes shoals."]
+        TypeReef,
+        #[doc = "The full extent of the reef complex."]
+        TypeReefExtent,
+        #[doc = "A relatively shallow zone of the back reef located closest to the shore, that may be exposed at low tide."]
+        TypeReefFlat,
+        #[doc = "A small section of rocks, coral, sandbars, or other features beneath the surface of the water that forms part of a reef."]
+        TypeReefGrowth,
+        #[doc = "A submerged rock in the water."]
+        TypeReefRockSubmerged,
+        #[doc = "An area controlled in some way by an authoritative source, such as a government-designated COVID containment zone. Features of this type should have one or more gcids corresponding to their specific regulation."]
+        TypeRegulatedArea,
+        #[doc = "A reservation is a region collectively held or governed by indigenous people and officially recognized by the country’s government at the federal or state level. A reservation may be fully contained within an administrative feature or partially contained within two or more. These regions are referred to by different categorical names depending on country and even by state, including but not limited to: “Indian Reservations”, “Indian Reserves”, “Land Claim Settlement Lands”, “Indian Lands”, “Treaty Lands”, “Indigenous Territories”, etc. A reservation is not a historic indigenous territory boundary or a region which has applied for land rights but has not yet received official recognition."]
+        TypeReservation,
+        #[doc = "An artificial body of water, possibly created by a dam, often used for irrigation or house use."]
+        TypeReservoir,
+        #[doc = "DEPRECATED"]
+        TypeRestArea,
+        #[doc = "DEPRECATED"]
+        TypeRestaurant,
+        #[doc = "A restriction group describes a set of segment restrictions that belong together and have a name or an associated event. See also restriction_group.proto"]
+        TypeRestrictionGroup,
+        #[doc = "A ridge is a geographical feature consisting of a chain of mountains or hills that form a continuous elevated crest with a single ridgeline for some distance."]
+        TypeRidge,
+        #[doc = "An inland body of moving water, or parts associated with it in which there is little or no current (backwater)."]
+        TypeRiver,
+        TypeRoad,
+        #[doc = "Features responsible for monitoring traffic on roads (usually for speed). Includes cameras at particular points as well as monitors that cover larger spans. Features of this type should have a corresponding gcid that specifies the correct subtype (e.g. gcid:road_camera or gcid:speed_camera_zone). This type was originally named as TYPE_ROAD_CAMERA."]
+        TypeRoadMonitor,
+        #[doc = "Road sign features have names, point geometry, etc. They also have segment_path data (see below) which lists the segments that refer to the sign. See segment.proto for the reference from the segment to the road sign."]
+        TypeRoadSign,
+        TypeRock,
+        TypeRocky,
+        #[doc = "A route is any section of road (or rails, etc.) that has a name. This includes city streets as well as highways. Road segments can belong to multiple routes (e.g. El Camino, CA-82)."]
+        TypeRoute,
+        #[doc = "A flat expanse of salt left by the evaporation of a body of salt water."]
+        TypeSaltFlat,
+        TypeSand,
+        #[doc = "DEPRECATED"]
+        TypeSchool,
+        TypeSchoolDistrict,
+        #[doc = "An ocean subdivision more or less confined by land and islands."]
+        TypeSea,
+        #[doc = "DEPRECATED"]
+        TypeSeaplaneBase,
+        #[doc = "DEPRECATED"]
+        TypeSeaport,
+        #[doc = "A lake that dries up part of the year."]
+        TypeSeasonalLake,
+        #[doc = "A river that dries up part of the year."]
+        TypeSeasonalRiver,
+        #[doc = "ABSTRACT"]
+        TypeSegment,
+        #[doc = "ABSTRACT"]
+        TypeSegmentPath,
+        #[doc = "DEPRECATED"]
+        TypeShopping,
+        #[doc = "DEPRECATED"]
+        TypeShoppingCenter,
+        TypeShrubbery,
+        #[doc = "Also see skiboundary.proto"]
+        TypeSkiBoundary,
+        #[doc = "Also see skilift.proto"]
+        TypeSkiLift,
+        #[doc = "Also see skitrail.proto"]
+        TypeSkiTrail,
+        #[doc = "Land not so steep as a cliff, but changing elevation. Includes slides."]
+        TypeSlope,
+        #[doc = "DEPRECATED"]
+        TypeSpecialStation,
+        #[doc = "DEPRECATED"]
+        TypeSportsComplex,
+        #[doc = "A place where ground water flows naturally out of the ground."]
+        TypeSpring,
+        #[doc = "A subsidiary peak of a mountain."]
+        TypeSpur,
+        #[doc = "DEPRECATED"]
+        TypeStadium,
+        TypeStandardTrack,
+        #[doc = "An area used for aggregating statistical data, eg, a census region. Note that TYPE_STATISTICAL_AREA has a third nibble so we can add an abstract parent above it later if need be at 0x2E1 (and rename TYPE_STATISTICAL_AREA as TYPE_STATISTICAL_AREA1)."]
+        TypeStatisticalArea,
+        #[doc = "Note that this type does not distinguish the nature of the statue (religious, historical, memorial, tourist, ...)."]
+        TypeStatue,
+        #[doc = "A long narrow ocean subdivision. Includes sounds."]
+        TypeStrait,
+        #[doc = "DEPRECATED This is deprecated and we want to use TYPE_COMPOUND_SECTION instead."]
+        TypeSubPremise,
+        #[doc = "ABSTRACT"]
+        TypeSublocality,
+        TypeSublocality1,
+        TypeSublocality2,
+        TypeSublocality3,
+        TypeSublocality4,
+        TypeSublocality5,
+        TypeSubmarineBasin,
+        TypeSubmarineCliff,
+        TypeSubmarineDeep,
+        TypeSubmarineFractureZone,
+        #[doc = "includes saddles"]
+        TypeSubmarineGap,
+        TypeSubmarinePlain,
+        TypeSubmarinePlateau,
+        TypeSubmarineRidge,
+        #[doc = "includes peaks, ranges, and spurs"]
+        TypeSubmarineSeamount,
+        TypeSubmarineSlope,
+        #[doc = "includes trenches and troughs"]
+        TypeSubmarineValley,
+        #[doc = "DEPRECATED"]
+        TypeSubwayStation,
+        TypeSubwayTrack,
+        #[doc = "DEPRECATED"]
+        TypeSuite,
+        #[doc = "DEPRECATED"]
+        TypeSynagogue,
+        #[doc = "Starting with TYPE_TARMAC, we use longer IDs, so that we can expand the number of feature types under TYPE_CARTOGRAPHIC."]
+        TypeTarmac,
+        #[doc = "ABSTRACT This type is incorrectly under TYPE_TECTONIC instead of TYPE_WATER. This was a mistake and is now fixed. See TYPE_WATERING_HOLE for the replacement."]
+        TypeTectonic,
+        #[doc = "DEPRECATED"]
+        TypeTemple,
+        #[doc = "A terminal point represents a good location for a user to meet a taxi, ridesharing vehicle, or general driver."]
+        TypeTerminalPoint,
+        TypeTerrace,
+        #[doc = "Expanses of land that share common surface attributes. These areas would look more or less uniform from a high altitude."]
+        TypeTerrain,
+        #[doc = "A timezone feature is used to specify the region covering an international timezone. When a point is covered by multiple timezone features, the most specific one can be used to compute the local time at this point. Most specific implies a much smaller region or the one that is closer to the center. A feature's timezone can be specified in the repeated related_timezone field."]
+        TypeTimezone,
+        #[doc = "A toll cluster is either a single point on a segment (represented as a point at the end of the segment that has ENDPOINT_TOLL_BOOTH set) or a group of points on various road segments in MapFacts that represents one or more lanes passing through a toll fixture that all go to the same routing destination. Each toll cluster should have at most a single price per payment method. E.g. {CASH = $5, PASS = $1}. Note: If a toll fixture has different prices for multiple routing destinations, drivers need to be in the correct lane before passing through the toll fixture and hence such a fixture is represented by multiple toll clusters. A toll cluster does not necessarily represent a real-world entity, e.g. a particular plaza/structure as perceived by humans. This is because a plaza can be represented by more than one toll cluster. We require toll clusters to have names, but they might be non-unique. For example, a plaza might be represented by multiple toll clusters that may have the same plaza name. For further details, please see go/toll-cluster-schema."]
+        TypeTollCluster,
+        #[doc = "DEPRECATED"]
+        TypeTouristDestination,
+        #[doc = "Open space used for events, gathering, or as market-place."]
+        TypeTownSquare,
+        #[doc = "A designated trail, which may consist of paved walkways, dirt paths, fire road, streets or highways, etc."]
+        TypeTrail,
+        TypeTrailHead,
+        #[doc = "DEPRECATED"]
+        TypeTrainStation,
+        #[doc = "DEPRECATED"]
+        TypeTramwayStation,
+        #[doc = "RESERVED"]
+        TypeTransient,
+        #[doc = "ABSTRACT"]
+        TypeTransit,
+        #[doc = "A transit agency operates a number of lines, typically all in the same city, region or country. See also transitagency.proto"]
+        TypeTransitAgency,
+        #[doc = "TYPE_TRANSIT_AGENCY was moved to 0xC91. This deprecated enum value still exists for debugging purposes only."]
+        TypeTransitAgencyDeprecatedValue,
+        #[doc = "DEPRECATED"]
+        TypeTransitDeparture,
+        #[doc = "DEPRECATED"]
+        TypeTransitLeg,
+        #[doc = "A transit line is a collection of transit legs, associated with some invariant properties of the trips that run over the legs. See also transitline.proto"]
+        TypeTransitLine,
+        #[doc = "DEPRECATED"]
+        TypeTransitStation,
+        #[doc = "DEPRECATED"]
+        TypeTransitStop,
+        #[doc = "DEPRECATED"]
+        TypeTransitTransfer,
+        #[doc = "DEPRECATED"]
+        TypeTransitTrip,
+        #[doc = "ABSTRACT"]
+        TypeTransportation,
+        #[doc = "DEPRECATED"]
+        TypeTravelService,
+        #[doc = "Tracks for streetcars, cable-cars, etc. Ferries are services that are part of the road network but are not roads. They typically involve fares and scheduled departure times."]
+        TypeTrolleyTrack,
+        TypeTundra,
+        #[doc = "Features that are notable for being high (or low), or for having sudden changes in elevation. These features might have an \"elevation\" extension to specify the actual elevation. See ElevationProto for more information."]
+        TypeUndersea,
+        #[doc = "DEPRECATED"]
+        TypeUniversity,
+        #[doc = "DEPRECATED"]
+        TypeUniversityGrounds,
+        #[doc = "A feature of completely unknown type. This should only be used when absolutely necessary. One example in which this type is useful is in the Chinese importer, which must heuristically segment addresses into components - it often does not know what types to make those components. Please note that the Oyster address formatter does not currently support address components of TYPE_UNKNOWN well."]
+        TypeUnknown,
+        TypeUnstableHillside,
+        #[doc = "Land along streams higher than the alluvial plain or stream terrace."]
+        TypeUpland,
+        #[doc = "DEPRECATED"]
+        TypeUsBorough,
+        #[doc = "DEPRECATED"]
+        TypeUsNationalMonument,
+        #[doc = "DEPRECATED"]
+        TypeUsNationalPark,
+        #[doc = "DEPRECATED"]
+        TypeUsState,
+        #[doc = "Terrain that is covered in vegetation."]
+        TypeVegetation,
+        #[doc = "DEPRECATED"]
+        TypeVeterinarian,
+        #[doc = "Any plausible 1-dimensional path through a 2+ dimensional space, for the purposes of making graph-search-based routing possible. Such segments can be used to model paths through parking lots, squares, floors of buildings and other areas."]
+        TypeVirtualSegment,
+        #[doc = "An elevated place that is notable for having a good view. Raster digital elevation data. This is not a type to be used by providers or consumed by clients."]
+        TypeVista,
+        TypeVolcano,
+        #[doc = "A dry riverbed that occasionally receives flashfloods."]
+        TypeWadi,
+        #[doc = "Use TYPE_COMPOUND_GROUND and appropriate gcids for the next two."]
+        TypeWall,
+        #[doc = "Features can be TYPE_WATER if we don't have enough information to properly type the body of water. TYPE_WATER is also used as the type for child features that compose a TYPE_RIVER feature."]
+        TypeWater,
+        TypeWaterFountain,
+        TypeWaterNavigation,
+        TypeWaterfall,
+        #[doc = "A natural depression filled with water where animals come to drink."]
+        TypeWateringHole,
+        #[doc = "DEPRECATED"]
+        TypeWateringHoleDeprecated,
+        TypeWatershedBoundary,
+        #[doc = "DEPRECATED"]
+        TypeWeatherCondition,
+        #[doc = "Land that is usually flooded. Includes bogs, marshes, flats, moors, and swamps."]
+        TypeWetland,
+        TypeWoods,
+    }
+    impl GeocodingSummaryFeatureType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GeocodingSummaryFeatureType::TypeAddressTemplate => "typeAddressTemplate",
+                GeocodingSummaryFeatureType::TypeAdministrativeArea => "typeAdministrativeArea",
+                GeocodingSummaryFeatureType::TypeAdministrativeArea1 => "typeAdministrativeArea1",
+                GeocodingSummaryFeatureType::TypeAdministrativeArea2 => "typeAdministrativeArea2",
+                GeocodingSummaryFeatureType::TypeAdministrativeArea3 => "typeAdministrativeArea3",
+                GeocodingSummaryFeatureType::TypeAdministrativeArea4 => "typeAdministrativeArea4",
+                GeocodingSummaryFeatureType::TypeAdministrativeArea5 => "typeAdministrativeArea5",
+                GeocodingSummaryFeatureType::TypeAdministrativeArea6 => "typeAdministrativeArea6",
+                GeocodingSummaryFeatureType::TypeAdministrativeArea7 => "typeAdministrativeArea7",
+                GeocodingSummaryFeatureType::TypeAdministrativeArea8 => "typeAdministrativeArea8",
+                GeocodingSummaryFeatureType::TypeAdministrativeArea9 => "typeAdministrativeArea9",
+                GeocodingSummaryFeatureType::TypeAgricultural => "typeAgricultural",
+                GeocodingSummaryFeatureType::TypeAirport => "typeAirport",
+                GeocodingSummaryFeatureType::TypeAirportCivil => "typeAirportCivil",
+                GeocodingSummaryFeatureType::TypeAirportGrounds => "typeAirportGrounds",
+                GeocodingSummaryFeatureType::TypeAirportMilitary => "typeAirportMilitary",
+                GeocodingSummaryFeatureType::TypeAirportMixed => "typeAirportMixed",
+                GeocodingSummaryFeatureType::TypeAirstrip => "typeAirstrip",
+                GeocodingSummaryFeatureType::TypeAnimalEnclosure => "typeAnimalEnclosure",
+                GeocodingSummaryFeatureType::TypeAny => "typeAny",
+                GeocodingSummaryFeatureType::TypeArchipelago => "typeArchipelago",
+                GeocodingSummaryFeatureType::TypeAtoll => "typeAtoll",
+                GeocodingSummaryFeatureType::TypeBank => "typeBank",
+                GeocodingSummaryFeatureType::TypeBar => "typeBar",
+                GeocodingSummaryFeatureType::TypeBay => "typeBay",
+                GeocodingSummaryFeatureType::TypeBeach => "typeBeach",
+                GeocodingSummaryFeatureType::TypeBicycleRoute => "typeBicycleRoute",
+                GeocodingSummaryFeatureType::TypeBight => "typeBight",
+                GeocodingSummaryFeatureType::TypeBirdWatching => "typeBirdWatching",
+                GeocodingSummaryFeatureType::TypeBorder => "typeBorder",
+                GeocodingSummaryFeatureType::TypeBorderCrossing => "typeBorderCrossing",
+                GeocodingSummaryFeatureType::TypeBroadTrack => "typeBroadTrack",
+                GeocodingSummaryFeatureType::TypeBuilding => "typeBuilding",
+                GeocodingSummaryFeatureType::TypeBuildingGrounds => "typeBuildingGrounds",
+                GeocodingSummaryFeatureType::TypeBuiltUpArea => "typeBuiltUpArea",
+                GeocodingSummaryFeatureType::TypeBusStation => "typeBusStation",
+                GeocodingSummaryFeatureType::TypeBusiness => "typeBusiness",
+                GeocodingSummaryFeatureType::TypeBusinessChain => "typeBusinessChain",
+                GeocodingSummaryFeatureType::TypeBusinessCorridor => "typeBusinessCorridor",
+                GeocodingSummaryFeatureType::TypeCableCarStation => "typeCableCarStation",
+                GeocodingSummaryFeatureType::TypeCampfirePit => "typeCampfirePit",
+                GeocodingSummaryFeatureType::TypeCampgrounds => "typeCampgrounds",
+                GeocodingSummaryFeatureType::TypeCampingSite => "typeCampingSite",
+                GeocodingSummaryFeatureType::TypeCanal => "typeCanal",
+                GeocodingSummaryFeatureType::TypeCarRental => "typeCarRental",
+                GeocodingSummaryFeatureType::TypeCarRepair => "typeCarRepair",
+                GeocodingSummaryFeatureType::TypeCartographic => "typeCartographic",
+                GeocodingSummaryFeatureType::TypeCartographicLine => "typeCartographicLine",
+                GeocodingSummaryFeatureType::TypeCashMachine => "typeCashMachine",
+                GeocodingSummaryFeatureType::TypeCave => "typeCave",
+                GeocodingSummaryFeatureType::TypeCay => "typeCay",
+                GeocodingSummaryFeatureType::TypeCelestial => "typeCelestial",
+                GeocodingSummaryFeatureType::TypeCemetery => "typeCemetery",
+                GeocodingSummaryFeatureType::TypeChannel => "typeChannel",
+                GeocodingSummaryFeatureType::TypeChurch => "typeChurch",
+                GeocodingSummaryFeatureType::TypeCityHall => "typeCityHall",
+                GeocodingSummaryFeatureType::TypeCliff => "typeCliff",
+                GeocodingSummaryFeatureType::TypeCoffee => "typeCoffee",
+                GeocodingSummaryFeatureType::TypeColloquialArea => "typeColloquialArea",
+                GeocodingSummaryFeatureType::TypeColloquialCity => "typeColloquialCity",
+                GeocodingSummaryFeatureType::TypeCompound => "typeCompound",
+                GeocodingSummaryFeatureType::TypeCompoundBuilding => "typeCompoundBuilding",
+                GeocodingSummaryFeatureType::TypeCompoundGrounds => "typeCompoundGrounds",
+                GeocodingSummaryFeatureType::TypeCompoundSection => "typeCompoundSection",
+                GeocodingSummaryFeatureType::TypeConfluence => "typeConfluence",
+                GeocodingSummaryFeatureType::TypeConstituency => "typeConstituency",
+                GeocodingSummaryFeatureType::TypeConstituencyFuture => "typeConstituencyFuture",
+                GeocodingSummaryFeatureType::TypeContinent => "typeContinent",
+                GeocodingSummaryFeatureType::TypeContourLine => "typeContourLine",
+                GeocodingSummaryFeatureType::TypeCountry => "typeCountry",
+                GeocodingSummaryFeatureType::TypeCourthouse => "typeCourthouse",
+                GeocodingSummaryFeatureType::TypeCrater => "typeCrater",
+                GeocodingSummaryFeatureType::TypeCurrent => "typeCurrent",
+                GeocodingSummaryFeatureType::TypeDam => "typeDam",
+                GeocodingSummaryFeatureType::TypeDataSource => "typeDataSource",
+                GeocodingSummaryFeatureType::TypeDentist => "typeDentist",
+                GeocodingSummaryFeatureType::TypeDeprecatedGolfShop => "typeDeprecatedGolfShop",
+                GeocodingSummaryFeatureType::TypeDeprecatedHighwayDoNotUse => {
+                    "typeDeprecatedHighwayDoNotUse"
+                }
+                GeocodingSummaryFeatureType::TypeDeprecatedTarmac => "typeDeprecatedTarmac",
+                GeocodingSummaryFeatureType::TypeDesert => "typeDesert",
+                GeocodingSummaryFeatureType::TypeDesignatedBarbecuePit => {
+                    "typeDesignatedBarbecuePit"
+                }
+                GeocodingSummaryFeatureType::TypeDesignatedCookingArea => {
+                    "typeDesignatedCookingArea"
+                }
+                GeocodingSummaryFeatureType::TypeDesignatedMarketArea => "typeDesignatedMarketArea",
+                GeocodingSummaryFeatureType::TypeDigitalElevationModel => {
+                    "typeDigitalElevationModel"
+                }
+                GeocodingSummaryFeatureType::TypeDisputedArea => "typeDisputedArea",
+                GeocodingSummaryFeatureType::TypeDistributary => "typeDistributary",
+                GeocodingSummaryFeatureType::TypeDoNotUseReservedToCatchGeneratedFiles => {
+                    "typeDoNotUseReservedToCatchGeneratedFiles"
+                }
+                GeocodingSummaryFeatureType::TypeDoctor => "typeDoctor",
+                GeocodingSummaryFeatureType::TypeDoodle => "typeDoodle",
+                GeocodingSummaryFeatureType::TypeDrinkingWater => "typeDrinkingWater",
+                GeocodingSummaryFeatureType::TypeDune => "typeDune",
+                GeocodingSummaryFeatureType::TypeEarthquake => "typeEarthquake",
+                GeocodingSummaryFeatureType::TypeEcoTouristDestination => {
+                    "typeEcoTouristDestination"
+                }
+                GeocodingSummaryFeatureType::TypeElevated => "typeElevated",
+                GeocodingSummaryFeatureType::TypeEmbassy => "typeEmbassy",
+                GeocodingSummaryFeatureType::TypeEmergency => "typeEmergency",
+                GeocodingSummaryFeatureType::TypeEnclosedTrafficArea => "typeEnclosedTrafficArea",
+                GeocodingSummaryFeatureType::TypeEntrance => "typeEntrance",
+                GeocodingSummaryFeatureType::TypeEstablishment => "typeEstablishment",
+                GeocodingSummaryFeatureType::TypeEstablishmentBuilding => {
+                    "typeEstablishmentBuilding"
+                }
+                GeocodingSummaryFeatureType::TypeEstablishmentGrounds => "typeEstablishmentGrounds",
+                GeocodingSummaryFeatureType::TypeEstablishmentPoi => "typeEstablishmentPoi",
+                GeocodingSummaryFeatureType::TypeEstablishmentService => "typeEstablishmentService",
+                GeocodingSummaryFeatureType::TypeEstuary => "typeEstuary",
+                GeocodingSummaryFeatureType::TypeEvent => "typeEvent",
+                GeocodingSummaryFeatureType::TypeFault => "typeFault",
+                GeocodingSummaryFeatureType::TypeFerry => "typeFerry",
+                GeocodingSummaryFeatureType::TypeFerryBoat => "typeFerryBoat",
+                GeocodingSummaryFeatureType::TypeFerryTerminal => "typeFerryTerminal",
+                GeocodingSummaryFeatureType::TypeFerryTrain => "typeFerryTrain",
+                GeocodingSummaryFeatureType::TypeFire => "typeFire",
+                GeocodingSummaryFeatureType::TypeFishing => "typeFishing",
+                GeocodingSummaryFeatureType::TypeFissure => "typeFissure",
+                GeocodingSummaryFeatureType::TypeFjord => "typeFjord",
+                GeocodingSummaryFeatureType::TypeFord => "typeFord",
+                GeocodingSummaryFeatureType::TypeFunicularStation => "typeFunicularStation",
+                GeocodingSummaryFeatureType::TypeFutureGeometry => "typeFutureGeometry",
+                GeocodingSummaryFeatureType::TypeGasStation => "typeGasStation",
+                GeocodingSummaryFeatureType::TypeGbCountry => "typeGbCountry",
+                GeocodingSummaryFeatureType::TypeGbDependentLocality => "typeGbDependentLocality",
+                GeocodingSummaryFeatureType::TypeGbDoubleDependentLocality => {
+                    "typeGbDoubleDependentLocality"
+                }
+                GeocodingSummaryFeatureType::TypeGbFormerPostalCounty => "typeGbFormerPostalCounty",
+                GeocodingSummaryFeatureType::TypeGbPostTown => "typeGbPostTown",
+                GeocodingSummaryFeatureType::TypeGbTraditionalCounty => "typeGbTraditionalCounty",
+                GeocodingSummaryFeatureType::TypeGeocodedAddress => "typeGeocodedAddress",
+                GeocodingSummaryFeatureType::TypeGeyser => "typeGeyser",
+                GeocodingSummaryFeatureType::TypeGlacier => "typeGlacier",
+                GeocodingSummaryFeatureType::TypeGolf => "typeGolf",
+                GeocodingSummaryFeatureType::TypeGolfCourse => "typeGolfCourse",
+                GeocodingSummaryFeatureType::TypeGolfFairway => "typeGolfFairway",
+                GeocodingSummaryFeatureType::TypeGolfHole => "typeGolfHole",
+                GeocodingSummaryFeatureType::TypeGolfPuttingGreen => "typeGolfPuttingGreen",
+                GeocodingSummaryFeatureType::TypeGolfRough => "typeGolfRough",
+                GeocodingSummaryFeatureType::TypeGolfSandBunker => "typeGolfSandBunker",
+                GeocodingSummaryFeatureType::TypeGolfTeeingGround => "typeGolfTeeingGround",
+                GeocodingSummaryFeatureType::TypeGondolaLiftStation => "typeGondolaLiftStation",
+                GeocodingSummaryFeatureType::TypeGovernment => "typeGovernment",
+                GeocodingSummaryFeatureType::TypeGrassland => "typeGrassland",
+                GeocodingSummaryFeatureType::TypeGrocery => "typeGrocery",
+                GeocodingSummaryFeatureType::TypeGrounds => "typeGrounds",
+                GeocodingSummaryFeatureType::TypeGurudwara => "typeGurudwara",
+                GeocodingSummaryFeatureType::TypeHarbor => "typeHarbor",
+                GeocodingSummaryFeatureType::TypeHeliport => "typeHeliport",
+                GeocodingSummaryFeatureType::TypeHighSpeedRail => "typeHighSpeedRail",
+                GeocodingSummaryFeatureType::TypeHighTension => "typeHighTension",
+                GeocodingSummaryFeatureType::TypeHighway => "typeHighway",
+                GeocodingSummaryFeatureType::TypeHighway1 => "typeHighway1",
+                GeocodingSummaryFeatureType::TypeHighway2 => "typeHighway2",
+                GeocodingSummaryFeatureType::TypeHighway3 => "typeHighway3",
+                GeocodingSummaryFeatureType::TypeHighway4 => "typeHighway4",
+                GeocodingSummaryFeatureType::TypeHighway5 => "typeHighway5",
+                GeocodingSummaryFeatureType::TypeHighway6 => "typeHighway6",
+                GeocodingSummaryFeatureType::TypeHighway7 => "typeHighway7",
+                GeocodingSummaryFeatureType::TypeHighway8 => "typeHighway8",
+                GeocodingSummaryFeatureType::TypeHighway9 => "typeHighway9",
+                GeocodingSummaryFeatureType::TypeHikingArea => "typeHikingArea",
+                GeocodingSummaryFeatureType::TypeHinduTemple => "typeHinduTemple",
+                GeocodingSummaryFeatureType::TypeHorseCarriageStation => "typeHorseCarriageStation",
+                GeocodingSummaryFeatureType::TypeHospital => "typeHospital",
+                GeocodingSummaryFeatureType::TypeHospitalGrounds => "typeHospitalGrounds",
+                GeocodingSummaryFeatureType::TypeHotSpring => "typeHotSpring",
+                GeocodingSummaryFeatureType::TypeHunting => "typeHunting",
+                GeocodingSummaryFeatureType::TypeHurricane => "typeHurricane",
+                GeocodingSummaryFeatureType::TypeIce => "typeIce",
+                GeocodingSummaryFeatureType::TypeIndustrial => "typeIndustrial",
+                GeocodingSummaryFeatureType::TypeInlet => "typeInlet",
+                GeocodingSummaryFeatureType::TypeIntersection => "typeIntersection",
+                GeocodingSummaryFeatureType::TypeIntersectionGroup => "typeIntersectionGroup",
+                GeocodingSummaryFeatureType::TypeIrrigation => "typeIrrigation",
+                GeocodingSummaryFeatureType::TypeIsland => "typeIsland",
+                GeocodingSummaryFeatureType::TypeIsthmus => "typeIsthmus",
+                GeocodingSummaryFeatureType::TypeJpChiban => "typeJpChiban",
+                GeocodingSummaryFeatureType::TypeJpEdaban => "typeJpEdaban",
+                GeocodingSummaryFeatureType::TypeJpGaiku => "typeJpGaiku",
+                GeocodingSummaryFeatureType::TypeJpGun => "typeJpGun",
+                GeocodingSummaryFeatureType::TypeJpKoaza => "typeJpKoaza",
+                GeocodingSummaryFeatureType::TypeJpOoaza => "typeJpOoaza",
+                GeocodingSummaryFeatureType::TypeJpShikuchouson => "typeJpShikuchouson",
+                GeocodingSummaryFeatureType::TypeJpSubShikuchouson => "typeJpSubShikuchouson",
+                GeocodingSummaryFeatureType::TypeJpTodoufuken => "typeJpTodoufuken",
+                GeocodingSummaryFeatureType::TypeJrTrack => "typeJrTrack",
+                GeocodingSummaryFeatureType::TypeKarst => "typeKarst",
+                GeocodingSummaryFeatureType::TypeLagoon => "typeLagoon",
+                GeocodingSummaryFeatureType::TypeLake => "typeLake",
+                GeocodingSummaryFeatureType::TypeLandMass => "typeLandMass",
+                GeocodingSummaryFeatureType::TypeLandParcel => "typeLandParcel",
+                GeocodingSummaryFeatureType::TypeLavaField => "typeLavaField",
+                GeocodingSummaryFeatureType::TypeLevel => "typeLevel",
+                GeocodingSummaryFeatureType::TypeLibrary => "typeLibrary",
+                GeocodingSummaryFeatureType::TypeLightRailTrack => "typeLightRailTrack",
+                GeocodingSummaryFeatureType::TypeLitterReceptacle => "typeLitterReceptacle",
+                GeocodingSummaryFeatureType::TypeLocalPark => "typeLocalPark",
+                GeocodingSummaryFeatureType::TypeLocale => "typeLocale",
+                GeocodingSummaryFeatureType::TypeLocality => "typeLocality",
+                GeocodingSummaryFeatureType::TypeLockerArea => "typeLockerArea",
+                GeocodingSummaryFeatureType::TypeLodging => "typeLodging",
+                GeocodingSummaryFeatureType::TypeMetaFeature => "typeMetaFeature",
+                GeocodingSummaryFeatureType::TypeMilitary => "typeMilitary",
+                GeocodingSummaryFeatureType::TypeMonorailStation => "typeMonorailStation",
+                GeocodingSummaryFeatureType::TypeMonorailTrack => "typeMonorailTrack",
+                GeocodingSummaryFeatureType::TypeMosque => "typeMosque",
+                GeocodingSummaryFeatureType::TypeMountainRange => "typeMountainRange",
+                GeocodingSummaryFeatureType::TypeMovieRental => "typeMovieRental",
+                GeocodingSummaryFeatureType::TypeNarrowTrack => "typeNarrowTrack",
+                GeocodingSummaryFeatureType::TypeNationalForest => "typeNationalForest",
+                GeocodingSummaryFeatureType::TypeNationalPark => "typeNationalPark",
+                GeocodingSummaryFeatureType::TypeNaturalFeature => "typeNaturalFeature",
+                GeocodingSummaryFeatureType::TypeNatureReserve => "typeNatureReserve",
+                GeocodingSummaryFeatureType::TypeNeighborhood => "typeNeighborhood",
+                GeocodingSummaryFeatureType::TypeNunatak => "typeNunatak",
+                GeocodingSummaryFeatureType::TypeOcean => "typeOcean",
+                GeocodingSummaryFeatureType::TypeOceanRockExposed => "typeOceanRockExposed",
+                GeocodingSummaryFeatureType::TypeOffRoadArea => "typeOffRoadArea",
+                GeocodingSummaryFeatureType::TypePan => "typePan",
+                GeocodingSummaryFeatureType::TypePark => "typePark",
+                GeocodingSummaryFeatureType::TypeParking => "typeParking",
+                GeocodingSummaryFeatureType::TypeParkingGarage => "typeParkingGarage",
+                GeocodingSummaryFeatureType::TypeParkingLot => "typeParkingLot",
+                GeocodingSummaryFeatureType::TypePass => "typePass",
+                GeocodingSummaryFeatureType::TypePathway => "typePathway",
+                GeocodingSummaryFeatureType::TypePeak => "typePeak",
+                GeocodingSummaryFeatureType::TypePeninsula => "typePeninsula",
+                GeocodingSummaryFeatureType::TypePharmacy => "typePharmacy",
+                GeocodingSummaryFeatureType::TypePhoneNumberAreaCode => "typePhoneNumberAreaCode",
+                GeocodingSummaryFeatureType::TypePhoneNumberPrefix => "typePhoneNumberPrefix",
+                GeocodingSummaryFeatureType::TypePicnicArea => "typePicnicArea",
+                GeocodingSummaryFeatureType::TypePlateau => "typePlateau",
+                GeocodingSummaryFeatureType::TypePlayGround => "typePlayGround",
+                GeocodingSummaryFeatureType::TypePolice => "typePolice",
+                GeocodingSummaryFeatureType::TypePoliceJurisdiction => "typePoliceJurisdiction",
+                GeocodingSummaryFeatureType::TypePolitical => "typePolitical",
+                GeocodingSummaryFeatureType::TypePond => "typePond",
+                GeocodingSummaryFeatureType::TypePostOffice => "typePostOffice",
+                GeocodingSummaryFeatureType::TypePostTown => "typePostTown",
+                GeocodingSummaryFeatureType::TypePostal => "typePostal",
+                GeocodingSummaryFeatureType::TypePostalCode => "typePostalCode",
+                GeocodingSummaryFeatureType::TypePostalCodePrefix => "typePostalCodePrefix",
+                GeocodingSummaryFeatureType::TypePostalRound => "typePostalRound",
+                GeocodingSummaryFeatureType::TypePremise => "typePremise",
+                GeocodingSummaryFeatureType::TypeProvincialForest => "typeProvincialForest",
+                GeocodingSummaryFeatureType::TypeProvincialPark => "typeProvincialPark",
+                GeocodingSummaryFeatureType::TypePublicSpacesAndMonuments => {
+                    "typePublicSpacesAndMonuments"
+                }
+                GeocodingSummaryFeatureType::TypeRailway => "typeRailway",
+                GeocodingSummaryFeatureType::TypeRapids => "typeRapids",
+                GeocodingSummaryFeatureType::TypeRavine => "typeRavine",
+                GeocodingSummaryFeatureType::TypeReef => "typeReef",
+                GeocodingSummaryFeatureType::TypeReefExtent => "typeReefExtent",
+                GeocodingSummaryFeatureType::TypeReefFlat => "typeReefFlat",
+                GeocodingSummaryFeatureType::TypeReefGrowth => "typeReefGrowth",
+                GeocodingSummaryFeatureType::TypeReefRockSubmerged => "typeReefRockSubmerged",
+                GeocodingSummaryFeatureType::TypeRegulatedArea => "typeRegulatedArea",
+                GeocodingSummaryFeatureType::TypeReservation => "typeReservation",
+                GeocodingSummaryFeatureType::TypeReservoir => "typeReservoir",
+                GeocodingSummaryFeatureType::TypeRestArea => "typeRestArea",
+                GeocodingSummaryFeatureType::TypeRestaurant => "typeRestaurant",
+                GeocodingSummaryFeatureType::TypeRestrictionGroup => "typeRestrictionGroup",
+                GeocodingSummaryFeatureType::TypeRidge => "typeRidge",
+                GeocodingSummaryFeatureType::TypeRiver => "typeRiver",
+                GeocodingSummaryFeatureType::TypeRoad => "typeRoad",
+                GeocodingSummaryFeatureType::TypeRoadMonitor => "typeRoadMonitor",
+                GeocodingSummaryFeatureType::TypeRoadSign => "typeRoadSign",
+                GeocodingSummaryFeatureType::TypeRock => "typeRock",
+                GeocodingSummaryFeatureType::TypeRocky => "typeRocky",
+                GeocodingSummaryFeatureType::TypeRoute => "typeRoute",
+                GeocodingSummaryFeatureType::TypeSaltFlat => "typeSaltFlat",
+                GeocodingSummaryFeatureType::TypeSand => "typeSand",
+                GeocodingSummaryFeatureType::TypeSchool => "typeSchool",
+                GeocodingSummaryFeatureType::TypeSchoolDistrict => "typeSchoolDistrict",
+                GeocodingSummaryFeatureType::TypeSea => "typeSea",
+                GeocodingSummaryFeatureType::TypeSeaplaneBase => "typeSeaplaneBase",
+                GeocodingSummaryFeatureType::TypeSeaport => "typeSeaport",
+                GeocodingSummaryFeatureType::TypeSeasonalLake => "typeSeasonalLake",
+                GeocodingSummaryFeatureType::TypeSeasonalRiver => "typeSeasonalRiver",
+                GeocodingSummaryFeatureType::TypeSegment => "typeSegment",
+                GeocodingSummaryFeatureType::TypeSegmentPath => "typeSegmentPath",
+                GeocodingSummaryFeatureType::TypeShopping => "typeShopping",
+                GeocodingSummaryFeatureType::TypeShoppingCenter => "typeShoppingCenter",
+                GeocodingSummaryFeatureType::TypeShrubbery => "typeShrubbery",
+                GeocodingSummaryFeatureType::TypeSkiBoundary => "typeSkiBoundary",
+                GeocodingSummaryFeatureType::TypeSkiLift => "typeSkiLift",
+                GeocodingSummaryFeatureType::TypeSkiTrail => "typeSkiTrail",
+                GeocodingSummaryFeatureType::TypeSlope => "typeSlope",
+                GeocodingSummaryFeatureType::TypeSpecialStation => "typeSpecialStation",
+                GeocodingSummaryFeatureType::TypeSportsComplex => "typeSportsComplex",
+                GeocodingSummaryFeatureType::TypeSpring => "typeSpring",
+                GeocodingSummaryFeatureType::TypeSpur => "typeSpur",
+                GeocodingSummaryFeatureType::TypeStadium => "typeStadium",
+                GeocodingSummaryFeatureType::TypeStandardTrack => "typeStandardTrack",
+                GeocodingSummaryFeatureType::TypeStatisticalArea => "typeStatisticalArea",
+                GeocodingSummaryFeatureType::TypeStatue => "typeStatue",
+                GeocodingSummaryFeatureType::TypeStrait => "typeStrait",
+                GeocodingSummaryFeatureType::TypeSubPremise => "typeSubPremise",
+                GeocodingSummaryFeatureType::TypeSublocality => "typeSublocality",
+                GeocodingSummaryFeatureType::TypeSublocality1 => "typeSublocality1",
+                GeocodingSummaryFeatureType::TypeSublocality2 => "typeSublocality2",
+                GeocodingSummaryFeatureType::TypeSublocality3 => "typeSublocality3",
+                GeocodingSummaryFeatureType::TypeSublocality4 => "typeSublocality4",
+                GeocodingSummaryFeatureType::TypeSublocality5 => "typeSublocality5",
+                GeocodingSummaryFeatureType::TypeSubmarineBasin => "typeSubmarineBasin",
+                GeocodingSummaryFeatureType::TypeSubmarineCliff => "typeSubmarineCliff",
+                GeocodingSummaryFeatureType::TypeSubmarineDeep => "typeSubmarineDeep",
+                GeocodingSummaryFeatureType::TypeSubmarineFractureZone => {
+                    "typeSubmarineFractureZone"
+                }
+                GeocodingSummaryFeatureType::TypeSubmarineGap => "typeSubmarineGap",
+                GeocodingSummaryFeatureType::TypeSubmarinePlain => "typeSubmarinePlain",
+                GeocodingSummaryFeatureType::TypeSubmarinePlateau => "typeSubmarinePlateau",
+                GeocodingSummaryFeatureType::TypeSubmarineRidge => "typeSubmarineRidge",
+                GeocodingSummaryFeatureType::TypeSubmarineSeamount => "typeSubmarineSeamount",
+                GeocodingSummaryFeatureType::TypeSubmarineSlope => "typeSubmarineSlope",
+                GeocodingSummaryFeatureType::TypeSubmarineValley => "typeSubmarineValley",
+                GeocodingSummaryFeatureType::TypeSubwayStation => "typeSubwayStation",
+                GeocodingSummaryFeatureType::TypeSubwayTrack => "typeSubwayTrack",
+                GeocodingSummaryFeatureType::TypeSuite => "typeSuite",
+                GeocodingSummaryFeatureType::TypeSynagogue => "typeSynagogue",
+                GeocodingSummaryFeatureType::TypeTarmac => "typeTarmac",
+                GeocodingSummaryFeatureType::TypeTectonic => "typeTectonic",
+                GeocodingSummaryFeatureType::TypeTemple => "typeTemple",
+                GeocodingSummaryFeatureType::TypeTerminalPoint => "typeTerminalPoint",
+                GeocodingSummaryFeatureType::TypeTerrace => "typeTerrace",
+                GeocodingSummaryFeatureType::TypeTerrain => "typeTerrain",
+                GeocodingSummaryFeatureType::TypeTimezone => "typeTimezone",
+                GeocodingSummaryFeatureType::TypeTollCluster => "typeTollCluster",
+                GeocodingSummaryFeatureType::TypeTouristDestination => "typeTouristDestination",
+                GeocodingSummaryFeatureType::TypeTownSquare => "typeTownSquare",
+                GeocodingSummaryFeatureType::TypeTrail => "typeTrail",
+                GeocodingSummaryFeatureType::TypeTrailHead => "typeTrailHead",
+                GeocodingSummaryFeatureType::TypeTrainStation => "typeTrainStation",
+                GeocodingSummaryFeatureType::TypeTramwayStation => "typeTramwayStation",
+                GeocodingSummaryFeatureType::TypeTransient => "typeTransient",
+                GeocodingSummaryFeatureType::TypeTransit => "typeTransit",
+                GeocodingSummaryFeatureType::TypeTransitAgency => "typeTransitAgency",
+                GeocodingSummaryFeatureType::TypeTransitAgencyDeprecatedValue => {
+                    "typeTransitAgencyDeprecatedValue"
+                }
+                GeocodingSummaryFeatureType::TypeTransitDeparture => "typeTransitDeparture",
+                GeocodingSummaryFeatureType::TypeTransitLeg => "typeTransitLeg",
+                GeocodingSummaryFeatureType::TypeTransitLine => "typeTransitLine",
+                GeocodingSummaryFeatureType::TypeTransitStation => "typeTransitStation",
+                GeocodingSummaryFeatureType::TypeTransitStop => "typeTransitStop",
+                GeocodingSummaryFeatureType::TypeTransitTransfer => "typeTransitTransfer",
+                GeocodingSummaryFeatureType::TypeTransitTrip => "typeTransitTrip",
+                GeocodingSummaryFeatureType::TypeTransportation => "typeTransportation",
+                GeocodingSummaryFeatureType::TypeTravelService => "typeTravelService",
+                GeocodingSummaryFeatureType::TypeTrolleyTrack => "typeTrolleyTrack",
+                GeocodingSummaryFeatureType::TypeTundra => "typeTundra",
+                GeocodingSummaryFeatureType::TypeUndersea => "typeUndersea",
+                GeocodingSummaryFeatureType::TypeUniversity => "typeUniversity",
+                GeocodingSummaryFeatureType::TypeUniversityGrounds => "typeUniversityGrounds",
+                GeocodingSummaryFeatureType::TypeUnknown => "typeUnknown",
+                GeocodingSummaryFeatureType::TypeUnstableHillside => "typeUnstableHillside",
+                GeocodingSummaryFeatureType::TypeUpland => "typeUpland",
+                GeocodingSummaryFeatureType::TypeUsBorough => "typeUsBorough",
+                GeocodingSummaryFeatureType::TypeUsNationalMonument => "typeUsNationalMonument",
+                GeocodingSummaryFeatureType::TypeUsNationalPark => "typeUsNationalPark",
+                GeocodingSummaryFeatureType::TypeUsState => "typeUsState",
+                GeocodingSummaryFeatureType::TypeVegetation => "typeVegetation",
+                GeocodingSummaryFeatureType::TypeVeterinarian => "typeVeterinarian",
+                GeocodingSummaryFeatureType::TypeVirtualSegment => "typeVirtualSegment",
+                GeocodingSummaryFeatureType::TypeVista => "typeVista",
+                GeocodingSummaryFeatureType::TypeVolcano => "typeVolcano",
+                GeocodingSummaryFeatureType::TypeWadi => "typeWadi",
+                GeocodingSummaryFeatureType::TypeWall => "typeWall",
+                GeocodingSummaryFeatureType::TypeWater => "typeWater",
+                GeocodingSummaryFeatureType::TypeWaterFountain => "typeWaterFountain",
+                GeocodingSummaryFeatureType::TypeWaterNavigation => "typeWaterNavigation",
+                GeocodingSummaryFeatureType::TypeWaterfall => "typeWaterfall",
+                GeocodingSummaryFeatureType::TypeWateringHole => "typeWateringHole",
+                GeocodingSummaryFeatureType::TypeWateringHoleDeprecated => {
+                    "typeWateringHoleDeprecated"
+                }
+                GeocodingSummaryFeatureType::TypeWatershedBoundary => "typeWatershedBoundary",
+                GeocodingSummaryFeatureType::TypeWeatherCondition => "typeWeatherCondition",
+                GeocodingSummaryFeatureType::TypeWetland => "typeWetland",
+                GeocodingSummaryFeatureType::TypeWoods => "typeWoods",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GeocodingSummaryFeatureType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GeocodingSummaryFeatureType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GeocodingSummaryFeatureType, ()> {
+            Ok(match s {
+                "typeAddressTemplate" => GeocodingSummaryFeatureType::TypeAddressTemplate,
+                "typeAdministrativeArea" => GeocodingSummaryFeatureType::TypeAdministrativeArea,
+                "typeAdministrativeArea1" => GeocodingSummaryFeatureType::TypeAdministrativeArea1,
+                "typeAdministrativeArea2" => GeocodingSummaryFeatureType::TypeAdministrativeArea2,
+                "typeAdministrativeArea3" => GeocodingSummaryFeatureType::TypeAdministrativeArea3,
+                "typeAdministrativeArea4" => GeocodingSummaryFeatureType::TypeAdministrativeArea4,
+                "typeAdministrativeArea5" => GeocodingSummaryFeatureType::TypeAdministrativeArea5,
+                "typeAdministrativeArea6" => GeocodingSummaryFeatureType::TypeAdministrativeArea6,
+                "typeAdministrativeArea7" => GeocodingSummaryFeatureType::TypeAdministrativeArea7,
+                "typeAdministrativeArea8" => GeocodingSummaryFeatureType::TypeAdministrativeArea8,
+                "typeAdministrativeArea9" => GeocodingSummaryFeatureType::TypeAdministrativeArea9,
+                "typeAgricultural" => GeocodingSummaryFeatureType::TypeAgricultural,
+                "typeAirport" => GeocodingSummaryFeatureType::TypeAirport,
+                "typeAirportCivil" => GeocodingSummaryFeatureType::TypeAirportCivil,
+                "typeAirportGrounds" => GeocodingSummaryFeatureType::TypeAirportGrounds,
+                "typeAirportMilitary" => GeocodingSummaryFeatureType::TypeAirportMilitary,
+                "typeAirportMixed" => GeocodingSummaryFeatureType::TypeAirportMixed,
+                "typeAirstrip" => GeocodingSummaryFeatureType::TypeAirstrip,
+                "typeAnimalEnclosure" => GeocodingSummaryFeatureType::TypeAnimalEnclosure,
+                "typeAny" => GeocodingSummaryFeatureType::TypeAny,
+                "typeArchipelago" => GeocodingSummaryFeatureType::TypeArchipelago,
+                "typeAtoll" => GeocodingSummaryFeatureType::TypeAtoll,
+                "typeBank" => GeocodingSummaryFeatureType::TypeBank,
+                "typeBar" => GeocodingSummaryFeatureType::TypeBar,
+                "typeBay" => GeocodingSummaryFeatureType::TypeBay,
+                "typeBeach" => GeocodingSummaryFeatureType::TypeBeach,
+                "typeBicycleRoute" => GeocodingSummaryFeatureType::TypeBicycleRoute,
+                "typeBight" => GeocodingSummaryFeatureType::TypeBight,
+                "typeBirdWatching" => GeocodingSummaryFeatureType::TypeBirdWatching,
+                "typeBorder" => GeocodingSummaryFeatureType::TypeBorder,
+                "typeBorderCrossing" => GeocodingSummaryFeatureType::TypeBorderCrossing,
+                "typeBroadTrack" => GeocodingSummaryFeatureType::TypeBroadTrack,
+                "typeBuilding" => GeocodingSummaryFeatureType::TypeBuilding,
+                "typeBuildingGrounds" => GeocodingSummaryFeatureType::TypeBuildingGrounds,
+                "typeBuiltUpArea" => GeocodingSummaryFeatureType::TypeBuiltUpArea,
+                "typeBusStation" => GeocodingSummaryFeatureType::TypeBusStation,
+                "typeBusiness" => GeocodingSummaryFeatureType::TypeBusiness,
+                "typeBusinessChain" => GeocodingSummaryFeatureType::TypeBusinessChain,
+                "typeBusinessCorridor" => GeocodingSummaryFeatureType::TypeBusinessCorridor,
+                "typeCableCarStation" => GeocodingSummaryFeatureType::TypeCableCarStation,
+                "typeCampfirePit" => GeocodingSummaryFeatureType::TypeCampfirePit,
+                "typeCampgrounds" => GeocodingSummaryFeatureType::TypeCampgrounds,
+                "typeCampingSite" => GeocodingSummaryFeatureType::TypeCampingSite,
+                "typeCanal" => GeocodingSummaryFeatureType::TypeCanal,
+                "typeCarRental" => GeocodingSummaryFeatureType::TypeCarRental,
+                "typeCarRepair" => GeocodingSummaryFeatureType::TypeCarRepair,
+                "typeCartographic" => GeocodingSummaryFeatureType::TypeCartographic,
+                "typeCartographicLine" => GeocodingSummaryFeatureType::TypeCartographicLine,
+                "typeCashMachine" => GeocodingSummaryFeatureType::TypeCashMachine,
+                "typeCave" => GeocodingSummaryFeatureType::TypeCave,
+                "typeCay" => GeocodingSummaryFeatureType::TypeCay,
+                "typeCelestial" => GeocodingSummaryFeatureType::TypeCelestial,
+                "typeCemetery" => GeocodingSummaryFeatureType::TypeCemetery,
+                "typeChannel" => GeocodingSummaryFeatureType::TypeChannel,
+                "typeChurch" => GeocodingSummaryFeatureType::TypeChurch,
+                "typeCityHall" => GeocodingSummaryFeatureType::TypeCityHall,
+                "typeCliff" => GeocodingSummaryFeatureType::TypeCliff,
+                "typeCoffee" => GeocodingSummaryFeatureType::TypeCoffee,
+                "typeColloquialArea" => GeocodingSummaryFeatureType::TypeColloquialArea,
+                "typeColloquialCity" => GeocodingSummaryFeatureType::TypeColloquialCity,
+                "typeCompound" => GeocodingSummaryFeatureType::TypeCompound,
+                "typeCompoundBuilding" => GeocodingSummaryFeatureType::TypeCompoundBuilding,
+                "typeCompoundGrounds" => GeocodingSummaryFeatureType::TypeCompoundGrounds,
+                "typeCompoundSection" => GeocodingSummaryFeatureType::TypeCompoundSection,
+                "typeConfluence" => GeocodingSummaryFeatureType::TypeConfluence,
+                "typeConstituency" => GeocodingSummaryFeatureType::TypeConstituency,
+                "typeConstituencyFuture" => GeocodingSummaryFeatureType::TypeConstituencyFuture,
+                "typeContinent" => GeocodingSummaryFeatureType::TypeContinent,
+                "typeContourLine" => GeocodingSummaryFeatureType::TypeContourLine,
+                "typeCountry" => GeocodingSummaryFeatureType::TypeCountry,
+                "typeCourthouse" => GeocodingSummaryFeatureType::TypeCourthouse,
+                "typeCrater" => GeocodingSummaryFeatureType::TypeCrater,
+                "typeCurrent" => GeocodingSummaryFeatureType::TypeCurrent,
+                "typeDam" => GeocodingSummaryFeatureType::TypeDam,
+                "typeDataSource" => GeocodingSummaryFeatureType::TypeDataSource,
+                "typeDentist" => GeocodingSummaryFeatureType::TypeDentist,
+                "typeDeprecatedGolfShop" => GeocodingSummaryFeatureType::TypeDeprecatedGolfShop,
+                "typeDeprecatedHighwayDoNotUse" => {
+                    GeocodingSummaryFeatureType::TypeDeprecatedHighwayDoNotUse
+                }
+                "typeDeprecatedTarmac" => GeocodingSummaryFeatureType::TypeDeprecatedTarmac,
+                "typeDesert" => GeocodingSummaryFeatureType::TypeDesert,
+                "typeDesignatedBarbecuePit" => {
+                    GeocodingSummaryFeatureType::TypeDesignatedBarbecuePit
+                }
+                "typeDesignatedCookingArea" => {
+                    GeocodingSummaryFeatureType::TypeDesignatedCookingArea
+                }
+                "typeDesignatedMarketArea" => GeocodingSummaryFeatureType::TypeDesignatedMarketArea,
+                "typeDigitalElevationModel" => {
+                    GeocodingSummaryFeatureType::TypeDigitalElevationModel
+                }
+                "typeDisputedArea" => GeocodingSummaryFeatureType::TypeDisputedArea,
+                "typeDistributary" => GeocodingSummaryFeatureType::TypeDistributary,
+                "typeDoNotUseReservedToCatchGeneratedFiles" => {
+                    GeocodingSummaryFeatureType::TypeDoNotUseReservedToCatchGeneratedFiles
+                }
+                "typeDoctor" => GeocodingSummaryFeatureType::TypeDoctor,
+                "typeDoodle" => GeocodingSummaryFeatureType::TypeDoodle,
+                "typeDrinkingWater" => GeocodingSummaryFeatureType::TypeDrinkingWater,
+                "typeDune" => GeocodingSummaryFeatureType::TypeDune,
+                "typeEarthquake" => GeocodingSummaryFeatureType::TypeEarthquake,
+                "typeEcoTouristDestination" => {
+                    GeocodingSummaryFeatureType::TypeEcoTouristDestination
+                }
+                "typeElevated" => GeocodingSummaryFeatureType::TypeElevated,
+                "typeEmbassy" => GeocodingSummaryFeatureType::TypeEmbassy,
+                "typeEmergency" => GeocodingSummaryFeatureType::TypeEmergency,
+                "typeEnclosedTrafficArea" => GeocodingSummaryFeatureType::TypeEnclosedTrafficArea,
+                "typeEntrance" => GeocodingSummaryFeatureType::TypeEntrance,
+                "typeEstablishment" => GeocodingSummaryFeatureType::TypeEstablishment,
+                "typeEstablishmentBuilding" => {
+                    GeocodingSummaryFeatureType::TypeEstablishmentBuilding
+                }
+                "typeEstablishmentGrounds" => GeocodingSummaryFeatureType::TypeEstablishmentGrounds,
+                "typeEstablishmentPoi" => GeocodingSummaryFeatureType::TypeEstablishmentPoi,
+                "typeEstablishmentService" => GeocodingSummaryFeatureType::TypeEstablishmentService,
+                "typeEstuary" => GeocodingSummaryFeatureType::TypeEstuary,
+                "typeEvent" => GeocodingSummaryFeatureType::TypeEvent,
+                "typeFault" => GeocodingSummaryFeatureType::TypeFault,
+                "typeFerry" => GeocodingSummaryFeatureType::TypeFerry,
+                "typeFerryBoat" => GeocodingSummaryFeatureType::TypeFerryBoat,
+                "typeFerryTerminal" => GeocodingSummaryFeatureType::TypeFerryTerminal,
+                "typeFerryTrain" => GeocodingSummaryFeatureType::TypeFerryTrain,
+                "typeFire" => GeocodingSummaryFeatureType::TypeFire,
+                "typeFishing" => GeocodingSummaryFeatureType::TypeFishing,
+                "typeFissure" => GeocodingSummaryFeatureType::TypeFissure,
+                "typeFjord" => GeocodingSummaryFeatureType::TypeFjord,
+                "typeFord" => GeocodingSummaryFeatureType::TypeFord,
+                "typeFunicularStation" => GeocodingSummaryFeatureType::TypeFunicularStation,
+                "typeFutureGeometry" => GeocodingSummaryFeatureType::TypeFutureGeometry,
+                "typeGasStation" => GeocodingSummaryFeatureType::TypeGasStation,
+                "typeGbCountry" => GeocodingSummaryFeatureType::TypeGbCountry,
+                "typeGbDependentLocality" => GeocodingSummaryFeatureType::TypeGbDependentLocality,
+                "typeGbDoubleDependentLocality" => {
+                    GeocodingSummaryFeatureType::TypeGbDoubleDependentLocality
+                }
+                "typeGbFormerPostalCounty" => GeocodingSummaryFeatureType::TypeGbFormerPostalCounty,
+                "typeGbPostTown" => GeocodingSummaryFeatureType::TypeGbPostTown,
+                "typeGbTraditionalCounty" => GeocodingSummaryFeatureType::TypeGbTraditionalCounty,
+                "typeGeocodedAddress" => GeocodingSummaryFeatureType::TypeGeocodedAddress,
+                "typeGeyser" => GeocodingSummaryFeatureType::TypeGeyser,
+                "typeGlacier" => GeocodingSummaryFeatureType::TypeGlacier,
+                "typeGolf" => GeocodingSummaryFeatureType::TypeGolf,
+                "typeGolfCourse" => GeocodingSummaryFeatureType::TypeGolfCourse,
+                "typeGolfFairway" => GeocodingSummaryFeatureType::TypeGolfFairway,
+                "typeGolfHole" => GeocodingSummaryFeatureType::TypeGolfHole,
+                "typeGolfPuttingGreen" => GeocodingSummaryFeatureType::TypeGolfPuttingGreen,
+                "typeGolfRough" => GeocodingSummaryFeatureType::TypeGolfRough,
+                "typeGolfSandBunker" => GeocodingSummaryFeatureType::TypeGolfSandBunker,
+                "typeGolfTeeingGround" => GeocodingSummaryFeatureType::TypeGolfTeeingGround,
+                "typeGondolaLiftStation" => GeocodingSummaryFeatureType::TypeGondolaLiftStation,
+                "typeGovernment" => GeocodingSummaryFeatureType::TypeGovernment,
+                "typeGrassland" => GeocodingSummaryFeatureType::TypeGrassland,
+                "typeGrocery" => GeocodingSummaryFeatureType::TypeGrocery,
+                "typeGrounds" => GeocodingSummaryFeatureType::TypeGrounds,
+                "typeGurudwara" => GeocodingSummaryFeatureType::TypeGurudwara,
+                "typeHarbor" => GeocodingSummaryFeatureType::TypeHarbor,
+                "typeHeliport" => GeocodingSummaryFeatureType::TypeHeliport,
+                "typeHighSpeedRail" => GeocodingSummaryFeatureType::TypeHighSpeedRail,
+                "typeHighTension" => GeocodingSummaryFeatureType::TypeHighTension,
+                "typeHighway" => GeocodingSummaryFeatureType::TypeHighway,
+                "typeHighway1" => GeocodingSummaryFeatureType::TypeHighway1,
+                "typeHighway2" => GeocodingSummaryFeatureType::TypeHighway2,
+                "typeHighway3" => GeocodingSummaryFeatureType::TypeHighway3,
+                "typeHighway4" => GeocodingSummaryFeatureType::TypeHighway4,
+                "typeHighway5" => GeocodingSummaryFeatureType::TypeHighway5,
+                "typeHighway6" => GeocodingSummaryFeatureType::TypeHighway6,
+                "typeHighway7" => GeocodingSummaryFeatureType::TypeHighway7,
+                "typeHighway8" => GeocodingSummaryFeatureType::TypeHighway8,
+                "typeHighway9" => GeocodingSummaryFeatureType::TypeHighway9,
+                "typeHikingArea" => GeocodingSummaryFeatureType::TypeHikingArea,
+                "typeHinduTemple" => GeocodingSummaryFeatureType::TypeHinduTemple,
+                "typeHorseCarriageStation" => GeocodingSummaryFeatureType::TypeHorseCarriageStation,
+                "typeHospital" => GeocodingSummaryFeatureType::TypeHospital,
+                "typeHospitalGrounds" => GeocodingSummaryFeatureType::TypeHospitalGrounds,
+                "typeHotSpring" => GeocodingSummaryFeatureType::TypeHotSpring,
+                "typeHunting" => GeocodingSummaryFeatureType::TypeHunting,
+                "typeHurricane" => GeocodingSummaryFeatureType::TypeHurricane,
+                "typeIce" => GeocodingSummaryFeatureType::TypeIce,
+                "typeIndustrial" => GeocodingSummaryFeatureType::TypeIndustrial,
+                "typeInlet" => GeocodingSummaryFeatureType::TypeInlet,
+                "typeIntersection" => GeocodingSummaryFeatureType::TypeIntersection,
+                "typeIntersectionGroup" => GeocodingSummaryFeatureType::TypeIntersectionGroup,
+                "typeIrrigation" => GeocodingSummaryFeatureType::TypeIrrigation,
+                "typeIsland" => GeocodingSummaryFeatureType::TypeIsland,
+                "typeIsthmus" => GeocodingSummaryFeatureType::TypeIsthmus,
+                "typeJpChiban" => GeocodingSummaryFeatureType::TypeJpChiban,
+                "typeJpEdaban" => GeocodingSummaryFeatureType::TypeJpEdaban,
+                "typeJpGaiku" => GeocodingSummaryFeatureType::TypeJpGaiku,
+                "typeJpGun" => GeocodingSummaryFeatureType::TypeJpGun,
+                "typeJpKoaza" => GeocodingSummaryFeatureType::TypeJpKoaza,
+                "typeJpOoaza" => GeocodingSummaryFeatureType::TypeJpOoaza,
+                "typeJpShikuchouson" => GeocodingSummaryFeatureType::TypeJpShikuchouson,
+                "typeJpSubShikuchouson" => GeocodingSummaryFeatureType::TypeJpSubShikuchouson,
+                "typeJpTodoufuken" => GeocodingSummaryFeatureType::TypeJpTodoufuken,
+                "typeJrTrack" => GeocodingSummaryFeatureType::TypeJrTrack,
+                "typeKarst" => GeocodingSummaryFeatureType::TypeKarst,
+                "typeLagoon" => GeocodingSummaryFeatureType::TypeLagoon,
+                "typeLake" => GeocodingSummaryFeatureType::TypeLake,
+                "typeLandMass" => GeocodingSummaryFeatureType::TypeLandMass,
+                "typeLandParcel" => GeocodingSummaryFeatureType::TypeLandParcel,
+                "typeLavaField" => GeocodingSummaryFeatureType::TypeLavaField,
+                "typeLevel" => GeocodingSummaryFeatureType::TypeLevel,
+                "typeLibrary" => GeocodingSummaryFeatureType::TypeLibrary,
+                "typeLightRailTrack" => GeocodingSummaryFeatureType::TypeLightRailTrack,
+                "typeLitterReceptacle" => GeocodingSummaryFeatureType::TypeLitterReceptacle,
+                "typeLocalPark" => GeocodingSummaryFeatureType::TypeLocalPark,
+                "typeLocale" => GeocodingSummaryFeatureType::TypeLocale,
+                "typeLocality" => GeocodingSummaryFeatureType::TypeLocality,
+                "typeLockerArea" => GeocodingSummaryFeatureType::TypeLockerArea,
+                "typeLodging" => GeocodingSummaryFeatureType::TypeLodging,
+                "typeMetaFeature" => GeocodingSummaryFeatureType::TypeMetaFeature,
+                "typeMilitary" => GeocodingSummaryFeatureType::TypeMilitary,
+                "typeMonorailStation" => GeocodingSummaryFeatureType::TypeMonorailStation,
+                "typeMonorailTrack" => GeocodingSummaryFeatureType::TypeMonorailTrack,
+                "typeMosque" => GeocodingSummaryFeatureType::TypeMosque,
+                "typeMountainRange" => GeocodingSummaryFeatureType::TypeMountainRange,
+                "typeMovieRental" => GeocodingSummaryFeatureType::TypeMovieRental,
+                "typeNarrowTrack" => GeocodingSummaryFeatureType::TypeNarrowTrack,
+                "typeNationalForest" => GeocodingSummaryFeatureType::TypeNationalForest,
+                "typeNationalPark" => GeocodingSummaryFeatureType::TypeNationalPark,
+                "typeNaturalFeature" => GeocodingSummaryFeatureType::TypeNaturalFeature,
+                "typeNatureReserve" => GeocodingSummaryFeatureType::TypeNatureReserve,
+                "typeNeighborhood" => GeocodingSummaryFeatureType::TypeNeighborhood,
+                "typeNunatak" => GeocodingSummaryFeatureType::TypeNunatak,
+                "typeOcean" => GeocodingSummaryFeatureType::TypeOcean,
+                "typeOceanRockExposed" => GeocodingSummaryFeatureType::TypeOceanRockExposed,
+                "typeOffRoadArea" => GeocodingSummaryFeatureType::TypeOffRoadArea,
+                "typePan" => GeocodingSummaryFeatureType::TypePan,
+                "typePark" => GeocodingSummaryFeatureType::TypePark,
+                "typeParking" => GeocodingSummaryFeatureType::TypeParking,
+                "typeParkingGarage" => GeocodingSummaryFeatureType::TypeParkingGarage,
+                "typeParkingLot" => GeocodingSummaryFeatureType::TypeParkingLot,
+                "typePass" => GeocodingSummaryFeatureType::TypePass,
+                "typePathway" => GeocodingSummaryFeatureType::TypePathway,
+                "typePeak" => GeocodingSummaryFeatureType::TypePeak,
+                "typePeninsula" => GeocodingSummaryFeatureType::TypePeninsula,
+                "typePharmacy" => GeocodingSummaryFeatureType::TypePharmacy,
+                "typePhoneNumberAreaCode" => GeocodingSummaryFeatureType::TypePhoneNumberAreaCode,
+                "typePhoneNumberPrefix" => GeocodingSummaryFeatureType::TypePhoneNumberPrefix,
+                "typePicnicArea" => GeocodingSummaryFeatureType::TypePicnicArea,
+                "typePlateau" => GeocodingSummaryFeatureType::TypePlateau,
+                "typePlayGround" => GeocodingSummaryFeatureType::TypePlayGround,
+                "typePolice" => GeocodingSummaryFeatureType::TypePolice,
+                "typePoliceJurisdiction" => GeocodingSummaryFeatureType::TypePoliceJurisdiction,
+                "typePolitical" => GeocodingSummaryFeatureType::TypePolitical,
+                "typePond" => GeocodingSummaryFeatureType::TypePond,
+                "typePostOffice" => GeocodingSummaryFeatureType::TypePostOffice,
+                "typePostTown" => GeocodingSummaryFeatureType::TypePostTown,
+                "typePostal" => GeocodingSummaryFeatureType::TypePostal,
+                "typePostalCode" => GeocodingSummaryFeatureType::TypePostalCode,
+                "typePostalCodePrefix" => GeocodingSummaryFeatureType::TypePostalCodePrefix,
+                "typePostalRound" => GeocodingSummaryFeatureType::TypePostalRound,
+                "typePremise" => GeocodingSummaryFeatureType::TypePremise,
+                "typeProvincialForest" => GeocodingSummaryFeatureType::TypeProvincialForest,
+                "typeProvincialPark" => GeocodingSummaryFeatureType::TypeProvincialPark,
+                "typePublicSpacesAndMonuments" => {
+                    GeocodingSummaryFeatureType::TypePublicSpacesAndMonuments
+                }
+                "typeRailway" => GeocodingSummaryFeatureType::TypeRailway,
+                "typeRapids" => GeocodingSummaryFeatureType::TypeRapids,
+                "typeRavine" => GeocodingSummaryFeatureType::TypeRavine,
+                "typeReef" => GeocodingSummaryFeatureType::TypeReef,
+                "typeReefExtent" => GeocodingSummaryFeatureType::TypeReefExtent,
+                "typeReefFlat" => GeocodingSummaryFeatureType::TypeReefFlat,
+                "typeReefGrowth" => GeocodingSummaryFeatureType::TypeReefGrowth,
+                "typeReefRockSubmerged" => GeocodingSummaryFeatureType::TypeReefRockSubmerged,
+                "typeRegulatedArea" => GeocodingSummaryFeatureType::TypeRegulatedArea,
+                "typeReservation" => GeocodingSummaryFeatureType::TypeReservation,
+                "typeReservoir" => GeocodingSummaryFeatureType::TypeReservoir,
+                "typeRestArea" => GeocodingSummaryFeatureType::TypeRestArea,
+                "typeRestaurant" => GeocodingSummaryFeatureType::TypeRestaurant,
+                "typeRestrictionGroup" => GeocodingSummaryFeatureType::TypeRestrictionGroup,
+                "typeRidge" => GeocodingSummaryFeatureType::TypeRidge,
+                "typeRiver" => GeocodingSummaryFeatureType::TypeRiver,
+                "typeRoad" => GeocodingSummaryFeatureType::TypeRoad,
+                "typeRoadMonitor" => GeocodingSummaryFeatureType::TypeRoadMonitor,
+                "typeRoadSign" => GeocodingSummaryFeatureType::TypeRoadSign,
+                "typeRock" => GeocodingSummaryFeatureType::TypeRock,
+                "typeRocky" => GeocodingSummaryFeatureType::TypeRocky,
+                "typeRoute" => GeocodingSummaryFeatureType::TypeRoute,
+                "typeSaltFlat" => GeocodingSummaryFeatureType::TypeSaltFlat,
+                "typeSand" => GeocodingSummaryFeatureType::TypeSand,
+                "typeSchool" => GeocodingSummaryFeatureType::TypeSchool,
+                "typeSchoolDistrict" => GeocodingSummaryFeatureType::TypeSchoolDistrict,
+                "typeSea" => GeocodingSummaryFeatureType::TypeSea,
+                "typeSeaplaneBase" => GeocodingSummaryFeatureType::TypeSeaplaneBase,
+                "typeSeaport" => GeocodingSummaryFeatureType::TypeSeaport,
+                "typeSeasonalLake" => GeocodingSummaryFeatureType::TypeSeasonalLake,
+                "typeSeasonalRiver" => GeocodingSummaryFeatureType::TypeSeasonalRiver,
+                "typeSegment" => GeocodingSummaryFeatureType::TypeSegment,
+                "typeSegmentPath" => GeocodingSummaryFeatureType::TypeSegmentPath,
+                "typeShopping" => GeocodingSummaryFeatureType::TypeShopping,
+                "typeShoppingCenter" => GeocodingSummaryFeatureType::TypeShoppingCenter,
+                "typeShrubbery" => GeocodingSummaryFeatureType::TypeShrubbery,
+                "typeSkiBoundary" => GeocodingSummaryFeatureType::TypeSkiBoundary,
+                "typeSkiLift" => GeocodingSummaryFeatureType::TypeSkiLift,
+                "typeSkiTrail" => GeocodingSummaryFeatureType::TypeSkiTrail,
+                "typeSlope" => GeocodingSummaryFeatureType::TypeSlope,
+                "typeSpecialStation" => GeocodingSummaryFeatureType::TypeSpecialStation,
+                "typeSportsComplex" => GeocodingSummaryFeatureType::TypeSportsComplex,
+                "typeSpring" => GeocodingSummaryFeatureType::TypeSpring,
+                "typeSpur" => GeocodingSummaryFeatureType::TypeSpur,
+                "typeStadium" => GeocodingSummaryFeatureType::TypeStadium,
+                "typeStandardTrack" => GeocodingSummaryFeatureType::TypeStandardTrack,
+                "typeStatisticalArea" => GeocodingSummaryFeatureType::TypeStatisticalArea,
+                "typeStatue" => GeocodingSummaryFeatureType::TypeStatue,
+                "typeStrait" => GeocodingSummaryFeatureType::TypeStrait,
+                "typeSubPremise" => GeocodingSummaryFeatureType::TypeSubPremise,
+                "typeSublocality" => GeocodingSummaryFeatureType::TypeSublocality,
+                "typeSublocality1" => GeocodingSummaryFeatureType::TypeSublocality1,
+                "typeSublocality2" => GeocodingSummaryFeatureType::TypeSublocality2,
+                "typeSublocality3" => GeocodingSummaryFeatureType::TypeSublocality3,
+                "typeSublocality4" => GeocodingSummaryFeatureType::TypeSublocality4,
+                "typeSublocality5" => GeocodingSummaryFeatureType::TypeSublocality5,
+                "typeSubmarineBasin" => GeocodingSummaryFeatureType::TypeSubmarineBasin,
+                "typeSubmarineCliff" => GeocodingSummaryFeatureType::TypeSubmarineCliff,
+                "typeSubmarineDeep" => GeocodingSummaryFeatureType::TypeSubmarineDeep,
+                "typeSubmarineFractureZone" => {
+                    GeocodingSummaryFeatureType::TypeSubmarineFractureZone
+                }
+                "typeSubmarineGap" => GeocodingSummaryFeatureType::TypeSubmarineGap,
+                "typeSubmarinePlain" => GeocodingSummaryFeatureType::TypeSubmarinePlain,
+                "typeSubmarinePlateau" => GeocodingSummaryFeatureType::TypeSubmarinePlateau,
+                "typeSubmarineRidge" => GeocodingSummaryFeatureType::TypeSubmarineRidge,
+                "typeSubmarineSeamount" => GeocodingSummaryFeatureType::TypeSubmarineSeamount,
+                "typeSubmarineSlope" => GeocodingSummaryFeatureType::TypeSubmarineSlope,
+                "typeSubmarineValley" => GeocodingSummaryFeatureType::TypeSubmarineValley,
+                "typeSubwayStation" => GeocodingSummaryFeatureType::TypeSubwayStation,
+                "typeSubwayTrack" => GeocodingSummaryFeatureType::TypeSubwayTrack,
+                "typeSuite" => GeocodingSummaryFeatureType::TypeSuite,
+                "typeSynagogue" => GeocodingSummaryFeatureType::TypeSynagogue,
+                "typeTarmac" => GeocodingSummaryFeatureType::TypeTarmac,
+                "typeTectonic" => GeocodingSummaryFeatureType::TypeTectonic,
+                "typeTemple" => GeocodingSummaryFeatureType::TypeTemple,
+                "typeTerminalPoint" => GeocodingSummaryFeatureType::TypeTerminalPoint,
+                "typeTerrace" => GeocodingSummaryFeatureType::TypeTerrace,
+                "typeTerrain" => GeocodingSummaryFeatureType::TypeTerrain,
+                "typeTimezone" => GeocodingSummaryFeatureType::TypeTimezone,
+                "typeTollCluster" => GeocodingSummaryFeatureType::TypeTollCluster,
+                "typeTouristDestination" => GeocodingSummaryFeatureType::TypeTouristDestination,
+                "typeTownSquare" => GeocodingSummaryFeatureType::TypeTownSquare,
+                "typeTrail" => GeocodingSummaryFeatureType::TypeTrail,
+                "typeTrailHead" => GeocodingSummaryFeatureType::TypeTrailHead,
+                "typeTrainStation" => GeocodingSummaryFeatureType::TypeTrainStation,
+                "typeTramwayStation" => GeocodingSummaryFeatureType::TypeTramwayStation,
+                "typeTransient" => GeocodingSummaryFeatureType::TypeTransient,
+                "typeTransit" => GeocodingSummaryFeatureType::TypeTransit,
+                "typeTransitAgency" => GeocodingSummaryFeatureType::TypeTransitAgency,
+                "typeTransitAgencyDeprecatedValue" => {
+                    GeocodingSummaryFeatureType::TypeTransitAgencyDeprecatedValue
+                }
+                "typeTransitDeparture" => GeocodingSummaryFeatureType::TypeTransitDeparture,
+                "typeTransitLeg" => GeocodingSummaryFeatureType::TypeTransitLeg,
+                "typeTransitLine" => GeocodingSummaryFeatureType::TypeTransitLine,
+                "typeTransitStation" => GeocodingSummaryFeatureType::TypeTransitStation,
+                "typeTransitStop" => GeocodingSummaryFeatureType::TypeTransitStop,
+                "typeTransitTransfer" => GeocodingSummaryFeatureType::TypeTransitTransfer,
+                "typeTransitTrip" => GeocodingSummaryFeatureType::TypeTransitTrip,
+                "typeTransportation" => GeocodingSummaryFeatureType::TypeTransportation,
+                "typeTravelService" => GeocodingSummaryFeatureType::TypeTravelService,
+                "typeTrolleyTrack" => GeocodingSummaryFeatureType::TypeTrolleyTrack,
+                "typeTundra" => GeocodingSummaryFeatureType::TypeTundra,
+                "typeUndersea" => GeocodingSummaryFeatureType::TypeUndersea,
+                "typeUniversity" => GeocodingSummaryFeatureType::TypeUniversity,
+                "typeUniversityGrounds" => GeocodingSummaryFeatureType::TypeUniversityGrounds,
+                "typeUnknown" => GeocodingSummaryFeatureType::TypeUnknown,
+                "typeUnstableHillside" => GeocodingSummaryFeatureType::TypeUnstableHillside,
+                "typeUpland" => GeocodingSummaryFeatureType::TypeUpland,
+                "typeUsBorough" => GeocodingSummaryFeatureType::TypeUsBorough,
+                "typeUsNationalMonument" => GeocodingSummaryFeatureType::TypeUsNationalMonument,
+                "typeUsNationalPark" => GeocodingSummaryFeatureType::TypeUsNationalPark,
+                "typeUsState" => GeocodingSummaryFeatureType::TypeUsState,
+                "typeVegetation" => GeocodingSummaryFeatureType::TypeVegetation,
+                "typeVeterinarian" => GeocodingSummaryFeatureType::TypeVeterinarian,
+                "typeVirtualSegment" => GeocodingSummaryFeatureType::TypeVirtualSegment,
+                "typeVista" => GeocodingSummaryFeatureType::TypeVista,
+                "typeVolcano" => GeocodingSummaryFeatureType::TypeVolcano,
+                "typeWadi" => GeocodingSummaryFeatureType::TypeWadi,
+                "typeWall" => GeocodingSummaryFeatureType::TypeWall,
+                "typeWater" => GeocodingSummaryFeatureType::TypeWater,
+                "typeWaterFountain" => GeocodingSummaryFeatureType::TypeWaterFountain,
+                "typeWaterNavigation" => GeocodingSummaryFeatureType::TypeWaterNavigation,
+                "typeWaterfall" => GeocodingSummaryFeatureType::TypeWaterfall,
+                "typeWateringHole" => GeocodingSummaryFeatureType::TypeWateringHole,
+                "typeWateringHoleDeprecated" => {
+                    GeocodingSummaryFeatureType::TypeWateringHoleDeprecated
+                }
+                "typeWatershedBoundary" => GeocodingSummaryFeatureType::TypeWatershedBoundary,
+                "typeWeatherCondition" => GeocodingSummaryFeatureType::TypeWeatherCondition,
+                "typeWetland" => GeocodingSummaryFeatureType::TypeWetland,
+                "typeWoods" => GeocodingSummaryFeatureType::TypeWoods,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GeocodingSummaryFeatureType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GeocodingSummaryFeatureType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GeocodingSummaryFeatureType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "typeAddressTemplate" => GeocodingSummaryFeatureType::TypeAddressTemplate,
+                "typeAdministrativeArea" => GeocodingSummaryFeatureType::TypeAdministrativeArea,
+                "typeAdministrativeArea1" => GeocodingSummaryFeatureType::TypeAdministrativeArea1,
+                "typeAdministrativeArea2" => GeocodingSummaryFeatureType::TypeAdministrativeArea2,
+                "typeAdministrativeArea3" => GeocodingSummaryFeatureType::TypeAdministrativeArea3,
+                "typeAdministrativeArea4" => GeocodingSummaryFeatureType::TypeAdministrativeArea4,
+                "typeAdministrativeArea5" => GeocodingSummaryFeatureType::TypeAdministrativeArea5,
+                "typeAdministrativeArea6" => GeocodingSummaryFeatureType::TypeAdministrativeArea6,
+                "typeAdministrativeArea7" => GeocodingSummaryFeatureType::TypeAdministrativeArea7,
+                "typeAdministrativeArea8" => GeocodingSummaryFeatureType::TypeAdministrativeArea8,
+                "typeAdministrativeArea9" => GeocodingSummaryFeatureType::TypeAdministrativeArea9,
+                "typeAgricultural" => GeocodingSummaryFeatureType::TypeAgricultural,
+                "typeAirport" => GeocodingSummaryFeatureType::TypeAirport,
+                "typeAirportCivil" => GeocodingSummaryFeatureType::TypeAirportCivil,
+                "typeAirportGrounds" => GeocodingSummaryFeatureType::TypeAirportGrounds,
+                "typeAirportMilitary" => GeocodingSummaryFeatureType::TypeAirportMilitary,
+                "typeAirportMixed" => GeocodingSummaryFeatureType::TypeAirportMixed,
+                "typeAirstrip" => GeocodingSummaryFeatureType::TypeAirstrip,
+                "typeAnimalEnclosure" => GeocodingSummaryFeatureType::TypeAnimalEnclosure,
+                "typeAny" => GeocodingSummaryFeatureType::TypeAny,
+                "typeArchipelago" => GeocodingSummaryFeatureType::TypeArchipelago,
+                "typeAtoll" => GeocodingSummaryFeatureType::TypeAtoll,
+                "typeBank" => GeocodingSummaryFeatureType::TypeBank,
+                "typeBar" => GeocodingSummaryFeatureType::TypeBar,
+                "typeBay" => GeocodingSummaryFeatureType::TypeBay,
+                "typeBeach" => GeocodingSummaryFeatureType::TypeBeach,
+                "typeBicycleRoute" => GeocodingSummaryFeatureType::TypeBicycleRoute,
+                "typeBight" => GeocodingSummaryFeatureType::TypeBight,
+                "typeBirdWatching" => GeocodingSummaryFeatureType::TypeBirdWatching,
+                "typeBorder" => GeocodingSummaryFeatureType::TypeBorder,
+                "typeBorderCrossing" => GeocodingSummaryFeatureType::TypeBorderCrossing,
+                "typeBroadTrack" => GeocodingSummaryFeatureType::TypeBroadTrack,
+                "typeBuilding" => GeocodingSummaryFeatureType::TypeBuilding,
+                "typeBuildingGrounds" => GeocodingSummaryFeatureType::TypeBuildingGrounds,
+                "typeBuiltUpArea" => GeocodingSummaryFeatureType::TypeBuiltUpArea,
+                "typeBusStation" => GeocodingSummaryFeatureType::TypeBusStation,
+                "typeBusiness" => GeocodingSummaryFeatureType::TypeBusiness,
+                "typeBusinessChain" => GeocodingSummaryFeatureType::TypeBusinessChain,
+                "typeBusinessCorridor" => GeocodingSummaryFeatureType::TypeBusinessCorridor,
+                "typeCableCarStation" => GeocodingSummaryFeatureType::TypeCableCarStation,
+                "typeCampfirePit" => GeocodingSummaryFeatureType::TypeCampfirePit,
+                "typeCampgrounds" => GeocodingSummaryFeatureType::TypeCampgrounds,
+                "typeCampingSite" => GeocodingSummaryFeatureType::TypeCampingSite,
+                "typeCanal" => GeocodingSummaryFeatureType::TypeCanal,
+                "typeCarRental" => GeocodingSummaryFeatureType::TypeCarRental,
+                "typeCarRepair" => GeocodingSummaryFeatureType::TypeCarRepair,
+                "typeCartographic" => GeocodingSummaryFeatureType::TypeCartographic,
+                "typeCartographicLine" => GeocodingSummaryFeatureType::TypeCartographicLine,
+                "typeCashMachine" => GeocodingSummaryFeatureType::TypeCashMachine,
+                "typeCave" => GeocodingSummaryFeatureType::TypeCave,
+                "typeCay" => GeocodingSummaryFeatureType::TypeCay,
+                "typeCelestial" => GeocodingSummaryFeatureType::TypeCelestial,
+                "typeCemetery" => GeocodingSummaryFeatureType::TypeCemetery,
+                "typeChannel" => GeocodingSummaryFeatureType::TypeChannel,
+                "typeChurch" => GeocodingSummaryFeatureType::TypeChurch,
+                "typeCityHall" => GeocodingSummaryFeatureType::TypeCityHall,
+                "typeCliff" => GeocodingSummaryFeatureType::TypeCliff,
+                "typeCoffee" => GeocodingSummaryFeatureType::TypeCoffee,
+                "typeColloquialArea" => GeocodingSummaryFeatureType::TypeColloquialArea,
+                "typeColloquialCity" => GeocodingSummaryFeatureType::TypeColloquialCity,
+                "typeCompound" => GeocodingSummaryFeatureType::TypeCompound,
+                "typeCompoundBuilding" => GeocodingSummaryFeatureType::TypeCompoundBuilding,
+                "typeCompoundGrounds" => GeocodingSummaryFeatureType::TypeCompoundGrounds,
+                "typeCompoundSection" => GeocodingSummaryFeatureType::TypeCompoundSection,
+                "typeConfluence" => GeocodingSummaryFeatureType::TypeConfluence,
+                "typeConstituency" => GeocodingSummaryFeatureType::TypeConstituency,
+                "typeConstituencyFuture" => GeocodingSummaryFeatureType::TypeConstituencyFuture,
+                "typeContinent" => GeocodingSummaryFeatureType::TypeContinent,
+                "typeContourLine" => GeocodingSummaryFeatureType::TypeContourLine,
+                "typeCountry" => GeocodingSummaryFeatureType::TypeCountry,
+                "typeCourthouse" => GeocodingSummaryFeatureType::TypeCourthouse,
+                "typeCrater" => GeocodingSummaryFeatureType::TypeCrater,
+                "typeCurrent" => GeocodingSummaryFeatureType::TypeCurrent,
+                "typeDam" => GeocodingSummaryFeatureType::TypeDam,
+                "typeDataSource" => GeocodingSummaryFeatureType::TypeDataSource,
+                "typeDentist" => GeocodingSummaryFeatureType::TypeDentist,
+                "typeDeprecatedGolfShop" => GeocodingSummaryFeatureType::TypeDeprecatedGolfShop,
+                "typeDeprecatedHighwayDoNotUse" => {
+                    GeocodingSummaryFeatureType::TypeDeprecatedHighwayDoNotUse
+                }
+                "typeDeprecatedTarmac" => GeocodingSummaryFeatureType::TypeDeprecatedTarmac,
+                "typeDesert" => GeocodingSummaryFeatureType::TypeDesert,
+                "typeDesignatedBarbecuePit" => {
+                    GeocodingSummaryFeatureType::TypeDesignatedBarbecuePit
+                }
+                "typeDesignatedCookingArea" => {
+                    GeocodingSummaryFeatureType::TypeDesignatedCookingArea
+                }
+                "typeDesignatedMarketArea" => GeocodingSummaryFeatureType::TypeDesignatedMarketArea,
+                "typeDigitalElevationModel" => {
+                    GeocodingSummaryFeatureType::TypeDigitalElevationModel
+                }
+                "typeDisputedArea" => GeocodingSummaryFeatureType::TypeDisputedArea,
+                "typeDistributary" => GeocodingSummaryFeatureType::TypeDistributary,
+                "typeDoNotUseReservedToCatchGeneratedFiles" => {
+                    GeocodingSummaryFeatureType::TypeDoNotUseReservedToCatchGeneratedFiles
+                }
+                "typeDoctor" => GeocodingSummaryFeatureType::TypeDoctor,
+                "typeDoodle" => GeocodingSummaryFeatureType::TypeDoodle,
+                "typeDrinkingWater" => GeocodingSummaryFeatureType::TypeDrinkingWater,
+                "typeDune" => GeocodingSummaryFeatureType::TypeDune,
+                "typeEarthquake" => GeocodingSummaryFeatureType::TypeEarthquake,
+                "typeEcoTouristDestination" => {
+                    GeocodingSummaryFeatureType::TypeEcoTouristDestination
+                }
+                "typeElevated" => GeocodingSummaryFeatureType::TypeElevated,
+                "typeEmbassy" => GeocodingSummaryFeatureType::TypeEmbassy,
+                "typeEmergency" => GeocodingSummaryFeatureType::TypeEmergency,
+                "typeEnclosedTrafficArea" => GeocodingSummaryFeatureType::TypeEnclosedTrafficArea,
+                "typeEntrance" => GeocodingSummaryFeatureType::TypeEntrance,
+                "typeEstablishment" => GeocodingSummaryFeatureType::TypeEstablishment,
+                "typeEstablishmentBuilding" => {
+                    GeocodingSummaryFeatureType::TypeEstablishmentBuilding
+                }
+                "typeEstablishmentGrounds" => GeocodingSummaryFeatureType::TypeEstablishmentGrounds,
+                "typeEstablishmentPoi" => GeocodingSummaryFeatureType::TypeEstablishmentPoi,
+                "typeEstablishmentService" => GeocodingSummaryFeatureType::TypeEstablishmentService,
+                "typeEstuary" => GeocodingSummaryFeatureType::TypeEstuary,
+                "typeEvent" => GeocodingSummaryFeatureType::TypeEvent,
+                "typeFault" => GeocodingSummaryFeatureType::TypeFault,
+                "typeFerry" => GeocodingSummaryFeatureType::TypeFerry,
+                "typeFerryBoat" => GeocodingSummaryFeatureType::TypeFerryBoat,
+                "typeFerryTerminal" => GeocodingSummaryFeatureType::TypeFerryTerminal,
+                "typeFerryTrain" => GeocodingSummaryFeatureType::TypeFerryTrain,
+                "typeFire" => GeocodingSummaryFeatureType::TypeFire,
+                "typeFishing" => GeocodingSummaryFeatureType::TypeFishing,
+                "typeFissure" => GeocodingSummaryFeatureType::TypeFissure,
+                "typeFjord" => GeocodingSummaryFeatureType::TypeFjord,
+                "typeFord" => GeocodingSummaryFeatureType::TypeFord,
+                "typeFunicularStation" => GeocodingSummaryFeatureType::TypeFunicularStation,
+                "typeFutureGeometry" => GeocodingSummaryFeatureType::TypeFutureGeometry,
+                "typeGasStation" => GeocodingSummaryFeatureType::TypeGasStation,
+                "typeGbCountry" => GeocodingSummaryFeatureType::TypeGbCountry,
+                "typeGbDependentLocality" => GeocodingSummaryFeatureType::TypeGbDependentLocality,
+                "typeGbDoubleDependentLocality" => {
+                    GeocodingSummaryFeatureType::TypeGbDoubleDependentLocality
+                }
+                "typeGbFormerPostalCounty" => GeocodingSummaryFeatureType::TypeGbFormerPostalCounty,
+                "typeGbPostTown" => GeocodingSummaryFeatureType::TypeGbPostTown,
+                "typeGbTraditionalCounty" => GeocodingSummaryFeatureType::TypeGbTraditionalCounty,
+                "typeGeocodedAddress" => GeocodingSummaryFeatureType::TypeGeocodedAddress,
+                "typeGeyser" => GeocodingSummaryFeatureType::TypeGeyser,
+                "typeGlacier" => GeocodingSummaryFeatureType::TypeGlacier,
+                "typeGolf" => GeocodingSummaryFeatureType::TypeGolf,
+                "typeGolfCourse" => GeocodingSummaryFeatureType::TypeGolfCourse,
+                "typeGolfFairway" => GeocodingSummaryFeatureType::TypeGolfFairway,
+                "typeGolfHole" => GeocodingSummaryFeatureType::TypeGolfHole,
+                "typeGolfPuttingGreen" => GeocodingSummaryFeatureType::TypeGolfPuttingGreen,
+                "typeGolfRough" => GeocodingSummaryFeatureType::TypeGolfRough,
+                "typeGolfSandBunker" => GeocodingSummaryFeatureType::TypeGolfSandBunker,
+                "typeGolfTeeingGround" => GeocodingSummaryFeatureType::TypeGolfTeeingGround,
+                "typeGondolaLiftStation" => GeocodingSummaryFeatureType::TypeGondolaLiftStation,
+                "typeGovernment" => GeocodingSummaryFeatureType::TypeGovernment,
+                "typeGrassland" => GeocodingSummaryFeatureType::TypeGrassland,
+                "typeGrocery" => GeocodingSummaryFeatureType::TypeGrocery,
+                "typeGrounds" => GeocodingSummaryFeatureType::TypeGrounds,
+                "typeGurudwara" => GeocodingSummaryFeatureType::TypeGurudwara,
+                "typeHarbor" => GeocodingSummaryFeatureType::TypeHarbor,
+                "typeHeliport" => GeocodingSummaryFeatureType::TypeHeliport,
+                "typeHighSpeedRail" => GeocodingSummaryFeatureType::TypeHighSpeedRail,
+                "typeHighTension" => GeocodingSummaryFeatureType::TypeHighTension,
+                "typeHighway" => GeocodingSummaryFeatureType::TypeHighway,
+                "typeHighway1" => GeocodingSummaryFeatureType::TypeHighway1,
+                "typeHighway2" => GeocodingSummaryFeatureType::TypeHighway2,
+                "typeHighway3" => GeocodingSummaryFeatureType::TypeHighway3,
+                "typeHighway4" => GeocodingSummaryFeatureType::TypeHighway4,
+                "typeHighway5" => GeocodingSummaryFeatureType::TypeHighway5,
+                "typeHighway6" => GeocodingSummaryFeatureType::TypeHighway6,
+                "typeHighway7" => GeocodingSummaryFeatureType::TypeHighway7,
+                "typeHighway8" => GeocodingSummaryFeatureType::TypeHighway8,
+                "typeHighway9" => GeocodingSummaryFeatureType::TypeHighway9,
+                "typeHikingArea" => GeocodingSummaryFeatureType::TypeHikingArea,
+                "typeHinduTemple" => GeocodingSummaryFeatureType::TypeHinduTemple,
+                "typeHorseCarriageStation" => GeocodingSummaryFeatureType::TypeHorseCarriageStation,
+                "typeHospital" => GeocodingSummaryFeatureType::TypeHospital,
+                "typeHospitalGrounds" => GeocodingSummaryFeatureType::TypeHospitalGrounds,
+                "typeHotSpring" => GeocodingSummaryFeatureType::TypeHotSpring,
+                "typeHunting" => GeocodingSummaryFeatureType::TypeHunting,
+                "typeHurricane" => GeocodingSummaryFeatureType::TypeHurricane,
+                "typeIce" => GeocodingSummaryFeatureType::TypeIce,
+                "typeIndustrial" => GeocodingSummaryFeatureType::TypeIndustrial,
+                "typeInlet" => GeocodingSummaryFeatureType::TypeInlet,
+                "typeIntersection" => GeocodingSummaryFeatureType::TypeIntersection,
+                "typeIntersectionGroup" => GeocodingSummaryFeatureType::TypeIntersectionGroup,
+                "typeIrrigation" => GeocodingSummaryFeatureType::TypeIrrigation,
+                "typeIsland" => GeocodingSummaryFeatureType::TypeIsland,
+                "typeIsthmus" => GeocodingSummaryFeatureType::TypeIsthmus,
+                "typeJpChiban" => GeocodingSummaryFeatureType::TypeJpChiban,
+                "typeJpEdaban" => GeocodingSummaryFeatureType::TypeJpEdaban,
+                "typeJpGaiku" => GeocodingSummaryFeatureType::TypeJpGaiku,
+                "typeJpGun" => GeocodingSummaryFeatureType::TypeJpGun,
+                "typeJpKoaza" => GeocodingSummaryFeatureType::TypeJpKoaza,
+                "typeJpOoaza" => GeocodingSummaryFeatureType::TypeJpOoaza,
+                "typeJpShikuchouson" => GeocodingSummaryFeatureType::TypeJpShikuchouson,
+                "typeJpSubShikuchouson" => GeocodingSummaryFeatureType::TypeJpSubShikuchouson,
+                "typeJpTodoufuken" => GeocodingSummaryFeatureType::TypeJpTodoufuken,
+                "typeJrTrack" => GeocodingSummaryFeatureType::TypeJrTrack,
+                "typeKarst" => GeocodingSummaryFeatureType::TypeKarst,
+                "typeLagoon" => GeocodingSummaryFeatureType::TypeLagoon,
+                "typeLake" => GeocodingSummaryFeatureType::TypeLake,
+                "typeLandMass" => GeocodingSummaryFeatureType::TypeLandMass,
+                "typeLandParcel" => GeocodingSummaryFeatureType::TypeLandParcel,
+                "typeLavaField" => GeocodingSummaryFeatureType::TypeLavaField,
+                "typeLevel" => GeocodingSummaryFeatureType::TypeLevel,
+                "typeLibrary" => GeocodingSummaryFeatureType::TypeLibrary,
+                "typeLightRailTrack" => GeocodingSummaryFeatureType::TypeLightRailTrack,
+                "typeLitterReceptacle" => GeocodingSummaryFeatureType::TypeLitterReceptacle,
+                "typeLocalPark" => GeocodingSummaryFeatureType::TypeLocalPark,
+                "typeLocale" => GeocodingSummaryFeatureType::TypeLocale,
+                "typeLocality" => GeocodingSummaryFeatureType::TypeLocality,
+                "typeLockerArea" => GeocodingSummaryFeatureType::TypeLockerArea,
+                "typeLodging" => GeocodingSummaryFeatureType::TypeLodging,
+                "typeMetaFeature" => GeocodingSummaryFeatureType::TypeMetaFeature,
+                "typeMilitary" => GeocodingSummaryFeatureType::TypeMilitary,
+                "typeMonorailStation" => GeocodingSummaryFeatureType::TypeMonorailStation,
+                "typeMonorailTrack" => GeocodingSummaryFeatureType::TypeMonorailTrack,
+                "typeMosque" => GeocodingSummaryFeatureType::TypeMosque,
+                "typeMountainRange" => GeocodingSummaryFeatureType::TypeMountainRange,
+                "typeMovieRental" => GeocodingSummaryFeatureType::TypeMovieRental,
+                "typeNarrowTrack" => GeocodingSummaryFeatureType::TypeNarrowTrack,
+                "typeNationalForest" => GeocodingSummaryFeatureType::TypeNationalForest,
+                "typeNationalPark" => GeocodingSummaryFeatureType::TypeNationalPark,
+                "typeNaturalFeature" => GeocodingSummaryFeatureType::TypeNaturalFeature,
+                "typeNatureReserve" => GeocodingSummaryFeatureType::TypeNatureReserve,
+                "typeNeighborhood" => GeocodingSummaryFeatureType::TypeNeighborhood,
+                "typeNunatak" => GeocodingSummaryFeatureType::TypeNunatak,
+                "typeOcean" => GeocodingSummaryFeatureType::TypeOcean,
+                "typeOceanRockExposed" => GeocodingSummaryFeatureType::TypeOceanRockExposed,
+                "typeOffRoadArea" => GeocodingSummaryFeatureType::TypeOffRoadArea,
+                "typePan" => GeocodingSummaryFeatureType::TypePan,
+                "typePark" => GeocodingSummaryFeatureType::TypePark,
+                "typeParking" => GeocodingSummaryFeatureType::TypeParking,
+                "typeParkingGarage" => GeocodingSummaryFeatureType::TypeParkingGarage,
+                "typeParkingLot" => GeocodingSummaryFeatureType::TypeParkingLot,
+                "typePass" => GeocodingSummaryFeatureType::TypePass,
+                "typePathway" => GeocodingSummaryFeatureType::TypePathway,
+                "typePeak" => GeocodingSummaryFeatureType::TypePeak,
+                "typePeninsula" => GeocodingSummaryFeatureType::TypePeninsula,
+                "typePharmacy" => GeocodingSummaryFeatureType::TypePharmacy,
+                "typePhoneNumberAreaCode" => GeocodingSummaryFeatureType::TypePhoneNumberAreaCode,
+                "typePhoneNumberPrefix" => GeocodingSummaryFeatureType::TypePhoneNumberPrefix,
+                "typePicnicArea" => GeocodingSummaryFeatureType::TypePicnicArea,
+                "typePlateau" => GeocodingSummaryFeatureType::TypePlateau,
+                "typePlayGround" => GeocodingSummaryFeatureType::TypePlayGround,
+                "typePolice" => GeocodingSummaryFeatureType::TypePolice,
+                "typePoliceJurisdiction" => GeocodingSummaryFeatureType::TypePoliceJurisdiction,
+                "typePolitical" => GeocodingSummaryFeatureType::TypePolitical,
+                "typePond" => GeocodingSummaryFeatureType::TypePond,
+                "typePostOffice" => GeocodingSummaryFeatureType::TypePostOffice,
+                "typePostTown" => GeocodingSummaryFeatureType::TypePostTown,
+                "typePostal" => GeocodingSummaryFeatureType::TypePostal,
+                "typePostalCode" => GeocodingSummaryFeatureType::TypePostalCode,
+                "typePostalCodePrefix" => GeocodingSummaryFeatureType::TypePostalCodePrefix,
+                "typePostalRound" => GeocodingSummaryFeatureType::TypePostalRound,
+                "typePremise" => GeocodingSummaryFeatureType::TypePremise,
+                "typeProvincialForest" => GeocodingSummaryFeatureType::TypeProvincialForest,
+                "typeProvincialPark" => GeocodingSummaryFeatureType::TypeProvincialPark,
+                "typePublicSpacesAndMonuments" => {
+                    GeocodingSummaryFeatureType::TypePublicSpacesAndMonuments
+                }
+                "typeRailway" => GeocodingSummaryFeatureType::TypeRailway,
+                "typeRapids" => GeocodingSummaryFeatureType::TypeRapids,
+                "typeRavine" => GeocodingSummaryFeatureType::TypeRavine,
+                "typeReef" => GeocodingSummaryFeatureType::TypeReef,
+                "typeReefExtent" => GeocodingSummaryFeatureType::TypeReefExtent,
+                "typeReefFlat" => GeocodingSummaryFeatureType::TypeReefFlat,
+                "typeReefGrowth" => GeocodingSummaryFeatureType::TypeReefGrowth,
+                "typeReefRockSubmerged" => GeocodingSummaryFeatureType::TypeReefRockSubmerged,
+                "typeRegulatedArea" => GeocodingSummaryFeatureType::TypeRegulatedArea,
+                "typeReservation" => GeocodingSummaryFeatureType::TypeReservation,
+                "typeReservoir" => GeocodingSummaryFeatureType::TypeReservoir,
+                "typeRestArea" => GeocodingSummaryFeatureType::TypeRestArea,
+                "typeRestaurant" => GeocodingSummaryFeatureType::TypeRestaurant,
+                "typeRestrictionGroup" => GeocodingSummaryFeatureType::TypeRestrictionGroup,
+                "typeRidge" => GeocodingSummaryFeatureType::TypeRidge,
+                "typeRiver" => GeocodingSummaryFeatureType::TypeRiver,
+                "typeRoad" => GeocodingSummaryFeatureType::TypeRoad,
+                "typeRoadMonitor" => GeocodingSummaryFeatureType::TypeRoadMonitor,
+                "typeRoadSign" => GeocodingSummaryFeatureType::TypeRoadSign,
+                "typeRock" => GeocodingSummaryFeatureType::TypeRock,
+                "typeRocky" => GeocodingSummaryFeatureType::TypeRocky,
+                "typeRoute" => GeocodingSummaryFeatureType::TypeRoute,
+                "typeSaltFlat" => GeocodingSummaryFeatureType::TypeSaltFlat,
+                "typeSand" => GeocodingSummaryFeatureType::TypeSand,
+                "typeSchool" => GeocodingSummaryFeatureType::TypeSchool,
+                "typeSchoolDistrict" => GeocodingSummaryFeatureType::TypeSchoolDistrict,
+                "typeSea" => GeocodingSummaryFeatureType::TypeSea,
+                "typeSeaplaneBase" => GeocodingSummaryFeatureType::TypeSeaplaneBase,
+                "typeSeaport" => GeocodingSummaryFeatureType::TypeSeaport,
+                "typeSeasonalLake" => GeocodingSummaryFeatureType::TypeSeasonalLake,
+                "typeSeasonalRiver" => GeocodingSummaryFeatureType::TypeSeasonalRiver,
+                "typeSegment" => GeocodingSummaryFeatureType::TypeSegment,
+                "typeSegmentPath" => GeocodingSummaryFeatureType::TypeSegmentPath,
+                "typeShopping" => GeocodingSummaryFeatureType::TypeShopping,
+                "typeShoppingCenter" => GeocodingSummaryFeatureType::TypeShoppingCenter,
+                "typeShrubbery" => GeocodingSummaryFeatureType::TypeShrubbery,
+                "typeSkiBoundary" => GeocodingSummaryFeatureType::TypeSkiBoundary,
+                "typeSkiLift" => GeocodingSummaryFeatureType::TypeSkiLift,
+                "typeSkiTrail" => GeocodingSummaryFeatureType::TypeSkiTrail,
+                "typeSlope" => GeocodingSummaryFeatureType::TypeSlope,
+                "typeSpecialStation" => GeocodingSummaryFeatureType::TypeSpecialStation,
+                "typeSportsComplex" => GeocodingSummaryFeatureType::TypeSportsComplex,
+                "typeSpring" => GeocodingSummaryFeatureType::TypeSpring,
+                "typeSpur" => GeocodingSummaryFeatureType::TypeSpur,
+                "typeStadium" => GeocodingSummaryFeatureType::TypeStadium,
+                "typeStandardTrack" => GeocodingSummaryFeatureType::TypeStandardTrack,
+                "typeStatisticalArea" => GeocodingSummaryFeatureType::TypeStatisticalArea,
+                "typeStatue" => GeocodingSummaryFeatureType::TypeStatue,
+                "typeStrait" => GeocodingSummaryFeatureType::TypeStrait,
+                "typeSubPremise" => GeocodingSummaryFeatureType::TypeSubPremise,
+                "typeSublocality" => GeocodingSummaryFeatureType::TypeSublocality,
+                "typeSublocality1" => GeocodingSummaryFeatureType::TypeSublocality1,
+                "typeSublocality2" => GeocodingSummaryFeatureType::TypeSublocality2,
+                "typeSublocality3" => GeocodingSummaryFeatureType::TypeSublocality3,
+                "typeSublocality4" => GeocodingSummaryFeatureType::TypeSublocality4,
+                "typeSublocality5" => GeocodingSummaryFeatureType::TypeSublocality5,
+                "typeSubmarineBasin" => GeocodingSummaryFeatureType::TypeSubmarineBasin,
+                "typeSubmarineCliff" => GeocodingSummaryFeatureType::TypeSubmarineCliff,
+                "typeSubmarineDeep" => GeocodingSummaryFeatureType::TypeSubmarineDeep,
+                "typeSubmarineFractureZone" => {
+                    GeocodingSummaryFeatureType::TypeSubmarineFractureZone
+                }
+                "typeSubmarineGap" => GeocodingSummaryFeatureType::TypeSubmarineGap,
+                "typeSubmarinePlain" => GeocodingSummaryFeatureType::TypeSubmarinePlain,
+                "typeSubmarinePlateau" => GeocodingSummaryFeatureType::TypeSubmarinePlateau,
+                "typeSubmarineRidge" => GeocodingSummaryFeatureType::TypeSubmarineRidge,
+                "typeSubmarineSeamount" => GeocodingSummaryFeatureType::TypeSubmarineSeamount,
+                "typeSubmarineSlope" => GeocodingSummaryFeatureType::TypeSubmarineSlope,
+                "typeSubmarineValley" => GeocodingSummaryFeatureType::TypeSubmarineValley,
+                "typeSubwayStation" => GeocodingSummaryFeatureType::TypeSubwayStation,
+                "typeSubwayTrack" => GeocodingSummaryFeatureType::TypeSubwayTrack,
+                "typeSuite" => GeocodingSummaryFeatureType::TypeSuite,
+                "typeSynagogue" => GeocodingSummaryFeatureType::TypeSynagogue,
+                "typeTarmac" => GeocodingSummaryFeatureType::TypeTarmac,
+                "typeTectonic" => GeocodingSummaryFeatureType::TypeTectonic,
+                "typeTemple" => GeocodingSummaryFeatureType::TypeTemple,
+                "typeTerminalPoint" => GeocodingSummaryFeatureType::TypeTerminalPoint,
+                "typeTerrace" => GeocodingSummaryFeatureType::TypeTerrace,
+                "typeTerrain" => GeocodingSummaryFeatureType::TypeTerrain,
+                "typeTimezone" => GeocodingSummaryFeatureType::TypeTimezone,
+                "typeTollCluster" => GeocodingSummaryFeatureType::TypeTollCluster,
+                "typeTouristDestination" => GeocodingSummaryFeatureType::TypeTouristDestination,
+                "typeTownSquare" => GeocodingSummaryFeatureType::TypeTownSquare,
+                "typeTrail" => GeocodingSummaryFeatureType::TypeTrail,
+                "typeTrailHead" => GeocodingSummaryFeatureType::TypeTrailHead,
+                "typeTrainStation" => GeocodingSummaryFeatureType::TypeTrainStation,
+                "typeTramwayStation" => GeocodingSummaryFeatureType::TypeTramwayStation,
+                "typeTransient" => GeocodingSummaryFeatureType::TypeTransient,
+                "typeTransit" => GeocodingSummaryFeatureType::TypeTransit,
+                "typeTransitAgency" => GeocodingSummaryFeatureType::TypeTransitAgency,
+                "typeTransitAgencyDeprecatedValue" => {
+                    GeocodingSummaryFeatureType::TypeTransitAgencyDeprecatedValue
+                }
+                "typeTransitDeparture" => GeocodingSummaryFeatureType::TypeTransitDeparture,
+                "typeTransitLeg" => GeocodingSummaryFeatureType::TypeTransitLeg,
+                "typeTransitLine" => GeocodingSummaryFeatureType::TypeTransitLine,
+                "typeTransitStation" => GeocodingSummaryFeatureType::TypeTransitStation,
+                "typeTransitStop" => GeocodingSummaryFeatureType::TypeTransitStop,
+                "typeTransitTransfer" => GeocodingSummaryFeatureType::TypeTransitTransfer,
+                "typeTransitTrip" => GeocodingSummaryFeatureType::TypeTransitTrip,
+                "typeTransportation" => GeocodingSummaryFeatureType::TypeTransportation,
+                "typeTravelService" => GeocodingSummaryFeatureType::TypeTravelService,
+                "typeTrolleyTrack" => GeocodingSummaryFeatureType::TypeTrolleyTrack,
+                "typeTundra" => GeocodingSummaryFeatureType::TypeTundra,
+                "typeUndersea" => GeocodingSummaryFeatureType::TypeUndersea,
+                "typeUniversity" => GeocodingSummaryFeatureType::TypeUniversity,
+                "typeUniversityGrounds" => GeocodingSummaryFeatureType::TypeUniversityGrounds,
+                "typeUnknown" => GeocodingSummaryFeatureType::TypeUnknown,
+                "typeUnstableHillside" => GeocodingSummaryFeatureType::TypeUnstableHillside,
+                "typeUpland" => GeocodingSummaryFeatureType::TypeUpland,
+                "typeUsBorough" => GeocodingSummaryFeatureType::TypeUsBorough,
+                "typeUsNationalMonument" => GeocodingSummaryFeatureType::TypeUsNationalMonument,
+                "typeUsNationalPark" => GeocodingSummaryFeatureType::TypeUsNationalPark,
+                "typeUsState" => GeocodingSummaryFeatureType::TypeUsState,
+                "typeVegetation" => GeocodingSummaryFeatureType::TypeVegetation,
+                "typeVeterinarian" => GeocodingSummaryFeatureType::TypeVeterinarian,
+                "typeVirtualSegment" => GeocodingSummaryFeatureType::TypeVirtualSegment,
+                "typeVista" => GeocodingSummaryFeatureType::TypeVista,
+                "typeVolcano" => GeocodingSummaryFeatureType::TypeVolcano,
+                "typeWadi" => GeocodingSummaryFeatureType::TypeWadi,
+                "typeWall" => GeocodingSummaryFeatureType::TypeWall,
+                "typeWater" => GeocodingSummaryFeatureType::TypeWater,
+                "typeWaterFountain" => GeocodingSummaryFeatureType::TypeWaterFountain,
+                "typeWaterNavigation" => GeocodingSummaryFeatureType::TypeWaterNavigation,
+                "typeWaterfall" => GeocodingSummaryFeatureType::TypeWaterfall,
+                "typeWateringHole" => GeocodingSummaryFeatureType::TypeWateringHole,
+                "typeWateringHoleDeprecated" => {
+                    GeocodingSummaryFeatureType::TypeWateringHoleDeprecated
+                }
+                "typeWatershedBoundary" => GeocodingSummaryFeatureType::TypeWatershedBoundary,
+                "typeWeatherCondition" => GeocodingSummaryFeatureType::TypeWeatherCondition,
+                "typeWetland" => GeocodingSummaryFeatureType::TypeWetland,
+                "typeWoods" => GeocodingSummaryFeatureType::TypeWoods,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GeocodingSummaryFeatureType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GeocodingSummaryFeatureType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GeographicDivision {
         #[doc = "Any other valid OCD IDs that refer to the same division.\\n\\nBecause OCD IDs are meant to be human-readable and at least somewhat predictable, there are occasionally several identifiers for a single division. These identifiers are defined to be equivalent to one another, and one is always indicated as the primary identifier. The primary identifier will be returned in ocd_id above, and any other equivalent valid identifiers will be returned in this list.\\n\\nFor example, if this division's OCD ID is ocd-division/country:us/district:dc, this will contain ocd-division/country:us/state:dc."]
         #[serde(
@@ -1140,6 +3128,30 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GeographicDivision {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MessageSet {}
+    impl ::google_field_selector::FieldSelector for MessageSet {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MessageSet {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1318,6 +3330,7 @@ pub mod schemas {
         Judge,
         LegislatorLowerBody,
         LegislatorUpperBody,
+        OtherRole,
         SchoolBoard,
         SpecialPurposeOfficer,
     }
@@ -1333,6 +3346,7 @@ pub mod schemas {
                 OfficeRolesItems::Judge => "judge",
                 OfficeRolesItems::LegislatorLowerBody => "legislatorLowerBody",
                 OfficeRolesItems::LegislatorUpperBody => "legislatorUpperBody",
+                OfficeRolesItems::OtherRole => "otherRole",
                 OfficeRolesItems::SchoolBoard => "schoolBoard",
                 OfficeRolesItems::SpecialPurposeOfficer => "specialPurposeOfficer",
             }
@@ -1356,6 +3370,7 @@ pub mod schemas {
                 "judge" => OfficeRolesItems::Judge,
                 "legislatorLowerBody" => OfficeRolesItems::LegislatorLowerBody,
                 "legislatorUpperBody" => OfficeRolesItems::LegislatorUpperBody,
+                "otherRole" => OfficeRolesItems::OtherRole,
                 "schoolBoard" => OfficeRolesItems::SchoolBoard,
                 "specialPurposeOfficer" => OfficeRolesItems::SpecialPurposeOfficer,
                 _ => return Err(()),
@@ -1391,6 +3406,7 @@ pub mod schemas {
                 "judge" => OfficeRolesItems::Judge,
                 "legislatorLowerBody" => OfficeRolesItems::LegislatorLowerBody,
                 "legislatorUpperBody" => OfficeRolesItems::LegislatorUpperBody,
+                "otherRole" => OfficeRolesItems::OtherRole,
                 "schoolBoard" => OfficeRolesItems::SchoolBoard,
                 "specialPurposeOfficer" => OfficeRolesItems::SpecialPurposeOfficer,
                 _ => {
@@ -1413,16 +3429,7 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Official {
         #[doc = "Addresses at which to contact the official."]
@@ -1446,6 +3453,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub emails: ::std::option::Option<Vec<String>>,
+        #[doc = "Detailed summary about the official's address's geocoding"]
+        #[serde(
+            rename = "geocodingSummaries",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub geocoding_summaries: ::std::option::Option<Vec<crate::schemas::GeocodingSummary>>,
         #[doc = "The official's name."]
         #[serde(
             rename = "name",
@@ -1589,6 +3603,120 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct Precinct {
+        #[doc = "ID of the AdministrationRegion message for this precinct. Corresponds to LocalityId xml tag."]
+        #[serde(
+            rename = "administrationRegionId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub administration_region_id: ::std::option::Option<String>,
+        #[doc = "ID(s) of the Contest message(s) for this precinct."]
+        #[serde(
+            rename = "contestId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub contest_id: ::std::option::Option<Vec<String>>,
+        #[doc = "Required. Dataset ID. What datasets our Precincts come from."]
+        #[serde(
+            rename = "datasetId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub dataset_id: ::std::option::Option<i64>,
+        #[doc = "ID(s) of the PollingLocation message(s) for this precinct."]
+        #[serde(
+            rename = "earlyVoteSiteId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub early_vote_site_id: ::std::option::Option<Vec<String>>,
+        #[doc = "ID(s) of the ElectoralDistrict message(s) for this precinct."]
+        #[serde(
+            rename = "electoralDistrictId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub electoral_district_id: ::std::option::Option<Vec<String>>,
+        #[doc = "Required. A unique identifier for this precinct."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "Specifies if the precinct runs mail-only elections."]
+        #[serde(
+            rename = "mailOnly",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mail_only: ::std::option::Option<bool>,
+        #[doc = "Required. The name of the precinct."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "The number of the precinct."]
+        #[serde(
+            rename = "number",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub number: ::std::option::Option<String>,
+        #[doc = "Encouraged. The OCD ID of the precinct"]
+        #[serde(
+            rename = "ocdId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ocd_id: ::std::option::Option<Vec<String>>,
+        #[doc = "ID(s) of the PollingLocation message(s) for this precinct."]
+        #[serde(
+            rename = "pollingLocationId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub polling_location_id: ::std::option::Option<Vec<String>>,
+        #[doc = "ID(s) of the SpatialBoundary message(s) for this precinct. Used to specify a geometrical boundary of the precinct."]
+        #[serde(
+            rename = "spatialBoundaryId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub spatial_boundary_id: ::std::option::Option<Vec<String>>,
+        #[doc = "If present, this proto corresponds to one portion of split precinct. Other portions of this precinct are guaranteed to have the same `name`. If not present, this proto represents a full precicnt."]
+        #[serde(
+            rename = "splitName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub split_name: ::std::option::Option<String>,
+        #[doc = "Specifies the ward the precinct is contained within."]
+        #[serde(
+            rename = "ward",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ward: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Precinct {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Precinct {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
     pub struct RepresentativeInfoData {
         #[doc = "A map of political geographic divisions that contain the requested address, keyed by the unique Open Civic Data identifier for this division."]
         #[serde(
@@ -1625,16 +3753,7 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct RepresentativeInfoResponse {
         #[doc = "A map of political geographic divisions that contain the requested address, keyed by the unique Open Civic Data identifier for this division."]
@@ -1869,6 +3988,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub precinct_id: ::std::option::Option<String>,
+        #[doc = "The precincts that match this voter's address. Will only be returned for project IDs which have been whitelisted as \"partner projects\"."]
+        #[serde(
+            rename = "precincts",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub precincts: ::std::option::Option<Vec<crate::schemas::Precinct>>,
         #[doc = "Local Election Information for the state that the voter votes in. For the US, there will only be one element in this array."]
         #[serde(
             rename = "state",
@@ -2774,6 +4900,7 @@ pub mod resources {
                 Judge,
                 LegislatorLowerBody,
                 LegislatorUpperBody,
+                OtherRole,
                 SchoolBoard,
                 SpecialPurposeOfficer,
             }
@@ -2803,6 +4930,7 @@ pub mod resources {
                         RepresentativeInfoByAddressRolesItems::LegislatorUpperBody => {
                             "legislatorUpperBody"
                         }
+                        RepresentativeInfoByAddressRolesItems::OtherRole => "otherRole",
                         RepresentativeInfoByAddressRolesItems::SchoolBoard => "schoolBoard",
                         RepresentativeInfoByAddressRolesItems::SpecialPurposeOfficer => {
                             "specialPurposeOfficer"
@@ -2845,6 +4973,7 @@ pub mod resources {
                         "legislatorUpperBody" => {
                             RepresentativeInfoByAddressRolesItems::LegislatorUpperBody
                         }
+                        "otherRole" => RepresentativeInfoByAddressRolesItems::OtherRole,
                         "schoolBoard" => RepresentativeInfoByAddressRolesItems::SchoolBoard,
                         "specialPurposeOfficer" => {
                             RepresentativeInfoByAddressRolesItems::SpecialPurposeOfficer
@@ -2896,6 +5025,7 @@ pub mod resources {
                         "legislatorUpperBody" => {
                             RepresentativeInfoByAddressRolesItems::LegislatorUpperBody
                         }
+                        "otherRole" => RepresentativeInfoByAddressRolesItems::OtherRole,
                         "schoolBoard" => RepresentativeInfoByAddressRolesItems::SchoolBoard,
                         "specialPurposeOfficer" => {
                             RepresentativeInfoByAddressRolesItems::SpecialPurposeOfficer
@@ -3042,6 +5172,7 @@ pub mod resources {
                 Judge,
                 LegislatorLowerBody,
                 LegislatorUpperBody,
+                OtherRole,
                 SchoolBoard,
                 SpecialPurposeOfficer,
             }
@@ -3071,6 +5202,7 @@ pub mod resources {
                         RepresentativeInfoByDivisionRolesItems::LegislatorUpperBody => {
                             "legislatorUpperBody"
                         }
+                        RepresentativeInfoByDivisionRolesItems::OtherRole => "otherRole",
                         RepresentativeInfoByDivisionRolesItems::SchoolBoard => "schoolBoard",
                         RepresentativeInfoByDivisionRolesItems::SpecialPurposeOfficer => {
                             "specialPurposeOfficer"
@@ -3113,6 +5245,7 @@ pub mod resources {
                         "legislatorUpperBody" => {
                             RepresentativeInfoByDivisionRolesItems::LegislatorUpperBody
                         }
+                        "otherRole" => RepresentativeInfoByDivisionRolesItems::OtherRole,
                         "schoolBoard" => RepresentativeInfoByDivisionRolesItems::SchoolBoard,
                         "specialPurposeOfficer" => {
                             RepresentativeInfoByDivisionRolesItems::SpecialPurposeOfficer
@@ -3164,6 +5297,7 @@ pub mod resources {
                         "legislatorUpperBody" => {
                             RepresentativeInfoByDivisionRolesItems::LegislatorUpperBody
                         }
+                        "otherRole" => RepresentativeInfoByDivisionRolesItems::OtherRole,
                         "schoolBoard" => RepresentativeInfoByDivisionRolesItems::SchoolBoard,
                         "specialPurposeOfficer" => {
                             RepresentativeInfoByDivisionRolesItems::SpecialPurposeOfficer
@@ -3248,7 +5382,7 @@ pub mod resources {
         }
         #[doc = "Created via [RepresentativesActions::representative_info_by_address()](struct.RepresentativesActions.html#method.representative_info_by_address)"]
         #[derive(Debug, Clone)]
-        pub struct RepresentativeInfoByAddressRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , address : Option < String > , include_offices : Option < bool > , levels : Option < Vec < crate :: resources :: representatives :: params :: RepresentativeInfoByAddressLevelsItems > > , roles : Option < Vec < crate :: resources :: representatives :: params :: RepresentativeInfoByAddressRolesItems > > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+        pub struct RepresentativeInfoByAddressRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , address : Option < String > , include_offices : Option < bool > , levels : Option < Vec < crate :: resources :: representatives :: params :: RepresentativeInfoByAddressLevelsItems > > , roles : Option < Vec < crate :: resources :: representatives :: params :: RepresentativeInfoByAddressRolesItems > > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
         impl<'a> RepresentativeInfoByAddressRequestBuilder<'a> {
             #[doc = "The address to look up. May only be specified if the field ocdId is not given in the URL"]
             pub fn address(mut self, value: impl Into<String>) -> Self {
@@ -3416,7 +5550,7 @@ pub mod resources {
         }
         #[doc = "Created via [RepresentativesActions::representative_info_by_division()](struct.RepresentativesActions.html#method.representative_info_by_division)"]
         #[derive(Debug, Clone)]
-        pub struct RepresentativeInfoByDivisionRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , ocd_id : String , levels : Option < Vec < crate :: resources :: representatives :: params :: RepresentativeInfoByDivisionLevelsItems > > , recursive : Option < bool > , roles : Option < Vec < crate :: resources :: representatives :: params :: RepresentativeInfoByDivisionRolesItems > > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+        pub struct RepresentativeInfoByDivisionRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , ocd_id : String , levels : Option < Vec < crate :: resources :: representatives :: params :: RepresentativeInfoByDivisionLevelsItems > > , recursive : Option < bool > , roles : Option < Vec < crate :: resources :: representatives :: params :: RepresentativeInfoByDivisionRolesItems > > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
         impl<'a> RepresentativeInfoByDivisionRequestBuilder<'a> {
             #[doc = "A list of office levels to filter by. Only offices that serve at least one of these levels will be returned. Divisions that don't contain a matching office will not be returned."]
             pub fn levels(

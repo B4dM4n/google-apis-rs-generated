@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [claims](resources/claims/struct.ClaimsActions.html)\n      * [*search*](resources/claims/struct.SearchRequestBuilder.html)\n    * [pages](resources/pages/struct.PagesActions.html)\n      * [*create*](resources/pages/struct.CreateRequestBuilder.html), [*delete*](resources/pages/struct.DeleteRequestBuilder.html), [*get*](resources/pages/struct.GetRequestBuilder.html), [*list*](resources/pages/struct.ListRequestBuilder.html), [*update*](resources/pages/struct.UpdateRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View your email address\n\n`https://www.googleapis.com/auth/userinfo.email`"]
+    #[doc = "See your primary Google Account email address\n\n`https://www.googleapis.com/auth/userinfo.email`"]
     pub const USERINFO_EMAIL: &str = "https://www.googleapis.com/auth/userinfo.email";
 }
 pub mod schemas {
@@ -1014,9 +1014,9 @@ pub mod resources {
                     Some(fields)
                 };
                 self.iter_with_fields(fields)
-            }            pub fn iter_with_default_fields ( self ) -> crate :: iter :: PageIter < Self , crate :: schemas :: GoogleFactcheckingFactchecktoolsV1Alpha1FactCheckedClaimSearchResponse >{
+            }            pub fn iter_with_default_fields (self) -> crate :: iter :: PageIter < Self , crate :: schemas :: GoogleFactcheckingFactchecktoolsV1Alpha1FactCheckedClaimSearchResponse >{
                 self.iter_with_fields(None::<&str>)
-            }            pub fn iter_with_all_fields ( self ) -> crate :: iter :: PageIter < Self , crate :: schemas :: GoogleFactcheckingFactchecktoolsV1Alpha1FactCheckedClaimSearchResponse >{
+            }            pub fn iter_with_all_fields (self) -> crate :: iter :: PageIter < Self , crate :: schemas :: GoogleFactcheckingFactchecktoolsV1Alpha1FactCheckedClaimSearchResponse >{
                 self.iter_with_fields(Some("*"))
             }
             pub fn iter_with_fields<T, F>(
@@ -1061,13 +1061,13 @@ pub mod resources {
             #[doc = r" `fields` selector indicating that the server will determine"]
             #[doc = r" the fields returned. This typically includes the most common"]
             #[doc = r" fields, but it will not include every possible attribute of"]
-            #[doc = r" the response resource."]            pub fn execute_with_default_fields ( self ) -> Result < crate :: schemas :: GoogleFactcheckingFactchecktoolsV1Alpha1FactCheckedClaimSearchResponse , crate :: Error >{
+            #[doc = r" the response resource."]            pub fn execute_with_default_fields (self) -> Result < crate :: schemas :: GoogleFactcheckingFactchecktoolsV1Alpha1FactCheckedClaimSearchResponse , crate :: Error >{
                 self.execute_with_fields(None::<&str>)
             }
             #[doc = r" Execute the given operation. This will provide a `fields`"]
             #[doc = r" selector of `*`. This will include every attribute of the"]
             #[doc = r" response resource and should be limited to use during"]
-            #[doc = r" development or debugging."]            pub fn execute_with_all_fields ( self ) -> Result < crate :: schemas :: GoogleFactcheckingFactchecktoolsV1Alpha1FactCheckedClaimSearchResponse , crate :: Error >{
+            #[doc = r" development or debugging."]            pub fn execute_with_all_fields (self) -> Result < crate :: schemas :: GoogleFactcheckingFactchecktoolsV1Alpha1FactCheckedClaimSearchResponse , crate :: Error >{
                 self.execute_with_fields(Some("*"))
             }
             #[doc = r" Execute the given operation. This will use the `fields`"]
@@ -1899,9 +1899,9 @@ pub mod resources {
                     Some(fields)
                 };
                 self.iter_with_fields(fields)
-            }            pub fn iter_with_default_fields ( self ) -> crate :: iter :: PageIter < Self , crate :: schemas :: GoogleFactcheckingFactchecktoolsV1Alpha1ListClaimReviewMarkupPagesResponse >{
+            }            pub fn iter_with_default_fields (self) -> crate :: iter :: PageIter < Self , crate :: schemas :: GoogleFactcheckingFactchecktoolsV1Alpha1ListClaimReviewMarkupPagesResponse >{
                 self.iter_with_fields(None::<&str>)
-            }            pub fn iter_with_all_fields ( self ) -> crate :: iter :: PageIter < Self , crate :: schemas :: GoogleFactcheckingFactchecktoolsV1Alpha1ListClaimReviewMarkupPagesResponse >{
+            }            pub fn iter_with_all_fields (self) -> crate :: iter :: PageIter < Self , crate :: schemas :: GoogleFactcheckingFactchecktoolsV1Alpha1ListClaimReviewMarkupPagesResponse >{
                 self.iter_with_fields(Some("*"))
             }
             pub fn iter_with_fields<T, F>(
@@ -1946,13 +1946,13 @@ pub mod resources {
             #[doc = r" `fields` selector indicating that the server will determine"]
             #[doc = r" the fields returned. This typically includes the most common"]
             #[doc = r" fields, but it will not include every possible attribute of"]
-            #[doc = r" the response resource."]            pub fn execute_with_default_fields ( self ) -> Result < crate :: schemas :: GoogleFactcheckingFactchecktoolsV1Alpha1ListClaimReviewMarkupPagesResponse , crate :: Error >{
+            #[doc = r" the response resource."]            pub fn execute_with_default_fields (self) -> Result < crate :: schemas :: GoogleFactcheckingFactchecktoolsV1Alpha1ListClaimReviewMarkupPagesResponse , crate :: Error >{
                 self.execute_with_fields(None::<&str>)
             }
             #[doc = r" Execute the given operation. This will provide a `fields`"]
             #[doc = r" selector of `*`. This will include every attribute of the"]
             #[doc = r" response resource and should be limited to use during"]
-            #[doc = r" development or debugging."]            pub fn execute_with_all_fields ( self ) -> Result < crate :: schemas :: GoogleFactcheckingFactchecktoolsV1Alpha1ListClaimReviewMarkupPagesResponse , crate :: Error >{
+            #[doc = r" development or debugging."]            pub fn execute_with_all_fields (self) -> Result < crate :: schemas :: GoogleFactcheckingFactchecktoolsV1Alpha1ListClaimReviewMarkupPagesResponse , crate :: Error >{
                 self.execute_with_fields(Some("*"))
             }
             #[doc = r" Execute the given operation. This will use the `fields`"]

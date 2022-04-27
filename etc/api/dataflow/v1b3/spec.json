@@ -7,7 +7,7 @@
   "canonicalName": "Dataflow",
   "fullyEncodeReservedExpansion": true,
   "version": "v1b3",
-  "revision": "20210307",
+  "revision": "20220405",
   "title": "Dataflow API",
   "description": "Manages Google Cloud Dataflow projects on Google Cloud Platform.",
   "ownerDomain": "google.com",
@@ -201,7 +201,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         },
         "https://www.googleapis.com/auth/compute": {
           "description": "View and manage your Google Compute Engine resources"
@@ -210,7 +210,7 @@
           "description": "View your Google Compute Engine resources"
         },
         "https://www.googleapis.com/auth/userinfo.email": {
-          "description": "View your email address"
+          "description": "See your primary Google Account email address"
         }
       }
     }
@@ -322,36 +322,6 @@
       "additionalProperties": null,
       "items": null
     },
-    "Artifact": {
-      "id": "Artifact",
-      "description": "Job information for templates.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "containerSpec": {
-          "description": "Container image path set for flex Template.",
-          "$ref": "ContainerSpec"
-        },
-        "jobGraphGcsPath": {
-          "description": "job_graph_gcs_path set for legacy Template.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "metadata": {
-          "description": "Metadata set for legacy Template.",
-          "$ref": "TemplateMetadata"
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
     "AutoscalingEvent": {
       "id": "AutoscalingEvent",
       "description": "A structured message reporting an autoscaling decision made by the Dataflow service.",
@@ -417,7 +387,7 @@
           "items": null
         },
         "workerPool": {
-          "description": "A short and friendly name for the worker pool this event refers to, populated from the value of PoolStageRelation::user_pool_name.",
+          "description": "A short and friendly name for the worker pool this event refers to.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -524,7 +494,7 @@
     },
     "BigTableIODetails": {
       "id": "BigTableIODetails",
-      "description": "Metadata for a BigTable connector used by the job.",
+      "description": "Metadata for a Cloud Bigtable connector used by the job.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -601,22 +571,6 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "CommitTemplateVersionRequest": {
-      "id": "CommitTemplateVersionRequest",
-      "description": "Commit will add a new TemplateVersion to an existing template.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "templateVersion": {
-          "description": "TemplateVersion obejct to create.",
-          "$ref": "TemplateVersion"
         }
       },
       "additionalProperties": null,
@@ -826,6 +780,36 @@
         },
         "image": {
           "description": "Name of the docker container image. E.g., gcr.io/project/some-image",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "imageRepositoryCertPath": {
+          "description": "Cloud Storage path to self-signed certificate of private registry.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "imageRepositoryPasswordSecretId": {
+          "description": "Secret Manager secret id for password to authenticate to private registry.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "imageRepositoryUsernameSecretId": {
+          "description": "Secret Manager secret id for username to authenticate to private registry.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1251,22 +1235,6 @@
       "additionalProperties": null,
       "items": null
     },
-    "CreateTemplateVersionRequest": {
-      "id": "CreateTemplateVersionRequest",
-      "description": "Creates a new Template with TemplateVersions.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "templateVersion": {
-          "description": "The TemplateVersion object to create.",
-          "$ref": "TemplateVersion"
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
     "CustomSourceLocation": {
       "id": "CustomSourceLocation",
       "description": "Identifies the location of a custom souce.",
@@ -1666,17 +1634,6 @@
       "additionalProperties": null,
       "items": null
     },
-    "Empty": {
-      "id": "Empty",
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {},
-      "additionalProperties": null,
-      "items": null
-    },
     "Environment": {
       "id": "Environment",
       "description": "Describes the environment in which a Dataflow Job runs.",
@@ -1710,7 +1667,7 @@
           "$ref": "DebugOptions"
         },
         "experiments": {
-          "description": "The list of experiments to enable. This field should be used for SDK related experiments and not for service related experiments. The proper field for service related experiments is service_options. For more details see the rationale at go/user-specified-service-options.",
+          "description": "The list of experiments to enable. This field should be used for SDK related experiments and not for service related experiments. The proper field for service related experiments is service_options.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1804,7 +1761,7 @@
           "items": null
         },
         "serviceOptions": {
-          "description": "The list of service options to enable. This field should be used for service related experiments only. These experiments, when graduating to GA, should be replaced by dedicated fields or become default (i.e. always on). For more details see the rationale at go/user-specified-service-options.",
+          "description": "The list of service options to enable. This field should be used for service related experiments only. These experiments, when graduating to GA, should be replaced by dedicated fields or become default (i.e. always on).",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1983,7 +1940,7 @@
             "`JOB_STATE_PENDING` indicates that the job has been created but is not yet running. Jobs that are pending may only transition to `JOB_STATE_RUNNING`, or `JOB_STATE_FAILED`.",
             "`JOB_STATE_CANCELLING` indicates that the job has been explicitly cancelled and is in the process of stopping. Jobs that are cancelling may only transition to `JOB_STATE_CANCELLED` or `JOB_STATE_FAILED`.",
             "`JOB_STATE_QUEUED` indicates that the job has been created but is being delayed until launch. Jobs that are queued may only transition to `JOB_STATE_PENDING` or `JOB_STATE_CANCELLED`.",
-            "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are intersted."
+            "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -2048,7 +2005,7 @@
           }
         },
         "kind": {
-          "description": "Type of tranform this stage is executing.",
+          "description": "Type of transform this stage is executing.",
           "type": "string",
           "format": null,
           "enum": [
@@ -2234,6 +2191,44 @@
           },
           "items": null
         },
+        "autoscalingAlgorithm": {
+          "description": "The algorithm to use for autoscaling",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "AUTOSCALING_ALGORITHM_UNKNOWN",
+            "AUTOSCALING_ALGORITHM_NONE",
+            "AUTOSCALING_ALGORITHM_BASIC"
+          ],
+          "enumDescriptions": [
+            "The algorithm is unknown, or unspecified.",
+            "Disable autoscaling.",
+            "Increase worker count over time to reduce job execution time."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "diskSizeGb": {
+          "description": "Worker disk size, in gigabytes.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "dumpHeapOnOom": {
+          "description": "If true, save a heap dump before killing a thread or process which is GC thrashing or out of memory. The location of the heap file will either be echoed back to the user, or the user will be given the opportunity to download the heap file.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "enableStreamingEngine": {
           "description": "Whether to enable Streaming Engine for the job.",
           "type": "boolean",
@@ -2290,6 +2285,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "launcherMachineType": {
+          "description": "The machine type to use for launching the job. The default is n1-standard-1.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "machineType": {
           "description": "The machine type to use for the job. Defaults to the value from the template if not specified.",
           "type": "string",
@@ -2330,8 +2335,38 @@
           "additionalProperties": null,
           "items": null
         },
+        "saveHeapDumpsToGcsPath": {
+          "description": "Cloud Storage bucket (directory) to upload heap dumps to the given location. Enabling this implies that heap dumps should be generated on OOM (dump_heap_on_oom is set to true).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "sdkContainerImage": {
+          "description": "Docker registry location of container image to use for the 'worker harness. Default is the container for the version of the SDK. Note this field is only valid for portable pipelines.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "serviceAccountEmail": {
           "description": "The email address of the service account to run the job as.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "stagingLocation": {
+          "description": "The Cloud Storage path for staging local files. Must be a valid Cloud Storage URL, beginning with `gs://`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2823,7 +2858,7 @@
     },
     "Job": {
       "id": "Job",
-      "description": "Defines a job to be run by the Cloud Dataflow service. nextID: 26",
+      "description": "Defines a job to be run by the Cloud Dataflow service. Do not enter confidential information when you supply string values using the API.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -2891,7 +2926,7 @@
             "`JOB_STATE_PENDING` indicates that the job has been created but is not yet running. Jobs that are pending may only transition to `JOB_STATE_RUNNING`, or `JOB_STATE_FAILED`.",
             "`JOB_STATE_CANCELLING` indicates that the job has been explicitly cancelled and is in the process of stopping. Jobs that are cancelling may only transition to `JOB_STATE_CANCELLED` or `JOB_STATE_FAILED`.",
             "`JOB_STATE_QUEUED` indicates that the job has been created but is being delayed until launch. Jobs that are queued may only transition to `JOB_STATE_PENDING` or `JOB_STATE_CANCELLED`.",
-            "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are intersted."
+            "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -3034,7 +3069,7 @@
             "`JOB_STATE_PENDING` indicates that the job has been created but is not yet running. Jobs that are pending may only transition to `JOB_STATE_RUNNING`, or `JOB_STATE_FAILED`.",
             "`JOB_STATE_CANCELLING` indicates that the job has been explicitly cancelled and is in the process of stopping. Jobs that are cancelling may only transition to `JOB_STATE_CANCELLED` or `JOB_STATE_FAILED`.",
             "`JOB_STATE_QUEUED` indicates that the job has been created but is being delayed until launch. Jobs that are queued may only transition to `JOB_STATE_PENDING` or `JOB_STATE_CANCELLED`.",
-            "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are intersted."
+            "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -3085,7 +3120,7 @@
           }
         },
         "stepsLocation": {
-          "description": "The GCS location where the steps are stored.",
+          "description": "The Cloud Storage location where the steps are stored.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3317,7 +3352,7 @@
       "enumDescriptions": [],
       "properties": {
         "bigTableDetails": {
-          "description": "Identification of a BigTable source used in the Dataflow job.",
+          "description": "Identification of a Cloud Bigtable source used in the Dataflow job.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3365,7 +3400,7 @@
           }
         },
         "pubsubDetails": {
-          "description": "Identification of a PubSub source used in the Dataflow job.",
+          "description": "Identification of a Pub/Sub source used in the Dataflow job.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3547,7 +3582,7 @@
           "$ref": "ContainerSpec"
         },
         "containerSpecGcsPath": {
-          "description": "Gcs path to a file with json serialized ContainerSpec as content.",
+          "description": "Cloud Storage path to a file with json serialized ContainerSpec as content.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3685,7 +3720,7 @@
     },
     "LaunchTemplateParameters": {
       "id": "LaunchTemplateParameters",
-      "description": "Parameters to provide to the template being launched.",
+      "description": "Parameters to provide to the template being launched. Note that the [metadata in the pipeline code] (https://cloud.google.com/dataflow/docs/guides/templates/creating-templates#metadata) determines which runtime parameters are valid.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -4039,40 +4074,6 @@
       "additionalProperties": null,
       "items": null
     },
-    "ListTemplateVersionsResponse": {
-      "id": "ListTemplateVersionsResponse",
-      "description": "Respond a list of TemplateVersions.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "nextPageToken": {
-          "description": "A token that can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "templateVersions": {
-          "description": "A list of TemplateVersions.",
-          "type": "array",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": {
-            "$ref": "TemplateVersion"
-          }
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
     "MapTask": {
       "id": "MapTask",
       "description": "MapTask consists of an ordered set of instructions, each of which describes one particular low-level operation for the worker to perform in order to accomplish the MapTask's WorkItem. Each instruction must appear in the list before any instructions which depends on its output.",
@@ -4139,6 +4140,16 @@
           "description": "Instantenous memory limit in bytes.",
           "type": "string",
           "format": "uint64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "currentOoms": {
+          "description": "Number of Out of Memory (OOM) events recorded since the previous measurement.",
+          "type": "string",
+          "format": "int64",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -4373,149 +4384,6 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "ModifyTemplateVersionLabelRequest": {
-      "id": "ModifyTemplateVersionLabelRequest",
-      "description": "Either add the label to TemplateVersion or remove it from the TemplateVersion.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "key": {
-          "description": "The label key for update.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "op": {
-          "description": "Requests for add label to TemplateVersion or remove label from TemplateVersion.",
-          "type": "string",
-          "format": null,
-          "enum": [
-            "OPERATION_UNSPECIFIED",
-            "ADD",
-            "REMOVE"
-          ],
-          "enumDescriptions": [
-            "Default value.",
-            "Add the label to the TemplateVersion object.",
-            "Remove the label from the TemplateVersion object."
-          ],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "value": {
-          "description": "The label value for update.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "ModifyTemplateVersionLabelResponse": {
-      "id": "ModifyTemplateVersionLabelResponse",
-      "description": "Respond the labels in the TemplateVersion.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "labels": {
-          "description": "All the label in the TemplateVersion.",
-          "type": "object",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": {
-            "description": null,
-            "type": "string",
-            "format": null,
-            "enum": [],
-            "enumDescriptions": [],
-            "properties": {},
-            "additionalProperties": null,
-            "items": null
-          },
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "ModifyTemplateVersionTagRequest": {
-      "id": "ModifyTemplateVersionTagRequest",
-      "description": "Add a tag to the current TemplateVersion. If tag exist in another TemplateVersion in the Template, remove the tag before add it to the current TemplateVersion. If remove_only set, remove the tag from the current TemplateVersion.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "removeOnly": {
-          "description": "The flag that indicates if the request is only for remove tag from TemplateVersion.",
-          "type": "boolean",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "tag": {
-          "description": "The tag for update.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "ModifyTemplateVersionTagResponse": {
-      "id": "ModifyTemplateVersionTagResponse",
-      "description": "Respond the current tags in the TemplateVersion.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "tags": {
-          "description": "All the tags in the TemplateVersion.",
-          "type": "array",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": {
-            "type": "string",
-            "format": null,
-            "enum": [],
-            "enumDescriptions": [],
-            "properties": {},
-            "additionalProperties": null,
-            "items": null
-          }
         }
       },
       "additionalProperties": null,
@@ -4834,6 +4702,25 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "customMetadata": {
+          "description": "Optional. Additional metadata for describing this parameter.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        },
         "helpText": {
           "description": "Required. The help text to display for the parameter.",
           "type": "string",
@@ -4893,12 +4780,12 @@
           "enumDescriptions": [
             "Default input type.",
             "The parameter specifies generic text input.",
-            "The parameter specifies a GCS Bucket to read from.",
-            "The parameter specifies a GCS Bucket to write to.",
-            "The parameter specifies a GCS file path to read from.",
-            "The parameter specifies a GCS file path to write to.",
-            "The parameter specifies a GCS folder path to read from.",
-            "The parameter specifies a GCS folder to write to.",
+            "The parameter specifies a Cloud Storage Bucket to read from.",
+            "The parameter specifies a Cloud Storage Bucket to write to.",
+            "The parameter specifies a Cloud Storage file path to read from.",
+            "The parameter specifies a Cloud Storage file path to write to.",
+            "The parameter specifies a Cloud Storage folder path to read from.",
+            "The parameter specifies a Cloud Storage folder to write to.",
             "The parameter specifies a Pub/Sub Topic.",
             "The parameter specifies a Pub/Sub Subscription."
           ],
@@ -5196,7 +5083,7 @@
     },
     "PubSubIODetails": {
       "id": "PubSubIODetails",
-      "description": "Metadata for a PubSub connector used by the job.",
+      "description": "Metadata for a Pub/Sub connector used by the job.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -5619,7 +5506,7 @@
       "enumDescriptions": [],
       "properties": {
         "additionalExperiments": {
-          "description": "Additional experiment flags for the job.",
+          "description": "Additional experiment flags for the job, specified with the `--experiments` option.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -5734,7 +5621,7 @@
           "items": null
         },
         "numWorkers": {
-          "description": "The initial number of Google Compute Engine instnaces for the job.",
+          "description": "The initial number of Google Compute Engine instances for the job.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -5883,6 +5770,24 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "capabilities": {
+          "description": "The set of capabilities enumerated in the above Environment proto. See also https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
         "containerImage": {
           "description": "A docker container image that resides in Google Container Registry.",
           "type": "string",
@@ -5940,7 +5845,7 @@
             "Cloud Dataflow is unaware of this version.",
             "This is a known version of an SDK, and is supported.",
             "A newer version of the SDK family exists, and an update is recommended.",
-            "This version of the SDK is deprecated and will eventually be no longer supported.",
+            "This version of the SDK is deprecated and will eventually be unsupported.",
             "Support for this SDK version has ended and it should no longer be used."
           ],
           "properties": {},
@@ -5973,7 +5878,7 @@
     },
     "SendDebugCaptureRequest": {
       "id": "SendDebugCaptureRequest",
-      "description": "Request to send encoded debug information.",
+      "description": "Request to send encoded debug information. Next ID: 8",
       "type": "object",
       "format": null,
       "enum": [],
@@ -5995,6 +5900,28 @@
           "format": null,
           "enum": [],
           "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "dataFormat": {
+          "description": "Format for the data field above (id=5).",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "DATA_FORMAT_UNSPECIFIED",
+            "RAW",
+            "JSON",
+            "ZLIB",
+            "BROTLI"
+          ],
+          "enumDescriptions": [
+            "Format unspecified, parsing is determined based upon page type and legacy encoding. (go/protodosdonts#do-include-an-unspecified-value-in-an-enum)",
+            "Raw HTML string.",
+            "JSON-encoded string.",
+            "Websafe encoded zlib-compressed string.",
+            "Websafe encoded brotli-compressed string."
+          ],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -6397,7 +6324,7 @@
           "items": null
         },
         "pubsubMetadata": {
-          "description": "PubSub snapshot metadata.",
+          "description": "Pub/Sub snapshot metadata.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -6407,6 +6334,16 @@
           "items": {
             "$ref": "PubsubSnapshotMetadata"
           }
+        },
+        "region": {
+          "description": "Cloud region where this snapshot lives in, e.g., \"us-central1\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "sourceJobId": {
           "description": "The job this snapshot was created from.",
@@ -8047,127 +7984,6 @@
       "additionalProperties": null,
       "items": null
     },
-    "TemplateVersion": {
-      "id": "TemplateVersion",
-      "description": "///////////////////////////////////////////////////////////////////////////// //// Template Catalog is used to organize user TemplateVersions. //// TemplateVersions that have the same project_id and display_name are //// belong to the same Template. //// Templates with the same project_id belong to the same Project. //// TemplateVersion may have labels and multiple labels are allowed. //// Duplicated labels in the same `TemplateVersion` are not allowed. //// TemplateVersion may have tags and multiple tags are allowed. Duplicated //// tags in the same `Template` are not allowed!",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "artifact": {
-          "description": "Job graph and metadata if it is a legacy Template. Container image path and metadata if it is flex Template.",
-          "$ref": "Artifact"
-        },
-        "createTime": {
-          "description": "Creation time of this TemplateVersion.",
-          "type": "string",
-          "format": "google-datetime",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "description": {
-          "description": "Template description from the user.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "displayName": {
-          "description": "A customized name for Template. Multiple TemplateVersions per Template.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "labels": {
-          "description": "Labels for the Template Version. Labels can be duplicate within Template.",
-          "type": "object",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": {
-            "description": null,
-            "type": "string",
-            "format": null,
-            "enum": [],
-            "enumDescriptions": [],
-            "properties": {},
-            "additionalProperties": null,
-            "items": null
-          },
-          "items": null
-        },
-        "projectId": {
-          "description": "A unique project_id. Multiple Templates per Project.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "tags": {
-          "description": "Alias for version_id, helps locate a TemplateVersion.",
-          "type": "array",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": {
-            "type": "string",
-            "format": null,
-            "enum": [],
-            "enumDescriptions": [],
-            "properties": {},
-            "additionalProperties": null,
-            "items": null
-          }
-        },
-        "type": {
-          "description": "Either LEGACY or FLEX. This should match with the type of artifact.",
-          "type": "string",
-          "format": null,
-          "enum": [
-            "TEMPLATE_TYPE_UNSPECIFIED",
-            "LEGACY",
-            "FLEX"
-          ],
-          "enumDescriptions": [
-            "Default value. Not a useful zero case.",
-            "Legacy Template.",
-            "Flex Template."
-          ],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "versionId": {
-          "description": "An auto generated version_id for TemplateVersion.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
     "TopologyConfig": {
       "id": "TopologyConfig",
       "description": "Global topology of the streaming Dataflow job, including all computations and their sharded locations.",
@@ -8851,7 +8667,7 @@
       "enumDescriptions": [],
       "properties": {
         "msg": {
-          "description": "A message describing any unusual health reports.",
+          "description": "Message describing any unusual health reports.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -8891,6 +8707,16 @@
           "description": "The interval at which the worker is sending health reports. The default value of 0 should be interpreted as the field is not being explicitly set by the worker.",
           "type": "string",
           "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "vmBrokenCode": {
+          "description": "Code to describe a specific reason, if known, that a VM has reported broken state.",
+          "type": "string",
+          "format": null,
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -9092,7 +8918,7 @@
       "enumDescriptions": [],
       "properties": {
         "code": {
-          "description": "The code is a string intended for consumption by a machine that identifies the type of message being sent. Examples: 1. \"HARNESS_STARTED\" might be used to indicate the worker harness has started. 2. \"GCS_DOWNLOAD_ERROR\" might be used to indicate an error downloading a GCS file as part of the boot process of one of the worker containers. This is a string and not an enum to make it easy to add new codes without waiting for an API change.",
+          "description": "The code is a string intended for consumption by a machine that identifies the type of message being sent. Examples: 1. \"HARNESS_STARTED\" might be used to indicate the worker harness has started. 2. \"GCS_DOWNLOAD_ERROR\" might be used to indicate an error downloading a Cloud Storage file as part of the boot process of one of the worker containers. This is a string and not an enum to make it easy to add new codes without waiting for an API change.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -9102,7 +8928,7 @@
           "items": null
         },
         "parameters": {
-          "description": "Parameters contains specific information about the code. This is a struct to allow parameters of different types. Examples: 1. For a \"HARNESS_STARTED\" message parameters might provide the name of the worker and additional data like timing information. 2. For a \"GCS_DOWNLOAD_ERROR\" parameters might contain fields listing the GCS objects being downloaded and fields containing errors. In general complex data structures should be avoided. If a worker needs to send a specific and complicated data structure then please consider defining a new proto and adding it to the data oneof in WorkerMessageResponse. Conventions: Parameters should only be used for information that isn't typically passed as a label. hostname and other worker identifiers should almost always be passed as labels since they will be included on most messages.",
+          "description": "Parameters contains specific information about the code. This is a struct to allow parameters of different types. Examples: 1. For a \"HARNESS_STARTED\" message parameters might provide the name of the worker and additional data like timing information. 2. For a \"GCS_DOWNLOAD_ERROR\" parameters might contain fields listing the Cloud Storage objects being downloaded and fields containing errors. In general complex data structures should be avoided. If a worker needs to send a specific and complicated data structure then please consider defining a new proto and adding it to the data oneof in WorkerMessageResponse. Conventions: Parameters should only be used for information that isn't typically passed as a label. hostname and other worker identifiers should almost always be passed as labels since they will be included on most messages.",
           "type": "object",
           "format": null,
           "enum": [],
@@ -9186,7 +9012,7 @@
             "The default set of packages to stage is unknown, or unspecified.",
             "Indicates that no packages should be staged at the worker unless explicitly specified by the job.",
             "Stage packages typically useful to workers written in Java.",
-            "Stage pacakges typically useful to workers written in Python."
+            "Stage packages typically useful to workers written in Python."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -9549,253 +9375,6 @@
   "resources": {
     "projects": {
       "resources": {
-        "catalogTemplates": {
-          "resources": {
-            "templateVersions": {
-              "resources": {},
-              "methods": {
-                "create": {
-                  "id": "dataflow.projects.catalogTemplates.templateVersions.create",
-                  "path": "v1b3/{+parent}/templateVersions",
-                  "httpMethod": "POST",
-                  "description": "Creates a new Template with TemplateVersion. Requires project_id(projects) and template display_name(catalogTemplates). The template display_name is set by the user.",
-                  "parameters": {
-                    "parent": {
-                      "description": "The parent project and template that the TemplateVersion will be created under. Create using project_id(pid1) and display_name(tid1). Format: projects/{pid1}/catalogTemplates/{tid1}",
-                      "default": null,
-                      "location": "path",
-                      "required": true,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": "^projects/[^/]+/catalogTemplates/[^/]+$",
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    }
-                  },
-                  "parameterOrder": [
-                    "parent"
-                  ],
-                  "request": {
-                    "$ref": "CreateTemplateVersionRequest"
-                  },
-                  "response": {
-                    "$ref": "TemplateVersion"
-                  },
-                  "scopes": [
-                    "https://www.googleapis.com/auth/cloud-platform",
-                    "https://www.googleapis.com/auth/userinfo.email"
-                  ],
-                  "supportsMediaDownload": false,
-                  "useMediaDownloadService": false,
-                  "supportsSubscription": false,
-                  "supportsMediaUpload": false,
-                  "mediaUpload": null
-                }
-              }
-            }
-          },
-          "methods": {
-            "commit": {
-              "id": "dataflow.projects.catalogTemplates.commit",
-              "path": "v1b3/{+name}:commit",
-              "httpMethod": "POST",
-              "description": "Creates a new TemplateVersion (Important: not new Template) entry in the spanner table. Requires project_id and display_name (template).",
-              "parameters": {
-                "name": {
-                  "description": "The location of the template, name includes project_id and display_name. Commit using project_id(pid1) and display_name(tid1). Format: projects/{pid1}/catalogTemplates/{tid1}",
-                  "default": null,
-                  "location": "path",
-                  "required": true,
-                  "type": "string",
-                  "format": null,
-                  "minimum": null,
-                  "maximum": null,
-                  "pattern": "^projects/[^/]+/catalogTemplates/[^/]+$",
-                  "enum": [],
-                  "enumDescriptions": [],
-                  "repeated": false
-                }
-              },
-              "parameterOrder": [
-                "name"
-              ],
-              "request": {
-                "$ref": "CommitTemplateVersionRequest"
-              },
-              "response": {
-                "$ref": "TemplateVersion"
-              },
-              "scopes": [
-                "https://www.googleapis.com/auth/cloud-platform",
-                "https://www.googleapis.com/auth/userinfo.email"
-              ],
-              "supportsMediaDownload": false,
-              "useMediaDownloadService": false,
-              "supportsSubscription": false,
-              "supportsMediaUpload": false,
-              "mediaUpload": null
-            },
-            "delete": {
-              "id": "dataflow.projects.catalogTemplates.delete",
-              "path": "v1b3/{+name}",
-              "httpMethod": "DELETE",
-              "description": "Deletes an existing Template. Do nothing if Template does not exist.",
-              "parameters": {
-                "name": {
-                  "description": "name includes project_id and display_name. Delete by project_id(pid1) and display_name(tid1). Format: projects/{pid1}/catalogTemplates/{tid1}",
-                  "default": null,
-                  "location": "path",
-                  "required": true,
-                  "type": "string",
-                  "format": null,
-                  "minimum": null,
-                  "maximum": null,
-                  "pattern": "^projects/[^/]+/catalogTemplates/[^/]+$",
-                  "enum": [],
-                  "enumDescriptions": [],
-                  "repeated": false
-                }
-              },
-              "parameterOrder": [
-                "name"
-              ],
-              "request": null,
-              "response": {
-                "$ref": "Empty"
-              },
-              "scopes": [
-                "https://www.googleapis.com/auth/cloud-platform",
-                "https://www.googleapis.com/auth/userinfo.email"
-              ],
-              "supportsMediaDownload": false,
-              "useMediaDownloadService": false,
-              "supportsSubscription": false,
-              "supportsMediaUpload": false,
-              "mediaUpload": null
-            },
-            "get": {
-              "id": "dataflow.projects.catalogTemplates.get",
-              "path": "v1b3/{+name}",
-              "httpMethod": "GET",
-              "description": "Get TemplateVersion using project_id and display_name with an optional version_id field. Get latest (has tag \"latest\") TemplateVersion if version_id not set.",
-              "parameters": {
-                "name": {
-                  "description": "Resource name includes project_id and display_name. version_id is optional. Get the latest TemplateVersion if version_id not set. Get by project_id(pid1) and display_name(tid1): Format: projects/{pid1}/catalogTemplates/{tid1} Get by project_id(pid1), display_name(tid1), and version_id(vid1): Format: projects/{pid1}/catalogTemplates/{tid1@vid}",
-                  "default": null,
-                  "location": "path",
-                  "required": true,
-                  "type": "string",
-                  "format": null,
-                  "minimum": null,
-                  "maximum": null,
-                  "pattern": "^projects/[^/]+/catalogTemplates/[^/]+$",
-                  "enum": [],
-                  "enumDescriptions": [],
-                  "repeated": false
-                }
-              },
-              "parameterOrder": [
-                "name"
-              ],
-              "request": null,
-              "response": {
-                "$ref": "TemplateVersion"
-              },
-              "scopes": [
-                "https://www.googleapis.com/auth/cloud-platform",
-                "https://www.googleapis.com/auth/userinfo.email"
-              ],
-              "supportsMediaDownload": false,
-              "useMediaDownloadService": false,
-              "supportsSubscription": false,
-              "supportsMediaUpload": false,
-              "mediaUpload": null
-            },
-            "label": {
-              "id": "dataflow.projects.catalogTemplates.label",
-              "path": "v1b3/{+name}:label",
-              "httpMethod": "POST",
-              "description": "Updates the label of the TemplateVersion. Label can be duplicated in Template, so either add or remove the label in the TemplateVersion.",
-              "parameters": {
-                "name": {
-                  "description": "Resource name includes project_id, display_name, and version_id. Updates by project_id(pid1), display_name(tid1), and version_id(vid1): Format: projects/{pid1}/catalogTemplates/{tid1@vid}",
-                  "default": null,
-                  "location": "path",
-                  "required": true,
-                  "type": "string",
-                  "format": null,
-                  "minimum": null,
-                  "maximum": null,
-                  "pattern": "^projects/[^/]+/catalogTemplates/[^/]+$",
-                  "enum": [],
-                  "enumDescriptions": [],
-                  "repeated": false
-                }
-              },
-              "parameterOrder": [
-                "name"
-              ],
-              "request": {
-                "$ref": "ModifyTemplateVersionLabelRequest"
-              },
-              "response": {
-                "$ref": "ModifyTemplateVersionLabelResponse"
-              },
-              "scopes": [
-                "https://www.googleapis.com/auth/cloud-platform",
-                "https://www.googleapis.com/auth/userinfo.email"
-              ],
-              "supportsMediaDownload": false,
-              "useMediaDownloadService": false,
-              "supportsSubscription": false,
-              "supportsMediaUpload": false,
-              "mediaUpload": null
-            },
-            "tag": {
-              "id": "dataflow.projects.catalogTemplates.tag",
-              "path": "v1b3/{+name}:tag",
-              "httpMethod": "POST",
-              "description": "Updates the tag of the TemplateVersion, and tag is unique in Template. If tag exists in another TemplateVersion in the Template, updates the tag to this TemplateVersion will remove it from the old TemplateVersion and add it to this TemplateVersion. If request is remove_only (remove_only = true), remove the tag from this TemplateVersion.",
-              "parameters": {
-                "name": {
-                  "description": "Resource name includes project_id, display_name, and version_id. Updates by project_id(pid1), display_name(tid1), and version_id(vid1): Format: projects/{pid1}/catalogTemplates/{tid1@vid}",
-                  "default": null,
-                  "location": "path",
-                  "required": true,
-                  "type": "string",
-                  "format": null,
-                  "minimum": null,
-                  "maximum": null,
-                  "pattern": "^projects/[^/]+/catalogTemplates/[^/]+$",
-                  "enum": [],
-                  "enumDescriptions": [],
-                  "repeated": false
-                }
-              },
-              "parameterOrder": [
-                "name"
-              ],
-              "request": {
-                "$ref": "ModifyTemplateVersionTagRequest"
-              },
-              "response": {
-                "$ref": "ModifyTemplateVersionTagResponse"
-              },
-              "scopes": [
-                "https://www.googleapis.com/auth/cloud-platform",
-                "https://www.googleapis.com/auth/userinfo.email"
-              ],
-              "supportsMediaDownload": false,
-              "useMediaDownloadService": false,
-              "supportsSubscription": false,
-              "supportsMediaUpload": false,
-              "mediaUpload": null
-            }
-          }
-        },
         "jobs": {
           "resources": {
             "debug": {
@@ -10330,7 +9909,7 @@
               "id": "dataflow.projects.jobs.create",
               "path": "v1b3/projects/{projectId}/jobs",
               "httpMethod": "POST",
-              "description": "Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`.",
+              "description": "Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`. Do not enter confidential information when you supply string values using the API.",
               "parameters": {
                 "location": {
                   "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
@@ -11606,7 +11185,7 @@
                   "id": "dataflow.projects.locations.jobs.create",
                   "path": "v1b3/projects/{projectId}/locations/{location}/jobs",
                   "httpMethod": "POST",
-                  "description": "Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`.",
+                  "description": "Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`. Do not enter confidential information when you supply string values using the API.",
                   "parameters": {
                     "location": {
                       "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
@@ -12543,7 +12122,7 @@
                   "id": "dataflow.projects.locations.templates.create",
                   "path": "v1b3/projects/{projectId}/locations/{location}/templates",
                   "httpMethod": "POST",
-                  "description": "Creates a Cloud Dataflow job from a template.",
+                  "description": "Creates a Cloud Dataflow job from a template. Do not enter confidential information when you supply string values using the API.",
                   "parameters": {
                     "location": {
                       "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.",
@@ -12690,7 +12269,7 @@
                   "description": "Launch a template.",
                   "parameters": {
                     "dynamicTemplate.gcsPath": {
-                      "description": "Path to dynamic template spec file on GCS. The file must be a Json serialized DynamicTemplateFieSpec object.",
+                      "description": "Path to dynamic template spec file on Cloud Storage. The file must be a Json serialized DynamicTemplateFieSpec object.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -13001,77 +12580,6 @@
             }
           }
         },
-        "templateVersions": {
-          "resources": {},
-          "methods": {
-            "list": {
-              "id": "dataflow.projects.templateVersions.list",
-              "path": "v1b3/{+parent}/templateVersions",
-              "httpMethod": "GET",
-              "description": "List TemplateVersions using project_id and an optional display_name field. List all the TemplateVersions in the Template if display set. List all the TemplateVersions in the Project if display_name not set.",
-              "parameters": {
-                "pageSize": {
-                  "description": "The maximum number of TemplateVersions to return per page.",
-                  "default": null,
-                  "location": "query",
-                  "required": false,
-                  "type": "integer",
-                  "format": "int32",
-                  "minimum": null,
-                  "maximum": null,
-                  "pattern": null,
-                  "enum": [],
-                  "enumDescriptions": [],
-                  "repeated": false
-                },
-                "pageToken": {
-                  "description": "The page token, received from a previous ListTemplateVersions call. Provide this to retrieve the subsequent page.",
-                  "default": null,
-                  "location": "query",
-                  "required": false,
-                  "type": "string",
-                  "format": null,
-                  "minimum": null,
-                  "maximum": null,
-                  "pattern": null,
-                  "enum": [],
-                  "enumDescriptions": [],
-                  "repeated": false
-                },
-                "parent": {
-                  "description": "parent includes project_id, and display_name is optional. List by project_id(pid1) and display_name(tid1). Format: projects/{pid1}/catalogTemplates/{tid1} List by project_id(pid1). Format: projects/{pid1}",
-                  "default": null,
-                  "location": "path",
-                  "required": true,
-                  "type": "string",
-                  "format": null,
-                  "minimum": null,
-                  "maximum": null,
-                  "pattern": "^projects/[^/]+$",
-                  "enum": [],
-                  "enumDescriptions": [],
-                  "repeated": false
-                }
-              },
-              "parameterOrder": [
-                "parent"
-              ],
-              "request": null,
-              "response": {
-                "$ref": "ListTemplateVersionsResponse"
-              },
-              "scopes": [
-                "https://www.googleapis.com/auth/cloud-platform",
-                "https://www.googleapis.com/auth/userinfo.email"
-              ],
-              "supportsMediaDownload": false,
-              "useMediaDownloadService": false,
-              "supportsSubscription": false,
-              "supportsMediaUpload": false,
-              "mediaUpload": null
-            }
-          }
-        },
         "templates": {
           "resources": {},
           "methods": {
@@ -13079,7 +12587,7 @@
               "id": "dataflow.projects.templates.create",
               "path": "v1b3/projects/{projectId}/templates",
               "httpMethod": "POST",
-              "description": "Creates a Cloud Dataflow job from a template.",
+              "description": "Creates a Cloud Dataflow job from a template. Do not enter confidential information when you supply string values using the API.",
               "parameters": {
                 "projectId": {
                   "description": "Required. The ID of the Cloud Platform project that the job belongs to.",
@@ -13210,7 +12718,7 @@
               "description": "Launch a template.",
               "parameters": {
                 "dynamicTemplate.gcsPath": {
-                  "description": "Path to dynamic template spec file on GCS. The file must be a Json serialized DynamicTemplateFieSpec object.",
+                  "description": "Path to dynamic template spec file on Cloud Storage. The file must be a Json serialized DynamicTemplateFieSpec object.",
                   "default": null,
                   "location": "query",
                   "required": false,

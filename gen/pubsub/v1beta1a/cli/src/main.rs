@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("pubsub1_beta1a")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210309")
+            .version("0.1.0-20220421")
             .about("Provides reliable, many-to-many, asynchronous messaging between applications. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -41,7 +41,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             subscriptions0 = subscriptions0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a subscription on a given topic for a given subscriber. If the subscription already exists, returns ALREADY_EXISTS. If the corresponding topic doesn\'t exist, returns NOT_FOUND. If the name is not provided in the request, the server will assign a random name for this subscription on the same project as the topic.");
+            let mcmd = SubCommand::with_name("create").about("Creates a subscription on a given topic for a given subscriber. If the subscription already exists, returns ALREADY_EXISTS. If the corresponding topic doesn't exist, returns NOT_FOUND. If the name is not provided in the request, the server will assign a random name for this subscription on the same project as the topic.");
             subscriptions0 = subscriptions0.subcommand(mcmd);
         }
         {

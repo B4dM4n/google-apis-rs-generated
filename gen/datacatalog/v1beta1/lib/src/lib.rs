@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [catalog](resources/catalog/struct.CatalogActions.html)\n      * [*search*](resources/catalog/struct.SearchRequestBuilder.html)\n    * [entries](resources/entries/struct.EntriesActions.html)\n      * [*lookup*](resources/entries/struct.LookupRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [entry_groups](resources/projects/locations/entry_groups/struct.EntryGroupsActions.html)\n          * [*create*](resources/projects/locations/entry_groups/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/entry_groups/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/entry_groups/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/entry_groups/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/entry_groups/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/entry_groups/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/entry_groups/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/entry_groups/struct.TestIamPermissionsRequestBuilder.html)\n          * [entries](resources/projects/locations/entry_groups/entries/struct.EntriesActions.html)\n            * [*create*](resources/projects/locations/entry_groups/entries/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/entry_groups/entries/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/entry_groups/entries/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/entry_groups/entries/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/entry_groups/entries/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/entry_groups/entries/struct.PatchRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/entry_groups/entries/struct.TestIamPermissionsRequestBuilder.html)\n            * [tags](resources/projects/locations/entry_groups/entries/tags/struct.TagsActions.html)\n              * [*create*](resources/projects/locations/entry_groups/entries/tags/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/entry_groups/entries/tags/struct.DeleteRequestBuilder.html), [*list*](resources/projects/locations/entry_groups/entries/tags/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/entry_groups/entries/tags/struct.PatchRequestBuilder.html)\n          * [tags](resources/projects/locations/entry_groups/tags/struct.TagsActions.html)\n            * [*create*](resources/projects/locations/entry_groups/tags/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/entry_groups/tags/struct.DeleteRequestBuilder.html), [*list*](resources/projects/locations/entry_groups/tags/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/entry_groups/tags/struct.PatchRequestBuilder.html)\n        * [tag_templates](resources/projects/locations/tag_templates/struct.TagTemplatesActions.html)\n          * [*create*](resources/projects/locations/tag_templates/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/tag_templates/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/tag_templates/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/tag_templates/struct.GetIamPolicyRequestBuilder.html), [*patch*](resources/projects/locations/tag_templates/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/tag_templates/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/tag_templates/struct.TestIamPermissionsRequestBuilder.html)\n          * [fields](resources/projects/locations/tag_templates/fields/struct.FieldsActions.html)\n            * [*create*](resources/projects/locations/tag_templates/fields/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/tag_templates/fields/struct.DeleteRequestBuilder.html), [*patch*](resources/projects/locations/tag_templates/fields/struct.PatchRequestBuilder.html), [*rename*](resources/projects/locations/tag_templates/fields/struct.RenameRequestBuilder.html)\n            * [enum_values](resources/projects/locations/tag_templates/fields/enum_values/struct.EnumValuesActions.html)\n              * [*rename*](resources/projects/locations/tag_templates/fields/enum_values/struct.RenameRequestBuilder.html)\n        * [taxonomies](resources/projects/locations/taxonomies/struct.TaxonomiesActions.html)\n          * [*create*](resources/projects/locations/taxonomies/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/taxonomies/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/taxonomies/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/taxonomies/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/taxonomies/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/taxonomies/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/taxonomies/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/taxonomies/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/taxonomies/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/taxonomies/struct.TestIamPermissionsRequestBuilder.html)\n          * [policy_tags](resources/projects/locations/taxonomies/policy_tags/struct.PolicyTagsActions.html)\n            * [*create*](resources/projects/locations/taxonomies/policy_tags/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/taxonomies/policy_tags/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/taxonomies/policy_tags/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/taxonomies/policy_tags/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/taxonomies/policy_tags/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/taxonomies/policy_tags/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/taxonomies/policy_tags/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/taxonomies/policy_tags/struct.TestIamPermissionsRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -17,21 +17,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Binding {
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -169,7 +169,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GetPolicyOptions {
-        #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "requestedPolicyVersion",
             default,
@@ -310,7 +310,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType, ()>
         {
-            Ok ( match s { "BIGQUERY_MATERIALIZED_VIEW" => GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType :: BigqueryMaterializedView , "BIGQUERY_TABLE" => GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType :: BigqueryTable , "BIGQUERY_VIEW" => GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType :: BigqueryView , "TABLE_SOURCE_TYPE_UNSPECIFIED" => GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType :: TableSourceTypeUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "BIGQUERY_MATERIALIZED_VIEW" => GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType :: BigqueryMaterializedView , "BIGQUERY_TABLE" => GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType :: BigqueryTable , "BIGQUERY_VIEW" => GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType :: BigqueryView , "TABLE_SOURCE_TYPE_UNSPECIFIED" => GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType :: TableSourceTypeUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType {
@@ -334,7 +334,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "BIGQUERY_MATERIALIZED_VIEW" => GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType :: BigqueryMaterializedView , "BIGQUERY_TABLE" => GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType :: BigqueryTable , "BIGQUERY_VIEW" => GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType :: BigqueryView , "TABLE_SOURCE_TYPE_UNSPECIFIED" => GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType :: TableSourceTypeUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "BIGQUERY_MATERIALIZED_VIEW" => GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType :: BigqueryMaterializedView , "BIGQUERY_TABLE" => GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType :: BigqueryTable , "BIGQUERY_VIEW" => GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType :: BigqueryView , "TABLE_SOURCE_TYPE_UNSPECIFIED" => GoogleCloudDatacatalogV1Beta1BigQueryTableSpecTableSourceType :: TableSourceTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -412,16 +412,7 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatacatalogV1Beta1Entry {
         #[doc = "Specification for a group of BigQuery tables with name pattern `[prefix]YYYYMMDD`. Context: https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding."]
@@ -508,6 +499,14 @@ pub mod schemas {
         )]
         pub source_system_timestamps:
             ::std::option::Option<crate::schemas::GoogleCloudDatacatalogV1Beta1SystemTimestamps>,
+        #[doc = "Output only. Statistics on the usage level of the resource."]
+        #[serde(
+            rename = "usageSignal",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub usage_signal:
+            ::std::option::Option<crate::schemas::GoogleCloudDatacatalogV1Beta1UsageSignal>,
         #[doc = "This field indicates the entry's source system that Data Catalog does not integrate with. `user_specified_system` strings must begin with a letter or underscore and can only contain letters, numbers, and underscores; are case insensitive; must be at least 1 character and at most 64 characters long."]
         #[serde(
             rename = "userSpecifiedSystem",
@@ -1194,16 +1193,7 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatacatalogV1Beta1ListEntriesResponse {
         #[doc = "Entry details."]
@@ -1557,7 +1547,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatacatalogV1Beta1SearchCatalogRequest {
-        #[doc = "Specifies the ordering of results, currently supported case-sensitive choices are: * `relevance`, only supports descending * `last_modified_timestamp [asc|desc]`, defaults to descending if not specified If not specified, defaults to `relevance` descending."]
+        #[doc = "Specifies the ordering of results, currently supported case-sensitive choices are: * `relevance`, only supports descending * `last_modified_timestamp [asc|desc]`, defaults to descending if not specified * `default` that can only be descending If not specified, defaults to `relevance` descending."]
         #[serde(
             rename = "orderBy",
             default,
@@ -1800,7 +1790,7 @@ pub mod schemas {
             GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType,
             (),
         > {
-            Ok ( match s { "ENTRY" => GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType :: Entry , "ENTRY_GROUP" => GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType :: EntryGroup , "SEARCH_RESULT_TYPE_UNSPECIFIED" => GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType :: SearchResultTypeUnspecified , "TAG_TEMPLATE" => GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType :: TagTemplate , _ => return Err ( ( ) ) , } )
+            Ok (match s { "ENTRY" => GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType :: Entry , "ENTRY_GROUP" => GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType :: EntryGroup , "SEARCH_RESULT_TYPE_UNSPECIFIED" => GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType :: SearchResultTypeUnspecified , "TAG_TEMPLATE" => GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType :: TagTemplate , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType {
@@ -1824,7 +1814,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "ENTRY" => GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType :: Entry , "ENTRY_GROUP" => GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType :: EntryGroup , "SEARCH_RESULT_TYPE_UNSPECIFIED" => GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType :: SearchResultTypeUnspecified , "TAG_TEMPLATE" => GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType :: TagTemplate , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "ENTRY" => GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType :: Entry , "ENTRY_GROUP" => GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType :: EntryGroup , "SEARCH_RESULT_TYPE_UNSPECIFIED" => GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType :: SearchResultTypeUnspecified , "TAG_TEMPLATE" => GoogleCloudDatacatalogV1Beta1SearchCatalogResultSearchResultType :: TagTemplate , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1907,7 +1897,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudDatacatalogV1Beta1SerializedTaxonomy { # [ doc = "A list of policy types that are activated for a taxonomy." ] # [ serde ( rename = "activatedPolicyTypes" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub activated_policy_types : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudDatacatalogV1Beta1SerializedTaxonomyActivatedPolicyTypesItems > > , # [ doc = "Description of the serialized taxonomy. The length of the description is limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an empty description." ] # [ serde ( rename = "description" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub description : :: std :: option :: Option < String > , # [ doc = "Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8." ] # [ serde ( rename = "displayName" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub display_name : :: std :: option :: Option < String > , # [ doc = "Top level policy tags associated with the taxonomy if any." ] # [ serde ( rename = "policyTags" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub policy_tags : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudDatacatalogV1Beta1SerializedPolicyTag > > , }
+    pub struct GoogleCloudDatacatalogV1Beta1SerializedTaxonomy { # [doc = "A list of policy types that are activated for a taxonomy."] # [serde (rename = "activatedPolicyTypes" , default , skip_serializing_if = "std::option::Option::is_none")] pub activated_policy_types : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudDatacatalogV1Beta1SerializedTaxonomyActivatedPolicyTypesItems > > , # [doc = "Description of the serialized taxonomy. The length of the description is limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an empty description."] # [serde (rename = "description" , default , skip_serializing_if = "std::option::Option::is_none")] pub description : :: std :: option :: Option < String > , # [doc = "Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8."] # [serde (rename = "displayName" , default , skip_serializing_if = "std::option::Option::is_none")] pub display_name : :: std :: option :: Option < String > , # [doc = "Top level policy tags associated with the taxonomy if any."] # [serde (rename = "policyTags" , default , skip_serializing_if = "std::option::Option::is_none")] pub policy_tags : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudDatacatalogV1Beta1SerializedPolicyTag > > , }
     impl ::google_field_selector::FieldSelector for GoogleCloudDatacatalogV1Beta1SerializedTaxonomy {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
@@ -1947,7 +1937,7 @@ pub mod schemas {
             GoogleCloudDatacatalogV1Beta1SerializedTaxonomyActivatedPolicyTypesItems,
             (),
         > {
-            Ok ( match s { "FINE_GRAINED_ACCESS_CONTROL" => GoogleCloudDatacatalogV1Beta1SerializedTaxonomyActivatedPolicyTypesItems :: FineGrainedAccessControl , "POLICY_TYPE_UNSPECIFIED" => GoogleCloudDatacatalogV1Beta1SerializedTaxonomyActivatedPolicyTypesItems :: PolicyTypeUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "FINE_GRAINED_ACCESS_CONTROL" => GoogleCloudDatacatalogV1Beta1SerializedTaxonomyActivatedPolicyTypesItems :: FineGrainedAccessControl , "POLICY_TYPE_UNSPECIFIED" => GoogleCloudDatacatalogV1Beta1SerializedTaxonomyActivatedPolicyTypesItems :: PolicyTypeUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display
@@ -1975,7 +1965,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "FINE_GRAINED_ACCESS_CONTROL" => GoogleCloudDatacatalogV1Beta1SerializedTaxonomyActivatedPolicyTypesItems :: FineGrainedAccessControl , "POLICY_TYPE_UNSPECIFIED" => GoogleCloudDatacatalogV1Beta1SerializedTaxonomyActivatedPolicyTypesItems :: PolicyTypeUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "FINE_GRAINED_ACCESS_CONTROL" => GoogleCloudDatacatalogV1Beta1SerializedTaxonomyActivatedPolicyTypesItems :: FineGrainedAccessControl , "POLICY_TYPE_UNSPECIFIED" => GoogleCloudDatacatalogV1Beta1SerializedTaxonomyActivatedPolicyTypesItems :: PolicyTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -2364,7 +2354,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Required. User defined name of this taxonomy. It must: contain only unicode letters, numbers, underscores, dashes and spaces; not start or end with spaces; and be at most 200 bytes long when encoded in UTF-8."]
+        #[doc = "Required. User defined name of this taxonomy. It must: contain only unicode letters, numbers, underscores, dashes and spaces; not start or end with spaces; and be at most 200 bytes long when encoded in UTF-8. The taxonomy display name must be unique within an organization."]
         #[serde(
             rename = "displayName",
             default,
@@ -2427,7 +2417,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudDatacatalogV1Beta1TaxonomyActivatedPolicyTypesItems, ()>
         {
-            Ok ( match s { "FINE_GRAINED_ACCESS_CONTROL" => GoogleCloudDatacatalogV1Beta1TaxonomyActivatedPolicyTypesItems :: FineGrainedAccessControl , "POLICY_TYPE_UNSPECIFIED" => GoogleCloudDatacatalogV1Beta1TaxonomyActivatedPolicyTypesItems :: PolicyTypeUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "FINE_GRAINED_ACCESS_CONTROL" => GoogleCloudDatacatalogV1Beta1TaxonomyActivatedPolicyTypesItems :: FineGrainedAccessControl , "POLICY_TYPE_UNSPECIFIED" => GoogleCloudDatacatalogV1Beta1TaxonomyActivatedPolicyTypesItems :: PolicyTypeUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudDatacatalogV1Beta1TaxonomyActivatedPolicyTypesItems {
@@ -2451,7 +2441,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "FINE_GRAINED_ACCESS_CONTROL" => GoogleCloudDatacatalogV1Beta1TaxonomyActivatedPolicyTypesItems :: FineGrainedAccessControl , "POLICY_TYPE_UNSPECIFIED" => GoogleCloudDatacatalogV1Beta1TaxonomyActivatedPolicyTypesItems :: PolicyTypeUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "FINE_GRAINED_ACCESS_CONTROL" => GoogleCloudDatacatalogV1Beta1TaxonomyActivatedPolicyTypesItems :: FineGrainedAccessControl , "POLICY_TYPE_UNSPECIFIED" => GoogleCloudDatacatalogV1Beta1TaxonomyActivatedPolicyTypesItems :: PolicyTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -2464,6 +2454,83 @@ pub mod schemas {
     impl ::google_field_selector::ToFieldType
         for GoogleCloudDatacatalogV1Beta1TaxonomyActivatedPolicyTypesItems
     {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDatacatalogV1Beta1UsageSignal {
+        #[doc = "The timestamp of the end of the usage statistics duration."]
+        #[serde(
+            rename = "updateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_time: ::std::option::Option<String>,
+        #[doc = "Usage statistics over each of the pre-defined time ranges, supported strings for time ranges are {\"24H\", \"7D\", \"30D\"}."]
+        #[serde(
+            rename = "usageWithinTimeRange",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub usage_within_time_range: ::std::option::Option<
+            ::std::collections::BTreeMap<
+                String,
+                crate::schemas::GoogleCloudDatacatalogV1Beta1UsageStats,
+            >,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDatacatalogV1Beta1UsageSignal {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDatacatalogV1Beta1UsageSignal {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDatacatalogV1Beta1UsageStats {
+        #[doc = "The number of times that the underlying entry was attempted to be used but was cancelled by the user."]
+        #[serde(
+            rename = "totalCancellations",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_cancellations: ::std::option::Option<f32>,
+        #[doc = "The number of times that the underlying entry was successfully used."]
+        #[serde(
+            rename = "totalCompletions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_completions: ::std::option::Option<f32>,
+        #[doc = "Total time spent (in milliseconds) during uses the resulted in completions."]
+        #[serde(
+            rename = "totalExecutionTimeForCompletionsMillis",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_execution_time_for_completions_millis: ::std::option::Option<f32>,
+        #[doc = "The number of times that the underlying entry was attempted to be used but failed."]
+        #[serde(
+            rename = "totalFailures",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_failures: ::std::option::Option<f32>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDatacatalogV1Beta1UsageStats {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDatacatalogV1Beta1UsageStats {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2512,7 +2579,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Policy {
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,
@@ -2557,7 +2624,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SetIamPolicyRequest {
-        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -2588,7 +2655,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -3085,7 +3152,7 @@ pub mod resources {
                 self.linked_resource = Some(value.into());
                 self
             }
-            #[doc = "The SQL name of the entry. SQL names are case-sensitive. Examples: * `pubsub.project_id.topic_id` * `pubsub.project_id.`topic.id.with.dots` ` * `bigquery.table.project_id.dataset_id.table_id` * `bigquery.dataset.project_id.dataset_id` * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id` `*_id`s shoud satisfy the standard SQL rules for identifiers. https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical."]
+            #[doc = "The SQL name of the entry. SQL names are case-sensitive. Examples: * `pubsub.project_id.topic_id` * `pubsub.project_id.`topic.id.with.dots` ` * `bigquery.table.project_id.dataset_id.table_id` * `bigquery.dataset.project_id.dataset_id` * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id` `*_id`s should satisfy the standard SQL rules for identifiers. https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical."]
             pub fn sql_resource(mut self, value: impl Into<String>) -> Self {
                 self.sql_resource = Some(value.into());
                 self
@@ -3482,7 +3549,7 @@ pub mod resources {
                         &self,
                     ) -> crate::resources::projects::locations::entry_groups::entries::EntriesActions
                     {
-                        crate :: resources :: projects :: locations :: entry_groups :: entries :: EntriesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        crate :: resources :: projects :: locations :: entry_groups :: entries :: EntriesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                     #[doc = "Actions that can be performed on the tags resource"]
                     pub fn tags(
@@ -5136,8 +5203,8 @@ pub mod resources {
                                 resource: resource.into(),
                             }
                         }
-                        #[doc = "Actions that can be performed on the tags resource"]                        pub fn tags ( & self ) -> crate :: resources :: projects :: locations :: entry_groups :: entries :: tags :: TagsActions{
-                            crate :: resources :: projects :: locations :: entry_groups :: entries :: tags :: TagsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the tags resource"]                        pub fn tags (& self) -> crate :: resources :: projects :: locations :: entry_groups :: entries :: tags :: TagsActions{
+                            crate :: resources :: projects :: locations :: entry_groups :: entries :: tags :: TagsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
                     }
                     #[doc = "Created via [EntriesActions::create()](struct.EntriesActions.html#method.create)"]
@@ -6506,7 +6573,7 @@ pub mod resources {
                                     name: name.into(),
                                 }
                             }
-                            #[doc = "Lists the tags on an Entry."]
+                            #[doc = "Lists tags assigned to an Entry. The columns in the response are lowercased."]
                             pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                                 ListRequestBuilder {
                                     reqwest: &self.reqwest,
@@ -7424,7 +7491,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Lists the tags on an Entry."]
+                        #[doc = "Lists tags assigned to an Entry. The columns in the response are lowercased."]
                         pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                             ListRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -8455,7 +8522,7 @@ pub mod resources {
                         &self,
                     ) -> crate::resources::projects::locations::tag_templates::fields::FieldsActions
                     {
-                        crate :: resources :: projects :: locations :: tag_templates :: fields :: FieldsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        crate :: resources :: projects :: locations :: tag_templates :: fields :: FieldsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 #[doc = "Created via [TagTemplatesActions::create()](struct.TagTemplatesActions.html#method.create)"]
@@ -9737,8 +9804,8 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Actions that can be performed on the enum_values resource"]                        pub fn enum_values ( & self ) -> crate :: resources :: projects :: locations :: tag_templates :: fields :: enum_values :: EnumValuesActions{
-                            crate :: resources :: projects :: locations :: tag_templates :: fields :: enum_values :: EnumValuesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        #[doc = "Actions that can be performed on the enum_values resource"]                        pub fn enum_values (& self) -> crate :: resources :: projects :: locations :: tag_templates :: fields :: enum_values :: EnumValuesActions{
+                            crate :: resources :: projects :: locations :: tag_templates :: fields :: enum_values :: EnumValuesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
                     }
                     #[doc = "Created via [FieldsActions::create()](struct.FieldsActions.html#method.create)"]
@@ -10264,7 +10331,7 @@ pub mod resources {
                     }
                     #[doc = "Created via [FieldsActions::rename()](struct.FieldsActions.html#method.rename)"]
                     #[derive(Debug, Clone)]
-                    pub struct RenameRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudDatacatalogV1Beta1RenameTagTemplateFieldRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                    pub struct RenameRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudDatacatalogV1Beta1RenameTagTemplateFieldRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                     impl<'a> RenameRequestBuilder<'a> {
                         #[doc = "OAuth access token."]
                         pub fn access_token(mut self, value: impl Into<String>) -> Self {
@@ -10453,7 +10520,7 @@ pub mod resources {
                         }
                         #[doc = "Created via [EnumValuesActions::rename()](struct.EnumValuesActions.html#method.rename)"]
                         #[derive(Debug, Clone)]
-                        pub struct RenameRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudDatacatalogV1Beta1RenameTagTemplateFieldEnumValueRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+                        pub struct RenameRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudDatacatalogV1Beta1RenameTagTemplateFieldEnumValueRequest , name : String , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
                         impl<'a> RenameRequestBuilder<'a> {
                             #[doc = "OAuth access token."]
                             pub fn access_token(mut self, value: impl Into<String>) -> Self {
@@ -10843,8 +10910,8 @@ pub mod resources {
                             resource: resource.into(),
                         }
                     }
-                    #[doc = "Actions that can be performed on the policy_tags resource"]                    pub fn policy_tags ( & self ) -> crate :: resources :: projects :: locations :: taxonomies :: policy_tags :: PolicyTagsActions{
-                        crate :: resources :: projects :: locations :: taxonomies :: policy_tags :: PolicyTagsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the policy_tags resource"]                    pub fn policy_tags (& self) -> crate :: resources :: projects :: locations :: taxonomies :: policy_tags :: PolicyTagsActions{
+                        crate :: resources :: projects :: locations :: taxonomies :: policy_tags :: PolicyTagsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 #[doc = "Created via [TaxonomiesActions::create()](struct.TaxonomiesActions.html#method.create)"]

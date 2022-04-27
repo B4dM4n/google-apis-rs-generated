@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("bigquery2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210303")
+            .version("0.1.0-20220326")
             .about("A data platform for customers to create, manage, share and query data.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -63,13 +63,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut jobs0 = SubCommand::with_name("jobs")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: cancel, get, get_query_results, insert, list and query");
+            .about("methods: cancel, delete, get, get_query_results, insert, list and query");
         {
             let mcmd = SubCommand::with_name("cancel").about("Requests that a job be cancelled. This call will return immediately, and the client will need to poll for the job status to see if the cancel completed successfully. Cancelled jobs may still incur costs.");
             jobs0 = jobs0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Returns information about a specific job. Job information is available for a six month period after creation. Requires that you\'re the person who ran the job, or have the Is Owner project role.");
+            let mcmd = SubCommand::with_name("delete").about("Requests the deletion of the metadata of a job. This call returns when the job's metadata is deleted.");
+            jobs0 = jobs0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Returns information about a specific job. Job information is available for a six month period after creation. Requires that you're the person who ran the job, or have the Is Owner project role.");
             jobs0 = jobs0.subcommand(mcmd);
         }
         {
@@ -104,9 +108,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             models0 = models0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about(
-                "Lists all models in the specified dataset. Requires the READER dataset role.",
-            );
+            let mcmd = SubCommand::with_name("list").about("Lists all models in the specified dataset. Requires the READER dataset role. After retrieving the list of models, you can get information about a particular model by calling the models.get method.");
             models0 = models0.subcommand(mcmd);
         }
         {

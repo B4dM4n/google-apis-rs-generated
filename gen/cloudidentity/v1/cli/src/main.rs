@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudidentity1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210310")
+            .version("0.1.0-20220418")
             .about("API for provisioning and managing identity resources.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -62,8 +62,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             devices0 = devices0.subcommand(mcmd);
         }
         let mut groups0 = SubCommand::with_name("groups")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list, lookup, patch and search");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_security_settings, list, lookup, patch, search and update_security_settings");
         {
             let mcmd = SubCommand::with_name("create").about("Creates a Group.");
             groups0 = groups0.subcommand(mcmd);
@@ -77,8 +77,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             groups0 = groups0.subcommand(mcmd);
         }
         {
+            let mcmd =
+                SubCommand::with_name("get_security_settings").about("Get Security Settings");
+            groups0 = groups0.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("list")
-                .about("Lists the `Group`s under a customer or namespace.");
+                .about("Lists the `Group` resources under a customer or namespace.");
             groups0 = groups0.subcommand(mcmd);
         }
         {
@@ -91,7 +96,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("search")
-                .about("Searches for `Group`s matching a specified query.");
+                .about("Searches for `Group` resources matching a specified query.");
+            groups0 = groups0.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("update_security_settings").about("Update Security Settings");
             groups0 = groups0.subcommand(mcmd);
         }
         let mut device_users1 = SubCommand::with_name("device_users")
@@ -112,7 +122,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             device_users1 = device_users1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes the specified DeviceUser. This also revokes the user\'s access to device data.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes the specified DeviceUser. This also revokes the user's access to device data.");
             device_users1 = device_users1.subcommand(mcmd);
         }
         {
@@ -124,11 +134,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             device_users1 = device_users1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("lookup").about("Looks up resource names of the DeviceUsers associated with the caller\'s credentials, as well as the properties provided in the request. This method must be called with end-user credentials with the scope: https://www.googleapis.com/auth/cloud-identity.devices.lookup If multiple properties are provided, only DeviceUsers having all of these properties are considered as matches - i.e. the query behaves like an AND. Different platforms require different amounts of information from the caller to ensure that the DeviceUser is uniquely identified. - iOS: No properties need to be passed, the caller\'s credentials are sufficient to identify the corresponding DeviceUser. - Android: Specifying the \'android_id\' field is required. - Desktop: Specifying the \'raw_resource_id\' field is required.");
+            let mcmd = SubCommand::with_name("lookup").about("Looks up resource names of the DeviceUsers associated with the caller's credentials, as well as the properties provided in the request. This method must be called with end-user credentials with the scope: https://www.googleapis.com/auth/cloud-identity.devices.lookup If multiple properties are provided, only DeviceUsers having all of these properties are considered as matches - i.e. the query behaves like an AND. Different platforms require different amounts of information from the caller to ensure that the DeviceUser is uniquely identified. - iOS: No properties need to be passed, the caller's credentials are sufficient to identify the corresponding DeviceUser. - Android: Specifying the 'android_id' field is required. - Desktop: Specifying the 'raw_resource_id' field is required.");
             device_users1 = device_users1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("wipe").about("Wipes the user\'s account on a device. Other data on the device that is not associated with the user\'s work account is not affected. For example, if a Gmail app is installed on a device that is used for personal and work purposes, and the user is logged in to the Gmail app with their personal account as well as their work account, wiping the \"deviceUser\" by their work administrator will not affect their personal account within Gmail or other apps such as Photos.");
+            let mcmd = SubCommand::with_name("wipe").about("Wipes the user's account on a device. Other data on the device that is not associated with the user's work account is not affected. For example, if a Gmail app is installed on a device that is used for personal and work purposes, and the user is logged in to the Gmail app with their personal account as well as their work account, wiping the \"deviceUser\" by their work administrator will not affect their personal account within Gmail or other apps such as Photos.");
             device_users1 = device_users1.subcommand(mcmd);
         }
         let mut memberships1 = SubCommand::with_name("memberships")

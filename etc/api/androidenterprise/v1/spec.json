@@ -7,7 +7,7 @@
   "canonicalName": "Android Enterprise",
   "fullyEncodeReservedExpansion": null,
   "version": "v1",
-  "revision": "20210317",
+  "revision": "20220426",
   "title": "Google Play EMM API",
   "description": "Manages the deployment of apps to Android Enterprise devices.",
   "ownerDomain": "google.com",
@@ -314,6 +314,10 @@
         "webApps": {
           "description": "Options for displaying the Web Apps page.",
           "$ref": "AdministratorWebTokenSpecWebApps"
+        },
+        "zeroTouch": {
+          "description": "Options for displaying the Zero Touch page.",
+          "$ref": "AdministratorWebTokenSpecZeroTouch"
         }
       },
       "additionalProperties": null,
@@ -427,6 +431,28 @@
       "properties": {
         "enabled": {
           "description": "Whether the Web Apps page is displayed. Default is true.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "AdministratorWebTokenSpecZeroTouch": {
+      "id": "AdministratorWebTokenSpecZeroTouch",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "enabled": {
+          "description": "Whether zero-touch embedded UI is usable with this token. If enabled, the admin can link zero-touch customers to this enterprise.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -1285,6 +1311,28 @@
       "properties": {
         "accountEmail": {
           "description": "The email address of the service account.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "EnterpriseAuthenticationAppLinkConfig": {
+      "id": "EnterpriseAuthenticationAppLinkConfig",
+      "description": "An authentication URL configuration for the authenticator app of an identity provider.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "uri": {
+          "description": "An authentication url.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2442,7 +2490,7 @@
       "enumDescriptions": [],
       "properties": {
         "autoUpdatePolicy": {
-          "description": "The auto-update policy for apps installed on the device. \"choiceToTheUser\" allows the device's user to configure the app update policy. \"always\" enables auto updates. \"never\" disables auto updates. \"wifiOnly\" enables auto updates only when the device is connected to wifi.",
+          "description": "Deprecated. Use autoUpdateMode instead. When autoUpdateMode is set to AUTO_UPDATE_POSTPONED or AUTO_UPDATE_HIGH_PRIORITY, this field has no effect. \"choiceToTheUser\" allows the device's user to configure the app update policy. \"always\" enables auto updates. \"never\" disables auto updates. \"wifiOnly\" enables auto updates only when the device is connected to wifi.",
           "type": "string",
           "format": null,
           "enum": [
@@ -3027,13 +3075,25 @@
           ],
           "enumDescriptions": [
             "Unspecified. Defaults to AUTO_UPDATE_DEFAULT.",
-            "The app is automatically updated with low priority to minimize the impact on the user. The app is updated when the following constraints are met: * The device is not actively used * The device is connected to a Wi-Fi network. * The device is charging * If the system update policy is set to `WINDOWED`: the local time of the device is within the daily maintenance window The device is notified about a new update within 24 hours after it is published by the developer, after which the app is updated the next time the constraints above are met.",
+            "The app is automatically updated with low priority to minimize the impact on the user. The app is updated when the following constraints are met: * The device is not actively used * The device is connected to an unmetered network * The device is charging The device is notified about a new update within 24 hours after it is published by the developer, after which the app is updated the next time the constraints above are met.",
             "The app is not automatically updated for a maximum of 90 days after the app becomes out of date. 90 days after the app becomes out of date, the latest available version is installed automatically with low priority (see AUTO_UPDATE_DEFAULT). After the app is updated it is not automatically updated again until 90 days after it becomes out of date again. The user can still manually update the app from the Play Store at any time.",
             "The app is updated as soon as possible. No constraints are applied. The device is notified immediately about a new app update after it is published by the developer."
           ],
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "enterpriseAuthenticationAppLinkConfigs": {
+          "description": "An authentication URL configuration for the authenticator app of an identity provider. This helps to launch the identity provider's authenticator app during the authentication happening in a private app using Android WebView. Authenticator app should already be the [default handler](https://developer.android.com/training/app-links/verify-site-associations) for the authentication url on the device.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "EnterpriseAuthenticationAppLinkConfig"
+          }
         },
         "managedConfiguration": {
           "description": "The managed configuration for the product.",
@@ -4372,7 +4432,7 @@
           "id": "androidenterprise.devices.update",
           "path": "androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}",
           "httpMethod": "PUT",
-          "description": "Updates the device policy. To ensure the policy is properly enforced, you need to prevent unmanaged accounts from accessing Google Play by setting the allowed_accounts in the managed configuration for the Google Play package. See restrict accounts in Google Play.",
+          "description": "Updates the device policy. To ensure the policy is properly enforced, you need to prevent unmanaged accounts from accessing Google Play by setting the allowed_accounts in the managed configuration for the Google Play package. See restrict accounts in Google Play. When provisioning a new device, you should set the device policy using this method before adding the managed Google Play Account to the device, otherwise the policy will not be applied for a short period of time after adding the account to the device.",
           "parameters": {
             "deviceId": {
               "description": "The ID of the device.",

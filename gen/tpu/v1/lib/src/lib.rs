@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n        * [accelerator_types](resources/projects/locations/accelerator_types/struct.AcceleratorTypesActions.html)\n          * [*get*](resources/projects/locations/accelerator_types/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/accelerator_types/struct.ListRequestBuilder.html)\n        * [nodes](resources/projects/locations/nodes/struct.NodesActions.html)\n          * [*create*](resources/projects/locations/nodes/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/nodes/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/nodes/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/nodes/struct.ListRequestBuilder.html), [*reimage*](resources/projects/locations/nodes/struct.ReimageRequestBuilder.html), [*start*](resources/projects/locations/nodes/struct.StartRequestBuilder.html), [*stop*](resources/projects/locations/nodes/struct.StopRequestBuilder.html)\n        * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n          * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/locations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n        * [tensorflow_versions](resources/projects/locations/tensorflow_versions/struct.TensorflowVersionsActions.html)\n          * [*get*](resources/projects/locations/tensorflow_versions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/tensorflow_versions/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -362,6 +362,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub accelerator_type: ::std::option::Option<String>,
+        #[doc = "Output only. The API version that created this Node."]
+        #[serde(
+            rename = "apiVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub api_version: ::std::option::Option<crate::schemas::NodeApiVersion>,
         #[doc = "The CIDR block that the TPU node will use when selecting an IP address. This CIDR block must be a /29 block; the Compute Engine networks API forbids a smaller block, and using a larger block would be wasteful (a node can only consume one IP address). Errors will occur if the CIDR block has already been used for a currently existing TPU node, the CIDR block conflicts with any subnetworks in the user's provided network, or the provided network is peered with another network that is using that CIDR block."]
         #[serde(
             rename = "cidrBlock",
@@ -493,6 +500,87 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum NodeApiVersion {
+        #[doc = "API version is unknown."]
+        ApiVersionUnspecified,
+        #[doc = "TPU API V1 version."]
+        V1,
+        #[doc = "TPU API V1Alpha1 version."]
+        V1Alpha1,
+        #[doc = "TPU API V2Alpha1 version."]
+        V2Alpha1,
+    }
+    impl NodeApiVersion {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                NodeApiVersion::ApiVersionUnspecified => "API_VERSION_UNSPECIFIED",
+                NodeApiVersion::V1 => "V1",
+                NodeApiVersion::V1Alpha1 => "V1_ALPHA1",
+                NodeApiVersion::V2Alpha1 => "V2_ALPHA1",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for NodeApiVersion {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for NodeApiVersion {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<NodeApiVersion, ()> {
+            Ok(match s {
+                "API_VERSION_UNSPECIFIED" => NodeApiVersion::ApiVersionUnspecified,
+                "V1" => NodeApiVersion::V1,
+                "V1_ALPHA1" => NodeApiVersion::V1Alpha1,
+                "V2_ALPHA1" => NodeApiVersion::V2Alpha1,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for NodeApiVersion {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for NodeApiVersion {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for NodeApiVersion {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "API_VERSION_UNSPECIFIED" => NodeApiVersion::ApiVersionUnspecified,
+                "V1" => NodeApiVersion::V1,
+                "V1_ALPHA1" => NodeApiVersion::V1Alpha1,
+                "V2_ALPHA1" => NodeApiVersion::V2Alpha1,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for NodeApiVersion {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NodeApiVersion {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum NodeHealth {
         #[doc = "The resource is unhealthy."]
         DeprecatedUnhealthy,
@@ -595,7 +683,7 @@ pub mod schemas {
         Hiding,
         #[doc = "TPU node has been preempted. Only applies to Preemptible TPU Nodes."]
         Preempted,
-        #[doc = "TPU node has been created and is fully usable."]
+        #[doc = "TPU node has been created."]
         Ready,
         #[doc = "TPU node is undergoing reimaging."]
         Reimaging,
@@ -782,49 +870,49 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OperationMetadata {
-        #[doc = "[Output only] API version used to start the operation."]
+        #[doc = "API version."]
         #[serde(
             rename = "apiVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_version: ::std::option::Option<String>,
-        #[doc = "[Output only] Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
+        #[doc = "Specifies if cancellation was requested for the operation."]
         #[serde(
             rename = "cancelRequested",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cancel_requested: ::std::option::Option<bool>,
-        #[doc = "[Output only] The time the operation was created."]
+        #[doc = "The time the operation was created."]
         #[serde(
             rename = "createTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "[Output only] The time the operation finished running."]
+        #[doc = "The time the operation finished running."]
         #[serde(
             rename = "endTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_time: ::std::option::Option<String>,
-        #[doc = "[Output only] Human-readable status of the operation, if any."]
+        #[doc = "Human-readable status of the operation, if any."]
         #[serde(
             rename = "statusDetail",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status_detail: ::std::option::Option<String>,
-        #[doc = "[Output only] Server-defined resource path for the target of the operation."]
+        #[doc = "Target of the operation - for example projects/project-1/connectivityTests/test-1"]
         #[serde(
             rename = "target",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub target: ::std::option::Option<String>,
-        #[doc = "[Output only] Name of the verb executed by the operation."]
+        #[doc = "Name of the verb executed by the operation."]
         #[serde(
             rename = "verb",
             default,
@@ -1058,6 +1146,8 @@ pub mod schemas {
         MeshBuildFail,
         #[doc = "TPU runtime is out of memory."]
         OutOfMemory,
+        #[doc = "Abusive behaviors have been identified on the current project."]
+        ProjectAbuse,
         #[doc = "Unspecified symptom."]
         SymptomTypeUnspecified,
     }
@@ -1069,6 +1159,7 @@ pub mod schemas {
                 SymptomSymptomType::LowMemory => "LOW_MEMORY",
                 SymptomSymptomType::MeshBuildFail => "MESH_BUILD_FAIL",
                 SymptomSymptomType::OutOfMemory => "OUT_OF_MEMORY",
+                SymptomSymptomType::ProjectAbuse => "PROJECT_ABUSE",
                 SymptomSymptomType::SymptomTypeUnspecified => "SYMPTOM_TYPE_UNSPECIFIED",
             }
         }
@@ -1087,6 +1178,7 @@ pub mod schemas {
                 "LOW_MEMORY" => SymptomSymptomType::LowMemory,
                 "MESH_BUILD_FAIL" => SymptomSymptomType::MeshBuildFail,
                 "OUT_OF_MEMORY" => SymptomSymptomType::OutOfMemory,
+                "PROJECT_ABUSE" => SymptomSymptomType::ProjectAbuse,
                 "SYMPTOM_TYPE_UNSPECIFIED" => SymptomSymptomType::SymptomTypeUnspecified,
                 _ => return Err(()),
             })
@@ -1117,6 +1209,7 @@ pub mod schemas {
                 "LOW_MEMORY" => SymptomSymptomType::LowMemory,
                 "MESH_BUILD_FAIL" => SymptomSymptomType::MeshBuildFail,
                 "OUT_OF_MEMORY" => SymptomSymptomType::OutOfMemory,
+                "PROJECT_ABUSE" => SymptomSymptomType::ProjectAbuse,
                 "SYMPTOM_TYPE_UNSPECIFIED" => SymptomSymptomType::SymptomTypeUnspecified,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -1437,7 +1530,7 @@ pub mod resources {
                     &self,
                 ) -> crate::resources::projects::locations::accelerator_types::AcceleratorTypesActions
                 {
-                    crate :: resources :: projects :: locations :: accelerator_types :: AcceleratorTypesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    crate :: resources :: projects :: locations :: accelerator_types :: AcceleratorTypesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
                 #[doc = "Actions that can be performed on the nodes resource"]
                 pub fn nodes(&self) -> crate::resources::projects::locations::nodes::NodesActions {
@@ -1456,8 +1549,8 @@ pub mod resources {
                         auth: self.auth_ref(),
                     }
                 }
-                #[doc = "Actions that can be performed on the tensorflow_versions resource"]                pub fn tensorflow_versions ( & self ) -> crate :: resources :: projects :: locations :: tensorflow_versions :: TensorflowVersionsActions{
-                    crate :: resources :: projects :: locations :: tensorflow_versions :: TensorflowVersionsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the tensorflow_versions resource"]                pub fn tensorflow_versions (& self) -> crate :: resources :: projects :: locations :: tensorflow_versions :: TensorflowVersionsActions{
+                    crate :: resources :: projects :: locations :: tensorflow_versions :: TensorflowVersionsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
             }
             #[doc = "Created via [LocationsActions::get()](struct.LocationsActions.html#method.get)"]
@@ -1641,17 +1734,17 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "The standard list filter."]
+                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
                 }
-                #[doc = "The standard list page size."]
+                #[doc = "The maximum number of results to return. If not set, the service selects a default."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "The standard list page token."]
+                #[doc = "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -2630,7 +2723,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Stops a node."]
+                    #[doc = "Stops a node, this operation is only available with single TPU nodes."]
                     pub fn stop(
                         &self,
                         request: crate::schemas::StopNodeRequest,

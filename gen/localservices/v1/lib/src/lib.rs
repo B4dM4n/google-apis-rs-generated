@@ -84,6 +84,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub current_period_total_cost: ::std::option::Option<f64>,
+        #[doc = "Number of impressions that customers have had in the past 2 days."]
+        #[serde(
+            rename = "impressionsLastTwoDays",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub impressions_last_two_days: ::std::option::Option<i64>,
         #[doc = "Phone lead responsiveness of the account for the past 90 days from current date. This is computed by taking the total number of connected calls from charged phone leads and dividing by the total number of calls received."]
         #[serde(
             rename = "phoneLeadResponsiveness",
@@ -172,6 +180,65 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAdsHomeservicesLocalservicesV1BookingLead {
+        #[doc = "Timestamp of when service is provided by advertiser."]
+        #[serde(
+            rename = "bookingAppointmentTimestamp",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub booking_appointment_timestamp: ::std::option::Option<String>,
+        #[doc = "Consumer email associated with the booking lead."]
+        #[serde(
+            rename = "consumerEmail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub consumer_email: ::std::option::Option<String>,
+        #[doc = "Consumer phone number associated with the booking lead."]
+        #[serde(
+            rename = "consumerPhoneNumber",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub consumer_phone_number: ::std::option::Option<String>,
+        #[doc = "Name of the customer who created the lead."]
+        #[serde(
+            rename = "customerName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub customer_name: ::std::option::Option<String>,
+        #[doc = "The job type of the specified lead."]
+        #[serde(
+            rename = "jobType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub job_type: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAdsHomeservicesLocalservicesV1BookingLead {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAdsHomeservicesLocalservicesV1BookingLead {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleAdsHomeservicesLocalservicesV1DetailedLeadReport {
@@ -192,6 +259,14 @@ pub mod schemas {
         pub aggregator_info: ::std::option::Option<
             crate::schemas::GoogleAdsHomeservicesLocalservicesV1AggregatorInfo,
         >,
+        #[doc = "More information associated to only booking leads."]
+        #[serde(
+            rename = "bookingLead",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub booking_lead:
+            ::std::option::Option<crate::schemas::GoogleAdsHomeservicesLocalservicesV1BookingLead>,
         #[doc = "Business name associated to the account."]
         #[serde(
             rename = "businessName",
@@ -334,7 +409,7 @@ pub mod schemas {
             GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportChargeStatus,
             (),
         > {
-            Ok ( match s { "CHARGE_STATUS_UNSPECIFIED" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportChargeStatus :: ChargeStatusUnspecified , "CHARGED" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportChargeStatus :: Charged , "NOT_CHARGED" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportChargeStatus :: NotCharged , _ => return Err ( ( ) ) , } )
+            Ok (match s { "CHARGE_STATUS_UNSPECIFIED" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportChargeStatus :: ChargeStatusUnspecified , "CHARGED" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportChargeStatus :: Charged , "NOT_CHARGED" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportChargeStatus :: NotCharged , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportChargeStatus {
@@ -358,7 +433,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "CHARGE_STATUS_UNSPECIFIED" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportChargeStatus :: ChargeStatusUnspecified , "CHARGED" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportChargeStatus :: Charged , "NOT_CHARGED" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportChargeStatus :: NotCharged , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "CHARGE_STATUS_UNSPECIFIED" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportChargeStatus :: ChargeStatusUnspecified , "CHARGED" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportChargeStatus :: Charged , "NOT_CHARGED" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportChargeStatus :: NotCharged , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -377,6 +452,8 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType {
+        #[doc = "Booking lead."]
+        Booking,
         #[doc = "Not specified."]
         LeadTypeUnspecified,
         #[doc = "Message lead."]
@@ -386,7 +463,7 @@ pub mod schemas {
     }
     impl GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType {
         pub fn as_str(self) -> &'static str {
-            match self { GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: LeadTypeUnspecified => "LEAD_TYPE_UNSPECIFIED" , GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: Message => "MESSAGE" , GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: PhoneCall => "PHONE_CALL" , }
+            match self { GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: Booking => "BOOKING" , GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: LeadTypeUnspecified => "LEAD_TYPE_UNSPECIFIED" , GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: Message => "MESSAGE" , GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: PhoneCall => "PHONE_CALL" , }
         }
     }
     impl ::std::convert::AsRef<str> for GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType {
@@ -400,7 +477,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType, ()>
         {
-            Ok ( match s { "LEAD_TYPE_UNSPECIFIED" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: LeadTypeUnspecified , "MESSAGE" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: Message , "PHONE_CALL" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: PhoneCall , _ => return Err ( ( ) ) , } )
+            Ok (match s { "BOOKING" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: Booking , "LEAD_TYPE_UNSPECIFIED" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: LeadTypeUnspecified , "MESSAGE" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: Message , "PHONE_CALL" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: PhoneCall , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType {
@@ -424,7 +501,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "LEAD_TYPE_UNSPECIFIED" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: LeadTypeUnspecified , "MESSAGE" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: Message , "PHONE_CALL" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: PhoneCall , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "BOOKING" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: Booking , "LEAD_TYPE_UNSPECIFIED" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: LeadTypeUnspecified , "MESSAGE" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: Message , "PHONE_CALL" => GoogleAdsHomeservicesLocalservicesV1DetailedLeadReportLeadType :: PhoneCall , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1449,9 +1526,9 @@ pub mod resources {
                     Some(fields)
                 };
                 self.iter_with_fields(fields)
-            }            pub fn iter_with_default_fields ( self ) -> crate :: iter :: PageIter < Self , crate :: schemas :: GoogleAdsHomeservicesLocalservicesV1SearchDetailedLeadReportsResponse >{
+            }            pub fn iter_with_default_fields (self) -> crate :: iter :: PageIter < Self , crate :: schemas :: GoogleAdsHomeservicesLocalservicesV1SearchDetailedLeadReportsResponse >{
                 self.iter_with_fields(None::<&str>)
-            }            pub fn iter_with_all_fields ( self ) -> crate :: iter :: PageIter < Self , crate :: schemas :: GoogleAdsHomeservicesLocalservicesV1SearchDetailedLeadReportsResponse >{
+            }            pub fn iter_with_all_fields (self) -> crate :: iter :: PageIter < Self , crate :: schemas :: GoogleAdsHomeservicesLocalservicesV1SearchDetailedLeadReportsResponse >{
                 self.iter_with_fields(Some("*"))
             }
             pub fn iter_with_fields<T, F>(
@@ -1496,13 +1573,13 @@ pub mod resources {
             #[doc = r" `fields` selector indicating that the server will determine"]
             #[doc = r" the fields returned. This typically includes the most common"]
             #[doc = r" fields, but it will not include every possible attribute of"]
-            #[doc = r" the response resource."]            pub fn execute_with_default_fields ( self ) -> Result < crate :: schemas :: GoogleAdsHomeservicesLocalservicesV1SearchDetailedLeadReportsResponse , crate :: Error >{
+            #[doc = r" the response resource."]            pub fn execute_with_default_fields (self) -> Result < crate :: schemas :: GoogleAdsHomeservicesLocalservicesV1SearchDetailedLeadReportsResponse , crate :: Error >{
                 self.execute_with_fields(None::<&str>)
             }
             #[doc = r" Execute the given operation. This will provide a `fields`"]
             #[doc = r" selector of `*`. This will include every attribute of the"]
             #[doc = r" response resource and should be limited to use during"]
-            #[doc = r" development or debugging."]            pub fn execute_with_all_fields ( self ) -> Result < crate :: schemas :: GoogleAdsHomeservicesLocalservicesV1SearchDetailedLeadReportsResponse , crate :: Error >{
+            #[doc = r" development or debugging."]            pub fn execute_with_all_fields (self) -> Result < crate :: schemas :: GoogleAdsHomeservicesLocalservicesV1SearchDetailedLeadReportsResponse , crate :: Error >{
                 self.execute_with_fields(Some("*"))
             }
             #[doc = r" Execute the given operation. This will use the `fields`"]

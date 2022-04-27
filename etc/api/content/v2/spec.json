@@ -7,7 +7,7 @@
   "canonicalName": "Shopping Content",
   "fullyEncodeReservedExpansion": true,
   "version": "v2",
-  "revision": "20210311",
+  "revision": "20220421",
   "title": "Content API for Shopping",
   "description": "Manage your product listings and accounts for Google Shopping",
   "ownerDomain": "google.com",
@@ -442,6 +442,16 @@
         "customerService": {
           "description": "The customer service information of the business.",
           "$ref": "AccountCustomerService"
+        },
+        "koreanBusinessRegistrationNumber": {
+          "description": "The 10-digit [Korean business registration number](https://support.google.com/merchants/answer/9037766) separated with dashes in the format: XXX-XX-XXXXX. This field will only be updated if explicitly set.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "phoneNumber": {
           "description": "The phone number of the business.",
@@ -2123,6 +2133,68 @@
       "additionalProperties": null,
       "items": null
     },
+    "Address": {
+      "id": "Address",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "administrativeArea": {
+          "description": "Required. Top-level administrative subdivision of the country. For example, a state like California (\"CA\") or a province like Quebec (\"QC\").",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "city": {
+          "description": "Required. City, town or commune. May also include dependent localities or sublocalities (e.g. neighborhoods or suburbs).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "country": {
+          "description": "Required. [CLDR country code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)(e.g. \"US\").",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "postalCode": {
+          "description": "Required. Postal code or ZIP (e.g. \"94043\"). Required.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "streetAddress": {
+          "description": "Street-level part of the address.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Amount": {
       "id": "Amount",
       "description": null,
@@ -2152,7 +2224,7 @@
       "enumDescriptions": [],
       "properties": {
         "businessDays": {
-          "description": "Regular business days. May not be empty.",
+          "description": "Regular business days, such as '\"monday\"'. May not be empty.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2257,6 +2329,24 @@
           "additionalProperties": null,
           "items": null
         },
+        "eddServices": {
+          "description": "A list of services supported for EDD (Estimated Delivery Date) calculation. This is the list of valid values for WarehouseBasedDeliveryTime.carrierService.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
         "name": {
           "description": "The name of the carrier (e.g., `\"UPS\"`). Always present.",
           "type": "string",
@@ -2268,7 +2358,7 @@
           "items": null
         },
         "services": {
-          "description": "A list of supported services (e.g., `\"ground\"`) for that carrier. Contains at least one service.",
+          "description": "A list of supported services (e.g., `\"ground\"`) for that carrier. Contains at least one service. This is the list of valid values for CarrierRate.carrierService.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3492,6 +3582,18 @@
         "transitTimeTable": {
           "description": "Transit time table, number of business days spent in transit based on row and column dimensions. Either `{min,max}TransitTimeInDays` or `transitTimeTable` can be set, but not both.",
           "$ref": "TransitTable"
+        },
+        "warehouseBasedDeliveryTimes": {
+          "description": "Indicates that the delivery time should be calculated per warehouse (shipping origin location) based on the settings of the selected carrier. When set, no other transit time related field in DeliveryTime should be set.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "WarehouseBasedDeliveryTime"
+          }
         }
       },
       "additionalProperties": null,
@@ -3903,484 +4005,6 @@
           "description": "The number of installments the buyer has to pay.",
           "type": "string",
           "format": "int64",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "Inventory": {
-      "id": "Inventory",
-      "description": null,
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "availability": {
-          "description": "The availability of the product. Acceptable values are: - \"`in stock`\" - \"`out of stock`\" - \"`preorder`\" ",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "customLabel0": {
-          "description": "Custom label 0 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "customLabel1": {
-          "description": "Custom label 1 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "customLabel2": {
-          "description": "Custom label 2 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "customLabel3": {
-          "description": "Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "customLabel4": {
-          "description": "Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "installment": {
-          "description": "Number and amount of installments to pay for an item. Brazil only.",
-          "$ref": "Installment"
-        },
-        "instoreProductLocation": {
-          "description": "The instore product location. Supported only for local products.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "kind": {
-          "description": "Identifies what kind of resource this is. Value: the fixed string \"`content#inventory`\"",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "loyaltyPoints": {
-          "description": "Loyalty points that users receive after purchasing the item. Japan only.",
-          "$ref": "LoyaltyPoints"
-        },
-        "pickup": {
-          "description": "Store pickup information. Only supported for local inventory. Not setting `pickup` means \"don't update\" while setting it to the empty value (`{}` in JSON) means \"delete\". Otherwise, `pickupMethod` and `pickupSla` must be set together, unless `pickupMethod` is \"not supported\".",
-          "$ref": "InventoryPickup"
-        },
-        "price": {
-          "description": "The price of the product.",
-          "$ref": "Price"
-        },
-        "quantity": {
-          "description": "The quantity of the product. Must be equal to or greater than zero. Supported only for local products.",
-          "type": "integer",
-          "format": "uint32",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "salePrice": {
-          "description": "The sale price of the product. Mandatory if `sale_price_effective_date` is defined.",
-          "$ref": "Price"
-        },
-        "salePriceEffectiveDate": {
-          "description": "A date range represented by a pair of ISO 8601 dates separated by a space, comma, or slash. Both dates might be specified as 'null' if undecided.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "sellOnGoogleQuantity": {
-          "description": "The quantity of the product that is available for selling on Google. Supported only for online products.",
-          "type": "integer",
-          "format": "uint32",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "InventoryCustomBatchRequest": {
-      "id": "InventoryCustomBatchRequest",
-      "description": null,
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "entries": {
-          "description": "The request entries to be processed in the batch.",
-          "type": "array",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": {
-            "$ref": "InventoryCustomBatchRequestEntry"
-          }
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "InventoryCustomBatchRequestEntry": {
-      "id": "InventoryCustomBatchRequestEntry",
-      "description": "A batch entry encoding a single non-batch inventory request.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "batchId": {
-          "description": "An entry ID, unique within the batch request.",
-          "type": "integer",
-          "format": "uint32",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "inventory": {
-          "description": "Price and availability of the product.",
-          "$ref": "Inventory"
-        },
-        "merchantId": {
-          "description": "The ID of the managing account.",
-          "type": "string",
-          "format": "uint64",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "productId": {
-          "description": "The ID of the product for which to update price and availability.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "storeCode": {
-          "description": "The code of the store for which to update price and availability. Use `online` to update price and availability of an online product.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "InventoryCustomBatchResponse": {
-      "id": "InventoryCustomBatchResponse",
-      "description": null,
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "entries": {
-          "description": "The result of the execution of the batch requests.",
-          "type": "array",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": {
-            "$ref": "InventoryCustomBatchResponseEntry"
-          }
-        },
-        "kind": {
-          "description": "Identifies what kind of resource this is. Value: the fixed string \"content#inventoryCustomBatchResponse\".",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "InventoryCustomBatchResponseEntry": {
-      "id": "InventoryCustomBatchResponseEntry",
-      "description": "A batch entry encoding a single non-batch inventory response.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "batchId": {
-          "description": "The ID of the request entry this entry responds to.",
-          "type": "integer",
-          "format": "uint32",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "errors": {
-          "description": "A list of errors defined if and only if the request failed.",
-          "$ref": "Errors"
-        },
-        "kind": {
-          "description": "Identifies what kind of resource this is. Value: the fixed string \"`content#inventoryCustomBatchResponseEntry`\"",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "InventoryPickup": {
-      "id": "InventoryPickup",
-      "description": null,
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "pickupMethod": {
-          "description": "Whether store pickup is available for this offer and whether the pickup option should be shown as buy, reserve, or not supported. Only supported for local inventory. Unless the value is \"not supported\", must be submitted together with `pickupSla`. Acceptable values are: - \"`buy`\" - \"`not supported`\" - \"`reserve`\" - \"`ship to store`\" ",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "pickupSla": {
-          "description": "The expected date that an order will be ready for pickup, relative to when the order is placed. Only supported for local inventory. Must be submitted together with `pickupMethod`. Acceptable values are: - \"`five day`\" - \"`four day`\" - \"`multi day`\" - \"`multi week`\" - \"`next day`\" - \"`same day`\" - \"`seven day`\" - \"`six day`\" - \"`three day`\" - \"`two day`\" ",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "InventorySetRequest": {
-      "id": "InventorySetRequest",
-      "description": null,
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "availability": {
-          "description": "The availability of the product. Acceptable values are: - \"`in stock`\" - \"`out of stock`\" - \"`preorder`\" ",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "customLabel0": {
-          "description": "Custom label 0 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "customLabel1": {
-          "description": "Custom label 1 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "customLabel2": {
-          "description": "Custom label 2 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "customLabel3": {
-          "description": "Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "customLabel4": {
-          "description": "Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "installment": {
-          "description": "Number and amount of installments to pay for an item. Brazil only.",
-          "$ref": "Installment"
-        },
-        "instoreProductLocation": {
-          "description": "The instore product location. Supported only for local products.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "loyaltyPoints": {
-          "description": "Loyalty points that users receive after purchasing the item. Japan only.",
-          "$ref": "LoyaltyPoints"
-        },
-        "pickup": {
-          "description": "Store pickup information. Only supported for local inventory. Not setting `pickup` means \"don't update\" while setting it to the empty value (`{}` in JSON) means \"delete\". Otherwise, `pickupMethod` and `pickupSla` must be set together, unless `pickupMethod` is \"not supported\".",
-          "$ref": "InventoryPickup"
-        },
-        "price": {
-          "description": "The price of the product.",
-          "$ref": "Price"
-        },
-        "quantity": {
-          "description": "The quantity of the product. Must be equal to or greater than zero. Supported only for local products.",
-          "type": "integer",
-          "format": "uint32",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "salePrice": {
-          "description": "The sale price of the product. Mandatory if `sale_price_effective_date` is defined.",
-          "$ref": "Price"
-        },
-        "salePriceEffectiveDate": {
-          "description": "A date range represented by a pair of ISO 8601 dates separated by a space, comma, or slash. Both dates might be specified as 'null' if undecided.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "sellOnGoogleQuantity": {
-          "description": "The quantity of the product that is available for selling on Google. Supported only for online products.",
-          "type": "integer",
-          "format": "uint32",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "InventorySetResponse": {
-      "id": "InventorySetResponse",
-      "description": null,
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "kind": {
-          "description": "Identifies what kind of resource this is. Value: the fixed string \"content#inventorySetResponse\".",
-          "type": "string",
-          "format": null,
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -10963,8 +10587,46 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "gcidCategory": {
+          "description": "The business type of the store.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
         "kind": {
           "description": "Identifies what kind of resource this is. Value: the fixed string \"`content#posStore`\"",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "phoneNumber": {
+          "description": "The store phone number.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "placeId": {
+          "description": "The Google Place Id of the store location.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -10985,6 +10647,26 @@
         },
         "storeCode": {
           "description": "Required. A store identifier that is unique for the given merchant.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "storeName": {
+          "description": "The merchant or store name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "websiteUrl": {
+          "description": "The website url for the store or merchant.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -11107,7 +10789,7 @@
     },
     "Product": {
       "id": "Product",
-      "description": " Required product attributes are primarily defined by the products data specification. See the Products Data Specification Help Center article for information. Some attributes are country-specific, so make sure you select the appropriate country in the drop-down selector at the top of the page. Product data. After inserting, updating, or deleting a product, it may take several minutes before changes take effect.",
+      "description": " Required product attributes are primarily defined by the products data specification. See the Products Data Specification Help Center article for information. Product data. After inserting, updating, or deleting a product, it may take several minutes before changes take effect.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -13576,6 +13258,18 @@
           "items": {
             "$ref": "Service"
           }
+        },
+        "warehouses": {
+          "description": "Optional. A list of warehouses which can be referred to in `services`.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Warehouse"
+          }
         }
       },
       "additionalProperties": null,
@@ -14661,6 +14355,174 @@
       "additionalProperties": null,
       "items": null
     },
+    "Warehouse": {
+      "id": "Warehouse",
+      "description": "A fulfillment warehouse, which stores and handles inventory.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "businessDayConfig": {
+          "description": "Business days of the warehouse. If not set, will be Monday to Friday by default.",
+          "$ref": "BusinessDayConfig"
+        },
+        "cutoffTime": {
+          "description": "Required. The latest time of day that an order can be accepted and begin processing. Later orders will be processed in the next day. The time is based on the warehouse postal code.",
+          "$ref": "WarehouseCutoffTime"
+        },
+        "handlingDays": {
+          "description": "Required. The number of days it takes for this warehouse to pack up and ship an item. This is on the warehouse level, but can be overridden on the offer level based on the attributes of an item.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Required. The name of the warehouse. Must be unique within account.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "shippingAddress": {
+          "description": "Required. Shipping address of the warehouse.",
+          "$ref": "Address"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "WarehouseBasedDeliveryTime": {
+      "id": "WarehouseBasedDeliveryTime",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "carrier": {
+          "description": "Required. Carrier, such as `\"UPS\"` or `\"Fedex\"`. The list of supported carriers can be retrieved via the `listSupportedCarriers` method.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "carrierService": {
+          "description": "Required. Carrier service, such as `\"ground\"` or `\"2 days\"`. The list of supported services for a carrier can be retrieved via the `listSupportedCarriers` method. The name of the service must be in the eddSupportedServices list.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "originAdministrativeArea": {
+          "description": "Shipping origin's state.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "originCity": {
+          "description": "Shipping origin's city.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "originCountry": {
+          "description": "Shipping origin's country represented as a [CLDR territory code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "originPostalCode": {
+          "description": "Shipping origin.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "originStreetAddress": {
+          "description": "Shipping origin's street address",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "warehouseName": {
+          "description": "The name of the warehouse. Warehouse name need to be matched with name. If warehouseName is set, the below fields will be ignored. The warehouse info will be read from warehouse.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "WarehouseCutoffTime": {
+      "id": "WarehouseCutoffTime",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "hour": {
+          "description": "Required. Hour (24-hour clock) of the cutoff time until which an order has to be placed to be processed in the same day by the warehouse. Hour is based on the timezone of warehouse.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "minute": {
+          "description": "Required. Minute of the cutoff time until which an order has to be placed to be processed in the same day by the warehouse. Minute is based on the timezone of warehouse.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Weight": {
       "id": "Weight",
       "description": null,
@@ -14680,7 +14542,7 @@
           "items": null
         },
         "value": {
-          "description": "Required. The weight represented as a number.",
+          "description": "Required. The weight represented as a number. The weight can have a maximum precision of four decimal places.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -16162,131 +16024,6 @@
           "request": null,
           "response": {
             "$ref": "DatafeedstatusesListResponse"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/content"
-          ],
-          "supportsMediaDownload": false,
-          "useMediaDownloadService": false,
-          "supportsSubscription": false,
-          "supportsMediaUpload": false,
-          "mediaUpload": null
-        }
-      }
-    },
-    "inventory": {
-      "resources": {},
-      "methods": {
-        "custombatch": {
-          "id": "content.inventory.custombatch",
-          "path": "inventory/batch",
-          "httpMethod": "POST",
-          "description": "Updates price and availability for multiple products or stores in a single request. This operation does not update the expiration date of the products.",
-          "parameters": {
-            "dryRun": {
-              "description": "Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).",
-              "default": null,
-              "location": "query",
-              "required": false,
-              "type": "boolean",
-              "format": null,
-              "minimum": null,
-              "maximum": null,
-              "pattern": null,
-              "enum": [],
-              "enumDescriptions": [],
-              "repeated": false
-            }
-          },
-          "parameterOrder": [],
-          "request": {
-            "$ref": "InventoryCustomBatchRequest"
-          },
-          "response": {
-            "$ref": "InventoryCustomBatchResponse"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/content"
-          ],
-          "supportsMediaDownload": false,
-          "useMediaDownloadService": false,
-          "supportsSubscription": false,
-          "supportsMediaUpload": false,
-          "mediaUpload": null
-        },
-        "set": {
-          "id": "content.inventory.set",
-          "path": "{merchantId}/inventory/{storeCode}/products/{productId}",
-          "httpMethod": "POST",
-          "description": "Updates price and availability of a product in your Merchant Center account.",
-          "parameters": {
-            "dryRun": {
-              "description": "Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).",
-              "default": null,
-              "location": "query",
-              "required": false,
-              "type": "boolean",
-              "format": null,
-              "minimum": null,
-              "maximum": null,
-              "pattern": null,
-              "enum": [],
-              "enumDescriptions": [],
-              "repeated": false
-            },
-            "merchantId": {
-              "description": "The ID of the account that contains the product. This account cannot be a multi-client account.",
-              "default": null,
-              "location": "path",
-              "required": true,
-              "type": "string",
-              "format": "uint64",
-              "minimum": null,
-              "maximum": null,
-              "pattern": null,
-              "enum": [],
-              "enumDescriptions": [],
-              "repeated": false
-            },
-            "productId": {
-              "description": "The REST ID of the product for which to update price and availability.",
-              "default": null,
-              "location": "path",
-              "required": true,
-              "type": "string",
-              "format": null,
-              "minimum": null,
-              "maximum": null,
-              "pattern": null,
-              "enum": [],
-              "enumDescriptions": [],
-              "repeated": false
-            },
-            "storeCode": {
-              "description": "The code of the store for which to update price and availability. Use `online` to update price and availability of an online product.",
-              "default": null,
-              "location": "path",
-              "required": true,
-              "type": "string",
-              "format": null,
-              "minimum": null,
-              "maximum": null,
-              "pattern": null,
-              "enum": [],
-              "enumDescriptions": [],
-              "repeated": false
-            }
-          },
-          "parameterOrder": [
-            "merchantId",
-            "storeCode",
-            "productId"
-          ],
-          "request": {
-            "$ref": "InventorySetRequest"
-          },
-          "response": {
-            "$ref": "InventorySetResponse"
           },
           "scopes": [
             "https://www.googleapis.com/auth/content"

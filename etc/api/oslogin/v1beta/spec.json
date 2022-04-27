@@ -7,7 +7,7 @@
   "canonicalName": "Cloud OS Login",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta",
-  "revision": "20210307",
+  "revision": "20220415",
   "title": "Cloud OS Login API",
   "description": "You can use OS Login to manage access to your VM instances using IAM roles.",
   "ownerDomain": "google.com",
@@ -201,10 +201,10 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         },
         "https://www.googleapis.com/auth/cloud-platform.read-only": {
-          "description": "View your data across Google Cloud Platform services"
+          "description": "View your data across Google Cloud services and see the email address of your Google Account"
         },
         "https://www.googleapis.com/auth/compute": {
           "description": "View and manage your Google Compute Engine resources"
@@ -218,7 +218,7 @@
   "schemas": {
     "Empty": {
       "id": "Empty",
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
+      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
       "type": "object",
       "format": null,
       "enum": [],
@@ -281,6 +281,18 @@
           "additionalProperties": null,
           "items": {
             "$ref": "PosixAccount"
+          }
+        },
+        "securityKeys": {
+          "description": "The registered security key credentials for a user.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "SecurityKey"
           }
         },
         "sshPublicKeys": {
@@ -430,6 +442,46 @@
       "additionalProperties": null,
       "items": null
     },
+    "SecurityKey": {
+      "id": "SecurityKey",
+      "description": "The credential information for a Google registered security key.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "privateKey": {
+          "description": "Hardware-backed private key text in SSH format.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "publicKey": {
+          "description": "Public key text in SSH format, defined by [RFC4253](\"https://www.ietf.org/rfc/rfc4253.txt\") section 6.6.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "universalTwoFactor": {
+          "description": "The U2F protocol type.",
+          "$ref": "UniversalTwoFactor"
+        },
+        "webAuthn": {
+          "description": "The Web Authentication protocol type.",
+          "$ref": "WebAuthn"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "SshPublicKey": {
       "id": "SshPublicKey",
       "description": "The SSH public key information associated with a Google account.",
@@ -470,6 +522,50 @@
         },
         "name": {
           "description": "Output only. The canonical resource name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "UniversalTwoFactor": {
+      "id": "UniversalTwoFactor",
+      "description": "Security key information specific to the U2F protocol.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "appId": {
+          "description": "Application ID for the U2F protocol.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "WebAuthn": {
+      "id": "WebAuthn",
+      "description": "Security key information specific to the Web Authentication protocol.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "rpId": {
+          "description": "Relying party ID for Web Authentication.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -532,6 +628,46 @@
         "sshPublicKeys": {
           "resources": {},
           "methods": {
+            "create": {
+              "id": "oslogin.users.sshPublicKeys.create",
+              "path": "v1beta/{+parent}/sshPublicKeys",
+              "httpMethod": "POST",
+              "description": "Create an SSH public key",
+              "parameters": {
+                "parent": {
+                  "description": "Required. The unique ID for the user in format `users/{user}`.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^users/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "parent"
+              ],
+              "request": {
+                "$ref": "SshPublicKey"
+              },
+              "response": {
+                "$ref": "SshPublicKey"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform",
+                "https://www.googleapis.com/auth/compute"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
             "delete": {
               "id": "oslogin.users.sshPublicKeys.delete",
               "path": "v1beta/{+name}",
@@ -713,6 +849,28 @@
               "enum": [],
               "enumDescriptions": [],
               "repeated": false
+            },
+            "view": {
+              "description": "The view configures whether to retrieve security keys information.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [
+                "LOGIN_PROFILE_VIEW_UNSPECIFIED",
+                "BASIC",
+                "SECURITY_KEY"
+              ],
+              "enumDescriptions": [
+                "The default login profile view. The API defaults to the BASIC view.",
+                "Includes POSIX and SSH key information.",
+                "Include security key information for the user."
+              ],
+              "repeated": false
             }
           },
           "parameterOrder": [
@@ -766,6 +924,28 @@
               "pattern": null,
               "enum": [],
               "enumDescriptions": [],
+              "repeated": false
+            },
+            "view": {
+              "description": "The view configures whether to retrieve security keys information.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [
+                "LOGIN_PROFILE_VIEW_UNSPECIFIED",
+                "BASIC",
+                "SECURITY_KEY"
+              ],
+              "enumDescriptions": [
+                "The default login profile view. The API defaults to the BASIC view.",
+                "Includes POSIX and SSH key information.",
+                "Include security key information for the user."
+              ],
               "repeated": false
             }
           },

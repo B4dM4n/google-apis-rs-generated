@@ -7,7 +7,7 @@
   "canonicalName": "Traffic Director Service",
   "fullyEncodeReservedExpansion": true,
   "version": "v2",
-  "revision": "20210312",
+  "revision": "20220330",
   "title": "Traffic Director API",
   "description": "",
   "ownerDomain": "google.com",
@@ -201,7 +201,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         }
       }
     }

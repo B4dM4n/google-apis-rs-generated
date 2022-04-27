@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("libraryagent1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210317")
+            .version("0.1.0-20220425")
             .about("A simple Google Example Library API.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -62,7 +62,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             books1 = books1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("r#return").about("Return a book to the library. Returns the book if it is returned to the library successfully. Returns error if the book does not belong to the library or the users didn\'t borrow before.");
+            let mcmd = SubCommand::with_name("r#return").about("Return a book to the library. Returns the book if it is returned to the library successfully. Returns error if the book does not belong to the library or the users didn't borrow before.");
             books1 = books1.subcommand(mcmd);
         }
         shelves0 = shelves0.subcommand(books1);

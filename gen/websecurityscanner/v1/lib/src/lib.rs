@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [scan_configs](resources/projects/scan_configs/struct.ScanConfigsActions.html)\n        * [*create*](resources/projects/scan_configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/scan_configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/scan_configs/struct.GetRequestBuilder.html), [*list*](resources/projects/scan_configs/struct.ListRequestBuilder.html), [*patch*](resources/projects/scan_configs/struct.PatchRequestBuilder.html), [*start*](resources/projects/scan_configs/struct.StartRequestBuilder.html)\n        * [scan_runs](resources/projects/scan_configs/scan_runs/struct.ScanRunsActions.html)\n          * [*get*](resources/projects/scan_configs/scan_runs/struct.GetRequestBuilder.html), [*list*](resources/projects/scan_configs/scan_runs/struct.ListRequestBuilder.html), [*stop*](resources/projects/scan_configs/scan_runs/struct.StopRequestBuilder.html)\n          * [crawled_urls](resources/projects/scan_configs/scan_runs/crawled_urls/struct.CrawledUrlsActions.html)\n            * [*list*](resources/projects/scan_configs/scan_runs/crawled_urls/struct.ListRequestBuilder.html)\n          * [finding_type_stats](resources/projects/scan_configs/scan_runs/finding_type_stats/struct.FindingTypeStatsActions.html)\n            * [*list*](resources/projects/scan_configs/scan_runs/finding_type_stats/struct.ListRequestBuilder.html)\n          * [findings](resources/projects/scan_configs/scan_runs/findings/struct.FindingsActions.html)\n            * [*get*](resources/projects/scan_configs/scan_runs/findings/struct.GetRequestBuilder.html), [*list*](resources/projects/scan_configs/scan_runs/findings/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -295,6 +295,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub xss: ::std::option::Option<crate::schemas::Xss>,
+        #[doc = "Output only. An addon containing information reported for an XXE, if any."]
+        #[serde(
+            rename = "xxe",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub xxe: ::std::option::Option<crate::schemas::Xxe>,
     }
     impl ::google_field_selector::FieldSelector for Finding {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -877,6 +884,13 @@ pub mod schemas {
         )]
         pub export_to_security_command_center:
             ::std::option::Option<crate::schemas::ScanConfigExportToSecurityCommandCenter>,
+        #[doc = "Whether to keep scanning even if most requests return HTTP error codes."]
+        #[serde(
+            rename = "ignoreHttpStatusErrors",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ignore_http_status_errors: ::std::option::Option<bool>,
         #[doc = "Whether the scan config is managed by Web Security Scanner, output only."]
         #[serde(
             rename = "managedScan",
@@ -966,7 +980,7 @@ pub mod schemas {
     impl ::std::str::FromStr for ScanConfigExportToSecurityCommandCenter {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<ScanConfigExportToSecurityCommandCenter, ()> {
-            Ok ( match s { "DISABLED" => ScanConfigExportToSecurityCommandCenter :: Disabled , "ENABLED" => ScanConfigExportToSecurityCommandCenter :: Enabled , "EXPORT_TO_SECURITY_COMMAND_CENTER_UNSPECIFIED" => ScanConfigExportToSecurityCommandCenter :: ExportToSecurityCommandCenterUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "DISABLED" => ScanConfigExportToSecurityCommandCenter :: Disabled , "ENABLED" => ScanConfigExportToSecurityCommandCenter :: Enabled , "EXPORT_TO_SECURITY_COMMAND_CENTER_UNSPECIFIED" => ScanConfigExportToSecurityCommandCenter :: ExportToSecurityCommandCenterUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for ScanConfigExportToSecurityCommandCenter {
@@ -988,7 +1002,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "DISABLED" => ScanConfigExportToSecurityCommandCenter :: Disabled , "ENABLED" => ScanConfigExportToSecurityCommandCenter :: Enabled , "EXPORT_TO_SECURITY_COMMAND_CENTER_UNSPECIFIED" => ScanConfigExportToSecurityCommandCenter :: ExportToSecurityCommandCenterUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "DISABLED" => ScanConfigExportToSecurityCommandCenter :: Disabled , "ENABLED" => ScanConfigExportToSecurityCommandCenter :: Enabled , "EXPORT_TO_SECURITY_COMMAND_CENTER_UNSPECIFIED" => ScanConfigExportToSecurityCommandCenter :: ExportToSecurityCommandCenterUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector for ScanConfigExportToSecurityCommandCenter {
@@ -2473,6 +2487,115 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for XssAttackVector {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Xxe {
+        #[doc = "Location within the request where the payload was placed."]
+        #[serde(
+            rename = "payloadLocation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub payload_location: ::std::option::Option<crate::schemas::XxePayloadLocation>,
+        #[doc = "The XML string that triggered the XXE vulnerability. Non-payload values might be redacted."]
+        #[serde(
+            rename = "payloadValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub payload_value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Xxe {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Xxe {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum XxePayloadLocation {
+        #[doc = "The XML payload replaced the complete request body."]
+        CompleteRequestBody,
+        #[doc = "Unknown Location."]
+        LocationUnspecified,
+    }
+    impl XxePayloadLocation {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                XxePayloadLocation::CompleteRequestBody => "COMPLETE_REQUEST_BODY",
+                XxePayloadLocation::LocationUnspecified => "LOCATION_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for XxePayloadLocation {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for XxePayloadLocation {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<XxePayloadLocation, ()> {
+            Ok(match s {
+                "COMPLETE_REQUEST_BODY" => XxePayloadLocation::CompleteRequestBody,
+                "LOCATION_UNSPECIFIED" => XxePayloadLocation::LocationUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for XxePayloadLocation {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for XxePayloadLocation {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for XxePayloadLocation {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "COMPLETE_REQUEST_BODY" => XxePayloadLocation::CompleteRequestBody,
+                "LOCATION_UNSPECIFIED" => XxePayloadLocation::LocationUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for XxePayloadLocation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for XxePayloadLocation {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4007,14 +4130,14 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Actions that can be performed on the crawled_urls resource"]                    pub fn crawled_urls ( & self ) -> crate :: resources :: projects :: scan_configs :: scan_runs :: crawled_urls :: CrawledUrlsActions{
-                        crate :: resources :: projects :: scan_configs :: scan_runs :: crawled_urls :: CrawledUrlsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the crawled_urls resource"]                    pub fn crawled_urls (& self) -> crate :: resources :: projects :: scan_configs :: scan_runs :: crawled_urls :: CrawledUrlsActions{
+                        crate :: resources :: projects :: scan_configs :: scan_runs :: crawled_urls :: CrawledUrlsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the finding_type_stats resource"]                    pub fn finding_type_stats ( & self ) -> crate :: resources :: projects :: scan_configs :: scan_runs :: finding_type_stats :: FindingTypeStatsActions{
-                        crate :: resources :: projects :: scan_configs :: scan_runs :: finding_type_stats :: FindingTypeStatsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the finding_type_stats resource"]                    pub fn finding_type_stats (& self) -> crate :: resources :: projects :: scan_configs :: scan_runs :: finding_type_stats :: FindingTypeStatsActions{
+                        crate :: resources :: projects :: scan_configs :: scan_runs :: finding_type_stats :: FindingTypeStatsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
-                    #[doc = "Actions that can be performed on the findings resource"]                    pub fn findings ( & self ) -> crate :: resources :: projects :: scan_configs :: scan_runs :: findings :: FindingsActions{
-                        crate :: resources :: projects :: scan_configs :: scan_runs :: findings :: FindingsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the findings resource"]                    pub fn findings (& self) -> crate :: resources :: projects :: scan_configs :: scan_runs :: findings :: FindingsActions{
+                        crate :: resources :: projects :: scan_configs :: scan_runs :: findings :: FindingsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 #[doc = "Created via [ScanRunsActions::get()](struct.ScanRunsActions.html#method.get)"]

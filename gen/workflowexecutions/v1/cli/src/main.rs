@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("workflowexecutions1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210309")
+            .version("0.1.0-20220412")
             .about("Execute workflows created with Workflows API.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -41,7 +41,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: workflows");
         let mut workflows2 = SubCommand::with_name("workflows")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: executions");
+            .about("methods: trigger_pubsub_execution");
+        {
+            let mcmd = SubCommand::with_name("trigger_pubsub_execution").about("Triggers a new execution using the latest revision of the given workflow by a Pub/Sub push notification.");
+            workflows2 = workflows2.subcommand(mcmd);
+        }
         let mut executions3 = SubCommand::with_name("executions")
             .setting(AppSettings::ColoredHelp)
             .about("methods: cancel, create, get and list");

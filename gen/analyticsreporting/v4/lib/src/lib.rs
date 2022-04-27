@@ -2479,6 +2479,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub data_last_refreshed: ::std::option::Option<String>,
+        #[doc = "If empty reason is specified, the report is empty for this reason."]
+        #[serde(
+            rename = "emptyReason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub empty_reason: ::std::option::Option<String>,
         #[doc = "Indicates if response to this request is golden or not. Data is golden when the exact same request will not produce any new results if asked at a later point in time."]
         #[serde(
             rename = "isDataGolden",

@@ -1546,7 +1546,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct DictlayerdataDictWordsItemsSensesItemsDefinitionsItemsExamplesItems { # [ serde ( rename = "source" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub source : :: std :: option :: Option < crate :: schemas :: DictlayerdataDictWordsItemsSensesItemsDefinitionsItemsExamplesItemsSource > , # [ serde ( rename = "text" , default , skip_serializing_if = "std::option::Option::is_none" ) ] pub text : :: std :: option :: Option < String > , }
+    pub struct DictlayerdataDictWordsItemsSensesItemsDefinitionsItemsExamplesItems { # [serde (rename = "source" , default , skip_serializing_if = "std::option::Option::is_none")] pub source : :: std :: option :: Option < crate :: schemas :: DictlayerdataDictWordsItemsSensesItemsDefinitionsItemsExamplesItemsSource > , # [serde (rename = "text" , default , skip_serializing_if = "std::option::Option::is_none")] pub text : :: std :: option :: Option < String > , }
     impl ::google_field_selector::FieldSelector
         for DictlayerdataDictWordsItemsSensesItemsDefinitionsItemsExamplesItems
     {
@@ -14445,7 +14445,7 @@ pub mod resources {
                     s: &str,
                 ) -> ::std::result::Result<ListCategoryVolumesMaxAllowedMaturityRating, ()>
                 {
-                    Ok ( match s { "MATURE" => ListCategoryVolumesMaxAllowedMaturityRating :: Mature , "MAX_ALLOWED_MATURITY_RATING_UNDEFINED" => ListCategoryVolumesMaxAllowedMaturityRating :: MaxAllowedMaturityRatingUndefined , "not-mature" => ListCategoryVolumesMaxAllowedMaturityRating :: NotMature , _ => return Err ( ( ) ) , } )
+                    Ok (match s { "MATURE" => ListCategoryVolumesMaxAllowedMaturityRating :: Mature , "MAX_ALLOWED_MATURITY_RATING_UNDEFINED" => ListCategoryVolumesMaxAllowedMaturityRating :: MaxAllowedMaturityRatingUndefined , "not-mature" => ListCategoryVolumesMaxAllowedMaturityRating :: NotMature , _ => return Err (()) , })
                 }
             }
             impl ::std::fmt::Display for ListCategoryVolumesMaxAllowedMaturityRating {
@@ -14467,7 +14467,7 @@ pub mod resources {
                     D: ::serde::de::Deserializer<'de>,
                 {
                     let value: &'de str = <&str>::deserialize(deserializer)?;
-                    Ok ( match value { "MATURE" => ListCategoryVolumesMaxAllowedMaturityRating :: Mature , "MAX_ALLOWED_MATURITY_RATING_UNDEFINED" => ListCategoryVolumesMaxAllowedMaturityRating :: MaxAllowedMaturityRatingUndefined , "not-mature" => ListCategoryVolumesMaxAllowedMaturityRating :: NotMature , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+                    Ok (match value { "MATURE" => ListCategoryVolumesMaxAllowedMaturityRating :: Mature , "MAX_ALLOWED_MATURITY_RATING_UNDEFINED" => ListCategoryVolumesMaxAllowedMaturityRating :: MaxAllowedMaturityRatingUndefined , "not-mature" => ListCategoryVolumesMaxAllowedMaturityRating :: NotMature , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
                 }
             }
             impl ::google_field_selector::FieldSelector for ListCategoryVolumesMaxAllowedMaturityRating {

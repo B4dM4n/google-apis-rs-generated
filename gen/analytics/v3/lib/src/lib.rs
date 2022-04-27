@@ -8373,8 +8373,8 @@ pub mod resources {
                     auth: self.auth_ref(),
                 }
             }
-            #[doc = "Actions that can be performed on the web_property_ad_words_links resource"]            pub fn web_property_ad_words_links ( & self ) -> crate :: resources :: management :: web_property_ad_words_links :: WebPropertyAdWordsLinksActions{
-                crate :: resources :: management :: web_property_ad_words_links :: WebPropertyAdWordsLinksActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+            #[doc = "Actions that can be performed on the web_property_ad_words_links resource"]            pub fn web_property_ad_words_links (& self) -> crate :: resources :: management :: web_property_ad_words_links :: WebPropertyAdWordsLinksActions{
+                crate :: resources :: management :: web_property_ad_words_links :: WebPropertyAdWordsLinksActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
             }
             #[doc = "Actions that can be performed on the webproperties resource"]
             pub fn webproperties(

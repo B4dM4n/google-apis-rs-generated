@@ -1,8 +1,8 @@
-#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*getBiReservation*](resources/projects/locations/struct.GetBiReservationRequestBuilder.html), [*searchAssignments*](resources/projects/locations/struct.SearchAssignmentsRequestBuilder.html), [*updateBiReservation*](resources/projects/locations/struct.UpdateBiReservationRequestBuilder.html)\n        * [capacity_commitments](resources/projects/locations/capacity_commitments/struct.CapacityCommitmentsActions.html)\n          * [*create*](resources/projects/locations/capacity_commitments/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/capacity_commitments/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/capacity_commitments/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/capacity_commitments/struct.ListRequestBuilder.html), [*merge*](resources/projects/locations/capacity_commitments/struct.MergeRequestBuilder.html), [*patch*](resources/projects/locations/capacity_commitments/struct.PatchRequestBuilder.html), [*split*](resources/projects/locations/capacity_commitments/struct.SplitRequestBuilder.html)\n        * [reservations](resources/projects/locations/reservations/struct.ReservationsActions.html)\n          * [*create*](resources/projects/locations/reservations/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/reservations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/reservations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/reservations/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/reservations/struct.PatchRequestBuilder.html)\n          * [assignments](resources/projects/locations/reservations/assignments/struct.AssignmentsActions.html)\n            * [*create*](resources/projects/locations/reservations/assignments/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/reservations/assignments/struct.DeleteRequestBuilder.html), [*list*](resources/projects/locations/reservations/assignments/struct.ListRequestBuilder.html), [*move*](resources/projects/locations/reservations/assignments/struct.MoveRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*getBiReservation*](resources/projects/locations/struct.GetBiReservationRequestBuilder.html), [*searchAssignments*](resources/projects/locations/struct.SearchAssignmentsRequestBuilder.html), [*updateBiReservation*](resources/projects/locations/struct.UpdateBiReservationRequestBuilder.html)\n        * [capacity_commitments](resources/projects/locations/capacity_commitments/struct.CapacityCommitmentsActions.html)\n          * [*create*](resources/projects/locations/capacity_commitments/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/capacity_commitments/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/capacity_commitments/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/capacity_commitments/struct.ListRequestBuilder.html), [*merge*](resources/projects/locations/capacity_commitments/struct.MergeRequestBuilder.html), [*patch*](resources/projects/locations/capacity_commitments/struct.PatchRequestBuilder.html), [*split*](resources/projects/locations/capacity_commitments/struct.SplitRequestBuilder.html)\n        * [reservations](resources/projects/locations/reservations/struct.ReservationsActions.html)\n          * [*create*](resources/projects/locations/reservations/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/reservations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/reservations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/reservations/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/reservations/struct.PatchRequestBuilder.html)\n          * [assignments](resources/projects/locations/reservations/assignments/struct.AssignmentsActions.html)\n            * [*create*](resources/projects/locations/reservations/assignments/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/reservations/assignments/struct.DeleteRequestBuilder.html), [*list*](resources/projects/locations/reservations/assignments/struct.ListRequestBuilder.html), [*move*](resources/projects/locations/reservations/assignments/struct.MoveRequestBuilder.html), [*patch*](resources/projects/locations/reservations/assignments/struct.PatchRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data in Google BigQuery\n\n`https://www.googleapis.com/auth/bigquery`"]
+    #[doc = "View and manage your data in Google BigQuery and see the email address for your Google Account\n\n`https://www.googleapis.com/auth/bigquery`"]
     pub const BIGQUERY: &str = "https://www.googleapis.com/auth/bigquery";
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -33,7 +33,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub job_type: ::std::option::Option<crate::schemas::AssignmentJobType>,
-        #[doc = "Output only. Name of the resource. E.g.: `projects/myproject/locations/US/reservations/team1-prod/assignments/123`."]
+        #[doc = "Output only. Name of the resource. E.g.: `projects/myproject/locations/US/reservations/team1-prod/assignments/123`. The assignment_id must only contain lower case alphanumeric characters or dashes and the max length is 64 characters."]
         #[serde(
             rename = "name",
             default,
@@ -235,6 +235,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "Preferred tables to use BI capacity for."]
+        #[serde(
+            rename = "preferredTables",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub preferred_tables: ::std::option::Option<Vec<crate::schemas::TableReference>>,
         #[doc = "Size of a reservation, in bytes."]
         #[serde(
             rename = "size",
@@ -284,7 +291,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub failure_status: ::std::option::Option<crate::schemas::Status>,
-        #[doc = "Output only. The resource name of the capacity commitment, e.g., `projects/myproject/locations/US/capacityCommitments/123`"]
+        #[doc = "Applicable only for commitments located within one of the BigQuery multi-regions (US or EU). If set to true, this commitment is placed in the organization's secondary region which is designated for disaster recovery purposes. If false, this commitment is placed in the organization's default region."]
+        #[serde(
+            rename = "multiRegionAuxiliary",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub multi_region_auxiliary: ::std::option::Option<bool>,
+        #[doc = "Output only. The resource name of the capacity commitment, e.g., `projects/myproject/locations/US/capacityCommitments/123` The commitment_id must only contain lower case alphanumeric characters or dashes. It must start with a letter and must not end with a dash. Its maximum length is 64 characters."]
         #[serde(
             rename = "name",
             default,
@@ -511,11 +525,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum CapacityCommitmentState {
-        #[doc = "Once slots are provisioned, capacity commitment becomes active. slot_count is added to the parent's slot_capacity."]
+        #[doc = "Once slots are provisioned, capacity commitment becomes active. slot_count is added to the project's slot_capacity."]
         Active,
         #[doc = "Capacity commitment is failed to be activated by the backend."]
         Failed,
-        #[doc = "Capacity commitment is pending provisioning. Pending capacity commitment does not contribute to the parent's slot_capacity."]
+        #[doc = "Capacity commitment is pending provisioning. Pending capacity commitment does not contribute to the project's slot_capacity."]
         Pending,
         #[doc = "Invalid state value."]
         StateUnspecified,
@@ -586,37 +600,6 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CapacityCommitmentState {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct CreateSlotPoolMetadata {
-        #[doc = "Resource name of the slot pool that is being created. E.g., projects/myproject/locations/us-central1/reservations/foo/slotPools/123"]
-        #[serde(
-            rename = "slotPool",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub slot_pool: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for CreateSlotPoolMetadata {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for CreateSlotPoolMetadata {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -823,6 +806,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Reservation {
+        #[doc = "Maximum number of queries that are allowed to run concurrently in this reservation. This is a soft limit due to asynchronous nature of the system and various optimizations for small queries. Default value is 0 which means that concurrency will be automatically set based on the reservation size."]
+        #[serde(
+            rename = "concurrency",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub concurrency: ::std::option::Option<i64>,
         #[doc = "Output only. Creation time of the reservation."]
         #[serde(
             rename = "creationTime",
@@ -830,29 +821,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub creation_time: ::std::option::Option<String>,
-        #[doc = "If false, any query using this reservation will use idle slots from other reservations within the same admin project. If true, a query using this reservation will execute with the slot capacity specified above at most."]
+        #[doc = "If false, any query or pipeline job using this reservation will use idle slots from other reservations within the same admin project. If true, a query or pipeline job using this reservation will execute with the slot capacity specified in the slot_capacity field at most."]
         #[serde(
             rename = "ignoreIdleSlots",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ignore_idle_slots: ::std::option::Option<bool>,
-        #[doc = "Maximum number of queries that are allowed to run concurrently in this reservation. Default value is 0 which means that maximum concurrency will be automatically set based on the reservation size."]
+        #[doc = "Applicable only for reservations located within one of the BigQuery multi-regions (US or EU). If set to true, this reservation is placed in the organization's secondary region which is designated for disaster recovery purposes. If false, this reservation is placed in the organization's default region."]
         #[serde(
-            rename = "maxConcurrency",
+            rename = "multiRegionAuxiliary",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        #[serde(with = "crate::parsed_string")]
-        pub max_concurrency: ::std::option::Option<i64>,
-        #[doc = "The resource name of the reservation, e.g., `projects/*/locations/*/reservations/team1-prod`."]
+        pub multi_region_auxiliary: ::std::option::Option<bool>,
+        #[doc = "The resource name of the reservation, e.g., `projects/*/locations/*/reservations/team1-prod`. The reservation_id must only contain lower case alphanumeric characters or dashes. It must start with a letter and must not end with a dash. Its maximum length is 64 characters."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Minimum slots available to this reservation. A slot is a unit of computational power in BigQuery, and serves as the unit of parallelism. Queries using this reservation might use more slots during runtime if ignore_idle_slots is set to false. If the new reservation's slot capacity exceed the parent's slot capacity or if total slot capacity of the new reservation and its siblings exceeds the parent's slot capacity, the request will fail with `google.rpc.Code.RESOURCE_EXHAUSTED`."]
+        #[doc = "Minimum slots available to this reservation. A slot is a unit of computational power in BigQuery, and serves as the unit of parallelism. Queries using this reservation might use more slots during runtime if ignore_idle_slots is set to false. If the new reservation's slot capacity exceeds the project's slot capacity or if total slot capacity of the new reservation and its siblings exceeds the project's slot capacity, the request will fail with `google.rpc.Code.RESOURCE_EXHAUSTED`. NOTE: for reservations in US or EU multi-regions, slot capacity constraints are checked separately for default and auxiliary regions. See multi_region_auxiliary flag for more details."]
         #[serde(
             rename = "slotCapacity",
             default,
@@ -1006,6 +996,51 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Status {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct TableReference {
+        #[doc = "The ID of the dataset in the above project."]
+        #[serde(
+            rename = "datasetId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dataset_id: ::std::option::Option<String>,
+        #[doc = "The assigned project ID of the project."]
+        #[serde(
+            rename = "projectId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub project_id: ::std::option::Option<String>,
+        #[doc = "The ID of the table in the above dataset."]
+        #[serde(
+            rename = "tableId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub table_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for TableReference {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TableReference {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1298,8 +1333,8 @@ pub mod resources {
                         update_mask: None,
                     }
                 }
-                #[doc = "Actions that can be performed on the capacity_commitments resource"]                pub fn capacity_commitments ( & self ) -> crate :: resources :: projects :: locations :: capacity_commitments :: CapacityCommitmentsActions{
-                    crate :: resources :: projects :: locations :: capacity_commitments :: CapacityCommitmentsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the capacity_commitments resource"]                pub fn capacity_commitments (& self) -> crate :: resources :: projects :: locations :: capacity_commitments :: CapacityCommitmentsActions{
+                    crate :: resources :: projects :: locations :: capacity_commitments :: CapacityCommitmentsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
                 #[doc = "Actions that can be performed on the reservations resource"]
                 pub fn reservations(
@@ -1965,6 +2000,7 @@ pub mod resources {
                             upload_type: None,
                             xgafv: None,
                             parent: parent.into(),
+                            capacity_commitment_id: None,
                             enforce_single_admin_project_per_org: None,
                         }
                     }
@@ -1985,6 +2021,7 @@ pub mod resources {
                             upload_type: None,
                             xgafv: None,
                             name: name.into(),
+                            force: None,
                         }
                     }
                     #[doc = "Returns information about the capacity commitment."]
@@ -2076,7 +2113,7 @@ pub mod resources {
                             update_mask: None,
                         }
                     }
-                    #[doc = "Splits capacity commitment to two commitments of the same plan and `commitment_end_time`. A common use case is to enable downgrading commitments. For example, in order to downgrade from 10000 slots to 8000, you might split a 10000 capacity commitment into commitments of 2000 and 8000. Then, you would change the plan of the first one to `FLEX` and then delete it."]
+                    #[doc = "Splits capacity commitment to two commitments of the same plan and `commitment_end_time`. A common use case is to enable downgrading commitments. For example, in order to downgrade from 10000 slots to 8000, you might split a 10000 capacity commitment into commitments of 2000 and 8000. Then, you delete the first one after the commitment end time passes."]
                     pub fn split(
                         &self,
                         request: crate::schemas::SplitCapacityCommitmentRequest,
@@ -2108,6 +2145,7 @@ pub mod resources {
                     pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                     request: crate::schemas::CapacityCommitment,
                     parent: String,
+                    capacity_commitment_id: Option<String>,
                     enforce_single_admin_project_per_org: Option<bool>,
                     access_token: Option<String>,
                     alt: Option<crate::params::Alt>,
@@ -2122,6 +2160,11 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> CreateRequestBuilder<'a> {
+                    #[doc = "The optional capacity commitment ID. Capacity commitment name will be generated automatically if this field is empty. This field must only contain lower case alphanumeric characters or dashes. The first and last character cannot be a dash. Max length is 64 characters. NOTE: this ID won't be kept if the capacity commitment is split or merged."]
+                    pub fn capacity_commitment_id(mut self, value: impl Into<String>) -> Self {
+                        self.capacity_commitment_id = Some(value.into());
+                        self
+                    }
                     #[doc = "If true, fail the request if another project in the organization has a capacity commitment."]
                     pub fn enforce_single_admin_project_per_org(mut self, value: bool) -> Self {
                         self.enforce_single_admin_project_per_org = Some(value);
@@ -2253,6 +2296,7 @@ pub mod resources {
                     ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
                     {
                         let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("capacityCommitmentId", &self.capacity_commitment_id)]);
                         req = req.query(&[(
                             "enforceSingleAdminProjectPerOrg",
                             &self.enforce_single_admin_project_per_org,
@@ -2282,6 +2326,7 @@ pub mod resources {
                     pub(crate) reqwest: &'a ::reqwest::blocking::Client,
                     pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                     name: String,
+                    force: Option<bool>,
                     access_token: Option<String>,
                     alt: Option<crate::params::Alt>,
                     callback: Option<String>,
@@ -2295,6 +2340,11 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> DeleteRequestBuilder<'a> {
+                    #[doc = "Can be used to force delete commitments even if assignments exist. Deleting commitments with assignments may cause queries to fail if they no longer have access to slots."]
+                    pub fn force(mut self, value: bool) -> Self {
+                        self.force = Some(value);
+                        self
+                    }
                     #[doc = "OAuth access token."]
                     pub fn access_token(mut self, value: impl Into<String>) -> Self {
                         self.access_token = Some(value.into());
@@ -2417,6 +2467,7 @@ pub mod resources {
                     ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
                     {
                         let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                        req = req.query(&[("force", &self.force)]);
                         req = req.query(&[("access_token", &self.access_token)]);
                         req = req.query(&[("alt", &self.alt)]);
                         req = req.query(&[("callback", &self.callback)]);
@@ -3512,8 +3563,8 @@ pub mod resources {
                             update_mask: None,
                         }
                     }
-                    #[doc = "Actions that can be performed on the assignments resource"]                    pub fn assignments ( & self ) -> crate :: resources :: projects :: locations :: reservations :: assignments :: AssignmentsActions{
-                        crate :: resources :: projects :: locations :: reservations :: assignments :: AssignmentsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                    #[doc = "Actions that can be performed on the assignments resource"]                    pub fn assignments (& self) -> crate :: resources :: projects :: locations :: reservations :: assignments :: AssignmentsActions{
+                        crate :: resources :: projects :: locations :: reservations :: assignments :: AssignmentsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 #[doc = "Created via [ReservationsActions::create()](struct.ReservationsActions.html#method.create)"]
@@ -3537,7 +3588,7 @@ pub mod resources {
                     xgafv: Option<crate::params::Xgafv>,
                 }
                 impl<'a> CreateRequestBuilder<'a> {
-                    #[doc = "The reservation ID. This field must only contain lower case alphanumeric characters or dash. Max length is 64 characters."]
+                    #[doc = "The reservation ID. It must only contain lower case alphanumeric characters or dashes. It must start with a letter and must not end with a dash. Its maximum length is 64 characters."]
                     pub fn reservation_id(mut self, value: impl Into<String>) -> Self {
                         self.reservation_id = Some(value.into());
                         self
@@ -4505,6 +4556,7 @@ pub mod resources {
                                 upload_type: None,
                                 xgafv: None,
                                 parent: parent.into(),
+                                assignment_id: None,
                             }
                         }
                         #[doc = "Deletes a assignment. No expansion will happen. Example: * Organization `organizationA` contains two projects, `project1` and `project2`. * Reservation `res1` exists and was created previously. * CreateAssignment was used previously to define the following associations between entities and reservations: `and` In this example, deletion of the `assignment won't affect the other assignment`. After said deletion, queries from `project1` will still use `res1` while queries from `project2` will switch to use on-demand mode."]
@@ -4571,6 +4623,31 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
+                        #[doc = "Updates an existing assignment. Only the `priority` field can be updated."]
+                        pub fn patch(
+                            &self,
+                            request: crate::schemas::Assignment,
+                            name: impl Into<String>,
+                        ) -> PatchRequestBuilder {
+                            PatchRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
+                                update_mask: None,
+                            }
+                        }
                     }
                     #[doc = "Created via [AssignmentsActions::create()](struct.AssignmentsActions.html#method.create)"]
                     #[derive(Debug, Clone)]
@@ -4579,6 +4656,7 @@ pub mod resources {
                         pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                         request: crate::schemas::Assignment,
                         parent: String,
+                        assignment_id: Option<String>,
                         access_token: Option<String>,
                         alt: Option<crate::params::Alt>,
                         callback: Option<String>,
@@ -4592,6 +4670,11 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> CreateRequestBuilder<'a> {
+                        #[doc = "The optional assignment ID. Assignment name will be generated automatically if this field is empty. This field must only contain lower case alphanumeric characters or dashes. Max length is 64 characters."]
+                        pub fn assignment_id(mut self, value: impl Into<String>) -> Self {
+                            self.assignment_id = Some(value.into());
+                            self
+                        }
                         #[doc = "OAuth access token."]
                         pub fn access_token(mut self, value: impl Into<String>) -> Self {
                             self.access_token = Some(value.into());
@@ -4720,6 +4803,7 @@ pub mod resources {
                         ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
                         {
                             let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("assignmentId", &self.assignment_id)]);
                             req = req.query(&[("access_token", &self.access_token)]);
                             req = req.query(&[("alt", &self.alt)]);
                             req = req.query(&[("callback", &self.callback)]);
@@ -5346,6 +5430,179 @@ pub mod resources {
                         ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
                         {
                             let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            req = req.bearer_auth(
+                                self.auth
+                                    .access_token()
+                                    .map_err(|err| crate::Error::OAuth2(err))?,
+                            );
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [AssignmentsActions::patch()](struct.AssignmentsActions.html#method.patch)"]
+                    #[derive(Debug, Clone)]
+                    pub struct PatchRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::Assignment,
+                        name: String,
+                        update_mask: Option<String>,
+                        access_token: Option<String>,
+                        alt: Option<crate::params::Alt>,
+                        callback: Option<String>,
+                        fields: Option<String>,
+                        key: Option<String>,
+                        oauth_token: Option<String>,
+                        pretty_print: Option<bool>,
+                        quota_user: Option<String>,
+                        upload_protocol: Option<String>,
+                        upload_type: Option<String>,
+                        xgafv: Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> PatchRequestBuilder<'a> {
+                        #[doc = "Standard field mask for the set of fields to be updated."]
+                        pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                            self.update_mask = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields)
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::Assignment, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>)
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::Assignment, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*"))
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute()
+                        }
+                        fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path())?;
+                            let req = req.json(&self.request);
+                            Ok(crate::error_from_response(req.send()?)?.json()?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output =
+                                "https://bigqueryreservation.googleapis.com/".to_owned();
+                            output.push_str("v1beta1/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output
+                        }
+                        fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                            req = req.query(&[("updateMask", &self.update_mask)]);
                             req = req.query(&[("access_token", &self.access_token)]);
                             req = req.query(&[("alt", &self.alt)]);
                             req = req.query(&[("callback", &self.callback)]);

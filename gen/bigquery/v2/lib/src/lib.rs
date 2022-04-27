@@ -1,22 +1,20 @@
-#![doc = "# Resources and Methods\n    * [datasets](resources/datasets/struct.DatasetsActions.html)\n      * [*delete*](resources/datasets/struct.DeleteRequestBuilder.html), [*get*](resources/datasets/struct.GetRequestBuilder.html), [*insert*](resources/datasets/struct.InsertRequestBuilder.html), [*list*](resources/datasets/struct.ListRequestBuilder.html), [*patch*](resources/datasets/struct.PatchRequestBuilder.html), [*update*](resources/datasets/struct.UpdateRequestBuilder.html)\n    * [jobs](resources/jobs/struct.JobsActions.html)\n      * [*cancel*](resources/jobs/struct.CancelRequestBuilder.html), [*get*](resources/jobs/struct.GetRequestBuilder.html), [*getQueryResults*](resources/jobs/struct.GetQueryResultsRequestBuilder.html), [*insert*](resources/jobs/struct.InsertRequestBuilder.html), [*list*](resources/jobs/struct.ListRequestBuilder.html), [*query*](resources/jobs/struct.QueryRequestBuilder.html)\n    * [models](resources/models/struct.ModelsActions.html)\n      * [*delete*](resources/models/struct.DeleteRequestBuilder.html), [*get*](resources/models/struct.GetRequestBuilder.html), [*list*](resources/models/struct.ListRequestBuilder.html), [*patch*](resources/models/struct.PatchRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [*getServiceAccount*](resources/projects/struct.GetServiceAccountRequestBuilder.html), [*list*](resources/projects/struct.ListRequestBuilder.html)\n    * [routines](resources/routines/struct.RoutinesActions.html)\n      * [*delete*](resources/routines/struct.DeleteRequestBuilder.html), [*get*](resources/routines/struct.GetRequestBuilder.html), [*insert*](resources/routines/struct.InsertRequestBuilder.html), [*list*](resources/routines/struct.ListRequestBuilder.html), [*update*](resources/routines/struct.UpdateRequestBuilder.html)\n    * [row_access_policies](resources/row_access_policies/struct.RowAccessPoliciesActions.html)\n      * [*getIamPolicy*](resources/row_access_policies/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/row_access_policies/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/row_access_policies/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/row_access_policies/struct.TestIamPermissionsRequestBuilder.html)\n    * [tabledata](resources/tabledata/struct.TabledataActions.html)\n      * [*insertAll*](resources/tabledata/struct.InsertAllRequestBuilder.html), [*list*](resources/tabledata/struct.ListRequestBuilder.html)\n    * [tables](resources/tables/struct.TablesActions.html)\n      * [*delete*](resources/tables/struct.DeleteRequestBuilder.html), [*get*](resources/tables/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/tables/struct.GetIamPolicyRequestBuilder.html), [*insert*](resources/tables/struct.InsertRequestBuilder.html), [*list*](resources/tables/struct.ListRequestBuilder.html), [*patch*](resources/tables/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/tables/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/tables/struct.TestIamPermissionsRequestBuilder.html), [*update*](resources/tables/struct.UpdateRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [datasets](resources/datasets/struct.DatasetsActions.html)\n      * [*delete*](resources/datasets/struct.DeleteRequestBuilder.html), [*get*](resources/datasets/struct.GetRequestBuilder.html), [*insert*](resources/datasets/struct.InsertRequestBuilder.html), [*list*](resources/datasets/struct.ListRequestBuilder.html), [*patch*](resources/datasets/struct.PatchRequestBuilder.html), [*update*](resources/datasets/struct.UpdateRequestBuilder.html)\n    * [jobs](resources/jobs/struct.JobsActions.html)\n      * [*cancel*](resources/jobs/struct.CancelRequestBuilder.html), [*delete*](resources/jobs/struct.DeleteRequestBuilder.html), [*get*](resources/jobs/struct.GetRequestBuilder.html), [*getQueryResults*](resources/jobs/struct.GetQueryResultsRequestBuilder.html), [*insert*](resources/jobs/struct.InsertRequestBuilder.html), [*list*](resources/jobs/struct.ListRequestBuilder.html), [*query*](resources/jobs/struct.QueryRequestBuilder.html)\n    * [models](resources/models/struct.ModelsActions.html)\n      * [*delete*](resources/models/struct.DeleteRequestBuilder.html), [*get*](resources/models/struct.GetRequestBuilder.html), [*list*](resources/models/struct.ListRequestBuilder.html), [*patch*](resources/models/struct.PatchRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [*getServiceAccount*](resources/projects/struct.GetServiceAccountRequestBuilder.html), [*list*](resources/projects/struct.ListRequestBuilder.html)\n    * [routines](resources/routines/struct.RoutinesActions.html)\n      * [*delete*](resources/routines/struct.DeleteRequestBuilder.html), [*get*](resources/routines/struct.GetRequestBuilder.html), [*insert*](resources/routines/struct.InsertRequestBuilder.html), [*list*](resources/routines/struct.ListRequestBuilder.html), [*update*](resources/routines/struct.UpdateRequestBuilder.html)\n    * [row_access_policies](resources/row_access_policies/struct.RowAccessPoliciesActions.html)\n      * [*getIamPolicy*](resources/row_access_policies/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/row_access_policies/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/row_access_policies/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/row_access_policies/struct.TestIamPermissionsRequestBuilder.html)\n    * [tabledata](resources/tabledata/struct.TabledataActions.html)\n      * [*insertAll*](resources/tabledata/struct.InsertAllRequestBuilder.html), [*list*](resources/tabledata/struct.ListRequestBuilder.html)\n    * [tables](resources/tables/struct.TablesActions.html)\n      * [*delete*](resources/tables/struct.DeleteRequestBuilder.html), [*get*](resources/tables/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/tables/struct.GetIamPolicyRequestBuilder.html), [*insert*](resources/tables/struct.InsertRequestBuilder.html), [*list*](resources/tables/struct.ListRequestBuilder.html), [*patch*](resources/tables/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/tables/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/tables/struct.TestIamPermissionsRequestBuilder.html), [*update*](resources/tables/struct.UpdateRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data in Google BigQuery\n\n`https://www.googleapis.com/auth/bigquery`"]
+    #[doc = "View and manage your data in Google BigQuery and see the email address for your Google Account\n\n`https://www.googleapis.com/auth/bigquery`"]
     pub const BIGQUERY: &str = "https://www.googleapis.com/auth/bigquery";
     #[doc = "Insert data into Google BigQuery\n\n`https://www.googleapis.com/auth/bigquery.insertdata`"]
     pub const BIGQUERY_INSERTDATA: &str = "https://www.googleapis.com/auth/bigquery.insertdata";
-    #[doc = "View your data in Google BigQuery\n\n`https://www.googleapis.com/auth/bigquery.readonly`"]
-    pub const BIGQUERY_READONLY: &str = "https://www.googleapis.com/auth/bigquery.readonly";
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
-    #[doc = "View your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
+    #[doc = "View your data across Google Cloud services and see the email address of your Google Account\n\n`https://www.googleapis.com/auth/cloud-platform.read-only`"]
     pub const CLOUD_PLATFORM_READ_ONLY: &str =
         "https://www.googleapis.com/auth/cloud-platform.read-only";
-    #[doc = "Manage your data and permissions in Google Cloud Storage\n\n`https://www.googleapis.com/auth/devstorage.full_control`"]
+    #[doc = "Manage your data and permissions in Cloud Storage and see the email address for your Google Account\n\n`https://www.googleapis.com/auth/devstorage.full_control`"]
     pub const DEVSTORAGE_FULL_CONTROL: &str =
         "https://www.googleapis.com/auth/devstorage.full_control";
     #[doc = "View your data in Google Cloud Storage\n\n`https://www.googleapis.com/auth/devstorage.read_only`"]
     pub const DEVSTORAGE_READ_ONLY: &str = "https://www.googleapis.com/auth/devstorage.read_only";
-    #[doc = "Manage your data in Google Cloud Storage\n\n`https://www.googleapis.com/auth/devstorage.read_write`"]
+    #[doc = "Manage your data in Cloud Storage and see the email address of your Google Account\n\n`https://www.googleapis.com/auth/devstorage.read_write`"]
     pub const DEVSTORAGE_READ_WRITE: &str = "https://www.googleapis.com/auth/devstorage.read_write";
 }
 pub mod schemas {
@@ -432,6 +430,7 @@ pub mod schemas {
         NoSeasonality,
         #[doc = "Quarterly period, 90 days or irregular."]
         Quarterly,
+        #[doc = "Unspecified seasonal period."]
         SeasonalPeriodTypeUnspecified,
         #[doc = "Weekly period, 7 days."]
         Weekly,
@@ -550,6 +549,27 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub has_drift: ::std::option::Option<bool>,
+        #[doc = "If true, holiday_effect is a part of time series decomposition result."]
+        #[serde(
+            rename = "hasHolidayEffect",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub has_holiday_effect: ::std::option::Option<bool>,
+        #[doc = "If true, spikes_and_dips is a part of time series decomposition result."]
+        #[serde(
+            rename = "hasSpikesAndDips",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub has_spikes_and_dips: ::std::option::Option<bool>,
+        #[doc = "If true, step_changes is a part of time series decomposition result."]
+        #[serde(
+            rename = "hasStepChanges",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub has_step_changes: ::std::option::Option<bool>,
         #[doc = "Non-seasonal order."]
         #[serde(
             rename = "nonSeasonalOrder",
@@ -572,6 +592,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub time_series_id: ::std::option::Option<String>,
+        #[doc = "The tuple of time_series_ids identifying this time series. It will be one of the unique tuples of values present in the time_series_id_columns specified during ARIMA model training. Only present when time_series_id_columns training option was used and the order of values here are same as the order of time_series_id_columns."]
+        #[serde(
+            rename = "timeSeriesIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub time_series_ids: ::std::option::Option<Vec<String>>,
     }
     impl ::google_field_selector::FieldSelector for ArimaModelInfo {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -593,6 +620,7 @@ pub mod schemas {
         NoSeasonality,
         #[doc = "Quarterly period, 90 days or irregular."]
         Quarterly,
+        #[doc = "Unspecified seasonal period."]
         SeasonalPeriodTypeUnspecified,
         #[doc = "Weekly period, 7 days."]
         Weekly,
@@ -772,6 +800,7 @@ pub mod schemas {
         NoSeasonality,
         #[doc = "Quarterly period, 90 days or irregular."]
         Quarterly,
+        #[doc = "Unspecified seasonal period."]
         SeasonalPeriodTypeUnspecified,
         #[doc = "Weekly period, 7 days."]
         Weekly,
@@ -881,6 +910,27 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub has_drift: ::std::option::Option<bool>,
+        #[doc = "If true, holiday_effect is a part of time series decomposition result."]
+        #[serde(
+            rename = "hasHolidayEffect",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub has_holiday_effect: ::std::option::Option<bool>,
+        #[doc = "If true, spikes_and_dips is a part of time series decomposition result."]
+        #[serde(
+            rename = "hasSpikesAndDips",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub has_spikes_and_dips: ::std::option::Option<bool>,
+        #[doc = "If true, step_changes is a part of time series decomposition result."]
+        #[serde(
+            rename = "hasStepChanges",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub has_step_changes: ::std::option::Option<bool>,
         #[doc = "Non-seasonal order."]
         #[serde(
             rename = "nonSeasonalOrder",
@@ -904,6 +954,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub time_series_id: ::std::option::Option<String>,
+        #[doc = "The tuple of time_series_ids identifying this time series. It will be one of the unique tuples of values present in the time_series_id_columns specified during ARIMA model training. Only present when time_series_id_columns training option was used and the order of values here are same as the order of time_series_id_columns."]
+        #[serde(
+            rename = "timeSeriesIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub time_series_ids: ::std::option::Option<Vec<String>>,
     }
     impl ::google_field_selector::FieldSelector for ArimaSingleModelForecastingMetrics {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -925,6 +982,7 @@ pub mod schemas {
         NoSeasonality,
         #[doc = "Quarterly period, 90 days or irregular."]
         Quarterly,
+        #[doc = "Unspecified seasonal period."]
         SeasonalPeriodTypeUnspecified,
         #[doc = "Weekly period, 7 days."]
         Weekly,
@@ -947,7 +1005,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<ArimaSingleModelForecastingMetricsSeasonalPeriodsItems, ()>
         {
-            Ok ( match s { "DAILY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Daily , "MONTHLY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Monthly , "NO_SEASONALITY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: NoSeasonality , "QUARTERLY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Quarterly , "SEASONAL_PERIOD_TYPE_UNSPECIFIED" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: SeasonalPeriodTypeUnspecified , "WEEKLY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Weekly , "YEARLY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Yearly , _ => return Err ( ( ) ) , } )
+            Ok (match s { "DAILY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Daily , "MONTHLY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Monthly , "NO_SEASONALITY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: NoSeasonality , "QUARTERLY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Quarterly , "SEASONAL_PERIOD_TYPE_UNSPECIFIED" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: SeasonalPeriodTypeUnspecified , "WEEKLY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Weekly , "YEARLY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Yearly , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for ArimaSingleModelForecastingMetricsSeasonalPeriodsItems {
@@ -969,7 +1027,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "DAILY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Daily , "MONTHLY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Monthly , "NO_SEASONALITY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: NoSeasonality , "QUARTERLY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Quarterly , "SEASONAL_PERIOD_TYPE_UNSPECIFIED" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: SeasonalPeriodTypeUnspecified , "WEEKLY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Weekly , "YEARLY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Yearly , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "DAILY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Daily , "MONTHLY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Monthly , "NO_SEASONALITY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: NoSeasonality , "QUARTERLY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Quarterly , "SEASONAL_PERIOD_TYPE_UNSPECIFIED" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: SeasonalPeriodTypeUnspecified , "WEEKLY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Weekly , "YEARLY" => ArimaSingleModelForecastingMetricsSeasonalPeriodsItems :: Yearly , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1139,6 +1197,113 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for AuditLogConfigLogType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AvroOptions {
+        #[doc = "[Optional] If sourceFormat is set to \"AVRO\", indicates whether to interpret logical types as the corresponding BigQuery data type (for example, TIMESTAMP), instead of using the raw type (for example, INTEGER)."]
+        #[serde(
+            rename = "useAvroLogicalTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub use_avro_logical_types: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for AvroOptions {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AvroOptions {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BiEngineReason {
+        #[doc = "[Output-only] High-level BI Engine reason for partial or disabled acceleration."]
+        #[serde(
+            rename = "code",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub code: ::std::option::Option<String>,
+        #[doc = "[Output-only] Free form human-readable reason for partial or disabled acceleration."]
+        #[serde(
+            rename = "message",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub message: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for BiEngineReason {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BiEngineReason {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BiEngineStatistics {
+        #[doc = "[Output-only] Specifies which mode of BI Engine acceleration was performed (if any)."]
+        #[serde(
+            rename = "biEngineMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bi_engine_mode: ::std::option::Option<String>,
+        #[doc = "In case of DISABLED or PARTIAL bi_engine_mode, these contain the explanatory reasons as to why BI Engine could not accelerate. In case the full query was accelerated, this field is not populated."]
+        #[serde(
+            rename = "biEngineReasons",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bi_engine_reasons: ::std::option::Option<Vec<crate::schemas::BiEngineReason>>,
+    }
+    impl ::google_field_selector::FieldSelector for BiEngineStatistics {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BiEngineStatistics {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1491,21 +1656,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Binding {
-        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the identities requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members: ::std::option::Option<Vec<String>>,
-        #[doc = "Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
+        #[doc = "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`."]
         #[serde(
             rename = "role",
             default,
@@ -1753,6 +1918,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CategoryCount {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CloneDefinition {
+        #[doc = "[Required] Reference describing the ID of the table that was cloned."]
+        #[serde(
+            rename = "baseTableReference",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub base_table_reference: ::std::option::Option<crate::schemas::TableReference>,
+        #[doc = "[Required] The time at which the base table was cloned. This value is reported in the JSON response using RFC3339 format."]
+        #[serde(
+            rename = "cloneTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub clone_time: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
+    }
+    impl ::google_field_selector::FieldSelector for CloneDefinition {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CloneDefinition {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2008,6 +2211,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub field_delimiter: ::std::option::Option<String>,
+        #[doc = "[Optional] An custom string that will represent a NULL value in CSV import data."]
+        #[serde(
+            rename = "null_marker",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub null_marker: ::std::option::Option<String>,
         #[doc = "[Optional] The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. The default value is a double-quote ('\"'). If your data does not contain quoted sections, set the property value to an empty string. If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true."]
         #[serde(
             rename = "quote",
@@ -2054,6 +2264,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub evaluation_table: ::std::option::Option<crate::schemas::TableReference>,
+        #[doc = "Table reference of the test data after split."]
+        #[serde(
+            rename = "testTable",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub test_table: ::std::option::Option<crate::schemas::TableReference>,
         #[doc = "Table reference of the training data after split."]
         #[serde(
             rename = "trainingTable",
@@ -2107,6 +2324,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dataset_reference: ::std::option::Option<crate::schemas::DatasetReference>,
+        #[doc = "[Output-only] The default collation of the dataset."]
+        #[serde(
+            rename = "defaultCollation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub default_collation: ::std::option::Option<String>,
         #[serde(
             rename = "defaultEncryptionConfiguration",
             default,
@@ -2158,6 +2382,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
+        #[doc = "[Optional] Indicates if table names are case insensitive in the dataset."]
+        #[serde(
+            rename = "isCaseInsensitive",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub is_case_insensitive: ::std::option::Option<bool>,
         #[doc = "[Output-only] The resource type."]
         #[serde(
             rename = "kind",
@@ -2187,6 +2418,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location: ::std::option::Option<String>,
+        #[doc = "[Optional] Number of hours for the max time travel for all tables in the dataset."]
+        #[serde(
+            rename = "maxTimeTravelHours",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub max_time_travel_hours: ::std::option::Option<i64>,
         #[doc = "[Output-only] Reserved for future use."]
         #[serde(
             rename = "satisfiesPZS",
@@ -2201,6 +2440,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub self_link: ::std::option::Option<String>,
+        #[doc = "[Optional]The tags associated with this dataset. Tag keys are globally unique."]
+        #[serde(
+            rename = "tags",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub tags: ::std::option::Option<Vec<crate::schemas::DatasetTagsItems>>,
     }
     impl ::google_field_selector::FieldSelector for Dataset {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2311,28 +2557,28 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct DatasetAccessEntry {
-        #[doc = "[Required] The dataset this entry applies to."]
+    pub struct DatasetTagsItems {
+        #[doc = "[Required] The namespaced friendly name of the tag key, e.g. \"12345/environment\" where 12345 is org id."]
         #[serde(
-            rename = "dataset",
+            rename = "tagKey",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub dataset: ::std::option::Option<crate::schemas::DatasetReference>,
+        pub tag_key: ::std::option::Option<String>,
+        #[doc = "[Required] Friendly short name of the tag value, e.g. \"production\"."]
         #[serde(
-            rename = "target_types",
+            rename = "tagValue",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub target_types:
-            ::std::option::Option<Vec<crate::schemas::DatasetAccessEntryTargetTypesItems>>,
+        pub tag_value: ::std::option::Option<String>,
     }
-    impl ::google_field_selector::FieldSelector for DatasetAccessEntry {
+    impl ::google_field_selector::FieldSelector for DatasetTagsItems {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for DatasetAccessEntry {
+    impl ::google_field_selector::ToFieldType for DatasetTagsItems {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2349,14 +2595,98 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct DatasetAccessEntryTargetTypesItems {
-        #[doc = "[Required] Which resources in the dataset this entry applies to. Currently, only views are supported, but additional target types may be added in the future. Possible values: VIEWS: This entry applies to all views in the dataset."]
+    pub struct DatasetAccessEntry {
+        #[doc = "[Required] The dataset this entry applies to."]
         #[serde(
-            rename = "targetType",
+            rename = "dataset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub target_type: ::std::option::Option<String>,
+        pub dataset: ::std::option::Option<crate::schemas::DatasetReference>,
+        #[serde(
+            rename = "targetTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target_types:
+            ::std::option::Option<Vec<crate::schemas::DatasetAccessEntryTargetTypesItems>>,
+    }
+    impl ::google_field_selector::FieldSelector for DatasetAccessEntry {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DatasetAccessEntry {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum DatasetAccessEntryTargetTypesItems {
+        #[doc = "Do not use. You must set a target type explicitly."]
+        TargetTypeUnspecified,
+        #[doc = "This entry applies to views in the dataset."]
+        Views,
+    }
+    impl DatasetAccessEntryTargetTypesItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                DatasetAccessEntryTargetTypesItems::TargetTypeUnspecified => {
+                    "TARGET_TYPE_UNSPECIFIED"
+                }
+                DatasetAccessEntryTargetTypesItems::Views => "VIEWS",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for DatasetAccessEntryTargetTypesItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for DatasetAccessEntryTargetTypesItems {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<DatasetAccessEntryTargetTypesItems, ()> {
+            Ok(match s {
+                "TARGET_TYPE_UNSPECIFIED" => {
+                    DatasetAccessEntryTargetTypesItems::TargetTypeUnspecified
+                }
+                "VIEWS" => DatasetAccessEntryTargetTypesItems::Views,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for DatasetAccessEntryTargetTypesItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for DatasetAccessEntryTargetTypesItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for DatasetAccessEntryTargetTypesItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "TARGET_TYPE_UNSPECIFIED" => {
+                    DatasetAccessEntryTargetTypesItems::TargetTypeUnspecified
+                }
+                "VIEWS" => DatasetAccessEntryTargetTypesItems::Views,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
     }
     impl ::google_field_selector::FieldSelector for DatasetAccessEntryTargetTypesItems {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2544,6 +2874,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
+        #[doc = "[Internal] This field is for Google internal use only."]
+        #[serde(
+            rename = "expirationTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub expiration_time: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
         #[doc = "[Optional] The friendly name for the destination table. This will only be used if the destination table is newly created. If the table already exists and a value different than the current friendly name is provided, the job will fail."]
         #[serde(
             rename = "friendlyName",
@@ -2587,6 +2924,134 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for DimensionalityReductionMetrics {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DmlStatistics {
+        #[doc = "Number of deleted Rows. populated by DML DELETE, MERGE and TRUNCATE statements."]
+        #[serde(
+            rename = "deletedRowCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub deleted_row_count: ::std::option::Option<i64>,
+        #[doc = "Number of inserted Rows. Populated by DML INSERT and MERGE statements."]
+        #[serde(
+            rename = "insertedRowCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub inserted_row_count: ::std::option::Option<i64>,
+        #[doc = "Number of updated Rows. Populated by DML UPDATE and MERGE statements."]
+        #[serde(
+            rename = "updatedRowCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub updated_row_count: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for DmlStatistics {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DmlStatistics {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct DoubleCandidates {
+        #[doc = "Candidates for the double parameter in increasing order."]
+        #[serde(
+            rename = "candidates",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub candidates: ::std::option::Option<Vec<f64>>,
+    }
+    impl ::google_field_selector::FieldSelector for DoubleCandidates {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DoubleCandidates {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct DoubleHparamSearchSpace {
+        #[doc = "Candidates of the double hyperparameter."]
+        #[serde(
+            rename = "candidates",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub candidates: ::std::option::Option<crate::schemas::DoubleCandidates>,
+        #[doc = "Range of the double hyperparameter."]
+        #[serde(
+            rename = "range",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub range: ::std::option::Option<crate::schemas::DoubleRange>,
+    }
+    impl ::google_field_selector::FieldSelector for DoubleHparamSearchSpace {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DoubleHparamSearchSpace {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct DoubleRange {
+        #[doc = "Max value of the double parameter."]
+        #[serde(
+            rename = "max",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub max: ::std::option::Option<f64>,
+        #[doc = "Min value of the double parameter."]
+        #[serde(
+            rename = "min",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub min: ::std::option::Option<f64>,
+    }
+    impl ::google_field_selector::FieldSelector for DoubleRange {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DoubleRange {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3073,7 +3538,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub attribution: ::std::option::Option<f64>,
-        #[doc = "Full name of the feature. For non-numerical features, will be formatted like .. Overall size of feature name will always be truncated to first 120 characters."]
+        #[doc = "The full feature name. For non-numerical features, will be formatted like `.`. Overall size of feature name will always be truncated to first 120 characters."]
         #[serde(
             rename = "featureName",
             default,
@@ -3163,6 +3628,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub autodetect: ::std::option::Option<bool>,
+        #[doc = "Additional properties to set if sourceFormat is set to Avro."]
+        #[serde(
+            rename = "avroOptions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub avro_options: ::std::option::Option<crate::schemas::AvroOptions>,
         #[doc = "[Optional] Additional options if sourceFormat is set to BIGTABLE."]
         #[serde(
             rename = "bigtableOptions",
@@ -3191,6 +3663,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub csv_options: ::std::option::Option<crate::schemas::CsvOptions>,
+        #[doc = "[Optional] Defines the list of possible SQL data types to which the source decimal values are converted. This list and the precision and the scale parameters of the decimal field determine the target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in the specified list and if it supports the precision and the scale. STRING supports all precision and scale values. If none of the listed types supports the precision and the scale, the type supporting the widest range in the specified list is picked, and if a value exceeds the supported range when reading the data, an error will be thrown. Example: Suppose the value of this field is [\"NUMERIC\", \"BIGNUMERIC\"]. If (precision,scale) is: (38,9) -> NUMERIC; (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits); (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits); (76,38) -> BIGNUMERIC; (77,38) -> BIGNUMERIC (error if value exeeds supported range). This field cannot contain duplicate types. The order of the types in this field is ignored. For example, [\"BIGNUMERIC\", \"NUMERIC\"] is the same as [\"NUMERIC\", \"BIGNUMERIC\"] and NUMERIC always takes precedence over BIGNUMERIC. Defaults to [\"NUMERIC\", \"STRING\"] for ORC and [\"NUMERIC\"] for the other file formats."]
+        #[serde(
+            rename = "decimalTargetTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub decimal_target_types: ::std::option::Option<Vec<String>>,
         #[doc = "[Optional] Additional options if sourceFormat is set to GOOGLE_SHEETS."]
         #[serde(
             rename = "googleSheetsOptions",
@@ -3339,7 +3818,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GetPolicyOptions {
-        #[doc = "Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+        #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
             rename = "requestedPolicyVersion",
             default,
@@ -3611,20 +4090,531 @@ pub mod schemas {
     #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
+    pub struct HparamSearchSpaces {
+        #[doc = "Activation functions of neural network models."]
+        #[serde(
+            rename = "activationFn",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub activation_fn: ::std::option::Option<crate::schemas::StringHparamSearchSpace>,
+        #[doc = "Mini batch sample size."]
+        #[serde(
+            rename = "batchSize",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub batch_size: ::std::option::Option<crate::schemas::IntHparamSearchSpace>,
+        #[doc = "Booster type for boosted tree models."]
+        #[serde(
+            rename = "boosterType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub booster_type: ::std::option::Option<crate::schemas::StringHparamSearchSpace>,
+        #[doc = "Subsample ratio of columns for each level for boosted tree models."]
+        #[serde(
+            rename = "colsampleBylevel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub colsample_bylevel: ::std::option::Option<crate::schemas::DoubleHparamSearchSpace>,
+        #[doc = "Subsample ratio of columns for each node(split) for boosted tree models."]
+        #[serde(
+            rename = "colsampleBynode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub colsample_bynode: ::std::option::Option<crate::schemas::DoubleHparamSearchSpace>,
+        #[doc = "Subsample ratio of columns when constructing each tree for boosted tree models."]
+        #[serde(
+            rename = "colsampleBytree",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub colsample_bytree: ::std::option::Option<crate::schemas::DoubleHparamSearchSpace>,
+        #[doc = "Dart normalization type for boosted tree models."]
+        #[serde(
+            rename = "dartNormalizeType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dart_normalize_type: ::std::option::Option<crate::schemas::StringHparamSearchSpace>,
+        #[doc = "Dropout probability for dnn model training and boosted tree models using dart booster."]
+        #[serde(
+            rename = "dropout",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dropout: ::std::option::Option<crate::schemas::DoubleHparamSearchSpace>,
+        #[doc = "Hidden units for neural network models."]
+        #[serde(
+            rename = "hiddenUnits",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub hidden_units: ::std::option::Option<crate::schemas::IntArrayHparamSearchSpace>,
+        #[doc = "L1 regularization coefficient."]
+        #[serde(
+            rename = "l1Reg",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub l_1_reg: ::std::option::Option<crate::schemas::DoubleHparamSearchSpace>,
+        #[doc = "L2 regularization coefficient."]
+        #[serde(
+            rename = "l2Reg",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub l_2_reg: ::std::option::Option<crate::schemas::DoubleHparamSearchSpace>,
+        #[doc = "Learning rate of training jobs."]
+        #[serde(
+            rename = "learnRate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub learn_rate: ::std::option::Option<crate::schemas::DoubleHparamSearchSpace>,
+        #[doc = "Maximum depth of a tree for boosted tree models."]
+        #[serde(
+            rename = "maxTreeDepth",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub max_tree_depth: ::std::option::Option<crate::schemas::IntHparamSearchSpace>,
+        #[doc = "Minimum split loss for boosted tree models."]
+        #[serde(
+            rename = "minSplitLoss",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub min_split_loss: ::std::option::Option<crate::schemas::DoubleHparamSearchSpace>,
+        #[doc = "Minimum sum of instance weight needed in a child for boosted tree models."]
+        #[serde(
+            rename = "minTreeChildWeight",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub min_tree_child_weight: ::std::option::Option<crate::schemas::IntHparamSearchSpace>,
+        #[doc = "Number of clusters for k-means."]
+        #[serde(
+            rename = "numClusters",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub num_clusters: ::std::option::Option<crate::schemas::IntHparamSearchSpace>,
+        #[doc = "Number of latent factors to train on."]
+        #[serde(
+            rename = "numFactors",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub num_factors: ::std::option::Option<crate::schemas::IntHparamSearchSpace>,
+        #[doc = "Number of parallel trees for boosted tree models."]
+        #[serde(
+            rename = "numParallelTree",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub num_parallel_tree: ::std::option::Option<crate::schemas::IntHparamSearchSpace>,
+        #[doc = "Optimizer of TF models."]
+        #[serde(
+            rename = "optimizer",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub optimizer: ::std::option::Option<crate::schemas::StringHparamSearchSpace>,
+        #[doc = "Subsample the training data to grow tree to prevent overfitting for boosted tree models."]
+        #[serde(
+            rename = "subsample",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub subsample: ::std::option::Option<crate::schemas::DoubleHparamSearchSpace>,
+        #[doc = "Tree construction algorithm for boosted tree models."]
+        #[serde(
+            rename = "treeMethod",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub tree_method: ::std::option::Option<crate::schemas::StringHparamSearchSpace>,
+        #[doc = "Hyperparameter for matrix factoration when implicit feedback type is specified."]
+        #[serde(
+            rename = "walsAlpha",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub wals_alpha: ::std::option::Option<crate::schemas::DoubleHparamSearchSpace>,
+    }
+    impl ::google_field_selector::FieldSelector for HparamSearchSpaces {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for HparamSearchSpaces {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct HparamTuningTrial {
+        #[doc = "Ending time of the trial."]
+        #[serde(
+            rename = "endTimeMs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub end_time_ms: ::std::option::Option<i64>,
+        #[doc = "Error message for FAILED and INFEASIBLE trial."]
+        #[serde(
+            rename = "errorMessage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub error_message: ::std::option::Option<String>,
+        #[doc = "Loss computed on the eval data at the end of trial."]
+        #[serde(
+            rename = "evalLoss",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub eval_loss: ::std::option::Option<f64>,
+        #[doc = "Evaluation metrics of this trial calculated on the test data. Empty in Job API."]
+        #[serde(
+            rename = "evaluationMetrics",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub evaluation_metrics: ::std::option::Option<crate::schemas::EvaluationMetrics>,
+        #[doc = "Hyperparameter tuning evaluation metrics of this trial calculated on the eval data. Unlike evaluation_metrics, only the fields corresponding to the hparam_tuning_objectives are set."]
+        #[serde(
+            rename = "hparamTuningEvaluationMetrics",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub hparam_tuning_evaluation_metrics:
+            ::std::option::Option<crate::schemas::EvaluationMetrics>,
+        #[doc = "The hyperprameters selected for this trial."]
+        #[serde(
+            rename = "hparams",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub hparams: ::std::option::Option<crate::schemas::TrainingOptions>,
+        #[doc = "Starting time of the trial."]
+        #[serde(
+            rename = "startTimeMs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub start_time_ms: ::std::option::Option<i64>,
+        #[doc = "The status of the trial."]
+        #[serde(
+            rename = "status",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub status: ::std::option::Option<crate::schemas::HparamTuningTrialStatus>,
+        #[doc = "Loss computed on the training data at the end of trial."]
+        #[serde(
+            rename = "trainingLoss",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub training_loss: ::std::option::Option<f64>,
+        #[doc = "1-based index of the trial."]
+        #[serde(
+            rename = "trialId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub trial_id: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for HparamTuningTrial {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for HparamTuningTrial {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum HparamTuningTrialStatus {
+        #[doc = "The trial failed."]
+        Failed,
+        #[doc = "The trial is infeasible due to the invalid params."]
+        Infeasible,
+        #[doc = "Scheduled but not started."]
+        NotStarted,
+        #[doc = "Running state."]
+        Running,
+        #[doc = "Trial stopped early because it's not promising."]
+        StoppedEarly,
+        #[doc = "The trial succeeded."]
+        Succeeded,
+        TrialStatusUnspecified,
+    }
+    impl HparamTuningTrialStatus {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                HparamTuningTrialStatus::Failed => "FAILED",
+                HparamTuningTrialStatus::Infeasible => "INFEASIBLE",
+                HparamTuningTrialStatus::NotStarted => "NOT_STARTED",
+                HparamTuningTrialStatus::Running => "RUNNING",
+                HparamTuningTrialStatus::StoppedEarly => "STOPPED_EARLY",
+                HparamTuningTrialStatus::Succeeded => "SUCCEEDED",
+                HparamTuningTrialStatus::TrialStatusUnspecified => "TRIAL_STATUS_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for HparamTuningTrialStatus {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for HparamTuningTrialStatus {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<HparamTuningTrialStatus, ()> {
+            Ok(match s {
+                "FAILED" => HparamTuningTrialStatus::Failed,
+                "INFEASIBLE" => HparamTuningTrialStatus::Infeasible,
+                "NOT_STARTED" => HparamTuningTrialStatus::NotStarted,
+                "RUNNING" => HparamTuningTrialStatus::Running,
+                "STOPPED_EARLY" => HparamTuningTrialStatus::StoppedEarly,
+                "SUCCEEDED" => HparamTuningTrialStatus::Succeeded,
+                "TRIAL_STATUS_UNSPECIFIED" => HparamTuningTrialStatus::TrialStatusUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for HparamTuningTrialStatus {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for HparamTuningTrialStatus {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for HparamTuningTrialStatus {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "FAILED" => HparamTuningTrialStatus::Failed,
+                "INFEASIBLE" => HparamTuningTrialStatus::Infeasible,
+                "NOT_STARTED" => HparamTuningTrialStatus::NotStarted,
+                "RUNNING" => HparamTuningTrialStatus::Running,
+                "STOPPED_EARLY" => HparamTuningTrialStatus::StoppedEarly,
+                "SUCCEEDED" => HparamTuningTrialStatus::Succeeded,
+                "TRIAL_STATUS_UNSPECIFIED" => HparamTuningTrialStatus::TrialStatusUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for HparamTuningTrialStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for HparamTuningTrialStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct IntArray {
+        #[doc = "Elements in the int array."]
+        #[serde(
+            rename = "elements",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub elements: ::std::option::Option<Vec<i64>>,
+    }
+    impl ::google_field_selector::FieldSelector for IntArray {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IntArray {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct IntArrayHparamSearchSpace {
+        #[doc = "Candidates for the int array parameter."]
+        #[serde(
+            rename = "candidates",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub candidates: ::std::option::Option<Vec<crate::schemas::IntArray>>,
+    }
+    impl ::google_field_selector::FieldSelector for IntArrayHparamSearchSpace {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IntArrayHparamSearchSpace {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct IntCandidates {
+        #[doc = "Candidates for the int parameter in increasing order."]
+        #[serde(
+            rename = "candidates",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub candidates: ::std::option::Option<Vec<i64>>,
+    }
+    impl ::google_field_selector::FieldSelector for IntCandidates {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IntCandidates {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct IntHparamSearchSpace {
+        #[doc = "Candidates of the int hyperparameter."]
+        #[serde(
+            rename = "candidates",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub candidates: ::std::option::Option<crate::schemas::IntCandidates>,
+        #[doc = "Range of the int hyperparameter."]
+        #[serde(
+            rename = "range",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub range: ::std::option::Option<crate::schemas::IntRange>,
+    }
+    impl ::google_field_selector::FieldSelector for IntHparamSearchSpace {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IntHparamSearchSpace {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct IntRange {
+        #[doc = "Max value of the int parameter."]
+        #[serde(
+            rename = "max",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub max: ::std::option::Option<i64>,
+        #[doc = "Min value of the int parameter."]
+        #[serde(
+            rename = "min",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub min: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for IntRange {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IntRange {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
     pub struct IterationResult {
-        #[serde(
-            rename = "arimaResult",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub arima_result: ::std::option::Option<crate::schemas::ArimaResult>,
-        #[doc = "Information about top clusters for clustering models."]
-        #[serde(
-            rename = "clusterInfos",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub cluster_infos: ::std::option::Option<Vec<crate::schemas::ClusterInfo>>,
         #[doc = "Time taken to run the iteration in milliseconds."]
         #[serde(
             rename = "durationMs",
@@ -3654,14 +4644,6 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub learn_rate: ::std::option::Option<f64>,
-        #[doc = "The information of the principal components."]
-        #[serde(
-            rename = "principalComponentInfos",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub principal_component_infos:
-            ::std::option::Option<Vec<crate::schemas::PrincipalComponentInfo>>,
         #[doc = "Loss computed on the training data at the end of iteration."]
         #[serde(
             rename = "trainingLoss",
@@ -3988,7 +4970,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_disposition: ::std::option::Option<String>,
-        #[doc = "Defines the list of possible SQL data types to which the source decimal values are converted. This list and the precision and the scale parameters of the decimal field determine the target type. In the order of NUMERIC, BIGNUMERIC ([Preview](/products/#product-launch-stages)), and STRING, a type is picked if it is in the specified list and if it supports the precision and the scale. STRING supports all precision and scale values. If none of the listed types supports the precision and the scale, the type supporting the widest range in the specified list is picked, and if a value exceeds the supported range when reading the data, an error will be thrown. Example: Suppose the value of this field is [\"NUMERIC\", \"BIGNUMERIC\"]. If (precision,scale) is: * (38,9) -> NUMERIC; * (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits); * (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits); * (76,38) -> BIGNUMERIC; * (77,38) -> BIGNUMERIC (error if value exeeds supported range). This field cannot contain duplicate types. The order of the types in this field is ignored. For example, [\"BIGNUMERIC\", \"NUMERIC\"] is the same as [\"NUMERIC\", \"BIGNUMERIC\"] and NUMERIC always takes precedence over BIGNUMERIC. Defaults to [\"NUMERIC\", \"STRING\"] for ORC and [\"NUMERIC\"] for the other file formats."]
+        #[doc = "[Optional] Defines the list of possible SQL data types to which the source decimal values are converted. This list and the precision and the scale parameters of the decimal field determine the target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in the specified list and if it supports the precision and the scale. STRING supports all precision and scale values. If none of the listed types supports the precision and the scale, the type supporting the widest range in the specified list is picked, and if a value exceeds the supported range when reading the data, an error will be thrown. Example: Suppose the value of this field is [\"NUMERIC\", \"BIGNUMERIC\"]. If (precision,scale) is: (38,9) -> NUMERIC; (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits); (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits); (76,38) -> BIGNUMERIC; (77,38) -> BIGNUMERIC (error if value exeeds supported range). This field cannot contain duplicate types. The order of the types in this field is ignored. For example, [\"BIGNUMERIC\", \"NUMERIC\"] is the same as [\"NUMERIC\", \"BIGNUMERIC\"] and NUMERIC always takes precedence over BIGNUMERIC. Defaults to [\"NUMERIC\", \"STRING\"] for ORC and [\"NUMERIC\"] for the other file formats."]
         #[serde(
             rename = "decimalTargetTypes",
             default,
@@ -4075,6 +5057,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parquet_options: ::std::option::Option<crate::schemas::ParquetOptions>,
+        #[doc = "[Optional] Preserves the embedded ASCII control characters (the first 32 characters in the ASCII-table, from '\\x00' to '\\x1F') when loading from CSV. Only applicable to CSV, ignored for other formats."]
+        #[serde(
+            rename = "preserveAsciiControlCharacters",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub preserve_ascii_control_characters: ::std::option::Option<bool>,
         #[doc = "If sourceFormat is set to \"DATASTORE_BACKUP\", indicates which entity properties to load into BigQuery from a Cloud Datastore backup. Property names are case sensitive and must be top-level properties. If no properties are specified, BigQuery loads all properties. If any named property isn't found in the Cloud Datastore backup, an invalid error is returned in the job result."]
         #[serde(
             rename = "projectionFields",
@@ -4152,7 +5141,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub time_partitioning: ::std::option::Option<crate::schemas::TimePartitioning>,
-        #[doc = "[Optional] If sourceFormat is set to \"AVRO\", indicates whether to enable interpreting logical types into their corresponding types (ie. TIMESTAMP), instead of only using their raw types (ie. INTEGER)."]
+        #[doc = "[Optional] If sourceFormat is set to \"AVRO\", indicates whether to interpret logical types as the corresponding BigQuery data type (for example, TIMESTAMP), instead of using the raw type (for example, INTEGER)."]
         #[serde(
             rename = "useAvroLogicalTypes",
             default,
@@ -4617,6 +5606,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub completion_ratio: ::std::option::Option<f64>,
+        #[doc = "[Output-only] Statistics for a copy job."]
+        #[serde(
+            rename = "copy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub copy: ::std::option::Option<crate::schemas::JobStatistics5>,
         #[doc = "[Output-only] Creation time of this job, in milliseconds since the epoch. This field will be present on all jobs."]
         #[serde(
             rename = "creationTime",
@@ -4706,6 +5702,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub script_statistics: ::std::option::Option<crate::schemas::ScriptStatistics>,
+        #[doc = "[Output-only] [Preview] Information of the session if this job is part of one."]
+        #[serde(
+            rename = "sessionInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub session_info: ::std::option::Option<crate::schemas::SessionInfo>,
         #[doc = "[Output-only] Start time of this job, in milliseconds since the epoch. This field will be present when the job transitions from the PENDING state to either RUNNING or DONE."]
         #[serde(
             rename = "startTime",
@@ -4732,11 +5735,11 @@ pub mod schemas {
         pub total_slot_ms: ::std::option::Option<i64>,
         #[doc = "[Output-only] [Alpha] Information of the multi-statement transaction if this job is part of one."]
         #[serde(
-            rename = "transactionInfoTemplate",
+            rename = "transactionInfo",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub transaction_info_template: ::std::option::Option<crate::schemas::TransactionInfo>,
+        pub transaction_info: ::std::option::Option<crate::schemas::TransactionInfo>,
     }
     impl ::google_field_selector::FieldSelector for JobStatistics {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -4791,6 +5794,13 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct JobStatistics2 {
+        #[doc = "BI Engine specific Statistics. [Output-only] BI Engine specific Statistics."]
+        #[serde(
+            rename = "biEngineStatistics",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bi_engine_statistics: ::std::option::Option<crate::schemas::BiEngineStatistics>,
         #[doc = "[Output-only] Billing tier for the job."]
         #[serde(
             rename = "billingTier",
@@ -4813,6 +5823,13 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub ddl_affected_row_access_policy_count: ::std::option::Option<i64>,
+        #[doc = "[Output-only] The DDL destination table. Present only for ALTER TABLE RENAME TO queries. Note that ddl_target_table is used just for its type information."]
+        #[serde(
+            rename = "ddlDestinationTable",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ddl_destination_table: ::std::option::Option<crate::schemas::TableReference>,
         #[doc = "The DDL operation performed, possibly dependent on the pre-existence of the DDL target. Possible values (new values might be added in the future): \"CREATE\": The query created the DDL target. \"SKIP\": No-op. Example cases: the query is CREATE TABLE IF NOT EXISTS while the table already exists, or the query is DROP TABLE IF EXISTS while the table does not exist. \"REPLACE\": The query replaced the DDL target. Example case: the query is CREATE OR REPLACE TABLE, and the table already exists. \"DROP\": The query deleted the DDL target."]
         #[serde(
             rename = "ddlOperationPerformed",
@@ -4849,6 +5866,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ddl_target_table: ::std::option::Option<crate::schemas::TableReference>,
+        #[doc = "[Output-only] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE."]
+        #[serde(
+            rename = "dmlStats",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dml_stats: ::std::option::Option<crate::schemas::DmlStatistics>,
         #[doc = "[Output-only] The original estimate of bytes processed for the job."]
         #[serde(
             rename = "estimatedBytesProcessed",
@@ -4857,6 +5881,13 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub estimated_bytes_processed: ::std::option::Option<i64>,
+        #[doc = "[Output-only] Statistics of a BigQuery ML training job."]
+        #[serde(
+            rename = "mlStatistics",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ml_statistics: ::std::option::Option<crate::schemas::MlStatistics>,
         #[doc = "[Output-only, Beta] Information about create model query job progress."]
         #[serde(
             rename = "modelTraining",
@@ -5148,6 +6179,46 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct JobStatistics5 {
+        #[doc = "[Output-only] Number of logical bytes copied to the destination table."]
+        #[serde(
+            rename = "copied_logical_bytes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub copied_logical_bytes: ::std::option::Option<i64>,
+        #[doc = "[Output-only] Number of rows copied to the destination table."]
+        #[serde(
+            rename = "copied_rows",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub copied_rows: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for JobStatistics5 {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for JobStatistics5 {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct JobStatus {
         #[doc = "[Output-only] Final error result of the job. If present, indicates that the job has completed and was unsuccessful."]
         #[serde(
@@ -5376,6 +6447,36 @@ pub mod schemas {
     #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
+    pub struct MlStatistics {
+        #[doc = "Results for all completed iterations."]
+        #[serde(
+            rename = "iterationResults",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub iteration_results: ::std::option::Option<Vec<crate::schemas::IterationResult>>,
+        #[doc = "Maximum number of iterations specified as max_iterations in the 'CREATE MODEL' query. The actual number of iterations may be less than this number due to early stop."]
+        #[serde(
+            rename = "maxIterations",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub max_iterations: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for MlStatistics {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MlStatistics {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
     pub struct Model {
         #[doc = "The best trial_id across all training runs."]
         #[serde(
@@ -5393,6 +6494,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub creation_time: ::std::option::Option<i64>,
+        #[doc = "Output only. The default trial_id to use in TVFs when the trial_id is not passed in. For single-objective [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, this is the best trial ID. For multi-objective [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, this is the smallest trial ID among all Pareto optimal trials."]
+        #[serde(
+            rename = "defaultTrialId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub default_trial_id: ::std::option::Option<i64>,
         #[doc = "Optional. A user-friendly description of this model."]
         #[serde(
             rename = "description",
@@ -5437,6 +6546,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub friendly_name: ::std::option::Option<String>,
+        #[doc = "Output only. All hyperparameter search spaces in this model."]
+        #[serde(
+            rename = "hparamSearchSpaces",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub hparam_search_spaces: ::std::option::Option<crate::schemas::HparamSearchSpaces>,
+        #[doc = "Output only. Trials of a [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) model sorted by trial_id."]
+        #[serde(
+            rename = "hparamTrials",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub hparam_trials: ::std::option::Option<Vec<crate::schemas::HparamTuningTrial>>,
         #[doc = "Output only. Label columns that were used to train this model. The output of the model will have a \"predicted_\" prefix to these columns."]
         #[serde(
             rename = "labelColumns",
@@ -5480,6 +6603,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub model_type: ::std::option::Option<crate::schemas::ModelModelType>,
+        #[doc = "Output only. For single-objective [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, it only contains the best trial. For multi-objective [hyperparameter tuning](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, it contains all Pareto optimal trials sorted by trial_id."]
+        #[serde(
+            rename = "optimalTrialIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub optimal_trial_ids: ::std::option::Option<Vec<i64>>,
         #[doc = "Output only. Information for all training runs in increasing order of start_time."]
         #[serde(
             rename = "trainingRuns",
@@ -5502,9 +6632,13 @@ pub mod schemas {
     pub enum ModelModelType {
         #[doc = "ARIMA model."]
         Arima,
-        #[doc = "[Beta] AutoML Tables classification model."]
+        #[doc = "New name for the ARIMA model."]
+        ArimaPlus,
+        #[doc = "Autoencoder model."]
+        Autoencoder,
+        #[doc = "AutoML Tables classification model."]
         AutomlClassifier,
-        #[doc = "[Beta] AutoML Tables regression model."]
+        #[doc = "AutoML Tables regression model."]
         AutomlRegressor,
         #[doc = "Boosted tree classifier model."]
         BoostedTreeClassifier,
@@ -5523,6 +6657,8 @@ pub mod schemas {
         #[doc = "Matrix factorization model."]
         MatrixFactorization,
         ModelTypeUnspecified,
+        #[doc = "Prinpical Component Analysis model."]
+        Pca,
         #[doc = "An imported TensorFlow model."]
         Tensorflow,
     }
@@ -5530,6 +6666,8 @@ pub mod schemas {
         pub fn as_str(self) -> &'static str {
             match self {
                 ModelModelType::Arima => "ARIMA",
+                ModelModelType::ArimaPlus => "ARIMA_PLUS",
+                ModelModelType::Autoencoder => "AUTOENCODER",
                 ModelModelType::AutomlClassifier => "AUTOML_CLASSIFIER",
                 ModelModelType::AutomlRegressor => "AUTOML_REGRESSOR",
                 ModelModelType::BoostedTreeClassifier => "BOOSTED_TREE_CLASSIFIER",
@@ -5541,6 +6679,7 @@ pub mod schemas {
                 ModelModelType::LogisticRegression => "LOGISTIC_REGRESSION",
                 ModelModelType::MatrixFactorization => "MATRIX_FACTORIZATION",
                 ModelModelType::ModelTypeUnspecified => "MODEL_TYPE_UNSPECIFIED",
+                ModelModelType::Pca => "PCA",
                 ModelModelType::Tensorflow => "TENSORFLOW",
             }
         }
@@ -5555,6 +6694,8 @@ pub mod schemas {
         fn from_str(s: &str) -> ::std::result::Result<ModelModelType, ()> {
             Ok(match s {
                 "ARIMA" => ModelModelType::Arima,
+                "ARIMA_PLUS" => ModelModelType::ArimaPlus,
+                "AUTOENCODER" => ModelModelType::Autoencoder,
                 "AUTOML_CLASSIFIER" => ModelModelType::AutomlClassifier,
                 "AUTOML_REGRESSOR" => ModelModelType::AutomlRegressor,
                 "BOOSTED_TREE_CLASSIFIER" => ModelModelType::BoostedTreeClassifier,
@@ -5566,6 +6707,7 @@ pub mod schemas {
                 "LOGISTIC_REGRESSION" => ModelModelType::LogisticRegression,
                 "MATRIX_FACTORIZATION" => ModelModelType::MatrixFactorization,
                 "MODEL_TYPE_UNSPECIFIED" => ModelModelType::ModelTypeUnspecified,
+                "PCA" => ModelModelType::Pca,
                 "TENSORFLOW" => ModelModelType::Tensorflow,
                 _ => return Err(()),
             })
@@ -5592,6 +6734,8 @@ pub mod schemas {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
                 "ARIMA" => ModelModelType::Arima,
+                "ARIMA_PLUS" => ModelModelType::ArimaPlus,
+                "AUTOENCODER" => ModelModelType::Autoencoder,
                 "AUTOML_CLASSIFIER" => ModelModelType::AutomlClassifier,
                 "AUTOML_REGRESSOR" => ModelModelType::AutomlRegressor,
                 "BOOSTED_TREE_CLASSIFIER" => ModelModelType::BoostedTreeClassifier,
@@ -5603,6 +6747,7 @@ pub mod schemas {
                 "LOGISTIC_REGRESSION" => ModelModelType::LogisticRegression,
                 "MATRIX_FACTORIZATION" => ModelModelType::MatrixFactorization,
                 "MODEL_TYPE_UNSPECIFIED" => ModelModelType::ModelTypeUnspecified,
+                "PCA" => ModelModelType::Pca,
                 "TENSORFLOW" => ModelModelType::Tensorflow,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -5827,7 +6972,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audit_configs: ::std::option::Option<Vec<crate::schemas::AuditConfig>>,
-        #[doc = "Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member."]
+        #[doc = "Associates a list of `members`, or principals, with a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one principal. The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250 of these principals can be Google groups. Each occurrence of a principal counts towards these limits. For example, if the `bindings` grant 50 different roles to `user:alice@example.com`, and not to any other principal, then you can add another 1,450 principals to the `bindings` in the `Policy`."]
         #[serde(
             rename = "bindings",
             default,
@@ -6389,6 +7534,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cache_hit: ::std::option::Option<bool>,
+        #[doc = "[Output-only] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE."]
+        #[serde(
+            rename = "dmlStats",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dml_stats: ::std::option::Option<crate::schemas::DmlStatistics>,
         #[doc = "[Output-only] The first errors or warnings encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has completed or was unsuccessful."]
         #[serde(
             rename = "errors",
@@ -6446,6 +7598,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub schema: ::std::option::Option<crate::schemas::TableSchema>,
+        #[doc = "[Output-only] [Preview] Information of the session if this job is part of one."]
+        #[serde(
+            rename = "sessionInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub session_info: ::std::option::Option<crate::schemas::SessionInfo>,
         #[doc = "The total number of bytes processed for this query. If this query was a dry run, this is the number of bytes that would be processed if the query were run."]
         #[serde(
             rename = "totalBytesProcessed",
@@ -6751,14 +7910,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub definition_body: ::std::option::Option<String>,
-        #[doc = "Optional. [Experimental] The description of the routine if defined."]
+        #[doc = "Optional. The description of the routine, if defined."]
         #[serde(
             rename = "description",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Optional. [Experimental] The determinism level of the JavaScript UDF if defined."]
+        #[doc = "Optional. The determinism level of the JavaScript UDF, if defined."]
         #[serde(
             rename = "determinismLevel",
             default,
@@ -6794,14 +7953,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub last_modified_time: ::std::option::Option<i64>,
-        #[doc = "Optional. Set only if Routine is a \"TABLE_VALUED_FUNCTION\". TODO(b/173344646) - Update return_type documentation to say it cannot be set for TABLE_VALUED_FUNCTION before preview launch."]
+        #[doc = "Optional. Can be set only if routine_type = \"TABLE_VALUED_FUNCTION\". If absent, the return table type is inferred from definition_body at query time in each query that references this routine. If present, then the columns in the evaluated table result will be cast to match the column types specificed in return table type, at query time."]
         #[serde(
             rename = "returnTableType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub return_table_type: ::std::option::Option<crate::schemas::StandardSqlTableType>,
-        #[doc = "Optional if language = \"SQL\"; required otherwise. If absent, the return type is inferred from definition_body at query time in each query that references this routine. If present, then the evaluated result will be cast to the specified returned type at query time. For example, for the functions created with the following statements: * `CREATE FUNCTION Add(x FLOAT64, y FLOAT64) RETURNS FLOAT64 AS (x + y);` * `CREATE FUNCTION Increment(x FLOAT64) AS (Add(x, 1));` * `CREATE FUNCTION Decrement(x FLOAT64) RETURNS FLOAT64 AS (Add(x, -1));` The return_type is `{type_kind: \"FLOAT64\"}` for `Add` and `Decrement`, and is absent for `Increment` (inferred as FLOAT64 at query time). Suppose the function `Add` is replaced by `CREATE OR REPLACE FUNCTION Add(x INT64, y INT64) AS (x + y);` Then the inferred return type of `Increment` is automatically changed to INT64 at query time, while the return type of `Decrement` remains FLOAT64."]
+        #[doc = "Optional if language = \"SQL\"; required otherwise. Cannot be set if routine_type = \"TABLE_VALUED_FUNCTION\". If absent, the return type is inferred from definition_body at query time in each query that references this routine. If present, then the evaluated result will be cast to the specified returned type at query time. For example, for the functions created with the following statements: * `CREATE FUNCTION Add(x FLOAT64, y FLOAT64) RETURNS FLOAT64 AS (x + y);` * `CREATE FUNCTION Increment(x FLOAT64) AS (Add(x, 1));` * `CREATE FUNCTION Decrement(x FLOAT64) RETURNS FLOAT64 AS (Add(x, -1));` The return_type is `{type_kind: \"FLOAT64\"}` for `Add` and `Decrement`, and is absent for `Increment` (inferred as FLOAT64 at query time). Suppose the function `Add` is replaced by `CREATE OR REPLACE FUNCTION Add(x INT64, y INT64) AS (x + y);` Then the inferred return type of `Increment` is automatically changed to INT64 at query time, while the return type of `Decrement` remains FLOAT64."]
         #[serde(
             rename = "returnType",
             default,
@@ -6822,6 +7981,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub routine_type: ::std::option::Option<crate::schemas::RoutineRoutineType>,
+        #[doc = "Optional. Can be set for procedures only. If true (default), the definition body will be validated in the creation and the updates of the procedure. For procedures with an argument of ANY TYPE, the definition body validtion is not supported at creation/update time, and thus this field must be set to false explicitly."]
+        #[serde(
+            rename = "strictMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub strict_mode: ::std::option::Option<bool>,
     }
     impl ::google_field_selector::FieldSelector for Routine {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -7412,6 +8578,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct SessionInfo {
+        #[doc = "[Output-only] // [Preview] Id of the session."]
+        #[serde(
+            rename = "sessionId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub session_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SessionInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SessionInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SetIamPolicyRequest {
         #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
         #[serde(
@@ -7451,14 +8648,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SnapshotDefinition {
-        #[doc = "[Required] Reference describing the ID of the table that is snapshotted."]
+        #[doc = "[Required] Reference describing the ID of the table that was snapshot."]
         #[serde(
             rename = "baseTableReference",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub base_table_reference: ::std::option::Option<crate::schemas::TableReference>,
-        #[doc = "[Required] The time at which the base table was snapshot."]
+        #[doc = "[Required] The time at which the base table was snapshot. This value is reported in the JSON response using RFC3339 format."]
         #[serde(
             rename = "snapshotTime",
             default,
@@ -7541,6 +8738,10 @@ pub mod schemas {
         Geography,
         #[doc = "Encoded as a string in decimal format."]
         Int64,
+        #[doc = "Encoded as fully qualified 3 part: 0-5 15 2:30:45.6"]
+        Interval,
+        #[doc = "Encoded as a string."]
+        Json,
         #[doc = "Encoded as a decimal string."]
         Numeric,
         #[doc = "Encoded as a string value."]
@@ -7566,6 +8767,8 @@ pub mod schemas {
                 StandardSqlDataTypeTypeKind::Float64 => "FLOAT64",
                 StandardSqlDataTypeTypeKind::Geography => "GEOGRAPHY",
                 StandardSqlDataTypeTypeKind::Int64 => "INT64",
+                StandardSqlDataTypeTypeKind::Interval => "INTERVAL",
+                StandardSqlDataTypeTypeKind::Json => "JSON",
                 StandardSqlDataTypeTypeKind::Numeric => "NUMERIC",
                 StandardSqlDataTypeTypeKind::String => "STRING",
                 StandardSqlDataTypeTypeKind::Struct => "STRUCT",
@@ -7593,6 +8796,8 @@ pub mod schemas {
                 "FLOAT64" => StandardSqlDataTypeTypeKind::Float64,
                 "GEOGRAPHY" => StandardSqlDataTypeTypeKind::Geography,
                 "INT64" => StandardSqlDataTypeTypeKind::Int64,
+                "INTERVAL" => StandardSqlDataTypeTypeKind::Interval,
+                "JSON" => StandardSqlDataTypeTypeKind::Json,
                 "NUMERIC" => StandardSqlDataTypeTypeKind::Numeric,
                 "STRING" => StandardSqlDataTypeTypeKind::String,
                 "STRUCT" => StandardSqlDataTypeTypeKind::Struct,
@@ -7632,6 +8837,8 @@ pub mod schemas {
                 "FLOAT64" => StandardSqlDataTypeTypeKind::Float64,
                 "GEOGRAPHY" => StandardSqlDataTypeTypeKind::Geography,
                 "INT64" => StandardSqlDataTypeTypeKind::Int64,
+                "INTERVAL" => StandardSqlDataTypeTypeKind::Interval,
+                "JSON" => StandardSqlDataTypeTypeKind::Json,
                 "NUMERIC" => StandardSqlDataTypeTypeKind::Numeric,
                 "STRING" => StandardSqlDataTypeTypeKind::String,
                 "STRUCT" => StandardSqlDataTypeTypeKind::Struct,
@@ -7805,9 +9012,47 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct StringHparamSearchSpace {
+        #[doc = "Canididates for the string or enum parameter in lower case."]
+        #[serde(
+            rename = "candidates",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub candidates: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for StringHparamSearchSpace {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for StringHparamSearchSpace {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Table {
+        #[doc = "[Output-only] Clone definition."]
+        #[serde(
+            rename = "cloneDefinition",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub clone_definition: ::std::option::Option<crate::schemas::CloneDefinition>,
         #[doc = "[Beta] Clustering specification for the table. Must be specified with partitioning, data in the table will be first partitioned and subsequently clustered."]
         #[serde(
             rename = "clustering",
@@ -7823,6 +9068,13 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub creation_time: ::std::option::Option<i64>,
+        #[doc = "[Output-only] The default collation of the table."]
+        #[serde(
+            rename = "defaultCollation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub default_collation: ::std::option::Option<String>,
         #[doc = "[Optional] A user-friendly description of this table."]
         #[serde(
             rename = "description",
@@ -7918,6 +9170,22 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub model: ::std::option::Option<crate::schemas::ModelDefinition>,
+        #[doc = "[Output-only] Number of logical bytes that are less than 90 days old."]
+        #[serde(
+            rename = "num_active_logical_bytes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub num_active_logical_bytes: ::std::option::Option<i64>,
+        #[doc = "[Output-only] Number of physical bytes less than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes."]
+        #[serde(
+            rename = "num_active_physical_bytes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub num_active_physical_bytes: ::std::option::Option<i64>,
         #[doc = "[Output-only] The size of this table in bytes, excluding any data in the streaming buffer."]
         #[serde(
             rename = "numBytes",
@@ -7934,6 +9202,30 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_long_term_bytes: ::std::option::Option<i64>,
+        #[doc = "[Output-only] Number of logical bytes that are more than 90 days old."]
+        #[serde(
+            rename = "num_long_term_logical_bytes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub num_long_term_logical_bytes: ::std::option::Option<i64>,
+        #[doc = "[Output-only] Number of physical bytes more than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes."]
+        #[serde(
+            rename = "num_long_term_physical_bytes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub num_long_term_physical_bytes: ::std::option::Option<i64>,
+        #[doc = "[Output-only] The number of partitions present in the table or materialized view. This data is not kept in real time, and might be delayed by a few seconds to a few minutes."]
+        #[serde(
+            rename = "num_partitions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub num_partitions: ::std::option::Option<i64>,
         #[doc = "[Output-only] [TrustedTester] The physical size of this table in bytes, excluding any data in the streaming buffer. This includes compression and storage used for time travel."]
         #[serde(
             rename = "numPhysicalBytes",
@@ -7950,6 +9242,30 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_rows: ::std::option::Option<u64>,
+        #[doc = "[Output-only] Number of physical bytes used by time travel storage (deleted or changed data). This data is not kept in real time, and might be delayed by a few seconds to a few minutes."]
+        #[serde(
+            rename = "num_time_travel_physical_bytes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub num_time_travel_physical_bytes: ::std::option::Option<i64>,
+        #[doc = "[Output-only] Total number of logical bytes in the table or materialized view."]
+        #[serde(
+            rename = "num_total_logical_bytes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub num_total_logical_bytes: ::std::option::Option<i64>,
+        #[doc = "[Output-only] The physical size of this table in bytes. This also includes storage used for time travel. This data is not kept in real time, and might be delayed by a few seconds to a few minutes."]
+        #[serde(
+            rename = "num_total_physical_bytes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub num_total_physical_bytes: ::std::option::Option<i64>,
         #[doc = "[Output-only] Describes the table type. The following values are supported: TABLE: A normal BigQuery table. VIEW: A virtual table defined by a SQL query. SNAPSHOT: An immutable, read-only table that is a copy of another table. [TrustedTester] MATERIALIZED_VIEW: SQL query whose result is persisted. EXTERNAL: A table that references data stored in an external storage system, such as Google Cloud Storage. The default value is TABLE."]
         #[serde(
             rename = "type",
@@ -8272,6 +9588,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub categories: ::std::option::Option<crate::schemas::TableFieldSchemaCategories>,
+        #[doc = "Optional. Collation specification of the field. It only can be set on string type field."]
+        #[serde(
+            rename = "collationSpec",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub collation_spec: ::std::option::Option<String>,
         #[doc = "[Optional] The field description. The maximum length is 1,024 characters."]
         #[serde(
             rename = "description",
@@ -8286,6 +9609,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub fields: ::std::option::Option<Vec<crate::schemas::TableFieldSchema>>,
+        #[doc = "[Optional] Maximum length of values of this field for STRINGS or BYTES. If max_length is not specified, no maximum length constraint is imposed on this field. If type = \"STRING\", then max_length represents the maximum UTF-8 length of strings in this field. If type = \"BYTES\", then max_length represents the maximum number of bytes in this field. It is invalid to set this field if type ≠ \"STRING\" and ≠ \"BYTES\"."]
+        #[serde(
+            rename = "maxLength",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub max_length: ::std::option::Option<i64>,
         #[doc = "[Optional] The field mode. Possible values include NULLABLE, REQUIRED and REPEATED. The default value is NULLABLE."]
         #[serde(
             rename = "mode",
@@ -8293,7 +9624,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mode: ::std::option::Option<String>,
-        #[doc = "[Required] The field name. The name must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_), and must start with a letter or underscore. The maximum length is 128 characters."]
+        #[doc = "[Required] The field name. The name must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_), and must start with a letter or underscore. The maximum length is 300 characters."]
         #[serde(
             rename = "name",
             default,
@@ -8306,13 +9637,29 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub policy_tags: ::std::option::Option<crate::schemas::TableFieldSchemaPolicyTags>,
-        #[doc = "[Required] The field data type. Possible values include STRING, BYTES, INTEGER, INT64 (same as INTEGER), FLOAT, FLOAT64 (same as FLOAT), NUMERIC, BIGNUMERIC, BOOLEAN, BOOL (same as BOOLEAN), TIMESTAMP, DATE, TIME, DATETIME, RECORD (where RECORD indicates that the field contains a nested schema) or STRUCT (same as RECORD)."]
+        #[doc = "[Optional] Precision (maximum number of total digits in base 10) and scale (maximum number of digits in the fractional part in base 10) constraints for values of this field for NUMERIC or BIGNUMERIC. It is invalid to set precision or scale if type ≠ \"NUMERIC\" and ≠ \"BIGNUMERIC\". If precision and scale are not specified, no value range constraint is imposed on this field insofar as values are permitted by the type. Values of this NUMERIC or BIGNUMERIC field must be in this range when: - Precision (P) and scale (S) are specified: [-10P-S + 10-S, 10P-S - 10-S] - Precision (P) is specified but not scale (and thus scale is interpreted to be equal to zero): [-10P + 1, 10P - 1]. Acceptable values for precision and scale if both are specified: - If type = \"NUMERIC\": 1 ≤ precision - scale ≤ 29 and 0 ≤ scale ≤ 9. - If type = \"BIGNUMERIC\": 1 ≤ precision - scale ≤ 38 and 0 ≤ scale ≤ 38. Acceptable values for precision if only precision is specified but not scale (and thus scale is interpreted to be equal to zero): - If type = \"NUMERIC\": 1 ≤ precision ≤ 29. - If type = \"BIGNUMERIC\": 1 ≤ precision ≤ 38. If scale is specified but not precision, then it is invalid."]
+        #[serde(
+            rename = "precision",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub precision: ::std::option::Option<i64>,
+        #[doc = "[Required] The field data type. Possible values include STRING, BYTES, INTEGER, INT64 (same as INTEGER), FLOAT, FLOAT64 (same as FLOAT), NUMERIC, BIGNUMERIC, BOOLEAN, BOOL (same as BOOLEAN), TIMESTAMP, DATE, TIME, DATETIME, INTERVAL, RECORD (where RECORD indicates that the field contains a nested schema) or STRUCT (same as RECORD)."]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
+        #[doc = "[Optional] See documentation for precision."]
+        #[serde(
+            rename = "scale",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub scale: ::std::option::Option<i64>,
     }
     impl ::google_field_selector::FieldSelector for TableFieldSchema {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -8800,6 +10147,13 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct TrainingOptions {
+        #[doc = "If true, detect step changes and make data adjustment in the input time series."]
+        #[serde(
+            rename = "adjustStepChanges",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub adjust_step_changes: ::std::option::Option<bool>,
         #[doc = "Whether to enable auto ARIMA or not."]
         #[serde(
             rename = "autoArima",
@@ -8823,6 +10177,56 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub batch_size: ::std::option::Option<i64>,
+        #[doc = "Booster type for boosted tree models."]
+        #[serde(
+            rename = "boosterType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub booster_type: ::std::option::Option<crate::schemas::TrainingOptionsBoosterType>,
+        #[doc = "Whether or not p-value test should be computed for this model. Only available for linear and logistic regression models."]
+        #[serde(
+            rename = "calculatePValues",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub calculate_p_values: ::std::option::Option<bool>,
+        #[doc = "If true, clean spikes and dips in the input time series."]
+        #[serde(
+            rename = "cleanSpikesAndDips",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub clean_spikes_and_dips: ::std::option::Option<bool>,
+        #[doc = "Subsample ratio of columns for each level for boosted tree models."]
+        #[serde(
+            rename = "colsampleBylevel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub colsample_bylevel: ::std::option::Option<f64>,
+        #[doc = "Subsample ratio of columns for each node(split) for boosted tree models."]
+        #[serde(
+            rename = "colsampleBynode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub colsample_bynode: ::std::option::Option<f64>,
+        #[doc = "Subsample ratio of columns when constructing each tree for boosted tree models."]
+        #[serde(
+            rename = "colsampleBytree",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub colsample_bytree: ::std::option::Option<f64>,
+        #[doc = "Type of normalization algorithm for boosted tree models using dart booster."]
+        #[serde(
+            rename = "dartNormalizeType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dart_normalize_type:
+            ::std::option::Option<crate::schemas::TrainingOptionsDartNormalizeType>,
         #[doc = "The data frequency of a time series."]
         #[serde(
             rename = "dataFrequency",
@@ -8852,6 +10256,13 @@ pub mod schemas {
         )]
         pub data_split_method:
             ::std::option::Option<crate::schemas::TrainingOptionsDataSplitMethod>,
+        #[doc = "If true, perform decompose time series and save the results."]
+        #[serde(
+            rename = "decomposeTimeSeries",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub decompose_time_series: ::std::option::Option<bool>,
         #[doc = "Distance type for clustering models."]
         #[serde(
             rename = "distanceType",
@@ -8873,6 +10284,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub early_stop: ::std::option::Option<bool>,
+        #[doc = "If true, enable global explanation during training."]
+        #[serde(
+            rename = "enableGlobalExplain",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_global_explain: ::std::option::Option<bool>,
         #[doc = "Feedback type that specifies which algorithm to run for matrix factorization."]
         #[serde(
             rename = "feedbackType",
@@ -8902,6 +10320,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub horizon: ::std::option::Option<i64>,
+        #[doc = "The target evaluation metrics to optimize the hyperparameters for."]
+        #[serde(
+            rename = "hparamTuningObjectives",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub hparam_tuning_objectives:
+            ::std::option::Option<Vec<crate::schemas::TrainingOptionsHparamTuningObjectivesItems>>,
         #[doc = "Include drift when fitting an ARIMA model."]
         #[serde(
             rename = "includeDrift",
@@ -8923,6 +10349,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub input_label_columns: ::std::option::Option<Vec<String>>,
+        #[doc = "Number of integral steps for the integrated gradients explain method."]
+        #[serde(
+            rename = "integratedGradientsNumSteps",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub integrated_gradients_num_steps: ::std::option::Option<i64>,
         #[doc = "Item column specified for matrix factorization models."]
         #[serde(
             rename = "itemColumn",
@@ -8996,6 +10430,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub max_iterations: ::std::option::Option<i64>,
+        #[doc = "Maximum number of trials to run in parallel."]
+        #[serde(
+            rename = "maxParallelTrials",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub max_parallel_trials: ::std::option::Option<i64>,
         #[doc = "Maximum depth of a tree for boosted tree models."]
         #[serde(
             rename = "maxTreeDepth",
@@ -9018,6 +10460,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub min_split_loss: ::std::option::Option<f64>,
+        #[doc = "Minimum sum of instance weight needed in a child for boosted tree models."]
+        #[serde(
+            rename = "minTreeChildWeight",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub min_tree_child_weight: ::std::option::Option<i64>,
         #[doc = "Google Cloud Storage URI from which the model was imported. Only applicable for imported models."]
         #[serde(
             rename = "modelUri",
@@ -9048,6 +10498,22 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_factors: ::std::option::Option<i64>,
+        #[doc = "Number of parallel trees constructed during each iteration for boosted tree models."]
+        #[serde(
+            rename = "numParallelTree",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub num_parallel_tree: ::std::option::Option<i64>,
+        #[doc = "Number of trials to run this hyperparameter tuning job."]
+        #[serde(
+            rename = "numTrials",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub num_trials: ::std::option::Option<i64>,
         #[doc = "Optimization strategy for training linear regression models."]
         #[serde(
             rename = "optimizationStrategy",
@@ -9063,6 +10529,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub preserve_input_structs: ::std::option::Option<bool>,
+        #[doc = "Number of paths for the sampled shapley explain method."]
+        #[serde(
+            rename = "sampledShapleyNumPaths",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub sampled_shapley_num_paths: ::std::option::Option<i64>,
         #[doc = "Subsample fraction of the training data to grow tree to prevent overfitting for boosted tree models."]
         #[serde(
             rename = "subsample",
@@ -9084,6 +10558,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub time_series_id_column: ::std::option::Option<String>,
+        #[doc = "The time series id columns that were used during ARIMA model training."]
+        #[serde(
+            rename = "timeSeriesIdColumns",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub time_series_id_columns: ::std::option::Option<Vec<String>>,
         #[doc = "Column to be designated as time series timestamp for ARIMA model."]
         #[serde(
             rename = "timeSeriesTimestampColumn",
@@ -9091,6 +10572,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub time_series_timestamp_column: ::std::option::Option<String>,
+        #[doc = "Tree construction algorithm for boosted tree models."]
+        #[serde(
+            rename = "treeMethod",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub tree_method: ::std::option::Option<crate::schemas::TrainingOptionsTreeMethod>,
         #[doc = "User column specified for matrix factorization models."]
         #[serde(
             rename = "userColumn",
@@ -9119,6 +10607,164 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for TrainingOptions {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum TrainingOptionsBoosterType {
+        #[doc = "Unspecified booster type."]
+        BoosterTypeUnspecified,
+        #[doc = "Dart booster."]
+        Dart,
+        #[doc = "Gbtree booster."]
+        Gbtree,
+    }
+    impl TrainingOptionsBoosterType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                TrainingOptionsBoosterType::BoosterTypeUnspecified => "BOOSTER_TYPE_UNSPECIFIED",
+                TrainingOptionsBoosterType::Dart => "DART",
+                TrainingOptionsBoosterType::Gbtree => "GBTREE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for TrainingOptionsBoosterType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for TrainingOptionsBoosterType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<TrainingOptionsBoosterType, ()> {
+            Ok(match s {
+                "BOOSTER_TYPE_UNSPECIFIED" => TrainingOptionsBoosterType::BoosterTypeUnspecified,
+                "DART" => TrainingOptionsBoosterType::Dart,
+                "GBTREE" => TrainingOptionsBoosterType::Gbtree,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for TrainingOptionsBoosterType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for TrainingOptionsBoosterType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for TrainingOptionsBoosterType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "BOOSTER_TYPE_UNSPECIFIED" => TrainingOptionsBoosterType::BoosterTypeUnspecified,
+                "DART" => TrainingOptionsBoosterType::Dart,
+                "GBTREE" => TrainingOptionsBoosterType::Gbtree,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for TrainingOptionsBoosterType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TrainingOptionsBoosterType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum TrainingOptionsDartNormalizeType {
+        #[doc = "Unspecified dart normalize type."]
+        DartNormalizeTypeUnspecified,
+        #[doc = "New trees have the same weight of sum of dropped trees."]
+        Forest,
+        #[doc = "New trees have the same weight of each of dropped trees."]
+        Tree,
+    }
+    impl TrainingOptionsDartNormalizeType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                TrainingOptionsDartNormalizeType::DartNormalizeTypeUnspecified => {
+                    "DART_NORMALIZE_TYPE_UNSPECIFIED"
+                }
+                TrainingOptionsDartNormalizeType::Forest => "FOREST",
+                TrainingOptionsDartNormalizeType::Tree => "TREE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for TrainingOptionsDartNormalizeType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for TrainingOptionsDartNormalizeType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<TrainingOptionsDartNormalizeType, ()> {
+            Ok(match s {
+                "DART_NORMALIZE_TYPE_UNSPECIFIED" => {
+                    TrainingOptionsDartNormalizeType::DartNormalizeTypeUnspecified
+                }
+                "FOREST" => TrainingOptionsDartNormalizeType::Forest,
+                "TREE" => TrainingOptionsDartNormalizeType::Tree,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for TrainingOptionsDartNormalizeType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for TrainingOptionsDartNormalizeType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for TrainingOptionsDartNormalizeType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DART_NORMALIZE_TYPE_UNSPECIFIED" => {
+                    TrainingOptionsDartNormalizeType::DartNormalizeTypeUnspecified
+                }
+                "FOREST" => TrainingOptionsDartNormalizeType::Forest,
+                "TREE" => TrainingOptionsDartNormalizeType::Tree,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for TrainingOptionsDartNormalizeType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TrainingOptionsDartNormalizeType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -9893,6 +11539,208 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum TrainingOptionsHparamTuningObjectivesItems {
+        #[doc = "Accuracy is the fraction of predictions given the correct label. For multiclass this is a globally micro-averaged metric."]
+        Accuracy,
+        #[doc = "Average Rank."]
+        AverageRank,
+        #[doc = "Davies-Bouldin Index."]
+        DaviesBouldinIndex,
+        #[doc = "Explained variance. explained_variance = 1 - VAR_POP(label_error)/VAR_POP(label)"]
+        ExplainedVariance,
+        #[doc = "The F1 score is an average of recall and precision. For multiclass this is a macro-averaged metric."]
+        F1Score,
+        #[doc = "Unspecified evaluation metric."]
+        HparamTuningObjectiveUnspecified,
+        #[doc = "Logorithmic Loss. For multiclass this is a macro-averaged metric."]
+        LogLoss,
+        #[doc = "Mean absolute error. mean_absolute_error = AVG(ABS(label - predicted))"]
+        MeanAbsoluteError,
+        #[doc = "Mean Average Precision."]
+        MeanAveragePrecision,
+        #[doc = "Mean squared error. mean_squared_error = AVG(POW(label - predicted, 2))"]
+        MeanSquaredError,
+        #[doc = "Mean squared log error. mean_squared_log_error = AVG(POW(LN(1 + label) - LN(1 + predicted), 2))"]
+        MeanSquaredLogError,
+        #[doc = "Mean absolute error. median_absolute_error = APPROX_QUANTILES(absolute_error, 2)[OFFSET(1)]"]
+        MedianAbsoluteError,
+        #[doc = "Normalized Discounted Cumulative Gain."]
+        NormalizedDiscountedCumulativeGain,
+        #[doc = "Precision is the fraction of actual positive predictions that had positive actual labels. For multiclass this is a macro-averaged metric treating each class as a binary classifier."]
+        Precision,
+        #[doc = "R^2 score. This corresponds to r2_score in ML.EVALUATE. r_squared = 1 - SUM(squared_error)/(COUNT(label)*VAR_POP(label))"]
+        RSquared,
+        #[doc = "Recall is the fraction of actual positive labels that were given a positive prediction. For multiclass this is a macro-averaged metric."]
+        Recall,
+        #[doc = "Area Under an ROC Curve. For multiclass this is a macro-averaged metric."]
+        RocAuc,
+    }
+    impl TrainingOptionsHparamTuningObjectivesItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                TrainingOptionsHparamTuningObjectivesItems::Accuracy => "ACCURACY",
+                TrainingOptionsHparamTuningObjectivesItems::AverageRank => "AVERAGE_RANK",
+                TrainingOptionsHparamTuningObjectivesItems::DaviesBouldinIndex => {
+                    "DAVIES_BOULDIN_INDEX"
+                }
+                TrainingOptionsHparamTuningObjectivesItems::ExplainedVariance => {
+                    "EXPLAINED_VARIANCE"
+                }
+                TrainingOptionsHparamTuningObjectivesItems::F1Score => "F1_SCORE",
+                TrainingOptionsHparamTuningObjectivesItems::HparamTuningObjectiveUnspecified => {
+                    "HPARAM_TUNING_OBJECTIVE_UNSPECIFIED"
+                }
+                TrainingOptionsHparamTuningObjectivesItems::LogLoss => "LOG_LOSS",
+                TrainingOptionsHparamTuningObjectivesItems::MeanAbsoluteError => {
+                    "MEAN_ABSOLUTE_ERROR"
+                }
+                TrainingOptionsHparamTuningObjectivesItems::MeanAveragePrecision => {
+                    "MEAN_AVERAGE_PRECISION"
+                }
+                TrainingOptionsHparamTuningObjectivesItems::MeanSquaredError => {
+                    "MEAN_SQUARED_ERROR"
+                }
+                TrainingOptionsHparamTuningObjectivesItems::MeanSquaredLogError => {
+                    "MEAN_SQUARED_LOG_ERROR"
+                }
+                TrainingOptionsHparamTuningObjectivesItems::MedianAbsoluteError => {
+                    "MEDIAN_ABSOLUTE_ERROR"
+                }
+                TrainingOptionsHparamTuningObjectivesItems::NormalizedDiscountedCumulativeGain => {
+                    "NORMALIZED_DISCOUNTED_CUMULATIVE_GAIN"
+                }
+                TrainingOptionsHparamTuningObjectivesItems::Precision => "PRECISION",
+                TrainingOptionsHparamTuningObjectivesItems::RSquared => "R_SQUARED",
+                TrainingOptionsHparamTuningObjectivesItems::Recall => "RECALL",
+                TrainingOptionsHparamTuningObjectivesItems::RocAuc => "ROC_AUC",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for TrainingOptionsHparamTuningObjectivesItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for TrainingOptionsHparamTuningObjectivesItems {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<TrainingOptionsHparamTuningObjectivesItems, ()> {
+            Ok(match s {
+                "ACCURACY" => TrainingOptionsHparamTuningObjectivesItems::Accuracy,
+                "AVERAGE_RANK" => TrainingOptionsHparamTuningObjectivesItems::AverageRank,
+                "DAVIES_BOULDIN_INDEX" => {
+                    TrainingOptionsHparamTuningObjectivesItems::DaviesBouldinIndex
+                }
+                "EXPLAINED_VARIANCE" => {
+                    TrainingOptionsHparamTuningObjectivesItems::ExplainedVariance
+                }
+                "F1_SCORE" => TrainingOptionsHparamTuningObjectivesItems::F1Score,
+                "HPARAM_TUNING_OBJECTIVE_UNSPECIFIED" => {
+                    TrainingOptionsHparamTuningObjectivesItems::HparamTuningObjectiveUnspecified
+                }
+                "LOG_LOSS" => TrainingOptionsHparamTuningObjectivesItems::LogLoss,
+                "MEAN_ABSOLUTE_ERROR" => {
+                    TrainingOptionsHparamTuningObjectivesItems::MeanAbsoluteError
+                }
+                "MEAN_AVERAGE_PRECISION" => {
+                    TrainingOptionsHparamTuningObjectivesItems::MeanAveragePrecision
+                }
+                "MEAN_SQUARED_ERROR" => {
+                    TrainingOptionsHparamTuningObjectivesItems::MeanSquaredError
+                }
+                "MEAN_SQUARED_LOG_ERROR" => {
+                    TrainingOptionsHparamTuningObjectivesItems::MeanSquaredLogError
+                }
+                "MEDIAN_ABSOLUTE_ERROR" => {
+                    TrainingOptionsHparamTuningObjectivesItems::MedianAbsoluteError
+                }
+                "NORMALIZED_DISCOUNTED_CUMULATIVE_GAIN" => {
+                    TrainingOptionsHparamTuningObjectivesItems::NormalizedDiscountedCumulativeGain
+                }
+                "PRECISION" => TrainingOptionsHparamTuningObjectivesItems::Precision,
+                "R_SQUARED" => TrainingOptionsHparamTuningObjectivesItems::RSquared,
+                "RECALL" => TrainingOptionsHparamTuningObjectivesItems::Recall,
+                "ROC_AUC" => TrainingOptionsHparamTuningObjectivesItems::RocAuc,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for TrainingOptionsHparamTuningObjectivesItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for TrainingOptionsHparamTuningObjectivesItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for TrainingOptionsHparamTuningObjectivesItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACCURACY" => TrainingOptionsHparamTuningObjectivesItems::Accuracy,
+                "AVERAGE_RANK" => TrainingOptionsHparamTuningObjectivesItems::AverageRank,
+                "DAVIES_BOULDIN_INDEX" => {
+                    TrainingOptionsHparamTuningObjectivesItems::DaviesBouldinIndex
+                }
+                "EXPLAINED_VARIANCE" => {
+                    TrainingOptionsHparamTuningObjectivesItems::ExplainedVariance
+                }
+                "F1_SCORE" => TrainingOptionsHparamTuningObjectivesItems::F1Score,
+                "HPARAM_TUNING_OBJECTIVE_UNSPECIFIED" => {
+                    TrainingOptionsHparamTuningObjectivesItems::HparamTuningObjectiveUnspecified
+                }
+                "LOG_LOSS" => TrainingOptionsHparamTuningObjectivesItems::LogLoss,
+                "MEAN_ABSOLUTE_ERROR" => {
+                    TrainingOptionsHparamTuningObjectivesItems::MeanAbsoluteError
+                }
+                "MEAN_AVERAGE_PRECISION" => {
+                    TrainingOptionsHparamTuningObjectivesItems::MeanAveragePrecision
+                }
+                "MEAN_SQUARED_ERROR" => {
+                    TrainingOptionsHparamTuningObjectivesItems::MeanSquaredError
+                }
+                "MEAN_SQUARED_LOG_ERROR" => {
+                    TrainingOptionsHparamTuningObjectivesItems::MeanSquaredLogError
+                }
+                "MEDIAN_ABSOLUTE_ERROR" => {
+                    TrainingOptionsHparamTuningObjectivesItems::MedianAbsoluteError
+                }
+                "NORMALIZED_DISCOUNTED_CUMULATIVE_GAIN" => {
+                    TrainingOptionsHparamTuningObjectivesItems::NormalizedDiscountedCumulativeGain
+                }
+                "PRECISION" => TrainingOptionsHparamTuningObjectivesItems::Precision,
+                "R_SQUARED" => TrainingOptionsHparamTuningObjectivesItems::RSquared,
+                "RECALL" => TrainingOptionsHparamTuningObjectivesItems::Recall,
+                "ROC_AUC" => TrainingOptionsHparamTuningObjectivesItems::RocAuc,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for TrainingOptionsHparamTuningObjectivesItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TrainingOptionsHparamTuningObjectivesItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum TrainingOptionsKmeansInitializationMethod {
         #[doc = "Initializes the centroids using data specified in kmeans_initialization_column."]
         Custom,
@@ -10217,10 +12065,104 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum TrainingOptionsTreeMethod {
+        #[doc = "Approximate greedy algorithm using quantile sketch and gradient histogram."]
+        Approx,
+        #[doc = "Use heuristic to choose the fastest method."]
+        Auto,
+        #[doc = "Exact greedy algorithm."]
+        Exact,
+        #[doc = "Fast histogram optimized approximate greedy algorithm."]
+        Hist,
+        #[doc = "Unspecified tree method."]
+        TreeMethodUnspecified,
+    }
+    impl TrainingOptionsTreeMethod {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                TrainingOptionsTreeMethod::Approx => "APPROX",
+                TrainingOptionsTreeMethod::Auto => "AUTO",
+                TrainingOptionsTreeMethod::Exact => "EXACT",
+                TrainingOptionsTreeMethod::Hist => "HIST",
+                TrainingOptionsTreeMethod::TreeMethodUnspecified => "TREE_METHOD_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for TrainingOptionsTreeMethod {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for TrainingOptionsTreeMethod {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<TrainingOptionsTreeMethod, ()> {
+            Ok(match s {
+                "APPROX" => TrainingOptionsTreeMethod::Approx,
+                "AUTO" => TrainingOptionsTreeMethod::Auto,
+                "EXACT" => TrainingOptionsTreeMethod::Exact,
+                "HIST" => TrainingOptionsTreeMethod::Hist,
+                "TREE_METHOD_UNSPECIFIED" => TrainingOptionsTreeMethod::TreeMethodUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for TrainingOptionsTreeMethod {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for TrainingOptionsTreeMethod {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for TrainingOptionsTreeMethod {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "APPROX" => TrainingOptionsTreeMethod::Approx,
+                "AUTO" => TrainingOptionsTreeMethod::Auto,
+                "EXACT" => TrainingOptionsTreeMethod::Exact,
+                "HIST" => TrainingOptionsTreeMethod::Hist,
+                "TREE_METHOD_UNSPECIFIED" => TrainingOptionsTreeMethod::TreeMethodUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for TrainingOptionsTreeMethod {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TrainingOptionsTreeMethod {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct TrainingRun {
+        #[doc = "Global explanation contains the explanation of top features on the class level. Applies to classification models only."]
+        #[serde(
+            rename = "classLevelGlobalExplanations",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub class_level_global_explanations:
+            ::std::option::Option<Vec<crate::schemas::GlobalExplanation>>,
         #[doc = "Data split result of the training run. Only set when the input data is actually split."]
         #[serde(
             rename = "dataSplitResult",
@@ -10235,13 +12177,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub evaluation_metrics: ::std::option::Option<crate::schemas::EvaluationMetrics>,
-        #[doc = "Global explanations for important features of the model. For multi-class models, there is one entry for each label class. For other models, there is only one entry in the list."]
+        #[doc = "Global explanation contains the explanation of top features on the model level. Applies to both regression and classification models."]
         #[serde(
-            rename = "globalExplanations",
+            rename = "modelLevelGlobalExplanation",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub global_explanations: ::std::option::Option<Vec<crate::schemas::GlobalExplanation>>,
+        pub model_level_global_explanation:
+            ::std::option::Option<crate::schemas::GlobalExplanation>,
         #[doc = "Output of each iteration run, results.size() <= max_iterations."]
         #[serde(
             rename = "results",
@@ -10263,6 +12206,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub training_options: ::std::option::Option<crate::schemas::TrainingOptions>,
+        #[doc = "The model id in Vertex AI Model Registry for this training run"]
+        #[serde(
+            rename = "vertexAiModelId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub vertex_ai_model_id: ::std::option::Option<String>,
+        #[doc = "The model version in Vertex AI Model Registry for this training run"]
+        #[serde(
+            rename = "vertexAiModelVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub vertex_ai_model_version: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for TrainingRun {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -10363,6 +12320,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub query: ::std::option::Option<String>,
+        #[doc = "True if the column names are explicitly specified. For example by using the 'CREATE VIEW v(c1, c2) AS ...' syntax. Can only be set using BigQuery's standard SQL: https://cloud.google.com/bigquery/sql-reference/"]
+        #[serde(
+            rename = "useExplicitColumnNames",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub use_explicit_column_names: ::std::option::Option<bool>,
         #[doc = "Specifies whether to use BigQuery's legacy SQL for this view. The default value is true. If set to false, the view will use BigQuery's standard SQL: https://cloud.google.com/bigquery/sql-reference/ Queries and views that reference this view must use the same flag value."]
         #[serde(
             rename = "useLegacySql",
@@ -11766,6 +13730,27 @@ pub mod resources {
                     location: None,
                 }
             }
+            #[doc = "Requests the deletion of the metadata of a job. This call returns when the job's metadata is deleted."]
+            pub fn delete(
+                &self,
+                project_id: impl Into<String>,
+                job_id: impl Into<String>,
+            ) -> DeleteRequestBuilder {
+                DeleteRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    alt: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    user_ip: None,
+                    project_id: project_id.into(),
+                    job_id: job_id.into(),
+                    location: None,
+                }
+            }
             #[doc = "Returns information about a specific job. Job information is available for a six month period after creation. Requires that you're the person who ran the job, or have the Is Owner project role."]
             pub fn get(
                 &self,
@@ -12005,6 +13990,100 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("location", &self.location)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("userIp", &self.user_ip)]);
+                req = req.bearer_auth(
+                    self.auth
+                        .access_token()
+                        .map_err(|err| crate::Error::OAuth2(err))?,
+                );
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [JobsActions::delete()](struct.JobsActions.html#method.delete)"]
+        #[derive(Debug, Clone)]
+        pub struct DeleteRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            project_id: String,
+            job_id: String,
+            location: Option<String>,
+            alt: Option<crate::params::Alt>,
+            fields: Option<String>,
+            key: Option<String>,
+            oauth_token: Option<String>,
+            pretty_print: Option<bool>,
+            quota_user: Option<String>,
+            user_ip: Option<String>,
+        }
+        impl<'a> DeleteRequestBuilder<'a> {
+            #[doc = "The geographic location of the job. Required. See details at: https://cloud.google.com/bigquery/docs/locations#specifying_your_location."]
+            pub fn location(mut self, value: impl Into<String>) -> Self {
+                self.location = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Deprecated. Please use quotaUser instead."]
+            pub fn user_ip(mut self, value: impl Into<String>) -> Self {
+                self.user_ip = Some(value.into());
+                self
+            }
+            pub fn execute(self) -> Result<(), crate::Error> {
+                let req = self._request(&self._path())?;
+                crate::error_from_response(req.send()?)?;
+                Ok(())
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://bigquery.googleapis.com/bigquery/v2/".to_owned();
+                output.push_str("projects/");
+                {
+                    let var_as_str = &self.project_id;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::RESERVED,
+                    ));
+                }
+                output.push_str("/jobs/");
+                {
+                    let var_as_str = &self.job_id;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::RESERVED,
+                    ));
+                }
+                output.push_str("/delete");
+                output
+            }
+            fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
                 req = req.query(&[("location", &self.location)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -13037,7 +15116,7 @@ pub mod resources {
                     model_id: model_id.into(),
                 }
             }
-            #[doc = "Lists all models in the specified dataset. Requires the READER dataset role."]
+            #[doc = "Lists all models in the specified dataset. Requires the READER dataset role. After retrieving the list of models, you can get information about a particular model by calling the models.get method."]
             pub fn list(
                 &self,
                 project_id: impl Into<String>,
@@ -16364,6 +18443,7 @@ pub mod resources {
                     project_id: project_id.into(),
                     dataset_id: dataset_id.into(),
                     table_id: table_id.into(),
+                    autodetect_schema: None,
                 }
             }
             #[doc = "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors."]
@@ -16428,6 +18508,7 @@ pub mod resources {
                     project_id: project_id.into(),
                     dataset_id: dataset_id.into(),
                     table_id: table_id.into(),
+                    autodetect_schema: None,
                 }
             }
         }
@@ -17213,6 +19294,7 @@ pub mod resources {
             project_id: String,
             dataset_id: String,
             table_id: String,
+            autodetect_schema: Option<bool>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
             key: Option<String>,
@@ -17222,6 +19304,11 @@ pub mod resources {
             user_ip: Option<String>,
         }
         impl<'a> PatchRequestBuilder<'a> {
+            #[doc = "When true will autodetect schema, else will keep original schema"]
+            pub fn autodetect_schema(mut self, value: bool) -> Self {
+                self.autodetect_schema = Some(value);
+                self
+            }
             #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
             pub fn key(mut self, value: impl Into<String>) -> Self {
                 self.key = Some(value.into());
@@ -17335,6 +19422,7 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                req = req.query(&[("autodetect_schema", &self.autodetect_schema)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
                 req = req.query(&[("key", &self.key)]);
@@ -17617,6 +19705,7 @@ pub mod resources {
             project_id: String,
             dataset_id: String,
             table_id: String,
+            autodetect_schema: Option<bool>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
             key: Option<String>,
@@ -17626,6 +19715,11 @@ pub mod resources {
             user_ip: Option<String>,
         }
         impl<'a> UpdateRequestBuilder<'a> {
+            #[doc = "When true will autodetect schema, else will keep original schema"]
+            pub fn autodetect_schema(mut self, value: bool) -> Self {
+                self.autodetect_schema = Some(value);
+                self
+            }
             #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
             pub fn key(mut self, value: impl Into<String>) -> Self {
                 self.key = Some(value.into());
@@ -17739,6 +19833,7 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::PUT, path);
+                req = req.query(&[("autodetect_schema", &self.autodetect_schema)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
                 req = req.query(&[("key", &self.key)]);

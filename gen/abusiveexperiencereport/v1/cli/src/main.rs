@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("abusiveexperiencereport1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210315")
+            .version("0.1.0-20220406")
             .about("Views Abusive Experience Report data, and gets a list of sites that have a significant number of abusive experiences.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -38,7 +38,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: get");
         {
             let mcmd = SubCommand::with_name("get")
-                .about("Gets a site\'s Abusive Experience Report summary.");
+                .about("Gets a site's Abusive Experience Report summary.");
             sites0 = sites0.subcommand(mcmd);
         }
         let mut violating_sites0 = SubCommand::with_name("violating_sites")

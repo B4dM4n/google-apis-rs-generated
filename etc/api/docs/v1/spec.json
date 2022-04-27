@@ -7,7 +7,7 @@
   "canonicalName": "Docs",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20210315",
+  "revision": "20220421",
   "title": "Google Docs API",
   "description": "Reads and writes Google Docs documents.",
   "ownerDomain": "google.com",
@@ -201,16 +201,16 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/documents": {
-          "description": "See, create, and edit all Google Docs documents you have access to"
+          "description": "See, edit, create, and delete all your Google Docs documents"
         },
         "https://www.googleapis.com/auth/documents.readonly": {
-          "description": "View your Google Docs documents"
+          "description": "See all your Google Docs documents"
         },
         "https://www.googleapis.com/auth/drive": {
           "description": "See, edit, create, and delete all of your Google Drive files"
         },
         "https://www.googleapis.com/auth/drive.file": {
-          "description": "View and manage Google Drive files and folders that you have opened or created with this app"
+          "description": "See, edit, create, and delete only the specific Google Drive files you use with this app"
         },
         "https://www.googleapis.com/auth/drive.readonly": {
           "description": "See and download all your Google Drive files"
@@ -585,7 +585,7 @@
     },
     "CreateFooterRequest": {
       "id": "CreateFooterRequest",
-      "description": "Creates a Footer. The new footer is applied to the SectionStyle at the location of the SectionBreak if specificed, otherwise it is applied to the DocumentStyle. If a footer of the specified type already exists, a 400 bad request error is returned.",
+      "description": "Creates a Footer. The new footer is applied to the SectionStyle at the location of the SectionBreak if specified, otherwise it is applied to the DocumentStyle. If a footer of the specified type already exists, a 400 bad request error is returned.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -681,7 +681,7 @@
     },
     "CreateHeaderRequest": {
       "id": "CreateHeaderRequest",
-      "description": "Creates a Header. The new header is applied to the SectionStyle at the location of the SectionBreak if specificed, otherwise it is applied to the DocumentStyle. If a header of the specified type already exists, a 400 bad request error is returned.",
+      "description": "Creates a Header. The new header is applied to the SectionStyle at the location of the SectionBreak if specified, otherwise it is applied to the DocumentStyle. If a header of the specified type already exists, a 400 bad request error is returned.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1287,7 +1287,7 @@
           "items": null
         },
         "revisionId": {
-          "description": "Output only. The revision ID of the document. Can be used in update requests to specify which revision of a document to apply updates to and how the request should behave if the document has been edited since that revision. Only populated if the user has edit access to the document. The format of the revision ID may change over time, so it should be treated opaquely. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the document has not changed. Conversely, a changed ID (for the same document and user) usually means the document has been updated; however, a changed ID can also be due to internal factors such as ID format changes.",
+          "description": "Output only. The revision ID of the document. Can be used in update requests to specify which revision of a document to apply updates to and how the request should behave if the document has been edited since that revision. Only populated if the user has edit access to the document. The revision ID is not a sequential number but an opaque string. The format of the revision ID might change over time. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the document has not changed. Conversely, a changed ID (for the same document and user) usually means the document has been updated. However, a changed ID can also be due to internal factors such as ID format changes.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2457,7 +2457,7 @@
           "$ref": "InlineObjectProperties"
         },
         "objectId": {
-          "description": "The ID of this inline object.",
+          "description": "The ID of this inline object. Can be used to update an object’s properties.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3815,6 +3815,10 @@
           "description": "A paragraph element that links to a person or email address.",
           "$ref": "Person"
         },
+        "richLink": {
+          "description": "A paragraph element that links to a Google resource (such as a file in Drive, a Youtube video, a Calendar event, etc.)",
+          "$ref": "RichLink"
+        },
         "startIndex": {
           "description": "The zero-based start index of this paragraph element, in UTF-16 code units.",
           "type": "integer",
@@ -4443,7 +4447,8 @@
             "BREAK_LEFT",
             "BREAK_RIGHT",
             "BREAK_LEFT_RIGHT",
-            "IN_FRONT_OF_TEXT"
+            "IN_FRONT_OF_TEXT",
+            "BEHIND_TEXT"
           ],
           "enumDescriptions": [
             "The layout is unspecified.",
@@ -4451,7 +4456,8 @@
             "Breaks text such that the positioned object is on the left and text is on the right.",
             "Breaks text such that the positioned object is on the right and text is on the left.",
             "Breaks text such that there is no text on the left or right of the positioned object.",
-            "The positioned object is in front of the text."
+            "The positioned object is in front of the text.",
+            "The positioned object is behind the text."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -4650,7 +4656,7 @@
       "enumDescriptions": [],
       "properties": {
         "imageObjectId": {
-          "description": "The ID of the existing image that will be replaced.",
+          "description": "The ID of the existing image that will be replaced. The ID can be retrieved from the response of a get request.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4669,14 +4675,14 @@
           ],
           "enumDescriptions": [
             "Unspecified image replace method. This value must not be used.",
-            "Scales and centers the image to fill the bounds of the original image. The image may be cropped in order to fill the original image's bounds. The rendered size of the image will be the same as that of the original image."
+            "Scales and centers the image to fill the bounds of the original image. The image may be cropped in order to fill the original image's bounds. The rendered size of the image will be the same as the original image."
           ],
           "properties": {},
           "additionalProperties": null,
           "items": null
         },
         "uri": {
-          "description": "The URI of the new image. The image is fetched once at insertion time and a copy is stored for display inside the document. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be in one of PNG, JPEG, or GIF format. The provided URI can be at most 2 kB in length. The URI itself is saved with the image, and exposed via the ImageProperties.source_uri field.",
+          "description": "The URI of the new image. The image is fetched once at insertion time and a copy is stored for display inside the document. Images must be less than 50MB, cannot exceed 25 megapixels, and must be in PNG, JPEG, or GIF format. The provided URI can't surpass 2 KB in length. The URI is saved with the image, and exposed through the ImageProperties.source_uri field.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4943,6 +4949,127 @@
           "description": "The red component of the color, from 0.0 to 1.0.",
           "type": "number",
           "format": "float",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RichLink": {
+      "id": "RichLink",
+      "description": "A link to a Google resource (e.g., a file in Drive, a YouTube video, a Calendar event, etc.).",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "richLinkId": {
+          "description": "Output only. The ID of this link.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "richLinkProperties": {
+          "description": "Output only. The properties of this RichLink. This field is always present.",
+          "$ref": "RichLinkProperties"
+        },
+        "suggestedDeletionIds": {
+          "description": "IDs for suggestions that remove this link from the document. A RichLink might have multiple deletion IDs if, for example, multiple users suggest to delete it. If empty, then this person link isn't suggested for deletion.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "suggestedInsertionIds": {
+          "description": "IDs for suggestions that insert this link into the document. A RichLink might have multiple insertion IDs if it is a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn't a suggested insertion.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "suggestedTextStyleChanges": {
+          "description": "The suggested text style changes to this RichLink, keyed by suggestion ID.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "$ref": "SuggestedTextStyle"
+          },
+          "items": null
+        },
+        "textStyle": {
+          "description": "The text style of this RichLink.",
+          "$ref": "TextStyle"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RichLinkProperties": {
+      "id": "RichLinkProperties",
+      "description": "Properties specific to a RichLink.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "mimeType": {
+          "description": "Output only. The [MIME type](https://developers.google.com/drive/api/v3/mime-types) of the RichLink, if there is one (i.e., when it is a file in Drive).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "title": {
+          "description": "Output only. The title of the RichLink as displayed in the link. This title matches the title of the linked resource at the time of the insertion or last update of the link. This field is always present.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "uri": {
+          "description": "Output only. The URI to the RichLink. This is always present.",
+          "type": "string",
+          "format": null,
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -7047,7 +7174,7 @@
       "enumDescriptions": [],
       "properties": {
         "requiredRevisionId": {
-          "description": "The revision ID of the document that the write request will be applied to. If this is not the latest revision of the document, the request will not be processed and will return a 400 bad request error. When a required revision ID is returned in a response, it indicates the revision ID of the document after the request was applied.",
+          "description": "The optional revision ID of the document the write request is applied to. If this is not the latest revision of the document, the request is not processed and returns a 400 bad request error. When a required revision ID is returned in a response, it indicates the revision ID of the document after the request was applied.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -7057,7 +7184,7 @@
           "items": null
         },
         "targetRevisionId": {
-          "description": "The target revision ID of the document that the write request will be applied to. If collaborator changes have occurred after the document was read using the API, the changes produced by this write request will be transformed against the collaborator changes. This results in a new revision of the document which incorporates both the changes in the request and the collaborator changes, and the Docs server will resolve conflicting changes. When using `target_revision_id`, the API client can be thought of as another collaborator of the document. The target revision ID may only be used to write to recent versions of a document. If the target revision is too far behind the latest revision, the request will not be processed and will return a 400 bad request error and the request should be retried after reading the latest version of the document. In most cases a `revision_id` will remain valid for use as a target revision for several minutes after it is read, but for frequently-edited documents this window may be shorter.",
+          "description": "The optional target revision ID of the document the write request is applied to. If collaborator changes have occurred after the document was read using the API, the changes produced by this write request are applied against the collaborator changes. This results in a new revision of the document that incorporates both the collaborator changes and the changes in the request, with the Docs server resolving conflicting changes. When using target revision ID, the API client can be thought of as another collaborator of the document. The target revision ID can only be used to write to recent versions of a document. If the target revision is too far behind the latest revision, the request is not processed and returns a 400 bad request error. The request should be tried again after retrieving the latest version of the document. Usually a revision ID remains valid for use as a target revision for several minutes after it's read, but for frequently edited documents this window might be shorter.",
           "type": "string",
           "format": null,
           "enum": [],

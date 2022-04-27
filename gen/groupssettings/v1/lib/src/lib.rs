@@ -73,6 +73,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_message_deny_notification_text: ::std::option::Option<String>,
+        #[doc = "Default sender for members who can post messages as the group. Possible values are: - `DEFAULT_SELF`: By default messages will be sent from the user - `GROUP`: By default messages will be sent from the group"]
+        #[serde(
+            rename = "default_sender",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub default_sender: ::std::option::Option<String>,
         #[doc = "Description of the group. This property value may be an empty string if no group description has been entered. If entered, the maximum group description is no more than 300 characters."]
         #[serde(
             rename = "description",

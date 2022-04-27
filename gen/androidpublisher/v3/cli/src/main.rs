@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("androidpublisher3")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210318")
+            .version("0.1.0-20220427")
             .about("Lets Android application developers access their Google Play accounts.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -33,6 +33,9 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .help("Provide more output to aid with debugging")
                 .multiple(false)
                 .takes_value(false));
+        let mut applications0 = SubCommand::with_name("applications")
+            .setting(AppSettings::ColoredHelp)
+            .about("sub-resources: device_tier_configs");
         let mut edits0 = SubCommand::with_name("edits")
             .setting(AppSettings::ColoredHelp)
             .about("methods: commit, delete, get, insert and validate");
@@ -56,6 +59,37 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("validate").about("Validates an app edit.");
             edits0 = edits0.subcommand(mcmd);
         }
+        let mut generatedapks0 = SubCommand::with_name("generatedapks")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: download and list");
+        {
+            let mcmd = SubCommand::with_name("download")
+                .about("Downloads a single signed APK generated from an app bundle.");
+            generatedapks0 = generatedapks0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Returns download metadata for all APKs that were generated from a given app bundle.");
+            generatedapks0 = generatedapks0.subcommand(mcmd);
+        }
+        let mut grants0 = SubCommand::with_name("grants")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete and patch");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Grant access for a user to the given package.");
+            grants0 = grants0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about(
+                "Removes all access for the user to the given package or developer account.",
+            );
+            grants0 = grants0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch")
+                .about("Updates access for the user to the given package.");
+            grants0 = grants0.subcommand(mcmd);
+        }
         let mut inappproducts0 = SubCommand::with_name("inappproducts")
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete, get, insert, list, patch and update");
@@ -75,8 +109,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             inappproducts0 = inappproducts0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list")
-                .about("Lists all in-app products - both managed products and subscriptions.");
+            let mcmd = SubCommand::with_name("list").about("Lists all in-app products - both managed products and subscriptions. If an app has a large number of in-app products, the response may be paginated. In this case the response field `tokenPagination.nextPageToken` will be set and the caller should provide its value as a `token` request parameter to retrieve the next page.");
             inappproducts0 = inappproducts0.subcommand(mcmd);
         }
         {
@@ -100,12 +133,18 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("uploadbundle").about("Uploads an app bundle to internal app sharing. If you are using the Google API client libraries, please increase the timeout of the http request before calling this endpoint (a timeout of 2 minutes is recommended). See [Timeouts and Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors) for an example in java.");
             internalappsharingartifacts0 = internalappsharingartifacts0.subcommand(mcmd);
         }
+        let mut monetization0 = SubCommand::with_name("monetization")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: convert_region_prices");
+        {
+            let mcmd = SubCommand::with_name("convert_region_prices").about("Calculates the region prices, using today's exchange rate and country-specific pricing patterns, based on the price in the request for a set of regions.");
+            monetization0 = monetization0.subcommand(mcmd);
+        }
         let mut orders0 = SubCommand::with_name("orders")
             .setting(AppSettings::ColoredHelp)
             .about("methods: refund");
         {
-            let mcmd = SubCommand::with_name("refund")
-                .about("Refund a user\'s subscription or in-app purchase order.");
+            let mcmd = SubCommand::with_name("refund").about("Refunds a user's subscription or in-app purchase order. Orders older than 1 year cannot be refunded.");
             orders0 = orders0.subcommand(mcmd);
         }
         let mut purchases0 = SubCommand::with_name("purchases")
@@ -130,6 +169,47 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut systemapks0 = SubCommand::with_name("systemapks")
             .setting(AppSettings::ColoredHelp)
             .about("sub-resources: variants");
+        let mut users0 = SubCommand::with_name("users")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Grant access for a user to the given developer account.");
+            users0 = users0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete")
+                .about("Removes all access for the user to the given developer account.");
+            users0 = users0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists all users with access to a developer account.");
+            users0 = users0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch")
+                .about("Updates access for the user to the developer account.");
+            users0 = users0.subcommand(mcmd);
+        }
+        let mut device_tier_configs1 = SubCommand::with_name("device_tier_configs")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, get and list");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a new device tier config for an app.");
+            device_tier_configs1 = device_tier_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("get").about("Returns a particular device tier config.");
+            device_tier_configs1 = device_tier_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Returns created device tier configs, ordered by descending creation time.");
+            device_tier_configs1 = device_tier_configs1.subcommand(mcmd);
+        }
         let mut apks1 = SubCommand::with_name("apks")
             .setting(AppSettings::ColoredHelp)
             .about("methods: addexternallyhosted, list and upload");
@@ -158,6 +238,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("upload").about("Uploads a new Android App Bundle to this edit. If you are using the Google API client libraries, please increase the timeout of the http request before calling this endpoint (a timeout of 2 minutes is recommended). See [Timeouts and Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors) for an example in java.");
             bundles1 = bundles1.subcommand(mcmd);
+        }
+        let mut countryavailability1 = SubCommand::with_name("countryavailability")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get");
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets country availability.");
+            countryavailability1 = countryavailability1.subcommand(mcmd);
         }
         let mut deobfuscationfiles1 = SubCommand::with_name("deobfuscationfiles")
             .setting(AppSettings::ColoredHelp)
@@ -191,11 +278,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             expansionfiles1 = expansionfiles1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Patches the APK\'s expansion file configuration to reference another APK\'s expansion file. To add a new expansion file use the Upload method.");
+            let mcmd = SubCommand::with_name("patch").about("Patches the APK's expansion file configuration to reference another APK's expansion file. To add a new expansion file use the Upload method.");
             expansionfiles1 = expansionfiles1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update").about("Updates the APK\'s expansion file configuration to reference another APK\'s expansion file. To add a new expansion file use the Upload method.");
+            let mcmd = SubCommand::with_name("update").about("Updates the APK's expansion file configuration to reference another APK's expansion file. To add a new expansion file use the Upload method.");
             expansionfiles1 = expansionfiles1.subcommand(mcmd);
         }
         {
@@ -258,15 +345,18 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: get, patch and update");
         {
-            let mcmd = SubCommand::with_name("get").about("Gets testers.");
+            let mcmd = SubCommand::with_name("get")
+                .about("Gets testers. Note: Testers resource does not support email lists.");
             testers1 = testers1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Patches testers.");
+            let mcmd = SubCommand::with_name("patch")
+                .about("Patches testers. Note: Testers resource does not support email lists.");
             testers1 = testers1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update").about("Updates testers.");
+            let mcmd = SubCommand::with_name("update")
+                .about("Updates testers. Note: Testers resource does not support email lists.");
             testers1 = testers1.subcommand(mcmd);
         }
         let mut tracks1 = SubCommand::with_name("tracks")
@@ -310,25 +400,25 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             subscriptions1 = subscriptions1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("cancel").about("Cancels a user\'s subscription purchase. The subscription remains valid until its expiration time.");
+            let mcmd = SubCommand::with_name("cancel").about("Cancels a user's subscription purchase. The subscription remains valid until its expiration time.");
             subscriptions1 = subscriptions1.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("defer").about(
-                "Defers a user\'s subscription purchase until a specified future expiration time.",
+                "Defers a user's subscription purchase until a specified future expiration time.",
             );
             subscriptions1 = subscriptions1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Checks whether a user\'s subscription purchase is valid and returns its expiry time.");
+            let mcmd = SubCommand::with_name("get").about("Checks whether a user's subscription purchase is valid and returns its expiry time.");
             subscriptions1 = subscriptions1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("refund").about("Refunds a user\'s subscription purchase, but the subscription remains valid until its expiration time and it will continue to recur.");
+            let mcmd = SubCommand::with_name("refund").about("Refunds a user's subscription purchase, but the subscription remains valid until its expiration time and it will continue to recur.");
             subscriptions1 = subscriptions1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("revoke").about("Refunds and immediately revokes a user\'s subscription purchase. Access to the subscription will be terminated immediately and it will stop recurring.");
+            let mcmd = SubCommand::with_name("revoke").about("Refunds and immediately revokes a user's subscription purchase. Access to the subscription will be terminated immediately and it will stop recurring.");
             subscriptions1 = subscriptions1.subcommand(mcmd);
         }
         let mut voidedpurchases1 = SubCommand::with_name("voidedpurchases")
@@ -371,15 +461,22 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         edits0 = edits0.subcommand(expansionfiles1);
         edits0 = edits0.subcommand(details1);
         edits0 = edits0.subcommand(deobfuscationfiles1);
+        edits0 = edits0.subcommand(countryavailability1);
         edits0 = edits0.subcommand(bundles1);
         edits0 = edits0.subcommand(apks1);
+        applications0 = applications0.subcommand(device_tier_configs1);
+        app = app.subcommand(users0);
         app = app.subcommand(systemapks0);
         app = app.subcommand(reviews0);
         app = app.subcommand(purchases0);
         app = app.subcommand(orders0);
+        app = app.subcommand(monetization0);
         app = app.subcommand(internalappsharingartifacts0);
         app = app.subcommand(inappproducts0);
+        app = app.subcommand(grants0);
+        app = app.subcommand(generatedapks0);
         app = app.subcommand(edits0);
+        app = app.subcommand(applications0);
 
         Self { app }
     }

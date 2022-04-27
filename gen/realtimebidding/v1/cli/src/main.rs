@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("realtimebidding1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210318")
+            .version("0.1.0-20220426")
             .about("Allows external bidders to manage their RTB integration with Google. This includes managing bidder endpoints, QPS quotas, configuring what ad inventory to receive via pretargeting, submitting creatives for verification, and accessing creative metadata such as approval status.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -68,18 +68,22 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             creatives1 = creatives1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("watch").about("Watches all creatives pertaining to a bidder. It is sufficient to invoke this endpoint once per bidder. A Pub/Sub topic will be created and notifications will be pushed to the topic when any of the bidder\'s creatives change status. All of the bidder\'s service accounts will have access to read from the topic. Subsequent invocations of this method will return the existing Pub/Sub configuration.");
+            let mcmd = SubCommand::with_name("watch").about("Watches all creatives pertaining to a bidder. It is sufficient to invoke this endpoint once per bidder. A Pub/Sub topic will be created and notifications will be pushed to the topic when any of the bidder's creatives change status. All of the bidder's service accounts will have access to read from the topic. Subsequent invocations of this method will return the existing Pub/Sub configuration.");
             creatives1 = creatives1.subcommand(mcmd);
         }
         let mut endpoints1 = SubCommand::with_name("endpoints")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get and list");
+            .about("methods: get, list and patch");
         {
             let mcmd = SubCommand::with_name("get").about("Gets a bidder endpoint by its name.");
             endpoints1 = endpoints1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists all the bidder\'s endpoints.");
+            let mcmd = SubCommand::with_name("list").about("Lists all the bidder's endpoints.");
+            endpoints1 = endpoints1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates a bidder's endpoint.");
             endpoints1 = endpoints1.subcommand(mcmd);
         }
         let mut pretargeting_configs1 = SubCommand::with_name("pretargeting_configs")
@@ -106,7 +110,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             pretargeting_configs1 = pretargeting_configs1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a pretargeting configuration. A pretargeting configuration\'s state (PretargetingConfig.state) is active upon creation, and it will start to affect traffic shortly after. A bidder may create a maximum of 10 pretargeting configurations. Attempts to exceed this maximum results in a 400 bad request error.");
+            let mcmd = SubCommand::with_name("create").about("Creates a pretargeting configuration. A pretargeting configuration's state (PretargetingConfig.state) is active upon creation, and it will start to affect traffic shortly after. A bidder may create a maximum of 10 pretargeting configurations. Attempts to exceed this maximum results in a 400 bad request error.");
             pretargeting_configs1 = pretargeting_configs1.subcommand(mcmd);
         }
         {

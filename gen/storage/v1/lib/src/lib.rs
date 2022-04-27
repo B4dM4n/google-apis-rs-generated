@@ -34,6 +34,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub acl: ::std::option::Option<Vec<crate::schemas::BucketAccessControl>>,
+        #[doc = "The bucket's Autoclass configuration."]
+        #[serde(
+            rename = "autoclass",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub autoclass: ::std::option::Option<crate::schemas::BucketAutoclass>,
         #[doc = "The bucket's billing configuration."]
         #[serde(
             rename = "billing",
@@ -169,6 +176,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub retention_policy: ::std::option::Option<crate::schemas::BucketRetentionPolicy>,
+        #[doc = "The Recovery Point Objective (RPO) of this bucket. Set to ASYNC_TURBO to turn on Turbo Replication on a bucket."]
+        #[serde(
+            rename = "rpo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rpo: ::std::option::Option<String>,
         #[doc = "Reserved for future use."]
         #[serde(
             rename = "satisfiesPZS",
@@ -218,13 +232,6 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub website: ::std::option::Option<crate::schemas::BucketWebsite>,
-        #[doc = "The zone or zones from which the bucket is intended to use zonal quota. Requests for data from outside the specified affinities are still allowed but won't be able to use zonal quota. The zone or zones need to be within the bucket location otherwise the requests will fail with a 400 Bad Request response."]
-        #[serde(
-            rename = "zoneAffinity",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub zone_affinity: ::std::option::Option<Vec<String>>,
     }
     impl ::google_field_selector::FieldSelector for Bucket {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -232,6 +239,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Bucket {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BucketAutoclass {
+        #[doc = "Whether or not Autoclass is enabled on this bucket"]
+        #[serde(
+            rename = "enabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enabled: ::std::option::Option<bool>,
+        #[doc = "A date and time in RFC 3339 format representing the instant at which \"enabled\" was last toggled."]
+        #[serde(
+            rename = "toggleTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub toggle_time: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
+    }
+    impl ::google_field_selector::FieldSelector for BucketAutoclass {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BucketAutoclass {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -371,7 +416,7 @@ pub mod schemas {
         )]
         pub bucket_policy_only:
             ::std::option::Option<crate::schemas::BucketIamConfigurationBucketPolicyOnly>,
-        #[doc = "The bucket's Public Access Prevention configuration. Currently, 'unspecified' and 'enforced' are supported."]
+        #[doc = "The bucket's Public Access Prevention configuration. Currently, 'inherited' and 'enforced' are supported."]
         #[serde(
             rename = "publicAccessPrevention",
             default,
@@ -2684,10 +2729,10 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     entity: entity.into(),
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -2706,10 +2751,10 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     entity: entity.into(),
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -2729,9 +2774,9 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -2746,9 +2791,9 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -2769,10 +2814,10 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     entity: entity.into(),
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -2793,10 +2838,10 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     entity: entity.into(),
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -2808,7 +2853,6 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             bucket: String,
             entity: String,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -2816,14 +2860,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -2847,6 +2887,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -2884,7 +2929,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -2892,6 +2936,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -2908,7 +2953,6 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             bucket: String,
             entity: String,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -2916,14 +2960,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> GetRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -2947,6 +2987,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -3035,7 +3080,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::GET, path);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -3043,6 +3087,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -3059,7 +3104,6 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             request: crate::schemas::BucketAccessControl,
             bucket: String,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -3067,14 +3111,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> InsertRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -3098,6 +3138,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -3180,7 +3225,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::POST, path);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -3188,6 +3232,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -3203,7 +3248,6 @@ pub mod resources {
             pub(crate) reqwest: &'a ::reqwest::blocking::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             bucket: String,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -3211,14 +3255,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -3242,6 +3282,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -3323,7 +3368,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::GET, path);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -3331,6 +3375,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -3348,7 +3393,6 @@ pub mod resources {
             request: crate::schemas::BucketAccessControl,
             bucket: String,
             entity: String,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -3356,14 +3400,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> PatchRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -3387,6 +3427,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -3476,7 +3521,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -3484,6 +3528,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -3501,7 +3546,6 @@ pub mod resources {
             request: crate::schemas::BucketAccessControl,
             bucket: String,
             entity: String,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -3509,14 +3553,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> UpdateRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -3540,6 +3580,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -3629,7 +3674,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::PUT, path);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -3637,6 +3681,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -4577,11 +4622,11 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     if_metageneration_match: None,
                     if_metageneration_not_match: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -4596,12 +4641,12 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     if_metageneration_match: None,
                     if_metageneration_not_match: None,
                     projection: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -4616,10 +4661,10 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     options_requested_policy_version: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -4639,12 +4684,12 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     project: project.into(),
                     predefined_acl: None,
                     predefined_default_object_acl: None,
                     projection: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -4659,13 +4704,13 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     project: project.into(),
                     max_results: None,
                     page_token: None,
                     prefix: None,
                     projection: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -4684,10 +4729,10 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     if_metageneration_match,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -4707,6 +4752,7 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     if_metageneration_match: None,
@@ -4714,7 +4760,6 @@ pub mod resources {
                     predefined_acl: None,
                     predefined_default_object_acl: None,
                     projection: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -4734,9 +4779,9 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -4755,10 +4800,10 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     permissions: permissions.into(),
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -4778,6 +4823,7 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     if_metageneration_match: None,
@@ -4785,7 +4831,6 @@ pub mod resources {
                     predefined_acl: None,
                     predefined_default_object_acl: None,
                     projection: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -4798,7 +4843,6 @@ pub mod resources {
             bucket: String,
             if_metageneration_match: Option<i64>,
             if_metageneration_not_match: Option<i64>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -4806,6 +4850,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
@@ -4817,11 +4862,6 @@ pub mod resources {
             #[doc = "If set, only deletes the bucket if its metageneration does not match this value."]
             pub fn if_metageneration_not_match(mut self, value: i64) -> Self {
                 self.if_metageneration_not_match = Some(value);
-                self
-            }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
                 self
             }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
@@ -4847,6 +4887,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -4881,7 +4926,6 @@ pub mod resources {
                     "ifMetagenerationNotMatch",
                     &self.if_metageneration_not_match,
                 )]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -4889,6 +4933,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -4907,7 +4952,6 @@ pub mod resources {
             if_metageneration_match: Option<i64>,
             if_metageneration_not_match: Option<i64>,
             projection: Option<crate::resources::buckets::params::GetProjection>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -4915,6 +4959,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> GetRequestBuilder<'a> {
@@ -4934,11 +4979,6 @@ pub mod resources {
                 value: crate::resources::buckets::params::GetProjection,
             ) -> Self {
                 self.projection = Some(value);
-                self
-            }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
                 self
             }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
@@ -4964,6 +5004,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -5048,7 +5093,6 @@ pub mod resources {
                     &self.if_metageneration_not_match,
                 )]);
                 req = req.query(&[("projection", &self.projection)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -5056,6 +5100,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -5072,7 +5117,6 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             bucket: String,
             options_requested_policy_version: Option<i32>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -5080,17 +5124,13 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> GetIamPolicyRequestBuilder<'a> {
             #[doc = "The IAM policy format version to be returned. If the optionsRequestedPolicyVersion is for an older version that doesn't support part of the requested IAM policy, the request fails."]
             pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                 self.options_requested_policy_version = Some(value);
-                self
-            }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
                 self
             }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
@@ -5116,6 +5156,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -5199,7 +5244,6 @@ pub mod resources {
                     "optionsRequestedPolicyVersion",
                     &self.options_requested_policy_version,
                 )]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -5207,6 +5251,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -5227,7 +5272,6 @@ pub mod resources {
             predefined_default_object_acl:
                 Option<crate::resources::buckets::params::InsertPredefinedDefaultObjectAcl>,
             projection: Option<crate::resources::buckets::params::InsertProjection>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -5235,6 +5279,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> InsertRequestBuilder<'a> {
@@ -5262,11 +5307,6 @@ pub mod resources {
                 self.projection = Some(value);
                 self
             }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -5290,6 +5330,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -5369,7 +5414,6 @@ pub mod resources {
                     &self.predefined_default_object_acl,
                 )]);
                 req = req.query(&[("projection", &self.projection)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -5377,6 +5421,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -5396,7 +5441,6 @@ pub mod resources {
             page_token: Option<String>,
             prefix: Option<String>,
             projection: Option<crate::resources::buckets::params::ListProjection>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -5404,6 +5448,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> ListRequestBuilder<'a> {
@@ -5430,11 +5475,6 @@ pub mod resources {
                 self.projection = Some(value);
                 self
             }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -5458,6 +5498,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -5632,7 +5677,6 @@ pub mod resources {
                 req = req.query(&[("pageToken", &self.page_token)]);
                 req = req.query(&[("prefix", &self.prefix)]);
                 req = req.query(&[("projection", &self.projection)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -5640,6 +5684,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -5667,7 +5712,6 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             bucket: String,
             if_metageneration_match: i64,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -5675,14 +5719,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> LockRetentionPolicyRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -5706,6 +5746,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -5786,7 +5831,6 @@ pub mod resources {
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::POST, path);
                 req = req.query(&[("ifMetagenerationMatch", &self.if_metageneration_match)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -5794,6 +5838,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -5816,7 +5861,6 @@ pub mod resources {
             predefined_default_object_acl:
                 Option<crate::resources::buckets::params::PatchPredefinedDefaultObjectAcl>,
             projection: Option<crate::resources::buckets::params::PatchProjection>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -5824,6 +5868,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> PatchRequestBuilder<'a> {
@@ -5861,11 +5906,6 @@ pub mod resources {
                 self.projection = Some(value);
                 self
             }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -5889,6 +5929,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -5979,7 +6024,6 @@ pub mod resources {
                     &self.predefined_default_object_acl,
                 )]);
                 req = req.query(&[("projection", &self.projection)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -5987,6 +6031,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -6003,7 +6048,6 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             request: crate::schemas::Policy,
             bucket: String,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -6011,14 +6055,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> SetIamPolicyRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -6042,6 +6082,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -6122,7 +6167,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::PUT, path);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -6130,6 +6174,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -6146,7 +6191,6 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             bucket: String,
             permissions: Vec<String>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -6154,14 +6198,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> TestIamPermissionsRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -6185,6 +6225,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -6269,7 +6314,6 @@ pub mod resources {
                 for value in &self.permissions {
                     req = req.query(&[("permissions", value)]);
                 }
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -6277,6 +6321,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -6299,7 +6344,6 @@ pub mod resources {
             predefined_default_object_acl:
                 Option<crate::resources::buckets::params::UpdatePredefinedDefaultObjectAcl>,
             projection: Option<crate::resources::buckets::params::UpdateProjection>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -6307,6 +6351,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> UpdateRequestBuilder<'a> {
@@ -6344,11 +6389,6 @@ pub mod resources {
                 self.projection = Some(value);
                 self
             }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -6372,6 +6412,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -6462,7 +6507,6 @@ pub mod resources {
                     &self.predefined_default_object_acl,
                 )]);
                 req = req.query(&[("projection", &self.projection)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -6470,6 +6514,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -6502,6 +6547,7 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                 }
             }
@@ -6518,6 +6564,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> StopRequestBuilder<'a> {
@@ -6539,6 +6586,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -6568,6 +6620,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -6603,10 +6656,10 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     entity: entity.into(),
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -6625,10 +6678,10 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     entity: entity.into(),
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -6648,9 +6701,9 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -6665,11 +6718,11 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     if_metageneration_match: None,
                     if_metageneration_not_match: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -6690,10 +6743,10 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     entity: entity.into(),
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -6714,10 +6767,10 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     entity: entity.into(),
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -6729,7 +6782,6 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             bucket: String,
             entity: String,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -6737,14 +6789,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -6768,6 +6816,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -6805,7 +6858,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -6813,6 +6865,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -6829,7 +6882,6 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             bucket: String,
             entity: String,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -6837,14 +6889,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> GetRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -6868,6 +6916,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -6956,7 +7009,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::GET, path);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -6964,6 +7016,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -6980,7 +7033,6 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             request: crate::schemas::ObjectAccessControl,
             bucket: String,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -6988,14 +7040,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> InsertRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -7019,6 +7067,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -7101,7 +7154,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::POST, path);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -7109,6 +7161,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -7126,7 +7179,6 @@ pub mod resources {
             bucket: String,
             if_metageneration_match: Option<i64>,
             if_metageneration_not_match: Option<i64>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -7134,6 +7186,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> ListRequestBuilder<'a> {
@@ -7145,11 +7198,6 @@ pub mod resources {
             #[doc = "If present, only return default ACL listing if the bucket's current metageneration does not match the given value."]
             pub fn if_metageneration_not_match(mut self, value: i64) -> Self {
                 self.if_metageneration_not_match = Some(value);
-                self
-            }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
                 self
             }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
@@ -7175,6 +7223,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -7261,7 +7314,6 @@ pub mod resources {
                     "ifMetagenerationNotMatch",
                     &self.if_metageneration_not_match,
                 )]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -7269,6 +7321,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -7286,7 +7339,6 @@ pub mod resources {
             request: crate::schemas::ObjectAccessControl,
             bucket: String,
             entity: String,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -7294,14 +7346,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> PatchRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -7325,6 +7373,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -7414,7 +7467,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -7422,6 +7474,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -7439,7 +7492,6 @@ pub mod resources {
             request: crate::schemas::ObjectAccessControl,
             bucket: String,
             entity: String,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -7447,14 +7499,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> UpdateRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -7478,6 +7526,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -7567,7 +7620,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::PUT, path);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -7575,6 +7627,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -7610,10 +7663,10 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     notification: notification.into(),
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -7632,10 +7685,10 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     notification: notification.into(),
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -7655,9 +7708,9 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -7672,9 +7725,9 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -7686,7 +7739,6 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             bucket: String,
             notification: String,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -7694,14 +7746,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -7725,6 +7773,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -7762,7 +7815,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -7770,6 +7822,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -7786,7 +7839,6 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             bucket: String,
             notification: String,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -7794,14 +7846,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> GetRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -7825,6 +7873,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -7913,7 +7966,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::GET, path);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -7921,6 +7973,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -7937,7 +7990,6 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             request: crate::schemas::Notification,
             bucket: String,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -7945,14 +7997,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> InsertRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -7976,6 +8024,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -8058,7 +8111,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::POST, path);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -8066,6 +8118,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -8081,7 +8134,6 @@ pub mod resources {
             pub(crate) reqwest: &'a ::reqwest::blocking::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             bucket: String,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -8089,14 +8141,10 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -8120,6 +8168,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -8201,7 +8254,6 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::GET, path);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -8209,6 +8261,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -8245,12 +8298,12 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     object: object.into(),
                     entity: entity.into(),
                     generation: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -8270,12 +8323,12 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     object: object.into(),
                     entity: entity.into(),
                     generation: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -8296,11 +8349,11 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     object: object.into(),
                     generation: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -8319,11 +8372,11 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     object: object.into(),
                     generation: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -8345,12 +8398,12 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     object: object.into(),
                     entity: entity.into(),
                     generation: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -8372,12 +8425,12 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     object: object.into(),
                     entity: entity.into(),
                     generation: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -8391,7 +8444,6 @@ pub mod resources {
             object: String,
             entity: String,
             generation: Option<i64>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -8399,17 +8451,13 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
             #[doc = "If present, selects a specific revision of this object (as opposed to the latest version, the default)."]
             pub fn generation(mut self, value: i64) -> Self {
                 self.generation = Some(value);
-                self
-            }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
                 self
             }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
@@ -8435,6 +8483,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -8481,7 +8534,6 @@ pub mod resources {
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
                 req = req.query(&[("generation", &self.generation)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -8489,6 +8541,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -8507,7 +8560,6 @@ pub mod resources {
             object: String,
             entity: String,
             generation: Option<i64>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -8515,17 +8567,13 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> GetRequestBuilder<'a> {
             #[doc = "If present, selects a specific revision of this object (as opposed to the latest version, the default)."]
             pub fn generation(mut self, value: i64) -> Self {
                 self.generation = Some(value);
-                self
-            }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
                 self
             }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
@@ -8551,6 +8599,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -8648,7 +8701,6 @@ pub mod resources {
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::GET, path);
                 req = req.query(&[("generation", &self.generation)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -8656,6 +8708,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -8674,7 +8727,6 @@ pub mod resources {
             bucket: String,
             object: String,
             generation: Option<i64>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -8682,17 +8734,13 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> InsertRequestBuilder<'a> {
             #[doc = "If present, selects a specific revision of this object (as opposed to the latest version, the default)."]
             pub fn generation(mut self, value: i64) -> Self {
                 self.generation = Some(value);
-                self
-            }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
                 self
             }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
@@ -8718,6 +8766,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -8809,7 +8862,6 @@ pub mod resources {
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::POST, path);
                 req = req.query(&[("generation", &self.generation)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -8817,6 +8869,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -8834,7 +8887,6 @@ pub mod resources {
             bucket: String,
             object: String,
             generation: Option<i64>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -8842,17 +8894,13 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> ListRequestBuilder<'a> {
             #[doc = "If present, selects a specific revision of this object (as opposed to the latest version, the default)."]
             pub fn generation(mut self, value: i64) -> Self {
                 self.generation = Some(value);
-                self
-            }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
                 self
             }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
@@ -8878,6 +8926,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -8968,7 +9021,6 @@ pub mod resources {
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::GET, path);
                 req = req.query(&[("generation", &self.generation)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -8976,6 +9028,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -8995,7 +9048,6 @@ pub mod resources {
             object: String,
             entity: String,
             generation: Option<i64>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -9003,17 +9055,13 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> PatchRequestBuilder<'a> {
             #[doc = "If present, selects a specific revision of this object (as opposed to the latest version, the default)."]
             pub fn generation(mut self, value: i64) -> Self {
                 self.generation = Some(value);
-                self
-            }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
                 self
             }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
@@ -9039,6 +9087,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -9137,7 +9190,6 @@ pub mod resources {
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
                 req = req.query(&[("generation", &self.generation)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -9145,6 +9197,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -9164,7 +9217,6 @@ pub mod resources {
             object: String,
             entity: String,
             generation: Option<i64>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -9172,17 +9224,13 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> UpdateRequestBuilder<'a> {
             #[doc = "If present, selects a specific revision of this object (as opposed to the latest version, the default)."]
             pub fn generation(mut self, value: i64) -> Self {
                 self.generation = Some(value);
-                self
-            }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
                 self
             }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
@@ -9208,6 +9256,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -9306,7 +9359,6 @@ pub mod resources {
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::PUT, path);
                 req = req.query(&[("generation", &self.generation)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -9314,6 +9366,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -10484,6 +10537,7 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     destination_bucket: destination_bucket.into(),
                     destination_object: destination_object.into(),
@@ -10491,7 +10545,6 @@ pub mod resources {
                     if_generation_match: None,
                     if_metageneration_match: None,
                     kms_key_name: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -10514,6 +10567,7 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     source_bucket: source_bucket.into(),
                     source_object: source_object.into(),
@@ -10530,7 +10584,6 @@ pub mod resources {
                     if_source_metageneration_match: None,
                     if_source_metageneration_not_match: None,
                     projection: None,
-                    provisional_user_project: None,
                     source_generation: None,
                     user_project: None,
                 }
@@ -10550,6 +10603,7 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     object: object.into(),
@@ -10558,7 +10612,6 @@ pub mod resources {
                     if_generation_not_match: None,
                     if_metageneration_match: None,
                     if_metageneration_not_match: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -10577,6 +10630,7 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     object: object.into(),
@@ -10586,7 +10640,6 @@ pub mod resources {
                     if_metageneration_match: None,
                     if_metageneration_not_match: None,
                     projection: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -10605,11 +10658,11 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     object: object.into(),
                     generation: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -10629,6 +10682,7 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     content_encoding: None,
@@ -10640,7 +10694,6 @@ pub mod resources {
                     name: None,
                     predefined_acl: None,
                     projection: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -10655,6 +10708,7 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     delimiter: None,
@@ -10664,7 +10718,6 @@ pub mod resources {
                     page_token: None,
                     prefix: None,
                     projection: None,
-                    provisional_user_project: None,
                     start_offset: None,
                     user_project: None,
                     versions: None,
@@ -10687,6 +10740,7 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     object: object.into(),
@@ -10697,7 +10751,6 @@ pub mod resources {
                     if_metageneration_not_match: None,
                     predefined_acl: None,
                     projection: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -10720,6 +10773,7 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     source_bucket: source_bucket.into(),
                     source_object: source_object.into(),
@@ -10737,7 +10791,6 @@ pub mod resources {
                     if_source_metageneration_not_match: None,
                     max_bytes_rewritten_per_call: None,
                     projection: None,
-                    provisional_user_project: None,
                     rewrite_token: None,
                     source_generation: None,
                     user_project: None,
@@ -10760,11 +10813,11 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     object: object.into(),
                     generation: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -10784,12 +10837,12 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     object: object.into(),
                     permissions: permissions.into(),
                     generation: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -10810,6 +10863,7 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     object: object.into(),
@@ -10820,7 +10874,6 @@ pub mod resources {
                     if_metageneration_not_match: None,
                     predefined_acl: None,
                     projection: None,
-                    provisional_user_project: None,
                     user_project: None,
                 }
             }
@@ -10840,6 +10893,7 @@ pub mod resources {
                     oauth_token: None,
                     pretty_print: None,
                     quota_user: None,
+                    upload_type: None,
                     user_ip: None,
                     bucket: bucket.into(),
                     delimiter: None,
@@ -10849,7 +10903,6 @@ pub mod resources {
                     page_token: None,
                     prefix: None,
                     projection: None,
-                    provisional_user_project: None,
                     start_offset: None,
                     user_project: None,
                     versions: None,
@@ -10869,7 +10922,6 @@ pub mod resources {
             if_generation_match: Option<i64>,
             if_metageneration_match: Option<i64>,
             kms_key_name: Option<String>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -10877,6 +10929,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> ComposeRequestBuilder<'a> {
@@ -10903,11 +10956,6 @@ pub mod resources {
                 self.kms_key_name = Some(value.into());
                 self
             }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -10931,6 +10979,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -11023,7 +11076,6 @@ pub mod resources {
                 req = req.query(&[("ifGenerationMatch", &self.if_generation_match)]);
                 req = req.query(&[("ifMetagenerationMatch", &self.if_metageneration_match)]);
                 req = req.query(&[("kmsKeyName", &self.kms_key_name)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -11031,6 +11083,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -11062,7 +11115,6 @@ pub mod resources {
             if_source_metageneration_match: Option<i64>,
             if_source_metageneration_not_match: Option<i64>,
             projection: Option<crate::resources::objects::params::CopyProjection>,
-            provisional_user_project: Option<String>,
             source_generation: Option<i64>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
@@ -11071,6 +11123,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> CopyRequestBuilder<'a> {
@@ -11135,11 +11188,6 @@ pub mod resources {
                 self.projection = Some(value);
                 self
             }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "If present, selects a specific revision of the source object (as opposed to the latest version, the default)."]
             pub fn source_generation(mut self, value: i64) -> Self {
                 self.source_generation = Some(value);
@@ -11168,6 +11216,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -11294,7 +11347,6 @@ pub mod resources {
                     &self.if_source_metageneration_not_match,
                 )]);
                 req = req.query(&[("projection", &self.projection)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("sourceGeneration", &self.source_generation)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
@@ -11303,6 +11355,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -11324,7 +11377,6 @@ pub mod resources {
             if_generation_not_match: Option<i64>,
             if_metageneration_match: Option<i64>,
             if_metageneration_not_match: Option<i64>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -11332,6 +11384,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
@@ -11360,11 +11413,6 @@ pub mod resources {
                 self.if_metageneration_not_match = Some(value);
                 self
             }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -11388,6 +11436,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -11433,7 +11486,6 @@ pub mod resources {
                     "ifMetagenerationNotMatch",
                     &self.if_metageneration_not_match,
                 )]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -11441,6 +11493,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -11463,7 +11516,6 @@ pub mod resources {
             if_metageneration_match: Option<i64>,
             if_metageneration_not_match: Option<i64>,
             projection: Option<crate::resources::objects::params::GetProjection>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -11471,6 +11523,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> GetRequestBuilder<'a> {
@@ -11507,11 +11560,6 @@ pub mod resources {
                 self.projection = Some(value);
                 self
             }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -11535,6 +11583,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -11660,7 +11713,6 @@ pub mod resources {
                     &self.if_metageneration_not_match,
                 )]);
                 req = req.query(&[("projection", &self.projection)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -11668,6 +11720,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -11685,7 +11738,6 @@ pub mod resources {
             bucket: String,
             object: String,
             generation: Option<i64>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -11693,17 +11745,13 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> GetIamPolicyRequestBuilder<'a> {
             #[doc = "If present, selects a specific revision of this object (as opposed to the latest version, the default)."]
             pub fn generation(mut self, value: i64) -> Self {
                 self.generation = Some(value);
-                self
-            }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
                 self
             }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
@@ -11729,6 +11777,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -11817,7 +11870,6 @@ pub mod resources {
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::GET, path);
                 req = req.query(&[("generation", &self.generation)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -11825,6 +11877,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -11850,7 +11903,6 @@ pub mod resources {
             name: Option<String>,
             predefined_acl: Option<crate::resources::objects::params::InsertPredefinedAcl>,
             projection: Option<crate::resources::objects::params::InsertProjection>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -11858,6 +11910,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> InsertRequestBuilder<'a> {
@@ -11912,11 +11965,6 @@ pub mod resources {
                 self.projection = Some(value);
                 self
             }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -11940,6 +11988,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -12123,7 +12176,6 @@ pub mod resources {
                 req = req.query(&[("name", &self.name)]);
                 req = req.query(&[("predefinedAcl", &self.predefined_acl)]);
                 req = req.query(&[("projection", &self.projection)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -12131,6 +12183,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -12153,7 +12206,6 @@ pub mod resources {
             page_token: Option<String>,
             prefix: Option<String>,
             projection: Option<crate::resources::objects::params::ListProjection>,
-            provisional_user_project: Option<String>,
             start_offset: Option<String>,
             user_project: Option<String>,
             versions: Option<bool>,
@@ -12163,6 +12215,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> ListRequestBuilder<'a> {
@@ -12204,11 +12257,6 @@ pub mod resources {
                 self.projection = Some(value);
                 self
             }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "Filter results to objects whose names are lexicographically equal to or after startOffset. If endOffset is also set, the objects listed will have names between startOffset (inclusive) and endOffset (exclusive)."]
             pub fn start_offset(mut self, value: impl Into<String>) -> Self {
                 self.start_offset = Some(value.into());
@@ -12242,6 +12290,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -12481,7 +12534,6 @@ pub mod resources {
                 req = req.query(&[("pageToken", &self.page_token)]);
                 req = req.query(&[("prefix", &self.prefix)]);
                 req = req.query(&[("projection", &self.projection)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("startOffset", &self.start_offset)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("versions", &self.versions)]);
@@ -12491,6 +12543,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -12526,7 +12579,6 @@ pub mod resources {
             if_metageneration_not_match: Option<i64>,
             predefined_acl: Option<crate::resources::objects::params::PatchPredefinedAcl>,
             projection: Option<crate::resources::objects::params::PatchProjection>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -12534,6 +12586,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> PatchRequestBuilder<'a> {
@@ -12578,11 +12631,6 @@ pub mod resources {
                 self.projection = Some(value);
                 self
             }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request, for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -12606,6 +12654,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -12703,7 +12756,6 @@ pub mod resources {
                 )]);
                 req = req.query(&[("predefinedAcl", &self.predefined_acl)]);
                 req = req.query(&[("projection", &self.projection)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -12711,6 +12763,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -12743,7 +12796,6 @@ pub mod resources {
             if_source_metageneration_not_match: Option<i64>,
             max_bytes_rewritten_per_call: Option<i64>,
             projection: Option<crate::resources::objects::params::RewriteProjection>,
-            provisional_user_project: Option<String>,
             rewrite_token: Option<String>,
             source_generation: Option<i64>,
             user_project: Option<String>,
@@ -12753,6 +12805,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> RewriteRequestBuilder<'a> {
@@ -12822,11 +12875,6 @@ pub mod resources {
                 self.projection = Some(value);
                 self
             }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "Include this field (from the previous rewrite response) on each rewrite request after the first one, until the rewrite response 'done' flag is true. Calls that provide a rewriteToken can omit all other request fields, but if included those fields must match the values provided in the first rewrite request."]
             pub fn rewrite_token(mut self, value: impl Into<String>) -> Self {
                 self.rewrite_token = Some(value.into());
@@ -12860,6 +12908,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -12992,7 +13045,6 @@ pub mod resources {
                     &self.max_bytes_rewritten_per_call,
                 )]);
                 req = req.query(&[("projection", &self.projection)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("rewriteToken", &self.rewrite_token)]);
                 req = req.query(&[("sourceGeneration", &self.source_generation)]);
                 req = req.query(&[("userProject", &self.user_project)]);
@@ -13002,6 +13054,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -13020,7 +13073,6 @@ pub mod resources {
             bucket: String,
             object: String,
             generation: Option<i64>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -13028,17 +13080,13 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> SetIamPolicyRequestBuilder<'a> {
             #[doc = "If present, selects a specific revision of this object (as opposed to the latest version, the default)."]
             pub fn generation(mut self, value: i64) -> Self {
                 self.generation = Some(value);
-                self
-            }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
                 self
             }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
@@ -13064,6 +13112,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -13153,7 +13206,6 @@ pub mod resources {
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::PUT, path);
                 req = req.query(&[("generation", &self.generation)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -13161,6 +13213,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -13179,7 +13232,6 @@ pub mod resources {
             object: String,
             permissions: Vec<String>,
             generation: Option<i64>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -13187,17 +13239,13 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> TestIamPermissionsRequestBuilder<'a> {
             #[doc = "If present, selects a specific revision of this object (as opposed to the latest version, the default)."]
             pub fn generation(mut self, value: i64) -> Self {
                 self.generation = Some(value);
-                self
-            }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
                 self
             }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
@@ -13223,6 +13271,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -13316,7 +13369,6 @@ pub mod resources {
                     req = req.query(&[("permissions", value)]);
                 }
                 req = req.query(&[("generation", &self.generation)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -13324,6 +13376,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -13348,7 +13401,6 @@ pub mod resources {
             if_metageneration_not_match: Option<i64>,
             predefined_acl: Option<crate::resources::objects::params::UpdatePredefinedAcl>,
             projection: Option<crate::resources::objects::params::UpdateProjection>,
-            provisional_user_project: Option<String>,
             user_project: Option<String>,
             alt: Option<crate::params::Alt>,
             fields: Option<String>,
@@ -13356,6 +13408,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> UpdateRequestBuilder<'a> {
@@ -13400,11 +13453,6 @@ pub mod resources {
                 self.projection = Some(value);
                 self
             }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "The project to be billed for this request. Required for Requester Pays buckets."]
             pub fn user_project(mut self, value: impl Into<String>) -> Self {
                 self.user_project = Some(value.into());
@@ -13428,6 +13476,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -13525,7 +13578,6 @@ pub mod resources {
                 )]);
                 req = req.query(&[("predefinedAcl", &self.predefined_acl)]);
                 req = req.query(&[("projection", &self.projection)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
@@ -13533,6 +13585,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -13556,7 +13609,6 @@ pub mod resources {
             page_token: Option<String>,
             prefix: Option<String>,
             projection: Option<crate::resources::objects::params::WatchAllProjection>,
-            provisional_user_project: Option<String>,
             start_offset: Option<String>,
             user_project: Option<String>,
             versions: Option<bool>,
@@ -13566,6 +13618,7 @@ pub mod resources {
             oauth_token: Option<String>,
             pretty_print: Option<bool>,
             quota_user: Option<String>,
+            upload_type: Option<String>,
             user_ip: Option<String>,
         }
         impl<'a> WatchAllRequestBuilder<'a> {
@@ -13607,11 +13660,6 @@ pub mod resources {
                 self.projection = Some(value);
                 self
             }
-            #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-            pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                self.provisional_user_project = Some(value.into());
-                self
-            }
             #[doc = "Filter results to objects whose names are lexicographically equal to or after startOffset. If endOffset is also set, the objects listed will have names between startOffset (inclusive) and endOffset (exclusive)."]
             pub fn start_offset(mut self, value: impl Into<String>) -> Self {
                 self.start_offset = Some(value.into());
@@ -13645,6 +13693,11 @@ pub mod resources {
             #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
             pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                 self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
                 self
             }
             #[doc = "Deprecated. Please use quotaUser instead."]
@@ -13732,7 +13785,6 @@ pub mod resources {
                 req = req.query(&[("pageToken", &self.page_token)]);
                 req = req.query(&[("prefix", &self.prefix)]);
                 req = req.query(&[("projection", &self.projection)]);
-                req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                 req = req.query(&[("startOffset", &self.start_offset)]);
                 req = req.query(&[("userProject", &self.user_project)]);
                 req = req.query(&[("versions", &self.versions)]);
@@ -13742,6 +13794,7 @@ pub mod resources {
                 req = req.query(&[("oauth_token", &self.oauth_token)]);
                 req = req.query(&[("prettyPrint", &self.pretty_print)]);
                 req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
                 req = req.query(&[("userIp", &self.user_ip)]);
                 req = req.bearer_auth(
                     self.auth
@@ -13804,6 +13857,7 @@ pub mod resources {
                         oauth_token: None,
                         pretty_print: None,
                         quota_user: None,
+                        upload_type: None,
                         user_ip: None,
                         project_id: project_id.into(),
                         service_account_email: service_account_email.into(),
@@ -13825,6 +13879,7 @@ pub mod resources {
                         oauth_token: None,
                         pretty_print: None,
                         quota_user: None,
+                        upload_type: None,
                         user_ip: None,
                         project_id: project_id.into(),
                         access_id: access_id.into(),
@@ -13846,6 +13901,7 @@ pub mod resources {
                         oauth_token: None,
                         pretty_print: None,
                         quota_user: None,
+                        upload_type: None,
                         user_ip: None,
                         project_id: project_id.into(),
                         access_id: access_id.into(),
@@ -13863,6 +13919,7 @@ pub mod resources {
                         oauth_token: None,
                         pretty_print: None,
                         quota_user: None,
+                        upload_type: None,
                         user_ip: None,
                         project_id: project_id.into(),
                         max_results: None,
@@ -13889,6 +13946,7 @@ pub mod resources {
                         oauth_token: None,
                         pretty_print: None,
                         quota_user: None,
+                        upload_type: None,
                         user_ip: None,
                         project_id: project_id.into(),
                         access_id: access_id.into(),
@@ -13910,6 +13968,7 @@ pub mod resources {
                 oauth_token: Option<String>,
                 pretty_print: Option<bool>,
                 quota_user: Option<String>,
+                upload_type: Option<String>,
                 user_ip: Option<String>,
             }
             impl<'a> CreateRequestBuilder<'a> {
@@ -13936,6 +13995,11 @@ pub mod resources {
                 #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
                 pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                     self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
                     self
                 }
                 #[doc = "Deprecated. Please use quotaUser instead."]
@@ -14028,6 +14092,7 @@ pub mod resources {
                     req = req.query(&[("oauth_token", &self.oauth_token)]);
                     req = req.query(&[("prettyPrint", &self.pretty_print)]);
                     req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
                     req = req.query(&[("userIp", &self.user_ip)]);
                     req = req.bearer_auth(
                         self.auth
@@ -14051,6 +14116,7 @@ pub mod resources {
                 oauth_token: Option<String>,
                 pretty_print: Option<bool>,
                 quota_user: Option<String>,
+                upload_type: Option<String>,
                 user_ip: Option<String>,
             }
             impl<'a> DeleteRequestBuilder<'a> {
@@ -14077,6 +14143,11 @@ pub mod resources {
                 #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
                 pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                     self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
                     self
                 }
                 #[doc = "Deprecated. Please use quotaUser instead."]
@@ -14121,6 +14192,7 @@ pub mod resources {
                     req = req.query(&[("oauth_token", &self.oauth_token)]);
                     req = req.query(&[("prettyPrint", &self.pretty_print)]);
                     req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
                     req = req.query(&[("userIp", &self.user_ip)]);
                     req = req.bearer_auth(
                         self.auth
@@ -14144,6 +14216,7 @@ pub mod resources {
                 oauth_token: Option<String>,
                 pretty_print: Option<bool>,
                 quota_user: Option<String>,
+                upload_type: Option<String>,
                 user_ip: Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
@@ -14170,6 +14243,11 @@ pub mod resources {
                 #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
                 pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                     self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
                     self
                 }
                 #[doc = "Deprecated. Please use quotaUser instead."]
@@ -14268,6 +14346,7 @@ pub mod resources {
                     req = req.query(&[("oauth_token", &self.oauth_token)]);
                     req = req.query(&[("prettyPrint", &self.pretty_print)]);
                     req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
                     req = req.query(&[("userIp", &self.user_ip)]);
                     req = req.bearer_auth(
                         self.auth
@@ -14294,6 +14373,7 @@ pub mod resources {
                 oauth_token: Option<String>,
                 pretty_print: Option<bool>,
                 quota_user: Option<String>,
+                upload_type: Option<String>,
                 user_ip: Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
@@ -14340,6 +14420,11 @@ pub mod resources {
                 #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
                 pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                     self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
                     self
                 }
                 #[doc = "Deprecated. Please use quotaUser instead."]
@@ -14535,6 +14620,7 @@ pub mod resources {
                     req = req.query(&[("oauth_token", &self.oauth_token)]);
                     req = req.query(&[("prettyPrint", &self.pretty_print)]);
                     req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
                     req = req.query(&[("userIp", &self.user_ip)]);
                     req = req.bearer_auth(
                         self.auth
@@ -14570,6 +14656,7 @@ pub mod resources {
                 oauth_token: Option<String>,
                 pretty_print: Option<bool>,
                 quota_user: Option<String>,
+                upload_type: Option<String>,
                 user_ip: Option<String>,
             }
             impl<'a> UpdateRequestBuilder<'a> {
@@ -14596,6 +14683,11 @@ pub mod resources {
                 #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
                 pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                     self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
                     self
                 }
                 #[doc = "Deprecated. Please use quotaUser instead."]
@@ -14695,6 +14787,7 @@ pub mod resources {
                     req = req.query(&[("oauth_token", &self.oauth_token)]);
                     req = req.query(&[("prettyPrint", &self.pretty_print)]);
                     req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
                     req = req.query(&[("userIp", &self.user_ip)]);
                     req = req.bearer_auth(
                         self.auth
@@ -14726,9 +14819,9 @@ pub mod resources {
                         oauth_token: None,
                         pretty_print: None,
                         quota_user: None,
+                        upload_type: None,
                         user_ip: None,
                         project_id: project_id.into(),
-                        provisional_user_project: None,
                         user_project: None,
                     }
                 }
@@ -14739,7 +14832,6 @@ pub mod resources {
                 pub(crate) reqwest: &'a ::reqwest::blocking::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 project_id: String,
-                provisional_user_project: Option<String>,
                 user_project: Option<String>,
                 alt: Option<crate::params::Alt>,
                 fields: Option<String>,
@@ -14747,14 +14839,10 @@ pub mod resources {
                 oauth_token: Option<String>,
                 pretty_print: Option<bool>,
                 quota_user: Option<String>,
+                upload_type: Option<String>,
                 user_ip: Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
-                #[doc = "The project to be billed for this request if the target bucket is requester-pays bucket."]
-                pub fn provisional_user_project(mut self, value: impl Into<String>) -> Self {
-                    self.provisional_user_project = Some(value.into());
-                    self
-                }
                 #[doc = "The project to be billed for this request."]
                 pub fn user_project(mut self, value: impl Into<String>) -> Self {
                     self.user_project = Some(value.into());
@@ -14778,6 +14866,11 @@ pub mod resources {
                 #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
                 pub fn quota_user(mut self, value: impl Into<String>) -> Self {
                     self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
                     self
                 }
                 #[doc = "Deprecated. Please use quotaUser instead."]
@@ -14862,7 +14955,6 @@ pub mod resources {
                     path: &str,
                 ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                     let mut req = self.reqwest.request(::reqwest::Method::GET, path);
-                    req = req.query(&[("provisionalUserProject", &self.provisional_user_project)]);
                     req = req.query(&[("userProject", &self.user_project)]);
                     req = req.query(&[("alt", &self.alt)]);
                     req = req.query(&[("fields", &self.fields)]);
@@ -14870,6 +14962,7 @@ pub mod resources {
                     req = req.query(&[("oauth_token", &self.oauth_token)]);
                     req = req.query(&[("prettyPrint", &self.pretty_print)]);
                     req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
                     req = req.query(&[("userIp", &self.user_ip)]);
                     req = req.bearer_auth(
                         self.auth

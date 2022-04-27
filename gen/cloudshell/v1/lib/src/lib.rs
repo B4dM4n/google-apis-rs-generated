@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [operations](resources/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/operations/struct.CancelRequestBuilder.html), [*delete*](resources/operations/struct.DeleteRequestBuilder.html), [*get*](resources/operations/struct.GetRequestBuilder.html), [*list*](resources/operations/struct.ListRequestBuilder.html)\n    * [users](resources/users/struct.UsersActions.html)\n      * [environments](resources/users/environments/struct.EnvironmentsActions.html)\n        * [*addPublicKey*](resources/users/environments/struct.AddPublicKeyRequestBuilder.html), [*authorize*](resources/users/environments/struct.AuthorizeRequestBuilder.html), [*get*](resources/users/environments/struct.GetRequestBuilder.html), [*removePublicKey*](resources/users/environments/struct.RemovePublicKeyRequestBuilder.html), [*start*](resources/users/environments/struct.StartRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {

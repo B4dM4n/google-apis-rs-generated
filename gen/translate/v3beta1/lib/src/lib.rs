@@ -1,11 +1,148 @@
-#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [*detectLanguage*](resources/projects/struct.DetectLanguageRequestBuilder.html), [*getSupportedLanguages*](resources/projects/struct.GetSupportedLanguagesRequestBuilder.html), [*translateText*](resources/projects/struct.TranslateTextRequestBuilder.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*batchTranslateText*](resources/projects/locations/struct.BatchTranslateTextRequestBuilder.html), [*detectLanguage*](resources/projects/locations/struct.DetectLanguageRequestBuilder.html), [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*getSupportedLanguages*](resources/projects/locations/struct.GetSupportedLanguagesRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html), [*translateText*](resources/projects/locations/struct.TranslateTextRequestBuilder.html)\n        * [glossaries](resources/projects/locations/glossaries/struct.GlossariesActions.html)\n          * [*create*](resources/projects/locations/glossaries/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/glossaries/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/glossaries/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/glossaries/struct.ListRequestBuilder.html)\n        * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n          * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/locations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html), [*wait*](resources/projects/locations/operations/struct.WaitRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [*detectLanguage*](resources/projects/struct.DetectLanguageRequestBuilder.html), [*getSupportedLanguages*](resources/projects/struct.GetSupportedLanguagesRequestBuilder.html), [*translateText*](resources/projects/struct.TranslateTextRequestBuilder.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*batchTranslateDocument*](resources/projects/locations/struct.BatchTranslateDocumentRequestBuilder.html), [*batchTranslateText*](resources/projects/locations/struct.BatchTranslateTextRequestBuilder.html), [*detectLanguage*](resources/projects/locations/struct.DetectLanguageRequestBuilder.html), [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*getSupportedLanguages*](resources/projects/locations/struct.GetSupportedLanguagesRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html), [*translateDocument*](resources/projects/locations/struct.TranslateDocumentRequestBuilder.html), [*translateText*](resources/projects/locations/struct.TranslateTextRequestBuilder.html)\n        * [glossaries](resources/projects/locations/glossaries/struct.GlossariesActions.html)\n          * [*create*](resources/projects/locations/glossaries/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/glossaries/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/glossaries/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/glossaries/struct.ListRequestBuilder.html)\n        * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n          * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/locations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html), [*wait*](resources/projects/locations/operations/struct.WaitRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
     #[doc = "Translate text from one language to another using Google Translate\n\n`https://www.googleapis.com/auth/cloud-translation`"]
     pub const CLOUD_TRANSLATION: &str = "https://www.googleapis.com/auth/cloud-translation";
 }
 pub mod schemas {
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BatchDocumentInputConfig {
+        #[doc = "Google Cloud Storage location for the source input. This can be a single file (for example, `gs://translation-test/input.docx`) or a wildcard (for example, `gs://translation-test/*`). File mime type is determined based on extension. Supported mime type includes: - `pdf`, application/pdf - `docx`, application/vnd.openxmlformats-officedocument.wordprocessingml.document - `pptx`, application/vnd.openxmlformats-officedocument.presentationml.presentation - `xlsx`, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB. The max file size to support for `.pdf` is 1GB and the max page limit is 1000 pages. The max file size to support for all input documents is 1GB."]
+        #[serde(
+            rename = "gcsSource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcs_source: ::std::option::Option<crate::schemas::GcsSource>,
+    }
+    impl ::google_field_selector::FieldSelector for BatchDocumentInputConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BatchDocumentInputConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BatchDocumentOutputConfig {
+        #[doc = "Google Cloud Storage destination for output content. For every single input document (for example, gs://a/b/c.[extension]), we generate at most 2 * n output files. (n is the # of target_language_codes in the BatchTranslateDocumentRequest). While the input documents are being processed, we write/update an index file `index.csv` under `gcs_destination.output_uri_prefix` (for example, gs://translation_output/index.csv) The index file is generated/updated as new files are being translated. The format is: input_document,target_language_code,translation_output,error_output, glossary_translation_output,glossary_error_output `input_document` is one file we matched using gcs_source.input_uri. `target_language_code` is provided in the request. `translation_output` contains the translations. (details provided below) `error_output` contains the error message during processing of the file. Both translations_file and errors_file could be empty strings if we have no content to output. `glossary_translation_output` and `glossary_error_output` are the translated output/error when we apply glossaries. They could also be empty if we have no content to output. Once a row is present in index.csv, the input/output matching never changes. Callers should also expect all the content in input_file are processed and ready to be consumed (that is, no partial output file is written). Since index.csv will be keeping updated during the process, please make sure there is no custom retention policy applied on the output bucket that may avoid file updating. (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy) The naming format of translation output files follows (for target language code [trg]): `translation_output`: gs://translation_output/a_b_c_[trg]*translation.[extension] `glossary_translation_output`: gs://translation_test/a_b_c*[trg]*glossary_translation.[extension] The output document will maintain the same file format as the input document. The naming format of error output files follows (for target language code [trg]): `error_output`: gs://translation_test/a_b_c*[trg]*errors.txt `glossary_error_output`: gs://translation_test/a_b_c*[trg]_glossary_translation.txt The error output is a txt file containing error details."]
+        #[serde(
+            rename = "gcsDestination",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcs_destination: ::std::option::Option<crate::schemas::GcsDestination>,
+    }
+    impl ::google_field_selector::FieldSelector for BatchDocumentOutputConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BatchDocumentOutputConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BatchTranslateDocumentRequest {
+        #[doc = "Optional."]
+        #[serde(
+            rename = "formatConversions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub format_conversions: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "Optional. Glossaries to be applied. It's keyed by target language code."]
+        #[serde(
+            rename = "glossaries",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub glossaries: ::std::option::Option<
+            ::std::collections::BTreeMap<String, crate::schemas::TranslateTextGlossaryConfig>,
+        >,
+        #[doc = "Required. Input configurations. The total number of files matched should be <= 100. The total content size to translate should be <= 100M Unicode codepoints. The files must use UTF-8 encoding."]
+        #[serde(
+            rename = "inputConfigs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub input_configs: ::std::option::Option<Vec<crate::schemas::BatchDocumentInputConfig>>,
+        #[doc = "Optional. The models to use for translation. Map's key is target language code. Map's value is the model name. Value can be a built-in general model, or an AutoML Translation model. The value format depends on model type: - AutoML Translation models: `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}` - General (built-in) models: `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`, If the map is empty or a specific model is not requested for a language pair, then default google model (nmt) is used."]
+        #[serde(
+            rename = "models",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub models: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "Required. Output configuration. If 2 input configs match to the same file (that is, same input path), we don't generate output for duplicate inputs."]
+        #[serde(
+            rename = "outputConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub output_config: ::std::option::Option<crate::schemas::BatchDocumentOutputConfig>,
+        #[doc = "Required. The BCP-47 language code of the input document if known, for example, \"en-US\" or \"sr-Latn\". Supported language codes are listed in Language Support (https://cloud.google.com/translate/docs/languages)."]
+        #[serde(
+            rename = "sourceLanguageCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub source_language_code: ::std::option::Option<String>,
+        #[doc = "Required. The BCP-47 language code to use for translation of the input document. Specify up to 10 language codes here."]
+        #[serde(
+            rename = "targetLanguageCodes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target_language_codes: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for BatchTranslateDocumentRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BatchTranslateDocumentRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -42,7 +179,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Optional. The models to use for translation. Map's key is target language code. Map's value is model name. Value can be a built-in general model, or an AutoML Translation model. The value format depends on model type: - AutoML Translation models: `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}` - General (built-in) models: `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`, `projects/{project-number-or-id}/locations/{location-id}/models/general/base` If the map is empty or a specific model is not requested for a language pair, then default google model (nmt) is used."]
+        #[doc = "Optional. The models to use for translation. Map's key is target language code. Map's value is model name. Value can be a built-in general model, or an AutoML Translation model. The value format depends on model type: - AutoML Translation models: `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}` - General (built-in) models: `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`, If the map is empty or a specific model is not requested for a language pair, then default google model (nmt) is used."]
         #[serde(
             rename = "models",
             default,
@@ -204,6 +341,134 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for DetectedLanguage {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DocumentInputConfig {
+        #[doc = "Document's content represented as a stream of bytes."]
+        #[serde(
+            rename = "content",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub content: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "Google Cloud Storage location. This must be a single file. For example: gs://example_bucket/example_file.pdf"]
+        #[serde(
+            rename = "gcsSource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcs_source: ::std::option::Option<crate::schemas::GcsSource>,
+        #[doc = "Specifies the input document's mime_type. If not specified it will be determined using the file extension for gcs_source provided files. For a file provided through bytes content the mime_type must be provided. Currently supported mime types are: - application/pdf - application/vnd.openxmlformats-officedocument.wordprocessingml.document - application/vnd.openxmlformats-officedocument.presentationml.presentation - application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"]
+        #[serde(
+            rename = "mimeType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mime_type: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for DocumentInputConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DocumentInputConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DocumentOutputConfig {
+        #[doc = "Optional. Google Cloud Storage destination for the translation output, e.g., `gs://my_bucket/my_directory/`. The destination directory provided does not have to be empty, but the bucket must exist. If a file with the same name as the output file already exists in the destination an error will be returned. For a DocumentInputConfig.contents provided document, the output file will have the name \"output_[trg]*translations.[ext]\", where - [trg] corresponds to the translated file's language code, - [ext] corresponds to the translated file's extension according to its mime type. For a DocumentInputConfig.gcs_uri provided document, the output file will have a name according to its URI. For example: an input file with URI: \"gs://a/b/c.[extension]\" stored in a gcs_destination bucket with name \"my_bucket\" will have an output URI: \"gs://my_bucket/a_b_c*[trg]*translations.[ext]\", where - [trg] corresponds to the translated file's language code, - [ext] corresponds to the translated file's extension according to its mime type. If the document was directly provided through the request, then the output document will have the format: \"gs://my_bucket/translated_document*[trg]*translations.[ext], where - [trg] corresponds to the translated file's language code, - [ext] corresponds to the translated file's extension according to its mime type. If a glossary was provided, then the output URI for the glossary translation will be equal to the default output URI but have `glossary_translations` instead of `translations`. For the previous example, its glossary URI would be: \"gs://my_bucket/a_b_c*[trg]_glossary_translations.[ext]\". Thus the max number of output files will be 2 (Translated document, Glossary translated document). Callers should expect no partial outputs. If there is any error during document translation, no output will be stored in the Cloud Storage bucket."]
+        #[serde(
+            rename = "gcsDestination",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcs_destination: ::std::option::Option<crate::schemas::GcsDestination>,
+        #[doc = "Optional. Specifies the translated document's mime_type. If not specified, the translated file's mime type will be the same as the input file's mime type. Currently only support the output mime type to be the same as input mime type. - application/pdf - application/vnd.openxmlformats-officedocument.wordprocessingml.document - application/vnd.openxmlformats-officedocument.presentationml.presentation - application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"]
+        #[serde(
+            rename = "mimeType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mime_type: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for DocumentOutputConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DocumentOutputConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DocumentTranslation {
+        #[doc = "The array of translated documents. It is expected to be size 1 for now. We may produce multiple translated documents in the future for other type of file formats."]
+        #[serde(
+            rename = "byteStreamOutputs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub byte_stream_outputs: ::std::option::Option<Vec<::google_api_bytes::Bytes>>,
+        #[doc = "The detected language for the input document. If the user did not provide the source language for the input document, this field will have the language code automatically detected. If the source language was passed, auto-detection of the language does not occur and this field is empty."]
+        #[serde(
+            rename = "detectedLanguageCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub detected_language_code: ::std::option::Option<String>,
+        #[doc = "The translated document's mime type."]
+        #[serde(
+            rename = "mimeType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mime_type: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for DocumentTranslation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DocumentTranslation {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -857,6 +1122,132 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct TranslateDocumentRequest {
+        #[doc = "Required. Input configurations."]
+        #[serde(
+            rename = "documentInputConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub document_input_config: ::std::option::Option<crate::schemas::DocumentInputConfig>,
+        #[doc = "Optional. Output configurations. Defines if the output file should be stored within Cloud Storage as well as the desired output format. If not provided the translated file will only be returned through a byte-stream and its output mime type will be the same as the input file's mime type."]
+        #[serde(
+            rename = "documentOutputConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub document_output_config: ::std::option::Option<crate::schemas::DocumentOutputConfig>,
+        #[doc = "Optional. Glossary to be applied. The glossary must be within the same region (have the same location-id) as the model, otherwise an INVALID_ARGUMENT (400) error is returned."]
+        #[serde(
+            rename = "glossaryConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub glossary_config: ::std::option::Option<crate::schemas::TranslateTextGlossaryConfig>,
+        #[doc = "Optional. The labels with user-defined metadata for the request. Label keys and values can be no longer than 63 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter. See https://cloud.google.com/translate/docs/advanced/labels for more information."]
+        #[serde(
+            rename = "labels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "Optional. The `model` type requested for this translation. The format depends on model type: - AutoML Translation models: `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}` - General (built-in) models: `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`, If not provided, the default Google model (NMT) will be used for translation."]
+        #[serde(
+            rename = "model",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub model: ::std::option::Option<String>,
+        #[doc = "Optional. The BCP-47 language code of the input document if known, for example, \"en-US\" or \"sr-Latn\". Supported language codes are listed in Language Support. If the source language isn't specified, the API attempts to identify the source language automatically and returns the source language within the response. Source language must be specified if the request contains a glossary or a custom model."]
+        #[serde(
+            rename = "sourceLanguageCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub source_language_code: ::std::option::Option<String>,
+        #[doc = "Required. The BCP-47 language code to use for translation of the input document, set to one of the language codes listed in Language Support."]
+        #[serde(
+            rename = "targetLanguageCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target_language_code: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for TranslateDocumentRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TranslateDocumentRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct TranslateDocumentResponse {
+        #[doc = "Translated document."]
+        #[serde(
+            rename = "documentTranslation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub document_translation: ::std::option::Option<crate::schemas::DocumentTranslation>,
+        #[doc = "The `glossary_config` used for this translation."]
+        #[serde(
+            rename = "glossaryConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub glossary_config: ::std::option::Option<crate::schemas::TranslateTextGlossaryConfig>,
+        #[doc = "The document's translation output if a glossary is provided in the request. This can be the same as [TranslateDocumentResponse.document_translation] if no glossary terms apply."]
+        #[serde(
+            rename = "glossaryDocumentTranslation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub glossary_document_translation:
+            ::std::option::Option<crate::schemas::DocumentTranslation>,
+        #[doc = "Only present when 'model' is present in the request. 'model' is normalized to have a project number. For example: If the 'model' field in TranslateDocumentRequest is: `projects/{project-id}/locations/{location-id}/models/general/nmt` then `model` here would be normalized to `projects/{project-number}/locations/{location-id}/models/general/nmt`."]
+        #[serde(
+            rename = "model",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub model: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for TranslateDocumentResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TranslateDocumentResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct TranslateTextGlossaryConfig {
         #[doc = "Required. Specifies the glossary used for this translation. Use this format: projects/*/locations/*/glossaries/*"]
         #[serde(
@@ -924,7 +1315,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mime_type: ::std::option::Option<String>,
-        #[doc = "Optional. The `model` type requested for this translation. The format depends on model type: - AutoML Translation models: `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}` - General (built-in) models: `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`, `projects/{project-number-or-id}/locations/{location-id}/models/general/base` For global (non-regionalized) requests, use `location-id` `global`. For example, `projects/{project-number-or-id}/locations/global/models/general/nmt`. If missing, the system decides which google base model to use."]
+        #[doc = "Optional. The `model` type requested for this translation. The format depends on model type: - AutoML Translation models: `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}` - General (built-in) models: `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`, For global (non-regionalized) requests, use `location-id` `global`. For example, `projects/{project-number-or-id}/locations/global/models/general/nmt`. If not provided, the default Google model (NMT) will be used"]
         #[serde(
             rename = "model",
             default,
@@ -1028,7 +1419,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub model: ::std::option::Option<String>,
-        #[doc = "Text translated into the target language."]
+        #[doc = "Text translated into the target language. If an error occurs during translation, this field might be excluded from the response."]
         #[serde(
             rename = "translatedText",
             default,
@@ -1540,7 +1931,7 @@ pub mod resources {
                 self.display_language_code = Some(value.into());
                 self
             }
-            #[doc = "Optional. Get supported languages of this model. The format depends on model type: - AutoML Translation models: `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}` - General (built-in) models: `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`, `projects/{project-number-or-id}/locations/{location-id}/models/general/base` Returns languages supported by the specified model. If missing, we get supported languages of Google general base (PBMT) model."]
+            #[doc = "Optional. Get supported languages of this model. The format depends on model type: - AutoML Translation models: `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}` - General (built-in) models: `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`, Returns languages supported by the specified model. If missing, we get supported languages of Google general NMT model."]
             pub fn model(mut self, value: impl Into<String>) -> Self {
                 self.model = Some(value.into());
                 self
@@ -1854,6 +2245,30 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
+                #[doc = "Translates a large volume of document in asynchronous batch mode. This function provides real-time output as the inputs are being processed. If caller cancels a request, the partial results (for an input file, it's all or nothing) may still be available on the specified output location. This call returns immediately and you can use google.longrunning.Operation.name to poll the status of the call."]
+                pub fn batch_translate_document(
+                    &self,
+                    request: crate::schemas::BatchTranslateDocumentRequest,
+                    parent: impl Into<String>,
+                ) -> BatchTranslateDocumentRequestBuilder {
+                    BatchTranslateDocumentRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        parent: parent.into(),
+                    }
+                }
                 #[doc = "Translates a large volume of text in asynchronous batch mode. This function provides real-time output as the inputs are being processed. If caller cancels a request, the partial results (for an input file, it's all or nothing) may still be available on the specified output location. This call returns immediately and you can use google.longrunning.Operation.name to poll the status of the call."]
                 pub fn batch_translate_text(
                     &self,
@@ -1967,6 +2382,30 @@ pub mod resources {
                         page_token: None,
                     }
                 }
+                #[doc = "Translates documents in synchronous mode."]
+                pub fn translate_document(
+                    &self,
+                    request: crate::schemas::TranslateDocumentRequest,
+                    parent: impl Into<String>,
+                ) -> TranslateDocumentRequestBuilder {
+                    TranslateDocumentRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        parent: parent.into(),
+                    }
+                }
                 #[doc = "Translates input text and returns translated text."]
                 pub fn translate_text(
                     &self,
@@ -2010,6 +2449,168 @@ pub mod resources {
                         reqwest: &self.reqwest,
                         auth: self.auth_ref(),
                     }
+                }
+            }
+            #[doc = "Created via [LocationsActions::batch_translate_document()](struct.LocationsActions.html#method.batch_translate_document)"]
+            #[derive(Debug, Clone)]
+            pub struct BatchTranslateDocumentRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::BatchTranslateDocumentRequest,
+                parent: String,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> BatchTranslateDocumentRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Operation, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Operation, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://translation.googleapis.com/".to_owned();
+                    output.push_str("v3beta1/");
+                    {
+                        let var_as_str = &self.parent;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str(":batchTranslateDocument");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
                 }
             }
             #[doc = "Created via [LocationsActions::batch_translate_text()](struct.LocationsActions.html#method.batch_translate_text)"]
@@ -2521,7 +3122,7 @@ pub mod resources {
                     self.display_language_code = Some(value.into());
                     self
                 }
-                #[doc = "Optional. Get supported languages of this model. The format depends on model type: - AutoML Translation models: `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}` - General (built-in) models: `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`, `projects/{project-number-or-id}/locations/{location-id}/models/general/base` Returns languages supported by the specified model. If missing, we get supported languages of Google general base (PBMT) model."]
+                #[doc = "Optional. Get supported languages of this model. The format depends on model type: - AutoML Translation models: `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}` - General (built-in) models: `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`, Returns languages supported by the specified model. If missing, we get supported languages of Google general NMT model."]
                 pub fn model(mut self, value: impl Into<String>) -> Self {
                     self.model = Some(value.into());
                     self
@@ -2691,12 +3292,12 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like \"displayName=tokyo\", and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
+                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
                 }
-                #[doc = "The maximum number of results to return. If not set, the service will select a default."]
+                #[doc = "The maximum number of results to return. If not set, the service selects a default."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
@@ -2959,6 +3560,170 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned,
                 {
                     self._execute()
+                }
+            }
+            #[doc = "Created via [LocationsActions::translate_document()](struct.LocationsActions.html#method.translate_document)"]
+            #[derive(Debug, Clone)]
+            pub struct TranslateDocumentRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::TranslateDocumentRequest,
+                parent: String,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> TranslateDocumentRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::TranslateDocumentResponse, crate::Error>
+                {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::TranslateDocumentResponse, crate::Error>
+                {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://translation.googleapis.com/".to_owned();
+                    output.push_str("v3beta1/");
+                    {
+                        let var_as_str = &self.parent;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str(":translateDocument");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
                 }
             }
             #[doc = "Created via [LocationsActions::translate_text()](struct.LocationsActions.html#method.translate_text)"]

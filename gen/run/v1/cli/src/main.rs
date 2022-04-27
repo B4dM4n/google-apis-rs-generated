@@ -15,8 +15,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("run1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210312")
-            .about("Deploy and manage user provided container images that scale automatically based on HTTP traffic.")
+            .version("0.1.0-20220415")
+            .about("Deploy and manage user provided container images that scale automatically based on incoming requests. The Cloud Run Admin API v1 follows the Knative Serving API specification, while v2 is aligned with Google Cloud AIP-based API standards, as described in https://google.aip.dev/.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
                 .long("scope")
@@ -35,7 +35,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .takes_value(false));
         let mut namespaces0 = SubCommand::with_name("namespaces")
                         .setting(AppSettings::ColoredHelp)
-                        .about("sub-resources: authorizeddomains, configurations, domainmappings, revisions, routes and services");
+                        .about("sub-resources: authorizeddomains, configurations, domainmappings, executions, jobs, revisions, routes, services and tasks");
         let mut projects0 = SubCommand::with_name("projects")
             .setting(AppSettings::ColoredHelp)
             .about("sub-resources: authorizeddomains and locations");
@@ -76,6 +76,49 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("list").about("List domain mappings.");
             domainmappings1 = domainmappings1.subcommand(mcmd);
+        }
+        let mut executions1 = SubCommand::with_name("executions")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: delete, get and list");
+        {
+            let mcmd = SubCommand::with_name("delete").about("Delete an execution.");
+            executions1 = executions1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Get information about an execution.");
+            executions1 = executions1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("List executions.");
+            executions1 = executions1.subcommand(mcmd);
+        }
+        let mut jobs1 = SubCommand::with_name("jobs")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list, replace_job and run");
+        {
+            let mcmd = SubCommand::with_name("create").about("Create a job.");
+            jobs1 = jobs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Delete a job.");
+            jobs1 = jobs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Get information about a job.");
+            jobs1 = jobs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("List jobs.");
+            jobs1 = jobs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("replace_job").about("Replace a job. Only the spec and metadata labels and annotations are modifiable. After the Replace request, Cloud Run will work to make the 'status' match the requested 'spec'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control.");
+            jobs1 = jobs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("run")
+                .about("Trigger creation of a new execution of this job.");
+            jobs1 = jobs1.subcommand(mcmd);
         }
         let mut revisions1 = SubCommand::with_name("revisions")
             .setting(AppSettings::ColoredHelp)
@@ -123,8 +166,19 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             services1 = services1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("replace_service").about("Replace a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the \'status\' match the requested \'spec\'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control.");
+            let mcmd = SubCommand::with_name("replace_service").about("Replace a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the 'status' match the requested 'spec'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control.");
             services1 = services1.subcommand(mcmd);
+        }
+        let mut tasks1 = SubCommand::with_name("tasks")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Get information about a task.");
+            tasks1 = tasks1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("List tasks.");
+            tasks1 = tasks1.subcommand(mcmd);
         }
         let mut authorizeddomains1 = SubCommand::with_name("authorizeddomains")
             .setting(AppSettings::ColoredHelp)
@@ -179,6 +233,21 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list").about("List domain mappings.");
             domainmappings2 = domainmappings2.subcommand(mcmd);
         }
+        let mut jobs2 = SubCommand::with_name("jobs")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get_iam_policy, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Get the IAM Access Control policy currently in effect for the given job. This result does not include any inherited policies.");
+            jobs2 = jobs2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the IAM Access control policy for the specified job. Overwrites any existing policy.");
+            jobs2 = jobs2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified job. There are no permissions required for making this API call.");
+            jobs2 = jobs2.subcommand(mcmd);
+        }
         let mut revisions2 = SubCommand::with_name("revisions")
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete, get and list");
@@ -229,7 +298,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             services2 = services2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("replace_service").about("Replace a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the \'status\' match the requested \'spec\'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control.");
+            let mcmd = SubCommand::with_name("replace_service").about("Replace a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the 'status' match the requested 'spec'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control.");
             services2 = services2.subcommand(mcmd);
         }
         {
@@ -243,14 +312,18 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         locations1 = locations1.subcommand(services2);
         locations1 = locations1.subcommand(routes2);
         locations1 = locations1.subcommand(revisions2);
+        locations1 = locations1.subcommand(jobs2);
         locations1 = locations1.subcommand(domainmappings2);
         locations1 = locations1.subcommand(configurations2);
         locations1 = locations1.subcommand(authorizeddomains2);
         projects0 = projects0.subcommand(locations1);
         projects0 = projects0.subcommand(authorizeddomains1);
+        namespaces0 = namespaces0.subcommand(tasks1);
         namespaces0 = namespaces0.subcommand(services1);
         namespaces0 = namespaces0.subcommand(routes1);
         namespaces0 = namespaces0.subcommand(revisions1);
+        namespaces0 = namespaces0.subcommand(jobs1);
+        namespaces0 = namespaces0.subcommand(executions1);
         namespaces0 = namespaces0.subcommand(domainmappings1);
         namespaces0 = namespaces0.subcommand(configurations1);
         namespaces0 = namespaces0.subcommand(authorizeddomains1);

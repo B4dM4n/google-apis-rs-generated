@@ -1,4 +1,4 @@
-#![doc = "# Resources and Methods\n    * [accounts](resources/accounts/struct.AccountsActions.html)\n      * [*get*](resources/accounts/struct.GetRequestBuilder.html), [*list*](resources/accounts/struct.ListRequestBuilder.html)\n      * [mediation_report](resources/accounts/mediation_report/struct.MediationReportActions.html)\n        * [*generate*](resources/accounts/mediation_report/struct.GenerateRequestBuilder.html)\n      * [network_report](resources/accounts/network_report/struct.NetworkReportActions.html)\n        * [*generate*](resources/accounts/network_report/struct.GenerateRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [accounts](resources/accounts/struct.AccountsActions.html)\n      * [*get*](resources/accounts/struct.GetRequestBuilder.html), [*list*](resources/accounts/struct.ListRequestBuilder.html)\n      * [ad_units](resources/accounts/ad_units/struct.AdUnitsActions.html)\n        * [*list*](resources/accounts/ad_units/struct.ListRequestBuilder.html)\n      * [apps](resources/accounts/apps/struct.AppsActions.html)\n        * [*list*](resources/accounts/apps/struct.ListRequestBuilder.html)\n      * [mediation_report](resources/accounts/mediation_report/struct.MediationReportActions.html)\n        * [*generate*](resources/accounts/mediation_report/struct.GenerateRequestBuilder.html)\n      * [network_report](resources/accounts/network_report/struct.NetworkReportActions.html)\n        * [*generate*](resources/accounts/network_report/struct.GenerateRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See your AdMob data\n\n`https://www.googleapis.com/auth/admob.readonly`"]
     pub const ADMOB_READONLY: &str = "https://www.googleapis.com/auth/admob.readonly";
@@ -6,6 +6,200 @@ pub mod scopes {
     pub const ADMOB_REPORT: &str = "https://www.googleapis.com/auth/admob.report";
 }
 pub mod schemas {
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AdUnit {
+        #[doc = "AdFormat of the ad unit. Possible values are as follows: \"BANNER\" - Banner ad format. \"BANNER_INTERSTITIAL\" - Legacy format that can be used as either banner or interstitial. This format can no longer be created but can be targeted by mediation groups. \"INTERSTITIAL\" - A full screen ad. Supported ad types are \"RICH_MEDIA\" and \"VIDEO\". \"NATIVE\" - Native ad format. \"REWARDED\" - An ad that, once viewed, gets a callback verifying the view so that a reward can be given to the user. Supported ad types are \"RICH_MEDIA\" (interactive) and video where video can not be excluded."]
+        #[serde(
+            rename = "adFormat",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ad_format: ::std::option::Option<String>,
+        #[doc = "Ad media type supported by this ad unit. Possible values as follows: \"RICH_MEDIA\" - Text, image, and other non-video media. \"VIDEO\" - Video media."]
+        #[serde(
+            rename = "adTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ad_types: ::std::option::Option<Vec<String>>,
+        #[doc = "The externally visible ID of the ad unit which can be used to integrate with the AdMob SDK. This is a read only property. Example: ca-app-pub-9876543210987654/0123456789"]
+        #[serde(
+            rename = "adUnitId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ad_unit_id: ::std::option::Option<String>,
+        #[doc = "The externally visible ID of the app this ad unit is associated with. Example: ca-app-pub-9876543210987654~0123456789"]
+        #[serde(
+            rename = "appId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub app_id: ::std::option::Option<String>,
+        #[doc = "The display name of the ad unit as shown in the AdMob UI, which is provided by the user. The maximum length allowed is 80 characters."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "Resource name for this ad unit. Format is accounts/{publisher_id}/adUnits/{ad_unit_id_fragment} Example: accounts/pub-9876543210987654/adUnits/0123456789"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for AdUnit {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AdUnit {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct App {
+        #[doc = "The externally visible ID of the app which can be used to integrate with the AdMob SDK. This is a read only property. Example: ca-app-pub-9876543210987654~0123456789"]
+        #[serde(
+            rename = "appId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub app_id: ::std::option::Option<String>,
+        #[doc = "Immutable. The information for an app that is linked to an app store. This field is present if and only if the app is linked to an app store."]
+        #[serde(
+            rename = "linkedAppInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub linked_app_info: ::std::option::Option<crate::schemas::AppLinkedAppInfo>,
+        #[doc = "The information for an app that is not linked to any app store. After an app is linked, this information is still retrivable. If no name is provided for the app upon creation, a placeholder name will be used."]
+        #[serde(
+            rename = "manualAppInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub manual_app_info: ::std::option::Option<crate::schemas::AppManualAppInfo>,
+        #[doc = "Resource name for this app. Format is accounts/{publisher_id}/apps/{app_id_fragment} Example: accounts/pub-9876543210987654/apps/0123456789"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Describes the platform of the app. Limited to \"IOS\" and \"ANDROID\"."]
+        #[serde(
+            rename = "platform",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub platform: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for App {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for App {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AppLinkedAppInfo {
+        #[doc = "The app store ID of the app; present if and only if the app is linked to an app store. If the app is added to the Google Play store, it will be the application ID of the app. For example: \"com.example.myapp\". See https://developer.android.com/studio/build/application-id. If the app is added to the Apple App Store, it will be app store ID. For example \"105169111\". Note that setting the app store id is considered an irreversible action. Once an app is linked, it cannot be unlinked."]
+        #[serde(
+            rename = "appStoreId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub app_store_id: ::std::option::Option<String>,
+        #[doc = "Output only. Display name of the app as it appears in the app store. This is an output-only field, and may be empty if the app cannot be found in the store."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for AppLinkedAppInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AppLinkedAppInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AppManualAppInfo {
+        #[doc = "The display name of the app as shown in the AdMob UI, which is provided by the user. The maximum length allowed is 80 characters."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for AppManualAppInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AppManualAppInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -235,6 +429,82 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct ListAdUnitsResponse {
+        #[doc = "The resulting ad units for the requested account."]
+        #[serde(
+            rename = "adUnits",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ad_units: ::std::option::Option<Vec<crate::schemas::AdUnit>>,
+        #[doc = "If not empty, indicates that there may be more ad units for the request; this value should be passed in a new `ListAdUnitsRequest`."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ListAdUnitsResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ListAdUnitsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ListAppsResponse {
+        #[doc = "The resulting apps for the requested account."]
+        #[serde(
+            rename = "apps",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub apps: ::std::option::Option<Vec<crate::schemas::App>>,
+        #[doc = "If not empty, indicates that there may be more apps for the request; this value should be passed in a new `ListAppsRequest`."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ListAppsResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ListAppsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ListPublisherAccountsResponse {
         #[doc = "Publisher that the client credentials can access."]
         #[serde(
@@ -386,27 +656,35 @@ pub mod schemas {
     pub enum MediationReportSpecDimensionsItems {
         #[doc = "The [unique ID of the ad source](/admob/api/v1/ad_sources) (for example, \"5450213213286189855\" and \"AdMob Network\" as label value)."]
         AdSource,
-        #[doc = "The unique ID of the ad source instance (for example, \"ca-app-pub-1234#5678\" and \"AdMob (default)\" as label value)."]
+        #[doc = "The unique ID of the ad source instance (for example, \"ca-app-pub-1234:asi:5678\" and \"AdMob (default)\" as label value)."]
         AdSourceInstance,
         #[doc = "The unique ID of the ad unit (for example, \"ca-app-pub-1234/8790\"). If AD_UNIT dimension is specified, then APP is included automatically."]
         AdUnit,
         #[doc = "The unique ID of the mobile application (for example, \"ca-app-pub-1234~1234\")."]
         App,
+        #[doc = "For Android, the app version name can be found in versionName in PackageInfo. For iOS, the app version name can be found in CFBundleShortVersionString. **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
+        AppVersionName,
         #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, \"US\" or \"FR\"). This is a geography dimension."]
         Country,
-        #[doc = "A date in the YYYY-MM-DD format (for example, \"2018-12-21\"). Requests can specify at most one time dimension."]
+        #[doc = "A date in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
         Date,
         #[doc = "Default value for an unset field. Do not use."]
         DimensionUnspecified,
         #[doc = "Format of the ad unit (for example, \"banner\", \"native\"), an ad delivery dimension."]
         Format,
+        #[doc = "GMA SDK version, e.g. \"iOS 7.62.0\". **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
+        GmaSdkVersion,
         #[doc = "The unique ID of the mediation group (for example, \"ca-app-pub-1234:mg:1234\" and \"AdMob (default)\" as label value)."]
         MediationGroup,
-        #[doc = "A month in the YYYY-MM format (for example, \"2018-12\"). Requests can specify at most one time dimension."]
+        #[doc = "Mobile operating system version, e.g. \"iOS 13.5.1\". **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
+        MobileOsVersion,
+        #[doc = "A month in the YYYYMM format (for example, \"202107\"). Requests can specify at most one time dimension."]
         Month,
         #[doc = "Mobile OS platform of the app (for example, \"Android\" or \"iOS\")."]
         Platform,
-        #[doc = "The date of the first day of a week in the YYYY-MM-DD format (for example, \"2018-12-21\"). Requests can specify at most one time dimension."]
+        #[doc = "Restriction mode for ads serving (e.g. \"Non-personalized ads\"). **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS) metric."]
+        ServingRestriction,
+        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
         Week,
     }
     impl MediationReportSpecDimensionsItems {
@@ -416,13 +694,17 @@ pub mod schemas {
                 MediationReportSpecDimensionsItems::AdSourceInstance => "AD_SOURCE_INSTANCE",
                 MediationReportSpecDimensionsItems::AdUnit => "AD_UNIT",
                 MediationReportSpecDimensionsItems::App => "APP",
+                MediationReportSpecDimensionsItems::AppVersionName => "APP_VERSION_NAME",
                 MediationReportSpecDimensionsItems::Country => "COUNTRY",
                 MediationReportSpecDimensionsItems::Date => "DATE",
                 MediationReportSpecDimensionsItems::DimensionUnspecified => "DIMENSION_UNSPECIFIED",
                 MediationReportSpecDimensionsItems::Format => "FORMAT",
+                MediationReportSpecDimensionsItems::GmaSdkVersion => "GMA_SDK_VERSION",
                 MediationReportSpecDimensionsItems::MediationGroup => "MEDIATION_GROUP",
+                MediationReportSpecDimensionsItems::MobileOsVersion => "MOBILE_OS_VERSION",
                 MediationReportSpecDimensionsItems::Month => "MONTH",
                 MediationReportSpecDimensionsItems::Platform => "PLATFORM",
+                MediationReportSpecDimensionsItems::ServingRestriction => "SERVING_RESTRICTION",
                 MediationReportSpecDimensionsItems::Week => "WEEK",
             }
         }
@@ -440,13 +722,17 @@ pub mod schemas {
                 "AD_SOURCE_INSTANCE" => MediationReportSpecDimensionsItems::AdSourceInstance,
                 "AD_UNIT" => MediationReportSpecDimensionsItems::AdUnit,
                 "APP" => MediationReportSpecDimensionsItems::App,
+                "APP_VERSION_NAME" => MediationReportSpecDimensionsItems::AppVersionName,
                 "COUNTRY" => MediationReportSpecDimensionsItems::Country,
                 "DATE" => MediationReportSpecDimensionsItems::Date,
                 "DIMENSION_UNSPECIFIED" => MediationReportSpecDimensionsItems::DimensionUnspecified,
                 "FORMAT" => MediationReportSpecDimensionsItems::Format,
+                "GMA_SDK_VERSION" => MediationReportSpecDimensionsItems::GmaSdkVersion,
                 "MEDIATION_GROUP" => MediationReportSpecDimensionsItems::MediationGroup,
+                "MOBILE_OS_VERSION" => MediationReportSpecDimensionsItems::MobileOsVersion,
                 "MONTH" => MediationReportSpecDimensionsItems::Month,
                 "PLATFORM" => MediationReportSpecDimensionsItems::Platform,
+                "SERVING_RESTRICTION" => MediationReportSpecDimensionsItems::ServingRestriction,
                 "WEEK" => MediationReportSpecDimensionsItems::Week,
                 _ => return Err(()),
             })
@@ -476,13 +762,17 @@ pub mod schemas {
                 "AD_SOURCE_INSTANCE" => MediationReportSpecDimensionsItems::AdSourceInstance,
                 "AD_UNIT" => MediationReportSpecDimensionsItems::AdUnit,
                 "APP" => MediationReportSpecDimensionsItems::App,
+                "APP_VERSION_NAME" => MediationReportSpecDimensionsItems::AppVersionName,
                 "COUNTRY" => MediationReportSpecDimensionsItems::Country,
                 "DATE" => MediationReportSpecDimensionsItems::Date,
                 "DIMENSION_UNSPECIFIED" => MediationReportSpecDimensionsItems::DimensionUnspecified,
                 "FORMAT" => MediationReportSpecDimensionsItems::Format,
+                "GMA_SDK_VERSION" => MediationReportSpecDimensionsItems::GmaSdkVersion,
                 "MEDIATION_GROUP" => MediationReportSpecDimensionsItems::MediationGroup,
+                "MOBILE_OS_VERSION" => MediationReportSpecDimensionsItems::MobileOsVersion,
                 "MONTH" => MediationReportSpecDimensionsItems::Month,
                 "PLATFORM" => MediationReportSpecDimensionsItems::Platform,
+                "SERVING_RESTRICTION" => MediationReportSpecDimensionsItems::ServingRestriction,
                 "WEEK" => MediationReportSpecDimensionsItems::Week,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -652,27 +942,35 @@ pub mod schemas {
     pub enum MediationReportSpecDimensionFilterDimension {
         #[doc = "The [unique ID of the ad source](/admob/api/v1/ad_sources) (for example, \"5450213213286189855\" and \"AdMob Network\" as label value)."]
         AdSource,
-        #[doc = "The unique ID of the ad source instance (for example, \"ca-app-pub-1234#5678\" and \"AdMob (default)\" as label value)."]
+        #[doc = "The unique ID of the ad source instance (for example, \"ca-app-pub-1234:asi:5678\" and \"AdMob (default)\" as label value)."]
         AdSourceInstance,
         #[doc = "The unique ID of the ad unit (for example, \"ca-app-pub-1234/8790\"). If AD_UNIT dimension is specified, then APP is included automatically."]
         AdUnit,
         #[doc = "The unique ID of the mobile application (for example, \"ca-app-pub-1234~1234\")."]
         App,
+        #[doc = "For Android, the app version name can be found in versionName in PackageInfo. For iOS, the app version name can be found in CFBundleShortVersionString. **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
+        AppVersionName,
         #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, \"US\" or \"FR\"). This is a geography dimension."]
         Country,
-        #[doc = "A date in the YYYY-MM-DD format (for example, \"2018-12-21\"). Requests can specify at most one time dimension."]
+        #[doc = "A date in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
         Date,
         #[doc = "Default value for an unset field. Do not use."]
         DimensionUnspecified,
         #[doc = "Format of the ad unit (for example, \"banner\", \"native\"), an ad delivery dimension."]
         Format,
+        #[doc = "GMA SDK version, e.g. \"iOS 7.62.0\". **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
+        GmaSdkVersion,
         #[doc = "The unique ID of the mediation group (for example, \"ca-app-pub-1234:mg:1234\" and \"AdMob (default)\" as label value)."]
         MediationGroup,
-        #[doc = "A month in the YYYY-MM format (for example, \"2018-12\"). Requests can specify at most one time dimension."]
+        #[doc = "Mobile operating system version, e.g. \"iOS 13.5.1\". **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
+        MobileOsVersion,
+        #[doc = "A month in the YYYYMM format (for example, \"202107\"). Requests can specify at most one time dimension."]
         Month,
         #[doc = "Mobile OS platform of the app (for example, \"Android\" or \"iOS\")."]
         Platform,
-        #[doc = "The date of the first day of a week in the YYYY-MM-DD format (for example, \"2018-12-21\"). Requests can specify at most one time dimension."]
+        #[doc = "Restriction mode for ads serving (e.g. \"Non-personalized ads\"). **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS) metric."]
+        ServingRestriction,
+        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
         Week,
     }
     impl MediationReportSpecDimensionFilterDimension {
@@ -684,15 +982,21 @@ pub mod schemas {
                 }
                 MediationReportSpecDimensionFilterDimension::AdUnit => "AD_UNIT",
                 MediationReportSpecDimensionFilterDimension::App => "APP",
+                MediationReportSpecDimensionFilterDimension::AppVersionName => "APP_VERSION_NAME",
                 MediationReportSpecDimensionFilterDimension::Country => "COUNTRY",
                 MediationReportSpecDimensionFilterDimension::Date => "DATE",
                 MediationReportSpecDimensionFilterDimension::DimensionUnspecified => {
                     "DIMENSION_UNSPECIFIED"
                 }
                 MediationReportSpecDimensionFilterDimension::Format => "FORMAT",
+                MediationReportSpecDimensionFilterDimension::GmaSdkVersion => "GMA_SDK_VERSION",
                 MediationReportSpecDimensionFilterDimension::MediationGroup => "MEDIATION_GROUP",
+                MediationReportSpecDimensionFilterDimension::MobileOsVersion => "MOBILE_OS_VERSION",
                 MediationReportSpecDimensionFilterDimension::Month => "MONTH",
                 MediationReportSpecDimensionFilterDimension::Platform => "PLATFORM",
+                MediationReportSpecDimensionFilterDimension::ServingRestriction => {
+                    "SERVING_RESTRICTION"
+                }
                 MediationReportSpecDimensionFilterDimension::Week => "WEEK",
             }
         }
@@ -714,15 +1018,21 @@ pub mod schemas {
                 }
                 "AD_UNIT" => MediationReportSpecDimensionFilterDimension::AdUnit,
                 "APP" => MediationReportSpecDimensionFilterDimension::App,
+                "APP_VERSION_NAME" => MediationReportSpecDimensionFilterDimension::AppVersionName,
                 "COUNTRY" => MediationReportSpecDimensionFilterDimension::Country,
                 "DATE" => MediationReportSpecDimensionFilterDimension::Date,
                 "DIMENSION_UNSPECIFIED" => {
                     MediationReportSpecDimensionFilterDimension::DimensionUnspecified
                 }
                 "FORMAT" => MediationReportSpecDimensionFilterDimension::Format,
+                "GMA_SDK_VERSION" => MediationReportSpecDimensionFilterDimension::GmaSdkVersion,
                 "MEDIATION_GROUP" => MediationReportSpecDimensionFilterDimension::MediationGroup,
+                "MOBILE_OS_VERSION" => MediationReportSpecDimensionFilterDimension::MobileOsVersion,
                 "MONTH" => MediationReportSpecDimensionFilterDimension::Month,
                 "PLATFORM" => MediationReportSpecDimensionFilterDimension::Platform,
+                "SERVING_RESTRICTION" => {
+                    MediationReportSpecDimensionFilterDimension::ServingRestriction
+                }
                 "WEEK" => MediationReportSpecDimensionFilterDimension::Week,
                 _ => return Err(()),
             })
@@ -754,15 +1064,21 @@ pub mod schemas {
                 }
                 "AD_UNIT" => MediationReportSpecDimensionFilterDimension::AdUnit,
                 "APP" => MediationReportSpecDimensionFilterDimension::App,
+                "APP_VERSION_NAME" => MediationReportSpecDimensionFilterDimension::AppVersionName,
                 "COUNTRY" => MediationReportSpecDimensionFilterDimension::Country,
                 "DATE" => MediationReportSpecDimensionFilterDimension::Date,
                 "DIMENSION_UNSPECIFIED" => {
                     MediationReportSpecDimensionFilterDimension::DimensionUnspecified
                 }
                 "FORMAT" => MediationReportSpecDimensionFilterDimension::Format,
+                "GMA_SDK_VERSION" => MediationReportSpecDimensionFilterDimension::GmaSdkVersion,
                 "MEDIATION_GROUP" => MediationReportSpecDimensionFilterDimension::MediationGroup,
+                "MOBILE_OS_VERSION" => MediationReportSpecDimensionFilterDimension::MobileOsVersion,
                 "MONTH" => MediationReportSpecDimensionFilterDimension::Month,
                 "PLATFORM" => MediationReportSpecDimensionFilterDimension::Platform,
+                "SERVING_RESTRICTION" => {
+                    MediationReportSpecDimensionFilterDimension::ServingRestriction
+                }
                 "WEEK" => MediationReportSpecDimensionFilterDimension::Week,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -833,27 +1149,35 @@ pub mod schemas {
     pub enum MediationReportSpecSortConditionDimension {
         #[doc = "The [unique ID of the ad source](/admob/api/v1/ad_sources) (for example, \"5450213213286189855\" and \"AdMob Network\" as label value)."]
         AdSource,
-        #[doc = "The unique ID of the ad source instance (for example, \"ca-app-pub-1234#5678\" and \"AdMob (default)\" as label value)."]
+        #[doc = "The unique ID of the ad source instance (for example, \"ca-app-pub-1234:asi:5678\" and \"AdMob (default)\" as label value)."]
         AdSourceInstance,
         #[doc = "The unique ID of the ad unit (for example, \"ca-app-pub-1234/8790\"). If AD_UNIT dimension is specified, then APP is included automatically."]
         AdUnit,
         #[doc = "The unique ID of the mobile application (for example, \"ca-app-pub-1234~1234\")."]
         App,
+        #[doc = "For Android, the app version name can be found in versionName in PackageInfo. For iOS, the app version name can be found in CFBundleShortVersionString. **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
+        AppVersionName,
         #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, \"US\" or \"FR\"). This is a geography dimension."]
         Country,
-        #[doc = "A date in the YYYY-MM-DD format (for example, \"2018-12-21\"). Requests can specify at most one time dimension."]
+        #[doc = "A date in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
         Date,
         #[doc = "Default value for an unset field. Do not use."]
         DimensionUnspecified,
         #[doc = "Format of the ad unit (for example, \"banner\", \"native\"), an ad delivery dimension."]
         Format,
+        #[doc = "GMA SDK version, e.g. \"iOS 7.62.0\". **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
+        GmaSdkVersion,
         #[doc = "The unique ID of the mediation group (for example, \"ca-app-pub-1234:mg:1234\" and \"AdMob (default)\" as label value)."]
         MediationGroup,
-        #[doc = "A month in the YYYY-MM format (for example, \"2018-12\"). Requests can specify at most one time dimension."]
+        #[doc = "Mobile operating system version, e.g. \"iOS 13.5.1\". **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
+        MobileOsVersion,
+        #[doc = "A month in the YYYYMM format (for example, \"202107\"). Requests can specify at most one time dimension."]
         Month,
         #[doc = "Mobile OS platform of the app (for example, \"Android\" or \"iOS\")."]
         Platform,
-        #[doc = "The date of the first day of a week in the YYYY-MM-DD format (for example, \"2018-12-21\"). Requests can specify at most one time dimension."]
+        #[doc = "Restriction mode for ads serving (e.g. \"Non-personalized ads\"). **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS) metric."]
+        ServingRestriction,
+        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
         Week,
     }
     impl MediationReportSpecSortConditionDimension {
@@ -863,15 +1187,21 @@ pub mod schemas {
                 MediationReportSpecSortConditionDimension::AdSourceInstance => "AD_SOURCE_INSTANCE",
                 MediationReportSpecSortConditionDimension::AdUnit => "AD_UNIT",
                 MediationReportSpecSortConditionDimension::App => "APP",
+                MediationReportSpecSortConditionDimension::AppVersionName => "APP_VERSION_NAME",
                 MediationReportSpecSortConditionDimension::Country => "COUNTRY",
                 MediationReportSpecSortConditionDimension::Date => "DATE",
                 MediationReportSpecSortConditionDimension::DimensionUnspecified => {
                     "DIMENSION_UNSPECIFIED"
                 }
                 MediationReportSpecSortConditionDimension::Format => "FORMAT",
+                MediationReportSpecSortConditionDimension::GmaSdkVersion => "GMA_SDK_VERSION",
                 MediationReportSpecSortConditionDimension::MediationGroup => "MEDIATION_GROUP",
+                MediationReportSpecSortConditionDimension::MobileOsVersion => "MOBILE_OS_VERSION",
                 MediationReportSpecSortConditionDimension::Month => "MONTH",
                 MediationReportSpecSortConditionDimension::Platform => "PLATFORM",
+                MediationReportSpecSortConditionDimension::ServingRestriction => {
+                    "SERVING_RESTRICTION"
+                }
                 MediationReportSpecSortConditionDimension::Week => "WEEK",
             }
         }
@@ -891,15 +1221,21 @@ pub mod schemas {
                 "AD_SOURCE_INSTANCE" => MediationReportSpecSortConditionDimension::AdSourceInstance,
                 "AD_UNIT" => MediationReportSpecSortConditionDimension::AdUnit,
                 "APP" => MediationReportSpecSortConditionDimension::App,
+                "APP_VERSION_NAME" => MediationReportSpecSortConditionDimension::AppVersionName,
                 "COUNTRY" => MediationReportSpecSortConditionDimension::Country,
                 "DATE" => MediationReportSpecSortConditionDimension::Date,
                 "DIMENSION_UNSPECIFIED" => {
                     MediationReportSpecSortConditionDimension::DimensionUnspecified
                 }
                 "FORMAT" => MediationReportSpecSortConditionDimension::Format,
+                "GMA_SDK_VERSION" => MediationReportSpecSortConditionDimension::GmaSdkVersion,
                 "MEDIATION_GROUP" => MediationReportSpecSortConditionDimension::MediationGroup,
+                "MOBILE_OS_VERSION" => MediationReportSpecSortConditionDimension::MobileOsVersion,
                 "MONTH" => MediationReportSpecSortConditionDimension::Month,
                 "PLATFORM" => MediationReportSpecSortConditionDimension::Platform,
+                "SERVING_RESTRICTION" => {
+                    MediationReportSpecSortConditionDimension::ServingRestriction
+                }
                 "WEEK" => MediationReportSpecSortConditionDimension::Week,
                 _ => return Err(()),
             })
@@ -929,15 +1265,21 @@ pub mod schemas {
                 "AD_SOURCE_INSTANCE" => MediationReportSpecSortConditionDimension::AdSourceInstance,
                 "AD_UNIT" => MediationReportSpecSortConditionDimension::AdUnit,
                 "APP" => MediationReportSpecSortConditionDimension::App,
+                "APP_VERSION_NAME" => MediationReportSpecSortConditionDimension::AppVersionName,
                 "COUNTRY" => MediationReportSpecSortConditionDimension::Country,
                 "DATE" => MediationReportSpecSortConditionDimension::Date,
                 "DIMENSION_UNSPECIFIED" => {
                     MediationReportSpecSortConditionDimension::DimensionUnspecified
                 }
                 "FORMAT" => MediationReportSpecSortConditionDimension::Format,
+                "GMA_SDK_VERSION" => MediationReportSpecSortConditionDimension::GmaSdkVersion,
                 "MEDIATION_GROUP" => MediationReportSpecSortConditionDimension::MediationGroup,
+                "MOBILE_OS_VERSION" => MediationReportSpecSortConditionDimension::MobileOsVersion,
                 "MONTH" => MediationReportSpecSortConditionDimension::Month,
                 "PLATFORM" => MediationReportSpecSortConditionDimension::Platform,
+                "SERVING_RESTRICTION" => {
+                    MediationReportSpecSortConditionDimension::ServingRestriction
+                }
                 "WEEK" => MediationReportSpecSortConditionDimension::Week,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -1237,19 +1579,27 @@ pub mod schemas {
         AdUnit,
         #[doc = "The unique ID of the mobile application (for example, \"ca-app-pub-1234~1234\")."]
         App,
+        #[doc = "For Android, the app version name can be found in versionName in PackageInfo. For iOS, the app version name can be found in CFBundleShortVersionString."]
+        AppVersionName,
         #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, \"US\" or \"FR\"). This is a geography dimension."]
         Country,
-        #[doc = "A date in the YYYY-MM-DD format (for example, \"2018-12-21\"). Requests can specify at most one time dimension."]
+        #[doc = "A date in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
         Date,
         #[doc = "Default value for an unset field. Do not use."]
         DimensionUnspecified,
         #[doc = "Format of the ad unit (for example, \"banner\", \"native\"), an ad delivery dimension."]
         Format,
-        #[doc = "A month in the YYYY-MM format (for example, \"2018-12\"). Requests can specify at most one time dimension."]
+        #[doc = "GMA SDK version, e.g. \"iOS 7.62.0\"."]
+        GmaSdkVersion,
+        #[doc = "Mobile operating system version, e.g. \"iOS 13.5.1\"."]
+        MobileOsVersion,
+        #[doc = "A month in the YYYYMM format (for example, \"202107\"). Requests can specify at most one time dimension."]
         Month,
         #[doc = "Mobile OS platform of the app (for example, \"Android\" or \"iOS\")."]
         Platform,
-        #[doc = "The date of the first day of a week in the YYYY-MM-DD format (for example, \"2018-12-21\"). Requests can specify at most one time dimension."]
+        #[doc = "Restriction mode for ads serving (e.g. \"Non-personalized ads\")."]
+        ServingRestriction,
+        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
         Week,
     }
     impl NetworkReportSpecDimensionsItems {
@@ -1258,12 +1608,16 @@ pub mod schemas {
                 NetworkReportSpecDimensionsItems::AdType => "AD_TYPE",
                 NetworkReportSpecDimensionsItems::AdUnit => "AD_UNIT",
                 NetworkReportSpecDimensionsItems::App => "APP",
+                NetworkReportSpecDimensionsItems::AppVersionName => "APP_VERSION_NAME",
                 NetworkReportSpecDimensionsItems::Country => "COUNTRY",
                 NetworkReportSpecDimensionsItems::Date => "DATE",
                 NetworkReportSpecDimensionsItems::DimensionUnspecified => "DIMENSION_UNSPECIFIED",
                 NetworkReportSpecDimensionsItems::Format => "FORMAT",
+                NetworkReportSpecDimensionsItems::GmaSdkVersion => "GMA_SDK_VERSION",
+                NetworkReportSpecDimensionsItems::MobileOsVersion => "MOBILE_OS_VERSION",
                 NetworkReportSpecDimensionsItems::Month => "MONTH",
                 NetworkReportSpecDimensionsItems::Platform => "PLATFORM",
+                NetworkReportSpecDimensionsItems::ServingRestriction => "SERVING_RESTRICTION",
                 NetworkReportSpecDimensionsItems::Week => "WEEK",
             }
         }
@@ -1280,12 +1634,16 @@ pub mod schemas {
                 "AD_TYPE" => NetworkReportSpecDimensionsItems::AdType,
                 "AD_UNIT" => NetworkReportSpecDimensionsItems::AdUnit,
                 "APP" => NetworkReportSpecDimensionsItems::App,
+                "APP_VERSION_NAME" => NetworkReportSpecDimensionsItems::AppVersionName,
                 "COUNTRY" => NetworkReportSpecDimensionsItems::Country,
                 "DATE" => NetworkReportSpecDimensionsItems::Date,
                 "DIMENSION_UNSPECIFIED" => NetworkReportSpecDimensionsItems::DimensionUnspecified,
                 "FORMAT" => NetworkReportSpecDimensionsItems::Format,
+                "GMA_SDK_VERSION" => NetworkReportSpecDimensionsItems::GmaSdkVersion,
+                "MOBILE_OS_VERSION" => NetworkReportSpecDimensionsItems::MobileOsVersion,
                 "MONTH" => NetworkReportSpecDimensionsItems::Month,
                 "PLATFORM" => NetworkReportSpecDimensionsItems::Platform,
+                "SERVING_RESTRICTION" => NetworkReportSpecDimensionsItems::ServingRestriction,
                 "WEEK" => NetworkReportSpecDimensionsItems::Week,
                 _ => return Err(()),
             })
@@ -1314,12 +1672,16 @@ pub mod schemas {
                 "AD_TYPE" => NetworkReportSpecDimensionsItems::AdType,
                 "AD_UNIT" => NetworkReportSpecDimensionsItems::AdUnit,
                 "APP" => NetworkReportSpecDimensionsItems::App,
+                "APP_VERSION_NAME" => NetworkReportSpecDimensionsItems::AppVersionName,
                 "COUNTRY" => NetworkReportSpecDimensionsItems::Country,
                 "DATE" => NetworkReportSpecDimensionsItems::Date,
                 "DIMENSION_UNSPECIFIED" => NetworkReportSpecDimensionsItems::DimensionUnspecified,
                 "FORMAT" => NetworkReportSpecDimensionsItems::Format,
+                "GMA_SDK_VERSION" => NetworkReportSpecDimensionsItems::GmaSdkVersion,
+                "MOBILE_OS_VERSION" => NetworkReportSpecDimensionsItems::MobileOsVersion,
                 "MONTH" => NetworkReportSpecDimensionsItems::Month,
                 "PLATFORM" => NetworkReportSpecDimensionsItems::Platform,
+                "SERVING_RESTRICTION" => NetworkReportSpecDimensionsItems::ServingRestriction,
                 "WEEK" => NetworkReportSpecDimensionsItems::Week,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -1498,19 +1860,27 @@ pub mod schemas {
         AdUnit,
         #[doc = "The unique ID of the mobile application (for example, \"ca-app-pub-1234~1234\")."]
         App,
+        #[doc = "For Android, the app version name can be found in versionName in PackageInfo. For iOS, the app version name can be found in CFBundleShortVersionString."]
+        AppVersionName,
         #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, \"US\" or \"FR\"). This is a geography dimension."]
         Country,
-        #[doc = "A date in the YYYY-MM-DD format (for example, \"2018-12-21\"). Requests can specify at most one time dimension."]
+        #[doc = "A date in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
         Date,
         #[doc = "Default value for an unset field. Do not use."]
         DimensionUnspecified,
         #[doc = "Format of the ad unit (for example, \"banner\", \"native\"), an ad delivery dimension."]
         Format,
-        #[doc = "A month in the YYYY-MM format (for example, \"2018-12\"). Requests can specify at most one time dimension."]
+        #[doc = "GMA SDK version, e.g. \"iOS 7.62.0\"."]
+        GmaSdkVersion,
+        #[doc = "Mobile operating system version, e.g. \"iOS 13.5.1\"."]
+        MobileOsVersion,
+        #[doc = "A month in the YYYYMM format (for example, \"202107\"). Requests can specify at most one time dimension."]
         Month,
         #[doc = "Mobile OS platform of the app (for example, \"Android\" or \"iOS\")."]
         Platform,
-        #[doc = "The date of the first day of a week in the YYYY-MM-DD format (for example, \"2018-12-21\"). Requests can specify at most one time dimension."]
+        #[doc = "Restriction mode for ads serving (e.g. \"Non-personalized ads\")."]
+        ServingRestriction,
+        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
         Week,
     }
     impl NetworkReportSpecDimensionFilterDimension {
@@ -1519,14 +1889,20 @@ pub mod schemas {
                 NetworkReportSpecDimensionFilterDimension::AdType => "AD_TYPE",
                 NetworkReportSpecDimensionFilterDimension::AdUnit => "AD_UNIT",
                 NetworkReportSpecDimensionFilterDimension::App => "APP",
+                NetworkReportSpecDimensionFilterDimension::AppVersionName => "APP_VERSION_NAME",
                 NetworkReportSpecDimensionFilterDimension::Country => "COUNTRY",
                 NetworkReportSpecDimensionFilterDimension::Date => "DATE",
                 NetworkReportSpecDimensionFilterDimension::DimensionUnspecified => {
                     "DIMENSION_UNSPECIFIED"
                 }
                 NetworkReportSpecDimensionFilterDimension::Format => "FORMAT",
+                NetworkReportSpecDimensionFilterDimension::GmaSdkVersion => "GMA_SDK_VERSION",
+                NetworkReportSpecDimensionFilterDimension::MobileOsVersion => "MOBILE_OS_VERSION",
                 NetworkReportSpecDimensionFilterDimension::Month => "MONTH",
                 NetworkReportSpecDimensionFilterDimension::Platform => "PLATFORM",
+                NetworkReportSpecDimensionFilterDimension::ServingRestriction => {
+                    "SERVING_RESTRICTION"
+                }
                 NetworkReportSpecDimensionFilterDimension::Week => "WEEK",
             }
         }
@@ -1545,14 +1921,20 @@ pub mod schemas {
                 "AD_TYPE" => NetworkReportSpecDimensionFilterDimension::AdType,
                 "AD_UNIT" => NetworkReportSpecDimensionFilterDimension::AdUnit,
                 "APP" => NetworkReportSpecDimensionFilterDimension::App,
+                "APP_VERSION_NAME" => NetworkReportSpecDimensionFilterDimension::AppVersionName,
                 "COUNTRY" => NetworkReportSpecDimensionFilterDimension::Country,
                 "DATE" => NetworkReportSpecDimensionFilterDimension::Date,
                 "DIMENSION_UNSPECIFIED" => {
                     NetworkReportSpecDimensionFilterDimension::DimensionUnspecified
                 }
                 "FORMAT" => NetworkReportSpecDimensionFilterDimension::Format,
+                "GMA_SDK_VERSION" => NetworkReportSpecDimensionFilterDimension::GmaSdkVersion,
+                "MOBILE_OS_VERSION" => NetworkReportSpecDimensionFilterDimension::MobileOsVersion,
                 "MONTH" => NetworkReportSpecDimensionFilterDimension::Month,
                 "PLATFORM" => NetworkReportSpecDimensionFilterDimension::Platform,
+                "SERVING_RESTRICTION" => {
+                    NetworkReportSpecDimensionFilterDimension::ServingRestriction
+                }
                 "WEEK" => NetworkReportSpecDimensionFilterDimension::Week,
                 _ => return Err(()),
             })
@@ -1581,14 +1963,20 @@ pub mod schemas {
                 "AD_TYPE" => NetworkReportSpecDimensionFilterDimension::AdType,
                 "AD_UNIT" => NetworkReportSpecDimensionFilterDimension::AdUnit,
                 "APP" => NetworkReportSpecDimensionFilterDimension::App,
+                "APP_VERSION_NAME" => NetworkReportSpecDimensionFilterDimension::AppVersionName,
                 "COUNTRY" => NetworkReportSpecDimensionFilterDimension::Country,
                 "DATE" => NetworkReportSpecDimensionFilterDimension::Date,
                 "DIMENSION_UNSPECIFIED" => {
                     NetworkReportSpecDimensionFilterDimension::DimensionUnspecified
                 }
                 "FORMAT" => NetworkReportSpecDimensionFilterDimension::Format,
+                "GMA_SDK_VERSION" => NetworkReportSpecDimensionFilterDimension::GmaSdkVersion,
+                "MOBILE_OS_VERSION" => NetworkReportSpecDimensionFilterDimension::MobileOsVersion,
                 "MONTH" => NetworkReportSpecDimensionFilterDimension::Month,
                 "PLATFORM" => NetworkReportSpecDimensionFilterDimension::Platform,
+                "SERVING_RESTRICTION" => {
+                    NetworkReportSpecDimensionFilterDimension::ServingRestriction
+                }
                 "WEEK" => NetworkReportSpecDimensionFilterDimension::Week,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -1663,19 +2051,27 @@ pub mod schemas {
         AdUnit,
         #[doc = "The unique ID of the mobile application (for example, \"ca-app-pub-1234~1234\")."]
         App,
+        #[doc = "For Android, the app version name can be found in versionName in PackageInfo. For iOS, the app version name can be found in CFBundleShortVersionString."]
+        AppVersionName,
         #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, \"US\" or \"FR\"). This is a geography dimension."]
         Country,
-        #[doc = "A date in the YYYY-MM-DD format (for example, \"2018-12-21\"). Requests can specify at most one time dimension."]
+        #[doc = "A date in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
         Date,
         #[doc = "Default value for an unset field. Do not use."]
         DimensionUnspecified,
         #[doc = "Format of the ad unit (for example, \"banner\", \"native\"), an ad delivery dimension."]
         Format,
-        #[doc = "A month in the YYYY-MM format (for example, \"2018-12\"). Requests can specify at most one time dimension."]
+        #[doc = "GMA SDK version, e.g. \"iOS 7.62.0\"."]
+        GmaSdkVersion,
+        #[doc = "Mobile operating system version, e.g. \"iOS 13.5.1\"."]
+        MobileOsVersion,
+        #[doc = "A month in the YYYYMM format (for example, \"202107\"). Requests can specify at most one time dimension."]
         Month,
         #[doc = "Mobile OS platform of the app (for example, \"Android\" or \"iOS\")."]
         Platform,
-        #[doc = "The date of the first day of a week in the YYYY-MM-DD format (for example, \"2018-12-21\"). Requests can specify at most one time dimension."]
+        #[doc = "Restriction mode for ads serving (e.g. \"Non-personalized ads\")."]
+        ServingRestriction,
+        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
         Week,
     }
     impl NetworkReportSpecSortConditionDimension {
@@ -1684,14 +2080,20 @@ pub mod schemas {
                 NetworkReportSpecSortConditionDimension::AdType => "AD_TYPE",
                 NetworkReportSpecSortConditionDimension::AdUnit => "AD_UNIT",
                 NetworkReportSpecSortConditionDimension::App => "APP",
+                NetworkReportSpecSortConditionDimension::AppVersionName => "APP_VERSION_NAME",
                 NetworkReportSpecSortConditionDimension::Country => "COUNTRY",
                 NetworkReportSpecSortConditionDimension::Date => "DATE",
                 NetworkReportSpecSortConditionDimension::DimensionUnspecified => {
                     "DIMENSION_UNSPECIFIED"
                 }
                 NetworkReportSpecSortConditionDimension::Format => "FORMAT",
+                NetworkReportSpecSortConditionDimension::GmaSdkVersion => "GMA_SDK_VERSION",
+                NetworkReportSpecSortConditionDimension::MobileOsVersion => "MOBILE_OS_VERSION",
                 NetworkReportSpecSortConditionDimension::Month => "MONTH",
                 NetworkReportSpecSortConditionDimension::Platform => "PLATFORM",
+                NetworkReportSpecSortConditionDimension::ServingRestriction => {
+                    "SERVING_RESTRICTION"
+                }
                 NetworkReportSpecSortConditionDimension::Week => "WEEK",
             }
         }
@@ -1708,14 +2110,20 @@ pub mod schemas {
                 "AD_TYPE" => NetworkReportSpecSortConditionDimension::AdType,
                 "AD_UNIT" => NetworkReportSpecSortConditionDimension::AdUnit,
                 "APP" => NetworkReportSpecSortConditionDimension::App,
+                "APP_VERSION_NAME" => NetworkReportSpecSortConditionDimension::AppVersionName,
                 "COUNTRY" => NetworkReportSpecSortConditionDimension::Country,
                 "DATE" => NetworkReportSpecSortConditionDimension::Date,
                 "DIMENSION_UNSPECIFIED" => {
                     NetworkReportSpecSortConditionDimension::DimensionUnspecified
                 }
                 "FORMAT" => NetworkReportSpecSortConditionDimension::Format,
+                "GMA_SDK_VERSION" => NetworkReportSpecSortConditionDimension::GmaSdkVersion,
+                "MOBILE_OS_VERSION" => NetworkReportSpecSortConditionDimension::MobileOsVersion,
                 "MONTH" => NetworkReportSpecSortConditionDimension::Month,
                 "PLATFORM" => NetworkReportSpecSortConditionDimension::Platform,
+                "SERVING_RESTRICTION" => {
+                    NetworkReportSpecSortConditionDimension::ServingRestriction
+                }
                 "WEEK" => NetworkReportSpecSortConditionDimension::Week,
                 _ => return Err(()),
             })
@@ -1744,14 +2152,20 @@ pub mod schemas {
                 "AD_TYPE" => NetworkReportSpecSortConditionDimension::AdType,
                 "AD_UNIT" => NetworkReportSpecSortConditionDimension::AdUnit,
                 "APP" => NetworkReportSpecSortConditionDimension::App,
+                "APP_VERSION_NAME" => NetworkReportSpecSortConditionDimension::AppVersionName,
                 "COUNTRY" => NetworkReportSpecSortConditionDimension::Country,
                 "DATE" => NetworkReportSpecSortConditionDimension::Date,
                 "DIMENSION_UNSPECIFIED" => {
                     NetworkReportSpecSortConditionDimension::DimensionUnspecified
                 }
                 "FORMAT" => NetworkReportSpecSortConditionDimension::Format,
+                "GMA_SDK_VERSION" => NetworkReportSpecSortConditionDimension::GmaSdkVersion,
+                "MOBILE_OS_VERSION" => NetworkReportSpecSortConditionDimension::MobileOsVersion,
                 "MONTH" => NetworkReportSpecSortConditionDimension::Month,
                 "PLATFORM" => NetworkReportSpecSortConditionDimension::Platform,
+                "SERVING_RESTRICTION" => {
+                    NetworkReportSpecSortConditionDimension::ServingRestriction
+                }
                 "WEEK" => NetworkReportSpecSortConditionDimension::Week,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -2614,6 +3028,20 @@ pub mod resources {
                     page_token: None,
                 }
             }
+            #[doc = "Actions that can be performed on the ad_units resource"]
+            pub fn ad_units(&self) -> crate::resources::accounts::ad_units::AdUnitsActions {
+                crate::resources::accounts::ad_units::AdUnitsActions {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                }
+            }
+            #[doc = "Actions that can be performed on the apps resource"]
+            pub fn apps(&self) -> crate::resources::accounts::apps::AppsActions {
+                crate::resources::accounts::apps::AppsActions {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                }
+            }
             #[doc = "Actions that can be performed on the mediation_report resource"]
             pub fn mediation_report(
                 &self,
@@ -3060,6 +3488,640 @@ pub mod resources {
                 T: ::serde::de::DeserializeOwned,
             {
                 self._execute()
+            }
+        }
+        pub mod ad_units {
+            pub mod params {}
+            pub struct AdUnitsActions<'a> {
+                pub(crate) reqwest: &'a reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            }
+            impl<'a> AdUnitsActions<'a> {
+                fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                    self.auth
+                }
+                #[doc = "List the ad units under the specified AdMob account."]
+                pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                    ListRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        parent: parent.into(),
+                        page_size: None,
+                        page_token: None,
+                    }
+                }
+            }
+            #[doc = "Created via [AdUnitsActions::list()](struct.AdUnitsActions.html#method.list)"]
+            #[derive(Debug, Clone)]
+            pub struct ListRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                parent: String,
+                page_size: Option<i32>,
+                page_token: Option<String>,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> ListRequestBuilder<'a> {
+                #[doc = "The maximum number of ad units to return. If unspecified or 0, at most 1000 ad units will be returned. The maximum value is 10,000; values above 10,000 will be coerced to 10,000."]
+                pub fn page_size(mut self, value: i32) -> Self {
+                    self.page_size = Some(value);
+                    self
+                }
+                #[doc = "The value returned by the last `ListAdUnitsResponse`; indicates that this is a continuation of a prior `ListAdUnits` call, and that the system should return the next page of data."]
+                pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                    self.page_token = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                #[doc = r" items yielded by the iterator are chosen by the caller of this"]
+                #[doc = r" method and must implement `Deserialize` and `FieldSelector`. The"]
+                #[doc = r" populated fields in the yielded items will be determined by the"]
+                #[doc = r" `FieldSelector` implementation."]
+                pub fn iter_ad_units<T>(self) -> crate::iter::PageItemIter<Self, T>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.iter_ad_units_with_fields(fields)
+                }
+                #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                #[doc = r" fields in `#items_type` will be the default fields populated by"]
+                #[doc = r" the server."]
+                pub fn iter_ad_units_with_default_fields(
+                    self,
+                ) -> crate::iter::PageItemIter<Self, crate::schemas::AdUnit> {
+                    self.iter_ad_units_with_fields(None::<String>)
+                }
+                #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                #[doc = r" fields in `#items_type` will be all fields available. This should"]
+                #[doc = r" primarily be used during developement and debugging as fetching"]
+                #[doc = r" all fields can be expensive both in bandwidth and server"]
+                #[doc = r" resources."]
+                pub fn iter_ad_units_with_all_fields(
+                    self,
+                ) -> crate::iter::PageItemIter<Self, crate::schemas::AdUnit> {
+                    self.iter_ad_units_with_fields(Some("*"))
+                }
+                pub fn iter_ad_units_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> crate::iter::PageItemIter<Self, T>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: AsRef<str>,
+                {
+                    self.fields = Some({
+                        let mut selector = concat!("nextPageToken,", "adUnits").to_owned();
+                        let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                        if !items_fields.is_empty() {
+                            selector.push_str("(");
+                            selector.push_str(items_fields);
+                            selector.push_str(")");
+                        }
+                        selector
+                    });
+                    crate::iter::PageItemIter::new(self, "adUnits")
+                }
+                pub fn iter<T>(self) -> crate::iter::PageIter<Self, T>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.iter_with_fields(fields)
+                }
+                pub fn iter_with_default_fields(
+                    self,
+                ) -> crate::iter::PageIter<Self, crate::schemas::ListAdUnitsResponse>
+                {
+                    self.iter_with_fields(None::<&str>)
+                }
+                pub fn iter_with_all_fields(
+                    self,
+                ) -> crate::iter::PageIter<Self, crate::schemas::ListAdUnitsResponse>
+                {
+                    self.iter_with_fields(Some("*"))
+                }
+                pub fn iter_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> crate::iter::PageIter<Self, T>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: AsRef<str>,
+                {
+                    let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                    if !fields.is_empty() {
+                        match fields.chars().rev().nth(0) {
+                            Some(',') | None => {}
+                            _ => fields.push_str(","),
+                        }
+                        fields.push_str("nextPageToken");
+                        self.fields = Some(fields);
+                    }
+                    crate::iter::PageIter::new(self)
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::ListAdUnitsResponse, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::ListAdUnitsResponse, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://admob.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.parent;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/adUnits");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("pageSize", &self.page_size)]);
+                    req = req.query(&[("pageToken", &self.page_token)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
+                }
+            }
+            impl<'a> crate::iter::IterableMethod for ListRequestBuilder<'a> {
+                fn set_page_token(&mut self, value: String) {
+                    self.page_token = value.into();
+                }
+                fn execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    self._execute()
+                }
+            }
+        }
+        pub mod apps {
+            pub mod params {}
+            pub struct AppsActions<'a> {
+                pub(crate) reqwest: &'a reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            }
+            impl<'a> AppsActions<'a> {
+                fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                    self.auth
+                }
+                #[doc = "List the apps under the specified AdMob account."]
+                pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                    ListRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        parent: parent.into(),
+                        page_size: None,
+                        page_token: None,
+                    }
+                }
+            }
+            #[doc = "Created via [AppsActions::list()](struct.AppsActions.html#method.list)"]
+            #[derive(Debug, Clone)]
+            pub struct ListRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                parent: String,
+                page_size: Option<i32>,
+                page_token: Option<String>,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> ListRequestBuilder<'a> {
+                #[doc = "The maximum number of apps to return. If unspecified or 0, at most 1000 apps will be returned. The maximum value is 10,000; values above 10,000 will be coerced to 10,000."]
+                pub fn page_size(mut self, value: i32) -> Self {
+                    self.page_size = Some(value);
+                    self
+                }
+                #[doc = "The value returned by the last `ListAppsResponse`; indicates that this is a continuation of a prior `ListApps` call, and that the system should return the next page of data."]
+                pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                    self.page_token = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                #[doc = r" items yielded by the iterator are chosen by the caller of this"]
+                #[doc = r" method and must implement `Deserialize` and `FieldSelector`. The"]
+                #[doc = r" populated fields in the yielded items will be determined by the"]
+                #[doc = r" `FieldSelector` implementation."]
+                pub fn iter_apps<T>(self) -> crate::iter::PageItemIter<Self, T>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.iter_apps_with_fields(fields)
+                }
+                #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                #[doc = r" fields in `#items_type` will be the default fields populated by"]
+                #[doc = r" the server."]
+                pub fn iter_apps_with_default_fields(
+                    self,
+                ) -> crate::iter::PageItemIter<Self, crate::schemas::App> {
+                    self.iter_apps_with_fields(None::<String>)
+                }
+                #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                #[doc = r" fields in `#items_type` will be all fields available. This should"]
+                #[doc = r" primarily be used during developement and debugging as fetching"]
+                #[doc = r" all fields can be expensive both in bandwidth and server"]
+                #[doc = r" resources."]
+                pub fn iter_apps_with_all_fields(
+                    self,
+                ) -> crate::iter::PageItemIter<Self, crate::schemas::App> {
+                    self.iter_apps_with_fields(Some("*"))
+                }
+                pub fn iter_apps_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> crate::iter::PageItemIter<Self, T>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: AsRef<str>,
+                {
+                    self.fields = Some({
+                        let mut selector = concat!("nextPageToken,", "apps").to_owned();
+                        let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                        if !items_fields.is_empty() {
+                            selector.push_str("(");
+                            selector.push_str(items_fields);
+                            selector.push_str(")");
+                        }
+                        selector
+                    });
+                    crate::iter::PageItemIter::new(self, "apps")
+                }
+                pub fn iter<T>(self) -> crate::iter::PageIter<Self, T>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.iter_with_fields(fields)
+                }
+                pub fn iter_with_default_fields(
+                    self,
+                ) -> crate::iter::PageIter<Self, crate::schemas::ListAppsResponse> {
+                    self.iter_with_fields(None::<&str>)
+                }
+                pub fn iter_with_all_fields(
+                    self,
+                ) -> crate::iter::PageIter<Self, crate::schemas::ListAppsResponse> {
+                    self.iter_with_fields(Some("*"))
+                }
+                pub fn iter_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> crate::iter::PageIter<Self, T>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: AsRef<str>,
+                {
+                    let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                    if !fields.is_empty() {
+                        match fields.chars().rev().nth(0) {
+                            Some(',') | None => {}
+                            _ => fields.push_str(","),
+                        }
+                        fields.push_str("nextPageToken");
+                        self.fields = Some(fields);
+                    }
+                    crate::iter::PageIter::new(self)
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::ListAppsResponse, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::ListAppsResponse, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://admob.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.parent;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/apps");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("pageSize", &self.page_size)]);
+                    req = req.query(&[("pageToken", &self.page_token)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
+                }
+            }
+            impl<'a> crate::iter::IterableMethod for ListRequestBuilder<'a> {
+                fn set_page_token(&mut self, value: String) {
+                    self.page_token = value.into();
+                }
+                fn execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    self._execute()
+                }
             }
         }
         pub mod mediation_report {

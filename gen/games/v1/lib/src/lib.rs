@@ -1,4 +1,4 @@
-#![doc = "# Resources and Methods\n    * [achievement_definitions](resources/achievement_definitions/struct.AchievementDefinitionsActions.html)\n      * [*list*](resources/achievement_definitions/struct.ListRequestBuilder.html)\n    * [achievements](resources/achievements/struct.AchievementsActions.html)\n      * [*increment*](resources/achievements/struct.IncrementRequestBuilder.html), [*list*](resources/achievements/struct.ListRequestBuilder.html), [*reveal*](resources/achievements/struct.RevealRequestBuilder.html), [*setStepsAtLeast*](resources/achievements/struct.SetStepsAtLeastRequestBuilder.html), [*unlock*](resources/achievements/struct.UnlockRequestBuilder.html), [*updateMultiple*](resources/achievements/struct.UpdateMultipleRequestBuilder.html)\n    * [applications](resources/applications/struct.ApplicationsActions.html)\n      * [*get*](resources/applications/struct.GetRequestBuilder.html), [*getEndPoint*](resources/applications/struct.GetEndPointRequestBuilder.html), [*played*](resources/applications/struct.PlayedRequestBuilder.html), [*verify*](resources/applications/struct.VerifyRequestBuilder.html)\n    * [events](resources/events/struct.EventsActions.html)\n      * [*listByPlayer*](resources/events/struct.ListByPlayerRequestBuilder.html), [*listDefinitions*](resources/events/struct.ListDefinitionsRequestBuilder.html), [*record*](resources/events/struct.RecordRequestBuilder.html)\n    * [leaderboards](resources/leaderboards/struct.LeaderboardsActions.html)\n      * [*get*](resources/leaderboards/struct.GetRequestBuilder.html), [*list*](resources/leaderboards/struct.ListRequestBuilder.html)\n    * [metagame](resources/metagame/struct.MetagameActions.html)\n      * [*getMetagameConfig*](resources/metagame/struct.GetMetagameConfigRequestBuilder.html), [*listCategoriesByPlayer*](resources/metagame/struct.ListCategoriesByPlayerRequestBuilder.html)\n    * [players](resources/players/struct.PlayersActions.html)\n      * [*get*](resources/players/struct.GetRequestBuilder.html), [*list*](resources/players/struct.ListRequestBuilder.html)\n    * [revisions](resources/revisions/struct.RevisionsActions.html)\n      * [*check*](resources/revisions/struct.CheckRequestBuilder.html)\n    * [scores](resources/scores/struct.ScoresActions.html)\n      * [*get*](resources/scores/struct.GetRequestBuilder.html), [*list*](resources/scores/struct.ListRequestBuilder.html), [*listWindow*](resources/scores/struct.ListWindowRequestBuilder.html), [*submit*](resources/scores/struct.SubmitRequestBuilder.html), [*submitMultiple*](resources/scores/struct.SubmitMultipleRequestBuilder.html)\n    * [snapshots](resources/snapshots/struct.SnapshotsActions.html)\n      * [*get*](resources/snapshots/struct.GetRequestBuilder.html), [*list*](resources/snapshots/struct.ListRequestBuilder.html)\n    * [snapshots_extended](resources/snapshots_extended/struct.SnapshotsExtendedActions.html)\n      * [*resolveSnapshotHead*](resources/snapshots_extended/struct.ResolveSnapshotHeadRequestBuilder.html)\n    * [stats](resources/stats/struct.StatsActions.html)\n      * [*get*](resources/stats/struct.GetRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [achievement_definitions](resources/achievement_definitions/struct.AchievementDefinitionsActions.html)\n      * [*list*](resources/achievement_definitions/struct.ListRequestBuilder.html)\n    * [achievements](resources/achievements/struct.AchievementsActions.html)\n      * [*increment*](resources/achievements/struct.IncrementRequestBuilder.html), [*list*](resources/achievements/struct.ListRequestBuilder.html), [*reveal*](resources/achievements/struct.RevealRequestBuilder.html), [*setStepsAtLeast*](resources/achievements/struct.SetStepsAtLeastRequestBuilder.html), [*unlock*](resources/achievements/struct.UnlockRequestBuilder.html), [*updateMultiple*](resources/achievements/struct.UpdateMultipleRequestBuilder.html)\n    * [applications](resources/applications/struct.ApplicationsActions.html)\n      * [*get*](resources/applications/struct.GetRequestBuilder.html), [*getEndPoint*](resources/applications/struct.GetEndPointRequestBuilder.html), [*played*](resources/applications/struct.PlayedRequestBuilder.html), [*verify*](resources/applications/struct.VerifyRequestBuilder.html)\n    * [events](resources/events/struct.EventsActions.html)\n      * [*listByPlayer*](resources/events/struct.ListByPlayerRequestBuilder.html), [*listDefinitions*](resources/events/struct.ListDefinitionsRequestBuilder.html), [*record*](resources/events/struct.RecordRequestBuilder.html)\n    * [leaderboards](resources/leaderboards/struct.LeaderboardsActions.html)\n      * [*get*](resources/leaderboards/struct.GetRequestBuilder.html), [*list*](resources/leaderboards/struct.ListRequestBuilder.html)\n    * [metagame](resources/metagame/struct.MetagameActions.html)\n      * [*getMetagameConfig*](resources/metagame/struct.GetMetagameConfigRequestBuilder.html), [*listCategoriesByPlayer*](resources/metagame/struct.ListCategoriesByPlayerRequestBuilder.html)\n    * [players](resources/players/struct.PlayersActions.html)\n      * [*get*](resources/players/struct.GetRequestBuilder.html), [*list*](resources/players/struct.ListRequestBuilder.html)\n    * [revisions](resources/revisions/struct.RevisionsActions.html)\n      * [*check*](resources/revisions/struct.CheckRequestBuilder.html)\n    * [scores](resources/scores/struct.ScoresActions.html)\n      * [*get*](resources/scores/struct.GetRequestBuilder.html), [*list*](resources/scores/struct.ListRequestBuilder.html), [*listWindow*](resources/scores/struct.ListWindowRequestBuilder.html), [*submit*](resources/scores/struct.SubmitRequestBuilder.html), [*submitMultiple*](resources/scores/struct.SubmitMultipleRequestBuilder.html)\n    * [snapshots](resources/snapshots/struct.SnapshotsActions.html)\n      * [*get*](resources/snapshots/struct.GetRequestBuilder.html), [*list*](resources/snapshots/struct.ListRequestBuilder.html)\n    * [stats](resources/stats/struct.StatsActions.html)\n      * [*get*](resources/stats/struct.GetRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, create, and delete its own configuration data in your Google Drive\n\n`https://www.googleapis.com/auth/drive.appdata`"]
     pub const DRIVE_APPDATA: &str = "https://www.googleapis.com/auth/drive.appdata";
@@ -3206,6 +3206,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub friend_status: ::std::option::Option<crate::schemas::PlayerFriendStatus>,
+        #[doc = "Per-application unique player identifier."]
+        #[serde(
+            rename = "gamePlayerId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub game_player_id: ::std::option::Option<String>,
         #[doc = "Uniquely identifies the type of this resource. Value is always the fixed string `games#player`"]
         #[serde(
             rename = "kind",
@@ -4593,187 +4600,6 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct ResolveSnapshotHeadRequest {
-        #[doc = "The maximum number of SnapshotRevision resources for `conflictingRevisions` to return per SnapshotExtended resource in the response. For any response, the actual number of resources returned may be less than specified by `maxConflictsPerSnapshot`. The value provided should be greater or equal to 0. If no value is provided, the server will use a sensible default."]
-        #[serde(
-            rename = "maxConflictsPerSnapshot",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub max_conflicts_per_snapshot: ::std::option::Option<i32>,
-        #[doc = "Required. The automatic resolution policy. All conflicts are resolved in chronological order, starting from the/ least recent. If the comparison metric is equal for the tentative head and the conflict, the head wins."]
-        #[serde(
-            rename = "resolutionPolicy",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub resolution_policy:
-            ::std::option::Option<crate::schemas::ResolveSnapshotHeadRequestResolutionPolicy>,
-    }
-    impl ::google_field_selector::FieldSelector for ResolveSnapshotHeadRequest {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for ResolveSnapshotHeadRequest {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum ResolveSnapshotHeadRequestResolutionPolicy {
-        #[doc = "Use the snapshot with the highest progress value."]
-        HighestProgress,
-        #[doc = "Use the snapshot with the longest played time."]
-        LongestPlaytime,
-        #[doc = "Use the snapshot that was most recently modified."]
-        MostRecentlyModified,
-        #[doc = "Don't resolve conflicts at all. Effectively only returns the current head revision of the snapshot. Corresponds to a game opening the snapshot with manual resolution policy."]
-        NoAutomaticResolution,
-        #[doc = "Safe default, don't use explicitly."]
-        ResolutionPolicyUnspecified,
-        #[doc = "Drops all conflicts and keeps the current head only."]
-        UseHead,
-    }
-    impl ResolveSnapshotHeadRequestResolutionPolicy {
-        pub fn as_str(self) -> &'static str {
-            match self {
-                ResolveSnapshotHeadRequestResolutionPolicy::HighestProgress => "HIGHEST_PROGRESS",
-                ResolveSnapshotHeadRequestResolutionPolicy::LongestPlaytime => "LONGEST_PLAYTIME",
-                ResolveSnapshotHeadRequestResolutionPolicy::MostRecentlyModified => {
-                    "MOST_RECENTLY_MODIFIED"
-                }
-                ResolveSnapshotHeadRequestResolutionPolicy::NoAutomaticResolution => {
-                    "NO_AUTOMATIC_RESOLUTION"
-                }
-                ResolveSnapshotHeadRequestResolutionPolicy::ResolutionPolicyUnspecified => {
-                    "RESOLUTION_POLICY_UNSPECIFIED"
-                }
-                ResolveSnapshotHeadRequestResolutionPolicy::UseHead => "USE_HEAD",
-            }
-        }
-    }
-    impl ::std::convert::AsRef<str> for ResolveSnapshotHeadRequestResolutionPolicy {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr for ResolveSnapshotHeadRequestResolutionPolicy {
-        type Err = ();
-        fn from_str(
-            s: &str,
-        ) -> ::std::result::Result<ResolveSnapshotHeadRequestResolutionPolicy, ()> {
-            Ok(match s {
-                "HIGHEST_PROGRESS" => ResolveSnapshotHeadRequestResolutionPolicy::HighestProgress,
-                "LONGEST_PLAYTIME" => ResolveSnapshotHeadRequestResolutionPolicy::LongestPlaytime,
-                "MOST_RECENTLY_MODIFIED" => {
-                    ResolveSnapshotHeadRequestResolutionPolicy::MostRecentlyModified
-                }
-                "NO_AUTOMATIC_RESOLUTION" => {
-                    ResolveSnapshotHeadRequestResolutionPolicy::NoAutomaticResolution
-                }
-                "RESOLUTION_POLICY_UNSPECIFIED" => {
-                    ResolveSnapshotHeadRequestResolutionPolicy::ResolutionPolicyUnspecified
-                }
-                "USE_HEAD" => ResolveSnapshotHeadRequestResolutionPolicy::UseHead,
-                _ => return Err(()),
-            })
-        }
-    }
-    impl ::std::fmt::Display for ResolveSnapshotHeadRequestResolutionPolicy {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize for ResolveSnapshotHeadRequestResolutionPolicy {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de> for ResolveSnapshotHeadRequestResolutionPolicy {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok(match value {
-                "HIGHEST_PROGRESS" => ResolveSnapshotHeadRequestResolutionPolicy::HighestProgress,
-                "LONGEST_PLAYTIME" => ResolveSnapshotHeadRequestResolutionPolicy::LongestPlaytime,
-                "MOST_RECENTLY_MODIFIED" => {
-                    ResolveSnapshotHeadRequestResolutionPolicy::MostRecentlyModified
-                }
-                "NO_AUTOMATIC_RESOLUTION" => {
-                    ResolveSnapshotHeadRequestResolutionPolicy::NoAutomaticResolution
-                }
-                "RESOLUTION_POLICY_UNSPECIFIED" => {
-                    ResolveSnapshotHeadRequestResolutionPolicy::ResolutionPolicyUnspecified
-                }
-                "USE_HEAD" => ResolveSnapshotHeadRequestResolutionPolicy::UseHead,
-                _ => {
-                    return Err(::serde::de::Error::custom(format!(
-                        "invalid enum for #name: {}",
-                        value
-                    )))
-                }
-            })
-        }
-    }
-    impl ::google_field_selector::FieldSelector for ResolveSnapshotHeadRequestResolutionPolicy {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for ResolveSnapshotHeadRequestResolutionPolicy {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct ResolveSnapshotHeadResponse {
-        #[doc = "The state of the snapshot."]
-        #[serde(
-            rename = "snapshot",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub snapshot: ::std::option::Option<crate::schemas::SnapshotExtended>,
-    }
-    impl ::google_field_selector::FieldSelector for ResolveSnapshotHeadResponse {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for ResolveSnapshotHeadResponse {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
     pub struct RevisionCheckResponse {
         #[doc = "The version of the API this client revision should use when calling API methods."]
         #[serde(
@@ -5142,177 +4968,6 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct SnapshotCoverImageResource {
-        #[doc = "Output only. Hash-like weak identifier of the uploaded image bytes, consistent per player per application. The content hash for a given resource will not change if the binary data hasn't changed. Except in very rare circumstances, the content_hash for matching binary data will be the same within a given player and application."]
-        #[serde(
-            rename = "contentHash",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub content_hash: ::std::option::Option<String>,
-        #[doc = "Output only. A URL the client can use to download the image. May vary across requests, and only guaranteed to be valid for a short time after it is returned."]
-        #[serde(
-            rename = "downloadUrl",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub download_url: ::std::option::Option<String>,
-        #[doc = "The height of the image in pixels."]
-        #[serde(
-            rename = "height",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub height: ::std::option::Option<i32>,
-        #[doc = "Output only. The MIME type of the image."]
-        #[serde(
-            rename = "mimeType",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub mime_type: ::std::option::Option<String>,
-        #[doc = "The ID of the image resource. It's guaranteed that if two IDs are equal then the contents are equal as well. It's not guaranteed that two identical blobs coming from separate uploads have the same ID. The resource ID can only be used within the application, user and resource type it was originally returned for. For example, it's not possible to use SnapshotDataResource's resource ID as the resource_id of a SnapshotCoverImageResource, even if the blob is a valid image file."]
-        #[serde(
-            rename = "resourceId",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub resource_id: ::std::option::Option<String>,
-        #[doc = "The width of the image in pixels."]
-        #[serde(
-            rename = "width",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub width: ::std::option::Option<i32>,
-    }
-    impl ::google_field_selector::FieldSelector for SnapshotCoverImageResource {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for SnapshotCoverImageResource {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct SnapshotDataResource {
-        #[doc = "Output only. Hash-like weak identifier of the uploaded blob bytes, consistent per player per application. The content hash for a given resource will not change if the binary data hasn't changed. Except in very rare circumstances, the content_hash for matching binary data will be the same within a given player and application."]
-        #[serde(
-            rename = "contentHash",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub content_hash: ::std::option::Option<String>,
-        #[doc = "Output only. A URL that the client can use to download the blob. May vary across requests, and only guaranteed to be valid for a short time after it is returned."]
-        #[serde(
-            rename = "downloadUrl",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub download_url: ::std::option::Option<String>,
-        #[doc = "The ID of the blob resource. It's guaranteed that if two IDs are equal then the contents are equal as well. It's not guaranteed that two identical blobs coming from separate uploads have the same resource ID. The resource ID can only be used within the application, user and resource type it was originally returned for. For example, it's not possible to use SnapshotDataResource's resource ID as the resource_id of a SnapshotCoverImageResource, even if the blob is a valid image file."]
-        #[serde(
-            rename = "resourceId",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub resource_id: ::std::option::Option<String>,
-        #[doc = "Output only. Size of the saved game blob in bytes."]
-        #[serde(
-            rename = "size",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        #[serde(with = "crate::parsed_string")]
-        pub size: ::std::option::Option<i64>,
-    }
-    impl ::google_field_selector::FieldSelector for SnapshotDataResource {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for SnapshotDataResource {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct SnapshotExtended {
-        #[doc = "A list of conflicting revisions. Only set if explicitly requested (e.g. using a field mask or a request flag), or if the RPC guarantees that this field is set. The conflicting revisions are sorted chronologically by their server creation time (oldest first). If there are too many conflicting revisions to return all of them in a single request this will only contain the first batch. In such case, the presented conflicting revisions must be resolved first in order to fetch the next batch."]
-        #[serde(
-            rename = "conflictingRevisions",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub conflicting_revisions: ::std::option::Option<Vec<crate::schemas::SnapshotRevision>>,
-        #[doc = "An indicator whether the snapshot has any conflicting revisions or not. Always set."]
-        #[serde(
-            rename = "hasConflictingRevisions",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub has_conflicting_revisions: ::std::option::Option<bool>,
-        #[doc = "The current head revision (the canonical revision as understood by the server)."]
-        #[serde(
-            rename = "headRevision",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub head_revision: ::std::option::Option<crate::schemas::SnapshotRevision>,
-        #[doc = "An identifier of the snapshot, developer-specified. It must match the pattern [0-9a-zA-Z-._~]{1,100}."]
-        #[serde(
-            rename = "snapshotName",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub snapshot_name: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for SnapshotExtended {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for SnapshotExtended {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
     pub struct SnapshotImage {
         #[doc = "The height of the image."]
         #[serde(
@@ -5401,118 +5056,6 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SnapshotListResponse {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct SnapshotMetadata {
-        #[doc = "The description of this snapshot."]
-        #[serde(
-            rename = "description",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub description: ::std::option::Option<String>,
-        #[doc = "The device that created the current revision."]
-        #[serde(
-            rename = "deviceName",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub device_name: ::std::option::Option<String>,
-        #[doc = "The duration associated with this snapshot. Values with sub-millisecond precision can be rounded or trimmed to the closest millisecond."]
-        #[serde(
-            rename = "gameplayDuration",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub gameplay_duration: ::std::option::Option<String>,
-        #[doc = "The timestamp of the last modification to this snapshot as provided by the client. Values with sub-millisecond precision can be rounded or trimmed to the closest millisecond."]
-        #[serde(
-            rename = "lastModifyTime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub last_modify_time: ::std::option::Option<String>,
-        #[doc = "The progress value (64-bit integer set by developer) associated with this snapshot."]
-        #[serde(
-            rename = "progressValue",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        #[serde(with = "crate::parsed_string")]
-        pub progress_value: ::std::option::Option<i64>,
-    }
-    impl ::google_field_selector::FieldSelector for SnapshotMetadata {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for SnapshotMetadata {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct SnapshotRevision {
-        #[doc = "Reference to the game provided blob for this revision."]
-        #[serde(
-            rename = "blob",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub blob: ::std::option::Option<crate::schemas::SnapshotDataResource>,
-        #[doc = "Reference to the cover image for this revision."]
-        #[serde(
-            rename = "coverImage",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub cover_image: ::std::option::Option<crate::schemas::SnapshotCoverImageResource>,
-        #[doc = "Output only. A server generated identifier of the snapshot revision."]
-        #[serde(
-            rename = "id",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub id: ::std::option::Option<String>,
-        #[doc = "Metadata for this snapshot revision."]
-        #[serde(
-            rename = "metadata",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub metadata: ::std::option::Option<crate::schemas::SnapshotMetadata>,
-    }
-    impl ::google_field_selector::FieldSelector for SnapshotRevision {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for SnapshotRevision {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5856,15 +5399,6 @@ impl Client {
     #[doc = "Actions that can be performed on the snapshots resource"]
     pub fn snapshots(&self) -> crate::resources::snapshots::SnapshotsActions {
         crate::resources::snapshots::SnapshotsActions {
-            reqwest: &self.reqwest,
-            auth: self.auth_ref(),
-        }
-    }
-    #[doc = "Actions that can be performed on the snapshots_extended resource"]
-    pub fn snapshots_extended(
-        &self,
-    ) -> crate::resources::snapshots_extended::SnapshotsExtendedActions {
-        crate::resources::snapshots_extended::SnapshotsExtendedActions {
             reqwest: &self.reqwest,
             auth: self.auth_ref(),
         }
@@ -10329,6 +9863,7 @@ pub mod resources {
                     xgafv: None,
                     player_id: player_id.into(),
                     language: None,
+                    player_id_consistency_token: None,
                 }
             }
             #[doc = "Get the collection of players for the currently authenticated user."]
@@ -10364,6 +9899,7 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             player_id: String,
             language: Option<String>,
+            player_id_consistency_token: Option<String>,
             access_token: Option<String>,
             alt: Option<crate::params::Alt>,
             callback: Option<String>,
@@ -10380,6 +9916,11 @@ pub mod resources {
             #[doc = "The preferred language to use for strings returned by this method."]
             pub fn language(mut self, value: impl Into<String>) -> Self {
                 self.language = Some(value.into());
+                self
+            }
+            #[doc = "Consistency token of the player id. The call returns a 'not found' result when the token is present and invalid. Empty value is ignored. See also GlobalPlayerIdConsistencyTokenProto"]
+            pub fn player_id_consistency_token(mut self, value: impl Into<String>) -> Self {
+                self.player_id_consistency_token = Some(value.into());
                 self
             }
             #[doc = "OAuth access token."]
@@ -10499,6 +10040,10 @@ pub mod resources {
             ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::GET, path);
                 req = req.query(&[("language", &self.language)]);
+                req = req.query(&[(
+                    "playerIdConsistencyToken",
+                    &self.player_id_consistency_token,
+                )]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -13419,201 +12964,6 @@ pub mod resources {
                 T: ::serde::de::DeserializeOwned,
             {
                 self._execute()
-            }
-        }
-    }
-    pub mod snapshots_extended {
-        pub mod params {}
-        pub struct SnapshotsExtendedActions<'a> {
-            pub(crate) reqwest: &'a reqwest::blocking::Client,
-            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-        }
-        impl<'a> SnapshotsExtendedActions<'a> {
-            fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
-                self.auth
-            }
-            #[doc = "Resolves any potential conflicts according to the resolution policy specified in the request and returns the snapshot head after the resolution."]
-            pub fn resolve_snapshot_head(
-                &self,
-                request: crate::schemas::ResolveSnapshotHeadRequest,
-                snapshot_name: impl Into<String>,
-            ) -> ResolveSnapshotHeadRequestBuilder {
-                ResolveSnapshotHeadRequestBuilder {
-                    reqwest: &self.reqwest,
-                    auth: self.auth_ref(),
-                    request,
-                    access_token: None,
-                    alt: None,
-                    callback: None,
-                    fields: None,
-                    key: None,
-                    oauth_token: None,
-                    pretty_print: None,
-                    quota_user: None,
-                    upload_protocol: None,
-                    upload_type: None,
-                    xgafv: None,
-                    snapshot_name: snapshot_name.into(),
-                }
-            }
-        }
-        #[doc = "Created via [SnapshotsExtendedActions::resolve_snapshot_head()](struct.SnapshotsExtendedActions.html#method.resolve_snapshot_head)"]
-        #[derive(Debug, Clone)]
-        pub struct ResolveSnapshotHeadRequestBuilder<'a> {
-            pub(crate) reqwest: &'a ::reqwest::blocking::Client,
-            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-            request: crate::schemas::ResolveSnapshotHeadRequest,
-            snapshot_name: String,
-            access_token: Option<String>,
-            alt: Option<crate::params::Alt>,
-            callback: Option<String>,
-            fields: Option<String>,
-            key: Option<String>,
-            oauth_token: Option<String>,
-            pretty_print: Option<bool>,
-            quota_user: Option<String>,
-            upload_protocol: Option<String>,
-            upload_type: Option<String>,
-            xgafv: Option<crate::params::Xgafv>,
-        }
-        impl<'a> ResolveSnapshotHeadRequestBuilder<'a> {
-            #[doc = "OAuth access token."]
-            pub fn access_token(mut self, value: impl Into<String>) -> Self {
-                self.access_token = Some(value.into());
-                self
-            }
-            #[doc = "JSONP"]
-            pub fn callback(mut self, value: impl Into<String>) -> Self {
-                self.callback = Some(value.into());
-                self
-            }
-            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
-            pub fn key(mut self, value: impl Into<String>) -> Self {
-                self.key = Some(value.into());
-                self
-            }
-            #[doc = "OAuth 2.0 token for the current user."]
-            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
-                self.oauth_token = Some(value.into());
-                self
-            }
-            #[doc = "Returns response with indentations and line breaks."]
-            pub fn pretty_print(mut self, value: bool) -> Self {
-                self.pretty_print = Some(value);
-                self
-            }
-            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
-            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
-                self.quota_user = Some(value.into());
-                self
-            }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
-            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
-                self.upload_protocol = Some(value.into());
-                self
-            }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
-            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
-                self.upload_type = Some(value.into());
-                self
-            }
-            #[doc = "V1 error format."]
-            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
-                self.xgafv = Some(value);
-                self
-            }
-            #[doc = r" Execute the given operation. The fields requested are"]
-            #[doc = r" determined by the FieldSelector attribute of the return type."]
-            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
-            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
-            #[doc = r" are not generic over the return type and deserialize the"]
-            #[doc = r" response into an auto-generated struct will all possible"]
-            #[doc = r" fields."]
-            pub fn execute<T>(self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
-            {
-                let fields = ::google_field_selector::to_string::<T>();
-                let fields: Option<String> = if fields.is_empty() {
-                    None
-                } else {
-                    Some(fields)
-                };
-                self.execute_with_fields(fields)
-            }
-            #[doc = r" Execute the given operation. This will not provide any"]
-            #[doc = r" `fields` selector indicating that the server will determine"]
-            #[doc = r" the fields returned. This typically includes the most common"]
-            #[doc = r" fields, but it will not include every possible attribute of"]
-            #[doc = r" the response resource."]
-            pub fn execute_with_default_fields(
-                self,
-            ) -> Result<crate::schemas::ResolveSnapshotHeadResponse, crate::Error> {
-                self.execute_with_fields(None::<&str>)
-            }
-            #[doc = r" Execute the given operation. This will provide a `fields`"]
-            #[doc = r" selector of `*`. This will include every attribute of the"]
-            #[doc = r" response resource and should be limited to use during"]
-            #[doc = r" development or debugging."]
-            pub fn execute_with_all_fields(
-                self,
-            ) -> Result<crate::schemas::ResolveSnapshotHeadResponse, crate::Error> {
-                self.execute_with_fields(Some("*"))
-            }
-            #[doc = r" Execute the given operation. This will use the `fields`"]
-            #[doc = r" selector provided and will deserialize the response into"]
-            #[doc = r" whatever return value is provided."]
-            pub fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-                F: Into<String>,
-            {
-                self.fields = fields.map(Into::into);
-                self._execute()
-            }
-            fn _execute<T>(&mut self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-            {
-                let req = self._request(&self._path())?;
-                let req = req.json(&self.request);
-                Ok(crate::error_from_response(req.send()?)?.json()?)
-            }
-            fn _path(&self) -> String {
-                let mut output = "https://games.googleapis.com/".to_owned();
-                output.push_str("games/v1/snapshotsExtended/");
-                {
-                    let var_as_str = &self.snapshot_name;
-                    output.extend(::percent_encoding::utf8_percent_encode(
-                        &var_as_str,
-                        crate::SIMPLE,
-                    ));
-                }
-                output.push_str(":resolveHead");
-                output
-            }
-            fn _request(
-                &self,
-                path: &str,
-            ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
-                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
-                req = req.query(&[("access_token", &self.access_token)]);
-                req = req.query(&[("alt", &self.alt)]);
-                req = req.query(&[("callback", &self.callback)]);
-                req = req.query(&[("fields", &self.fields)]);
-                req = req.query(&[("key", &self.key)]);
-                req = req.query(&[("oauth_token", &self.oauth_token)]);
-                req = req.query(&[("prettyPrint", &self.pretty_print)]);
-                req = req.query(&[("quotaUser", &self.quota_user)]);
-                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
-                req = req.query(&[("uploadType", &self.upload_type)]);
-                req = req.query(&[("$.xgafv", &self.xgafv)]);
-                req = req.bearer_auth(
-                    self.auth
-                        .access_token()
-                        .map_err(|err| crate::Error::OAuth2(err))?,
-                );
-                Ok(req)
             }
         }
     }

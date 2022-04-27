@@ -16,6 +16,295 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct AccountSuspensionDetails {
+        #[doc = "The reason why this account is receiving an account suspension warning."]
+        #[serde(
+            rename = "abuseReason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub abuse_reason:
+            ::std::option::Option<crate::schemas::AccountSuspensionDetailsAbuseReason>,
+        #[doc = "The name of the product being abused. This is restricted to only the following values: \"Gmail\" \"Google Workspace\" \"Payments\" \"Voice\" \"YouTube\" \"Other\""]
+        #[serde(
+            rename = "productName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub product_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for AccountSuspensionDetails {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AccountSuspensionDetails {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AccountSuspensionDetailsAbuseReason {
+        #[doc = "Abuse reason is unspecified."]
+        AccountSuspensionAbuseReasonUnspecified,
+        #[doc = "This account is being suspended for fraud."]
+        Fraud,
+        #[doc = "This account is being suspended for number harvesting."]
+        NumberHarvesting,
+        #[doc = "This account is being suspended for payments fraud."]
+        PaymentsFraud,
+        #[doc = "This account is being suspended for phishing."]
+        Phishing,
+        #[doc = "This account is being suspended for spam."]
+        Spam,
+        #[doc = "This account is being suspended for a Terms of Service violation."]
+        TosViolation,
+        #[doc = "This account is being suspended for artificially boosting traffic to a website."]
+        TrafficPumping,
+        #[doc = "This account is being suspended for unwanted content."]
+        UnwantedContent,
+    }
+    impl AccountSuspensionDetailsAbuseReason {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AccountSuspensionDetailsAbuseReason::AccountSuspensionAbuseReasonUnspecified => {
+                    "ACCOUNT_SUSPENSION_ABUSE_REASON_UNSPECIFIED"
+                }
+                AccountSuspensionDetailsAbuseReason::Fraud => "FRAUD",
+                AccountSuspensionDetailsAbuseReason::NumberHarvesting => "NUMBER_HARVESTING",
+                AccountSuspensionDetailsAbuseReason::PaymentsFraud => "PAYMENTS_FRAUD",
+                AccountSuspensionDetailsAbuseReason::Phishing => "PHISHING",
+                AccountSuspensionDetailsAbuseReason::Spam => "SPAM",
+                AccountSuspensionDetailsAbuseReason::TosViolation => "TOS_VIOLATION",
+                AccountSuspensionDetailsAbuseReason::TrafficPumping => "TRAFFIC_PUMPING",
+                AccountSuspensionDetailsAbuseReason::UnwantedContent => "UNWANTED_CONTENT",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AccountSuspensionDetailsAbuseReason {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AccountSuspensionDetailsAbuseReason {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AccountSuspensionDetailsAbuseReason, ()> {
+            Ok(match s {
+                "ACCOUNT_SUSPENSION_ABUSE_REASON_UNSPECIFIED" => {
+                    AccountSuspensionDetailsAbuseReason::AccountSuspensionAbuseReasonUnspecified
+                }
+                "FRAUD" => AccountSuspensionDetailsAbuseReason::Fraud,
+                "NUMBER_HARVESTING" => AccountSuspensionDetailsAbuseReason::NumberHarvesting,
+                "PAYMENTS_FRAUD" => AccountSuspensionDetailsAbuseReason::PaymentsFraud,
+                "PHISHING" => AccountSuspensionDetailsAbuseReason::Phishing,
+                "SPAM" => AccountSuspensionDetailsAbuseReason::Spam,
+                "TOS_VIOLATION" => AccountSuspensionDetailsAbuseReason::TosViolation,
+                "TRAFFIC_PUMPING" => AccountSuspensionDetailsAbuseReason::TrafficPumping,
+                "UNWANTED_CONTENT" => AccountSuspensionDetailsAbuseReason::UnwantedContent,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AccountSuspensionDetailsAbuseReason {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AccountSuspensionDetailsAbuseReason {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AccountSuspensionDetailsAbuseReason {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACCOUNT_SUSPENSION_ABUSE_REASON_UNSPECIFIED" => {
+                    AccountSuspensionDetailsAbuseReason::AccountSuspensionAbuseReasonUnspecified
+                }
+                "FRAUD" => AccountSuspensionDetailsAbuseReason::Fraud,
+                "NUMBER_HARVESTING" => AccountSuspensionDetailsAbuseReason::NumberHarvesting,
+                "PAYMENTS_FRAUD" => AccountSuspensionDetailsAbuseReason::PaymentsFraud,
+                "PHISHING" => AccountSuspensionDetailsAbuseReason::Phishing,
+                "SPAM" => AccountSuspensionDetailsAbuseReason::Spam,
+                "TOS_VIOLATION" => AccountSuspensionDetailsAbuseReason::TosViolation,
+                "TRAFFIC_PUMPING" => AccountSuspensionDetailsAbuseReason::TrafficPumping,
+                "UNWANTED_CONTENT" => AccountSuspensionDetailsAbuseReason::UnwantedContent,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AccountSuspensionDetailsAbuseReason {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AccountSuspensionDetailsAbuseReason {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AccountSuspensionWarning {
+        #[doc = "The amount of time remaining to appeal an imminent suspension. After this window has elapsed, the account will be suspended. Only populated if the account suspension is in WARNING state."]
+        #[serde(
+            rename = "appealWindow",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub appeal_window: ::std::option::Option<String>,
+        #[doc = "Account suspension warning state."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::AccountSuspensionWarningState>,
+        #[doc = "Details about why an account is being suspended."]
+        #[serde(
+            rename = "suspensionDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub suspension_details:
+            ::std::option::Option<Vec<crate::schemas::AccountSuspensionDetails>>,
+    }
+    impl ::google_field_selector::FieldSelector for AccountSuspensionWarning {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AccountSuspensionWarning {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AccountSuspensionWarningState {
+        #[doc = "State is unspecified."]
+        AccountSuspensionWarningStateUnspecified,
+        #[doc = "Customer is being notified that their suspension appeal was approved."]
+        AppealApproved,
+        #[doc = "Customer has submitted their appeal, which is pending review."]
+        AppealSubmitted,
+        #[doc = "Customer is being notified that their account has been suspended."]
+        Suspended,
+        #[doc = "Customer is receiving a warning about imminent suspension."]
+        Warning,
+    }
+    impl AccountSuspensionWarningState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AccountSuspensionWarningState::AccountSuspensionWarningStateUnspecified => {
+                    "ACCOUNT_SUSPENSION_WARNING_STATE_UNSPECIFIED"
+                }
+                AccountSuspensionWarningState::AppealApproved => "APPEAL_APPROVED",
+                AccountSuspensionWarningState::AppealSubmitted => "APPEAL_SUBMITTED",
+                AccountSuspensionWarningState::Suspended => "SUSPENDED",
+                AccountSuspensionWarningState::Warning => "WARNING",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AccountSuspensionWarningState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AccountSuspensionWarningState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AccountSuspensionWarningState, ()> {
+            Ok(match s {
+                "ACCOUNT_SUSPENSION_WARNING_STATE_UNSPECIFIED" => {
+                    AccountSuspensionWarningState::AccountSuspensionWarningStateUnspecified
+                }
+                "APPEAL_APPROVED" => AccountSuspensionWarningState::AppealApproved,
+                "APPEAL_SUBMITTED" => AccountSuspensionWarningState::AppealSubmitted,
+                "SUSPENDED" => AccountSuspensionWarningState::Suspended,
+                "WARNING" => AccountSuspensionWarningState::Warning,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AccountSuspensionWarningState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AccountSuspensionWarningState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AccountSuspensionWarningState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACCOUNT_SUSPENSION_WARNING_STATE_UNSPECIFIED" => {
+                    AccountSuspensionWarningState::AccountSuspensionWarningStateUnspecified
+                }
+                "APPEAL_APPROVED" => AccountSuspensionWarningState::AppealApproved,
+                "APPEAL_SUBMITTED" => AccountSuspensionWarningState::AppealSubmitted,
+                "SUSPENDED" => AccountSuspensionWarningState::Suspended,
+                "WARNING" => AccountSuspensionWarningState::Warning,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AccountSuspensionWarningState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AccountSuspensionWarningState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct AccountWarning {
         #[doc = "Required. The email of the user that this event belongs to."]
         #[serde(
@@ -232,7 +521,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metadata: ::std::option::Option<crate::schemas::AlertMetadata>,
-        #[doc = "Required. The type of the alert. This is output only after alert is created. For a list of available alert types see [Google Workspace Alert types](/admin-sdk/alertcenter/reference/alert-types)."]
+        #[doc = "Required. The type of the alert. This is output only after alert is created. For a list of available alert types see [Google Workspace Alert types](https://developers.google.com/admin-sdk/alertcenter/reference/alert-types)."]
         #[serde(
             rename = "type",
             default,
@@ -246,7 +535,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub security_investigation_tool_link: ::std::option::Option<String>,
-        #[doc = "Required. A unique identifier for the system that reported the alert. This is output only after alert is created. Supported sources are any of the following: * Google Operations * Mobile device management * Gmail phishing * Domain wide takeout * State sponsored attack * Google identity"]
+        #[doc = "Required. A unique identifier for the system that reported the alert. This is output only after alert is created. Supported sources are any of the following: * Google Operations * Mobile device management * Gmail phishing * Data Loss Prevention * Domain wide takeout * State sponsored attack * Google identity * Apps outage"]
         #[serde(
             rename = "source",
             default,
@@ -465,7 +754,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub customer_id: ::std::option::Option<String>,
-        #[doc = "Optional. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of an alert metadata from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform metatdata updates in order to avoid race conditions: An `etag` is returned in the response which contains alert metadata, and systems are expected to put that etag in the request to update alert metadata to ensure that their change will be applied to the same version of the alert metadata. If no `etag` is provided in the call to update alert metadata, then the existing alert metadata is overwritten blindly."]
+        #[doc = "Optional. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of an alert metadata from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform metadata updates in order to avoid race conditions: An `etag` is returned in the response which contains alert metadata, and systems are expected to put that etag in the request to update alert metadata to ensure that their change will be applied to the same version of the alert metadata. If no `etag` is provided in the call to update alert metadata, then the existing alert metadata is overwritten blindly."]
         #[serde(
             rename = "etag",
             default,
@@ -531,6 +820,218 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for AppMakerSqlSetupNotification {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AppSettingsChanged {
+        #[doc = "Any other associated alert details, for example, AlertConfiguration."]
+        #[serde(
+            rename = "alertDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub alert_details: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "Rule name"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for AppSettingsChanged {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AppSettingsChanged {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AppsOutage {
+        #[doc = "Link to the outage event in Google Workspace Status Dashboard"]
+        #[serde(
+            rename = "dashboardUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dashboard_uri: ::std::option::Option<String>,
+        #[doc = "Incident tracking ID."]
+        #[serde(
+            rename = "incidentTrackingId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub incident_tracking_id: ::std::option::Option<String>,
+        #[doc = "Indicates new alert details under which the outage is communicated. Only populated when Status is MERGED."]
+        #[serde(
+            rename = "mergeInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub merge_info: ::std::option::Option<crate::schemas::MergeInfo>,
+        #[doc = "Timestamp by which the next update is expected to arrive."]
+        #[serde(
+            rename = "nextUpdateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_update_time: ::std::option::Option<String>,
+        #[doc = "List of products impacted by the outage."]
+        #[serde(
+            rename = "products",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub products: ::std::option::Option<Vec<String>>,
+        #[doc = "Timestamp when the outage is expected to be resolved, or has confirmed resolution. Provided only when known."]
+        #[serde(
+            rename = "resolutionTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resolution_time: ::std::option::Option<String>,
+        #[doc = "Current outage status."]
+        #[serde(
+            rename = "status",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub status: ::std::option::Option<crate::schemas::AppsOutageStatus>,
+    }
+    impl ::google_field_selector::FieldSelector for AppsOutage {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AppsOutage {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AppsOutageStatus {
+        #[doc = "The incident has lower impact than initially anticipated."]
+        Downgraded,
+        #[doc = "Further assessment indicated no customer impact."]
+        FalsePositive,
+        #[doc = "The incident was merged into a parent."]
+        Merged,
+        #[doc = "The incident has just been reported."]
+        New,
+        #[doc = "The incident is ongoing."]
+        Ongoing,
+        #[doc = "The incident has been partially resolved."]
+        PartiallyResolved,
+        #[doc = "The incident has been resolved."]
+        Resolved,
+        #[doc = "Status is unspecified."]
+        StatusUnspecified,
+    }
+    impl AppsOutageStatus {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AppsOutageStatus::Downgraded => "DOWNGRADED",
+                AppsOutageStatus::FalsePositive => "FALSE_POSITIVE",
+                AppsOutageStatus::Merged => "MERGED",
+                AppsOutageStatus::New => "NEW",
+                AppsOutageStatus::Ongoing => "ONGOING",
+                AppsOutageStatus::PartiallyResolved => "PARTIALLY_RESOLVED",
+                AppsOutageStatus::Resolved => "RESOLVED",
+                AppsOutageStatus::StatusUnspecified => "STATUS_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AppsOutageStatus {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AppsOutageStatus {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AppsOutageStatus, ()> {
+            Ok(match s {
+                "DOWNGRADED" => AppsOutageStatus::Downgraded,
+                "FALSE_POSITIVE" => AppsOutageStatus::FalsePositive,
+                "MERGED" => AppsOutageStatus::Merged,
+                "NEW" => AppsOutageStatus::New,
+                "ONGOING" => AppsOutageStatus::Ongoing,
+                "PARTIALLY_RESOLVED" => AppsOutageStatus::PartiallyResolved,
+                "RESOLVED" => AppsOutageStatus::Resolved,
+                "STATUS_UNSPECIFIED" => AppsOutageStatus::StatusUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AppsOutageStatus {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AppsOutageStatus {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AppsOutageStatus {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DOWNGRADED" => AppsOutageStatus::Downgraded,
+                "FALSE_POSITIVE" => AppsOutageStatus::FalsePositive,
+                "MERGED" => AppsOutageStatus::Merged,
+                "NEW" => AppsOutageStatus::New,
+                "ONGOING" => AppsOutageStatus::Ongoing,
+                "PARTIALLY_RESOLVED" => AppsOutageStatus::PartiallyResolved,
+                "RESOLVED" => AppsOutageStatus::Resolved,
+                "STATUS_UNSPECIFIED" => AppsOutageStatus::StatusUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AppsOutageStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AppsOutageStatus {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1189,7 +1690,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub attachments_sha_256_hash: ::std::option::Option<Vec<String>>,
-        #[doc = "The date the malicious email was sent."]
+        #[doc = "The date of the event related to this email."]
         #[serde(
             rename = "date",
             default,
@@ -1283,6 +1784,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
+        #[doc = "Customer domain for email template personalization."]
+        #[serde(
+            rename = "domain",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub domain: ::std::option::Option<String>,
         #[doc = "A header to display above the incident message. Typically used to attach a localized notice on the timeline for followup comms translations."]
         #[serde(
             rename = "header",
@@ -1602,6 +2110,44 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct MandatoryServiceAnnouncement {
+        #[doc = "Detailed, freeform text describing the announcement"]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "One line summary of the announcement"]
+        #[serde(
+            rename = "title",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub title: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for MandatoryServiceAnnouncement {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MandatoryServiceAnnouncement {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct MatchInfo {
         #[doc = "For matched detector predefined by Google."]
         #[serde(
@@ -1624,6 +2170,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for MatchInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MergeInfo {
+        #[doc = "Optional. New alert ID. Reference the [google.apps.alertcenter.Alert] with this ID for the current state."]
+        #[serde(
+            rename = "newAlertId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub new_alert_id: ::std::option::Option<String>,
+        #[doc = "The new tracking ID from the parent incident."]
+        #[serde(
+            rename = "newIncidentTrackingId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub new_incident_tracking_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for MergeInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MergeInfo {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1738,6 +2322,51 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for PredefinedDetectorInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ReportingRule {
+        #[doc = "Any other associated alert details, for example, AlertConfiguration."]
+        #[serde(
+            rename = "alertDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub alert_details: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "Rule name"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Alert Rule query Sample Query query { condition { filter { expected_application_id: 777491262838 expected_event_name: \"indexable_content_change\" filter_op: IN } } conjunction_operator: OR }"]
+        #[serde(
+            rename = "query",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub query: ::std::option::Option<::google_api_bytes::Bytes>,
+    }
+    impl ::google_field_selector::FieldSelector for ReportingRule {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ReportingRule {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2611,6 +3240,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for User {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UserChanges {
+        #[doc = "Rule name"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for UserChanges {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UserChanges {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3831,7 +4491,7 @@ pub mod resources {
                 self.customer_id = Some(value.into());
                 self
             }
-            #[doc = "Optional. A query string for filtering alert results. For more details, see [Query filters](/admin-sdk/alertcenter/guides/query-filters) and [Supported query filter fields](/admin-sdk/alertcenter/reference/filter-fields#alerts.list)."]
+            #[doc = "Optional. A query string for filtering alert results. For more details, see [Query filters](https://developers.google.com/admin-sdk/alertcenter/guides/query-filters) and [Supported query filter fields](https://developers.google.com/admin-sdk/alertcenter/reference/filter-fields#alerts.list)."]
             pub fn filter(mut self, value: impl Into<String>) -> Self {
                 self.filter = Some(value.into());
                 self
@@ -4504,7 +5164,7 @@ pub mod resources {
                     self.customer_id = Some(value.into());
                     self
                 }
-                #[doc = "Optional. A query string for filtering alert feedback results. For more details, see [Query filters](/admin-sdk/alertcenter/guides/query-filters) and [Supported query filter fields](/admin-sdk/alertcenter/reference/filter-fields#alerts.feedback.list)."]
+                #[doc = "Optional. A query string for filtering alert feedback results. For more details, see [Query filters](https://developers.google.com/admin-sdk/alertcenter/guides/query-filters) and [Supported query filter fields](https://developers.google.com/admin-sdk/alertcenter/reference/filter-fields#alerts.feedback.list)."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self

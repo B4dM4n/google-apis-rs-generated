@@ -1,6 +1,6 @@
-#![doc = "# Resources and Methods\n    * [folders](resources/folders/struct.FoldersActions.html)\n      * [time_series](resources/folders/time_series/struct.TimeSeriesActions.html)\n        * [*list*](resources/folders/time_series/struct.ListRequestBuilder.html)\n    * [organizations](resources/organizations/struct.OrganizationsActions.html)\n      * [time_series](resources/organizations/time_series/struct.TimeSeriesActions.html)\n        * [*list*](resources/organizations/time_series/struct.ListRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [alert_policies](resources/projects/alert_policies/struct.AlertPoliciesActions.html)\n        * [*create*](resources/projects/alert_policies/struct.CreateRequestBuilder.html), [*delete*](resources/projects/alert_policies/struct.DeleteRequestBuilder.html), [*get*](resources/projects/alert_policies/struct.GetRequestBuilder.html), [*list*](resources/projects/alert_policies/struct.ListRequestBuilder.html), [*patch*](resources/projects/alert_policies/struct.PatchRequestBuilder.html)\n      * [collectd_time_series](resources/projects/collectd_time_series/struct.CollectdTimeSeriesActions.html)\n        * [*create*](resources/projects/collectd_time_series/struct.CreateRequestBuilder.html)\n      * [groups](resources/projects/groups/struct.GroupsActions.html)\n        * [*create*](resources/projects/groups/struct.CreateRequestBuilder.html), [*delete*](resources/projects/groups/struct.DeleteRequestBuilder.html), [*get*](resources/projects/groups/struct.GetRequestBuilder.html), [*list*](resources/projects/groups/struct.ListRequestBuilder.html), [*update*](resources/projects/groups/struct.UpdateRequestBuilder.html)\n        * [members](resources/projects/groups/members/struct.MembersActions.html)\n          * [*list*](resources/projects/groups/members/struct.ListRequestBuilder.html)\n      * [metric_descriptors](resources/projects/metric_descriptors/struct.MetricDescriptorsActions.html)\n        * [*create*](resources/projects/metric_descriptors/struct.CreateRequestBuilder.html), [*delete*](resources/projects/metric_descriptors/struct.DeleteRequestBuilder.html), [*get*](resources/projects/metric_descriptors/struct.GetRequestBuilder.html), [*list*](resources/projects/metric_descriptors/struct.ListRequestBuilder.html)\n      * [monitored_resource_descriptors](resources/projects/monitored_resource_descriptors/struct.MonitoredResourceDescriptorsActions.html)\n        * [*get*](resources/projects/monitored_resource_descriptors/struct.GetRequestBuilder.html), [*list*](resources/projects/monitored_resource_descriptors/struct.ListRequestBuilder.html)\n      * [notification_channel_descriptors](resources/projects/notification_channel_descriptors/struct.NotificationChannelDescriptorsActions.html)\n        * [*get*](resources/projects/notification_channel_descriptors/struct.GetRequestBuilder.html), [*list*](resources/projects/notification_channel_descriptors/struct.ListRequestBuilder.html)\n      * [notification_channels](resources/projects/notification_channels/struct.NotificationChannelsActions.html)\n        * [*create*](resources/projects/notification_channels/struct.CreateRequestBuilder.html), [*delete*](resources/projects/notification_channels/struct.DeleteRequestBuilder.html), [*get*](resources/projects/notification_channels/struct.GetRequestBuilder.html), [*getVerificationCode*](resources/projects/notification_channels/struct.GetVerificationCodeRequestBuilder.html), [*list*](resources/projects/notification_channels/struct.ListRequestBuilder.html), [*patch*](resources/projects/notification_channels/struct.PatchRequestBuilder.html), [*sendVerificationCode*](resources/projects/notification_channels/struct.SendVerificationCodeRequestBuilder.html), [*verify*](resources/projects/notification_channels/struct.VerifyRequestBuilder.html)\n      * [time_series](resources/projects/time_series/struct.TimeSeriesActions.html)\n        * [*create*](resources/projects/time_series/struct.CreateRequestBuilder.html), [*list*](resources/projects/time_series/struct.ListRequestBuilder.html), [*query*](resources/projects/time_series/struct.QueryRequestBuilder.html)\n      * [uptime_check_configs](resources/projects/uptime_check_configs/struct.UptimeCheckConfigsActions.html)\n        * [*create*](resources/projects/uptime_check_configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/uptime_check_configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/uptime_check_configs/struct.GetRequestBuilder.html), [*list*](resources/projects/uptime_check_configs/struct.ListRequestBuilder.html), [*patch*](resources/projects/uptime_check_configs/struct.PatchRequestBuilder.html)\n    * [services](resources/services/struct.ServicesActions.html)\n      * [*create*](resources/services/struct.CreateRequestBuilder.html), [*delete*](resources/services/struct.DeleteRequestBuilder.html), [*get*](resources/services/struct.GetRequestBuilder.html), [*list*](resources/services/struct.ListRequestBuilder.html), [*patch*](resources/services/struct.PatchRequestBuilder.html)\n      * [service_level_objectives](resources/services/service_level_objectives/struct.ServiceLevelObjectivesActions.html)\n        * [*create*](resources/services/service_level_objectives/struct.CreateRequestBuilder.html), [*delete*](resources/services/service_level_objectives/struct.DeleteRequestBuilder.html), [*get*](resources/services/service_level_objectives/struct.GetRequestBuilder.html), [*list*](resources/services/service_level_objectives/struct.ListRequestBuilder.html), [*patch*](resources/services/service_level_objectives/struct.PatchRequestBuilder.html)\n    * [uptime_check_ips](resources/uptime_check_ips/struct.UptimeCheckIpsActions.html)\n      * [*list*](resources/uptime_check_ips/struct.ListRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [folders](resources/folders/struct.FoldersActions.html)\n      * [time_series](resources/folders/time_series/struct.TimeSeriesActions.html)\n        * [*list*](resources/folders/time_series/struct.ListRequestBuilder.html)\n    * [organizations](resources/organizations/struct.OrganizationsActions.html)\n      * [time_series](resources/organizations/time_series/struct.TimeSeriesActions.html)\n        * [*list*](resources/organizations/time_series/struct.ListRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [alert_policies](resources/projects/alert_policies/struct.AlertPoliciesActions.html)\n        * [*create*](resources/projects/alert_policies/struct.CreateRequestBuilder.html), [*delete*](resources/projects/alert_policies/struct.DeleteRequestBuilder.html), [*get*](resources/projects/alert_policies/struct.GetRequestBuilder.html), [*list*](resources/projects/alert_policies/struct.ListRequestBuilder.html), [*patch*](resources/projects/alert_policies/struct.PatchRequestBuilder.html)\n      * [collectd_time_series](resources/projects/collectd_time_series/struct.CollectdTimeSeriesActions.html)\n        * [*create*](resources/projects/collectd_time_series/struct.CreateRequestBuilder.html)\n      * [groups](resources/projects/groups/struct.GroupsActions.html)\n        * [*create*](resources/projects/groups/struct.CreateRequestBuilder.html), [*delete*](resources/projects/groups/struct.DeleteRequestBuilder.html), [*get*](resources/projects/groups/struct.GetRequestBuilder.html), [*list*](resources/projects/groups/struct.ListRequestBuilder.html), [*update*](resources/projects/groups/struct.UpdateRequestBuilder.html)\n        * [members](resources/projects/groups/members/struct.MembersActions.html)\n          * [*list*](resources/projects/groups/members/struct.ListRequestBuilder.html)\n      * [metric_descriptors](resources/projects/metric_descriptors/struct.MetricDescriptorsActions.html)\n        * [*create*](resources/projects/metric_descriptors/struct.CreateRequestBuilder.html), [*delete*](resources/projects/metric_descriptors/struct.DeleteRequestBuilder.html), [*get*](resources/projects/metric_descriptors/struct.GetRequestBuilder.html), [*list*](resources/projects/metric_descriptors/struct.ListRequestBuilder.html)\n      * [monitored_resource_descriptors](resources/projects/monitored_resource_descriptors/struct.MonitoredResourceDescriptorsActions.html)\n        * [*get*](resources/projects/monitored_resource_descriptors/struct.GetRequestBuilder.html), [*list*](resources/projects/monitored_resource_descriptors/struct.ListRequestBuilder.html)\n      * [notification_channel_descriptors](resources/projects/notification_channel_descriptors/struct.NotificationChannelDescriptorsActions.html)\n        * [*get*](resources/projects/notification_channel_descriptors/struct.GetRequestBuilder.html), [*list*](resources/projects/notification_channel_descriptors/struct.ListRequestBuilder.html)\n      * [notification_channels](resources/projects/notification_channels/struct.NotificationChannelsActions.html)\n        * [*create*](resources/projects/notification_channels/struct.CreateRequestBuilder.html), [*delete*](resources/projects/notification_channels/struct.DeleteRequestBuilder.html), [*get*](resources/projects/notification_channels/struct.GetRequestBuilder.html), [*getVerificationCode*](resources/projects/notification_channels/struct.GetVerificationCodeRequestBuilder.html), [*list*](resources/projects/notification_channels/struct.ListRequestBuilder.html), [*patch*](resources/projects/notification_channels/struct.PatchRequestBuilder.html), [*sendVerificationCode*](resources/projects/notification_channels/struct.SendVerificationCodeRequestBuilder.html), [*verify*](resources/projects/notification_channels/struct.VerifyRequestBuilder.html)\n      * [time_series](resources/projects/time_series/struct.TimeSeriesActions.html)\n        * [*create*](resources/projects/time_series/struct.CreateRequestBuilder.html), [*createService*](resources/projects/time_series/struct.CreateServiceRequestBuilder.html), [*list*](resources/projects/time_series/struct.ListRequestBuilder.html), [*query*](resources/projects/time_series/struct.QueryRequestBuilder.html)\n      * [uptime_check_configs](resources/projects/uptime_check_configs/struct.UptimeCheckConfigsActions.html)\n        * [*create*](resources/projects/uptime_check_configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/uptime_check_configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/uptime_check_configs/struct.GetRequestBuilder.html), [*list*](resources/projects/uptime_check_configs/struct.ListRequestBuilder.html), [*patch*](resources/projects/uptime_check_configs/struct.PatchRequestBuilder.html)\n    * [services](resources/services/struct.ServicesActions.html)\n      * [*create*](resources/services/struct.CreateRequestBuilder.html), [*delete*](resources/services/struct.DeleteRequestBuilder.html), [*get*](resources/services/struct.GetRequestBuilder.html), [*list*](resources/services/struct.ListRequestBuilder.html), [*patch*](resources/services/struct.PatchRequestBuilder.html)\n      * [service_level_objectives](resources/services/service_level_objectives/struct.ServiceLevelObjectivesActions.html)\n        * [*create*](resources/services/service_level_objectives/struct.CreateRequestBuilder.html), [*delete*](resources/services/service_level_objectives/struct.DeleteRequestBuilder.html), [*get*](resources/services/service_level_objectives/struct.GetRequestBuilder.html), [*list*](resources/services/service_level_objectives/struct.ListRequestBuilder.html), [*patch*](resources/services/service_level_objectives/struct.PatchRequestBuilder.html)\n    * [uptime_check_ips](resources/uptime_check_ips/struct.UptimeCheckIpsActions.html)\n      * [*list*](resources/uptime_check_ips/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
     #[doc = "View and write monitoring data for all of your Google and third-party Cloud and API projects\n\n`https://www.googleapis.com/auth/monitoring`"]
     pub const MONITORING: &str = "https://www.googleapis.com/auth/monitoring";
@@ -352,6 +352,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct AlertPolicy {
+        #[doc = "Control over how this alert policy's notification channels are notified."]
+        #[serde(
+            rename = "alertStrategy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub alert_strategy: ::std::option::Option<crate::schemas::AlertStrategy>,
         #[doc = "How to combine the results of multiple conditions to determine if an incident should be opened. If condition_time_series_query_language is present, this must be COMBINE_UNSPECIFIED."]
         #[serde(
             rename = "combiner",
@@ -517,6 +524,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for AlertPolicyCombiner {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AlertStrategy {
+        #[doc = "If an alert policy that was active has no data for this long, any open incidents will close"]
+        #[serde(
+            rename = "autoClose",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub auto_close: ::std::option::Option<String>,
+        #[doc = "Required for alert policies with a LogMatch condition.This limit is not implemented for alert policies that are not log-based."]
+        #[serde(
+            rename = "notificationRateLimit",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub notification_rate_limit: ::std::option::Option<crate::schemas::NotificationRateLimit>,
+    }
+    impl ::google_field_selector::FieldSelector for AlertStrategy {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AlertStrategy {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1060,6 +1105,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition_absent: ::std::option::Option<crate::schemas::MetricAbsence>,
+        #[doc = "A condition that checks for log messages matching given constraints. If set, no other conditions can be present."]
+        #[serde(
+            rename = "conditionMatchedLog",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub condition_matched_log: ::std::option::Option<crate::schemas::LogMatch>,
         #[doc = "A condition that uses the Monitoring Query Language to define alerts."]
         #[serde(
             rename = "conditionMonitoringQueryLanguage",
@@ -1113,7 +1165,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ContentMatcher {
-        #[doc = "String or regex content to match. Maximum 1024 bytes. An empty content string indicates no content matching is to be performed."]
+        #[doc = "String, regex or JSON content to match. Maximum 1024 bytes. An empty content string indicates no content matching is to be performed."]
         #[serde(
             rename = "content",
             default,
@@ -1144,11 +1196,11 @@ pub mod schemas {
         ContainsString,
         #[doc = "No content matcher type specified (maintained for backward compatibility, but deprecated for future use). Treated as CONTAINS_STRING."]
         ContentMatcherOptionUnspecified,
-        #[doc = "Selects regular-expression matching. The match succeeds of the output matches the regular expression specified in the content string."]
+        #[doc = "Selects regular-expression matching. The match succeeds if the output matches the regular expression specified in the content string. Regex matching is only supported for HTTP/HTTPS checks."]
         MatchesRegex,
         #[doc = "Selects negation of substring matching. The match succeeds if the output does NOT contain the content string."]
         NotContainsString,
-        #[doc = "Selects negation of regular-expression matching. The match succeeds if the output does NOT match the regular expression specified in the content string."]
+        #[doc = "Selects negation of regular-expression matching. The match succeeds if the output does NOT match the regular expression specified in the content string. Regex matching is only supported for HTTP/HTTPS checks."]
         NotMatchesRegex,
     }
     impl ContentMatcherMatcher {
@@ -1474,7 +1526,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Documentation {
-        #[doc = "The text of the documentation, interpreted according to mime_type. The content may not exceed 8,192 Unicode characters and may not exceed more than 10,240 bytes when encoded in UTF-8 format, whichever is smaller."]
+        #[doc = "The text of the documentation, interpreted according to mime_type. The content may not exceed 8,192 Unicode characters and may not exceed more than 10,240 bytes when encoded in UTF-8 format, whichever is smaller. This text can be templatized by using variables (https://cloud.google.com/monitoring/alerts/doc-variables)."]
         #[serde(
             rename = "content",
             default,
@@ -2171,7 +2223,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub auth_info: ::std::option::Option<crate::schemas::BasicAuthentication>,
-        #[doc = "The request body associated with the HTTP POST request. If content_type is URL_ENCODED, the body passed in must be URL-encoded. Users can provide a Content-Length header via the headers field or the API will do so. If the request_method is GET and body is not empty, the API will return an error. The maximum byte size is 1 megabyte. Note: As with all bytes fields, JSON representations are base64 encoded. e.g.: \"foo=bar\" in URL-encoded form is \"foo%3Dbar\" and in base64 encoding is \"Zm9vJTI1M0RiYXI=\"."]
+        #[doc = "The request body associated with the HTTP POST request. If content_type is URL_ENCODED, the body passed in must be URL-encoded. Users can provide a Content-Length header via the headers field or the API will do so. If the request_method is GET and body is not empty, the API will return an error. The maximum byte size is 1 megabyte.Note: If client libraries aren't used (which performs the conversion automatically) base64 encode your body data since the field is of bytes type."]
         #[serde(
             rename = "body",
             default,
@@ -3295,6 +3347,44 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct LogMatch {
+        #[doc = "Required. A logs-based filter. See Advanced Logs Queries (https://cloud.google.com/logging/docs/view/advanced-queries) for how this filter should be constructed."]
+        #[serde(
+            rename = "filter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filter: ::std::option::Option<String>,
+        #[doc = "Optional. A map from a label key to an extractor expression, which is used to extract the value for this label key. Each entry in this map is a specification for how data should be extracted from log entries that match filter. Each combination of extracted values is treated as a separate rule for the purposes of triggering notifications. Label keys and corresponding values can be used in notifications generated by this condition.Please see the documentation on logs-based metric valueExtractors (https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor) for syntax and examples."]
+        #[serde(
+            rename = "labelExtractors",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub label_extractors: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+    }
+    impl ::google_field_selector::FieldSelector for LogMatch {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LogMatch {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct MeshIstio {
         #[doc = "Identifier for the mesh in which this Istio service is defined. Corresponds to the mesh_uid metric label in Istio metrics."]
         #[serde(
@@ -3370,7 +3460,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct MetricAbsence {
-        #[doc = "Specifies the alignment of data points in individual time series as well as how to combine the retrieved time series together (such as when aggregating multiple streams on each resource to a single stream for each resource or when aggregating streams across all members of a group of resrouces). Multiple aggregations are applied in the order specified.This field is similar to the one in the ListTimeSeries request (https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It is advisable to use the ListTimeSeries method when debugging this field."]
+        #[doc = "Specifies the alignment of data points in individual time series as well as how to combine the retrieved time series together (such as when aggregating multiple streams on each resource to a single stream for each resource or when aggregating streams across all members of a group of resources). Multiple aggregations are applied in the order specified.This field is similar to the one in the ListTimeSeries request (https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It is advisable to use the ListTimeSeries method when debugging this field."]
         #[serde(
             rename = "aggregations",
             default,
@@ -3512,11 +3602,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MetricDescriptorLaunchStage {
-        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don’t have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases."]
+        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don't have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases."]
         Alpha,
         #[doc = "Beta is the point at which we are ready to open a release for any customer to use. There are no SLA or technical support obligations in a Beta release. Products will be complete from a feature perspective, but may have some open outstanding issues. Beta releases are suitable for limited production use cases."]
         Beta,
-        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the “Deprecation Policy” section of our Terms of Service (https://cloud.google.com/terms/) and the Google Cloud Platform Subject to the Deprecation Policy (https://cloud.google.com/terms/deprecation) documentation."]
+        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the \"Deprecation Policy\" section of our Terms of Service (https://cloud.google.com/terms/) and the Google Cloud Platform Subject to the Deprecation Policy (https://cloud.google.com/terms/deprecation) documentation."]
         Deprecated,
         #[doc = "Early Access features are limited to a closed group of testers. To use these features, you must sign up in advance and sign a Trusted Tester agreement (which includes confidentiality provisions). These features may be unstable, changed in backward-incompatible ways, and are not guaranteed to be released."]
         EarlyAccess,
@@ -3836,11 +3926,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MetricDescriptorMetadataLaunchStage {
-        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don’t have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases."]
+        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don't have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases."]
         Alpha,
         #[doc = "Beta is the point at which we are ready to open a release for any customer to use. There are no SLA or technical support obligations in a Beta release. Products will be complete from a feature perspective, but may have some open outstanding issues. Beta releases are suitable for limited production use cases."]
         Beta,
-        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the “Deprecation Policy” section of our Terms of Service (https://cloud.google.com/terms/) and the Google Cloud Platform Subject to the Deprecation Policy (https://cloud.google.com/terms/deprecation) documentation."]
+        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the \"Deprecation Policy\" section of our Terms of Service (https://cloud.google.com/terms/) and the Google Cloud Platform Subject to the Deprecation Policy (https://cloud.google.com/terms/deprecation) documentation."]
         Deprecated,
         #[doc = "Early Access features are limited to a closed group of testers. To use these features, you must sign up in advance and sign a Trusted Tester agreement (which includes confidentiality provisions). These features may be unstable, changed in backward-incompatible ways, and are not guaranteed to be released."]
         EarlyAccess,
@@ -3974,7 +4064,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct MetricThreshold {
-        #[doc = "Specifies the alignment of data points in individual time series as well as how to combine the retrieved time series together (such as when aggregating multiple streams on each resource to a single stream for each resource or when aggregating streams across all members of a group of resrouces). Multiple aggregations are applied in the order specified.This field is similar to the one in the ListTimeSeries request (https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It is advisable to use the ListTimeSeries method when debugging this field."]
+        #[doc = "Specifies the alignment of data points in individual time series as well as how to combine the retrieved time series together (such as when aggregating multiple streams on each resource to a single stream for each resource or when aggregating streams across all members of a group of resources). Multiple aggregations are applied in the order specified.This field is similar to the one in the ListTimeSeries request (https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It is advisable to use the ListTimeSeries method when debugging this field."]
         #[serde(
             rename = "aggregations",
             default,
@@ -4009,6 +4099,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub duration: ::std::option::Option<String>,
+        #[doc = "A condition control that determines how metric-threshold conditions are evaluated when data stops arriving."]
+        #[serde(
+            rename = "evaluationMissingData",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub evaluation_missing_data:
+            ::std::option::Option<crate::schemas::MetricThresholdEvaluationMissingData>,
         #[doc = "Required. A filter (https://cloud.google.com/monitoring/api/v3/filters) that identifies which time series should be compared with the threshold.The filter is similar to the one that is specified in the ListTimeSeries request (https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that call is useful to verify the time series that will be retrieved / processed). The filter must specify the metric type and the resource type. Optionally, it can specify resource labels and metric labels. This field must not exceed 2048 Unicode characters in length."]
         #[serde(
             rename = "filter",
@@ -4137,6 +4235,111 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MetricThresholdEvaluationMissingData {
+        #[doc = "If there is no data to evaluate the condition, then evaluate the condition as true. The default for conditions with a duration value."]
+        EvaluationMissingDataActive,
+        #[doc = "If there is no data to evaluate the condition, then evaluate the condition as false."]
+        EvaluationMissingDataInactive,
+        #[doc = "Do not evaluate the condition to any value if there is no data."]
+        EvaluationMissingDataNoOp,
+        #[doc = "An unspecified evaluation missing data option. Equivalent to EVALUATION_MISSING_DATA_NO_OP."]
+        EvaluationMissingDataUnspecified,
+    }
+    impl MetricThresholdEvaluationMissingData {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MetricThresholdEvaluationMissingData::EvaluationMissingDataActive => {
+                    "EVALUATION_MISSING_DATA_ACTIVE"
+                }
+                MetricThresholdEvaluationMissingData::EvaluationMissingDataInactive => {
+                    "EVALUATION_MISSING_DATA_INACTIVE"
+                }
+                MetricThresholdEvaluationMissingData::EvaluationMissingDataNoOp => {
+                    "EVALUATION_MISSING_DATA_NO_OP"
+                }
+                MetricThresholdEvaluationMissingData::EvaluationMissingDataUnspecified => {
+                    "EVALUATION_MISSING_DATA_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MetricThresholdEvaluationMissingData {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MetricThresholdEvaluationMissingData {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MetricThresholdEvaluationMissingData, ()> {
+            Ok(match s {
+                "EVALUATION_MISSING_DATA_ACTIVE" => {
+                    MetricThresholdEvaluationMissingData::EvaluationMissingDataActive
+                }
+                "EVALUATION_MISSING_DATA_INACTIVE" => {
+                    MetricThresholdEvaluationMissingData::EvaluationMissingDataInactive
+                }
+                "EVALUATION_MISSING_DATA_NO_OP" => {
+                    MetricThresholdEvaluationMissingData::EvaluationMissingDataNoOp
+                }
+                "EVALUATION_MISSING_DATA_UNSPECIFIED" => {
+                    MetricThresholdEvaluationMissingData::EvaluationMissingDataUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MetricThresholdEvaluationMissingData {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MetricThresholdEvaluationMissingData {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MetricThresholdEvaluationMissingData {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "EVALUATION_MISSING_DATA_ACTIVE" => {
+                    MetricThresholdEvaluationMissingData::EvaluationMissingDataActive
+                }
+                "EVALUATION_MISSING_DATA_INACTIVE" => {
+                    MetricThresholdEvaluationMissingData::EvaluationMissingDataInactive
+                }
+                "EVALUATION_MISSING_DATA_NO_OP" => {
+                    MetricThresholdEvaluationMissingData::EvaluationMissingDataNoOp
+                }
+                "EVALUATION_MISSING_DATA_UNSPECIFIED" => {
+                    MetricThresholdEvaluationMissingData::EvaluationMissingDataUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MetricThresholdEvaluationMissingData {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MetricThresholdEvaluationMissingData {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -4157,7 +4360,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Required. The monitored resource type. This field must match the type field of a MonitoredResourceDescriptor object. For example, the type of a Compute Engine VM instance is gce_instance. For a list of types, see Monitoring resource types and Logging resource types."]
+        #[doc = "Required. The monitored resource type. This field must match the type field of a MonitoredResourceDescriptor object. For example, the type of a Compute Engine VM instance is gce_instance. For a list of types, see Monitoring resource types (https://cloud.google.com/monitoring/api/resources) and Logging resource types (https://cloud.google.com/logging/docs/api/v2/resource-list)."]
         #[serde(
             rename = "type",
             default,
@@ -4224,7 +4427,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. The monitored resource type. For example, the type \"cloudsql_database\" represents databases in Google Cloud SQL."]
+        #[doc = "Required. The monitored resource type. For example, the type \"cloudsql_database\" represents databases in Google Cloud SQL. For a list of types, see Monitoring resource types (https://cloud.google.com/monitoring/api/resources) and Logging resource types (https://cloud.google.com/logging/docs/api/v2/resource-list)."]
         #[serde(
             rename = "type",
             default,
@@ -4244,11 +4447,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MonitoredResourceDescriptorLaunchStage {
-        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don’t have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases."]
+        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don't have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases."]
         Alpha,
         #[doc = "Beta is the point at which we are ready to open a release for any customer to use. There are no SLA or technical support obligations in a Beta release. Products will be complete from a feature perspective, but may have some open outstanding issues. Beta releases are suitable for limited production use cases."]
         Beta,
-        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the “Deprecation Policy” section of our Terms of Service (https://cloud.google.com/terms/) and the Google Cloud Platform Subject to the Deprecation Policy (https://cloud.google.com/terms/deprecation) documentation."]
+        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the \"Deprecation Policy\" section of our Terms of Service (https://cloud.google.com/terms/) and the Google Cloud Platform Subject to the Deprecation Policy (https://cloud.google.com/terms/deprecation) documentation."]
         Deprecated,
         #[doc = "Early Access features are limited to a closed group of testers. To use these features, you must sign up in advance and sign a Trusted Tester agreement (which includes confidentiality provisions). These features may be unstable, changed in backward-incompatible ways, and are not guaranteed to be released."]
         EarlyAccess,
@@ -4388,6 +4591,15 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub duration: ::std::option::Option<String>,
+        #[doc = "A condition control that determines how metric-threshold conditions are evaluated when data stops arriving."]
+        #[serde(
+            rename = "evaluationMissingData",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub evaluation_missing_data: ::std::option::Option<
+            crate::schemas::MonitoringQueryLanguageConditionEvaluationMissingData,
+        >,
         #[doc = "Monitoring Query Language (https://cloud.google.com/monitoring/mql) query that outputs a boolean stream."]
         #[serde(
             rename = "query",
@@ -4409,6 +4621,72 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for MonitoringQueryLanguageCondition {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MonitoringQueryLanguageConditionEvaluationMissingData {
+        #[doc = "If there is no data to evaluate the condition, then evaluate the condition as true. The default for conditions with a duration value."]
+        EvaluationMissingDataActive,
+        #[doc = "If there is no data to evaluate the condition, then evaluate the condition as false."]
+        EvaluationMissingDataInactive,
+        #[doc = "Do not evaluate the condition to any value if there is no data."]
+        EvaluationMissingDataNoOp,
+        #[doc = "An unspecified evaluation missing data option. Equivalent to EVALUATION_MISSING_DATA_NO_OP."]
+        EvaluationMissingDataUnspecified,
+    }
+    impl MonitoringQueryLanguageConditionEvaluationMissingData {
+        pub fn as_str(self) -> &'static str {
+            match self { MonitoringQueryLanguageConditionEvaluationMissingData :: EvaluationMissingDataActive => "EVALUATION_MISSING_DATA_ACTIVE" , MonitoringQueryLanguageConditionEvaluationMissingData :: EvaluationMissingDataInactive => "EVALUATION_MISSING_DATA_INACTIVE" , MonitoringQueryLanguageConditionEvaluationMissingData :: EvaluationMissingDataNoOp => "EVALUATION_MISSING_DATA_NO_OP" , MonitoringQueryLanguageConditionEvaluationMissingData :: EvaluationMissingDataUnspecified => "EVALUATION_MISSING_DATA_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MonitoringQueryLanguageConditionEvaluationMissingData {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MonitoringQueryLanguageConditionEvaluationMissingData {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<MonitoringQueryLanguageConditionEvaluationMissingData, ()>
+        {
+            Ok (match s { "EVALUATION_MISSING_DATA_ACTIVE" => MonitoringQueryLanguageConditionEvaluationMissingData :: EvaluationMissingDataActive , "EVALUATION_MISSING_DATA_INACTIVE" => MonitoringQueryLanguageConditionEvaluationMissingData :: EvaluationMissingDataInactive , "EVALUATION_MISSING_DATA_NO_OP" => MonitoringQueryLanguageConditionEvaluationMissingData :: EvaluationMissingDataNoOp , "EVALUATION_MISSING_DATA_UNSPECIFIED" => MonitoringQueryLanguageConditionEvaluationMissingData :: EvaluationMissingDataUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for MonitoringQueryLanguageConditionEvaluationMissingData {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MonitoringQueryLanguageConditionEvaluationMissingData {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MonitoringQueryLanguageConditionEvaluationMissingData {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "EVALUATION_MISSING_DATA_ACTIVE" => MonitoringQueryLanguageConditionEvaluationMissingData :: EvaluationMissingDataActive , "EVALUATION_MISSING_DATA_INACTIVE" => MonitoringQueryLanguageConditionEvaluationMissingData :: EvaluationMissingDataInactive , "EVALUATION_MISSING_DATA_NO_OP" => MonitoringQueryLanguageConditionEvaluationMissingData :: EvaluationMissingDataNoOp , "EVALUATION_MISSING_DATA_UNSPECIFIED" => MonitoringQueryLanguageConditionEvaluationMissingData :: EvaluationMissingDataUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for MonitoringQueryLanguageConditionEvaluationMissingData
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for MonitoringQueryLanguageConditionEvaluationMissingData
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4684,6 +4962,15 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
+        #[doc = "The tiers that support this notification channel; the project service tier must be one of the supported_tiers."]
+        #[serde(
+            rename = "supportedTiers",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub supported_tiers: ::std::option::Option<
+            Vec<crate::schemas::NotificationChannelDescriptorSupportedTiersItems>,
+        >,
     }
     impl ::google_field_selector::FieldSelector for NotificationChannelDescriptor {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -4697,11 +4984,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum NotificationChannelDescriptorLaunchStage {
-        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don’t have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases."]
+        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don't have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases."]
         Alpha,
         #[doc = "Beta is the point at which we are ready to open a release for any customer to use. There are no SLA or technical support obligations in a Beta release. Products will be complete from a feature perspective, but may have some open outstanding issues. Beta releases are suitable for limited production use cases."]
         Beta,
-        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the “Deprecation Policy” section of our Terms of Service (https://cloud.google.com/terms/) and the Google Cloud Platform Subject to the Deprecation Policy (https://cloud.google.com/terms/deprecation) documentation."]
+        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the \"Deprecation Policy\" section of our Terms of Service (https://cloud.google.com/terms/) and the Google Cloud Platform Subject to the Deprecation Policy (https://cloud.google.com/terms/deprecation) documentation."]
         Deprecated,
         #[doc = "Early Access features are limited to a closed group of testers. To use these features, you must sign up in advance and sign a Trusted Tester agreement (which includes confidentiality provisions). These features may be unstable, changed in backward-incompatible ways, and are not guaranteed to be released."]
         EarlyAccess,
@@ -4800,6 +5087,264 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for NotificationChannelDescriptorLaunchStage {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum NotificationChannelDescriptorSupportedTiersItems {
+        #[doc = "The Stackdriver Basic tier, a free tier of service that provides basic features, a moderate allotment of logs, and access to built-in metrics. A number of features are not available in this tier. For more details, see the service tiers documentation (https://cloud.google.com/monitoring/workspaces/tiers)."]
+        ServiceTierBasic,
+        #[doc = "The Stackdriver Premium tier, a higher, more expensive tier of service that provides access to all Stackdriver features, lets you use Stackdriver with AWS accounts, and has a larger allotments for logs and metrics. For more details, see the service tiers documentation (https://cloud.google.com/monitoring/workspaces/tiers)."]
+        ServiceTierPremium,
+        #[doc = "An invalid sentinel value, used to indicate that a tier has not been provided explicitly."]
+        ServiceTierUnspecified,
+    }
+    impl NotificationChannelDescriptorSupportedTiersItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                NotificationChannelDescriptorSupportedTiersItems::ServiceTierBasic => {
+                    "SERVICE_TIER_BASIC"
+                }
+                NotificationChannelDescriptorSupportedTiersItems::ServiceTierPremium => {
+                    "SERVICE_TIER_PREMIUM"
+                }
+                NotificationChannelDescriptorSupportedTiersItems::ServiceTierUnspecified => {
+                    "SERVICE_TIER_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for NotificationChannelDescriptorSupportedTiersItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for NotificationChannelDescriptorSupportedTiersItems {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<NotificationChannelDescriptorSupportedTiersItems, ()> {
+            Ok(match s {
+                "SERVICE_TIER_BASIC" => {
+                    NotificationChannelDescriptorSupportedTiersItems::ServiceTierBasic
+                }
+                "SERVICE_TIER_PREMIUM" => {
+                    NotificationChannelDescriptorSupportedTiersItems::ServiceTierPremium
+                }
+                "SERVICE_TIER_UNSPECIFIED" => {
+                    NotificationChannelDescriptorSupportedTiersItems::ServiceTierUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for NotificationChannelDescriptorSupportedTiersItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for NotificationChannelDescriptorSupportedTiersItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for NotificationChannelDescriptorSupportedTiersItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "SERVICE_TIER_BASIC" => {
+                    NotificationChannelDescriptorSupportedTiersItems::ServiceTierBasic
+                }
+                "SERVICE_TIER_PREMIUM" => {
+                    NotificationChannelDescriptorSupportedTiersItems::ServiceTierPremium
+                }
+                "SERVICE_TIER_UNSPECIFIED" => {
+                    NotificationChannelDescriptorSupportedTiersItems::ServiceTierUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for NotificationChannelDescriptorSupportedTiersItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NotificationChannelDescriptorSupportedTiersItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct NotificationRateLimit {
+        #[doc = "Not more than one notification per period."]
+        #[serde(
+            rename = "period",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub period: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for NotificationRateLimit {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NotificationRateLimit {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct OperationMetadata {
+        #[doc = "The time when the batch request was received."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "Current state of the batch operation."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::OperationMetadataState>,
+        #[doc = "The time when the operation result was last updated."]
+        #[serde(
+            rename = "updateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for OperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum OperationMetadataState {
+        #[doc = "The batch processing was cancelled."]
+        Cancelled,
+        #[doc = "Request has been received."]
+        Created,
+        #[doc = "The batch processing is done."]
+        Done,
+        #[doc = "Request is actively being processed."]
+        Running,
+        #[doc = "Invalid."]
+        StateUnspecified,
+    }
+    impl OperationMetadataState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                OperationMetadataState::Cancelled => "CANCELLED",
+                OperationMetadataState::Created => "CREATED",
+                OperationMetadataState::Done => "DONE",
+                OperationMetadataState::Running => "RUNNING",
+                OperationMetadataState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for OperationMetadataState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for OperationMetadataState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<OperationMetadataState, ()> {
+            Ok(match s {
+                "CANCELLED" => OperationMetadataState::Cancelled,
+                "CREATED" => OperationMetadataState::Created,
+                "DONE" => OperationMetadataState::Done,
+                "RUNNING" => OperationMetadataState::Running,
+                "STATE_UNSPECIFIED" => OperationMetadataState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for OperationMetadataState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for OperationMetadataState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for OperationMetadataState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CANCELLED" => OperationMetadataState::Cancelled,
+                "CREATED" => OperationMetadataState::Created,
+                "DONE" => OperationMetadataState::Done,
+                "RUNNING" => OperationMetadataState::Running,
+                "STATE_UNSPECIFIED" => OperationMetadataState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for OperationMetadataState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OperationMetadataState {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5279,6 +5824,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub telemetry: ::std::option::Option<crate::schemas::Telemetry>,
+        #[doc = "Labels which have been used to annotate the service. Label keys must start with a letter. Label keys and values may contain lowercase letters, numbers, underscores, and dashes. Label keys and values have a maximum length of 63 characters, and must be less than 128 bytes in size. Up to 64 label entries may be stored. For labels which do not have a semantic value, the empty string may be supplied for the label value."]
+        #[serde(
+            rename = "userLabels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
     }
     impl ::google_field_selector::FieldSelector for Service {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -5373,6 +5925,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub service_level_indicator: ::std::option::Option<crate::schemas::ServiceLevelIndicator>,
+        #[doc = "Labels which have been used to annotate the service-level objective. Label keys must start with a letter. Label keys and values may contain lowercase letters, numbers, underscores, and dashes. Label keys and values have a maximum length of 63 characters, and must be less than 128 bytes in size. Up to 64 label entries may be stored. For labels which do not have a semantic value, the empty string may be supplied for the label value."]
+        #[serde(
+            rename = "userLabels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
     }
     impl ::google_field_selector::FieldSelector for ServiceLevelObjective {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -5718,7 +6277,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub points: ::std::option::Option<Vec<crate::schemas::Point>>,
-        #[doc = "The associated monitored resource. Custom metrics can use only certain monitored resource types in their time series data."]
+        #[doc = "The associated monitored resource. Custom metrics can use only certain monitored resource types in their time series data. For more information, see Monitored resources for custom metrics (https://cloud.google.com/monitoring/custom-metrics/creating-metrics#custom-metric-resources)."]
         #[serde(
             rename = "resource",
             default,
@@ -6254,6 +6813,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UptimeCheckConfig {
+        #[doc = "The type of checkers to use to execute the Uptime check."]
+        #[serde(
+            rename = "checkerType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub checker_type: ::std::option::Option<crate::schemas::UptimeCheckConfigCheckerType>,
         #[doc = "The content that is expected to appear in the data returned by the target server against which the check is run. Currently, only the first entry in the content_matchers list is supported, and additional entries will be ignored. This field is optional and should only be specified if a content match is required as part of the/ Uptime check."]
         #[serde(
             rename = "contentMatchers",
@@ -6289,7 +6855,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_internal: ::std::option::Option<bool>,
-        #[doc = "The monitored resource (https://cloud.google.com/monitoring/api/resources) associated with the configuration. The following monitored resource types are valid for this field: uptime_url, gce_instance, gae_app, aws_ec2_instance, aws_elb_load_balancer"]
+        #[doc = "The monitored resource (https://cloud.google.com/monitoring/api/resources) associated with the configuration. The following monitored resource types are valid for this field: uptime_url, gce_instance, gae_app, aws_ec2_instance, aws_elb_load_balancer k8s_service servicedirectory_service"]
         #[serde(
             rename = "monitoredResource",
             default,
@@ -6346,6 +6912,82 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for UptimeCheckConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum UptimeCheckConfigCheckerType {
+        #[doc = "The default checker type. Currently converted to STATIC_IP_CHECKERS on creation, the default conversion behavior may change in the future."]
+        CheckerTypeUnspecified,
+        #[doc = "STATIC_IP_CHECKERS are used for uptime checks that perform egress across the public internet. STATIC_IP_CHECKERS use the static IP addresses returned by ListUptimeCheckIps."]
+        StaticIpCheckers,
+        #[doc = "VPC_CHECKERS are used for uptime checks that perform egress using Service Directory and private network access. When using VPC_CHECKERS, the monitored resource type must be servicedirectory_service."]
+        VpcCheckers,
+    }
+    impl UptimeCheckConfigCheckerType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                UptimeCheckConfigCheckerType::CheckerTypeUnspecified => "CHECKER_TYPE_UNSPECIFIED",
+                UptimeCheckConfigCheckerType::StaticIpCheckers => "STATIC_IP_CHECKERS",
+                UptimeCheckConfigCheckerType::VpcCheckers => "VPC_CHECKERS",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for UptimeCheckConfigCheckerType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for UptimeCheckConfigCheckerType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<UptimeCheckConfigCheckerType, ()> {
+            Ok(match s {
+                "CHECKER_TYPE_UNSPECIFIED" => UptimeCheckConfigCheckerType::CheckerTypeUnspecified,
+                "STATIC_IP_CHECKERS" => UptimeCheckConfigCheckerType::StaticIpCheckers,
+                "VPC_CHECKERS" => UptimeCheckConfigCheckerType::VpcCheckers,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for UptimeCheckConfigCheckerType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for UptimeCheckConfigCheckerType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for UptimeCheckConfigCheckerType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CHECKER_TYPE_UNSPECIFIED" => UptimeCheckConfigCheckerType::CheckerTypeUnspecified,
+                "STATIC_IP_CHECKERS" => UptimeCheckConfigCheckerType::StaticIpCheckers,
+                "VPC_CHECKERS" => UptimeCheckConfigCheckerType::VpcCheckers,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for UptimeCheckConfigCheckerType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UptimeCheckConfigCheckerType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -7977,7 +8619,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Lists time series that match a filter. This method does not require a Workspace."]
+                #[doc = "Lists time series that match a filter."]
                 pub fn list(&self, name: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -8014,7 +8656,7 @@ pub mod resources {
             }
             #[doc = "Created via [TimeSeriesActions::list()](struct.TimeSeriesActions.html#method.list)"]
             #[derive(Debug, Clone)]
-            pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , name : String , aggregation_alignment_period : Option < String > , aggregation_cross_series_reducer : Option < crate :: resources :: folders :: time_series :: params :: ListAggregationCrossSeriesReducer > , aggregation_group_by_fields : Option < Vec < String > > , aggregation_per_series_aligner : Option < crate :: resources :: folders :: time_series :: params :: ListAggregationPerSeriesAligner > , filter : Option < String > , interval_end_time : Option < String > , interval_start_time : Option < String > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , secondary_aggregation_alignment_period : Option < String > , secondary_aggregation_cross_series_reducer : Option < crate :: resources :: folders :: time_series :: params :: ListSecondaryAggregationCrossSeriesReducer > , secondary_aggregation_group_by_fields : Option < Vec < String > > , secondary_aggregation_per_series_aligner : Option < crate :: resources :: folders :: time_series :: params :: ListSecondaryAggregationPerSeriesAligner > , view : Option < crate :: resources :: folders :: time_series :: params :: ListView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+            pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , name : String , aggregation_alignment_period : Option < String > , aggregation_cross_series_reducer : Option < crate :: resources :: folders :: time_series :: params :: ListAggregationCrossSeriesReducer > , aggregation_group_by_fields : Option < Vec < String > > , aggregation_per_series_aligner : Option < crate :: resources :: folders :: time_series :: params :: ListAggregationPerSeriesAligner > , filter : Option < String > , interval_end_time : Option < String > , interval_start_time : Option < String > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , secondary_aggregation_alignment_period : Option < String > , secondary_aggregation_cross_series_reducer : Option < crate :: resources :: folders :: time_series :: params :: ListSecondaryAggregationCrossSeriesReducer > , secondary_aggregation_group_by_fields : Option < Vec < String > > , secondary_aggregation_per_series_aligner : Option < crate :: resources :: folders :: time_series :: params :: ListSecondaryAggregationPerSeriesAligner > , view : Option < crate :: resources :: folders :: time_series :: params :: ListView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The alignment_period specifies a time interval, in seconds, that is used to divide the data in all the time series into consistent blocks of time. This will be done before the per-series aligner can be applied to the data.The value must be at least 60 seconds. If a per-series aligner other than ALIGN_NONE is specified, this field is required or an error is returned. If no per-series aligner is specified, or the aligner ALIGN_NONE is specified, then this field is ignored.The maximum value of the alignment_period is 104 weeks (2 years) for charts, and 90,000 seconds (25 hours) for alerting policies."]
                 pub fn aggregation_alignment_period(mut self, value: impl Into<String>) -> Self {
@@ -9349,7 +9991,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Lists time series that match a filter. This method does not require a Workspace."]
+                #[doc = "Lists time series that match a filter."]
                 pub fn list(&self, name: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -9386,7 +10028,7 @@ pub mod resources {
             }
             #[doc = "Created via [TimeSeriesActions::list()](struct.TimeSeriesActions.html#method.list)"]
             #[derive(Debug, Clone)]
-            pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , name : String , aggregation_alignment_period : Option < String > , aggregation_cross_series_reducer : Option < crate :: resources :: organizations :: time_series :: params :: ListAggregationCrossSeriesReducer > , aggregation_group_by_fields : Option < Vec < String > > , aggregation_per_series_aligner : Option < crate :: resources :: organizations :: time_series :: params :: ListAggregationPerSeriesAligner > , filter : Option < String > , interval_end_time : Option < String > , interval_start_time : Option < String > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , secondary_aggregation_alignment_period : Option < String > , secondary_aggregation_cross_series_reducer : Option < crate :: resources :: organizations :: time_series :: params :: ListSecondaryAggregationCrossSeriesReducer > , secondary_aggregation_group_by_fields : Option < Vec < String > > , secondary_aggregation_per_series_aligner : Option < crate :: resources :: organizations :: time_series :: params :: ListSecondaryAggregationPerSeriesAligner > , view : Option < crate :: resources :: organizations :: time_series :: params :: ListView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+            pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , name : String , aggregation_alignment_period : Option < String > , aggregation_cross_series_reducer : Option < crate :: resources :: organizations :: time_series :: params :: ListAggregationCrossSeriesReducer > , aggregation_group_by_fields : Option < Vec < String > > , aggregation_per_series_aligner : Option < crate :: resources :: organizations :: time_series :: params :: ListAggregationPerSeriesAligner > , filter : Option < String > , interval_end_time : Option < String > , interval_start_time : Option < String > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , secondary_aggregation_alignment_period : Option < String > , secondary_aggregation_cross_series_reducer : Option < crate :: resources :: organizations :: time_series :: params :: ListSecondaryAggregationCrossSeriesReducer > , secondary_aggregation_group_by_fields : Option < Vec < String > > , secondary_aggregation_per_series_aligner : Option < crate :: resources :: organizations :: time_series :: params :: ListSecondaryAggregationPerSeriesAligner > , view : Option < crate :: resources :: organizations :: time_series :: params :: ListView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The alignment_period specifies a time interval, in seconds, that is used to divide the data in all the time series into consistent blocks of time. This will be done before the per-series aligner can be applied to the data.The value must be at least 60 seconds. If a per-series aligner other than ALIGN_NONE is specified, this field is required or an error is returned. If no per-series aligner is specified, or the aligner ALIGN_NONE is specified, then this field is ignored.The maximum value of the alignment_period is 104 weeks (2 years) for charts, and 90,000 seconds (25 hours) for alerting policies."]
                 pub fn aggregation_alignment_period(mut self, value: impl Into<String>) -> Self {
@@ -9881,11 +10523,11 @@ pub mod resources {
                     auth: self.auth_ref(),
                 }
             }
-            #[doc = "Actions that can be performed on the monitored_resource_descriptors resource"]            pub fn monitored_resource_descriptors ( & self ) -> crate :: resources :: projects :: monitored_resource_descriptors :: MonitoredResourceDescriptorsActions{
-                crate :: resources :: projects :: monitored_resource_descriptors :: MonitoredResourceDescriptorsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+            #[doc = "Actions that can be performed on the monitored_resource_descriptors resource"]            pub fn monitored_resource_descriptors (& self) -> crate :: resources :: projects :: monitored_resource_descriptors :: MonitoredResourceDescriptorsActions{
+                crate :: resources :: projects :: monitored_resource_descriptors :: MonitoredResourceDescriptorsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
             }
-            #[doc = "Actions that can be performed on the notification_channel_descriptors resource"]            pub fn notification_channel_descriptors ( & self ) -> crate :: resources :: projects :: notification_channel_descriptors :: NotificationChannelDescriptorsActions{
-                crate :: resources :: projects :: notification_channel_descriptors :: NotificationChannelDescriptorsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+            #[doc = "Actions that can be performed on the notification_channel_descriptors resource"]            pub fn notification_channel_descriptors (& self) -> crate :: resources :: projects :: notification_channel_descriptors :: NotificationChannelDescriptorsActions{
+                crate :: resources :: projects :: notification_channel_descriptors :: NotificationChannelDescriptorsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
             }
             #[doc = "Actions that can be performed on the notification_channels resource"]
             pub fn notification_channels(
@@ -12648,7 +13290,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Creates a new metric descriptor. User-created metric descriptors define custom metrics (https://cloud.google.com/monitoring/custom-metrics)."]
+                #[doc = "Creates a new metric descriptor. The creation is executed asynchronously and callers may check the returned operation to track its progress. User-created metric descriptors define custom metrics (https://cloud.google.com/monitoring/custom-metrics)."]
                 pub fn create(
                     &self,
                     request: crate::schemas::MetricDescriptor,
@@ -12691,7 +13333,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Gets a single metric descriptor. This method does not require a Workspace."]
+                #[doc = "Gets a single metric descriptor."]
                 pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                     GetRequestBuilder {
                         reqwest: &self.reqwest,
@@ -12710,7 +13352,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Lists metric descriptors that match a filter. This method does not require a Workspace."]
+                #[doc = "Lists metric descriptors that match a filter."]
                 pub fn list(&self, name: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -13521,7 +14163,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Gets a single monitored resource descriptor. This method does not require a Workspace."]
+                #[doc = "Gets a single monitored resource descriptor."]
                 pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                     GetRequestBuilder {
                         reqwest: &self.reqwest,
@@ -13540,7 +14182,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Lists monitored resource descriptors that match a filter. This method does not require a Workspace."]
+                #[doc = "Lists monitored resource descriptors that match a filter."]
                 pub fn list(&self, name: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -17069,7 +17711,31 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Lists time series that match a filter. This method does not require a Workspace."]
+                #[doc = "Creates or adds data to one or more service time series. A service time series is a time series for a metric from a Google Cloud service. The response is empty if all time series in the request were written. If any time series could not be written, a corresponding failure message is included in the error response. This endpoint rejects writes to user-defined metrics. This method is only for use by Google Cloud services. Use projects.timeSeries.create instead."]
+                pub fn create_service(
+                    &self,
+                    request: crate::schemas::CreateTimeSeriesRequest,
+                    name: impl Into<String>,
+                ) -> CreateServiceRequestBuilder {
+                    CreateServiceRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                    }
+                }
+                #[doc = "Lists time series that match a filter."]
                 pub fn list(&self, name: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -17103,7 +17769,7 @@ pub mod resources {
                         view: None,
                     }
                 }
-                #[doc = "Queries time series using Monitoring Query Language. This method does not require a Workspace."]
+                #[doc = "Queries time series using Monitoring Query Language."]
                 pub fn query(
                     &self,
                     request: crate::schemas::QueryTimeSeriesRequest,
@@ -17290,9 +17956,171 @@ pub mod resources {
                     Ok(req)
                 }
             }
+            #[doc = "Created via [TimeSeriesActions::create_service()](struct.TimeSeriesActions.html#method.create_service)"]
+            #[derive(Debug, Clone)]
+            pub struct CreateServiceRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::CreateTimeSeriesRequest,
+                name: String,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> CreateServiceRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Empty, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Empty, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://monitoring.googleapis.com/".to_owned();
+                    output.push_str("v3/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/timeSeries:createService");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
+                }
+            }
             #[doc = "Created via [TimeSeriesActions::list()](struct.TimeSeriesActions.html#method.list)"]
             #[derive(Debug, Clone)]
-            pub struct ListRequestBuilder < 'a > { pub ( crate ) reqwest : & 'a :: reqwest :: blocking :: Client , pub ( crate ) auth : & 'a dyn :: google_api_auth :: GetAccessToken , name : String , aggregation_alignment_period : Option < String > , aggregation_cross_series_reducer : Option < crate :: resources :: projects :: time_series :: params :: ListAggregationCrossSeriesReducer > , aggregation_group_by_fields : Option < Vec < String > > , aggregation_per_series_aligner : Option < crate :: resources :: projects :: time_series :: params :: ListAggregationPerSeriesAligner > , filter : Option < String > , interval_end_time : Option < String > , interval_start_time : Option < String > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , secondary_aggregation_alignment_period : Option < String > , secondary_aggregation_cross_series_reducer : Option < crate :: resources :: projects :: time_series :: params :: ListSecondaryAggregationCrossSeriesReducer > , secondary_aggregation_group_by_fields : Option < Vec < String > > , secondary_aggregation_per_series_aligner : Option < crate :: resources :: projects :: time_series :: params :: ListSecondaryAggregationPerSeriesAligner > , view : Option < crate :: resources :: projects :: time_series :: params :: ListView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
+            pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: blocking :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , name : String , aggregation_alignment_period : Option < String > , aggregation_cross_series_reducer : Option < crate :: resources :: projects :: time_series :: params :: ListAggregationCrossSeriesReducer > , aggregation_group_by_fields : Option < Vec < String > > , aggregation_per_series_aligner : Option < crate :: resources :: projects :: time_series :: params :: ListAggregationPerSeriesAligner > , filter : Option < String > , interval_end_time : Option < String > , interval_start_time : Option < String > , order_by : Option < String > , page_size : Option < i32 > , page_token : Option < String > , secondary_aggregation_alignment_period : Option < String > , secondary_aggregation_cross_series_reducer : Option < crate :: resources :: projects :: time_series :: params :: ListSecondaryAggregationCrossSeriesReducer > , secondary_aggregation_group_by_fields : Option < Vec < String > > , secondary_aggregation_per_series_aligner : Option < crate :: resources :: projects :: time_series :: params :: ListSecondaryAggregationPerSeriesAligner > , view : Option < crate :: resources :: projects :: time_series :: params :: ListView > , access_token : Option < String > , alt : Option < crate :: params :: Alt > , callback : Option < String > , fields : Option < String > , key : Option < String > , oauth_token : Option < String > , pretty_print : Option < bool > , quota_user : Option < String > , upload_protocol : Option < String > , upload_type : Option < String > , xgafv : Option < crate :: params :: Xgafv > , }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The alignment_period specifies a time interval, in seconds, that is used to divide the data in all the time series into consistent blocks of time. This will be done before the per-series aligner can be applied to the data.The value must be at least 60 seconds. If a per-series aligner other than ALIGN_NONE is specified, this field is required or an error is returned. If no per-series aligner is specified, or the aligner ALIGN_NONE is specified, then this field is ignored.The maximum value of the alignment_period is 104 weeks (2 years) for charts, and 90,000 seconds (25 hours) for alerting policies."]
                 pub fn aggregation_alignment_period(mut self, value: impl Into<String>) -> Self {
@@ -19086,7 +19914,7 @@ pub mod resources {
                 &self,
             ) -> crate::resources::services::service_level_objectives::ServiceLevelObjectivesActions
             {
-                crate :: resources :: services :: service_level_objectives :: ServiceLevelObjectivesActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                crate :: resources :: services :: service_level_objectives :: ServiceLevelObjectivesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
             }
         }
         #[doc = "Created via [ServicesActions::create()](struct.ServicesActions.html#method.create)"]

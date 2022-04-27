@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("firestore1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210220")
+            .version("0.1.0-20220407")
             .about("Accesses the NoSQL document database built for automatic scaling, high performance, and ease of application development. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -38,13 +38,26 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: databases and locations");
         let mut databases1 = SubCommand::with_name("databases")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: export_documents and import_documents");
+            .about("methods: export_documents, get, import_documents, list and patch");
         {
-            let mcmd = SubCommand::with_name("export_documents").about("Exports a copy of all or a subset of documents from Google Cloud Firestore to another storage system, such as Google Cloud Storage. Recent updates to documents may not be reflected in the export. The export occurs in the background and its progress can be monitored and managed via the Operation resource that is created. The output of an export may only be used once the associated operation is done. If an export operation is cancelled before completion it may leave partial data behind in Google Cloud Storage.");
+            let mcmd = SubCommand::with_name("export_documents").about("Exports a copy of all or a subset of documents from Google Cloud Firestore to another storage system, such as Google Cloud Storage. Recent updates to documents may not be reflected in the export. The export occurs in the background and its progress can be monitored and managed via the Operation resource that is created. The output of an export may only be used once the associated operation is done. If an export operation is cancelled before completion it may leave partial data behind in Google Cloud Storage. For more details on export behavior and output format, refer to: https://cloud.google.com/firestore/docs/manage-data/export-import");
+            databases1 = databases1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets information about a database.");
             databases1 = databases1.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("import_documents").about("Imports documents into Google Cloud Firestore. Existing documents with the same name are overwritten. The import occurs in the background and its progress can be monitored and managed via the Operation resource that is created. If an ImportDocuments operation is cancelled, it is possible that a subset of the data has already been imported to Cloud Firestore.");
+            databases1 = databases1.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("list").about("List all the databases in the project.");
+            databases1 = databases1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates a database.");
             databases1 = databases1.subcommand(mcmd);
         }
         let mut locations1 = SubCommand::with_name("locations")
@@ -64,7 +77,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: fields and indexes");
         let mut documents2 = SubCommand::with_name("documents")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: batch_get, batch_write, begin_transaction, commit, create_document, delete, get, list, list_collection_ids, listen, partition_query, patch, rollback, run_query and write");
+                        .about("methods: batch_get, batch_write, begin_transaction, commit, create_document, delete, get, list, list_collection_ids, list_documents, listen, partition_query, patch, rollback, run_aggregation_query, run_query and write");
         {
             let mcmd = SubCommand::with_name("batch_get").about("Gets multiple documents. Documents returned by this method are not guaranteed to be returned in the same order that they were requested.");
             documents2 = documents2.subcommand(mcmd);
@@ -105,6 +118,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             documents2 = documents2.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("list_documents").about("Lists documents.");
+            documents2 = documents2.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("listen").about("Listens to changes.");
             documents2 = documents2.subcommand(mcmd);
         }
@@ -121,6 +138,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             documents2 = documents2.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("run_aggregation_query").about("Runs an aggregation query. Rather than producing Document results like Firestore.RunQuery, this API allows running an aggregation to produce a series of AggregationResult server-side. High-Level Example: ``` -- Return the number of documents in table given a filter. SELECT COUNT(*) FROM ( SELECT * FROM k where a = true ); ```");
+            documents2 = documents2.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("run_query").about("Runs a query.");
             documents2 = documents2.subcommand(mcmd);
         }
@@ -133,11 +154,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: cancel, delete, get and list");
         {
-            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn\'t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
+            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
             operations2 = operations2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn\'t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.");
             operations2 = operations2.subcommand(mcmd);
         }
         {
@@ -145,7 +166,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             operations2 = operations2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn\'t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations2 = operations2.subcommand(mcmd);
         }
         let mut fields3 = SubCommand::with_name("fields")
@@ -157,11 +178,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             fields3 = fields3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists the field configuration and metadata for this database. Currently, FirestoreAdmin.ListFields only supports listing fields that have been explicitly overridden. To issue this query, call FirestoreAdmin.ListFields with the filter set to `indexConfig.usesAncestorConfig:false`.");
+            let mcmd = SubCommand::with_name("list").about("Lists the field configuration and metadata for this database. Currently, FirestoreAdmin.ListFields only supports listing fields that have been explicitly overridden. To issue this query, call FirestoreAdmin.ListFields with the filter set to `indexConfig.usesAncestorConfig:false` .");
             fields3 = fields3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates a field configuration. Currently, field updates apply only to single field index configuration. However, calls to FirestoreAdmin.UpdateField should provide a field mask to avoid changing any configuration that the caller isn\'t aware of. The field mask should be specified as: `{ paths: \"index_config\" }`. This call returns a google.longrunning.Operation which may be used to track the status of the field update. The metadata for the operation will be the type FieldOperationMetadata. To configure the default field settings for the database, use the special `Field` with resource name: `projects/{project_id}/databases/{database_id}/collectionGroups/__default__/fields/*`.");
+            let mcmd = SubCommand::with_name("patch").about("Updates a field configuration. Currently, field updates apply only to single field index configuration. However, calls to FirestoreAdmin.UpdateField should provide a field mask to avoid changing any configuration that the caller isn't aware of. The field mask should be specified as: `{ paths: \"index_config\" }`. This call returns a google.longrunning.Operation which may be used to track the status of the field update. The metadata for the operation will be the type FieldOperationMetadata. To configure the default field settings for the database, use the special `Field` with resource name: `projects/{project_id}/databases/{database_id}/collectionGroups/__default__/fields/*`.");
             fields3 = fields3.subcommand(mcmd);
         }
         let mut indexes3 = SubCommand::with_name("indexes")

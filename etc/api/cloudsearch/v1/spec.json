@@ -7,9 +7,9 @@
   "canonicalName": "Cloud Search",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20210301",
+  "revision": "20220419",
   "title": "Cloud Search API",
-  "description": "Cloud Search provides cloud-based search capabilities over G Suite data. The Cloud Search API allows indexing of non-G Suite data into Cloud Search.",
+  "description": "Cloud Search provides cloud-based search capabilities over Google Workspace data. The Cloud Search API allows indexing of non-Google Workspace data into Cloud Search.",
   "ownerDomain": "google.com",
   "ownerName": "Google",
   "icons": {
@@ -231,6 +231,206 @@
     }
   },
   "schemas": {
+    "AclInfo": {
+      "id": "AclInfo",
+      "description": "Next tag: 4",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "groupsCount": {
+          "description": "Number of groups which have at least read access to the document.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "scope": {
+          "description": "The scope to which the content was shared.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "LIMITED",
+            "DASHER_DOMAIN_WITH_LINK",
+            "DASHER_DOMAIN",
+            "PUBLIC_WITH_LINK",
+            "PUBLIC",
+            "TEAM_DRIVE"
+          ],
+          "enumDescriptions": [
+            "Explicit set of people and groups.",
+            "Anybody at the same domain with the link.",
+            "Now it works only for google.com. Anybody at the same domain. Now it works only",
+            "for google.com. Anybody with the link.",
+            "Anybody.",
+            "Special tag to indicate TeamDrive scope."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "usersCount": {
+          "description": "Number of users which have at least read access to the document.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "AppId": {
+      "id": "AppId",
+      "description": "Identifier of an App.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "appType": {
+          "description": "Enum indicating the type of App this is.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "APP_TYPE_UNSPECIFIED",
+            "APP",
+            "GSUITE_APP",
+            "INCOMING_WEBHOOK"
+          ],
+          "enumDescriptions": [
+            "",
+            "3P APP eg. external Bots(Asana Bot), 1P Bots(Drive Bot).",
+            "1P APP eg. Tasks, Meet, Docs, Calendar..",
+            "Asynchronous messages via an incoming webhook."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "gsuiteAppType": {
+          "description": "Enum indicating which 1P App this is when app_type is GSUITE_APP. Determined & set by the 1P API as a convenience for all users of this identifier(Eg. clients, chime, backend etc.) to map to 1P properties.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "GSUITE_APP_TYPE_UNSPECIFIED",
+            "TASKS_APP",
+            "CALENDAR_APP",
+            "DOCS_APP",
+            "SHEETS_APP",
+            "SLIDES_APP",
+            "MEET_APP",
+            "ASSISTIVE_SUGGESTION_APP",
+            "CONTACTS_APP",
+            "ACTIVITY_FEED_APP",
+            "DRIVE_APP"
+          ],
+          "enumDescriptions": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Powered by Bullseye",
+            "",
+            "",
+            ""
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "id": {
+          "description": "Numeric identifier of the App. Set to Project number for 1/3P Apps. For Webhook, this is WebhookId. Determined & set by the 1P API from App credentials on the side channel.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "AuditLoggingSettings": {
+      "id": "AuditLoggingSettings",
+      "description": "Represents the settings for Cloud audit logging",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "logAdminReadActions": {
+          "description": "Indicates whether audit logging is on/off for admin activity read APIs i.e. Get/List DataSources, Get/List SearchApplications etc.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "logDataReadActions": {
+          "description": "Indicates whether audit logging is on/off for data access read APIs i.e. ListItems, GetItem etc.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "logDataWriteActions": {
+          "description": "Indicates whether audit logging is on/off for data access write APIs i.e. IndexItem etc.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "project": {
+          "description": "The resource name of the GCP Project to store audit logs. Cloud audit logging will be enabled after project_name has been updated through CustomerService. Format: projects/{project_id}",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "AvatarInfo": {
+      "id": "AvatarInfo",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "emoji": {
+          "description": null,
+          "$ref": "Emoji"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "BooleanOperatorOptions": {
       "id": "BooleanOperatorOptions",
       "description": "Used to provide a search operator for boolean properties. This is optional. Search operators let users restrict the query to specific fields relevant to the type of item being searched.",
@@ -333,6 +533,170 @@
       "additionalProperties": null,
       "items": null
     },
+    "ContextAttribute": {
+      "id": "ContextAttribute",
+      "description": "A named attribute associated with an item which can be used for influencing the ranking of the item based on the context in the request.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "name": {
+          "description": "The name of the attribute. It should not be empty. The maximum length is 32 characters. The name must start with a letter and can only contain letters (A-Z, a-z) or numbers (0-9). The name will be normalized (lower-cased) before being matched.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "values": {
+          "description": "Text values of the attribute. The maximum number of elements is 10. The maximum length of an element in the array is 32 characters. The value will be normalized (lower-cased) before being matched.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "CustomEmoji": {
+      "id": "CustomEmoji",
+      "description": "Proto representation of a custom emoji. May be used in both APIs and in Spanner, but certain fields should be restricted to one or the other. See the per-field documentation for details. NEXT_TAG: 11",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "blobId": {
+          "description": "ID for the underlying image data in Blobstore. This field should *only* be present in Spanner or within the server, but should not be exposed in public APIs.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "createTimeMicros": {
+          "description": "Time when the Emoji was created, in microseconds. This field may be present in Spanner, within the server, or in public APIs.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "creatorUserId": {
+          "description": "This field should *never* be persisted to Spanner.",
+          "$ref": "UserId"
+        },
+        "ownerCustomerId": {
+          "description": "This field should *never* be persisted to Spanner.",
+          "$ref": "CustomerId"
+        },
+        "readToken": {
+          "description": "Opaque token that clients use to construct the URL for accessing the custom emoji’s image data. This field is intended for API consumption, and should *never* be persisted to Spanner.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "shortcode": {
+          "description": "User-provided, human-readable ID for the custom emoji. Users are expected to observe this field in the UI instead of the UUID. This shortcode should be unique within an organization, but has no global uniqueness guarantees, unlike the UUID. This field should *never* be persisted to Spanner.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "state": {
+          "description": "Snapshot of the current state of the emoji, which may differ from the source-of-truth in the CustomEmojis table. This field should *never* be persisted to Spanner.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "EMOJI_STATE_UNSPECIFIED",
+            "EMOJI_ENABLED",
+            "EMOJI_SYSTEM_DISABLED",
+            "EMOJI_HIDDEN",
+            "EMOJI_DELETED"
+          ],
+          "enumDescriptions": [
+            "",
+            "Emoji is visible and available to be used, subject to access control requirements.",
+            "Emoji can no longer be used (e.g. due to a shortcode conflict), but is not removed from existing embeddings.",
+            "Emoji is hidden from pickers, so new usages are not allowed, but is not removed from existing embeddings.",
+            "Emoji is removed everywhere and is not available to end-users."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "updateTimeMicros": {
+          "description": null,
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "uuid": {
+          "description": "Unique key for a custom emoji resource. Required. This field is *always* populated.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "CustomerId": {
+      "id": "CustomerId",
+      "description": "Represents a GSuite customer ID. Obfuscated with CustomerIdObfuscator.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "customerId": {
+          "description": null,
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "CustomerIndexStats": {
       "id": "CustomerIndexStats",
       "description": "Aggregation of items by status code as of the specified date.",
@@ -389,6 +753,32 @@
       "additionalProperties": null,
       "items": null
     },
+    "CustomerSearchApplicationStats": {
+      "id": "CustomerSearchApplicationStats",
+      "description": "Search application stats for a customer for the given date.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "count": {
+          "description": "The count of search applications for the date.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "date": {
+          "description": "Date for which search application stats were calculated.",
+          "$ref": "Date"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "CustomerSessionStats": {
       "id": "CustomerSessionStats",
       "description": null,
@@ -398,7 +788,7 @@
       "enumDescriptions": [],
       "properties": {
         "date": {
-          "description": "Date for which session stats were calculated. Stats calculated on the next day close to midnight are returned.",
+          "description": "Date for which session stats were calculated. Stats are calculated on the following day, close to midnight PST, and then returned.",
           "$ref": "Date"
         },
         "searchSessionsCount": {
@@ -410,6 +800,26 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "CustomerSettings": {
+      "id": "CustomerSettings",
+      "description": "Represents settings at a customer level.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "auditLoggingSettings": {
+          "description": "Audit Logging settings for the customer. If update_mask is empty then this field will be updated based on UpdateCustomerSettings request.",
+          "$ref": "AuditLoggingSettings"
+        },
+        "vpcSettings": {
+          "description": "VPC SC settings for the customer. If update_mask is empty then this field will be updated based on UpdateCustomerSettings request.",
+          "$ref": "VPCSettings"
         }
       },
       "additionalProperties": null,
@@ -556,6 +966,16 @@
             "additionalProperties": null,
             "items": null
           }
+        },
+        "returnThumbnailUrls": {
+          "description": "Can a user request to get thumbnail URI for Items indexed in this data source.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "shortName": {
           "description": "A short name or alias for the source. This value will be used to match the 'source' operator. For example, if the short name is *<value>* then queries like *source:<value>* will only return results for this source. The value must be unique across all datasources. The value must only contain alphanumeric characters (a-zA-Z0-9). The value cannot start with 'google' and cannot be one of the following: mail, gmail, docs, drive, groups, sites, calendar, hangouts, gplus, keep, people, teams. Its maximum length is 32 characters.",
@@ -831,6 +1251,28 @@
       "additionalProperties": null,
       "items": null
     },
+    "DmId": {
+      "id": "DmId",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "dmId": {
+          "description": "Unique server assigned Id, per Direct Message Space.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "DoubleOperatorOptions": {
       "id": "DoubleOperatorOptions",
       "description": "Used to provide a search operator for double properties. This is optional. Search operators let users restrict the query to specific fields relevant to the type of item being searched.",
@@ -1049,6 +1491,168 @@
       "additionalProperties": null,
       "items": null
     },
+    "DynamiteSpacesScoringInfo": {
+      "id": "DynamiteSpacesScoringInfo",
+      "description": "This is the proto for holding space level scoring information. This data is used for logging in query-api server and for testing purposes.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "affinityScore": {
+          "description": null,
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "commonContactCountAffinityScore": {
+          "description": null,
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "contactsIntersectionCount": {
+          "description": null,
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "finalScore": {
+          "description": null,
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "freshnessScore": {
+          "description": null,
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "joinedSpacesAffinityScore": {
+          "description": null,
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "lastMessagePostedTimestampMicros": {
+          "description": null,
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "memberMetadataCount": {
+          "description": null,
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "messageScore": {
+          "description": null,
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "numAucContacts": {
+          "description": null,
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "smallContactListAffinityScore": {
+          "description": null,
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "smallUnjoinedSpacesAffinityScore": {
+          "description": null,
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "spaceAgeInDays": {
+          "description": null,
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "spaceCreationTimestampMicros": {
+          "description": null,
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "topicalityScore": {
+          "description": null,
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "EmailAddress": {
       "id": "EmailAddress",
       "description": "A person's email address.",
@@ -1059,6 +1663,32 @@
       "properties": {
         "emailAddress": {
           "description": "The email address.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Emoji": {
+      "id": "Emoji",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "customEmoji": {
+          "description": "A custom emoji.",
+          "$ref": "CustomEmoji"
+        },
+        "unicode": {
+          "description": "A basic emoji represented by a unicode string.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1260,7 +1890,7 @@
       "enumDescriptions": [],
       "properties": {
         "count": {
-          "description": "Number of results that match the bucket value. Counts are only returned for searches when count accuracy is ensured. Can be empty.",
+          "description": "Number of results that match the bucket value. Counts are only returned for searches when count accuracy is ensured. Cloud Search does not guarantee facet counts for any query and facet counts might be present only intermittently, even for identical queries. Do not build dependencies on facet count existence; instead use facet ount percentages which are always returned.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -1553,6 +2183,16 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "averageIndexedItemCount": {
+          "description": "Average item count for the given date range for which billing is done.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "stats": {
           "description": "Summary of indexed item counts, one for each day in the requested range.",
           "type": "array",
@@ -1587,6 +2227,50 @@
           "additionalProperties": null,
           "items": {
             "$ref": "CustomerQueryStats"
+          }
+        },
+        "totalQueryCount": {
+          "description": "Total successful query count (status code 200) for the given date range.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GetCustomerSearchApplicationStatsResponse": {
+      "id": "GetCustomerSearchApplicationStatsResponse",
+      "description": "Response format for search application stats for a customer.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "averageSearchApplicationCount": {
+          "description": "Average search application count for the given date range.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "stats": {
+          "description": "Search application stats by date.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "CustomerSearchApplicationStats"
           }
         }
       },
@@ -1649,6 +2333,16 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "averageIndexedItemCount": {
+          "description": "Average item count for the given date range for which billing is done.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "stats": {
           "description": "Summary of indexed item counts, one for each day in the requested range.",
           "type": "array",
@@ -1667,14 +2361,14 @@
     },
     "GetSearchApplicationQueryStatsResponse": {
       "id": "GetSearchApplicationQueryStatsResponse",
-      "description": null,
+      "description": "Response format for getting query stats for a search application between given dates.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "stats": {
-          "description": null,
+          "description": "Query stats per date for a search application.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1684,6 +2378,16 @@
           "items": {
             "$ref": "SearchApplicationQueryStats"
           }
+        },
+        "totalQueryCount": {
+          "description": "Total successful query count (status code 200) for the given date range.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -1732,6 +2436,176 @@
           "items": {
             "$ref": "SearchApplicationUserStats"
           }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleDocsMetadata": {
+      "id": "GoogleDocsMetadata",
+      "description": "The corpus specific metadata for office-type documents, from Google Docs and other sources. This message is passed to the scorer and beyond. Next tag: 7",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "aclInfo": {
+          "description": "Contains number of users and groups which can access the document.",
+          "$ref": "AclInfo"
+        },
+        "documentType": {
+          "description": "The conceptual type (presentation, document, etc.) of this document.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "UNKNOWN",
+            "DOCUMENT",
+            "PRESENTATION",
+            "SPREADSHEET",
+            "PDF",
+            "IMAGE",
+            "BINARY_BLOB",
+            "FUSION_TABLE",
+            "FOLDER",
+            "DRAWING",
+            "VIDEO",
+            "FORM",
+            "DRAFT_SITE",
+            "DRAFT_SITE_PAGE",
+            "JAM",
+            "SHORTCUT",
+            "SCRIPT"
+          ],
+          "enumDescriptions": [
+            "If the type is unknown or not represented in this enum.",
+            "Writely, Word, etc.",
+            "Presently, PowerPoint, etc.",
+            "Trix, Excel, etc.",
+            "File types for Gdrive objects are below.",
+            "",
+            "Fall-back for unknown Gdrive types.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "For Atari page and site drafts",
+            "",
+            "Jamboard Jams (go/jam)",
+            "Drive Shortcuts (go/shortcuts)",
+            ""
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "fileExtension": {
+          "description": "The file extension of the document. NOTE: As of October 2018 this field is not backfilled for old documents.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "lastContentModifiedTimestamp": {
+          "description": "The last time this document was modified, in seconds since epoch. Only counts content modifications.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "resultInfo": {
+          "description": "Additional per-result information, akin to Gmail's SingleThreadResponse. Note: GWS no longer seems to use this field, but there's still one reference to it for Scribe, so we can't remove it.",
+          "$ref": "GoogleDocsResultInfo"
+        },
+        "typeInfo": {
+          "description": "Contains additional information about the document depending on its type.",
+          "$ref": "TypeInfo"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleDocsResultInfo": {
+      "id": "GoogleDocsResultInfo",
+      "description": "A message containing information about a specific result. This information is passed to the scorer and beyond; in particular, GWS relies on it to format the result in the UI. Split from GoogleDocsMetadata in case we later want to reuse the message.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "attachmentSha1": {
+          "description": "The SHA1 hash of the object in Drive, if any.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "cosmoId": {
+          "description": "The storage identifier for the object in Cosmo. This field is intended to used by Stratus/Moonshine integration only. It should not be exposed externally (please refer to encrypted_id for that purpose).",
+          "$ref": "Id"
+        },
+        "cosmoNameSpace": {
+          "description": "For Cosmo objects, the Cosmo namespace the object was in. This allows downstream clients to identify whether a document was created in Writely or Kix, Presently or Punch, or whether it was uploaded from GDrive. See storage_cosmo.Id.NAME_SPACE for a list of all Cosmo name spaces.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "encryptedId": {
+          "description": "The encrypted (user-visible) id of this object. Knowing the id is sufficient to create a canonical URL for this document.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "mimeType": {
+          "description": "The mimetype of the document.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "shareScope": {
+          "description": "The visibility indicator in the UI will be based upon this.",
+          "$ref": "ShareScope"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GroupId": {
+      "id": "GroupId",
+      "description": "Id representing a group that could be a space, a chat, or a direct message space. Which ID is set here will determine which group",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "dmId": {
+          "description": "Unique, immutable ID of the Direct Message Space",
+          "$ref": "DmId"
+        },
+        "spaceId": {
+          "description": "Unique, immutable ID of the Space",
+          "$ref": "SpaceId"
         }
       },
       "additionalProperties": null,
@@ -1809,6 +2683,48 @@
       "additionalProperties": null,
       "items": null
     },
+    "Id": {
+      "id": "Id",
+      "description": "Identifies a particular object, including both Users and DirEntries. This Id is unique across the entire server instance, such as the production or qa instance.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "creatorUserId": {
+          "description": "The User account in which the DirEntry was originally created. If name_space==GAIA, then it's the gaia_id of the user this id is referring to.",
+          "type": "string",
+          "format": "uint64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "localId": {
+          "description": "The local identifier for the DirEntry (local to the creator's account). local_id + app_name is guaranteed to be unique within the creator account, but not across all User accounts. The string is case sensitive. Ignore if name_space==GAIA. NB For name_space==COSMO, all local_id's should be defined in google3/java/com/google/storage/cosmo/server/api/SpecialObjectIds.java as they have a special predefined meaning. See cosmo.client.CosmoIdFactory.createObjectId(long,String) for IMPORTANT recommendations when generating IDs.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "nameSpace": {
+          "description": "The name space in which this id is unique (typically the application that created it). Values should be drawn from the above enum, but for experimentation, use values greater than 1000.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "IndexItemOptions": {
       "id": "IndexItemOptions",
       "description": null,
@@ -1880,6 +2796,17 @@
           "items": null
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "InitializeCustomerRequest": {
+      "id": "InitializeCustomerRequest",
+      "description": "Request message for `InitializeCustomer` method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -2132,7 +3059,7 @@
           "$ref": "ItemStructuredData"
         },
         "version": {
-          "description": "Required. The indexing system stores the version from the datasource as a byte string and compares the Item version in the index to the version of the queued Item using lexical ordering. Cloud Search Indexing won't index or delete any queued item with a version value that is less than or equal to the version of the currently indexed item. The maximum length for this field is 1024 bytes.",
+          "description": "Required. The indexing system stores the version from the datasource as a byte string and compares the Item version in the index to the version of the queued Item using lexical ordering. Cloud Search Indexing won't index or delete any queued item with a version value that is less than or equal to the version of the currently indexed item. The maximum length for this field is 1024 bytes. For information on how item version affects the deletion process, refer to [Handle revisions after manual deletes](https://developers.google.com/cloud-search/docs/guides/operations).",
           "type": "string",
           "format": "byte",
           "enum": [],
@@ -2297,6 +3224,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "indexedItemsCount": {
+          "description": "Number of items matching the status code for which billing is done. This excludes virtual container items from the total count. This count would not be applicable for items with ERROR or NEW_ITEM status code.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "statusCode": {
           "description": "Status of the items.",
           "type": "string",
@@ -2350,6 +3287,18 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "contextAttributes": {
+          "description": "A set of named attributes associated with the item. This can be used for influencing the ranking of the item based on the context in the request. The maximum number of elements is 10.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "ContextAttribute"
+          }
         },
         "createTime": {
           "description": "The time when the item was created in the source repository.",
@@ -2426,7 +3375,7 @@
           "$ref": "SearchQualityMetadata"
         },
         "sourceRepositoryUrl": {
-          "description": "Link to the source repository serving the data. Search results apply this link to the title. Whitespace or special characters may cause Cloud Search result links to trigger a redirect notice; to avoid this, encode the URL. The maximum length is 2048 characters.",
+          "description": "Link to the source repository serving the data. Seach results apply this link to the title. Whitespace or special characters may cause Cloud Seach result links to trigger a redirect notice; to avoid this, encode the URL. The maximum length is 2048 characters.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2902,6 +3851,16 @@
         "source": {
           "description": "The named source for the result, such as Gmail.",
           "$ref": "Source"
+        },
+        "thumbnailUrl": {
+          "description": "The thumbnail URL of the result.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "updateTime": {
           "description": "The last modified date for the object in the search result. If not set in the item, the value returned here is empty. When `updateTime` is used for calculating freshness and is not set, this value defaults to 2 years from the current time.",
@@ -3606,7 +4565,7 @@
           "items": null
         },
         "isSortable": {
-          "description": "Indicates that the property can be used for sorting. Cannot be true for properties that are repeatable. Cannot be true for properties whose type is object or user identifier. IsReturnable must be true to set this option. Only supported for Boolean, Date, Double, Integer, and Timestamp properties.",
+          "description": "Indicates that the property can be used for sorting. Cannot be true for properties that are repeatable. Cannot be true for properties whose type is object. IsReturnable must be true to set this option. Only supported for Boolean, Date, Double, Integer, and Timestamp properties.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -3891,6 +4850,38 @@
       "additionalProperties": null,
       "items": null
     },
+    "QueryInterpretationConfig": {
+      "id": "QueryInterpretationConfig",
+      "description": "Default options to interpret user query.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "forceDisableSupplementalResults": {
+          "description": "Set this flag to disable supplemental results retrieval, setting a flag here will not retrieve supplemental results for queries associated with a given search application. If this flag is set to True, it will take precedence over the option set at Query level. For the default value of False, query level flag will set the correct interpretation for supplemental results.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "forceVerbatimMode": {
+          "description": "Enable this flag to turn off all internal optimizations like natural language (NL) interpretation of queries, supplemental results retrieval, and usage of synonyms including custom ones. If this flag is set to True, it will take precedence over the option set at Query level. For the default value of False, query level flag will set the correct interpretation for verbatim mode.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "QueryInterpretationOptions": {
       "id": "QueryInterpretationOptions",
       "description": "Options to interpret user query.",
@@ -3901,6 +4892,16 @@
       "properties": {
         "disableNlInterpretation": {
           "description": "Flag to disable natural language (NL) interpretation of queries. Default is false, Set to true to disable natural language interpretation. NL interpretation only applies to predefined datasources.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "disableSupplementalResults": {
+          "description": "Use this flag to disable supplemental results for a query. Supplemental results setting chosen at SearchApplication level will take precedence if set to True.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -4321,7 +5322,7 @@
       "enumDescriptions": [],
       "properties": {
         "driveFollowUpRestrict": {
-          "description": "LINT.ThenChange(//depot/google3/java/com/google/apps/search/quality/itemsuggest/utils/SubtypeRerankingUtils.java)",
+          "description": null,
           "$ref": "DriveFollowUpRestrict"
         },
         "driveLocationRestrict": {
@@ -4329,7 +5330,7 @@
           "$ref": "DriveLocationRestrict"
         },
         "driveMimeTypeRestrict": {
-          "description": "LINT.IfChange Drive Types.",
+          "description": "Drive Types.",
           "$ref": "DriveMimeTypeRestrict"
         },
         "driveTimeSpanRestrict": {
@@ -4644,6 +5645,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "enableAuditLog": {
+          "description": "Indicates whether audit logging is on/off for requests made for the search application in query APIs.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "name": {
           "description": "Name of the Search Application. Format: searchapplications/{application_id}.",
           "type": "string",
@@ -4672,6 +5683,20 @@
             "items": null
           }
         },
+        "queryInterpretationConfig": {
+          "description": "The default options for query interpretation",
+          "$ref": "QueryInterpretationConfig"
+        },
+        "returnResultThumbnailUrls": {
+          "description": "With each result we should return the URI for its thumbnail (when applicable)",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "scoringConfig": {
           "description": "Configuration for ranking results.",
           "$ref": "ScoringConfig"
@@ -4694,7 +5719,7 @@
     },
     "SearchApplicationQueryStats": {
       "id": "SearchApplicationQueryStats",
-      "description": null,
+      "description": "Search application level query stats per date",
       "type": "object",
       "format": null,
       "enum": [],
@@ -4729,7 +5754,7 @@
       "enumDescriptions": [],
       "properties": {
         "date": {
-          "description": "Date for which session stats were calculated. Stats calculated on the next day close to midnight are returned.",
+          "description": "Date for which session stats were calculated. Stats are calculated on the following day, close to midnight PST, and then returned.",
           "$ref": "Date"
         },
         "searchSessionsCount": {
@@ -4892,6 +5917,18 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "contextAttributes": {
+          "description": "Context attributes for the request which will be used to adjust ranking of search results. The maximum number of elements is 10.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "ContextAttribute"
+          }
+        },
         "dataSourceRestrictions": {
           "description": "The sources to use for querying. If not specified, all data sources from the current search application are used.",
           "type": "array",
@@ -4927,7 +5964,7 @@
           "items": null
         },
         "query": {
-          "description": "The raw query string. See supported search operators in the [Cloud search Cheat Sheet](https://support.google.com/a/users/answer/9299929)",
+          "description": "The raw query string. See supported search operators in the [Narrow your search with operators](https://support.google.com/cloudsearch/answer/6172299)",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5124,6 +6161,52 @@
       "additionalProperties": null,
       "items": null
     },
+    "ShareScope": {
+      "id": "ShareScope",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "domain": {
+          "description": "If scope is DOMAIN, this field contains the dasher domain, for example \"google.com\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "scope": {
+          "description": "The scope to which the content was shared.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "UNKNOWN",
+            "PRIVATE",
+            "LIMITED",
+            "EXTENDED",
+            "DASHER_DOMAIN",
+            "PUBLIC"
+          ],
+          "enumDescriptions": [
+            "",
+            "Only the author can view the post.",
+            "Viewable only by a set of people.",
+            "Viewable by extended circles.",
+            "",
+            ""
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Snippet": {
       "id": "Snippet",
       "description": "Snippet of the search result, which summarizes the content of the resulting page.",
@@ -5281,7 +6364,7 @@
       "enumDescriptions": [],
       "properties": {
         "numResults": {
-          "description": "Maximum number of results allowed from a source. No limits will be set on results if this value is less than or equal to 0.",
+          "description": "Maximum number of results allowed from a datasource in a result page as long as results from other sources are not exhausted. Value specified must not be negative. A default value is used if this value is equal to 0. To disable crowding, set the value greater than 100.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -5371,6 +6454,130 @@
             "",
             "",
             ""
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SpaceId": {
+      "id": "SpaceId",
+      "description": "Primary key for Space resource.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "spaceId": {
+          "description": "Unique, immutable ID of the Space",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SpaceInfo": {
+      "id": "SpaceInfo",
+      "description": "Defines the representation of a single matching space.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "avatarInfo": {
+          "description": null,
+          "$ref": "AvatarInfo"
+        },
+        "avatarUrl": {
+          "description": null,
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "description": {
+          "description": null,
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "groupId": {
+          "description": null,
+          "$ref": "GroupId"
+        },
+        "inviterEmail": {
+          "description": "The email address of the user that invited the calling user to the room, if available. This field will only be populated for direct invites, it will be empty if the user was indirectly invited to the group.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "isExternal": {
+          "description": "Whether this is a space that enables guest access",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": null,
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "numMembers": {
+          "description": null,
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "userMembershipState": {
+          "description": "searching user's membership state in this space",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "MEMBER_UNKNOWN",
+            "MEMBER_INVITED",
+            "MEMBER_JOINED",
+            "MEMBER_NOT_A_MEMBER",
+            "MEMBER_FAILED"
+          ],
+          "enumDescriptions": [
+            "Default state, do not use",
+            "An invitation to the space has been sent",
+            "User has joined the space",
+            "User is not a member",
+            "This state should never be stored in Spanner. It is a state for responses to the clients to indicate that membership mutations have failed and the member is in its previous state."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -5793,6 +7000,22 @@
       "additionalProperties": null,
       "items": null
     },
+    "TypeInfo": {
+      "id": "TypeInfo",
+      "description": "Next tag: 2",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "videoInfo": {
+          "description": "Contains additional video information only if document_type is VIDEO.",
+          "$ref": "VideoInfo"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "UnmappedIdentity": {
       "id": "UnmappedIdentity",
       "description": null,
@@ -5921,7 +7144,7 @@
     },
     "UploadItemRef": {
       "id": "UploadItemRef",
-      "description": "Represents an upload session reference. This reference is created via upload method. Updating of item content may refer to this uploaded content via contentDataRef.",
+      "description": "Represents an upload session reference. This reference is created via upload method. This reference is valid for 30 days after its creation. Updating of item content may refer to this uploaded content via contentDataRef.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -5929,6 +7152,80 @@
       "properties": {
         "name": {
           "description": "Name of the content reference. The maximum length is 2048 characters.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "UserId": {
+      "id": "UserId",
+      "description": "Primary key for User resource.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "actingUserId": {
+          "description": "Optional. Opaque, server-assigned ID of the user profile associated with App/user acting on behalf of the human user. This is currently only set when a 3P application is acting on the user's behalf.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "id": {
+          "description": "Opaque, server-assigned ID of the User.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "originAppId": {
+          "description": "Optional. Identifier of the App involved (directly or on behalf of a human creator) in creating this message. This is not set if the user posted a message directly, but is used in the case of, for example, a message being generated by a 1P integration based on a user action (creating an event, creating a task etc). This should only be used on the BE. For clients, please use the field in the FE message proto instead (google3/apps/dynamite/v1/frontend/api/message.proto?q=origin_app_id).",
+          "$ref": "AppId"
+        },
+        "type": {
+          "description": "Clients do not need to send UserType to Backend, but Backend will always send this field to clients per the following rule: 1. For HUMAN Ids, the field is empty but by default .getType() will return HUMAN. 2. For BOT Ids, the field is ALWAYS set to BOT.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "HUMAN",
+            "BOT"
+          ],
+          "enumDescriptions": [
+            "Notes on HUMAN type: 1) Leaving UserId.UserType field empty will return HUMAN as default value. This is expected because all the existing UserIds are without explicitly setting UserType, most of which are HUMAN Ids. For Bot Ids we will always set BOT in UserType field. 2) DO NOT explicitly set HUMAN as type. This is a proto2 issue, that a UserId with explicitly set default value HUMAN as type is NOT equal to an id without setting the field. aka. UserId id1 = UserId.newBuilder() .setId(\"dummy\").setType(UserType.HUMAN).build(); UserId id2 = UserId.newBuilder().setId(\"dummy\").build(); AssertThat(id1).isNotEqual(id2); AssertThat(id2.getType()).isEqualTo(UserType.HUMAN);",
+            ""
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "VPCSettings": {
+      "id": "VPCSettings",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "project": {
+          "description": "The resource name of the GCP Project to be used for VPC SC policy check. VPC security settings on this project will be honored for Cloud Search APIs after project_name has been updated through CustomerService. Format: projects/{project_id}",
           "type": "string",
           "format": null,
           "enum": [],
@@ -6028,6 +7325,28 @@
         "value": {
           "description": "The value to be compared with.",
           "$ref": "Value"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "VideoInfo": {
+      "id": "VideoInfo",
+      "description": "Next tag: 2",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "duration": {
+          "description": "Duration of the video in milliseconds. This field can be absent for recently uploaded video or inaccurate sometimes.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -6132,7 +7451,7 @@
                   "id": "cloudsearch.debug.datasources.items.checkAccess",
                   "path": "v1/debug/{+name}:checkAccess",
                   "httpMethod": "POST",
-                  "description": "Checks whether an item is accessible by specified principal. **Note:** This API requires an admin account to execute.",
+                  "description": "Checks whether an item is accessible by specified principal. Principal must be a user; groups and domain values aren't supported. **Note:** This API requires an admin account to execute.",
                   "parameters": {
                     "debugOptions.enableDebugging": {
                       "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
@@ -6539,7 +7858,7 @@
                       "repeated": false
                     },
                     "version": {
-                      "description": "Required. The incremented version of the item to delete from the index. The indexing system stores the version from the datasource as a byte string and compares the Item version in the index to the version of the queued Item using lexical ordering. Cloud Search Indexing won't delete any queued item with a version value that is less than or equal to the version of the currently indexed item. The maximum length for this field is 1024 bytes.",
+                      "description": "Required. The incremented version of the item to delete from the index. The indexing system stores the version from the datasource as a byte string and compares the Item version in the index to the version of the queued Item using lexical ordering. Cloud Search Indexing won't delete any queued item with a version value that is less than or equal to the version of the currently indexed item. The maximum length for this field is 1024 bytes. For information on how item version affects the deletion process, refer to [Handle revisions after manual deletes](https://developers.google.com/cloud-search/docs/guides/operations).",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -7343,7 +8662,7 @@
               "id": "cloudsearch.query.sources.list",
               "path": "v1/query/sources",
               "httpMethod": "GET",
-              "description": "Returns list of sources that user can use for Search and Suggest APIs. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [G Suite domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/).",
+              "description": "Returns list of sources that user can use for Search and Suggest APIs. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [Google Workspace domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/).",
               "parameters": {
                 "pageToken": {
                   "description": "Number of sources to return in the response.",
@@ -7439,7 +8758,7 @@
           "id": "cloudsearch.query.search",
           "path": "v1/query/search",
           "httpMethod": "POST",
-          "description": "The Cloud Search Query API provides the search method, which returns the most relevant results from a user query. The results can come from G Suite Apps, such as Gmail or Google Drive, or they can come from data that you have indexed from a third party. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [G Suite domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/).",
+          "description": "The Cloud Search Query API provides the search method, which returns the most relevant results from a user query. The results can come from Google Workspace apps, such as Gmail or Google Drive, or they can come from data that you have indexed from a third party. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [Google Workspace domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/).",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -7462,7 +8781,7 @@
           "id": "cloudsearch.query.suggest",
           "path": "v1/query/suggest",
           "httpMethod": "POST",
-          "description": "Provides suggestions for autocompleting the query. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [G Suite domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/).",
+          "description": "Provides suggestions for autocompleting the query. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [Google Workspace domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/).",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -7639,7 +8958,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "Maximum number of datasources to fetch in a request. The max value is 100. The default value is 10",
+                  "description": "Maximum number of datasources to fetch in a request. The max value is 1000. The default value is 1000.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -8009,7 +9328,69 @@
           }
         }
       },
-      "methods": {}
+      "methods": {
+        "getCustomer": {
+          "id": "cloudsearch.settings.getCustomer",
+          "path": "v1/settings/customer",
+          "httpMethod": "GET",
+          "description": "Get customer settings. **Note:** This API requires an admin account to execute.",
+          "parameters": {},
+          "parameterOrder": [],
+          "request": null,
+          "response": {
+            "$ref": "CustomerSettings"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud_search",
+            "https://www.googleapis.com/auth/cloud_search.settings",
+            "https://www.googleapis.com/auth/cloud_search.settings.indexing"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "updateCustomer": {
+          "id": "cloudsearch.settings.updateCustomer",
+          "path": "v1/settings/customer",
+          "httpMethod": "PATCH",
+          "description": "Update customer settings. **Note:** This API requires an admin account to execute.",
+          "parameters": {
+            "updateMask": {
+              "description": "Update mask to control which fields get updated. If you specify a field in the update_mask but don't specify its value here, that field will be cleared. If the mask is not present or empty, all fields will be updated. Currently supported field paths: vpc_settings and audit_logging_settings",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "google-fieldmask",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [],
+          "request": {
+            "$ref": "CustomerSettings"
+          },
+          "response": {
+            "$ref": "Operation"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud_search",
+            "https://www.googleapis.com/auth/cloud_search.settings",
+            "https://www.googleapis.com/auth/cloud_search.settings.indexing"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        }
+      }
     },
     "stats": {
       "resources": {
@@ -8761,6 +10142,113 @@
           "supportsMediaUpload": false,
           "mediaUpload": null
         },
+        "getSearchapplication": {
+          "id": "cloudsearch.stats.getSearchapplication",
+          "path": "v1/stats/searchapplication",
+          "httpMethod": "GET",
+          "description": "Get search application stats for customer. **Note:** This API requires a standard end user account to execute.",
+          "parameters": {
+            "endDate.day": {
+              "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "endDate.month": {
+              "description": "Month of date. Must be from 1 to 12.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "endDate.year": {
+              "description": "Year of date. Must be from 1 to 9999.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "startDate.day": {
+              "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "startDate.month": {
+              "description": "Month of date. Must be from 1 to 12.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "startDate.year": {
+              "description": "Year of date. Must be from 1 to 9999.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [],
+          "request": null,
+          "response": {
+            "$ref": "GetCustomerSearchApplicationStatsResponse"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud_search",
+            "https://www.googleapis.com/auth/cloud_search.stats",
+            "https://www.googleapis.com/auth/cloud_search.stats.indexing"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
         "getSession": {
           "id": "cloudsearch.stats.getSession",
           "path": "v1/stats/session",
@@ -8968,6 +10456,35 @@
             "https://www.googleapis.com/auth/cloud_search",
             "https://www.googleapis.com/auth/cloud_search.stats",
             "https://www.googleapis.com/auth/cloud_search.stats.indexing"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        }
+      }
+    },
+    "v1": {
+      "resources": {},
+      "methods": {
+        "initializeCustomer": {
+          "id": "cloudsearch.initializeCustomer",
+          "path": "v1:initializeCustomer",
+          "httpMethod": "POST",
+          "description": "Enables `third party` support in Google Cloud Search. **Note:** This API requires an admin account to execute.",
+          "parameters": {},
+          "parameterOrder": [],
+          "request": {
+            "$ref": "InitializeCustomerRequest"
+          },
+          "response": {
+            "$ref": "Operation"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud_search",
+            "https://www.googleapis.com/auth/cloud_search.settings",
+            "https://www.googleapis.com/auth/cloud_search.settings.indexing"
           ],
           "supportsMediaDownload": false,
           "useMediaDownloadService": false,

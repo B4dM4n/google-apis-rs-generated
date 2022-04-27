@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("script1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210307")
+            .version("0.1.0-20220425")
             .about("Manages and executes Google Apps Script projects. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -41,7 +41,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             processes0 = processes0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list_script_processes").about("List information about a script\'s executed processes, such as process type and current status.");
+            let mcmd = SubCommand::with_name("list_script_processes").about("List information about a script's executed processes, such as process type and current status.");
             processes0 = processes0.subcommand(mcmd);
         }
         let mut projects0 = SubCommand::with_name("projects")
@@ -52,7 +52,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             projects0 = projects0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Gets a script project\'s metadata.");
+            let mcmd = SubCommand::with_name("get").about("Gets a script project's metadata.");
             projects0 = projects0.subcommand(mcmd);
         }
         {

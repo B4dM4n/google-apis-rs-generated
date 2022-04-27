@@ -7,7 +7,7 @@
   "canonicalName": "Firebase Dynamic Links",
   "fullyEncodeReservedExpansion": null,
   "version": "v1",
-  "revision": "20210309",
+  "revision": "20220425",
   "title": "Firebase Dynamic Links API",
   "description": "Programmatically creates and manages Firebase Dynamic Links.",
   "ownerDomain": "google.com",
@@ -1262,7 +1262,7 @@
       "enumDescriptions": [],
       "properties": {
         "gclid": {
-          "description": "[AdWords autotagging parameter](https://support.google.com/analytics/answer/1033981?hl=en); used to measure Google AdWords ads. This value is generated dynamically and should never be modified.",
+          "description": "Deprecated; FDL SDK does not process nor log it.",
           "type": "string",
           "format": null,
           "enum": [],

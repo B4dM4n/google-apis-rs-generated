@@ -1,6 +1,6 @@
 #![doc = "# Resources and Methods\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [aggregated](resources/projects/aggregated/struct.AggregatedActions.html)\n        * [usable_subnetworks](resources/projects/aggregated/usable_subnetworks/struct.UsableSubnetworksActions.html)\n          * [*list*](resources/projects/aggregated/usable_subnetworks/struct.ListRequestBuilder.html)\n      * [locations](resources/projects/locations/struct.LocationsActions.html)\n        * [*getServerConfig*](resources/projects/locations/struct.GetServerConfigRequestBuilder.html)\n        * [clusters](resources/projects/locations/clusters/struct.ClustersActions.html)\n          * [*completeIpRotation*](resources/projects/locations/clusters/struct.CompleteIpRotationRequestBuilder.html), [*create*](resources/projects/locations/clusters/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/clusters/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/clusters/struct.GetRequestBuilder.html), [*getJwks*](resources/projects/locations/clusters/struct.GetJwksRequestBuilder.html), [*list*](resources/projects/locations/clusters/struct.ListRequestBuilder.html), [*setAddons*](resources/projects/locations/clusters/struct.SetAddonsRequestBuilder.html), [*setLegacyAbac*](resources/projects/locations/clusters/struct.SetLegacyAbacRequestBuilder.html), [*setLocations*](resources/projects/locations/clusters/struct.SetLocationsRequestBuilder.html), [*setLogging*](resources/projects/locations/clusters/struct.SetLoggingRequestBuilder.html), [*setMaintenancePolicy*](resources/projects/locations/clusters/struct.SetMaintenancePolicyRequestBuilder.html), [*setMasterAuth*](resources/projects/locations/clusters/struct.SetMasterAuthRequestBuilder.html), [*setMonitoring*](resources/projects/locations/clusters/struct.SetMonitoringRequestBuilder.html), [*setNetworkPolicy*](resources/projects/locations/clusters/struct.SetNetworkPolicyRequestBuilder.html), [*setResourceLabels*](resources/projects/locations/clusters/struct.SetResourceLabelsRequestBuilder.html), [*startIpRotation*](resources/projects/locations/clusters/struct.StartIpRotationRequestBuilder.html), [*update*](resources/projects/locations/clusters/struct.UpdateRequestBuilder.html), [*updateMaster*](resources/projects/locations/clusters/struct.UpdateMasterRequestBuilder.html)\n          * [node_pools](resources/projects/locations/clusters/node_pools/struct.NodePoolsActions.html)\n            * [*create*](resources/projects/locations/clusters/node_pools/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/clusters/node_pools/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/clusters/node_pools/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/clusters/node_pools/struct.ListRequestBuilder.html), [*rollback*](resources/projects/locations/clusters/node_pools/struct.RollbackRequestBuilder.html), [*setAutoscaling*](resources/projects/locations/clusters/node_pools/struct.SetAutoscalingRequestBuilder.html), [*setManagement*](resources/projects/locations/clusters/node_pools/struct.SetManagementRequestBuilder.html), [*setSize*](resources/projects/locations/clusters/node_pools/struct.SetSizeRequestBuilder.html), [*update*](resources/projects/locations/clusters/node_pools/struct.UpdateRequestBuilder.html)\n          * [well_known](resources/projects/locations/clusters/well_known/struct.WellKnownActions.html)\n            * [*getOpenid-configuration*](resources/projects/locations/clusters/well_known/struct.GetOpenidConfigurationRequestBuilder.html)\n        * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n          * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n      * [zones](resources/projects/zones/struct.ZonesActions.html)\n        * [*getServerconfig*](resources/projects/zones/struct.GetServerconfigRequestBuilder.html)\n        * [clusters](resources/projects/zones/clusters/struct.ClustersActions.html)\n          * [*addons*](resources/projects/zones/clusters/struct.AddonsRequestBuilder.html), [*completeIpRotation*](resources/projects/zones/clusters/struct.CompleteIpRotationRequestBuilder.html), [*create*](resources/projects/zones/clusters/struct.CreateRequestBuilder.html), [*delete*](resources/projects/zones/clusters/struct.DeleteRequestBuilder.html), [*get*](resources/projects/zones/clusters/struct.GetRequestBuilder.html), [*legacyAbac*](resources/projects/zones/clusters/struct.LegacyAbacRequestBuilder.html), [*list*](resources/projects/zones/clusters/struct.ListRequestBuilder.html), [*locations*](resources/projects/zones/clusters/struct.LocationsRequestBuilder.html), [*logging*](resources/projects/zones/clusters/struct.LoggingRequestBuilder.html), [*master*](resources/projects/zones/clusters/struct.MasterRequestBuilder.html), [*monitoring*](resources/projects/zones/clusters/struct.MonitoringRequestBuilder.html), [*resourceLabels*](resources/projects/zones/clusters/struct.ResourceLabelsRequestBuilder.html), [*setMaintenancePolicy*](resources/projects/zones/clusters/struct.SetMaintenancePolicyRequestBuilder.html), [*setMasterAuth*](resources/projects/zones/clusters/struct.SetMasterAuthRequestBuilder.html), [*setNetworkPolicy*](resources/projects/zones/clusters/struct.SetNetworkPolicyRequestBuilder.html), [*startIpRotation*](resources/projects/zones/clusters/struct.StartIpRotationRequestBuilder.html), [*update*](resources/projects/zones/clusters/struct.UpdateRequestBuilder.html)\n          * [node_pools](resources/projects/zones/clusters/node_pools/struct.NodePoolsActions.html)\n            * [*autoscaling*](resources/projects/zones/clusters/node_pools/struct.AutoscalingRequestBuilder.html), [*create*](resources/projects/zones/clusters/node_pools/struct.CreateRequestBuilder.html), [*delete*](resources/projects/zones/clusters/node_pools/struct.DeleteRequestBuilder.html), [*get*](resources/projects/zones/clusters/node_pools/struct.GetRequestBuilder.html), [*list*](resources/projects/zones/clusters/node_pools/struct.ListRequestBuilder.html), [*rollback*](resources/projects/zones/clusters/node_pools/struct.RollbackRequestBuilder.html), [*setManagement*](resources/projects/zones/clusters/node_pools/struct.SetManagementRequestBuilder.html), [*setSize*](resources/projects/zones/clusters/node_pools/struct.SetSizeRequestBuilder.html), [*update*](resources/projects/zones/clusters/node_pools/struct.UpdateRequestBuilder.html)\n        * [operations](resources/projects/zones/operations/struct.OperationsActions.html)\n          * [*cancel*](resources/projects/zones/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/zones/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/zones/operations/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
@@ -32,6 +32,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub accelerator_type: ::std::option::Option<String>,
+        #[doc = "Size of partitions to create on the GPU. Valid values are described in the NVIDIA [mig user guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning)."]
+        #[serde(
+            rename = "gpuPartitionSize",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gpu_partition_size: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for AcceleratorConfig {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -85,6 +92,14 @@ pub mod schemas {
         )]
         pub gce_persistent_disk_csi_driver_config:
             ::std::option::Option<crate::schemas::GcePersistentDiskCsiDriverConfig>,
+        #[doc = "Configuration for the GCP Filestore CSI driver."]
+        #[serde(
+            rename = "gcpFilestoreCsiDriverConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcp_filestore_csi_driver_config:
+            ::std::option::Option<crate::schemas::GcpFilestoreCsiDriverConfig>,
         #[doc = "Configuration for the horizontal pod autoscaling feature, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods."]
         #[serde(
             rename = "horizontalPodAutoscaling",
@@ -121,6 +136,38 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for AddonsConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AdvancedMachineFeatures {
+        #[doc = "The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed."]
+        #[serde(
+            rename = "threadsPerCore",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub threads_per_core: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for AdvancedMachineFeatures {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AdvancedMachineFeatures {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -266,6 +313,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disk_type: ::std::option::Option<String>,
+        #[doc = "The image type to use for NAP created node."]
+        #[serde(
+            rename = "imageType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub image_type: ::std::option::Option<String>,
         #[doc = "Specifies the node management options for NAP created node-pools."]
         #[serde(
             rename = "management",
@@ -273,7 +327,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub management: ::std::option::Option<crate::schemas::NodeManagement>,
-        #[doc = "Minimum CPU platform to be used for NAP created node pools. The instance may be scheduled on the specified or newer CPU platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: Intel Haswell or minCpuPlatform: Intel Sandy Bridge. For more information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform) To unset the min cpu platform field pass \"automatic\" as field value."]
+        #[doc = "Deprecated. Minimum CPU platform to be used for NAP created node pools. The instance may be scheduled on the specified or newer CPU platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: Intel Haswell or minCpuPlatform: Intel Sandy Bridge. For more information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform) This field is deprecated, min_cpu_platform should be specified using cloud.google.com/requested-min-cpu-platform label selector on the pod. To unset the min cpu platform field pass \"automatic\" as field value."]
         #[serde(
             rename = "minCpuPlatform",
             default,
@@ -698,6 +752,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conditions: ::std::option::Option<Vec<crate::schemas::StatusCondition>>,
+        #[doc = "Configuration of Confidential Nodes. All the nodes in the cluster will be Confidential VM once enabled."]
+        #[serde(
+            rename = "confidentialNodes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub confidential_nodes: ::std::option::Option<crate::schemas::ConfidentialNodes>,
         #[doc = "[Output only] The time the cluster was created, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."]
         #[serde(
             rename = "createTime",
@@ -775,6 +836,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub expire_time: ::std::option::Option<String>,
+        #[doc = "Output only. Unique id for the cluster."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "Configuration for Identity Service component."]
+        #[serde(
+            rename = "identityServiceConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub identity_service_config: ::std::option::Option<crate::schemas::IdentityServiceConfig>,
         #[doc = "The initial Kubernetes version for this cluster. Valid versions are those found in validMasterVersions returned by getServerConfig. The version can be upgraded over time; such upgrades are reflected in currentMasterVersion and currentNodeVersion. Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - \"latest\": picks the highest valid Kubernetes version - \"1.X\": picks the highest valid patch+gke.N patch in the 1.X version - \"1.X.Y\": picks the highest valid gke.N patch in the 1.X.Y version - \"1.X.Y-gke.N\": picks an explicit Kubernetes version - \"\",\"-\": picks the default Kubernetes version"]
         #[serde(
             rename = "initialClusterVersion",
@@ -831,6 +906,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub locations: ::std::option::Option<Vec<String>>,
+        #[doc = "Logging configuration for the cluster."]
+        #[serde(
+            rename = "loggingConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub logging_config: ::std::option::Option<crate::schemas::LoggingConfig>,
         #[doc = "The logging service the cluster should use to write logs. Currently available options: * `logging.googleapis.com/kubernetes` - The Cloud Logging service with a Kubernetes-native resource model * `logging.googleapis.com` - The legacy Cloud Logging service (no longer available as of GKE 1.15). * `none` - no logs will be exported from the cluster. If left as an empty string,`logging.googleapis.com/kubernetes` will be used for GKE 1.14+ or `logging.googleapis.com` for earlier versions."]
         #[serde(
             rename = "loggingService",
@@ -860,6 +942,20 @@ pub mod schemas {
         )]
         pub master_authorized_networks_config:
             ::std::option::Option<crate::schemas::MasterAuthorizedNetworksConfig>,
+        #[doc = "Configuration for issuance of mTLS keys and certificates to Kubernetes pods."]
+        #[serde(
+            rename = "meshCertificates",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mesh_certificates: ::std::option::Option<crate::schemas::MeshCertificates>,
+        #[doc = "Monitoring configuration for the cluster."]
+        #[serde(
+            rename = "monitoringConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub monitoring_config: ::std::option::Option<crate::schemas::MonitoringConfig>,
         #[doc = "The monitoring service the cluster should use to write metrics. Currently available options: * \"monitoring.googleapis.com/kubernetes\" - The Cloud Monitoring service with a Kubernetes-native resource model * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no longer available as of GKE 1.15). * `none` - No metrics will be exported from the cluster. If left as an empty string,`monitoring.googleapis.com/kubernetes` will be used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions."]
         #[serde(
             rename = "monitoringService",
@@ -909,6 +1005,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub node_ipv_4_cidr_size: ::std::option::Option<i32>,
+        #[doc = "Node pool configs that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters."]
+        #[serde(
+            rename = "nodePoolAutoConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub node_pool_auto_config: ::std::option::Option<crate::schemas::NodePoolAutoConfig>,
+        #[doc = "Default NodePool settings for the entire cluster. These settings are overridden if specified on the specific NodePool object."]
+        #[serde(
+            rename = "nodePoolDefaults",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub node_pool_defaults: ::std::option::Option<crate::schemas::NodePoolDefaults>,
         #[doc = "The node pools associated with this cluster. This field should not be set if \"node_config\" or \"initial_node_count\" are specified."]
         #[serde(
             rename = "nodePools",
@@ -1157,6 +1267,14 @@ pub mod schemas {
         )]
         pub autoprovisioning_node_pool_defaults:
             ::std::option::Option<crate::schemas::AutoprovisioningNodePoolDefaults>,
+        #[doc = "Defines autoscaling behaviour."]
+        #[serde(
+            rename = "autoscalingProfile",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub autoscaling_profile:
+            ::std::option::Option<crate::schemas::ClusterAutoscalingAutoscalingProfile>,
         #[doc = "Enables automatic node pool creation and deletion."]
         #[serde(
             rename = "enableNodeAutoprovisioning",
@@ -1182,6 +1300,82 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ClusterAutoscalingAutoscalingProfile {
+        #[doc = "Use default (balanced) autoscaling configuration."]
+        Balanced,
+        #[doc = "Prioritize optimizing utilization of resources."]
+        OptimizeUtilization,
+        #[doc = "No change to autoscaling configuration."]
+        ProfileUnspecified,
+    }
+    impl ClusterAutoscalingAutoscalingProfile {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ClusterAutoscalingAutoscalingProfile::Balanced => "BALANCED",
+                ClusterAutoscalingAutoscalingProfile::OptimizeUtilization => "OPTIMIZE_UTILIZATION",
+                ClusterAutoscalingAutoscalingProfile::ProfileUnspecified => "PROFILE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ClusterAutoscalingAutoscalingProfile {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ClusterAutoscalingAutoscalingProfile {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ClusterAutoscalingAutoscalingProfile, ()> {
+            Ok(match s {
+                "BALANCED" => ClusterAutoscalingAutoscalingProfile::Balanced,
+                "OPTIMIZE_UTILIZATION" => ClusterAutoscalingAutoscalingProfile::OptimizeUtilization,
+                "PROFILE_UNSPECIFIED" => ClusterAutoscalingAutoscalingProfile::ProfileUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ClusterAutoscalingAutoscalingProfile {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ClusterAutoscalingAutoscalingProfile {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ClusterAutoscalingAutoscalingProfile {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "BALANCED" => ClusterAutoscalingAutoscalingProfile::Balanced,
+                "OPTIMIZE_UTILIZATION" => ClusterAutoscalingAutoscalingProfile::OptimizeUtilization,
+                "PROFILE_UNSPECIFIED" => ClusterAutoscalingAutoscalingProfile::ProfileUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ClusterAutoscalingAutoscalingProfile {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ClusterAutoscalingAutoscalingProfile {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -1202,6 +1396,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub desired_addons_config: ::std::option::Option<crate::schemas::AddonsConfig>,
+        #[doc = "The desired authenticator groups config for the cluster."]
+        #[serde(
+            rename = "desiredAuthenticatorGroupsConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_authenticator_groups_config:
+            ::std::option::Option<crate::schemas::AuthenticatorGroupsConfig>,
         #[doc = "The desired configuration options for the Binary Authorization feature."]
         #[serde(
             rename = "desiredBinaryAuthorization",
@@ -1224,6 +1426,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub desired_database_encryption: ::std::option::Option<crate::schemas::DatabaseEncryption>,
+        #[doc = "The desired datapath provider for the cluster."]
+        #[serde(
+            rename = "desiredDatapathProvider",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_datapath_provider:
+            ::std::option::Option<crate::schemas::ClusterUpdateDesiredDatapathProvider>,
         #[doc = "The desired status of whether to disable default sNAT for this cluster."]
         #[serde(
             rename = "desiredDefaultSnatStatus",
@@ -1231,6 +1441,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub desired_default_snat_status: ::std::option::Option<crate::schemas::DefaultSnatStatus>,
+        #[doc = "DNSConfig contains clusterDNS config for this cluster."]
+        #[serde(
+            rename = "desiredDnsConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_dns_config: ::std::option::Option<crate::schemas::Dnsconfig>,
+        #[doc = "The desired GCFS config for the cluster"]
+        #[serde(
+            rename = "desiredGcfsConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_gcfs_config: ::std::option::Option<crate::schemas::GcfsConfig>,
+        #[doc = "The desired Identity Service component configuration."]
+        #[serde(
+            rename = "desiredIdentityServiceConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_identity_service_config:
+            ::std::option::Option<crate::schemas::IdentityServiceConfig>,
         #[doc = "The desired image type for the node pool. NOTE: Set the \"desired_node_pool\" field as well."]
         #[serde(
             rename = "desiredImageType",
@@ -1246,6 +1478,14 @@ pub mod schemas {
         )]
         pub desired_intra_node_visibility_config:
             ::std::option::Option<crate::schemas::IntraNodeVisibilityConfig>,
+        #[doc = "The desired L4 Internal Load Balancer Subsetting configuration."]
+        #[serde(
+            rename = "desiredL4ilbSubsettingConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_l_4ilb_subsetting_config:
+            ::std::option::Option<crate::schemas::IlbsubsettingConfig>,
         #[doc = "The desired list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes should be located. This list must always include the cluster's primary zone. Warning: changing cluster locations will update the locations of all node pools and will result in nodes being added and/or removed."]
         #[serde(
             rename = "desiredLocations",
@@ -1253,6 +1493,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub desired_locations: ::std::option::Option<Vec<String>>,
+        #[doc = "The desired logging configuration."]
+        #[serde(
+            rename = "desiredLoggingConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_logging_config: ::std::option::Option<crate::schemas::LoggingConfig>,
         #[doc = "The logging service the cluster should use to write logs. Currently available options: * `logging.googleapis.com/kubernetes` - The Cloud Logging service with a Kubernetes-native resource model * `logging.googleapis.com` - The legacy Cloud Logging service (no longer available as of GKE 1.15). * `none` - no logs will be exported from the cluster. If left as an empty string,`logging.googleapis.com/kubernetes` will be used for GKE 1.14+ or `logging.googleapis.com` for earlier versions."]
         #[serde(
             rename = "desiredLoggingService",
@@ -1275,6 +1522,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub desired_master_version: ::std::option::Option<String>,
+        #[doc = "Configuration for issuance of mTLS keys and certificates to Kubernetes pods."]
+        #[serde(
+            rename = "desiredMeshCertificates",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_mesh_certificates: ::std::option::Option<crate::schemas::MeshCertificates>,
+        #[doc = "The desired monitoring configuration."]
+        #[serde(
+            rename = "desiredMonitoringConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_monitoring_config: ::std::option::Option<crate::schemas::MonitoringConfig>,
         #[doc = "The monitoring service the cluster should use to write metrics. Currently available options: * \"monitoring.googleapis.com/kubernetes\" - The Cloud Monitoring service with a Kubernetes-native resource model * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no longer available as of GKE 1.15). * `none` - No metrics will be exported from the cluster. If left as an empty string,`monitoring.googleapis.com/kubernetes` will be used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions."]
         #[serde(
             rename = "desiredMonitoringService",
@@ -1282,6 +1543,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub desired_monitoring_service: ::std::option::Option<String>,
+        #[doc = "The desired network tags that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters."]
+        #[serde(
+            rename = "desiredNodePoolAutoConfigNetworkTags",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_node_pool_auto_config_network_tags:
+            ::std::option::Option<crate::schemas::NetworkTags>,
         #[doc = "Autoscaler configuration for the node pool specified in desired_node_pool_id. If there is only one pool in the cluster and desired_node_pool_id is not provided then the change applies to that single node pool."]
         #[serde(
             rename = "desiredNodePoolAutoscaling",
@@ -1342,6 +1611,14 @@ pub mod schemas {
         )]
         pub desired_resource_usage_export_config:
             ::std::option::Option<crate::schemas::ResourceUsageExportConfig>,
+        #[doc = "ServiceExternalIPsConfig specifies the config for the use of Services with ExternalIPs field."]
+        #[serde(
+            rename = "desiredServiceExternalIpsConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_service_external_ips_config:
+            ::std::option::Option<crate::schemas::ServiceExternalIPsConfig>,
         #[doc = "Configuration for Shielded Nodes."]
         #[serde(
             rename = "desiredShieldedNodes",
@@ -1377,6 +1654,88 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ClusterUpdateDesiredDatapathProvider {
+        #[doc = "Use the eBPF based GKE Dataplane V2 with additional features. See the [GKE Dataplane V2 documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/dataplane-v2) for more."]
+        AdvancedDatapath,
+        #[doc = "Default value."]
+        DatapathProviderUnspecified,
+        #[doc = "Use the IPTables implementation based on kube-proxy."]
+        LegacyDatapath,
+    }
+    impl ClusterUpdateDesiredDatapathProvider {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ClusterUpdateDesiredDatapathProvider::AdvancedDatapath => "ADVANCED_DATAPATH",
+                ClusterUpdateDesiredDatapathProvider::DatapathProviderUnspecified => {
+                    "DATAPATH_PROVIDER_UNSPECIFIED"
+                }
+                ClusterUpdateDesiredDatapathProvider::LegacyDatapath => "LEGACY_DATAPATH",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ClusterUpdateDesiredDatapathProvider {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ClusterUpdateDesiredDatapathProvider {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ClusterUpdateDesiredDatapathProvider, ()> {
+            Ok(match s {
+                "ADVANCED_DATAPATH" => ClusterUpdateDesiredDatapathProvider::AdvancedDatapath,
+                "DATAPATH_PROVIDER_UNSPECIFIED" => {
+                    ClusterUpdateDesiredDatapathProvider::DatapathProviderUnspecified
+                }
+                "LEGACY_DATAPATH" => ClusterUpdateDesiredDatapathProvider::LegacyDatapath,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ClusterUpdateDesiredDatapathProvider {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ClusterUpdateDesiredDatapathProvider {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ClusterUpdateDesiredDatapathProvider {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ADVANCED_DATAPATH" => ClusterUpdateDesiredDatapathProvider::AdvancedDatapath,
+                "DATAPATH_PROVIDER_UNSPECIFIED" => {
+                    ClusterUpdateDesiredDatapathProvider::DatapathProviderUnspecified
+                }
+                "LEGACY_DATAPATH" => ClusterUpdateDesiredDatapathProvider::LegacyDatapath,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ClusterUpdateDesiredDatapathProvider {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ClusterUpdateDesiredDatapathProvider {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ClusterUpdateDesiredPrivateIpv6GoogleAccess {
         #[doc = "Enables priate IPv6 access to and from Google Services"]
         PrivateIpv6GoogleAccessBidirectional,
@@ -1402,7 +1761,7 @@ pub mod schemas {
         fn from_str(
             s: &str,
         ) -> ::std::result::Result<ClusterUpdateDesiredPrivateIpv6GoogleAccess, ()> {
-            Ok ( match s { "PRIVATE_IPV6_GOOGLE_ACCESS_BIDIRECTIONAL" => ClusterUpdateDesiredPrivateIpv6GoogleAccess :: PrivateIpv6GoogleAccessBidirectional , "PRIVATE_IPV6_GOOGLE_ACCESS_DISABLED" => ClusterUpdateDesiredPrivateIpv6GoogleAccess :: PrivateIpv6GoogleAccessDisabled , "PRIVATE_IPV6_GOOGLE_ACCESS_TO_GOOGLE" => ClusterUpdateDesiredPrivateIpv6GoogleAccess :: PrivateIpv6GoogleAccessToGoogle , "PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED" => ClusterUpdateDesiredPrivateIpv6GoogleAccess :: PrivateIpv6GoogleAccessUnspecified , _ => return Err ( ( ) ) , } )
+            Ok (match s { "PRIVATE_IPV6_GOOGLE_ACCESS_BIDIRECTIONAL" => ClusterUpdateDesiredPrivateIpv6GoogleAccess :: PrivateIpv6GoogleAccessBidirectional , "PRIVATE_IPV6_GOOGLE_ACCESS_DISABLED" => ClusterUpdateDesiredPrivateIpv6GoogleAccess :: PrivateIpv6GoogleAccessDisabled , "PRIVATE_IPV6_GOOGLE_ACCESS_TO_GOOGLE" => ClusterUpdateDesiredPrivateIpv6GoogleAccess :: PrivateIpv6GoogleAccessToGoogle , "PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED" => ClusterUpdateDesiredPrivateIpv6GoogleAccess :: PrivateIpv6GoogleAccessUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for ClusterUpdateDesiredPrivateIpv6GoogleAccess {
@@ -1424,7 +1783,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok ( match value { "PRIVATE_IPV6_GOOGLE_ACCESS_BIDIRECTIONAL" => ClusterUpdateDesiredPrivateIpv6GoogleAccess :: PrivateIpv6GoogleAccessBidirectional , "PRIVATE_IPV6_GOOGLE_ACCESS_DISABLED" => ClusterUpdateDesiredPrivateIpv6GoogleAccess :: PrivateIpv6GoogleAccessDisabled , "PRIVATE_IPV6_GOOGLE_ACCESS_TO_GOOGLE" => ClusterUpdateDesiredPrivateIpv6GoogleAccess :: PrivateIpv6GoogleAccessToGoogle , "PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED" => ClusterUpdateDesiredPrivateIpv6GoogleAccess :: PrivateIpv6GoogleAccessUnspecified , _ => return Err ( :: serde :: de :: Error :: custom ( format ! ( "invalid enum for #name: {}" , value ) ) ) , } )
+            Ok (match value { "PRIVATE_IPV6_GOOGLE_ACCESS_BIDIRECTIONAL" => ClusterUpdateDesiredPrivateIpv6GoogleAccess :: PrivateIpv6GoogleAccessBidirectional , "PRIVATE_IPV6_GOOGLE_ACCESS_DISABLED" => ClusterUpdateDesiredPrivateIpv6GoogleAccess :: PrivateIpv6GoogleAccessDisabled , "PRIVATE_IPV6_GOOGLE_ACCESS_TO_GOOGLE" => ClusterUpdateDesiredPrivateIpv6GoogleAccess :: PrivateIpv6GoogleAccessToGoogle , "PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED" => ClusterUpdateDesiredPrivateIpv6GoogleAccess :: PrivateIpv6GoogleAccessUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector for ClusterUpdateDesiredPrivateIpv6GoogleAccess {
@@ -1457,7 +1816,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cluster_id: ::std::option::Option<String>,
-        #[doc = "The name (project, location, cluster id) of the cluster to complete IP rotation. Specified in the format `projects/*/locations/*/clusters/*`."]
+        #[doc = "The name (project, location, cluster name) of the cluster to complete IP rotation. Specified in the format `projects/*/locations/*/clusters/*`."]
         #[serde(
             rename = "name",
             default,
@@ -1485,6 +1844,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CompleteIPRotationRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ConfidentialNodes {
+        #[doc = "Whether Confidential Nodes feature is enabled."]
+        #[serde(
+            rename = "enabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enabled: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for ConfidentialNodes {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ConfidentialNodes {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1630,7 +2020,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub node_pool: ::std::option::Option<crate::schemas::NodePool>,
-        #[doc = "The parent (project, location, cluster id) where the node pool will be created. Specified in the format `projects/*/locations/*/clusters/*`."]
+        #[doc = "The parent (project, location, cluster name) where the node pool will be created. Specified in the format `projects/*/locations/*/clusters/*`."]
         #[serde(
             rename = "parent",
             default,
@@ -1884,6 +2274,198 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Dnsconfig {
+        #[doc = "cluster_dns indicates which in-cluster DNS provider should be used."]
+        #[serde(
+            rename = "clusterDns",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cluster_dns: ::std::option::Option<crate::schemas::DnsconfigClusterDns>,
+        #[doc = "cluster_dns_domain is the suffix used for all cluster service records."]
+        #[serde(
+            rename = "clusterDnsDomain",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cluster_dns_domain: ::std::option::Option<String>,
+        #[doc = "cluster_dns_scope indicates the scope of access to cluster DNS records."]
+        #[serde(
+            rename = "clusterDnsScope",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cluster_dns_scope: ::std::option::Option<crate::schemas::DnsconfigClusterDnsScope>,
+    }
+    impl ::google_field_selector::FieldSelector for Dnsconfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Dnsconfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum DnsconfigClusterDns {
+        #[doc = "Use CloudDNS for DNS resolution."]
+        CloudDns,
+        #[doc = "Use GKE default DNS provider(kube-dns) for DNS resolution."]
+        PlatformDefault,
+        #[doc = "Default value"]
+        ProviderUnspecified,
+    }
+    impl DnsconfigClusterDns {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                DnsconfigClusterDns::CloudDns => "CLOUD_DNS",
+                DnsconfigClusterDns::PlatformDefault => "PLATFORM_DEFAULT",
+                DnsconfigClusterDns::ProviderUnspecified => "PROVIDER_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for DnsconfigClusterDns {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for DnsconfigClusterDns {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<DnsconfigClusterDns, ()> {
+            Ok(match s {
+                "CLOUD_DNS" => DnsconfigClusterDns::CloudDns,
+                "PLATFORM_DEFAULT" => DnsconfigClusterDns::PlatformDefault,
+                "PROVIDER_UNSPECIFIED" => DnsconfigClusterDns::ProviderUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for DnsconfigClusterDns {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for DnsconfigClusterDns {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for DnsconfigClusterDns {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CLOUD_DNS" => DnsconfigClusterDns::CloudDns,
+                "PLATFORM_DEFAULT" => DnsconfigClusterDns::PlatformDefault,
+                "PROVIDER_UNSPECIFIED" => DnsconfigClusterDns::ProviderUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for DnsconfigClusterDns {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DnsconfigClusterDns {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum DnsconfigClusterDnsScope {
+        #[doc = "Default value, will be inferred as cluster scope."]
+        DnsScopeUnspecified,
+        #[doc = "DNS records are accessible from within the VPC."]
+        VpcScope,
+    }
+    impl DnsconfigClusterDnsScope {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                DnsconfigClusterDnsScope::DnsScopeUnspecified => "DNS_SCOPE_UNSPECIFIED",
+                DnsconfigClusterDnsScope::VpcScope => "VPC_SCOPE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for DnsconfigClusterDnsScope {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for DnsconfigClusterDnsScope {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<DnsconfigClusterDnsScope, ()> {
+            Ok(match s {
+                "DNS_SCOPE_UNSPECIFIED" => DnsconfigClusterDnsScope::DnsScopeUnspecified,
+                "VPC_SCOPE" => DnsconfigClusterDnsScope::VpcScope,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for DnsconfigClusterDnsScope {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for DnsconfigClusterDnsScope {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for DnsconfigClusterDnsScope {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DNS_SCOPE_UNSPECIFIED" => DnsconfigClusterDnsScope::DnsScopeUnspecified,
+                "VPC_SCOPE" => DnsconfigClusterDnsScope::VpcScope,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for DnsconfigClusterDnsScope {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DnsconfigClusterDnsScope {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Copy,
         Default,
         :: serde :: Deserialize,
@@ -1896,6 +2478,118 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Empty {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Filter {
+        #[doc = "Event types to allowlist."]
+        #[serde(
+            rename = "eventType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event_type: ::std::option::Option<Vec<crate::schemas::FilterEventTypeItems>>,
+    }
+    impl ::google_field_selector::FieldSelector for Filter {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Filter {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum FilterEventTypeItems {
+        #[doc = "Not set, will be ignored."]
+        EventTypeUnspecified,
+        #[doc = "Corresponds with SecurityBulletinEvent."]
+        SecurityBulletinEvent,
+        #[doc = "Corresponds with UpgradeAvailableEvent."]
+        UpgradeAvailableEvent,
+        #[doc = "Corresponds with UpgradeEvent."]
+        UpgradeEvent,
+    }
+    impl FilterEventTypeItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                FilterEventTypeItems::EventTypeUnspecified => "EVENT_TYPE_UNSPECIFIED",
+                FilterEventTypeItems::SecurityBulletinEvent => "SECURITY_BULLETIN_EVENT",
+                FilterEventTypeItems::UpgradeAvailableEvent => "UPGRADE_AVAILABLE_EVENT",
+                FilterEventTypeItems::UpgradeEvent => "UPGRADE_EVENT",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for FilterEventTypeItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for FilterEventTypeItems {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<FilterEventTypeItems, ()> {
+            Ok(match s {
+                "EVENT_TYPE_UNSPECIFIED" => FilterEventTypeItems::EventTypeUnspecified,
+                "SECURITY_BULLETIN_EVENT" => FilterEventTypeItems::SecurityBulletinEvent,
+                "UPGRADE_AVAILABLE_EVENT" => FilterEventTypeItems::UpgradeAvailableEvent,
+                "UPGRADE_EVENT" => FilterEventTypeItems::UpgradeEvent,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for FilterEventTypeItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for FilterEventTypeItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for FilterEventTypeItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "EVENT_TYPE_UNSPECIFIED" => FilterEventTypeItems::EventTypeUnspecified,
+                "SECURITY_BULLETIN_EVENT" => FilterEventTypeItems::SecurityBulletinEvent,
+                "UPGRADE_AVAILABLE_EVENT" => FilterEventTypeItems::UpgradeAvailableEvent,
+                "UPGRADE_EVENT" => FilterEventTypeItems::UpgradeEvent,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for FilterEventTypeItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FilterEventTypeItems {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1927,6 +2621,68 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GcePersistentDiskCsiDriverConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GcfsConfig {
+        #[doc = "Whether to use GCFS."]
+        #[serde(
+            rename = "enabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enabled: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for GcfsConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GcfsConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GcpFilestoreCsiDriverConfig {
+        #[doc = "Whether the GCP Filestore CSI driver is enabled for this cluster."]
+        #[serde(
+            rename = "enabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enabled: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for GcpFilestoreCsiDriverConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GcpFilestoreCsiDriverConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2153,6 +2909,68 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for HttpLoadBalancing {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct IdentityServiceConfig {
+        #[doc = "Whether to enable the Identity Service component"]
+        #[serde(
+            rename = "enabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enabled: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for IdentityServiceConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IdentityServiceConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct IlbsubsettingConfig {
+        #[doc = "Enables l4 ILB subsetting for this cluster."]
+        #[serde(
+            rename = "enabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enabled: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for IlbsubsettingConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IlbsubsettingConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2465,7 +3283,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LinuxNodeConfig {
-        #[doc = "The Linux kernel parameters to be applied to the nodes and all pods running on the nodes. The following parameters are supported. net.core.netdev_max_backlog net.core.rmem_max net.core.wmem_default net.core.wmem_max net.core.optmem_max net.core.somaxconn net.ipv4.tcp_rmem net.ipv4.tcp_wmem net.ipv4.tcp_tw_reuse"]
+        #[doc = "The Linux kernel parameters to be applied to the nodes and all pods running on the nodes. The following parameters are supported. net.core.busy_poll net.core.busy_read net.core.netdev_max_backlog net.core.rmem_max net.core.wmem_default net.core.wmem_max net.core.optmem_max net.core.somaxconn net.ipv4.tcp_rmem net.ipv4.tcp_wmem net.ipv4.tcp_tw_reuse"]
         #[serde(
             rename = "sysctls",
             default,
@@ -2552,9 +3370,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    #[derive(
-        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
-    )]
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct ListOperationsResponse {
         #[doc = "If any zones are listed here, the list of operations returned may be missing the operations from those zones."]
         #[serde(
@@ -2615,6 +3431,272 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ListUsableSubnetworksResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct LoggingComponentConfig {
+        #[doc = "Select components to collect logs. An empty set would disable all logging."]
+        #[serde(
+            rename = "enableComponents",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_components:
+            ::std::option::Option<Vec<crate::schemas::LoggingComponentConfigEnableComponentsItems>>,
+    }
+    impl ::google_field_selector::FieldSelector for LoggingComponentConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LoggingComponentConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum LoggingComponentConfigEnableComponentsItems {
+        #[doc = "Default value. This shouldn't be used."]
+        ComponentUnspecified,
+        #[doc = "system components"]
+        SystemComponents,
+        #[doc = "workloads"]
+        Workloads,
+    }
+    impl LoggingComponentConfigEnableComponentsItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                LoggingComponentConfigEnableComponentsItems::ComponentUnspecified => {
+                    "COMPONENT_UNSPECIFIED"
+                }
+                LoggingComponentConfigEnableComponentsItems::SystemComponents => {
+                    "SYSTEM_COMPONENTS"
+                }
+                LoggingComponentConfigEnableComponentsItems::Workloads => "WORKLOADS",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for LoggingComponentConfigEnableComponentsItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for LoggingComponentConfigEnableComponentsItems {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<LoggingComponentConfigEnableComponentsItems, ()> {
+            Ok(match s {
+                "COMPONENT_UNSPECIFIED" => {
+                    LoggingComponentConfigEnableComponentsItems::ComponentUnspecified
+                }
+                "SYSTEM_COMPONENTS" => {
+                    LoggingComponentConfigEnableComponentsItems::SystemComponents
+                }
+                "WORKLOADS" => LoggingComponentConfigEnableComponentsItems::Workloads,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for LoggingComponentConfigEnableComponentsItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for LoggingComponentConfigEnableComponentsItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for LoggingComponentConfigEnableComponentsItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "COMPONENT_UNSPECIFIED" => {
+                    LoggingComponentConfigEnableComponentsItems::ComponentUnspecified
+                }
+                "SYSTEM_COMPONENTS" => {
+                    LoggingComponentConfigEnableComponentsItems::SystemComponents
+                }
+                "WORKLOADS" => LoggingComponentConfigEnableComponentsItems::Workloads,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for LoggingComponentConfigEnableComponentsItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LoggingComponentConfigEnableComponentsItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct LoggingConfig {
+        #[doc = "Logging components configuration"]
+        #[serde(
+            rename = "componentConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub component_config: ::std::option::Option<crate::schemas::LoggingComponentConfig>,
+    }
+    impl ::google_field_selector::FieldSelector for LoggingConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LoggingConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MaintenanceExclusionOptions {
+        #[doc = "Scope specifies the upgrade scope which upgrades are blocked by the exclusion."]
+        #[serde(
+            rename = "scope",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub scope: ::std::option::Option<crate::schemas::MaintenanceExclusionOptionsScope>,
+    }
+    impl ::google_field_selector::FieldSelector for MaintenanceExclusionOptions {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MaintenanceExclusionOptions {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MaintenanceExclusionOptionsScope {
+        #[doc = "NO_MINOR_OR_NODE_UPGRADES excludes all minor upgrades for the cluster, and also exclude all node pool upgrades. Only control plane patches are allowed."]
+        NoMinorOrNodeUpgrades,
+        #[doc = "NO_MINOR_UPGRADES excludes all minor upgrades for the cluster, only patches are allowed."]
+        NoMinorUpgrades,
+        #[doc = "NO_UPGRADES excludes all upgrades, including patch upgrades and minor upgrades across control planes and nodes. This is the default exclusion behavior."]
+        NoUpgrades,
+    }
+    impl MaintenanceExclusionOptionsScope {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MaintenanceExclusionOptionsScope::NoMinorOrNodeUpgrades => {
+                    "NO_MINOR_OR_NODE_UPGRADES"
+                }
+                MaintenanceExclusionOptionsScope::NoMinorUpgrades => "NO_MINOR_UPGRADES",
+                MaintenanceExclusionOptionsScope::NoUpgrades => "NO_UPGRADES",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MaintenanceExclusionOptionsScope {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MaintenanceExclusionOptionsScope {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MaintenanceExclusionOptionsScope, ()> {
+            Ok(match s {
+                "NO_MINOR_OR_NODE_UPGRADES" => {
+                    MaintenanceExclusionOptionsScope::NoMinorOrNodeUpgrades
+                }
+                "NO_MINOR_UPGRADES" => MaintenanceExclusionOptionsScope::NoMinorUpgrades,
+                "NO_UPGRADES" => MaintenanceExclusionOptionsScope::NoUpgrades,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MaintenanceExclusionOptionsScope {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MaintenanceExclusionOptionsScope {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MaintenanceExclusionOptionsScope {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "NO_MINOR_OR_NODE_UPGRADES" => {
+                    MaintenanceExclusionOptionsScope::NoMinorOrNodeUpgrades
+                }
+                "NO_MINOR_UPGRADES" => MaintenanceExclusionOptionsScope::NoMinorUpgrades,
+                "NO_UPGRADES" => MaintenanceExclusionOptionsScope::NoUpgrades,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MaintenanceExclusionOptionsScope {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MaintenanceExclusionOptionsScope {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2841,6 +3923,37 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MeshCertificates {
+        #[doc = "enable_certificates controls issuance of workload mTLS certificates. If set, the GKE Workload Identity Certificates controller and node agent will be deployed in the cluster, which can then be configured by creating a WorkloadCertificateConfig Custom Resource. Requires Workload Identity (workload_pool must be non-empty)."]
+        #[serde(
+            rename = "enableCertificates",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_certificates: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for MeshCertificates {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MeshCertificates {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Metric {
@@ -2896,7 +4009,163 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct MonitoringComponentConfig {
+        #[doc = "Select components to collect metrics. An empty set would disable all monitoring."]
+        #[serde(
+            rename = "enableComponents",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_components: ::std::option::Option<
+            Vec<crate::schemas::MonitoringComponentConfigEnableComponentsItems>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for MonitoringComponentConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MonitoringComponentConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MonitoringComponentConfigEnableComponentsItems {
+        #[doc = "Default value. This shouldn't be used."]
+        ComponentUnspecified,
+        #[doc = "system components"]
+        SystemComponents,
+    }
+    impl MonitoringComponentConfigEnableComponentsItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MonitoringComponentConfigEnableComponentsItems::ComponentUnspecified => {
+                    "COMPONENT_UNSPECIFIED"
+                }
+                MonitoringComponentConfigEnableComponentsItems::SystemComponents => {
+                    "SYSTEM_COMPONENTS"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MonitoringComponentConfigEnableComponentsItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MonitoringComponentConfigEnableComponentsItems {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<MonitoringComponentConfigEnableComponentsItems, ()> {
+            Ok(match s {
+                "COMPONENT_UNSPECIFIED" => {
+                    MonitoringComponentConfigEnableComponentsItems::ComponentUnspecified
+                }
+                "SYSTEM_COMPONENTS" => {
+                    MonitoringComponentConfigEnableComponentsItems::SystemComponents
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MonitoringComponentConfigEnableComponentsItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MonitoringComponentConfigEnableComponentsItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MonitoringComponentConfigEnableComponentsItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "COMPONENT_UNSPECIFIED" => {
+                    MonitoringComponentConfigEnableComponentsItems::ComponentUnspecified
+                }
+                "SYSTEM_COMPONENTS" => {
+                    MonitoringComponentConfigEnableComponentsItems::SystemComponents
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MonitoringComponentConfigEnableComponentsItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MonitoringComponentConfigEnableComponentsItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MonitoringConfig {
+        #[doc = "Monitoring components configuration"]
+        #[serde(
+            rename = "componentConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub component_config: ::std::option::Option<crate::schemas::MonitoringComponentConfig>,
+    }
+    impl ::google_field_selector::FieldSelector for MonitoringConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MonitoringConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct NetworkConfig {
+        #[doc = "The desired datapath provider for this cluster. By default, uses the IPTables-based kube-proxy implementation."]
+        #[serde(
+            rename = "datapathProvider",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub datapath_provider: ::std::option::Option<crate::schemas::NetworkConfigDatapathProvider>,
         #[doc = "Whether the cluster disables default in-node sNAT rules. In-node sNAT rules will be disabled when default_snat_status is disabled. When disabled is set to false, default IP masquerade rules will be applied to the nodes to prevent sNAT on cluster internal traffic."]
         #[serde(
             rename = "defaultSnatStatus",
@@ -2904,6 +4173,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_snat_status: ::std::option::Option<crate::schemas::DefaultSnatStatus>,
+        #[doc = "DNSConfig contains clusterDNS config for this cluster."]
+        #[serde(
+            rename = "dnsConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dns_config: ::std::option::Option<crate::schemas::Dnsconfig>,
         #[doc = "Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network."]
         #[serde(
             rename = "enableIntraNodeVisibility",
@@ -2911,6 +4187,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enable_intra_node_visibility: ::std::option::Option<bool>,
+        #[doc = "Whether L4ILB Subsetting is enabled for this cluster."]
+        #[serde(
+            rename = "enableL4ilbSubsetting",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_l_4ilb_subsetting: ::std::option::Option<bool>,
         #[doc = "Output only. The relative name of the Google Compute Engine network(https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. Example: projects/my-project/global/networks/my-network"]
         #[serde(
             rename = "network",
@@ -2926,6 +4209,14 @@ pub mod schemas {
         )]
         pub private_ipv_6_google_access:
             ::std::option::Option<crate::schemas::NetworkConfigPrivateIpv6GoogleAccess>,
+        #[doc = "ServiceExternalIPsConfig specifies if services with externalIPs field are blocked or not."]
+        #[serde(
+            rename = "serviceExternalIpsConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub service_external_ips_config:
+            ::std::option::Option<crate::schemas::ServiceExternalIPsConfig>,
         #[doc = "Output only. The relative name of the Google Compute Engine [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the cluster is connected. Example: projects/my-project/regions/us-central1/subnetworks/my-subnet"]
         #[serde(
             rename = "subnetwork",
@@ -2940,6 +4231,88 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for NetworkConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum NetworkConfigDatapathProvider {
+        #[doc = "Use the eBPF based GKE Dataplane V2 with additional features. See the [GKE Dataplane V2 documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/dataplane-v2) for more."]
+        AdvancedDatapath,
+        #[doc = "Default value."]
+        DatapathProviderUnspecified,
+        #[doc = "Use the IPTables implementation based on kube-proxy."]
+        LegacyDatapath,
+    }
+    impl NetworkConfigDatapathProvider {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                NetworkConfigDatapathProvider::AdvancedDatapath => "ADVANCED_DATAPATH",
+                NetworkConfigDatapathProvider::DatapathProviderUnspecified => {
+                    "DATAPATH_PROVIDER_UNSPECIFIED"
+                }
+                NetworkConfigDatapathProvider::LegacyDatapath => "LEGACY_DATAPATH",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for NetworkConfigDatapathProvider {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for NetworkConfigDatapathProvider {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<NetworkConfigDatapathProvider, ()> {
+            Ok(match s {
+                "ADVANCED_DATAPATH" => NetworkConfigDatapathProvider::AdvancedDatapath,
+                "DATAPATH_PROVIDER_UNSPECIFIED" => {
+                    NetworkConfigDatapathProvider::DatapathProviderUnspecified
+                }
+                "LEGACY_DATAPATH" => NetworkConfigDatapathProvider::LegacyDatapath,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for NetworkConfigDatapathProvider {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for NetworkConfigDatapathProvider {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for NetworkConfigDatapathProvider {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ADVANCED_DATAPATH" => NetworkConfigDatapathProvider::AdvancedDatapath,
+                "DATAPATH_PROVIDER_UNSPECIFIED" => {
+                    NetworkConfigDatapathProvider::DatapathProviderUnspecified
+                }
+                "LEGACY_DATAPATH" => NetworkConfigDatapathProvider::LegacyDatapath,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for NetworkConfigDatapathProvider {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NetworkConfigDatapathProvider {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3201,6 +4574,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct NetworkTags {
+        #[doc = "List of network tags."]
+        #[serde(
+            rename = "tags",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub tags: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for NetworkTags {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NetworkTags {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct NodeConfig {
         #[doc = "A list of hardware accelerators to be attached to each node. See https://cloud.google.com/compute/docs/gpus for more information about support for GPUs."]
         #[serde(
@@ -3209,6 +4613,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub accelerators: ::std::option::Option<Vec<crate::schemas::AcceleratorConfig>>,
+        #[doc = "Advanced features for the Compute Engine VM."]
+        #[serde(
+            rename = "advancedMachineFeatures",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub advanced_machine_features:
+            ::std::option::Option<crate::schemas::AdvancedMachineFeatures>,
         #[doc = "The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool. This should be of the form projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME]. For more information about protecting resources with Cloud KMS Keys please see: https://cloud.google.com/compute/docs/disks/customer-managed-encryption"]
         #[serde(
             rename = "bootDiskKmsKey",
@@ -3230,6 +4642,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disk_type: ::std::option::Option<String>,
+        #[doc = "Google Container File System (image streaming) configs."]
+        #[serde(
+            rename = "gcfsConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcfs_config: ::std::option::Option<crate::schemas::GcfsConfig>,
+        #[doc = "Enable or disable gvnic in the node pool."]
+        #[serde(
+            rename = "gvnic",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gvnic: ::std::option::Option<crate::schemas::VirtualNIC>,
         #[doc = "The image type to use for this node. Note that for a given image type, the latest version of it will be used."]
         #[serde(
             rename = "imageType",
@@ -3272,7 +4698,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub machine_type: ::std::option::Option<String>,
-        #[doc = "The metadata key/value pairs assigned to instances in the cluster. Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes in length. These are reflected as part of a URL in the metadata server. Additionally, to avoid ambiguity, keys must not conflict with any other metadata keys for the project or be one of the reserved keys: - \"cluster-location\" - \"cluster-name\" - \"cluster-uid\" - \"configure-sh\" - \"containerd-configure-sh\" - \"enable-os-login\" - \"gci-ensure-gke-docker\" - \"gci-metrics-enabled\" - \"gci-update-strategy\" - \"instance-template\" - \"kube-env\" - \"startup-script\" - \"user-data\" - \"disable-address-manager\" - \"windows-startup-script-ps1\" - \"common-psm1\" - \"k8s-node-setup-psm1\" - \"install-ssh-psm1\" - \"user-profile-psm1\" The following keys are reserved for Windows nodes: - \"serial-port-logging-enable\" Values are free-form strings, and only have meaning as interpreted by the image running in the instance. The only restriction placed on them is that each value's size must be less than or equal to 32 KB. The total size of all keys and values must be less than 512 KB."]
+        #[doc = "The metadata key/value pairs assigned to instances in the cluster. Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes in length. These are reflected as part of a URL in the metadata server. Additionally, to avoid ambiguity, keys must not conflict with any other metadata keys for the project or be one of the reserved keys: - \"cluster-location\" - \"cluster-name\" - \"cluster-uid\" - \"configure-sh\" - \"containerd-configure-sh\" - \"enable-os-login\" - \"gci-ensure-gke-docker\" - \"gci-metrics-enabled\" - \"gci-update-strategy\" - \"instance-template\" - \"kube-env\" - \"startup-script\" - \"user-data\" - \"disable-address-manager\" - \"windows-startup-script-ps1\" - \"common-psm1\" - \"k8s-node-setup-psm1\" - \"install-ssh-psm1\" - \"user-profile-psm1\" Values are free-form strings, and only have meaning as interpreted by the image running in the instance. The only restriction placed on them is that each value's size must be less than or equal to 32 KB. The total size of all keys and values must be less than 512 KB."]
         #[serde(
             rename = "metadata",
             default,
@@ -3335,6 +4761,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub shielded_instance_config: ::std::option::Option<crate::schemas::ShieldedInstanceConfig>,
+        #[doc = "Spot flag for enabling Spot VM, which is a rebrand of the existing preemptible flag."]
+        #[serde(
+            rename = "spot",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub spot: ::std::option::Option<bool>,
         #[doc = "The list of instance tags applied to all nodes. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during cluster or node pool creation. Each tag within the list must comply with RFC1035."]
         #[serde(
             rename = "tags",
@@ -3379,6 +4812,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct NodeConfigDefaults {
+        #[doc = "GCFS (Google Container File System, a.k.a Riptide) options."]
+        #[serde(
+            rename = "gcfsConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcfs_config: ::std::option::Option<crate::schemas::GcfsConfig>,
+    }
+    impl ::google_field_selector::FieldSelector for NodeConfigDefaults {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NodeConfigDefaults {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct NodeKubeletConfig {
         #[doc = "Enable CPU CFS quota enforcement for containers that specify CPU limits. This option is enabled by default which makes kubelet use CFS quota (https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt) to enforce container CPU limits. Otherwise, CPU limits will not be enforced at all. Disable this option to mitigate CPU throttling problems while still having your pods to be in Guaranteed QoS class by specifying the CPU limits. The default value is 'true' if unspecified."]
         #[serde(
@@ -3394,13 +4858,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cpu_cfs_quota_period: ::std::option::Option<String>,
-        #[doc = "Control the CPU management policy on the node. See https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/ The following values are allowed. - \"none\": the default, which represents the existing scheduling behavior. - \"static\": allows pods with certain resource characteristics to be granted increased CPU affinity and exclusivity on the node. The default value is 'none' if unspecified."]
+        #[doc = "Control the CPU management policy on the node. See https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/ The following values are allowed. * \"none\": the default, which represents the existing scheduling behavior. * \"static\": allows pods with certain resource characteristics to be granted increased CPU affinity and exclusivity on the node. The default value is 'none' if unspecified."]
         #[serde(
             rename = "cpuManagerPolicy",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cpu_manager_policy: ::std::option::Option<String>,
+        #[doc = "Set the Pod PID limits. See https://kubernetes.io/docs/concepts/policy/pid-limiting/#pod-pid-limits Controls the maximum number of processes allowed to run in a pod. The value must be greater than or equal to 1024 and less than 4194304."]
+        #[serde(
+            rename = "podPidsLimit",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub pod_pids_limit: ::std::option::Option<i64>,
     }
     impl ::google_field_selector::FieldSelector for NodeKubeletConfig {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -3408,6 +4880,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for NodeKubeletConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct NodeLabels {
+        #[doc = "Map of node label keys and node label values."]
+        #[serde(
+            rename = "labels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+    }
+    impl ::google_field_selector::FieldSelector for NodeLabels {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NodeLabels {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3453,6 +4956,51 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for NodeManagement {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct NodeNetworkConfig {
+        #[doc = "Input only. Whether to create a new range for pod IPs in this node pool. Defaults are provided for `pod_range` and `pod_ipv4_cidr_block` if they are not specified. If neither `create_pod_range` or `pod_range` are specified, the cluster-level default (`ip_allocation_policy.cluster_ipv4_cidr_block`) is used. Only applicable if `ip_allocation_policy.use_ip_aliases` is true. This field cannot be changed after the node pool has been created."]
+        #[serde(
+            rename = "createPodRange",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_pod_range: ::std::option::Option<bool>,
+        #[doc = "The IP address range for pod IPs in this node pool. Only applicable if `create_pod_range` is true. Set to blank to have a range chosen with the default size. Set to /netmask (e.g. `/14`) to have a range chosen with a specific netmask. Set to a [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `10.96.0.0/14`) to pick a specific range to use. Only applicable if `ip_allocation_policy.use_ip_aliases` is true. This field cannot be changed after the node pool has been created."]
+        #[serde(
+            rename = "podIpv4CidrBlock",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pod_ipv_4_cidr_block: ::std::option::Option<String>,
+        #[doc = "The ID of the secondary range for pod IPs. If `create_pod_range` is true, this ID is used for the new range. If `create_pod_range` is false, uses an existing secondary range with this ID. Only applicable if `ip_allocation_policy.use_ip_aliases` is true. This field cannot be changed after the node pool has been created."]
+        #[serde(
+            rename = "podRange",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pod_range: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for NodeNetworkConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NodeNetworkConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3533,6 +5081,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "Networking configuration for this NodePool. If specified, it overrides the cluster-level defaults."]
+        #[serde(
+            rename = "networkConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub network_config: ::std::option::Option<crate::schemas::NodeNetworkConfig>,
         #[doc = "[Output only] The pod CIDR block size per node in this node pool."]
         #[serde(
             rename = "podIpv4CidrSize",
@@ -3694,6 +5249,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct NodePoolAutoConfig {
+        #[doc = "The list of instance tags applied to all nodes. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during cluster creation. Each tag within the list must comply with RFC1035."]
+        #[serde(
+            rename = "networkTags",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub network_tags: ::std::option::Option<crate::schemas::NetworkTags>,
+    }
+    impl ::google_field_selector::FieldSelector for NodePoolAutoConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NodePoolAutoConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct NodePoolAutoscaling {
         #[doc = "Can this node pool be deleted automatically."]
         #[serde(
@@ -3709,14 +5295,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enabled: ::std::option::Option<bool>,
-        #[doc = "Maximum number of nodes in the NodePool. Must be >= min_node_count. There has to enough quota to scale up the cluster."]
+        #[doc = "Maximum number of nodes for one location in the NodePool. Must be >= min_node_count. There has to be enough quota to scale up the cluster."]
         #[serde(
             rename = "maxNodeCount",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_node_count: ::std::option::Option<i32>,
-        #[doc = "Minimum number of nodes in the NodePool. Must be >= 1 and <= max_node_count."]
+        #[doc = "Minimum number of nodes for one location in the NodePool. Must be >= 1 and <= max_node_count."]
         #[serde(
             rename = "minNodeCount",
             default,
@@ -3730,6 +5316,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for NodePoolAutoscaling {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct NodePoolDefaults {
+        #[doc = "Subset of NodeConfig message that has defaults."]
+        #[serde(
+            rename = "nodeConfigDefaults",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub node_config_defaults: ::std::option::Option<crate::schemas::NodeConfigDefaults>,
+    }
+    impl ::google_field_selector::FieldSelector for NodePoolDefaults {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NodePoolDefaults {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3872,6 +5489,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct NodeTaints {
+        #[doc = "List of node taints."]
+        #[serde(
+            rename = "taints",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub taints: ::std::option::Option<Vec<crate::schemas::NodeTaint>>,
+    }
+    impl ::google_field_selector::FieldSelector for NodeTaints {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NodeTaints {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct NotificationConfig {
         #[doc = "Notification config for Pub/Sub."]
         #[serde(
@@ -3891,11 +5539,9 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    #[derive(
-        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
-    )]
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Operation {
-        #[doc = "Which conditions caused the current cluster state."]
+        #[doc = "Which conditions caused the current cluster state. Deprecated. Use field error instead."]
         #[serde(
             rename = "clusterConditions",
             default,
@@ -3916,6 +5562,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_time: ::std::option::Option<String>,
+        #[doc = "The error result of the operation in case of failure."]
+        #[serde(
+            rename = "error",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub error: ::std::option::Option<crate::schemas::Status>,
         #[doc = "[Output only] The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which the cluster resides."]
         #[serde(
             rename = "location",
@@ -3930,7 +5583,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Which conditions caused the current node pool state."]
+        #[doc = "Which conditions caused the current node pool state. Deprecated. Use field error instead."]
         #[serde(
             rename = "nodepoolConditions",
             default,
@@ -3972,7 +5625,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status: ::std::option::Option<crate::schemas::OperationStatus>,
-        #[doc = "Output only. If an error has occurred, a textual description of the error."]
+        #[doc = "Output only. If an error has occurred, a textual description of the error. Deprecated. Use the field error instead."]
         #[serde(
             rename = "statusMessage",
             default,
@@ -4490,6 +6143,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enabled: ::std::option::Option<bool>,
+        #[doc = "Allows filtering to one or more specific event types. If no filter is specified, or if a filter is specified with no event types, all event types will be sent"]
+        #[serde(
+            rename = "filter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filter: ::std::option::Option<crate::schemas::Filter>,
         #[doc = "The desired Pub/Sub topic to which notifications will be sent by GKE. Format is `projects/{project}/topics/{topic}`."]
         #[serde(
             rename = "topic",
@@ -5185,6 +6845,100 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct SecurityBulletinEvent {
+        #[doc = "The GKE minor versions affected by this vulnerability."]
+        #[serde(
+            rename = "affectedSupportedMinors",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub affected_supported_minors: ::std::option::Option<Vec<String>>,
+        #[doc = "A brief description of the bulletin. See the bulletin pointed to by the bulletin_uri field for an expanded description."]
+        #[serde(
+            rename = "briefDescription",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub brief_description: ::std::option::Option<String>,
+        #[doc = "The ID of the bulletin corresponding to the vulnerability."]
+        #[serde(
+            rename = "bulletinId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bulletin_id: ::std::option::Option<String>,
+        #[doc = "The URI link to the bulletin on the website for more information."]
+        #[serde(
+            rename = "bulletinUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bulletin_uri: ::std::option::Option<String>,
+        #[doc = "The CVEs associated with this bulletin."]
+        #[serde(
+            rename = "cveIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cve_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "If this field is specified, it means there are manual steps that the user must take to make their clusters safe."]
+        #[serde(
+            rename = "manualStepsRequired",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub manual_steps_required: ::std::option::Option<bool>,
+        #[doc = "The GKE versions where this vulnerability is patched."]
+        #[serde(
+            rename = "patchedVersions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub patched_versions: ::std::option::Option<Vec<String>>,
+        #[doc = "The resource type (node/control plane) that has the vulnerability. Multiple notifications (1 notification per resource type) will be sent for a vulnerability that affects > 1 resource type."]
+        #[serde(
+            rename = "resourceTypeAffected",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resource_type_affected: ::std::option::Option<String>,
+        #[doc = "The severity of this bulletin as it relates to GKE."]
+        #[serde(
+            rename = "severity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub severity: ::std::option::Option<String>,
+        #[doc = "This represents a version selected from the patched_versions field that the cluster receiving this notification should most likely want to upgrade to based on its current version. Note that if this notification is being received by a given cluster, it means that this version is currently available as an upgrade target in that cluster's location."]
+        #[serde(
+            rename = "suggestedUpgradeTarget",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub suggested_upgrade_target: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SecurityBulletinEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SecurityBulletinEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ServerConfig {
         #[doc = "List of release channel configurations."]
         #[serde(
@@ -5235,6 +6989,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ServerConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ServiceExternalIPsConfig {
+        #[doc = "Whether Services with ExternalIPs field are allowed or not."]
+        #[serde(
+            rename = "enabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enabled: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for ServiceExternalIPsConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ServiceExternalIPsConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5325,7 +7110,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub label_fingerprint: ::std::option::Option<String>,
-        #[doc = "The name (project, location, cluster id) of the cluster to set labels. Specified in the format `projects/*/locations/*/clusters/*`."]
+        #[doc = "The name (project, location, cluster name) of the cluster to set labels. Specified in the format `projects/*/locations/*/clusters/*`."]
         #[serde(
             rename = "name",
             default,
@@ -5391,7 +7176,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enabled: ::std::option::Option<bool>,
-        #[doc = "The name (project, location, cluster id) of the cluster to set legacy abac. Specified in the format `projects/*/locations/*/clusters/*`."]
+        #[doc = "The name (project, location, cluster name) of the cluster to set legacy abac. Specified in the format `projects/*/locations/*/clusters/*`."]
         #[serde(
             rename = "name",
             default,
@@ -5568,7 +7353,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub maintenance_policy: ::std::option::Option<crate::schemas::MaintenancePolicy>,
-        #[doc = "The name (project, location, cluster id) of the cluster to set maintenance policy. Specified in the format `projects/*/locations/*/clusters/*`."]
+        #[doc = "The name (project, location, cluster name) of the cluster to set maintenance policy. Specified in the format `projects/*/locations/*/clusters/*`."]
         #[serde(
             rename = "name",
             default,
@@ -5826,7 +7611,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cluster_id: ::std::option::Option<String>,
-        #[doc = "The name (project, location, cluster id) of the cluster to set networking policy. Specified in the format `projects/*/locations/*/clusters/*`."]
+        #[doc = "The name (project, location, cluster name) of the cluster to set networking policy. Specified in the format `projects/*/locations/*/clusters/*`."]
         #[serde(
             rename = "name",
             default,
@@ -6152,7 +7937,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cluster_id: ::std::option::Option<String>,
-        #[doc = "The name (project, location, cluster id) of the cluster to start IP rotation. Specified in the format `projects/*/locations/*/clusters/*`."]
+        #[doc = "The name (project, location, cluster name) of the cluster to start IP rotation. Specified in the format `projects/*/locations/*/clusters/*`."]
         #[serde(
             rename = "name",
             default,
@@ -6191,6 +7976,41 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct Status {
+        #[doc = "The status code, which should be an enum value of google.rpc.Code."]
+        #[serde(
+            rename = "code",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub code: ::std::option::Option<i32>,
+        #[doc = "A list of messages that carry the error details. There is a common set of message types for APIs to use."]
+        #[serde(
+            rename = "details",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub details:
+            ::std::option::Option<Vec<::std::collections::BTreeMap<String, ::serde_json::Value>>>,
+        #[doc = "A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client."]
+        #[serde(
+            rename = "message",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub message: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Status {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Status {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -6204,7 +8024,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct StatusCondition {
-        #[doc = "Machine-friendly representation of the condition"]
+        #[doc = "Canonical code of the condition."]
+        #[serde(
+            rename = "canonicalCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub canonical_code: ::std::option::Option<crate::schemas::StatusConditionCanonicalCode>,
+        #[doc = "Machine-friendly representation of the condition Deprecated. Use canonical_code instead."]
         #[serde(
             rename = "code",
             default,
@@ -6230,8 +8057,156 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum StatusConditionCanonicalCode {
+        #[doc = "The operation was aborted, typically due to a concurrency issue such as a sequencer check failure or transaction abort. See the guidelines above for deciding between `FAILED_PRECONDITION`, `ABORTED`, and `UNAVAILABLE`. HTTP Mapping: 409 Conflict"]
+        Aborted,
+        #[doc = "The entity that a client attempted to create (e.g., file or directory) already exists. HTTP Mapping: 409 Conflict"]
+        AlreadyExists,
+        #[doc = "The operation was cancelled, typically by the caller. HTTP Mapping: 499 Client Closed Request"]
+        Cancelled,
+        #[doc = "Unrecoverable data loss or corruption. HTTP Mapping: 500 Internal Server Error"]
+        DataLoss,
+        #[doc = "The deadline expired before the operation could complete. For operations that change the state of the system, this error may be returned even if the operation has completed successfully. For example, a successful response from a server could have been delayed long enough for the deadline to expire. HTTP Mapping: 504 Gateway Timeout"]
+        DeadlineExceeded,
+        #[doc = "The operation was rejected because the system is not in a state required for the operation's execution. For example, the directory to be deleted is non-empty, an rmdir operation is applied to a non-directory, etc. Service implementors can use the following guidelines to decide between `FAILED_PRECONDITION`, `ABORTED`, and `UNAVAILABLE`: (a) Use `UNAVAILABLE` if the client can retry just the failing call. (b) Use `ABORTED` if the client should retry at a higher level. For example, when a client-specified test-and-set fails, indicating the client should restart a read-modify-write sequence. (c) Use `FAILED_PRECONDITION` if the client should not retry until the system state has been explicitly fixed. For example, if an \"rmdir\" fails because the directory is non-empty, `FAILED_PRECONDITION` should be returned since the client should not retry unless the files are deleted from the directory. HTTP Mapping: 400 Bad Request"]
+        FailedPrecondition,
+        #[doc = "Internal errors. This means that some invariants expected by the underlying system have been broken. This error code is reserved for serious errors. HTTP Mapping: 500 Internal Server Error"]
+        Internal,
+        #[doc = "The client specified an invalid argument. Note that this differs from `FAILED_PRECONDITION`. `INVALID_ARGUMENT` indicates arguments that are problematic regardless of the state of the system (e.g., a malformed file name). HTTP Mapping: 400 Bad Request"]
+        InvalidArgument,
+        #[doc = "Some requested entity (e.g., file or directory) was not found. Note to server developers: if a request is denied for an entire class of users, such as gradual feature rollout or undocumented allowlist, `NOT_FOUND` may be used. If a request is denied for some users within a class of users, such as user-based access control, `PERMISSION_DENIED` must be used. HTTP Mapping: 404 Not Found"]
+        NotFound,
+        #[doc = "Not an error; returned on success HTTP Mapping: 200 OK"]
+        Ok,
+        #[doc = "The operation was attempted past the valid range. E.g., seeking or reading past end-of-file. Unlike `INVALID_ARGUMENT`, this error indicates a problem that may be fixed if the system state changes. For example, a 32-bit file system will generate `INVALID_ARGUMENT` if asked to read at an offset that is not in the range [0,2^32-1], but it will generate `OUT_OF_RANGE` if asked to read from an offset past the current file size. There is a fair bit of overlap between `FAILED_PRECONDITION` and `OUT_OF_RANGE`. We recommend using `OUT_OF_RANGE` (the more specific error) when it applies so that callers who are iterating through a space can easily look for an `OUT_OF_RANGE` error to detect when they are done. HTTP Mapping: 400 Bad Request"]
+        OutOfRange,
+        #[doc = "The caller does not have permission to execute the specified operation. `PERMISSION_DENIED` must not be used for rejections caused by exhausting some resource (use `RESOURCE_EXHAUSTED` instead for those errors). `PERMISSION_DENIED` must not be used if the caller can not be identified (use `UNAUTHENTICATED` instead for those errors). This error code does not imply the request is valid or the requested entity exists or satisfies other pre-conditions. HTTP Mapping: 403 Forbidden"]
+        PermissionDenied,
+        #[doc = "Some resource has been exhausted, perhaps a per-user quota, or perhaps the entire file system is out of space. HTTP Mapping: 429 Too Many Requests"]
+        ResourceExhausted,
+        #[doc = "The request does not have valid authentication credentials for the operation. HTTP Mapping: 401 Unauthorized"]
+        Unauthenticated,
+        #[doc = "The service is currently unavailable. This is most likely a transient condition, which can be corrected by retrying with a backoff. Note that it is not always safe to retry non-idempotent operations. See the guidelines above for deciding between `FAILED_PRECONDITION`, `ABORTED`, and `UNAVAILABLE`. HTTP Mapping: 503 Service Unavailable"]
+        Unavailable,
+        #[doc = "The operation is not implemented or is not supported/enabled in this service. HTTP Mapping: 501 Not Implemented"]
+        Unimplemented,
+        #[doc = "Unknown error. For example, this error may be returned when a `Status` value received from another address space belongs to an error space that is not known in this address space. Also errors raised by APIs that do not return enough error information may be converted to this error. HTTP Mapping: 500 Internal Server Error"]
+        Unknown,
+    }
+    impl StatusConditionCanonicalCode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                StatusConditionCanonicalCode::Aborted => "ABORTED",
+                StatusConditionCanonicalCode::AlreadyExists => "ALREADY_EXISTS",
+                StatusConditionCanonicalCode::Cancelled => "CANCELLED",
+                StatusConditionCanonicalCode::DataLoss => "DATA_LOSS",
+                StatusConditionCanonicalCode::DeadlineExceeded => "DEADLINE_EXCEEDED",
+                StatusConditionCanonicalCode::FailedPrecondition => "FAILED_PRECONDITION",
+                StatusConditionCanonicalCode::Internal => "INTERNAL",
+                StatusConditionCanonicalCode::InvalidArgument => "INVALID_ARGUMENT",
+                StatusConditionCanonicalCode::NotFound => "NOT_FOUND",
+                StatusConditionCanonicalCode::Ok => "OK",
+                StatusConditionCanonicalCode::OutOfRange => "OUT_OF_RANGE",
+                StatusConditionCanonicalCode::PermissionDenied => "PERMISSION_DENIED",
+                StatusConditionCanonicalCode::ResourceExhausted => "RESOURCE_EXHAUSTED",
+                StatusConditionCanonicalCode::Unauthenticated => "UNAUTHENTICATED",
+                StatusConditionCanonicalCode::Unavailable => "UNAVAILABLE",
+                StatusConditionCanonicalCode::Unimplemented => "UNIMPLEMENTED",
+                StatusConditionCanonicalCode::Unknown => "UNKNOWN",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for StatusConditionCanonicalCode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for StatusConditionCanonicalCode {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<StatusConditionCanonicalCode, ()> {
+            Ok(match s {
+                "ABORTED" => StatusConditionCanonicalCode::Aborted,
+                "ALREADY_EXISTS" => StatusConditionCanonicalCode::AlreadyExists,
+                "CANCELLED" => StatusConditionCanonicalCode::Cancelled,
+                "DATA_LOSS" => StatusConditionCanonicalCode::DataLoss,
+                "DEADLINE_EXCEEDED" => StatusConditionCanonicalCode::DeadlineExceeded,
+                "FAILED_PRECONDITION" => StatusConditionCanonicalCode::FailedPrecondition,
+                "INTERNAL" => StatusConditionCanonicalCode::Internal,
+                "INVALID_ARGUMENT" => StatusConditionCanonicalCode::InvalidArgument,
+                "NOT_FOUND" => StatusConditionCanonicalCode::NotFound,
+                "OK" => StatusConditionCanonicalCode::Ok,
+                "OUT_OF_RANGE" => StatusConditionCanonicalCode::OutOfRange,
+                "PERMISSION_DENIED" => StatusConditionCanonicalCode::PermissionDenied,
+                "RESOURCE_EXHAUSTED" => StatusConditionCanonicalCode::ResourceExhausted,
+                "UNAUTHENTICATED" => StatusConditionCanonicalCode::Unauthenticated,
+                "UNAVAILABLE" => StatusConditionCanonicalCode::Unavailable,
+                "UNIMPLEMENTED" => StatusConditionCanonicalCode::Unimplemented,
+                "UNKNOWN" => StatusConditionCanonicalCode::Unknown,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for StatusConditionCanonicalCode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for StatusConditionCanonicalCode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for StatusConditionCanonicalCode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ABORTED" => StatusConditionCanonicalCode::Aborted,
+                "ALREADY_EXISTS" => StatusConditionCanonicalCode::AlreadyExists,
+                "CANCELLED" => StatusConditionCanonicalCode::Cancelled,
+                "DATA_LOSS" => StatusConditionCanonicalCode::DataLoss,
+                "DEADLINE_EXCEEDED" => StatusConditionCanonicalCode::DeadlineExceeded,
+                "FAILED_PRECONDITION" => StatusConditionCanonicalCode::FailedPrecondition,
+                "INTERNAL" => StatusConditionCanonicalCode::Internal,
+                "INVALID_ARGUMENT" => StatusConditionCanonicalCode::InvalidArgument,
+                "NOT_FOUND" => StatusConditionCanonicalCode::NotFound,
+                "OK" => StatusConditionCanonicalCode::Ok,
+                "OUT_OF_RANGE" => StatusConditionCanonicalCode::OutOfRange,
+                "PERMISSION_DENIED" => StatusConditionCanonicalCode::PermissionDenied,
+                "RESOURCE_EXHAUSTED" => StatusConditionCanonicalCode::ResourceExhausted,
+                "UNAUTHENTICATED" => StatusConditionCanonicalCode::Unauthenticated,
+                "UNAVAILABLE" => StatusConditionCanonicalCode::Unavailable,
+                "UNIMPLEMENTED" => StatusConditionCanonicalCode::Unimplemented,
+                "UNKNOWN" => StatusConditionCanonicalCode::Unknown,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for StatusConditionCanonicalCode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for StatusConditionCanonicalCode {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum StatusConditionCode {
-        #[doc = "Unable to perform an encrypt operation against the CloudKMS key used for etcd level encryption. More codes TBA"]
+        #[doc = "Cluster CA is expiring soon."]
+        CaExpiring,
+        #[doc = "Unable to perform an encrypt operation against the CloudKMS key used for etcd level encryption."]
         CloudKmsKeyError,
         #[doc = "Google Compute Engine quota was exceeded."]
         GceQuotaExceeded,
@@ -6247,6 +8222,7 @@ pub mod schemas {
     impl StatusConditionCode {
         pub fn as_str(self) -> &'static str {
             match self {
+                StatusConditionCode::CaExpiring => "CA_EXPIRING",
                 StatusConditionCode::CloudKmsKeyError => "CLOUD_KMS_KEY_ERROR",
                 StatusConditionCode::GceQuotaExceeded => "GCE_QUOTA_EXCEEDED",
                 StatusConditionCode::GceStockout => "GCE_STOCKOUT",
@@ -6265,6 +8241,7 @@ pub mod schemas {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<StatusConditionCode, ()> {
             Ok(match s {
+                "CA_EXPIRING" => StatusConditionCode::CaExpiring,
                 "CLOUD_KMS_KEY_ERROR" => StatusConditionCode::CloudKmsKeyError,
                 "GCE_QUOTA_EXCEEDED" => StatusConditionCode::GceQuotaExceeded,
                 "GCE_STOCKOUT" => StatusConditionCode::GceStockout,
@@ -6295,6 +8272,7 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "CA_EXPIRING" => StatusConditionCode::CaExpiring,
                 "CLOUD_KMS_KEY_ERROR" => StatusConditionCode::CloudKmsKeyError,
                 "GCE_QUOTA_EXCEEDED" => StatusConditionCode::GceQuotaExceeded,
                 "GCE_STOCKOUT" => StatusConditionCode::GceStockout,
@@ -6340,6 +8318,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_time: ::std::option::Option<String>,
+        #[doc = "MaintenanceExclusionOptions provides maintenance exclusion related options."]
+        #[serde(
+            rename = "maintenanceExclusionOptions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub maintenance_exclusion_options:
+            ::std::option::Option<crate::schemas::MaintenanceExclusionOptions>,
         #[doc = "The time that the window first starts."]
         #[serde(
             rename = "startTime",
@@ -6496,6 +8482,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cluster_id: ::std::option::Option<String>,
+        #[doc = "GCFS config."]
+        #[serde(
+            rename = "gcfsConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcfs_config: ::std::option::Option<crate::schemas::GcfsConfig>,
+        #[doc = "Enable or disable gvnic on the node pool."]
+        #[serde(
+            rename = "gvnic",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gvnic: ::std::option::Option<crate::schemas::VirtualNIC>,
         #[doc = "Required. The desired image type for the node pool."]
         #[serde(
             rename = "imageType",
@@ -6510,6 +8510,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kubelet_config: ::std::option::Option<crate::schemas::NodeKubeletConfig>,
+        #[doc = "The desired node labels to be applied to all nodes in the node pool. If this field is not present, the labels will not be changed. Otherwise, the existing node labels will be *replaced* with the provided labels."]
+        #[serde(
+            rename = "labels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub labels: ::std::option::Option<crate::schemas::NodeLabels>,
         #[doc = "Parameters that can be configured on Linux nodes."]
         #[serde(
             rename = "linuxNodeConfig",
@@ -6552,6 +8559,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_id: ::std::option::Option<String>,
+        #[doc = "The desired network tags to be applied to all nodes in the node pool. If this field is not present, the tags will not be changed. Otherwise, the existing network tags will be *replaced* with the provided tags."]
+        #[serde(
+            rename = "tags",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub tags: ::std::option::Option<crate::schemas::NetworkTags>,
+        #[doc = "The desired node taints to be applied to all nodes in the node pool. If this field is not present, the taints will not be changed. Otherwise, the existing node taints will be *replaced* with the provided taints."]
+        #[serde(
+            rename = "taints",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub taints: ::std::option::Option<crate::schemas::NodeTaints>,
         #[doc = "Upgrade settings control disruption and speed of the upgrade."]
         #[serde(
             rename = "upgradeSettings",
@@ -6580,6 +8601,140 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for UpdateNodePoolRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UpgradeAvailableEvent {
+        #[doc = "The release channel of the version. If empty, it means a non-channel release."]
+        #[serde(
+            rename = "releaseChannel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub release_channel: ::std::option::Option<crate::schemas::ReleaseChannel>,
+        #[doc = "Optional relative path to the resource. For example, the relative path of the node pool."]
+        #[serde(
+            rename = "resource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resource: ::std::option::Option<String>,
+        #[doc = "The resource type of the release version."]
+        #[serde(
+            rename = "resourceType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resource_type: ::std::option::Option<crate::schemas::UpgradeAvailableEventResourceType>,
+        #[doc = "The release version available for upgrade."]
+        #[serde(
+            rename = "version",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for UpgradeAvailableEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UpgradeAvailableEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum UpgradeAvailableEventResourceType {
+        #[doc = "Master / control plane"]
+        Master,
+        #[doc = "Node pool"]
+        NodePool,
+        #[doc = "Default value. This shouldn't be used."]
+        UpgradeResourceTypeUnspecified,
+    }
+    impl UpgradeAvailableEventResourceType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                UpgradeAvailableEventResourceType::Master => "MASTER",
+                UpgradeAvailableEventResourceType::NodePool => "NODE_POOL",
+                UpgradeAvailableEventResourceType::UpgradeResourceTypeUnspecified => {
+                    "UPGRADE_RESOURCE_TYPE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for UpgradeAvailableEventResourceType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for UpgradeAvailableEventResourceType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<UpgradeAvailableEventResourceType, ()> {
+            Ok(match s {
+                "MASTER" => UpgradeAvailableEventResourceType::Master,
+                "NODE_POOL" => UpgradeAvailableEventResourceType::NodePool,
+                "UPGRADE_RESOURCE_TYPE_UNSPECIFIED" => {
+                    UpgradeAvailableEventResourceType::UpgradeResourceTypeUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for UpgradeAvailableEventResourceType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for UpgradeAvailableEventResourceType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for UpgradeAvailableEventResourceType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "MASTER" => UpgradeAvailableEventResourceType::Master,
+                "NODE_POOL" => UpgradeAvailableEventResourceType::NodePool,
+                "UPGRADE_RESOURCE_TYPE_UNSPECIFIED" => {
+                    UpgradeAvailableEventResourceType::UpgradeResourceTypeUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for UpgradeAvailableEventResourceType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UpgradeAvailableEventResourceType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -7004,6 +9159,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct VirtualNIC {
+        #[doc = "Whether gVNIC features are enabled in the node pool."]
+        #[serde(
+            rename = "enabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enabled: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for VirtualNIC {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for VirtualNIC {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct WorkloadIdentityConfig {
         #[doc = "The workload pool to attach all Kubernetes service accounts to."]
         #[serde(
@@ -7360,8 +9546,8 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Actions that can be performed on the usable_subnetworks resource"]                pub fn usable_subnetworks ( & self ) -> crate :: resources :: projects :: aggregated :: usable_subnetworks :: UsableSubnetworksActions{
-                    crate :: resources :: projects :: aggregated :: usable_subnetworks :: UsableSubnetworksActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                #[doc = "Actions that can be performed on the usable_subnetworks resource"]                pub fn usable_subnetworks (& self) -> crate :: resources :: projects :: aggregated :: usable_subnetworks :: UsableSubnetworksActions{
+                    crate :: resources :: projects :: aggregated :: usable_subnetworks :: UsableSubnetworksActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
             }
             pub mod usable_subnetworks {
@@ -8361,14 +10547,14 @@ pub mod resources {
                         &self,
                     ) -> crate::resources::projects::locations::clusters::node_pools::NodePoolsActions
                     {
-                        crate :: resources :: projects :: locations :: clusters :: node_pools :: NodePoolsActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        crate :: resources :: projects :: locations :: clusters :: node_pools :: NodePoolsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                     #[doc = "Actions that can be performed on the well_known resource"]
                     pub fn well_known(
                         &self,
                     ) -> crate::resources::projects::locations::clusters::well_known::WellKnownActions
                     {
-                        crate :: resources :: projects :: locations :: clusters :: well_known :: WellKnownActions { reqwest : & self . reqwest , auth : self . auth_ref ( ) , }
+                        crate :: resources :: projects :: locations :: clusters :: well_known :: WellKnownActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 #[doc = "Created via [ClustersActions::complete_ip_rotation()](struct.ClustersActions.html#method.complete_ip_rotation)"]
@@ -18801,7 +20987,7 @@ pub mod resources {
                         xgafv: Option<crate::params::Xgafv>,
                     }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "The parent (project, location, cluster id) where the node pools will be listed. Specified in the format `projects/*/locations/*/clusters/*`."]
+                        #[doc = "The parent (project, location, cluster name) where the node pools will be listed. Specified in the format `projects/*/locations/*/clusters/*`."]
                         pub fn parent(mut self, value: impl Into<String>) -> Self {
                             self.parent = Some(value.into());
                             self

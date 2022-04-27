@@ -1,9 +1,142 @@
-#![doc = "# Resources and Methods\n    * [google_service_accounts](resources/google_service_accounts/struct.GoogleServiceAccountsActions.html)\n      * [*get*](resources/google_service_accounts/struct.GetRequestBuilder.html)\n    * [transfer_jobs](resources/transfer_jobs/struct.TransferJobsActions.html)\n      * [*create*](resources/transfer_jobs/struct.CreateRequestBuilder.html), [*get*](resources/transfer_jobs/struct.GetRequestBuilder.html), [*list*](resources/transfer_jobs/struct.ListRequestBuilder.html), [*patch*](resources/transfer_jobs/struct.PatchRequestBuilder.html), [*run*](resources/transfer_jobs/struct.RunRequestBuilder.html)\n    * [transfer_operations](resources/transfer_operations/struct.TransferOperationsActions.html)\n      * [*cancel*](resources/transfer_operations/struct.CancelRequestBuilder.html), [*get*](resources/transfer_operations/struct.GetRequestBuilder.html), [*list*](resources/transfer_operations/struct.ListRequestBuilder.html), [*pause*](resources/transfer_operations/struct.PauseRequestBuilder.html), [*resume*](resources/transfer_operations/struct.ResumeRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n    * [google_service_accounts](resources/google_service_accounts/struct.GoogleServiceAccountsActions.html)\n      * [*get*](resources/google_service_accounts/struct.GetRequestBuilder.html)\n    * [projects](resources/projects/struct.ProjectsActions.html)\n      * [agent_pools](resources/projects/agent_pools/struct.AgentPoolsActions.html)\n        * [*create*](resources/projects/agent_pools/struct.CreateRequestBuilder.html), [*delete*](resources/projects/agent_pools/struct.DeleteRequestBuilder.html), [*get*](resources/projects/agent_pools/struct.GetRequestBuilder.html), [*list*](resources/projects/agent_pools/struct.ListRequestBuilder.html), [*patch*](resources/projects/agent_pools/struct.PatchRequestBuilder.html)\n    * [transfer_jobs](resources/transfer_jobs/struct.TransferJobsActions.html)\n      * [*create*](resources/transfer_jobs/struct.CreateRequestBuilder.html), [*get*](resources/transfer_jobs/struct.GetRequestBuilder.html), [*list*](resources/transfer_jobs/struct.ListRequestBuilder.html), [*patch*](resources/transfer_jobs/struct.PatchRequestBuilder.html), [*run*](resources/transfer_jobs/struct.RunRequestBuilder.html)\n    * [transfer_operations](resources/transfer_operations/struct.TransferOperationsActions.html)\n      * [*cancel*](resources/transfer_operations/struct.CancelRequestBuilder.html), [*get*](resources/transfer_operations/struct.GetRequestBuilder.html), [*list*](resources/transfer_operations/struct.ListRequestBuilder.html), [*pause*](resources/transfer_operations/struct.PauseRequestBuilder.html), [*resume*](resources/transfer_operations/struct.ResumeRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
+    #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AgentPool {
+        #[doc = "Specifies the bandwidth limit details. If this field is unspecified, the default value is set as 'No Limit'."]
+        #[serde(
+            rename = "bandwidthLimit",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bandwidth_limit: ::std::option::Option<crate::schemas::BandwidthLimit>,
+        #[doc = "Specifies the client-specified AgentPool description."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "Required. Specifies a unique string that identifies the agent pool. Format: `projects/{project_id}/agentPools/{agent_pool_id}`"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Output only. Specifies the state of the AgentPool."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::AgentPoolState>,
+    }
+    impl ::google_field_selector::FieldSelector for AgentPool {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AgentPool {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AgentPoolState {
+        #[doc = "Determines that the AgentPool is created for use. At this state, Agents can join the AgentPool and participate in the transfer jobs in that pool."]
+        Created,
+        #[doc = "This is an initialization state. During this stage, the resources such as Pub/Sub topics are allocated for the AgentPool."]
+        Creating,
+        #[doc = "Determines that the AgentPool deletion has been initiated, and all the resources are scheduled to be cleaned up and freed."]
+        Deleting,
+        #[doc = "Default value. This value is unused."]
+        StateUnspecified,
+    }
+    impl AgentPoolState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AgentPoolState::Created => "CREATED",
+                AgentPoolState::Creating => "CREATING",
+                AgentPoolState::Deleting => "DELETING",
+                AgentPoolState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AgentPoolState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AgentPoolState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AgentPoolState, ()> {
+            Ok(match s {
+                "CREATED" => AgentPoolState::Created,
+                "CREATING" => AgentPoolState::Creating,
+                "DELETING" => AgentPoolState::Deleting,
+                "STATE_UNSPECIFIED" => AgentPoolState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AgentPoolState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AgentPoolState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AgentPoolState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CREATED" => AgentPoolState::Created,
+                "CREATING" => AgentPoolState::Creating,
+                "DELETING" => AgentPoolState::Deleting,
+                "STATE_UNSPECIFIED" => AgentPoolState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AgentPoolState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AgentPoolState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -55,7 +188,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AwsS3Data {
-        #[doc = "Required. Input only. AWS access key used to sign the API requests to the AWS S3 bucket. Permissions on the bucket must be granted to the access ID of the AWS access key. For information on our data retention policy for user credentials, see [User credentials](/storage-transfer/docs/data-retention#user-credentials)."]
+        #[doc = "Input only. AWS access key used to sign the API requests to the AWS S3 bucket. Permissions on the bucket must be granted to the access ID of the AWS access key. For information on our data retention policy for user credentials, see [User credentials](/storage-transfer/docs/data-retention#user-credentials)."]
         #[serde(
             rename = "awsAccessKey",
             default,
@@ -76,6 +209,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub path: ::std::option::Option<String>,
+        #[doc = "The Amazon Resource Name (ARN) of the role to support temporary credentials via `AssumeRoleWithWebIdentity`. For more information about ARNs, see [IAM ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns). When a role ARN is provided, Transfer Service fetches temporary credentials for the session using a `AssumeRoleWithWebIdentity` call for the provided role using the GoogleServiceAccount for this project."]
+        #[serde(
+            rename = "roleArn",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub role_arn: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for AwsS3Data {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -152,7 +292,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AzureCredentials {
-        #[doc = "Required. Azure shared access signature. (see [Grant limited access to Azure Storage resources using shared access signatures (SAS)](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview))."]
+        #[doc = "Required. Azure shared access signature (SAS). For more information about SAS, see [Grant limited access to Azure Storage resources using shared access signatures (SAS)](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview)."]
         #[serde(
             rename = "sasToken",
             default,
@@ -166,6 +306,38 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for AzureCredentials {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BandwidthLimit {
+        #[doc = "Bandwidth rate in megabytes per second, distributed across all the agents in the pool."]
+        #[serde(
+            rename = "limitMbps",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub limit_mbps: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for BandwidthLimit {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BandwidthLimit {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -329,7 +501,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub error_count: ::std::option::Option<i64>,
-        #[doc = "Error samples. At most 5 error log entries will be recorded for a given error code for a single transfer operation."]
+        #[doc = "Error samples. At most 5 error log entries are recorded for a given error code for a single transfer operation."]
         #[serde(
             rename = "errorLogEntries",
             default,
@@ -359,7 +531,7 @@ pub mod schemas {
         DataLoss,
         #[doc = "The deadline expired before the operation could complete. For operations that change the state of the system, this error may be returned even if the operation has completed successfully. For example, a successful response from a server could have been delayed long enough for the deadline to expire. HTTP Mapping: 504 Gateway Timeout"]
         DeadlineExceeded,
-        #[doc = "The operation was rejected because the system is not in a state required for the operation's execution. For example, the directory to be deleted is non-empty, an rmdir operation is applied to a non-directory, etc. Service implementors can use the following guidelines to decide between `FAILED_PRECONDITION`, `ABORTED`, and `UNAVAILABLE`: (a) Use `UNAVAILABLE` if the client can retry just the failing call. (b) Use `ABORTED` if the client should retry at a higher level (e.g., when a client-specified test-and-set fails, indicating the client should restart a read-modify-write sequence). (c) Use `FAILED_PRECONDITION` if the client should not retry until the system state has been explicitly fixed. E.g., if an \"rmdir\" fails because the directory is non-empty, `FAILED_PRECONDITION` should be returned since the client should not retry unless the files are deleted from the directory. HTTP Mapping: 400 Bad Request"]
+        #[doc = "The operation was rejected because the system is not in a state required for the operation's execution. For example, the directory to be deleted is non-empty, an rmdir operation is applied to a non-directory, etc. Service implementors can use the following guidelines to decide between `FAILED_PRECONDITION`, `ABORTED`, and `UNAVAILABLE`: (a) Use `UNAVAILABLE` if the client can retry just the failing call. (b) Use `ABORTED` if the client should retry at a higher level. For example, when a client-specified test-and-set fails, indicating the client should restart a read-modify-write sequence. (c) Use `FAILED_PRECONDITION` if the client should not retry until the system state has been explicitly fixed. For example, if an \"rmdir\" fails because the directory is non-empty, `FAILED_PRECONDITION` should be returned since the client should not retry unless the files are deleted from the directory. HTTP Mapping: 400 Bad Request"]
         FailedPrecondition,
         #[doc = "Internal errors. This means that some invariants expected by the underlying system have been broken. This error code is reserved for serious errors. HTTP Mapping: 500 Internal Server Error"]
         Internal,
@@ -506,14 +678,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GcsData {
-        #[doc = "Required. Cloud Storage bucket name (see [Bucket Name Requirements](https://cloud.google.com/storage/docs/naming#requirements))."]
+        #[doc = "Required. Cloud Storage bucket name. Must meet [Bucket Name Requirements](/storage/docs/naming#requirements)."]
         #[serde(
             rename = "bucketName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bucket_name: ::std::option::Option<String>,
-        #[doc = "Root path to transfer objects. Must be an empty string or full path name that ends with a '/'. This field is treated as an object prefix. As such, it should generally not begin with a '/'. (must meet Object Name Requirements](https://cloud.google.com/storage/docs/naming#objectnames))."]
+        #[doc = "Root path to transfer objects. Must be an empty string or full path name that ends with a '/'. This field is treated as an object prefix. As such, it should generally not begin with a '/'. The root path value must meet [Object Name Requirements](/storage/docs/naming#objectnames)."]
         #[serde(
             rename = "path",
             default,
@@ -551,6 +723,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub account_email: ::std::option::Option<String>,
+        #[doc = "Unique identifier for the service account."]
+        #[serde(
+            rename = "subjectId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub subject_id: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for GoogleServiceAccount {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -589,6 +768,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for HttpData {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ListAgentPoolsResponse {
+        #[doc = "A list of agent pools."]
+        #[serde(
+            rename = "agentPools",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub agent_pools: ::std::option::Option<Vec<crate::schemas::AgentPool>>,
+        #[doc = "The list next page token."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ListAgentPoolsResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ListAgentPoolsResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -670,6 +887,1036 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct LoggingConfig {
+        #[doc = "For transfers with a PosixFilesystem source, this option enables the Cloud Storage transfer logs for this transfer."]
+        #[serde(
+            rename = "enableOnpremGcsTransferLogs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_onprem_gcs_transfer_logs: ::std::option::Option<bool>,
+        #[doc = "States in which `log_actions` are logged. If empty, no logs are generated. Not supported for transfers with PosixFilesystem data sources; use enable_onprem_gcs_transfer_logs instead."]
+        #[serde(
+            rename = "logActionStates",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub log_action_states:
+            ::std::option::Option<Vec<crate::schemas::LoggingConfigLogActionStatesItems>>,
+        #[doc = "Specifies the actions to be logged. If empty, no logs are generated. Not supported for transfers with PosixFilesystem data sources; use enable_onprem_gcs_transfer_logs instead."]
+        #[serde(
+            rename = "logActions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub log_actions: ::std::option::Option<Vec<crate::schemas::LoggingConfigLogActionsItems>>,
+    }
+    impl ::google_field_selector::FieldSelector for LoggingConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LoggingConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum LoggingConfigLogActionStatesItems {
+        #[doc = "`LoggableAction` terminated in an error state. `FAILED` actions are logged as ERROR."]
+        Failed,
+        #[doc = "Default value. This value is unused."]
+        LoggableActionStateUnspecified,
+        #[doc = "`LoggableAction` completed successfully. `SUCCEEDED` actions are logged as INFO."]
+        Succeeded,
+    }
+    impl LoggingConfigLogActionStatesItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                LoggingConfigLogActionStatesItems::Failed => "FAILED",
+                LoggingConfigLogActionStatesItems::LoggableActionStateUnspecified => {
+                    "LOGGABLE_ACTION_STATE_UNSPECIFIED"
+                }
+                LoggingConfigLogActionStatesItems::Succeeded => "SUCCEEDED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for LoggingConfigLogActionStatesItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for LoggingConfigLogActionStatesItems {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<LoggingConfigLogActionStatesItems, ()> {
+            Ok(match s {
+                "FAILED" => LoggingConfigLogActionStatesItems::Failed,
+                "LOGGABLE_ACTION_STATE_UNSPECIFIED" => {
+                    LoggingConfigLogActionStatesItems::LoggableActionStateUnspecified
+                }
+                "SUCCEEDED" => LoggingConfigLogActionStatesItems::Succeeded,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for LoggingConfigLogActionStatesItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for LoggingConfigLogActionStatesItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for LoggingConfigLogActionStatesItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "FAILED" => LoggingConfigLogActionStatesItems::Failed,
+                "LOGGABLE_ACTION_STATE_UNSPECIFIED" => {
+                    LoggingConfigLogActionStatesItems::LoggableActionStateUnspecified
+                }
+                "SUCCEEDED" => LoggingConfigLogActionStatesItems::Succeeded,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for LoggingConfigLogActionStatesItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LoggingConfigLogActionStatesItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum LoggingConfigLogActionsItems {
+        #[doc = "Copying objects to Google Cloud Storage."]
+        Copy,
+        #[doc = "Deleting objects at the source or the destination."]
+        Delete,
+        #[doc = "Listing objects in a bucket."]
+        Find,
+        #[doc = "Default value. This value is unused."]
+        LoggableActionUnspecified,
+    }
+    impl LoggingConfigLogActionsItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                LoggingConfigLogActionsItems::Copy => "COPY",
+                LoggingConfigLogActionsItems::Delete => "DELETE",
+                LoggingConfigLogActionsItems::Find => "FIND",
+                LoggingConfigLogActionsItems::LoggableActionUnspecified => {
+                    "LOGGABLE_ACTION_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for LoggingConfigLogActionsItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for LoggingConfigLogActionsItems {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<LoggingConfigLogActionsItems, ()> {
+            Ok(match s {
+                "COPY" => LoggingConfigLogActionsItems::Copy,
+                "DELETE" => LoggingConfigLogActionsItems::Delete,
+                "FIND" => LoggingConfigLogActionsItems::Find,
+                "LOGGABLE_ACTION_UNSPECIFIED" => {
+                    LoggingConfigLogActionsItems::LoggableActionUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for LoggingConfigLogActionsItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for LoggingConfigLogActionsItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for LoggingConfigLogActionsItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "COPY" => LoggingConfigLogActionsItems::Copy,
+                "DELETE" => LoggingConfigLogActionsItems::Delete,
+                "FIND" => LoggingConfigLogActionsItems::Find,
+                "LOGGABLE_ACTION_UNSPECIFIED" => {
+                    LoggingConfigLogActionsItems::LoggableActionUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for LoggingConfigLogActionsItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LoggingConfigLogActionsItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MetadataOptions {
+        #[doc = "Specifies how each object's ACLs should be preserved for transfers between Google Cloud Storage buckets. If unspecified, the default behavior is the same as ACL_DESTINATION_BUCKET_DEFAULT."]
+        #[serde(
+            rename = "acl",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub acl: ::std::option::Option<crate::schemas::MetadataOptionsAcl>,
+        #[doc = "Specifies how each file's POSIX group ID (GID) attribute should be handled by the transfer. By default, GID is not preserved. Only applicable to transfers involving POSIX file systems, and ignored for other transfers."]
+        #[serde(
+            rename = "gid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gid: ::std::option::Option<crate::schemas::MetadataOptionsGid>,
+        #[doc = "Specifies how each object's Cloud KMS customer-managed encryption key (CMEK) is preserved for transfers between Google Cloud Storage buckets. If unspecified, the default behavior is the same as KMS_KEY_DESTINATION_BUCKET_DEFAULT."]
+        #[serde(
+            rename = "kmsKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kms_key: ::std::option::Option<crate::schemas::MetadataOptionsKmsKey>,
+        #[doc = "Specifies how each file's mode attribute should be handled by the transfer. By default, mode is not preserved. Only applicable to transfers involving POSIX file systems, and ignored for other transfers."]
+        #[serde(
+            rename = "mode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mode: ::std::option::Option<crate::schemas::MetadataOptionsMode>,
+        #[doc = "Specifies the storage class to set on objects being transferred to Google Cloud Storage buckets. If unspecified, the default behavior is the same as STORAGE_CLASS_DESTINATION_BUCKET_DEFAULT."]
+        #[serde(
+            rename = "storageClass",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub storage_class: ::std::option::Option<crate::schemas::MetadataOptionsStorageClass>,
+        #[doc = "Specifies how symlinks should be handled by the transfer. By default, symlinks are not preserved. Only applicable to transfers involving POSIX file systems, and ignored for other transfers."]
+        #[serde(
+            rename = "symlink",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub symlink: ::std::option::Option<crate::schemas::MetadataOptionsSymlink>,
+        #[doc = "Specifies how each object's temporary hold status should be preserved for transfers between Google Cloud Storage buckets. If unspecified, the default behavior is the same as TEMPORARY_HOLD_PRESERVE."]
+        #[serde(
+            rename = "temporaryHold",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub temporary_hold: ::std::option::Option<crate::schemas::MetadataOptionsTemporaryHold>,
+        #[doc = "Specifies how each object's `timeCreated` metadata is preserved for transfers between Google Cloud Storage buckets. If unspecified, the default behavior is the same as TIME_CREATED_SKIP."]
+        #[serde(
+            rename = "timeCreated",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub time_created: ::std::option::Option<crate::schemas::MetadataOptionsTimeCreated>,
+        #[doc = "Specifies how each file's POSIX user ID (UID) attribute should be handled by the transfer. By default, UID is not preserved. Only applicable to transfers involving POSIX file systems, and ignored for other transfers."]
+        #[serde(
+            rename = "uid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uid: ::std::option::Option<crate::schemas::MetadataOptionsUid>,
+    }
+    impl ::google_field_selector::FieldSelector for MetadataOptions {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MetadataOptions {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MetadataOptionsAcl {
+        #[doc = "Use the destination bucket's default object ACLS, if applicable."]
+        AclDestinationBucketDefault,
+        #[doc = "Preserve the object's original ACLs. This requires the service account to have `storage.objects.getIamPolicy` permission for the source object. [Uniform bucket-level access](https://cloud.google.com/storage/docs/uniform-bucket-level-access) must not be enabled on either the source or destination buckets."]
+        AclPreserve,
+        #[doc = "ACL behavior is unspecified."]
+        AclUnspecified,
+    }
+    impl MetadataOptionsAcl {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MetadataOptionsAcl::AclDestinationBucketDefault => "ACL_DESTINATION_BUCKET_DEFAULT",
+                MetadataOptionsAcl::AclPreserve => "ACL_PRESERVE",
+                MetadataOptionsAcl::AclUnspecified => "ACL_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MetadataOptionsAcl {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MetadataOptionsAcl {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MetadataOptionsAcl, ()> {
+            Ok(match s {
+                "ACL_DESTINATION_BUCKET_DEFAULT" => MetadataOptionsAcl::AclDestinationBucketDefault,
+                "ACL_PRESERVE" => MetadataOptionsAcl::AclPreserve,
+                "ACL_UNSPECIFIED" => MetadataOptionsAcl::AclUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MetadataOptionsAcl {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MetadataOptionsAcl {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MetadataOptionsAcl {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACL_DESTINATION_BUCKET_DEFAULT" => MetadataOptionsAcl::AclDestinationBucketDefault,
+                "ACL_PRESERVE" => MetadataOptionsAcl::AclPreserve,
+                "ACL_UNSPECIFIED" => MetadataOptionsAcl::AclUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MetadataOptionsAcl {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MetadataOptionsAcl {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MetadataOptionsGid {
+        #[doc = "Preserve GID during a transfer job."]
+        GidNumber,
+        #[doc = "Do not preserve GID during a transfer job."]
+        GidSkip,
+        #[doc = "GID behavior is unspecified."]
+        GidUnspecified,
+    }
+    impl MetadataOptionsGid {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MetadataOptionsGid::GidNumber => "GID_NUMBER",
+                MetadataOptionsGid::GidSkip => "GID_SKIP",
+                MetadataOptionsGid::GidUnspecified => "GID_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MetadataOptionsGid {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MetadataOptionsGid {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MetadataOptionsGid, ()> {
+            Ok(match s {
+                "GID_NUMBER" => MetadataOptionsGid::GidNumber,
+                "GID_SKIP" => MetadataOptionsGid::GidSkip,
+                "GID_UNSPECIFIED" => MetadataOptionsGid::GidUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MetadataOptionsGid {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MetadataOptionsGid {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MetadataOptionsGid {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "GID_NUMBER" => MetadataOptionsGid::GidNumber,
+                "GID_SKIP" => MetadataOptionsGid::GidSkip,
+                "GID_UNSPECIFIED" => MetadataOptionsGid::GidUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MetadataOptionsGid {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MetadataOptionsGid {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MetadataOptionsKmsKey {
+        #[doc = "Use the destination bucket's default encryption settings."]
+        KmsKeyDestinationBucketDefault,
+        #[doc = "Preserve the object's original Cloud KMS customer-managed encryption key (CMEK) if present. Objects that do not use a Cloud KMS encryption key will be encrypted using the destination bucket's encryption settings."]
+        KmsKeyPreserve,
+        #[doc = "KmsKey behavior is unspecified."]
+        KmsKeyUnspecified,
+    }
+    impl MetadataOptionsKmsKey {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MetadataOptionsKmsKey::KmsKeyDestinationBucketDefault => {
+                    "KMS_KEY_DESTINATION_BUCKET_DEFAULT"
+                }
+                MetadataOptionsKmsKey::KmsKeyPreserve => "KMS_KEY_PRESERVE",
+                MetadataOptionsKmsKey::KmsKeyUnspecified => "KMS_KEY_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MetadataOptionsKmsKey {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MetadataOptionsKmsKey {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MetadataOptionsKmsKey, ()> {
+            Ok(match s {
+                "KMS_KEY_DESTINATION_BUCKET_DEFAULT" => {
+                    MetadataOptionsKmsKey::KmsKeyDestinationBucketDefault
+                }
+                "KMS_KEY_PRESERVE" => MetadataOptionsKmsKey::KmsKeyPreserve,
+                "KMS_KEY_UNSPECIFIED" => MetadataOptionsKmsKey::KmsKeyUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MetadataOptionsKmsKey {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MetadataOptionsKmsKey {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MetadataOptionsKmsKey {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "KMS_KEY_DESTINATION_BUCKET_DEFAULT" => {
+                    MetadataOptionsKmsKey::KmsKeyDestinationBucketDefault
+                }
+                "KMS_KEY_PRESERVE" => MetadataOptionsKmsKey::KmsKeyPreserve,
+                "KMS_KEY_UNSPECIFIED" => MetadataOptionsKmsKey::KmsKeyUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MetadataOptionsKmsKey {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MetadataOptionsKmsKey {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MetadataOptionsMode {
+        #[doc = "Preserve mode during a transfer job."]
+        ModePreserve,
+        #[doc = "Do not preserve mode during a transfer job."]
+        ModeSkip,
+        #[doc = "Mode behavior is unspecified."]
+        ModeUnspecified,
+    }
+    impl MetadataOptionsMode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MetadataOptionsMode::ModePreserve => "MODE_PRESERVE",
+                MetadataOptionsMode::ModeSkip => "MODE_SKIP",
+                MetadataOptionsMode::ModeUnspecified => "MODE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MetadataOptionsMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MetadataOptionsMode {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MetadataOptionsMode, ()> {
+            Ok(match s {
+                "MODE_PRESERVE" => MetadataOptionsMode::ModePreserve,
+                "MODE_SKIP" => MetadataOptionsMode::ModeSkip,
+                "MODE_UNSPECIFIED" => MetadataOptionsMode::ModeUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MetadataOptionsMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MetadataOptionsMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MetadataOptionsMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "MODE_PRESERVE" => MetadataOptionsMode::ModePreserve,
+                "MODE_SKIP" => MetadataOptionsMode::ModeSkip,
+                "MODE_UNSPECIFIED" => MetadataOptionsMode::ModeUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MetadataOptionsMode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MetadataOptionsMode {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MetadataOptionsStorageClass {
+        #[doc = "Set the storage class to ARCHIVE."]
+        StorageClassArchive,
+        #[doc = "Set the storage class to COLDLINE."]
+        StorageClassColdline,
+        #[doc = "Use the destination bucket's default storage class."]
+        StorageClassDestinationBucketDefault,
+        #[doc = "Set the storage class to NEARLINE."]
+        StorageClassNearline,
+        #[doc = "Preserve the object's original storage class. This is only supported for transfers from Google Cloud Storage buckets."]
+        StorageClassPreserve,
+        #[doc = "Set the storage class to STANDARD."]
+        StorageClassStandard,
+        #[doc = "Storage class behavior is unspecified."]
+        StorageClassUnspecified,
+    }
+    impl MetadataOptionsStorageClass {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MetadataOptionsStorageClass::StorageClassArchive => "STORAGE_CLASS_ARCHIVE",
+                MetadataOptionsStorageClass::StorageClassColdline => "STORAGE_CLASS_COLDLINE",
+                MetadataOptionsStorageClass::StorageClassDestinationBucketDefault => {
+                    "STORAGE_CLASS_DESTINATION_BUCKET_DEFAULT"
+                }
+                MetadataOptionsStorageClass::StorageClassNearline => "STORAGE_CLASS_NEARLINE",
+                MetadataOptionsStorageClass::StorageClassPreserve => "STORAGE_CLASS_PRESERVE",
+                MetadataOptionsStorageClass::StorageClassStandard => "STORAGE_CLASS_STANDARD",
+                MetadataOptionsStorageClass::StorageClassUnspecified => "STORAGE_CLASS_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MetadataOptionsStorageClass {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MetadataOptionsStorageClass {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MetadataOptionsStorageClass, ()> {
+            Ok(match s {
+                "STORAGE_CLASS_ARCHIVE" => MetadataOptionsStorageClass::StorageClassArchive,
+                "STORAGE_CLASS_COLDLINE" => MetadataOptionsStorageClass::StorageClassColdline,
+                "STORAGE_CLASS_DESTINATION_BUCKET_DEFAULT" => {
+                    MetadataOptionsStorageClass::StorageClassDestinationBucketDefault
+                }
+                "STORAGE_CLASS_NEARLINE" => MetadataOptionsStorageClass::StorageClassNearline,
+                "STORAGE_CLASS_PRESERVE" => MetadataOptionsStorageClass::StorageClassPreserve,
+                "STORAGE_CLASS_STANDARD" => MetadataOptionsStorageClass::StorageClassStandard,
+                "STORAGE_CLASS_UNSPECIFIED" => MetadataOptionsStorageClass::StorageClassUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MetadataOptionsStorageClass {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MetadataOptionsStorageClass {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MetadataOptionsStorageClass {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "STORAGE_CLASS_ARCHIVE" => MetadataOptionsStorageClass::StorageClassArchive,
+                "STORAGE_CLASS_COLDLINE" => MetadataOptionsStorageClass::StorageClassColdline,
+                "STORAGE_CLASS_DESTINATION_BUCKET_DEFAULT" => {
+                    MetadataOptionsStorageClass::StorageClassDestinationBucketDefault
+                }
+                "STORAGE_CLASS_NEARLINE" => MetadataOptionsStorageClass::StorageClassNearline,
+                "STORAGE_CLASS_PRESERVE" => MetadataOptionsStorageClass::StorageClassPreserve,
+                "STORAGE_CLASS_STANDARD" => MetadataOptionsStorageClass::StorageClassStandard,
+                "STORAGE_CLASS_UNSPECIFIED" => MetadataOptionsStorageClass::StorageClassUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MetadataOptionsStorageClass {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MetadataOptionsStorageClass {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MetadataOptionsSymlink {
+        #[doc = "Preserve symlinks during a transfer job."]
+        SymlinkPreserve,
+        #[doc = "Do not preserve symlinks during a transfer job."]
+        SymlinkSkip,
+        #[doc = "Symlink behavior is unspecified."]
+        SymlinkUnspecified,
+    }
+    impl MetadataOptionsSymlink {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MetadataOptionsSymlink::SymlinkPreserve => "SYMLINK_PRESERVE",
+                MetadataOptionsSymlink::SymlinkSkip => "SYMLINK_SKIP",
+                MetadataOptionsSymlink::SymlinkUnspecified => "SYMLINK_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MetadataOptionsSymlink {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MetadataOptionsSymlink {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MetadataOptionsSymlink, ()> {
+            Ok(match s {
+                "SYMLINK_PRESERVE" => MetadataOptionsSymlink::SymlinkPreserve,
+                "SYMLINK_SKIP" => MetadataOptionsSymlink::SymlinkSkip,
+                "SYMLINK_UNSPECIFIED" => MetadataOptionsSymlink::SymlinkUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MetadataOptionsSymlink {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MetadataOptionsSymlink {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MetadataOptionsSymlink {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "SYMLINK_PRESERVE" => MetadataOptionsSymlink::SymlinkPreserve,
+                "SYMLINK_SKIP" => MetadataOptionsSymlink::SymlinkSkip,
+                "SYMLINK_UNSPECIFIED" => MetadataOptionsSymlink::SymlinkUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MetadataOptionsSymlink {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MetadataOptionsSymlink {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MetadataOptionsTemporaryHold {
+        #[doc = "Preserve the object's original temporary hold status."]
+        TemporaryHoldPreserve,
+        #[doc = "Do not set a temporary hold on the destination object."]
+        TemporaryHoldSkip,
+        #[doc = "Temporary hold behavior is unspecified."]
+        TemporaryHoldUnspecified,
+    }
+    impl MetadataOptionsTemporaryHold {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MetadataOptionsTemporaryHold::TemporaryHoldPreserve => "TEMPORARY_HOLD_PRESERVE",
+                MetadataOptionsTemporaryHold::TemporaryHoldSkip => "TEMPORARY_HOLD_SKIP",
+                MetadataOptionsTemporaryHold::TemporaryHoldUnspecified => {
+                    "TEMPORARY_HOLD_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MetadataOptionsTemporaryHold {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MetadataOptionsTemporaryHold {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MetadataOptionsTemporaryHold, ()> {
+            Ok(match s {
+                "TEMPORARY_HOLD_PRESERVE" => MetadataOptionsTemporaryHold::TemporaryHoldPreserve,
+                "TEMPORARY_HOLD_SKIP" => MetadataOptionsTemporaryHold::TemporaryHoldSkip,
+                "TEMPORARY_HOLD_UNSPECIFIED" => {
+                    MetadataOptionsTemporaryHold::TemporaryHoldUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MetadataOptionsTemporaryHold {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MetadataOptionsTemporaryHold {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MetadataOptionsTemporaryHold {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "TEMPORARY_HOLD_PRESERVE" => MetadataOptionsTemporaryHold::TemporaryHoldPreserve,
+                "TEMPORARY_HOLD_SKIP" => MetadataOptionsTemporaryHold::TemporaryHoldSkip,
+                "TEMPORARY_HOLD_UNSPECIFIED" => {
+                    MetadataOptionsTemporaryHold::TemporaryHoldUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MetadataOptionsTemporaryHold {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MetadataOptionsTemporaryHold {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MetadataOptionsTimeCreated {
+        #[doc = "Preserves the source object's `timeCreated` metadata in the `customTime` field in the destination object. Note that any value stored in the source object's `customTime` field will not be propagated to the destination object."]
+        TimeCreatedPreserveAsCustomTime,
+        #[doc = "Do not preserve the `timeCreated` metadata from the source object."]
+        TimeCreatedSkip,
+        #[doc = "TimeCreated behavior is unspecified."]
+        TimeCreatedUnspecified,
+    }
+    impl MetadataOptionsTimeCreated {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MetadataOptionsTimeCreated::TimeCreatedPreserveAsCustomTime => {
+                    "TIME_CREATED_PRESERVE_AS_CUSTOM_TIME"
+                }
+                MetadataOptionsTimeCreated::TimeCreatedSkip => "TIME_CREATED_SKIP",
+                MetadataOptionsTimeCreated::TimeCreatedUnspecified => "TIME_CREATED_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MetadataOptionsTimeCreated {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MetadataOptionsTimeCreated {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MetadataOptionsTimeCreated, ()> {
+            Ok(match s {
+                "TIME_CREATED_PRESERVE_AS_CUSTOM_TIME" => {
+                    MetadataOptionsTimeCreated::TimeCreatedPreserveAsCustomTime
+                }
+                "TIME_CREATED_SKIP" => MetadataOptionsTimeCreated::TimeCreatedSkip,
+                "TIME_CREATED_UNSPECIFIED" => MetadataOptionsTimeCreated::TimeCreatedUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MetadataOptionsTimeCreated {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MetadataOptionsTimeCreated {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MetadataOptionsTimeCreated {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "TIME_CREATED_PRESERVE_AS_CUSTOM_TIME" => {
+                    MetadataOptionsTimeCreated::TimeCreatedPreserveAsCustomTime
+                }
+                "TIME_CREATED_SKIP" => MetadataOptionsTimeCreated::TimeCreatedSkip,
+                "TIME_CREATED_UNSPECIFIED" => MetadataOptionsTimeCreated::TimeCreatedUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MetadataOptionsTimeCreated {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MetadataOptionsTimeCreated {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MetadataOptionsUid {
+        #[doc = "Preserve UID during a transfer job."]
+        UidNumber,
+        #[doc = "Do not preserve UID during a transfer job."]
+        UidSkip,
+        #[doc = "UID behavior is unspecified."]
+        UidUnspecified,
+    }
+    impl MetadataOptionsUid {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MetadataOptionsUid::UidNumber => "UID_NUMBER",
+                MetadataOptionsUid::UidSkip => "UID_SKIP",
+                MetadataOptionsUid::UidUnspecified => "UID_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MetadataOptionsUid {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MetadataOptionsUid {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MetadataOptionsUid, ()> {
+            Ok(match s {
+                "UID_NUMBER" => MetadataOptionsUid::UidNumber,
+                "UID_SKIP" => MetadataOptionsUid::UidSkip,
+                "UID_UNSPECIFIED" => MetadataOptionsUid::UidUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MetadataOptionsUid {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MetadataOptionsUid {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MetadataOptionsUid {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "UID_NUMBER" => MetadataOptionsUid::UidNumber,
+                "UID_SKIP" => MetadataOptionsUid::UidSkip,
+                "UID_UNSPECIFIED" => MetadataOptionsUid::UidUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MetadataOptionsUid {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MetadataOptionsUid {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct NotificationConfig {
         #[doc = "Event types for which a notification is desired. If empty, send notifications for all event types."]
         #[serde(
@@ -686,7 +1933,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub payload_format: ::std::option::Option<crate::schemas::NotificationConfigPayloadFormat>,
-        #[doc = "Required. The `Topic.name` of the Cloud Pub/Sub topic to which to publish notifications. Must be of the format: `projects/{project}/topics/{topic}`. Not matching this format will result in an INVALID_ARGUMENT error."]
+        #[doc = "Required. The `Topic.name` of the Pub/Sub topic to which to publish notifications. Must be of the format: `projects/{project}/topics/{topic}`. Not matching this format results in an INVALID_ARGUMENT error."]
         #[serde(
             rename = "pubsubTopic",
             default,
@@ -912,7 +2159,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub include_prefixes: ::std::option::Option<Vec<String>>,
-        #[doc = "If specified, only objects with a \"last modification time\" before this timestamp and objects that don't have a \"last modification time\" will be transferred."]
+        #[doc = "If specified, only objects with a \"last modification time\" before this timestamp and objects that don't have a \"last modification time\" are transferred."]
         #[serde(
             rename = "lastModifiedBefore",
             default,
@@ -926,14 +2173,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub last_modified_since: ::std::option::Option<String>,
-        #[doc = "If specified, only objects with a \"last modification time\" on or after `NOW` - `max_time_elapsed_since_last_modification` and objects that don't have a \"last modification time\" are transferred. For each TransferOperation started by this TransferJob, `NOW` refers to the start_time of the `TransferOperation`."]
+        #[doc = "Ensures that objects are not transferred if a specific maximum time has elapsed since the \"last modification time\". When a TransferOperation begins, objects with a \"last modification time\" are transferred only if the elapsed time between the start_time of the `TransferOperation`and the \"last modification time\" of the object is less than the value of max_time_elapsed_since_last_modification`. Objects that do not have a \"last modification time\" are also transferred."]
         #[serde(
             rename = "maxTimeElapsedSinceLastModification",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_time_elapsed_since_last_modification: ::std::option::Option<String>,
-        #[doc = "If specified, only objects with a \"last modification time\" before `NOW` - `min_time_elapsed_since_last_modification` and objects that don't have a \"last modification time\" are transferred. For each TransferOperation started by this TransferJob, `NOW` refers to the start_time of the `TransferOperation`."]
+        #[doc = "Ensures that objects are not transferred until a specific minimum time has elapsed after the \"last modification time\". When a TransferOperation begins, objects with a \"last modification time\" are transferred only if the elapsed time between the start_time of the `TransferOperation` and the \"last modification time\" of the object is equal to or greater than the value of min_time_elapsed_since_last_modification`. Objects that do not have a \"last modification time\" are also transferred."]
         #[serde(
             rename = "minTimeElapsedSinceLastModification",
             default,
@@ -1033,6 +2280,37 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PosixFilesystem {
+        #[doc = "Root directory path to the filesystem."]
+        #[serde(
+            rename = "rootDirectory",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub root_directory: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PosixFilesystem {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PosixFilesystem {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Copy,
         Default,
         :: serde :: Deserialize,
@@ -1062,7 +2340,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RunTransferJobRequest {
-        #[doc = "Required. The ID of the Google Cloud Platform Console project that owns the transfer job."]
+        #[doc = "Required. The ID of the Google Cloud project that owns the transfer job."]
         #[serde(
             rename = "projectId",
             default,
@@ -1107,14 +2385,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub repeat_interval: ::std::option::Option<String>,
-        #[doc = "The last day a transfer runs. Date boundaries are determined relative to UTC time. A job will run once per 24 hours within the following guidelines: * If `schedule_end_date` and schedule_start_date are the same and in the future relative to UTC, the transfer is executed only one time. * If `schedule_end_date` is later than `schedule_start_date` and `schedule_end_date` is in the future relative to UTC, the job will run each day at start_time_of_day through `schedule_end_date`."]
+        #[doc = "The last day a transfer runs. Date boundaries are determined relative to UTC time. A job runs once per 24 hours within the following guidelines: * If `schedule_end_date` and schedule_start_date are the same and in the future relative to UTC, the transfer is executed only one time. * If `schedule_end_date` is later than `schedule_start_date` and `schedule_end_date` is in the future relative to UTC, the job runs each day at start_time_of_day through `schedule_end_date`."]
         #[serde(
             rename = "scheduleEndDate",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub schedule_end_date: ::std::option::Option<crate::schemas::Date>,
-        #[doc = "Required. The start date of a transfer. Date boundaries are determined relative to UTC time. If `schedule_start_date` and start_time_of_day are in the past relative to the job's creation time, the transfer starts the day after you schedule the transfer request. **Note:** When starting jobs at or near midnight UTC it is possible that a job will start later than expected. For example, if you send an outbound request on June 1 one millisecond prior to midnight UTC and the Storage Transfer Service server receives the request on June 2, then it will create a TransferJob with `schedule_start_date` set to June 2 and a `start_time_of_day` set to midnight UTC. The first scheduled TransferOperation will take place on June 3 at midnight UTC."]
+        #[doc = "Required. The start date of a transfer. Date boundaries are determined relative to UTC time. If `schedule_start_date` and start_time_of_day are in the past relative to the job's creation time, the transfer starts the day after you schedule the transfer request. **Note:** When starting jobs at or near midnight UTC it is possible that a job starts later than expected. For example, if you send an outbound request on June 1 one millisecond prior to midnight UTC and the Storage Transfer Service server receives the request on June 2, then it creates a TransferJob with `schedule_start_date` set to June 2 and a `start_time_of_day` set to midnight UTC. The first scheduled TransferOperation takes place on June 3 at midnight UTC."]
         #[serde(
             rename = "scheduleStartDate",
             default,
@@ -1303,6 +2581,46 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub bytes_from_source_skipped_by_sync: ::std::option::Option<i64>,
+        #[doc = "For transfers involving PosixFilesystem only. Number of listing failures for each directory found at the source. Potential failures when listing a directory include permission failure or block failure. If listing a directory fails, no files in the directory are transferred."]
+        #[serde(
+            rename = "directoriesFailedToListFromSource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub directories_failed_to_list_from_source: ::std::option::Option<i64>,
+        #[doc = "For transfers involving PosixFilesystem only. Number of directories found while listing. For example, if the root directory of the transfer is `base/` and there are two other directories, `a/` and `b/` under this directory, the count after listing `base/`, `base/a/` and `base/b/` is 3."]
+        #[serde(
+            rename = "directoriesFoundFromSource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub directories_found_from_source: ::std::option::Option<i64>,
+        #[doc = "For transfers involving PosixFilesystem only. Number of successful listings for each directory found at the source."]
+        #[serde(
+            rename = "directoriesSuccessfullyListedFromSource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub directories_successfully_listed_from_source: ::std::option::Option<i64>,
+        #[doc = "Number of successfully cleaned up intermediate objects."]
+        #[serde(
+            rename = "intermediateObjectsCleanedUp",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub intermediate_objects_cleaned_up: ::std::option::Option<i64>,
+        #[doc = "Number of intermediate objects failed cleaned up."]
+        #[serde(
+            rename = "intermediateObjectsFailedCleanedUp",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub intermediate_objects_failed_cleaned_up: ::std::option::Option<i64>,
         #[doc = "Objects that are copied to the data sink."]
         #[serde(
             rename = "objectsCopiedToSink",
@@ -1419,35 +2737,42 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub last_modification_time: ::std::option::Option<String>,
-        #[doc = "The name of the most recently started TransferOperation of this JobConfig. Present if and only if at least one TransferOperation has been created for this JobConfig."]
+        #[doc = "The name of the most recently started TransferOperation of this JobConfig. Present if a TransferOperation has been created for this JobConfig."]
         #[serde(
             rename = "latestOperationName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub latest_operation_name: ::std::option::Option<String>,
-        #[doc = "A unique name (within the transfer project) assigned when the job is created. If this field is empty in a CreateTransferJobRequest, Storage Transfer Service will assign a unique name. Otherwise, the specified name is used as the unique name for this job. If the specified name is in use by a job, the creation request fails with an ALREADY_EXISTS error. This name must start with `\"transferJobs/\"` prefix and end with a letter or a number, and should be no more than 128 characters. Example: `\"transferJobs/[A-Za-z0-9-._~]*[A-Za-z0-9]$\"` Invalid job names will fail with an INVALID_ARGUMENT error."]
+        #[doc = "Logging configuration."]
+        #[serde(
+            rename = "loggingConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub logging_config: ::std::option::Option<crate::schemas::LoggingConfig>,
+        #[doc = "A unique name (within the transfer project) assigned when the job is created. If this field is empty in a CreateTransferJobRequest, Storage Transfer Service assigns a unique name. Otherwise, the specified name is used as the unique name for this job. If the specified name is in use by a job, the creation request fails with an ALREADY_EXISTS error. This name must start with `\"transferJobs/\"` prefix and end with a letter or a number, and should be no more than 128 characters. For transfers involving PosixFilesystem, this name must start with `transferJobs/OPI` specifically. For all other transfer types, this name must not start with `transferJobs/OPI`. Non-PosixFilesystem example: `\"transferJobs/^(?!OPI)[A-Za-z0-9-._~]*[A-Za-z0-9]$\"` PosixFilesystem example: `\"transferJobs/OPI^[A-Za-z0-9-._~]*[A-Za-z0-9]$\"` Applications must not rely on the enforcement of naming requirements involving OPI. Invalid job names fail with an INVALID_ARGUMENT error."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Notification configuration."]
+        #[doc = "Notification configuration. This is not supported for transfers involving PosixFilesystem."]
         #[serde(
             rename = "notificationConfig",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub notification_config: ::std::option::Option<crate::schemas::NotificationConfig>,
-        #[doc = "The ID of the Google Cloud Platform Project that owns the job."]
+        #[doc = "The ID of the Google Cloud project that owns the job."]
         #[serde(
             rename = "projectId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_id: ::std::option::Option<String>,
-        #[doc = "Specifies schedule for the transfer job. This is an optional field. When the field is not set, the job will never execute a transfer, unless you invoke RunTransferJob or update the job to have a non-empty schedule."]
+        #[doc = "Specifies schedule for the transfer job. This is an optional field. When the field is not set, the job never executes a transfer, unless you invoke RunTransferJob or update the job to have a non-empty schedule."]
         #[serde(
             rename = "schedule",
             default,
@@ -1483,9 +2808,9 @@ pub mod schemas {
     pub enum TransferJobStatus {
         #[doc = "This is a soft delete state. After a transfer job is set to this state, the job and all the transfer executions are subject to garbage collection. Transfer jobs become eligible for garbage collection 30 days after their status is set to `DELETED`."]
         Deleted,
-        #[doc = "New transfers will not be scheduled."]
+        #[doc = "New transfers are not scheduled."]
         Disabled,
-        #[doc = "New transfers will be performed based on the schedule."]
+        #[doc = "New transfers are performed based on the schedule."]
         Enabled,
         #[doc = "Zero is an illegal value."]
         StatusUnspecified,
@@ -1572,6 +2897,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct TransferManifest {
+        #[doc = "Specifies the path to the manifest in Cloud Storage. The Google-managed service account for the transfer must have `storage.objects.get` permission for this object. An example path is `gs://bucket_name/path/manifest.csv`."]
+        #[serde(
+            rename = "location",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub location: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for TransferManifest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TransferManifest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct TransferOperation {
         #[doc = "Information about the progress of the transfer operation."]
         #[serde(
@@ -1608,7 +2964,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub notification_config: ::std::option::Option<crate::schemas::NotificationConfig>,
-        #[doc = "The ID of the Google Cloud Platform Project that owns the operation."]
+        #[doc = "The ID of the Google Cloud project that owns the operation."]
         #[serde(
             rename = "projectId",
             default,
@@ -1777,13 +3133,27 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub delete_objects_unique_in_sink: ::std::option::Option<bool>,
-        #[doc = "When to overwrite objects that already exist in the sink. The default is that only objects that are different from the source are ovewritten. If true, all objects in the sink whose name matches an object in the source will be overwritten with the source object."]
+        #[doc = "Represents the selected metadata options for a transfer job. This feature is in Preview."]
+        #[serde(
+            rename = "metadataOptions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metadata_options: ::std::option::Option<crate::schemas::MetadataOptions>,
+        #[doc = "When to overwrite objects that already exist in the sink. The default is that only objects that are different from the source are ovewritten. If true, all objects in the sink whose name matches an object in the source are overwritten with the source object."]
         #[serde(
             rename = "overwriteObjectsAlreadyExistingInSink",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub overwrite_objects_already_existing_in_sink: ::std::option::Option<bool>,
+        #[doc = "When to overwrite objects that already exist in the sink. If not set overwrite behavior is determined by overwrite_objects_already_existing_in_sink."]
+        #[serde(
+            rename = "overwriteWhen",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub overwrite_when: ::std::option::Option<crate::schemas::TransferOptionsOverwriteWhen>,
     }
     impl ::google_field_selector::FieldSelector for TransferOptions {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1791,6 +3161,93 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for TransferOptions {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum TransferOptionsOverwriteWhen {
+        #[doc = "Always overwrite destination object."]
+        Always,
+        #[doc = "Overwrite destination object with source if the two objects are different."]
+        Different,
+        #[doc = "Never overwrite destination object."]
+        Never,
+        #[doc = "Indicate the option is not set."]
+        OverwriteWhenUnspecified,
+    }
+    impl TransferOptionsOverwriteWhen {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                TransferOptionsOverwriteWhen::Always => "ALWAYS",
+                TransferOptionsOverwriteWhen::Different => "DIFFERENT",
+                TransferOptionsOverwriteWhen::Never => "NEVER",
+                TransferOptionsOverwriteWhen::OverwriteWhenUnspecified => {
+                    "OVERWRITE_WHEN_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for TransferOptionsOverwriteWhen {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for TransferOptionsOverwriteWhen {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<TransferOptionsOverwriteWhen, ()> {
+            Ok(match s {
+                "ALWAYS" => TransferOptionsOverwriteWhen::Always,
+                "DIFFERENT" => TransferOptionsOverwriteWhen::Different,
+                "NEVER" => TransferOptionsOverwriteWhen::Never,
+                "OVERWRITE_WHEN_UNSPECIFIED" => {
+                    TransferOptionsOverwriteWhen::OverwriteWhenUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for TransferOptionsOverwriteWhen {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for TransferOptionsOverwriteWhen {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for TransferOptionsOverwriteWhen {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ALWAYS" => TransferOptionsOverwriteWhen::Always,
+                "DIFFERENT" => TransferOptionsOverwriteWhen::Different,
+                "NEVER" => TransferOptionsOverwriteWhen::Never,
+                "OVERWRITE_WHEN_UNSPECIFIED" => {
+                    TransferOptionsOverwriteWhen::OverwriteWhenUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for TransferOptionsOverwriteWhen {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TransferOptionsOverwriteWhen {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1837,6 +3294,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gcs_data_source: ::std::option::Option<crate::schemas::GcsData>,
+        #[doc = "Cloud Storage intermediate data location."]
+        #[serde(
+            rename = "gcsIntermediateDataLocation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcs_intermediate_data_location: ::std::option::Option<crate::schemas::GcsData>,
         #[doc = "An HTTP URL data source."]
         #[serde(
             rename = "httpDataSource",
@@ -1851,6 +3315,41 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub object_conditions: ::std::option::Option<crate::schemas::ObjectConditions>,
+        #[doc = "A POSIX Filesystem data sink."]
+        #[serde(
+            rename = "posixDataSink",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub posix_data_sink: ::std::option::Option<crate::schemas::PosixFilesystem>,
+        #[doc = "A POSIX Filesystem data source."]
+        #[serde(
+            rename = "posixDataSource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub posix_data_source: ::std::option::Option<crate::schemas::PosixFilesystem>,
+        #[doc = "Specifies the agent pool name associated with the posix data sink. When unspecified, the default name is used."]
+        #[serde(
+            rename = "sinkAgentPoolName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sink_agent_pool_name: ::std::option::Option<String>,
+        #[doc = "Specifies the agent pool name associated with the posix data source. When unspecified, the default name is used."]
+        #[serde(
+            rename = "sourceAgentPoolName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub source_agent_pool_name: ::std::option::Option<String>,
+        #[doc = "A manifest file provides a list of objects to be transferred from the data source. This field points to the location of the manifest file. Otherwise, the entire source bucket is used. ObjectConditions still apply."]
+        #[serde(
+            rename = "transferManifest",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub transfer_manifest: ::std::option::Option<crate::schemas::TransferManifest>,
         #[doc = "If the option delete_objects_unique_in_sink is `true` and time-based object conditions such as 'last modification time' are specified, the request fails with an INVALID_ARGUMENT error."]
         #[serde(
             rename = "transferOptions",
@@ -1882,21 +3381,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UpdateTransferJobRequest {
-        #[doc = "Required. The ID of the Google Cloud Platform Console project that owns the job."]
+        #[doc = "Required. The ID of the Google Cloud project that owns the job."]
         #[serde(
             rename = "projectId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_id: ::std::option::Option<String>,
-        #[doc = "Required. The job to update. `transferJob` is expected to specify only four fields: description, transfer_spec, notification_config, and status. An `UpdateTransferJobRequest` that specifies other fields are rejected with the error INVALID_ARGUMENT. Updating a job satus to DELETED requires `storagetransfer.jobs.delete` permissions."]
+        #[doc = "Required. The job to update. `transferJob` is expected to specify one or more of five fields: description, transfer_spec, notification_config, logging_config, and status. An `UpdateTransferJobRequest` that specifies other fields are rejected with the error INVALID_ARGUMENT. Updating a job status to DELETED requires `storagetransfer.jobs.delete` permissions."]
         #[serde(
             rename = "transferJob",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub transfer_job: ::std::option::Option<crate::schemas::TransferJob>,
-        #[doc = "The field mask of the fields in `transferJob` that are to be updated in this request. Fields in `transferJob` that can be updated are: description, transfer_spec, notification_config, and status. To update the `transfer_spec` of the job, a complete transfer specification must be provided. An incomplete specification missing any required fields is rejected with the error INVALID_ARGUMENT."]
+        #[doc = "The field mask of the fields in `transferJob` that are to be updated in this request. Fields in `transferJob` that can be updated are: description, transfer_spec, notification_config, logging_config, and status. To update the `transfer_spec` of the job, a complete transfer specification must be provided. An incomplete specification missing any required fields is rejected with the error INVALID_ARGUMENT."]
         #[serde(
             rename = "updateTransferJobFieldMask",
             default,
@@ -2102,6 +3601,13 @@ impl Client {
             auth: self.auth_ref(),
         }
     }
+    #[doc = "Actions that can be performed on the projects resource"]
+    pub fn projects(&self) -> crate::resources::projects::ProjectsActions {
+        crate::resources::projects::ProjectsActions {
+            reqwest: &self.reqwest,
+            auth: self.auth_ref(),
+        }
+    }
     #[doc = "Actions that can be performed on the transfer_jobs resource"]
     pub fn transfer_jobs(&self) -> crate::resources::transfer_jobs::TransferJobsActions {
         crate::resources::transfer_jobs::TransferJobsActions {
@@ -2130,7 +3636,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Returns the Google service account that is used by Storage Transfer Service to access buckets in the project where transfers run or in other projects. Each Google service account is associated with one Google Cloud Platform Console project. Users should add this service account to the Google Cloud Storage bucket ACLs to grant access to Storage Transfer Service. This service account is created and owned by Storage Transfer Service and can only be used by Storage Transfer Service."]
+            #[doc = "Returns the Google service account that is used by Storage Transfer Service to access buckets in the project where transfers run or in other projects. Each Google service account is associated with one Google Cloud project. Users should add this service account to the Google Cloud Storage bucket ACLs to grant access to Storage Transfer Service. This service account is created and owned by Storage Transfer Service and can only be used by Storage Transfer Service."]
             pub fn get(&self, project_id: impl Into<String>) -> GetRequestBuilder {
                 GetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -2307,6 +3813,1096 @@ pub mod resources {
             }
         }
     }
+    pub mod projects {
+        pub mod params {}
+        pub struct ProjectsActions<'a> {
+            pub(crate) reqwest: &'a reqwest::blocking::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+        }
+        impl<'a> ProjectsActions<'a> {
+            fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                self.auth
+            }
+            #[doc = "Actions that can be performed on the agent_pools resource"]
+            pub fn agent_pools(
+                &self,
+            ) -> crate::resources::projects::agent_pools::AgentPoolsActions {
+                crate::resources::projects::agent_pools::AgentPoolsActions {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                }
+            }
+        }
+        pub mod agent_pools {
+            pub mod params {}
+            pub struct AgentPoolsActions<'a> {
+                pub(crate) reqwest: &'a reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            }
+            impl<'a> AgentPoolsActions<'a> {
+                fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                    self.auth
+                }
+                #[doc = "Creates an agent pool resource."]
+                pub fn create(
+                    &self,
+                    request: crate::schemas::AgentPool,
+                    project_id: impl Into<String>,
+                ) -> CreateRequestBuilder {
+                    CreateRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        project_id: project_id.into(),
+                        agent_pool_id: None,
+                    }
+                }
+                #[doc = "Deletes an agent pool."]
+                pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
+                    DeleteRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                    }
+                }
+                #[doc = "Gets an agent pool."]
+                pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                    GetRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                    }
+                }
+                #[doc = "Lists agent pools."]
+                pub fn list(&self, project_id: impl Into<String>) -> ListRequestBuilder {
+                    ListRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        project_id: project_id.into(),
+                        filter: None,
+                        page_size: None,
+                        page_token: None,
+                    }
+                }
+                #[doc = "Updates an existing agent pool resource."]
+                pub fn patch(
+                    &self,
+                    request: crate::schemas::AgentPool,
+                    name: impl Into<String>,
+                ) -> PatchRequestBuilder {
+                    PatchRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                        update_mask: None,
+                    }
+                }
+            }
+            #[doc = "Created via [AgentPoolsActions::create()](struct.AgentPoolsActions.html#method.create)"]
+            #[derive(Debug, Clone)]
+            pub struct CreateRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::AgentPool,
+                project_id: String,
+                agent_pool_id: Option<String>,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> CreateRequestBuilder<'a> {
+                #[doc = "Required. The ID of the agent pool to create. The `agent_pool_id` must meet the following requirements: * Length of 128 characters or less. * Not start with the string `goog`. * Start with a lowercase ASCII character, followed by: * Zero or more: lowercase Latin alphabet characters, numerals, hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`). * One or more numerals or lowercase ASCII characters. As expressed by the regular expression: `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`."]
+                pub fn agent_pool_id(mut self, value: impl Into<String>) -> Self {
+                    self.agent_pool_id = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::AgentPool, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::AgentPool, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://storagetransfer.googleapis.com/".to_owned();
+                    output.push_str("v1/projects/");
+                    {
+                        let var_as_str = &self.project_id;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/agentPools");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("agentPoolId", &self.agent_pool_id)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [AgentPoolsActions::delete()](struct.AgentPoolsActions.html#method.delete)"]
+            #[derive(Debug, Clone)]
+            pub struct DeleteRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                name: String,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> DeleteRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Empty, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Empty, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://storagetransfer.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [AgentPoolsActions::get()](struct.AgentPoolsActions.html#method.get)"]
+            #[derive(Debug, Clone)]
+            pub struct GetRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                name: String,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> GetRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::AgentPool, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::AgentPool, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://storagetransfer.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [AgentPoolsActions::list()](struct.AgentPoolsActions.html#method.list)"]
+            #[derive(Debug, Clone)]
+            pub struct ListRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                project_id: String,
+                filter: Option<String>,
+                page_size: Option<i32>,
+                page_token: Option<String>,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> ListRequestBuilder<'a> {
+                #[doc = "An optional list of query parameters specified as JSON text in the form of: `{\"agentPoolNames\":[\"agentpool1\",\"agentpool2\",...]}` Since `agentPoolNames` support multiple values, its values must be specified with array notation. When the filter is either empty or not provided, the list returns all agent pools for the project."]
+                pub fn filter(mut self, value: impl Into<String>) -> Self {
+                    self.filter = Some(value.into());
+                    self
+                }
+                #[doc = "The list page size. The max allowed value is `256`."]
+                pub fn page_size(mut self, value: i32) -> Self {
+                    self.page_size = Some(value);
+                    self
+                }
+                #[doc = "The list page token."]
+                pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                    self.page_token = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                #[doc = r" items yielded by the iterator are chosen by the caller of this"]
+                #[doc = r" method and must implement `Deserialize` and `FieldSelector`. The"]
+                #[doc = r" populated fields in the yielded items will be determined by the"]
+                #[doc = r" `FieldSelector` implementation."]
+                pub fn iter_agent_pools<T>(self) -> crate::iter::PageItemIter<Self, T>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.iter_agent_pools_with_fields(fields)
+                }
+                #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                #[doc = r" fields in `#items_type` will be the default fields populated by"]
+                #[doc = r" the server."]
+                pub fn iter_agent_pools_with_default_fields(
+                    self,
+                ) -> crate::iter::PageItemIter<Self, crate::schemas::AgentPool> {
+                    self.iter_agent_pools_with_fields(None::<String>)
+                }
+                #[doc = r" Return an iterator that iterates over all `#prop_ident`. The"]
+                #[doc = r" items yielded by the iterator are `#items_type`. The populated"]
+                #[doc = r" fields in `#items_type` will be all fields available. This should"]
+                #[doc = r" primarily be used during developement and debugging as fetching"]
+                #[doc = r" all fields can be expensive both in bandwidth and server"]
+                #[doc = r" resources."]
+                pub fn iter_agent_pools_with_all_fields(
+                    self,
+                ) -> crate::iter::PageItemIter<Self, crate::schemas::AgentPool> {
+                    self.iter_agent_pools_with_fields(Some("*"))
+                }
+                pub fn iter_agent_pools_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> crate::iter::PageItemIter<Self, T>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: AsRef<str>,
+                {
+                    self.fields = Some({
+                        let mut selector = concat!("nextPageToken,", "agentPools").to_owned();
+                        let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                        if !items_fields.is_empty() {
+                            selector.push_str("(");
+                            selector.push_str(items_fields);
+                            selector.push_str(")");
+                        }
+                        selector
+                    });
+                    crate::iter::PageItemIter::new(self, "agentPools")
+                }
+                pub fn iter<T>(self) -> crate::iter::PageIter<Self, T>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.iter_with_fields(fields)
+                }
+                pub fn iter_with_default_fields(
+                    self,
+                ) -> crate::iter::PageIter<Self, crate::schemas::ListAgentPoolsResponse>
+                {
+                    self.iter_with_fields(None::<&str>)
+                }
+                pub fn iter_with_all_fields(
+                    self,
+                ) -> crate::iter::PageIter<Self, crate::schemas::ListAgentPoolsResponse>
+                {
+                    self.iter_with_fields(Some("*"))
+                }
+                pub fn iter_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> crate::iter::PageIter<Self, T>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: AsRef<str>,
+                {
+                    let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                    if !fields.is_empty() {
+                        match fields.chars().rev().nth(0) {
+                            Some(',') | None => {}
+                            _ => fields.push_str(","),
+                        }
+                        fields.push_str("nextPageToken");
+                        self.fields = Some(fields);
+                    }
+                    crate::iter::PageIter::new(self)
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::ListAgentPoolsResponse, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::ListAgentPoolsResponse, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://storagetransfer.googleapis.com/".to_owned();
+                    output.push_str("v1/projects/");
+                    {
+                        let var_as_str = &self.project_id;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/agentPools");
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("filter", &self.filter)]);
+                    req = req.query(&[("pageSize", &self.page_size)]);
+                    req = req.query(&[("pageToken", &self.page_token)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
+                }
+            }
+            impl<'a> crate::iter::IterableMethod for ListRequestBuilder<'a> {
+                fn set_page_token(&mut self, value: String) {
+                    self.page_token = value.into();
+                }
+                fn execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    self._execute()
+                }
+            }
+            #[doc = "Created via [AgentPoolsActions::patch()](struct.AgentPoolsActions.html#method.patch)"]
+            #[derive(Debug, Clone)]
+            pub struct PatchRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::blocking::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::AgentPool,
+                name: String,
+                update_mask: Option<String>,
+                access_token: Option<String>,
+                alt: Option<crate::params::Alt>,
+                callback: Option<String>,
+                fields: Option<String>,
+                key: Option<String>,
+                oauth_token: Option<String>,
+                pretty_print: Option<bool>,
+                quota_user: Option<String>,
+                upload_protocol: Option<String>,
+                upload_type: Option<String>,
+                xgafv: Option<crate::params::Xgafv>,
+            }
+            impl<'a> PatchRequestBuilder<'a> {
+                #[doc = "The [field mask] (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf) of the fields in `agentPool` to update in this request. The following `agentPool` fields can be updated: * display_name * bandwidth_limit"]
+                pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                    self.update_mask = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields)
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::AgentPool, crate::Error> {
+                    self.execute_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::AgentPool, crate::Error> {
+                    self.execute_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute()
+                }
+                fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path())?;
+                    let req = req.json(&self.request);
+                    Ok(crate::error_from_response(req.send()?)?.json()?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://storagetransfer.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output
+                }
+                fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::blocking::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                    req = req.query(&[("updateMask", &self.update_mask)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    req = req.bearer_auth(
+                        self.auth
+                            .access_token()
+                            .map_err(|err| crate::Error::OAuth2(err))?,
+                    );
+                    Ok(req)
+                }
+            }
+        }
+    }
     pub mod transfer_jobs {
         pub mod params {}
         pub struct TransferJobsActions<'a> {
@@ -2405,7 +5001,7 @@ pub mod resources {
                     job_name: job_name.into(),
                 }
             }
-            #[doc = "Attempts to start a new TransferOperation for the current TransferJob. A TransferJob has a maximum of one active TransferOperation. If this method is called while a TransferOperation is active, an error wil be returned."]
+            #[doc = "Attempts to start a new TransferOperation for the current TransferJob. A TransferJob has a maximum of one active TransferOperation. If this method is called while a TransferOperation is active, an error will be returned."]
             pub fn run(
                 &self,
                 request: crate::schemas::RunTransferJobRequest,

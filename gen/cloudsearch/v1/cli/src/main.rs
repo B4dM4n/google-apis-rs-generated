@@ -15,8 +15,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudsearch1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210301")
-            .about("Cloud Search provides cloud-based search capabilities over G Suite data. The Cloud Search API allows indexing of non-G Suite data into Cloud Search.")
+            .version("0.1.0-20220419")
+            .about("Cloud Search provides cloud-based search capabilities over Google Workspace data. The Cloud Search API allows indexing of non-Google Workspace data into Cloud Search.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
                 .long("scope")
@@ -57,25 +57,41 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: search and suggest");
         {
-            let mcmd = SubCommand::with_name("search").about("The Cloud Search Query API provides the search method, which returns the most relevant results from a user query. The results can come from G Suite Apps, such as Gmail or Google Drive, or they can come from data that you have indexed from a third party. **Note:** This API requires a standard end user account to execute. A service account can\'t perform Query API requests directly; to use a service account to perform queries, set up [G Suite domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/).");
+            let mcmd = SubCommand::with_name("search").about("The Cloud Search Query API provides the search method, which returns the most relevant results from a user query. The results can come from Google Workspace apps, such as Gmail or Google Drive, or they can come from data that you have indexed from a third party. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [Google Workspace domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/).");
             query0 = query0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("suggest").about("Provides suggestions for autocompleting the query. **Note:** This API requires a standard end user account to execute. A service account can\'t perform Query API requests directly; to use a service account to perform queries, set up [G Suite domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/).");
+            let mcmd = SubCommand::with_name("suggest").about("Provides suggestions for autocompleting the query. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [Google Workspace domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/).");
             query0 = query0.subcommand(mcmd);
         }
         let mut settings0 = SubCommand::with_name("settings")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: datasources and searchapplications");
+            .about("methods: get_customer and update_customer");
+        {
+            let mcmd = SubCommand::with_name("get_customer").about(
+                "Get customer settings. **Note:** This API requires an admin account to execute.",
+            );
+            settings0 = settings0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("update_customer").about("Update customer settings. **Note:** This API requires an admin account to execute.");
+            settings0 = settings0.subcommand(mcmd);
+        }
         let mut stats0 = SubCommand::with_name("stats")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get_index, get_query, get_session and get_user");
+            .about(
+                "methods: get_index, get_query, get_searchapplication, get_session and get_user",
+            );
         {
-            let mcmd = SubCommand::with_name("get_index").about("Gets indexed item statistics aggreggated across all data sources. This API only returns statistics for previous dates; it doesn\'t return statistics for the current day. **Note:** This API requires a standard end user account to execute.");
+            let mcmd = SubCommand::with_name("get_index").about("Gets indexed item statistics aggreggated across all data sources. This API only returns statistics for previous dates; it doesn't return statistics for the current day. **Note:** This API requires a standard end user account to execute.");
             stats0 = stats0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("get_query").about("Get the query statistics for customer. **Note:** This API requires a standard end user account to execute.");
+            stats0 = stats0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_searchapplication").about("Get search application stats for customer. **Note:** This API requires a standard end user account to execute.");
             stats0 = stats0.subcommand(mcmd);
         }
         {
@@ -85,6 +101,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("get_user").about("Get the users statistics for customer. **Note:** This API requires a standard end user account to execute.");
             stats0 = stats0.subcommand(mcmd);
+        }
+        let mut v_10 = SubCommand::with_name("v_1")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: initialize_customer");
+        {
+            let mcmd = SubCommand::with_name("initialize_customer").about("Enables `third party` support in Google Cloud Search. **Note:** This API requires an admin account to execute.");
+            v_10 = v_10.subcommand(mcmd);
         }
         let mut datasources1 = SubCommand::with_name("datasources")
             .setting(AppSettings::ColoredHelp)
@@ -111,14 +134,14 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
         {
-            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn\'t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             lro1 = lro1.subcommand(mcmd);
         }
         let mut sources1 = SubCommand::with_name("sources")
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
         {
-            let mcmd = SubCommand::with_name("list").about("Returns list of sources that user can use for Search and Suggest APIs. **Note:** This API requires a standard end user account to execute. A service account can\'t perform Query API requests directly; to use a service account to perform queries, set up [G Suite domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/).");
+            let mcmd = SubCommand::with_name("list").about("Returns list of sources that user can use for Search and Suggest APIs. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [Google Workspace domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/).");
             sources1 = sources1.subcommand(mcmd);
         }
         let mut datasources1 = SubCommand::with_name("datasources")
@@ -197,7 +220,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: check_access and search_by_view_url");
         {
-            let mcmd = SubCommand::with_name("check_access").about("Checks whether an item is accessible by specified principal. **Note:** This API requires an admin account to execute.");
+            let mcmd = SubCommand::with_name("check_access").about("Checks whether an item is accessible by specified principal. Principal must be a user; groups and domain values aren't supported. **Note:** This API requires an admin account to execute.");
             items2 = items2.subcommand(mcmd);
         }
         {
@@ -254,7 +277,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             items2 = items2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("upload").about("Creates an upload session for uploading item content. For items smaller than 100 KB, it\'s easier to embed the content inline within an index request. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.");
+            let mcmd = SubCommand::with_name("upload").about("Creates an upload session for uploading item content. For items smaller than 100 KB, it's easier to embed the content inline within an index request. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.");
             items2 = items2.subcommand(mcmd);
         }
         let mut datasources2 = SubCommand::with_name("datasources")
@@ -312,6 +335,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         indexing0 = indexing0.subcommand(datasources1);
         debug0 = debug0.subcommand(identitysources1);
         debug0 = debug0.subcommand(datasources1);
+        app = app.subcommand(v_10);
         app = app.subcommand(stats0);
         app = app.subcommand(settings0);
         app = app.subcommand(query0);

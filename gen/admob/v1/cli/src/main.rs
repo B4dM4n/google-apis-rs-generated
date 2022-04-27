@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("admob1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20210318")
+            .version("0.1.0-20220426")
             .about("The AdMob API allows publishers to programmatically get information about their AdMob account. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -45,6 +45,22 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list").about("Lists the AdMob publisher account that was most recently signed in to from the AdMob UI. For more information, see https://support.google.com/admob/answer/10243672.");
             accounts0 = accounts0.subcommand(mcmd);
         }
+        let mut ad_units1 = SubCommand::with_name("ad_units")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: list");
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("List the ad units under the specified AdMob account.");
+            ad_units1 = ad_units1.subcommand(mcmd);
+        }
+        let mut apps1 = SubCommand::with_name("apps")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: list");
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("List the apps under the specified AdMob account.");
+            apps1 = apps1.subcommand(mcmd);
+        }
         let mut mediation_report1 = SubCommand::with_name("mediation_report")
             .setting(AppSettings::ColoredHelp)
             .about("methods: generate");
@@ -61,6 +77,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         accounts0 = accounts0.subcommand(network_report1);
         accounts0 = accounts0.subcommand(mediation_report1);
+        accounts0 = accounts0.subcommand(apps1);
+        accounts0 = accounts0.subcommand(ad_units1);
         app = app.subcommand(accounts0);
 
         Self { app }

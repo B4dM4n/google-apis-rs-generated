@@ -7,9 +7,9 @@
   "canonicalName": "Vault",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20210308",
-  "title": "G Suite Vault API",
-  "description": "Archiving and eDiscovery for G Suite.",
+  "revision": "20220423",
+  "title": "Google Vault API",
+  "description": "Retention and eDiscovery for Google Workspace. To work with Vault resources, the account must have the [required Vault privileges](https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege. For example, to download an export, an account needs the **Manage Exports** privilege and the matter shared with them. ",
   "ownerDomain": "google.com",
   "ownerName": "Google",
   "icons": {
@@ -212,7 +212,7 @@
   "schemas": {
     "AccountCount": {
       "id": "AccountCount",
-      "description": "Count number for each account.",
+      "description": "The results count for each account.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -223,7 +223,7 @@
           "$ref": "UserInfo"
         },
         "count": {
-          "description": "The number of artifacts found for this account.",
+          "description": "The number of results (messages or files) found for this account.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -278,7 +278,7 @@
     },
     "AccountInfo": {
       "id": "AccountInfo",
-      "description": "Accounts to search",
+      "description": "The accounts to search",
       "type": "object",
       "format": null,
       "enum": [],
@@ -308,18 +308,18 @@
     },
     "AddHeldAccountResult": {
       "id": "AddHeldAccountResult",
-      "description": "A status detailing the status of each account creation, and the HeldAccount, if successful.",
+      "description": "The status of each account creation, and the **HeldAccount**, if successful.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "account": {
-          "description": "If present, this account was successfully created.",
+          "description": "Returned when the account was successfully created.",
           "$ref": "HeldAccount"
         },
         "status": {
-          "description": "This represents the success status. If failed, check message.",
+          "description": "Reports the request status. If it failed, returns an error message.",
           "$ref": "Status"
         }
       },
@@ -335,7 +335,7 @@
       "enumDescriptions": [],
       "properties": {
         "accountIds": {
-          "description": "Account IDs to identify which accounts to add. Only account_ids or only emails should be specified, but not both.",
+          "description": "A comma-separated list of the account IDs of the accounts to add to the hold. Specify either **emails** or **account_ids**, but not both.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -353,7 +353,7 @@
           }
         },
         "emails": {
-          "description": "Emails to identify which accounts to add. Only emails or only account_ids should be specified, but not both.",
+          "description": "A comma-separated list of the emails of the accounts to add to the hold. Specify either **emails** or **account_ids**, but not both.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -400,14 +400,14 @@
     },
     "AddMatterPermissionsRequest": {
       "id": "AddMatterPermissionsRequest",
-      "description": "Add an account with the permission specified. The role cannot be owner. If an account already has a role in the matter, it will be overwritten.",
+      "description": "Add an account with the permission specified. The role cannot be owner. If an account already has a role in the matter, the existing role is overwritten.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "ccMe": {
-          "description": "Only relevant if send_emails is true. True to CC requestor in the email message. False to not CC requestor.",
+          "description": "Only relevant if **sendEmails** is **true**. To CC the requestor in the email message, set to **true**. To not CC requestor, set to **false**.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -417,11 +417,11 @@
           "items": null
         },
         "matterPermission": {
-          "description": "The MatterPermission to add.",
+          "description": "The account and its role to add.",
           "$ref": "MatterPermission"
         },
         "sendEmails": {
-          "description": "True to send notification email to the added account. False to not send notification email.",
+          "description": "To send a notification email to the added account, set to **true**. To not send a notification email, set to **false**.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -465,7 +465,7 @@
       "enumDescriptions": [],
       "properties": {
         "matter": {
-          "description": "The updated matter, with state CLOSED.",
+          "description": "The updated matter, with state **CLOSED**.",
           "$ref": "Matter"
         }
       },
@@ -474,14 +474,14 @@
     },
     "CloudStorageFile": {
       "id": "CloudStorageFile",
-      "description": "An export file on cloud storage",
+      "description": "The export file in Cloud Storage",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "bucketName": {
-          "description": "The cloud storage bucket name of this export file. Can be used in cloud storage JSON/XML API, but not to list the bucket contents. Instead, you can get individual export files by object name.",
+          "description": "The name of the Cloud Storage bucket for the export file. You can use this value in the [Cloud Storage JSON or XML APIs](https://cloud.google.com/storage/docs/apis), but not to list the bucket contents. Instead, you can [get individual export files](https://cloud.google.com/storage/docs/json_api/v1/objects/get) by object name.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -501,7 +501,7 @@
           "items": null
         },
         "objectName": {
-          "description": "The cloud storage object name of this export file. Can be used in cloud storage JSON/XML API.",
+          "description": "The name of the Cloud Storage object for the export file. You can use this value in the [Cloud Storage JSON or XML APIs](https://cloud.google.com/storage/docs/apis).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -511,7 +511,7 @@
           "items": null
         },
         "size": {
-          "description": "The size of the export file.",
+          "description": "The export file size.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -526,14 +526,14 @@
     },
     "CloudStorageSink": {
       "id": "CloudStorageSink",
-      "description": "Export sink for cloud storage files.",
+      "description": "Export sink for Cloud Storage files.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "files": {
-          "description": "Output only. The exported files on cloud storage.",
+          "description": "Output only. The exported files in Cloud Storage.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -550,30 +550,30 @@
     },
     "CorpusQuery": {
       "id": "CorpusQuery",
-      "description": "Corpus specific queries.",
+      "description": "Service-specific options for holds.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "driveQuery": {
-          "description": "Details pertaining to Drive holds. If set, corpus must be Drive.",
+          "description": "Service-specific options for Drive holds. If set, **CorpusType** must be **DRIVE**.",
           "$ref": "HeldDriveQuery"
         },
         "groupsQuery": {
-          "description": "Details pertaining to Groups holds. If set, corpus must be Groups.",
+          "description": "Service-specific options for Groups holds. If set, **CorpusType** must be **GROUPS**.",
           "$ref": "HeldGroupsQuery"
         },
         "hangoutsChatQuery": {
-          "description": "Details pertaining to Hangouts Chat holds. If set, corpus must be Hangouts Chat.",
+          "description": "Service-specific options for Chat holds. If set, **CorpusType** must be **HANGOUTS_CHAT**.",
           "$ref": "HeldHangoutsChatQuery"
         },
         "mailQuery": {
-          "description": "Details pertaining to mail holds. If set, corpus must be mail.",
+          "description": "Service-specific options for Gmail holds. If set, **CorpusType** must be **MAIL**.",
           "$ref": "HeldMailQuery"
         },
         "voiceQuery": {
-          "description": "Details pertaining to Voice holds. If set, corpus must be Voice.",
+          "description": "Service-specific options for Voice holds. If set, **CorpusType** must be **VOICE**.",
           "$ref": "HeldVoiceQuery"
         }
       },
@@ -639,7 +639,7 @@
           "$ref": "Query"
         },
         "view": {
-          "description": "Specifies the granularity of the count result returned in response.",
+          "description": "Sets the granularity of the count results.",
           "type": "string",
           "format": null,
           "enum": [
@@ -648,9 +648,9 @@
             "ALL"
           ],
           "enumDescriptions": [
-            "Default. It works the same as TOTAL_COUNT.",
-            "Response includes: total count, queried accounts count, matching accounts count, non-queryable accounts, queried account errors.",
-            "Response includes additional breakdown of account count."
+            "Default. Same as **TOTAL_COUNT**.",
+            "Response includes counts of the total accounts, queried accounts, matching accounts, non-queryable accounts, and queried account errors.",
+            "Response includes the same details as **TOTAL_COUNT**, plus additional account breakdown."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -669,15 +669,15 @@
       "enumDescriptions": [],
       "properties": {
         "groupsCountResult": {
-          "description": "Count metrics of Groups.",
+          "description": "Count metrics for Groups.",
           "$ref": "GroupsCountResult"
         },
         "mailCountResult": {
-          "description": "Count metrics of Mail.",
+          "description": "Count metrics for Gmail and classic Hangouts.",
           "$ref": "MailCountResult"
         },
         "totalCount": {
-          "description": "Total count of artifacts. For mail and groups, artifacts refers to messages.",
+          "description": "Total count of messages.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -692,14 +692,14 @@
     },
     "DriveExportOptions": {
       "id": "DriveExportOptions",
-      "description": "The options for Drive export.",
+      "description": "Options for Drive exports.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "includeAccessInfo": {
-          "description": "Set to true to include access level information for users with indirect access to files.",
+          "description": "To include access level information for users with [indirect access](https://support.google.com/vault/answer/6099459#metadata) to files, set to **true**.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -714,14 +714,34 @@
     },
     "DriveOptions": {
       "id": "DriveOptions",
-      "description": "Drive search advanced options",
+      "description": "Additional options for Drive search",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "clientSideEncryptedOption": {
+          "description": "Set whether the results include only content encrypted with [Google Workspace Client-side encryption](https://support.google.com/a?p=cse_ov) content, only unencrypted content, or both. Defaults to both. Currently supported for Drive.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "CLIENT_SIDE_ENCRYPTED_OPTION_UNSPECIFIED",
+            "CLIENT_SIDE_ENCRYPTED_OPTION_ANY",
+            "CLIENT_SIDE_ENCRYPTED_OPTION_ENCRYPTED",
+            "CLIENT_SIDE_ENCRYPTED_OPTION_UNENCRYPTED"
+          ],
+          "enumDescriptions": [
+            "Encryption status unspecified. Results include both client-side encrypted and non-encrypted content.",
+            "Include both client-side encrypted and unencrypted content in results.",
+            "Include client-side encrypted content only.",
+            "Include unencrypted content only."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "includeSharedDrives": {
-          "description": "Set to true to include shared drive.",
+          "description": "Set to **true** to include shared drives.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -741,7 +761,7 @@
           "items": null
         },
         "versionDate": {
-          "description": "Search the versions of the Drive file as of the reference date. These timestamps are in GMT and rounded down to the given date.",
+          "description": "Search the current version of the Drive file, but export the contents of the last version saved before 12:00 AM UTC on the specified date. Enter the date in UTC.",
           "type": "string",
           "format": "google-datetime",
           "enum": [],
@@ -756,7 +776,7 @@
     },
     "Empty": {
       "id": "Empty",
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
+      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
       "type": "object",
       "format": null,
       "enum": [],
@@ -767,14 +787,14 @@
     },
     "Export": {
       "id": "Export",
-      "description": "An export",
+      "description": "An export. To work with Vault resources, the account must have the [required Vault privileges](https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "cloudStorageSink": {
-          "description": "Output only. Export sink for cloud storage files.",
+          "description": "Output only. The sink for export files in Cloud Storage.",
           "$ref": "CloudStorageSink"
         },
         "createTime": {
@@ -788,7 +808,7 @@
           "items": null
         },
         "exportOptions": {
-          "description": "Advanced options of the export.",
+          "description": "Additional export options.",
           "$ref": "ExportOptions"
         },
         "id": {
@@ -812,7 +832,7 @@
           "items": null
         },
         "name": {
-          "description": "The export name.",
+          "description": "The export name. Don't use special characters (~!$'(),;@:/?) in the name, they can prevent you from downloading exports.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -822,7 +842,7 @@
           "items": null
         },
         "query": {
-          "description": "The search query being exported.",
+          "description": "The query parameters used to create the export.",
           "$ref": "Query"
         },
         "requester": {
@@ -830,11 +850,11 @@
           "$ref": "UserInfo"
         },
         "stats": {
-          "description": "Output only. Export statistics.",
+          "description": "Output only. Details about the export progress and size.",
           "$ref": "ExportStats"
         },
         "status": {
-          "description": "Output only. The export status.",
+          "description": "Output only. The status of the export.",
           "type": "string",
           "format": null,
           "enum": [
@@ -847,7 +867,7 @@
             "The status is unspecified.",
             "The export completed.",
             "The export failed.",
-            "The export is still being executed."
+            "The export is in progress."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -859,30 +879,30 @@
     },
     "ExportOptions": {
       "id": "ExportOptions",
-      "description": "Export advanced options",
+      "description": "Additional options for exports",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "driveOptions": {
-          "description": "Option available for Drive export.",
+          "description": "Options for Drive exports.",
           "$ref": "DriveExportOptions"
         },
         "groupsOptions": {
-          "description": "Option available for groups export.",
+          "description": "Options for Groups exports.",
           "$ref": "GroupsExportOptions"
         },
         "hangoutsChatOptions": {
-          "description": "Option available for hangouts chat export.",
+          "description": "Options for Chat exports.",
           "$ref": "HangoutsChatExportOptions"
         },
         "mailOptions": {
-          "description": "Option available for mail export.",
+          "description": "Options for Gmail exports.",
           "$ref": "MailExportOptions"
         },
         "region": {
-          "description": "The requested export location.",
+          "description": "The requested data region for the export.",
           "type": "string",
           "format": null,
           "enum": [
@@ -892,9 +912,9 @@
             "EUROPE"
           ],
           "enumDescriptions": [
-            "The region is unspecified. Will be treated the same as ANY.",
+            "The region is unspecified. Defaults to ANY.",
             "Any region.",
-            "US region.",
+            "United States region.",
             "Europe region."
           ],
           "properties": {},
@@ -902,7 +922,7 @@
           "items": null
         },
         "voiceOptions": {
-          "description": "Option available for voice export.",
+          "description": "Options for Voice exports.",
           "$ref": "VoiceExportOptions"
         }
       },
@@ -911,14 +931,14 @@
     },
     "ExportStats": {
       "id": "ExportStats",
-      "description": "Stats of an export.",
+      "description": "Progress information for an export.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "exportedArtifactCount": {
-          "description": "The number of documents already processed by the export.",
+          "description": "The number of messages or files already processed for export.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -938,7 +958,7 @@
           "items": null
         },
         "totalArtifactCount": {
-          "description": "The number of documents to be exported.",
+          "description": "The number of messages or files to be exported.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -994,7 +1014,7 @@
           "items": null
         },
         "nonQueryableAccounts": {
-          "description": "When data scope is HELD_DATA in the request Query, these accounts in the request are not queried because they are not on hold. For other data scope, this field is not set.",
+          "description": "When **DataScope** is **HELD_DATA**, these accounts in the request are not queried because they are not on hold. For other data scope, this field is not set.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1027,14 +1047,14 @@
     },
     "GroupsExportOptions": {
       "id": "GroupsExportOptions",
-      "description": "The options for groups export.",
+      "description": "Options for Groups exports.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "exportFormat": {
-          "description": "The export format for groups export.",
+          "description": "The file format for exported messages.",
           "type": "string",
           "format": null,
           "enum": [
@@ -1044,8 +1064,8 @@
           ],
           "enumDescriptions": [
             "No export format specified.",
-            "MBOX as export format.",
-            "PST as export format"
+            "Export as MBOX. Only available for Gmail, Groups, Hangouts and Voice.",
+            "Export as PST. Only available for Gmail, Groups, Hangouts, Voice and Calendar."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1057,14 +1077,14 @@
     },
     "HangoutsChatExportOptions": {
       "id": "HangoutsChatExportOptions",
-      "description": "The options for hangouts chat export.",
+      "description": "Options for Chat exports.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "exportFormat": {
-          "description": "The export format for hangouts chat export.",
+          "description": "The file format for exported messages.",
           "type": "string",
           "format": null,
           "enum": [
@@ -1074,8 +1094,8 @@
           ],
           "enumDescriptions": [
             "No export format specified.",
-            "MBOX as export format.",
-            "PST as export format"
+            "Export as MBOX. Only available for Gmail, Groups, Hangouts and Voice.",
+            "Export as PST. Only available for Gmail, Groups, Hangouts, Voice and Calendar."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1087,14 +1107,14 @@
     },
     "HangoutsChatInfo": {
       "id": "HangoutsChatInfo",
-      "description": "Accounts to search",
+      "description": "The Chat spaces to search",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "roomId": {
-          "description": "A set of rooms to search.",
+          "description": "A list of Chat spaces IDs, as provided by the [Chat API](https://developers.google.com/hangouts/chat).",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1117,14 +1137,14 @@
     },
     "HangoutsChatOptions": {
       "id": "HangoutsChatOptions",
-      "description": "Hangouts chat search advanced options",
+      "description": "Additional options for Google Chat search",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "includeRooms": {
-          "description": "Set to true to include rooms.",
+          "description": "For searches by account or organizational unit, set to **true** to include rooms.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -1139,14 +1159,14 @@
     },
     "HeldAccount": {
       "id": "HeldAccount",
-      "description": "An account being held in a particular hold. This structure is immutable. This can be either a single user or a google group, depending on the corpus.",
+      "description": "An account covered by a hold. This structure is immutable. It can be an individual account or a Google Group, depending on the service. To work with Vault resources, the account must have the [required Vault privileges] (https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "accountId": {
-          "description": "The account's ID as provided by the Admin SDK.",
+          "description": "The account ID, as provided by the [Admin SDK](https://developers.google.com/admin-sdk/).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1156,7 +1176,7 @@
           "items": null
         },
         "email": {
-          "description": "The primary email address of the account. If used as an input, this takes precedence over account ID.",
+          "description": "The primary email address of the account. If used as an input, this takes precedence over **accountId**.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1201,14 +1221,14 @@
     },
     "HeldDriveQuery": {
       "id": "HeldDriveQuery",
-      "description": "Query options for Drive holds.",
+      "description": "Options for Drive holds.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "includeSharedDriveFiles": {
-          "description": "If true, include files in shared drives in the hold.",
+          "description": "To include files in shared drives in the hold, set to **true**.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -1218,7 +1238,7 @@
           "items": null
         },
         "includeTeamDriveFiles": {
-          "description": "If true, include files in Team Drives in the hold.",
+          "description": "To include files in Team Drives in the hold, set to **true**.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -1240,7 +1260,7 @@
       "enumDescriptions": [],
       "properties": {
         "endTime": {
-          "description": "The end time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.",
+          "description": "The end time for the query. Specify in GMT. The value is rounded to 12 AM on the specified date.",
           "type": "string",
           "format": "google-datetime",
           "enum": [],
@@ -1250,7 +1270,7 @@
           "items": null
         },
         "startTime": {
-          "description": "The start time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.",
+          "description": "The start time for the query. Specify in GMT. The value is rounded to 12 AM on the specified date.",
           "type": "string",
           "format": "google-datetime",
           "enum": [],
@@ -1260,7 +1280,7 @@
           "items": null
         },
         "terms": {
-          "description": "The search terms for the hold.",
+          "description": "The [search operators](https://support.google.com/vault/answer/2474474) used to refine the messages covered by the hold.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1275,14 +1295,14 @@
     },
     "HeldHangoutsChatQuery": {
       "id": "HeldHangoutsChatQuery",
-      "description": "Query options for hangouts chat holds.",
+      "description": "Options for Chat holds.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "includeRooms": {
-          "description": "If true, include rooms the user has participated in.",
+          "description": "To include messages in Chat spaces the user was a member of, set to **true**.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -1297,14 +1317,14 @@
     },
     "HeldMailQuery": {
       "id": "HeldMailQuery",
-      "description": "Query options for mail holds.",
+      "description": "Query options for Gmail holds.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "endTime": {
-          "description": "The end time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.",
+          "description": "The end time for the query. Specify in GMT. The value is rounded to 12 AM on the specified date.",
           "type": "string",
           "format": "google-datetime",
           "enum": [],
@@ -1314,7 +1334,7 @@
           "items": null
         },
         "startTime": {
-          "description": "The start time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.",
+          "description": "The start time for the query. Specify in GMT. The value is rounded to 12 AM on the specified date.",
           "type": "string",
           "format": "google-datetime",
           "enum": [],
@@ -1324,7 +1344,7 @@
           "items": null
         },
         "terms": {
-          "description": "The search terms for the hold.",
+          "description": "The [search operators](https://support.google.com/vault/answer/2474474) used to refine the messages covered by the hold.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1339,14 +1359,14 @@
     },
     "HeldOrgUnit": {
       "id": "HeldOrgUnit",
-      "description": "A organizational unit being held in a particular hold. This structure is immutable.",
+      "description": "The organizational unit covered by a hold. This structure is immutable.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "holdTime": {
-          "description": "When the org unit was put on hold. This property is immutable.",
+          "description": "When the organizational unit was put on hold. This property is immutable.",
           "type": "string",
           "format": "google-datetime",
           "enum": [],
@@ -1356,7 +1376,7 @@
           "items": null
         },
         "orgUnitId": {
-          "description": "The org unit's immutable ID as provided by the Admin SDK.",
+          "description": "The organizational unit's immutable ID as provided by the [Admin SDK](https://developers.google.com/admin-sdk/).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1371,14 +1391,14 @@
     },
     "HeldVoiceQuery": {
       "id": "HeldVoiceQuery",
-      "description": "Query options for Voice holds.",
+      "description": "Options for Voice holds.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "coveredData": {
-          "description": "Data covered by this rule. Should be non-empty. Order does not matter and duplicates will be ignored.",
+          "description": "A list of data types covered by the hold. Should be non-empty. Order does not matter and duplicates are ignored.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1396,9 +1416,9 @@
             ],
             "enumDescriptions": [
               "Covered data unspecified.",
-              "Voice text message will be covered.",
-              "Voicemail will be covered.",
-              "Call logs will be covered."
+              "Voice text messages.",
+              "Voicemails and their transcripts.",
+              "Call logs."
             ],
             "properties": {},
             "additionalProperties": null,
@@ -1411,14 +1431,14 @@
     },
     "Hold": {
       "id": "Hold",
-      "description": "Represents a hold within Vault. A hold restricts purging of artifacts based on the combination of the query and accounts restrictions. A hold can be configured to either apply to an explicitly configured set of accounts, or can be applied to all members of an organizational unit.",
+      "description": "A hold. A hold prevents the specified Google Workspace service from purging data for specific accounts or all members of an organizational unit. To work with Vault resources, the account must have the [required Vault privileges] (https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "accounts": {
-          "description": "If set, the hold applies to the enumerated accounts and org_unit must be empty.",
+          "description": "If set, the hold applies to the specified accounts and **orgUnit** must be empty.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1430,7 +1450,7 @@
           }
         },
         "corpus": {
-          "description": "The corpus to be searched.",
+          "description": "The service to be searched.",
           "type": "string",
           "format": null,
           "enum": [
@@ -1442,11 +1462,11 @@
             "VOICE"
           ],
           "enumDescriptions": [
-            "No corpus specified.",
-            "Drive.",
-            "Mail.",
+            "No service specified.",
+            "Drive, including Meet and Sites.",
+            "For search, Gmail and classic Hangouts. For holds, Gmail only.",
             "Groups.",
-            "Hangouts Chat.",
+            "For export, Google Chat only. For holds, Google Chat and classic Hangouts.",
             "Google Voice."
           ],
           "properties": {},
@@ -1474,11 +1494,11 @@
           "items": null
         },
         "orgUnit": {
-          "description": "If set, the hold applies to all members of the organizational unit and accounts must be empty. This property is mutable. For groups holds, set the accounts field.",
+          "description": "If set, the hold applies to all members of the organizational unit and **accounts** must be empty. This property is mutable. For Groups holds, set **accounts**.",
           "$ref": "HeldOrgUnit"
         },
         "query": {
-          "description": "The corpus-specific query. If set, the corpusQuery must match corpus type.",
+          "description": "Service-specific options. If set, **CorpusQuery** must match **CorpusType**.",
           "$ref": "CorpusQuery"
         },
         "updateTime": {
@@ -1497,7 +1517,7 @@
     },
     "ListExportsResponse": {
       "id": "ListExportsResponse",
-      "description": "The holds for a matter.",
+      "description": "The exports for a matter.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1531,7 +1551,7 @@
     },
     "ListHeldAccountsResponse": {
       "id": "ListHeldAccountsResponse",
-      "description": "Returns a list of held accounts for a hold.",
+      "description": "Returns a list of the accounts covered by a hold.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1674,7 +1694,7 @@
           "items": null
         },
         "savedQueries": {
-          "description": "List of output saved queries.",
+          "description": "List of saved queries.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1691,14 +1711,14 @@
     },
     "MailCountResult": {
       "id": "MailCountResult",
-      "description": "Mail specific count metrics.",
+      "description": "Gmail and classic Hangouts-specific count metrics.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "accountCountErrors": {
-          "description": "Error occurred when querying these accounts.",
+          "description": "Errors occurred when querying these accounts.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1732,7 +1752,7 @@
           "items": null
         },
         "nonQueryableAccounts": {
-          "description": "When data scope is HELD_DATA in the request Query, these accounts in the request are not queried because they are not on hold. For other data scope, this field is not set.",
+          "description": "When **DataScope** is **HELD_DATA** and when account emails are passed in explicitly, the list of accounts in the request that are not queried because they are not on hold in the matter. For other data scopes, this field is not set.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1765,14 +1785,14 @@
     },
     "MailExportOptions": {
       "id": "MailExportOptions",
-      "description": "The options for mail export.",
+      "description": "Options for Gmail exports.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "exportFormat": {
-          "description": "The export file format.",
+          "description": "The file format for exported messages.",
           "type": "string",
           "format": null,
           "enum": [
@@ -1782,15 +1802,25 @@
           ],
           "enumDescriptions": [
             "No export format specified.",
-            "MBOX as export format.",
-            "PST as export format"
+            "Export as MBOX. Only available for Gmail, Groups, Hangouts and Voice.",
+            "Export as PST. Only available for Gmail, Groups, Hangouts, Voice and Calendar."
           ],
           "properties": {},
           "additionalProperties": null,
           "items": null
         },
         "showConfidentialModeContent": {
-          "description": "Set to true to export confidential mode content.",
+          "description": "To export confidential mode content, set to **true**.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "useNewExport": {
+          "description": "To use the new export system, set to **true**.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -1805,14 +1835,14 @@
     },
     "MailOptions": {
       "id": "MailOptions",
-      "description": "Mail search advanced options",
+      "description": "Additional options for Gmail search",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "excludeDrafts": {
-          "description": "Set to true to exclude drafts.",
+          "description": "Set to **true** to exclude drafts.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -1827,14 +1857,14 @@
     },
     "Matter": {
       "id": "Matter",
-      "description": "Represents a matter.",
+      "description": "Represents a matter. To work with Vault resources, the account must have the [required Vault privileges] (https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "description": {
-          "description": "The description of the matter.",
+          "description": "An optional description for the matter.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1844,7 +1874,7 @@
           "items": null
         },
         "matterId": {
-          "description": "The matter ID which is generated by the server. Should be blank when creating a new matter.",
+          "description": "The matter ID, which is generated by the server. Leave blank when creating a matter.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1854,7 +1884,7 @@
           "items": null
         },
         "matterPermissions": {
-          "description": "List of users and access to the matter. Currently there is no programmer defined limit on the number of permissions a matter can have.",
+          "description": "Lists the users and their permission for the matter. Currently there is no programmer defined limit on the number of permissions a matter can have.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1887,9 +1917,9 @@
           ],
           "enumDescriptions": [
             "The matter has no specified state.",
-            "This matter is open.",
-            "This matter is closed.",
-            "This matter is deleted."
+            "The matter is open.",
+            "The matter is closed.",
+            "The matter is deleted."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1901,14 +1931,14 @@
     },
     "MatterPermission": {
       "id": "MatterPermission",
-      "description": "Currently each matter only has one owner, and all others are collaborators. When an account is purged, its corresponding MatterPermission resources cease to exist.",
+      "description": "Users can be matter owners or collaborators. Each matter has only one owner. All others users who can access the matter are collaborators. When an account is purged, its corresponding MatterPermission resources cease to exist.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "accountId": {
-          "description": "The account ID, as provided by Admin SDK.",
+          "description": "The account ID, as provided by the [Admin SDK](https://developers.google.com/admin-sdk/).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1918,7 +1948,7 @@
           "items": null
         },
         "role": {
-          "description": "The user's role in this matter.",
+          "description": "The user's role for the matter.",
           "type": "string",
           "format": null,
           "enum": [
@@ -1928,7 +1958,7 @@
           ],
           "enumDescriptions": [
             "No role assigned.",
-            "A collaborator to the matter.",
+            "A collaborator on the matter.",
             "The owner of the matter."
           ],
           "properties": {},
@@ -2015,14 +2045,14 @@
     },
     "OrgUnitInfo": {
       "id": "OrgUnitInfo",
-      "description": "Org Unit to search",
+      "description": "The organizational unit to search",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "orgUnitId": {
-          "description": "Org unit to search, as provided by the Admin SDK Directory API.",
+          "description": "The name of the organizational unit to search, as provided by the [Admin SDK Directory API](https://developers.google.com/admin-sdk/directory/).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2037,18 +2067,18 @@
     },
     "Query": {
       "id": "Query",
-      "description": "A query definition relevant for search & export.",
+      "description": "The query definition used for search and export.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "accountInfo": {
-          "description": "When 'ACCOUNT' is chosen as search method, account_info needs to be specified.",
+          "description": "Required when **SearchMethod** is **ACCOUNT**.",
           "$ref": "AccountInfo"
         },
         "corpus": {
-          "description": "The corpus to search.",
+          "description": "The Google Workspace service to search.",
           "type": "string",
           "format": null,
           "enum": [
@@ -2060,11 +2090,11 @@
             "VOICE"
           ],
           "enumDescriptions": [
-            "No corpus specified.",
-            "Drive.",
-            "Mail.",
+            "No service specified.",
+            "Drive, including Meet and Sites.",
+            "For search, Gmail and classic Hangouts. For holds, Gmail only.",
             "Groups.",
-            "Hangouts Chat.",
+            "For export, Google Chat only. For holds, Google Chat and classic Hangouts.",
             "Google Voice."
           ],
           "properties": {},
@@ -2072,7 +2102,7 @@
           "items": null
         },
         "dataScope": {
-          "description": "The data source to search from.",
+          "description": "The data source to search.",
           "type": "string",
           "format": null,
           "enum": [
@@ -2082,21 +2112,21 @@
             "UNPROCESSED_DATA"
           ],
           "enumDescriptions": [
-            "No data scope specified.",
+            "No data source specified.",
             "All available data.",
-            "Data on hold.",
-            "Data not processed."
+            "Only data on hold.",
+            "Only data not yet processed by Vault. (Gmail and Groups only)"
           ],
           "properties": {},
           "additionalProperties": null,
           "items": null
         },
         "driveOptions": {
-          "description": "For Drive search, specify more options in this field.",
+          "description": "Set Drive search-specific options.",
           "$ref": "DriveOptions"
         },
         "endTime": {
-          "description": "The end time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.",
+          "description": "The end time for the search query. Specify in GMT. The value is rounded to 12 AM on the specified date.",
           "type": "string",
           "format": "google-datetime",
           "enum": [],
@@ -2106,19 +2136,19 @@
           "items": null
         },
         "hangoutsChatInfo": {
-          "description": "When 'ROOM' is chosen as search method, hangout_chats_info needs to be specified. (read-only)",
+          "description": "Required when **SearchMethod** is **ROOM**. (read-only)",
           "$ref": "HangoutsChatInfo"
         },
         "hangoutsChatOptions": {
-          "description": "For hangouts chat search, specify more options in this field. (read-only)",
+          "description": "Set Chat search-specific options. (read-only)",
           "$ref": "HangoutsChatOptions"
         },
         "mailOptions": {
-          "description": "For mail search, specify more options in this field.",
+          "description": "Set Gmail search-specific options.",
           "$ref": "MailOptions"
         },
         "method": {
-          "description": "The search method to use. This field is similar to the search_method field but is introduced to support shared drives. It supports all search method types. In case the search_method is TEAM_DRIVE the response of this field will be SHARED_DRIVE only.",
+          "description": "The entity to search. This field replaces **searchMethod** to support shared drives. When **searchMethod** is **TEAM_DRIVE**, the response of this field is **SHARED_DRIVE**.",
           "type": "string",
           "format": null,
           "enum": [
@@ -2128,23 +2158,25 @@
             "TEAM_DRIVE",
             "ENTIRE_ORG",
             "ROOM",
+            "SITES_URL",
             "SHARED_DRIVE"
           ],
           "enumDescriptions": [
-            "A search method must be specified. If a request does not specify a search method, it will be rejected.",
-            "Will search all accounts provided in account_info.",
-            "Will search all accounts in the OU specified in org_unit_info.",
-            "Will search for all accounts in the Team Drive specified in team_drive_info.",
-            "Will search for all accounts in the organization. No need to set account_info or org_unit_info. Not all CORPUS_TYPE support this scope. Supported by MAIL.",
-            "Will search in the Room specified in hangout_chats_info. (read-only)",
-            "Will search for all accounts in the shared drive specified in shared_drive_info."
+            "A search method must be specified or else it is rejected.",
+            "Search the data of the accounts specified in [AccountInfo](https://developers.google.com/vault/reference/rest/v1/Query#accountinfo).",
+            "Search the data of all accounts in the organizational unit specified in [OrgUnitInfo](https://developers.google.com/vault/reference/rest/v1/Query#orgunitinfo).",
+            "Search the data in the Team Drive specified in **team_drive_info**.",
+            "Search the data of all accounts in the organization. Supported only for Gmail. When specified, you don't need to specify **AccountInfo** or **OrgUnitInfo**.",
+            "Search messages in the Chat spaces specified in [HangoutsChatInfo](https://developers.google.com/vault/reference/rest/v1/Query#hangoutschatinfo).",
+            "Search for sites by the published site URLs specified in [SitesUrlInfo](https://developers.google.com/vault/reference/rest/v1/Query#sitesurlinfo).",
+            "Search the files in the shared drives specified in [SharedDriveInfo](https://developers.google.com/vault/reference/rest/v1/Query#shareddriveinfo)."
           ],
           "properties": {},
           "additionalProperties": null,
           "items": null
         },
         "orgUnitInfo": {
-          "description": "When 'ORG_UNIT' is chosen as as search method, org_unit_info needs to be specified.",
+          "description": "Required when **SearchMethod** is **ORG_UNIT**.",
           "$ref": "OrgUnitInfo"
         },
         "searchMethod": {
@@ -2158,27 +2190,33 @@
             "TEAM_DRIVE",
             "ENTIRE_ORG",
             "ROOM",
+            "SITES_URL",
             "SHARED_DRIVE"
           ],
           "enumDescriptions": [
-            "A search method must be specified. If a request does not specify a search method, it will be rejected.",
-            "Will search all accounts provided in account_info.",
-            "Will search all accounts in the OU specified in org_unit_info.",
-            "Will search for all accounts in the Team Drive specified in team_drive_info.",
-            "Will search for all accounts in the organization. No need to set account_info or org_unit_info. Not all CORPUS_TYPE support this scope. Supported by MAIL.",
-            "Will search in the Room specified in hangout_chats_info. (read-only)",
-            "Will search for all accounts in the shared drive specified in shared_drive_info."
+            "A search method must be specified or else it is rejected.",
+            "Search the data of the accounts specified in [AccountInfo](https://developers.google.com/vault/reference/rest/v1/Query#accountinfo).",
+            "Search the data of all accounts in the organizational unit specified in [OrgUnitInfo](https://developers.google.com/vault/reference/rest/v1/Query#orgunitinfo).",
+            "Search the data in the Team Drive specified in **team_drive_info**.",
+            "Search the data of all accounts in the organization. Supported only for Gmail. When specified, you don't need to specify **AccountInfo** or **OrgUnitInfo**.",
+            "Search messages in the Chat spaces specified in [HangoutsChatInfo](https://developers.google.com/vault/reference/rest/v1/Query#hangoutschatinfo).",
+            "Search for sites by the published site URLs specified in [SitesUrlInfo](https://developers.google.com/vault/reference/rest/v1/Query#sitesurlinfo).",
+            "Search the files in the shared drives specified in [SharedDriveInfo](https://developers.google.com/vault/reference/rest/v1/Query#shareddriveinfo)."
           ],
           "properties": {},
           "additionalProperties": null,
           "items": null
         },
         "sharedDriveInfo": {
-          "description": "When 'SHARED_DRIVE' is chosen as search method, shared_drive_info needs to be specified.",
+          "description": "Required when **SearchMethod** is **SHARED_DRIVE**.",
           "$ref": "SharedDriveInfo"
         },
+        "sitesUrlInfo": {
+          "description": "Required when **SearchMethod** is **SITES_URL**.",
+          "$ref": "SitesUrlInfo"
+        },
         "startTime": {
-          "description": "The start time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.",
+          "description": "The start time for the search query. Specify in GMT. The value is rounded to 12 AM on the specified date.",
           "type": "string",
           "format": "google-datetime",
           "enum": [],
@@ -2188,11 +2226,11 @@
           "items": null
         },
         "teamDriveInfo": {
-          "description": "When 'TEAM_DRIVE' is chosen as search method, team_drive_info needs to be specified.",
+          "description": "Required when **SearchMethod** is **TEAM_DRIVE**.",
           "$ref": "TeamDriveInfo"
         },
         "terms": {
-          "description": "The corpus-specific search operators used to generate search results.",
+          "description": "Service-specific [search operators](https://support.google.com/vault/answer/2474474) to filter search results.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2202,7 +2240,7 @@
           "items": null
         },
         "timeZone": {
-          "description": "The time zone name. It should be an IANA TZ name, such as \"America/Los_Angeles\". For more information, see Time Zone.",
+          "description": "The time zone name. It should be an IANA TZ name, such as \"America/Los_Angeles\". For a list of time zone names, see [Time Zone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For more information about how Vault uses time zones, see [the Vault help center](https://support.google.com/vault/answer/6092995#time).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2212,7 +2250,7 @@
           "items": null
         },
         "voiceOptions": {
-          "description": "For voice search, specify more options in this field.",
+          "description": "Set Voice search-specific options.",
           "$ref": "VoiceOptions"
         }
       },
@@ -2228,7 +2266,7 @@
       "enumDescriptions": [],
       "properties": {
         "accountIds": {
-          "description": "Account IDs to identify HeldAccounts to remove.",
+          "description": "The account IDs of the accounts to remove from the hold.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2258,7 +2296,7 @@
       "enumDescriptions": [],
       "properties": {
         "statuses": {
-          "description": "A list of statuses for deleted accounts. Results have the same order as the request.",
+          "description": "A list of statuses for the deleted accounts. Results have the same order as the request.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2315,7 +2353,7 @@
       "enumDescriptions": [],
       "properties": {
         "matter": {
-          "description": "The updated matter, with state OPEN.",
+          "description": "The updated matter, with state **OPEN**.",
           "$ref": "Matter"
         }
       },
@@ -2324,14 +2362,14 @@
     },
     "SavedQuery": {
       "id": "SavedQuery",
-      "description": "Definition of the saved query.",
+      "description": "The definition of a saved query. To work with Vault resources, the account must have the [required Vault privileges](https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "createTime": {
-          "description": "Output only. The server generated timestamp at which saved query was created.",
+          "description": "Output only. The server-generated timestamp when the saved query was created.",
           "type": "string",
           "format": "google-datetime",
           "enum": [],
@@ -2341,7 +2379,7 @@
           "items": null
         },
         "displayName": {
-          "description": "Name of the saved query.",
+          "description": "The name of the saved query.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2351,7 +2389,7 @@
           "items": null
         },
         "matterId": {
-          "description": "Output only. The matter ID of the associated matter. The server does not look at this field during create and always uses matter id in the URL.",
+          "description": "Output only. The matter ID of the matter the saved query is saved in. The server does not use this field during create and always uses matter ID in the URL.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2361,7 +2399,7 @@
           "items": null
         },
         "query": {
-          "description": "The underlying Query object which contains all the information of the saved query.",
+          "description": "The search parameters of the saved query.",
           "$ref": "Query"
         },
         "savedQueryId": {
@@ -2380,14 +2418,44 @@
     },
     "SharedDriveInfo": {
       "id": "SharedDriveInfo",
-      "description": "Shared drives to search",
+      "description": "The shared drives to search",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "sharedDriveIds": {
-          "description": "List of Shared drive IDs, as provided by Drive API.",
+          "description": "A list of shared drive IDs, as provided by the [Drive API](https://developers.google.com/drive).",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SitesUrlInfo": {
+      "id": "SitesUrlInfo",
+      "description": "The published site URLs of new Google Sites to search",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "urls": {
+          "description": "A list of published site URLs.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2476,7 +2544,7 @@
       "enumDescriptions": [],
       "properties": {
         "teamDriveIds": {
-          "description": "List of Team Drive IDs, as provided by Drive API.",
+          "description": "List of Team Drive IDs, as provided by the [Drive API](https://developers.google.com/drive).",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2542,14 +2610,14 @@
     },
     "VoiceExportOptions": {
       "id": "VoiceExportOptions",
-      "description": "The options for voice export.",
+      "description": "The options for Voice exports.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "exportFormat": {
-          "description": "The export format for voice export.",
+          "description": "The file format for exported text messages.",
           "type": "string",
           "format": null,
           "enum": [
@@ -2559,8 +2627,8 @@
           ],
           "enumDescriptions": [
             "No export format specified.",
-            "MBOX as export format.",
-            "PST as export format"
+            "Export as MBOX. Only available for Gmail, Groups, Hangouts and Voice.",
+            "Export as PST. Only available for Gmail, Groups, Hangouts, Voice and Calendar."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -2572,7 +2640,7 @@
     },
     "VoiceOptions": {
       "id": "VoiceOptions",
-      "description": "Voice search options",
+      "description": "Additional options for Voice search",
       "type": "object",
       "format": null,
       "enum": [],
@@ -2597,9 +2665,9 @@
             ],
             "enumDescriptions": [
               "Covered data unspecified.",
-              "Voice text message will be covered.",
-              "Voicemail will be covered.",
-              "Call logs will be covered."
+              "Voice text messages.",
+              "Voicemails and their transcripts.",
+              "Call logs."
             ],
             "properties": {},
             "additionalProperties": null,
@@ -2621,7 +2689,7 @@
               "id": "vault.matters.exports.create",
               "path": "v1/matters/{matterId}/exports",
               "httpMethod": "POST",
-              "description": "Creates an Export.",
+              "description": "Creates an export.",
               "parameters": {
                 "matterId": {
                   "description": "The matter ID.",
@@ -2660,7 +2728,7 @@
               "id": "vault.matters.exports.delete",
               "path": "v1/matters/{matterId}/exports/{exportId}",
               "httpMethod": "DELETE",
-              "description": "Deletes an Export.",
+              "description": "Deletes an export.",
               "parameters": {
                 "exportId": {
                   "description": "The export ID.",
@@ -2712,7 +2780,7 @@
               "id": "vault.matters.exports.get",
               "path": "v1/matters/{matterId}/exports/{exportId}",
               "httpMethod": "GET",
-              "description": "Gets an Export.",
+              "description": "Gets an export.",
               "parameters": {
                 "exportId": {
                   "description": "The export ID.",
@@ -2765,7 +2833,7 @@
               "id": "vault.matters.exports.list",
               "path": "v1/matters/{matterId}/exports",
               "httpMethod": "GET",
-              "description": "Lists Exports.",
+              "description": "Lists details about the exports in the specified matter.",
               "parameters": {
                 "matterId": {
                   "description": "The matter ID.",
@@ -2838,7 +2906,7 @@
                   "id": "vault.matters.holds.accounts.create",
                   "path": "v1/matters/{matterId}/holds/{holdId}/accounts",
                   "httpMethod": "POST",
-                  "description": "Adds a HeldAccount to a hold. Accounts can only be added to a hold that has no held_org_unit set. Attempting to add an account to an OU-based hold will result in an error.",
+                  "description": "Adds an account to a hold. Accounts can be added only to a hold that does not have an organizational unit set. If you try to add an account to an organizational unit-based hold, an error is returned.",
                   "parameters": {
                     "holdId": {
                       "description": "The hold ID.",
@@ -2892,7 +2960,7 @@
                   "id": "vault.matters.holds.accounts.delete",
                   "path": "v1/matters/{matterId}/holds/{holdId}/accounts/{accountId}",
                   "httpMethod": "DELETE",
-                  "description": "Removes a HeldAccount from a hold. If this request leaves the hold with no held accounts, the hold will not apply to any accounts.",
+                  "description": "Removes an account from a hold.",
                   "parameters": {
                     "accountId": {
                       "description": "The ID of the account to remove from the hold.",
@@ -2959,7 +3027,7 @@
                   "id": "vault.matters.holds.accounts.list",
                   "path": "v1/matters/{matterId}/holds/{holdId}/accounts",
                   "httpMethod": "GET",
-                  "description": "Lists HeldAccounts for a hold. This will only list individually specified held accounts. If the hold is on an OU, then use Admin SDK to enumerate its members.",
+                  "description": "Lists the accounts covered by a hold. This can list only individually-specified accounts covered by the hold. If the hold covers an organizational unit, use the [Admin SDK](https://developers.google.com/admin-sdk/). to list the members of the organizational unit on hold.",
                   "parameters": {
                     "holdId": {
                       "description": "The hold ID.",
@@ -3016,7 +3084,7 @@
               "id": "vault.matters.holds.addHeldAccounts",
               "path": "v1/matters/{matterId}/holds/{holdId}:addHeldAccounts",
               "httpMethod": "POST",
-              "description": "Adds HeldAccounts to a hold. Returns a list of accounts that have been successfully added. Accounts can only be added to an existing account-based hold.",
+              "description": "Adds accounts to a hold. Returns a list of accounts that have been successfully added. Accounts can be added only to an existing account-based hold.",
               "parameters": {
                 "holdId": {
                   "description": "The hold ID.",
@@ -3070,7 +3138,7 @@
               "id": "vault.matters.holds.create",
               "path": "v1/matters/{matterId}/holds",
               "httpMethod": "POST",
-              "description": "Creates a hold in the given matter.",
+              "description": "Creates a hold in the specified matter.",
               "parameters": {
                 "matterId": {
                   "description": "The matter ID.",
@@ -3109,7 +3177,7 @@
               "id": "vault.matters.holds.delete",
               "path": "v1/matters/{matterId}/holds/{holdId}",
               "httpMethod": "DELETE",
-              "description": "Removes a hold by ID. This will release any HeldAccounts on this Hold.",
+              "description": "Removes the specified hold and releases the accounts or organizational unit covered by the hold. If the data is not preserved by another hold or retention rule, it might be purged.",
               "parameters": {
                 "holdId": {
                   "description": "The hold ID.",
@@ -3161,7 +3229,7 @@
               "id": "vault.matters.holds.get",
               "path": "v1/matters/{matterId}/holds/{holdId}",
               "httpMethod": "GET",
-              "description": "Gets a hold by ID.",
+              "description": "Gets the specified hold.",
               "parameters": {
                 "holdId": {
                   "description": "The hold ID.",
@@ -3192,7 +3260,7 @@
                   "repeated": false
                 },
                 "view": {
-                  "description": "Specifies which parts of the Hold to return.",
+                  "description": "The amount of detail to return for a hold.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -3207,9 +3275,9 @@
                     "FULL_HOLD"
                   ],
                   "enumDescriptions": [
-                    "There is no specified view. Defaults to FULL_HOLD.",
-                    "Response includes the id, name, update time, corpus, and query.",
-                    "Full representation of a Hold. Response includes all fields of 'BASIC' and the entities the Hold applies to, such as accounts, or OU."
+                    "Not specified. Defaults to **FULL_HOLD**.",
+                    "Returns the hold ID, name, update time, service, and query.",
+                    "Returns all details of **BASIC_HOLD** and the entities the hold applies to, such as accounts or organizational unit."
                   ],
                   "repeated": false
                 }
@@ -3236,7 +3304,7 @@
               "id": "vault.matters.holds.list",
               "path": "v1/matters/{matterId}/holds",
               "httpMethod": "GET",
-              "description": "Lists holds within a matter. An empty page token in ListHoldsResponse denotes no more holds to list.",
+              "description": "Lists the holds in a matter.",
               "parameters": {
                 "matterId": {
                   "description": "The matter ID.",
@@ -3253,7 +3321,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "The number of holds to return in the response, between 0 and 100 inclusive. Leaving this empty, or as 0, is the same as page_size = 100.",
+                  "description": "The number of holds to return in the response, between 0 and 100 inclusive. Leaving this empty, or as 0, is the same as **page_size** = 100.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -3281,7 +3349,7 @@
                   "repeated": false
                 },
                 "view": {
-                  "description": "Specifies which parts of the Hold to return.",
+                  "description": "The amount of detail to return for a hold.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -3296,9 +3364,9 @@
                     "FULL_HOLD"
                   ],
                   "enumDescriptions": [
-                    "There is no specified view. Defaults to FULL_HOLD.",
-                    "Response includes the id, name, update time, corpus, and query.",
-                    "Full representation of a Hold. Response includes all fields of 'BASIC' and the entities the Hold applies to, such as accounts, or OU."
+                    "Not specified. Defaults to **FULL_HOLD**.",
+                    "Returns the hold ID, name, update time, service, and query.",
+                    "Returns all details of **BASIC_HOLD** and the entities the hold applies to, such as accounts or organizational unit."
                   ],
                   "repeated": false
                 }
@@ -3324,7 +3392,7 @@
               "id": "vault.matters.holds.removeHeldAccounts",
               "path": "v1/matters/{matterId}/holds/{holdId}:removeHeldAccounts",
               "httpMethod": "POST",
-              "description": "Removes HeldAccounts from a hold. Returns a list of statuses in the same order as the request. If this request leaves the hold with no held accounts, the hold will not apply to any accounts.",
+              "description": "Removes the specified accounts from a hold. Returns a list of statuses in the same order as the request.",
               "parameters": {
                 "holdId": {
                   "description": "The hold ID.",
@@ -3378,7 +3446,7 @@
               "id": "vault.matters.holds.update",
               "path": "v1/matters/{matterId}/holds/{holdId}",
               "httpMethod": "PUT",
-              "description": "Updates the OU and/or query parameters of a hold. You cannot add accounts to a hold that covers an OU, nor can you add OUs to a hold that covers individual accounts. Accounts listed in the hold will be ignored.",
+              "description": "Updates the scope (organizational unit or accounts) and query parameters of a hold. You cannot add accounts to a hold that covers an organizational unit, nor can you add organizational units to a hold that covers individual accounts. If you try, the unsupported values are ignored.",
               "parameters": {
                 "holdId": {
                   "description": "The ID of the hold.",
@@ -3440,7 +3508,7 @@
               "description": "Creates a saved query.",
               "parameters": {
                 "matterId": {
-                  "description": "The matter ID of the parent matter for which the saved query is to be created.",
+                  "description": "The ID of the matter to create the saved query in.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -3476,10 +3544,10 @@
               "id": "vault.matters.savedQueries.delete",
               "path": "v1/matters/{matterId}/savedQueries/{savedQueryId}",
               "httpMethod": "DELETE",
-              "description": "Deletes a saved query by Id.",
+              "description": "Deletes the specified saved query.",
               "parameters": {
                 "matterId": {
-                  "description": "The matter ID of the parent matter for which the saved query is to be deleted.",
+                  "description": "The ID of the matter to delete the saved query from.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -3493,7 +3561,7 @@
                   "repeated": false
                 },
                 "savedQueryId": {
-                  "description": "ID of the saved query to be deleted.",
+                  "description": "ID of the saved query to delete.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -3528,10 +3596,10 @@
               "id": "vault.matters.savedQueries.get",
               "path": "v1/matters/{matterId}/savedQueries/{savedQueryId}",
               "httpMethod": "GET",
-              "description": "Retrieves a saved query by Id.",
+              "description": "Retrieves the specified saved query.",
               "parameters": {
                 "matterId": {
-                  "description": "The matter ID of the parent matter for which the saved query is to be retrieved.",
+                  "description": "The ID of the matter to get the saved query from.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -3545,7 +3613,7 @@
                   "repeated": false
                 },
                 "savedQueryId": {
-                  "description": "ID of the saved query to be retrieved.",
+                  "description": "ID of the saved query to retrieve.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -3581,10 +3649,10 @@
               "id": "vault.matters.savedQueries.list",
               "path": "v1/matters/{matterId}/savedQueries",
               "httpMethod": "GET",
-              "description": "Lists saved queries within a matter. An empty page token in ListSavedQueriesResponse denotes no more saved queries to list.",
+              "description": "Lists the saved queries in a matter.",
               "parameters": {
                 "matterId": {
-                  "description": "The matter ID of the parent matter for which the saved queries are to be retrieved.",
+                  "description": "The ID of the matter to get the saved queries for.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -3690,7 +3758,7 @@
           "id": "vault.matters.close",
           "path": "v1/matters/{matterId}:close",
           "httpMethod": "POST",
-          "description": "Closes the specified matter. Returns matter with updated state.",
+          "description": "Closes the specified matter. Returns the matter with updated state.",
           "parameters": {
             "matterId": {
               "description": "The matter ID.",
@@ -3729,7 +3797,7 @@
           "id": "vault.matters.count",
           "path": "v1/matters/{matterId}:count",
           "httpMethod": "POST",
-          "description": "Counts the artifacts within the context of a matter and returns a detailed breakdown of metrics.",
+          "description": "Counts the accounts processed by the specified query.",
           "parameters": {
             "matterId": {
               "description": "The matter ID.",
@@ -3768,7 +3836,7 @@
           "id": "vault.matters.create",
           "path": "v1/matters",
           "httpMethod": "POST",
-          "description": "Creates a new matter with the given name and description. The initial state is open, and the owner is the method caller. Returns the created matter with default view.",
+          "description": "Creates a matter with the given name and description. The initial state is open, and the owner is the method caller. Returns the created matter with default view.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -3790,7 +3858,7 @@
           "id": "vault.matters.delete",
           "path": "v1/matters/{matterId}",
           "httpMethod": "DELETE",
-          "description": "Deletes the specified matter. Returns matter with updated state.",
+          "description": "Deletes the specified matter. Returns the matter with updated state.",
           "parameters": {
             "matterId": {
               "description": "The matter ID",
@@ -3844,7 +3912,7 @@
               "repeated": false
             },
             "view": {
-              "description": "Specifies which parts of the Matter to return in the response.",
+              "description": "Specifies how much information about the matter to return in the response.",
               "default": null,
               "location": "query",
               "required": false,
@@ -3859,9 +3927,9 @@
                 "FULL"
               ],
               "enumDescriptions": [
-                "There is no specified view.",
-                "Response includes the matter_id, name, description, and state. Default choice.",
-                "Full representation of matter is returned. Everything above and including MatterPermissions list."
+                "The amount of detail is unspecified. Same as **BASIC**.",
+                "Returns the matter ID, name, description, and state. Default choice.",
+                "Returns the basic details and a list of matter owners and collaborators (see [MatterPermissions](https://developers.google.com/vault/reference/rest/v1/matters#matterpermission))."
               ],
               "repeated": false
             }
@@ -3887,7 +3955,7 @@
           "id": "vault.matters.list",
           "path": "v1/matters",
           "httpMethod": "GET",
-          "description": "Lists matters the user has access to.",
+          "description": "Lists matters the requestor has access to.",
           "parameters": {
             "pageSize": {
               "description": "The number of matters to return in the response. Default and maximum are 100.",
@@ -3918,7 +3986,7 @@
               "repeated": false
             },
             "state": {
-              "description": "If set, list only matters with that specific state. The default is listing matters of all states.",
+              "description": "If set, lists only matters with the specified state. The default lists matters of all states.",
               "default": null,
               "location": "query",
               "required": false,
@@ -3935,14 +4003,14 @@
               ],
               "enumDescriptions": [
                 "The matter has no specified state.",
-                "This matter is open.",
-                "This matter is closed.",
-                "This matter is deleted."
+                "The matter is open.",
+                "The matter is closed.",
+                "The matter is deleted."
               ],
               "repeated": false
             },
             "view": {
-              "description": "Specifies which parts of the matter to return in response.",
+              "description": "Specifies how much information about the matter to return in response.",
               "default": null,
               "location": "query",
               "required": false,
@@ -3957,9 +4025,9 @@
                 "FULL"
               ],
               "enumDescriptions": [
-                "There is no specified view.",
-                "Response includes the matter_id, name, description, and state. Default choice.",
-                "Full representation of matter is returned. Everything above and including MatterPermissions list."
+                "The amount of detail is unspecified. Same as **BASIC**.",
+                "Returns the matter ID, name, description, and state. Default choice.",
+                "Returns the basic details and a list of matter owners and collaborators (see [MatterPermissions](https://developers.google.com/vault/reference/rest/v1/matters#matterpermission))."
               ],
               "repeated": false
             }
@@ -4022,7 +4090,7 @@
           "id": "vault.matters.reopen",
           "path": "v1/matters/{matterId}:reopen",
           "httpMethod": "POST",
-          "description": "Reopens the specified matter. Returns matter with updated state.",
+          "description": "Reopens the specified matter. Returns the matter with updated state.",
           "parameters": {
             "matterId": {
               "description": "The matter ID.",
@@ -4061,7 +4129,7 @@
           "id": "vault.matters.undelete",
           "path": "v1/matters/{matterId}:undelete",
           "httpMethod": "POST",
-          "description": "Undeletes the specified matter. Returns matter with updated state.",
+          "description": "Undeletes the specified matter. Returns the matter with updated state.",
           "parameters": {
             "matterId": {
               "description": "The matter ID.",
