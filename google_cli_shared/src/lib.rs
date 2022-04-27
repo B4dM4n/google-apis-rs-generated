@@ -1,7 +1,6 @@
 #![deny(unsafe_code)]
 use mime::Mime;
 use serde_json::{self as json, value::Value as JsonValue};
-use strsim;
 use yup_oauth2::{ApplicationSecret, ConsoleApplicationSecret};
 
 pub mod dep {
@@ -51,11 +50,11 @@ pub fn remove_json_null_values(value: &mut JsonValue) {
         JsonValue::Object(ref mut map) => {
             let mut for_removal = Vec::new();
 
-            for (key, mut value) in map.iter_mut() {
+            for (key, value) in map.iter_mut() {
                 if value.is_null() {
                     for_removal.push(key.clone());
                 } else {
-                    remove_json_null_values(&mut value);
+                    remove_json_null_values(value);
                 }
             }
 
@@ -150,10 +149,7 @@ fn did_you_mean(
             candidate = Some((confidence, pv.to_owned()));
         }
     }
-    match candidate {
-        None => None,
-        Some((_, candidate)) => Some(candidate),
-    }
+    candidate.map(|(_, candidate)| candidate)
 }
 
 pub enum CallType {
@@ -300,7 +296,7 @@ impl FieldCursor {
         let possible_values: Vec<_> = possible_values.into_iter().collect();
         let push_field = |fs: &mut String, f: &mut String| {
             if !f.is_empty() {
-                match did_you_mean(&f, &possible_values) {
+                match did_you_mean(f, &possible_values) {
                     Some(candidate) => fs.push_str(&candidate),
                     None => fs.push_str(f),
                 };
@@ -343,7 +339,7 @@ impl FieldCursor {
         for field in &self.0[..self.0.len() - 1] {
             let tmp = object;
             object = match *tmp {
-                JsonValue::Object(ref mut mapping) => assure_entry(mapping, &field),
+                JsonValue::Object(ref mut mapping) => assure_entry(mapping, field),
                 _ => panic!("We don't expect non-object Values here ..."),
             };
         }
@@ -357,18 +353,18 @@ impl FieldCursor {
                  -> JsonValue {
                     match json_type {
                         JsonType::Boolean => {
-                            JsonValue::Bool(arg_from_str(value, err, &field, "boolean"))
+                            JsonValue::Bool(arg_from_str(value, err, field, "boolean"))
                         }
                         JsonType::Int => JsonValue::Number(
-                            json::Number::from_f64(arg_from_str(value, err, &field, "int"))
+                            json::Number::from_f64(arg_from_str(value, err, field, "int"))
                                 .expect("valid f64"),
                         ),
                         JsonType::Uint => JsonValue::Number(
-                            json::Number::from_f64(arg_from_str(value, err, &field, "uint"))
+                            json::Number::from_f64(arg_from_str(value, err, field, "uint"))
                                 .expect("valid f64"),
                         ),
                         JsonType::Float => JsonValue::Number(
-                            json::Number::from_f64(arg_from_str(value, err, &field, "float"))
+                            json::Number::from_f64(arg_from_str(value, err, field, "float"))
                                 .expect("valid f64"),
                         ),
                         JsonType::String => JsonValue::String(value.to_owned()),
@@ -396,7 +392,7 @@ impl FieldCursor {
                         let (key, value) = parse_kv_arg(value, err, true);
                         let json_value = to_json_value(value.unwrap_or(""), type_info.jtype, err);
 
-                        match *assure_entry(mapping, &field) {
+                        match *assure_entry(mapping, field) {
                             JsonValue::Object(ref mut value_map) => {
                                 if value_map.insert(key.to_owned(), json_value).is_some() {
                                     err.issues.push(CLIError::Field(FieldError::Duplicate(
@@ -788,7 +784,7 @@ pub fn application_secret_from_directory(
                 ApplicationSecretError::DecoderError((secret_str(), json_err)),
             ))),
             Ok(console_secret) => match console_secret.installed {
-                Some(secret) => return Ok(secret),
+                Some(secret) => Ok(secret),
                 None => Err(CLIError::Configuration(ConfigurationError::Secret(
                     ApplicationSecretError::FormatError(secret_str()),
                 ))),
