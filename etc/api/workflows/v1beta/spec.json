@@ -7,7 +7,7 @@
   "canonicalName": "Workflows",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta",
-  "revision": "20220413",
+  "revision": "20220406",
   "title": "Workflows API",
   "description": "Manage workflow definitions. To execute workflows and manage executions, see the Workflows Executions API.",
   "ownerDomain": "google.com",

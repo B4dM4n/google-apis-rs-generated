@@ -7,7 +7,7 @@
   "canonicalName": "Cloud Deploy",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220420",
+  "revision": "20220413",
   "title": "Google Cloud Deploy API",
   "description": "",
   "ownerDomain": "google.com",

@@ -7,7 +7,7 @@
   "canonicalName": null,
   "fullyEncodeReservedExpansion": null,
   "version": "v1",
-  "revision": "20220421",
+  "revision": "20220407",
   "title": "Groups Settings API",
   "description": "Manages permission levels and related settings of a group.",
   "ownerDomain": "google.com",

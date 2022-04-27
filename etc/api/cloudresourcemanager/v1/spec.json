@@ -7,7 +7,7 @@
   "canonicalName": "Cloud Resource Manager",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220410",
+  "revision": "20220424",
   "title": "Cloud Resource Manager API",
   "description": "Creates, reads, and updates metadata for Google Cloud Platform resource containers.",
   "ownerDomain": "google.com",

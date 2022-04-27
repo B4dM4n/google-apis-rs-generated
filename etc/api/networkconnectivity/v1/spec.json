@@ -7,7 +7,7 @@
   "canonicalName": "networkconnectivity",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220415",
+  "revision": "20220426",
   "title": "Network Connectivity API",
   "description": "The Network Connectivity API provides access to Network Connectivity Center.",
   "ownerDomain": "google.com",

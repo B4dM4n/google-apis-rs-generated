@@ -7,7 +7,7 @@
   "canonicalName": "Contactcenterinsights",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220415",
+  "revision": "20220425",
   "title": "Contact Center AI Insights API",
   "description": "",
   "ownerDomain": "google.com",

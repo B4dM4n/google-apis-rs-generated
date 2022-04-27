@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("networkconnectivity1_alpha1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220415")
+            .version("0.1.0-20220426")
             .about("The Network Connectivity API provides access to Network Connectivity Center.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -47,6 +47,21 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists information about the supported locations for this service.");
             locations1 = locations1.subcommand(mcmd);
+        }
+        let mut connection_policies2 = SubCommand::with_name("connection_policies")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get_iam_policy, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            connection_policies2 = connection_policies2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.");
+            connection_policies2 = connection_policies2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
+            connection_policies2 = connection_policies2.subcommand(mcmd);
         }
         let mut global2 = SubCommand::with_name("global")
             .setting(AppSettings::ColoredHelp)
@@ -84,21 +99,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations2 = operations2.subcommand(mcmd);
-        }
-        let mut service_connect_policies2 = SubCommand::with_name("service_connect_policies")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: get_iam_policy, set_iam_policy and test_iam_permissions");
-        {
-            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
-            service_connect_policies2 = service_connect_policies2.subcommand(mcmd);
-        }
-        {
-            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.");
-            service_connect_policies2 = service_connect_policies2.subcommand(mcmd);
-        }
-        {
-            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
-            service_connect_policies2 = service_connect_policies2.subcommand(mcmd);
         }
         let mut service_instances2 = SubCommand::with_name("service_instances")
             .setting(AppSettings::ColoredHelp)
@@ -194,10 +194,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         global2 = global2.subcommand(hubs3);
         locations1 = locations1.subcommand(spokes2);
         locations1 = locations1.subcommand(service_instances2);
-        locations1 = locations1.subcommand(service_connect_policies2);
         locations1 = locations1.subcommand(operations2);
         locations1 = locations1.subcommand(internal_ranges2);
         locations1 = locations1.subcommand(global2);
+        locations1 = locations1.subcommand(connection_policies2);
         projects0 = projects0.subcommand(locations1);
         app = app.subcommand(projects0);
 

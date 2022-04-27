@@ -7,7 +7,7 @@
   "canonicalName": "Assuredworkloads",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220415",
+  "revision": "20220425",
   "title": "Assured Workloads API",
   "description": "",
   "ownerDomain": "google.com",

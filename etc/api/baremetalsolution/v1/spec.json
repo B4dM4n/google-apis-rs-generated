@@ -7,7 +7,7 @@
   "canonicalName": null,
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220422",
+  "revision": "20220418",
   "title": "Bare Metal Solution API",
   "description": "Provides ways to manage Bare Metal Solution hardware installed in a regional extension located near a Google Cloud data center.",
   "ownerDomain": "google.com",
