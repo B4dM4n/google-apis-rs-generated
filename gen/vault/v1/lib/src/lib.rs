@@ -3108,6 +3108,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub shared_drive_info: ::std::option::Option<crate::schemas::SharedDriveInfo>,
+        #[doc = "Required when **SearchMethod** is **SITES_URL**."]
+        #[serde(
+            rename = "sitesUrlInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sites_url_info: ::std::option::Option<crate::schemas::SitesUrlInfo>,
         #[doc = "The start time for the search query. Specify in GMT. The value is rounded to 12 AM on the specified date."]
         #[serde(
             rename = "startTime",
@@ -3340,6 +3347,8 @@ pub mod schemas {
         SearchMethodUnspecified,
         #[doc = "Search the files in the shared drives specified in [SharedDriveInfo](https://developers.google.com/vault/reference/rest/v1/Query#shareddriveinfo)."]
         SharedDrive,
+        #[doc = "Search for sites by the published site URLs specified in [SitesUrlInfo](https://developers.google.com/vault/reference/rest/v1/Query#sitesurlinfo)."]
+        SitesUrl,
         #[doc = "Search the data in the Team Drive specified in **team_drive_info**."]
         TeamDrive,
     }
@@ -3352,6 +3361,7 @@ pub mod schemas {
                 QueryMethod::Room => "ROOM",
                 QueryMethod::SearchMethodUnspecified => "SEARCH_METHOD_UNSPECIFIED",
                 QueryMethod::SharedDrive => "SHARED_DRIVE",
+                QueryMethod::SitesUrl => "SITES_URL",
                 QueryMethod::TeamDrive => "TEAM_DRIVE",
             }
         }
@@ -3371,6 +3381,7 @@ pub mod schemas {
                 "ROOM" => QueryMethod::Room,
                 "SEARCH_METHOD_UNSPECIFIED" => QueryMethod::SearchMethodUnspecified,
                 "SHARED_DRIVE" => QueryMethod::SharedDrive,
+                "SITES_URL" => QueryMethod::SitesUrl,
                 "TEAM_DRIVE" => QueryMethod::TeamDrive,
                 _ => return Err(()),
             })
@@ -3402,6 +3413,7 @@ pub mod schemas {
                 "ROOM" => QueryMethod::Room,
                 "SEARCH_METHOD_UNSPECIFIED" => QueryMethod::SearchMethodUnspecified,
                 "SHARED_DRIVE" => QueryMethod::SharedDrive,
+                "SITES_URL" => QueryMethod::SitesUrl,
                 "TEAM_DRIVE" => QueryMethod::TeamDrive,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -3436,6 +3448,8 @@ pub mod schemas {
         SearchMethodUnspecified,
         #[doc = "Search the files in the shared drives specified in [SharedDriveInfo](https://developers.google.com/vault/reference/rest/v1/Query#shareddriveinfo)."]
         SharedDrive,
+        #[doc = "Search for sites by the published site URLs specified in [SitesUrlInfo](https://developers.google.com/vault/reference/rest/v1/Query#sitesurlinfo)."]
+        SitesUrl,
         #[doc = "Search the data in the Team Drive specified in **team_drive_info**."]
         TeamDrive,
     }
@@ -3448,6 +3462,7 @@ pub mod schemas {
                 QuerySearchMethod::Room => "ROOM",
                 QuerySearchMethod::SearchMethodUnspecified => "SEARCH_METHOD_UNSPECIFIED",
                 QuerySearchMethod::SharedDrive => "SHARED_DRIVE",
+                QuerySearchMethod::SitesUrl => "SITES_URL",
                 QuerySearchMethod::TeamDrive => "TEAM_DRIVE",
             }
         }
@@ -3467,6 +3482,7 @@ pub mod schemas {
                 "ROOM" => QuerySearchMethod::Room,
                 "SEARCH_METHOD_UNSPECIFIED" => QuerySearchMethod::SearchMethodUnspecified,
                 "SHARED_DRIVE" => QuerySearchMethod::SharedDrive,
+                "SITES_URL" => QuerySearchMethod::SitesUrl,
                 "TEAM_DRIVE" => QuerySearchMethod::TeamDrive,
                 _ => return Err(()),
             })
@@ -3498,6 +3514,7 @@ pub mod schemas {
                 "ROOM" => QuerySearchMethod::Room,
                 "SEARCH_METHOD_UNSPECIFIED" => QuerySearchMethod::SearchMethodUnspecified,
                 "SHARED_DRIVE" => QuerySearchMethod::SharedDrive,
+                "SITES_URL" => QuerySearchMethod::SitesUrl,
                 "TEAM_DRIVE" => QuerySearchMethod::TeamDrive,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -3741,6 +3758,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SharedDriveInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SitesUrlInfo {
+        #[doc = "A list of published site URLs."]
+        #[serde(
+            rename = "urls",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub urls: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for SitesUrlInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SitesUrlInfo {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }

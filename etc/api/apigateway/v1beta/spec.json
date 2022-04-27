@@ -7,7 +7,7 @@
   "canonicalName": null,
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta",
-  "revision": "20220406",
+  "revision": "20220420",
   "title": "API Gateway API",
   "description": "",
   "ownerDomain": "google.com",

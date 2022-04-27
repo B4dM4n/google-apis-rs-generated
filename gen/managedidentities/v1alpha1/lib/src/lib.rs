@@ -1059,7 +1059,142 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudSaasacceleratorManagementProvidersV1Instance { # [doc = "consumer_defined_name is the name that is set by the consumer. On the other hand Name field represents system-assigned id of an instance so consumers are not necessarily aware of it. consumer_defined_name is used for notification/UI purposes for consumer to recognize their instances."] # [serde (rename = "consumerDefinedName" , default , skip_serializing_if = "std::option::Option::is_none")] pub consumer_defined_name : :: std :: option :: Option < String > , # [doc = "Output only. Timestamp when the resource was created."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Optional. The instance_type of this instance of format: projects/{project_id}/locations/{location_id}/instanceTypes/{instance_type_id}. Instance Type represents a high-level tier or SKU of the service that this instance belong to. When enabled(eg: Maintenance Rollout), Rollout uses 'instance_type' along with 'software_versions' to determine whether instance needs an update or not."] # [serde (rename = "instanceType" , default , skip_serializing_if = "std::option::Option::is_none")] pub instance_type : :: std :: option :: Option < String > , # [doc = "Optional. Resource labels to represent user provided metadata. Each label is a key-value pair, where both the key and the value are arbitrary strings provided by the user."] # [serde (rename = "labels" , default , skip_serializing_if = "std::option::Option::is_none")] pub labels : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , String > > , # [doc = "Deprecated. The MaintenancePolicies that have been attached to the instance. The key must be of the type name of the oneof policy name defined in MaintenancePolicy, and the referenced policy must define the same policy type. For complete details of MaintenancePolicy, please refer to go/cloud-saas-mw-ug."] # [serde (rename = "maintenancePolicyNames" , default , skip_serializing_if = "std::option::Option::is_none")] pub maintenance_policy_names : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , String > > , # [doc = "The MaintenanceSchedule contains the scheduling information of published maintenance schedule with same key as software_versions."] # [serde (rename = "maintenanceSchedules" , default , skip_serializing_if = "std::option::Option::is_none")] pub maintenance_schedules : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSchedule > > , # [doc = "Optional. The MaintenanceSettings associated with instance."] # [serde (rename = "maintenanceSettings" , default , skip_serializing_if = "std::option::Option::is_none")] pub maintenance_settings : :: std :: option :: Option < crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSettings > , # [doc = "Unique name of the resource. It uses the form: `projects/{project_id|project_number}/locations/{location_id}/instances/{instance_id}` Note: Either project_id or project_number can be used, but keep it consistent with other APIs (e.g. RescheduleUpdate)"] # [serde (rename = "name" , default , skip_serializing_if = "std::option::Option::is_none")] pub name : :: std :: option :: Option < String > , # [doc = "Optional. notification_parameter are information that service producers may like to include that is not relevant to Rollout. This parameter will only be passed to Gamma and Cloud Logging for notification/logging purpose."] # [serde (rename = "notificationParameters" , default , skip_serializing_if = "std::option::Option::is_none")] pub notification_parameters : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1NotificationParameter > > , # [doc = "Output only. Custom string attributes used primarily to expose producer-specific information in monitoring dashboards. See go/get-instance-metadata."] # [serde (rename = "producerMetadata" , default , skip_serializing_if = "std::option::Option::is_none")] pub producer_metadata : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , String > > , # [doc = "Output only. The list of data plane resources provisioned for this instance, e.g. compute VMs. See go/get-instance-metadata."] # [serde (rename = "provisionedResources" , default , skip_serializing_if = "std::option::Option::is_none")] pub provisioned_resources : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1ProvisionedResource > > , # [doc = "Link to the SLM instance template. Only populated when updating SLM instances via SSA's Actuation service adaptor. Service producers with custom control plane (e.g. Cloud SQL) doesn't need to populate this field. Instead they should use software_versions."] # [serde (rename = "slmInstanceTemplate" , default , skip_serializing_if = "std::option::Option::is_none")] pub slm_instance_template : :: std :: option :: Option < String > , # [doc = "Output only. SLO metadata for instance classification in the Standardized dataplane SLO platform. See go/cloud-ssa-standard-slo for feature description."] # [serde (rename = "sloMetadata" , default , skip_serializing_if = "std::option::Option::is_none")] pub slo_metadata : :: std :: option :: Option < crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata > , # [doc = "Software versions that are used to deploy this instance. This can be mutated by rollout services."] # [serde (rename = "softwareVersions" , default , skip_serializing_if = "std::option::Option::is_none")] pub software_versions : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , String > > , # [doc = "Output only. Current lifecycle state of the resource (e.g. if it's being created or ready to use)."] # [serde (rename = "state" , default , skip_serializing_if = "std::option::Option::is_none")] pub state : :: std :: option :: Option < crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1InstanceState > , # [doc = "Output only. ID of the associated GCP tenant project. See go/get-instance-metadata."] # [serde (rename = "tenantProjectId" , default , skip_serializing_if = "std::option::Option::is_none")] pub tenant_project_id : :: std :: option :: Option < String > , # [doc = "Output only. Timestamp when the resource was last modified."] # [serde (rename = "updateTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub update_time : :: std :: option :: Option < String > , }
+    pub struct GoogleCloudSaasacceleratorManagementProvidersV1Instance {
+        #[doc = "consumer_defined_name is the name that is set by the consumer. On the other hand Name field represents system-assigned id of an instance so consumers are not necessarily aware of it. consumer_defined_name is used for notification/UI purposes for consumer to recognize their instances."]
+        #[serde(
+            rename = "consumerDefinedName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub consumer_defined_name: ::std::option::Option<String>,
+        #[doc = "Output only. Timestamp when the resource was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "Optional. The instance_type of this instance of format: projects/{project_id}/locations/{location_id}/instanceTypes/{instance_type_id}. Instance Type represents a high-level tier or SKU of the service that this instance belong to. When enabled(eg: Maintenance Rollout), Rollout uses 'instance_type' along with 'software_versions' to determine whether instance needs an update or not."]
+        #[serde(
+            rename = "instanceType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub instance_type: ::std::option::Option<String>,
+        #[doc = "Optional. Resource labels to represent user provided metadata. Each label is a key-value pair, where both the key and the value are arbitrary strings provided by the user."]
+        #[serde(
+            rename = "labels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "Deprecated. The MaintenancePolicies that have been attached to the instance. The key must be of the type name of the oneof policy name defined in MaintenancePolicy, and the referenced policy must define the same policy type. For complete details of MaintenancePolicy, please refer to go/cloud-saas-mw-ug."]
+        #[serde(
+            rename = "maintenancePolicyNames",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub maintenance_policy_names:
+            ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "The MaintenanceSchedule contains the scheduling information of published maintenance schedule with same key as software_versions."]
+        #[serde(
+            rename = "maintenanceSchedules",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub maintenance_schedules: ::std::option::Option<
+            ::std::collections::BTreeMap<
+                String,
+                crate::schemas::GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSchedule,
+            >,
+        >,
+        #[doc = "Optional. The MaintenanceSettings associated with instance."]
+        #[serde(
+            rename = "maintenanceSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub maintenance_settings: ::std::option::Option<
+            crate::schemas::GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSettings,
+        >,
+        #[doc = "Unique name of the resource. It uses the form: `projects/{project_id|project_number}/locations/{location_id}/instances/{instance_id}` Note: Either project_id or project_number can be used, but keep it consistent with other APIs (e.g. RescheduleUpdate)"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Optional. notification_parameters are information that service producers may like to include that is not relevant to Rollout. This parameter will only be passed to Gamma and Cloud Logging for notification/logging purpose."]
+        #[serde(
+            rename = "notificationParameters",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub notification_parameters:
+            ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "Output only. Custom string attributes used primarily to expose producer-specific information in monitoring dashboards. See go/get-instance-metadata."]
+        #[serde(
+            rename = "producerMetadata",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub producer_metadata: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "Output only. The list of data plane resources provisioned for this instance, e.g. compute VMs. See go/get-instance-metadata."]
+        #[serde(
+            rename = "provisionedResources",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub provisioned_resources: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudSaasacceleratorManagementProvidersV1ProvisionedResource>,
+        >,
+        #[doc = "Link to the SLM instance template. Only populated when updating SLM instances via SSA's Actuation service adaptor. Service producers with custom control plane (e.g. Cloud SQL) doesn't need to populate this field. Instead they should use software_versions."]
+        #[serde(
+            rename = "slmInstanceTemplate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub slm_instance_template: ::std::option::Option<String>,
+        #[doc = "Output only. SLO metadata for instance classification in the Standardized dataplane SLO platform. See go/cloud-ssa-standard-slo for feature description."]
+        #[serde(
+            rename = "sloMetadata",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub slo_metadata: ::std::option::Option<
+            crate::schemas::GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata,
+        >,
+        #[doc = "Software versions that are used to deploy this instance. This can be mutated by rollout services."]
+        #[serde(
+            rename = "softwareVersions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub software_versions: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "Output only. Current lifecycle state of the resource (e.g. if it's being created or ready to use)."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<
+            crate::schemas::GoogleCloudSaasacceleratorManagementProvidersV1InstanceState,
+        >,
+        #[doc = "Output only. ID of the associated GCP tenant project. See go/get-instance-metadata."]
+        #[serde(
+            rename = "tenantProjectId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub tenant_project_id: ::std::option::Option<String>,
+        #[doc = "Output only. Timestamp when the resource was last modified."]
+        #[serde(
+            rename = "updateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_time: ::std::option::Option<String>,
+    }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudSaasacceleratorManagementProvidersV1Instance
     {
@@ -1369,41 +1504,6 @@ pub mod schemas {
     }
     impl ::google_field_selector::ToFieldType
         for GoogleCloudSaasacceleratorManagementProvidersV1NodeSloMetadata
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudSaasacceleratorManagementProvidersV1NotificationParameter {
-        #[doc = "Optional. Array of string values. e.g. instance's replica information."]
-        #[serde(
-            rename = "values",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub values: ::std::option::Option<Vec<String>>,
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudSaasacceleratorManagementProvidersV1NotificationParameter
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudSaasacceleratorManagementProvidersV1NotificationParameter
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -4096,7 +4196,7 @@ pub mod resources {
                 xgafv: Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
+                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like \"displayName=tokyo\", and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self

@@ -7,7 +7,7 @@
   "canonicalName": "Recaptcha Enterprise",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220415",
+  "revision": "20220422",
   "title": "reCAPTCHA Enterprise API",
   "description": "",
   "ownerDomain": "google.com",

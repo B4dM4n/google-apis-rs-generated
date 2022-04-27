@@ -7,7 +7,7 @@
   "canonicalName": "Security Command Center",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220414",
+  "revision": "20220421",
   "title": "Security Command Center API",
   "description": "Security Command Center API provides access to temporal views of assets and findings within an organization.",
   "ownerDomain": "google.com",

@@ -7,7 +7,7 @@
   "canonicalName": "Reseller",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220424",
+  "revision": "20220426",
   "title": "Google Workspace Reseller API",
   "description": "Perform common functions that are available on the Channel Services console at scale, like placing orders and viewing customer information",
   "ownerDomain": "google.com",

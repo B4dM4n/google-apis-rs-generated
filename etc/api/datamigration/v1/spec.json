@@ -7,7 +7,7 @@
   "canonicalName": "Database Migration Service",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220420",
+  "revision": "20220406",
   "title": "Database Migration API",
   "description": "Manage Cloud Database Migration Service resources on Google Cloud Platform.",
   "ownerDomain": "google.com",

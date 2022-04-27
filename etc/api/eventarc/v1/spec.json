@@ -7,9 +7,9 @@
   "canonicalName": "Eventarc",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220422",
+  "revision": "20220408",
   "title": "Eventarc API",
-  "description": "Build event-driven applications on Google Cloud Platform.",
+  "description": "",
   "ownerDomain": "google.com",
   "ownerName": "Google",
   "icons": {
