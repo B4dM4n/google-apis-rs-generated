@@ -44,6 +44,7 @@ remove-api name version:
 # Fetch the latest API index from Googles discovery service
 refresh-api-index:
     curl -S https://www.googleapis.com/discovery/v1/apis > {{API_INDEX_JSON}}
+    git apply etc/drop_serviceconsumermanagement_v1beta1.patch
 
 # build or update the MCP tool, used for generation and much more
 mcp:
