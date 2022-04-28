@@ -12095,6 +12095,52 @@ pub mod resources {
                 let response = req.send().await?.error_for_status()?;
                 Ok(response.json().await?)
             }
+            fn _resumable_upload_path(&self) -> String {
+                let mut output = "https://storage.googleapis.com/".to_owned();
+                output.push_str("resumable/upload/storage/v1/b/");
+                {
+                    let var_as_str = &self.bucket;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output.push_str("/o");
+                output
+            }
+            pub async fn start_resumable_upload(
+                self,
+                mime_type: ::mime::Mime,
+            ) -> Result<crate::ResumableUpload, crate::Error> {
+                let req = self._request(&self._resumable_upload_path()).await?;
+                let req = req.query(&[("uploadType", "resumable")]);
+                let req = req.header(
+                    ::reqwest::header::HeaderName::from_static("x-upload-content-type"),
+                    mime_type.to_string(),
+                );
+                let req = req.json(&self.request);
+                let resp = req.send().await?.error_for_status()?;
+                let location_header =
+                    resp.headers()
+                        .get(::reqwest::header::LOCATION)
+                        .ok_or_else(|| {
+                            crate::Error::Other(
+                                format!(
+                                    "No LOCATION header returned when initiating resumable upload"
+                                )
+                                .into(),
+                            )
+                        })?;
+                let upload_url = ::std::str::from_utf8(location_header.as_bytes())
+                    .map_err(|_| {
+                        crate::Error::Other(format!("Non UTF8 LOCATION header returned").into())
+                    })?
+                    .to_owned();
+                Ok(crate::ResumableUpload::new(
+                    self.reqwest.clone(),
+                    upload_url,
+                ))
+            }
             #[doc = r" Execute the given operation. The fields requested are"]
             #[doc = r" determined by the FieldSelector attribute of the return type."]
             #[doc = r" This allows for flexible and ergonomic partial responses. See"]
@@ -15035,4 +15081,92 @@ mod parsed_string {
             None => Ok(None),
         }
     }
+}
+pub struct ResumableUpload {
+    reqwest: ::reqwest::Client,
+    url: String,
+    progress: Option<i64>,
+}
+
+impl ResumableUpload {
+    pub fn new(reqwest: ::reqwest::Client, url: String) -> Self {
+        ResumableUpload {
+            reqwest,
+            url,
+            progress: None,
+        }
+    }
+
+    pub fn url(&self) -> &str {
+        &self.url
+    }
+
+    pub async fn upload<R>(&mut self, mut reader: R) -> Result<(), Box<dyn ::std::error::Error>>
+    where
+        R: ::futures::io::AsyncRead
+            + ::futures::io::AsyncSeek
+            + ::std::marker::Unpin
+            + Send
+            + Sync
+            + 'static,
+    {
+        use ::futures::io::AsyncSeekExt;
+        use ::tokio_util::compat::FuturesAsyncReadCompatExt;
+
+        let reader_len = {
+            let start = reader.seek(::std::io::SeekFrom::Current(0)).await?;
+            let end = reader.seek(::std::io::SeekFrom::End(0)).await?;
+            reader.seek(::std::io::SeekFrom::Start(start)).await?;
+            end
+        };
+        let progress = match self.progress {
+            Some(progress) => progress,
+            None => {
+                let req = self.reqwest.request(::reqwest::Method::PUT, &self.url);
+                let req = req.header(::reqwest::header::CONTENT_LENGTH, 0_i16);
+                let req = req.header(
+                    ::reqwest::header::CONTENT_RANGE,
+                    format!("bytes */{}", reader_len),
+                );
+                let response = req.send().await?.error_for_status()?;
+                match response.headers().get(::reqwest::header::RANGE) {
+                    Some(range_header) => {
+                        let (_, progress) = parse_range_header(range_header)
+                            .map_err(|e| format!("invalid RANGE header: {}", e))?;
+                        progress + 1
+                    }
+                    None => 0,
+                }
+            }
+        };
+
+        reader
+            .seek(::std::io::SeekFrom::Start(progress as u64))
+            .await?;
+        let reader_stream = ::tokio_util::io::ReaderStream::new(reader.compat());
+        let content_range = format!("bytes {}-{}/{}", progress, reader_len - 1, reader_len);
+        let req = self.reqwest.request(::reqwest::Method::PUT, &self.url);
+        let req = req.header(::reqwest::header::CONTENT_RANGE, content_range);
+        let req = req.body(::reqwest::Body::wrap_stream(reader_stream));
+        req.send().await?.error_for_status()?;
+        Ok(())
+    }
+}
+
+fn parse_range_header(
+    range: &::reqwest::header::HeaderValue,
+) -> Result<(i64, i64), Box<dyn ::std::error::Error>> {
+    let range = range.to_str()?;
+    if !range.starts_with("bytes ") {
+        return Err(r#"does not begin with "bytes""#.to_owned().into());
+    }
+    let range = &range[6..];
+    let slash_idx = range
+        .find('/')
+        .ok_or_else(|| r#"does not contain"#.to_owned())?;
+    let (begin, end) = range.split_at(slash_idx);
+    let end = &end[1..]; // remove '/'
+    let begin: i64 = begin.parse()?;
+    let end: i64 = end.parse()?;
+    Ok((begin, end))
 }
